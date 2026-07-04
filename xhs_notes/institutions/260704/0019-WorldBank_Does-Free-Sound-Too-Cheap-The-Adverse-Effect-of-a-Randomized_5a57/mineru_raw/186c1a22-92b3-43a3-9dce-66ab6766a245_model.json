@@ -1,0 +1,4074 @@
+[
+    [
+        {
+            "type": "aside_text",
+            "bbox": [
+                0.009,
+                0.441,
+                0.032,
+                0.607
+            ],
+            "angle": 0,
+            "content": "Public Disclosure Authorized"
+        },
+        {
+            "type": "aside_text",
+            "bbox": [
+                0.009,
+                0.025,
+                0.031,
+                0.191
+            ],
+            "angle": 0,
+            "content": "Public Disclosure Authorized"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.112,
+                0.086,
+                0.612,
+                0.115
+            ],
+            "angle": 0,
+            "content": "Policy Research Working Paper"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.71,
+                0.087,
+                0.803,
+                0.114
+            ],
+            "angle": 0,
+            "content": "11063"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.256,
+                0.299,
+                0.746,
+                0.336
+            ],
+            "angle": 0,
+            "content": "Does Free Sound Too Cheap?"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.181,
+                0.36,
+                0.821,
+                0.42
+            ],
+            "angle": 0,
+            "content": "The Adverse Effect of a Randomized Text Message Campaign on Program Take-up"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.43,
+                0.445,
+                0.57,
+                0.466
+            ],
+            "angle": 0,
+            "content": "Jeannie Annan",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.425,
+                0.467,
+                0.579,
+                0.489
+            ],
+            "angle": 0,
+            "content": "Estelle Koussoubé",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.432,
+                0.49,
+                0.57,
+                0.513
+            ],
+            "angle": 0,
+            "content": "Joséphine Tassy",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.442,
+                0.513,
+                0.562,
+                0.534
+            ],
+            "angle": 0,
+            "content": "Léa Rouanet",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.421,
+                0.535,
+                0.584,
+                0.556
+            ],
+            "angle": 0,
+            "content": "Clara Delavallade",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.442,
+                0.558,
+                0.564,
+                0.58
+            ],
+            "angle": 0,
+            "content": "David Evans",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.051,
+                0.823,
+                0.111,
+                0.873
+            ],
+            "angle": 0,
+            "content": ""
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.115,
+                0.836,
+                0.356,
+                0.859
+            ],
+            "angle": 0,
+            "content": "WORLD BANK GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.113,
+                0.863,
+                0.329,
+                0.926
+            ],
+            "angle": 0,
+            "content": "Africa Region\nGender Innovation Lab\nFebruary 2025"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.258,
+                0.298,
+                0.744,
+                0.335
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.185,
+                0.36,
+                0.819,
+                0.388
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.391,
+                0.702,
+                0.417
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.434,
+                0.447,
+                0.566,
+                0.464
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.428,
+                0.468,
+                0.576,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.434,
+                0.491,
+                0.566,
+                0.513
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.447,
+                0.515,
+                0.557,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.425,
+                0.536,
+                0.58,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.445,
+                0.56,
+                0.559,
+                0.578
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.064,
+                0.375,
+                0.084
+            ],
+            "angle": 0,
+            "content": "POLICY RESEARCH WORKING PAPER 11063",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.084,
+                0.106,
+                0.178,
+                0.128
+            ],
+            "angle": 0,
+            "content": "Abstract"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.134,
+                0.476,
+                0.255
+            ],
+            "angle": 0,
+            "content": "This study conducted a randomized experiment to improve participation in a youth employment program in Côte d'Ivoire by testing text message outreach methods. Sending text messages highlighting that the program was free only to eligible youth had no impact, but messages sent to both youth and trusted contacts led to reduced enrollment. This negative effect was smaller for women, and null when",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.494,
+                0.136,
+                0.888,
+                0.238
+            ],
+            "angle": 0,
+            "content": "their contact was also female. Qualitative findings suggest that distrust among unfamiliar contacts contributed to this decline. The study highlights the importance of tailoring communication strategies in job training programs to increase effectiveness, considering recipients' relationships and trust.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.082,
+                0.372,
+                0.886,
+                0.442
+            ],
+            "angle": 0,
+            "content": "This paper is a product of the Gender Innovation Lab, Africa Region. It is part of a larger effort by the World Bank to provide open access to its research and make a contribution to development policy discussions around the world. Policy Research Working Papers are also posted on the Web at http://www.worldbank.org/prwp. The authors may be contacted at jtassy@worldbank.org."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.134,
+                0.853,
+                0.844,
+                0.926
+            ],
+            "angle": 0,
+            "content": "The Policy Research Working Paper Series disseminates the findings of work in progress to encourage the exchange of ideas about development issues. An objective of the series is to get the findings out quickly, even if the presentations are less than fully polished. The papers carry the names of the authors and should be cited accordingly. The findings, interpretations, and conclusions expressed in this paper are entirely those of the authors. They do not necessarily represent the views of the International Bank for Reconstruction and Development/World Bank and its affiliated organizations, or those of the Executive Directors of the World Bank or the governments they represent."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.356,
+                0.942,
+                0.617,
+                0.959
+            ],
+            "angle": 0,
+            "content": "Produced by the Research Support Team"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.068,
+                0.371,
+                0.08
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.107,
+                0.175,
+                0.128
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.139,
+                0.47,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.087,
+                0.156,
+                0.471,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.173,
+                0.473,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.087,
+                0.189,
+                0.471,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.206,
+                0.471,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.222,
+                0.472,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.238,
+                0.47,
+                0.251
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.499,
+                0.138,
+                0.883,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.499,
+                0.155,
+                0.882,
+                0.17
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.5,
+                0.173,
+                0.885,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.498,
+                0.189,
+                0.882,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.498,
+                0.204,
+                0.882,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.499,
+                0.221,
+                0.565,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.129,
+                0.149,
+                0.869,
+                0.261
+            ],
+            "angle": 0,
+            "content": "Does Free Sound Too Cheap? The Adverse Effect of a Randomized Text Message Campaign on Program Take-up*"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.208,
+                0.285,
+                0.791,
+                0.339
+            ],
+            "angle": 0,
+            "content": "Jeannie Annan Ⓡ Estelle Koussoubé Ⓡ Joséphine Tassy\n ⓇLéa Rouanet ⓇClara Delavallade ⓇDavid Evans",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.159,
+                0.649,
+                0.705,
+                0.685
+            ],
+            "angle": 0,
+            "content": "Keywords: youth employment, text message incentives, program take-up.\nJEL Codes: O15, J16, J24, D83",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.111,
+                0.73,
+                0.888,
+                0.915
+            ],
+            "angle": 0,
+            "content": "*Annan: International Rescue Committee, jeannie.annan@rescue.org. Koussoubé: World Bank, mkoussoube@worldbank.org. Tassy: World Bank, jtassy@worldbank.org. Rouanet: World Bank, lrouanet@worldbank.org. Delavallade: World Bank, cdelavallade@worldbank.org. Evans: Inter-American Development Bank, devans@iadb.org. The order of authors' names was randomized. This paper is a product of the Gender Innovation Lab, within the Office of the World Bank's Africa Region Chief Economist. We gratefully acknowledge financial support from and the Wellspring Philanthropic Fund and the World Bank's Umbrella Facility for Gender Equality (UFGE). The UFGE is a multi-donor trust fund administered by the World Bank to advance gender equality and women's empowerment through experimentation and knowledge creation to help governments and the private sector focus policy and programs on scalable solutions with sustainable outcomes. The findings, interpretations, and conclusions expressed in this work do not necessarily reflect the views of The World Bank Group, its Board of Executive Directors, or the governments it represents. All errors and omissions are our own."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.131,
+                0.153,
+                0.866,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.158,
+                0.192,
+                0.841,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.443,
+                0.233,
+                0.571,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.212,
+                0.288,
+                0.785,
+                0.307
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.253,
+                0.317,
+                0.756,
+                0.334
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.652,
+                0.701,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.67,
+                0.403,
+                0.683
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.088,
+                0.342,
+                0.11
+            ],
+            "angle": 0,
+            "content": "1 Introduction"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.138,
+                0.886,
+                0.46
+            ],
+            "angle": 0,
+            "content": "With Sub-Saharan Africa's working-age population expected to reach 1.3 billion by 2050, making up \\(25\\%\\) of the global labor force (World Bank, 2023), and \\(20\\%-30\\%\\) of youth currently not in employment, education, or training (UNICEF, 2022), there is an urgent need to equip young people with the skills required to secure meaningful employment. Although there is significant heterogeneity across programs, the average effects of technical and vocational education and training (TVET) programs on youth employment have been positive in both higher and lower income country settings (Hanushek et al., 2017; Tripney and Hombrados, 2013). However, low take-up rates significantly challenge the effectiveness of training programs in such settings (McKenzie and Woodruff, 2014). Improving uptake of TVET programs in Africa is thus a potentially important step in introducing skilled individuals into the labor market and reducing youth unemployment.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.47,
+                0.887,
+                0.701
+            ],
+            "angle": 0,
+            "content": "The range of TVET offerings in Africa is extensive, with participant costs varying significantly (Van Lieshout and Mehtha, 2017). Removing cost barriers has been shown to increase product usage in low- and middle-income countries (Cohen and Dupas, 2010; Kremer and Miguel, 2007) as well as participation in basic education (Duflo et al., 2023). Analogously, reducing costs could boost enrollment in training programs. One tool that has proven effective at shifting behaviors at low cost in some contexts is sending informational text messages (Grácio and Vicente 2021; Rodríguez and Saavedra 2019), making use of growing mobile phone penetration in low and middle income countries.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.711,
+                0.887,
+                0.913
+            ],
+            "angle": 0,
+            "content": "This study uses a randomized controlled trial to test the impact of sending text messages (i.e., short message service, or SMS messages) to youth and—in some cases—a trusted contact the youth have identified in order to increase uptake of a youth employment program in Côte d'Ivoire. We find that SMS messages that make salient the fact that the training program is free can discourage enrollment. Specifically, we show that the negative impact on enrollment is significant only when both the potential applicant and their contact are sent SMS messages. This finding is consistent with the theoretical literature that suggests",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.494,
+                0.935,
+                0.505,
+                0.949
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.089,
+                0.34,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.139,
+                0.881,
+                0.155
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.169,
+                0.881,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.2,
+                0.882,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.23,
+                0.882,
+                0.246
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.26,
+                0.881,
+                0.276
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.291,
+                0.882,
+                0.306
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.32,
+                0.881,
+                0.335
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.351,
+                0.882,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.379,
+                0.882,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.411,
+                0.882,
+                0.427
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.441,
+                0.559,
+                0.456
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.472,
+                0.881,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.502,
+                0.881,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.532,
+                0.883,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.562,
+                0.881,
+                0.577
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.593,
+                0.881,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.622,
+                0.883,
+                0.639
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.653,
+                0.882,
+                0.668
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.683,
+                0.577,
+                0.698
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.713,
+                0.883,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.744,
+                0.883,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.773,
+                0.882,
+                0.789
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.804,
+                0.883,
+                0.82
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.835,
+                0.882,
+                0.85
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.863,
+                0.883,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.894,
+                0.882,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.093,
+                0.886,
+                0.324
+            ],
+            "angle": 0,
+            "content": "pricing can serve as a signal of quality, with higher prices indicating better product quality (Bagwell and Riordan, 1991). Furthermore, in collectivist cultures such as Côte d'Ivoire, youth career choices are heavily influenced by family expectations (Akosah-Twumasi et al., 2018). The support and approval from family members are pivotal, and youth are more likely to choose careers that are perceived to enhance the family's social standing and fulfill familial obligations. Moreover, our evidence shows that this influence varies according to the gender of both the youth and their contacts. The discouragement effect is significantly less for women, and it is not statistically significant for women whose contact is also a woman.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.334,
+                0.887,
+                0.475
+            ],
+            "angle": 0,
+            "content": "We complement our quantitative results with qualitative interviews with the youths' contacts, which demonstrate that the perception of the program by those contacts plays a role. The decision to enroll in a training program is based on both cost and the program's reputation. We conclude the paper with a discussion on the broader implications of our findings and potential areas for future research.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.113,
+                0.519,
+                0.757,
+                0.543
+            ],
+            "angle": 0,
+            "content": "2 Intervention, Empirical Strategy and Data"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.569,
+                0.887,
+                0.891
+            ],
+            "angle": 0,
+            "content": "This study evaluates the impact of an SMS intervention to increase interest and take-up in the PRO-Jeunes youth employment program, which was implemented in urban and peri-urban Côte d'Ivoire by the International Rescue Committee. The PRO-Jeunes program was extensively publicized through a comprehensive communication strategy, including a public relations campaign, direct marketing, media activities, and community mobilization. The public relations campaign engaged local authorities, professional training centers, employment agencies, social centers, and private enterprises. Media activities included press releases, advertisements, and direct broadcasts on the PRO-Jeunes website and on social media platforms (Twitter, YouTube, Facebook), as well as on local and regional television and radio. Additionally, community mobilization initiatives involved meeting with community leaders, distributing flyers, and informing communities about the project launch and",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.493,
+                0.934,
+                0.506,
+                0.949
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.095,
+                0.881,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.124,
+                0.881,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.155,
+                0.881,
+                0.17
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.185,
+                0.883,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.215,
+                0.882,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.245,
+                0.882,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.276,
+                0.882,
+                0.291
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.306,
+                0.872,
+                0.32
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.336,
+                0.88,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.367,
+                0.883,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.396,
+                0.883,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.427,
+                0.882,
+                0.443
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.457,
+                0.514,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.52,
+                0.756,
+                0.541
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.57,
+                0.883,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.6,
+                0.881,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.63,
+                0.882,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.661,
+                0.884,
+                0.676
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.691,
+                0.881,
+                0.707
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.722,
+                0.881,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.752,
+                0.883,
+                0.767
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.78,
+                0.882,
+                0.796
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.811,
+                0.883,
+                0.828
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.843,
+                0.879,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.873,
+                0.882,
+                0.887
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.093,
+                0.256,
+                0.11
+            ],
+            "angle": 0,
+            "content": "enrollment sites.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.123,
+                0.887,
+                0.354
+            ],
+            "angle": 0,
+            "content": "Recruitment for the PRO-Jeunes program was carried out in two stages: (i) interested youth first registered, expressing their interest in the program; (ii) after screening all the applications, the project team invited eligible applicants to come to an “enrollment meeting.” According to data from the first two cohorts from the program, a significant share of eligible applicants who had expressed their interest in stage 1 did not attend the subsequent enrollment meeting in stage 2. The intervention evaluated in this study targeted the next cohort, and took place between the two stages, aiming to increase take-up from registration to enrollment.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.365,
+                0.888,
+                0.657
+            ],
+            "angle": 0,
+            "content": "Eligible applicants were randomly selected to receive an SMS reminding them that the program was free. \\( ^{1} \\)  Youth were already informed that the program was free at pre-registration and the message served as a reminder. Randomization was stratified by gender and geographic location. The SMS message read as follows: “Come participate in an information session about PRO-Jeunes, a program offering free training, support for self-employment and employment opportunities.” In the first treatment, the SMS was randomly sent to the youth only. In the second, treatment, the SMS was sent to the youth and their listed contact person. At pre-registration, youth were asked to list a person to contact in case they could not be reached. It was specified that youth who did not live by themselves should provide the name of a person they lived with.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.666,
+                0.887,
+                0.837
+            ],
+            "angle": 0,
+            "content": "Our study uses administrative data collected in 2019 on a sample of 2,926 eligible applicants to the PRO-Jeunes program who had completed the pre-registration stage, during which they provided identification and contact information for their contact person, as described in Table 2. The data include variables such as date of birth, phone number, gender and geographic location for youth, and the relationship to the youth and phone number for contacts. Contact gender was inferred from the relationship variable. Listed re-",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.112,
+                0.845,
+                0.887,
+                0.893
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\) A second type of SMS emphasizing the long-term career benefits of the program was also tested. Results were inconclusive and are described in the appendix. The analysis presented in this paper focuses on the message emphasizing the free nature of the program."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.494,
+                0.935,
+                0.506,
+                0.949
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.095,
+                0.254,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.125,
+                0.883,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.155,
+                0.882,
+                0.17
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.185,
+                0.882,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.215,
+                0.884,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.245,
+                0.882,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.276,
+                0.882,
+                0.291
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.306,
+                0.882,
+                0.321
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.335,
+                0.235,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.366,
+                0.883,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.394,
+                0.883,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.427,
+                0.881,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.455,
+                0.881,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.485,
+                0.882,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.517,
+                0.882,
+                0.533
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.547,
+                0.882,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.577,
+                0.883,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.608,
+                0.882,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.638,
+                0.431,
+                0.653
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.668,
+                0.881,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.698,
+                0.882,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.728,
+                0.881,
+                0.745
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.758,
+                0.881,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.789,
+                0.883,
+                0.805
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.819,
+                0.881,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.093,
+                0.884,
+                0.142
+            ],
+            "angle": 0,
+            "content": "lationships were mother/father, uncle/aunt, brother/sister, grandparents, cousin, guardian, spouse, friend and other.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.153,
+                0.887,
+                0.324
+            ],
+            "angle": 0,
+            "content": "The average age of youth in our sample is 23 years (25th percentile: 20 years; 75th percentile: 26 years), and half of the sample are women. In terms of contacts, about half of the youth listed a parent as their contact; another \\(9\\%\\) provided a spouse as a contact. Women are \\(18.5\\%\\) less likely than men to choose women as contacts. \\(15.6\\%\\) of women choosing their husband as a contact, compared to only \\(1.7\\%\\) of men choosing their wife (Table 1). These statistics are balanced across treatment groups (Table 2).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.334,
+                0.886,
+                0.474
+            ],
+            "angle": 0,
+            "content": "To complement the quantitative data, we conducted a qualitative survey to better understand the quantitative findings, including 12 individual interviews and 4 focus group discussions among youth and their contacts in August-September 2023. In the focus group discussions, men and women were interviewed separately to better understand the gender differences in the observed results.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.142,
+                0.485,
+                0.632,
+                0.503
+            ],
+            "angle": 0,
+            "content": "We use the following specification for our main estimates:",
+            "merge_prev": false
+        },
+        {
+            "type": "equation",
+            "bbox": [
+                0.259,
+                0.539,
+                0.741,
+                0.593
+            ],
+            "angle": 0,
+            "content": "\\begin{array}{r} E n r o l l e d _ {i} = \\beta_ {0} + \\beta_ {1} W o m a n _ {i} + \\beta_ {2} T _ {1 i} + \\beta_ {3} T _ {1 i} \\cdot W o m a n _ {i} + \\\\ \\beta_ {4} T _ {2 i} + \\beta_ {5} T _ {2 i} \\cdot W o m a n _ {i} + X _ {i} ^ {\\prime} + \\lambda_ {e, c} + \\varepsilon_ {i} \\end{array}\\tag{1}"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.62,
+                0.887,
+                0.85
+            ],
+            "angle": 0,
+            "content": "Where  \\( Enrolled_{i} \\)  is a binary variable indicating whether individual i has completed the enrollment process.  \\( T_{1i} \\)  is a binary variable indicating whether the individual was in the first treatment group, where an SMS was sent to youth only.  \\( T_{2i} \\)  is a binary variable indicating whether the individual was in the second treatment group, where an SMS was sent to youth and their contact.  \\( Woman_{i} \\)  is a binary variable taking the value of one when the individual is a woman.  \\( X_{i}^{\\prime} \\)  is a vector of control variables, including age and geographic location. We also run a heterogeneity test with the same specification, comparing two sub-groups: youth with male contacts versus youth with female contacts.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.494,
+                0.935,
+                0.506,
+                0.949
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.283,
+                0.65,
+                0.309,
+                0.666
+            ],
+            "latex": "",
+            "score": 0.8769
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.226,
+                0.77,
+                0.252,
+                0.789
+            ],
+            "latex": "",
+            "score": 0.6319
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.273,
+                0.74,
+                0.349,
+                0.757
+            ],
+            "latex": "",
+            "score": 0.5081
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.598,
+                0.68,
+                0.624,
+                0.696
+            ],
+            "latex": "",
+            "score": 0.8722
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.093,
+                0.882,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.124,
+                0.324,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.144,
+                0.153,
+                0.884,
+                0.17
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.184,
+                0.884,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.215,
+                0.883,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.244,
+                0.881,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.275,
+                0.882,
+                0.291
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.113,
+                0.303,
+                0.598,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.336,
+                0.882,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.365,
+                0.883,
+                0.383
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.394,
+                0.883,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.427,
+                0.882,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.456,
+                0.404,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.486,
+                0.629,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.621,
+                0.884,
+                0.636
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.65,
+                0.282,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.309,
+                0.65,
+                0.884,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.68,
+                0.597,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.625,
+                0.68,
+                0.882,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.711,
+                0.882,
+                0.727
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.742,
+                0.265,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.351,
+                0.742,
+                0.883,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.112,
+                0.77,
+                0.226,
+                0.789
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.252,
+                0.77,
+                0.884,
+                0.789
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.803,
+                0.882,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.832,
+                0.571,
+                0.847
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.114,
+                0.088,
+                0.269,
+                0.109
+            ],
+            "angle": 0,
+            "content": "3 Results"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.113,
+                0.143,
+                0.52,
+                0.163
+            ],
+            "angle": 0,
+            "content": "3.1 Overall impact on enrollment"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.185,
+                0.886,
+                0.386
+            ],
+            "angle": 0,
+            "content": "Table 3 presents the treatment effects of sending the SMS to youth only or to youth and their contact on enrollment. We find that sending the SMS to youth only has no statistically significant impact on enrollment. Sending the SMS to both youth and their contact significantly decreases the probability of enrolling for both men (from \\(43.8\\%\\) to \\(25.2\\%\\)) and women (from \\(38.5\\%\\) to \\(30.7\\%\\)), equivalent to a \\(42.4\\%\\) decrease for men and a \\(20.2\\%\\) decrease for women, both significant at the \\(5\\%\\) level. The decrease in enrollment is significantly greater for men, with men's enrollment decreasing by 10.8 percentage points more than women's.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.396,
+                0.886,
+                0.567
+            ],
+            "angle": 0,
+            "content": "The fact that we only see a decrease when the contacts are included, coupled with our qualitative evidence, point to contacts being an important influence over youth's decisions. About half of youth listed a parent as their contact (Table 2). Qualitative interviews indicate that youth select the contact based on either personal relationships (family members or friends) or the contact's professional experience, and that youth expect their contact to provide significant guidance.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.578,
+                0.887,
+                0.9
+            ],
+            "angle": 0,
+            "content": "Qualitative interviews also indicate that while the program being free was perceived positively by both youth and contacts, it can also signal either poor quality or potential fraud. When asked what could improve the message's perception, interviewees suggested that it should illustrate the reputability of the organization providing the program. Both contacts and youth mentioned the importance of trusting the organization. This could explain why sending the SMS to youth and their contact had a worse effect on enrollment, compared to sending it to youth only. When the SMS were sent, youth had already attended a pre-registration information session, and therefore already had some information about the organization, whereas contacts had no prior interactions with the implementing organization. Contacts had no reason to have trust in the program, which could have led to them discouraging youth to register.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.494,
+                0.935,
+                0.506,
+                0.949
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.088,
+                0.269,
+                0.111
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.145,
+                0.518,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.186,
+                0.883,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.216,
+                0.881,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.248,
+                0.881,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.278,
+                0.881,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.308,
+                0.881,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.336,
+                0.881,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.367,
+                0.866,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.397,
+                0.882,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.428,
+                0.881,
+                0.444
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.458,
+                0.881,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.489,
+                0.883,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.518,
+                0.882,
+                0.535
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.549,
+                0.355,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.58,
+                0.883,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.61,
+                0.881,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.639,
+                0.882,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.67,
+                0.882,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.7,
+                0.881,
+                0.715
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.73,
+                0.881,
+                0.745
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.76,
+                0.883,
+                0.776
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.791,
+                0.883,
+                0.806
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.82,
+                0.881,
+                0.836
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.851,
+                0.882,
+                0.867
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.882,
+                0.371,
+                0.896
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.113,
+                0.091,
+                0.676,
+                0.111
+            ],
+            "angle": 0,
+            "content": "3.2 Impact on enrollment by gender of contact"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.133,
+                0.887,
+                0.455
+            ],
+            "angle": 0,
+            "content": "Table 4 shows the treatment effects of sending SMS to youth only or to youth and their contact on program enrollment for two subsamples: column (1) shows the impact on youth whose contacts are men, and column (2) shows the impact on youth whose contacts are women. It presents a more nuanced picture when we consider the gender of the contact. Sending SMS to male youth and their contact always has a negative impact, regardless of the contact's gender: the effect corresponds to a \\(36.2\\%\\) decrease in enrollment for men with male contacts and to a \\(52.3\\%\\) for men with female contacts. The impact on women's enrollment of the SMS to youth and their contact is driven by women with male contacts. Women with male contacts are \\(30.3\\%\\) less likely to enroll, whereas women with female contacts are the only group which does not exhibit a significant decrease in enrollment. This is not explained by differences in delivery rates (Figure 1).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.465,
+                0.887,
+                0.726
+            ],
+            "angle": 0,
+            "content": "Our results are robust to restricting the analysis to the subsample of youth whose contact is a parent: young women whose mothers were sent the contact SMS are the only ones not discouraged by the SMS. This may suggest that women value the opportunity cost of the program for young women less than men, either because they discount less the expected quality of the program based on the free message or because they are more aware than men of the limitations in job market opportunities for young women. However, these findings may be subject to selection bias in contact choice. The observed differences in effects by contact gender could be partially attributed to unobserved characteristics of youth who choose male versus female contacts, rather than solely to the gender of the contact itself.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.114,
+                0.77,
+                0.312,
+                0.792
+            ],
+            "angle": 0,
+            "content": "4 Discussion"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.82,
+                0.886,
+                0.9
+            ],
+            "angle": 0,
+            "content": "Low take-up is a major barrier to the effectiveness of a large number of development programs and social policies. In some cases, that low take-up may reflect insufficient information regarding the program. This study sought to boost the uptake of a youth employment",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.493,
+                0.935,
+                0.506,
+                0.949
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.09,
+                0.674,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.134,
+                0.883,
+                0.149
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.163,
+                0.881,
+                0.179
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.194,
+                0.882,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.224,
+                0.881,
+                0.24
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.255,
+                0.883,
+                0.271
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.285,
+                0.883,
+                0.3
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.314,
+                0.883,
+                0.331
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.345,
+                0.883,
+                0.361
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.375,
+                0.883,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.406,
+                0.883,
+                0.422
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.436,
+                0.467,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.466,
+                0.883,
+                0.482
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.496,
+                0.883,
+                0.512
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.526,
+                0.883,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.556,
+                0.882,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.587,
+                0.883,
+                0.603
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.617,
+                0.881,
+                0.634
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.647,
+                0.883,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.677,
+                0.882,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.708,
+                0.752,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.112,
+                0.77,
+                0.311,
+                0.793
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.821,
+                0.882,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.851,
+                0.882,
+                0.867
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.882,
+                0.881,
+                0.897
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.092,
+                0.886,
+                0.143
+            ],
+            "angle": 0,
+            "content": "program by making the free nature of the program salient through SMS reminders sent to both applicants and their contacts.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.152,
+                0.886,
+                0.265
+            ],
+            "angle": 0,
+            "content": "We provide quantitative evidence that this had no significant impact on program enrolment when youth were contacted alone and a discouraging effect when youth were contacted along with a person of reference. This discouraging effect was found for all youth, except women with a female contact, and is significantly stronger among men.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.272,
+                0.887,
+                0.568
+            ],
+            "angle": 0,
+            "content": "Complementary qualitative evidence highlights the key role played by trust in the program in shaping recipients' perception of the SMS messages. A message highlighting the program's cost-free aspect can inadvertently backfire if the target audience lacks familiarity with the offering, leading to skepticism about quality rather than generating interest. This finding underscores the value of building trust in the program before promoting it, ensuring that recipients are familiar with and confident in its value. Additionally, our results indicate that contacts are critical in influencing youth's take-up decisions. While they can be effective channels for information dissemination, trust needs to be cultivated not only with the youth, but also with the contacts, especially for male participants and male contacts, among whom the discouraging effect was strongest.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.574,
+                0.887,
+                0.869
+            ],
+            "angle": 0,
+            "content": "Focusing solely on the free nature of the program may not be enough to attract participants and can even lead to distrust when interpreted as a low-quality signal. Future communication strategies should highlight the quality and value of the program to align with the expectations and aspirations of the youth and the contacts influencing their decisions. Program coordinators could actively build trust with youth and their contacts by providing them with detailed, transparent information about the program's value and quality, and incorporating this type of information in messaging strategies. Additionally, messaging strategies could be tailored to align with the specific expectations of both youth and their contacts, potentially involving pre-engagement initiatives to familiarize them with the program before direct outreach.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.141,
+                0.876,
+                0.886,
+                0.897
+            ],
+            "angle": 0,
+            "content": "Gender dynamics further complicate the enrollment process, particularly among female",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.494,
+                0.935,
+                0.506,
+                0.949
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.095,
+                0.882,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.125,
+                0.409,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.155,
+                0.882,
+                0.171
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.185,
+                0.884,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.215,
+                0.882,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.244,
+                0.712,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.276,
+                0.881,
+                0.291
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.306,
+                0.883,
+                0.321
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.336,
+                0.881,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.366,
+                0.882,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.396,
+                0.882,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.426,
+                0.883,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.456,
+                0.883,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.487,
+                0.881,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.517,
+                0.882,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.547,
+                0.429,
+                0.562
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.578,
+                0.882,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.607,
+                0.883,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.638,
+                0.882,
+                0.653
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.667,
+                0.881,
+                0.683
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.698,
+                0.882,
+                0.713
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.728,
+                0.882,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.759,
+                0.881,
+                0.775
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.789,
+                0.882,
+                0.804
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.819,
+                0.882,
+                0.834
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.849,
+                0.414,
+                0.864
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.878,
+                0.882,
+                0.895
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.092,
+                0.886,
+                0.325
+            ],
+            "angle": 0,
+            "content": "recipients. The analysis indicates that the deterrent effect of the messaging is significantly less pronounced among women with female contacts than among women with male contacts. This heterogeneity suggests that the perception and impact of the program's promotional messages are influenced by broader social and cultural factors. However, this finding should be interpreted with caution given the potential selection bias in contact choice. Future research could address this by randomly assigning suggested contact gender to establish causal relationships, collecting more detailed data on reasons for contact selection, and exploring the interaction between youth characteristics and contact gender.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.333,
+                0.887,
+                0.628
+            ],
+            "angle": 0,
+            "content": "Taken together, our mixed-method study demonstrates the challenges of promoting the uptake of youth employment programs, highlighting the need for nuanced context-specific approaches. Increasing youth enrollment in skills development programs is a critical challenge, often hindered by issues of trust and perceptions of program benefits. It is crucial for program coordinators to focus on building trust and familiarity before emphasizing cost-free aspects. Messaging strategies should account for the complex dynamics between youth, their contacts, and gender. Leveraging existing trusted networks, such as religious or educational institutions, could enhance program credibility. By addressing the complexities of trust, social networks, and gender dynamics, program organizers can develop more effective strategies to improve registration outcomes and, ultimately, youth employment opportunities.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.494,
+                0.935,
+                0.506,
+                0.949
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.095,
+                0.881,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.125,
+                0.881,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.154,
+                0.882,
+                0.17
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.184,
+                0.882,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.215,
+                0.881,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.245,
+                0.883,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.276,
+                0.882,
+                0.291
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.307,
+                0.663,
+                0.32
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.337,
+                0.882,
+                0.35
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.366,
+                0.882,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.396,
+                0.881,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.426,
+                0.881,
+                0.441
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.457,
+                0.883,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.488,
+                0.882,
+                0.503
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.517,
+                0.882,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.547,
+                0.882,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.578,
+                0.882,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.608,
+                0.815,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.113,
+                0.088,
+                0.27,
+                0.11
+            ],
+            "angle": 0,
+            "content": "References"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.113,
+                0.125,
+                0.885,
+                0.18
+            ],
+            "angle": 0,
+            "content": "Akosah-Twumasi, P., Emeto, T. I., Lindsay, D., Tsey, K., and Malau-Aduli, B. S. (2018). A systematic review of factors that influence youths career choices—the role of culture. In Frontiers in Education, volume 3, page 58. Frontiers Media SA."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.114,
+                0.191,
+                0.884,
+                0.228
+            ],
+            "angle": 0,
+            "content": "Bagwell, K. and Riordan, M. H. (1991). High and declining prices signal product quality. The American Economic Review, pages 224–239."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.113,
+                0.24,
+                0.885,
+                0.277
+            ],
+            "angle": 0,
+            "content": "Cohen, J. and Dupas, P. (2010). Free distribution or cost-sharing? evidence from a randomized malaria prevention experiment. The Quarterly Journal of Economics, 125(1):1–45."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.112,
+                0.287,
+                0.885,
+                0.325
+            ],
+            "angle": 0,
+            "content": "Duflo, E., Dupas, P., and Kremer, M. (2023). The impact of secondary school subsidies on career trajectories in a dual labor market: Experimental evidence from ghana."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.113,
+                0.335,
+                0.887,
+                0.39
+            ],
+            "angle": 0,
+            "content": "Grácio, M. and Vicente, P. C. (2021). Information, get-out-the-vote messages, and peer influence: Causal effects on political behavior in mozambique. Journal of Development Economics, 151:102665."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.112,
+                0.401,
+                0.886,
+                0.457
+            ],
+            "angle": 0,
+            "content": "Hanushek, E. A., Schwerdt, G., Woessmann, L., and Zhang, L. (2017). General education, vocational education, and labor-market outcomes over the lifecycle. Journal of human resources, 52(1):48–87."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.114,
+                0.467,
+                0.888,
+                0.505
+            ],
+            "angle": 0,
+            "content": "Kremer, M. and Miguel, E. (2007). The illusion of sustainability. The Quarterly Journal of Economics, 122(3):1007–1065."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.113,
+                0.516,
+                0.886,
+                0.572
+            ],
+            "angle": 0,
+            "content": "McKenzie, D. (2021). Small business training to improve management practices in developing countries: re-assessing the evidence for ‘training doesn’t work’. Oxford Review of Economic Policy, 37(2):276–301."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.112,
+                0.582,
+                0.885,
+                0.638
+            ],
+            "angle": 0,
+            "content": "McKenzie, D. and Woodruff, C. (2014). What are we learning from business training and entrepreneurship evaluations around the developing world? The World Bank Research Observer, 29(1):48–82."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.113,
+                0.648,
+                0.886,
+                0.704
+            ],
+            "angle": 0,
+            "content": "Rodríguez, C. and Saavedra, J. E. (2019). The persistent effects of youth savings reminders: Experimental evidence from text-message campaigns in colombia. Journal of Development Economics, 139:135–156."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.112,
+                0.714,
+                0.886,
+                0.77
+            ],
+            "angle": 0,
+            "content": "Rokicki, S., Cohen, J., Salomon, J. A., and Fink, G. (2017). Impact of a text-messaging program on adolescent reproductive health: a cluster-randomized trial in ghana. American Journal of Public Health, 107(2):298–305."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.112,
+                0.781,
+                0.885,
+                0.837
+            ],
+            "angle": 0,
+            "content": "Tripney, J. S. and Hombrados, J. G. (2013). Technical and vocational education and training (tvet) for young people in low-and middle-income countries: a systematic review and meta-analysis. Empirical research in vocational education and training, 5:1–14."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.113,
+                0.846,
+                0.783,
+                0.866
+            ],
+            "angle": 0,
+            "content": "UNICEF (2022). Global neet data: Where's it all gone? Accessed: 2024-09-30."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.113,
+                0.876,
+                0.888,
+                0.913
+            ],
+            "angle": 0,
+            "content": "Van Lieshout, S. and Mehtha, P. (2017). The Next 15 Million: Start and Improve Your Business Global Tracer Study 2011-15. ILO."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.492,
+                0.935,
+                0.506,
+                0.949
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.088,
+                0.267,
+                0.111
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.092,
+                0.739,
+                0.11
+            ],
+            "angle": 0,
+            "content": "World Bank (2023). World development indicators. Accessed: 2024-09-30.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.489,
+                0.934,
+                0.512,
+                0.949
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.094,
+                0.738,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.114,
+                0.088,
+                0.209,
+                0.11
+            ],
+            "angle": 0,
+            "content": "Tables"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.327,
+                0.138,
+                0.672,
+                0.156
+            ],
+            "angle": 0,
+            "content": "Table 1: Descriptive statistics by gender"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.132,
+                0.165,
+                0.864,
+                0.457
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"2\">Variable</td><td colspan=\"2\">Men(1)</td><td colspan=\"2\">Women(2)</td><td rowspan=\"2\">T-test(1)-(2)</td></tr><tr><td>N</td><td>Mean/SE</td><td>N</td><td>Mean/SE</td></tr><tr><td>Age</td><td>1504</td><td>23.245[0.097]</td><td>1422</td><td>23.035[0.101]</td><td>0.210</td></tr><tr><td>Contact is a woman</td><td>1504</td><td>0.398[0.013]</td><td>1422</td><td>0.489[0.013]</td><td>-0.090***</td></tr><tr><td>Contact is youth&#x27;s mother</td><td>1504</td><td>0.277[0.012]</td><td>1422</td><td>0.329[0.012]</td><td>-0.052***</td></tr><tr><td>Contact is youth&#x27;s father</td><td>1504</td><td>0.250[0.011]</td><td>1422</td><td>0.160[0.010]</td><td>0.090***</td></tr><tr><td>Contact is youth&#x27;s mother or father</td><td>1504</td><td>0.527[0.013]</td><td>1422</td><td>0.489[0.013]</td><td>0.038**</td></tr><tr><td>Contact is youth&#x27;s spouse</td><td>1504</td><td>0.017[0.003]</td><td>1422</td><td>0.156[0.010]</td><td>-0.139***</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.131,
+                0.461,
+                0.866,
+                0.498
+            ],
+            "angle": 0,
+            "content": "Notes: The value displayed for t-tests are the differences in the means across the groups. *** p < 0.01, ** p < 0.05, * p < 0.1"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.488,
+                0.934,
+                0.511,
+                0.95
+            ],
+            "angle": 0,
+            "content": "11"
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.133,
+                0.479,
+                0.385,
+                0.497
+            ],
+            "latex": "",
+            "score": 0.6452
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.086,
+                0.209,
+                0.112
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.335,
+                0.116,
+                0.665,
+                0.141
+            ],
+            "angle": 0,
+            "content": "Table 2: Descriptive statistics by treatment group"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.114,
+                0.154,
+                0.883,
+                0.612
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"2\"></td><td colspan=\"2\">(1) Control</td><td colspan=\"2\">(2) SMS to youth</td><td colspan=\"2\">(3) SMS to youth &amp; contact</td><td rowspan=\"2\">t-test (1)-(2)</td><td rowspan=\"2\">t-test (1)-(3)</td><td rowspan=\"2\">t-test (2)-(3)</td></tr><tr><td>N</td><td>Mean/SE</td><td>N</td><td>Mean/SE</td><td>N</td><td>Mean/SE</td></tr><tr><td>Woman</td><td>1466</td><td>0.487[0.013]</td><td>731</td><td>0.487[0.018]</td><td>729</td><td>0.483[0.019]</td><td>0.000</td><td>0.004</td><td>0.004</td></tr><tr><td>Age</td><td>1466</td><td>23.128[0.098]</td><td>731</td><td>23.064[0.142]</td><td>729</td><td>23.252[0.139]</td><td>0.064</td><td>-0.124</td><td>-0.188</td></tr><tr><td>Contact is a woman</td><td>1475</td><td>0.452[0.013]</td><td>736</td><td>0.413[0.018]</td><td>737</td><td>0.438[0.018]</td><td>0.039*</td><td>0.014</td><td>-0.025</td></tr><tr><td>Contact is youth&#x27;s mother</td><td>1475</td><td>0.310[0.012]</td><td>736</td><td>0.283[0.017]</td><td>737</td><td>0.299[0.017]</td><td>0.027</td><td>0.011</td><td>-0.016</td></tr><tr><td>Contact is youth&#x27;s father</td><td>1475</td><td>0.199[0.010]</td><td>736</td><td>0.196[0.015]</td><td>737</td><td>0.225[0.015]</td><td>0.004</td><td>-0.026</td><td>-0.030</td></tr><tr><td>Contact is youth&#x27;s mother or father</td><td>1475</td><td>0.509[0.013]</td><td>736</td><td>0.478[0.018]</td><td>737</td><td>0.524[0.018]</td><td>0.031</td><td>-0.015</td><td>-0.045*</td></tr><tr><td>Contact is youth&#x27;s spouse</td><td>1475</td><td>0.087[0.007]</td><td>736</td><td>0.087[0.010]</td><td>737</td><td>0.076[0.010]</td><td>-0.000</td><td>0.011</td><td>0.011</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.115,
+                0.616,
+                0.884,
+                0.641
+            ],
+            "angle": 0,
+            "content": "Notes: The value displayed for t-tests are the differences in the means across the groups. *** p < 0.01, ** p < 0.05, * p < 0.1"
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.658,
+                0.617,
+                0.882,
+                0.64
+            ],
+            "latex": "",
+            "score": 0.5735
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.301,
+                0.09,
+                0.698,
+                0.108
+            ],
+            "angle": 0,
+            "content": "Table 3: Treatment effects on enrollment rates"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.225,
+                0.12,
+                0.774,
+                0.64
+            ],
+            "angle": 0,
+            "content": "<table><tr><td></td><td>Completed enrollment process</td></tr><tr><td>Woman</td><td>-0.052**</td></tr><tr><td>p-value</td><td>0.033</td></tr><tr><td>sharpened q-value</td><td>0.035</td></tr><tr><td>SMS to youth</td><td>-0.023</td></tr><tr><td>p-value</td><td>0.431</td></tr><tr><td>sharpened q-value</td><td>0.275</td></tr><tr><td>SMS to youth x Woman</td><td>0.015</td></tr><tr><td>p-value</td><td>0.724</td></tr><tr><td>sharpened q-value</td><td>0.408</td></tr><tr><td>SMS to youth &amp; contact</td><td>-0.186***</td></tr><tr><td>p-value</td><td>0.000</td></tr><tr><td>sharpened q-value</td><td>0.001</td></tr><tr><td>SMS to youth &amp; contact x Woman</td><td>0.108**</td></tr><tr><td>p-value</td><td>0.011</td></tr><tr><td>sharpened q-value</td><td>0.024</td></tr><tr><td>SMS to youth: p(T + T*W)=0</td><td>0.784</td></tr><tr><td>SMS to youth &amp; contact: p(T + T*W)=0</td><td>0.011</td></tr><tr><td>Control mean</td><td>0.438</td></tr><tr><td>R-squared</td><td>0.067</td></tr><tr><td>Observations</td><td>2926</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.227,
+                0.644,
+                0.51,
+                0.661
+            ],
+            "angle": 0,
+            "content": "Notes: T=Treatment. W=Woman."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.222,
+                0.662,
+                0.514,
+                0.68
+            ],
+            "angle": 0,
+            "content": "\\*\\*\\* p < 0.01, \\*\\* p < 0.05, \\* p < 0.1"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.221,
+                0.679,
+                0.776,
+                0.715
+            ],
+            "angle": 0,
+            "content": "Sharpened q-values are p-values that have been adjusted for the False Discovery Rate (FDR). Controls: Age and geographic location."
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.215,
+                0.09,
+                0.782,
+                0.109
+            ],
+            "angle": 0,
+            "content": "Table 4: Treatment effects on enrollment rates - by contact gender"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.137,
+                0.121,
+                0.859,
+                0.684
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"2\"></td><td colspan=\"3\">Completed enrolment process</td></tr><tr><td>Contact is a man</td><td>Contact is a woman</td><td>T-test (1)=(2)</td></tr><tr><td></td><td>(1)</td><td>(2)</td><td></td></tr><tr><td>Woman</td><td>-0.035</td><td>-0.081**</td><td>0.249</td></tr><tr><td>p-value</td><td>0.296</td><td>0.026</td><td></td></tr><tr><td>sharpened q-value</td><td>1.000</td><td>0.027</td><td></td></tr><tr><td>SMS to youth</td><td>-0.007</td><td>-0.050</td><td>0.514</td></tr><tr><td>p-value</td><td>0.846</td><td>0.285</td><td></td></tr><tr><td>sharpened q-value</td><td>1.000</td><td>0.166</td><td></td></tr><tr><td>SMS to youth x Woman</td><td>-0.011</td><td>0.058</td><td>0.379</td></tr><tr><td>p-value</td><td>0.840</td><td>0.366</td><td></td></tr><tr><td>sharpened q-value</td><td>1.000</td><td>0.172</td><td></td></tr><tr><td>SMS to youth &amp; contact</td><td>-0.158***</td><td>-0.229***</td><td>0.191</td></tr><tr><td>p-value</td><td>0.000</td><td>0.000</td><td></td></tr><tr><td>sharpened q-value</td><td>0.001</td><td>0.001</td><td></td></tr><tr><td>SMS to youth &amp; contact x Woman</td><td>0.036</td><td>0.196***</td><td>0.033</td></tr><tr><td>p-value</td><td>0.532</td><td>0.002</td><td></td></tr><tr><td>sharpened q-value</td><td>1.000</td><td>0.004</td><td></td></tr><tr><td>SMS to youth: p(T + T*W)=0</td><td>0.652</td><td>0.852</td><td>0.553</td></tr><tr><td>SMS to youth &amp; contact: p(T + T*W)=0</td><td>0.005</td><td>0.452</td><td>0.090</td></tr><tr><td>Control mean</td><td>0.438</td><td>0.438</td><td></td></tr><tr><td>R-squared</td><td>0.065</td><td>0.076</td><td></td></tr><tr><td>Observations</td><td>1632</td><td>1294</td><td></td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.134,
+                0.688,
+                0.865,
+                0.742
+            ],
+            "angle": 0,
+            "content": "Notes: T=Treatment. W=Woman. *** p < 0.01, ** p < 0.05, * p < 0.1. Sharpened q-values are p-values that have been adjusted for the False Discovery Rate (FDR). Controls: Age and geographic location."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.488,
+                0.934,
+                0.512,
+                0.95
+            ],
+            "angle": 0,
+            "content": "14"
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.455,
+                0.69,
+                0.522,
+                0.706
+            ],
+            "latex": "",
+            "score": 0.4888
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.552,
+                0.69,
+                0.622,
+                0.706
+            ],
+            "latex": "",
+            "score": 0.4757
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.635,
+                0.69,
+                0.7,
+                0.706
+            ],
+            "latex": "",
+            "score": 0.5261
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.114,
+                0.087,
+                0.211,
+                0.113
+            ],
+            "angle": 0,
+            "content": "Figure"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.279,
+                0.141,
+                0.719,
+                0.161
+            ],
+            "angle": 0,
+            "content": "Figure 1: SMS Delivery Rates by Treatment Group"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.215,
+                0.176,
+                0.781,
+                0.464
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.488,
+                0.934,
+                0.512,
+                0.95
+            ],
+            "angle": 0,
+            "content": "15"
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.114,
+                0.088,
+                0.257,
+                0.112
+            ],
+            "angle": 0,
+            "content": "Appendix"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.112,
+                0.133,
+                0.613,
+                0.155
+            ],
+            "angle": 0,
+            "content": "SMS on long-term benefits of the program"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.168,
+                0.887,
+                0.302
+            ],
+            "angle": 0,
+            "content": "Another type of SMS, emphasizing the long-term benefits of the program, was sent to either youth only or youth and their contacts. Similarly to the SMS highlighting that the program was free, it had no impact on enrollment when sent exclusively to youth. However, when sent to both youth and their contacts, the impact differed by gender: it decreased enrollment for men but increased enrollment for women. Due to the inconclusive nature of these results, we have chosen to focus on the first type of SMS in this paper.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.488,
+                0.934,
+                0.512,
+                0.95
+            ],
+            "angle": 0,
+            "content": "16"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.087,
+                0.255,
+                0.113
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.133,
+                0.61,
+                0.155
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.17,
+                0.882,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.192,
+                0.881,
+                0.206
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.216,
+                0.882,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.238,
+                0.882,
+                0.252
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.261,
+                0.881,
+                0.275
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.282,
+                0.643,
+                0.299
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

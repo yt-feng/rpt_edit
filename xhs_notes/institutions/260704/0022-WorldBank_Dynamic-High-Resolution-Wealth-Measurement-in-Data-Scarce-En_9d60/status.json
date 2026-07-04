@@ -1,0 +1,19 @@
+{
+  "source_pdf": "/tmp/pdf_batch_005_1hgw4_54/pdfs/0022-WorldBank_Dynamic-High-Resolution-Wealth-Measurement-in-Data-Scarce-En_9d601dab.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "世界银行",
+  "cover_short_title": "卫星+AI，贫困测量",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png"
+  ],
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

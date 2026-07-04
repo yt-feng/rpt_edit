@@ -1,0 +1,4451 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.148,
+                0.108,
+                0.357,
+                0.193
+            ],
+            "angle": 0,
+            "content": "BROOKINGS\nTHE BEIJING\nBRIEF"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.375,
+                0.226,
+                0.625,
+                0.262
+            ],
+            "angle": 0,
+            "content": "The Beijing Brief podcast\nThe Brookings Institution"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.245,
+                0.274,
+                0.754,
+                0.295
+            ],
+            "angle": 0,
+            "content": "\"From Geneva: AI, security, and US-China dialogue\""
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.377,
+                0.307,
+                0.622,
+                0.327
+            ],
+            "angle": 0,
+            "content": "Wednesday, July 1, 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.117,
+                0.355,
+                0.235,
+                0.373
+            ],
+            "angle": 0,
+            "content": "Participants:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.177,
+                0.386,
+                0.348,
+                0.403
+            ],
+            "angle": 0,
+            "content": "R. David Edelman",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.177,
+                0.402,
+                0.778,
+                0.437
+            ],
+            "angle": 0,
+            "content": "Director, Project on Technology, the Economy, & National Security Massachusetts Institute of Technology",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.177,
+                0.436,
+                0.85,
+                0.469
+            ],
+            "angle": 0,
+            "content": "Nonresident Senior Fellow, John L. Thornton China Center, The Brookings Institution",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.177,
+                0.482,
+                0.284,
+                0.499
+            ],
+            "angle": 0,
+            "content": "Ryan Hass",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.177,
+                0.499,
+                0.543,
+                0.516
+            ],
+            "angle": 0,
+            "content": "Director, John L. Thornton China Center",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.177,
+                0.516,
+                0.81,
+                0.564
+            ],
+            "angle": 0,
+            "content": "Senior Fellow, Foreign Policy, Center for Asia Policy Studies, John L. Thornton China Center; Chen-Fu and Cecilia Yen Koo Chair in Taiwan Studies",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.178,
+                0.564,
+                0.407,
+                0.583
+            ],
+            "angle": 0,
+            "content": "The Brookings Institution",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.117,
+                0.595,
+                0.294,
+                0.613
+            ],
+            "angle": 0,
+            "content": "Episode Summary:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.175,
+                0.625,
+                0.876,
+                0.761
+            ],
+            "angle": 0,
+            "content": "In this special episode of The Beijing Brief, Ryan Hass speaks with R. David Edelman on the sidelines of the United Nations Global Conference on AI, Security, and Ethics in Geneva, Switzerland. Drawing on seven years of experience participating in a track II dialogue on AI and national security, they discuss the importance of sustained dialogue despite broader strategic competition, prospects for renewed government-to-government AI talks, shared concerns over AI-enabled cyber and biological risks, and the growing debate over global AI governance.",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.379,
+                0.227,
+                0.622,
+                0.243
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.378,
+                0.245,
+                0.621,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.248,
+                0.277,
+                0.751,
+                0.293
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.38,
+                0.309,
+                0.618,
+                0.326
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.356,
+                0.233,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.18,
+                0.387,
+                0.343,
+                0.403
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.18,
+                0.403,
+                0.774,
+                0.419
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.179,
+                0.42,
+                0.524,
+                0.436
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.435,
+                0.848,
+                0.453
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.179,
+                0.454,
+                0.268,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.181,
+                0.484,
+                0.281,
+                0.5
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.181,
+                0.5,
+                0.539,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.18,
+                0.517,
+                0.795,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.18,
+                0.533,
+                0.808,
+                0.547
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.18,
+                0.549,
+                0.25,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.181,
+                0.566,
+                0.403,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.596,
+                0.291,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.18,
+                0.627,
+                0.86,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.642,
+                0.832,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.18,
+                0.66,
+                0.825,
+                0.675
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.676,
+                0.874,
+                0.691
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.18,
+                0.693,
+                0.813,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.18,
+                0.71,
+                0.821,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.724,
+                0.864,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.18,
+                0.743,
+                0.488,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.085,
+                0.869,
+                0.186
+            ],
+            "angle": 0,
+            "content": "EDELMAN: If there is one set of issues that seems to unite U.S. and China, it is mutual anxiety about the impact that AI can have on our collective national security, and even for the relationship and sleepwalking into, God forbid, a conflict. And so that's really what we're focused on today, is talking about what are the mechanisms that exist bilaterally, at the perhaps multilateral or international level, to bring down the risk of an otherwise unintended conflict.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.198,
+                0.189,
+                0.217
+            ],
+            "angle": 0,
+            "content": "[music]",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.227,
+                0.861,
+                0.264
+            ],
+            "angle": 0,
+            "content": "HASS: Hi, this is Ryan Hass, co-host of the Beijing Brief podcast. I'm here with my friend and colleague, David Edelman.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.116,
+                0.275,
+                0.494,
+                0.295
+            ],
+            "angle": 0,
+            "content": "EDELMAN: Hey, Ryan. Good to see you.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.306,
+                0.871,
+                0.341
+            ],
+            "angle": 0,
+            "content": "HASS: Good to see you. We are in Geneva, sunny, summery Geneva today. David, why are we here?",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.353,
+                0.175,
+                0.372
+            ],
+            "angle": 0,
+            "content": "[0:40]",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.383,
+                0.858,
+                0.453
+            ],
+            "angle": 0,
+            "content": "EDELMAN: We are here at the UN Global Conference on AI, Security, and Ethics, hosted by the United Nations here in Geneva, and the UN Disarmament Agency, UNIDIR, which is pulling together folks from around the world to talk about the intersection of national security and artificial intelligence.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.464,
+                0.877,
+                0.532
+            ],
+            "angle": 0,
+            "content": "And specifically, we're here on behalf of Brookings, to talk about some of the experience that we've had over the course of the last seven years on AI, and specifically U.S.-China AI national security, an issue that I know you've been leading on from well before then.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.543,
+                0.175,
+                0.563
+            ],
+            "angle": 0,
+            "content": "[1:07]",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.574,
+                0.838,
+                0.61
+            ],
+            "angle": 0,
+            "content": "HASS: David, you were just on the stage at this UNIDIR conference. What were some of the key messages that you wanted to get across?",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.622,
+                0.175,
+                0.64
+            ],
+            "angle": 0,
+            "content": "[1:12]",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.652,
+                0.853,
+                0.721
+            ],
+            "angle": 0,
+            "content": "EDELMAN: Well, you know, the first message was that this is one of those issues that is evolving faster than governments can keep up, and that we have heard consistently from governments that there is a real need to have this conversation happening both bilaterally, U.S.-China, and more broadly.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.732,
+                0.865,
+                0.816
+            ],
+            "angle": 0,
+            "content": "We keep hearing over and over from those, you know, here at this conference, that this is gonna be a global dialogue, and it needs to be situated within that. But at the same time, I think there's a lot of anxiety in this room about where this very consequential security relationship, one that is not always on positive tenor, is headed.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.828,
+                0.842,
+                0.88
+            ],
+            "angle": 0,
+            "content": "And if there is one set of issues that seems to unite U.S. and China, it is mutual anxiety about the impact that AI can have on our collective national security, and even for the relationship and sleepwalking into, God forbid, a conflict.",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.086,
+                0.834,
+                0.1
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.103,
+                0.864,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.119,
+                0.845,
+                0.134
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.136,
+                0.865,
+                0.151
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.151,
+                0.854,
+                0.168
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.169,
+                0.507,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.199,
+                0.187,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.228,
+                0.857,
+                0.246
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.246,
+                0.454,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.277,
+                0.491,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.307,
+                0.869,
+                0.324
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.325,
+                0.279,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.353,
+                0.175,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.383,
+                0.856,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.401,
+                0.84,
+                0.417
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.419,
+                0.814,
+                0.433
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.434,
+                0.624,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.466,
+                0.804,
+                0.479
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.482,
+                0.805,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.499,
+                0.872,
+                0.512
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.515,
+                0.342,
+                0.528
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.545,
+                0.175,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.576,
+                0.835,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.592,
+                0.64,
+                0.607
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.621,
+                0.175,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.652,
+                0.851,
+                0.668
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.67,
+                0.814,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.687,
+                0.84,
+                0.7
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.703,
+                0.634,
+                0.717
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.733,
+                0.862,
+                0.749
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.751,
+                0.861,
+                0.764
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.765,
+                0.788,
+                0.781
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.783,
+                0.813,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.799,
+                0.194,
+                0.813
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.829,
+                0.828,
+                0.844
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.846,
+                0.838,
+                0.86
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.863,
+                0.735,
+                0.877
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.086,
+                0.872,
+                0.137
+            ],
+            "angle": 0,
+            "content": "And so that's really what we're focused on today, is talking about what are the mechanisms that exist bilaterally, at the perhaps multilateral or international level, to bring down the risk of an otherwise unintended conflict.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.149,
+                0.175,
+                0.168
+            ],
+            "angle": 0,
+            "content": "[2:08]",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.179,
+                0.871,
+                0.265
+            ],
+            "angle": 0,
+            "content": "HASS: It was a powerful visual having you on the stage with your Chinese counterpart, Xiao Qian, talking about the work of this Track II dialogue on the role of AI in national security that Brookings and Tsinghua have led for the past seven years. What were some of the headwinds that you described in that conversation to the progress of this dialogue?",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.275,
+                0.875,
+                0.443
+            ],
+            "angle": 0,
+            "content": "EDELMAN: Well, look, this dialogue, as you well know, happens in a context not of mutual trust, but of mutual interest. Right? The U.S. and China at the governmental level do not trust one another on these issues as a long list of others. And so, you know, I think one of the core headwinds that we’ve always been facing, and frankly anywhere we want to make constructive progress, even on issues that are challenging in U.S.-China, is the fact that there is consistent political relationship separate from any academic dialogue, separate from any Track II, even separate from the issues we might want to talk government to government with, with China, in the broader tenor of the relationship. There are lots of things that make that a dynamic relationship.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.454,
+                0.876,
+                0.588
+            ],
+            "angle": 0,
+            "content": "And so obviously this dialogue, like any other, has run into the challenges of ensuring that we are making sure we are fully representing the realities of the relationship. No one wants to have a conversation for its own sake. The idea is to actually make meaningful progress to help where appropriate, inform or educate or provide new ideas to the governmental level. And also frankly to help one another more deeply understand where the trajectories are headed, where this technology is headed, and where there might be areas for constructive if not agreement, at least constructive overlap in the policies that we want to see.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.599,
+                0.882,
+                0.669
+            ],
+            "angle": 0,
+            "content": "You know, U.S.-China, it is clear that both countries are concerned about the idea of these capabilities falling into the hands of non-state actors for malicious use, whether that's in the context of biological weapons or other bio concerns, whether it's in the cybersecurity context we're reading so much about right now, AI plus cyber hacking.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.679,
+                0.882,
+                0.747
+            ],
+            "angle": 0,
+            "content": "These are issues that are not U.S. or China. These are global issues. And yet they're the two most consequential parties, the U.S. and China, that are leading the AI revolution, and therefore, it's one of the most important conversations that can be had right now is between them.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.759,
+                0.871,
+                0.861
+            ],
+            "angle": 0,
+            "content": "So, certainly it continues to be the case that this is a challenging relationship. These are challenging conversations to be had. But just as was true throughout the Cold War, when the U.S. and the Soviet Union, then Russia were able at times to sit together to talk about consequential national security interests, in the interest of broader global stability, this is going to have to be one of those issues, as hard and halting as it can often be.",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.086,
+                0.814,
+                0.1
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.104,
+                0.868,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.12,
+                0.61,
+                0.134
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.15,
+                0.175,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.181,
+                0.783,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.198,
+                0.869,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.214,
+                0.823,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.23,
+                0.863,
+                0.244
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.248,
+                0.385,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.276,
+                0.864,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.294,
+                0.862,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.308,
+                0.849,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.327,
+                0.858,
+                0.341
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.343,
+                0.783,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.359,
+                0.835,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.376,
+                0.843,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.392,
+                0.872,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.409,
+                0.808,
+                0.422
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.425,
+                0.31,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.455,
+                0.8,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.472,
+                0.809,
+                0.486
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.488,
+                0.844,
+                0.503
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.505,
+                0.86,
+                0.519
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.521,
+                0.848,
+                0.535
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.537,
+                0.87,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.554,
+                0.856,
+                0.568
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.57,
+                0.613,
+                0.584
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.6,
+                0.874,
+                0.614
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.617,
+                0.879,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.634,
+                0.857,
+                0.647
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.65,
+                0.869,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.679,
+                0.88,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.697,
+                0.822,
+                0.711
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.714,
+                0.845,
+                0.727
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.73,
+                0.399,
+                0.744
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.759,
+                0.869,
+                0.775
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.776,
+                0.848,
+                0.791
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.792,
+                0.826,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.81,
+                0.83,
+                0.824
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.827,
+                0.86,
+                0.84
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.843,
+                0.345,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.085,
+                0.175,
+                0.104
+            ],
+            "angle": 0,
+            "content": "[4:26]",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.115,
+                0.878,
+                0.217
+            ],
+            "angle": 0,
+            "content": "HASS: One of the things that I have heard both in government but also since being out of government is a sense of skepticism about the role of Track II dialogues, which are dialogues between former officials and experts that don't have a government affiliation. What do you say to people who are cynical about the prospect that people who are not in government could play a role in advancing some of these discussions?",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.227,
+                0.175,
+                0.248
+            ],
+            "angle": 0,
+            "content": "[4:46]",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.259,
+                0.871,
+                0.393
+            ],
+            "angle": 0,
+            "content": "EDELMAN: Well, look, I, I’ve been there. I’ve been in government. You’ve been in government. I mean, the reality is, we, as those who are not presently in government, we are not the government. There is a absolutely important and critical distinction that is made there, for better and for worse. The reality is that one of the values of Track II dialogues is that it can be a venue in which not policies, but ideas of ways in which there can be overlap in policy can be explored. And it can be explored in a safe way where governments have total deniability in the outcomes of those processes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.404,
+                0.854,
+                0.506
+            ],
+            "angle": 0,
+            "content": "There are other governmental processes that exist in exactly the same way. Right here at the UN, I was involved for years in a group of governmental experts on cybersecurity. It's a UN-based mechanism that exists, again, for experts to come together, try their best to anticipate where policy is going, and then devise, if not solutions, common understandings about that. And then the governments can choose to walk away. They can choose to pick up some of it or not.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.517,
+                0.88,
+                0.602
+            ],
+            "angle": 0,
+            "content": "But, having been inside government, as you have as well, truth is we don't have a lot of time to be sitting, developing 100-hour dialogues, 50-page studies of every element. We really hope and rely on deep expertise of those that can help inform that and to scope out directions that frankly may be more creative than those that we would necessarily have.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.613,
+                0.872,
+                0.649
+            ],
+            "angle": 0,
+            "content": "I don't think a Track II, it can ever claim it has more access than a Track I. Hopefully it has contributing better ideas than would otherwise be available in the absence.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.66,
+                0.175,
+                0.68
+            ],
+            "angle": 0,
+            "content": "[6:07]",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.691,
+                0.88,
+                0.743
+            ],
+            "angle": 0,
+            "content": "HASS: Well, on that note, President Trump and President Xi have announced that the United States and China at a government-to-government level will will resume an official dialogue on artificial intelligence.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.754,
+                0.175,
+                0.774
+            ],
+            "angle": 0,
+            "content": "[6:16]",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.785,
+                0.863,
+                0.871
+            ],
+            "angle": 0,
+            "content": "EDELMAN: Now you, Ryan Hass, have been in that seat. Right? I was there. You have run functionally the last state visit by Xi Jinping to the United States. Okay, so you've been through it. We've got this high-level statement. Our people, right, shall go talk about AI. What's the expectation there? When two leaders say that, on the Chinese side and on the U.S. side, what are they actually directing?",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.086,
+                0.175,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.116,
+                0.861,
+                0.133
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.133,
+                0.823,
+                0.149
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.15,
+                0.785,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.166,
+                0.797,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.183,
+                0.874,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.2,
+                0.314,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.229,
+                0.175,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.261,
+                0.853,
+                0.275
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.277,
+                0.762,
+                0.291
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.294,
+                0.867,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.309,
+                0.859,
+                0.324
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.326,
+                0.863,
+                0.341
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.343,
+                0.814,
+                0.358
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.359,
+                0.864,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.377,
+                0.273,
+                0.389
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.405,
+                0.851,
+                0.421
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.422,
+                0.82,
+                0.438
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.44,
+                0.839,
+                0.453
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.455,
+                0.835,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.472,
+                0.814,
+                0.486
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.489,
+                0.719,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.519,
+                0.877,
+                0.533
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.534,
+                0.81,
+                0.55
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.552,
+                0.841,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.569,
+                0.875,
+                0.582
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.585,
+                0.335,
+                0.599
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.613,
+                0.868,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.631,
+                0.839,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.662,
+                0.175,
+                0.683
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.693,
+                0.854,
+                0.707
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.709,
+                0.877,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.724,
+                0.473,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.755,
+                0.176,
+                0.776
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.787,
+                0.852,
+                0.801
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.802,
+                0.859,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.819,
+                0.859,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.837,
+                0.849,
+                0.85
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.852,
+                0.726,
+                0.867
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.085,
+                0.175,
+                0.104
+            ],
+            "angle": 0,
+            "content": "[6:40]",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.115,
+                0.88,
+                0.234
+            ],
+            "angle": 0,
+            "content": "HASS: Well, I was going to ask you the question, but since you posed it to me, I'll just say a few things. First of all, the fact that the two leaders said this when they met in Beijing, knowing that they would see each other again in September in Washington, D.C., means that they are setting expectations that there will be some semblance of progress on AI issues between their last meeting and their next meeting. Otherwise, they wouldn't have gone to the effort of building the fanfare and the expectation around this issue.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.245,
+                0.88,
+                0.297
+            ],
+            "angle": 0,
+            "content": "The question then becomes, where is progress practical? And on that, I think that we need to learn a lesson from the last administration. The Biden administration tried once to have a AI dialogue with the Chinese.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.116,
+                0.308,
+                0.535,
+                0.327
+            ],
+            "angle": 0,
+            "content": "EDELMAN: It didn't go great, as I understand.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.339,
+                0.346,
+                0.357
+            ],
+            "angle": 0,
+            "content": "HASS: It was shambolic.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.369,
+                0.287,
+                0.388
+            ],
+            "angle": 0,
+            "content": "EDELMAN: Okay.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.4,
+                0.878,
+                0.451
+            ],
+            "angle": 0,
+            "content": "HASS: Diplomatically unprepared. And as a consequence, both sides came into that meeting with different sets of expectations about the agenda and what would be achieved.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.464,
+                0.881,
+                0.549
+            ],
+            "angle": 0,
+            "content": "That mistake cannot repeat itself again. Instead, both sides need to do the diplomatic groundwork of making sure that they have aligned agendas, aligned expectations before they enter the room to have this next set of dialogues. And the issues that seem to be most animating right now, are around the ability of AI to amplify cyber threats and potential threats to critical infrastructure.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.56,
+                0.176,
+                0.579
+            ],
+            "angle": 0,
+            "content": "[7:54]",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.59,
+                0.871,
+                0.676
+            ],
+            "angle": 0,
+            "content": "EDELMAN: I think we’ve also heard from a range of interlocutors, but the Chinese included, that this intersection of AI and bio is an area of real concern. That the idea that you might have rogue actors, particularly non-state actors, that would be in a position to actually engage what we think of as bio-terrorism, that’s an area that we’ve certainly heard about.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.687,
+                0.837,
+                0.722
+            ],
+            "angle": 0,
+            "content": "Now, will Xi and and Trump be able to talk about something that sensitive? Who knows. That's a pretty tall order.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.734,
+                0.175,
+                0.754
+            ],
+            "angle": 0,
+            "content": "[8:18]",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.764,
+                0.88,
+                0.833
+            ],
+            "angle": 0,
+            "content": "HASS: You know, David, one other thing that I've learned over the seven years of us doing this dialogue with the Chinese is that progress doesn't travel on a linear path. It's very jagged. There are iterations of meetings where it feels like no progress is being made.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.844,
+                0.877,
+                0.897
+            ],
+            "angle": 0,
+            "content": "And then there are sort of step increases in the productivity of the dialogue. And I think that we should probably factor that into our assessment of what's happening at the government-to-government level as well, because this is a complicated set of",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.086,
+                0.176,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.117,
+                0.848,
+                0.132
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.134,
+                0.877,
+                0.148
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.151,
+                0.769,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.167,
+                0.859,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.183,
+                0.811,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.2,
+                0.871,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.216,
+                0.421,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.246,
+                0.877,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.263,
+                0.845,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.279,
+                0.518,
+                0.294
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.31,
+                0.531,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.34,
+                0.342,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.371,
+                0.286,
+                0.391
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.402,
+                0.875,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.419,
+                0.832,
+                0.433
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.436,
+                0.206,
+                0.448
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.466,
+                0.878,
+                0.48
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.482,
+                0.845,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.499,
+                0.842,
+                0.512
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.516,
+                0.844,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.531,
+                0.584,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.561,
+                0.175,
+                0.582
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.592,
+                0.854,
+                0.606
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.609,
+                0.867,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.625,
+                0.842,
+                0.639
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.642,
+                0.831,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.659,
+                0.371,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.689,
+                0.833,
+                0.704
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.705,
+                0.406,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.735,
+                0.175,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.766,
+                0.877,
+                0.78
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.783,
+                0.862,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.799,
+                0.846,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.815,
+                0.233,
+                0.831
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.846,
+                0.845,
+                0.86
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.863,
+                0.872,
+                0.877
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.879,
+                0.843,
+                0.893
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.085,
+                0.877,
+                0.121
+            ],
+            "angle": 0,
+            "content": "issues that are evolving in real time. And I think it'll be animated by where both sides identify mutual vulnerability and mutual risk, as well as mutual interest.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.132,
+                0.175,
+                0.151
+            ],
+            "angle": 0,
+            "content": "[8:50]",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.162,
+                0.882,
+                0.232
+            ],
+            "angle": 0,
+            "content": "EDELMAN: Yeah, I think that's kind of the key of this idea of coming together, not for its own sake, not because of trust, but because of mutual interest, because there is this need that both sides have as the two most consequential superpowers, yes, but AI superpowers in this context.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.243,
+                0.879,
+                0.312
+            ],
+            "angle": 0,
+            "content": "And that sense of vulnerability and that the technology is moving more quickly than government can, that's something we say in the U.S. all the time. It's become kind of a cliché, and people have been saying this, I've been... you know, in government and technology for 15, 20 years, they're always saying that.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.323,
+                0.882,
+                0.441
+            ],
+            "angle": 0,
+            "content": "To hear it out of Beijing, the idea that technology is moving faster than they would say even their own government can keep up, that's actually a really important statement. I think it shows that even at this time of, you know, tension as we had under the Biden administration, obviously tensions persist now under the Trump administration, the idea that this is going to be an area where these two leaders think there either can or more importantly has to be some area of mutual agreement or mutual pursuit, that strikes me as pretty significant.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.451,
+                0.872,
+                0.52
+            ],
+            "angle": 0,
+            "content": "And I'll just say as someone involved in in technology and foreign policy for a long time, if you told me that, you know, the president of the United States and the president of China sitting down and one of the top five issues on their agenda would be AI or any tech issue at all, that's remarkable.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.531,
+                0.244,
+                0.549
+            ],
+            "angle": 0,
+            "content": "HASS: Yeah.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.562,
+                0.865,
+                0.631
+            ],
+            "angle": 0,
+            "content": "EDELMAN: And it's remarkable over a long sweep that we've seen from the shirt sleeves summit at Sunnylands talking to President Obama, and Obama brought up hacking as a major area of his concerns, specifically theft of intellectual property. You know, the relationship continued to be tense on those issues then.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.642,
+                0.872,
+                0.761
+            ],
+            "angle": 0,
+            "content": "And now, an issue that is also technological, that you could see being just as frankly poisonous to the relationship, where there's a sense that there's an arms race on, we talked about it earlier, an unhelpful frame, but people have framed it that way. The idea that these leaders are saying, Hey, you know what? We might be racing, we might have competition here. We might not trust one another approaching it, but we absolutely have to talk because this could be fundamentally destabilizing to our relationship, and as a result of that, to the global security picture.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.77,
+                0.822,
+                0.806
+            ],
+            "angle": 0,
+            "content": "That to me is a pretty important tell and an interesting point of real nonpartisan continuity across administrations in the U.S. as well.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.817,
+                0.186,
+                0.838
+            ],
+            "angle": 0,
+            "content": "[10:54]",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.849,
+                0.881,
+                0.901
+            ],
+            "angle": 0,
+            "content": "HASS: I think that's a great point. But your, your other point is also really valid, which is that even though the United States and China are the two dominant actors in the space, they are not the only actors. We've just spent the last two days at the United",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.087,
+                0.872,
+                0.101
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.103,
+                0.747,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.133,
+                0.175,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.162,
+                0.88,
+                0.18
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.181,
+                0.861,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.198,
+                0.869,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.214,
+                0.394,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.245,
+                0.859,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.261,
+                0.875,
+                0.275
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.278,
+                0.843,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.294,
+                0.65,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.324,
+                0.846,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.341,
+                0.813,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.356,
+                0.837,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.372,
+                0.833,
+                0.389
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.39,
+                0.879,
+                0.404
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.406,
+                0.845,
+                0.421
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.423,
+                0.573,
+                0.438
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.452,
+                0.849,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.47,
+                0.809,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.487,
+                0.867,
+                0.5
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.503,
+                0.544,
+                0.517
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.531,
+                0.242,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.563,
+                0.845,
+                0.578
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.579,
+                0.86,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.597,
+                0.837,
+                0.611
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.613,
+                0.752,
+                0.627
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.643,
+                0.869,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.66,
+                0.848,
+                0.675
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.675,
+                0.842,
+                0.691
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.693,
+                0.851,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.709,
+                0.867,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.726,
+                0.858,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.742,
+                0.696,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.773,
+                0.818,
+                0.788
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.789,
+                0.584,
+                0.803
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.818,
+                0.185,
+                0.838
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.85,
+                0.878,
+                0.864
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.867,
+                0.859,
+                0.881
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.884,
+                0.863,
+                0.898
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.085,
+                0.845,
+                0.121
+            ],
+            "angle": 0,
+            "content": "Nations listening to counterparts from around the world talking about governance issues. What are some of the things that you've heard?",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.132,
+                0.187,
+                0.151
+            ],
+            "angle": 0,
+            "content": "[11:08]",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.162,
+                0.877,
+                0.247
+            ],
+            "angle": 0,
+            "content": "EDELMAN: You know, what I’ve been surprised by most is the creativity or the range of ideas that people have about how to get their hands around this global AI governance question, which is not just one question, to be clear. AI governance is happening at at every level. It’s an economic issue, it’s a national security issue, and beyond.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.259,
+                0.863,
+                0.361
+            ],
+            "angle": 0,
+            "content": "But, you know, here at the UN, we're at the UN in Geneva, right? And which agencies and organizations live here? The ITU, the International Telecommunications Union. The United Nations Disarmament Agency is here. The International Atomic Energy Agency is also in Europe. You look at these agencies, and I think a lot of people around the world are looking for what can be the single location. It's almost a clearing house for a lot of these concerns.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.372,
+                0.875,
+                0.424
+            ],
+            "angle": 0,
+            "content": "Now, personally, I think that's kind of a tall order. One, international organizations, if national governments were having trouble keeping up with the speed of it, IOs might have even more trouble. So that's just a reality.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.435,
+                0.855,
+                0.52
+            ],
+            "angle": 0,
+            "content": "But, you know, we're hearing real clarity. I was there in the hallways and someone said, you know what we really need is an International Atomic Energy Agency, an IAEA for AI just like we have for nuclear weapons and nuclear power. That's a powerful idea. It has great clarity to it. It is also not lost on me that the head of the IAEA was addressing this very conference.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.531,
+                0.883,
+                0.649
+            ],
+            "angle": 0,
+            "content": "So I think you're gonna see this institutional pressure, not just from, you know, sort of the grassroots or the global majority as they're calling themselves, to, you know, talk about where can we deal with this issue, particularly for lower resource countries that might not have the capacity to do a lot of governance and that feel like they are receivers, not givers of the rules of AI, but want to be very involved in it. That desire for more unified governance at the intergovernmental level, it it's definitely gonna be there.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.661,
+                0.878,
+                0.746
+            ],
+            "angle": 0,
+            "content": "I think the question that we all have to ask ourselves now is what are the mechanisms that have worked in dealing with hard national security relevant technologies that, frankly, could benefit in certain areas from interlocking, I won't say overwhelming, but interlocking levels of governance at the international intergovernmental level.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.117,
+                0.756,
+                0.187,
+                0.776
+            ],
+            "angle": 0,
+            "content": "[13:07]"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.788,
+                0.877,
+                0.906
+            ],
+            "angle": 0,
+            "content": "And that last word is really critical. It's kind of a line of UN speak. You know, we say things out here like the multi-stakeholder model and intergovernmental. What intergovernmental means, generally speaking, is that companies are not invited, that civil society is not invited. When you think about the history of internet policy and technology policy in the last 20-plus years, that multi-stakeholderism has been really important. It's been critical to preserving the long-term freedom and openness of the internet. It's been critical to preserving, you know, what we think of as its innovative",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.087,
+                0.841,
+                0.102
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.103,
+                0.612,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.133,
+                0.186,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.165,
+                0.823,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.181,
+                0.852,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.197,
+                0.851,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.215,
+                0.874,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.23,
+                0.192,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.261,
+                0.798,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.277,
+                0.695,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.293,
+                0.859,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.31,
+                0.856,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.327,
+                0.842,
+                0.341
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.344,
+                0.689,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.374,
+                0.868,
+                0.388
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.39,
+                0.871,
+                0.404
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.407,
+                0.54,
+                0.421
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.436,
+                0.854,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.453,
+                0.847,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.47,
+                0.817,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.487,
+                0.845,
+                0.5
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.501,
+                0.504,
+                0.517
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.533,
+                0.88,
+                0.547
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.549,
+                0.874,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.566,
+                0.879,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.582,
+                0.826,
+                0.597
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.599,
+                0.865,
+                0.613
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.614,
+                0.869,
+                0.63
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.631,
+                0.174,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.662,
+                0.767,
+                0.676
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.679,
+                0.802,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.695,
+                0.874,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.712,
+                0.755,
+                0.726
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.728,
+                0.333,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.758,
+                0.186,
+                0.778
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.787,
+                0.866,
+                0.805
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.804,
+                0.809,
+                0.819
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.822,
+                0.874,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.838,
+                0.839,
+                0.853
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.855,
+                0.872,
+                0.87
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.871,
+                0.87,
+                0.885
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.887,
+                0.863,
+                0.902
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.086,
+                0.825,
+                0.121
+            ],
+            "angle": 0,
+            "content": "potential. Oh, and by the way, turns out unlike nuclear weapons, AI is a private sector invention with a lot of help from academia fundamentally.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.132,
+                0.881,
+                0.233
+            ],
+            "angle": 0,
+            "content": "And so there is no state monopoly on AI that exists. And so when we think about these sort of governance paradigms to lay on top, yes, IAEA, or the CERN is another thing people have said is an international collaboration, there’s probably going to be a role for international organizations to find their space here and to figure out what they can uniquely work on and uniquely galvanize a particularly largely legitimate bloc.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.245,
+                0.867,
+                0.347
+            ],
+            "angle": 0,
+            "content": "But at the same time, we have to weigh this against the speed at which we need governance, and that is true at the domestic economic level, and it's just as true in the national security level as well. And that's why I suspect you're going to see conversations like U.S.-China remain not only vital, but somewhat counterintuitively at the forefront of this global dialogue precisely because they're the countries that have the most to gain and the most to lose from this going awry.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.358,
+                0.877,
+                0.475
+            ],
+            "angle": 0,
+            "content": "HASS: Well, David, thank you so much for adding so much insight into this conversation. We started out talking about a Track II dialogue between Brookings and Tsinghua. We expanded it to talk about the U.S.-China government-to-government dialogue and how it fits into the relationship between the two countries as well as the two leaders. And now we’ve closed by talking about the role of the United Nations’ international system in looking at governance issues related to these questions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.487,
+                0.868,
+                0.539
+            ],
+            "angle": 0,
+            "content": "We've covered a ton of ground. This has been a really rich supplement to the June 23rd podcast on U.S. and China AI strategies. We will be back in Washington soon, so to our listeners, please stay tuned.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.55,
+                0.855,
+                0.585
+            ],
+            "angle": 0,
+            "content": "For more in-depth analysis from our team, visit the China Center on the Brookings website at Brookings dot edu slash ChinaCenter.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.596,
+                0.365,
+                0.615
+            ],
+            "angle": 0,
+            "content": "EDELMAN: Thanks, Ryan.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.628,
+                0.189,
+                0.646
+            ],
+            "angle": 0,
+            "content": "[music]",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.658,
+                0.874,
+                0.71
+            ],
+            "angle": 0,
+            "content": "JON CZIN: On behalf of the team at the John L. Thornton China Center, thank you for listening to The Beijing Brief. This podcast is produced by the Brookings Podcast Network.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.722,
+                0.877,
+                0.808
+            ],
+            "angle": 0,
+            "content": "Our thanks to the production team, including supervising producer Ike Blake; senior producer Fred Dews; producer Allie Matthias; audio engineer Gastón Reboredo; and video producers Daniel Morales and Teddy Wansink. Rachel Slattery designed the show's artwork. Also, thank you to our colleagues in the John L. Thornton China Center, Foreign Policy, and Office of Communications at Brookings for their support.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.818,
+                0.883,
+                0.87
+            ],
+            "angle": 0,
+            "content": "To learn more about our research, visit us at Brookings dot edu slash China Center, and to learn more about this podcast, go to Brookings dot edu slash The Beijing Brief or wherever you like to get podcasts.",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.086,
+                0.82,
+                0.102
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.103,
+                0.688,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.133,
+                0.84,
+                0.148
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.15,
+                0.877,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.167,
+                0.867,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.183,
+                0.854,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.2,
+                0.842,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.215,
+                0.166,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.247,
+                0.836,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.263,
+                0.854,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.278,
+                0.821,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.295,
+                0.863,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.311,
+                0.849,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.327,
+                0.692,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.358,
+                0.788,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.375,
+                0.846,
+                0.391
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.392,
+                0.792,
+                0.407
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.408,
+                0.859,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.424,
+                0.839,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.44,
+                0.874,
+                0.456
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.457,
+                0.213,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.487,
+                0.858,
+                0.503
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.504,
+                0.863,
+                0.519
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.522,
+                0.453,
+                0.536
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.552,
+                0.852,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.569,
+                0.556,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.598,
+                0.362,
+                0.614
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.628,
+                0.187,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.659,
+                0.859,
+                0.674
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.676,
+                0.87,
+                0.69
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.693,
+                0.2,
+                0.707
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.723,
+                0.866,
+                0.738
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.74,
+                0.874,
+                0.754
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.757,
+                0.857,
+                0.77
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.773,
+                0.834,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.788,
+                0.87,
+                0.804
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.819,
+                0.866,
+                0.834
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.837,
+                0.88,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.853,
+                0.448,
+                0.867
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

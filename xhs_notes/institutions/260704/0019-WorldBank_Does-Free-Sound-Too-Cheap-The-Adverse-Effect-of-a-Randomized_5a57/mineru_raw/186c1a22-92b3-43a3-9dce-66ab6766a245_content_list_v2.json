@@ -1,0 +1,2082 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Does Free Sound Too Cheap?"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                254,
+                297,
+                745,
+                335
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The Adverse Effect of a Randomized Text Message Campaign on Program Take-up"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                179,
+                359,
+                820,
+                419
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Jeannie Annan"
+                    }
+                ]
+            },
+            "bbox": [
+                429,
+                444,
+                568,
+                465
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Estelle Koussoubé"
+                    }
+                ]
+            },
+            "bbox": [
+                424,
+                465,
+                578,
+                488
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Joséphine Tassy"
+                    }
+                ]
+            },
+            "bbox": [
+                431,
+                489,
+                568,
+                512
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Léa Rouanet"
+                    }
+                ]
+            },
+            "bbox": [
+                441,
+                512,
+                560,
+                532
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Clara Delavallade"
+                    }
+                ]
+            },
+            "bbox": [
+                419,
+                534,
+                583,
+                555
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "David Evans"
+                    }
+                ]
+            },
+            "bbox": [
+                441,
+                556,
+                563,
+                579
+            ]
+        },
+        {
+            "type": "page_aside_text",
+            "content": {
+                "page_aside_text_content": [
+                    {
+                        "type": "text",
+                        "content": "Public Disclosure Authorized"
+                    }
+                ]
+            },
+            "bbox": [
+                8,
+                440,
+                31,
+                606
+            ]
+        },
+        {
+            "type": "page_aside_text",
+            "content": {
+                "page_aside_text_content": [
+                    {
+                        "type": "text",
+                        "content": "Public Disclosure Authorized"
+                    }
+                ]
+            },
+            "bbox": [
+                8,
+                23,
+                29,
+                190
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy Research Working Paper"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                85,
+                611,
+                114
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "11063"
+                    }
+                ]
+            },
+            "bbox": [
+                709,
+                85,
+                802,
+                113
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": []
+            },
+            "bbox": [
+                50,
+                821,
+                109,
+                872
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "WORLD BANK GROUP"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                835,
+                354,
+                858
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Africa Region\nGender Innovation Lab\nFebruary 2025"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                862,
+                328,
+                925
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "POLICY RESEARCH WORKING PAPER 11063"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                63,
+                374,
+                83
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Abstract"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                83,
+                104,
+                176,
+                127
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This study conducted a randomized experiment to improve participation in a youth employment program in Côte d'Ivoire by testing text message outreach methods. Sending text messages highlighting that the program was free only to eligible youth had no impact, but messages sent to both youth and trusted contacts led to reduced enrollment. This negative effect was smaller for women, and null when their contact was also female. Qualitative findings suggest that distrust among unfamiliar contacts contributed to this decline. The study highlights the importance of tailoring communication strategies in job training programs to increase effectiveness, considering recipients' relationships and trust."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                133,
+                475,
+                253
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                493,
+                135,
+                887,
+                237
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "This paper is a product of the Gender Innovation Lab, Africa Region. It is part of a larger effort by the World Bank to provide open access to its research and make a contribution to development policy discussions around the world. Policy Research Working Papers are also posted on the Web at http://www.worldbank.org/prwp. The authors may be contacted at jtassy@worldbank.org."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                371,
+                885,
+                441
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "The Policy Research Working Paper Series disseminates the findings of work in progress to encourage the exchange of ideas about development issues. An objective of the series is to get the findings out quickly, even if the presentations are less than fully polished. The papers carry the names of the authors and should be cited accordingly. The findings, interpretations, and conclusions expressed in this paper are entirely those of the authors. They do not necessarily represent the views of the International Bank for Reconstruction and Development/World Bank and its affiliated organizations, or those of the Executive Directors of the World Bank or the governments they represent."
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                852,
+                843,
+                925
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Produced by the Research Support Team"
+                    }
+                ]
+            },
+            "bbox": [
+                354,
+                941,
+                616,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Does Free Sound Too Cheap? The Adverse Effect of a Randomized Text Message Campaign on Program Take-up*"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                127,
+                148,
+                867,
+                260
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Jeannie Annan Ⓡ Estelle Koussoubé Ⓡ Joséphine Tassy\n ⓇLéa Rouanet ⓇClara Delavallade ⓇDavid Evans"
+                    }
+                ]
+            },
+            "bbox": [
+                207,
+                284,
+                790,
+                338
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Keywords: youth employment, text message incentives, program take-up.\nJEL Codes: O15, J16, J24, D83"
+                    }
+                ]
+            },
+            "bbox": [
+                158,
+                648,
+                704,
+                684
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "*Annan: International Rescue Committee, jeannie.annan@rescue.org. Koussoubé: World Bank, mkoussoube@worldbank.org. Tassy: World Bank, jtassy@worldbank.org. Rouanet: World Bank, lrouanet@worldbank.org. Delavallade: World Bank, cdelavallade@worldbank.org. Evans: Inter-American Development Bank, devans@iadb.org. The order of authors' names was randomized. This paper is a product of the Gender Innovation Lab, within the Office of the World Bank's Africa Region Chief Economist. We gratefully acknowledge financial support from and the Wellspring Philanthropic Fund and the World Bank's Umbrella Facility for Gender Equality (UFGE). The UFGE is a multi-donor trust fund administered by the World Bank to advance gender equality and women's empowerment through experimentation and knowledge creation to help governments and the private sector focus policy and programs on scalable solutions with sustainable outcomes. The findings, interpretations, and conclusions expressed in this work do not necessarily reflect the views of The World Bank Group, its Board of Executive Directors, or the governments it represents. All errors and omissions are our own."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                729,
+                887,
+                914
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1 Introduction"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                114,
+                87,
+                341,
+                109
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "With Sub-Saharan Africa's working-age population expected to reach 1.3 billion by 2050, making up  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "25\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " of the global labor force (World Bank, 2023), and  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "20\\%-30\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " of youth currently not in employment, education, or training (UNICEF, 2022), there is an urgent need to equip young people with the skills required to secure meaningful employment. Although there is significant heterogeneity across programs, the average effects of technical and vocational education and training (TVET) programs on youth employment have been positive in both higher and lower income country settings (Hanushek et al., 2017; Tripney and Hombrados, 2013). However, low take-up rates significantly challenge the effectiveness of training programs in such settings (McKenzie and Woodruff, 2014). Improving uptake of TVET programs in Africa is thus a potentially important step in introducing skilled individuals into the labor market and reducing youth unemployment."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                137,
+                885,
+                459
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The range of TVET offerings in Africa is extensive, with participant costs varying significantly (Van Lieshout and Mehtha, 2017). Removing cost barriers has been shown to increase product usage in low- and middle-income countries (Cohen and Dupas, 2010; Kremer and Miguel, 2007) as well as participation in basic education (Duflo et al., 2023). Analogously, reducing costs could boost enrollment in training programs. One tool that has proven effective at shifting behaviors at low cost in some contexts is sending informational text messages (Grácio and Vicente 2021; Rodríguez and Saavedra 2019), making use of growing mobile phone penetration in low and middle income countries."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                469,
+                885,
+                700
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This study uses a randomized controlled trial to test the impact of sending text messages (i.e., short message service, or SMS messages) to youth and—in some cases—a trusted contact the youth have identified in order to increase uptake of a youth employment program in Côte d'Ivoire. We find that SMS messages that make salient the fact that the training program is free can discourage enrollment. Specifically, we show that the negative impact on enrollment is significant only when both the potential applicant and their contact are sent SMS messages. This finding is consistent with the theoretical literature that suggests pricing can serve as a signal of quality, with higher prices indicating better product quality (Bagwell and Riordan, 1991). Furthermore, in collectivist cultures such as Côte d'Ivoire, youth career choices are heavily influenced by family expectations (Akosah-Twumasi et al., 2018). The support and approval from family members are pivotal, and youth are more likely to choose careers that are perceived to enhance the family's social standing and fulfill familial obligations. Moreover, our evidence shows that this influence varies according to the gender of both the youth and their contacts. The discouragement effect is significantly less for women, and it is not statistically significant for women whose contact is also a woman."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                710,
+                885,
+                912
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "1"
+                    }
+                ]
+            },
+            "bbox": [
+                493,
+                934,
+                504,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                111,
+                92,
+                885,
+                323
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We complement our quantitative results with qualitative interviews with the youths' contacts, which demonstrate that the perception of the program by those contacts plays a role. The decision to enroll in a training program is based on both cost and the program's reputation. We conclude the paper with a discussion on the broader implications of our findings and potential areas for future research."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                333,
+                885,
+                474
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2 Intervention, Empirical Strategy and Data"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                518,
+                756,
+                542
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This study evaluates the impact of an SMS intervention to increase interest and take-up in the PRO-Jeunes youth employment program, which was implemented in urban and peri-urban Côte d'Ivoire by the International Rescue Committee. The PRO-Jeunes program was extensively publicized through a comprehensive communication strategy, including a public relations campaign, direct marketing, media activities, and community mobilization. The public relations campaign engaged local authorities, professional training centers, employment agencies, social centers, and private enterprises. Media activities included press releases, advertisements, and direct broadcasts on the PRO-Jeunes website and on social media platforms (Twitter, YouTube, Facebook), as well as on local and regional television and radio. Additionally, community mobilization initiatives involved meeting with community leaders, distributing flyers, and informing communities about the project launch and"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                568,
+                885,
+                890
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                491,
+                933,
+                504,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "enrollment sites."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                92,
+                254,
+                109
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Recruitment for the PRO-Jeunes program was carried out in two stages: (i) interested youth first registered, expressing their interest in the program; (ii) after screening all the applications, the project team invited eligible applicants to come to an “enrollment meeting.” According to data from the first two cohorts from the program, a significant share of eligible applicants who had expressed their interest in stage 1 did not attend the subsequent enrollment meeting in stage 2. The intervention evaluated in this study targeted the next cohort, and took place between the two stages, aiming to increase take-up from registration to enrollment."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                122,
+                885,
+                353
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Eligible applicants were randomly selected to receive an SMS reminding them that the program was free.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  Youth were already informed that the program was free at pre-registration and the message served as a reminder. Randomization was stratified by gender and geographic location. The SMS message read as follows: “Come participate in an information session about PRO-Jeunes, a program offering free training, support for self-employment and employment opportunities.” In the first treatment, the SMS was randomly sent to the youth only. In the second, treatment, the SMS was sent to the youth and their listed contact person. At pre-registration, youth were asked to list a person to contact in case they could not be reached. It was specified that youth who did not live by themselves should provide the name of a person they lived with."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                364,
+                887,
+                656
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our study uses administrative data collected in 2019 on a sample of 2,926 eligible applicants to the PRO-Jeunes program who had completed the pre-registration stage, during which they provided identification and contact information for their contact person, as described in Table 2. The data include variables such as date of birth, phone number, gender and geographic location for youth, and the relationship to the youth and phone number for contacts. Contact gender was inferred from the relationship variable. Listed relationships were mother/father, uncle/aunt, brother/sister, grandparents, cousin, guardian, spouse, friend and other."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                665,
+                885,
+                835
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " A second type of SMS emphasizing the long-term career benefits of the program was also tested. Results were inconclusive and are described in the appendix. The analysis presented in this paper focuses on the message emphasizing the free nature of the program."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                844,
+                885,
+                892
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                493,
+                934,
+                504,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                111,
+                92,
+                883,
+                141
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The average age of youth in our sample is 23 years (25th percentile: 20 years; 75th percentile: 26 years), and half of the sample are women. In terms of contacts, about half of the youth listed a parent as their contact; another  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "9\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " provided a spouse as a contact. Women are  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "18.5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " less likely than men to choose women as contacts.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "15.6\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " of women choosing their husband as a contact, compared to only  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "1.7\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " of men choosing their wife (Table 1). These statistics are balanced across treatment groups (Table 2)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                152,
+                885,
+                323
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To complement the quantitative data, we conducted a qualitative survey to better understand the quantitative findings, including 12 individual interviews and 4 focus group discussions among youth and their contacts in August-September 2023. In the focus group discussions, men and women were interviewed separately to better understand the gender differences in the observed results."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                333,
+                885,
+                473
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We use the following specification for our main estimates:"
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                484,
+                630,
+                502
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{r} E n r o l l e d _ {i} = \\beta_ {0} + \\beta_ {1} W o m a n _ {i} + \\beta_ {2} T _ {1 i} + \\beta_ {3} T _ {1 i} \\cdot W o m a n _ {i} + \\\\ \\beta_ {4} T _ {2 i} + \\beta_ {5} T _ {2 i} \\cdot W o m a n _ {i} + X _ {i} ^ {\\prime} + \\lambda_ {e, c} + \\varepsilon_ {i} \\end{array}\\tag{1}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/aef13f063c7d5d3b445ee98fb3e855be90a9f72b628f0050a445df761356b1e7.jpg"
+                }
+            },
+            "bbox": [
+                258,
+                537,
+                740,
+                592
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Where   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "Enrolled_{i}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  is a binary variable indicating whether individual i has completed the enrollment process.   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "T_{1i}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  is a binary variable indicating whether the individual was in the first treatment group, where an SMS was sent to youth only.   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "T_{2i}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  is a binary variable indicating whether the individual was in the second treatment group, where an SMS was sent to youth and their contact.   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "Woman_{i}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  is a binary variable taking the value of one when the individual is a woman.   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "X_{i}^{\\prime}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  is a vector of control variables, including age and geographic location. We also run a heterogeneity test with the same specification, comparing two sub-groups: youth with male contacts versus youth with female contacts."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                619,
+                885,
+                849
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                493,
+                934,
+                504,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3 Results"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                87,
+                267,
+                108
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.1 Overall impact on enrollment"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                142,
+                519,
+                162
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Table 3 presents the treatment effects of sending the SMS to youth only or to youth and their contact on enrollment. We find that sending the SMS to youth only has no statistically significant impact on enrollment. Sending the SMS to both youth and their contact significantly decreases the probability of enrolling for both men (from  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "43.8\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " to  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "25.2\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": ") and women (from  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "38.5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " to  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "30.7\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "), equivalent to a  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "42.4\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " decrease for men and a  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "20.2\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " decrease for women, both significant at the  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " level. The decrease in enrollment is significantly greater for men, with men's enrollment decreasing by 10.8 percentage points more than women's."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                184,
+                885,
+                385
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The fact that we only see a decrease when the contacts are included, coupled with our qualitative evidence, point to contacts being an important influence over youth's decisions. About half of youth listed a parent as their contact (Table 2). Qualitative interviews indicate that youth select the contact based on either personal relationships (family members or friends) or the contact's professional experience, and that youth expect their contact to provide significant guidance."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                395,
+                885,
+                566
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Qualitative interviews also indicate that while the program being free was perceived positively by both youth and contacts, it can also signal either poor quality or potential fraud. When asked what could improve the message's perception, interviewees suggested that it should illustrate the reputability of the organization providing the program. Both contacts and youth mentioned the importance of trusting the organization. This could explain why sending the SMS to youth and their contact had a worse effect on enrollment, compared to sending it to youth only. When the SMS were sent, youth had already attended a pre-registration information session, and therefore already had some information about the organization, whereas contacts had no prior interactions with the implementing organization. Contacts had no reason to have trust in the program, which could have led to them discouraging youth to register."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                577,
+                885,
+                898
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                493,
+                934,
+                504,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.2 Impact on enrollment by gender of contact"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                90,
+                674,
+                109
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Table 4 shows the treatment effects of sending SMS to youth only or to youth and their contact on program enrollment for two subsamples: column (1) shows the impact on youth whose contacts are men, and column (2) shows the impact on youth whose contacts are women. It presents a more nuanced picture when we consider the gender of the contact. Sending SMS to male youth and their contact always has a negative impact, regardless of the contact's gender: the effect corresponds to a  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "36.2\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " decrease in enrollment for men with male contacts and to a  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "52.3\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " for men with female contacts. The impact on women's enrollment of the SMS to youth and their contact is driven by women with male contacts. Women with male contacts are  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "30.3\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " less likely to enroll, whereas women with female contacts are the only group which does not exhibit a significant decrease in enrollment. This is not explained by differences in delivery rates (Figure 1)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                132,
+                885,
+                454
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our results are robust to restricting the analysis to the subsample of youth whose contact is a parent: young women whose mothers were sent the contact SMS are the only ones not discouraged by the SMS. This may suggest that women value the opportunity cost of the program for young women less than men, either because they discount less the expected quality of the program based on the free message or because they are more aware than men of the limitations in job market opportunities for young women. However, these findings may be subject to selection bias in contact choice. The observed differences in effects by contact gender could be partially attributed to unobserved characteristics of youth who choose male versus female contacts, rather than solely to the gender of the contact itself."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                464,
+                885,
+                724
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4 Discussion"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                768,
+                310,
+                791
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Low take-up is a major barrier to the effectiveness of a large number of development programs and social policies. In some cases, that low take-up may reflect insufficient information regarding the program. This study sought to boost the uptake of a youth employment program by making the free nature of the program salient through SMS reminders sent to both applicants and their contacts."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                819,
+                885,
+                898
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                491,
+                934,
+                504,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                111,
+                90,
+                885,
+                142
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We provide quantitative evidence that this had no significant impact on program enrolment when youth were contacted alone and a discouraging effect when youth were contacted along with a person of reference. This discouraging effect was found for all youth, except women with a female contact, and is significantly stronger among men."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                151,
+                885,
+                263
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Complementary qualitative evidence highlights the key role played by trust in the program in shaping recipients' perception of the SMS messages. A message highlighting the program's cost-free aspect can inadvertently backfire if the target audience lacks familiarity with the offering, leading to skepticism about quality rather than generating interest. This finding underscores the value of building trust in the program before promoting it, ensuring that recipients are familiar with and confident in its value. Additionally, our results indicate that contacts are critical in influencing youth's take-up decisions. While they can be effective channels for information dissemination, trust needs to be cultivated not only with the youth, but also with the contacts, especially for male participants and male contacts, among whom the discouraging effect was strongest."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                271,
+                885,
+                566
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Focusing solely on the free nature of the program may not be enough to attract participants and can even lead to distrust when interpreted as a low-quality signal. Future communication strategies should highlight the quality and value of the program to align with the expectations and aspirations of the youth and the contacts influencing their decisions. Program coordinators could actively build trust with youth and their contacts by providing them with detailed, transparent information about the program's value and quality, and incorporating this type of information in messaging strategies. Additionally, messaging strategies could be tailored to align with the specific expectations of both youth and their contacts, potentially involving pre-engagement initiatives to familiarize them with the program before direct outreach."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                573,
+                885,
+                868
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Gender dynamics further complicate the enrollment process, particularly among female recipients. The analysis indicates that the deterrent effect of the messaging is significantly less pronounced among women with female contacts than among women with male contacts. This heterogeneity suggests that the perception and impact of the program's promotional messages are influenced by broader social and cultural factors. However, this finding should be interpreted with caution given the potential selection bias in contact choice. Future research could address this by randomly assigning suggested contact gender to establish causal relationships, collecting more detailed data on reasons for contact selection, and exploring the interaction between youth characteristics and contact gender."
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                875,
+                885,
+                896
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                493,
+                934,
+                504,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                111,
+                90,
+                885,
+                324
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Taken together, our mixed-method study demonstrates the challenges of promoting the uptake of youth employment programs, highlighting the need for nuanced context-specific approaches. Increasing youth enrollment in skills development programs is a critical challenge, often hindered by issues of trust and perceptions of program benefits. It is crucial for program coordinators to focus on building trust and familiarity before emphasizing cost-free aspects. Messaging strategies should account for the complex dynamics between youth, their contacts, and gender. Leveraging existing trusted networks, such as religious or educational institutions, could enhance program credibility. By addressing the complexities of trust, social networks, and gender dynamics, program organizers can develop more effective strategies to improve registration outcomes and, ultimately, youth employment opportunities."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                332,
+                885,
+                627
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                493,
+                934,
+                504,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "References"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                87,
+                269,
+                109
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Akosah-Twumasi, P., Emeto, T. I., Lindsay, D., Tsey, K., and Malau-Aduli, B. S. (2018). A systematic review of factors that influence youths career choices—the role of culture. In Frontiers in Education, volume 3, page 58. Frontiers Media SA."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                125,
+                883,
+                179
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Bagwell, K. and Riordan, M. H. (1991). High and declining prices signal product quality. The American Economic Review, pages 224–239."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                190,
+                883,
+                227
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Cohen, J. and Dupas, P. (2010). Free distribution or cost-sharing? evidence from a randomized malaria prevention experiment. The Quarterly Journal of Economics, 125(1):1–45."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                239,
+                883,
+                276
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Duflo, E., Dupas, P., and Kremer, M. (2023). The impact of secondary school subsidies on career trajectories in a dual labor market: Experimental evidence from ghana."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                286,
+                883,
+                324
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Grácio, M. and Vicente, P. C. (2021). Information, get-out-the-vote messages, and peer influence: Causal effects on political behavior in mozambique. Journal of Development Economics, 151:102665."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                334,
+                885,
+                388
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Hanushek, E. A., Schwerdt, G., Woessmann, L., and Zhang, L. (2017). General education, vocational education, and labor-market outcomes over the lifecycle. Journal of human resources, 52(1):48–87."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                400,
+                885,
+                455
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Kremer, M. and Miguel, E. (2007). The illusion of sustainability. The Quarterly Journal of Economics, 122(3):1007–1065."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                465,
+                887,
+                503
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "McKenzie, D. (2021). Small business training to improve management practices in developing countries: re-assessing the evidence for ‘training doesn’t work’. Oxford Review of Economic Policy, 37(2):276–301."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                515,
+                885,
+                571
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "McKenzie, D. and Woodruff, C. (2014). What are we learning from business training and entrepreneurship evaluations around the developing world? The World Bank Research Observer, 29(1):48–82."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                580,
+                883,
+                637
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Rodríguez, C. and Saavedra, J. E. (2019). The persistent effects of youth savings reminders: Experimental evidence from text-message campaigns in colombia. Journal of Development Economics, 139:135–156."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                647,
+                885,
+                703
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Rokicki, S., Cohen, J., Salomon, J. A., and Fink, G. (2017). Impact of a text-messaging program on adolescent reproductive health: a cluster-randomized trial in ghana. American Journal of Public Health, 107(2):298–305."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                713,
+                885,
+                768
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Tripney, J. S. and Hombrados, J. G. (2013). Technical and vocational education and training (tvet) for young people in low-and middle-income countries: a systematic review and meta-analysis. Empirical research in vocational education and training, 5:1–14."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                780,
+                883,
+                835
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "UNICEF (2022). Global neet data: Where's it all gone? Accessed: 2024-09-30."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                845,
+                782,
+                864
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Van Lieshout, S. and Mehtha, P. (2017). The Next 15 Million: Start and Improve Your Business Global Tracer Study 2011-15. ILO."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                875,
+                887,
+                912
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                491,
+                934,
+                504,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "World Bank (2023). World development indicators. Accessed: 2024-09-30."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                90,
+                738,
+                109
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                488,
+                933,
+                511,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Tables"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                87,
+                207,
+                109
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/96f424dd196b53eb353ab53d2938ff9e6d78930a70e36bc57d22bda2cd89c9c1.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 1: Descriptive statistics by gender"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Notes: The value displayed for t-tests are the differences in the means across the groups. *** p < 0.01, ** p < 0.05, * p < 0.1"
+                    }
+                ],
+                "html": "<table><tr><td rowspan=\"2\">Variable</td><td colspan=\"2\">Men(1)</td><td colspan=\"2\">Women(2)</td><td rowspan=\"2\">T-test(1)-(2)</td></tr><tr><td>N</td><td>Mean/SE</td><td>N</td><td>Mean/SE</td></tr><tr><td>Age</td><td>1504</td><td>23.245[0.097]</td><td>1422</td><td>23.035[0.101]</td><td>0.210</td></tr><tr><td>Contact is a woman</td><td>1504</td><td>0.398[0.013]</td><td>1422</td><td>0.489[0.013]</td><td>-0.090***</td></tr><tr><td>Contact is youth&#x27;s mother</td><td>1504</td><td>0.277[0.012]</td><td>1422</td><td>0.329[0.012]</td><td>-0.052***</td></tr><tr><td>Contact is youth&#x27;s father</td><td>1504</td><td>0.250[0.011]</td><td>1422</td><td>0.160[0.010]</td><td>0.090***</td></tr><tr><td>Contact is youth&#x27;s mother or father</td><td>1504</td><td>0.527[0.013]</td><td>1422</td><td>0.489[0.013]</td><td>0.038**</td></tr><tr><td>Contact is youth&#x27;s spouse</td><td>1504</td><td>0.017[0.003]</td><td>1422</td><td>0.156[0.010]</td><td>-0.139***</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                130,
+                164,
+                862,
+                455
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                486,
+                933,
+                509,
+                949
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/39c5bb0df3d0f74a950eed4fecfe60e5a318af671dfcde13b10eb484e6ff5a8c.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 2: Descriptive statistics by treatment group"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Notes: The value displayed for t-tests are the differences in the means across the groups. *** p < 0.01, ** p < 0.05, * p < 0.1"
+                    }
+                ],
+                "html": "<table><tr><td rowspan=\"2\"></td><td colspan=\"2\">(1) Control</td><td colspan=\"2\">(2) SMS to youth</td><td colspan=\"2\">(3) SMS to youth &amp; contact</td><td rowspan=\"2\">t-test (1)-(2)</td><td rowspan=\"2\">t-test (1)-(3)</td><td rowspan=\"2\">t-test (2)-(3)</td></tr><tr><td>N</td><td>Mean/SE</td><td>N</td><td>Mean/SE</td><td>N</td><td>Mean/SE</td></tr><tr><td>Woman</td><td>1466</td><td>0.487[0.013]</td><td>731</td><td>0.487[0.018]</td><td>729</td><td>0.483[0.019]</td><td>0.000</td><td>0.004</td><td>0.004</td></tr><tr><td>Age</td><td>1466</td><td>23.128[0.098]</td><td>731</td><td>23.064[0.142]</td><td>729</td><td>23.252[0.139]</td><td>0.064</td><td>-0.124</td><td>-0.188</td></tr><tr><td>Contact is a woman</td><td>1475</td><td>0.452[0.013]</td><td>736</td><td>0.413[0.018]</td><td>737</td><td>0.438[0.018]</td><td>0.039*</td><td>0.014</td><td>-0.025</td></tr><tr><td>Contact is youth&#x27;s mother</td><td>1475</td><td>0.310[0.012]</td><td>736</td><td>0.283[0.017]</td><td>737</td><td>0.299[0.017]</td><td>0.027</td><td>0.011</td><td>-0.016</td></tr><tr><td>Contact is youth&#x27;s father</td><td>1475</td><td>0.199[0.010]</td><td>736</td><td>0.196[0.015]</td><td>737</td><td>0.225[0.015]</td><td>0.004</td><td>-0.026</td><td>-0.030</td></tr><tr><td>Contact is youth&#x27;s mother or father</td><td>1475</td><td>0.509[0.013]</td><td>736</td><td>0.478[0.018]</td><td>737</td><td>0.524[0.018]</td><td>0.031</td><td>-0.015</td><td>-0.045*</td></tr><tr><td>Contact is youth&#x27;s spouse</td><td>1475</td><td>0.087[0.007]</td><td>736</td><td>0.087[0.010]</td><td>737</td><td>0.076[0.010]</td><td>-0.000</td><td>0.011</td><td>0.011</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                113,
+                153,
+                882,
+                611
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/56edc61ceedd8f37e6ad0425ea58fd6156905a30456727760ef268c9cf534e8a.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 3: Treatment effects on enrollment rates"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Notes: T=Treatment. W=Woman."
+                    },
+                    {
+                        "type": "text",
+                        "content": "\\*\\*\\* p < 0.01, \\*\\* p < 0.05, \\* p < 0.1"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Sharpened q-values are p-values that have been adjusted for the False Discovery Rate (FDR). Controls: Age and geographic location."
+                    }
+                ],
+                "html": "<table><tr><td></td><td>Completed enrollment process</td></tr><tr><td>Woman</td><td>-0.052**</td></tr><tr><td>p-value</td><td>0.033</td></tr><tr><td>sharpened q-value</td><td>0.035</td></tr><tr><td>SMS to youth</td><td>-0.023</td></tr><tr><td>p-value</td><td>0.431</td></tr><tr><td>sharpened q-value</td><td>0.275</td></tr><tr><td>SMS to youth x Woman</td><td>0.015</td></tr><tr><td>p-value</td><td>0.724</td></tr><tr><td>sharpened q-value</td><td>0.408</td></tr><tr><td>SMS to youth &amp; contact</td><td>-0.186***</td></tr><tr><td>p-value</td><td>0.000</td></tr><tr><td>sharpened q-value</td><td>0.001</td></tr><tr><td>SMS to youth &amp; contact x Woman</td><td>0.108**</td></tr><tr><td>p-value</td><td>0.011</td></tr><tr><td>sharpened q-value</td><td>0.024</td></tr><tr><td>SMS to youth: p(T + T*W)=0</td><td>0.784</td></tr><tr><td>SMS to youth &amp; contact: p(T + T*W)=0</td><td>0.011</td></tr><tr><td>Control mean</td><td>0.438</td></tr><tr><td>R-squared</td><td>0.067</td></tr><tr><td>Observations</td><td>2926</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                223,
+                119,
+                772,
+                638
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/9ad00ff464daf5787b2c916bb55d9a0ccd25fbf3bd486e6755b7ec1f414268a1.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 4: Treatment effects on enrollment rates - by contact gender"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Notes: T=Treatment. W=Woman. *** p < 0.01, ** p < 0.05, * p < 0.1. Sharpened q-values are p-values that have been adjusted for the False Discovery Rate (FDR). Controls: Age and geographic location."
+                    }
+                ],
+                "html": "<table><tr><td rowspan=\"2\"></td><td colspan=\"3\">Completed enrolment process</td></tr><tr><td>Contact is a man</td><td>Contact is a woman</td><td>T-test (1)=(2)</td></tr><tr><td></td><td>(1)</td><td>(2)</td><td></td></tr><tr><td>Woman</td><td>-0.035</td><td>-0.081**</td><td>0.249</td></tr><tr><td>p-value</td><td>0.296</td><td>0.026</td><td></td></tr><tr><td>sharpened q-value</td><td>1.000</td><td>0.027</td><td></td></tr><tr><td>SMS to youth</td><td>-0.007</td><td>-0.050</td><td>0.514</td></tr><tr><td>p-value</td><td>0.846</td><td>0.285</td><td></td></tr><tr><td>sharpened q-value</td><td>1.000</td><td>0.166</td><td></td></tr><tr><td>SMS to youth x Woman</td><td>-0.011</td><td>0.058</td><td>0.379</td></tr><tr><td>p-value</td><td>0.840</td><td>0.366</td><td></td></tr><tr><td>sharpened q-value</td><td>1.000</td><td>0.172</td><td></td></tr><tr><td>SMS to youth &amp; contact</td><td>-0.158***</td><td>-0.229***</td><td>0.191</td></tr><tr><td>p-value</td><td>0.000</td><td>0.000</td><td></td></tr><tr><td>sharpened q-value</td><td>0.001</td><td>0.001</td><td></td></tr><tr><td>SMS to youth &amp; contact x Woman</td><td>0.036</td><td>0.196***</td><td>0.033</td></tr><tr><td>p-value</td><td>0.532</td><td>0.002</td><td></td></tr><tr><td>sharpened q-value</td><td>1.000</td><td>0.004</td><td></td></tr><tr><td>SMS to youth: p(T + T*W)=0</td><td>0.652</td><td>0.852</td><td>0.553</td></tr><tr><td>SMS to youth &amp; contact: p(T + T*W)=0</td><td>0.005</td><td>0.452</td><td>0.090</td></tr><tr><td>Control mean</td><td>0.438</td><td>0.438</td><td></td></tr><tr><td>R-squared</td><td>0.065</td><td>0.076</td><td></td></tr><tr><td>Observations</td><td>1632</td><td>1294</td><td></td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                135,
+                119,
+                857,
+                683
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14"
+                    }
+                ]
+            },
+            "bbox": [
+                486,
+                933,
+                511,
+                949
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c28896ed8249626fcc12078de00868807048599b1523ea599c4bacb1d79fd820.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 1: SMS Delivery Rates by Treatment Group"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                214,
+                175,
+                779,
+                463
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Figure"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                85,
+                210,
+                112
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "15"
+                    }
+                ]
+            },
+            "bbox": [
+                486,
+                933,
+                511,
+                949
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Appendix"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                87,
+                256,
+                111
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "SMS on long-term benefits of the program"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                111,
+                132,
+                612,
+                154
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Another type of SMS, emphasizing the long-term benefits of the program, was sent to either youth only or youth and their contacts. Similarly to the SMS highlighting that the program was free, it had no impact on enrollment when sent exclusively to youth. However, when sent to both youth and their contacts, the impact differed by gender: it decreased enrollment for men but increased enrollment for women. Due to the inconclusive nature of these results, we have chosen to focus on the first type of SMS in this paper."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                167,
+                885,
+                301
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "16"
+                    }
+                ]
+            },
+            "bbox": [
+                486,
+                933,
+                511,
+                949
+            ]
+        }
+    ]
+]
