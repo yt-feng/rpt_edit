@@ -1,0 +1,4624 @@
+[
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                1.0,
+                0.396
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.051,
+                0.432,
+                0.189,
+                0.449
+            ],
+            "angle": 0,
+            "content": "PERSONALIZATION",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.478,
+                0.661,
+                0.576
+            ],
+            "angle": 0,
+            "content": "The Science Behind\nNext-Best Action"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.607,
+                0.438,
+                0.626
+            ],
+            "angle": 0,
+            "content": "By Silvio Palumbo, Yun Lim, and Nabeel Siddiqi",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.65,
+                0.368,
+                0.669
+            ],
+            "angle": 0,
+            "content": "ARTICLE JUNE 17, 2026 15 MIN READ",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.729,
+                0.477,
+                0.749
+            ],
+            "angle": 0,
+            "content": "This is Part 3 of a five-part series on next-best action.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.764,
+                0.949,
+                0.865
+            ],
+            "angle": 0,
+            "content": "The previous article in this series explained how next-best action (NBA) is shifting from marketer-orchestrated journeys to agent-composed actions and discussed the technology architecture needed to enable it. Agent-native NBA requires models capable of exploring pathways that humans never spelled out prescriptively, learning loops that compound without human intervention, and a layered architecture with different classes of algorithms.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.877,
+                0.893,
+                0.919
+            ],
+            "angle": 0,
+            "content": "This shift requires different applications and a fundamental evolution in the underlying decisioning science. This article, oriented toward technical leaders, describes that scientific",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.97,
+                0.251,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.437,
+                0.185,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.474,
+                0.664,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.529,
+                0.578,
+                0.577
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.61,
+                0.434,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.655,
+                0.364,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.732,
+                0.475,
+                0.747
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.766,
+                0.947,
+                0.781
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.787,
+                0.901,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.807,
+                0.888,
+                0.822
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.826,
+                0.852,
+                0.841
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.846,
+                0.745,
+                0.861
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.879,
+                0.853,
+                0.897
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.9,
+                0.888,
+                0.915
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.042,
+                0.068,
+                0.694,
+                0.088
+            ],
+            "angle": 0,
+            "content": "evolution and explores the nuances of advanced decisioning engines."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.041,
+                0.209,
+                0.852,
+                0.25
+            ],
+            "angle": 0,
+            "content": "Three Layers of Action Selection"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.277,
+                0.907,
+                0.357
+            ],
+            "angle": 0,
+            "content": "NBA action selection occurs across three layers: propensity and uplift scoring, contextual bandits, and agent-based reasoning. These layers are additive, not alternative. Systems don't necessarily need to graduate from one to the next, however, as each layer handles a fundamentally different type of intelligence.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.37,
+                0.947,
+                0.491
+            ],
+            "angle": 0,
+            "content": "Propensity and uplift models estimate the likelihood and incremental value of a customer's responding to a given action. Contextual bandits optimize the exploration-exploitation tradeoff across large sets of structured signals, learning in real time which actions work in which contexts. Foundation model agents interpret unstructured content, compose novel action combinations, and exercise judgment in situations that structured models cannot encode. The most effective systems will run all three layers simultaneously. (See Exhibit 1.)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.521,
+                0.111,
+                0.536
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 1"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.043,
+                0.539,
+                0.642,
+                0.559
+            ],
+            "angle": 0,
+            "content": "Each Layer Expands What the System Can Learn and Act On"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.045,
+                0.571,
+                0.728,
+                0.76
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.045,
+                0.776,
+                0.148,
+                0.787
+            ],
+            "angle": 0,
+            "content": "Source: BCG analysis."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.784,
+                0.619,
+                0.797
+            ],
+            "angle": 0,
+            "content": "Note: Vendor examples are illustrative, not exhaustive; inclusion does not constitute endorsement. UCB = upper confidence bound."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.045,
+                0.83,
+                0.822,
+                0.869
+            ],
+            "angle": 0,
+            "content": "Layer 1: Propensity and Uplift Scoring"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.893,
+                0.93,
+                0.932
+            ],
+            "angle": 0,
+            "content": "The dominant paradigm today is to train a model per action (or a multi-output model across actions), score each customer on likelihood to respond, rank each, and select each. The models",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.97,
+                0.251,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.209,
+                0.851,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.278,
+                0.874,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.299,
+                0.904,
+                0.314
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.319,
+                0.821,
+                0.333
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.337,
+                0.457,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.372,
+                0.894,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.393,
+                0.93,
+                0.407
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.413,
+                0.944,
+                0.428
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.434,
+                0.924,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.452,
+                0.915,
+                0.467
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.472,
+                0.633,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.524,
+                0.108,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.829,
+                0.82,
+                0.867
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.895,
+                0.891,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.914,
+                0.926,
+                0.929
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.955,
+                0.207
+            ],
+            "angle": 0,
+            "content": "are typically gradient-boosted trees (such as XGBoost or LightGBM) or logistic regressions trained on historical response data. The most widely deployed enterprise NBA platforms operate at this layer. Adaptive models use classifiers with online learning, scoring each action by formulas that weight propensity, expected value, and business levers. This approach works well when the action space is small, the customer context is stable, and the goal is single-step conversion. Most organizations should master this layer before adding the others. The returns from handling propensity scoring well are substantial.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.045,
+                0.236,
+                0.613,
+                0.27
+            ],
+            "angle": 0,
+            "content": "Layer 2: Contextual Bandits"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.297,
+                0.952,
+                0.415
+            ],
+            "angle": 0,
+            "content": "Rather than predicting response probability, contextual bandits directly optimize which action to take in light of the customer's context. The key difference is the exploration-exploitation tradeoff: the system deliberately allocates a fraction of decisions to less-certain actions in order to learn their true value, rather than always exploiting the prevalent best guess. This sampling approach has been researched for decades, but only recently have software-as-a-service solutions begun to adopt it widely.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.429,
+                0.949,
+                0.569
+            ],
+            "angle": 0,
+            "content": "Several marketing platforms have adopted bandit-based architectures in the past two years. One common approach is a “community of bandits” architecture, decomposing the decision into separate bandit dimensions for channel, timing, creative, and offer, each optimizing independently. Others use contextual bandits with gradient-boosted reward models for nonlinear feature interactions, or they implement Thompson sampling to auto-optimize offer selection. These approaches represent a meaningful step beyond propensity scoring because they learn from their own decisions, not just from historical data.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.582,
+                0.94,
+                0.663
+            ],
+            "angle": 0,
+            "content": "The algorithmic choice within Layer 2 matters. In most NBA contexts, Thompson sampling, which draws actions from the posterior distribution of expected rewards, outperforms simpler approaches such as epsilon-greedy because it naturally adapts its exploration rate to uncertainty: exploring more where it knows less, and exploiting more where it is confident.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.676,
+                0.943,
+                0.796
+            ],
+            "angle": 0,
+            "content": "For the reward model underlying the bandit, linear contextual bandits offer interpretability and computational efficiency but assume linear reward functions. Neural contextual bandits capture nonlinear interactions between customer features and actions at the cost of computational complexity. In practice, a pragmatic approach involves using neural reward models in the batch layer (where computational budgets are larger) and distilling them into lighter linear or tree-based models for real-time serving.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.809,
+                0.926,
+                0.929
+            ],
+            "angle": 0,
+            "content": "Consider a credit card issuer that wants to test balance-transfer offers. A propensity model, trained on historical responses, learns that customers with high balances and long tenure respond best. A contextual bandit discovers something that the historical data never revealed: when paired with a specific creative treatment, recently activated cardholders with moderate balances respond at even higher rates because they are actively evaluating offers. The propensity model never explored this combination; the bandit did because it was designed to.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.069,
+                0.952,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.089,
+                0.935,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.108,
+                0.923,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.129,
+                0.949,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.149,
+                0.886,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.167,
+                0.884,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.189,
+                0.414,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.237,
+                0.61,
+                0.268
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.299,
+                0.943,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.319,
+                0.947,
+                0.333
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.338,
+                0.93,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.357,
+                0.933,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.377,
+                0.946,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.397,
+                0.186,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.43,
+                0.944,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.451,
+                0.891,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.469,
+                0.815,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.491,
+                0.946,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.51,
+                0.909,
+                0.527
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.53,
+                0.923,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.549,
+                0.543,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.584,
+                0.936,
+                0.599
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.604,
+                0.851,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.624,
+                0.84,
+                0.639
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.643,
+                0.878,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.678,
+                0.927,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.697,
+                0.939,
+                0.712
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.716,
+                0.896,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.737,
+                0.927,
+                0.753
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.757,
+                0.898,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.776,
+                0.371,
+                0.792
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.811,
+                0.894,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.831,
+                0.877,
+                0.846
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.851,
+                0.921,
+                0.866
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.871,
+                0.904,
+                0.885
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.891,
+                0.849,
+                0.905
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.909,
+                0.913,
+                0.926
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.046,
+                0.068,
+                0.705,
+                0.105
+            ],
+            "angle": 0,
+            "content": "Layer 3: Agent-Based Reasoning"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.13,
+                0.954,
+                0.269
+            ],
+            "angle": 0,
+            "content": "Foundation models add value to the decisioning stack in an area where structured models hit a ceiling: dealing with unstructured or highly disjointed data. A contextual bandit excels at optimizing across large sets of structured signals (such as account tenure, transaction frequency, channel preference, and response history), but it can't interpret the tone of a customer's last service chat, assess whether a browsing sequence suggests confusion or comparison shopping, or weigh the strategic intent behind a brand campaign. These are judgment calls, not optimization problems.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.283,
+                0.947,
+                0.423
+            ],
+            "angle": 0,
+            "content": "A foundation model agent reasons in natural language about the customer's situation, the available options, and the likely outcomes. It processes context that would be prohibitively expensive to encode as features for a structured model. Organizations should consider adding Layer 3 when they see evidence that their models' decisioning quality is constrained by unstructured context that bandits cannot ingest. Layer 3 is not a replacement for Layers 1 and 2, but a complementary capability. The first platform bets on Layer 3 are emerging, but no vendor has deployed the full vision at scale yet. This represents both a risk and an opportunity.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.435,
+                0.946,
+                0.596
+            ],
+            "angle": 0,
+            "content": "The three layers compose a stack, not a sequence. Propensity and uplift models provide foundational scores. Contextual bandits use those scores as inputs while adding exploration and real-time learning across structured signals. Foundation model agents sit on top, interpreting unstructured context that neither of the lower layers can process and making compositional decisions that optimization alone can't reach. The agent doesn't replace the bandit; it decides when to defer to the bandit's quantitative recommendation and when to override it because unstructured context has changed the calculus. When an organization runs all three layers simultaneously, scoring, optimization, and reasoning work in concert.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.043,
+                0.664,
+                0.777,
+                0.745
+            ],
+            "angle": 0,
+            "content": "Limitations of Propensity and Uplift Models"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.771,
+                0.938,
+                0.851
+            ],
+            "angle": 0,
+            "content": "Most organizations operate exclusively at Layer 1, and well-executed propensity and uplift scoring already delivers meaningful lift. It is interpretable, auditable, and well understood. But even the best combinations of propensity and uplift models have three structural limitations as organizations scale their personalization ambitions:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.879,
+                0.924,
+                0.921
+            ],
+            "angle": 0,
+            "content": "- Propensity models (without uplift models) do not provide prescriptive recommendations. A propensity model answers “How likely is this customer to respond?” but not “Will this",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.068,
+                0.703,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.132,
+                0.922,
+                0.146
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.151,
+                0.859,
+                0.168
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.17,
+                0.944,
+                0.187
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.19,
+                0.91,
+                0.206
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.212,
+                0.949,
+                0.226
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.23,
+                0.926,
+                0.246
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.251,
+                0.144,
+                0.268
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.286,
+                0.88,
+                0.3
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.306,
+                0.889,
+                0.32
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.325,
+                0.915,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.343,
+                0.85,
+                0.359
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.363,
+                0.94,
+                0.378
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.383,
+                0.927,
+                0.399
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.403,
+                0.857,
+                0.419
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.437,
+                0.861,
+                0.453
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.456,
+                0.944,
+                0.473
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.476,
+                0.909,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.497,
+                0.901,
+                0.513
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.517,
+                0.912,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.537,
+                0.894,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.557,
+                0.884,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.576,
+                0.684,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.662,
+                0.779,
+                0.706
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.703,
+                0.382,
+                0.744
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.774,
+                0.886,
+                0.789
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.793,
+                0.916,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.812,
+                0.933,
+                0.828
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.832,
+                0.531,
+                0.848
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.882,
+                0.921,
+                0.897
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.903,
+                0.88,
+                0.917
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.063,
+                0.068,
+                0.931,
+                0.286
+            ],
+            "angle": 0,
+            "content": "action change behavior relative to doing nothing?\" A customer with a 90% propensity to purchase may have planned to buy anyway; if so, targeting that customer with a discount destroys margin without changing behavior. The critical upgrade within Layer 1 is the shift to uplift modeling, which estimates the incremental effect of an action versus no action. Organizations that make this shift typically discover that 20% to 40% of their active programs deliver hardly any incremental lift, instead just capturing intent that would have materialized anyway. This requires different training data (randomized holdout groups or quasi-experimental designs) and different model architectures. The most effective approaches include T-learners (separate models for treatment and control groups), S-learners (a single model with the treatment as an input), and doubly robust learners, which combine outcome modeling with propensity weighting to reduce bias from either component alone.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.299,
+                0.926,
+                0.438
+            ],
+            "angle": 0,
+            "content": "- They cannot discover novel combinations. Propensity and uplift models score within a predefined action space. If the marketer has defined 15 offers, a model of this type will rank just those 15. It can’t discover, for example, that combining a smaller offer with a specific content frame and a particular channel at a nonstandard time would outperform any of the 15 predefined options. As the composable shelf grows to hundreds of atomic assets that can be linked in thousands of possible combinations, this limitation becomes a binding constraint.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.452,
+                0.923,
+                0.59
+            ],
+            "angle": 0,
+            "content": "- They struggle with sequential decisions. These models score each action independently. A propensity model doesn’t account for the fact that sending an offer today changes the optimal choice for tomorrow. Instead, it treats each decision in isolation, although actual customer engagement is a multistep setup in which current actions shape future options. More complex uplift modeling implementations can calculate conditional probabilities that are contingent on a prior step, but the formulation requires constant oversight and learning cycles.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.62,
+                0.912,
+                0.679
+            ],
+            "angle": 0,
+            "content": "These limitations are not bugs. They are inherent to the paradigm. Moving past them requires both a different system architecture and an additional (not alternative) class of decisioning models.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.752,
+                0.742,
+                0.79
+            ],
+            "angle": 0,
+            "content": "The Two-Track Architecture"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.818,
+                0.956,
+                0.898
+            ],
+            "angle": 0,
+            "content": "The production system that makes Layer 2 and Layer 3 models operational requires a two-track architecture that separates batch optimization from real-time serving. Each track has different latency requirements, different model types, and different roles in the overall system. (See Exhibit 2.)",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.07,
+                0.877,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.089,
+                0.884,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.109,
+                0.912,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.128,
+                0.856,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.148,
+                0.927,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.168,
+                0.927,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.188,
+                0.822,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.207,
+                0.886,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.227,
+                0.909,
+                0.242
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.248,
+                0.913,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.265,
+                0.813,
+                0.281
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.301,
+                0.874,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.32,
+                0.915,
+                0.336
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.341,
+                0.881,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.36,
+                0.912,
+                0.375
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.381,
+                0.921,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.4,
+                0.839,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.42,
+                0.171,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.454,
+                0.913,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.474,
+                0.861,
+                0.49
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.493,
+                0.881,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.514,
+                0.894,
+                0.528
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.532,
+                0.918,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.552,
+                0.918,
+                0.568
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.572,
+                0.134,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.622,
+                0.909,
+                0.638
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.64,
+                0.892,
+                0.657
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.661,
+                0.122,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.751,
+                0.741,
+                0.789
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.049,
+                0.821,
+                0.927,
+                0.834
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.84,
+                0.919,
+                0.855
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.86,
+                0.95,
+                0.873
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.878,
+                0.073,
+                0.898
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.043,
+                0.08,
+                0.671,
+                0.119
+            ],
+            "angle": 0,
+            "content": "Batch Optimization and Real-Time Serving Operate on Different Cadences with Different Roles"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.044,
+                0.141,
+                0.728,
+                0.361
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.383,
+                0.421,
+                0.404
+            ],
+            "angle": 0,
+            "content": "Source: BCG analysis. Note: CLV = customer lifetime value; SLO = service-level objective; TTL = time to live."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.046,
+                0.437,
+                0.572,
+                0.473
+            ],
+            "angle": 0,
+            "content": "Batch Optimization Layer"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.499,
+                0.952,
+                0.619
+            ],
+            "angle": 0,
+            "content": "The batch optimization layer runs on a 24- to 48-hour cadence. Its job is to compute policies in advance, update model parameters, and solve portfolio-level optimization problems that are too computationally expensive for real-time execution. This is where the system answers strategic questions such as “Given the current shelf composition, customer base distribution, and business constraints (budget ceilings, contact frequency limits, and channel capacity), what is the optimal allocation of actions across the population?”",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.633,
+                0.946,
+                0.791
+            ],
+            "angle": 0,
+            "content": "In practice, the batch layer runs several processes. For example, it retrains bandit policies on the latest interaction data, incorporating new reward signals. Then it refreshes propensity and uplift models with expanded training windows. And finally, it uses portfolio optimization to solve a constrained allocation problem: how to maximize expected total value subject to inventory constraints on offers, frequency caps per customer, and budget limits per business unit. This last step is crucial and often overlooked. Without portfolio-level optimization, the real-time layer will assign the best action to each individual customer, quickly exhausting high-value offers on easy-to-convert customers while starving harder-to-reach segments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.804,
+                0.947,
+                0.905
+            ],
+            "angle": 0,
+            "content": "Algorithmically, the portfolio optimization is typically formulated as a mixed-integer linear program (MILP) for tractable problem sizes, using Lagrangian relaxation to decompose the problem when the customer-action matrix exceeds solver limits. In practice, most organizations need both: MILP to make precise allocations within business units or segments, and Lagrangian relaxation to coordinate across the full portfolio. Relying on either by itself introduces bias. MILP",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.083,
+                0.669,
+                0.1
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.102,
+                0.337,
+                0.117
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.437,
+                0.57,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.049,
+                0.502,
+                0.913,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.521,
+                0.941,
+                0.536
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.541,
+                0.916,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.559,
+                0.949,
+                0.575
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.58,
+                0.94,
+                0.594
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.6,
+                0.46,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.635,
+                0.943,
+                0.649
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.655,
+                0.936,
+                0.669
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.674,
+                0.894,
+                0.688
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.692,
+                0.888,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.713,
+                0.941,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.732,
+                0.935,
+                0.748
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.753,
+                0.929,
+                0.767
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.77,
+                0.626,
+                0.788
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.807,
+                0.877,
+                0.822
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.826,
+                0.887,
+                0.841
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.847,
+                0.929,
+                0.861
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.866,
+                0.933,
+                0.881
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.886,
+                0.94,
+                0.901
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.891,
+                0.109
+            ],
+            "angle": 0,
+            "content": "alone cannot scale to millions of customers, and Lagrangian relaxation alone may produce suboptimal allocations within smaller subproblems for which exact solutions are feasible.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.178,
+                0.655,
+                0.221
+            ],
+            "angle": 0,
+            "content": "Real-Time Serving Layer"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.245,
+                0.955,
+                0.366
+            ],
+            "angle": 0,
+            "content": "The real-time serving layer operates at the moment of customer interaction, with latency typically under 100 milliseconds. When a customer opens the company's banking app, visits its website, or triggers an event, the serving layer must immediately decide what to display. To do so, it takes the policies and parameters that the batch layer precomputed and adapts them to the live context: what the customer is doing right now, what channel the customer is in, what time it is, and what has happened since the batch layer last ran.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.379,
+                0.956,
+                0.46
+            ],
+            "angle": 0,
+            "content": "The real-time layer is where contextual adaptation happens. A customer whose batch-computed policy says “show a balance transfer offer” might instead receive a service recovery message if the real-time layer detects that the individual has just completed a frustrating support interaction. The batch layer sets the strategic frame; the real-time layer exercises tactical judgment within it.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.472,
+                0.954,
+                0.574
+            ],
+            "angle": 0,
+            "content": "Foundation model agents operate primarily in the real-time layer, handling the compositional reasoning that determines exactly how to assemble a particular action from shelf components. Policies and budgets computed in the batch layer serve as guardrails. This separation is essential because it prevents the agent from making locally optimal decisions that are globally suboptimal (such as burning the entire monthly budget on high-value offers in the first week).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.586,
+                0.952,
+                0.687
+            ],
+            "angle": 0,
+            "content": "The interaction between the two layers constitutes the engineering backbone of agent-native NBA. Organizations that try to build purely real-time systems without batch optimization will discover that per-customer decisions do not translate into coherent portfolio-level strategies. But organizations that rely solely on batch processing will miss the contextual moments that drive the highest incremental value.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.755,
+                0.85,
+                0.876
+            ],
+            "angle": 0,
+            "content": "Objective Function for Reinforcement Learning and the Bandit Layer"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.886,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.09,
+                0.88,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.177,
+                0.653,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.246,
+                0.949,
+                0.264
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.267,
+                0.95,
+                0.283
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.287,
+                0.942,
+                0.302
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.306,
+                0.932,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.327,
+                0.918,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.347,
+                0.46,
+                0.362
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.381,
+                0.934,
+                0.397
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.402,
+                0.921,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.421,
+                0.953,
+                0.436
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.44,
+                0.932,
+                0.455
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.475,
+                0.907,
+                0.49
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.495,
+                0.927,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.513,
+                0.945,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.534,
+                0.949,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.554,
+                0.797,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.589,
+                0.908,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.608,
+                0.903,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.629,
+                0.946,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.648,
+                0.921,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.668,
+                0.328,
+                0.683
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.754,
+                0.601,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.794,
+                0.851,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.833,
+                0.365,
+                0.876
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.938,
+                0.167
+            ],
+            "angle": 0,
+            "content": "The batch processing layer is where reinforcement learning (RL) operates. Its core function is to manage the exploration-exploitation tradeoff. Should the system exploit the best action given current knowledge, or should it explore a less-certain action to gather information that may improve future decisions? This nontrivial tradeoff is the mechanism that separates systems that learn from their own decisions from systems that just replay patterns found in historical data.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.181,
+                0.953,
+                0.301
+            ],
+            "angle": 0,
+            "content": "The most practical deployment of RL for NBA is the contextual bandit, in which the system observes a customer's context, selects an action, and soon receives a reward signal such as a click, a conversion, or an app open. The policy model at the center of this process operates in a continuous loop. First, it takes customer context as input and outputs an action selection. Then it uses the observed reward to update its beliefs about which actions work in which contexts. Over thousands of iterations, the policy converges on increasingly effective action assignments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.315,
+                0.938,
+                0.474
+            ],
+            "angle": 0,
+            "content": "Not all business objectives produce immediate reward signals. In attempts to optimize for customer lifetime value (CLV), the true outcome takes months or years to observe. Multistep RL can handle this, but it is substantially more complex to implement and requires significantly more exploration data to perform well. In most NBA situations, a contextual bandit with a well-chosen proxy reward is the pragmatic choice. It is critical that the proxy links causally to the ultimate business objective, because optimizing for the wrong reward will produce a policy that seems to perform well on the proxy metric but fails to move the outcome that actually matters. Getting this right is one of the most consequential design decisions in the system.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.487,
+                0.955,
+                0.627
+            ],
+            "angle": 0,
+            "content": "The algorithmic architecture of the policy model itself presents a meaningful design choice. Two families dominate: value-based methods and policy gradient methods. Value-based methods estimate the expected reward for each possible action in a given context and then select the highest-value option. They work well when the action space is relatively constrained (fewer than 1,000 discrete actions) and when the organization needs a reliable policy quickly. They also offer more direct control, enabling implementation of business-specific constraints and nuances in the policy logic. For most NBA deployments today, value-based methods are the right starting point.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.64,
+                0.951,
+                0.78
+            ],
+            "angle": 0,
+            "content": "In contrast, policy gradient methods learn a probability distribution over actions and then update that distribution based on observed rewards. They are the better choice when actions are continuous (such as determining the discount percentage to offer a customer) or when the action space is very large, because they can represent the policy compactly through distributional parameters rather than enumerating every possible action. The tradeoff is sample efficiency. Policy gradient methods require more exploration data to converge, and this translates into a longer learning period before the policy can reach peak performance.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.793,
+                0.943,
+                0.912
+            ],
+            "angle": 0,
+            "content": "The method chosen will determine the system's learning speed, its ability to handle business constraints, and the speed at which it can evaluate new actions on the composable shelf. Organizations that are building their first bandit layer should default to value-based methods for their core action selection and reserve policy gradient approaches for the specific dimensions—such as pricing, discount depth, and contact timing—where continuous optimization delivers the highest marginal value.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.933,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.09,
+                0.912,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.109,
+                0.889,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.128,
+                0.934,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.148,
+                0.909,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.183,
+                0.887,
+                0.197
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.204,
+                0.912,
+                0.217
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.224,
+                0.929,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.243,
+                0.95,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.263,
+                0.93,
+                0.276
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.282,
+                0.881,
+                0.296
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.317,
+                0.879,
+                0.331
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.337,
+                0.934,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.357,
+                0.9,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.375,
+                0.923,
+                0.389
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.395,
+                0.892,
+                0.409
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.416,
+                0.923,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.436,
+                0.925,
+                0.449
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.454,
+                0.802,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.489,
+                0.926,
+                0.503
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.509,
+                0.898,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.529,
+                0.904,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.548,
+                0.931,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.568,
+                0.939,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.587,
+                0.95,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.608,
+                0.93,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.641,
+                0.949,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.662,
+                0.869,
+                0.676
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.68,
+                0.944,
+                0.698
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.701,
+                0.894,
+                0.717
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.72,
+                0.906,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.74,
+                0.909,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.761,
+                0.691,
+                0.776
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.795,
+                0.907,
+                0.81
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.815,
+                0.872,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.834,
+                0.936,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.853,
+                0.936,
+                0.87
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.873,
+                0.936,
+                0.888
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.894,
+                0.261,
+                0.909
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.043,
+                0.067,
+                0.681,
+                0.149
+            ],
+            "angle": 0,
+            "content": "Foundation Models as the Reasoning Layer"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.174,
+                0.946,
+                0.253
+            ],
+            "angle": 0,
+            "content": "Foundation models introduce a qualitatively different capability into the NBA stack: the ability to reason over unstructured context and to compose actions that structured optimization cannot reach. A common first instinct is to use them for content generation, which is valuable but incremental.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.268,
+                0.871,
+                0.289
+            ],
+            "angle": 0,
+            "content": "The deeper value lies in three capabilities that restructure the decisioning process itself:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.318,
+                0.935,
+                0.496
+            ],
+            "angle": 0,
+            "content": "- Contextual Understanding Beyond Feature Vectors. Traditional models operate on structured features, such as account balance, days since last purchase, and segment membership. Foundation models can also process unstructured context, such as the text of a customer's last service chat, the sequence of pages browsed, and the tone of a subsequent social media post. This is not tantamount to adding more features to an existing model. It represents a qualitatively different kind of understanding. When an agent reads that a customer's service interaction ultimately reached resolution, but the customer expressed frustration about the process, it can adjust the next action in a way that no feature vector could encode.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.51,
+                0.922,
+                0.668
+            ],
+            "angle": 0,
+            "content": "- Compositional Reasoning. Foundation models can reason about combinations at a scale that optimization alone can’t match. For a shelf of 200 atomic assets across offers, creative treatments, content blocks, and channels, the number of possible compositions is astronomical. Consequently, a brute-force optimization approach collapses under the dimensionality. A foundation model instead reasons about plausible compositions: “This customer is in a trust-recovery moment, so pair a security-focused message with a value-reinforcement offer, skip promotional language, and use an intimate channel such as in-app rather than email.”",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.683,
+                0.932,
+                0.803
+            ],
+            "angle": 0,
+            "content": "- Explainable Decision Rationale. Unlike black-box models that produce a score, foundation model agents can articulate why they made a decision. In regulated industries such as banking, insurance, or health care, explainability is a compliance requirement. And for the technical leaders governing these systems, understanding why the system chose a particular action is essential for debugging, calibrating trust, and adjusting constraints. The agent’s reasoning trace becomes an audit artifact that structured models can’t provide.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.832,
+                0.944,
+                0.912
+            ],
+            "angle": 0,
+            "content": "In the practical architecture, foundation models occupy the top layer in the decisioning stack. Data and features flow up from the customer data platform, structured models produce scores and policy recommendations, and the foundation model agent reasons over these inputs, together with unstructured context, to make the final compositional decision. The agent's output",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.066,
+                0.681,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.107,
+                0.463,
+                0.15
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.177,
+                0.943,
+                0.192
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.196,
+                0.923,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.215,
+                0.875,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.236,
+                0.164,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.268,
+                0.868,
+                0.287
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.321,
+                0.841,
+                0.334
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.341,
+                0.851,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.36,
+                0.93,
+                0.375
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.381,
+                0.91,
+                0.394
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.398,
+                0.894,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.419,
+                0.868,
+                0.434
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.438,
+                0.897,
+                0.454
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.458,
+                0.891,
+                0.474
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.478,
+                0.198,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.512,
+                0.897,
+                0.528
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.531,
+                0.906,
+                0.547
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.553,
+                0.832,
+                0.567
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.572,
+                0.861,
+                0.588
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.591,
+                0.886,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.612,
+                0.884,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.63,
+                0.917,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.651,
+                0.241,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.685,
+                0.907,
+                0.7
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.705,
+                0.862,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.725,
+                0.9,
+                0.739
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.743,
+                0.927,
+                0.76
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.764,
+                0.886,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.784,
+                0.803,
+                0.799
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.835,
+                0.909,
+                0.848
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.854,
+                0.918,
+                0.867
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.873,
+                0.875,
+                0.889
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.893,
+                0.939,
+                0.908
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.067,
+                0.935,
+                0.108
+            ],
+            "angle": 0,
+            "content": "is not a score but a fully composed action with a specific combination of offer, creative, channel, timing, and message assembled from the shelf.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.041,
+                0.177,
+                0.737,
+                0.26
+            ],
+            "angle": 0,
+            "content": "The Cold-Start Problem and Intelligent Exploration"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.285,
+                0.947,
+                0.386
+            ],
+            "angle": 0,
+            "content": "Every decisioning system faces a version of the cold-start problem. When a new action, a new customer segment, or a new context emerges, the system has no historical data to inform its decisions. In systems that rely solely on Layer 2, human operatives manage cold starts manually. The marketer designs a test plan, allocates budget, runs the experiment, and updates the models. With Layer 3, the system can handle cold starts autonomously.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.399,
+                0.935,
+                0.539
+            ],
+            "angle": 0,
+            "content": "This is where the interaction between foundation models and contextual bandits becomes critical. The foundation model provides a reasoned “prior”—an estimate of how a new action might perform, given its characteristics, the characteristics of similar actions, and the context in which it would be deployed. The bandit uses this prior as a starting point and updates it through controlled exploration. Instead of engaging in purely random exploration (which is wasteful) or purely model-based exploitation (which is biased toward the known), the system explores intelligently, guided by the agent’s reasoning about where the highest-value information lies.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.551,
+                0.948,
+                0.652
+            ],
+            "angle": 0,
+            "content": "In practical terms, this means that when the composable shelf adds a new offer construct, the system does not need weeks of manual testing to understand its value. The agent reasons about which customer contexts are most likely to benefit, the bandit allocates a small fraction of traffic to test those hypotheses, and the system converges on a performance estimate within days rather than quarters. The speed of learning delivers a competitive advantage.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.665,
+                0.92,
+                0.706
+            ],
+            "angle": 0,
+            "content": "Organizations that can onboard and optimize new actions faster can respond to market shifts more quickly and maintain a constantly refreshed shelf.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.041,
+                0.776,
+                0.491,
+                0.814
+            ],
+            "angle": 0,
+            "content": "The Path Forward"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.843,
+                0.951,
+                0.904
+            ],
+            "angle": 0,
+            "content": "Every technique described in this article is widely available today. Contextual bandits are deployed at scale in recommendation systems across technology companies and, increasingly, in enterprise marketing platforms. Foundation models are commercially available and rapidly",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.07,
+                0.931,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.089,
+                0.482,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.177,
+                0.736,
+                0.217
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.217,
+                0.603,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.287,
+                0.909,
+                0.302
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.307,
+                0.9,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.327,
+                0.943,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.346,
+                0.877,
+                0.361
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.367,
+                0.702,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.401,
+                0.883,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.421,
+                0.902,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.44,
+                0.927,
+                0.454
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.46,
+                0.928,
+                0.475
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.48,
+                0.92,
+                0.495
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.499,
+                0.872,
+                0.514
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.519,
+                0.9,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.553,
+                0.916,
+                0.568
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.574,
+                0.94,
+                0.587
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.594,
+                0.944,
+                0.609
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.614,
+                0.892,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.632,
+                0.759,
+                0.649
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.668,
+                0.915,
+                0.683
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.687,
+                0.563,
+                0.702
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.776,
+                0.49,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.846,
+                0.868,
+                0.861
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.865,
+                0.946,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.885,
+                0.891,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.067,
+                0.886,
+                0.108
+            ],
+            "angle": 0,
+            "content": "improving. The scientific building blocks for agent-native NBA are not theoretical. They are deployable.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.121,
+                0.946,
+                0.242
+            ],
+            "angle": 0,
+            "content": "The problem is organizational. Most marketing analytics teams are not staffed for reinforcement learning or bandit optimization. And most organizations have not yet built the two-track architecture necessary to make real-time agent-based decisioning possible. Technical leaders who start building this infrastructure now—hiring RL and causal inference expertise, standing up the batch and real-time architecture, and piloting contextual bandits—will position the organization to lead rather than follow the transition to agent-native NBA.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.292,
+                0.943,
+                0.392
+            ],
+            "angle": 0,
+            "content": "This is Part 3 of a five-part series on the future of next-best action. Part 1 explores why most NBA programs underdeliver and identifies four structural gaps. Part 2 discusses the shift from marketer-orchestrated journeys to agent-composed actions and the technology architecture that enables it. Part 4 examines how marketing organizations can restructure around the new operating model. Part 5 addresses measurement: from campaign-level attribution to agentic measurement.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.463,
+                0.247,
+                0.501
+            ],
+            "angle": 0,
+            "content": "Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.069,
+                0.546,
+                0.22,
+                0.651
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.245,
+                0.549,
+                0.411,
+                0.571
+            ],
+            "angle": 0,
+            "content": "Silvio Palumbo"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.582,
+                0.437,
+                0.622
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nNew York"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.246,
+                0.627,
+                0.275,
+                0.643
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.532,
+                0.545,
+                0.683,
+                0.651
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.555,
+                0.803,
+                0.576
+            ],
+            "angle": 0,
+            "content": "Yun Lim"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.699,
+                0.22,
+                0.804
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.587,
+                0.838,
+                0.638
+            ],
+            "angle": 0,
+            "content": "Associate Director Chicago"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.707,
+                0.409,
+                0.73
+            ],
+            "angle": 0,
+            "content": "Nabeel Siddiqi"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.246,
+                0.775,
+                0.275,
+                0.791
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.243,
+                0.74,
+                0.436,
+                0.77
+            ],
+            "angle": 0,
+            "content": "SCT Outside Consultant\nBCG X – Manhattan Beach"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "11"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.07,
+                0.881,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.09,
+                0.157,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.124,
+                0.943,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.144,
+                0.86,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.163,
+                0.912,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.181,
+                0.941,
+                0.199
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.204,
+                0.851,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.223,
+                0.733,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.294,
+                0.918,
+                0.311
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.313,
+                0.94,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.333,
+                0.929,
+                0.349
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.353,
+                0.866,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.372,
+                0.469,
+                0.389
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.461,
+                0.247,
+                0.5
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.103,
+                0.436,
+                0.121
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.138,
+                0.952,
+                0.258
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "12"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.105,
+                0.433,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.14,
+                0.95,
+                0.155
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.159,
+                0.9,
+                0.176
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.18,
+                0.904,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.199,
+                0.911,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.218,
+                0.933,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.238,
+                0.593,
+                0.255
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

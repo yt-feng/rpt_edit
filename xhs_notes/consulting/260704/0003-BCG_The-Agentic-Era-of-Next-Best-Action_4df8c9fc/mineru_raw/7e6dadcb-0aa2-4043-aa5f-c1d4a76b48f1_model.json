@@ -1,0 +1,3855 @@
+[
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                1.0,
+                0.396
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.051,
+                0.432,
+                0.188,
+                0.449
+            ],
+            "angle": 0,
+            "content": "PERSONALIZATION",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.478,
+                0.635,
+                0.576
+            ],
+            "angle": 0,
+            "content": "The Agentic Era of\nNext-Best Action"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.607,
+                0.425,
+                0.626
+            ],
+            "angle": 0,
+            "content": "By Silvio Palumbo, Yun Lim, and Karl Johnson",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.65,
+                0.361,
+                0.668
+            ],
+            "angle": 0,
+            "content": "ARTICLE MAY 29, 2026 12 MIN READ",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.729,
+                0.477,
+                0.749
+            ],
+            "angle": 0,
+            "content": "This is Part 2 of a five-part series on next-best action.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.764,
+                0.953,
+                0.864
+            ],
+            "angle": 0,
+            "content": "Well-designed customer journeys unlock highly targeted audiences, and for over a decade they have been the organizing principle behind personalization strategies. But today the journey model operates in an increasingly dynamic environment: channels have multiplied; customer signals manifest in real time; and the shelf of possible content, offers, and experiences has grown substantially.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.877,
+                0.936,
+                0.919
+            ],
+            "angle": 0,
+            "content": "As a result, the journey model's impact has plateaued. Personalization must evolve by changing its unit of decision from marketer-orchestrated journeys to agent-orchestrated actions, with AI",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.942,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.437,
+                0.184,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.474,
+                0.64,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.529,
+                0.578,
+                0.579
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.61,
+                0.422,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.654,
+                0.356,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.731,
+                0.475,
+                0.747
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.767,
+                0.917,
+                0.782
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.786,
+                0.892,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.807,
+                0.91,
+                0.822
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.826,
+                0.95,
+                0.841
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.847,
+                0.174,
+                0.861
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.879,
+                0.932,
+                0.897
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.899,
+                0.913,
+                0.916
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.956,
+                0.127
+            ],
+            "angle": 0,
+            "content": "agents selecting, sequencing, and composing interactions from a modular shelf in real time. The marketer's role shifts, too, from designing journey flows to curating the shelf's content and setting the objectives that agents pursue.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.142,
+                0.925,
+                0.221
+            ],
+            "angle": 0,
+            "content": "The stakes of getting these shifts right are significant. Organizations that modernize their next-best action (NBA) architecture will compound value across both efficiency and growth: from dramatic reductions in campaign cycle time to step-change increases in addressable revenue. (See Exhibit 1.)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.252,
+                0.116,
+                0.268
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 1"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.27,
+                0.691,
+                0.311
+            ],
+            "angle": 0,
+            "content": "AI-Native Marketing Drives More Efficient, More Effective Growth Across the Enterprise",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.051,
+                0.321,
+                0.176,
+                0.408
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.066,
+                0.413,
+                0.164,
+                0.427
+            ],
+            "angle": 0,
+            "content": "Savings from NBA"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.19,
+                0.322,
+                0.312,
+                0.408
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.209,
+                0.413,
+                0.295,
+                0.427
+            ],
+            "angle": 0,
+            "content": "Savings from AI"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.043,
+                0.443,
+                0.48,
+                0.464
+            ],
+            "angle": 0,
+            "content": "Source: BCG analysis leveraging industry benchmarks and BCG research commissioned by Google. Note: NBA = next-best action."
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.328,
+                0.322,
+                0.451,
+                0.409
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.335,
+                0.413,
+                0.445,
+                0.436
+            ],
+            "angle": 0,
+            "content": "Reduction in campaign cycle time"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.465,
+                0.322,
+                0.586,
+                0.409
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.492,
+                0.413,
+                0.56,
+                0.436
+            ],
+            "angle": 0,
+            "content": "More assets in market"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.601,
+                0.321,
+                0.722,
+                0.408
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.606,
+                0.414,
+                0.716,
+                0.436
+            ],
+            "angle": 0,
+            "content": "Increase in addressable revenue"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.534,
+                0.579,
+                0.577
+            ],
+            "angle": 0,
+            "content": "How NBA Is Evolving"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.601,
+                0.918,
+                0.661
+            ],
+            "angle": 0,
+            "content": "Each new evolution of NBA is defined by a different unit of decision and a different role for the marketer. Understanding where an organization sits on this continuum is the first step toward preparing for what comes next. (See Exhibit 2.)",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.07,
+                0.932,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.09,
+                0.95,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.109,
+                0.362,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.144,
+                0.921,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.163,
+                0.894,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.183,
+                0.918,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.203,
+                0.186,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.256,
+                0.112,
+                0.267
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.271,
+                0.687,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.291,
+                0.257,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.53,
+                0.578,
+                0.576
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.603,
+                0.916,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.623,
+                0.913,
+                0.638
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.643,
+                0.475,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.045,
+                0.065,
+                0.115,
+                0.078
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 2"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.044,
+                0.081,
+                0.619,
+                0.121
+            ],
+            "angle": 0,
+            "content": "What Companies Build for Evolution 2 Today Becomes the Foundation for Evolution 3"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.13,
+                0.421,
+                0.144
+            ],
+            "angle": 0,
+            "content": "Each era changes the unit of decision and the role of marketer",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.047,
+                0.152,
+                0.727,
+                0.365
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.045,
+                0.371,
+                0.181,
+                0.39
+            ],
+            "angle": 0,
+            "content": "Source: BCG analysis.\nNote: NBA = next-best action."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.424,
+                0.938,
+                0.543
+            ],
+            "angle": 0,
+            "content": "First Evolution. Today, most organizations operate marketer-orchestrated journeys, in which marketers manually build audiences, design journey flows, and define the rules governing which customers receive which communications. The unit of decision is the journey itself. A well-honed journey remains very effective, but it scales poorly because every new segment, product launch, or channel requires a new journey—and the number of journeys quickly increases beyond the team's ability to manage them.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.557,
+                0.956,
+                0.638
+            ],
+            "angle": 0,
+            "content": "Second Evolution. More and more organizations are moving to model-optimized journeys, in which marketers define the components, objectives, and guardrails, but machine learning models optimize within the prebuilt journey. The models choose the best branch, offer, or message to optimize an objective function, but they operate within boundaries set by the marketer.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.65,
+                0.95,
+                0.731
+            ],
+            "angle": 0,
+            "content": "The unit of decision in this evolution shifts from the journey to the journey step, as NBA embraces algorithmic optimization without disrupting the underlying approach. The architecture still rests on the assumption that journeys are the appropriate organizing construct and that humans should define the options and constraints.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.744,
+                0.955,
+                0.823
+            ],
+            "angle": 0,
+            "content": "Third Evolution. NBA is headed toward agent-composed actions, in which the marketer's role shifts from designing journeys to curating a shelf of composable assets and setting the objectives for AI agents. The agents select, sequence, and compose atomic actions from that shelf to suit the real-time context.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.838,
+                0.956,
+                0.919
+            ],
+            "angle": 0,
+            "content": "The unit of decision in the third evolution is the atomic action. The marketer governs the option space (which assets are available, which constraints apply), while agents determine the activation (what, when, and in what combination or sequence). In practice, this enables a marketing organization to launch personalized programs in hours rather than weeks. Every interaction",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.083,
+                0.619,
+                0.1
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.104,
+                0.306,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.133,
+                0.417,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.425,
+                0.893,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.445,
+                0.929,
+                0.461
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.464,
+                0.929,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.485,
+                0.934,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.504,
+                0.912,
+                0.521
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.525,
+                0.335,
+                0.539
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.558,
+                0.953,
+                0.574
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.579,
+                0.886,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.598,
+                0.902,
+                0.614
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.618,
+                0.851,
+                0.634
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.652,
+                0.948,
+                0.669
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.673,
+                0.929,
+                0.688
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.693,
+                0.891,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.711,
+                0.439,
+                0.727
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.748,
+                0.906,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.767,
+                0.943,
+                0.78
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.786,
+                0.949,
+                0.799
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.807,
+                0.211,
+                0.82
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.84,
+                0.925,
+                0.855
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.862,
+                0.952,
+                0.875
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.881,
+                0.87,
+                0.896
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.898,
+                0.894,
+                0.917
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.042,
+                0.068,
+                0.878,
+                0.108
+            ],
+            "angle": 0,
+            "content": "compounds to deliver better performance, and the system can adapt to shifting customer behavior faster than any manually managed program can."
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.228,
+                0.863,
+                0.305
+            ],
+            "angle": 0,
+            "content": "Four Capabilities of Agent-Native NBA"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.335,
+                0.95,
+                0.436
+            ],
+            "angle": 0,
+            "content": "Evolving to agent-native NBA requires building four interconnected capabilities: composable shelf, agent architecture, tools/state management, and learning and optimization. (See Exhibit 3.) These four capabilities constitute a system designed from the ground up to support AI agents in autonomously reasoning, selecting actions, and composing them, rather than operating as a retrofitted traditional stack with agent capabilities bolted on top.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.466,
+                0.116,
+                0.482
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 3"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.483,
+                0.655,
+                0.525
+            ],
+            "angle": 0,
+            "content": "Four Capabilities Separate Agent-Native NBA from Traditional Decisioning Stacks",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.044,
+                0.534,
+                0.727,
+                0.665
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.059,
+                0.587,
+                0.201,
+                0.64
+            ],
+            "angle": 0,
+            "content": "Composable shelf\nModular catalog of offers, creatives, and micro-journeys that agents select from and assemble on demand",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.671,
+                0.18,
+                0.69
+            ],
+            "angle": 0,
+            "content": "Source: BCG analysis.\nNote: NBA = next-best action.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.247,
+                0.587,
+                0.354,
+                0.6
+            ],
+            "angle": 0,
+            "content": "Agent architecture"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.232,
+                0.6,
+                0.372,
+                0.649
+            ],
+            "angle": 0,
+            "content": "Use of specialized agents to reason about customer context, collaborate across decisioning tasks, and orchestrate real-time actions",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.402,
+                0.587,
+                0.543,
+                0.6
+            ],
+            "angle": 0,
+            "content": "Tools/state management"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.404,
+                0.6,
+                0.542,
+                0.658
+            ],
+            "angle": 0,
+            "content": "Exposure of every model, integration, and data source as a modular tool that agents invoke on demand, with persistent memory of customer state",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.569,
+                0.586,
+                0.719,
+                0.6
+            ],
+            "angle": 0,
+            "content": "Learning and optimization"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.571,
+                0.592,
+                0.719,
+                0.658
+            ],
+            "angle": 0,
+            "content": "Learning and optimization\nExperimentation engine that measures every shelf asset and agent decision through causal testing, compounding performance over time",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.045,
+                0.724,
+                0.645,
+                0.76
+            ],
+            "angle": 0,
+            "content": "Inside the Composable Shelf"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.786,
+                0.935,
+                0.886
+            ],
+            "angle": 0,
+            "content": "The composable shelf is the modular catalog of offers, creatives, and micro-journeys that agents select from and assemble on demand. It organizes everything that is available for an agent to deploy into three levels of granularity—atomic assets, compiled communications, and micro-journeys—each tagged with metadata that agents use to evaluate what to select and how to combine the selected items. (See Exhibit 4.)",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.972,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.228,
+                0.864,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.269,
+                0.164,
+                0.306
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.338,
+                0.903,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.357,
+                0.947,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.378,
+                0.933,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.397,
+                0.898,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.416,
+                0.65,
+                0.432
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.469,
+                0.113,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.487,
+                0.65,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.507,
+                0.231,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.588,
+                0.181,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.602,
+                0.191,
+                0.611
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.611,
+                0.2,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.064,
+                0.62,
+                0.197,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.629,
+                0.182,
+                0.638
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.674,
+                0.143,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.682,
+                0.178,
+                0.689
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.587,
+                0.354,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.24,
+                0.601,
+                0.362,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.24,
+                0.612,
+                0.363,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.238,
+                0.62,
+                0.365,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.249,
+                0.629,
+                0.354,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.232,
+                0.639,
+                0.37,
+                0.647
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.401,
+                0.587,
+                0.543,
+                0.599
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.412,
+                0.602,
+                0.533,
+                0.611
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.406,
+                0.612,
+                0.539,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.419,
+                0.621,
+                0.526,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.41,
+                0.629,
+                0.535,
+                0.638
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.408,
+                0.638,
+                0.537,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.437,
+                0.648,
+                0.508,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.569,
+                0.587,
+                0.719,
+                0.599
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.571,
+                0.591,
+                0.716,
+                0.597
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.586,
+                0.602,
+                0.702,
+                0.611
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.583,
+                0.611,
+                0.705,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.585,
+                0.621,
+                0.702,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.589,
+                0.628,
+                0.699,
+                0.638
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.578,
+                0.638,
+                0.708,
+                0.647
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.62,
+                0.647,
+                0.668,
+                0.656
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.726,
+                0.64,
+                0.759
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.788,
+                0.932,
+                0.804
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.808,
+                0.912,
+                0.823
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.829,
+                0.908,
+                0.843
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.848,
+                0.897,
+                0.863
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.866,
+                0.449,
+                0.881
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.044,
+                0.081,
+                0.658,
+                0.121
+            ],
+            "angle": 0,
+            "content": "The Composable Shelf Organizes Deployable Experiences into Three Levels"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.045,
+                0.065,
+                0.115,
+                0.078
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 4"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.046,
+                0.134,
+                0.727,
+                0.356
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.045,
+                0.368,
+                0.146,
+                0.379
+            ],
+            "angle": 0,
+            "content": "Source: BCG analysis."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.414,
+                0.954,
+                0.475
+            ],
+            "angle": 0,
+            "content": "If content, offers, and experiences are not tagged and modularized at the right level of granularity, agents will have nothing meaningful to work with. The shelf is not a static content library. It is a living inventory that agents continually tap, test, and learn from.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.488,
+                0.943,
+                0.588
+            ],
+            "angle": 0,
+            "content": "Atomic assets—copy variants, image assets, offer constructs, and content templates—are the most granular building blocks. They are individually reusable and are tagged with metadata such as channel compatibility, regulatory flags, and expiration dates. Marketers, designers, and generative AI contribute to building this layer. Drawing from the resulting pool of information, agents compose whatever combination the context demands.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.602,
+                0.955,
+                0.702
+            ],
+            "angle": 0,
+            "content": "Compiled communications bundle an offer with a creative treatment and a channel to form a single unit that is ready for delivery at a specific touchpoint. These communications are conceived as preassembled modules: each one is a unique email message with a specific offer and creative, approved and ready to deploy. Agents select the right compiled communication for the moment and determine the optimal timing and sequence of delivery.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.715,
+                0.943,
+                0.855
+            ],
+            "angle": 0,
+            "content": "Micro-journeys are precomposed sequences of communications (usually consisting of two to five steps) designed to address the reality that not every brand interaction needs to be decomposed into atomic parts. Unlike the sprawling journeys in the first evolution of NBA, micro-journeys are short, self-contained, and purpose-built: a product launch sequence, an onboarding welcome series, a loyalty tier celebration. They provide curated experiences in situations where the brand has a deliberate story to tell. Agents decide when to trigger them to deliver the sequence as a complete block, but they do not rearrange the internal structure.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.882,
+                0.859,
+                0.918
+            ],
+            "angle": 0,
+            "content": "What the Agent Architecture Looks Like"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.416,
+                0.95,
+                0.432
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.435,
+                0.923,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.455,
+                0.644,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.49,
+                0.927,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.51,
+                0.938,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.53,
+                0.878,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.55,
+                0.904,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.569,
+                0.618,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.605,
+                0.907,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.624,
+                0.952,
+                0.639
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.643,
+                0.941,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.663,
+                0.93,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.683,
+                0.597,
+                0.698
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.718,
+                0.938,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.737,
+                0.938,
+                0.751
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.757,
+                0.935,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.777,
+                0.901,
+                0.791
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.796,
+                0.938,
+                0.812
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.816,
+                0.91,
+                0.83
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.837,
+                0.647,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.884,
+                0.856,
+                0.916
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.944,
+                0.127
+            ],
+            "angle": 0,
+            "content": "Agent architecture is the hub-and-spoke system of specialized agents that reason, collaborate, and orchestrate decisions. (See Exhibit 5.) The key components are agents, tools, Model Context Protocol (MCP), and learning and optimization:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.157,
+                0.926,
+                0.336
+            ],
+            "angle": 0,
+            "content": "- Agents are the reasoning layer. A central orchestrator responds to a trigger action (a customer event, a scheduled cadence, a real-time signal, or a long hiatus in activity) and routes them to specialized agents. Each agent is responsible for a distinct part of the decision process—assembling context, checking eligibility, selecting the best action, composing the final communication, or managing experimentation. Agents do not execute in a fixed sequence. Instead, they identify the information they need, decide which tools to invoke, and adapt their approach based on what they find. This flexible process is what separates an agent architecture from a traditional decisioning pipeline, in which the sequence is always the same: ingest data, score, select, and deliver.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.349,
+                0.919,
+                0.489
+            ],
+            "angle": 0,
+            "content": "- Tools are the action layer. Every model, data source, channel integration, and business rule in the stack is exposed as a discrete, callable tool that agents can invoke on demand. An eligibility check is a tool. A propensity model is a tool. A channel application programming interface (API) is a tool. By modularizing the stack in this way, the system gains composability. Agents can combine tools in whatever sequence the context requires, rather than following a prewired pipeline. Tools also maintain a persistent state, giving agents memory of prior interactions, customer preferences, and in-flight communications.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.503,
+                0.923,
+                0.581
+            ],
+            "angle": 0,
+            "content": "- MCP is the connective layer. This protocol is what makes the architecture modular rather than monolithic. Agents use MCP to discover and invoke tools through a shared interface. New models, channels, and data sources plug in as new tools without requiring architectural reworking.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.596,
+                0.91,
+                0.674
+            ],
+            "angle": 0,
+            "content": "- Learning and optimization provide the measurement engine. Through continuous experimentation, they score every shelf asset and every agent decision, thereby improving performance over time. Causal measurement and incrementality testing are essential, not optional.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.071,
+                0.922,
+                0.084
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.09,
+                0.939,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.485,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.158,
+                0.851,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.179,
+                0.881,
+                0.193
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.198,
+                0.854,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.219,
+                0.852,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.239,
+                0.923,
+                0.253
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.258,
+                0.874,
+                0.272
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.277,
+                0.871,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.297,
+                0.844,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.318,
+                0.689,
+                0.331
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.35,
+                0.914,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.371,
+                0.89,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.389,
+                0.903,
+                0.407
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.409,
+                0.795,
+                0.426
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.43,
+                0.912,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.449,
+                0.873,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.47,
+                0.829,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.504,
+                0.894,
+                0.519
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.524,
+                0.894,
+                0.539
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.545,
+                0.918,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.564,
+                0.165,
+                0.578
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.597,
+                0.834,
+                0.614
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.618,
+                0.904,
+                0.633
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.637,
+                0.906,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.657,
+                0.154,
+                0.673
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.045,
+                0.065,
+                0.115,
+                0.078
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 5"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.044,
+                0.068,
+                0.728,
+                0.361
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.044,
+                0.363,
+                0.721,
+                0.384
+            ],
+            "angle": 0,
+            "content": "Note: CDP = customer data platform; DAM = digital asset manager; DWH = data warehouse; ESP = email service provider; MCP = Model Context Protocol; ML = machine learning; SMS = short message service."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.418,
+                0.944,
+                0.558
+            ],
+            "angle": 0,
+            "content": "The power of this architecture will make agent-native NBA architectures far superior to today's systems. Consider a credit card customer who calls to dispute a fraudulent charge, gets it resolved, and then opens the issuer's app 20 minutes later. In the first evolution of NBA, the app displays a scheduled balance transfer promotion that had been queued before the call, misinterpreting a moment when trust was just tested. In the second evolution of NBA, a propensity model suppresses the promotion in response to a recency rule, but it can't recognize that the resolved fraud case is a moment to reinforce trust.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.571,
+                0.956,
+                0.709
+            ],
+            "angle": 0,
+            "content": "In third evolution of NBA, the orchestrator routes the app-open event to a context agent, which assembles the full picture: fraud dispute resolved favorably, long-tenure cardholder, high monthly spending, no prior fraud incidents. An action selection agent evaluates available options and selects a security reassurance message paired with a complimentary credit monitoring upgrade. A composition agent assembles the in-app card from atomic assets on the shelf in seconds, with no human intervention. The experimentation layer records the outcome to improve the next similar moment.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.779,
+                0.816,
+                0.857
+            ],
+            "angle": 0,
+            "content": "Building for Tomorrow's Agent Infrastructure"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.887,
+                0.923,
+                0.926
+            ],
+            "angle": 0,
+            "content": "The agent-native architecture does not require or assume a greenfield build. Every component that organizations build today for the second evolution of NBA will map directly to a capability",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.419,
+                0.919,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.44,
+                0.869,
+                0.454
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.459,
+                0.938,
+                0.474
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.479,
+                0.854,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.499,
+                0.857,
+                0.513
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.518,
+                0.939,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.539,
+                0.592,
+                0.553
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.573,
+                0.928,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.593,
+                0.941,
+                0.609
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.613,
+                0.907,
+                0.627
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.633,
+                0.952,
+                0.647
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.651,
+                0.949,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.672,
+                0.935,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.691,
+                0.132,
+                0.706
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.777,
+                0.817,
+                0.821
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.82,
+                0.388,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.889,
+                0.915,
+                0.904
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.907,
+                0.917,
+                0.923
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.936,
+                0.109
+            ],
+            "angle": 0,
+            "content": "that agents can use in the third evolution of NBA. (See Exhibits 6 and 7.) The investment path is cumulative, not sequential. There is no throwaway work, and no replatforming is required.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.139,
+                0.117,
+                0.154
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 6"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.156,
+                0.627,
+                0.178
+            ],
+            "angle": 0,
+            "content": "Key Parts of the Agent Architecture Are Built in Evolution 2"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.045,
+                0.197,
+                0.724,
+                0.425
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.043,
+                0.432,
+                0.702,
+                0.457
+            ],
+            "angle": 0,
+            "content": "Source: BCG analysis.\nNote: AWS = Amazon Web Services; CLV = customer lifetime value; DAM = digital asset manager; ESP = Email Service Provider; MCP = Model Context Protocol; SMS = short message service."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.493,
+                0.915,
+                0.593
+            ],
+            "angle": 0,
+            "content": "The key design principle is modularity. Every component built today should be designed as a modular tool that agents can invoke autonomously in the future. This means creating API-first interfaces, clean metadata, and well-defined inputs and outputs. The difference between an organization that can adopt agent-native NBA in 12 months and one that requires multiyear replatforming is whether it designs today's build with modularity in mind.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.662,
+                0.799,
+                0.74
+            ],
+            "angle": 0,
+            "content": "The Path Forward: How to Get Started"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.769,
+                0.945,
+                0.81
+            ],
+            "angle": 0,
+            "content": "Building these capabilities in the correct sequence ensures that every investment dollar delivers value today while building toward the third evolution of NBA. The steps are as follows:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.839,
+                0.92,
+                0.917
+            ],
+            "angle": 0,
+            "content": "- Start with the composable shelf. Build a modular, metadata-rich catalog of creative, offer, product, and action assets. This work delivers immediate value by reducing content redundancy and improving reuse. Over time, it becomes the library that agents will leverage in real time.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.07,
+                0.932,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.09,
+                0.868,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.143,
+                0.112,
+                0.152
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.496,
+                0.899,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.516,
+                0.912,
+                0.528
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.534,
+                0.895,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.555,
+                0.897,
+                0.567
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.573,
+                0.717,
+                0.588
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.662,
+                0.798,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.702,
+                0.224,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.772,
+                0.942,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.791,
+                0.838,
+                0.806
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.841,
+                0.891,
+                0.856
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.86,
+                0.838,
+                0.876
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.881,
+                0.915,
+                0.896
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.901,
+                0.18,
+                0.914
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.904,
+                0.127
+            ],
+            "angle": 0,
+            "content": "- Modularize the tools layer. Replatform every model and integration as a modular, API-first component. This action delivers near-term efficiency gains. Each model and integration exposed as a tool becomes a capability that agents can invoke autonomously.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.142,
+                0.887,
+                0.221
+            ],
+            "angle": 0,
+            "content": "- Stand up experimentation to learn and optimize. Build causal measurement and incrementality testing to start compounding performance gains. This practice creates continuous experimentation and feedback loops that agents will eventually use for self-optimization.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.236,
+                0.917,
+                0.336
+            ],
+            "angle": 0,
+            "content": "- Pilot agent use cases to build the architecture. Start with a single, bounded use case to build organizational confidence and track the rapidly evolving vendor landscape. The agent architecture is the orchestration layer that connects the other capabilities, but it benefits from the maturity of the components it orchestrates. Sequencing matters: the capabilities must be in place for an agentic approach to perform the orchestration role.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.406,
+                0.745,
+                0.485
+            ],
+            "angle": 0,
+            "content": "From Campaign Operator to System Architect"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.511,
+                0.95,
+                0.632
+            ],
+            "angle": 0,
+            "content": "The technology to build toward agent-native NBA is already widely available. The challenge lies in reinventing the marketing operating model—defining which decisions agents should make autonomously, which require human oversight, and how governance should scale as the system matures. Organizations that begin piloting single-agent use cases early will build the muscle and technical intuition they need to expand in scope over time. As the scope expands, the marketer will become the architect of the system rather than a campaign operator.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.645,
+                0.949,
+                0.764
+            ],
+            "angle": 0,
+            "content": "Organizations that delay adopting agentic approaches face a self-reinforcing disadvantage. Their campaign cycles will take weeks while competitors' take hours, they will assemble content manually while competitors compose dynamically from thousands of tested assets, and their experimentation will run in quarterly cycles while competitors will get smarter with every customer touchpoint. For many companies, the next 12 to 18 months will determine which side of that divide it falls on.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.815,
+                0.956,
+                0.875
+            ],
+            "angle": 0,
+            "content": "This is Part 2 of a five-part series on the future of next-best action. Part 1 explores why most NBA programs underdeliver and identifies four structural gaps. Part 3 unpacks the decisioning science, from propensity models to contextual bandits to foundation model reasoning. Part 4 examines how marketing organizations can",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.069,
+                0.901,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.09,
+                0.872,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.109,
+                0.792,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.144,
+                0.826,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.164,
+                0.858,
+                0.179
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.183,
+                0.883,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.205,
+                0.19,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.238,
+                0.883,
+                0.252
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.256,
+                0.913,
+                0.272
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.277,
+                0.893,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.297,
+                0.896,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.318,
+                0.763,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.403,
+                0.747,
+                0.448
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.446,
+                0.465,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.514,
+                0.949,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.534,
+                0.883,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.554,
+                0.924,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.574,
+                0.94,
+                0.588
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.594,
+                0.929,
+                0.609
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.612,
+                0.721,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.647,
+                0.938,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.668,
+                0.886,
+                0.682
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.687,
+                0.906,
+                0.702
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.707,
+                0.868,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.726,
+                0.946,
+                0.742
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.746,
+                0.241,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.816,
+                0.916,
+                0.833
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.837,
+                0.952,
+                0.853
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.855,
+                0.899,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.936,
+                0.107
+            ],
+            "angle": 0,
+            "content": "restructure around the new operating model. Part 5 addresses measurement: from campaign-level attribution to agentic measurement.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.18,
+                0.247,
+                0.217
+            ],
+            "angle": 0,
+            "content": "Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.262,
+                0.22,
+                0.368
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.245,
+                0.265,
+                0.411,
+                0.288
+            ],
+            "angle": 0,
+            "content": "Silvio Palumbo"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.298,
+                0.437,
+                0.339
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nNew York"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.246,
+                0.345,
+                0.275,
+                0.361
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.532,
+                0.262,
+                0.684,
+                0.368
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.271,
+                0.803,
+                0.293
+            ],
+            "angle": 0,
+            "content": "Yun Lim"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.304,
+                0.839,
+                0.356
+            ],
+            "angle": 0,
+            "content": "Associate Director Chicago"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.085,
+                0.416,
+                0.217,
+                0.522
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.245,
+                0.424,
+                0.39,
+                0.447
+            ],
+            "angle": 0,
+            "content": "Karl Johnson"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.246,
+                0.491,
+                0.275,
+                0.507
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.243,
+                0.457,
+                0.446,
+                0.487
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner\nWashington, DC",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.609,
+                0.436,
+                0.628
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.643,
+                0.953,
+                0.765
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.068,
+                0.934,
+                0.088
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.088,
+                0.249,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.177,
+                0.248,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.267,
+                0.407,
+                0.287
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.426,
+                0.387,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.46,
+                0.442,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.474,
+                0.355,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.612,
+                0.433,
+                0.63
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.646,
+                0.95,
+                0.661
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.666,
+                0.9,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.685,
+                0.904,
+                0.7
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.706,
+                0.912,
+                0.721
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.726,
+                0.933,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.745,
+                0.594,
+                0.76
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

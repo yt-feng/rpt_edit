@@ -1,52 +1,10 @@
 [
   {
-    "source_pdf": "/tmp/pdf_batch_001_o14atz1i/pdfs/0001-BCG_2026-Global-Wealth-Report-The-Great-Reordering_807c26de.pdf",
+    "source_pdf": "/tmp/pdf_batch_001_0amu_bt_/pdfs/0001-BCG_Five-Barriers-CEOs-Must-Overcome-for-AI-Impact_7d94285f.pdf",
     "mineru_state": "done",
     "mineru_error": "",
     "institution_name": "波士顿咨询",
-    "cover_short_title": "DeepSeek 生",
-    "cover_subtitle": "研报重点一图看懂",
-    "images": [
-      "assets/xhs_card_01.png",
-      "assets/xhs_card_02.png",
-      "assets/xhs_card_03.png",
-      "assets/xhs_card_04.png",
-      "assets/xhs_card_05.png",
-      "assets/xhs_card_06.png",
-      "assets/xhs_card_07.png",
-      "assets/xhs_card_08.png",
-      "assets/xhs_card_09.png"
-    ],
-    "cover": "assets/cover.png",
-    "wechat_article": "wechat_article.md"
-  },
-  {
-    "source_pdf": "/tmp/pdf_batch_001_o14atz1i/pdfs/0002-BCG_BCG-AI-Radar-2026-As-AI-Investments-Surge-CEOs-Take-the-Lead_ab351214.pdf",
-    "mineru_state": "done",
-    "mineru_error": "",
-    "institution_name": "波士顿咨询",
-    "cover_short_title": "DeepSeek 生",
-    "cover_subtitle": "研报重点一图看懂",
-    "images": [
-      "assets/xhs_card_01.png",
-      "assets/xhs_card_02.png",
-      "assets/xhs_card_03.png",
-      "assets/xhs_card_04.png",
-      "assets/xhs_card_05.png",
-      "assets/xhs_card_06.png",
-      "assets/xhs_card_07.png",
-      "assets/xhs_card_08.png",
-      "assets/xhs_card_09.png"
-    ],
-    "cover": "assets/cover.png",
-    "wechat_article": "wechat_article.md"
-  },
-  {
-    "source_pdf": "/tmp/pdf_batch_001_o14atz1i/pdfs/0003-BCG_Five-Barriers-CEOs-Must-Overcome-for-AI-Impact_7d94285f.pdf",
-    "mineru_state": "done",
-    "mineru_error": "",
-    "institution_name": "波士顿咨询",
-    "cover_short_title": "DeepSeek 生",
+    "cover_short_title": "AI转型不成功，问题",
     "cover_subtitle": "研报重点一图看懂",
     "images": [
       "assets/xhs_card_01.png",
@@ -56,11 +14,11 @@
     "wechat_article": "wechat_article.md"
   },
   {
-    "source_pdf": "/tmp/pdf_batch_001_o14atz1i/pdfs/0004-BCG_Harnessing-the-Human-Side-of-Transformations_5c35382e.pdf",
+    "source_pdf": "/tmp/pdf_batch_001_0amu_bt_/pdfs/0002-BCG_Harnessing-the-Human-Side-of-Transformations_5c35382e.pdf",
     "mineru_state": "done",
     "mineru_error": "",
     "institution_name": "波士顿咨询",
-    "cover_short_title": "DeepSeek 生",
+    "cover_short_title": "只有1/4的组织变革",
     "cover_subtitle": "研报重点一图看懂",
     "images": [
       "assets/xhs_card_01.png",
@@ -70,11 +28,11 @@
     "wechat_article": "wechat_article.md"
   },
   {
-    "source_pdf": "/tmp/pdf_batch_001_o14atz1i/pdfs/0005-BCG_The-Future-of-Digital-Assets_22db7044.pdf",
+    "source_pdf": "/tmp/pdf_batch_001_0amu_bt_/pdfs/0003-BCG_The-Agentic-Era-of-Next-Best-Action_4df8c9fc.pdf",
     "mineru_state": "done",
     "mineru_error": "",
     "institution_name": "波士顿咨询",
-    "cover_short_title": "DeepSeek 生",
+    "cover_short_title": "个性化营销，进入Ag",
     "cover_subtitle": "研报重点一图看懂",
     "images": [
       "assets/xhs_card_01.png",
@@ -83,9 +41,36 @@
       "assets/xhs_card_04.png",
       "assets/xhs_card_05.png",
       "assets/xhs_card_06.png",
-      "assets/xhs_card_07.png",
-      "assets/xhs_card_08.png",
-      "assets/xhs_card_09.png"
+      "assets/xhs_card_07.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_0amu_bt_/pdfs/0004-BCG_The-End-of-Marketing-Campaigns-as-We-Know-Them_a98ad172.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "营销的终点是“没有营",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_0amu_bt_/pdfs/0005-BCG_The-Science-Behind-Next-Best-Action_79d38587.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "NBA 系统背后的三",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
     ],
     "cover": "assets/cover.png",
     "wechat_article": "wechat_article.md"

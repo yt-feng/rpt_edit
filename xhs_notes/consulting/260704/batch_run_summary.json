@@ -9,7 +9,7 @@
   "shard_count": 1,
   "max_reports_per_shard": 0,
   "max_total_reports": 0,
-  "skip_existing": true,
+  "skip_existing": false,
   "skipped_existing_count": 0,
   "skipped_existing": [],
   "failures": 0,
@@ -19,28 +19,28 @@
       "pdf_count": 5,
       "files": [
         {
-          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_2026-Global-Wealth-Report-The-Great-Reordering_807c26de.pdf",
-          "batch_file": "/tmp/pdf_batch_001_o14atz1i/pdfs/0001-BCG_2026-Global-Wealth-Report-The-Great-Reordering_807c26de.pdf",
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Five-Barriers-CEOs-Must-Overcome-for-AI-Impact_7d94285f.pdf",
+          "batch_file": "/tmp/pdf_batch_001_0amu_bt_/pdfs/0001-BCG_Five-Barriers-CEOs-Must-Overcome-for-AI-Impact_7d94285f.pdf",
           "stable_index": "1"
         },
         {
-          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_BCG-AI-Radar-2026-As-AI-Investments-Surge-CEOs-Take-the-Lead_ab351214.pdf",
-          "batch_file": "/tmp/pdf_batch_001_o14atz1i/pdfs/0002-BCG_BCG-AI-Radar-2026-As-AI-Investments-Surge-CEOs-Take-the-Lead_ab351214.pdf",
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Harnessing-the-Human-Side-of-Transformations_5c35382e.pdf",
+          "batch_file": "/tmp/pdf_batch_001_0amu_bt_/pdfs/0002-BCG_Harnessing-the-Human-Side-of-Transformations_5c35382e.pdf",
           "stable_index": "2"
         },
         {
-          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Five-Barriers-CEOs-Must-Overcome-for-AI-Impact_7d94285f.pdf",
-          "batch_file": "/tmp/pdf_batch_001_o14atz1i/pdfs/0003-BCG_Five-Barriers-CEOs-Must-Overcome-for-AI-Impact_7d94285f.pdf",
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_The-Agentic-Era-of-Next-Best-Action_4df8c9fc.pdf",
+          "batch_file": "/tmp/pdf_batch_001_0amu_bt_/pdfs/0003-BCG_The-Agentic-Era-of-Next-Best-Action_4df8c9fc.pdf",
           "stable_index": "3"
         },
         {
-          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Harnessing-the-Human-Side-of-Transformations_5c35382e.pdf",
-          "batch_file": "/tmp/pdf_batch_001_o14atz1i/pdfs/0004-BCG_Harnessing-the-Human-Side-of-Transformations_5c35382e.pdf",
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_The-End-of-Marketing-Campaigns-as-We-Know-Them_a98ad172.pdf",
+          "batch_file": "/tmp/pdf_batch_001_0amu_bt_/pdfs/0004-BCG_The-End-of-Marketing-Campaigns-as-We-Know-Them_a98ad172.pdf",
           "stable_index": "4"
         },
         {
-          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_The-Future-of-Digital-Assets_22db7044.pdf",
-          "batch_file": "/tmp/pdf_batch_001_o14atz1i/pdfs/0005-BCG_The-Future-of-Digital-Assets_22db7044.pdf",
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_The-Science-Behind-Next-Best-Action_79d38587.pdf",
+          "batch_file": "/tmp/pdf_batch_001_0amu_bt_/pdfs/0005-BCG_The-Science-Behind-Next-Best-Action_79d38587.pdf",
           "stable_index": "5"
         }
       ],
