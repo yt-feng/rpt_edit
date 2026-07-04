@@ -1,6 +1,6 @@
 {
   "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
-  "total_pdf_count_before_shard": 32,
+  "total_pdf_count_before_shard": 33,
   "pdf_count_before_skip": 5,
   "pdf_count": 5,
   "generated_report_count": 5,
@@ -9,7 +9,7 @@
   "shard_count": 40,
   "max_reports_per_shard": 5,
   "max_total_reports": 0,
-  "skip_existing": true,
+  "skip_existing": false,
   "skipped_existing_count": 0,
   "skipped_existing": [],
   "failures": 0,
@@ -19,28 +19,28 @@
       "pdf_count": 5,
       "files": [
         {
-          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/27-MS-China Autos & Shared Mobility：Overseas strength and new launches anchor June sales-260701.pdf",
-          "batch_file": "/tmp/pdf_batch_001_a0b3a53u/pdfs/0001-27-MS-China Autos - Shared Mobility-Overseas strength and new launches anchor June sales-260701.pdf",
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/27-JPM-China Internet Cheap is acknowledged； urgency still needs proof-260702.pdf",
+          "batch_file": "/tmp/pdf_batch_001_dtg2jplq/pdfs/0001-27-JPM-China Internet Cheap is acknowledged- urgency still needs proof-260702.pdf",
           "stable_index": "1"
         },
         {
           "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/28-MS-China Autos & Shared Mobility Extending 800V EV Technology into AIDC-260701.pdf",
-          "batch_file": "/tmp/pdf_batch_001_a0b3a53u/pdfs/0002-28-MS-China Autos - Shared Mobility Extending 800V EV Technology into AIDC-260701.pdf",
+          "batch_file": "/tmp/pdf_batch_001_dtg2jplq/pdfs/0002-28-MS-China Autos - Shared Mobility Extending 800V EV Technology into AIDC-260701.pdf",
           "stable_index": "2"
         },
         {
-          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/29-MS-Energy Security & AI：Key Investor Questions-260702.pdf",
-          "batch_file": "/tmp/pdf_batch_001_a0b3a53u/pdfs/0003-29-MS-Energy Security - AI-Key Investor Questions-260702.pdf",
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/29-NOM-China factory automation data：June 2026：Airtac sales up 28% y~y in June-260703.pdf",
+          "batch_file": "/tmp/pdf_batch_001_dtg2jplq/pdfs/0003-29-NOM-China factory automation data-June 2026-Airtac sales up 28- y-y in June-260703.pdf",
           "stable_index": "3"
         },
         {
-          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/30-MS-Semiconductor Inventory Tracker： Not Restocking Yet-260701.pdf",
-          "batch_file": "/tmp/pdf_batch_001_a0b3a53u/pdfs/0004-30-MS-Semiconductor Inventory Tracker- Not Restocking Yet-260701.pdf",
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/30-GS-Japan Technology： IT Services： June BOJ Tankan data： Supply demand tightness eases slightly， gap may widen in margin improvement on AI-260702.pdf",
+          "batch_file": "/tmp/pdf_batch_001_dtg2jplq/pdfs/0004-30-GS-Japan Technology- IT Services- June BOJ Tankan data- Supply demand tightness eases slightly- gap may widen in margin improvement on AI-260702.pdf",
           "stable_index": "4"
         },
         {
-          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/31-NOM-China factory automation data：June 2026：Airtac sales up 28% y~y in June-260703.pdf",
-          "batch_file": "/tmp/pdf_batch_001_a0b3a53u/pdfs/0005-31-NOM-China factory automation data-June 2026-Airtac sales up 28- y-y in June-260703.pdf",
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/31-GS-Banks：Measuring AI Maturity in Banking： Insights from the Evident AI Index CEO—Key Takeaways-260702.pdf",
+          "batch_file": "/tmp/pdf_batch_001_dtg2jplq/pdfs/0005-31-GS-Banks-Measuring AI Maturity in Banking- Insights from the Evident AI Index CEO-Key Takeaways-260702.pdf",
           "stable_index": "5"
         }
       ],
