@@ -188,11 +188,13 @@ def wechat_title_policy_skip_reason(title: str) -> str:
 def canonicalize_institution_title_name(title: str) -> str:
     normalized = normalize_space(title)
     normalized = normalized.replace("摩根斯坦利", "摩根士丹利")
-    normalized = normalized.replace("美国银行：", "美银：")
+    normalized = normalized.replace("美国银行", "美银")
     return normalized
 
 
 def alias_pattern(alias: str) -> str:
+    if alias.lower() == "bofa":
+        return r"(?<![A-Za-z])BofA(?=(?:Q[1-4]|\d|[^A-Za-z]|$))"
     if re.fullmatch(r"[A-Z]{2,5}", alias):
         return rf"(?<![A-Za-z]){re.escape(alias)}(?![A-Za-z])"
     if re.fullmatch(r"[A-Za-z. ]+", alias):
@@ -262,6 +264,28 @@ def remove_redundant_title_aliases(title: str) -> str:
     return limit_title_colons(cleaned).strip("：: -—")
 
 
+def strip_unexpected_leading_institution_prefix(title: str, institution_name: str) -> str:
+    expected = canonicalize_institution_title_name(institution_name)
+    cleaned = remove_redundant_title_aliases(title)
+    for _ in range(3):
+        for cn_name, aliases in INSTITUTION_TITLE_ALIASES:
+            if canonicalize_institution_title_name(cn_name) == expected:
+                continue
+            prefix_group = "|".join([re.escape(cn_name), *(alias_pattern(alias) for alias in aliases)])
+            replaced = re.sub(
+                rf"^(?:{prefix_group})\s*[：:，,、;；\-—]\s*",
+                "",
+                cleaned,
+                flags=re.I,
+            ).strip()
+            if replaced != cleaned:
+                cleaned = replaced
+                break
+        else:
+            break
+    return cleaned
+
+
 def draft_title_key(title: str) -> str:
     key = remove_redundant_title_aliases(title)
     key = re.sub(r"\s+", "", key)
@@ -277,6 +301,7 @@ def sharpen_wechat_title(title: str, institution_name: str = "") -> str:
     cleaned = re.sub(r"正在经历的不是", "不是", cleaned)
     cleaned = re.sub(r"真正的分水岭", "分水岭", cleaned)
     if institution_name:
+        cleaned = strip_unexpected_leading_institution_prefix(cleaned, institution_name)
         cleaned = ensure_title_has_institution(cleaned, canonicalize_institution_title_name(institution_name))
     return truncate_chars(remove_redundant_title_aliases(cleaned), WECHAT_TITLE_MAX_CHARS)
 

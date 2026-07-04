@@ -53,13 +53,14 @@ def stringify_metadata(value: Any) -> str:
 
 
 def infer_institution_name(*values: Any) -> str:
-    haystack = "\n".join(stringify_metadata(value) for value in values if value is not None)
-    if not haystack:
-        return ""
-    searchable = re.sub(r"[_/]+", " ", haystack)
-    for pattern, chinese_name in INSTITUTION_PATTERNS:
-        if pattern.search(searchable):
-            return chinese_name
+    for value in values:
+        haystack = stringify_metadata(value)
+        if not haystack:
+            continue
+        searchable = re.sub(r"[_/]+", " ", haystack)
+        for pattern, chinese_name in INSTITUTION_PATTERNS:
+            if pattern.search(searchable):
+                return chinese_name
     return ""
 
 
