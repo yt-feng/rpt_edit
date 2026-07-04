@@ -122,9 +122,13 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         "kind": "rss",
         "pdf": "swap_htm_pdf",
         "feeds": [
+            # BIS' public RSS page labels this broader feed "Research papers"; it
+            # includes the Annual Economic Report, BIS Bulletins, FSI papers and
+            # working papers. The old wppubls feed only covered working papers.
+            "https://www.bis.org/doclist/bis_fsi_publs.rss",
             "https://www.bis.org/doclist/wppubls.rss",
         ],
-        # Only keep /publ/ documents (working papers, bulletins), skip speeches etc.
+        # Only keep substantive publication pages, skip speeches / central-bank reviews.
         "include": r"bis\.org/publ/",
     },
     "worldbank": {

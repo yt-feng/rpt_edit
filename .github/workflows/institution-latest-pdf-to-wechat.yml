@@ -15,7 +15,7 @@ on:
       since_days:
         description: "Only fetch reports published within this many days"
         required: true
-        default: "1"
+        default: "7"
       max_per_institution:
         description: "Cap new PDFs per institution (0 = no cap)"
         required: true
@@ -104,7 +104,7 @@ jobs:
             --output-dir _institution_latest_pdfs \
             --date "$DATE" \
             --institutions "${{ github.event.inputs.institutions || 'all' }}" \
-            --since-days "${{ github.event.inputs.since_days || '1' }}" \
+            --since-days "${{ github.event.inputs.since_days || '7' }}" \
             --max-per-institution "${{ github.event.inputs.max_per_institution || '0' }}" \
             --force-reprocess "${{ github.event.inputs.force_reprocess || 'false' }}" \
             2>&1 | tee institution_fetch_progress.log

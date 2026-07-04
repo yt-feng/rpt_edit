@@ -755,6 +755,18 @@ def hook_html(text: str) -> str:
     )
 
 
+def referenced_markdown_image_keys(markdown: str) -> set[str]:
+    keys: set[str] = set()
+    for match in IMAGE_TOKEN_RE.finditer(markdown or ""):
+        keys.add(f"[[KC_IMAGE_{match.group(1)}]]")
+    for match in MD_IMAGE_RE.finditer(markdown or ""):
+        ref = match.group(2).strip()
+        if ref:
+            keys.add(ref)
+            keys.add(Path(ref).name)
+    return keys
+
+
 def after_image_note_html(text: str) -> str:
     """Follow-and-star reminder shown at the very end, after the 星球 QR image."""
     if not text:
@@ -827,7 +839,12 @@ def render_fitted_wechat_html(
     last_body_images = 0
     for image_limit in image_limits:
         body_images = [
-            {"url": item["url"], "alt": item.get("token") or "chart"}
+            {
+                "url": item["url"],
+                "alt": item.get("token") or "chart",
+                "source": item.get("source", ""),
+                "context": item.get("context", ""),
+            }
             for item in uploaded_images[:image_limit]
             if item.get("url")
         ]
@@ -876,9 +893,17 @@ def markdown_to_wechat_html(
     paragraph: list[str] = []
     list_items: list[str] = []
     rendered_image_urls: set[str] = set()
+    referenced_keys = referenced_markdown_image_keys(markdown)
+    floating_images = [
+        item
+        for item in body_images
+        if item.get("url") and (item.get("alt") or "") not in referenced_keys
+    ]
+    floating_image_index = 0
     selected_image_urls = [item["url"] for item in body_images if item.get("url")]
     selected_image_set = set(selected_image_urls)
     body_budget = max(0, max_visible_chars - visible_char_count(hook_text))
+    placement_budget = min(body_budget, max(visible_char_count(clean_markdown(markdown)), 1)) if body_budget else 0
     text_used = 0
 
     def remaining_chars() -> int:
@@ -905,6 +930,21 @@ def markdown_to_wechat_html(
         parts.append(image_html(url, alt=alt))
         rendered_image_urls.add(url)
 
+    def maybe_insert_floating_image(force: bool = False) -> None:
+        nonlocal floating_image_index
+        if floating_image_index >= len(floating_images):
+            return
+        item = floating_images[floating_image_index]
+        url = item.get("url") or ""
+        if not url or url in rendered_image_urls:
+            floating_image_index += 1
+            return
+        threshold = placement_budget * (floating_image_index + 1) / (len(floating_images) + 1)
+        if force or body_budget <= 0 or text_used >= threshold:
+            parts.append(image_html(url, alt=item.get("context") or item.get("alt") or "KC Desk"))
+            rendered_image_urls.add(url)
+            floating_image_index += 1
+
     def flush_paragraph() -> None:
         nonlocal paragraph
         if paragraph:
@@ -912,6 +952,7 @@ def markdown_to_wechat_html(
             rendered = paragraph_html(fitted)
             if rendered:
                 parts.append(rendered)
+                maybe_insert_floating_image()
             paragraph = []
 
     def flush_list() -> None:
@@ -927,6 +968,7 @@ def markdown_to_wechat_html(
             if rendered_items:
                 body = "".join(f"<li>{inline_markdown(item, context='list')}</li>" for item in rendered_items)
                 parts.append(f'<ul style="margin:10px 0 12px;padding-left:22px;line-height:1.7;color:#202631;font-size:16px;">{body}</ul>')
+                maybe_insert_floating_image()
             list_items = []
 
     for raw in clean_markdown(markdown).splitlines():
@@ -943,6 +985,7 @@ def markdown_to_wechat_html(
             fitted = fit_text(quote)
             if fitted:
                 parts.append(kc_comment_html(fitted))
+                maybe_insert_floating_image()
             continue
 
         token_match = IMAGE_TOKEN_RE.fullmatch(line)
@@ -953,6 +996,7 @@ def markdown_to_wechat_html(
             token = f"[[KC_IMAGE_{token_match.group(1)}]]"
             url = image_urls.get(token)
             maybe_render_image(url or "", token)
+            maybe_insert_floating_image()
             continue
         if md_image_match:
             flush_paragraph()
@@ -961,6 +1005,7 @@ def markdown_to_wechat_html(
             url = image_urls.get(ref) or ref
             if url.startswith("http://") or url.startswith("https://"):
                 maybe_render_image(url, md_image_match.group(1))
+                maybe_insert_floating_image()
             continue
 
         if is_figure_meta_line(line):
@@ -975,6 +1020,7 @@ def markdown_to_wechat_html(
             fitted = fit_text(heading.group(2))
             if fitted:
                 parts.append(heading_html(len(heading.group(1)), fitted))
+                maybe_insert_floating_image()
             continue
 
         bullet = re.match(r"^[-*]\s+(.+)$", line)
@@ -987,6 +1033,8 @@ def markdown_to_wechat_html(
 
     flush_paragraph()
     flush_list()
+    while floating_image_index < len(floating_images):
+        maybe_insert_floating_image(force=True)
     supplemental_images = [
         image_html(item["url"], alt=item.get("alt") or "KC Desk")
         for item in body_images
@@ -1104,18 +1152,53 @@ def choose_cover_image(report_dir: Path, figure_paths: dict[str, Path], fallback
     return fallback
 
 
-def pollinations_prompt(title: str, index: int) -> str:
+def pollinations_context_snippets(markdown: str, title: str, count: int) -> list[str]:
+    if count <= 0:
+        return []
+    candidates: list[str] = []
+    current_heading = ""
+    for raw in clean_markdown(markdown).splitlines():
+        line = normalize_space(strip_markdown_markup(raw))
+        if not line or is_figure_meta_line(line):
+            continue
+        if IMAGE_TOKEN_RE.search(raw) or MD_IMAGE_RE.search(raw):
+            continue
+        heading = re.match(r"^#{1,6}\s+(.+)$", raw.strip())
+        if heading:
+            current_heading = normalize_space(strip_markdown_markup(heading.group(1)))
+            continue
+        line = re.sub(r"^[-*>]\s*", "", line)
+        if visible_char_count(line) < 28:
+            continue
+        context = f"{current_heading}：{line}" if current_heading else line
+        candidates.append(truncate_visible_text(context, 90, suffix=""))
+    if not candidates:
+        return [normalize_space(strip_markdown_markup(title))] * count
+    if len(candidates) <= count:
+        return candidates + [candidates[-1]] * (count - len(candidates))
+    if count == 1:
+        return [candidates[len(candidates) // 2]]
+    picks: list[str] = []
+    for idx in range(count):
+        pos = round(idx * (len(candidates) - 1) / (count - 1))
+        picks.append(candidates[pos])
+    return picks
+
+
+def pollinations_prompt(title: str, index: int, context: str = "") -> str:
     topic = normalize_space(strip_markdown_markup(title)) or "global macro and industry research"
+    section_context = normalize_space(strip_markdown_markup(context))
     angle = [
         "executive strategy briefing",
         "financial research insight",
         "market intelligence discussion",
     ][(index - 1) % 3]
+    context_sentence = f" Specific section context: {section_context}." if section_context else ""
     prompt = (
         f"Premium editorial image for a Chinese financial research article about {topic}. "
-        f"Scene type: {angle}. Photorealistic business and market research visual, "
+        f"Scene type: {angle}.{context_sentence} Photorealistic business and market research visual, "
         "human-scale context, clean composition, sophisticated lighting, white, ink and gold accents, "
-        "no readable text, no logos, no watermarks, no charts, no abstract filler."
+        "distinct from the other article images, no readable text, no logos, no watermarks, no abstract filler."
     )
     return " ".join(prompt.split())[:1000]
 
@@ -1632,9 +1715,11 @@ def build_article(
 
     target_min_images = min(args.min_inline_images, args.max_inline_images)
     ai_image_index = 1
+    ai_contexts = pollinations_context_snippets(markdown, title, target_min_images)
     while len(uploaded_images) < target_min_images:
         ai_token = f"KC_AI_IMAGE_{ai_image_index:03d}"
-        prompt = pollinations_prompt(title, ai_image_index)
+        context = ai_contexts[(ai_image_index - 1) % len(ai_contexts)] if ai_contexts else ""
+        prompt = pollinations_prompt(title, ai_image_index, context)
         source_url = pollinations_url(prompt)
         if args.dry_run:
             image_url = fake_static_image_url(f"pollinations/{report_dir.name}/{ai_token}.jpg")
@@ -1660,6 +1745,7 @@ def build_article(
                 "url": image_url,
                 "source": status_name,
                 "prompt": prompt,
+                "context": context,
                 "pollinations_url": source_url,
                 "reason": reason,
             }

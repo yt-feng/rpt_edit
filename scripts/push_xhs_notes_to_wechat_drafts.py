@@ -43,6 +43,7 @@ from push_kc_translated_to_wechat_drafts import (  # noqa: E402
     is_article_size_error,
     log,
     parse_selection_limit,
+    pollinations_context_snippets,
     payload_article_titles,
     pollinations_prompt,
     prepare_article_upload_image,
@@ -323,13 +324,15 @@ def build_article(
         image_items.extend(extra_asset_images(report_dir, seen_paths)[: target_image_count - len(image_items)])
 
     ai_image_index = 1
+    ai_contexts = pollinations_context_snippets(markdown, title, target_image_count)
     while len(image_items) < target_image_count and len(image_items) < args.max_inline_images:
         ai_token = f"KC_AI_IMAGE_{ai_image_index:03d}"
-        prompt = pollinations_prompt(title, ai_image_index)
+        context = ai_contexts[(ai_image_index - 1) % len(ai_contexts)] if ai_contexts else ""
+        prompt = pollinations_prompt(title, ai_image_index, context)
         if args.dry_run:
             ai_path_obj = output_dir / "_assets" / f"article_{index:02d}_{ai_token.lower()}.jpg"
             image_items.append((ai_token, ai_path_obj))
-            image_metadata[ai_token] = {"source": "pollinations_dry_run", "prompt": prompt}
+            image_metadata[ai_token] = {"source": "pollinations_dry_run", "prompt": prompt, "context": context}
         else:
             if session is None or access_token is None:
                 raise RuntimeError("session and access_token are required outside dry-run")
@@ -350,6 +353,7 @@ def build_article(
             image_metadata[ai_token] = {
                 "source": status_name,
                 "prompt": prompt,
+                "context": context,
                 "pollinations_url": source_url,
                 "reason": reason,
             }
@@ -379,7 +383,7 @@ def build_article(
             "url": image_url,
             "source": metadata.get("source", "xhs_notes"),
         }
-        for key in ["prompt", "pollinations_url", "reason"]:
+        for key in ["prompt", "context", "pollinations_url", "reason"]:
             if metadata.get(key):
                 image_record[key] = metadata[key]
         uploaded_images.append(image_record)
