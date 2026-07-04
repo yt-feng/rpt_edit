@@ -417,7 +417,8 @@ def version_assets(output: Path) -> None:
     for html_path in output.glob("*.html"):
         text = html_path.read_text(encoding="utf-8")
         for rel, digest in versions.items():
-            text = text.replace(f'"{rel}"', f'"{rel}?v={digest}"')
+            pattern = re.compile(rf'(["\']){re.escape(rel)}(?:\?v=[^"\']*)?\1')
+            text = pattern.sub(lambda match: f"{match.group(1)}{rel}?v={digest}{match.group(1)}", text)
         html_path.write_text(text, encoding="utf-8")
 
 
