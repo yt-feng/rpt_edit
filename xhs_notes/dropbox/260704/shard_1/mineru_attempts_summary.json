@@ -1,0 +1,29 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 3,
+    "successful_pdf_count": 3,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_315f3acs/pdfs/0001-06-GS-CONNECTING THE DOTS-Conviction List- Capex -AI and beyond-- AI drivers -talent- and China Dragon plus key research-260703.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_315f3acs/pdfs/0002-07-Bofa-The Flow Show Red- White- and Boom-260702.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_315f3acs/pdfs/0003-08-GS-Taiwan ODM Brands- 3-month preview- June revenue flat MoM on avg but YoY remains strong- AI servers smartphone new models key drivers-260703.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
