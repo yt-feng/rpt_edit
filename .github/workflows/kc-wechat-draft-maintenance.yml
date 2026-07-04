@@ -1,0 +1,163 @@
+name: KC WeChat Draft Maintenance
+
+on:
+  workflow_dispatch:
+    inputs:
+      date_folder:
+        description: "KC translated report date folder, e.g. 260703, or latest"
+        required: true
+        default: "latest"
+      summary_path:
+        description: "Existing WeChat draft summary to delete first. Empty uses wechat_drafts/<date_folder>/wechat_draft_summary.json"
+        required: false
+        default: ""
+      delete_existing:
+        description: "Delete media_id values from the existing summary before reuploading"
+        required: true
+        type: boolean
+        default: true
+      reupload:
+        description: "Upload KC translated reports into new WeChat drafts"
+        required: true
+        type: boolean
+        default: true
+      max_articles:
+        description: "Number of KC translated reports to upload; use all for every report"
+        required: true
+        default: "all"
+      article_offset:
+        description: "Zero-based offset into the KC translated report list"
+        required: true
+        default: "0"
+      articles_per_draft:
+        description: "Number of articles in each WeChat draft item"
+        required: true
+        default: "8"
+      max_body_chars:
+        description: "Approximate visible Chinese character budget for each article"
+        required: true
+        default: "2000"
+      min_inline_images:
+        description: "Minimum body images per article"
+        required: true
+        default: "3"
+      max_inline_images:
+        description: "Maximum body images per article"
+        required: true
+        default: "3"
+      publish:
+        description: "Submit created drafts for publishing"
+        required: true
+        type: boolean
+        default: false
+      commit_results:
+        description: "Commit new WeChat draft summaries to main"
+        required: true
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+env:
+  PYTHONUNBUFFERED: "1"
+
+concurrency:
+  group: kc-wechat-draft-maintenance
+  cancel-in-progress: false
+
+jobs:
+  repair-kc-wechat-drafts:
+    runs-on: [self-hosted, linux, x64, wechat-draft]
+    timeout-minutes: 180
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Pull latest main
+        run: |
+          git fetch --depth=1 origin main
+          git reset --hard origin/main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Resolve date folder and summary path
+        run: |
+          DATE_FOLDER="${{ inputs.date_folder }}"
+          if [ "$DATE_FOLDER" = "latest" ]; then
+            DATE_FOLDER=$(python - <<'PY'
+          from pathlib import Path
+          import re
+
+          root = Path("kc_translated_reports")
+          candidates = [p.name for p in root.iterdir() if p.is_dir() and re.fullmatch(r"\d{6,8}", p.name)]
+          if not candidates:
+              raise SystemExit("No date folders found under kc_translated_reports")
+          print(max(candidates, key=lambda value: int(value)))
+          PY
+          )
+          fi
+          SUMMARY_PATH="${{ inputs.summary_path }}"
+          if [ -z "$SUMMARY_PATH" ]; then
+            SUMMARY_PATH="wechat_drafts/$DATE_FOLDER/wechat_draft_summary.json"
+          fi
+          echo "DATE_FOLDER=$DATE_FOLDER" >> "$GITHUB_ENV"
+          echo "SUMMARY_PATH=$SUMMARY_PATH" >> "$GITHUB_ENV"
+          echo "WECHAT_DRAFT_DIR=wechat_drafts/$DATE_FOLDER" >> "$GITHUB_ENV"
+          mkdir -p "wechat_drafts/$DATE_FOLDER"
+          echo "::notice::date_folder=$DATE_FOLDER"
+          echo "::notice::summary_path=$SUMMARY_PATH"
+
+      - name: Delete existing WeChat drafts from summary
+        if: ${{ inputs.delete_existing == true }}
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+        run: |
+          python scripts/delete_wechat_drafts.py \
+            --summary "$SUMMARY_PATH" \
+            --output "$WECHAT_DRAFT_DIR/deleted_drafts_summary.json" \
+            --timeout 120
+
+      - name: Upload KC translated reports to WeChat drafts
+        if: ${{ inputs.reupload == true }}
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+        run: |
+          PUBLISH_ARGS=()
+          if [ "${{ inputs.publish }}" = "true" ]; then
+            PUBLISH_ARGS+=(--publish)
+          fi
+          python scripts/push_kc_translated_to_wechat_drafts.py \
+            --translated-root "kc_translated_reports" \
+            --date-folder "$DATE_FOLDER" \
+            --output-root "wechat_drafts" \
+            --max-articles "${{ inputs.max_articles }}" \
+            --article-offset "${{ inputs.article_offset }}" \
+            --articles-per-draft "${{ inputs.articles_per_draft }}" \
+            --max-body-chars "${{ inputs.max_body_chars }}" \
+            --min-inline-images "${{ inputs.min_inline_images }}" \
+            --max-inline-images "${{ inputs.max_inline_images }}" \
+            "${PUBLISH_ARGS[@]}" 2>&1 | tee "$WECHAT_DRAFT_DIR/wechat_drafts_progress.log"
+
+      - name: Upload WeChat draft maintenance artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kc-wechat-draft-maintenance-${{ env.DATE_FOLDER }}-${{ github.run_id }}
+          path: ${{ env.WECHAT_DRAFT_DIR }}
+          if-no-files-found: error
+
+      - name: Commit WeChat draft summaries
+        if: ${{ inputs.commit_results == true }}
+        run: |
+          bash scripts/commit_output_dir.sh "$WECHAT_DRAFT_DIR" "Repair KC translated WeChat drafts $DATE_FOLDER" 8
