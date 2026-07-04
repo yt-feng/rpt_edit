@@ -1449,6 +1449,48 @@ async function handleAuth(request, env) {
   }
 }
 
+async function handleAccountPasswordChange(request, env) {
+  let user;
+  try {
+    user = await currentUserFromRequest(env, request);
+  } catch (error) {
+    return jsonResponse(request, env, 401, { detail: error.message || "Please log in." });
+  }
+
+  let payload = {};
+  try {
+    payload = await request.json();
+  } catch (_error) {
+    return jsonResponse(request, env, 400, { detail: "Invalid JSON body." });
+  }
+
+  const currentPassword = String(payload.current_password || "");
+  const newPassword = String(payload.new_password || "");
+  if (newPassword.length < 4 || newPassword.length > 128) {
+    return jsonResponse(request, env, 400, { detail: "新密码需为 4-128 位。" });
+  }
+  if (currentPassword === newPassword) {
+    return jsonResponse(request, env, 400, { detail: "新密码不能和当前密码相同。" });
+  }
+  if (!await siteUserPasswordMatches(env, user, currentPassword)) {
+    return jsonResponse(request, env, 401, { detail: "当前密码不正确。" });
+  }
+  if (!user.id) {
+    return jsonResponse(request, env, 503, { detail: "Account service is temporarily unavailable." });
+  }
+
+  try {
+    const passwordFields = await hashUserPassword(env, newPassword);
+    const updated = await updateSiteUser(env, user.id, {
+      ...passwordFields,
+      last_login_at: new Date().toISOString(),
+    });
+    return authSuccessResponse(request, env, 200, { ...user, ...updated });
+  } catch (_error) {
+    return jsonResponse(request, env, 503, { detail: "密码更新失败，请稍后重试。" });
+  }
+}
+
 async function handleEntitlement(request, env) {
   const url = new URL(request.url);
   try {
@@ -6435,6 +6477,10 @@ export default {
 
     if (pathname === "/auth" && (request.method === "GET" || request.method === "POST")) {
       return handleAuth(request, env);
+    }
+
+    if (pathname === "/account/password" && request.method === "POST") {
+      return handleAccountPasswordChange(request, env);
     }
 
     if (pathname === "/entitlement" && request.method === "GET") {

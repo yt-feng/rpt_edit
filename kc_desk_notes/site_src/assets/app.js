@@ -396,6 +396,15 @@
               <button class="secondary-button quiet-admin-button" id="accountAdminOpen" type="button" hidden>管理后台</button>
               <button class="secondary-button" id="accountLogout" type="button">退出登录</button>
             </div>
+            <form id="accountPasswordForm" class="account-password-form">
+              <span>需要改密码可以在这里更新。</span>
+              <div class="account-password-grid">
+                <input id="accountCurrentPassword" type="password" autocomplete="current-password" placeholder="当前密码" required>
+                <input id="accountNewPassword" type="password" autocomplete="new-password" placeholder="新密码" required>
+                <input id="accountNewPasswordConfirm" type="password" autocomplete="new-password" placeholder="确认新密码" required>
+              </div>
+              <button class="secondary-button" id="accountPasswordSubmit" type="submit">修改密码</button>
+            </form>
           </div>
           <div class="contact-card" id="accountContactCard">
             <strong>报告获取</strong>
@@ -451,6 +460,11 @@
     const toggle = document.getElementById("accountModeToggle");
     const logout = document.getElementById("accountLogout");
     const adminOpen = document.getElementById("accountAdminOpen");
+    const passwordForm = document.getElementById("accountPasswordForm");
+    const currentPassword = document.getElementById("accountCurrentPassword");
+    const newPassword = document.getElementById("accountNewPassword");
+    const newPasswordConfirm = document.getElementById("accountNewPasswordConfirm");
+    const passwordSubmit = document.getElementById("accountPasswordSubmit");
     const status = document.getElementById("accountModalStatus");
     let mode = "login";
     let captchaToken = "";
@@ -530,6 +544,43 @@
     }
     if (adminOpen) {
       adminOpen.addEventListener("click", () => showAccountAdminModal(workerUrl));
+    }
+    if (passwordForm) {
+      passwordForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (!loadAuthSession()) {
+          setStatus("请先登录。", "error");
+          return;
+        }
+        if (newPassword.value !== newPasswordConfirm.value) {
+          setStatus("两次输入的新密码不一致。", "error");
+          return;
+        }
+        passwordSubmit.disabled = true;
+        setStatus("正在修改密码…");
+        try {
+          const response = await fetch(`${workerUrl}/account/password`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", ...authHeaders() },
+            body: JSON.stringify({
+              current_password: currentPassword.value,
+              new_password: newPassword.value,
+            }),
+          });
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok || !data.token || !data.user) throw new Error(data.detail || "密码修改失败。");
+          saveAuthSession({ token: data.token, user: data.user });
+          currentPassword.value = "";
+          newPassword.value = "";
+          newPasswordConfirm.value = "";
+          refreshUi();
+          setStatus("密码已更新。", "ok");
+        } catch (error) {
+          setStatus(error.message || "密码修改失败。", "error");
+        } finally {
+          passwordSubmit.disabled = false;
+        }
+      });
     }
 
     form.addEventListener("submit", async (event) => {
