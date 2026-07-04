@@ -1,0 +1,1787 @@
+[
+    {
+        "type": "text",
+        "text": "China Economic Activity and Policy Tracker: July 3",
+        "text_level": 2,
+        "bbox": [
+            78,
+            74,
+            602,
+            103
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "In this note, we update four sets of high-frequency indicators that we track: 1) consumption and mobility; 2) production and investment; 3) other macro activity; and 4) markets and policy. To track closely the impact of higher energy price supply shock on Chinese economic activity, we now publish our tracker on a weekly basis.",
+        "bbox": [
+            76,
+            172,
+            689,
+            245
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Chelsea Song +852-2978-0106 | chelsea.song@gs.com GS (Asia) L.L.C.",
+        "bbox": [
+            720,
+            172,
+            854,
+            215
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "1) Consumption and mobility",
+        "text_level": 2,
+        "bbox": [
+            80,
+            270,
+            344,
+            291
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 1: 30-city daily property transaction volume in the primary market edged down over the last week and remained below year-ago level",
+        "bbox": [
+            78,
+            308,
+            683,
+            340
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b1e1cbd0ae00e05a75b62b6fed5e206481ef57f9532752c38d31acdecb043725.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Wind, GS Global Investment Research"
+        ],
+        "bbox": [
+            93,
+            345,
+            684,
+            605
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Goldman Research Sachs",
+        "bbox": [
+            78,
+            3,
+            297,
+            43
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Economics Research 3 July 2026 | 4:14PM HKT",
+        "bbox": [
+            725,
+            5,
+            919,
+            45
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html.",
+        "bbox": [
+            80,
+            922,
+            856,
+            971
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2d8d0d1637e70bf2e66559fa66633ac697c98f47d352c46ff3c59c6bdf6ce160.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 2: 16-city daily property transaction volume in the secondary market fell over the last week but remained above year-ago level"
+        ],
+        "chart_footnote": [
+            "Source: Wind, GS Global Investment Research"
+        ],
+        "bbox": [
+            282,
+            89,
+            903,
+            358
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/bbf2837b0b7f3333d9ac531a028dd6f223b39c9473ef0e30e1715895a337a666.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 3: China's passenger flights for domestic routes increased towards year-ago level"
+        ],
+        "chart_footnote": [
+            "Source: Wind, GS Global Investment Research"
+        ],
+        "bbox": [
+            281,
+            425,
+            905,
+            695
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            5,
+            184,
+            19
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "China Economic Activity and Policy Tracker",
+        "bbox": [
+            633,
+            7,
+            918,
+            23
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "3 July 2026",
+        "bbox": [
+            81,
+            954,
+            151,
+            967
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            906,
+            954,
+            916,
+            966
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/58475eb6dc2c05894d3aa1503bd61d5f9cb0c774efeb90972d4fe30136e1e4a7.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 4: China's passenger flights cancellation rate also edged down towards year-ago level"
+        ],
+        "chart_footnote": [
+            "Source: Wind, GS Global Investment Research",
+            "Exhibit 5: Traffic congestion normalized after Dragon Boat Festival and is currently around year-ago level"
+        ],
+        "bbox": [
+            281,
+            74,
+            905,
+            345
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/95e836f969ebaea98b0ff6105c93189ad59382606a6fe3ef065d02b4dde437a0.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "\\*Calculated as the ratio of actual travel time to 'free flow' travel time, higher = more congested.  \n\\*Percentage change relative to 2025."
+        ],
+        "bbox": [
+            281,
+            425,
+            905,
+            668
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "From 2022 onwards, we changed our data source from Gaode map to Baidu map. Baidu congestion data starts from September 2021 and moves closely with that from Gaode map. The two sets of data are different in sample coverage: Gaode map covers 100 cities and Baidu map covers 98 cities.",
+        "bbox": [
+            271,
+            707,
+            906,
+            744
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            5,
+            184,
+            20
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "China Economic Activity and Policy Tracker",
+        "bbox": [
+            633,
+            7,
+            918,
+            23
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "Source: Wind, Haver Analytics, GS Global Investment Research",
+        "bbox": [
+            271,
+            752,
+            656,
+            765
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "3 July 2026",
+        "bbox": [
+            81,
+            954,
+            151,
+            967
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            906,
+            954,
+            916,
+            966
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/82b36e3c3a7a64c73cc6abf2cfe00e151065bfa49ce7928c961bc841b8d66dd3.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 6: Domestic gasoline and diesel prices remained unchanged over the last week while Brent price continued to fall"
+        ],
+        "chart_footnote": [
+            "Source: Haver Analytics, GS Global Investment Research"
+        ],
+        "bbox": [
+            282,
+            87,
+            903,
+            363
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6e566cfc36d666443c8902e4b9343b1ccd9d5f3d7e58b1411f64d0631be2f3c2.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 7: Prices for sulfuric acid edged up over the last week while prices for other chemicals edged down"
+        ],
+        "chart_footnote": [
+            "Source: Wind, Haver Analytics, GS Global Investment Research"
+        ],
+        "bbox": [
+            281,
+            442,
+            905,
+            720
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            5,
+            184,
+            19
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "China Economic Activity and Policy Tracker",
+        "bbox": [
+            633,
+            7,
+            918,
+            23
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "3 July 2026",
+        "bbox": [
+            81,
+            954,
+            151,
+            966
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            906,
+            954,
+            916,
+            966
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/fec1e681caa81879426a7a61f594216fc13c2e3bc5e3954e4f364da016e5bcb5.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 8: The NBS consumer confidence edged up in May, and the Morning Consult consumer confidence also rebounded over the past week"
+        ],
+        "chart_footnote": [
+            "Source: Haver Analytics, Morning Consult, GS Global Investment Research"
+        ],
+        "bbox": [
+            279,
+            87,
+            901,
+            363
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/882011c8316ac3c515de7113ebeff9758b6bedf0a2583135e9add639029efc99.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 9: Weighted PMI employment sub-index edged up in June"
+        ],
+        "chart_footnote": [
+            "Source: NBS, RatingDog, CKGSB, Haver Analytics, GS Global Investment Research"
+        ],
+        "bbox": [
+            279,
+            428,
+            903,
+            707
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            5,
+            184,
+            19
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "China Economic Activity and Policy Tracker",
+        "bbox": [
+            633,
+            7,
+            918,
+            23
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "3 July 2026",
+        "bbox": [
+            81,
+            954,
+            151,
+            966
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            906,
+            954,
+            916,
+            966
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\*Percentage change relative to the same week in 2025.",
+        "bbox": [
+            287,
+            357,
+            594,
+            371
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "2) Production and investment",
+        "text_level": 2,
+        "bbox": [
+            272,
+            40,
+            542,
+            58
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/28f8008ceaa490f1951039bd26dd5a202a2cd8b2970fb95036616922c26df8fc.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Mysteel, GS Global Investment Research"
+        ],
+        "bbox": [
+            282,
+            92,
+            901,
+            372
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/202726e3a6541ad2fc055bd99a3b7bd7865c37bc5b5ba7e24efce73f2c048c00.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 11: Steel production edged up slightly over the past week"
+        ],
+        "chart_footnote": [
+            "Source: Mysteel, GS Global Investment Research"
+        ],
+        "bbox": [
+            284,
+            437,
+            903,
+            709
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            5,
+            184,
+            19
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "China Economic Activity and Policy Tracker",
+        "bbox": [
+            633,
+            7,
+            918,
+            23
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "3 July 2026",
+        "bbox": [
+            81,
+            954,
+            151,
+            967
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            906,
+            954,
+            918,
+            966
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/26bc961598b4f35fc78b5066750f1cae7942b385f02062b42b717d8b87adc081.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 12: Daily coal consumption in coastal provinces remained rangebound over the last week and was above year-ago level"
+        ],
+        "chart_footnote": [
+            "\\*Percent change relative to 2025.",
+            "Note: Data available since July 2020, data prior to that are derived based on coal consumption at six major coastal power plants.",
+            "Source: Haver, CCTD, GS Global Investment Research"
+        ],
+        "bbox": [
+            282,
+            87,
+            903,
+            323
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/23a0482d24f88dcde38d3bb8f0855b0d4b20a0965e1cf14b22ef9704f56f9656.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 13: RMB 2.04bn local government special bonds have been issued year-to-date"
+        ],
+        "chart_footnote": [
+            "Source: Wind, GS Global Investment Research"
+        ],
+        "bbox": [
+            282,
+            420,
+            906,
+            696
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            5,
+            184,
+            20
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "China Economic Activity and Policy Tracker",
+        "bbox": [
+            633,
+            7,
+            918,
+            23
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "3 July 2026",
+        "bbox": [
+            81,
+            954,
+            151,
+            967
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            906,
+            954,
+            916,
+            966
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6b5bcccf22405e54c6633995727655efcc879bb947d01e8bed8dbc1d39cd5536.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 14: The anti-corruption proxy at national level stayed elevated, while that at local level rose to record high in Q2 2026"
+        ],
+        "chart_footnote": [
+            "Note: The proxy represents the number of government officials announced as under investigation each quarter. National level is deputy ministerial level and above; local level is any level but in practice mostly deputy bureau level and above.",
+            "Source: CCDI, GS Global Investment Research"
+        ],
+        "bbox": [
+            282,
+            87,
+            903,
+            320
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/65e95d100ba8d4a1d80477249a4910d75f51550f3447c4859d9c7dec7c2446ad.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 15: Policy bank support remained soft in June"
+        ],
+        "chart_footnote": [
+            "Source: PBOC, Wind, Data compiled by GS Global Investment Research"
+        ],
+        "bbox": [
+            282,
+            442,
+            906,
+            716
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            5,
+            184,
+            20
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "China Economic Activity and Policy Tracker",
+        "bbox": [
+            633,
+            7,
+            918,
+            23
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "3 July 2026",
+        "bbox": [
+            81,
+            954,
+            151,
+            967
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            906,
+            954,
+            916,
+            966
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "3) Other macro activity",
+        "text_level": 2,
+        "bbox": [
+            272,
+            40,
+            483,
+            59
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 16: Official port container throughput increased over the last week and was above year-ago level",
+        "bbox": [
+            271,
+            77,
+            892,
+            108
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/13c5ab2ae3a3f03b8510fe2206c29a29de642ad00d475e30463fdbf53464332c.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Ministry of Transport, Haver Analytics, GS Global Investment Research"
+        ],
+        "bbox": [
+            279,
+            113,
+            905,
+            385
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 17: Freight volume of departing ships at 20 major ports increased and was above year-ago level",
+        "bbox": [
+            271,
+            429,
+            880,
+            459
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/308e0fb400d7288b7ec8e21bdfcf3b1baac845f3db9dbf24dc6a974b5378b851.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: CEIC, GS Global Investment Research"
+        ],
+        "bbox": [
+            281,
+            465,
+            905,
+            736
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            5,
+            184,
+            19
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "China Economic Activity and Policy Tracker",
+        "bbox": [
+            633,
+            7,
+            918,
+            23
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "3 July 2026",
+        "bbox": [
+            81,
+            954,
+            151,
+            967
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            906,
+            954,
+            916,
+            966
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f82f5b95bda757329b7a24c09534ac68518ef68785d0fb18b6d62f01ffd688cc.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 18: Our nowcast indicates China oil demand edged up to 16.4mb/d in the latest reading"
+        ],
+        "chart_footnote": [
+            "Our GS Commodities research team detail their updated methodology for nowcasting China demand in their oil tracker. GS nowcast provides a high-frequency measure of demand, while GS balances are based on supply-demand estimates updated every six weeks.",
+            "Source: Kpler, ICIS, Oilchem, IEA, GS Global Investment Research"
+        ],
+        "bbox": [
+            281,
+            87,
+            905,
+            363
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/fff3db076219f5ae38295c25a92b98e33df0b60bf9b44f129e5852ee07a0f661.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 19: China visible landed crude inventories fell over the last week of June"
+        ],
+        "chart_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "bbox": [
+            279,
+            491,
+            906,
+            772
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            5,
+            184,
+            20
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "China Economic Activity and Policy Tracker",
+        "bbox": [
+            633,
+            7,
+            918,
+            23
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "3 July 2026",
+        "bbox": [
+            81,
+            954,
+            151,
+            967
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            898,
+            954,
+            918,
+            966
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "4) Markets and policy",
+        "text_level": 2,
+        "bbox": [
+            271,
+            40,
+            468,
+            59
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5f1534a5e16cf961078909c3e813e2912033b6d506d843b9f560bc88f9413adf.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 20: Interbank repo rates edged up over the last week"
+        ],
+        "chart_footnote": [
+            "Source: Wind, GS Global Investment Research"
+        ],
+        "bbox": [
+            279,
+            96,
+            905,
+            378
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/316b086574a855b5afc01d2e662d824992e7ffebcc24e7e248524a04596c3bab.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 21: Overnight rate remained below the 7-day OMO rate"
+        ],
+        "chart_footnote": [
+            "The grey dashed lines represent the corridor defined by the temporary overnight OMOs.",
+            "Source: CEIC, Wind, GS Global Investment Research"
+        ],
+        "bbox": [
+            281,
+            440,
+            905,
+            716
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            5,
+            184,
+            19
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "China Economic Activity and Policy Tracker",
+        "bbox": [
+            633,
+            7,
+            918,
+            23
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "3 July 2026",
+        "bbox": [
+            81,
+            954,
+            151,
+            967
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            898,
+            954,
+            916,
+            967
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/40da79be6df83fb248af39b944665e6d555f431033d10c030748a4895ecffa9b.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 22: CNY appreciated against CFETS basket while remained rangebound against USD over the past week"
+        ],
+        "chart_footnote": [
+            "Source: GS Global Investment Research, Wind"
+        ],
+        "bbox": [
+            279,
+            87,
+            903,
+            366
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ed4dcd1296d0ffa31089d4e46181c6143523cc1e88f1a1bb08b3abbd6e616175.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 23: USDCNY fixing implied countercyclical factor dropped in recent weeks"
+        ],
+        "chart_footnote": [
+            "Source: Bloomberg, Data compiled by GS Global Investment Research"
+        ],
+        "bbox": [
+            279,
+            428,
+            903,
+            705
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            5,
+            184,
+            19
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "China Economic Activity and Policy Tracker",
+        "bbox": [
+            633,
+            7,
+            918,
+            23
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "3 July 2026",
+        "bbox": [
+            81,
+            954,
+            151,
+            967
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            898,
+            954,
+            918,
+            966
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "table",
+        "img_path": "images/8c34b31f9aa74228ec5070ec4443b47a87d4d50acc2d9005f6b1aa6bde7ab6f2.jpg",
+        "table_caption": [
+            "Exhibit 24: Major macro policy announcements since May"
+        ],
+        "table_footnote": [
+            "Source: Government websites, GS Global Investment Research"
+        ],
+        "table_body": "<table><tr><td>Date</td><td>Announcement</td><td>Type</td></tr><tr><td>29/30-Jun</td><td>The PBOC conducted its first overnight reverse repos, with the rate undisclosed.</td><td>Monetary</td></tr><tr><td>29-Jun</td><td>State council meeting on the development of AI, current foreign trade situation, and reviewed the plan for carbon peaking during the 15th FPY</td><td>Other</td></tr><tr><td>25-Jun</td><td>NDRC and National Energy Administration released China&#x27;s 15th FYP for building the new-type energy system</td><td>Investment</td></tr><tr><td>23-Jun</td><td>Ministry of Commerce issued notices to intensify efforts to promote the expansion of automobile consumption across the entire chain</td><td>Consumption</td></tr><tr><td>22-Jun</td><td>Ministry of Commerce issued a plan to stabilize and improve the utilization of foreign investment</td><td>Investment</td></tr><tr><td>18-Jun</td><td>Ministry of Commerce issued opinions on accelerating the development of AI+ consumption</td><td>Consumption</td></tr><tr><td>18-Jun</td><td>NDRC will issue the complete list of this year&#x27;s 200bn yuan equipment upgrade projects and the third batch of 62.5bn yuan in CGSB funds for the consumer goods trade-in program by end June</td><td>Consumption</td></tr><tr><td>17-Jun</td><td>Lujiazui Forum reinforced three policy directions: a more price-based monetary policy framework, reduced emphasis on aggregate credit extension, and rules-based capital opening</td><td>Monetary</td></tr><tr><td>15-Jun</td><td>MOF issued administrative measures for service industry development funds</td><td>Consumption</td></tr><tr><td>11-Jun</td><td>State council meeting on rectifying issues from 2025 audit of central budget execution and other fiscal revenues and expenditures</td><td>Fiscal</td></tr><tr><td>10-Jun</td><td>NDRC meeting on accelerated preparation of targeted policy tools for timely implementation as needed</td><td>Growth</td></tr><tr><td>2-Jun</td><td>The central government allocated 99.9 billion yuan in childcare subsidy funds to support the implementation of the childcare subsidy system</td><td>Consumption/Growth</td></tr><tr><td>1-Jun</td><td>State council issued a document setting out guidelines on corporate and individuals&#x27; overseas investments</td><td>Other</td></tr><tr><td>28-May</td><td>State council issued a notice on the Urban Renewal Plan for the 15th Five-year period</td><td>Growth</td></tr><tr><td>22-May</td><td>State council issued note on promoting the provision of basic public services at the place of permanent residence</td><td>Other</td></tr><tr><td>21-May</td><td>State council meeting on advancing the construction of a unified national market</td><td>Growth</td></tr><tr><td>18-May</td><td>State council issued the action plan for stabilizing employment, expanding job openings, and improving job qualities</td><td>Employment</td></tr><tr><td>15-May</td><td>State council meeting on the implementation of Central Urban Work Conference&#x27;s directives and progress of urban renewal</td><td>Growth</td></tr><tr><td>9-May</td><td>State council meeting on the development of the national transportation system and progress in resolving local government debt risks</td><td>Other</td></tr><tr><td>8-May</td><td>MOF allocated RMB 45.8 billion in 2026 to support the development of preschool education</td><td>Growth</td></tr><tr><td>1-May</td><td>Premier Li Qiang emphasized accelerating the construction of the water network</td><td>Growth</td></tr></table>",
+        "bbox": [
+            81,
+            70,
+            913,
+            301
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Thanks to Samson Yau and Ming Yang, interns on the Asia Economics team, for their contribution to this report.",
+        "bbox": [
+            271,
+            326,
+            836,
+            360
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The China Economics Team",
+        "text_level": 2,
+        "bbox": [
+            284,
+            402,
+            509,
+            421
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Andrew Tilton  \n+852-2978-1802  \nandrew.tilton@gs.com  \nGS (Asia) L.L.C.",
+        "bbox": [
+            282,
+            445,
+            416,
+            486
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Xinquan Chen  \n+852-2978-2418  \nxinquan.chen@gs.com  \nGS (Asia) L.L.C.",
+        "bbox": [
+            282,
+            500,
+            416,
+            541
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Hui Shan  \n+852-2978-6634  \nhui.shan@gs.com  \nGS (Asia) L.L.C.",
+        "bbox": [
+            493,
+            443,
+            625,
+            486
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Yuting Yang  \n+852-2978-7283  \nyuting.y.yang@gs.com  \nGS (Asia) L.L.C.",
+        "bbox": [
+            493,
+            500,
+            625,
+            541
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Lisheng Wang +852-3966-4004 lisheng.wang@gs.com GS (Asia) L.L.C.",
+        "bbox": [
+            705,
+            445,
+            836,
+            486
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Chelsea Song +852-2978-0106 chelsea.song@gs.com GS (Asia) L.L.C.",
+        "bbox": [
+            705,
+            500,
+            836,
+            541
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            5,
+            184,
+            19
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "China Economic Activity and Policy Tracker",
+        "bbox": [
+            633,
+            7,
+            918,
+            23
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "3 July 2026",
+        "bbox": [
+            81,
+            954,
+            151,
+            966
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            898,
+            954,
+            916,
+            966
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Disclosure Appendix",
+        "text_level": 2,
+        "bbox": [
+            78,
+            40,
+            253,
+            61
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Reg AC",
+        "text_level": 2,
+        "bbox": [
+            78,
+            82,
+            138,
+            96
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "I, Chelsea Song, hereby certify that all of the views expressed in this report accurately reflect my personal views, which have not been influenced by considerations of the firm's business or client relationships.",
+        "bbox": [
+            78,
+            104,
+            890,
+            129
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.",
+        "bbox": [
+            78,
+            134,
+            887,
+            147
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Contributing Authors: Chelsea Song GS (Asia) L.L.C..",
+        "bbox": [
+            78,
+            152,
+            447,
+            166
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.",
+        "bbox": [
+            78,
+            170,
+            897,
+            194
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Disclosures",
+        "text_level": 2,
+        "bbox": [
+            80,
+            206,
+            169,
+            221
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Regulatory disclosures",
+        "text_level": 2,
+        "bbox": [
+            78,
+            225,
+            253,
+            241
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Disclosures required by United States laws and regulations",
+        "text_level": 2,
+        "bbox": [
+            78,
+            245,
+            517,
+            259
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; $1\\%$ or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.",
+        "bbox": [
+            78,
+            258,
+            908,
+            305
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.",
+        "bbox": [
+            76,
+            309,
+            915,
+            390
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States",
+        "text_level": 2,
+        "bbox": [
+            78,
+            401,
+            875,
+            415
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States\n\nThe following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details, a copy of the annual compliance audit report and other relevant information and disclosures can be found at this link:",
+        "bbox": [
+            76,
+            407,
+            913,
+            727
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "https://www.goldmansachs.com/worldwide/india/research-analyst. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are",
+        "bbox": [
+            76,
+            726,
+            918,
+            927
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            5,
+            184,
+            19
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "China Economic Activity and Policy Tracker",
+        "bbox": [
+            633,
+            7,
+            918,
+            23
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            898,
+            954,
+            918,
+            966
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "3 July 2026",
+        "bbox": [
+            80,
+            954,
+            151,
+            967
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "available from GS International on request.",
+        "bbox": [
+            78,
+            40,
+            390,
+            54
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.",
+        "bbox": [
+            78,
+            59,
+            910,
+            139
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.",
+        "bbox": [
+            76,
+            144,
+            915,
+            202
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Global product; distributing entities",
+        "text_level": 2,
+        "bbox": [
+            80,
+            212,
+            352,
+            227
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.",
+        "bbox": [
+            76,
+            225,
+            918,
+            350
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.",
+        "bbox": [
+            78,
+            354,
+            880,
+            380
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.",
+        "bbox": [
+            78,
+            385,
+            905,
+            430
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "General disclosures",
+        "text_level": 2,
+        "bbox": [
+            80,
+            443,
+            230,
+            456
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.",
+        "bbox": [
+            78,
+            456,
+            915,
+            514
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).",
+        "bbox": [
+            78,
+            520,
+            915,
+            554
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.",
+        "bbox": [
+            78,
+            560,
+            916,
+            594
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.",
+        "bbox": [
+            76,
+            600,
+            890,
+            625
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.",
+        "bbox": [
+            78,
+            629,
+            918,
+            654
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.",
+        "bbox": [
+            78,
+            659,
+            913,
+            683
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "This research is focused on investment themes across markets, industries and sectors. It does not attempt to distinguish between the prospects or performance of, or provide analysis of, individual companies within any industry or sector we describe.",
+        "bbox": [
+            78,
+            687,
+            888,
+            713
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Any trading recommendation in this research relating to an equity or credit security or securities within an industry or sector is reflective of the investment theme being discussed and is not a recommendation of any such security in isolation.",
+        "bbox": [
+            78,
+            718,
+            867,
+            741
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.",
+        "bbox": [
+            76,
+            747,
+            918,
+            816
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\\_fcm\\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.",
+        "bbox": [
+            76,
+            821,
+            906,
+            880
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints.",
+        "bbox": [
+            78,
+            883,
+            905,
+            931
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            5,
+            184,
+            19
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "China Economic Activity and Policy Tracker",
+        "bbox": [
+            633,
+            7,
+            918,
+            23
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "3 July 2026",
+        "bbox": [
+            80,
+            954,
+            151,
+            967
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            898,
+            954,
+            916,
+            966
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.",
+        "bbox": [
+            78,
+            41,
+            900,
+            99
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.",
+        "bbox": [
+            78,
+            103,
+            898,
+            150
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.",
+        "bbox": [
+            78,
+            154,
+            890,
+            178
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "© 2026 GS.",
+        "text_level": 2,
+        "bbox": [
+            80,
+            185,
+            220,
+            197
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.",
+        "bbox": [
+            76,
+            203,
+            913,
+            283
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            6,
+            184,
+            19
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "China Economic Activity and Policy Tracker",
+        "bbox": [
+            633,
+            7,
+            918,
+            23
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "3 July 2026",
+        "bbox": [
+            80,
+            954,
+            151,
+            967
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            898,
+            954,
+            918,
+            966
+        ],
+        "page_idx": 15
+    }
+]
