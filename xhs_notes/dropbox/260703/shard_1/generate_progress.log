@@ -1,17 +1,15 @@
-Found 32 total PDFs; shard 1/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Found 33 total PDFs; shard 1/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
 Running batch 1: 5 PDFs
 Found 5 PDFs. MinerU token slots available=2.
 MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
-Uploading PDF to MinerU: /tmp/pdf_batch_001_jjja8t48/pdfs/0001-06-Morgan Stanley-Global Technology NAND Industry Outlook Diverging Trends-260702.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_jjja8t48/pdfs/0002-07-Goldman Sachs-Strategy Espresso-Europe and the China Dragon - a fiercer fight-260702.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_jjja8t48/pdfs/0003-08-HSBC-China Macro Tracker Engagement continues-260701.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_jjja8t48/pdfs/0004-09-J.P. Morgan-China RatingDog PMI- Stabilization- Not Reflation-260701.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_jjja8t48/pdfs/0005-10-Nomura-Global AI Trend Tracker-AI expert call 69 takeaways - InP Epi wafer-260701.pdf
-MinerU attempt 1 using MINER_U_2 batch_id=f7467f08-c592-4675-b678-e3d413b00526
-MinerU states: running, running, running, pending, waiting-file
-MinerU states: running, done, done, done, done
+Uploading PDF to MinerU: /tmp/pdf_batch_001_v9y470u3/pdfs/0001-06-Morgan Stanley-Global Technology NAND Industry Outlook Diverging Trends-260702.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_v9y470u3/pdfs/0002-07-Goldman Sachs-Strategy Espresso-Europe and the China Dragon - a fiercer fight-260702.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_v9y470u3/pdfs/0003-08-HSBC-China Macro Tracker Engagement continues-260701.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_v9y470u3/pdfs/0004-09-J.P. Morgan-China RatingDog PMI- Stabilization- Not Reflation-260701.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_v9y470u3/pdfs/0005-10-UBS-US Economic Perspectives-Warsh at Sintra- 3 takeaways-260701.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=8a9228d2-8bba-433c-b6ac-ec0b4530e841
+MinerU states: done, done, done, done, waiting-file
 MinerU states: done, done, done, done, done
-DeepSeek generation failed for Xiaohongshu note: DeepSeek generate Xiaohongshu note: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
 /home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:277: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
   pixels = list(gray.getdata())
 Skip non-chart visual asset 1caa0df2de1d522ea00d7d2c85ae89c10d8f95036419fa79f689e4d26d2215be.jpg: score=2;chart_ratio,large
@@ -46,10 +44,6 @@ Skip non-chart visual asset 53a3cd45f1c3dc31627f0dffe881dd78cc8d481de06898abff08
 Skip non-chart visual asset c10cf00147e1bcf98668d27b53af959799703ca439a04b88cc2aedb9943745e7.jpg: score=0;square_without_chart_hint,edge:0.26,large
 Skip non-chart visual asset 2d80745e739b427036700a05d0c1e710203d352c15d43892baea2165b78315a2.jpg: score=0;square_without_chart_hint,edge:0.28,large
 Skip non-chart visual asset b9d5bb9da7cc6c9d8f16de51e4268034674fc4e244ced13d16edaec1c79eacd4.jpg: score=0;square_without_chart_hint,edge:0.26,large
-DeepSeek generation failed for WeChat article: DeepSeek generate WeChat article: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
-DeepSeek generation failed for Xiaohongshu note: DeepSeek generate Xiaohongshu note: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
-DeepSeek generation failed for WeChat article: DeepSeek generate WeChat article: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
-DeepSeek generation failed for Xiaohongshu note: DeepSeek generate Xiaohongshu note: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
 Skip non-chart visual asset 47260605eb4f9a2a47a228f250b44695d379206322b7359facc801cbae5c4735.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.27
 Skip non-chart visual asset 7a5b13c447940b8a81f68b99df9bcbd78e5cb1cd54e34367a0d9fd6759e6f3bb.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.34,contrast
 Skip non-chart visual asset d231e1b4c55fe71e8b46accbff105ec1cca97eb45b5b1c2d5a5c875f12e6f479.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.28
@@ -82,11 +76,6 @@ Skip non-chart visual asset 91bc5823b3104f4deb1c0813581fbb9660572dd1ae2c3c4c42a8
 Skip non-chart visual asset 7cfd6189c325ff4a0f3ae261ca0804d3e51d02edfe9631891a7b2db3909fa9f4.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.33,contrast
 Skip non-chart visual asset 95df3ba4485104722e383f1dae114561450b586186781aef5b5e1b3999de361b.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.26
 Skip non-chart visual asset 05619f38b8df1f9737cbee70a4bf5a46d504ec82a04400b967e0ae23589926e9.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.35,contrast
-DeepSeek generation failed for WeChat article: DeepSeek generate WeChat article: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
-DeepSeek generation failed for Xiaohongshu note: DeepSeek generate Xiaohongshu note: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
-DeepSeek generation failed for WeChat article: DeepSeek generate WeChat article: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
-DeepSeek generation failed for Xiaohongshu note: DeepSeek generate Xiaohongshu note: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
 MinerU result contained no standalone chart images; creating title card only.
-DeepSeek generation failed for WeChat article: DeepSeek generate WeChat article: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
 Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260703/shard_1; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
 All batches completed successfully. Generated 5 report directories.

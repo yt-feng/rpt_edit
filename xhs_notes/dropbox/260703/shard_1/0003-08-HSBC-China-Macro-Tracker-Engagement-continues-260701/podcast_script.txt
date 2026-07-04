@@ -1,1 +1,83 @@
-DeepSeek 生成 podcast 脚本失败：DeepSeek generate conversational Chinese and English podcast scripts: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
+ZH_A: 这期报告内容很丰富，但我最想先问你一个问题：你觉得现在中欧关系，是更紧张了，还是更缓和了？
+
+ZH_B: 表面看双方还在谈，甚至设了十月期限要出成果，但实际基调已经变了。报告认为，中欧之间的“去风险”议程正在加速，摩擦更容易升级了。
+
+ZH_A: 所以报告真正要回答的问题，不是“中欧会不会吵架”，而是“这场吵架会走到哪一步”？
+
+ZH_B: 对。报告的核心判断是，中欧现在的矛盾，已经从关税这种具体领域，扩散到了补贴、标准、采购、战略技术。一旦技术问题变得政治化，就很难快速收场。
+
+ZH_A: 那报告里有没有提到，中国这边会怎么应对？
+
+ZH_B: 有。报告指出，中国不太可能退让，反而在扩大反制工具，比如最近通过的供应链安全法，还有7月1号生效的ODI新规。双方都在加码，这就增加了“以牙还牙”升级的风险。
+
+ZH_A: 除了中欧关系，报告还花了很多篇幅讲工业利润。我看到一个词叫“分化”，具体是什么意思？
+
+ZH_B: 就是赢家和输家很分明。上游的能源、有色，还有跟全球AI需求相关的电子行业，利润很好。但中游和下游压力很大，整体拖累从1到4月的4.8个百分点，扩大到了前五个月的5.5个百分点。
+
+ZH_A: 这意味着普通制造业的日子很难过？
+
+ZH_B: 是的。报告里举了例子，服装皮革利润跌了快两成，橡胶塑料也跌了。核心原因是能源成本涨了，但下游产品价格涨不上去，利润就被压缩了。报告也提到，虽然成本压力后面可能缓解，但国内终端需求依然疲弱。
+
+ZH_A: 那房地产和基建呢？报告说它们也拖累了利润？
+
+ZH_B: 对。二季度以来，房地产和基建投资疲软加剧，对前五个月工业利润造成了1.2个百分点的拖累。不过报告认为，后面政府债券发行加速，还有8000亿政策性金融工具落地，应该能帮基建和建筑活动回温。但房地产投资可能还是拖累。
+
+ZH_A: 报告里还提到一个挺有意思的点，就是地方债。审计署发现有些地方融资平台造假退出名单？
+
+ZH_B: 没错。报告引用了审计署的数据，说抽查中有6%的地方融资平台通过造假数据来退出名单。还有地方通过国企新增隐性债务，或者用贷款置换、删除数据来压低存量债务。这说明“去风险”的清理工作，可能没有表面看起来那么干净。
+
+ZH_A: 所以地方财政的压力，短期内还是会制约投资？
+
+ZH_B: 对。土地出让收入前五个月跌了将近29%，地方财政很紧。不过报告也提到，北京正在鼓励地方盘活存量资产，非税收入已经有所回升。但更根本的，还是要推进财税改革。
+
+ZH_A: 比如报告里说的，扩大消费税并让地方分享？
+
+ZH_B: 没错。这能从根本上改善地方财政收入。但报告也留了一个悬念：这些改革具体怎么落地，时间表是什么，报告并没有完全展开。
+
+ZH_A: 所以听完这期，你会发现中欧关系、工业利润、地方债这三条线，其实都指向同一个问题：中国经济的结构性压力正在加剧，政策应对的难度也在上升。
+
+ZH_B: 对。而完整报告里，还有更多关于这些悬念的详细分析，比如中欧谈判的后续情景，以及财税改革的具体路径。如果你觉得意犹未尽，非常建议去阅读完整报告。
+
+ZH_A: 好，那我们这期就聊到这里。感谢收听，我们下期再见。
+
+EN_A: So let me start with a big picture question. Are China-EU relations actually getting worse, or is this just noise?
+
+EN_B: The report argues the tone has shifted. Even though both sides are still talking and even set an October deadline for tangible results, the EU’s de-risking agenda is accelerating. Tensions are more prone to escalation now.
+
+EN_A: So the real question the report is trying to answer is not whether they will argue, but how far this will go?
+
+EN_B: Exactly. The core insight is that the disputes have moved beyond tariffs into subsidies, standards, procurement, and strategic technologies. Once technical issues become political, it is very hard to de-escalate quickly.
+
+EN_A: And what about China’s response? Does the report see them backing down?
+
+EN_B: Quite the opposite. The report points out that China has been expanding its countermeasures. For example, the recent Supply Chain Security Act and the new ODI regulations that took effect on July first. Both sides are adding tools, which raises the risk of tit-for-tat escalation.
+
+EN_A: Let’s shift to industrial profits. The report uses the word bifurcation. What does that mean on the ground?
+
+EN_B: It means clear winners and losers. Energy, non-ferrous metals, and sectors tied to global AI demand are doing very well. But midstream and downstream industries are struggling. The drag from those weaker sectors expanded from 4.8 percentage points in the first four months to 5.5 percentage points in the first five months.
+
+EN_A: So what does that mean for the average manufacturer?
+
+EN_B: It means margin compression. The report gives examples like garments and leather, where profits fell by roughly 11 and 19 percent. Energy costs are rising, but output prices are not. The report does note that cost pressures may ease later, but domestic demand remains too weak to support a broad recovery.
+
+EN_A: And property and infrastructure? The report says they also dragged on profits.
+
+EN_B: Yes. The weakness in property and infrastructure investment intensified from the second quarter, creating a 1.2 percentage point drag on headline profit growth. However, the report expects that faster government bond issuance and 800 billion yuan in new policy-based financing tools should help infrastructure. But property investment is likely to remain a drag.
+
+EN_A: There is also a very interesting section on local government debt. The audit office found cases of data manipulation?
+
+EN_B: That is right. The report cites the National Audit Office, which found that 6 percent of local government financing vehicles in spot checks had falsified data to exit the official list. Some localities also added new hidden debt through state-owned enterprises or artificially lowered existing debt through loan substitutions and data deletions. So the cleanup is not as clean as it looks.
+
+EN_A: So local fiscal constraints are still a major issue?
+
+EN_B: Absolutely. Land sales revenue dropped nearly 29 percent year-on-year in the first five months. The report notes that Beijing is encouraging local governments to monetize existing assets, which has helped lift non-tax revenue. But the fundamental solution, the report hints, is deeper fiscal reform.
+
+EN_A: Like the report’s suggestion to expand the consumption tax and let local governments share in the revenue?
+
+EN_B: Exactly. That would fundamentally improve local fiscal health. But the report leaves a question mark on how and when these reforms will actually be implemented. That is one of the big open questions.
+
+EN_A: So to wrap it up, the three themes we discussed—EU relations, industrial profits, and local debt—all point to the same conclusion: structural pressures on China’s economy are intensifying, and policy responses are getting more complicated.
+
+EN_B: Right. And the full report goes deeper into each of these open questions, including scenario analysis on EU-China talks and the specific pathways for fiscal reform. If you want to know more, definitely check out the full report.
+
+EN_A: Great. Thanks for the insights. And thanks for listening. We will see you next time.

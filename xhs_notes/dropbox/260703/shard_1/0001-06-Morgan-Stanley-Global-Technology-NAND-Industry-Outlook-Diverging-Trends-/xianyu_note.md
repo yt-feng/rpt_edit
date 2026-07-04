@@ -1,3 +1,17 @@
-DeepSeek 生成 Xianyu listing note 失败：DeepSeek generate Xianyu listing note: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
+闲鱼标题：NAND行业研报 AI存储供需分析英文PDF
 
-请复制 prompt_for_xianyu.md 手动生成。
+商品描述：
+这是一份来自投行的英文原版NAND行业研报，主题聚焦于AI驱动的存储供需趋势，包含对多家核心存储芯片与模组公司的详细分析。报告覆盖了从AI服务器到消费端的需求分化、供应短缺预测，以及各厂商的估值逻辑与长协合约影响。
+
+适合人群：半导体行业研究员、PE/VC从业者、券商投研实习生、电子/计算机相关专业学生、准备AI存储方向面试或行业研究的同学。也适合对存储产业链、NAND与DRAM周期有研究兴趣的投资者参考学习。
+
+亮点包括：
+- 全球NAND供需模型与2027年前短缺情景分析
+- 覆盖三星、SK海力士、美光、铠侠、西部数据等核心标的
+- AI与消费端需求分化下的定价与订单变化
+- 各公司长协合约、股东回报与估值逻辑对比
+- 对硅映、Fadu等eSSD控制器新增长点的详细拆解
+
+资料为电子版PDF，拍下后24小时内发网盘链接或邮箱。电子类资料一经发货不退不换，有问题可以提前咨询。需要其他报告也可以私聊，支持一站式咨询。
+
+Hashtag：#学习资料 #研究笔记 #行业研究 #研报资料 #资料整理 #报告学习 #案例研究 #半导体 #存储芯片
