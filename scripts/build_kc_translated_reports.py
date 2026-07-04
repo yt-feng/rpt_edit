@@ -31,8 +31,15 @@ except Exception:  # pragma: no cover
         return text
 
 try:
-    from institution_names import infer_institution_name
+    from institution_names import ensure_title_has_institution, infer_institution_name
 except Exception:  # pragma: no cover
+    def ensure_title_has_institution(title: str, institution: str) -> str:
+        title = title.strip()
+        institution = institution.strip()
+        if institution and not title.startswith(f"{institution}："):
+            return f"{institution}：{title}"
+        return title
+
     def infer_institution_name(*_values: Any) -> str:
         return ""
 
@@ -47,6 +54,23 @@ INSTITUTION_KEY_TO_CN = {
     "rand": "兰德公司",
     "brookings": "布鲁金斯学会",
 }
+
+INSTITUTION_TITLE_ALIASES: list[tuple[str, list[str]]] = [
+    ("高盛", ["GS", "Goldman Sachs"]),
+    ("摩根大通", ["JPM", "J.P. Morgan", "JP Morgan", "JPMorgan"]),
+    ("摩根士丹利", ["MS", "Morgan Stanley", "摩根斯坦利", "大摩"]),
+    ("美银", ["BofA", "Bank of America", "美国银行", "美银证券"]),
+    ("花旗", ["Citi", "Citigroup"]),
+    ("瑞银", ["UBS"]),
+    ("汇丰", ["HSBC"]),
+    ("巴克莱", ["BARC", "Barclays"]),
+    ("伯恩斯坦", ["Bernstein", "Sanford C. Bernstein", "Sanford Bernstein"]),
+    ("杰富瑞", ["JEF", "Jefferies"]),
+    ("德意志银行", ["DB", "Deutsche Bank", "德银"]),
+    ("野村", ["NOM", "Nomura"]),
+    ("美联储", ["Fed", "Federal Reserve"]),
+]
+TITLE_ALIAS_SEPARATOR_RE = r"(?:[：:，,、;；\-—]\s*)?"
 
 try:  # Loaded lazily so --help and cleaning logic work without reportlab installed.
     from reportlab.lib import colors
@@ -148,6 +172,103 @@ def log(message: str) -> None:
 
 def normalize_space(text: str) -> str:
     return re.sub(r"\s+", " ", sanitize_text(text or "")).strip()
+
+
+def canonicalize_institution_title_name(title: str) -> str:
+    normalized = normalize_space(title)
+    normalized = normalized.replace("摩根斯坦利", "摩根士丹利")
+    normalized = normalized.replace("美国银行：", "美银：")
+    return normalized
+
+
+def alias_pattern(alias: str) -> str:
+    if re.fullmatch(r"[A-Z]{2,5}", alias):
+        return rf"(?<![A-Za-z]){re.escape(alias)}(?![A-Za-z])"
+    if re.fullmatch(r"[A-Za-z. ]+", alias):
+        return r"\b" + re.escape(alias).replace(r"\ ", r"[\s._-]+") + r"\b"
+    return re.escape(alias)
+
+
+def limit_title_colons(title: str) -> str:
+    cleaned = normalize_space(title).replace(":", "：")
+    if "：" not in cleaned:
+        return cleaned
+    head, tail = cleaned.split("：", 1)
+    tail = re.sub(r"\s*：\s*", "，", tail).strip(" ，")
+    if not tail:
+        return head.strip()
+    return f"{head.strip()}：{tail}"
+
+
+def clean_leading_report_slug(title: str) -> str:
+    cleaned = normalize_space(title)
+    cleaned = re.sub(
+        r"^([^：:]{1,18}[：:]\s*)(?:\d{4}[-_])?\d{1,4}[-_]\d{1,4}[-_]+",
+        r"\1",
+        cleaned,
+    )
+    cleaned = re.sub(r"^(?:\d{4}[-_])?\d{1,4}[-_]\d{1,4}[-_]+", "", cleaned)
+
+    def readable_slug_tail(value: str) -> str:
+        if value.count("-") + value.count("_") < 3:
+            return value
+        value = value.replace("_", " ")
+        value = re.sub(r"\s*-{2,}\s*", "，", value)
+        value = re.sub(r"\s*-\s*", " ", value)
+        return normalize_space(value)
+
+    for sep in ("：", ":"):
+        if sep in cleaned:
+            head, tail = cleaned.split(sep, 1)
+            return f"{head.strip()}：{readable_slug_tail(tail.strip())}".strip("： ")
+    return readable_slug_tail(cleaned).strip(" -_")
+
+
+def remove_redundant_title_aliases(title: str) -> str:
+    cleaned = clean_leading_report_slug(canonicalize_institution_title_name(title))
+    for cn_name, aliases in INSTITUTION_TITLE_ALIASES:
+        alias_group = "|".join(alias_pattern(alias) for alias in aliases)
+        cleaned = re.sub(
+            rf"^({re.escape(cn_name)})[：:]\s*(?:{alias_group})\s*{TITLE_ALIAS_SEPARATOR_RE}",
+            rf"\1：",
+            cleaned,
+            flags=re.I,
+        )
+        cleaned = re.sub(
+            rf"^(?:{alias_group})\s*[：:]\s*({re.escape(cn_name)})\s*{TITLE_ALIAS_SEPARATOR_RE}",
+            rf"\1：",
+            cleaned,
+            flags=re.I,
+        )
+        cleaned = re.sub(
+            rf"^({re.escape(cn_name)})\s*(?:\(|（)\s*(?:{alias_group})\s*(?:\)|）)\s*{TITLE_ALIAS_SEPARATOR_RE}",
+            rf"\1：",
+            cleaned,
+            flags=re.I,
+        )
+    cleaned = re.sub(r"\s*[：:]\s*", "：", cleaned)
+    cleaned = re.sub(r"：{2,}", "：", cleaned)
+    return limit_title_colons(cleaned).strip("：: -—")
+
+
+def clean_display_title(title: str, institution_name: str = "") -> str:
+    cleaned = remove_redundant_title_aliases(title)
+    cleaned = re.sub(r"^(?:标题|微信标题)\s*[：:]\s*", "", cleaned)
+    if institution_name:
+        cleaned = ensure_title_has_institution(
+            cleaned,
+            canonicalize_institution_title_name(institution_name),
+        )
+    return remove_redundant_title_aliases(cleaned)[:140]
+
+
+def replace_first_heading(markdown: str, title: str) -> str:
+    lines = markdown.splitlines()
+    for idx, raw in enumerate(lines):
+        if raw.strip().startswith("#"):
+            lines[idx] = f"# {title}"
+            return "\n".join(lines).strip() + "\n"
+    return f"# {title}\n\n{markdown.strip()}\n"
 
 
 def slug(value: str, max_len: int = 96) -> str:
@@ -934,17 +1055,17 @@ def render_pdf(translated_markdown: str, figures: list[dict[str, Any]], output_p
 
 
 def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.Namespace) -> dict[str, Any]:
-    title = report_title(report_dir)
+    source_title = report_title(report_dir)
     report_out_dir = out_dir / f"{index:02d}-{slug(report_dir.name)}"
     report_out_dir.mkdir(parents=True, exist_ok=True)
-    log(f"Processing report {index}: {title}")
+    log(f"Processing report {index}: {source_title}")
 
     source_preview = ""
     source_path = report_dir / "source_mineru.md"
     if source_path.exists():
         source_preview = source_path.read_text(encoding="utf-8", errors="ignore")[:1600]
-    institution_name = infer_institution_name(report_dir.name, title, source_preview)
-    article_style = is_public_or_consulting_report(report_dir, title, source_preview)
+    institution_name = infer_institution_name(report_dir.name, source_title, source_preview)
+    article_style = is_public_or_consulting_report(report_dir, source_title, source_preview)
     if article_style:
         log(f"  Using article-style rewrite and strict chart filtering for {institution_name or report_dir.name}")
 
@@ -958,18 +1079,21 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
     (report_out_dir / "figure_manifest.json").write_text(json.dumps(figures, ensure_ascii=False, indent=2), encoding="utf-8")
 
     if article_style:
-        translated_md = generate_article_style_markdown(clean_md, title, institution_name, figures, args)
+        translated_md = generate_article_style_markdown(clean_md, source_title, institution_name, figures, args)
     else:
         translated_md = translate_markdown(clean_md, args)
+    display_title = clean_display_title(first_heading(translated_md, source_title), institution_name)
+    translated_md = replace_first_heading(translated_md, display_title)
     translated_path = report_out_dir / "translated.md"
     translated_path.write_text(translated_md, encoding="utf-8")
 
     output_pdf = report_out_dir / f"kc_translated_report_{index:02d}.pdf"
-    render_pdf(translated_md, figures, output_pdf, title)
+    render_pdf(translated_md, figures, output_pdf, display_title)
 
     status = {
         "source_report_dir": str(report_dir),
-        "title": title,
+        "title": display_title,
+        "source_title": source_title,
         "source_clean": "source_clean.md",
         "translated_markdown": "translated.md",
         "pdf": output_pdf.name,
