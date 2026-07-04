@@ -1387,7 +1387,8 @@
   async function segmentedAdminDownload(endpoint, fallbackName, progress, signal, options = {}) {
     const chunkSize = options.chunkSize || 4 * 1024 * 1024;
     const concurrency = options.concurrency || 4;
-    const first = await fetchRangeBlob(endpoint, 0, chunkSize - 1, signal);
+    const firstSignal = options.firstChunkTimeoutMs ? timeoutSignal(signal, options.firstChunkTimeoutMs) : signal;
+    const first = await fetchRangeBlob(endpoint, 0, chunkSize - 1, firstSignal);
     if (first.full) {
       setDownloadProgress(progress, first.blob.size, first.total || first.blob.size);
       return first.blob;
@@ -1772,22 +1773,38 @@
       const row = button.closest(".account-admin-file");
       const progress = row && row.querySelector(".account-admin-progress");
       const controller = new AbortController();
-      if (!(segmented && isVideoDownloadButton(button))) startAdminButtonAction(button, controller);
+      startAdminButtonAction(button, controller);
       resetDownloadProgress(progress);
       status.className = "status-line";
       status.textContent = segmented ? "正在准备高速缓存…" : "正在准备下载…";
+      let finalLabel = "";
+      let finalDelay = 0;
       try {
         let blob;
         let disposition = "";
         if (segmented && isVideoDownloadButton(button)) {
           const directUrl = withDownloadToken(endpoint);
-          setDownloadMessage(progress, "已交给浏览器下载器；如果没有弹出，请允许浏览器下载。", 18);
-          triggerNativeDownload(directUrl, name);
-          status.textContent = "视频下载已交给浏览器处理。";
-          status.classList.add("ok");
-          finishAdminButtonAction(button, "已开始", 1600);
-          prepareSegmentedAdminDownload(workerUrl, button, controller.signal, progress).catch(() => null);
-          return;
+          try {
+            setDownloadMessage(progress, "正在准备高速缓存…", 8);
+            await prepareSegmentedAdminDownload(workerUrl, button, timeoutSignal(controller.signal, 8000), progress);
+          } catch (error) {
+            if (error && error.name === "AbortError" && controller.signal.aborted) throw error;
+            status.textContent = "缓存准备较慢，正在尝试高速下载…";
+          }
+          try {
+            status.textContent = "正在高速下载…";
+            setDownloadMessage(progress, "正在高速下载…", 10);
+            blob = await segmentedAdminDownload(endpoint, name, progress, controller.signal, { firstChunkTimeoutMs: 8000 });
+          } catch (error) {
+            if (error && error.name === "AbortError" && controller.signal.aborted) throw error;
+            setDownloadMessage(progress, "高速通道无响应，已切换浏览器下载。", 18);
+            triggerNativeDownload(directUrl, name);
+            status.textContent = "已切换浏览器下载。";
+            status.classList.add("ok");
+            finalLabel = "已切换";
+            finalDelay = 1600;
+            return;
+          }
         } else if (segmented) {
           try {
             await prepareSegmentedAdminDownload(workerUrl, button, controller.signal, progress);
@@ -1817,7 +1834,7 @@
           status.classList.add("error");
         }
       } finally {
-        if (!(segmented && isVideoDownloadButton(button))) finishAdminButtonAction(button);
+        finishAdminButtonAction(button, finalLabel, finalDelay);
       }
     });
 
