@@ -683,23 +683,6 @@
               <strong>用户信息</strong>
               <span id="accountAdminUserCount"></span>
             </div>
-            <div class="account-admin-table-wrap">
-              <table class="account-admin-table">
-                <thead>
-                  <tr>
-                    <th>用户名</th>
-                    <th>邮箱</th>
-                    <th>账号</th>
-                    <th>下载权限</th>
-                    <th>到期</th>
-                    <th>注册</th>
-                    <th>最近登录</th>
-                    <th>操作</th>
-                  </tr>
-                </thead>
-                <tbody id="accountAdminUsers"></tbody>
-              </table>
-            </div>
             <form id="accountAdminUserEditor" class="account-admin-user-editor" hidden>
               <div class="account-admin-user-editor-head">
                 <strong id="accountAdminUserEditorTitle">编辑用户权限</strong>
@@ -733,6 +716,23 @@
                 <button class="primary" type="submit">保存权限</button>
               </div>
             </form>
+            <div class="account-admin-table-wrap">
+              <table class="account-admin-table">
+                <thead>
+                  <tr>
+                    <th>用户名</th>
+                    <th>邮箱</th>
+                    <th>账号</th>
+                    <th>下载权限</th>
+                    <th>到期</th>
+                    <th>注册</th>
+                    <th>最近登录</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody id="accountAdminUsers"></tbody>
+              </table>
+            </div>
           </section>
         </div>
       </div>
@@ -809,9 +809,10 @@
     if (!user || !targets.userEditor) return;
     const access = user.access || {};
     const options = accountAdminAccessOptions || {};
+    const username = user.username || user.email || "";
     targets.userEditor.hidden = false;
     targets.accessEmail.value = user.email || "";
-    targets.userEditorTitle.textContent = `编辑权限：${user.username || user.email || ""}`;
+    targets.userEditorTitle.textContent = `编辑权限：${username}`;
     targets.accessMode.innerHTML = optionMarkup(options.modes || [], [access.access_mode || "none"]);
     targets.accessDuration.innerHTML = optionMarkup(options.durations || [], [access.lifetime ? "lifetime" : "12"]);
     targets.accessInstitutions.innerHTML = optionMarkup(options.institutions || [], access.institutions || []);
@@ -827,6 +828,14 @@
     `).join("");
     targets.accessNote.value = access.note || "";
     targets.accessMode.dispatchEvent(new Event("change"));
+    if (targets.status) {
+      targets.status.className = "status-line ok";
+      targets.status.textContent = `正在编辑 ${username || "用户"} 的下载权限。`;
+    }
+    requestAnimationFrame(() => {
+      targets.userEditor.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      if (targets.accessMode) targets.accessMode.focus({ preventScroll: true });
+    });
   }
 
   function updateUserAccessEditorMode(targets) {
@@ -1519,7 +1528,12 @@
         const button = event.target.closest(".account-admin-edit-user");
         if (!button) return;
         const user = accountAdminUsersByEmail.get(String(button.dataset.email || ""));
-        if (user) fillUserAccessEditor(user, targets);
+        if (user) {
+          fillUserAccessEditor(user, targets);
+        } else {
+          status.className = "status-line error";
+          status.textContent = "没有找到这个用户，请刷新后台后再试。";
+        }
       });
     }
     if (userEditor) {

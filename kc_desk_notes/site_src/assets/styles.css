@@ -1029,11 +1029,11 @@ button.primary:disabled {
 .account-admin-user-editor {
   display: grid;
   gap: 14px;
-  margin-top: 16px;
+  margin: 10px 0 16px;
   padding: 14px;
-  border: 1px solid var(--line);
+  border: 1px solid #b7d8d3;
   border-radius: 8px;
-  background: #f8fafc;
+  background: #eef7f5;
 }
 
 .account-admin-user-editor[hidden] {
