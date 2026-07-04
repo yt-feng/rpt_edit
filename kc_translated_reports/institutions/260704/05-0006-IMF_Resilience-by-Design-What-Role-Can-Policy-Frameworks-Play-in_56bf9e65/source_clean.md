@@ -1,0 +1,478 @@
+# Resilience by Design:
+# What Role Can Policy Frameworks Play in the Middle East and Central Asia?
+
+Hasan Dudu, Troy Matheson, Dirk Muir, Karmen Naidoo, Salem Nechi, and Pedro Rodriguez
+
+WP/26/138
+
+IMF Working Papers describe research in progress by the author(s) and are published to elicit comments and to encourage debate. The views expressed in IMF Working Papers are those of the author(s) and do not necessarily represent the views of the IMF, its Executive Board, or IMF management.
+
+2026
+JUL
+
+
+# IMF Working Paper MCD
+
+Resilience by Design:
+What Role Can Policy Frameworks Play in the Middle East and Central Asia?
+Prepared by Hasan Dudu, Troy Matheson, Dirk Muir, Karmen Naidoo, Salem Nechi, and Pedro Rodriguez\*
+
+Authorized for distribution by Roberto Cardarelli
+February 2026
+
+IMF Working Papers describe research in progress by the author(s) and are published to elicit comments and to encourage debate. The views expressed in IMF Working Papers are those of the author(s) and do not necessarily represent the views of the IMF, its Executive Board, or IMF management.
+
+ABSTRACT: The changing global economic landscape is likely to expose the Middle East, North Africa, and Pakistan (MENAP) and Caucasus and Central Asia (CCA) regions to more frequent external shocks, putting a premium on resilient and flexible macroeconomic policy frameworks. By using empirical analysis and model-based scenarios, this paper highlights the important roles of policy frameworks in stabilizing MENAP and CCA economies against adverse global shocks. Two messages stand out from the analysis. First, as countries make progress toward diversifying their exports and deepening domestic financial markets, credible inflation-targeting monetary policy regimes that allow greater exchange rate flexibility could enable faster adjustment to adverse global shocks. Second, adopting strong fiscal rules could help better anchor long-term expectations, reduce risk premiums, and help support countercyclical fiscal responses.
+
+RECOMMENDED CITATION: Dudu, Hasan, Troy Matheson, Dirk Muir, Karmen Naidoo, Salem Nechi, Pedro Rodriguez. 2026. “Resilience by Design: What Role Can Policy Frameworks in the Middle East and Central Asia?” IMF Working Paper WP/26/138, Washington DC.
+
+JEL Classification Numbers:
+
+E17, F47, E52, H60
+
+Keywords:
+
+Shocks; Macrodynamics; Fiscal; Monetary; Policy Frameworks
+
+Author's E-Mail Address:
+
+
+## Contents
+
+## FIGURES
+
+Figure 1. Monetary Policy Trilemma....5
+Figure 2. Exchange Rate Regimes....6
+Figure 4. Determinants of Sovereign Spreads....8
+Figure 5. Impact of Adverse Global Shocks by Exchange Rate Regime....9
+Figure 6. Impact of Global Shocks and Country Characteristics....10
+Figure 7. Impact of Adverse Global Shocks on Real GDP: Different Fiscal Frameworks....11
+Figure 8. Impact of Adverse Global Shocks on Primary Balance and Spreads: Different Fiscal Frameworks...11
+Figure 9. Historical Shocks: Real GDP Losses....14
+Figure 10. Real GDP Losses....16
+Figure 11. Country Characteristics: MENAP and CCA Compared to Emerging Markets and Advanced Economies....18
+
+Figure A- 1. MENAP & CCA: Exchange Rate Regimes....20
+Figure A- 7. Comparison of model results with observed changes after the Global Financial Crisis and Covid Shock....Error! Bookmark not defined.
+
+## TABLES
+
+Table 1. Monetary policy frameworks of MCD countries in the current policy scenario....12
+Table 2. Scenario assumptions....13
+
+## I. Introduction
+
+Trade protectionism and geopolitical fragmentation are reshaping the global economy and contributing to heightened global uncertainty and downside risks (IMF, 2025a; IMF, 2025b; World Bank, 2025). This changing global landscape is likely to expose the Middle East, North Africa and Pakistan (MENAP) and Caucasus and Central Asia (CCA) regions to more frequent adverse external shocks.
+
+An economy's ability to respond to shocks ultimately depends on a complex interplay of factors: its economic structure, openness to trade and financial flows, and the design and strength of its policy institutions. Policy frameworks are especially important, as they determine the tools available to restore growth and stabilize inflation. In the MENAP and CCA regions, monetary policy frameworks generally place stronger emphasis on exchange rate stability as an objective than in other advanced and emerging market economies, whereas fiscal frameworks tend to be weaker, with few countries having formal fiscal rules. $^{1}$
+
+Monetary policy frameworks are particularly important in determining how economies adjust to global shocks. Under credible inflation-targeting regimes with flexible exchange rates, policy interest rates can focus on domestic stabilization while exchange-rate movements act as automatic stabilizers, cushioning terms-of-trade and financial shocks (Broda, 2004; Carrière-Swallow et al., 2016). Empirical evidence shows that these frameworks can deliver lower inflation volatility and faster recoveries from external shocks, provided credibility is strong, and financial markets are sufficiently developed (Vega and Winkelried, 2005; Ball and Sheridan, 2003). By contrast, fixed or pegged regimes can import credibility from an anchor currency and help to contain inflation, but often at the cost of policy flexibility. These frameworks perform well when supported by disciplined fiscal policy, ample reserves, and synchronized cycles with the anchor economy—as in Hong Kong SAR and Jordan (Chiu, 2001; IMF, 2024 Jordan Article IV)—but are vulnerable when fiscal dominance, currency mismatches, or credibility gaps emerge, as illustrated by Argentina’s crisis in 2001 (IEO, 2004) and Lebanon’s collapse in 2019 (IMF, 2019; Financial Times, 2025 Lebanon).
+
+Fiscal policy frameworks play a complementary and equally vital role in macroeconomic stabilization. Countries that enter downturns with stronger fiscal positions and well-established buffers are typically able to implement countercyclical policies without jeopardizing debt sustainability. Empirical evidence confirms that fiscal space and credible fiscal rules enhance resilience: economies with stronger frameworks experience smaller output losses and faster recoveries during crises (Auerbach and Gorodnichenko, 2012; Bova et al., 2016; IMF, 2020). Medium-term fiscal frameworks are particularly effective in linking short-term budget decisions to long-term sustainability goals, improving transparency and predictability (Harris and Sánchez, 2020; IMF, 2018). When supported by realistic forecasts and institutional enforcement, such frameworks help anchor expectations, reduce sovereign risk premia, and sustain investor confidence (Debrun and Kumar, 2007; Eyraud et al., 2018). Cross-country experience suggests that countries with more robust fiscal rules and frameworks enjoy lower sovereign spreads—often by several hundred basis points—underscoring the importance of fiscal credibility for macroeconomic stability (Debrun et al., 2013; World Bank, 2022).
+
+Against this backdrop, this paper investigates how monetary and fiscal policy frameworks influence how MENAP and CCA economies respond following adverse global shocks. It combines empirical evidence from a global panel with model-based simulations employing the IMF's MCDMOD framework. Together, these approaches assess both the empirical and structural dimensions of resilience under different policy regimes—fixed versus (inflation targeting with) flexible exchange rates and strong versus weak fiscal frameworks. Two key messages emerge from the analysis. First, economies with flexible exchange rates generally experience smaller and less persistent output declines after adverse global shocks, particularly where financial markets are deeper and exports are more diverse. Although MENAP and CCA economies still lag other regions in export diversification and financial depth, ongoing progress in these areas over the coming years suggests that the benefits of moving to more flexible exchange rate regimes will become greater in the future. Second, strong fiscal rules (legally based, transparent, enforced, and resilient to shocks) can better anchor long-term expectations, reduce risk premia, and help support countercyclical fiscal responses to better stabilize output following adverse shocks.
+
+The remainder of this paper proceeds as follows: Section II describes monetary and fiscal policy frameworks in the MENAP and CCA regions; Section III explores how policy frameworks tend to impact macroeconomic adjustment in a global sample; Section IV presents model-based evidence on how adjustments to policy frameworks in MENAP and CCA economies can help to mitigate the impact of global shocks; and Section V concludes with a summary of the findings.
+
+## I. Policy Frameworks in the Middle East and Central Asia
+
+## A. Monetary Frameworks
+
+The “impossible trinity,” or the Mundell–Fleming Trilemma, highlights the inherent constraints on a country’s monetary policy objectives (Obstfeld, Shambaugh, and Taylor 2005). It holds that policymakers cannot simultaneously maintain a fixed exchange rate, free capital mobility, and domestic monetary policy autonomy. Only two of these three objectives can be pursued at the same time, as a country fundamentally has only two relevant monetary policy instruments at its disposal—the interest rate and capital controls. Each combination of these objectives offers distinct pros and cons with tradeoffs that depend on country-specific circumstances.
+
+Figure 1. Monetary Policy Trilemma
+
+[[KC_IMAGE_001]]
+
+Sources: Aizenman, Chinn, and Ito (2010); and IMF staff calculations.
+Note: The country-level indexes for monetary independence, exchange rate stability, and financial openness range between 0 and 1 and are averaged across the subregions displayed in the triangle. AE = advanced economies; CCA = Caucasus and Central Asia; EM = emerging market; FX = foreign exchange; GCC = Gulf Cooperation Council; ME&CA = Middle East and Central Asia; MENAP = Middle East, North Africa and Pakistan; OE = oil exporters; OI = oil importers.
+
+Figure 1 displays indexes that capture the three dimensions of the impossible trinity (Aizenman, Chin, and Ito 2008). Monetary policy autonomy is measured by the correlation between a home country's money market interest rate and that of a base country. Exchange rate stability is gauged by the standard deviation of changes in the exchange rate (in log terms) relative to a base country. Financial openness reflects the extent of legal and regulatory restrictions on cross-border financial transactions (Chinn and Ito 2006 and 2008). $^{2}$
+
+Monetary policy frameworks in the MENAP region reflect a clear preference for exchange rate stability (see Annex I, Figure A-1). In the Gulf Cooperation Council (GCC) countries and other MENA oil exporters, this is maintained primarily through currency pegs, with GCC countries favoring more open capital accounts. $^{3}$ MENAP oil importers also prioritize exchange rate stability, typically using managed regimes that preserve some degree of monetary policy autonomy thanks to less open capital accounts. By contrast, CCA countries lean toward greater monetary autonomy, coupled with more open capital accounts. According to the IMF's Annual Report on Exchange Arrangements and Exchange Restrictions (IMF 2023), about half of MENAP and CCA countries operate under some form of de facto peg. $^{4}$ Although recent years have seen a gradual shift toward greater exchange rate flexibility, most countries in the region continue to favor managed regimes that balance exchange rate stability with some room for adjustment (Figure 2), partly because of limited financial market development and shallow currency markets.
+
+Figure 2. Exchange Rate Regimes
+1. CCA and MENAP Region: Share of Exchange Rate Regimes, 2023
+(Percent)
+
+[[KC_IMAGE_002]]
+
+
+2. Share of Exchange Rate Regimes, 2023 (Percent)
+
+[[KC_IMAGE_003]]
+
+Sources: IMF, The Annual Report on Exchange Arrangements and Exchange Restrictions database; and IMF staff calculations.
+Note: AE = advanced economies; CCA = Caucasus and Central Asia; EMDE = emerging market and developing economies; GCC = Gulf Cooperation Council; MENAP = Middle East, North Africa and Pakistan; OE = oil exporters; OI = oil importers.
+
+## B. Fiscal Frameworks
+
+Strong fiscal frameworks can help anchor private sector expectations of future fiscal policy by lending credibility to official (budget) projections and commitments. Adopting credible medium-term fiscal frameworks and fiscal rules can help achieve this objective and indirectly contribute to lower sovereign spreads and higher credit ratings (Acalin and others 2025; Badinger and Reuter 2017; Sawadogo 2020; Islamaj, Penaloza, and Sommers 2024).
+
+Some economies in the MENAP and CCA regions (for example, Mauritania, Oman, Saudi Arabia, and Tajikistan) operate under informal fiscal rules, but few have formally adopted rules that are codified in legislation. According to the IMF's updated Fiscal Rules Dataset (Alonso and others forthcoming), only one-quarter of economies in the MENAP and CCA regions have formal operational fiscal rules, compared to two-thirds in emerging market and developing economies, and over 80 percent in advanced economies (Figure 3).
+
+Although the adoption of a fiscal rule is not necessarily conducive to stronger fiscal frameworks (as unwarranted deviations from it may undermine its credibility), “strong” fiscal rules can bolster the credibility of official projections and anchor private sector expectations of future fiscal policy (Chapter 2, October 2025 World Economic Outlook). Based on the IMF’s Fiscal Rule Strength Index, the MENAP and CCA regions are generally behind other regions, with their fiscal strength below the average for advanced and other emerging markets (the only exception being Georgia) (Annex I, Figure A-2).
+
+
+[[KC_IMAGE_004]]
+
+Sources: IMF, Fiscal Rule dataset; and IMF staff calculations.
+Note: AE = advanced economy; CCA = Caucasus and Central Asia; EM = emerging market; MENAP = Middle East, North Africa and Pakistan.
+
+## C. Fiscal Rules and Sovereign Spreads
+
+To highlight the importance of fiscal rules, this section explores the role of strong fiscal rules and other macroeconomic and institutional factors in explaining the variation in sovereign spreads across countries, using a panel regression. Based on a global sample of 57 countries over the period of 1996–2021, the regression specification includes fixed effects and a control for global financial market volatility, with clustered standard errors. A strong (weak) fiscal rule is defined as a score in the top (bottom) third of the IMF Fiscal Rule Strength Index distribution.
+
+The results from this analysis show that countries with strong fiscal rules typically enjoy lower sovereign spreads (by about 85 basis points) compared to those with weak or no fiscal rules (Figure 4). Over and above the presence of strong fiscal rules, differences in spreads across countries are determined by the strength of government institutions (proxied by a corruption index and a political risk score that captures government stability and rule of law, among other factors), the size of economic buffers (the presence of a sovereign wealth fund and the level of reserves), and debt levels. For example, large buffers help explain why GCC countries benefit from better creditworthiness while lacking formal fiscal rules. By contrast, despite having fiscal rules, several economies in the CCA region exhibit weaker creditworthiness compared to other emerging markets, mainly because of relatively weaker governance indicators.
+
+Figure 4. Determinants of Sovereign Spreads (Coefficient estimates, Basis points)
+
+[[KC_IMAGE_005]]
+
+Sources: IMF, World Economic Outlook database; IMF, Fiscal Rules Database (Alonso and others, forthcoming); Bloomberg L.P.; World Bank, Worldwide Governance Indicators; and IMF staff calculations. Note: The political risk score ranges from 0 to 100, where a higher score means lower political risk.
+
+## II. Policy Frameworks and Macroeconomic Adjustment: An Empirical Analysis
+
+This section explores how monetary and fiscal policy frameworks have affected macroeconomic adjustment in a global sample of countries following adverse global shocks.
+
+## A. Methodology
+
+The analysis uses a local projections approach (Jordà 2005) applied to a global panel over the past three and a half decades to estimate how real output, current account, and the fiscal balance have responded to adverse global shocks under different monetary and fiscal policy frameworks. Global shocks are captured by a 1 standard deviation rise in the GDP-weighted World Uncertainty Index (Ahir, Bloom and Furceri 2022), equivalent to a jump from the 10th to 50th percentile of the historical distribution of the indicator (building on Chapter 2 of the April 2025 Regional Economic Outlook: Middle East and Central Asia).
+
+The following baseline specification is used:
+
+$$
+\begin{array}{r l} y _ {i, t + h} - y _ {i, t - 1} = & \beta_ {1} ^ {h} U N C _ {i, t} + \beta_ {2} ^ {h} U N C _ {i, t} * P o l i c y F r a m e w o r k _ {i} + \sum_ {j = 1} ^ {2} \gamma_ {1} ^ {h} U N C _ {i, t - j} \\ & + \sum_ {j = 1} ^ {2} \gamma_ {2} ^ {h} (y _ {i, t - j} - y _ {i, t - j - 1}) + \theta_ {i} ^ {h} X _ {i, t} + \alpha_ {i} ^ {h} + \varepsilon_ {i, t} ^ {h} \end{array}
+$$
+
+where $y_{i,t}$ is the dependent variable of interest (real output, current account balance, primary balance, or sovereign spreads) for country i in year t; PolicyFramework is a dummy variable indicating either the exchange rate regime (fixed vs. floating), or the fiscal policy framework (strong rule vs. weak/no rule). UNC is the standardized uncertainty index. Two lags of the dependent variable and the uncertainty index are included. X is a set of variables that control for conflict shocks, natural disasters, epidemics, the U.S. fed funds rate, and global oil prices. When assessing fiscal frameworks, political stability and government effectiveness are also included as controls. h is the impulse response horizon, where the shock occurs in year 1. $\alpha$ represents fixed effects. Confidence bands are based on cluster robust standard errors.
+
+## B. Fixed versus Floating Exchange Rates
+
+This analysis indicates that exchange rate regimes have played a significant role in how economies adjust to global uncertainty shocks. Economies with floating exchange rates have tended to experience smaller and less persistent output declines after an adverse global shock than those operating under fixed regimes. Output losses are estimated at 2.1 percent for economies with floating exchange rates a year after a shock compared to a 2.6 percent average loss for those with fixed exchange rates, with these economies experiencing more persistent losses (Figure 5). Current account dynamics also show a divergence in the short term: economies with more flexible exchange rates tend to experience a smaller impact on the trade balance because of currency depreciation and recover more rapidly, underscoring the importance of exchange rate flexibility in output stabilization.
+
+Figure 5. Impact of Adverse Global Shocks by Exchange Rate Regime
+(Percent, impact of a 1 standard deviation shock on uncertainty)
+
+[[KC_IMAGE_006]]
+
+
+2. Current Account Balance
+
+[[KC_IMAGE_007]]
+
+Sources: IMF, World Economic Outlook database; IMF, The Annual Report on Exchange Arrangements and Exchange Restrictions database; Ahir, Bloom, and Furceri (2022); World Uncertainty Index (WUI) database; Federal Reserve Bank of St. Louis, Federal Reserve Economic Data database; Uppsala Georeferenced Event Database; Center for Research on the Epidemiology of Disasters, Emergency Events Database EM-DAT; and IMF staff calculations.
+Note: The shock happens in year 1. Shaded areas represent the 90 percent confidence interval.
+
+Although floating exchange rates can offer significant benefits, the extent of these benefits depends on country-specific characteristics (Frankel 2012). Two factors appear to be particularly relevant: financial market development and export diversification (Duttagupta, Fernandez, and Karacadag 2005; Chowdhury and others 2014). Well-developed and liquid financial markets facilitate market pricing of currencies, provide instruments for risk management, and enhance monetary policy transmission, among other benefits.
+
+Countries that are heavily reliant on a single export or tied closely to a major trading partner may better support macroeconomic stability by pegging to that partner's currency (or a basket of partner currencies). By contrast, more diversified and globally integrated economies would benefit from exchange rate adjustment, as exposure to external shocks may be higher. The empirical results confirm that the reduction in output losses after an adverse global shock from a floating exchange rate regime is significant only in economies with higher levels of financial market development and diversified exports. For economies with low levels of financial development or concentrated exports, there is no discernible difference in impacts between fixed and floating regimes (Figure 6). $^{5}$
+
+Figure 6. Impact of Global Shocks and Country Characteristics (Percent real GDP change one year after shock, 1 standard deviation uncertainty shock)
+
+[[KC_IMAGE_008]]
+
+
+Sources: IMF, World Economic Outlook database; IMF, The Annual Report on Exchange Arrangements and Exchange Restrictions database; Ahir, Bloom, and Furceri (2022); World Uncertainty Index (WUI) database; Federal Reserve Bank of St. Louis, Federal Reserve Economic Data database; Uppsala Georeferenced Event Database; Center for Research on the Epidemiology of Disasters, Emergency Events Database EM-DAT; IMF, Financial Development Index Database; UNCTAD, UNCTAD Stat Merchandise Trade Matrix; and IMF staff calculations.
+
+Note: Strong (weak) financial market development and high (low) export diversification are based on having a score above (below) the global median for each indicator, respectively. Vertical lines represent the 90 percent confidence interval. \* denotes a statistically significant difference between the two groups of economies.
+
+## C. Strong versus Weak Fiscal Frameworks
+
+The results of this analysis also show that economies with stronger fiscal frameworks—defined as those in the top one-third of the IMF's Fiscal Rules Strength Index distribution—experience smaller output losses one year after an adverse global shock compared to those with weaker fiscal frameworks (those with weak or no fiscal rules) (Figure 7). The behavior of primary fiscal balances and spreads after a global shock suggests that economies with weaker fiscal frameworks tend to be more fiscally constrained and thus mount a more limited countercyclical policy response (smaller decrease in the primary balance) while experiencing a significant increase in borrowing costs (higher spreads) (Figure 8).
+
+Figure 7. Impact of Adverse Global Shocks on Real GDP: Different Fiscal Frameworks
+(Percent, 1 standard deviation uncertainty shock)
+
+[[KC_IMAGE_009]]
+
+Figure 8. Impact of Adverse Global Shocks on Primary Balance and Spreads: Different Fiscal Frameworks
+
+(Percent impact one year after shock, 1 standard deviation uncertainty shock)
+
+[[KC_IMAGE_010]]
+
+Sources: IMF; World Economic Outlook database; Ahir, Bloom, and Furceri (2022); World Uncertainty Index (WUI) database; Federal Reserve Bank of St. Louis, Federal Reserve Economic Data database; IMF, Sovereign Spread Monitor; Uppsala Georeferenced Event Database; Center for Research on the Epidemiology of Disasters, Emergency Events Database EM-DAT; World Bank, Worldwide Governance Indicators; Alonso and others (forthcoming); IMF, Fiscal Rules Dataset; and IMF staff calculations.
+
+Note: A strong (weak) fiscal rule is defined as a strength score in the top (bottom) third of the Fiscal Rule Strength Index distribution (see Alonso and others forthcoming, for details). Vertical lines represent the 90 percent confidence interval. \* Denotes a statistically significant difference between the two groups of economies.
+
+## III. Policy Frameworks and Macroeconomic Adjustment: A Structural Approach
+
+This section builds on the empirical analysis in the previous section by using the IMF's MCDMOD model (see Annex II for model description and assumptions). The model allows for better control of individual country characteristics and initial conditions to assess how different monetary and fiscal policy frameworks can change the impact of an adverse global shock on MENAP and CCA economies. $^{6}$
+
+In this paper, monetary policy responses for each country and region are calibrated based on their existing policy regimes, allowing for flexible exchange rates and credible inflation targets, managed exchange rates with limited monetary autonomy, and pegged exchange rates with no monetary autonomy (Table 1). For all countries, fiscal policy responses are captured by simple rules that stabilize the deficit-to-GDP ratio over time while allowing for automatic stabilizers to operate. Fiscal policy responses are country-specific, with the degrees of deficit stabilization calibrated to reflect each country's historical relationships and institutional
+
+features, such as the strength of its social safety net. The key parameters calibrated for MENAP and CCA economies include debt-to-GDP ratios, short- and long-term debt shares, shares of liquidity-constrained households, and automatic stabilizers. The rich and granular calibration of the model ensures that the implied fiscal multipliers, interest rate sensitivities, and exchange rate pass-throughs differ across oil exporters, oil importers, and GCC economies, on average, reflecting structural heterogeneity and policy framework differences across countries and regions. $^{7}$
+
+The version of MCDMOD used for this paper includes eight countries in the MENAP and CCA regions (Jordan, Morocco, Pakistan, Saudi Arabia, Iran, Kazakhstan, Armenia, and Georgia) and 5 sub-regions which aggregates the rest of the MENAP and CCA economies (other GCC, other non-GCC MENA Oil Exporters, other MENAP oil importers, other CCA oil exporters, other CCA oil importers). It also includes major trading partners of MENAP and CCA countries as single countries (China, Japan, Russia, Turkey, United States) or aggregate regions (Euro Area, Emerging Asia, Latin America, Other Advanced Economies, Other European Union, Other Oil Exporters, Rest of the World).
+
+Table 1. Policy frameworks in the current policy scenario
+
+
+Source: IMF Staff
+
+## A. Global Adverse Scenario
+
+The adverse global shock scenario is drawn from the April 2025 World Economic Outlook (IMF, 2025) downside scenario. This scenario was chosen given the broad range of trade and financial shocks embedded in it, which are introduced via four layers:
+
+■ Global divergences: This layer has three components:
+
+Renewal of the US Tax Cuts and Jobs Act (TCJA). The scenario assumed the renewal of a broad set of provisions in the TCJA for a period of 10 years, including individual and business taxes, the child tax credit, and expensing of investment, totaling about 11 percent of GDP over 2025–34. The
+
+accompanying deficits are back-loaded, reaching about 1.4 percent of GDP by 2027. Because the renewal comes after a historical inflation surge, the layer assumes a small additional temporary increase in US inflation expectations.
+
+\- Lower productivity in Europe. The recent slowdown in productivity growth in the euro area was assumed to deepen as a result of lower innovation, technological shifts, and lack of access to equity funding. Total factor productivity growth declines by 0.2 percentage point per year over five years, relative to the reference forecast, starting in 2025. The decline is concentrated in the tradables sector.
+
+\- Weaker domestic demand in China. Consumption and investment fall relative to those in the reference forecast by 0.7 and 0.5 percent, respectively, in 2025. The decline builds over 2026–27 and fades after that.
+
+\- Trade war. The scenario assumes a ratcheting up of tariffs in response to the April 2 (2025) announcement. First, it incorporates an additional 50 percentage point increase in tariffs on all China-US trade in both directions relative to the reference forecast in this report. Second, countries other than China respond tit for tat to the April 2 announcement, raising tariffs on imports from the United States by the same rate. Third, the United States responds by doubling the rate announced on April 2 to all countries other than China. As a result, there is an increase of about 18 percentage points in the effective tariff rate on both US goods imports and US goods exports, relative to the current reference forecast.
+
+\- Increase in global uncertainty. Uncertainty over macroeconomic policies increases. The resulting shock is equivalent to a three-standard-deviation increase in the global economic policy uncertainty measure in Davis (2016), about 50 percent larger than the spike observed in 2018–19. Regions more directly exposed to tariff measures, or where trade represents a larger share of activity, experience a somewhat greater uncertainty shock.
+
+\- Tighter financial conditions. The combination of shocks in the scenario triggers a tightening in financial conditions. Asset prices decline globally in the shock year (2025), with the largest decline in the US (about 5 percent on average for the year) and in emerging markets (about 3 percent). Sovereign and corporate premiums in emerging markets excluding China increase by 50 basis points; corporate premiums in advanced economies and China increase by 25 basis points. The tightening in financial conditions lasts for two years.
+
+Table 2. Scenario assumptions
+
+
+Source: IMF Staff
+
+Note: 1/ GCC treated like AEs. 2/ Lower coefficient for the GCC (3bps per one percent of GDP) than for non-GCC (5 bps).
+
+After the adverse global shock, global output declines by about 1.4 percent relative to baseline after two years, with inflation falling by 0.8 percentage points and oil prices dropping more than 12 percent due to weaker global demand. For historical context, the two-year global output decline is less severe than those experienced after the global financial crisis and the COVID-19 pandemic (Figure 9). $^{8}$ The largest output losses in MENAP and CCA economies occur among non-GCC oil exporters after such a shock, whereas oil-importing countries experience the smallest losses. The primary transmission channels differ by country type: lower oil prices weigh on oil exporters, whereas tighter financial conditions have the greatest impact on oil importers. Although investment is the most impacted GDP component, particularly in oil exporters, consumption also contracts sharply, especially in countries with limited social safety nets and more rigid exchange rate regimes such as among non-GCC oil exporters.
+
+Sources: IMF, World Economic Outlook database; and IMF staff calculations.
+Figure 9. Historical Shocks: Real GDP Losses (Percent relative to baseline, average two years after shock)
+
+[[KC_IMAGE_011]]
+
+trends that existed 10 years prior to each downturn. CCA = Caucasus and Central Asia;
+GFC = global financial crisis; GCC = Gulf Cooperation Council; MENAP = Middle East,
+North Africa and Pakistan; OE = oil exporters; OI = oil importers.
+
+For oil exporters in the MCD region, the primary transmission channel of the global downside scenario is the sharp decline in oil prices, which directly undermines fiscal revenues, weakens external balances, and reduces overall economic activity. Lower oil demand leads to cuts in production and export volumes, compressing household incomes and curtailing both public and private investment. The contraction in domestic demand is particularly pronounced in countries where consumption constitutes a large share of GDP and where social safety nets are limited (Annex III, Figure A-3 – Figure A-6).
+
+Imports fall sharply—more than exports, especially in more vulnerable economies, leading to an improvement in current account balances. However, this adjustment is accompanied by a real effective exchange rate (REER) appreciation, which erodes competitiveness. Inflation declines significantly due to weaker demand and lower import prices, but monetary policy in many MENA oil exporters remains constrained by rigid exchange rate regimes. These countries follow U.S. monetary policy, resulting in procyclical tightening despite domestic disinflationary pressures. Elevated real interest rates further suppress investment and delay recovery
+
+Overall, GDP in oil-exporting countries declines between 2 and 3.5 percent relative to the baseline. The contraction is more severe in non-GCC MENA oil exporters, where household consumption is a larger component of GDP and macroeconomic buffers are generally weaker. The combination of external shocks and limited policy flexibility amplifies the downturn, underscoring the importance of structural reforms and more adaptive policy frameworks.
+
+For oil importers, the downside global scenario primarily transmits through tighter financial conditions and weaker external demand. Investment is the most affected component of GDP, as higher global risk premia and reduced capital inflows raise borrowing costs and constrain access to finance. This is particularly challenging for countries with limited fiscal space or underdeveloped financial markets.
+
+While lower global commodity prices offer some relief—easing inflationary pressures and improving trade balances—the benefits are uneven (Annex III, Figure A-5). Central Asian oil importers, which tend to have more flexible exchange rate regimes, are able to respond with monetary easing, helping to cushion the shock. In contrast, MENAP oil importers, often operating under more rigid FX regimes, experience real exchange rate appreciation, which undermines competitiveness and limits the scope for monetary policy support.
+
+The external demand shock compounds these challenges. Slower growth in China reduces export demand for Central Asia, while weaker activity in the U.S. and Europe hits MENA exporters. Overall, the combination of subdued investment, constrained policy space, and declining external demand results in a broad-based slowdown across oil-importing economies in the region. Overall, impact on oil importers are smaller with 1.4 percent loss in GDP levels compared to the baseline on the back of limited integration with rest of the world both in terms of trade and financial flows, decreasing commodity prices and more flexible FX rate regimes.
+
+## B. Different Policy Frameworks
+
+The following scenarios explore the macroeconomic implications of facing the global shock with alternative policy frameworks—i.e., assuming that countries in the MENAP and CCA regions have already adopted different policy frameworks when the adverse global shock hits. Importantly, this assumes that economies have effectively managed the trade-offs and costs associated with transitioning to new credible policy frameworks. As indicated above, the focus is on alternative exchange-rate/monetary regimes and fiscal frameworks. As illustrated in Figure 10, these alternative frameworks can have material implications in terms of growth outcomes, although, as discussed below they tend to vary by policy and region.
+
+Figure 10. Real GDP Losses
+(Average percentage change from baseline, 2025–26)
+
+[[KC_IMAGE_012]]
+
+Sources: MCDMOD results; and IMF staff calculations.
+Note: CCA = Caucasus and Central Asia; GCC = Gulf Cooperation Council; MENA = Middle East, North Africa and Pakistan (excluding the GCC).
+
+## a. Inflation targeting monetary regime with flexible exchange rates
+
+In this scenario, all MENAP and CCA countries have credible inflation-targeting frameworks and flexible exchange rates. Flexible exchange rate regimes appear to be more effective in cushioning the impact of a global downturn, as immediate currency depreciations boost export competitiveness and allow for more countercyclical monetary easing and lower interest rates. This policy flexibility is particularly valuable for countries more integrated into global trade and financial systems, where external shocks are transmitted through multiple channels—such as exports, imports, capital flows, and remittances. In such cases, flexible exchange rates help mitigate the severity of spillovers by enabling real exchange rate adjustments and preserving monetary policy autonomy. Conversely, countries with rigid exchange rate regimes face constraints in responding to external pressures, often resulting in real exchange rate appreciation and limited scope for monetary stimulus.
+
+As a result, GDP declines in MENAP oil-importing countries are nearly halved relative to the baseline (Figure 9), reflecting the effectiveness of exchange rate flexibility and supportive policy frameworks. The benefits are more limited for GCC and CCA oil exporters, where exports are dominated by oil commodities and trade flows are less responsive to exchange rate changes. For these economies, the primary transmission channel is the sharp decline in oil prices, which directly undermines fiscal revenues, weakens external balances, and reduces overall economic activity. Lower oil demand leads to cuts in production and export volumes, compressing household incomes and curtailing both public and private investment—especially in countries where consumption constitutes a large share of GDP and social safety nets are limited.
+
+Inflation declines by less in this scenario for all subregions as smaller output declines and exchange rate depreciation put less downward pressure on prices. The only exception is the GCC economies, where inflation declines by more than in the adverse scenario due to permanently lower commodity prices. Overall, the extent to which countries can buffer external shocks depends not only on their exposure but also on the strength and flexibility of their domestic policy frameworks.
+
+## b. Stronger fiscal frameworks
+
+In this scenario, countries have stronger fiscal frameworks. As shown in Section II, such frameworks are typically associated with a more limited impact on sovereign spreads after an adverse global shock. Lower risk premiums reduce borrowing costs, supporting private consumption and investment. This outcome reflects global empirical evidence that underscores the importance of fiscal credibility in shaping macroeconomic resilience during periods of heightened uncertainty. In model simulations, countries with credible fiscal frameworks are treated similarly to advanced economies, experiencing a smaller increase in risk premia compared to emerging markets. This distinction signals investor confidence in the government's commitment to fiscal discipline, which helps preserve policy space and contain financing costs during shocks.
+
+For non-GCC oil exporters, output losses decline by over 1 percentage point compared to the baseline downside scenario, largely driven by a strong recovery in investment. Lower risk premia soften the hit to private capital formation, enabling a more stable rebound in economic activity. However, the recovery in consumption remains constrained, as real effective exchange rate (REER) appreciation limits export competitiveness. Oil-importing countries also benefit, as lower risk premiums allow for more effective fiscal responses without triggering debt sustainability concerns. These countries, already less exposed to commodity price volatility and global financial spillovers, are able to deploy targeted support measures that sustain private investment and bolster consumption. Yet, as in other scenarios, rising imports partially offset domestic demand gains, highlighting the need for complementary reforms to enhance external competitiveness and reduce import dependency.
+
+For GCC countries, which already enjoy high credit ratings and substantial fiscal buffers, the credibility scenario yields little change in outcomes. These economies are treated as advanced in the baseline downside scenario, and their sovereign spreads remain relatively stable even under stress. Overall, the benefits of stronger fiscal frameworks are comparable in magnitude to moving to inflation targeting and flexible exchange rate regimes for most subregions, except for MENA oil exporters, where the dominance of oil in trade and fiscal revenues limits the responsiveness of the economy to lower borrowing costs alone. These findings reinforce the notion that fiscal accommodation is most effective when anchored by credible rules that shape expectations and reduce financing risks during adverse global conditions.
+
+## c. Combined Scenario: Stronger fiscal frameworks with flexible exchange rates
+
+In this scenario, countries have both credible inflation-targeting frameworks with flexible exchange rate regimes and stronger fiscal frameworks. This combination allows for lower borrowing costs and more rapid external adjustment, mitigating the short-term impact of a global downturn more effectively than in the other scenarios. However, the benefits are less pronounced for GCC countries, as they already enjoy low sovereign spreads and limited gains from exchange rate flexibility due to the relatively inelastic nature of their oil-dominated exports.
+
+Importantly, the benefits from inflation targeting with flexible exchange rates and stronger fiscal frameworks are not additive but still, their interaction amplifies the overall resilience of the economy, particularly through the investment and consumption channels. In most subregions, the adverse impact on GDP is significantly reduced: for MENAP non-GCC oil exporters and MENAP oil importers, the impact of the shock on GDP is cut to one fourth of baseline impact, while for CCA oil importers and exporters, the impact is reduced to about one third. These improvements are primarily driven by a much smaller decline in investment and consumption. Lower risk premiums reduce financing costs, enabling governments to rely less on cutting transfers to cash-
+
+constrained households, while automatic stabilizers and monetary easing help sustain consumption among broader segments of the population.
+
+Additionally, the depreciation following the shock is more modest across all regions. This reflects the stabilizing effect of lower risk premiums, which attract higher levels of foreign investment and reduce the need for sharp external adjustments. Although imports decline less than in other scenarios —due to stronger domestic demand, the resulting larger current account deficits are comfortably financed by increased capital inflows. This dynamic underscore the importance of credible policy frameworks not only in buffering the initial shock but also in facilitating a smoother and more sustainable recovery.
+
+Overall, while the combined scenario delivers substantial macroeconomic benefits for most MCD subregions, its effectiveness varies depending on structural characteristics. For GCC countries, where fiscal buffers are already strong and exchange rate flexibility offers limited traction, the incremental gains are modest. For other regions, however, the synergy between credible monetary and fiscal frameworks proves to be a powerful tool in mitigating the effects of global downturns.
+
+## I. Conclusion
+
+Policy frameworks play an important role in facilitating macroeconomic adjustment after adverse global shocks. In the MENAP and CCA regions, monetary policy frameworks tend to reflect a strong preference for exchange rate stability relative to other emerging or advanced economies, whereas fiscal frameworks tend to be relatively weak. This analysis finds that strong fiscal rules and institutions can help to support countercyclical fiscal responses by better anchoring long-term expectations and reducing risk premiums. At the same time, inflation targeting and greater exchange rate flexibility can speed up adjustment to adverse external shocks, particularly as countries in the region diversify their exports and deepen their domestic financial markets. Although MENAP and CCA economies still lag other regions in export diversification and financial depth (Figure 11), ongoing progress in these areas over the coming years suggests that the benefits of
+
+Figure 11. Country Characteristics: MENAP and CCA Compared to Emerging Markets and Advanced Economies (Score)
+
+[[KC_IMAGE_013]]
+
+Sources: IMF, Financial Development Index Database; IMF, World Economic Outlook database; UNCTAD, UNCTAD Stat Merchandise Trade Matrix; and IMF staff calculations.
+Note: The line represents the fitted values for the global sample of economies. Subregional averages and those for other AEs and EMs are shown by diamond markers. AE = advanced economy; CCA = Caucasus and Central Asia; EM = emerging market; GCC = Gulf Cooperation Council; MENA & CCA = Middle East and Central Asia; MENAP = Middle East, North Africa and Pakistan; OE = oil exporter; OI = oil importer.
+
+moving to a more flexible exchange rate regime (with a credible inflation target and strong fiscal rules as nominal anchors) will become greater in the future.
+
+This chapter raises several questions for future research on how policy frameworks in the MENAP and CCA regions could evolve in response to the changing nature and frequency of global shocks. Key issues include: (1) how a flexible exchange rate regime might impact economic adjustment when global shocks are permanent versus temporary; (2) how policy frameworks should adapt to structural change—such as greater trade integration and diversification—and what this means for institutions; and (3) how the challenges and trade-offs associated with the transition to a new policy framework will depend on country circumstances, including on whether it is optimal to use the existing fiscal space as a buffer against external real shocks as opposed to a greater reliance on exchange rates' adjustment.
+
+## Annex I. Additional Charts on Policy Frameworks
+
+Figure A- 1. MENAP & CCA: Exchange Rate Regimes
+
+[[KC_IMAGE_014]]
+
+Source: IMF, The Annual Report on Exchange Arrangements and Exchange Restrictions database.
+
+Figure A- 2. MENAP & CCA: Strength of Fiscal Rules, 2023
+IMF Fiscal Rule Strength Score, 2023
+
+[[KC_IMAGE_015]]
+
+Source: IMF, Fiscal Rules Dataset, 2025; Alonso and others (forthcoming); and IMF Staff Calculations.
+
+## Annex II. MCDMOD Description and Assumptions
+
+MCDMOD model is an implementation of The Flexible System of Global Models (FSGM) suite. It is a semi-structural, multi-region macroeconomic model developed by the IMF to support policy analysis and global surveillance. It was designed to provide broad country coverage for the MCD region, while maintaining analytical rigor and computational feasibility.
+
+MCDMOD strikes a balance between micro-founded and reduced-form components. Core behavioral blocks, such as consumption and investment, are grounded in economic theory, while trade, labor markets, and inflation dynamics are modeled in a more reduced-form manner to ensure tractability and empirical realism. Aggregate demand is represented as the sum of household consumption, private investment, government spending, and net exports. Consumption is based on an overlapping generations framework with liquidity-constrained households, introducing non-Ricardian features. Investment follows a Tobin's Q specification with adjustment costs. On the supply side, potential output is determined by a Cobb-Douglas production function with trend TFP, capital, and labor. Inflation dynamics are captured through Phillips curves for core CPI and wages, while headline CPI incorporates commodity price effects. Trade is modeled through simplified multilateral equations that ensure global consistency, and explicit commodity blocks for oil, food, and metals capture terms-of-trade shocks.
+
+The policy framework includes an inflation-forecast-based interest rate rule for monetary policy, with flexibility to accommodate different exchange rate regimes. Fiscal policy follows a debt-stabilizing rule with automatic stabilizers, using instruments such as taxes, transfers, and public investment. Forward-looking behavior is a key feature of MCDMOD, as expectations influence consumption, investment, and inflation. Financial frictions are incorporated through risk premia and term structure effects, while the external sector tracks current accounts, net foreign assets, and exchange rates under incomplete markets. The model also captures productivity spillovers through trade linkages.
+
+Calibration relies on panel data estimates, refined to ensure realistic system-wide properties, and the model is benchmarked against structural models and empirical evidence. Future enhancements include Bayesian estimation of key behavioral parameters. MCDMOD is widely used for policy simulations, shock analysis, and spillover assessments, making it a practical and flexible tool for global macroeconomic analysis. Its design helps to inform policy advice with extensive country coverage and realistic dynamics.
+
+# Annex III. Additional Model Results
+
+
+[[KC_IMAGE_016]]
+
+Sources: MCDMOD results; and IMF staff calculations.
+
+
+[[KC_IMAGE_017]]
+
+■ Flexible ER and Stronger Fiscal Frameworks
+Note: CCA = Caucasus and Central Asia; GCC = Gulf Cooperation Council; MENA = Middle East, North Africa and Pakistan.
+
+
+[[KC_IMAGE_018]]
+
+
+[[KC_IMAGE_019]]
+
+Real effective exchange rate
+
+
+[[KC_IMAGE_020]]
+
+Sources: MCDMOD results; and IMF staff calculations.
+■ Adverse Global Shock
+- Flexible ER
+
+■ Stronger Fiscal Frameworks
+
+■ Flexible ER and Stronger Fiscal Frameworks
+
+■ Fiscal Accommodation
+
+
+[[KC_IMAGE_021]]
+
+Sources: MCDMOD results; and IMF staff calculations.
+
+
+[[KC_IMAGE_022]]
+
+Note: CCA = Caucasus and Central Asia; GCC = Gulf Cooperation Council; MENA = Middle East, North Africa and Pakistan.
+
+
+[[KC_IMAGE_023]]
+
+
+[[KC_IMAGE_024]]
+
+Sources: MCDMOD results; and IMF staff calculations.
+Note: CCA = Caucasus and Central Asia; GCC = Gulf Cooperation Council; MENA = Middle East, North Africa and Pakistan.
+
+## References
+
+Auerbach, A., Gorodnichenko, Y. 2012. “Fiscal Multipliers in Recession and Expansion.” NBER Book: Fiscal Policy after the Financial Crisis.
+
+Acalin, Julien, Virginia Alonso, Clara Arroyo, Raphael Lam, Leonardo Martinez, Anh D.M. Nguyen, Francisco Roch, Galen Sher, and Alexandra Solovyeva 2025. “Fiscal Guardrails Against High Debt and Looming Spending Pressures.” Staff Discussion Note 25/004, International Monetary Fund, Washington, DC
+
+Ahir, Hites, Nicholas Bloom, and Davide Furceri. 2022. “The World Uncertainty Index.” NBER Working Papers 29763, National Bureau of Economic Research, Cambridge, MA. doi: 10.3386/w29763
+
+Aizenman, Joshua, Menzie D. Chinn, and Hiro Ito. 2008. “Assessing the Emerging Global Financial Architecture: Measuring the Trilemma's Configurations over Time.” Working Paper Series #14533, National Bureau of Economic Research (NBER).
+
+Aizenman, Joshua, Menzie D. Chinn, and Hiro Ito. 2010. The Emerging Global Financial Architecture: Tracing and Evaluating New Patterns of the Trilemma Configuration. Journal of International Money and Finance 29 (4): 615–41.
+
+Alonso, Virginia, Clara Arroyo, Ozlem Aydin, Vybhai Balasundharam, Hamid R. Davoodi, Gabriel Hegab, Anh M. Nguyen, Natalia. Salazar, Galen Sher, Alexandra Solovyeva, and Nino Tchelishvili. Forthcoming. “Fiscal Rules and Fiscal Councils: Recent Trends and Revisions since the Pandemic.” IMF Working Paper, International Monetary Fund, Washington, DC.
+
+Andrle, Micale, Patrick Blagrave, Pedro Espaillat, Keiko Honjo, Benjamin L Hunt, Mika Kortelainen, René Lalonde, Douglas Laxton, Eleonara Mavrodeidi, Dirk V Muir, Susanna Mursula, and Stephen Snudden. 2015. “The Flexible System of Global Models – FSGM.” IMF Working Paper 15/64, International Monetary Fund, Washington, DC.
+
+Badinger, Harald, and Wolf Heinrich Reuter. 2017. "The Case for Fiscal Rules." Economic Modelling 60: 334–43.
+
+Ball, L., Sheridan, N. (2003). "Does Inflation Targeting Matter?" NBER Working Paper 9577.
+
+Bova, E., Carcenac, N., & Guerguil, M. (2016). “Fiscal Rules at a Glance.” IMF Background Paper.
+
+Broda, C. (2004). “Terms of Trade and Exchange Rate Regimes in Developing Countries.” Journal of International Economics, 63(1), 31–58.
+
+Carrière-Swallow, Y., Gruss, A., Magud, N., & Valencia, F. (2016). “Monetary Policy Credibility and Exchange Rate Pass-Through.” IMF Working Paper 16/240.
+
+Chinn, Menzie. D. and Hiro Ito. 2006. "What Matters for Financial Development? Capital Controls, Institutions, and Interactions." Journal of Development Economics 81 (1): 163–192 (October).
+
+Chinn, Menzie. D. and Hiro Ito. 2008. "A New Measure of Financial Openness." Journal of Comparative Policy Analysis 10 (3): 309–322.
+
+Chiu, P. (2001). “Hong Kong’s Experience in Operating the Currency Board System.” IMF Seminar on Exchange Rate Regimes.
+
+Chowdhury, Mohammad Tarequl H., Prasad Sankar Bhattacharya, Debdulal Mallick, and Mehmet Ali Ulubaşoğlu. 2014. “An Empirical Inquiry into the Role of Sectoral Diversification in Exchange Rate Regime Choice.” European Economic Review 67: 210–27.
+
+Debrun, X., & Kumar, M. 2007. "The Discipline-Enhancing Role of Fiscal Institutions." IMF Working Paper 07/171.
+
+Debrun, X., Epstein, N., Symansky, S. 2013. “Rules-Based Fiscal Policy in Emerging Markets.” IMF Policy Paper.
+
+Duttagupta, Rupa, Gilda Fernandez, and Cem Karacadag. 2005. “Moving to a Flexible Exchange Rate: How, When, and How Fast?” IMF Economic Issues 38, International Monetary Fund, Washington, DC.
+
+Eyraud, L., Gaspar, V., Poghosyan, T. 2018. Fiscal Politics. Washington D.C.: IMF.
+
+Financial Times. 2025. “Lebanon Passes Bank Restructuring Law in Step Toward IMF Reform.” August.
+
+Frankel, Jeffrey. A. 2012. “Choosing an Exchange Rate Regime.” In Handbook of Exchange Rates (First Edition), edited by Jessica James, Ian W. Marsh, and Lucio Sarno. John Wiley and Sons, Inc.
+
+Harris, J., Sánchez, A. 2020. “Medium-Term Fiscal Frameworks: Effective Design and Implementation.” World Bank Policy Note.
+
+International Monetary Fund (IMF). 2023. Annual Report on Exchange Arrangements and Exchange Restrictions 2023. Washington, DC.
+
+International Monetary Fund (IMF). 2025a. World Economic Outlook: Critical Juncture amid Policy Shifts. Washington, DC. April.
+
+International Monetary Fund (IMF). 2025b. World Economic Outlook Update: Global Economy: Tenuous Resilience amid Persistent Uncertainty. Washington, DC. July.
+
+International Monetary Fund (IMF). 2024. Jordan: Article IV Consultation and Second Review under the EFF (IMF Country Report No. 2024/345)
+
+International Monetary Fund (IMF). 2020. Fiscal Monitor: Policies for the Recovery. Washington D.C.
+
+International Monetary Fund (IMF). 2019. “Lebanon: Article IV Consultation—Staff Report.” IMF Country Report 19/312.
+
+International Monetary Fund (IMF). 2018. Assessing Fiscal Space: An IMF Handbook. Washington D.C.
+
+International Monetary Fund (IMF), Independent Evaluation Office (IEO). 2004. The IMF and Argentina, 1991–2001. Washington D.C.
+
+Islamaj, Ergys, Agustin Samano Penaloza, and Scott Sommers. 2024. “The Sovereign Spread Compressing Effect of Fiscal Rules during Global Crises.” World Bank Policy Research Paper 10741, Washington, DC.
+
+Jordà, Óscar. 2005. “Estimation and Inference of Impulse Responses by Local Projections.” American Economic Review 95 (1): 161–82. Levy-Yeyati, Eduardo, and Federico Sturzenegger. 2003. “To Float or to Fix: Evidence on the Impact of Exchange Rate Regimes on Growth.” American Economic Review 93 (4): 1173–93.
+
+Levy-Yeyati, Eduardo, and Federico Sturzenegger. 2016. “Classifying Exchange Rate Regimes: 15 Years Later.” HKS Working Paper No. 16-028, August.
+
+Obstfeld, Maurice, Jay C. Shambaugh, and Alan M. Taylor. 2005. "The Trilemma in History: Tradeoffs among Exchange Rates, Monetary Policies, and Capital Mobility." The Review of Economics and Statistics 87 (3): 423–38.
+
+Sawadogo, Pegdéwendé Nestor. 2020. “Can Fiscal Rules Improve Financial Market Access for Developing Countries?” Journal of Macroeconomics 65: 103214.
+
+Vega, M., Winkelried, D. (2005). “Inflation Targeting and Inflation Behavior: A Successful Story?” International Journal of Central Banking, 1(3), 1–34.
+
+World Bank. 2025. Flagship Report: Global Economic Prospects. Washington DC. June.
+
+World Bank. 2022. Fiscal Frameworks for Resilience and Growth. Washington D.C.
+
+
+[[KC_IMAGE_025]]
