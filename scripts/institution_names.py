@@ -9,12 +9,12 @@ from typing import Any
 
 INSTITUTION_PATTERNS: tuple[tuple[re.Pattern[str], str], ...] = (
     (re.compile(r"\bGoldman(?:\s+Sachs)?\b|\bGS\b", re.I), "高盛"),
-    (re.compile(r"\bMorgan\s+Stanley\b|\bMS\b", re.I), "摩根斯坦利"),
+    (re.compile(r"\bMorgan\s+Stanley\b|\bMS\b", re.I), "摩根士丹利"),
     (re.compile(r"\bJ\.?\s*P\.?\s*[-_\s]*Morgan\b|\bJPMorgan\b|\bJPM\b", re.I), "摩根大通"),
     (re.compile(r"\bHSBC\b|Hongkong\s+and\s+Shanghai\s+Banking", re.I), "汇丰"),
     (re.compile(r"\bUBS\b", re.I), "瑞银"),
     (re.compile(r"\bCiti(?:group)?\b", re.I), "花旗"),
-    (re.compile(r"\bBofA\b|Bank\s+of\s+America", re.I), "美国银行"),
+    (re.compile(r"\bBofA\b|Bank\s+of\s+America", re.I), "美银"),
     (re.compile(r"\bBarclays\b", re.I), "巴克莱"),
     (re.compile(r"\bDeutsche\s+Bank\b", re.I), "德意志银行"),
     (re.compile(r"\bNomura\b", re.I), "野村"),
@@ -39,6 +39,17 @@ INSTITUTION_PATTERNS: tuple[tuple[re.Pattern[str], str], ...] = (
     (re.compile(r"\bBCG\b|Boston\s+Consulting", re.I), "波士顿咨询"),
 )
 
+CANONICAL_INSTITUTION_NAMES = {
+    "摩根斯坦利": "摩根士丹利",
+    "美国银行": "美银",
+    "美银证券": "美银",
+}
+
+
+def canonical_institution_name(value: str) -> str:
+    normalized = re.sub(r"\s+", " ", value or "").strip()
+    return CANONICAL_INSTITUTION_NAMES.get(normalized, normalized)
+
 
 def stringify_metadata(value: Any) -> str:
     if value is None:
@@ -60,15 +71,16 @@ def infer_institution_name(*values: Any) -> str:
         searchable = re.sub(r"[-_/]+", " ", haystack)
         for pattern, chinese_name in INSTITUTION_PATTERNS:
             if pattern.search(searchable):
-                return chinese_name
+                return canonical_institution_name(chinese_name)
     return ""
 
 
 def ensure_title_has_institution(title: str, institution: str) -> str:
     title = re.sub(r"\s+", " ", title or "").strip()
-    institution = (institution or "").strip()
+    title = title.replace("摩根斯坦利", "摩根士丹利").replace("美国银行", "美银").replace("美银证券", "美银")
+    institution = canonical_institution_name(institution or "")
     if not title or not institution:
         return title
-    if institution in title[: max(8, len(institution) + 3)]:
+    if re.match(rf"^{re.escape(institution)}(?:[：:，,、;；\-—\s]|$)", title):
         return title
     return f"{institution}：{title}"

@@ -240,6 +240,12 @@ def clean_leading_report_slug(title: str) -> str:
 def remove_redundant_title_aliases(title: str) -> str:
     cleaned = clean_leading_report_slug(canonicalize_institution_title_name(title))
     for cn_name, aliases in INSTITUTION_TITLE_ALIASES:
+        cleaned = re.sub(
+            rf"^({re.escape(cn_name)})[：:]\s*{re.escape(cn_name)}\s*{TITLE_ALIAS_SEPARATOR_RE}",
+            rf"\1：",
+            cleaned,
+            flags=re.I,
+        )
         alias_group = "|".join(alias_pattern(alias) for alias in aliases)
         cleaned = re.sub(
             rf"^({re.escape(cn_name)})[：:]\s*(?:{alias_group})\s*{TITLE_ALIAS_SEPARATOR_RE}",
