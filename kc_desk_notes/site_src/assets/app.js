@@ -343,6 +343,11 @@
     return Boolean(getAdminToken() || canOpenOperationsPanel());
   }
 
+  function canUseDeliveryTools(session = loadAuthSession()) {
+    if (canOpenOperationsPanel(session)) return true;
+    return !session && Boolean(getAdminToken());
+  }
+
   async function refreshAuthSession(workerUrl) {
     const session = loadAuthSession();
     if (!session || !session.token || !workerUrl) return null;
@@ -1335,6 +1340,33 @@
     return new Blob(chunks, { type: first.response.headers.get("Content-Type") || contentTypeFromFilename(fallbackName) });
   }
 
+  async function prepareSegmentedAdminDownload(workerUrl, button, signal) {
+    const kind = String(button && button.dataset.kind || "");
+    if (kind !== "file" && kind !== "artifact") return;
+    const key = button.dataset.key || "";
+    const repo = button.dataset.repo || "";
+    const name = button.dataset.name || "download";
+    const url = new URL(`${workerUrl}/account-admin/prepare-github-download`);
+    url.searchParams.set("kind", kind);
+    if (kind === "artifact") {
+      url.searchParams.set("id", key);
+      url.searchParams.set("name", name);
+    } else {
+      url.searchParams.set("path", key);
+      if (repo) url.searchParams.set("repo", repo);
+    }
+    const response = await fetch(url.toString(), {
+      cache: "no-store",
+      headers: authHeaders(),
+      signal,
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok || !data.ok) {
+      throw new Error(data.detail || "文件缓存准备失败，请稍后重试。");
+    }
+    return data;
+  }
+
   function contentTypeFromFilename(name) {
     if (/\.mp4$/i.test(name)) return "video/mp4";
     if (/\.pdf$/i.test(name)) return "application/pdf";
@@ -1666,11 +1698,13 @@
       }
       resetDownloadProgress(progress);
       status.className = "status-line";
-      status.textContent = segmented ? "正在分段下载…" : "正在准备下载…";
+      status.textContent = segmented ? "正在准备高速缓存…" : "正在准备下载…";
       try {
         let blob;
         let disposition = "";
         if (segmented) {
+          await prepareSegmentedAdminDownload(workerUrl, button, controller.signal);
+          status.textContent = "正在分段下载…";
           blob = await segmentedAdminDownload(endpoint, name, progress, controller.signal);
         } else {
           const response = await fetch(endpoint, { headers: authHeaders(), signal: controller.signal });
@@ -3047,7 +3081,7 @@
 
   async function requestReportPassword(workerUrl, id) {
     const token = getAdminToken();
-    if (!token && !canOpenOperationsPanel()) throw new Error("Private tools are locked.");
+    if (!canUseDeliveryTools()) throw new Error("Private tools are locked.");
     try {
       const response = await fetch(`${workerUrl}/admin/report-password`, {
         method: "POST",
@@ -3071,7 +3105,7 @@
 
   async function requestExternalPassword(workerUrl, id, source = EXTERNAL_SOURCE) {
     const token = getAdminToken();
-    if (!token && !canOpenOperationsPanel()) throw new Error("Private tools are locked.");
+    if (!canUseDeliveryTools()) throw new Error("Private tools are locked.");
     try {
       const response = await fetch(`${workerUrl}/admin/report-password`, {
         method: "POST",
@@ -3102,7 +3136,7 @@
     if (!panel || !generate || !linkInput || !copy || !status) return;
 
     function refresh() {
-      panel.hidden = !privateToolsUnlocked();
+      panel.hidden = !canUseDeliveryTools();
     }
 
     refresh();
@@ -3632,7 +3666,7 @@
     }
 
     function refreshAdmin() {
-      adminTools.hidden = !privateToolsUnlocked();
+      adminTools.hidden = !canUseDeliveryTools();
     }
 
     async function submitDownload(event) {

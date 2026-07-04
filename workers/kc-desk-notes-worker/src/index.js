@@ -22,6 +22,7 @@ const ACCESS_PAGE_RANGE_OPTIONS = [
 ];
 const ACCESS_DURATION_OPTIONS = [
   { value: "1", label: "1个月", months: 1 },
+  { value: "2", label: "2个月", months: 2 },
   { value: "3", label: "3个月", months: 3 },
   { value: "6", label: "6个月", months: 6 },
   { value: "12", label: "1年", months: 12 },
@@ -5664,6 +5665,54 @@ async function warmAdminGithubCache(env, files = null) {
   };
 }
 
+async function prepareAdminGithubFileCache(request, env) {
+  let adminUser;
+  try {
+    adminUser = await requireOperationsUser(request, env);
+  } catch (error) {
+    return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+  }
+  const url = new URL(request.url);
+  const kind = String(url.searchParams.get("kind") || "file").trim();
+  if (kind === "artifact") {
+    const id = String(url.searchParams.get("id") || "").trim();
+    if (!/^\d+$/.test(id)) return jsonResponse(request, env, 400, { detail: "Artifact id is invalid." });
+    if (!isSuperAccount(adminUser)) {
+      try {
+        const artifact = await githubApiJson(env, `/actions/artifacts/${encodeURIComponent(id)}`);
+        if (!/market-views-pdf/i.test(String(artifact && artifact.name || ""))) {
+          return jsonResponse(request, env, 403, { detail: "Artifact is not allowed for this account." });
+        }
+      } catch (_error) {
+        return jsonResponse(request, env, 403, { detail: "Artifact is not allowed for this account." });
+      }
+    }
+    const result = await cacheGithubArtifact(env, { type: "artifact", id, name: url.searchParams.get("name") || "" });
+    return jsonResponse(request, env, result.ok ? 200 : 502, result.ok
+      ? { ok: true, cached: Boolean(result.cached), key: result.key || "" }
+      : { ok: false, detail: "文件缓存准备失败，请稍后重试。" });
+  }
+
+  const path = String(url.searchParams.get("path") || "").replace(/^\/+/, "");
+  const repo = normalizeGithubRepoParam(env, url.searchParams.get("repo") || "");
+  if (!repo || !isAllowedAdminGithubFile(env, repo, path)) {
+    return jsonResponse(request, env, 400, { detail: "File path is not allowed." });
+  }
+  if (!isSuperAccount(adminUser) && operatorBlockedGithubFile(path)) {
+    return jsonResponse(request, env, 403, { detail: "File path is not allowed for this account." });
+  }
+  const result = await cacheGithubFile(env, {
+    type: "file",
+    path,
+    repo,
+    name: path.split("/").pop() || "download",
+    date: renderedClipDate(path) || kcEntertainmentDateFromPath(path) || "",
+  });
+  return jsonResponse(request, env, result.ok ? 200 : 502, result.ok
+    ? { ok: true, cached: Boolean(result.cached), key: result.key || "" }
+    : { ok: false, detail: "文件缓存准备失败，请稍后重试。" });
+}
+
 function parseRangeHeader(rangeHeader, size) {
   const match = String(rangeHeader || "").match(/^bytes=(\d*)-(\d*)$/i);
   if (!match || !Number.isFinite(size) || size <= 0) return null;
@@ -6588,6 +6637,10 @@ export default {
 
     if (pathname === "/account-admin/github-artifact" && request.method === "GET") {
       return handleAccountAdminGithubArtifact(request, env, ctx);
+    }
+
+    if (pathname === "/account-admin/prepare-github-download" && request.method === "GET") {
+      return prepareAdminGithubFileCache(request, env);
     }
 
     if (pathname === "/account-admin/report-pdf" && request.method === "GET") {
