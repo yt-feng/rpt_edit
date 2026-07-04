@@ -20,6 +20,7 @@
   let accountAdminUsersByEmail = new Map();
   let accountAdminAccessOptions = {};
   let pdfJsLoadPromise = null;
+  const activeAdminButtonActions = new WeakMap();
 
   const INDUSTRY_RULES = [
     ["Macro / FX / Rates", /\b(macro|fx|foreign exchange|currency|cny|yuan|dollar|usd|rate|rates|yield|fed|ecb|boj|inflation|cpi|pmi|gdp|economy|economic|recession|treasury|bond|nominal|real rate)\b/],
@@ -940,7 +941,6 @@
             data-repo="${escapeHtml(repo)}"
             data-size-bytes="${escapeHtml(String(file.size_bytes || 0))}"
             data-name="${escapeHtml(file.name || "download")}">下载</button>
-          <button class="secondary-button account-admin-cancel" type="button" hidden>取消</button>
         </div>
       </div>
     `;
@@ -982,7 +982,6 @@
           <button class="secondary-button account-admin-copy-intro" type="button">复制文案</button>
           <button class="secondary-button account-admin-report-download" type="button">下载报告</button>
           <button class="secondary-button account-admin-cover-save" type="button">保存首图</button>
-          <button class="secondary-button account-admin-cancel" type="button" hidden>取消</button>
         </div>
       </article>
     `;
@@ -1292,6 +1291,46 @@
     progress.hidden = false;
     if (bar) bar.style.width = `${Math.max(0, Math.min(100, percent))}%`;
     if (text) text.textContent = message || "";
+  }
+
+  function adminActionButtons(button) {
+    const actions = button && button.closest(".account-admin-file-actions");
+    return actions ? Array.from(actions.querySelectorAll("button")) : [];
+  }
+
+  function cancelActiveAdminButton(button) {
+    const active = activeAdminButtonActions.get(button);
+    if (!active) return false;
+    active.controller.abort();
+    return true;
+  }
+
+  function startAdminButtonAction(button, controller) {
+    if (!button || !controller) return;
+    if (!button.dataset.idleLabel) button.dataset.idleLabel = button.textContent.trim() || "下载";
+    activeAdminButtonActions.set(button, { controller });
+    adminActionButtons(button).forEach((other) => {
+      other.disabled = other !== button;
+    });
+    button.disabled = false;
+    button.classList.add("is-cancel");
+    button.textContent = "取消";
+  }
+
+  function finishAdminButtonAction(button, label = "", restoreDelayMs = 0) {
+    if (!button) return;
+    activeAdminButtonActions.delete(button);
+    adminActionButtons(button).forEach((other) => {
+      other.disabled = false;
+    });
+    button.classList.remove("is-cancel");
+    const idle = button.dataset.idleLabel || "下载";
+    button.textContent = label || idle;
+    if (label && restoreDelayMs > 0) {
+      window.setTimeout(() => {
+        if (!activeAdminButtonActions.has(button)) button.textContent = idle;
+      }, restoreDelayMs);
+    }
   }
 
   function withDownloadToken(endpoint) {
@@ -1682,15 +1721,14 @@
       if (!downloadButton && !imageButton) return;
 
       const button = downloadButton || imageButton;
-      const progress = row.querySelector(".account-admin-progress");
-      const cancel = row.querySelector(".account-admin-cancel");
-      const controller = new AbortController();
-      button.disabled = true;
-      if (cancel) {
-        cancel.hidden = false;
-        cancel.disabled = false;
-        cancel.onclick = () => controller.abort();
+      if (cancelActiveAdminButton(button)) {
+        status.className = "status-line";
+        status.textContent = "正在取消…";
+        return;
       }
+      const progress = row.querySelector(".account-admin-progress");
+      const controller = new AbortController();
+      startAdminButtonAction(button, controller);
       resetDownloadProgress(progress);
       status.className = "status-line";
       status.textContent = downloadButton ? "正在下载精选报告…" : "正在读取 PDF 并生成第一页图片…";
@@ -1712,16 +1750,17 @@
           status.classList.add("error");
         }
       } finally {
-        button.disabled = false;
-        if (cancel) {
-          cancel.hidden = true;
-          cancel.onclick = null;
-        }
+        finishAdminButtonAction(button);
       }
     });
     files.addEventListener("click", async (event) => {
       const button = event.target.closest(".account-admin-download");
       if (!button) return;
+      if (cancelActiveAdminButton(button)) {
+        status.className = "status-line";
+        status.textContent = "正在取消下载…";
+        return;
+      }
       const kind = button.dataset.kind;
       const segmented = (kind === "file" || kind === "artifact") && shouldUseSegmentedDownload(button);
       const key = button.dataset.key || "";
@@ -1732,14 +1771,8 @@
         : `${workerUrl}/account-admin/github-file?path=${encodeURIComponent(key)}${repo ? `&repo=${encodeURIComponent(repo)}` : ""}`;
       const row = button.closest(".account-admin-file");
       const progress = row && row.querySelector(".account-admin-progress");
-      const cancel = row && row.querySelector(".account-admin-cancel");
       const controller = new AbortController();
-      button.disabled = true;
-      if (cancel) {
-        cancel.hidden = false;
-        cancel.disabled = false;
-        cancel.onclick = () => controller.abort();
-      }
+      if (!(segmented && isVideoDownloadButton(button))) startAdminButtonAction(button, controller);
       resetDownloadProgress(progress);
       status.className = "status-line";
       status.textContent = segmented ? "正在准备高速缓存…" : "正在准备下载…";
@@ -1752,6 +1785,7 @@
           triggerNativeDownload(directUrl, name);
           status.textContent = "视频下载已交给浏览器处理。";
           status.classList.add("ok");
+          finishAdminButtonAction(button, "已开始", 1600);
           prepareSegmentedAdminDownload(workerUrl, button, controller.signal, progress).catch(() => null);
           return;
         } else if (segmented) {
@@ -1783,11 +1817,7 @@
           status.classList.add("error");
         }
       } finally {
-        button.disabled = false;
-        if (cancel) {
-          cancel.hidden = true;
-          cancel.onclick = null;
-        }
+        if (!(segmented && isVideoDownloadButton(button))) finishAdminButtonAction(button);
       }
     });
 

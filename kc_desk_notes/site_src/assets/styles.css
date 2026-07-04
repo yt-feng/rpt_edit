@@ -1428,6 +1428,12 @@ button.primary:disabled {
   min-height: 38px;
 }
 
+.account-admin-file-actions .secondary-button.is-cancel {
+  border-color: #fecaca;
+  background: #fff1f2;
+  color: #991b1b;
+}
+
 .account-admin-progress {
   display: grid;
   gap: 5px;
