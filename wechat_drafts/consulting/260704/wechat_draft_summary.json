@@ -1,0 +1,132 @@
+{
+  "date_folder": "260704",
+  "dry_run": false,
+  "publish": false,
+  "max_articles": "all",
+  "input_selected_count": 5,
+  "selected_count": 5,
+  "skipped_title_policy_count": 0,
+  "skipped_title_policy": [],
+  "articles_per_draft": 8,
+  "draft_count": 1,
+  "max_body_chars": 2000,
+  "max_content_chars": 19500,
+  "max_content_bytes": 18000,
+  "min_inline_images": 3,
+  "max_inline_images": 3,
+  "body_hook": "更多国际信源汇编&评论，扫码交流，每日更新，汇总国际主流叙事&数据&图表，观测边际变化。汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询、智库等朋友，期待交流",
+  "trailing_image": "/opt/actions-runner-rpt-edit/_work/rpt_edit/rpt_edit/prompts/zsxq_img.jpg",
+  "drafts": [
+    {
+      "draft_index": 1,
+      "media_id": "avPwUQVH0p7DPpCFFkit83AMiMQkHFVFkJt6uSOmBv1_1KAIRSdtPmJ981toDcps",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 5,
+      "payload_bytes": 55420,
+      "payload": "wechat_drafts/consulting/260704/draft_payload_01.json",
+      "titles": [
+        "波士顿咨询：CEO们搞砸AI转型的五个共同死穴，碎片化实验，90%的企业在“小打小闹”中浪费AI潜力",
+        "波士顿咨询：企业转型的成败，终于被拆解到了“人”这一层，转型失败的根源，在于忽视了人的“反变革本能”",
+        "波士顿咨询：营销的“旅程”时代已死，“代理”时代已来，决策单元的三次跃迁，从“旅程”到“原子行动”",
+        "波士顿咨询：营销战役的终结，不是营销的终结，从“战役思维”到“货架思维”，70%-80%的客户触点将被AI接管",
+        "波士顿咨询：下一代“最佳下一步行动”不是算法升级，是决策架构的重构，三层决策架构，从“预测谁最可能买”到“判断此刻该做什么”"
+      ],
+      "wechat_titles": [
+        "波士顿咨询：CEO们搞砸AI转型的五个共同死穴，碎片化实验，90%的企业在“小打小闹”中浪费AI潜力",
+        "波士顿咨询：企业转型的成败，终于被拆解到了“人”这一层，转型失败的根源，在于忽视了人的“反变革本能”",
+        "波士顿咨询：营销的“旅程”时代已死，“代理”时代已来，决策单元的三次跃迁，从“旅程”到“原子行动”",
+        "波士顿咨询：营销战役的终结，不是营销的终结，从“战役思维”到“货架思维”，70%-80%的客户触点将被AI接管",
+        "波士顿咨询：下一代“最佳下一步行动”不是算法升级，是决策架构的重构，三层决策架构，从“预测谁最可能买”到“判断此刻该做什么”"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 5,
+        "expected_article_count": 5,
+        "matches_expected_article_count": true,
+        "titles": [
+          "æ³¢å£«é¡¿å¨è¯¢ï¼CEOä»¬æç ¸AIè½¬åçäºä¸ªå ±åæ­»ç©´ï¼ç¢çåå®éªï¼90%çä¼ä¸å¨âå°æå°é¹âä¸­æµªè´¹AIæ½å",
+          "æ³¢å£«é¡¿å¨è¯¢ï¼ä¼ä¸è½¬åçæè´¥ï¼ç»äºè¢«æè§£å°äºâäººâè¿ä¸å±ï¼è½¬åå¤±è´¥çæ ¹æºï¼å¨äºå¿½è§äºäººçâååé©æ¬è½â",
+          "æ³¢å£«é¡¿å¨è¯¢ï¼è¥éçâæ ç¨âæ¶ä»£å·²æ­»ï¼âä»£çâæ¶ä»£å·²æ¥ï¼å³ç­åå çä¸æ¬¡è·è¿ï¼ä»âæ ç¨âå°âåå­è¡å¨â",
+          "æ³¢å£«é¡¿å¨è¯¢ï¼è¥éæå½¹çç»ç»ï¼ä¸æ¯è¥éçç»ç»ï¼ä»âæå½¹æç»´âå°âè´§æ¶æç»´âï¼70%-80%çå®¢æ·è§¦ç¹å°è¢«AIæ¥ç®¡",
+          "æ³¢å£«é¡¿å¨è¯¢ï¼ä¸ä¸ä»£âæä½³ä¸ä¸æ­¥è¡å¨âä¸æ¯ç®æ³åçº§ï¼æ¯å³ç­æ¶æçéæï¼ä¸å±å³ç­æ¶æï¼ä»âé¢æµè°æå¯è½ä¹°âå°âå¤æ­æ­¤å»è¯¥åä»ä¹â"
+        ],
+        "create_time": 1783124203,
+        "update_time": 1783124203
+      }
+    }
+  ],
+  "articles": [
+    {
+      "title": "波士顿咨询：CEO们搞砸AI转型的五个共同死穴，碎片化实验，90%的企业在“小打小闹”中浪费AI潜力",
+      "wechat_title": "波士顿咨询：CEO们搞砸AI转型的五个共同死穴，碎片化实验，90%的企业在“小打小闹”中浪费AI潜力",
+      "institution_name": "波士顿咨询",
+      "source_report_name": "BCG Five-Barriers-CEOs-Must-Overcome-for-AI-Impact 7d94285f",
+      "report_dir": "kc_translated_reports/consulting/260704/01-0001-BCG_Five-Barriers-CEOs-Must-Overcome-for-AI-Impact_7d94285f",
+      "content_chars": 7087,
+      "content_bytes": 10931,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/consulting/260704/_assets/article_01_kc_ai_image_001.jpg"
+    },
+    {
+      "title": "波士顿咨询：企业转型的成败，终于被拆解到了“人”这一层，转型失败的根源，在于忽视了人的“反变革本能”",
+      "wechat_title": "波士顿咨询：企业转型的成败，终于被拆解到了“人”这一层，转型失败的根源，在于忽视了人的“反变革本能”",
+      "institution_name": "波士顿咨询",
+      "source_report_name": "BCG Harnessing-the-Human-Side-of-Transformations 5c35382e",
+      "report_dir": "kc_translated_reports/consulting/260704/02-0002-BCG_Harnessing-the-Human-Side-of-Transformations_5c35382e",
+      "content_chars": 6965,
+      "content_bytes": 11001,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 2,
+      "cover_image": "kc_translated_reports/consulting/260704/02-0002-BCG_Harnessing-the-Human-Side-of-Transformations_5c35382e/assets/fig_001.jpg"
+    },
+    {
+      "title": "波士顿咨询：营销的“旅程”时代已死，“代理”时代已来，决策单元的三次跃迁，从“旅程”到“原子行动”",
+      "wechat_title": "波士顿咨询：营销的“旅程”时代已死，“代理”时代已来，决策单元的三次跃迁，从“旅程”到“原子行动”",
+      "institution_name": "波士顿咨询",
+      "source_report_name": "BCG The-Agentic-Era-of-Next-Best-Action 4df8c9fc",
+      "report_dir": "kc_translated_reports/consulting/260704/03-0003-BCG_The-Agentic-Era-of-Next-Best-Action_4df8c9fc",
+      "content_chars": 6419,
+      "content_bytes": 10319,
+      "visible_text_chars": 1928,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/consulting/260704/03-0003-BCG_The-Agentic-Era-of-Next-Best-Action_4df8c9fc/assets/fig_001.jpg"
+    },
+    {
+      "title": "波士顿咨询：营销战役的终结，不是营销的终结，从“战役思维”到“货架思维”，70%-80%的客户触点将被AI接管",
+      "wechat_title": "波士顿咨询：营销战役的终结，不是营销的终结，从“战役思维”到“货架思维”，70%-80%的客户触点将被AI接管",
+      "institution_name": "波士顿咨询",
+      "source_report_name": "BCG The-End-of-Marketing-Campaigns-as-We-Know-Them a98ad172",
+      "report_dir": "kc_translated_reports/consulting/260704/04-0004-BCG_The-End-of-Marketing-Campaigns-as-We-Know-Them_a98ad172",
+      "content_chars": 7010,
+      "content_bytes": 10862,
+      "visible_text_chars": 1960,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/consulting/260704/_assets/article_04_kc_ai_image_001.jpg"
+    },
+    {
+      "title": "波士顿咨询：下一代“最佳下一步行动”不是算法升级，是决策架构的重构，三层决策架构，从“预测谁最可能买”到“判断此刻该做什么”",
+      "wechat_title": "波士顿咨询：下一代“最佳下一步行动”不是算法升级，是决策架构的重构，三层决策架构，从“预测谁最可能买”到“判断此刻该做什么”",
+      "institution_name": "波士顿咨询",
+      "source_report_name": "BCG The-Science-Behind-Next-Best-Action 79d38587",
+      "report_dir": "kc_translated_reports/consulting/260704/05-0005-BCG_The-Science-Behind-Next-Best-Action_79d38587",
+      "content_chars": 5858,
+      "content_bytes": 9840,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 1,
+      "cover_image": "kc_translated_reports/consulting/260704/05-0005-BCG_The-Science-Behind-Next-Best-Action_79d38587/assets/fig_001.jpg"
+    }
+  ]
+}
