@@ -1,52 +1,10 @@
 [
   {
-    "source_pdf": "/tmp/pdf_batch_008_88e7_bfb/pdfs/0036-WorldBank_The-Elusive-Impact-of-Corporate-Tax-Incentives_16f407a5.pdf",
+    "source_pdf": "/tmp/pdf_batch_001_tddwu8ux/pdfs/0001-BIS_Annual-Economic-Report-2026_5ab56784.pdf",
     "mineru_state": "done",
     "mineru_error": "",
-    "institution_name": "世界银行",
-    "cover_short_title": "企业税优惠真的能拉动",
-    "cover_subtitle": "研报重点一图看懂",
-    "images": [
-      "assets/xhs_card_01.png",
-      "assets/xhs_card_02.png",
-      "assets/xhs_card_03.png",
-      "assets/xhs_card_04.png",
-      "assets/xhs_card_05.png",
-      "assets/xhs_card_06.png",
-      "assets/xhs_card_07.png",
-      "assets/xhs_card_08.png",
-      "assets/xhs_card_09.png"
-    ],
-    "cover": "assets/cover.png",
-    "wechat_article": "wechat_article.md"
-  },
-  {
-    "source_pdf": "/tmp/pdf_batch_008_88e7_bfb/pdfs/0037-WorldBank_The-Exposure-of-Workers-to-Artificial-Intelligence-in-Low--a_1d64539f.pdf",
-    "mineru_state": "done",
-    "mineru_error": "",
-    "institution_name": "世界银行",
-    "cover_short_title": "AI对不同国家的影响",
-    "cover_subtitle": "研报重点一图看懂",
-    "images": [
-      "assets/xhs_card_01.png",
-      "assets/xhs_card_02.png",
-      "assets/xhs_card_03.png",
-      "assets/xhs_card_04.png",
-      "assets/xhs_card_05.png",
-      "assets/xhs_card_06.png",
-      "assets/xhs_card_07.png",
-      "assets/xhs_card_08.png",
-      "assets/xhs_card_09.png"
-    ],
-    "cover": "assets/cover.png",
-    "wechat_article": "wechat_article.md"
-  },
-  {
-    "source_pdf": "/tmp/pdf_batch_008_88e7_bfb/pdfs/0038-WorldBank_Weather-Shocks-and-Rural-Economic-Linkages-Evidence-from-Raj_405b317a.pdf",
-    "mineru_state": "done",
-    "mineru_error": "",
-    "institution_name": "世界银行",
-    "cover_short_title": "下雨多，农村反而更赚",
+    "institution_name": "国际清算银行",
+    "cover_short_title": "2026全球经济的四",
     "cover_subtitle": "研报重点一图看懂",
     "images": [
       "assets/xhs_card_01.png",
