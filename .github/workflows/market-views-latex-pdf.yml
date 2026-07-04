@@ -49,6 +49,14 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
+          sparse-checkout: |
+            .github/workflows
+            scripts
+            requirements.txt
+            xhs_notes/dropbox
+            xhs_notes/institutions
+            xhs_notes/consulting
+            market_view_summaries
 
       - name: Pull latest generated shard outputs
         run: |
