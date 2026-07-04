@@ -1,0 +1,142 @@
+# Does Free Sound Too Cheap?
+# The Adverse Effect of a Randomized Text Message Campaign on Program Take-up
+## Abstract
+
+This study conducted a randomized experiment to improve participation in a youth employment program in Côte d'Ivoire by testing text message outreach methods. Sending text messages highlighting that the program was free only to eligible youth had no impact, but messages sent to both youth and trusted contacts led to reduced enrollment. This negative effect was smaller for women, and null when their contact was also female. Qualitative findings suggest that distrust among unfamiliar contacts contributed to this decline. The study highlights the importance of tailoring communication strategies in job training programs to increase effectiveness, considering recipients' relationships and trust.
+
+# Does Free Sound Too Cheap? The Adverse Effect of a Randomized Text Message Campaign on Program Take-up\*
+
+Jeannie Annan Ⓡ Estelle Koussoubé Ⓡ Joséphine Tassy
+ⓇLéa Rouanet ⓇClara Delavallade ⓇDavid Evans
+
+Keywords: youth employment, text message incentives, program take-up.
+JEL Codes: O15, J16, J24, D83
+
+## 1 Introduction
+
+With Sub-Saharan Africa's working-age population expected to reach 1.3 billion by 2050, making up $25\%$ of the global labor force (World Bank, 2023), and $20\%-30\%$ of youth currently not in employment, education, or training (UNICEF, 2022), there is an urgent need to equip young people with the skills required to secure meaningful employment. Although there is significant heterogeneity across programs, the average effects of technical and vocational education and training (TVET) programs on youth employment have been positive in both higher and lower income country settings (Hanushek et al., 2017; Tripney and Hombrados, 2013). However, low take-up rates significantly challenge the effectiveness of training programs in such settings (McKenzie and Woodruff, 2014). Improving uptake of TVET programs in Africa is thus a potentially important step in introducing skilled individuals into the labor market and reducing youth unemployment.
+
+The range of TVET offerings in Africa is extensive, with participant costs varying significantly (Van Lieshout and Mehtha, 2017). Removing cost barriers has been shown to increase product usage in low- and middle-income countries (Cohen and Dupas, 2010; Kremer and Miguel, 2007) as well as participation in basic education (Duflo et al., 2023). Analogously, reducing costs could boost enrollment in training programs. One tool that has proven effective at shifting behaviors at low cost in some contexts is sending informational text messages (Grácio and Vicente 2021; Rodríguez and Saavedra 2019), making use of growing mobile phone penetration in low and middle income countries.
+
+This study uses a randomized controlled trial to test the impact of sending text messages (i.e., short message service, or SMS messages) to youth and—in some cases—a trusted contact the youth have identified in order to increase uptake of a youth employment program in Côte d'Ivoire. We find that SMS messages that make salient the fact that the training program is free can discourage enrollment. Specifically, we show that the negative impact on enrollment is significant only when both the potential applicant and their contact are sent SMS messages. This finding is consistent with the theoretical literature that suggests pricing can serve as a signal of quality, with higher prices indicating better product quality (Bagwell and Riordan, 1991). Furthermore, in collectivist cultures such as Côte d'Ivoire, youth career choices are heavily influenced by family expectations (Akosah-Twumasi et al., 2018). The support and approval from family members are pivotal, and youth are more likely to choose careers that are perceived to enhance the family's social standing and fulfill familial obligations. Moreover, our evidence shows that this influence varies according to the gender of both the youth and their contacts. The discouragement effect is significantly less for women, and it is not statistically significant for women whose contact is also a woman.
+
+We complement our quantitative results with qualitative interviews with the youths' contacts, which demonstrate that the perception of the program by those contacts plays a role. The decision to enroll in a training program is based on both cost and the program's reputation. We conclude the paper with a discussion on the broader implications of our findings and potential areas for future research.
+
+## 2 Intervention, Empirical Strategy and Data
+
+This study evaluates the impact of an SMS intervention to increase interest and take-up in the PRO-Jeunes youth employment program, which was implemented in urban and peri-urban Côte d'Ivoire by the International Rescue Committee. The PRO-Jeunes program was extensively publicized through a comprehensive communication strategy, including a public relations campaign, direct marketing, media activities, and community mobilization. The public relations campaign engaged local authorities, professional training centers, employment agencies, social centers, and private enterprises. Media activities included press releases, advertisements, and direct broadcasts on the PRO-Jeunes website and on social media platforms (Twitter, YouTube, Facebook), as well as on local and regional television and radio. Additionally, community mobilization initiatives involved meeting with community leaders, distributing flyers, and informing communities about the project launch and
+
+enrollment sites.
+
+Recruitment for the PRO-Jeunes program was carried out in two stages: (i) interested youth first registered, expressing their interest in the program; (ii) after screening all the applications, the project team invited eligible applicants to come to an “enrollment meeting.” According to data from the first two cohorts from the program, a significant share of eligible applicants who had expressed their interest in stage 1 did not attend the subsequent enrollment meeting in stage 2. The intervention evaluated in this study targeted the next cohort, and took place between the two stages, aiming to increase take-up from registration to enrollment.
+
+Eligible applicants were randomly selected to receive an SMS reminding them that the program was free. $^{1}$ Youth were already informed that the program was free at pre-registration and the message served as a reminder. Randomization was stratified by gender and geographic location. The SMS message read as follows: “Come participate in an information session about PRO-Jeunes, a program offering free training, support for self-employment and employment opportunities.” In the first treatment, the SMS was randomly sent to the youth only. In the second, treatment, the SMS was sent to the youth and their listed contact person. At pre-registration, youth were asked to list a person to contact in case they could not be reached. It was specified that youth who did not live by themselves should provide the name of a person they lived with.
+
+Our study uses administrative data collected in 2019 on a sample of 2,926 eligible applicants to the PRO-Jeunes program who had completed the pre-registration stage, during which they provided identification and contact information for their contact person, as described in Table 2. The data include variables such as date of birth, phone number, gender and geographic location for youth, and the relationship to the youth and phone number for contacts. Contact gender was inferred from the relationship variable. Listed relationships were mother/father, uncle/aunt, brother/sister, grandparents, cousin, guardian, spouse, friend and other.
+
+The average age of youth in our sample is 23 years (25th percentile: 20 years; 75th percentile: 26 years), and half of the sample are women. In terms of contacts, about half of the youth listed a parent as their contact; another $9\%$ provided a spouse as a contact. Women are $18.5\%$ less likely than men to choose women as contacts. $15.6\%$ of women choosing their husband as a contact, compared to only $1.7\%$ of men choosing their wife (Table 1). These statistics are balanced across treatment groups (Table 2).
+
+To complement the quantitative data, we conducted a qualitative survey to better understand the quantitative findings, including 12 individual interviews and 4 focus group discussions among youth and their contacts in August-September 2023. In the focus group discussions, men and women were interviewed separately to better understand the gender differences in the observed results.
+
+We use the following specification for our main estimates:
+
+$$
+\begin{array}{r} E n r o l l e d _ {i} = \beta_ {0} + \beta_ {1} W o m a n _ {i} + \beta_ {2} T _ {1 i} + \beta_ {3} T _ {1 i} \cdot W o m a n _ {i} + \\ \beta_ {4} T _ {2 i} + \beta_ {5} T _ {2 i} \cdot W o m a n _ {i} + X _ {i} ^ {\prime} + \lambda_ {e, c} + \varepsilon_ {i} \end{array}\tag{1}
+$$
+
+Where $Enrolled_{i}$ is a binary variable indicating whether individual i has completed the enrollment process. $T_{1i}$ is a binary variable indicating whether the individual was in the first treatment group, where an SMS was sent to youth only. $T_{2i}$ is a binary variable indicating whether the individual was in the second treatment group, where an SMS was sent to youth and their contact. $Woman_{i}$ is a binary variable taking the value of one when the individual is a woman. $X_{i}^{\prime}$ is a vector of control variables, including age and geographic location. We also run a heterogeneity test with the same specification, comparing two sub-groups: youth with male contacts versus youth with female contacts.
+
+## 3 Results
+
+## 3.1 Overall impact on enrollment
+
+Table 3 presents the treatment effects of sending the SMS to youth only or to youth and their contact on enrollment. We find that sending the SMS to youth only has no statistically significant impact on enrollment. Sending the SMS to both youth and their contact significantly decreases the probability of enrolling for both men (from $43.8\%$ to $25.2\%$ ) and women (from $38.5\%$ to $30.7\%$ ), equivalent to a $42.4\%$ decrease for men and a $20.2\%$ decrease for women, both significant at the $5\%$ level. The decrease in enrollment is significantly greater for men, with men's enrollment decreasing by 10.8 percentage points more than women's.
+
+The fact that we only see a decrease when the contacts are included, coupled with our qualitative evidence, point to contacts being an important influence over youth's decisions. About half of youth listed a parent as their contact (Table 2). Qualitative interviews indicate that youth select the contact based on either personal relationships (family members or friends) or the contact's professional experience, and that youth expect their contact to provide significant guidance.
+
+Qualitative interviews also indicate that while the program being free was perceived positively by both youth and contacts, it can also signal either poor quality or potential fraud. When asked what could improve the message's perception, interviewees suggested that it should illustrate the reputability of the organization providing the program. Both contacts and youth mentioned the importance of trusting the organization. This could explain why sending the SMS to youth and their contact had a worse effect on enrollment, compared to sending it to youth only. When the SMS were sent, youth had already attended a pre-registration information session, and therefore already had some information about the organization, whereas contacts had no prior interactions with the implementing organization. Contacts had no reason to have trust in the program, which could have led to them discouraging youth to register.
+
+## 3.2 Impact on enrollment by gender of contact
+
+Table 4 shows the treatment effects of sending SMS to youth only or to youth and their contact on program enrollment for two subsamples: column (1) shows the impact on youth whose contacts are men, and column (2) shows the impact on youth whose contacts are women. It presents a more nuanced picture when we consider the gender of the contact. Sending SMS to male youth and their contact always has a negative impact, regardless of the contact's gender: the effect corresponds to a $36.2\%$ decrease in enrollment for men with male contacts and to a $52.3\%$ for men with female contacts. The impact on women's enrollment of the SMS to youth and their contact is driven by women with male contacts. Women with male contacts are $30.3\%$ less likely to enroll, whereas women with female contacts are the only group which does not exhibit a significant decrease in enrollment. This is not explained by differences in delivery rates (Figure 1).
+
+Our results are robust to restricting the analysis to the subsample of youth whose contact is a parent: young women whose mothers were sent the contact SMS are the only ones not discouraged by the SMS. This may suggest that women value the opportunity cost of the program for young women less than men, either because they discount less the expected quality of the program based on the free message or because they are more aware than men of the limitations in job market opportunities for young women. However, these findings may be subject to selection bias in contact choice. The observed differences in effects by contact gender could be partially attributed to unobserved characteristics of youth who choose male versus female contacts, rather than solely to the gender of the contact itself.
+
+## 4 Discussion
+
+Low take-up is a major barrier to the effectiveness of a large number of development programs and social policies. In some cases, that low take-up may reflect insufficient information regarding the program. This study sought to boost the uptake of a youth employment program by making the free nature of the program salient through SMS reminders sent to both applicants and their contacts.
+
+We provide quantitative evidence that this had no significant impact on program enrolment when youth were contacted alone and a discouraging effect when youth were contacted along with a person of reference. This discouraging effect was found for all youth, except women with a female contact, and is significantly stronger among men.
+
+Complementary qualitative evidence highlights the key role played by trust in the program in shaping recipients' perception of the SMS messages. A message highlighting the program's cost-free aspect can inadvertently backfire if the target audience lacks familiarity with the offering, leading to skepticism about quality rather than generating interest. This finding underscores the value of building trust in the program before promoting it, ensuring that recipients are familiar with and confident in its value. Additionally, our results indicate that contacts are critical in influencing youth's take-up decisions. While they can be effective channels for information dissemination, trust needs to be cultivated not only with the youth, but also with the contacts, especially for male participants and male contacts, among whom the discouraging effect was strongest.
+
+Focusing solely on the free nature of the program may not be enough to attract participants and can even lead to distrust when interpreted as a low-quality signal. Future communication strategies should highlight the quality and value of the program to align with the expectations and aspirations of the youth and the contacts influencing their decisions. Program coordinators could actively build trust with youth and their contacts by providing them with detailed, transparent information about the program's value and quality, and incorporating this type of information in messaging strategies. Additionally, messaging strategies could be tailored to align with the specific expectations of both youth and their contacts, potentially involving pre-engagement initiatives to familiarize them with the program before direct outreach.
+
+Gender dynamics further complicate the enrollment process, particularly among female recipients. The analysis indicates that the deterrent effect of the messaging is significantly less pronounced among women with female contacts than among women with male contacts. This heterogeneity suggests that the perception and impact of the program's promotional messages are influenced by broader social and cultural factors. However, this finding should be interpreted with caution given the potential selection bias in contact choice. Future research could address this by randomly assigning suggested contact gender to establish causal relationships, collecting more detailed data on reasons for contact selection, and exploring the interaction between youth characteristics and contact gender.
+
+Taken together, our mixed-method study demonstrates the challenges of promoting the uptake of youth employment programs, highlighting the need for nuanced context-specific approaches. Increasing youth enrollment in skills development programs is a critical challenge, often hindered by issues of trust and perceptions of program benefits. It is crucial for program coordinators to focus on building trust and familiarity before emphasizing cost-free aspects. Messaging strategies should account for the complex dynamics between youth, their contacts, and gender. Leveraging existing trusted networks, such as religious or educational institutions, could enhance program credibility. By addressing the complexities of trust, social networks, and gender dynamics, program organizers can develop more effective strategies to improve registration outcomes and, ultimately, youth employment opportunities.
+
+## References
+
+Akosah-Twumasi, P., Emeto, T. I., Lindsay, D., Tsey, K., and Malau-Aduli, B. S. (2018). A systematic review of factors that influence youths career choices—the role of culture. In Frontiers in Education, volume 3, page 58. Frontiers Media SA.
+
+Bagwell, K. and Riordan, M. H. (1991). High and declining prices signal product quality. The American Economic Review, pages 224–239.
+
+Cohen, J. and Dupas, P. (2010). Free distribution or cost-sharing? evidence from a randomized malaria prevention experiment. The Quarterly Journal of Economics, 125(1):1–45.
+
+Duflo, E., Dupas, P., and Kremer, M. (2023). The impact of secondary school subsidies on career trajectories in a dual labor market: Experimental evidence from ghana.
+
+Grácio, M. and Vicente, P. C. (2021). Information, get-out-the-vote messages, and peer influence: Causal effects on political behavior in mozambique. Journal of Development Economics, 151:102665.
+
+Hanushek, E. A., Schwerdt, G., Woessmann, L., and Zhang, L. (2017). General education, vocational education, and labor-market outcomes over the lifecycle. Journal of human resources, 52(1):48–87.
+
+Kremer, M. and Miguel, E. (2007). The illusion of sustainability. The Quarterly Journal of Economics, 122(3):1007–1065.
+
+McKenzie, D. (2021). Small business training to improve management practices in developing countries: re-assessing the evidence for ‘training doesn’t work’. Oxford Review of Economic Policy, 37(2):276–301.
+
+McKenzie, D. and Woodruff, C. (2014). What are we learning from business training and entrepreneurship evaluations around the developing world? The World Bank Research Observer, 29(1):48–82.
+
+Rodríguez, C. and Saavedra, J. E. (2019). The persistent effects of youth savings reminders: Experimental evidence from text-message campaigns in colombia. Journal of Development Economics, 139:135–156.
+
+Rokicki, S., Cohen, J., Salomon, J. A., and Fink, G. (2017). Impact of a text-messaging program on adolescent reproductive health: a cluster-randomized trial in ghana. American Journal of Public Health, 107(2):298–305.
+
+Tripney, J. S. and Hombrados, J. G. (2013). Technical and vocational education and training (tvet) for young people in low-and middle-income countries: a systematic review and meta-analysis. Empirical research in vocational education and training, 5:1–14.
+
+
+Van Lieshout, S. and Mehtha, P. (2017). The Next 15 Million: Start and Improve Your Business Global Tracer Study 2011-15. ILO.
+
+
+## Tables
+
+Table 1: Descriptive statistics by gender
+
+
+Notes: The value displayed for t-tests are the differences in the means across the groups. \*\*\* p < 0.01, \*\* p < 0.05, \* p < 0.1
+
+Table 2: Descriptive statistics by treatment group
+
+
+Notes: The value displayed for t-tests are the differences in the means across the groups. \*\*\* p < 0.01, \*\* p < 0.05, \* p < 0.1
+
+Table 3: Treatment effects on enrollment rates
+
+
+Notes: T=Treatment. W=Woman.
+\*\*\* p < 0.01, \*\* p < 0.05, \* p < 0.1
+Sharpened q-values are p-values that have been adjusted for the False Discovery Rate (FDR). Controls: Age and geographic location.
+
+Table 4: Treatment effects on enrollment rates - by contact gender
+
+
+Notes: T=Treatment. W=Woman. \*\*\* p < 0.01, \*\* p < 0.05, \* p < 0.1. Sharpened q-values are p-values that have been adjusted for the False Discovery Rate (FDR). Controls: Age and geographic location.
+
+Figure 1: SMS Delivery Rates by Treatment Group
+
+[[KC_IMAGE_001]]
+
+
+## Appendix
+
+## SMS on long-term benefits of the program
+
+Another type of SMS, emphasizing the long-term benefits of the program, was sent to either youth only or youth and their contacts. Similarly to the SMS highlighting that the program was free, it had no impact on enrollment when sent exclusively to youth. However, when sent to both youth and their contacts, the impact differed by gender: it decreased enrollment for men but increased enrollment for women. Due to the inconclusive nature of these results, we have chosen to focus on the first type of SMS in this paper.

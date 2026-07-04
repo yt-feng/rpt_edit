@@ -1,0 +1,30 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/institutions/260704/0014-WorldBank_Community-Health-Workers-as-Key-Providers-of-Easy-to-Use-Con_42a2/mineru_raw/images/1d70ce2cdf7c1d8207c5ef75da5efadc8a2f1d1dee7d2b14b1d809310ca57eff.jpg",
+    "path": "kc_translated_reports/institutions/260704/12-0014-WorldBank_Community-Health-Workers-as-Key-Providers-of-Easy-to-Use-Con_42a2/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.18,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/institutions/260704/0014-WorldBank_Community-Health-Workers-as-Key-Providers-of-Easy-to-Use-Con_42a2/mineru_raw/images/e5a8887ad31b46ffdd7bee8c1b625127c7230750954332a6147a6685ebacaadc.jpg",
+    "path": "kc_translated_reports/institutions/260704/12-0014-WorldBank_Community-Health-Workers-as-Key-Providers-of-Easy-to-Use-Con_42a2/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.16,large"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/institutions/260704/0014-WorldBank_Community-Health-Workers-as-Key-Providers-of-Easy-to-Use-Con_42a2/mineru_raw/images/4d59e03c4aa48c81c369aebbf988d18c71acabf6beb5b5145c160f33e0e053c7.jpg",
+    "path": "kc_translated_reports/institutions/260704/12-0014-WorldBank_Community-Health-Workers-as-Key-Providers-of-Easy-to-Use-Con_42a2/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=9;chart_context,edge:0.29,large"
+  },
+  {
+    "token": "[[KC_IMAGE_004]]",
+    "source_path": "xhs_notes/institutions/260704/0014-WorldBank_Community-Health-Workers-as-Key-Providers-of-Easy-to-Use-Con_42a2/mineru_raw/images/664c17a4f8e9f62316657444e6c942892d2b12af663085dddb08232e92b94f03.jpg",
+    "path": "kc_translated_reports/institutions/260704/12-0014-WorldBank_Community-Health-Workers-as-Key-Providers-of-Easy-to-Use-Con_42a2/assets/fig_004.jpg",
+    "relative_path": "fig_004.jpg",
+    "chart_filter": "score=9;chart_context,edge:0.26,large"
+  }
+]

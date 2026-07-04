@@ -1,0 +1,23 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/institutions/260704/0013-WorldBank_Collecting-Accurate-Data-on-Intimate-Partner-Violence-Learni_655b/mineru_raw/images/57345b52ace0a4dd6d3421730906d12f6b350643b9b5ab6da968cfd1bdf4ee98.jpg",
+    "path": "kc_translated_reports/institutions/260704/11-0013-WorldBank_Collecting-Accurate-Data-on-Intimate-Partner-Violence-Learni_655b/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.19,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/institutions/260704/0013-WorldBank_Collecting-Accurate-Data-on-Intimate-Partner-Violence-Learni_655b/mineru_raw/images/6fef6f4f8b12a7f05d0e53842bad153ffed524588a4ea587fac2be7364148147.jpg",
+    "path": "kc_translated_reports/institutions/260704/11-0013-WorldBank_Collecting-Accurate-Data-on-Intimate-Partner-Violence-Learni_655b/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=9;chart_context,edge:0.24,large"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/institutions/260704/0013-WorldBank_Collecting-Accurate-Data-on-Intimate-Partner-Violence-Learni_655b/mineru_raw/images/59baf4356c0f4f8ede32f1e67cc8440c03ea91a79d7308f9b8849e3bc1331568.jpg",
+    "path": "kc_translated_reports/institutions/260704/11-0013-WorldBank_Collecting-Accurate-Data-on-Intimate-Partner-Violence-Learni_655b/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=6;non_chart_context,chart_context,chart_ratio,edge:0.19,contrast,large"
+  }
+]

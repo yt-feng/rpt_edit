@@ -1,0 +1,16 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/institutions/260704/0023-WorldBank_Effects-of-a-Community-Driven-Water-Sanitation-and-Hygiene-I_d64d/mineru_raw/images/be428beab4bc106dca3d40224a2f4db24a5fe9827a7e83b485fdc0c534af66de.jpg",
+    "path": "kc_translated_reports/institutions/260704/21-0023-WorldBank_Effects-of-a-Community-Driven-Water-Sanitation-and-Hygiene-I_d64d/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=4;non_chart_context,chart_context,edge:0.21,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/institutions/260704/0023-WorldBank_Effects-of-a-Community-Driven-Water-Sanitation-and-Hygiene-I_d64d/mineru_raw/images/7063632d3c3e55d4f65d4db2c4025908e13aff031a30e5ddf6d9349e8bcdfef6.jpg",
+    "path": "kc_translated_reports/institutions/260704/21-0023-WorldBank_Effects-of-a-Community-Driven-Water-Sanitation-and-Hygiene-I_d64d/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=5;non_chart_context,chart_context,chart_ratio,edge:0.12,large"
+  }
+]
