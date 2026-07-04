@@ -876,6 +876,26 @@
     "imf:f418c42a475c89cf77025223cdc9e02814e40dd4b95c384d174e90b6c078": {
       "first_seen": "2026-07-04",
       "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publ/arpdf/ar2026e.htm": {
+      "first_seen": "2026-07-04",
+      "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publ/bisbull125.htm": {
+      "first_seen": "2026-07-04",
+      "status": "too_old"
+    },
+    "bis:https://www.bis.org/publ/qtrpdf/r_qt2606.htm": {
+      "first_seen": "2026-07-04",
+      "status": "too_old"
+    },
+    "bis:https://www.bis.org/publ/bppdf/bispap172.htm": {
+      "first_seen": "2026-07-04",
+      "status": "too_old"
+    },
+    "bis:https://www.bis.org/publ/bppdf/bispap171.htm": {
+      "first_seen": "2026-07-04",
+      "status": "too_old"
     }
   }
 }
