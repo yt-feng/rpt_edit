@@ -1,4 +1,4 @@
-# 银行：衡量银行业的AI成熟度——来自Evident AI指数CEO的洞见：关键要点
+# 高盛：银行，衡量银行业的AI成熟度——来自Evident AI指数CEO的洞见，关键要点
 
 我们与Evident AI指数（一个衡量金融机构AI成熟度的全球框架）的CEO兼联合创始人Alexandra Mousavizadeh共同举办了一场网络研讨会。讨论突出了以下几个关键主题：
 
