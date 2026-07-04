@@ -1,0 +1,44 @@
+ZH_A: 今天聊一份非常有意思的研报。它来自一家外资投行，讲的是AI芯片背后的封装技术。你怎么看这份报告？
+ZH_B: 核心判断是，Cloud AI的需求比一个月前预期的还要强。最直接的指标就是CoWoS产能的扩张速度，台积电和日月光都在加速。
+ZH_A: CoWoS到底是什么？为什么它这么重要？
+ZH_B: CoWoS是先进封装技术。简单说，就是把GPU、CPU和HBM内存紧密地封装在一起。AI芯片需要极高的带宽，这就是关键。
+ZH_A: 所以产能加速扩张，意味着下游需求很强劲？
+ZH_B: 没错。报告把CoWoS产能看作Cloud AI需求的领先指标。台积电2026年底的产能预期从12万片提高到13万片，2027年更是从15万片提高到18万片。
+ZH_A: 这个数字很惊人。那这些产能主要被谁吃掉了？
+ZH_B: 目前最大的客户还是Nvidia。但报告里一个非常有趣的洞察是，AMD的服务器CPU Venice正在快速起量。2027年的预估出货量高达400万颗，这将是AMD CoWoS需求增长232%的主要推手。
+ZH_A: 这意味着市场结构正在发生变化？
+ZH_B: 对。Nvidia依然是主导，但AMD和Google TPU这类ASIC的占比在快速提升。到2027年，ASIC的CoWoS晶圆需求占比预计会从2025年的28%上升到33%。
+ZH_A: 听起来供应链会更分散？
+ZH_B: 是的。报告认为，从2027到2028年开始，先进封装供应链会更多元化。日月光和Amkor的机会在增加，尤其是服务器CPU领域。Intel的EMIB-T技术也在获得关注。
+ZH_A: 但台积电会被撼动吗？
+ZH_B: 报告认为不会。台积电依然是最大的玩家。它的先进封装业务在未来五年有望保持约50%的增长。这得益于其领先的市场份额、3D堆叠技术的价值提升，以及CoPoS和CPO等新技术的升级。
+ZH_A: 那Nvidia的Rubin架构进展如何？
+ZH_B: 这里有一个悬念。Rubin GPU在2026年第二季度因为重新设计，爬坡速度较慢。但报告预计，从下半年开始会大幅加速，全年出货量预计达到210万颗。至于为什么重新设计，以及这对供应链的具体影响，完整报告里有更详细的分析。
+ZH_A: 那投资上有什么结论？
+ZH_B: 报告看好整个Cloud AI半导体供应链。首选是台积电，然后是联发科和日月光。设备供应商也有机会，比如GPTC。但具体的目标价和估值逻辑，还是得去看完整报告。
+ZH_A: 所以这份报告的核心价值，不是给一个结论，而是帮我们理解这个产业的底层逻辑。
+ZH_B: 没错。CoWoS的产能就是这个产业的“温度计”。它现在显示的是，AI的热度比我们想的还要高。
+ZH_A: 想了解更多关于Nvidia Rubin的重新设计细节，或者台积电CoPoS技术的具体影响，欢迎加入我们的社群，获取完整报告。
+ZH_B: 我们下期再聊。
+
+EN_A: Today we are digging into a report from a global investment bank. It is all about the packaging technology behind AI chips. What is the main takeaway?
+EN_B: The core idea is that demand for cloud AI is stronger than we thought just a month ago. The clearest signal is how fast CoWoS capacity is expanding, both at TSMC and ASE.
+EN_A: CoWoS is a type of advanced packaging, right? Why is it such a big deal?
+EN_B: Exactly. It is the technology that lets you put a GPU, a CPU, and HBM memory very close together. AI chips need a ton of bandwidth, and CoWoS makes that possible.
+EN_A: So faster capacity expansion means stronger demand downstream?
+EN_B: Yes. The report treats CoWoS capacity as a leading indicator for cloud AI demand. TSMC's capacity target for the end of 2026 is now 130,000 wafers per month, up from 120,000. For 2027, it goes from 150,000 to 180,000.
+EN_A: Those are big numbers. Who is taking all that capacity?
+EN_B: Nvidia is still the biggest customer. But here is a really interesting finding. AMD's new server CPU, called Venice, is ramping up fast. The report estimates four million units in 2027. That alone could drive a 232 percent jump in AMD's CoWoS demand.
+EN_A: So the market is becoming more diverse?
+EN_B: Exactly. Nvidia is still dominant, but the share from AMD and ASICs like Google's TPU is growing fast. By 2027, ASICs could account for 33 percent of all CoWoS wafer demand, up from 28 percent in 2025.
+EN_A: Does that mean the supply chain is going to get more diversified?
+EN_B: The report thinks so. From 2027 to 2028 onward, advanced packaging supply will become more diverse. Companies like ASE and Amkor will have more opportunities, especially from server CPUs. Intel's EMIB-T technology is also gaining traction.
+EN_B: But the report does not think TSMC will be dethroned. It is still the biggest player. Its advanced packaging sales could grow at around 50 percent per year for the next five years. That is driven by its market share, 3D stacking, and new technologies like CoPoS and co-packaged optics.
+EN_A: What about Nvidia's next-generation Rubin architecture? How is that going?
+EN_B: Here is a good cliffhanger. The Rubin GPU ramp was slow in the second quarter of 2026 because of some redesigns. But the report expects a steep pickup in the second half, with total shipments of 2.1 million units for the full year. Why the redesign and what it means for the supply chain is something you have to read the full report for.
+EN_A: So what is the investment angle here?
+EN_B: The report likes the whole cloud AI semiconductor supply chain. Its top picks are TSMC, MediaTek, and ASE. Equipment suppliers like GPTC also have potential. But for the specific price targets and valuation logic, you really need to see the full analysis.
+EN_A: So the real value of this report is not a single conclusion. It is about understanding the underlying logic of this industry.
+EN_B: Exactly. Think of CoWoS capacity as the thermometer for this industry. Right now, it is telling us the AI fever is even higher than we thought.
+EN_A: If you want to learn more about the Nvidia Rubin redesign or the impact of TSMC's CoPoS technology, join our community to get the full report.
+EN_B: We will talk again next time.
