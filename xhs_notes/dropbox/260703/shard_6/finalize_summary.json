@@ -1,25 +1,31 @@
 [
   {
-    "item": "0001-32-NOM-Sungrow-Power-Supply-300274--US-inverter-ban--news-and-company-ca",
-    "xianyu_note.md_error": "DeepSeek generate Xianyu listing note: HTTP 402, response={\"error\": {\"message\": \"Insufficient Balance\", \"type\": \"unknown_error\", \"param\": null, \"code\": \"invalid_request_error\"}}",
+    "item": "0001-32-HSBC-Powering-AI-The-SOFC-opportunity--undersupplied-through-2030-260701",
     "xianyu_note.md": "xianyu_note.md",
     "prompt_for_xianyu.md": "prompt_for_xianyu.md",
-    "xianyu_note_chars": "244",
+    "xianyu_note_chars": "596",
     "xianyu_note_no_emoji": "true",
     "xianyu_note_max_chars": "1499",
-    "zhihu_article.md_error": "DeepSeek generate Zhihu article: HTTP 402, response={\"error\": {\"message\": \"Insufficient Balance\", \"type\": \"unknown_error\", \"param\": null, \"code\": \"invalid_request_error\"}}",
     "zhihu_article.md": "zhihu_article.md",
     "prompt_for_zhihu.md": "prompt_for_zhihu.md"
   },
   {
-    "item": "0002-33-NOM-USD-CNY-fix-model-Projection--6.7785-260703",
-    "xianyu_note.md_error": "DeepSeek generate Xianyu listing note: HTTP 402, response={\"error\": {\"message\": \"Insufficient Balance\", \"type\": \"unknown_error\", \"param\": null, \"code\": \"invalid_request_error\"}}",
+    "item": "0002-33-Morgan-Stanley-Wire---Cable-Our-View-on-Recent-Share-Price-Correction-26",
     "xianyu_note.md": "xianyu_note.md",
     "prompt_for_xianyu.md": "prompt_for_xianyu.md",
-    "xianyu_note_chars": "244",
+    "xianyu_note_chars": "494",
     "xianyu_note_no_emoji": "true",
     "xianyu_note_max_chars": "1499",
-    "zhihu_article.md_error": "DeepSeek generate Zhihu article: HTTP 402, response={\"error\": {\"message\": \"Insufficient Balance\", \"type\": \"unknown_error\", \"param\": null, \"code\": \"invalid_request_error\"}}",
+    "zhihu_article.md": "zhihu_article.md",
+    "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+  },
+  {
+    "item": "0003-34-Morgan-Stanley-A-Prisoner-s-Dilemma--Too-much-space--too-little-demand-2",
+    "xianyu_note.md": "xianyu_note.md",
+    "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+    "xianyu_note_chars": "506",
+    "xianyu_note_no_emoji": "true",
+    "xianyu_note_max_chars": "1499",
     "zhihu_article.md": "zhihu_article.md",
     "prompt_for_zhihu.md": "prompt_for_zhihu.md"
   }

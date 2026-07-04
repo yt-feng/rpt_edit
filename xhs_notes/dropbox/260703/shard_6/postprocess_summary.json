@@ -1,11 +1,40 @@
 [
   {
-    "item": "0001-32-NOM-Sungrow-Power-Supply-300274--US-inverter-ban--news-and-company-ca",
-    "source_pdf": "/tmp/pdf_batch_001_vpxsuci1/pdfs/0001-32-NOM-Sungrow Power Supply-300274--US inverter ban- news and company call update-260701.pdf",
+    "item": "0001-32-HSBC-Powering-AI-The-SOFC-opportunity--undersupplied-through-2030-260701",
+    "source_pdf": "/tmp/pdf_batch_001_qiwje5d6/pdfs/0001-32-HSBC-Powering AI-The SOFC opportunity- undersupplied through 2030-260701.pdf",
     "mineru_state": "done",
     "mineru_error": "",
-    "institution_name": "NOM",
-    "cover_short_title": "DeepSeek 生",
+    "institution_name": "HSBC",
+    "cover_short_title": "SOFC 为何是数据",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-33-Morgan-Stanley-Wire---Cable-Our-View-on-Recent-Share-Price-Correction-26",
+    "source_pdf": "/tmp/pdf_batch_001_qiwje5d6/pdfs/0002-33-MS-Wire - Cable-Our View on Recent Share Price Correction-260701.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "摩根斯坦利",
+    "cover_short_title": "日本线缆三兄弟回调，",
     "cover_subtitle": "研报重点一图看懂",
     "images": [
       "assets/xhs_card_01.png",
@@ -16,24 +45,27 @@
     "wechat_images": [
       "assets/source_image_01.jpg"
     ],
-    "wechat_en_error": "DeepSeek generate English WeChat-style article: HTTP 402, response={\"error\": {\"message\": \"Insufficient Balance\", \"type\": \"unknown_error\", \"param\": null, \"code\": \"invalid_request_error\"}}",
     "wechat_article_en": "wechat_article_en.md",
-    "podcast_error": "DeepSeek generate conversational Chinese and English podcast scripts: HTTP 402, response={\"error\": {\"message\": \"Insufficient Balance\", \"type\": \"unknown_error\", \"param\": null, \"code\": \"invalid_request_error\"}}",
     "podcast_script": "podcast_script.txt"
   },
   {
-    "item": "0002-33-NOM-USD-CNY-fix-model-Projection--6.7785-260703",
-    "source_pdf": "/tmp/pdf_batch_001_vpxsuci1/pdfs/0002-33-NOM-USD CNY fix model Projection- 6.7785-260703.pdf",
+    "item": "0003-34-Morgan-Stanley-A-Prisoner-s-Dilemma--Too-much-space--too-little-demand-2",
+    "source_pdf": "/tmp/pdf_batch_001_qiwje5d6/pdfs/0003-34-MS-A Prisoner-s Dilemma- Too much space- too little demand-260702.pdf",
     "mineru_state": "done",
     "mineru_error": "",
-    "institution_name": "NOM",
-    "cover_short_title": "DeepSeek 生",
+    "institution_name": "摩根斯坦利",
+    "cover_short_title": "波兰超市饱和战：空间",
     "cover_subtitle": "研报重点一图看懂",
     "images": [
       "assets/xhs_card_01.png",
       "assets/xhs_card_02.png",
       "assets/xhs_card_03.png",
-      "assets/xhs_card_04.png"
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
     ],
     "cover": "assets/cover.png",
     "wechat_article": "wechat_article.md",
@@ -42,9 +74,7 @@
       "assets/source_image_02.jpg",
       "assets/source_image_03.jpg"
     ],
-    "wechat_en_error": "DeepSeek generate English WeChat-style article: HTTP 402, response={\"error\": {\"message\": \"Insufficient Balance\", \"type\": \"unknown_error\", \"param\": null, \"code\": \"invalid_request_error\"}}",
     "wechat_article_en": "wechat_article_en.md",
-    "podcast_error": "DeepSeek generate conversational Chinese and English podcast scripts: HTTP 402, response={\"error\": {\"message\": \"Insufficient Balance\", \"type\": \"unknown_error\", \"param\": null, \"code\": \"invalid_request_error\"}}",
     "podcast_script": "podcast_script.txt"
   }
 ]
