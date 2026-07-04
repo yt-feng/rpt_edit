@@ -324,6 +324,16 @@ def parse_selection_limit(value: str, label: str) -> int | None:
     return limit
 
 
+def parse_institution_filter(value: str) -> set[str]:
+    filters: set[str] = set()
+    for raw in (value or "").split(","):
+        token = normalize_space(raw)
+        if not token or token.lower() in {"all", "*"}:
+            continue
+        filters.add(INSTITUTION_KEY_TO_CN.get(token.lower(), token))
+    return filters
+
+
 def find_report_dirs(date_dir: Path) -> list[Path]:
     report_dirs: list[Path] = []
     for shard in sorted(date_dir.glob("shard_*"), key=lambda p: p.name):
@@ -1145,6 +1155,8 @@ def main() -> int:
     parser.add_argument("--deepseek-retries", type=int, default=3)
     parser.add_argument("--exclude-institutions", default="",
                         help="Comma list of institution keys to skip entirely, e.g. rand,brookings.")
+    parser.add_argument("--include-institutions", default="",
+                        help="Comma list of institution keys/names to keep, e.g. bis,imf.")
     parser.add_argument("--title-guard", action="store_true",
                         help="Use DeepSeek to skip reports whose title is China-sensitive (keeps them out of WeChat).")
     args = parser.parse_args()
@@ -1160,6 +1172,19 @@ def main() -> int:
     all_reports = find_report_dirs(date_dir)
     if not all_reports:
         raise RuntimeError(f"No report outputs with source_mineru.md found under {date_dir}")
+
+    included_cn = parse_institution_filter(args.include_institutions)
+    if included_cn:
+        kept: list[Path] = []
+        for report_dir in all_reports:
+            institution = infer_institution_name(report_dir.name)
+            if institution in included_cn:
+                kept.append(report_dir)
+            else:
+                log(f"Skipping institution report outside include filter ({institution or 'unknown'}): {report_dir.name}")
+        all_reports = kept
+        if not all_reports:
+            raise RuntimeError(f"No reports under {date_dir} matched --include-institutions={args.include_institutions}")
 
     excluded_cn = {
         INSTITUTION_KEY_TO_CN.get(key.strip().lower(), key.strip())

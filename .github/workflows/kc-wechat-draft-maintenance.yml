@@ -11,6 +11,22 @@ on:
         description: "Existing WeChat draft summary to delete first. Empty uses wechat_drafts/<date_folder>/wechat_draft_summary.json"
         required: false
         default: ""
+      translated_root:
+        description: "Translated report root to upload from"
+        required: true
+        default: "kc_translated_reports"
+      output_root:
+        description: "WeChat draft output root"
+        required: true
+        default: "wechat_drafts"
+      include_institutions:
+        description: "Comma list of institution keys/names to upload, e.g. bis. Empty/all uploads every selected report."
+        required: false
+        default: ""
+      extra_media_ids:
+        description: "Comma/newline separated extra draft media_id values to delete"
+        required: false
+        default: ""
       delete_existing:
         description: "Delete media_id values from the existing summary before reuploading"
         required: true
@@ -98,22 +114,22 @@ jobs:
           from pathlib import Path
           import re
 
-          root = Path("kc_translated_reports")
+          root = Path("${{ inputs.translated_root }}")
           candidates = [p.name for p in root.iterdir() if p.is_dir() and re.fullmatch(r"\d{6,8}", p.name)]
           if not candidates:
-              raise SystemExit("No date folders found under kc_translated_reports")
+              raise SystemExit(f"No date folders found under {root}")
           print(max(candidates, key=lambda value: int(value)))
           PY
           )
           fi
           SUMMARY_PATH="${{ inputs.summary_path }}"
           if [ -z "$SUMMARY_PATH" ]; then
-            SUMMARY_PATH="wechat_drafts/$DATE_FOLDER/wechat_draft_summary.json"
+            SUMMARY_PATH="${{ inputs.output_root }}/$DATE_FOLDER/wechat_draft_summary.json"
           fi
           echo "DATE_FOLDER=$DATE_FOLDER" >> "$GITHUB_ENV"
           echo "SUMMARY_PATH=$SUMMARY_PATH" >> "$GITHUB_ENV"
-          echo "WECHAT_DRAFT_DIR=wechat_drafts/$DATE_FOLDER" >> "$GITHUB_ENV"
-          mkdir -p "wechat_drafts/$DATE_FOLDER"
+          echo "WECHAT_DRAFT_DIR=${{ inputs.output_root }}/$DATE_FOLDER" >> "$GITHUB_ENV"
+          mkdir -p "${{ inputs.output_root }}/$DATE_FOLDER"
           echo "::notice::date_folder=$DATE_FOLDER"
           echo "::notice::summary_path=$SUMMARY_PATH"
 
@@ -123,9 +139,17 @@ jobs:
           WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
           WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
         run: |
+          MEDIA_ARGS=()
+          while IFS= read -r media_id; do
+            media_id="$(echo "$media_id" | xargs)"
+            if [ -n "$media_id" ]; then
+              MEDIA_ARGS+=(--media-id "$media_id")
+            fi
+          done < <(printf '%s\n' "${{ inputs.extra_media_ids }}" | tr ',' '\n')
           python scripts/delete_wechat_drafts.py \
             --summary "$SUMMARY_PATH" \
             --output "$WECHAT_DRAFT_DIR/deleted_drafts_summary.json" \
+            "${MEDIA_ARGS[@]}" \
             --timeout 120
 
       - name: Upload KC translated reports to WeChat drafts
@@ -139,11 +163,12 @@ jobs:
             PUBLISH_ARGS+=(--publish)
           fi
           python scripts/push_kc_translated_to_wechat_drafts.py \
-            --translated-root "kc_translated_reports" \
+            --translated-root "${{ inputs.translated_root }}" \
             --date-folder "$DATE_FOLDER" \
-            --output-root "wechat_drafts" \
+            --output-root "${{ inputs.output_root }}" \
             --max-articles "${{ inputs.max_articles }}" \
             --article-offset "${{ inputs.article_offset }}" \
+            --include-institutions "${{ inputs.include_institutions }}" \
             --articles-per-draft "${{ inputs.articles_per_draft }}" \
             --max-body-chars "${{ inputs.max_body_chars }}" \
             --min-inline-images "${{ inputs.min_inline_images }}" \

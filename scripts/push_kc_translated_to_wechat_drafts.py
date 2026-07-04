@@ -57,6 +57,10 @@ DEFAULT_AFTER_IMAGE_NOTE = (
     "或将「KC桌面」设为星标"
 )
 POLLINATIONS_BASE_URL = "https://image.pollinations.ai/prompt/"
+WECHAT_COVER_WIDTH = 1200
+WECHAT_COVER_HEIGHT = 675
+WECHAT_COVER_CROP_235_1 = "0_0.121693_1_0.878307"
+WECHAT_COVER_CROP_1_1 = "0.21875_0_0.78125_1"
 WECHAT_REQUEST_MAX_ATTEMPTS = 5
 WECHAT_REQUEST_RETRY_BASE_SECONDS = 1.5
 WECHAT_REQUEST_RETRY_MAX_SECONDS = 20.0
@@ -81,6 +85,19 @@ WECHAT_TITLE_CHINA_POLITICAL_RE = re.compile(
     r"government|authority|official|censorship|tariff|trade war|export control|sanction|\bban\b)",
     re.I,
 )
+INSTITUTION_KEY_TO_CN = {
+    "imf": "IMF",
+    "bis": "国际清算银行",
+    "worldbank": "世界银行",
+    "world bank": "世界银行",
+    "rand": "兰德公司",
+    "brookings": "布鲁金斯学会",
+    "mckinsey": "麦肯锡",
+    "bcg": "波士顿咨询",
+    "bain": "贝恩",
+    "ark": "木头姐ARK",
+    "ark invest": "木头姐ARK",
+}
 WECHAT_TITLE_STRONG_CHINA_SENSITIVE_RE = re.compile(
     r"(中共|共产党|党中央|政治局|习近平|反腐|国安法|台湾|台海|新疆|西藏|人权|民主|"
     r"抗议|示威|镇压|南海|军事|CCP|Communist Party|Xi Jinping|Taiwan|Taiwan Strait|"
@@ -386,6 +403,16 @@ def parse_selection_limit(value: str, label: str) -> int | None:
     if limit < 1:
         raise ValueError(f"{label} must be at least 1, or use 'all'")
     return limit
+
+
+def parse_institution_filter(value: str) -> set[str]:
+    filters: set[str] = set()
+    for raw in (value or "").split(","):
+        token = normalize_space(raw)
+        if not token or token.lower() in {"all", "*"}:
+            continue
+        filters.add(INSTITUTION_KEY_TO_CN.get(token.lower(), token))
+    return filters
 
 
 def find_report_dirs(date_dir: Path) -> list[Path]:
@@ -1140,6 +1167,40 @@ def write_fallback_cover(path: Path, width: int = 1200, height: int = 675) -> No
     )
 
 
+def save_wechat_cover_jpeg(source: Path, target: Path) -> Path:
+    target.parent.mkdir(parents=True, exist_ok=True)
+    with Image.open(source) as image:
+        working = image.convert("RGB")
+    width, height = working.size
+    if width <= 0 or height <= 0:
+        raise RuntimeError(f"Invalid cover dimensions for {source}: {width}x{height}")
+    source_ratio = width / height
+    target_ratio = WECHAT_COVER_WIDTH / WECHAT_COVER_HEIGHT
+    if source_ratio >= target_ratio:
+        resized_height = WECHAT_COVER_HEIGHT
+        resized_width = max(WECHAT_COVER_WIDTH, round(resized_height * source_ratio))
+    else:
+        resized_width = WECHAT_COVER_WIDTH
+        resized_height = max(WECHAT_COVER_HEIGHT, round(resized_width / source_ratio))
+    resized = working.resize((resized_width, resized_height), Image.Resampling.LANCZOS)
+    left = max(0, (resized_width - WECHAT_COVER_WIDTH) // 2)
+    top = max(0, (resized_height - WECHAT_COVER_HEIGHT) // 2)
+    cover = resized.crop((left, top, left + WECHAT_COVER_WIDTH, top + WECHAT_COVER_HEIGHT))
+    cover.save(target, format="JPEG", quality=88, optimize=True, progressive=True)
+    return target
+
+
+def prepare_cover_upload_image(path: Path, output_dir: Path, stem: str) -> Path:
+    target = output_dir / "_assets" / f"{stem}_cover.jpg"
+    try:
+        return save_wechat_cover_jpeg(path, target)
+    except Exception as exc:
+        fallback = output_dir / "_assets" / f"{stem}_fallback_cover.png"
+        write_fallback_cover(fallback, WECHAT_COVER_WIDTH, WECHAT_COVER_HEIGHT)
+        log(f"Could not normalize cover image {path}: {exc}; using generated fallback cover.")
+        return save_wechat_cover_jpeg(fallback, target)
+
+
 def choose_cover_image(report_dir: Path, figure_paths: dict[str, Path], fallback_dir: Path) -> Path:
     for token in sorted(figure_paths):
         path = figure_paths[token]
@@ -1759,6 +1820,7 @@ def build_article(
             if candidate.exists() and candidate.is_file():
                 cover_image = candidate
                 break
+    cover_image = prepare_cover_upload_image(cover_image, output_dir, f"article_{index:02d}")
     if args.dry_run:
         thumb_media_id = f"DRY_RUN_THUMB_{index:02d}"
     else:
@@ -1800,6 +1862,8 @@ def build_article(
         "thumb_media_id": thumb_media_id,
         "need_open_comment": 0,
         "only_fans_can_comment": 0,
+        "pic_crop_235_1": WECHAT_COVER_CROP_235_1,
+        "pic_crop_1_1": WECHAT_COVER_CROP_1_1,
     }
     if args.content_source_url:
         article["content_source_url"] = args.content_source_url
@@ -1836,6 +1900,23 @@ def is_article_size_error(exc: WeChatError) -> bool:
     return exc.errcode == 45008 or "article size out of limit" in str(exc).lower()
 
 
+def is_cover_crop_error(exc: WeChatError) -> bool:
+    return exc.errcode == 53402 or "crop" in str(exc).lower() or "裁剪" in exc.errmsg
+
+
+def replacement_cover_media_id(
+    session: requests.Session,
+    access_token: str,
+    output_dir: Path,
+    draft_index: int,
+    timeout: int,
+) -> str:
+    fallback_png = output_dir / "_assets" / f"draft_{draft_index:02d}_replacement_cover.png"
+    write_fallback_cover(fallback_png, WECHAT_COVER_WIDTH, WECHAT_COVER_HEIGHT)
+    fallback_jpg = prepare_cover_upload_image(fallback_png, output_dir, f"draft_{draft_index:02d}_replacement")
+    return upload_cover_material(session, access_token, fallback_jpg, timeout)
+
+
 def article_payload(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return [dict(item["article"]) for item in items]
 
@@ -1847,6 +1928,7 @@ def main() -> int:
     parser.add_argument("--output-root", default="wechat_drafts")
     parser.add_argument("--max-articles", default="10")
     parser.add_argument("--article-offset", type=int, default=0)
+    parser.add_argument("--include-institutions", default="", help="Comma list of institution keys/names to upload, e.g. bis,imf.")
     parser.add_argument("--articles-per-draft", type=int, default=DEFAULT_ARTICLES_PER_DRAFT)
     parser.add_argument("--max-inline-images", type=int, default=DEFAULT_MIN_INLINE_IMAGES)
     parser.add_argument("--min-inline-images", type=int, default=DEFAULT_MIN_INLINE_IMAGES)
@@ -1886,6 +1968,18 @@ def main() -> int:
         raise RuntimeError(f"Date folder not found: {date_dir}")
 
     report_dirs = find_report_dirs(date_dir)
+    included_institutions = parse_institution_filter(args.include_institutions)
+    institution_filtered_count = 0
+    if included_institutions:
+        filtered_report_dirs: list[Path] = []
+        for report_dir in report_dirs:
+            metadata = translated_article_title_metadata(report_dir)
+            if metadata["institution_name"] in included_institutions:
+                filtered_report_dirs.append(report_dir)
+            else:
+                institution_filtered_count += 1
+        report_dirs = filtered_report_dirs
+
     if max_articles is None:
         selected = report_dirs[args.article_offset :]
     else:
@@ -1914,6 +2008,12 @@ def main() -> int:
     selected = allowed_selected
 
     if not selected:
+        status = "skipped_institution_filter" if included_institutions and institution_filtered_count else "skipped_title_policy"
+        message = (
+            f"No selected translated reports matched --include-institutions={args.include_institutions} from {date_dir}"
+            if status == "skipped_institution_filter"
+            else f"All selected translated reports were blocked by WeChat title policy from {date_dir}"
+        )
         summary_path = output_dir / "wechat_draft_summary.json"
         summary = {
             "date_folder": date_dir.name,
@@ -1922,21 +2022,24 @@ def main() -> int:
             "max_articles": "all" if max_articles is None else max_articles,
             "input_selected_count": input_selected_count,
             "selected_count": 0,
+            "include_institutions": sorted(included_institutions),
+            "institution_filtered_count": institution_filtered_count,
             "skipped_title_policy_count": len(skipped_title_policy),
             "skipped_title_policy": skipped_title_policy,
             "draft_count": 0,
-            "status": "skipped_title_policy",
-            "message": f"All selected translated reports were blocked by WeChat title policy from {date_dir}",
+            "status": status,
+            "message": message,
             "drafts": [],
             "articles": [],
         }
         write_json(summary_path, summary)
-        log(f"All selected translated reports blocked by title policy; wrote skip summary: {summary_path}")
+        log(f"{message}; wrote skip summary: {summary_path}")
         return 0
 
     log(
         f"Selected {len(selected)} translated reports from {date_dir} "
-        f"(skipped_title_policy={len(skipped_title_policy)}/{input_selected_count})"
+        f"(institution_filtered={institution_filtered_count}, "
+        f"skipped_title_policy={len(skipped_title_policy)}/{input_selected_count})"
     )
 
     session: requests.Session | None = None
@@ -2013,7 +2116,24 @@ def main() -> int:
                     log(f"Creating WeChat draft {draft_index}")
                     media_id = add_draft(session, access_token, articles, args.timeout)
                 except WeChatError as exc:
-                    if is_article_size_error(exc) and len(group) > 1:
+                    if is_cover_crop_error(exc):
+                        log(
+                            "WeChat rejected a draft cover crop; replacing this draft group's "
+                            "cover images with a generated safe cover and retrying."
+                        )
+                        safe_thumb_media_id = replacement_cover_media_id(
+                            session,
+                            access_token,
+                            output_dir,
+                            draft_index,
+                            args.timeout,
+                        )
+                        for article in articles:
+                            article["thumb_media_id"] = safe_thumb_media_id
+                            article["pic_crop_235_1"] = WECHAT_COVER_CROP_235_1
+                            article["pic_crop_1_1"] = WECHAT_COVER_CROP_1_1
+                        media_id = add_draft(session, access_token, articles, args.timeout)
+                    elif is_article_size_error(exc) and len(group) > 1:
                         split_at = max(1, len(group) // 2)
                         log(
                             "WeChat rejected draft group as too large; "
@@ -2059,6 +2179,8 @@ def main() -> int:
         "max_articles": "all" if max_articles is None else max_articles,
         "input_selected_count": input_selected_count,
         "selected_count": len(selected),
+        "include_institutions": sorted(included_institutions),
+        "institution_filtered_count": institution_filtered_count,
         "skipped_title_policy_count": len(skipped_title_policy),
         "skipped_title_policy": skipped_title_policy,
         "articles_per_draft": args.articles_per_draft,

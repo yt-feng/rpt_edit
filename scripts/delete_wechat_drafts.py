@@ -63,7 +63,7 @@ def delete_draft(session: requests.Session, access_token: str, media_id: str, ti
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Delete WeChat drafts by media_id from a summary file.")
-    parser.add_argument("--summary", type=Path, required=True)
+    parser.add_argument("--summary", type=Path)
     parser.add_argument("--media-id", action="append", default=[])
     parser.add_argument("--output", type=Path, default=Path("deleted_wechat_drafts_summary.json"))
     parser.add_argument("--timeout", type=int, default=120)
@@ -73,20 +73,28 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
-    if not args.summary.exists():
+    if args.summary and not args.summary.exists() and not args.media_id:
         raise RuntimeError(f"Draft summary not found: {args.summary}")
+    if not args.summary and not args.media_id:
+        raise RuntimeError("--summary or at least one --media-id is required")
     if not args.dry_run and (not args.wechat_appid or not args.wechat_secret):
         raise RuntimeError("WECHAT_MP_APPID and WECHAT_MP_APPSECRET are required unless --dry-run is set")
 
-    summary = read_json(args.summary)
-    if not isinstance(summary, dict):
+    summary: dict[str, Any] = {}
+    if args.summary and args.summary.exists():
+        raw_summary = read_json(args.summary)
+    else:
+        raw_summary = {}
+    if not isinstance(raw_summary, dict):
         raise RuntimeError(f"Draft summary must be a JSON object: {args.summary}")
+    summary = raw_summary
 
+    summary_label = str(args.summary) if args.summary else "(media-id only)"
     media_ids = collect_media_ids(summary, args.media_id)
     if not media_ids:
-        raise RuntimeError(f"No draft media_id values found in {args.summary}")
+        raise RuntimeError(f"No draft media_id values found in {summary_label}")
 
-    log(f"Deleting {len(media_ids)} WeChat draft(s) from {args.summary}")
+    log(f"Deleting {len(media_ids)} WeChat draft(s) from {summary_label}")
     results: list[dict[str, Any]] = []
 
     session: requests.Session | None = None
@@ -117,12 +125,12 @@ def main() -> int:
             log(f"Failed to delete WeChat draft media_id={media_id}: {exc}")
             if not args.ignore_delete_errors:
                 results.append(record)
-                write_json(args.output, {"summary": str(args.summary), "results": results})
+                write_json(args.output, {"summary": summary_label, "results": results})
                 raise
         results.append(record)
 
     payload = {
-        "summary": str(args.summary),
+        "summary": summary_label,
         "dry_run": args.dry_run,
         "requested_count": len(media_ids),
         "deleted_count": sum(1 for item in results if item.get("deleted")),

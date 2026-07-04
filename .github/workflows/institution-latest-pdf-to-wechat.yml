@@ -144,6 +144,7 @@ jobs:
             --date-folder "$DATE" \
             --output-root "kc_translated_reports/institutions" \
             --max-reports "${{ github.event.inputs.max_translated || 'all' }}" \
+            --include-institutions "${{ github.event.inputs.institutions || 'all' }}" \
             --exclude-institutions "rand,brookings" \
             --title-guard \
             2>&1 | tee institution_translated_progress.log
@@ -222,7 +223,8 @@ jobs:
             --translated-root "kc_translated_reports/institutions" \
             --date-folder "$DATE" \
             --output-root "wechat_drafts/institutions" \
-            --max-articles "all" \
+            --max-articles "${{ github.event.inputs.max_translated || 'all' }}" \
+            --include-institutions "${{ github.event.inputs.institutions || 'all' }}" \
             --articles-per-draft "${{ github.event.inputs.articles_per_draft || '8' }}" \
             --max-body-chars "2000" \
             --min-inline-images "3" \
