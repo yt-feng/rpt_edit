@@ -1,0 +1,22 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_afg8r212/pdfs/0002-McKinsey_PDF-Clearer-view-tougher-terrain---McKinsey-Company_4e89923a.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "麦肯锡",
+  "cover_short_title": "雾散了，路变硬了",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_title": "麦肯锡：私募股权已经驶入更硬的地面，不是所有车都能开过去",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

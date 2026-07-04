@@ -1,0 +1,3730 @@
+[
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/a1325020489eac8c8e5130e2f2d71360472f36cb2da89c97c3d3eff3e08b75c5.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                0,
+                1000,
+                426
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ARTIFICIAL INTELLIGENCE"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                464,
+                228,
+                481
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "AI Will Reshape More Jobs Than It Replaces"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                35,
+                510,
+                737,
+                613
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "By Greg Emerson, Matthew Kropp, Julie Bedard, Lisa Krayer, Viacheslav Romanov, Megan Hsu, Luis Sanchez Boedo, and Diya Mohnot"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                639,
+                784,
+                677
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ARTICLE APRIL 03, 2026 15 MIN READ"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                701,
+                373,
+                719
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Over the next two to three years, 50% to 55% of jobs in the US will be reshaped by AI. For many employees, this will mean that they retain the same or a similar role but face radically new expectations for how they work and what they produce. For company leaders, it will require a clear vision for how the transformation is managed, including a scaled, strategic approach to upskilling and reskilling and the restructuring of career ladders."
+                    }
+                ]
+            },
+            "bbox": [
+                38,
+                780,
+                954,
+                879
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                969,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "1"
+                    }
+                ]
+            },
+            "bbox": [
+                941,
+                970,
+                954,
+                983
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This shift is already happening—and will pick up speed as AI adoption spreads. Our analysis, based on microeconomic modeling, identified a significant swath of the labor force for which AI will meaningfully augment current roles. Moreover, when the productivity gains from AI use trigger increased end product demand and the potential for augmentation is high, we believe there will be a need for more and, in some cases, new human roles. (See Exhibit 1.) While job augmentation and new-job creation will happen rapidly, full substitution of jobs by AI will be slower. Five years from now—or perhaps further in the future—10% to 15% of jobs in the US could be eliminated.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  This level of potential job loss is considerable and creates an important call to action for business leaders."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                67,
+                949,
+                248
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 1"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                280,
+                114,
+                294
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Two Critical Factors in AI's Impact Are Labor Substitution and Demand Expandability"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                297,
+                651,
+                338
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/b034cedc69adcbf12f1b82f87a3976832db3c203662c9d67184e52fa836df249.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: BCG Henderson Institute analysis."
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                349,
+                725,
+                543
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Critically, our analysis is not intended to be an unemployment forecast. It does not account for macroeconomic factors such as geopolitics or inflation, nor does it contemplate the impact of new AI breakthroughs beyond the capabilities of today's frontier models. Moreover, our model can't solve for powerful and influential unknowns, such as the future impact of AI on the accessibility of jobs and the speed with which the technology is adopted. (See “Methodology: Translating Automation Potential into Labor Market Outcomes” for more on our approach.)"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                598,
+                925,
+                718
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "- Methodology: Translating Automation Potential into Labor Market Outcomes"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                747,
+                814,
+                803
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This analysis applied a structured microeconomic framework to assess how AI reshapes employment outcomes. Rather than equating automatable tasks with job loss, we evaluated three distinct forces: task-level automation potential, substitution versus augmentation dynamics, and demand expandability."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                841,
+                821,
+                921
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                969,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "AI Task Automation Potential"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                79,
+                87,
+                372,
+                105
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We began by estimating automation potential at the task level for each role. Using granular occupational data (Revelio Labs' 1,500-role taxonomy, O*NET task decomposition, and Revelio headcount data), we evaluated the share of individual work activities within each role that are automatable given current AI capabilities."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                126,
+                821,
+                225
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Each task was assessed using a structured rubric and classified as automatable if it met the following criteria:"
+                    }
+                ]
+            },
+            "bbox": [
+                79,
+                244,
+                841,
+                282
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- The task does not require a significant physical human presence or manual interaction in the real world."
+                    }
+                ]
+            },
+            "bbox": [
+                79,
+                313,
+                804,
+                351
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- The task can be executed without substantial emotional intelligence, negotiation, or complex interpersonal judgment."
+                    }
+                ]
+            },
+            "bbox": [
+                79,
+                368,
+                750,
+                407
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- The task is sufficiently structured to be performed without excessive ambiguity or open-ended reasoning."
+                    }
+                ]
+            },
+            "bbox": [
+                79,
+                422,
+                739,
+                463
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- The necessary data inputs are observable or available to an agentic AI system."
+                    }
+                ]
+            },
+            "bbox": [
+                79,
+                476,
+                762,
+                516
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- The task's outcome is governed by rule-based logic grounded in documentation, precedents, or established procedures."
+                    }
+                ]
+            },
+            "bbox": [
+                79,
+                532,
+                693,
+                571
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For each role, we applied the share of time spent on each automatable task to estimate the overall task automation potential. Roles with automation potential below the average of 40% were classified as lower automation, as they are less likely to be prioritized for material disruption in the next four to five years. We segmented lower-automation roles into enabled and limited-exposure roles using a 25% automation potential cutoff. Roles exceeding the 40% threshold were evaluated in subsequent stages of the analysis."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                601,
+                841,
+                740
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Substitution Versus Augmentation"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                759,
+                415,
+                778
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For roles with meaningful automation potential, we assessed whether AI is more likely to substitute for labor or augment it. This depends on the degree of human value embedded in the role, which we evaluated on two dimensions:"
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                797,
+                831,
+                857
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Human Interaction and Judgment. We determined whether reliable performance requires significant emotional intelligence, negotiation, or complex interpersonal judgment. Roles scoring low involve routine, transactional interactions in which persuasion needs are minimal and outcomes hinge on objective criteria requiring limited discretion; these roles are more likely to be substituted. Roles scoring high require nuanced interpretation of emotional and social cues, and outcomes depend on trust, persuasion, and contextual judgment; these are more likely to be augmented."
+                    }
+                ]
+            },
+            "bbox": [
+                79,
+                887,
+                767,
+                928
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                983
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                99,
+                67,
+                811,
+                205
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Process Structure and Repeatability. We evaluated how structured and codifiable the workflow is. Roles scoring low involve structured, repeatable processes with well-defined inputs and outputs; these roles are more susceptible to substitution. Roles scoring high involve open-ended problem solving and frequent exceptions requiring expert judgment; these roles are more likely to be augmented."
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                219,
+                809,
+                338
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Demand Expandability"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                368,
+                301,
+                387
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Even when AI substitutes for humans in executing tasks, labor outcomes depend on whether productivity gains expand total demand. We evaluated demand expandability through two lenses:"
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                407,
+                833,
+                468
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Demand Headroom. We evaluated whether AI-driven reductions in unit cost or cycle time unlock additional output. We assessed this on the basis of two empirical signals. First, we estimated industry-level price elasticity by relating changes in industry price indices to changes in real industry output, normalized for overall real GDP growth.* Industries where output is especially responsive to price movements were classified as more elastic, implying that AI-driven cost reductions are likely to translate into higher demand for output."
+                    }
+                ]
+            },
+            "bbox": [
+                79,
+                497,
+                814,
+                658
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Second, as a proxy for unmet demand, we used labor market indicators, particularly job openings from the US Bureau of Labor Statistics' Job Openings and Labor Turnover Survey. Openings were normalized for baseline turnover to avoid overstating demand in high-churn occupations. A persistently elevated job opening rate suggests that employers face supply constraints, indicating latent or underserved demand."
+                    }
+                ]
+            },
+            "bbox": [
+                97,
+                678,
+                809,
+                797
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Together, these measures help distinguish industries where demand is expandable from those that are saturated."
+                    }
+                ]
+            },
+            "bbox": [
+                101,
+                816,
+                752,
+                856
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Structural Scalability. We used this lens to evaluate whether supply can scale if demand increases. Even when demand headroom exists, expansion may be constrained by capital intensity (such as physical capacity, capex requirements, or long lead times) or by credentialing barriers (including education level, licensing, certification, regulatory requirements, and extended training pipelines). In roles with high structural scalability, demand expansion is more likely to translate into employment growth."
+                    }
+                ]
+            },
+            "bbox": [
+                79,
+                870,
+                803,
+                929
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                971,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                99,
+                67,
+                818,
+                146
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Defining Roles Versus Jobs"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                175,
+                336,
+                195
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We applied our model at the level of roles. We evaluated each role and translated the resulting insights into impacts on the total number of jobs. A role refers to a type of work defined by a specific set of responsibilities, while jobs refer to the positions within a role. In our dataset, approximately 165 million US jobs (the employment level as of January 2026 reported by the US Bureau of Labor Statistics) are distributed across roughly 1,500 distinct roles defined by Revelio Labs. (Revelio aggregates publicly available professional profile data, including LinkedIn profiles, and applies weighting adjustments to account for workers not represented in the data.) Our analysis focuses on the US labor market, where Revelio's data is more comprehensive than elsewhere."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                216,
+                826,
+                413
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Quantifying Potential Job Impact"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                432,
+                400,
+                451
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To estimate the share of jobs potentially vulnerable due to AI, the model considers:"
+                    }
+                ]
+            },
+            "bbox": [
+                79,
+                470,
+                754,
+                508
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Substituted Roles: the number of jobs where AI substitutes for human workers multiplied by the role's automation potential"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                541,
+                755,
+                580
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Divergent Roles: the number of jobs where AI substitutes for human workers multiplied by the role's automation potential multiplied by a demand-expansion adjustment (0.5–1.0) reflecting how much employment persists as output grows"
+                    }
+                ]
+            },
+            "bbox": [
+                79,
+                595,
+                814,
+                674
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Aggregation Across Roles: adding together these adjusted impacts across roles produces a point-in-time estimate of 10% to 15% of US jobs that are vulnerable over the next four to five years"
+                    }
+                ]
+            },
+            "bbox": [
+                79,
+                690,
+                792,
+                747
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Quantifying Potential Share of Reshaped Jobs"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                778,
+                521,
+                797
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We defined reshaped jobs as those in which AI materially changes how work is done, even if the job itself remains. This includes amplified and rebalanced roles, where AI augments work; remaining roles in substituted and divergent categories, where workers will need significant upskilling; and enabled roles with more than 25% automation potential, where task exposure is high enough to alter day-to-day responsibilities. Aggregated across roles, this suggests that 50% to 55% of US jobs could be reshaped over the next two to three years."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                818,
+                841,
+                917
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                77,
+                67,
+                801,
+                107
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Scope and Limitations"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                79,
+                126,
+                303,
+                143
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The analysis reflects current AI capabilities, with a focus on large language models and autonomous driving technologies because of the demonstrated commercial progress in both domains. Other forms of physical AI and robotics were excluded, as large-scale deployment across most industries remains limited. While advances are accelerating, we do not expect diffusion to materially alter labor market outcomes in the near term. The results therefore reflect potential exposure under current AI capabilities; realized outcomes will depend on how quickly organizations deploy these technologies."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                145,
+                841,
+                304
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "If AI systems were to consistently perform open-ended, judgment-intensive tasks autonomously at human-level proficiency, the distribution of roles across the substitution and augmentation categories would shift materially, and the framework would need to be revisited."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                322,
+                836,
+                401
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This is a microeconomic assessment of labor impact, not a forecast of aggregate unemployment or near-term layoffs. Employment outcomes are also influenced by macroeconomic forces—including inflation, interest rates, trade policy, recession cycles, and geopolitical dynamics—which are outside the scope of this analysis."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                420,
+                831,
+                520
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "That said, the analysis provides clear guidance for CEOs on how to act in the face of this workforce shift. They are making decisions today that affect their people and the viability of their business, and they need a nuanced view of AI's impact. Those who cut their workforce beyond AI's ability to replace it will see productivity drop, institutional knowledge disappear, and critical talent walk away. Those who fail to dramatically rethink work will see their competitors grow faster and more profitably."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                630,
+                952,
+                747
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Task Automation Doesn’t Have to Mean Job Loss"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                40,
+                66,
+                873,
+                147
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To build our model, we calculated the number of jobs involving tasks that are at least 40% automatable. This represents the average level of automation for all US-based occupations and the threshold after which role and organization redesign becomes a stronger business case. The 43% of jobs that exceed this threshold formed the focus of our analysis. The other 57% are jobs that depend heavily on the physical presence of human workers, on hands-on work, or on sustained human interaction, all of which limit the potential for automation and thus are less likely to be disrupted by AI. (See Exhibit 2.)"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                173,
+                936,
+                313
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 2"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                42,
+                343,
+                116,
+                359
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/d4ef7de6bb8969c7ccb051d5a652c8402120cf5bf57e6127cc8ff6a68e30c7c9.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Agentic AI May Drive High Levels of Task Automation in 43% of Jobs"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: Revelio Labs; O*NET; US Bureau of Labor Statistics; BCG Henderson Institute analysis."
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                391,
+                691,
+                596
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Substitution Versus Augmentation. To illustrate the difference between substitution and augmentation, consider call center representatives and software engineers, two roles that are already deploying agentic AI at scale."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                649,
+                919,
+                709
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A call center representative is typically responsible for resolving a defined set of customer inquiries within established workflows. Much of the work involves structured interactions such as account lookups, policy explanations, and scripted troubleshooting. When AI systems can reliably handle these repeatable inquiries end to end, fewer representatives are required. In this setting, the workflow can often be clearly bifurcated, with AI handling first-line interactions and humans focusing on escalations and exceptions."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                722,
+                942,
+                843
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In some cases, representatives can transition into higher-value roles focused on relationship building and proactive risk mitigation. But overall employment in the call center rep role will decline as the most structured tasks are absorbed by the system."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                857,
+                907,
+                917
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                969,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                983
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A software engineer, by contrast, produces a very different output. While coding includes routine elements, the core value of the role lies in system design, architectural judgment, tradeoffs between performance and cost, and the translation of business needs into technical solutions. AI can dramatically accelerate code generation and testing, but given today's capabilities, it cannot replace the system-level judgment required to own the outcome end to end—meaning the work cannot be cleanly divided between system and engineer. Instead, software development becomes an ongoing interaction in which engineers define objectives, refine outputs, validate results, and integrate components into broader systems."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                67,
+                951,
+                225
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AI supports and accelerates these steps but does not replace the need for human judgment and accountability. As a result, AI helps engineers do their jobs more effectively rather than replacing them, making these roles less likely to experience direct displacement and shifting engineers' work toward system-level thinking, orchestration, and product and design tasks, rather than repetitive coding tasks."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                240,
+                947,
+                338
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Low Versus High Demand Expandability. When AI lowers the cost of delivering a business outcome or end product, the question is whether demand for the output expands or remains bounded. If lower costs unlock unmet demand, increase accessibility, or accelerate consumption, total output may rise and employment may remain stable or even grow despite significant automation at the task level. If demand for the outcome is fixed, productivity gains are more likely to translate into fewer required workers."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                353,
+                951,
+                473
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This dynamic is not new. Economists have long observed that efficiency improvements can increase total consumption rather than reduce it, a phenomenon often referred to as Jevons Paradox. When the cost of a resource falls, usage can rise. The same logic applies to labor: whether productivity reduces employment depends on how demand for the output responds."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                486,
+                907,
+                565
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Software engineering illustrates expandable demand. Organizations across industries continue to face persistent unmet need for digital products, automation, and new features. As AI reduces the cost and time required to build software, organizations often build more. Output expands and overall job volume may remain stable or grow, even as the productivity of individual engineers rises, because humans continue to play a meaningful role. The continued growth of software engineering headcount in the years following the introduction of ChatGPT in 2022 illustrates this phenomenon. (See Exhibit 3.)"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                580,
+                952,
+                719
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                970,
+                249,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/63320988151e7c4bf9ea79796f56bc955569a6925a5eb8a3082646849e65515c.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 3\nSoftware Engineering Headcount Has Risen Steadily in the Past Three Years"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: Revelio Labs; BCG Henderson Institute analysis.  \n "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " Approximately 500 US-based software companies tagged as AI in PitchBook."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                129,
+                723,
+                303
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Call center representatives illustrate bounded demand. The volume of inbound interactions is largely determined by the size of the customer base and the frequency of service needs. When AI reduces the cost of handling routine inquiries, the number of interactions does not expand proportionally. In this context, productivity gains are more likely to reduce the number of representatives required."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                365,
+                944,
+                466
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The Majority of Current Jobs Will Stay but Evolve"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                40,
+                533,
+                870,
+                617
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "By analyzing roles against the factors above, we can identify where they belong in BCG Henderson Institute's proprietary AI Labor Disruption Segments, which comprise six categories. (See Exhibit 4.)"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                642,
+                934,
+                703
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the US, Most Jobs Will Remain in Some Form in the Coming Years"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                80,
+                728,
+                102
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/216ba82bfe0bdadbdb368a79836892df2752bd5ad0250a7e7e5849d6158af537.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: Revelio Labs; O*NET; US Bureau of Labor Statistics; BCG Henderson Institute analysis. Note: Demand expandability was not assessed for lower-automation roles, because the expected disruption is less significant."
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                117,
+                727,
+                309
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Amplified Roles. When AI augments human capabilities and demand expands, employment may remain stable or grow. Humans remain central to value creation, and wage inflation may develop as higher productivity increases competition for skilled talent. This type of role represents 5% of current jobs."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                376,
+                942,
+                455
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Software engineering falls under this category. (For a “what if” scenario, see “What Would It Take for Software Engineering to Move from an Amplified to a Divergent Role?”) So do many lawyers, particularly those in advisory and judgment-intensive areas of law. Investment in legal tech startups, like Harvey AI, reached record-high levels in 2025, spurring significant discussion of how AI will reshape this field. As AI accelerates research, drafting, and case preparation, legal services could become more accessible. In domains where unmet demand exists, such as compliance, regulatory review, and contract management, lower costs may increase the volume of legal work. Senior legal judgment would remain central, with AI amplifying professional capabilities."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                470,
+                947,
+                630
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "- What Would It Take for Software Engineering to Move from an Amplified to a Divergent Role?"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                659,
+                819,
+                718
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The future of software engineering is an incredibly controversial topic. Some AI leaders have publicly claimed that there’s never been a better time to be a software engineer, while others have forecast the end of the profession. The expandability of demand around the output of software engineers is without question: the number of IT roadmaps is nearly infinite and AI implementation itself will be a massive driver of more engineering output. The question for the medium and long term is whether to categorize the software engineering role as amplified (suggesting that AI will augment the work of software engineers and most jobs will remain) or divergent (suggesting that AI will substitute for that"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                753,
+                824,
+                932
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                934,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "work and a substantial share of jobs may potentially be eliminated)."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                67,
+                718,
+                87
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "At present, although AI has largely mastered the domain of coding, humans are still required in many parts of the software engineering process, including system design, architectural tradeoffs, quality checking for security and efficiency, and integration across complex systems. There is an open question—one that cannot be answered today—as to whether newer AI models will master these processes and come to serve as complete substitutes for software engineers."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                105,
+                840,
+                225
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Although software engineering is currently situated in the amplified section of our AI Labor Disruption Segments, we expect considerable churn given the extent to which the frontier labs are focused on this domain. Skills such as the writing and maintenance of code will be deprioritized, whereas higher-order systems thinking and proficiency with AI tools will grow in importance. Were the role to move to the divergent segment owing to a leap in the capabilities of AI agents, we would expect to see considerably more output from a smaller population of senior, deeply knowledgeable engineering leaders."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                244,
+                843,
+                403
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Leaders should monitor how these technological shifts interact with workforce demand and adjust their talent strategies accordingly. Rather than treating workforce planning as a static forecast, companies will increasingly need to update hiring, upskilling, reskilling, and role design dynamically as AI evolves."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                420,
+                806,
+                501
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Rebalanced Roles. When AI augments work but demand is bounded, headcount may remain steady while roles are redesigned. Routine tasks automate while more complex responsibilities expand. As work shifts toward higher-value activities, skill requirements rise and upskilling becomes essential. We estimate that 14% of current jobs fall under this category."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                646,
+                929,
+                725
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "One example is content marketing, where demand is bounded by marketing budgets and strategic priorities. At the same time, with the fragmentation of audiences and with influencers and large language models reshaping customer journeys, brands need more, not less, content delivered in a more targeted way to the right audience at the right time. Marketer roles—instead of being broken up by channel, as they are now—will expand, with marketers and creative directors becoming omnichannel specialists who can think through end-to-end campaigns. Academic research is a similar case. Demand is constrained by institutional funding, but with increased productivity driven by agentic AI, the need increases for hypothesis formation, data interpretation, and scholarly judgment—which remain the province of humans."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                740,
+                937,
+                919
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                934,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Divergent Roles. Where AI substitutes for human tasks but demand remains expandable, the effect on employment becomes uneven; our analysis suggests that this applies to 12% of current jobs. In these roles, entry-level and junior positions are more exposed to automation in the short term. A sizable portion of the structured tasks traditionally performed at these levels are among the first to be automated, which means there will be some roles lost in this category. At the same time, responsibilities at senior levels persist and may grow to include higher volumes of work as demand expands. This creates a structural tension. The roles that remain require contextual judgment, oversight, and coordination skills that are typically built through on-the-job experience. This is a clear example of a scenario where the numbers alone can’t tell the full story."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                67,
+                949,
+                246
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Insurance sales agents fall into this category. AI automates routine activities such as lead qualification, quote generation, and policy comparisons—tasks often handled by entry-level employees or sales assistants, especially for standardized products such as auto or basic life insurance. At the same time, significant protection gaps remain, particularly in broader life insurance coverage and among small businesses that remain underinsured. By lowering distribution and servicing costs, AI allows insurers to reach previously underserved customers, expanding overall market participation and unlocking latent demand. As a result, some routine roles decline, while others shift toward higher-value activities such as policy advisory for more complex products (commercial insurance or annuities, for example) and long-term client relationship management."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                260,
+                934,
+                457
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "IT support technicians provide a similar example. AI can resolve routine tickets and automate diagnostics. As digital infrastructure expands and systems grow more complex, the need for advanced troubleshooting and systems oversight may rise. Entry-level resolution work may decline unless workers can be quickly upskilled, while higher-skilled technical coordination roles persist or grow."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                470,
+                942,
+                571
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Substituted Roles. Only when demand is capped and AI directly substitutes for human workers in core tasks do roles fall into this category—an outcome that our analysis estimates affects about 12% of current jobs. Efficiency gains convert into net job losses, and downward wage pressure develops for the positions that remain."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                583,
+                952,
+                665
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Certain financial-analyst roles fall under this category (as do call center representatives). The volume of financial analysis is largely tied to existing reporting cycles, investment mandates, and internal decision processes. When AI automates routine modeling, data aggregation, and initial interpretation, the output does not expand proportionally. In this case, productivity gains are more likely to reduce the number of analysts required than to drive additional hiring."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                678,
+                949,
+                778
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "It is important to note that substitution does not imply permanent exclusion from the workforce. As augmented, less automatable, and emerging roles expand elsewhere in the economy, workers in substitution-exposed positions may transition to such roles with targeted reskilling and mobility support. Starting to plan now for these redeployments—even though they will not happen immediately or all at once—will be critical, as transitions require time, coordination, and investment."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                791,
+                946,
+                910
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                934,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Enabled Roles. AI will become embedded in the day-to-day activities of 23% of jobs, reshaping how tasks are performed, but not fundamentally altering how work is structured. Workers will be expected to use AI to improve efficiency, accuracy, and decision making. While routine elements may be streamlined, core responsibilities—often involving the physical presence of a human worker, interpersonal interactions, or domain-specific expertise—will remain human-led. As AI becomes a baseline capability, skill requirements will rise, making continuous upskilling essential."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                67,
+                954,
+                205
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Clinical assistants and lab technicians illustrate this dynamic. Their work remains hands-on or patient facing, but AI increasingly supports documentation, workflow coordination, and aspects of diagnostic analysis. For example, clinical assistants may use AI for real-time note taking and patient intake, and lab technicians can leverage AI to interpret test results or flag anomalies. Over time, effective use of these AI tools becomes part of the role, raising expectations for productivity and accuracy without fundamentally changing its nature."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                219,
+                956,
+                338
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Limited-Exposure Roles. In the remaining share of lower-automation jobs—34% of current jobs—both the technical feasibility of automation and the scope for AI-driven productivity gains remain limited. (Our analysis does not account for potential future breakthroughs in technologies such as humanoid robotics.) Work is often highly contextual, relationship driven, or dependent on a physical human presence in ways that are difficult to codify or scale through AI. As a result, these roles are less likely to be significantly reshaped in the near term."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                353,
+                952,
+                473
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Physicians and teachers are illustrative. Both require the ability to form complex judgments, engage in interpersonal interactions, and adapt in real time to individual needs. AI may assist in limited, task-specific ways, but it will not meaningfully reshape either role. The core of the work—patient care and instruction—will remain fundamentally human."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                486,
+                942,
+                565
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Scale of Impact. Across all six segments, 10% to 15% of jobs are vulnerable to elimination; these are the jobs in the substituted and divergent categories, weighted by their automation potential and adjusted for demand expansion. At the same time, 50% to 55% will be reshaped; these are the jobs in the amplified, rebalanced, and enabled categories, as well as the remaining portions of jobs in the divergent and substituted categories where work is not vulnerable to elimination. The remaining roles are largely lacking in significant automation potential in the near term. Meanwhile, an unspecified but meaningful number of jobs are likely to be created as new demand emerges and new capabilities are enabled by AI."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                580,
+                941,
+                739
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Taking a deeper look at the totality of roles in the US job market and applying our methodology, we can see in Exhibits 5 and 6 how roles are distributed, with bubble size indicating the scale of impact."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                752,
+                934,
+                812
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                934,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Distribution of Higher-Automation Roles Affected by Automation"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                80,
+                680,
+                101
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f076582ea3abf600b3c299e78eb54179ddee52e79bb99677bd50aeafa8c0a6f3.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Distribution of Lower-Automation Roles Influenced by Automation"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: Revelio Labs; O*NET; US Bureau of Labor Statistics; BCG Henderson Institute analysis."
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                109,
+                730,
+                340
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/9dd66b8c7b209fe365b222d3aac624e58df576804f75d9eb036c139e45cc6ed6.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: Revelio Labs; O*NET; US Bureau of Labor Statistics; BCG Henderson Institute analysis."
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                436,
+                728,
+                644
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Tackling the Great Unknowns"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                40,
+                734,
+                779,
+                776
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our analysis enables us to categorize roles, but this isn't the whole story. Each segment—and, potentially, individual roles within each segment—will evolve and have different ripple effects that must be managed in different timeframes. As a result, stability in headline job numbers may mask critical issues for company leaders."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                802,
+                942,
+                881
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14"
+                    }
+                ]
+            },
+            "bbox": [
+                934,
+                970,
+                954,
+                983
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Side Effects of Agentic AI Role Transformation. First, a key challenge in the AI era will not be simply the number of jobs affected, but how quickly workers can be upskilled and redeployed into redesigned roles. Absorbing a workforce shift of this magnitude will therefore require deliberate investment in reskilling, mobility, and capability building, making workforce development a leadership priority."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                67,
+                939,
+                166
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the near term, some organizations may respond by slowing or freezing hiring as they reassess workforce needs and push for higher productivity with AI—creating additional pressure on existing employees to adapt and upskill. In some cases, these measures are being taken ahead of realized AI impacts and should be viewed as a temporary phase rather than a new status quo. Companies whose products and services are in high demand will continue to hire over time as productivity gains translate into growth."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                180,
+                956,
+                300
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Second, as AI absorbs much of the routine work that has historically justified large entry-level hiring cohorts, fewer execution-focused positions will be required. In the short term, the volume of entry-level jobs may decrease. Some companies will still choose to invest in junior workers in order to create a talent pipeline, while others may cut back. Over time, though, these jobs will be redefined and filled by candidates prepared to take on higher-order tasks, such as supervising AI outputs, managing exceptions, and contributing to more complex problem solving earlier in their careers."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                313,
+                949,
+                451
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In this environment, AI fluency may become an increasingly important complement to tenure in assessing readiness for augmented responsibilities, with companies prioritizing candidates who proactively adopt AI tools and rethink how work is done. In some cases, this will create opportunities for junior candidates—including recent graduates—who may be more familiar with AI than workers with more experience on the job."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                467,
+                942,
+                565
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Third, skill thresholds will rise. Redesigned roles will demand that employees demonstrate greater expertise, oversight, and accountability, increasing the premium on domain knowledge and sound judgment. As Exhibit 7 illustrates, the more durable roles tend to require higher credentials and greater seniority. Moving into these roles requires new capabilities and, in many cases, additional training or formal credentials. Even where total employment remains steady, these higher thresholds can create barriers to entry and friction in workforce transitions."
+                    }
+                ]
+            },
+            "bbox": [
+                38,
+                580,
+                954,
+                699
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "15"
+                    }
+                ]
+            },
+            "bbox": [
+                934,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 7"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                64,
+                114,
+                77
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "More Durable Roles Tend to Require More Seniority and Higher Credentials"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                80,
+                602,
+                120
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Seniority by role category"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                131,
+                186,
+                145
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/ca8b2c1d1914fa3bc2fdd77b4bb049969a01a5a78c4741ca569fc7bfc6763957.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Credentialing requirements by role category"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Sources: Revelio Labs; BCG Henderson Institute analysis. Note: Seniority analysis was not applied to lower-automation roles because the expected disruption is more limited."
+                    }
+                ]
+            },
+            "bbox": [
+                48,
+                155,
+                390,
+                286
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1f93c05aa48aba02fc3f5c95874ad95431efca4071d02b73a80a9ab4abb716f4.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                409,
+                154,
+                728,
+                286
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Finally, cognitive load will intensify. Many roles currently balance structured execution with higher-level thinking. As repetitive tasks are automated, the remaining work will be concentrated in problem solving, decision making, and the integration of complex inputs, increasing the cognitive intensity of work. While some workers will thrive in more judgment-driven roles, others may struggle with the shift toward continuous high-level cognitive engagement and will require upskilling. Without deliberate role design and capability building, organizations risk losing out on AI’s full productivity potential."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                341,
+                946,
+                479
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "These four dynamics can generate short-term turnover, uncertainty, and disruption at the job level, even when aggregate employment remains stable. The labor impact of AI is therefore not only about how many jobs persist, but how accessible and sustainable those jobs become."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                495,
+                929,
+                555
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Open Questions on the Timeline for Change. Another key unknown is timing. Economic impact often lags model capability, as the former also depends on application maturity, workflow redesign, integration with legacy systems, and the availability of human capital capable of deploying and managing these AI systems."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                568,
+                932,
+                648
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Contact center tools are among the most mature applications, yet overall market penetration remains limited relative to total industry size. In our experience, full worker substitution tends to roll out more slowly than augmentation. Substitution often means that fewer humans are retained in the loop, which demands extensive process redesign and formalization of tacit knowledge. Human workers may also form a critical “escalation layer” to handle outcomes that agents can’t deliver. By contrast, augmentation can diffuse more quickly because humans remain in force and can manage context, edge cases, and ambiguity during the transition."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                662,
+                947,
+                802
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Scaling agentic systems requires specialized integration talent, including forward-deployed engineers, systems integrators, and project managers who tailor systems to enterprise-specific contexts. These technical experts are embedded directly with business teams, translating AI capabilities into real, working solutions. They sit between AI technology and the organization, adapting workflows, integrating legacy systems, and ensuring that outputs are reliable and"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                814,
+                925,
+                915
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                969,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "16"
+                    }
+                ]
+            },
+            "bbox": [
+                934,
+                970,
+                954,
+                983
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "usable. Across these integration roles, supply remains limited relative to demand, making implementation capacity a key bottleneck. These roles are also an example of new jobs emerging from AI adoption, with demand expected to increase as enterprises scale deployment."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                67,
+                954,
+                127
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As a result, there will likely be a multiyear lag between automation potential and realized labor market impact. Exhibit 8 clearly illustrates this gap. Industries with high automation potential do not always demonstrate high levels of scaled AI adoption. In others, such as technology and software, adoption is already well above average, although today's average remains far from the full potential for most industries. Still other industries, including financial services and legal services, have substantial automation potential but scaled deployment has yet to catch up. Diffusion will vary by sector, company size, and the availability of integration expertise, with larger enterprises typically moving faster than smaller organizations owing to resourcing, system, and data access issues."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                141,
+                954,
+                318
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1e1db2d55c0de47bc128df1e47705fae013be4d70ac5de38daf5d4e45aa61fd5.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "The Gap Between AI Potential and Scaled Adoption Varies Across Industries"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: Revelio Labs; O*NET; HG Insights; BCG Henderson Institute analysis.\nNote: AI adoption is indexed to the weighted average across all US employees; it is measured using the share of employees with AI skills, the share of AI-related positions, the share of AI job postings, and the number of AI technology vendors used by the company."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Sources: Revelio Labs; O*NET; HG Insights; BCG Henderson Institute analysis."
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                414,
+                728,
+                631
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "What CEOs Need to Do Now to Prepare"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                40,
+                736,
+                809,
+                816
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "There are four critical starting points for leaders."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                843,
+                498,
+                862
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Embed workforce strategy into competitive strategy. AI will reshape competitive dynamics and enable new business models. Companies that respond by accelerating innovation, redesigning offerings, or reconfiguring their delivery of value at the enterprise, business line, product, and functional levels will fundamentally change the nature of work inside their organizations. Workforce strategy cannot sit downstream of automation. It must be embedded in strategic planning. Remaking the workforce is a competitive imperative."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                877,
+                944,
+                917
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                969,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "17"
+                    }
+                ]
+            },
+            "bbox": [
+                934,
+                970,
+                954,
+                983
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                40,
+                67,
+                909,
+                147
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Leaders should avoid reactive actions on cost driven by headlines or peer behavior. Workforce decisions must reflect the specific mix of automatable and augmentable work within the specific enterprise. Copying another company’s reductions without understanding one’s own exposure risks undermines both productivity and long-term competitiveness."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                160,
+                941,
+                241
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Refocus automation on redesign, not just cost reduction. Agentic AI isn't a blunt instrument. Different roles require different approaches. Sometimes cost is a dominant factor. At other times, other priorities dominate, such as speed of work and quality. Cost actions—such as headcount freezes or reductions—are visible and straightforward, with explicit OpEx impact. But when AI drives productivity rather than cuts, ROI becomes harder to define and defend."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                255,
+                944,
+                354
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In these situations, leaders must redesign workflows and rethink how performance is measured. Capturing value requires new, domain-specific KPIs that link productivity gains to tangible outcomes, such as higher revenue per FTE, more product shipped, or stronger customer impact. Task turnover within a role will be a measure of how fast roles can evolve toward higher-value work. Realizing AI’s upside often means growing into the improvement—translating productivity gains into financial results through budgeting and workforce planning."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                368,
+                939,
+                489
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Put upskilling, reskilling, and redeployment at the center of workforce strategy. Just because a job remains does not mean employees are prepared for it. Upskilling, reskilling, and structured redeployment pathways must become central to workforce strategy. Moreover, workers will likely require more frequent (versus one-time) upskilling as the technology evolves. Leaders should prepare their workforce in phases aligned with how roles are evolving and create clear pathways to adjacent, augmented, and emerging positions. In each of the five AI Labor Disruption Segments in which AI is expected to materially impact work, leaders should keep the following considerations in mind for each category:"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                502,
+                951,
+                659
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Amplified Roles. Leaders should focus on retaining and developing this talent, reinventing team-based workflows to maximize human–AI collaboration and redefining what excellence looks like. As productivity expectations rise, leaders should remain mindful of cognitive overload and actively manage workloads. Reinforcing the narrative that AI enhances long-term value will be critical to sustaining engagement and performance."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                689,
+                920,
+                789
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Rebalanced Roles. The opportunity lies in role redesign. Leaders should identify repeatable components that can be automated and reinvest the time savings in higher-value activities. Upskilling in AI fluency and structured experimentation is essential to ensure that higher-order skills translate into measurable improvements in output quality."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                802,
+                917,
+                882
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "18"
+                    }
+                ]
+            },
+            "bbox": [
+                934,
+                970,
+                954,
+                983
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Divergent Roles. The challenge here is structural. Leaders should redesign career pathways with deliberation, creating accelerated development tracks and clear routes into higher-skilled responsibilities. Preserving entry points, investing in young talent, and managing progression thoughtfully is essential to avoiding long-term skill gaps."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                67,
+                914,
+                146
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Substituted Roles. Leaders should reimagine processes end to end around AI agents. Workforce transition planning must be developed in parallel with AI deployment. Redeployment pathways, transition support, and change management should be designed alongside automation initiatives."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                160,
+                907,
+                240
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Enabled Roles. Leaders should focus on embedding AI into day-to-day workflows and building broad-based AI fluency across the workforce. The priority is consistent adoption: removing barriers to usage, standardizing tools and workflows, and setting clear expectations so that gains are realized widely."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                254,
+                929,
+                334
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Shape the AI narrative to unlock performance. Sequencing and signaling matter. Focusing first on highly substitutable roles may deliver short-term efficiency gains, but it can create a demoralized atmosphere that undermines broader transformation. When employees associate automation with displacement, engagement declines and the motivation to upskill erodes. They may resist augmentation efforts, even when designed to elevate their roles. Leaders must communicate clearly that if workers upskill, AI in most roles will be about value creation, not displacement. The narrative set at the top will shape whether the workforce embraces transformation or resists it."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                363,
+                952,
+                502
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AI creates a massive opportunity for business leaders but also significant uncertainty in terms of how to unlock it. Moreover, this is all happening in a charged environment. In some cases, restructurings that would have occurred regardless, as part of the normal business cycle, are likely to be attributed to AI, which will create fear at a societal level."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                552,
+                949,
+                633
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "At the same time, AI's impact will vary significantly across companies. Some will lean into AI to drive innovation and growth, while others will focus on efficiency and automation. This could lead to very different talent strategies, with some reducing headcount while others hire aggressively."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                646,
+                942,
+                707
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For CEOs, the imperative today is to focus on achieving the right balance of automation, upskilling, and deliberate talent planning—to deliver enterprise ROI at scale and help their employees develop the skills they need to thrive in the AI era."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                720,
+                954,
+                781
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The authors would like to thank Djon Kleine, Philip Ventura, Nissim Ray, and Hanson Wong for their valuable contributions to the research and analysis that informed this article."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                795,
+                951,
+                835
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "19"
+                    }
+                ]
+            },
+            "bbox": [
+                934,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The BCG Institute is Boston Consulting Group's strategy think tank, dedicated to exploring and developing valuable new insights from business, technology, and science by embracing the powerful technology of ideas. The Institute engages leaders in provocative discussion and experimentation to expand the boundaries of business theory and practice and to translate innovative ideas from within and beyond business. For more ideas and inspiration from the Institute, please visit our website and follow us on LinkedIn and X (formerly Twitter)."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                67,
+                720,
+                225
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                970,
+                249,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "20"
+                    }
+                ]
+            },
+            "bbox": [
+                934,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Authors"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                42,
+                67,
+                245,
+                105
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/162c6bcf73941d7be291edda86b39c53e1095f616169add398925cff8521eb94.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                69,
+                149,
+                220,
+                256
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/dd0842cf5ebc2fe3071d5b9eb49b9a90fa70241e1a262c771e21823c73cf6c9b.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                67,
+                313,
+                218,
+                422
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/6aef94c358e063c01775c41458c45f3b94ee3ab4677ee73bfe8fa06fe6bcd8be.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                69,
+                468,
+                218,
+                574
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/1a7a0172361232c1c15a274635deaae2e4d34ec5be393678c463be855725f019.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Managing Director & Senior Partner\nSan Francisco - Bay Area"
+                    }
+                ]
+            },
+            "bbox": [
+                69,
+                642,
+                218,
+                749
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Greg Emerson"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                244,
+                160,
+                402,
+                181
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/b3e8109c290fd422ac5c1e254d09f1721f78d1af37802daeb136479280683bc5.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                245,
+                237,
+                274,
+                254
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Julie Bedard"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                242,
+                318,
+                380,
+                341
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Managing Director & Partner; BCG Institute Fellow\nBoston"
+                    }
+                ]
+            },
+            "bbox": [
+                242,
+                351,
+                447,
+                391
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/3d776c48005a1633c3943a30f61eb7f7939aadb214979813852f96ff903eb67d.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                245,
+                395,
+                274,
+                413
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Viacheslav Romanov"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                242,
+                470,
+                363,
+                514
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Partner & Associate Director,\nPIPE Tech Capital\nBoston"
+                    }
+                ]
+            },
+            "bbox": [
+                242,
+                526,
+                444,
+                565
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/19ffac2f9bc89a1c48aea815e80a4447fb93186dea39086abe64d2122e955472.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                245,
+                571,
+                274,
+                587
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Luis Sanchez Boedo"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                242,
+                651,
+                466,
+                673
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Consultant\nRaleigh-Durham"
+                    }
+                ]
+            },
+            "bbox": [
+                242,
+                684,
+                363,
+                714
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/d840fec615da3f3102928cb375fda7a0c41789f1d030030d178f82aee6a5193a.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                245,
+                719,
+                274,
+                734
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/7d72e95d9ad61e1d657dc20c34161a9b91a3fc2d81e3444156842b004f755fa3.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                531,
+                149,
+                681,
+                258
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Matthew Kropp"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                707,
+                153,
+                882,
+                175
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Managing Director & Senior Partner; BCG Henderson Institute Fellow\nSan Francisco - Bay Area"
+                    }
+                ]
+            },
+            "bbox": [
+                707,
+                186,
+                897,
+                240
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/3dfc90ddb448821a32790bc30d666689af43f820a721bf946be1fb34616cf9ee.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                708,
+                244,
+                735,
+                259
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/365e7956f9db3e48428d7dbfefdee0e0d0e88a28c620299a2d059b089f8ddeff.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                531,
+                315,
+                683,
+                420
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Lisa Krayer"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                707,
+                323,
+                831,
+                346
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Principal Philadelphia"
+                    }
+                ]
+            },
+            "bbox": [
+                705,
+                356,
+                797,
+                387
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/69471990027b648695c54df67f803dc11a1360e4769352aac5aadfed3fd1ca6c.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                708,
+                390,
+                735,
+                406
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/8d046917f164237f96b62232ebdb09221163bc1cc9fd35f45b2ff6344663a9e5.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                545,
+                470,
+                676,
+                574
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Megan Hsu"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                705,
+                487,
+                836,
+                510
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Project Leader\nSan Diego"
+                    }
+                ]
+            },
+            "bbox": [
+                705,
+                520,
+                814,
+                550
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/03c45016c9e38a049466e15573a9c7808fa09647801bb71bc47fe80c2a61e7a8.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                708,
+                554,
+                735,
+                571
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Diya Mohnot"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                707,
+                651,
+                853,
+                674
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/23d6a897c5540b1c1aa1fb02f92c5b51545ad94018db0a9eae7a1d3ea1b41069.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                531,
+                643,
+                683,
+                747
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/2bf7eca36c21de89fac86f50213fb2f578369a883bb5844a6e894fcbf85382d9.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                708,
+                719,
+                735,
+                734
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Associate Philadelphia"
+                    }
+                ]
+            },
+            "bbox": [
+                705,
+                684,
+                797,
+                714
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                970,
+                249,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "21"
+                    }
+                ]
+            },
+            "bbox": [
+                934,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "ABOUT BOSTON CONSULTING GROUP"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                42,
+                102,
+                434,
+                120
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                137,
+                951,
+                256
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "1 This number assumes 165 million US jobs filling 1,500 roles."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                341,
+                457,
+                357
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "* We sourced real output (value added), industry price indices, and real GDP from the US Bureau of Economic Analysis."
+                    }
+                ]
+            },
+            "bbox": [
+                42,
+                362,
+                858,
+                378
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "22"
+                    }
+                ]
+            },
+            "bbox": [
+                934,
+                970,
+                954,
+                982
+            ]
+        }
+    ]
+]

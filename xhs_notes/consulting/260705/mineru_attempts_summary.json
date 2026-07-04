@@ -1,0 +1,29 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 3,
+    "successful_pdf_count": 3,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_afg8r212/pdfs/0001-BCG_AI-Will-Reshape-More-Jobs-Than-It-Replaces_379efb43.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_afg8r212/pdfs/0002-McKinsey_PDF-Clearer-view-tougher-terrain---McKinsey-Company_4e89923a.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_afg8r212/pdfs/0003-McKinsey_PDF-Technology-Trends-Outlook-2025---McKinsey-Company_518523bb.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

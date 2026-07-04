@@ -1,0 +1,67 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_afg8r212/pdfs/0001-BCG_AI-Will-Reshape-More-Jobs-Than-It-Replaces_379efb43.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "波士顿咨询",
+    "cover_short_title": "AI不会抢走你的工作",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "wechat_title": "波士顿咨询：波士顿咨询揭示AI就业悖论，软件工程师反而因AI需求增长",
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_afg8r212/pdfs/0002-McKinsey_PDF-Clearer-view-tougher-terrain---McKinsey-Company_4e89923a.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "麦肯锡",
+    "cover_short_title": "雾散了，路变硬了",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_title": "麦肯锡：私募股权已经驶入更硬的地面，不是所有车都能开过去",
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_afg8r212/pdfs/0003-McKinsey_PDF-Technology-Trends-Outlook-2025---McKinsey-Company_518523bb.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "麦肯锡",
+    "cover_short_title": "2025科技趋势，这",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_title": "麦肯锡：麦肯锡2025技术趋势，AI不是主角，而是激活其他技术的引擎",
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]
