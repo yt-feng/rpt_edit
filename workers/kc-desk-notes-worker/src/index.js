@@ -660,7 +660,16 @@ function publicUser(user) {
 
 function bearerToken(request) {
   const header = request.headers.get("Authorization") || request.headers.get("authorization") || "";
-  return header.toLowerCase().startsWith("bearer ") ? header.slice(7).trim() : "";
+  if (header.toLowerCase().startsWith("bearer ")) return header.slice(7).trim();
+  try {
+    const url = new URL(request.url);
+    const path = url.pathname.replace(/^\/api(?=\/)/, "");
+    const downloadToken = String(url.searchParams.get("download_token") || "").trim();
+    if (downloadToken && /^\/account-admin\/github-(file|artifact)$/.test(path)) return downloadToken;
+  } catch (_error) {
+    // Header-based auth remains the default path.
+  }
+  return "";
 }
 
 function supabaseBaseUrl(env) {

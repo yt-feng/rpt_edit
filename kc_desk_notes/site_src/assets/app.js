@@ -1281,6 +1281,37 @@
     return size > 5 * 1024 * 1024 && /\.(mp4|pdf|zip)$/i.test(name);
   }
 
+  function isVideoDownloadButton(button) {
+    return /\.mp4$/i.test(String(button && button.dataset.name || ""));
+  }
+
+  function setDownloadMessage(progress, message, percent = 12) {
+    if (!progress) return;
+    const bar = progress.querySelector(".account-admin-progress-track span");
+    const text = progress.querySelector("small");
+    progress.hidden = false;
+    if (bar) bar.style.width = `${Math.max(0, Math.min(100, percent))}%`;
+    if (text) text.textContent = message || "";
+  }
+
+  function withDownloadToken(endpoint) {
+    const session = loadAuthSession();
+    const url = new URL(endpoint, window.location.href);
+    if (session && session.token) url.searchParams.set("download_token", session.token);
+    return url.toString();
+  }
+
+  function triggerNativeDownload(url, fallbackName) {
+    const link = document.createElement("a");
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.download = fallbackName || "download";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }
+
   function timeoutSignal(parentSignal, ms) {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), ms);
@@ -1715,7 +1746,15 @@
       try {
         let blob;
         let disposition = "";
-        if (segmented) {
+        if (segmented && isVideoDownloadButton(button)) {
+          const directUrl = withDownloadToken(endpoint);
+          setDownloadMessage(progress, "已交给浏览器下载器；如果没有弹出，请允许浏览器下载。", 18);
+          triggerNativeDownload(directUrl, name);
+          status.textContent = "视频下载已交给浏览器处理。";
+          status.classList.add("ok");
+          prepareSegmentedAdminDownload(workerUrl, button, controller.signal, progress).catch(() => null);
+          return;
+        } else if (segmented) {
           try {
             await prepareSegmentedAdminDownload(workerUrl, button, controller.signal, progress);
           } catch (error) {
