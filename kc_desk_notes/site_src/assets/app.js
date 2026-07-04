@@ -1276,10 +1276,21 @@
 
   function shouldUseSegmentedDownload(button) {
     const name = String(button && button.dataset.name || "");
-    const fileKind = String(button && button.dataset.fileKind || "");
     const size = Number(button && button.dataset.sizeBytes || 0) || 0;
-    if (/\.mp4$/i.test(name) && /^(bbg-show|bbg-ark-invest|kc-entertain)$/i.test(fileKind)) return true;
+    if (/\.mp4$/i.test(name)) return true;
     return size > 5 * 1024 * 1024 && /\.(mp4|pdf|zip)$/i.test(name);
+  }
+
+  function timeoutSignal(parentSignal, ms) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), ms);
+    const cleanup = () => clearTimeout(timer);
+    controller.signal.addEventListener("abort", cleanup, { once: true });
+    if (parentSignal) {
+      if (parentSignal.aborted) controller.abort();
+      else parentSignal.addEventListener("abort", () => controller.abort(), { once: true });
+    }
+    return controller.signal;
   }
 
   async function fetchRangeBlob(endpoint, start, end, signal) {
@@ -1340,7 +1351,7 @@
     return new Blob(chunks, { type: first.response.headers.get("Content-Type") || contentTypeFromFilename(fallbackName) });
   }
 
-  async function prepareSegmentedAdminDownload(workerUrl, button, signal) {
+  async function prepareSegmentedAdminDownload(workerUrl, button, signal, progress) {
     const kind = String(button && button.dataset.kind || "");
     if (kind !== "file" && kind !== "artifact") return;
     const key = button.dataset.key || "";
@@ -1355,15 +1366,17 @@
       url.searchParams.set("path", key);
       if (repo) url.searchParams.set("repo", repo);
     }
+    setDownloadProgress(progress, 1, 100);
     const response = await fetch(url.toString(), {
       cache: "no-store",
       headers: authHeaders(),
-      signal,
+      signal: timeoutSignal(signal, 25000),
     });
     const data = await response.json().catch(() => ({}));
     if (!response.ok || !data.ok) {
       throw new Error(data.detail || "文件缓存准备失败，请稍后重试。");
     }
+    setDownloadProgress(progress, 100, 100);
     return data;
   }
 
@@ -1703,7 +1716,12 @@
         let blob;
         let disposition = "";
         if (segmented) {
-          await prepareSegmentedAdminDownload(workerUrl, button, controller.signal);
+          try {
+            await prepareSegmentedAdminDownload(workerUrl, button, controller.signal, progress);
+          } catch (error) {
+            if (error && error.name === "AbortError" && controller.signal.aborted) throw error;
+            status.textContent = "高速缓存准备较慢，正在改用直接下载…";
+          }
           status.textContent = "正在分段下载…";
           blob = await segmentedAdminDownload(endpoint, name, progress, controller.signal);
         } else {
