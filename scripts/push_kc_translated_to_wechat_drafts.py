@@ -1867,19 +1867,31 @@ def main() -> int:
             trailing_image_url = upload_article_image(session, access_token, trailing_image_path, args.timeout)
             log(f"Uploaded trailing image: {trailing_image_path}")
 
-    built_articles = [
-        build_article(report_dir, idx, args, session, access_token, output_dir, trailing_image_url)
-        for idx, report_dir in enumerate(selected, 1)
-    ]
+    built_articles = []
+    for idx, report_dir in enumerate(selected, 1):
+        start_time = time.monotonic()
+        log(f"Building WeChat article {idx}/{len(selected)}: {report_dir.name}")
+        article_item = build_article(report_dir, idx, args, session, access_token, output_dir, trailing_image_url)
+        built_articles.append(article_item)
+        log(
+            f"Built WeChat article {idx}/{len(selected)} in {time.monotonic() - start_time:.1f}s: "
+            f"{article_item['wechat_title']} "
+            f"(body_images={article_item['body_image_count']}, ai_images={article_item['ai_image_count']})"
+        )
 
     drafts = []
 
     def create_draft(group: list[dict[str, Any]]) -> None:
         articles = article_payload(group)
         payload_bytes = utf8_byte_count(json.dumps({"articles": articles}, ensure_ascii=False, separators=(",", ":")))
+        draft_index = len(drafts) + 1
+        log(
+            f"Preparing WeChat draft {draft_index}: articles={len(articles)} "
+            f"payload_bytes={payload_bytes}"
+        )
         if args.dry_run:
-            media_id = f"DRY_RUN_DRAFT_{len(drafts) + 1:02d}"
-            publish_id = f"DRY_RUN_PUBLISH_{len(drafts) + 1:02d}" if args.publish else ""
+            media_id = f"DRY_RUN_DRAFT_{draft_index:02d}"
+            publish_id = f"DRY_RUN_PUBLISH_{draft_index:02d}" if args.publish else ""
             reused_existing = False
             draft_get = {
                 "ok": True,
@@ -1892,6 +1904,7 @@ def main() -> int:
         else:
             if session is None or access_token is None:
                 raise RuntimeError("session and access_token are required outside dry-run")
+            log(f"Checking recent drafts before creating WeChat draft {draft_index}")
             existing_media_id = find_recent_draft_by_titles(
                 session,
                 access_token,
@@ -1905,6 +1918,7 @@ def main() -> int:
             else:
                 reused_existing = False
                 try:
+                    log(f"Creating WeChat draft {draft_index}")
                     media_id = add_draft(session, access_token, articles, args.timeout)
                 except WeChatError as exc:
                     if is_article_size_error(exc) and len(group) > 1:
@@ -1917,10 +1931,10 @@ def main() -> int:
                         create_draft(group[split_at:])
                         return
                     raise
+            log(f"Verifying WeChat draft {draft_index}: media_id={media_id}")
             draft_get = verify_draft_get(session, access_token, media_id, args.timeout, len(articles))
             publish_id = submit_publish(session, access_token, media_id, args.timeout) if args.publish else ""
 
-        draft_index = len(drafts) + 1
         payload_path = output_dir / f"draft_payload_{draft_index:02d}.json"
         write_json(payload_path, {"articles": articles})
         drafts.append(
