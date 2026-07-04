@@ -30,6 +30,11 @@ import requests
 from PIL import Image, ImageDraw
 
 from institution_names import ensure_title_has_institution, infer_institution_name
+from wechat_title_optimizer import (
+    choose_best_wechat_title,
+    clean_wechat_title as optimizer_clean_wechat_title,
+    extract_wechat_keywords,
+)
 
 
 BRAND = "KC桌面——外资精译"
@@ -37,7 +42,9 @@ AUTHOR = "KC桌面"
 BOTTOM_DISCLAIMER = "For informational purposes only. Not investment advice."
 DEFAULT_BODY_HOOK = (
     "更多国际信源汇编&评论，扫码交流，每日更新，汇总国际主流叙事&数据&图表，观测边际变化。"
-    "汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询、智库等朋友，期待交流"
+    "星球里会把单篇报告放回当天的国际投行、咨询公司、国际机构主线里，整理成中文摘要、KC评论和图表合集，"
+    "便于喂给AI，也便于人工快速扫市场dynamics。汇聚了头部券商、PE/VC、投行、并购、hedge fund、"
+    "资管机构、战略咨询、智库等朋友，期待交流"
 )
 DEFAULT_BODY_VISIBLE_CHARS = 2000
 DEFAULT_MIN_INLINE_IMAGES = 3
@@ -53,8 +60,7 @@ WECHAT_UPLOADIMG_TARGET_BYTES = 930 * 1024
 DEFAULT_TRAILING_IMAGE = "prompts/zsxq_img.jpg"
 # Shown at the very end of every article, after the 星球 QR image.
 DEFAULT_AFTER_IMAGE_NOTE = (
-    "微信推荐机制调整，期望收到更多此类信息，关注后可以加微信从朋友圈查看更新&免费领取原文报告。"
-    "或将「KC桌面」设为星标"
+    "关注后可以加微信从朋友圈查看更新&免费领取原文报告；经常读这类国际信源，也可以把「KC桌面」设为星标。"
 )
 POLLINATIONS_BASE_URL = "https://image.pollinations.ai/prompt/"
 WECHAT_COVER_WIDTH = 1200
@@ -326,7 +332,14 @@ def sharpen_wechat_title(title: str, institution_name: str = "") -> str:
     if institution_name:
         cleaned = strip_unexpected_leading_institution_prefix(cleaned, institution_name)
         cleaned = ensure_title_has_institution(cleaned, canonicalize_institution_title_name(institution_name))
-    return truncate_chars(remove_redundant_title_aliases(cleaned), WECHAT_TITLE_MAX_CHARS)
+    source_keywords = extract_wechat_keywords(cleaned, max_keywords=8)
+    return choose_best_wechat_title(
+        [cleaned, optimizer_clean_wechat_title(cleaned, institution_name, max_chars=WECHAT_TITLE_MAX_CHARS)],
+        fallback=cleaned,
+        institution_name=institution_name,
+        source_keywords=source_keywords,
+        max_chars=WECHAT_TITLE_MAX_CHARS,
+    )
 
 
 def truncate_chars(text: str, max_chars: int) -> str:
@@ -782,6 +795,33 @@ def hook_html(text: str) -> str:
     )
 
 
+def keyword_bridge_html(keywords: list[str]) -> str:
+    clean_keywords = [item for item in keywords if item][:6]
+    if len(clean_keywords) < 2:
+        return ""
+    keyword_text = "、".join(html.escape(item) for item in clean_keywords)
+    return (
+        '<p style="margin:0 0 16px;color:#596579;font-size:14px;line-height:1.7;">'
+        f"这篇可以沿着 <strong style=\"color:#2457A7;\">{keyword_text}</strong> 这几条线索看，"
+        "重点不是复述报告，而是看这些变量如何互相验证。"
+        "</p>"
+    )
+
+
+def mid_article_cta_html(hook_text: str, keywords: list[str]) -> str:
+    keyword_hint = "、".join(keywords[:3])
+    lead = f"如果你是从「{html.escape(keyword_hint)}」这类线索搜到这里，" if keyword_hint else "如果你长期跟这类国际信源，"
+    return (
+        '<section style="margin:18px 0;padding:14px 16px;background:#EAF2FB;'
+        'border-left:4px solid #2E6FB7;color:#152033;font-size:15px;line-height:1.75;">'
+        f"{lead}单篇文章只能解决一个切片。"
+        "我每天会把国际投行、咨询公司和国际机构的新增报告整理成中文摘要、KC评论和图表合集，"
+        "适合直接喂给AI追问，也适合人工快速扫当天市场主线。"
+        f"<br/><span style=\"color:#596579;\">{html.escape(truncate_visible_text(hook_text, 86, suffix=''))}</span>"
+        "</section>"
+    )
+
+
 def referenced_markdown_image_keys(markdown: str) -> set[str]:
     keys: set[str] = set()
     for match in IMAGE_TOKEN_RE.finditer(markdown or ""):
@@ -916,7 +956,11 @@ def markdown_to_wechat_html(
     max_visible_chars: int,
     max_chars: int,
 ) -> tuple[str, int, int]:
+    keyword_terms = extract_wechat_keywords(title, f"{source_report_name}\n{markdown}", max_keywords=8)
     parts: list[str] = [brand_header_html(brand, title)]
+    bridge = keyword_bridge_html(keyword_terms)
+    if bridge:
+        parts.append(bridge)
     paragraph: list[str] = []
     list_items: list[str] = []
     rendered_image_urls: set[str] = set()
@@ -932,6 +976,7 @@ def markdown_to_wechat_html(
     body_budget = max(0, max_visible_chars - visible_char_count(hook_text))
     placement_budget = min(body_budget, max(visible_char_count(clean_markdown(markdown)), 1)) if body_budget else 0
     text_used = 0
+    mid_cta_inserted = False
 
     def remaining_chars() -> int:
         return max(0, body_budget - text_used)
@@ -972,6 +1017,15 @@ def markdown_to_wechat_html(
             rendered_image_urls.add(url)
             floating_image_index += 1
 
+    def maybe_insert_mid_cta(force: bool = False) -> None:
+        nonlocal mid_cta_inserted
+        if mid_cta_inserted or not hook_text:
+            return
+        threshold = placement_budget * 0.36 if placement_budget else 0
+        if force or body_budget <= 0 or text_used >= threshold:
+            parts.append(mid_article_cta_html(hook_text, keyword_terms))
+            mid_cta_inserted = True
+
     def flush_paragraph() -> None:
         nonlocal paragraph
         if paragraph:
@@ -980,6 +1034,7 @@ def markdown_to_wechat_html(
             if rendered:
                 parts.append(rendered)
                 maybe_insert_floating_image()
+                maybe_insert_mid_cta()
             paragraph = []
 
     def flush_list() -> None:
@@ -996,6 +1051,7 @@ def markdown_to_wechat_html(
                 body = "".join(f"<li>{inline_markdown(item, context='list')}</li>" for item in rendered_items)
                 parts.append(f'<ul style="margin:10px 0 12px;padding-left:22px;line-height:1.7;color:#202631;font-size:16px;">{body}</ul>')
                 maybe_insert_floating_image()
+                maybe_insert_mid_cta()
             list_items = []
 
     for raw in clean_markdown(markdown).splitlines():
@@ -1013,6 +1069,7 @@ def markdown_to_wechat_html(
             if fitted:
                 parts.append(kc_comment_html(fitted))
                 maybe_insert_floating_image()
+                maybe_insert_mid_cta(force=True)
             continue
 
         token_match = IMAGE_TOKEN_RE.fullmatch(line)
@@ -1060,6 +1117,7 @@ def markdown_to_wechat_html(
 
     flush_paragraph()
     flush_list()
+    maybe_insert_mid_cta(force=True)
     while floating_image_index < len(floating_images):
         maybe_insert_floating_image(force=True)
     supplemental_images = [

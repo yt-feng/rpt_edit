@@ -43,6 +43,13 @@ except Exception:  # pragma: no cover
     def infer_institution_name(*_values: Any) -> str:
         return ""
 
+from wechat_title_optimizer import (
+    build_wechat_title_refinement_prompt,
+    choose_best_wechat_title,
+    extract_title_candidates,
+    extract_wechat_keywords,
+)
+
 # Maps the institution keys used by fetch_institution_latest_pdfs.py to the Chinese
 # names institution_names.infer_institution_name returns, so --exclude-institutions
 # can drop whole sources (e.g. rand,brookings) before translating.
@@ -871,13 +878,17 @@ def build_article_style_prompt(markdown: str, title: str, institution_name: str,
 - 不能编造原文没有的信息；如果某个数字不确定，就不要写。
 
 格式要求：
-1. 第一行必须是 `# {{机构中文名}}：{{短标题}}`，标题短、清楚、有传播性。
+1. 第一行必须是 `# {{机构中文名}}：{{短标题}}`，标题短、清楚、有传播性；优先 18-34 个中文字符，最多一个冒号。
+   - 标题必须包含至少两个钩子：机构/人物 big name、可搜索主题词、反常识判断、市场误判、数据节点、政策/行业变量。
+   - 不要写英文机构简称或 ticker，例如 GS、JPM、JEF、NOM、BARC、MS、DB、Citi；不要写“核心观点”“关键要点”“研报速览”。
 2. 正文控制在 1200-1800 个中文字符。
-3. 使用 3 个 `##` 小节，每个小节标题都要是 action title，读标题就知道结论。
-4. 每个小节 1-2 段，段落要像投行报告解读，避免散乱摘抄。
-5. 插入 2 条 `> KC评论：...`。KC评论要用大白话解释“这对市场/企业/政策观察意味着什么”，不要空泛。
-6. 如有可用图表占位符，只能从这些 token 里选 1-3 个并原样插入，单独成行：{token_text}
-7. 不要输出代码块，不要输出英文原文，不要输出“以下是”等解释。
+3. 开头 2 段要自然带出 4-7 个长尾关键词，例如国家/行业/政策/数据/公司/技术词，让读者从搜一搜进入也能立刻判断相关性。
+4. 使用 3 个 `##` 小节，每个小节标题都要是 action title，读标题就知道结论。
+5. 每个小节 1-2 段，段落要像投行报告解读，避免散乱摘抄。
+6. 插入 2 条 `> KC评论：...`。KC评论要用大白话解释“这对市场/企业/政策观察意味着什么”，不要空泛。
+7. 如有可用图表占位符，只能从这些 token 里选 1-3 个并原样插入，单独成行：{token_text}
+8. 第一条 KC评论 后可以自然补一句：单篇报告只是一个切片，每天的国际信源汇编会把类似报告放回当天主线，整理成中文摘要、KC评论和图表合集，便于喂给AI追问，也便于人工快速扫市场变化。
+9. 不要输出代码块，不要输出英文原文，不要输出“以下是”等解释。
 
 机构中文名：{institution_name or "该机构"}
 原报告标题：{title}
@@ -910,6 +921,44 @@ def generate_article_style_markdown(
     article = article.replace("```markdown", "").replace("```", "")
     article = insert_article_tokens(article, image_tokens)
     return sanitize_text(article).strip() + "\n"
+
+
+def refine_wechat_title_with_deepseek(
+    source_title: str,
+    translated_md: str,
+    institution_name: str,
+    args: argparse.Namespace,
+) -> str:
+    fallback = clean_display_title(first_heading(translated_md, source_title), institution_name)
+    if not getattr(args, "title_refine", True):
+        return fallback
+    article_excerpt = normalize_space(re.sub(r"[#>*`!\\[\\]()]+", " ", translated_md))[:2400]
+    source_keywords = extract_wechat_keywords(source_title, translated_md, max_keywords=10)
+    prompt = build_wechat_title_refinement_prompt(
+        source_title=source_title,
+        institution_name=institution_name,
+        article_excerpt=article_excerpt,
+        source_keywords=source_keywords,
+    )
+    try:
+        raw = call_deepseek(
+            prompt,
+            args,
+            f"WeChat title refine: {source_title[:40]}",
+            temperature=0.25,
+            system_content="你是中文微信公众号标题编辑，只输出严格 JSON。",
+        )
+        candidates = extract_title_candidates(raw)
+    except Exception as exc:
+        log(f"  Title refinement failed, using generated heading: {exc}")
+        candidates = []
+    return choose_best_wechat_title(
+        candidates,
+        fallback=fallback,
+        institution_name=institution_name,
+        source_keywords=source_keywords,
+        max_chars=64,
+    )
 
 
 def register_cjk_font() -> str:
@@ -1117,7 +1166,7 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
         translated_md = generate_article_style_markdown(clean_md, source_title, institution_name, figures, args)
     else:
         translated_md = translate_markdown(clean_md, args)
-    display_title = clean_display_title(first_heading(translated_md, source_title), institution_name)
+    display_title = refine_wechat_title_with_deepseek(source_title, translated_md, institution_name, args)
     translated_md = replace_first_heading(translated_md, display_title)
     translated_path = report_out_dir / "translated.md"
     translated_path.write_text(translated_md, encoding="utf-8")
@@ -1157,6 +1206,9 @@ def main() -> int:
                         help="Comma list of institution keys to skip entirely, e.g. rand,brookings.")
     parser.add_argument("--include-institutions", default="",
                         help="Comma list of institution keys/names to keep, e.g. bis,imf.")
+    parser.add_argument("--no-title-refine", dest="title_refine", action="store_false",
+                        help="Skip the extra DeepSeek title-candidate pass and use the generated heading.")
+    parser.set_defaults(title_refine=True)
     parser.add_argument("--title-guard", action="store_true",
                         help="Use DeepSeek to skip reports whose title is China-sensitive (keeps them out of WeChat).")
     args = parser.parse_args()

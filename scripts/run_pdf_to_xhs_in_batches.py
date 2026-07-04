@@ -144,6 +144,8 @@ def build_child_command(args: argparse.Namespace, tmp_input: Path) -> list[str]:
         "--mineru-no-progress-timeout", str(args.mineru_no_progress_timeout),
         "--watermark", args.watermark,
     ]
+    if not args.wechat_title_refine:
+        cmd.append("--no-wechat-title-refine")
     return cmd
 
 
@@ -209,7 +211,18 @@ def main() -> int:
     parser.add_argument("--ocr", default="true")
     parser.add_argument("--length", type=int, default=1000)
     parser.add_argument("--wechat-length", type=int, default=3000)
-    parser.add_argument("--community-cta", default="加入社群，领取完整研报解读与原始图表。")
+    parser.add_argument(
+        "--community-cta",
+        default=(
+            "更多国际信源汇编&评论，扫码交流，每日更新，汇总国际主流叙事&数据&图表，观测边际变化。"
+            "星球会把单篇报告放回当天国际投行、咨询公司、国际机构主线里，整理成中文摘要、KC评论和图表合集，"
+            "便于喂给AI，也便于人工快速扫市场dynamics。汇聚了头部券商、PE/VC、投行、并购、hedge fund、"
+            "资管机构、战略咨询、智库等朋友，期待交流"
+        ),
+    )
+    parser.add_argument("--no-wechat-title-refine", dest="wechat_title_refine", action="store_false",
+                        help="Skip the extra DeepSeek title-candidate pass in child batches.")
+    parser.set_defaults(wechat_title_refine=True)
     parser.add_argument("--max-images", type=int, default=8)
     parser.add_argument("--poll-timeout", type=int, default=3600)
     parser.add_argument("--poll-interval", type=int, default=15)

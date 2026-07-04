@@ -25,11 +25,18 @@ if str(SCRIPT_DIR) not in sys.path:
 try:
     from institution_names import ensure_title_has_institution, infer_institution_name
 except Exception:  # pragma: no cover
+    def ensure_title_has_institution(title: str, _institution: str) -> str:
+        return title
+
     def infer_institution_name(*_values: Any) -> str:
         return ""
 
-    def ensure_title_has_institution(title: str, _institution: str) -> str:
-        return title
+from wechat_title_optimizer import (
+    build_wechat_title_refinement_prompt,
+    choose_best_wechat_title,
+    extract_title_candidates,
+    extract_wechat_keywords,
+)
 
 MINERU_BASE_URL = "https://mineru.net"
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp", ".bmp"}
@@ -593,6 +600,56 @@ def safe_generate_text(prompt: str, args: argparse.Namespace, label: str) -> str
         raise RuntimeError(f"DeepSeek generation failed for {label}: {exc}") from exc
 
 
+def first_markdown_heading(markdown: str, fallback: str) -> str:
+    for raw in markdown.splitlines():
+        stripped = raw.strip()
+        if stripped.startswith("#"):
+            title = re.sub(r"^#{1,6}\s*", "", stripped).strip()
+            if title:
+                return title
+    return fallback
+
+
+def replace_first_markdown_heading(markdown: str, title: str) -> str:
+    lines = markdown.splitlines()
+    for index, raw in enumerate(lines):
+        if raw.strip().startswith("#"):
+            lines[index] = f"# {title}"
+            return "\n".join(lines).strip() + "\n"
+    return f"# {title}\n\n{markdown.strip()}\n"
+
+
+def refine_wechat_article_title(
+    source_title: str,
+    wechat_article: str,
+    institution_name: str,
+    args: argparse.Namespace,
+) -> str:
+    fallback = ensure_title_has_institution(first_markdown_heading(wechat_article, source_title), institution_name)
+    if not getattr(args, "wechat_title_refine", True):
+        return choose_best_wechat_title([], fallback=fallback, institution_name=institution_name)
+    source_keywords = extract_wechat_keywords(source_title, wechat_article, max_keywords=10)
+    article_excerpt = re.sub(r"\s+", " ", re.sub(r"[#>*`!\\[\\]()]+", " ", wechat_article)).strip()[:2400]
+    prompt = build_wechat_title_refinement_prompt(
+        source_title=source_title,
+        institution_name=institution_name,
+        article_excerpt=article_excerpt,
+        source_keywords=source_keywords,
+    )
+    try:
+        raw = call_deepseek(prompt, args, f"WeChat title refine: {source_title[:40]}")
+        candidates = extract_title_candidates(raw)
+    except Exception as exc:
+        print(f"Title refinement failed for {source_title[:80]}: {exc}", flush=True)
+        candidates = []
+    return choose_best_wechat_title(
+        candidates,
+        fallback=fallback,
+        institution_name=institution_name,
+        source_keywords=source_keywords,
+    )
+
+
 def visible_char_count(text: str) -> int:
     return len(re.sub(r"\s+", "", text or ""))
 
@@ -793,6 +850,9 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
     (item_dir / "prompt_for_wechat.md").write_text(wechat_prompt, encoding="utf-8")
     wechat_article = safe_generate_text(wechat_prompt, args, "WeChat article")
     wechat_article = ensure_markdown_h1_institution(wechat_article, institution_name)
+    refined_wechat_title = refine_wechat_article_title(pdf_path.stem, wechat_article, institution_name, args)
+    wechat_article = replace_first_markdown_heading(wechat_article, refined_wechat_title)
+    status["wechat_title"] = refined_wechat_title
     wechat_article = embed_images_in_wechat_article(wechat_article, status.get("images", []), max_images=3)
     (item_dir / "wechat_article.md").write_text(wechat_article, encoding="utf-8")
     try:
@@ -819,11 +879,16 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--style", default="投研博主风：信息密度高，但像给朋友讲逻辑")
     parser.add_argument("--length", type=int, default=1000)
     parser.add_argument("--wechat-length", type=int, default=1200)
+    parser.add_argument("--no-wechat-title-refine", dest="wechat_title_refine", action="store_false",
+                        help="Skip the extra DeepSeek title-candidate pass for WeChat articles.")
+    parser.set_defaults(wechat_title_refine=True)
     parser.add_argument(
         "--community-cta",
         default=(
             "更多国际信源汇编&评论，扫码交流，每日更新，汇总国际主流叙事&数据&图表，观测边际变化。"
-            "汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询、智库等朋友，期待交流"
+            "星球会把单篇报告放回当天国际投行、咨询公司、国际机构主线里，整理成中文摘要、KC评论和图表合集，"
+            "便于喂给AI，也便于人工快速扫市场dynamics。汇聚了头部券商、PE/VC、投行、并购、hedge fund、"
+            "资管机构、战略咨询、智库等朋友，期待交流"
         ),
     )
     parser.add_argument("--emoji", default="中")
