@@ -1,0 +1,45 @@
+name: KC Account Admin
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "Account maintenance action"
+        required: true
+        default: "reset-password"
+        type: choice
+        options:
+          - reset-password
+      username:
+        description: "KC Desk username"
+        required: false
+        type: string
+      email:
+        description: "KC Desk email"
+        required: false
+        type: string
+      password:
+        description: "New password"
+        required: true
+        type: string
+
+jobs:
+  account-admin:
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL || vars.SUPABASE_URL || 'unconfigured' }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || 'unconfigured' }}
+      AUTH_SECRET: ${{ secrets.AUTH_SECRET || secrets.PASSWORD_SECRET || 'unconfigured' }}
+      PASSWORD_SECRET: ${{ secrets.PASSWORD_SECRET || 'unconfigured' }}
+      KC_ACCOUNT_PASSWORD: ${{ github.event.inputs.password }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Mask password
+        run: echo "::add-mask::${KC_ACCOUNT_PASSWORD}"
+      - name: Reset password
+        run: |
+          test "${{ github.event.inputs.action }}" = "reset-password"
+          python scripts/kc_account_admin.py reset-password \
+            --username "${{ github.event.inputs.username }}" \
+            --email "${{ github.event.inputs.email }}" \
+            --password "${KC_ACCOUNT_PASSWORD}"
