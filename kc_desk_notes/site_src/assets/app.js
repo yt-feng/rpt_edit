@@ -2863,6 +2863,7 @@
     const accountDownload = document.getElementById("accountDownloadReport");
     const hint = document.getElementById("accountAccessHint");
     const status = document.getElementById("accountAccessStatus");
+    const passwordForm = document.getElementById("unlockForm");
     const context = { item, source };
 
     function statusTarget(text, kind) {
@@ -2872,22 +2873,29 @@
     async function refresh() {
       const session = loadAuthSession();
       panel.hidden = false;
-      hint.textContent = `登录后可查看账号下载权限；开通权限请联系微信 ${CONTACT_WECHAT}。`;
+      if (passwordForm) passwordForm.hidden = false;
       accountDownload.hidden = true;
+      openAccount.hidden = Boolean(session);
       if (!session) {
+        hint.textContent = `登录后可查看账号下载权限；开通权限请联系微信 ${CONTACT_WECHAT}。`;
         statusTarget(`如需开通权限，请联系微信 ${CONTACT_WECHAT}。`);
         return;
       }
+      hint.textContent = `当前账号：${authUserLabel(session)}`;
       statusTarget("正在读取账号权益…");
       try {
         const access = await fetchReportAccess(workerUrl, item, source);
         if (access && access.can_download) {
           accountDownload.hidden = false;
-          statusTarget("当前账号已解锁此报告，可直接下载。", "ok");
+          if (passwordForm) passwordForm.hidden = true;
+          hint.textContent = "当前账号已开通此报告下载权限。";
+          statusTarget("可直接使用账号下载。", "ok");
         } else {
+          if (passwordForm) passwordForm.hidden = false;
           statusTarget(`当前账号尚未解锁此报告。如需开通权限，请联系微信 ${CONTACT_WECHAT}。`);
         }
       } catch (error) {
+        if (passwordForm) passwordForm.hidden = false;
         statusTarget(error.message || "账号状态读取失败。", "error");
       }
     }
