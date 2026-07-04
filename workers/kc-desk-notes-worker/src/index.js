@@ -6052,14 +6052,45 @@ async function externalDirectPdfUrl(id) {
   }
 }
 
-function externalPdfResponse(request, env, body, title, id) {
-  return new Response(body, {
+function bytesToBinaryString(bytes) {
+  let out = "";
+  const chunk = 0x8000;
+  for (let i = 0; i < bytes.length; i += chunk) {
+    out += String.fromCharCode(...bytes.subarray(i, i + chunk));
+  }
+  return out;
+}
+
+function binaryStringToBytes(text) {
+  const bytes = new Uint8Array(text.length);
+  for (let i = 0; i < text.length; i += 1) bytes[i] = text.charCodeAt(i) & 0xff;
+  return bytes;
+}
+
+function sanitizePdfExternalLinksBytes(bytes) {
+  if (!bytes || bytes.length < 5 || bytesToBinaryString(bytes.subarray(0, 5)) !== "%PDF-") return bytes;
+  let text = bytesToBinaryString(bytes);
+  text = text.replace(/\/URI\s*\((?:\\[\s\S]|[^\\)])*\)/g, (match) => match.replace(/\(([\s\S]*)\)$/, (_whole, inner) => `(${String(inner).replace(/[^\r\n]/g, " ")})`));
+  text = text.replace(/\/URI\s*<[^>]*>/g, (match) => match.replace(/<([^>]*)>$/, (_whole, inner) => `<${String(inner).replace(/[0-9A-Fa-f]/g, "0")}>`));
+  text = text.replace(/\/S\s*\/URI/g, (match) => match.replace("/URI", "/XYZ"));
+  return binaryStringToBytes(text);
+}
+
+async function sanitizePdfExternalLinksBody(body) {
+  const bytes = new Uint8Array(await new Response(body).arrayBuffer());
+  return sanitizePdfExternalLinksBytes(bytes);
+}
+
+async function externalPdfResponse(request, env, body, title, id) {
+  const sanitized = await sanitizePdfExternalLinksBody(body);
+  return new Response(sanitized, {
     headers: {
       ...corsHeaders(request, env),
       "Content-Type": "application/pdf",
       "Content-Disposition": contentDisposition(`${title || id}.pdf`),
       "Cache-Control": "no-store, private",
       "X-Content-Type-Options": "nosniff",
+      "X-KCDesk-PDF-Sanitized": "links",
     },
   });
 }
@@ -6117,7 +6148,7 @@ async function handleExternalPdf(request, env) {
     try {
       const pdf = await fetchWithTimeout(direct.url, { headers: { "User-Agent": EXTERNAL_UA } }, UPSTREAM_PDF_TIMEOUT_MS);
       if (pdf.ok) {
-        return externalPdfResponse(request, env, pdf.body, direct.title, id);
+        return await externalPdfResponse(request, env, pdf.body, direct.title, id);
       }
     } catch (_error) {
       // Fall through to the R2 / grab paths below.
@@ -6128,7 +6159,7 @@ async function handleExternalPdf(request, env) {
   if (env.REPORT_BUCKET) {
     const object = await env.REPORT_BUCKET.get(externalObjectKey(id));
     if (object) {
-      return externalPdfResponse(request, env, object.body, direct.title, id);
+      return await externalPdfResponse(request, env, object.body, direct.title, id);
     }
   }
 

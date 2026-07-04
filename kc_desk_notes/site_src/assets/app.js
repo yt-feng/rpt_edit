@@ -289,6 +289,34 @@
     return user.username || user.email || "账号";
   }
 
+  function accountRightLabel(row = {}) {
+    if (!row || !row.active) return "";
+    if (row.access_mode === "all") return "全站报告下载权限";
+    if (row.access_mode === "filters") return "条件报告下载权限";
+    if (row.plan === "annual") return "年度下载权限";
+    if (row.plan === "super" || row.plan === "operator") return "账号下载权限";
+    return "下载权限";
+  }
+
+  function accountRightExpiryText(row = {}) {
+    if (!row || !row.active) return "";
+    if (row.lifetime) return "长期有效";
+    const end = String(row.current_period_end || "").slice(0, 10);
+    return end ? `有效期至 ${end}` : "";
+  }
+
+  function accountRightSummary(data = {}) {
+    const access = data && data.access;
+    if (access && access.active) {
+      return [accountRightLabel(access), accountRightExpiryText(access)].filter(Boolean).join("，");
+    }
+    const entitlement = data && data.entitlement;
+    if (entitlement && entitlement.active && (entitlement.plan === "annual" || entitlement.plan === "super" || entitlement.plan === "operator")) {
+      return [accountRightLabel(entitlement), accountRightExpiryText(entitlement)].filter(Boolean).join("，");
+    }
+    return "";
+  }
+
   function isSuperSession(session = loadAuthSession()) {
     const user = session && session.user;
     return Boolean(user && (user.role === "super" || user.is_super));
@@ -495,16 +523,8 @@
         fetch(`${workerUrl}/entitlement`, { cache: "no-store", headers: authHeaders() })
           .then((response) => response.json())
           .then((data) => {
-            const entitlement = data && data.entitlement;
-            const access = data && data.access;
-            if (access && access.active) {
-              const label = access.access_mode === "all" ? "全站报告" : "条件报告";
-              setStatus(`账号${label}下载权限有效${access.current_period_end ? `至 ${access.current_period_end.slice(0, 10)}` : ""}。`, "ok");
-              return;
-            }
-            if (entitlement && entitlement.active && (entitlement.plan === "annual" || entitlement.plan === "super" || entitlement.plan === "operator")) {
-              setStatus(`账号下载权限有效${entitlement.current_period_end ? `至 ${entitlement.current_period_end.slice(0, 10)}` : ""}。`, "ok");
-            }
+            const summary = accountRightSummary(data);
+            if (summary) setStatus(`账号${summary}。`, "ok");
           })
           .catch(() => {});
       } else {
@@ -2950,14 +2970,17 @@
       statusTarget("正在读取账号权益…");
       try {
         const access = await fetchReportAccess(workerUrl, item, source);
+        const summary = accountRightSummary(access);
         if (access && access.can_download) {
           accountDownload.hidden = false;
           if (passwordForm) passwordForm.hidden = true;
-          hint.textContent = "当前账号已开通此报告下载权限。";
-          statusTarget("可直接使用账号下载。", "ok");
+          hint.textContent = summary ? `当前账号已开通此报告下载权限，${summary}。` : "当前账号已开通此报告下载权限。";
+          statusTarget(summary ? `可直接使用账号下载；${summary}。` : "可直接使用账号下载。", "ok");
         } else {
           if (passwordForm) passwordForm.hidden = false;
-          statusTarget(`当前账号尚未解锁此报告。如需开通权限，请联系微信 ${CONTACT_WECHAT}。`);
+          statusTarget(summary
+            ? `当前账号有${summary}，但不包含此报告。如需调整权限，请联系微信 ${CONTACT_WECHAT}。`
+            : `当前账号尚未解锁此报告。如需开通权限，请联系微信 ${CONTACT_WECHAT}。`);
         }
       } catch (error) {
         if (passwordForm) passwordForm.hidden = false;

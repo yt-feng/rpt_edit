@@ -20,6 +20,8 @@ import re
 import sys
 from pathlib import Path
 
+from sanitize_pdf_links import sanitize_pdf_links
+
 REPORTIFY_R2_PREFIX = "reportify"
 DEFAULT_BUCKET = "kc-desk-notes-pdfs"
 
@@ -61,6 +63,11 @@ def main() -> int:
     data = pdf_path.read_bytes() if pdf_path.exists() else b""
     if not data.startswith(b"%PDF-"):
         raise SystemExit(f"Not a valid PDF (missing %PDF- header): {pdf_path}")
+    try:
+        if sanitize_pdf_links(pdf_path):
+            data = pdf_path.read_bytes()
+    except Exception as exc:
+        print(f"warning: could not sanitize PDF links: {exc}", file=sys.stderr)
 
     bucket = os.getenv("R2_BUCKET", "").strip() or DEFAULT_BUCKET
     key = f"{REPORTIFY_R2_PREFIX}/{report_id}.pdf"
