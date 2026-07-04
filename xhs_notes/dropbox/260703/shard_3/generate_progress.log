@@ -1,38 +1,21 @@
-Found 32 total PDFs; shard 3/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Found 33 total PDFs; shard 3/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
 Running batch 1: 5 PDFs
 Found 5 PDFs. MinerU token slots available=2.
 MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
-Uploading PDF to MinerU: /tmp/pdf_batch_001_34dea777/pdfs/0001-17-Goldman Sachs-China Data Centers- Highlights from China AI Computing Industry Ecological Development Conference-260702.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_34dea777/pdfs/0002-18-J.P. Morgan-Hardware - Networking Data Center Watch- AI Demand Supported as LLM Usage and GPU Pricing Climb- Meanwhile- Memory Spot Prices Diverge-260701.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_34dea777/pdfs/0003-19-Morgan Stanley-China Property-Weakening Indicators may Lead to Faster Home Price Declines-260701.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_34dea777/pdfs/0004-20-Nomura-Asia Insights-China- Retail sales revisited-260702.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_34dea777/pdfs/0005-21-UBS-China Property-Top 100 Developers- Sales- softer momentum in June 2026-260701.pdf
-MinerU attempt 1 using MINER_U_2 batch_id=ce645e2e-525b-42d8-a9f1-6d0eb999ed37
-MinerU states: done, running, running, pending, waiting-file
-MinerU states: done, done, done, done, running
+Uploading PDF to MinerU: /tmp/pdf_batch_001_5o1ejxix/pdfs/0001-17-Nomura-Asia Insights-China- Retail sales revisited-260702.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_5o1ejxix/pdfs/0002-18-J.P. Morgan-Hardware - Networking Data Center Watch- AI Demand Supported as LLM Usage and GPU Pricing Climb- Meanwhile- Memory Spot Prices Diverge-260701.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_5o1ejxix/pdfs/0003-19-UBS-China Property-Top 100 Developers- Sales- softer momentum in June 2026-260701.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_5o1ejxix/pdfs/0004-20-BofA Securities-Top 10 US Ideas Quarterly Introducing the Top 10 US Ideas for Q3 2026-260701.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_5o1ejxix/pdfs/0005-21-Nomura-USD CNY fix model Projection- 6.7785-260703.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=674e563d-b675-442c-a41d-8417cf3cc99d
+MinerU states: done, done, done, done, waiting-file
 MinerU states: done, done, done, done, done
-DeepSeek generation failed for Xiaohongshu note: DeepSeek generate Xiaohongshu note: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
 /home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:277: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
   pixels = list(gray.getdata())
-Skip non-chart visual asset 8c247acddce22bab07addd396aebf3bfb992f3f5d4153f9955e1b423d5a7c0fe.jpg: score=2;chart_ratio,contrast
-Skip non-chart visual asset 71ee8b20bbb981a52dad41e073b805d9da776078d8ee2cca9120afb4e02124e8.jpg: score=2;chart_ratio,contrast
-Skip non-chart visual asset 1c563aebc9eac7d5c9b3e74b4dd56adbe250b1aa2f42aa8ab7f2084eb1e748ee.jpg: score=0;square_without_chart_hint,edge:0.17,contrast
-Skip non-chart visual asset 2f8f9606d871ce9b47c0a7f24546dda480fd0c97a4faa4b99b1a79716b0e2b7c.jpg: score=-100;too_small:1159x109
-DeepSeek generation failed for WeChat article: DeepSeek generate WeChat article: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
-DeepSeek generation failed for Xiaohongshu note: DeepSeek generate Xiaohongshu note: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
-Skip non-chart visual asset bf371e770c0814c3bb21aa9623df62d296698f1b5d48db11382b6845138e5f3b.jpg: score=-100;too_small:982x167
-DeepSeek generation failed for WeChat article: DeepSeek generate WeChat article: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
-DeepSeek generation failed for Xiaohongshu note: DeepSeek generate Xiaohongshu note: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
-Skip non-chart visual asset deaf4a320c3561a8c1d8269cf3add11b3ca9ac6b2f8dea13139dfd7932fcefab.jpg: score=-100;too_small:515x134
-Skip non-chart visual asset b24b338d114eac39c52bce598867153a9095541874f18aa75a54e82f69c41423.jpg: score=1;large
-Skip non-chart visual asset a21f31e7cad847b4a32d182db3537c8dcd36736bb98dd05be94a6712c548cde3.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.18
-DeepSeek generation failed for WeChat article: DeepSeek generate WeChat article: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
-DeepSeek generation failed for Xiaohongshu note: DeepSeek generate Xiaohongshu note: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
 Skip non-chart visual asset f565d9b016bfce1978153622bffc323371d6176260907f85b0ad9ab747783b48.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.25,large
 Skip non-chart visual asset 24e822f59b2c9678adf7f92c1fec06f4d6eb035dea20f75e76d6d02cb68be986.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.18,large
 Skip non-chart visual asset 58d7d4266e14c79a2de7f6fc755bd9f8aee45e88e3c0aa2a01b93cf665352325.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.51,contrast,large
-DeepSeek generation failed for WeChat article: DeepSeek generate WeChat article: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
-DeepSeek generation failed for Xiaohongshu note: DeepSeek generate Xiaohongshu note: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
+Skip non-chart visual asset bf371e770c0814c3bb21aa9623df62d296698f1b5d48db11382b6845138e5f3b.jpg: score=-100;too_small:982x167
 Skip non-chart visual asset e514c42eec72bdd10a35e33a0aae0e72e6cad736e0d78f854ba68f01f8132112.jpg: score=0;odd_ratio:6.23,edge:0.20,contrast
 Skip non-chart visual asset 8dd87be6541ef2b4f09013779d609637bf5c372811bfb186ef7a2ef66b1c0ba1.jpg: score=2;chart_ratio,large
 Skip non-chart visual asset 012de62de2f9d26e98e79c79c99c80e8230fb1c4837ec339922c6ea829148d37.jpg: score=0;odd_ratio:7.58,edge:0.28,contrast
@@ -40,6 +23,46 @@ Skip non-chart visual asset a1d123d344424351b563901c1ed09b8ce917d666c50887a4b880
 Skip non-chart visual asset f202b8874fbe6090535da68dfbe24596445fcc7b3f0a0a46264641374f4f7c44.jpg: score=0;odd_ratio:7.26,edge:0.18,contrast
 Skip non-chart visual asset 0cc8a74a1c6c63a97915fd78c5f2202d9fdf5f42a841f10b578656dc8063a979.jpg: score=2;chart_ratio,large
 Skip non-chart visual asset 2ee0893a17a4869a2726bf21b34f804877e5f06b764f4cee666a207f141d7313.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.34,contrast,large
-DeepSeek generation failed for WeChat article: DeepSeek generate WeChat article: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
+Skip non-chart visual asset f0424cc043bcca536b3b1eb05d0ba45ae54bc2c0ab2a0532bfb6dd4b65401f3c.jpg: score=-100;too_small:973x176
+Skip non-chart visual asset 23e1372a30afabee6b5461b091dd4e1efd0ed58246c84e7b26471ae9ae4ee14d.jpg: score=-100;too_small:1562x120
+Skip non-chart visual asset a8a7a349a244cdf196d7fefd317c8c75a26cc40d7809a38c2f54045c326f5f43.jpg: score=-100;too_small:1562x120
+Skip non-chart visual asset 9154281c331c65b4d39ca48478f31d53019d9d8615da186bf027111a8087cffb.jpg: score=-100;too_small:1562x118
+Skip non-chart visual asset 083cb877583ef466247df228351f27637c737313c776818cf255a4a7d877acad.jpg: score=-100;too_small:985x176
+Skip non-chart visual asset 4d3ea24b31825b86719edd677f1d2a72d258bc81d77a185a03491e2b8d398a0a.jpg: score=-1;odd_ratio:7.52,edge:0.11
+Skip non-chart visual asset 5576de2fda361cc7a6094a82ba4d94169b240f30645c711bc8f991d939afcbbc.jpg: score=-100;too_small:1562x120
+Skip non-chart visual asset 347b037c9dacfcef51356a7b5d65cf0d99ce8ecdabe9f07683984b77ef7d09bf.jpg: score=-100;too_small:846x126
+Skip non-chart visual asset 280abe302b6ed2f1496d20f7f6284b020cd1143e354356e6b47cc94a08ee3dc8.jpg: score=0;
+Skip non-chart visual asset ab189d328696e77508805c5c14488adefbc690e95658f9061ded50cc5a94df3e.jpg: score=-100;too_small:976x176
+Skip non-chart visual asset f658316e0ae121a6ebe687d71a2c3ae60640d85b438754f27cb563f7e6b12391.jpg: score=-100;too_small:1557x176
+Skip non-chart visual asset 5da8c4b3a7ac13f81629aa86ae97c4e102cb0329a942619d39e2223ba8f8f444.jpg: score=0;odd_ratio:4.91,edge:0.13,large
+Skip non-chart visual asset 4b311c823f17584462d1bd15c593317559868e364fb61f6b9b329b79169bd789.jpg: score=2;edge:0.18
+Skip non-chart visual asset 3bbc6664b86987f3491319b9b8d03b0f93a34d45887e3014cf5d780c2e1bbbc1.jpg: score=-100;too_small:971x143
+Skip non-chart visual asset fb0da4a50b9b1310d95c36bf9f2e1d52159f9c4566b7cebf764878b8521cfeed.jpg: score=-100;too_small:976x173
+Skip non-chart visual asset 72dedbf47dc6df5135a5f9113aacbd126135c230171a436d5ab33801520c112d.jpg: score=-3;odd_ratio:7.09
+Skip non-chart visual asset f784a4b905b210759a9de867629a6ee49e8517de9460b68602889e27bbca5271.jpg: score=-100;too_small:1003x129
+Skip non-chart visual asset 11c5fc48127572748ad5f94deee1b808acab5bdb8a447a4c65ebd761e12802b3.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.24,large
+Skip non-chart visual asset 9a0e46c6027e64ea84045a3b1a5302057b4e58aab7cb9fa314bec4b79b5947f9.jpg: score=-100;too_small:1437x90
+Skip non-chart visual asset 5a8fb7ba9a6b35cc067936880eb042319adef443550325015d51f75c217e3d8c.jpg: score=-100;too_small:976x176
+Skip non-chart visual asset 51f17115dcfbbda46013cbfbe12dcd5cf3f23706961e5a7d5751634734beca32.jpg: score=-3;odd_ratio:7.17
+Skip non-chart visual asset 3d2130b9e564f09269fded9a9ce43e1b0548d56816bfc050fbb8e3b16ec7dc46.jpg: score=0;odd_ratio:5.42,edge:0.10,large
+Skip non-chart visual asset 649aafe85c3615e7d093b07ad58a46173279016cf9828408500795d18de8c615.jpg: score=0;odd_ratio:6.84,edge:0.11,large
+Skip non-chart visual asset 0af5685a5d2e8bd5082f8f4c6efaa5249a6d35848fbf38f7e1c91e30d64abb3d.jpg: score=-100;too_small:431x73
+Skip non-chart visual asset c6aeee47ec5743a6b0a8171af73587bdfbaf2e8768e9b29501464fd83cbc3205.jpg: score=2;edge:0.20
+Skip non-chart visual asset c73060e5f05cfca2bb359875cc8f002e9b8256cfa52a3f973f9723440bfd52b4.jpg: score=-100;too_small:1562x118
+Skip non-chart visual asset 9bfd7b5b6f17c521f50f880a1c6fa29ad74fdce95dacc76d0dc4249f491fec87.jpg: score=-100;too_small:1562x120
+Skip non-chart visual asset e2fffe43fbcf67acf47fd116c6ff91d595264f5d2508706bbb70a58f821824b4.jpg: score=-100;too_small:976x120
+Skip non-chart visual asset f52d7e1b9b8f9edcdca85633f75377382c28345c85eb4ada03832e49c1c567be.jpg: score=-100;too_small:1562x120
+Skip non-chart visual asset 25a30b3dae07e08621a64eb2995dfce8d2d8494c88362d410b901c6126ba2198.jpg: score=-100;too_small:1562x120
+Skip non-chart visual asset 64a33f8530691da715a17405c8e746235b448172a1fcbfa8d7c541f9ee6e3572.jpg: score=-100;too_small:1562x120
+Skip non-chart visual asset 0f033504671310f7ebe4ad628c4ba225e7083967f9626dc2ef9dbc9a10787a9c.jpg: score=-100;too_small:1560x148
+Skip non-chart visual asset 3bd12dcd23e9aafebaf1e31506699710d24735e9d865ee446af738652d540f3c.jpg: score=-100;too_small:1562x118
+Skip non-chart visual asset b75178daab007b779059ed8648eb8b912a729706cf232876d7eed53513c3c900.jpg: score=-100;too_small:1556x151
+Skip non-chart visual asset 7e045ee516cb001bccd64931b5f77a6424e7e0289322aa2b42f71d4a207acb38.jpg: score=-100;too_small:1556x176
+Skip non-chart visual asset 5e3c23f6923ad980247892dd80c0922a7d82bee84020646496cea68ef725ba2b.jpg: score=0;odd_ratio:4.88,edge:0.11,large
+Skip non-chart visual asset aa486afc134967b50f0356be0a52a162432d7ebc455babdb79a201cec0d1fdb3.jpg: score=2;edge:0.10
+Skip non-chart visual asset 5625323c9dc421198938107c8458606e2299b20a439ece107ad164e9337dff44.jpg: score=-100;too_small:976x173
+Skip non-chart visual asset 4d07950411b2ec7beaa6155d223e85bb0a7391689e5f08989ab5027a21150776.jpg: score=0;odd_ratio:6.58,edge:0.11,large
+Skip non-chart visual asset 7cb607f0065fb967b50d0d15d7b5353d428146cbdde2c9937173c683c08e6fd3.jpg: score=-100;too_small:985x173
+Skip non-chart visual asset e5f5007a4354c547c62f247c82e6fe223edad7595bf7a079bddce3167e49b258.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.18,contrast,large
 Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260703/shard_3; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
 All batches completed successfully. Generated 5 report directories.

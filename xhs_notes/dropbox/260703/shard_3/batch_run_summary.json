@@ -1,6 +1,6 @@
 {
   "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
-  "total_pdf_count_before_shard": 32,
+  "total_pdf_count_before_shard": 33,
   "pdf_count_before_skip": 5,
   "pdf_count": 5,
   "generated_report_count": 5,
@@ -9,7 +9,7 @@
   "shard_count": 40,
   "max_reports_per_shard": 5,
   "max_total_reports": 0,
-  "skip_existing": true,
+  "skip_existing": false,
   "skipped_existing_count": 0,
   "skipped_existing": [],
   "failures": 0,
@@ -19,28 +19,28 @@
       "pdf_count": 5,
       "files": [
         {
-          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/17-GS-China Data Centers： Highlights from China AI Computing Industry Ecological Development Conference-260702.pdf",
-          "batch_file": "/tmp/pdf_batch_001_34dea777/pdfs/0001-17-GS-China Data Centers- Highlights from China AI Computing Industry Ecological Development Conference-260702.pdf",
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/17-NOM-Asia Insights：China： Retail sales revisited-260702.pdf",
+          "batch_file": "/tmp/pdf_batch_001_5o1ejxix/pdfs/0001-17-NOM-Asia Insights-China- Retail sales revisited-260702.pdf",
           "stable_index": "1"
         },
         {
           "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/18-JPM-Hardware & Networking Data Center Watch： AI Demand Supported as LLM Usage and GPU Pricing Climb； Meanwhile， Memory Spot Prices Diverge-260701.pdf",
-          "batch_file": "/tmp/pdf_batch_001_34dea777/pdfs/0002-18-JPM-Hardware - Networking Data Center Watch- AI Demand Supported as LLM Usage and GPU Pricing Climb- Meanwhile- Memory Spot Prices Diverge-260701.pdf",
+          "batch_file": "/tmp/pdf_batch_001_5o1ejxix/pdfs/0002-18-JPM-Hardware - Networking Data Center Watch- AI Demand Supported as LLM Usage and GPU Pricing Climb- Meanwhile- Memory Spot Prices Diverge-260701.pdf",
           "stable_index": "2"
         },
         {
-          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/19-MS-China Property：Weakening Indicators may Lead to Faster Home Price Declines-260701.pdf",
-          "batch_file": "/tmp/pdf_batch_001_34dea777/pdfs/0003-19-MS-China Property-Weakening Indicators may Lead to Faster Home Price Declines-260701.pdf",
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/19-UBS-China Property：Top 100 Developers' Sales： softer momentum in June 2026-260701.pdf",
+          "batch_file": "/tmp/pdf_batch_001_5o1ejxix/pdfs/0003-19-UBS-China Property-Top 100 Developers- Sales- softer momentum in June 2026-260701.pdf",
           "stable_index": "3"
         },
         {
-          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/20-NOM-Asia Insights：China： Retail sales revisited-260702.pdf",
-          "batch_file": "/tmp/pdf_batch_001_34dea777/pdfs/0004-20-NOM-Asia Insights-China- Retail sales revisited-260702.pdf",
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/20-BofA-Top 10 US Ideas Quarterly Introducing the Top 10 US Ideas for Q3 2026-260701.pdf",
+          "batch_file": "/tmp/pdf_batch_001_5o1ejxix/pdfs/0004-20-BofA-Top 10 US Ideas Quarterly Introducing the Top 10 US Ideas for Q3 2026-260701.pdf",
           "stable_index": "4"
         },
         {
-          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/21-UBS-China Property：Top 100 Developers' Sales： softer momentum in June 2026-260701.pdf",
-          "batch_file": "/tmp/pdf_batch_001_34dea777/pdfs/0005-21-UBS-China Property-Top 100 Developers- Sales- softer momentum in June 2026-260701.pdf",
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/21-NOM-USD CNY fix model Projection： 6.7785-260703.pdf",
+          "batch_file": "/tmp/pdf_batch_001_5o1ejxix/pdfs/0005-21-NOM-USD CNY fix model Projection- 6.7785-260703.pdf",
           "stable_index": "5"
         }
       ],

@@ -1,5 +1,25 @@
-DeepSeek 生成 Xiaohongshu note 失败：DeepSeek generate Xiaohongshu note: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
+AI需求还在涨，GPU租金连续涨了7个月
 
-请复制对应 prompt 文件手动生成。
+AI需求还在涨
+
+LLM用量加速，GPU租金连涨
+
+📊 最近某外资投行的数据中心跟踪报告更新了，几个关键数据点值得关注：
+
+1️⃣ LLM用量加速，但价格分化
+6月OpenRouter上的token用量环比猛增70%，同比20倍。虽然token均价同比还在降（-5%），但降速明显收窄。美国模型虽然用量占比只有35%，却占了85%以上的花费——说明大家愿意为高质量模型付费。
+
+2️⃣ GPU租金全面上涨
+非超大规模云端的GPU租金6月继续涨：A100环比+6.3%，H100环比+3.7%，B200环比+2.7%。A100涨得最猛，B200租金是H100的约2倍，H100是A100的约1.7倍。H100已经连涨7个月。
+
+3️⃣ 内存价格出现分化
+DRAM（DDR5）继续涨，6月环比+10%，同比+740%。NAND则连续3个月小幅下滑，但同比仍涨412%。一个涨一个跌，说明不同存储需求逻辑不同。
+
+4️⃣ 热门模型榜单
+按用量排名：DeepSeek V4 Flash、MiMo-V2.5、MiniMax M3、Hy3 preview、Claude Opus 4.7
+按花费排名：Claude Opus 4.7、Claude Opus 4.8、GPT-5.5、Claude Sonnet 4.6、GLM 5.2
+Claude Opus 4.7是唯一在用量和花费都进前五的——性能和定价能力都很强。
+
+🔍 研报未给出具体公司推荐，但整体趋势指向AI基础设施需求依然强劲。你们觉得哪类硬件最受益？
 
 #学习笔记

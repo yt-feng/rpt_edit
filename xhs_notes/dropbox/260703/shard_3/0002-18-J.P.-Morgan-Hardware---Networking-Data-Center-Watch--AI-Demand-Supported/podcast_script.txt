@@ -1,1 +1,75 @@
-DeepSeek 生成 podcast 脚本失败：DeepSeek generate conversational Chinese and English podcast scripts: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
+ZH_A: 最近有一份关于AI基础设施需求的报告，里面提到了一些很有意思的数据，比如LLM的使用量和GPU租金都在涨。你觉得这背后真正说明了什么？
+
+ZH_B: 这份报告的核心判断其实很明确：AI基础设施的需求环境依然非常强劲。我们看到的不仅仅是使用量在扩张，更重要的是整个生态的经济账在变得更健康。
+
+ZH_A: 经济账变得更健康？这怎么理解？很多人不是一直在担心AI的成本太高、盈利困难吗？
+
+ZH_B: 对，这正是报告要回答的关键问题。它用了一个叫“Token经济学”的角度来拆解。简单说，就是模型提供方每生成一个Token，到底赚不赚钱。
+
+ZH_A: 那结果呢？
+
+ZH_B: 报告基于OpenRouter平台6月份的数据发现，Token的总使用量环比增长了70%，同比增长了20倍。但有意思的是，虽然平均价格同比还在下降，降幅其实在收窄，环比甚至还涨了7%。
+
+ZH_A: 所以意思是，尽管价格在跌，但用的人多了很多，总支出反而在加速增长？
+
+ZH_B: 完全正确。6月份的总支出环比也增长了70%，同比增长了16倍。这说明“量”的增长远远抵消了“价”的下跌，模型提供方的总收入盘子是在快速扩大的。
+
+ZH_A: 那GPU租金也在涨，这又意味着什么？
+
+ZH_B: 这指向了供给侧的紧张。报告追踪了非超大规模云服务商的GPU租赁价格，从A100到H100再到最新的B200，6月份全线环比上涨。A100涨得最猛，环比涨了6.3%。
+
+ZH_A: 但B200是最新的芯片，它的价格是H100的两倍，这个溢价会不会慢慢收窄？
+
+ZH_B: 你问到点子上了。报告确实观察到B200对H100的溢价比例在连续第二个月小幅下降。但这不一定代表需求变弱，可能只是市场在寻找一个更合理的定价平衡点。这里其实有一个悬念：这种价格结构的变化，到底是因为供给增加，还是需求结构在迁移？报告里没有完全展开。
+
+ZH_A: 那内存这边呢？DRAM和NAND的价格走势好像不太一样。
+
+ZH_B: 对，这是一个非常值得关注的信号。DRAM的现货价格6月份继续上涨，同比已经涨了超过8倍。但NAND的现货价格却连续第三个月小幅下跌。虽然同比还是涨了5倍多，但这个方向上的分歧，可能预示着不同存储芯片的需求周期开始分化了。
+
+ZH_A: 分化？那对于投资AI基础设施的人来说，这意味着什么？
+
+ZH_B: 这意味着不能一刀切地看整个存储市场。报告没有完全回答的是：这种分化是暂时的库存调整，还是AI工作负载对内存类型的偏好发生了根本性改变？比如，是不是训练和推理对DRAM的需求更刚性，而对NAND的需求在放缓？这需要更深入地去读报告里的数据细节。
+
+ZH_A: 听下来，这份报告的核心就是告诉我们，AI的需求故事还远没有结束，但里面的结构正在变得复杂。
+
+ZH_B: 没错。整体需求环境非常正面，但内部的轮动和分化已经开始。想真正理解这些信号背后的投资含义，还是得仔细看完整报告里的图表和假设。
+
+ZH_A: 好的，那今天的讨论就先到这里。如果你想获取这份报告的完整版本，或者加入我们的社群一起交流，可以查看节目详情。我们下期再见。
+
+ZH_B: 下期见。
+
+EN_A: So we just got our hands on a new report about AI infrastructure demand. It’s got some pretty interesting numbers on LLM usage and GPU rental prices. What’s the one big takeaway here?
+
+EN_B: The core message is that the demand environment for AI infrastructure remains incredibly strong. It’s not just about usage growing. The report suggests the economics for model providers are actually moving in a healthier direction.
+
+EN_A: Healthier economics? A lot of people are still worried about the high costs and whether AI can be profitable. How does this report address that?
+
+EN_B: That’s exactly the central question it tries to answer, using something called “token economics.” Basically, it looks at how much money a model provider makes per token. The data from OpenRouter for June shows that total token volume surged 70% month over month and 20 times year over year. And while average token prices are still down year over year, the decline is slowing. In fact, prices actually went up 7% from May.
+
+EN_A: So even though the price per token is dropping, the massive increase in usage is more than making up for it?
+
+EN_B: Exactly. Total spending on tokens also jumped 70% month over month and 16 times year over year. The volume growth is easily offsetting the price decline. The total revenue pie for model providers is expanding fast.
+
+EN_A: And what about the GPU rental market? The report says prices are going up too.
+
+EN_B: That points to supply side tightness. The report tracks rental prices for non-hyperscaler GPUs, from the A100 to the H100 and the new B200. All three tiers saw price increases in June. The A100 actually saw the biggest jump, up over 6% from the previous month.
+
+EN_A: The B200 is the newest and most powerful chip. Its price is about double that of the H100. Is that premium sustainable?
+
+EN_B: Good question. The report does note that the B200-to-H100 price ratio has ticked down for two months in a row. That doesn’t necessarily mean demand is weakening. It could just be the market finding a new equilibrium. But here’s something the report doesn’t fully unpack: is this narrowing premium due to more supply coming online, or is the demand mix shifting? That’s a key point you’d want to explore in the full report.
+
+EN_A: And what about memory prices? I noticed DRAM and NAND are moving in opposite directions.
+
+EN_B: That’s a really important divergence. DRAM spot prices kept climbing in June and are up more than 8 times year over year. But NAND spot prices have now fallen modestly for three months in a row. Even though they are still up over 5 times year over year, the direction is clearly different.
+
+EN_A: So what does that divergence mean for someone investing in AI infrastructure?
+
+EN_B: It means you can’t treat the entire memory market as one thing. The report doesn’t fully answer this, but it raises a critical question: is this a temporary inventory adjustment, or is there a fundamental shift in how AI workloads are consuming different types of memory? Is DRAM demand more structural for training and inference, while NAND demand is cooling off? The full report has the charts and assumptions to help you make that call.
+
+EN_A: So the big picture is that the AI demand story is still very much alive, but the details are getting more nuanced.
+
+EN_B: Absolutely. The overall environment is very positive, but the internal rotations and divergences are starting to show. To really understand the investment implications, you need to dig into the full report.
+
+EN_A: Great. That’s all for today. If you want to get the complete report or join our community discussion, check the show notes. We’ll see you next time.
+
+EN_B: See you.
