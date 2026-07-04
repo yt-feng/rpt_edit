@@ -1,0 +1,57 @@
+{
+  "created_at_utc": "2026-07-04T22:20:40.907353+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260704",
+  "output_dir": "publish_ready_zips/260704",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 2,
+  "skipped_shards": [],
+  "total_files": 144,
+  "total_renamed_markdown_count": 40,
+  "total_raw_file_bytes": 20126081,
+  "zip_count": 1,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260704/publish_ready_260704.zip",
+      "size_bytes": 18969813,
+      "file_count": 144,
+      "renamed_markdown_count": 40,
+      "raw_file_bytes": 20126081,
+      "shards": [
+        "shard_0",
+        "shard_1"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 91,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12250378,
+      "reports": [
+        "0001-01-Goldman-Sachs-Global-Rates-Trader-Lower-inflation-risks--steeper-curves-",
+        "0002-02-Goldman-Sachs-Global-Markets-Daily--More-JPY-Weakness-to-Come-Without-a-",
+        "0003-03-Goldman-Sachs-GLOBAL-FX-TRADER-Halftime-Adjustments-260703",
+        "0004-04-Goldman-Sachs-China-Economic-Activity-and-Policy-Tracker--July-3-260703",
+        "0005-05-Nomura-US-Economic-Weekly-Taskmasters-260702"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 3,
+      "file_count": 53,
+      "renamed_markdown_count": 15,
+      "raw_file_bytes": 7875703,
+      "reports": [
+        "0001-06-Goldman-Sachs-CONNECTING-THE-DOTS-Conviction-List--Capex--AI-and-beyond-",
+        "0002-07-Bofa-The-Flow-Show-Red--White--and-Boom-260702",
+        "0003-08-Goldman-Sachs-Taiwan-ODM-Brands--3-month-preview--June-revenue-flat-MoM-"
+      ]
+    }
+  ]
+}
