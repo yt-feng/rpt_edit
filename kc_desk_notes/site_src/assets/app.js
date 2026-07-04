@@ -12,11 +12,13 @@
   const REPORT_A_SOURCE = "report-a";
   const EXTERNAL_SOURCE = "external";
   const NEWSFEED_TOPIC_LIMIT = 10000;
-  const NEWSFEED_ACCOUNT_USERNAMES = new Set(["twotigers", "jacob"]);
-  const NEWSFEED_ACCOUNT_EMAILS = new Set(["twotigers@users.kcdesk.com", "jacob@bo-axis.com"]);
+  const NEWSFEED_ACCOUNT_USERNAMES = new Set(["jacob"]);
+  const NEWSFEED_ACCOUNT_EMAILS = new Set(["jacob@bo-axis.com"]);
   const PDFJS_MODULE_URL = "/assets/vendor/pdfjs/pdf.mjs";
   const PDFJS_WORKER_URL = "/assets/vendor/pdfjs/pdf.worker.mjs";
   let accountAdminDailyPicks = new Map();
+  let accountAdminUsersByEmail = new Map();
+  let accountAdminAccessOptions = {};
   let pdfJsLoadPromise = null;
 
   const INDUSTRY_RULES = [
@@ -480,6 +482,12 @@
           .then((response) => response.json())
           .then((data) => {
             const entitlement = data && data.entitlement;
+            const access = data && data.access;
+            if (access && access.active) {
+              const label = access.access_mode === "all" ? "全站报告" : "条件报告";
+              setStatus(`账号${label}下载权限有效${access.current_period_end ? `至 ${access.current_period_end.slice(0, 10)}` : ""}。`, "ok");
+              return;
+            }
             if (entitlement && entitlement.active && (entitlement.plan === "annual" || entitlement.plan === "super" || entitlement.plan === "operator")) {
               setStatus(`账号下载权限有效${entitlement.current_period_end ? `至 ${entitlement.current_period_end.slice(0, 10)}` : ""}。`, "ok");
             }
@@ -630,14 +638,50 @@
                   <tr>
                     <th>用户名</th>
                     <th>邮箱</th>
-                    <th>权限</th>
+                    <th>账号</th>
+                    <th>下载权限</th>
+                    <th>到期</th>
                     <th>注册</th>
                     <th>最近登录</th>
+                    <th>操作</th>
                   </tr>
                 </thead>
                 <tbody id="accountAdminUsers"></tbody>
               </table>
             </div>
+            <form id="accountAdminUserEditor" class="account-admin-user-editor" hidden>
+              <div class="account-admin-user-editor-head">
+                <strong id="accountAdminUserEditorTitle">编辑用户权限</strong>
+                <button class="secondary-button" id="accountAdminUserEditorClose" type="button">关闭</button>
+              </div>
+              <input id="accountAdminAccessEmail" type="hidden">
+              <div class="account-admin-form-grid">
+                <label>
+                  <span>权限范围</span>
+                  <select id="accountAdminAccessMode"></select>
+                </label>
+                <label>
+                  <span>开通时长</span>
+                  <select id="accountAdminAccessDuration"></select>
+                </label>
+                <label>
+                  <span>Institution</span>
+                  <select id="accountAdminAccessInstitutions" multiple></select>
+                </label>
+                <label>
+                  <span>Industry</span>
+                  <select id="accountAdminAccessIndustries" multiple></select>
+                </label>
+              </div>
+              <div class="account-admin-page-ranges" id="accountAdminAccessPageRanges"></div>
+              <label class="account-admin-note-field">
+                <span>备注</span>
+                <input id="accountAdminAccessNote" type="text" placeholder="可选">
+              </label>
+              <div class="account-admin-user-editor-actions">
+                <button class="primary" type="submit">保存权限</button>
+              </div>
+            </form>
           </section>
         </div>
       </div>
@@ -651,16 +695,128 @@
     return "free";
   }
 
+  function adminUserAccessLabel(user) {
+    if (user && user.role === "super") return "全站报告";
+    const access = user && user.access || {};
+    if (!access.active) return "未开通";
+    if (access.access_mode === "all") return "全站报告";
+    if (access.access_mode === "filters") {
+      const parts = [];
+      if (Array.isArray(access.institutions) && access.institutions.length) parts.push(`机构 ${access.institutions.length}`);
+      if (Array.isArray(access.industries) && access.industries.length) parts.push(`行业 ${access.industries.length}`);
+      if (Array.isArray(access.page_ranges) && access.page_ranges.length) parts.push(`页数 ${access.page_ranges.length}`);
+      return parts.length ? parts.join(" / ") : "条件报告";
+    }
+    return access.access_mode || "active";
+  }
+
+  function adminUserAccessExpiry(user) {
+    const access = user && user.access || {};
+    if (user && user.role === "super") return "长期";
+    if (!access.active) return "-";
+    if (access.lifetime) return "长期";
+    return access.current_period_end ? String(access.current_period_end).slice(0, 10) : "-";
+  }
+
   function adminUserRow(user) {
+    const email = user.email || "";
+    const editable = user.role !== "super";
     return `
-      <tr>
+      <tr data-email="${escapeHtml(email)}">
         <td>${escapeHtml(user.username || "")}</td>
-        <td>${escapeHtml(user.email || "")}</td>
+        <td>${escapeHtml(email)}</td>
         <td>${escapeHtml(adminUserEntitlementLabel(user))}</td>
+        <td>${escapeHtml(adminUserAccessLabel(user))}</td>
+        <td>${escapeHtml(adminUserAccessExpiry(user))}</td>
         <td>${escapeHtml(String(user.created_at || "").slice(0, 10))}</td>
         <td>${escapeHtml(String(user.last_login_at || "").replace("T", " ").slice(0, 16))}</td>
+        <td>${editable ? `<button class="secondary-button account-admin-edit-user" type="button" data-email="${escapeHtml(email)}">编辑</button>` : ""}</td>
       </tr>
     `;
+  }
+
+  function optionMarkup(options = [], selected = []) {
+    const selectedSet = new Set((Array.isArray(selected) ? selected : []).map(String));
+    return (options || []).map((option) => {
+      const value = String(option.value || "");
+      return `<option value="${escapeHtml(value)}"${selectedSet.has(value) ? " selected" : ""}>${escapeHtml(option.label || value)}</option>`;
+    }).join("");
+  }
+
+  function setSelectValues(select, values = []) {
+    const selected = new Set((Array.isArray(values) ? values : []).map(String));
+    Array.from(select.options).forEach((option) => {
+      option.selected = selected.has(option.value);
+    });
+  }
+
+  function selectedSelectValues(select) {
+    return Array.from(select.selectedOptions || []).map((option) => option.value).filter(Boolean);
+  }
+
+  function fillUserAccessEditor(user, targets) {
+    if (!user || !targets.userEditor) return;
+    const access = user.access || {};
+    const options = accountAdminAccessOptions || {};
+    targets.userEditor.hidden = false;
+    targets.accessEmail.value = user.email || "";
+    targets.userEditorTitle.textContent = `编辑权限：${user.username || user.email || ""}`;
+    targets.accessMode.innerHTML = optionMarkup(options.modes || [], [access.access_mode || "none"]);
+    targets.accessDuration.innerHTML = optionMarkup(options.durations || [], [access.lifetime ? "lifetime" : "12"]);
+    targets.accessInstitutions.innerHTML = optionMarkup(options.institutions || [], access.institutions || []);
+    targets.accessIndustries.innerHTML = optionMarkup(options.industries || [], access.industries || []);
+    setSelectValues(targets.accessInstitutions, access.institutions || []);
+    setSelectValues(targets.accessIndustries, access.industries || []);
+    const selectedRanges = new Set(access.page_ranges || []);
+    targets.accessPageRanges.innerHTML = (options.page_ranges || []).map((option) => `
+      <label>
+        <input type="checkbox" name="adminAccessPageRange" value="${escapeHtml(option.value || "")}"${selectedRanges.has(option.value) ? " checked" : ""}>
+        <span>${escapeHtml(option.label || option.value || "")}</span>
+      </label>
+    `).join("");
+    targets.accessNote.value = access.note || "";
+    targets.accessMode.dispatchEvent(new Event("change"));
+  }
+
+  function updateUserAccessEditorMode(targets) {
+    if (!targets || !targets.userEditor) return;
+    const filters = targets.accessMode.value === "filters";
+    targets.accessInstitutions.disabled = !filters;
+    targets.accessIndustries.disabled = !filters;
+    targets.accessPageRanges.querySelectorAll("input").forEach((input) => {
+      input.disabled = !filters;
+    });
+  }
+
+  async function saveUserAccess(workerUrl, targets) {
+    const email = targets.accessEmail.value || "";
+    const mode = targets.accessMode.value || "none";
+    const payload = {
+      email,
+      access_mode: mode,
+      duration_months: mode === "none" ? "" : (targets.accessDuration.value || "12"),
+      institutions: mode === "filters" ? selectedSelectValues(targets.accessInstitutions) : [],
+      industries: mode === "filters" ? selectedSelectValues(targets.accessIndustries) : [],
+      page_ranges: mode === "filters"
+        ? Array.from(targets.accessPageRanges.querySelectorAll("input:checked")).map((input) => input.value)
+        : [],
+      note: targets.accessNote.value || "",
+    };
+    const response = await fetch(`${workerUrl}/account-admin/user-access`, {
+      method: "POST",
+      cache: "no-store",
+      headers: { "Content-Type": "application/json", ...authHeaders() },
+      body: JSON.stringify(payload),
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(data.detail || "保存权限失败。");
+    const updated = data.user || null;
+    if (updated && updated.email) accountAdminUsersByEmail.set(String(updated.email), updated);
+    else {
+      const existing = accountAdminUsersByEmail.get(email) || { email };
+      accountAdminUsersByEmail.set(email, { ...existing, access: data.access });
+    }
+    return data;
   }
 
   function adminFileRow(file) {
@@ -1183,6 +1339,8 @@
       const dailyPicks = Array.isArray(data.daily_picks) ? data.daily_picks : [];
       const wechatSchedule = data.wechat_schedule && typeof data.wechat_schedule === "object" ? data.wechat_schedule : {};
       const analytics = data.analytics && typeof data.analytics === "object" ? data.analytics : null;
+      accountAdminUsersByEmail = new Map(users.map((user) => [String(user.email || ""), user]));
+      accountAdminAccessOptions = data.access_options && typeof data.access_options === "object" ? data.access_options : {};
       const canViewUsers = data.can_view_users !== false;
       const canViewWechat = data.can_view_wechat !== false;
       const canViewAnalytics = data.can_view_analytics !== false;
@@ -1203,7 +1361,7 @@
         targets.userCount.textContent = `${users.length} users`;
         targets.users.innerHTML = users.length
           ? users.map(adminUserRow).join("")
-          : '<tr><td colspan="5">暂无用户。</td></tr>';
+          : '<tr><td colspan="8">暂无用户。</td></tr>';
       }
       if (canViewAnalytics && targets.analytics && targets.analyticsCount) {
         targets.analyticsCount.textContent = analytics ? `近 ${analytics.range_days || 30} 天 · ${analytics.event_count || 0} events` : "";
@@ -1248,6 +1406,16 @@
     const userCount = document.getElementById("accountAdminUserCount");
     const users = document.getElementById("accountAdminUsers");
     const usersSection = document.getElementById("accountAdminUsersSection");
+    const userEditor = document.getElementById("accountAdminUserEditor");
+    const userEditorTitle = document.getElementById("accountAdminUserEditorTitle");
+    const userEditorClose = document.getElementById("accountAdminUserEditorClose");
+    const accessEmail = document.getElementById("accountAdminAccessEmail");
+    const accessMode = document.getElementById("accountAdminAccessMode");
+    const accessDuration = document.getElementById("accountAdminAccessDuration");
+    const accessInstitutions = document.getElementById("accountAdminAccessInstitutions");
+    const accessIndustries = document.getElementById("accountAdminAccessIndustries");
+    const accessPageRanges = document.getElementById("accountAdminAccessPageRanges");
+    const accessNote = document.getElementById("accountAdminAccessNote");
     const files = document.getElementById("accountAdminFiles");
     const analyticsCount = document.getElementById("accountAdminAnalyticsCount");
     const analytics = document.getElementById("accountAdminAnalytics");
@@ -1267,6 +1435,16 @@
       userCount,
       users,
       usersSection,
+      userEditor,
+      userEditorTitle,
+      userEditorClose,
+      accessEmail,
+      accessMode,
+      accessDuration,
+      accessInstitutions,
+      accessIndustries,
+      accessPageRanges,
+      accessNote,
       files,
     };
 
@@ -1279,6 +1457,43 @@
       if (event.target === modal) finish();
     });
     refresh.addEventListener("click", () => loadAccountAdminSummary(workerUrl, targets));
+    if (accessMode) accessMode.addEventListener("change", () => updateUserAccessEditorMode(targets));
+    if (userEditorClose) {
+      userEditorClose.addEventListener("click", () => {
+        if (userEditor) userEditor.hidden = true;
+      });
+    }
+    if (users) {
+      users.addEventListener("click", (event) => {
+        const button = event.target.closest(".account-admin-edit-user");
+        if (!button) return;
+        const user = accountAdminUsersByEmail.get(String(button.dataset.email || ""));
+        if (user) fillUserAccessEditor(user, targets);
+      });
+    }
+    if (userEditor) {
+      userEditor.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const submit = userEditor.querySelector("button[type='submit']");
+        if (submit) submit.disabled = true;
+        status.className = "status-line";
+        status.textContent = "正在保存用户权限…";
+        try {
+          await saveUserAccess(workerUrl, targets);
+          const updatedUsers = [...accountAdminUsersByEmail.values()];
+          users.innerHTML = updatedUsers.length
+            ? updatedUsers.map(adminUserRow).join("")
+            : '<tr><td colspan="8">暂无用户。</td></tr>';
+          status.textContent = "用户权限已保存。";
+          status.classList.add("ok");
+        } catch (error) {
+          status.textContent = error.message || "保存权限失败。";
+          status.classList.add("error");
+        } finally {
+          if (submit) submit.disabled = false;
+        }
+      });
+    }
     picks.addEventListener("click", async (event) => {
       const row = event.target.closest(".account-admin-pick");
       if (!row) return;
@@ -2945,16 +3160,18 @@
       }
 
       button.disabled = true;
-      status.textContent = "Checking password...";
+      const session = loadAuthSession();
+      const action = session ? "account_or_password_download" : "password_download";
+      status.textContent = session ? "Checking account access..." : "Checking password...";
       let downloadErrorTracked = false;
       trackEvent(workerUrl, "download_attempt", {
         ...analyticsReportPayload(item, "catalog"),
-        action: "password_download",
+        action,
       });
       try {
         const response = await fetch(`${workerUrl}/download`, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: { "Content-Type": "application/json", ...authHeaders() },
           body: JSON.stringify({
             id: item.id,
             password: input.value,
@@ -2974,7 +3191,7 @@
           if (response.status === 401) clearRememberedDownloadPassword();
           trackEvent(workerUrl, "download_error", {
             ...analyticsReportPayload(item, "catalog"),
-            action: "password_download",
+            action,
             status: String(response.status),
             error: message,
           });
@@ -2984,10 +3201,10 @@
 
         const blob = await response.blob();
         triggerBlobDownload(blob, response.headers.get("Content-Disposition"), item.filename);
-        setRememberedDownloadPassword(input.value);
+        if (!session && input.value) setRememberedDownloadPassword(input.value);
         trackEvent(workerUrl, "download_success", {
           ...analyticsReportPayload(item, "catalog"),
-          action: "password_download",
+          action,
           status: "ok",
         });
         status.textContent = "Download started.";
@@ -2996,7 +3213,7 @@
         if (!downloadErrorTracked) {
           trackEvent(workerUrl, "download_error", {
             ...analyticsReportPayload(item, "catalog"),
-            action: "password_download",
+            action,
             status: "exception",
             error: error.message || "Download failed.",
           });
@@ -3723,7 +3940,7 @@
     return data;
   }
 
-  function renderNewsfeedAccess(app, workerUrl, message = "Sign in as twotigers to open the test module.") {
+  function renderNewsfeedAccess(app, workerUrl, message = "请登录已开通的账号继续。") {
     app.innerHTML = `
       <section class="newsfeed-access">
         <h1>Newsfeed</h1>

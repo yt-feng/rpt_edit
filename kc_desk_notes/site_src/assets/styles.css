@@ -1020,6 +1020,84 @@ button.primary:disabled {
   border-bottom: 0;
 }
 
+.account-admin-table .secondary-button {
+  min-height: 34px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+.account-admin-user-editor {
+  display: grid;
+  gap: 14px;
+  margin-top: 16px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.account-admin-user-editor[hidden] {
+  display: none;
+}
+
+.account-admin-user-editor-head,
+.account-admin-user-editor-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.account-admin-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.account-admin-form-grid label,
+.account-admin-note-field {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.account-admin-form-grid select,
+.account-admin-note-field input {
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 10px;
+  color: var(--ink);
+  background: #ffffff;
+  font: inherit;
+}
+
+.account-admin-form-grid select[multiple] {
+  min-height: 122px;
+}
+
+.account-admin-page-ranges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.account-admin-page-ranges label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 34px;
+  border: 1px solid #b7d8d3;
+  border-radius: 999px;
+  padding: 0 10px;
+  color: var(--accent-strong);
+  background: #eef7f5;
+  font-size: 12px;
+  font-weight: 900;
+}
+
 .account-admin-files {
   display: grid;
   gap: 10px;

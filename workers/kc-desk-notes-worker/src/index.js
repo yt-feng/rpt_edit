@@ -13,8 +13,47 @@ const SUPER_ACCOUNT_USERNAMES = new Set(["twotigers"]);
 const SUPER_ACCOUNT_EMAILS = new Set(["twotigers@users.kcdesk.com"]);
 const OPERATOR_ACCOUNT_USERNAMES = new Set(["liuxin"]);
 const OPERATOR_ACCOUNT_EMAILS = new Set(["liuxin@users.kcdesk.com"]);
-const NEWSFEED_ACCOUNT_USERNAMES = new Set(["twotigers", "jacob"]);
-const NEWSFEED_ACCOUNT_EMAILS = new Set(["twotigers@users.kcdesk.com", "jacob@bo-axis.com"]);
+const ACCESS_MODES = new Set(["none", "all", "filters"]);
+const ACCESS_PAGE_RANGE_OPTIONS = [
+  { value: "under5", label: "5页以下" },
+  { value: "5_10", label: "5-10页" },
+  { value: "10_20", label: "10-20页" },
+  { value: "over20", label: "20页以上" },
+];
+const ACCESS_DURATION_OPTIONS = [
+  { value: "1", label: "1个月", months: 1 },
+  { value: "3", label: "3个月", months: 3 },
+  { value: "6", label: "6个月", months: 6 },
+  { value: "12", label: "1年", months: 12 },
+  { value: "24", label: "2年", months: 24 },
+  { value: "lifetime", label: "长期", months: 0 },
+];
+const BOOTSTRAP_ACCESS_GRANTS = {
+  "yjia0405@gmail.com": {
+    access_mode: "all",
+    status: "active",
+    lifetime: true,
+    current_period_end: null,
+    note: "Full-site report access.",
+  },
+};
+const REPORT_INDUSTRY_RULES = [
+  ["Macro / FX / Rates", /\b(macro|fx|foreign exchange|currency|cny|yuan|dollar|usd|rate|rates|yield|fed|ecb|boj|inflation|cpi|pmi|gdp|economy|economic|recession|treasury|bond|nominal|real rate)\b/],
+  ["Equity Strategy", /\b(strategy|equity strategy|market strategy|asset allocation|portfolio|index|earnings revision|valuation|eps|target price)\b/],
+  ["Tech / AI / Semis", /\b(ai|artificial intelligence|semiconductor|semis|chip|chips|memory|dram|nand|hbm|gpu|server|software|cloud|data center|datacenter|robot|robotics)\b/],
+  ["Internet / Media", /\b(internet|media|gaming|game|music|streaming|advertising|ecommerce|e-commerce|platform|social|takeaway|food delivery|new media)\b/],
+  ["Autos / EV / Batteries", /\b(auto|autos|automotive|vehicle|ev|bev|battery|batteries|lithium|ess|adas|mobility|tesla|byd)\b/],
+  ["Energy / Utilities", /\b(energy|oil|gas|lng|solar|wind|power|utility|utilities|renewable|coal|electricity|grid)\b/],
+  ["Metals / Mining", /\b(metal|metals|mining|copper|aluminum|aluminium|steel|iron ore|gold|silver|nickel|commodity|commodities)\b/],
+  ["Healthcare / Biotech", /\b(healthcare|health care|biotech|pharma|pharmaceutical|drug|medical|hospital|medtech|vaccine|therapy)\b/],
+  ["Consumer / Retail", /\b(consumer|retail|apparel|luxury|brand|restaurant|food|beverage|travel retail|staples|discretionary)\b/],
+  ["Banks / Financials", /\b(bank|banks|banking|insurance|broker|brokerage|asset manager|fintech|exchange|financials|payment)\b/],
+  ["Real Estate", /\b(real estate|property|housing|developer|reit|mortgage|homebuilder|construction)\b/],
+  ["Industrials / Capex", /\b(industrial|industrials|machinery|automation|capex|capital goods|aerospace|defense|rail|shipping|logistics|transport)\b/],
+  ["Policy / Geopolitics", /\b(policy|politics|geopolitic|geopolitical|tariff|trade war|election|sanction|iran|russia|taiwan|strait|security)\b/],
+];
+const NEWSFEED_ACCOUNT_USERNAMES = new Set(["jacob"]);
+const NEWSFEED_ACCOUNT_EMAILS = new Set(["jacob@bo-axis.com"]);
 const DEFAULT_GITHUB_REPO = "yt-feng/rpt_edit";
 const DEFAULT_GITHUB_REF = "main";
 const BBG_SHOW_REPO = "yt-feng/bbg-show";
@@ -548,6 +587,11 @@ function isNewsfeedAccount(user) {
   return isSuperAccount(user) || NEWSFEED_ACCOUNT_USERNAMES.has(username) || NEWSFEED_ACCOUNT_EMAILS.has(email);
 }
 
+function accessErrorStatus(error) {
+  const message = String(error && error.message || "");
+  return /log in|account|access denied|not enabled|only .*admin/i.test(message) ? 403 : 500;
+}
+
 function generatedEmailForUsername(username) {
   return `${username}@${GENERATED_EMAIL_DOMAIN}`;
 }
@@ -995,6 +1039,159 @@ function publicEntitlement(row) {
   };
 }
 
+function normalizeAccessList(values, limit = 60) {
+  const raw = Array.isArray(values) ? values : String(values || "").split(/[,\n，;；]+/);
+  const seen = new Set();
+  const items = [];
+  for (const value of raw) {
+    const text = String(value || "").replace(/\s+/g, " ").trim();
+    if (!text) continue;
+    const key = normalizeText(text);
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    items.push(text.slice(0, 120));
+    if (items.length >= limit) break;
+  }
+  return items;
+}
+
+function accessGrantActive(row) {
+  if (!row || typeof row !== "object") return false;
+  const status = String(row.status || "inactive");
+  return ACTIVE_STATUSES.has(status) && (Boolean(row.lifetime) || periodIsCurrent(row.current_period_end));
+}
+
+function publicAccessGrant(row) {
+  const source = row && row.source || "";
+  const mode = ACCESS_MODES.has(String(row && row.access_mode || "")) ? String(row.access_mode) : "none";
+  const lifetime = Boolean(row && row.lifetime);
+  const currentPeriodEnd = row && row.current_period_end || null;
+  const status = row && row.status || "inactive";
+  return {
+    email: row && row.email || "",
+    access_mode: mode,
+    status,
+    lifetime,
+    current_period_end: currentPeriodEnd,
+    active: accessGrantActive(row),
+    institutions: normalizeAccessList(row && row.institutions),
+    industries: normalizeAccessList(row && row.industries),
+    page_ranges: normalizeAccessList(row && row.page_ranges, ACCESS_PAGE_RANGE_OPTIONS.length)
+      .filter((value) => ACCESS_PAGE_RANGE_OPTIONS.some((option) => option.value === value)),
+    note: String(row && row.note || "").slice(0, 240),
+    source,
+    updated_at: row && row.updated_at || "",
+    updated_by: row && row.updated_by || "",
+  };
+}
+
+function bootstrapAccessGrant(email) {
+  const normalized = normalizeEmail(email);
+  const grant = BOOTSTRAP_ACCESS_GRANTS[normalized];
+  if (!grant) return null;
+  return publicAccessGrant({
+    ...grant,
+    email: normalized,
+    source: "bootstrap",
+    updated_at: "2026-07-04T00:00:00.000Z",
+  });
+}
+
+async function findAccessGrant(env, email) {
+  const normalized = normalizeEmail(email);
+  if (!normalized) return publicAccessGrant(null);
+  const stored = await safeR2GetJson(env, accountKey("access", normalized));
+  if (stored && typeof stored === "object") return publicAccessGrant({ ...stored, email: normalized });
+  return bootstrapAccessGrant(normalized) || publicAccessGrant({ email: normalized });
+}
+
+function accessDurationEndIso(durationMonths) {
+  const text = String(durationMonths || "").trim();
+  if (text === "lifetime") return null;
+  const months = Number(text);
+  if (!Number.isFinite(months) || months <= 0) return null;
+  const date = new Date();
+  date.setUTCMonth(date.getUTCMonth() + Math.min(120, Math.round(months)));
+  return date.toISOString();
+}
+
+async function saveAccessGrant(env, email, fields, adminUser) {
+  const normalized = normalizeEmail(email);
+  if (!normalized) throw new Error("Email is required.");
+  const existing = await safeR2GetJson(env, accountKey("access", normalized));
+  const mode = ACCESS_MODES.has(String(fields.access_mode || "")) ? String(fields.access_mode) : "none";
+  const activeMode = mode !== "none";
+  const duration = String(fields.duration_months || "").trim();
+  const lifetime = activeMode && duration === "lifetime";
+  const currentPeriodEnd = activeMode ? (lifetime ? null : accessDurationEndIso(duration || "1")) : null;
+  const now = new Date().toISOString();
+  const payload = {
+    ...(existing || {}),
+    email: normalized,
+    access_mode: mode,
+    status: activeMode ? "active" : "inactive",
+    lifetime,
+    current_period_end: currentPeriodEnd,
+    institutions: mode === "filters" ? normalizeAccessList(fields.institutions) : [],
+    industries: mode === "filters" ? normalizeAccessList(fields.industries) : [],
+    page_ranges: mode === "filters"
+      ? normalizeAccessList(fields.page_ranges, ACCESS_PAGE_RANGE_OPTIONS.length)
+        .filter((value) => ACCESS_PAGE_RANGE_OPTIONS.some((option) => option.value === value))
+      : [],
+    note: String(fields.note || "").slice(0, 240),
+    id: existing && existing.id || (crypto.randomUUID ? crypto.randomUUID() : randomHex(16)),
+    created_at: existing && existing.created_at || now,
+    updated_at: now,
+    updated_by: normalizeEmail(adminUser && adminUser.email) || String(adminUser && adminUser.username || ""),
+  };
+  await r2PutJson(env, accountKey("access", normalized), payload);
+  return publicAccessGrant(payload);
+}
+
+function accessPageRangeMatches(range, pages) {
+  if (!pages) return false;
+  if (range === "under5") return pages <= 5;
+  if (range === "5_10") return pages >= 5 && pages <= 10;
+  if (range === "10_20") return pages >= 10 && pages <= 20;
+  if (range === "over20") return pages >= 20;
+  return false;
+}
+
+function accessGrantMatchesReport(grant, report, source) {
+  const access = publicAccessGrant(grant);
+  if (!access.active) return false;
+  if (access.access_mode === "all") return true;
+  if (access.access_mode !== "filters" || source !== "catalog" || !report) return false;
+  const institutionFilters = access.institutions.map(normalizeText).filter(Boolean);
+  const industryFilters = access.industries.map(normalizeText).filter(Boolean);
+  const pageFilters = access.page_ranges;
+
+  if (institutionFilters.length) {
+    const reportInstitutions = [
+      report.bank_code,
+      report.bank_name,
+      reportBankLabel(report),
+    ].map(normalizeText).filter(Boolean);
+    if (!institutionFilters.some((filter) => reportInstitutions.some((value) => value === filter || value.includes(filter) || filter.includes(value)))) {
+      return false;
+    }
+  }
+
+  if (industryFilters.length) {
+    const industry = normalizeText(inferReportIndustry(report));
+    if (!industryFilters.some((filter) => industry === filter || industry.includes(filter) || filter.includes(industry))) {
+      return false;
+    }
+  }
+
+  if (pageFilters.length) {
+    const pages = reportPageCount(report);
+    if (!pageFilters.some((range) => accessPageRangeMatches(range, pages))) return false;
+  }
+
+  return Boolean(institutionFilters.length || industryFilters.length || pageFilters.length);
+}
+
 function superEntitlement(user) {
   return {
     email: normalizeEmail(user && user.email) || "",
@@ -1009,24 +1206,48 @@ function superEntitlement(user) {
 
 async function reportAccessForUser(env, user, reportId, source) {
   const email = normalizeEmail(user.email);
-  if (!email) return { can_download: false, entitlement: publicEntitlement(null), purchase: null };
+  if (!email) return { can_download: false, entitlement: publicEntitlement(null), access: publicAccessGrant(null), purchase: null };
   if (isPrivilegedAccount(user)) {
     return {
       can_download: true,
       entitlement: superEntitlement(user),
+      access: publicAccessGrant({
+        email,
+        access_mode: "all",
+        status: "active",
+        lifetime: true,
+        source: "role",
+        updated_at: new Date().toISOString(),
+      }),
       purchase: null,
     };
   }
-  const [entitlementRow, purchase] = await Promise.all([
+  const [entitlementRow, purchase, accessRow] = await Promise.all([
     findEntitlement(env, email).catch(() => null),
     reportId ? findReportPurchase(env, email, reportId, source).catch(() => null) : Promise.resolve(null),
+    findAccessGrant(env, email).catch(() => publicAccessGrant(null)),
   ]);
   const entitlement = publicEntitlement(entitlementRow);
+  const access = publicAccessGrant(accessRow);
   const annual = entitlement.active && entitlement.plan === "annual";
   const purchased = purchase && ACTIVE_STATUSES.has(String(purchase.status || "active"));
+  let customAccess = false;
+  if (access.active) {
+    if (access.access_mode === "all") {
+      customAccess = true;
+    } else if (reportId && source === "catalog") {
+      try {
+        const catalog = await loadCatalog(env);
+        customAccess = accessGrantMatchesReport(access, findReport(catalog, reportId), source);
+      } catch (_error) {
+        customAccess = false;
+      }
+    }
+  }
   return {
-    can_download: Boolean(annual || purchased),
+    can_download: Boolean(annual || customAccess || purchased),
     entitlement,
+    access,
     purchase: purchased ? purchase : null,
   };
 }
@@ -1818,12 +2039,22 @@ async function requireOperationsUser(request, env) {
   return user;
 }
 
-function adminVisibleUser(user, entitlementRow) {
+function adminVisibleUser(user, entitlementRow, accessRow) {
   const publicInfo = publicUser(user);
   return {
     ...publicInfo,
     last_login_at: user.last_login_at || "",
     entitlement: isPrivilegedAccount(user) ? superEntitlement(user) : publicEntitlement(entitlementRow),
+    access: isPrivilegedAccount(user)
+      ? publicAccessGrant({
+        email: normalizeEmail(user && user.email),
+        access_mode: "all",
+        status: "active",
+        lifetime: true,
+        source: "role",
+        updated_at: new Date().toISOString(),
+      })
+      : publicAccessGrant(accessRow),
   };
 }
 
@@ -2157,6 +2388,20 @@ function reportBankLabel(item) {
   const code = String(item.bank_code || "").trim();
   const name = String(item.bank_name || "").trim();
   return code && name && normalizeText(code) !== normalizeText(name) ? `${code} · ${name}` : (code || name || "Other");
+}
+
+function inferReportIndustry(item) {
+  const explicit = item && (item.industry || item.sector || item.category);
+  if (explicit) return String(explicit);
+  const text = normalizeText([
+    item && item.title,
+    item && item.title_zh,
+    item && item.filename,
+  ].join(" "));
+  for (const [label, pattern] of REPORT_INDUSTRY_RULES) {
+    if (pattern.test(text)) return label;
+  }
+  return "Other";
 }
 
 function reportDisplayTitle(item) {
@@ -2537,6 +2782,33 @@ function entitlementMap(rows) {
     if (email && !mapped.has(email)) mapped.set(email, row);
   }
   return mapped;
+}
+
+function accessOptionRowsFromCatalog(catalog) {
+  const items = Array.isArray(catalog && catalog.items) ? catalog.items : [];
+  const institutions = new Map();
+  const industries = new Map();
+  for (const item of items) {
+    const bank = reportBankLabel(item);
+    if (bank) institutions.set(bank, (institutions.get(bank) || 0) + 1);
+    const industry = inferReportIndustry(item);
+    if (industry) industries.set(industry, (industries.get(industry) || 0) + 1);
+  }
+  const optionRows = (map) => [...map.entries()]
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .slice(0, 120)
+    .map(([value, count]) => ({ value, label: `${value} (${count})` }));
+  return {
+    modes: [
+      { value: "none", label: "关闭下载权限" },
+      { value: "all", label: "全站报告" },
+      { value: "filters", label: "按条件筛选" },
+    ],
+    institutions: optionRows(institutions),
+    industries: optionRows(industries),
+    page_ranges: ACCESS_PAGE_RANGE_OPTIONS,
+    durations: ACCESS_DURATION_OPTIONS,
+  };
 }
 
 function githubRepo(env) {
@@ -3539,7 +3811,7 @@ async function handleNewsfeedHome(request, env) {
       settings: publicNewsfeedSettings({ ...settings, preferred_regions: preferences.regions, interface_language: preferences.language }, user, env),
     });
   } catch (error) {
-    return jsonResponse(request, env, /twotigers|log in|Account/i.test(String(error.message)) ? 403 : 500, { detail: error.message || "Newsfeed unavailable." });
+    return jsonResponse(request, env, accessErrorStatus(error), { detail: error.message || "Newsfeed unavailable." });
   }
 }
 
@@ -3567,7 +3839,7 @@ async function handleNewsfeedExplore(request, env) {
       topics: topics.map(publicNewsfeedTopic),
     });
   } catch (error) {
-    return jsonResponse(request, env, /twotigers|log in|Account/i.test(String(error.message)) ? 403 : 500, { detail: error.message || "Newsfeed unavailable." });
+    return jsonResponse(request, env, accessErrorStatus(error), { detail: error.message || "Newsfeed unavailable." });
   }
 }
 
@@ -3591,7 +3863,7 @@ async function handleNewsfeedTopic(request, env) {
       cache_status: payload.cache_status,
     });
   } catch (error) {
-    return jsonResponse(request, env, /twotigers|log in|Account/i.test(String(error.message)) ? 403 : 500, { detail: error.message || "Newsfeed unavailable." });
+    return jsonResponse(request, env, accessErrorStatus(error), { detail: error.message || "Newsfeed unavailable." });
   }
 }
 
@@ -3638,7 +3910,7 @@ async function handleNewsfeedCreateTopic(request, env, ctx) {
       pending: !fastItems,
     });
   } catch (error) {
-    return jsonResponse(request, env, /twotigers|log in|Account/i.test(String(error.message)) ? 403 : 500, { detail: error.message || "Could not create topic." });
+    return jsonResponse(request, env, accessErrorStatus(error), { detail: error.message || "Could not create topic." });
   }
 }
 
@@ -3657,7 +3929,7 @@ async function handleNewsfeedPinTopic(request, env) {
     const topics = await loadNewsfeedTopics(env, user);
     return jsonResponse(request, env, 200, { topics: topics.map(publicNewsfeedTopic) });
   } catch (error) {
-    return jsonResponse(request, env, /twotigers|log in|Account/i.test(String(error.message)) ? 403 : 500, { detail: error.message || "Could not update topic." });
+    return jsonResponse(request, env, accessErrorStatus(error), { detail: error.message || "Could not update topic." });
   }
 }
 
@@ -3674,7 +3946,7 @@ async function handleNewsfeedSettings(request, env) {
     await saveNewsfeedSettings(env, user, next);
     return jsonResponse(request, env, 200, { settings: publicNewsfeedSettings(next, user, env) });
   } catch (error) {
-    return jsonResponse(request, env, /twotigers|log in|Account/i.test(String(error.message)) ? 403 : 500, { detail: error.message || "Could not save settings." });
+    return jsonResponse(request, env, accessErrorStatus(error), { detail: error.message || "Could not save settings." });
   }
 }
 
@@ -3711,7 +3983,7 @@ async function handleNewsfeedEmailSend(request, env, options = {}) {
     });
   } catch (error) {
     const fallback = isTest ? "Could not send test email." : "Could not send newsletter email.";
-    return jsonResponse(request, env, /twotigers|log in|Account/i.test(String(error.message)) ? 403 : 500, { detail: error.message || fallback });
+    return jsonResponse(request, env, accessErrorStatus(error), { detail: error.message || fallback });
   }
 }
 
@@ -3807,7 +4079,7 @@ async function handleNewsfeedArticle(request, env) {
       },
     });
   } catch (error) {
-    return jsonResponse(request, env, /twotigers|log in|Account/i.test(String(error.message)) ? 403 : 500, { detail: error.message || "Could not load story." });
+    return jsonResponse(request, env, accessErrorStatus(error), { detail: error.message || "Could not load story." });
   }
 }
 
@@ -3864,7 +4136,7 @@ async function handleNewsfeedBriefing(request, env) {
       audio_seconds_target: 30,
     });
   } catch (error) {
-    return jsonResponse(request, env, /twotigers|log in|Account/i.test(String(error.message)) ? 403 : 500, { detail: error.message || "Could not prepare briefing." });
+    return jsonResponse(request, env, accessErrorStatus(error), { detail: error.message || "Could not prepare briefing." });
   }
 }
 
@@ -5055,6 +5327,14 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
     ]);
     const files = adminFilesForUser(allFiles, adminUser);
     const entitlementsByEmail = entitlementMap(entitlementRows);
+    const accessByEmail = new Map();
+    if (isSuper) {
+      const accessRows = await Promise.all(userRows.map((user) => findAccessGrant(env, user.email).catch(() => publicAccessGrant(null))));
+      userRows.forEach((user, index) => {
+        const email = normalizeEmail(user.email);
+        if (email) accessByEmail.set(email, accessRows[index]);
+      });
+    }
     const dailyPicks = selectDailyPicks(catalog, 5, searchIndex);
     if (ctx && typeof ctx.waitUntil === "function") {
       ctx.waitUntil(warmAdminGithubCache(env, files).catch(() => null));
@@ -5065,7 +5345,12 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
       can_view_users: isSuper,
       can_view_wechat: isSuper,
       can_view_analytics: isSuper,
-      users: isSuper ? userRows.map((user) => adminVisibleUser(user, entitlementsByEmail.get(normalizeEmail(user.email)))) : [],
+      users: isSuper ? userRows.map((user) => adminVisibleUser(
+        user,
+        entitlementsByEmail.get(normalizeEmail(user.email)),
+        accessByEmail.get(normalizeEmail(user.email)),
+      )) : [],
+      access_options: isSuper ? accessOptionRowsFromCatalog(catalog) : null,
       files,
       daily_picks: dailyPicks,
       wechat_schedule: wechatSchedule || null,
@@ -5076,6 +5361,38 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
     });
   } catch (error) {
     return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+  }
+}
+
+async function handleAccountAdminUserAccess(request, env) {
+  let adminUser;
+  try {
+    adminUser = await requireSuperUser(request, env);
+  } catch (error) {
+    return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+  }
+
+  let payload = {};
+  try {
+    payload = await request.json();
+  } catch (_error) {
+    return jsonResponse(request, env, 400, { detail: "Invalid JSON body." });
+  }
+
+  const email = normalizeEmail(payload.email);
+  if (!email) return jsonResponse(request, env, 400, { detail: "Email is required." });
+
+  try {
+    const access = await saveAccessGrant(env, email, payload, adminUser);
+    let user = await findSiteUserByEmail(env, email).catch(() => null);
+    if (!user && payload.username) user = await findSiteUserByUsername(env, normalizeUsername(payload.username)).catch(() => null);
+    return jsonResponse(request, env, 200, {
+      ok: true,
+      user: user ? adminVisibleUser(user, await findEntitlement(env, email).catch(() => null), access) : null,
+      access,
+    });
+  } catch (error) {
+    return jsonResponse(request, env, 400, { detail: error.message || "Could not save access." });
   }
 }
 
@@ -6182,6 +6499,10 @@ export default {
 
     if (pathname === "/account-admin/summary" && request.method === "GET") {
       return handleAccountAdminSummary(request, env, ctx);
+    }
+
+    if (pathname === "/account-admin/user-access" && request.method === "POST") {
+      return handleAccountAdminUserAccess(request, env);
     }
 
     if (pathname === "/account-admin/github-file" && request.method === "GET") {
