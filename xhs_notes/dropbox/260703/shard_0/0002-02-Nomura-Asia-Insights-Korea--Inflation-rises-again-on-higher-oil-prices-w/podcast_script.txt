@@ -1,1 +1,39 @@
-DeepSeek 生成 podcast 脚本失败：DeepSeek generate conversational Chinese and English podcast scripts: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
+ZH_A: 最近韩国通胀数据又起来了，六月CPI同比涨到3.2%，这是不是意味着韩国经济又开始过热了？
+ZH_B: 其实不能这么看。虽然数字确实高了，但仔细拆开看，这次上涨主要是之前石油价格冲击的滞后影响，而不是全面性的价格上涨。
+ZH_A: 所以你的意思是，这个3.2%更像是一个“余波”，而不是新一轮通胀的开始？
+ZH_B: 对。报告里特别指出，核心通胀——也就是剔除食品和能源后的CPI——稳定在2.5%，而且环比增速从0.5%直接降到0%。这说明上涨集中在能源这类波动大的项目上，基础价格压力并没有扩散。
+ZH_A: 那石油价格的影响到底有多大？报告里提到石油产品价格同比涨了24.7%，这听起来很吓人。
+ZH_B: 确实，石油产品是头号推手，光这一项就贡献了0.93个百分点的通胀。但报告也强调，这个冲击正在消退。随着油价回落，他们预计通胀会在八月见顶，然后从第四季度开始逐步下行。
+ZH_A: 那韩国央行现在怎么看？数据这么高，他们会不会急着加息？
+ZH_B: 报告的观点是，韩国央行依然会保持鹰派立场，但原因不完全是通胀。实际上，金融稳定问题——比如家庭债务和房价——现在比通胀更让他们担心。所以他们预计七月、十月和明年一月各加息25个基点，终端利率到3.25%。
+ZH_A: 等一下，如果通胀已经在见顶，为什么还要加息？这听起来有点矛盾。
+ZH_B: 这就是报告里一个很关键的点。他们担心的是“第二轮效应”——也就是能源和运输成本会不会开始传导到服务价格和工资上。目前还没有明显证据，但央行不敢掉以轻心。
+ZH_A: 那服务价格这块呢？报告里说服务通胀在放缓，从2.8%降到2.6%，这算是个好消息吧？
+ZH_B: 是的，特别是外出就餐以外的个人服务价格，从4.4%大幅回落到3.9%，说明旅游相关的一次性涨价已经消退。这支持了“通胀压力是暂时且集中”的判断。
+ZH_A: 但报告也提到农产品和畜产品价格在上涨，这是另一个风险点吗？
+ZH_B: 对，畜产品价格同比涨了6.2%，渔业产品涨了3.7%。不过农产品反而在下降，所以整体食品通胀还算可控。这部分的持续性还需要继续观察。
+ZH_A: 那么，对于投资者来说，这份报告最重要的结论是什么？
+ZH_B: 核心是两点。第一，通胀在八月见顶后，会逐步回落，到2027年第二季度回到央行2%的目标。第二，韩国央行的加息路径已经基本确定，三次加息，每次25个基点。但报告里其实还有一个没完全展开的问题——如果油价继续下跌，或者汇率出现大幅波动，这个预测会不会被打破？
+ZH_A: 所以，完整报告里会有更详细的压力测试？
+ZH_B: 没错，报告里提到了“下行风险”和“抵消因素”，比如汇率贬值和灵活的油价上限机制。这些细节在完整报告中会有更深入的量化分析。如果你想知道具体数字和情景，建议去读原文。
+ZH_A: 好，那我们就先聊到这里。如果想获取完整报告，记得关注我们的社群和推送。感谢收听，我们下期再见。
+
+EN_A: So, Korea’s inflation just hit 3.2 percent in June. That’s the highest since late 2023. Should we be worried?
+EN_B: Not exactly. The headline number looks scary, but when you dig into the details, it’s mostly a hangover from earlier oil price shocks. Core inflation stayed flat at 2.5 percent, and the monthly pace actually slowed to zero.
+EN_A: So this is more of a lag effect than a new wave of inflation?
+EN_B: Exactly. The report says the pickup was concentrated in volatile items like petroleum products. Underlying price pressures haven’t broadened out. That’s a key distinction.
+EN_A: How big was the oil impact? I saw petroleum products were up almost 25 percent year on year.
+EN_B: That alone contributed nearly one percentage point to headline inflation. But the report expects that shock to fade. They see inflation peaking in August, then gradually easing from the fourth quarter onward.
+EN_A: What about the Bank of Korea? Do they plan to hike rates?
+EN_B: Yes, but not just because of inflation. The report says financial stability concerns — things like household debt and housing — are actually more important now. They expect three 25-basis-point hikes: in July, October, and January, taking the terminal rate to 3.25 percent.
+EN_A: That sounds a bit contradictory. If inflation is already peaking, why hike?
+EN_B: That’s the interesting part. The central bank is worried about second-round effects — whether higher energy costs will start feeding into services prices and wages. There’s no strong evidence yet, but they don’t want to take any chances.
+EN_A: Services inflation did come down, right? From 2.8 to 2.6 percent?
+EN_B: Yes, and within that, personal services excluding dining out dropped sharply from 4.4 to 3.9 percent. That suggests the one-off tourism-related price spikes have reversed. So the data supports the view that inflation is temporary and concentrated.
+EN_A: What about food prices? The report mentions livestock and fishery products are up.
+EN_B: Livestock prices rose 6.2 percent year on year, and fishery products were up 3.7 percent. But agricultural products actually fell. So overall, food inflation is still manageable. The big question is whether this will persist.
+EN_A: So what’s the main takeaway for investors?
+EN_B: Two things. First, inflation will peak in August and then gradually return to the Bank of Korea’s two percent target by mid-2027. Second, the rate hike path is pretty clear: three hikes, each 25 basis points. But there’s one thing the report doesn’t fully answer — what happens if oil prices drop further or the won weakens significantly?
+EN_A: So the full report has more scenario analysis?
+EN_B: Exactly. It mentions downside risks and offsetting factors like currency depreciation and the flexible fuel price cap. The full report goes into more detail on those scenarios. If you want the specifics, you should read the original.
+EN_A: Good point. Thanks for breaking it down. For the full report, check out our community and updates. See you next time.

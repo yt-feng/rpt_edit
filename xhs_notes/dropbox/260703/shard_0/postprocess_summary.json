@@ -1,11 +1,11 @@
 [
   {
     "item": "0001-01-Morgan-Stanley-US-Rates-Strategy-Buy-10y-TIPS-with-Payer-Protection-2607",
-    "source_pdf": "/tmp/pdf_batch_001_aec_mz_4/pdfs/0001-01-MS-US Rates Strategy-Buy 10y TIPS with Payer Protection-260701.pdf",
+    "source_pdf": "/tmp/pdf_batch_001_aq9dbtz_/pdfs/0001-01-MS-US Rates Strategy-Buy 10y TIPS with Payer Protection-260701.pdf",
     "mineru_state": "done",
     "mineru_error": "",
     "institution_name": "摩根斯坦利",
-    "cover_short_title": "DeepSeek 生",
+    "cover_short_title": "10年期TIPS，被",
     "cover_subtitle": "研报重点一图看懂",
     "images": [
       "assets/xhs_card_01.png",
@@ -16,18 +16,16 @@
     "wechat_images": [
       "assets/source_image_01.jpg"
     ],
-    "wechat_en_error": "DeepSeek generate English WeChat-style article: HTTP 402, response={\"error\": {\"message\": \"Insufficient Balance\", \"type\": \"unknown_error\", \"param\": null, \"code\": \"invalid_request_error\"}}",
     "wechat_article_en": "wechat_article_en.md",
-    "podcast_error": "DeepSeek generate conversational Chinese and English podcast scripts: HTTP 402, response={\"error\": {\"message\": \"Insufficient Balance\", \"type\": \"unknown_error\", \"param\": null, \"code\": \"invalid_request_error\"}}",
     "podcast_script": "podcast_script.txt"
   },
   {
     "item": "0002-02-NOM-Asia-Insights-Korea--Inflation-rises-again-on-higher-oil-prices-w",
-    "source_pdf": "/tmp/pdf_batch_001_aec_mz_4/pdfs/0002-02-NOM-Asia Insights-Korea- Inflation rises again on higher oil prices while core inflation remains sticky-260702.pdf",
+    "source_pdf": "/tmp/pdf_batch_001_aq9dbtz_/pdfs/0002-02-NOM-Asia Insights-Korea- Inflation rises again on higher oil prices while core inflation remains sticky-260702.pdf",
     "mineru_state": "done",
     "mineru_error": "",
     "institution_name": "NOM",
-    "cover_short_title": "DeepSeek 生",
+    "cover_short_title": "韩国通胀又抬头？油价",
     "cover_subtitle": "研报重点一图看懂",
     "images": [
       "assets/xhs_card_01.png",
@@ -38,18 +36,16 @@
     "wechat_images": [
       "assets/source_image_01.jpg"
     ],
-    "wechat_en_error": "DeepSeek generate English WeChat-style article: HTTP 402, response={\"error\": {\"message\": \"Insufficient Balance\", \"type\": \"unknown_error\", \"param\": null, \"code\": \"invalid_request_error\"}}",
     "wechat_article_en": "wechat_article_en.md",
-    "podcast_error": "DeepSeek generate conversational Chinese and English podcast scripts: HTTP 402, response={\"error\": {\"message\": \"Insufficient Balance\", \"type\": \"unknown_error\", \"param\": null, \"code\": \"invalid_request_error\"}}",
     "podcast_script": "podcast_script.txt"
   },
   {
     "item": "0003-03-CITI-China-Economics-Signs-of-Stabilization-Ahead-of-Politburo----Jun-Q2",
-    "source_pdf": "/tmp/pdf_batch_001_aec_mz_4/pdfs/0003-03-CITI-China Economics Signs of Stabilization Ahead of Politburo- - Jun Q2 Data Preview-260701.pdf",
+    "source_pdf": "/tmp/pdf_batch_001_aq9dbtz_/pdfs/0003-03-CITI-China Economics Signs of Stabilization Ahead of Politburo- - Jun Q2 Data Preview-260701.pdf",
     "mineru_state": "done",
     "mineru_error": "",
     "institution_name": "Citi",
-    "cover_short_title": "DeepSeek 生",
+    "cover_short_title": "六月数据：出口跑在前",
     "cover_subtitle": "研报重点一图看懂",
     "images": [
       "assets/xhs_card_01.png",
@@ -60,18 +56,16 @@
     "wechat_images": [
       "assets/source_image_01.jpg"
     ],
-    "wechat_en_error": "DeepSeek generate English WeChat-style article: HTTP 402, response={\"error\": {\"message\": \"Insufficient Balance\", \"type\": \"unknown_error\", \"param\": null, \"code\": \"invalid_request_error\"}}",
     "wechat_article_en": "wechat_article_en.md",
-    "podcast_error": "DeepSeek generate conversational Chinese and English podcast scripts: HTTP 402, response={\"error\": {\"message\": \"Insufficient Balance\", \"type\": \"unknown_error\", \"param\": null, \"code\": \"invalid_request_error\"}}",
     "podcast_script": "podcast_script.txt"
   },
   {
     "item": "0004-04-J.P.-Morgan-J.P.-Morgan-Global-Manufacturing-PMI-Consolidating-around-so",
-    "source_pdf": "/tmp/pdf_batch_001_aec_mz_4/pdfs/0004-04-JPM-JPM Global Manufacturing PMI-Consolidating around solid growth in June-260701.pdf",
+    "source_pdf": "/tmp/pdf_batch_001_aq9dbtz_/pdfs/0004-04-JPM-JPM Global Manufacturing PMI-Consolidating around solid growth in June-260701.pdf",
     "mineru_state": "done",
     "mineru_error": "",
     "institution_name": "JPM",
-    "cover_short_title": "DeepSeek 生",
+    "cover_short_title": "全球制造业，6月踩了",
     "cover_subtitle": "研报重点一图看懂",
     "images": [
       "assets/xhs_card_01.png",
@@ -91,18 +85,16 @@
       "assets/source_image_02.jpg",
       "assets/source_image_03.jpg"
     ],
-    "wechat_en_error": "DeepSeek generate English WeChat-style article: HTTP 402, response={\"error\": {\"message\": \"Insufficient Balance\", \"type\": \"unknown_error\", \"param\": null, \"code\": \"invalid_request_error\"}}",
     "wechat_article_en": "wechat_article_en.md",
-    "podcast_error": "DeepSeek generate conversational Chinese and English podcast scripts: HTTP 402, response={\"error\": {\"message\": \"Insufficient Balance\", \"type\": \"unknown_error\", \"param\": null, \"code\": \"invalid_request_error\"}}",
     "podcast_script": "podcast_script.txt"
   },
   {
     "item": "0005-05-Morgan-Stanley-US-Economics-Consumption-growth-has-slowed---what-gives--",
-    "source_pdf": "/tmp/pdf_batch_001_aec_mz_4/pdfs/0005-05-MS-US Economics-Consumption growth has slowed - what gives--260701.pdf",
+    "source_pdf": "/tmp/pdf_batch_001_aq9dbtz_/pdfs/0005-05-MS-US Economics-Consumption growth has slowed - what gives--260701.pdf",
     "mineru_state": "done",
     "mineru_error": "",
     "institution_name": "摩根斯坦利",
-    "cover_short_title": "DeepSeek 生",
+    "cover_short_title": "消费放缓，但没那么糟",
     "cover_subtitle": "研报重点一图看懂",
     "images": [
       "assets/xhs_card_01.png",
@@ -122,9 +114,7 @@
       "assets/source_image_02.jpg",
       "assets/source_image_03.jpg"
     ],
-    "wechat_en_error": "DeepSeek generate English WeChat-style article: HTTP 402, response={\"error\": {\"message\": \"Insufficient Balance\", \"type\": \"unknown_error\", \"param\": null, \"code\": \"invalid_request_error\"}}",
     "wechat_article_en": "wechat_article_en.md",
-    "podcast_error": "DeepSeek generate conversational Chinese and English podcast scripts: HTTP 402, response={\"error\": {\"message\": \"Insufficient Balance\", \"type\": \"unknown_error\", \"param\": null, \"code\": \"invalid_request_error\"}}",
     "podcast_script": "podcast_script.txt"
   }
 ]
