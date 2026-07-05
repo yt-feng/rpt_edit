@@ -1,0 +1,103 @@
+[
+  {
+    "id": 0,
+    "name": "GS-Fujian Wanchen Food （300972）： Robust store openings and healthy per~store GMV growth YTD amid rational competition； Reiterate Buy-260704.pdf",
+    "dropbox_path": "/zip_backup/260705/GS-fujian wanchen food （300972）： robust store openings and healthy per~store gmv growth ytd amid rational competition； reiterate buy-260704.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-fujian wanchen food （300972）： robust store openings and healthy per~store gmv growth ytd amid rational competition； reiterate buy-260704.pdf",
+    "category": "company_stock",
+    "score": 0.99,
+    "reason": "标题含股票代码300972、评级Buy、目标价，明显是单一公司研报",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 1,
+    "name": "GS-KOSPI dropped by 4% amid continued market volatility and foreign outflows； fP E fell to the lowest level since the G.F.C-260704.pdf",
+    "dropbox_path": "/zip_backup/260705/GS-kospi dropped by 4% amid continued market volatility and foreign outflows； fp e fell to the lowest level since the g.f.c-260704.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-kospi dropped by 4% amid continued market volatility and foreign outflows； fp e fell to the lowest level since the g.f.c-260704.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "讨论KOSPI指数、市场波动、外资流出、市盈率，属于宏观市场趋势",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 2,
+    "name": "GS-Yageo Corp. （2327.TW）Commodity MLCC pricing upcycle is coming， with more capacity transferred into AI industry； Buy， with new TP of NT$1，490 （from NT$346）-260705.pdf",
+    "dropbox_path": "/zip_backup/260705/GS-yageo corp. （2327.tw）commodity mlcc pricing upcycle is coming， with more capacity transferred into ai industry； buy， with new tp of nt$1，490 （from nt$346）-260705.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-yageo corp. （2327.tw）commodity mlcc pricing upcycle is coming， with more capacity transferred into ai industry； buy， with new tp of nt$1，490 （from nt$346）-260705.pdf",
+    "category": "company_stock",
+    "score": 0.99,
+    "reason": "标题含股票代码2327.TW、评级Buy、目标价，是单一公司研报；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=2",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 4,
+    "macro_priority_score": 1,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=2"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "NOM-Bizlink（3665.TW）Penang site visit takeaways-260705.pdf",
+    "dropbox_path": "/zip_backup/260705/NOM-bizlink（3665.tw）penang site visit takeaways-260705.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-bizlink（3665.tw）penang site visit takeaways-260705.pdf",
+    "category": "company_stock",
+    "score": 0.99,
+    "reason": "标题含股票代码3665.TW，是单一公司参访纪要；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 0,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "JPM-EHang~ ADR（EH.US）Downgrade to Underweight； commercialization delayed， first~mover advantage diminished-260704.pdf",
+    "dropbox_path": "/zip_backup/260705/JPM-ehang~ adr（eh.us）downgrade to underweight； commercialization delayed， first~mover advantage diminished-260704.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-ehang~ adr（eh.us）downgrade to underweight； commercialization delayed， first~mover advantage diminished-260704.pdf",
+    "category": "company_stock",
+    "score": 0.99,
+    "reason": "标题含股票代码EH.US、评级Downgrade，是单一公司研报；本地规则排除个股/评级/目标价/财报信号：contains_ticker,contains_rating_or_target_price,company_hint_score=4",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "contains_rating_or_target_price",
+      "company_hint_score=4"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "MS-Robotaxi Diffusion – Robots，  Taxis and the Trillion~Dollar Traffic Portal-260703.pdf",
+    "dropbox_path": "/zip_backup/260705/MS-robotaxi diffusion – robots，  taxis and the trillion~dollar traffic portal-260703.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-robotaxi diffusion – robots，  taxis and the trillion~dollar traffic portal-260703.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "讨论Robotaxi行业扩散和万亿级流量入口，属于产业链主题",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 6,
+    "name": "NOM-China Robotics：Data emerges as the critical part for robotics-260705.pdf",
+    "dropbox_path": "/zip_backup/260705/NOM-china robotics：data emerges as the critical part for robotics-260705.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-china robotics：data emerges as the critical part for robotics-260705.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "讨论中国机器人行业数据关键性，属于行业供需趋势",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  }
+]

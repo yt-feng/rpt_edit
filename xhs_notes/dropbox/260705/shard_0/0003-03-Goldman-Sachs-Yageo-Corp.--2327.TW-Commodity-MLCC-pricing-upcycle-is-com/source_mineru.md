@@ -1,0 +1,368 @@
+# Yageo Corp. (2327.TW)
+
+# Commodity MLCC pricing upcycle is coming, with more capacity transferred into AI industry; Buy, with new TP of NT\$1,490 (from NT\$346)
+
+2327.TW 12m Price Target: NT\$1,490.00 Price: NT\$1,045.00 Upside: 42.6%
+
+We are seeing a new trend of commodity MLCC pricing hikes emerging, and we believe Yageo is in a good position (\~25% of the global commodity MLCC capacity share in 2026-28) to benefit from the solid commodity MLCC pricing hike outlook (we expect Yageo's commodity MLCC pricing to go up by 93%/84% in 2027/28E), leading to a 46%/51% GM in 2027E/28E and record high EPS.
+
+Considering (1) more and more MLCC capacity is being transferred into the AI grade MLCC supply chain (we expect 14/24/32% of global MLCC capacity to support AI MLCC demand in 2026/27/28E, up from 9% in 2025), (2) the back-to-normal growth of non-AI MLCC demand (2025-28E volume CAGR at 9%, per GSe), and (3) inventory demand building up in coming years (inventory level in 2025 was 36% less than the peak level of the past ten years), we believe the global non-AI MLCC industry utilization rate will revert to 97%/100% in 2027/28E (vs. last peak of 94/99% in 2017/18), suggesting a solid pricing outlook for the overall MLCC market.
+
+We raise our 2026/27/28E earnings by 11%/49%/106% to factor in the better pricing conditions for commodity MLCC as well as better order visibility. Reflecting this and rollover of our valuation base from 3Q26-2Q27 to 2H27-1H28 we revise up our 12-m TP to NT\$1,490 (vs. NT\$346 previously), with the target PB/ROE multiple at 26x (in line with past 20 years peak multiple). Overall, we are bullish on Yageo's traditional MLCC business profitability, seeing a structural change in the industry supply demand conditions, suggesting good earnings outlook.
+
+In this note, we transfer Yageo coverage from Daiki Takayama to Chao Wang.
+
+## BUY
+
+Chao Wang  
++886(2)2730-4195 | kuan-chao.wang@gs.com  
+GS (Asia) L.L.C., Taipei Branch
+
+Allen Chang  
++852-2978-2930 | allen.k.chang@gs.com  
+GS (Asia) L.L.C.
+
+Daiki Takayama
++81(3)4587-9870 | daiki.takayama@gs.com
+GS Japan Co., Ltd.
+
+## Key Data
+
+Market cap: NT\$2.1tr / \$67.2bn
+Enterprise value: NT\$2.2tr / \$68.6bn
+3m ADTV: NT\$33.2bn / \$1.0bn
+Taiwan
+Taiwan Electronic Components
+M&A Rank: 3
+Leases incl. in net debt & EV?: No
+
+GS Forecast
+
+<table><tr><td></td><td>12/25</td><td>12/26E</td><td>12/27E</td><td>12/28E</td></tr><tr><td>Revenue (NT$ mn) New</td><td>132,930.0</td><td>196,764.5</td><td>289,670.6</td><td>388,444.8</td></tr><tr><td>Revenue (NT$ mn) Old</td><td>132,930.0</td><td>184,797.8</td><td>230,447.8</td><td>252,550.2</td></tr><tr><td>EBITDA (NT$ mn)</td><td>39,634.5</td><td>64,139.7</td><td>107,325.3</td><td>158,305.3</td></tr><tr><td>EPS (NT$) New</td><td>11.51</td><td>21.22</td><td>37.56</td><td>57.32</td></tr><tr><td>EPS (NT$) Old</td><td>11.51</td><td>19.12</td><td>25.27</td><td>27.87</td></tr><tr><td>P/E (X)</td><td>13.4</td><td>49.3</td><td>27.8</td><td>18.2</td></tr><tr><td>P/B (X)</td><td>1.9</td><td>11.2</td><td>9.4</td><td>7.5</td></tr><tr><td>Dividend yield (%)</td><td>3.9</td><td>1.1</td><td>1.9</td><td>2.9</td></tr><tr><td>CROCI (%)</td><td>9.5</td><td>13.6</td><td>21.8</td><td>30.9</td></tr><tr><td></td><td>3/26</td><td>6/26E</td><td>9/26E</td><td>12/26E</td></tr><tr><td>EPS (NT$)</td><td>3.91</td><td>4.71</td><td>5.93</td><td>6.68</td></tr></table>
+
+GS Factor Profile
+
+![](images/df9683fa2a4c75caf1c1f3985df565b8b199d8177f580721f7e84aa2a4105dd7.jpg)
+
+Source: Company data, GS estimates. See disclosures for details.
+
+<table><tr><td></td><td>3m</td><td>6m</td><td>12m</td></tr><tr><td>Absolute</td><td>324.8%</td><td>333.6%</td><td>736.8%</td></tr><tr><td>Rel. to the Taiwan SE Weighted Index</td><td>195.8%</td><td>172.0%</td><td>306.3%</td></tr></table>
+
+Balance Sheet (NT\$ mn)  
+Growth & Margins (%)
+
+Ratios & Valuation
+
+<table><tr><td></td><td>12/25</td><td>12/26E</td><td>12/27E</td><td>12/28E</td></tr><tr><td>P/E (X)</td><td>13.4</td><td>49.3</td><td>27.8</td><td>18.2</td></tr><tr><td>P/B (X)</td><td>1.9</td><td>11.2</td><td>9.4</td><td>7.5</td></tr><tr><td>FCF yield (%)</td><td>7.8</td><td>1.6</td><td>2.6</td><td>4.4</td></tr><tr><td>EV/EBITDAR (X)</td><td>9.6</td><td>34.1</td><td>20.1</td><td>13.3</td></tr><tr><td>EV/EBITDA (excl. leases) (X)</td><td>9.6</td><td>34.1</td><td>20.1</td><td>13.3</td></tr><tr><td>CROCI (%)</td><td>9.5</td><td>13.6</td><td>21.8</td><td>30.9</td></tr><tr><td>ROE (%)</td><td>14.3</td><td>24.0</td><td>36.7</td><td>45.8</td></tr><tr><td>Net debt/equity (%)</td><td>35.8</td><td>21.2</td><td>3.8</td><td>(16.2)</td></tr><tr><td>Net debt/equity (excl. leases) (%)</td><td>35.8</td><td>21.2</td><td>3.8</td><td>(16.2)</td></tr><tr><td>Interest cover (X)</td><td>10.4</td><td>17.7</td><td>31.7</td><td>48.4</td></tr><tr><td>Days inventory outst, sales</td><td>81.6</td><td>59.2</td><td>47.3</td><td>44.9</td></tr><tr><td>Receivable days</td><td>76.3</td><td>73.3</td><td>75.6</td><td>78.6</td></tr><tr><td>Days payable outstanding</td><td>71.1</td><td>63.6</td><td>62.2</td><td>64.5</td></tr><tr><td>DuPont ROE (%)</td><td>13.6</td><td>22.3</td><td>33.2</td><td>40.8</td></tr><tr><td>Turnover (X)</td><td>0.3</td><td>0.5</td><td>0.6</td><td>0.7</td></tr><tr><td>Leverage (X)</td><td>2.2</td><td>2.2</td><td>2.1</td><td>2.0</td></tr><tr><td>Gross cash invested (ex cash) (NT$)</td><td>367,675.4</td><td>378,066.1</td><td>393,402.5</td><td>405,759.7</td></tr><tr><td>Average capital employed (NT$)</td><td>232,763.5</td><td>236,363.4</td><td>238,536.9</td><td>241,244.5</td></tr><tr><td>BVPS (NT$)</td><td>83.22</td><td>93.40</td><td>111.38</td><td>138.82</td></tr></table>
+
+<table><tr><td colspan="5">Growth &amp; Margins (%)</td></tr><tr><td></td><td>12/25</td><td>12/26E</td><td>12/27E</td><td>12/28E</td></tr><tr><td>Total revenue growth</td><td>9.3</td><td>48.0</td><td>47.2</td><td>34.1</td></tr><tr><td>EBITDA growth</td><td>20.1</td><td>61.8</td><td>67.3</td><td>47.5</td></tr><tr><td>EPS growth</td><td>(69.8)</td><td>84.3</td><td>77.0</td><td>52.6</td></tr><tr><td>DPS growth</td><td>(70.0)</td><td>84.3</td><td>77.0</td><td>52.6</td></tr><tr><td>EBIT margin</td><td>22.4</td><td>27.3</td><td>33.3</td><td>37.8</td></tr><tr><td>EBITDA margin</td><td>29.8</td><td>32.6</td><td>37.1</td><td>40.8</td></tr><tr><td>Net income margin</td><td>17.8</td><td>22.1</td><td>26.6</td><td>30.3</td></tr></table>
+
+Price Performance  
+![](images/4b6bde8fc55c369e9e9bc8e04638578a74bd6478e31760fd6bf0485f49640162.jpg)  
+Source: FactSet. Price as of 3 Jul 2026 close.
+
+Income Statement (NT\$ mn)
+
+<table><tr><td></td><td>12/25</td><td>12/26E</td><td>12/27E</td><td>12/28E</td></tr><tr><td>Total revenue</td><td>132,930.0</td><td>196,764.5</td><td>289,670.6</td><td>388,444.8</td></tr><tr><td>Cost of goods sold</td><td>(84,800.2)</td><td>(117,442.3)</td><td>(156,769.5)</td><td>(192,349.6)</td></tr><tr><td>SG&amp;A</td><td>(14,910.4)</td><td>-</td><td>-</td><td>-</td></tr><tr><td>R&amp;D</td><td>(3,418.7)</td><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>Other operating inc./(exp.)</td><td>0.0</td><td>(25,587.4)</td><td>(36,551.0)</td><td>(49,093.2)</td></tr><tr><td>EBITDA</td><td>39,634.5</td><td>64,139.7</td><td>107,325.3</td><td>158,305.3</td></tr><tr><td>Depreciation &amp; amortization</td><td>(9,833.8)</td><td>(10,404.9)</td><td>(10,975.3)</td><td>(11,303.1)</td></tr><tr><td>EBIT</td><td>29,800.7</td><td>53,734.8</td><td>96,350.0</td><td>147,002.1</td></tr><tr><td>Net interest inc./(exp.)</td><td>1,570.7</td><td>2,878.9</td><td>4,403.6</td><td>6,776.4</td></tr><tr><td>Income/(loss) from associates</td><td>0.0</td><td>1,013.8</td><td>742.7</td><td>279.6</td></tr><tr><td>Pre-tax profit</td><td>31,119.7</td><td>56,126.6</td><td>98,470.8</td><td>148,659.7</td></tr><tr><td>Provision for taxes</td><td>(7,342.8)</td><td>(12,447.4)</td><td>(21,255.9)</td><td>(30,869.1)</td></tr><tr><td>Minority interest</td><td>(142.6)</td><td>(126.7)</td><td>(120.0)</td><td>(120.0)</td></tr><tr><td>Preferred dividends</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Net inc. (pre-exceptionals)</td><td>23,634.2</td><td>43,552.5</td><td>77,094.9</td><td>117,670.6</td></tr><tr><td>Post-tax exceptionals</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Net inc. (post-exceptionals)</td><td>23,634.2</td><td>43,552.5</td><td>77,094.9</td><td>117,670.6</td></tr><tr><td>EPS (basic, pre-except) (NT$)</td><td>11.51</td><td>21.22</td><td>37.56</td><td>57.32</td></tr><tr><td>EPS (diluted, pre-except) (NT$)</td><td>11.51</td><td>21.22</td><td>37.56</td><td>57.32</td></tr><tr><td>EPS (basic, post-except) (NT$)</td><td>11.51</td><td>21.22</td><td>37.56</td><td>57.32</td></tr><tr><td>EPS (diluted, post-except) (NT$)</td><td>11.51</td><td>21.22</td><td>37.56</td><td>57.32</td></tr><tr><td>DPS (NT$)</td><td>6.00</td><td>11.06</td><td>19.58</td><td>29.88</td></tr><tr><td>Div. payout ratio (%)</td><td>52.1</td><td>52.1</td><td>52.1</td><td>52.1</td></tr></table>
+
+<table><tr><td colspan="5">Balance Sheet (NT$ mn)</td></tr><tr><td></td><td>12/25</td><td>12/26E</td><td>12/27E</td><td>12/28E</td></tr><tr><td>Cash &amp; cash equivalents</td><td>81,473.5</td><td>102,463.7</td><td>135,129.1</td><td>190,526.0</td></tr><tr><td>Accounts receivable</td><td>30,509.6</td><td>48,517.3</td><td>71,425.6</td><td>95,780.9</td></tr><tr><td>Inventory</td><td>31,635.6</td><td>32,176.0</td><td>42,950.6</td><td>52,698.5</td></tr><tr><td>Other current assets</td><td>21,727.1</td><td>21,727.1</td><td>21,727.1</td><td>21,727.1</td></tr><tr><td>Total current assets</td><td>165,345.8</td><td>204,884.1</td><td>271,232.5</td><td>360,732.6</td></tr><tr><td>Net PP&amp;E</td><td>65,304.8</td><td>61,959.6</td><td>58,044.0</td><td>53,800.6</td></tr><tr><td>Net intangibles</td><td>106,699.8</td><td>105,696.2</td><td>104,692.5</td><td>103,688.8</td></tr><tr><td>Total investments</td><td>45,202.5</td><td>46,216.3</td><td>46,959.0</td><td>47,238.6</td></tr><tr><td>Other long-term assets</td><td>8,236.2</td><td>8,236.2</td><td>8,236.2</td><td>8,236.2</td></tr><tr><td>Total assets</td><td>390,789.2</td><td>426,992.4</td><td>489,164.2</td><td>573,696.8</td></tr><tr><td>Accounts payable</td><td>18,031.4</td><td>22,875.5</td><td>30,535.7</td><td>37,466.0</td></tr><tr><td>Short-term debt</td><td>86,258.7</td><td>86,258.7</td><td>86,258.7</td><td>86,258.7</td></tr><tr><td>Short-term lease liabilities</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Other current liabilities</td><td>31,789.3</td><td>42,172.3</td><td>59,657.4</td><td>80,808.9</td></tr><tr><td>Total current liabilities</td><td>136,079.4</td><td>151,306.5</td><td>176,451.8</td><td>204,533.6</td></tr><tr><td>Long-term debt</td><td>57,588.8</td><td>57,588.8</td><td>57,588.8</td><td>57,588.8</td></tr><tr><td>Long-term lease liabilities</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Other long-term liabilities</td><td>23,124.5</td><td>23,124.5</td><td>23,124.5</td><td>23,124.5</td></tr><tr><td>Total long-term liabilities</td><td>80,713.2</td><td>80,713.2</td><td>80,713.2</td><td>80,713.2</td></tr><tr><td>Total liabilities</td><td>216,792.6</td><td>232,019.8</td><td>257,165.0</td><td>285,246.8</td></tr><tr><td>Preferred shares</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Total common equity</td><td>170,877.8</td><td>191,727.1</td><td>228,633.7</td><td>284,964.6</td></tr><tr><td>Minority interest</td><td>3,118.7</td><td>3,245.4</td><td>3,365.4</td><td>3,485.4</td></tr><tr><td>Total liabilities &amp; equity</td><td>390,789.2</td><td>426,992.4</td><td>489,164.2</td><td>573,696.8</td></tr><tr><td>Net debt, adjusted</td><td>62,374.0</td><td>41,383.8</td><td>8,718.3</td><td>(46,678.5)</td></tr></table>
+
+<table><tr><td></td><td>12/25</td><td>12/26E</td><td>12/27E</td><td>12/28E</td></tr><tr><td>Net income</td><td>23,634.2</td><td>43,552.5</td><td>77,094.9</td><td>117,670.6</td></tr><tr><td>D&amp;A add-back</td><td>9,833.8</td><td>10,404.9</td><td>10,975.3</td><td>11,303.1</td></tr><tr><td>Minority interest add-back</td><td>142.6</td><td>126.7</td><td>120.0</td><td>120.0</td></tr><tr><td>Net (inc)/dec working capital</td><td>(5,002.1)</td><td>(13,704.0)</td><td>(26,022.7)</td><td>(27,172.9)</td></tr><tr><td>Other operating cash flow</td><td>2,254.6</td><td>(1,013.8)</td><td>(742.7)</td><td>(279.6)</td></tr><tr><td>Cash flow from operations</td><td>30,863.1</td><td>39,366.4</td><td>61,424.7</td><td>101,641.2</td></tr><tr><td>Capital expenditures</td><td>(6,056.0)</td><td>(6,056.0)</td><td>(6,056.0)</td><td>(6,056.0)</td></tr><tr><td>Acquisitions</td><td>21,996.0</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Divestitures</td><td>1,344.3</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Others</td><td>(21,009.6)</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Cash flow from investing</td><td>(3,725.3)</td><td>(6,056.0)</td><td>(6,056.0)</td><td>(6,056.0)</td></tr><tr><td>Repayment of lease liabilities</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Dividends paid (common &amp; pref)</td><td>(10,265.2)</td><td>(12,320.1)</td><td>(22,703.2)</td><td>(40,188.3)</td></tr><tr><td>Inc/(dec) in debt</td><td>89,213.2</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Other financing cash flows</td><td>(85,730.0)</td><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>Cash flow from financing</td><td>(6,782.0)</td><td>(12,320.1)</td><td>(22,703.2)</td><td>(40,188.3)</td></tr><tr><td>Total cash flow</td><td>20,355.9</td><td>20,990.2</td><td>32,665.4</td><td>55,396.9</td></tr><tr><td>Free cash flow</td><td>24,807.1</td><td>33,310.3</td><td>55,368.7</td><td>95,585.2</td></tr></table>
+
+Source: Company data, GS estimates.
+
+## MLCC industry analysis – Commodity MLCC should see a much better pricing outlook, as suppliers are all transferring commodity capacity into AI grade capacity
+
+We believe the next upcycle for the MLCC industry will be driven by AI, in order to meet with the strong AI demand, and major JP/KR MLCC suppliers continuing to shift capacity towards AI applications, which should tighten commodity MLCC supply and lead to full utilization and a more favorable pricing environment. We expect the pricing hike ratio for commodity products to surpass the high-end due to their lower margin and diverse customer base, offering more room for price increases.
+
+## AI will be a key driver for global MLCC TAM
+
+We expect global MLCC TAM to reach 33% CAGR over 2025-28E, with AI MLCC TAM tracking faster at 93% CAGR and reaching 19% of total global MLCC TAM in 2028E (from 6% in 2025). The strong demand for AI MLCC should be supported by both higher server shipment volumes and a significant increase in MLCC content per server (we expect MLCC to reach 300K+/500K+ for GB300/VR200 vs. 12k for general server).
+
+Exhibit 1: Major MLCC up cycles / down cycles in last two decades  
+![](images/ceb2a6440664c051ff5f94d43dd624041170f3b718581ce18aa781013de6b5b9.jpg)  
+Source: Company data, GS Global Investment Research
+
+Exhibit 2: AI to drive MLCC TAM expansion through 2025-28E  
+![](images/caacbb802f7bfa32e24e1d112ddd190ff1943854944f07886527f69872358b49.jpg)  
+Source: GS Global Investment Research, Company data
+
+Exhibit 3: Smartphone and automotive continues to drive non-AI MLCC demand  
+![](images/7fed69d82c63a6e4732199d894f6544904f9336a4b08c33c6f0a46b22cf8bf55.jpg)  
+Source: GS Global Investment Research, Company data
+
+## Non-AI MLCC remains a stable market
+
+We expect non-AI MLCC volume to see a stable CAGR of 9% in 2025-28E, continuing to be supported by both automotive and smartphone, with CAGR of 8%/7% in 2025-28E, respectively. We view the automotive MLCC segment as a key sector as it accounts for 20%+ of total non-AI MLCC through 2025-28E, with the level of MLCC consumption to be notably higher than other non-AI segments (e.g. 20k+ on average vs. \~2K for smartphones and \~2.5K on average for desktop PCs). Smartphone accounts for 25%+ of total non-AI MLCC through 2025-28E, with shipments continuing to be impacted by high memory costs (see here), while the content-per-box increase has largely offset the negative impact. We also expect segments such as PCs and servers continuing to see content-per-box increases.
+
+Exhibit 4: MLCC content per device (including power) comparison  
+![](images/f2cf7dd880d06d5cc2e4cb84273666ff1fd3b9bbdfb761585dd36b658a06d65b.jpg)  
+Source: GS Global Investment Research
+
+Exhibit 5: Global MLCC capacity growth (2016-28E)  
+![](images/65f9261359e94aff2140630ea361f4ddbbcc7a065a67cf1d3e3f58e5930919ce.jpg)  
+Source: GS Global Investment Research, Company data
+
+## Major suppliers shifting capacity toward AI application to meet the strong demand
+
+We believe annual capacity for the MLCC industry will see a stable increase of around $10\%$ per year through 2026-28E, while the capacity expansion plans for major MLCC suppliers will outpace the market with double digit YoY expansion. Other than the stable capacity expansion, we continue to see major JP/KR suppliers continuing to shift capacity toward AI applications in order to meet the strong AI demand. Also, major MLCC suppliers are prioritizing AI-related orders due to their better margin profiles,
+
+which may mean they will start considering taking on more orders from non-AI segments.
+
+## Commodity MLCC to see price hikes driven by the tightened supply
+
+The industry shift in capacity expansion toward AI is also constructive for the commodity MLCC segment, as the segment is more sensitive to supply demand conditions. More capacity dedicated to AI MLCCs effectively tightens the supply available for commodity MLCCs, and we forecast the global non-AI MLCC industry utilization rate to revert to $97\% / 100\%$ in 2027/28E, similar to the level of last peak of $94 / 99\%$ in 2017/18. This creates a more favorable pricing environment for commodity MLCCs. Given that AI MLCC already enjoy higher margins and are mainly focused on bigger customers with contracts, its relatively difficult for them to adopt aggressive pricing adjustments, and we believe commodity product pricing hike ratios are likely to surpass the high-end MLCC products (Exhibit 7).
+
+Exhibit 6: Non-AI MLCC industry utilization rate to be to $97 / 100\%$ in 2027/28E
+
+<table><tr><td>Non-AI capacity (bn units/ month)</td><td>2017</td><td>2018</td><td>2019</td><td>2020</td><td>2021</td><td>2022</td><td>2023</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td>Yageo</td><td>37</td><td>45</td><td>54</td><td>58</td><td>62</td><td>62</td><td>71</td><td>80</td><td>80</td><td>80</td><td>72</td><td>70</td></tr><tr><td>Total non-AI capacity</td><td>367</td><td>413</td><td>460</td><td>513</td><td>593</td><td>668</td><td>720</td><td>762</td><td>786</td><td>798</td><td>795</td><td>793</td></tr><tr><td>Non-AI supply growth rate</td><td>8%</td><td>13%</td><td>11%</td><td>12%</td><td>15%</td><td>13%</td><td>8%</td><td>6%</td><td>3%</td><td>1%</td><td>0%</td><td>0%</td></tr><tr><td>Non-AI demand growth rate</td><td>11%</td><td>13%</td><td>8%</td><td>8%</td><td>18%</td><td>0%</td><td>-2%</td><td>5%</td><td>6%</td><td>6%</td><td>9%</td><td>11%</td></tr><tr><td>Theoretical UTR</td><td>92%</td><td>92%</td><td>89%</td><td>85%</td><td>87%</td><td>77%</td><td>70%</td><td>70%</td><td>71%</td><td>75%</td><td>82%</td><td>90%</td></tr><tr><td>Acutal UTR</td><td>94%</td><td>99%</td><td>71%</td><td>74%</td><td>81%</td><td>71%</td><td>62%</td><td>70%</td><td>75%</td><td>82%</td><td>97%</td><td>100%</td></tr><tr><td>Inventory build / access demand</td><td>108</td><td>367</td><td>(946)</td><td>(684)</td><td>(432)</td><td>(545)</td><td>(719)</td><td>45</td><td>338</td><td>714</td><td>1,449</td><td>876</td></tr><tr><td>Inventory volume (bn units)</td><td>108</td><td>474</td><td>(472)</td><td>(1,156)</td><td>(1,588)</td><td>(2,133)</td><td>(2,851)</td><td>(2,806)</td><td>(2,468)</td><td>(1,754)</td><td>(305)</td><td>571</td></tr></table>
+
+Source: GS Global Investment Research, Company data
+
+Exhibit 7: We expect low-end product pricing hike ratio to surpass high-end, due to the capacity transformation into high-end driven by AI technology migration demand 2027 YoY  
+![](images/c5d51753aba77509232c44c6f0faa6dcdb30c64a62801fc0a3161c3a71ee9f39.jpg)  
+Source: Company data, GS Global Investment Research
+
+## Yageo is in a good position to benefit from the solid commodity MLCC pricing hike
+
+As mentioned above, we do expect the commodity MLCC product pricing to rise much faster than the industry MLCC pricing hike level, which should benefit Yageo the most in the overall MLCC supply chain, as its commodity MLCC accounts for more than $72\% / 85\%$ of its total MLCC revenue in 2026/27 (vs. all other JP/KR players, which are all focusing on high-end / AI grade MLCC) with a $23\%$ capacity share in the commodity MLCC market in 2026 (the single largest commodity MLCC capacity holder, while the second largest supplier's capacity only holds $15\%$ of the industry capacity; Exhibit 10).
+
+Yageo to benefit the most from the commodity MLCC pricing hike; we expect the company to enjoy a 29/93/84% YoY pricing upside in 2026/27/28E
+
+For Yageo's MLCC business, only \~10% is related to the AI server industry today, which mostly is not covered by LTA or any agreement and is covered by distributors; moreover, \~72%/85/90% of the MLCC revenue will be contributed by commodity business in 2026/27/28, or 23/32/40% of the company's overall GP in 2026/27/28, based on GSe (vs. 20% in the past 5 years; Exhibit 8).
+
+We now expect Yageo's commodity MLCC pricing to go up by 29%/93%/84% YoY in 2026/27/28E vs. -5%\~+10% YoY in 2022-25 (Exhibit 9), which was not only driven by the company leadership position in the commodity MLCC market, but also its high capacity share and good relationship with distributors, making the company able to control its utilization rate and industry inventory levels to help with pricing hike progress.
+
+On the margin side, as we see no significant cost hike from key components; we believe the commodity MLCC pricing hike from 2H26 should directly improve the company's overall profitability and absolute profit level in coming years, which should boost the company's overall OPM from the last trough level at $19\%$ in 2023 or $22\%$ in 2025 directly to $27.3\% / 33.3\% / 37.8\%$ in 2026/27/28E (Exhibit 11). We believe the OPM expansion speed this time will be more sustainable than in 2017-18 (this time we believe the pricing uptrend period should last for at least 30 months if AI demand doesn't slow down in the next 30 months), thanks to the expanding demand from AI, and key high-end suppliers' focus on expanding high capacity MLCC, allowing the second tier players like Yageo to benefit from the pricing/margin tailwind in coming years.
+
+Exhibit 8: Commodity MLCC will contribute 23/32/40% of total Yageo OPI in 2026/27/28E, up from 20% in the past 5 years  
+![](images/f14941243bc74ba566931777a88dda92c428b25bca8b622c55ab0fd834a838b3.jpg)  
+Source: Company data, GS Global Investment Research
+
+Exhibit 9: We expect Yageo's MLCC pricing YoY will start to accelerate from 2H26 and continue in the next 24-30 months
+
+Yageo's MLCC pricing YoY trend  
+![](images/9179d68fa6e970877149b145453dc178b4b009d8c2a125d54c4470bca9b239d6.jpg)  
+Source: Company data, GS Global Investment Research  
+Exhibit 10: Yageo holds $23\%$ of the commodity MLCC industry capacity in 2026
+
+![](images/e377efb2c46b983ba2fff3420f1fb21b09e9bcbd2cf3ffccd3ada448fdb88310.jpg)  
+Source: Company data, GS Global Investment Research
+
+Exhibit 11: Yageo's commodity MLCC ASP trend vs. OPM  
+![](images/118d697a7cc2f88eddf88d84e600e766d6fe771d04986a277df4255c249c231a.jpg)  
+Source: Company data, GS Global Investment Research
+
+## Yageo should start outperforming JP/KR peers in revenue/margin growth outlook, thanks to the commodity MLCC pricing hike
+
+Like what we have seen in the past two cycles in the past 10 years, we believe Yageo will again start to outperform the high-end peers in JP/KR in coming years, due mainly to the much better than expected commodity pricing outlook (while we expect the high-end players' ASP to only grow by \~50% CAGR in next 3 years). We forecast Yageo's commodity MLCC pricing will grow by \~70% 2025-28E CAGR, which suggests Yageo's growth/margin growth premium vs. JP/KR peers will be in-line with the past 10-year upcycle period.
+
+We expect Yageo's overall revenue to grow by $43\%$ 2025-28E CAGR, with the OPM to expand by 15ppt from 2025 $(22.4\%)$ to 2028 $(37.8\%)$ , while expecting the other JP/KR high-end players together to only enjoy a $14\%$ 2025-28E revenue CAGR with the OPM only increasing from $10.0\%$ in 2025 to $20.4\%$ in 2028E.
+
+Exhibit 12: We believe Yageo will enjoy much better revenue growth than others from 2H26, thanks to the better pricing outlook  
+![](images/ad350ccd734b824cd4dac93dc0070548d04a641a04410f3d57aa6e8ebbc1d682.jpg)  
+Source: Company data, GS Global Investment Research
+
+Exhibit 13: Yageo's OPM to continue to outgrow peers, with a much better pricing outlook  
+![](images/95e195c4774e24fb60c43d408b4192a76835468642b2e161dd86f7f2ebd6fcb2.jpg)  
+Source: Company data, GS Global Investment Research
+
+## Earnings revision: Revising up 2026-28E EPS by $11 - 106\%$ to factor in the better MLCC pricing outlook
+
+## Earnings revisions
+
+We revise up our 2026/27/28E EPS by 11/49/106% to factor in better pricing conditions for commodity MLCC as well as better order visibility (we revise up 2026/27/28E revenue estimates by 6/26/54%). We expect the contribution to be margin accretive thus we revise up our 2026/27/28E GM by 0.9/4.7/8.9ppt.
+
+Exhibit 14: Earnings revision table
+
+<table><tr><td>Yageo P&amp;L (NT$ mn)</td><td>2026E New</td><td>2026E Old</td><td>Diff.</td><td>2027E New</td><td>2027E Old</td><td>Diff.</td><td>2028E New</td><td>2028E Old</td><td>Diff.</td></tr><tr><td>Sales</td><td>196,765</td><td>184,798</td><td>6%</td><td>289,671</td><td>230,448</td><td>26%</td><td>388,445</td><td>252,550</td><td>54%</td></tr><tr><td>Gross Profit</td><td>79,322</td><td>72,789</td><td>9%</td><td>132,901</td><td>94,832</td><td>40%</td><td>196,095</td><td>105,057</td><td>87%</td></tr><tr><td>EBIT</td><td>53,735</td><td>48,333</td><td>11%</td><td>96,350</td><td>65,206</td><td>48%</td><td>147,002</td><td>72,825</td><td>102%</td></tr><tr><td>Net Income</td><td>43,553</td><td>39,255</td><td>11%</td><td>77,095</td><td>51,867</td><td>49%</td><td>117,671</td><td>57,208</td><td>106%</td></tr><tr><td>EPS (NT$)</td><td>21.22</td><td>19.12</td><td>11%</td><td>37.56</td><td>25.27</td><td>49%</td><td>57.32</td><td>27.87</td><td>106%</td></tr><tr><td>Ratio analysis</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Gross margin</td><td>40.3%</td><td>39.4%</td><td>0.9pp</td><td>45.9%</td><td>41.2%</td><td>4.7pp</td><td>50.5%</td><td>41.6%</td><td>8.9pp</td></tr><tr><td>EBIT margin</td><td>27.3%</td><td>26.2%</td><td>1.2pp</td><td>33.3%</td><td>28.3%</td><td>5.0pp</td><td>37.8%</td><td>28.8%</td><td>9.0pp</td></tr><tr><td>Net margin</td><td>22.1%</td><td>21.2%</td><td>0.9pp</td><td>26.6%</td><td>22.5%</td><td>4.1pp</td><td>30.3%</td><td>22.7%</td><td>7.6pp</td></tr></table>
+
+Source: Company data, GS Global Investment Research
+
+## Where are we vs. consensus?
+
+Our 2026/27/28E revenue estimates are 18/32/45% higher than Bloomberg consensus, due to our positive view on the better pricing for commodity MLCC, which we expect to increase 15-20% in each quarter throughout 2027/28 (BBG consensus only implies \~10% per quarter pricing hike). As such, considering the better operating leverage driven by price hikes, our 2026/27/28E GM estimate is 1.3/3.4/4.4ppt higher than Bloomberg consensus, as we believe the company's revenue will be mainly driven by MLCC in the coming years (35%/45%/53% revenue contribution in 2026/27/28E).
+
+Exhibit 15: Our numbers vs. Bloomberg consensus
+
+<table><tr><td></td><td colspan="3">2026E</td><td colspan="3">2027E</td><td colspan="3">2028E</td></tr><tr><td>Yageo&#x27;s P&amp;L (NT$mn)</td><td>GS est,</td><td>Consensus</td><td>Diff (%)</td><td>GS est,</td><td>Consensus</td><td>Diff (%)</td><td>GS est,</td><td>Consensus</td><td>Diff (%)</td></tr><tr><td>Revenue</td><td>196,765</td><td>166,358</td><td>18%</td><td>289,671</td><td>219,069</td><td>32%</td><td>388,445</td><td>267,065</td><td>45%</td></tr><tr><td>Gross profits</td><td>79,322</td><td>64,951</td><td>22%</td><td>132,901</td><td>93,094</td><td>43%</td><td>196,095</td><td>123,187</td><td>59%</td></tr><tr><td>Operating profits</td><td>53,735</td><td>43,591</td><td>23%</td><td>96,350</td><td>68,675</td><td>40%</td><td>147,002</td><td>92,021</td><td>60%</td></tr><tr><td>Net earnings</td><td>43,553</td><td>35,291</td><td>23%</td><td>77,095</td><td>54,777</td><td>41%</td><td>117,671</td><td>75,232</td><td>56%</td></tr><tr><td>EPS, NT$</td><td>21.22</td><td>17.16</td><td>24%</td><td>37.56</td><td>26.98</td><td>39%</td><td>57.32</td><td>36.53</td><td>57%</td></tr><tr><td>Gross margin (%)</td><td>40.3%</td><td>39.0%</td><td>1.3ppt</td><td>45.9%</td><td>42.5%</td><td>3.4ppt</td><td>50.5%</td><td>46.1%</td><td>4.4ppt</td></tr><tr><td>EBIT margin (%)</td><td>27.3%</td><td>26.2%</td><td>1.1ppt</td><td>33.3%</td><td>31.3%</td><td>1.9ppt</td><td>37.8%</td><td>34.5%</td><td>3.4ppt</td></tr><tr><td>Net margin (%)</td><td>22.1%</td><td>21.2%</td><td>0.9ppt</td><td>26.6%</td><td>25.0%</td><td>1.6ppt</td><td>30.3%</td><td>28.2%</td><td>2.1ppt</td></tr></table>
+
+Source: Bloomberg, GS Global Investment Research
+
+Exhibit 16: P&L table
+
+<table><tr><td>NT$mn</td><td>1Q25</td><td>2Q25</td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td>2Q26E</td><td>3Q26E</td><td>4Q26E</td><td>1Q27E</td><td>2Q27E</td><td>3Q27E</td><td>4Q27E</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td>Revenue</td><td>31,104</td><td>32,771</td><td>33,087</td><td>35,968</td><td>38,166</td><td>44,653</td><td>55,280</td><td>58,666</td><td>62,822</td><td>69,318</td><td>76,935</td><td>80,596</td><td>121,667</td><td>132,930</td><td>196,765</td><td>289,671</td><td>388,445</td></tr><tr><td>Gross profit</td><td>11,086</td><td>11,652</td><td>11,974</td><td>13,417</td><td>14,542</td><td>17,844</td><td>22,453</td><td>24,483</td><td>27,254</td><td>31,363</td><td>35,746</td><td>38,537</td><td>41,803</td><td>48,130</td><td>79,322</td><td>132,901</td><td>196,095</td></tr><tr><td>Operating expense</td><td>(4,623)</td><td>(4,609)</td><td>(4,412)</td><td>(4,664)</td><td>(4,897)</td><td>(5,983)</td><td>(7,291)</td><td>(7,417)</td><td>(7,906)</td><td>(8,831)</td><td>(9,605)</td><td>(10,209)</td><td>(18,377)</td><td>(18,307)</td><td>(25,587)</td><td>(36,551)</td><td>(49,093)</td></tr><tr><td>Operating income</td><td>6,463</td><td>7,044</td><td>7,562</td><td>8,753</td><td>9,645</td><td>11,861</td><td>15,163</td><td>17,066</td><td>19,349</td><td>22,532</td><td>26,141</td><td>28,328</td><td>23,427</td><td>29,822</td><td>53,735</td><td>96,350</td><td>147,002</td></tr><tr><td>Pretax income</td><td>7,173</td><td>7,028</td><td>8,212</td><td>8,727</td><td>10,357</td><td>12,431</td><td>15,683</td><td>17,656</td><td>19,869</td><td>23,102</td><td>26,661</td><td>28,839</td><td>26,906</td><td>31,140</td><td>56,127</td><td>98,471</td><td>148,660</td></tr><tr><td>Taxes expense</td><td>(1,610)</td><td>(2,016)</td><td>(1,817)</td><td>(1,904)</td><td>(2,293)</td><td>(2,739)</td><td>(3,487)</td><td>(3,928)</td><td>(4,383)</td><td>(5,032)</td><td>(5,703)</td><td>(6,138)</td><td>(7,376)</td><td>(7,346)</td><td>(12,447)</td><td>(21,256)</td><td>(30,869)</td></tr><tr><td>Net income</td><td>5,530</td><td>4,998</td><td>6,356</td><td>6,768</td><td>8,027</td><td>9,662</td><td>12,165</td><td>13,698</td><td>15,456</td><td>18,040</td><td>20,928</td><td>22,671</td><td>19,398</td><td>23,652</td><td>43,553</td><td>77,095</td><td>117,671</td></tr><tr><td>EPS, NT$</td><td>2.69</td><td>2.43</td><td>3.10</td><td>3.30</td><td>3.91</td><td>4.71</td><td>5.93</td><td>6.68</td><td>7.53</td><td>8.79</td><td>10.20</td><td>11.05</td><td>9.50</td><td>11.52</td><td>21.22</td><td>37.56</td><td>57.32</td></tr><tr><td colspan="13">Ratio analysis and assumption</td><td colspan="5"></td></tr><tr><td colspan="13">As % of sales</td><td colspan="5"></td></tr><tr><td>Gross margin</td><td>35.6%</td><td>35.6%</td><td>36.2%</td><td>37.3%</td><td>38.1%</td><td>40.0%</td><td>40.6%</td><td>41.7%</td><td>43.4%</td><td>45.2%</td><td>46.5%</td><td>47.8%</td><td>34.4%</td><td>36.2%</td><td>40.3%</td><td>45.9%</td><td>50.5%</td></tr><tr><td>Operating expense ratio</td><td>14.9%</td><td>14.1%</td><td>13.3%</td><td>13.0%</td><td>12.8%</td><td>13.4%</td><td>13.2%</td><td>12.6%</td><td>12.6%</td><td>12.7%</td><td>12.5%</td><td>12.7%</td><td>15.1%</td><td>13.8%</td><td>13.0%</td><td>12.6%</td><td>12.6%</td></tr><tr><td>Operating margin</td><td>20.8%</td><td>21.5%</td><td>22.9%</td><td>24.3%</td><td>25.3%</td><td>26.6%</td><td>27.4%</td><td>29.1%</td><td>30.8%</td><td>32.5%</td><td>34.0%</td><td>35.1%</td><td>19.3%</td><td>22.4%</td><td>27.3%</td><td>33.3%</td><td>37.8%</td></tr><tr><td>Net margin</td><td>17.8%</td><td>15.3%</td><td>19.2%</td><td>18.8%</td><td>21.0%</td><td>21.6%</td><td>22.0%</td><td>23.3%</td><td>24.6%</td><td>26.0%</td><td>27.2%</td><td>28.1%</td><td>15.9%</td><td>17.8%</td><td>22.1%</td><td>26.6%</td><td>30.3%</td></tr><tr><td colspan="13">QoQ growth (%)</td><td colspan="5"></td></tr><tr><td>Revenue</td><td>3.7%</td><td>5.4%</td><td>1.0%</td><td>8.7%</td><td>6.1%</td><td>17.0%</td><td>23.8%</td><td>6.1%</td><td>7.1%</td><td>10.3%</td><td>11.0%</td><td>4.8%</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Gross profit</td><td>11.4%</td><td>5.1%</td><td>2.8%</td><td>12.1%</td><td>8.4%</td><td>22.7%</td><td>25.8%</td><td>9.0%</td><td>11.3%</td><td>15.1%</td><td>14.0%</td><td>7.8%</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Operating income</td><td>20.5%</td><td>9.0%</td><td>7.4%</td><td>15.8%</td><td>10.2%</td><td>23.0%</td><td>27.8%</td><td>12.6%</td><td>13.4%</td><td>16.5%</td><td>16.0%</td><td>8.4%</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Net income</td><td>49.1%</td><td>-9.6%</td><td>27.2%</td><td>6.5%</td><td>18.6%</td><td>20.4%</td><td>25.9%</td><td>12.6%</td><td>12.8%</td><td>16.7%</td><td>16.0%</td><td>8.3%</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td colspan="13">YoY growth (%)</td><td colspan="5"></td></tr><tr><td>Revenue</td><td>9.1%</td><td>4.3%</td><td>4.3%</td><td>19.9%</td><td>22.7%</td><td>36.3%</td><td>67.1%</td><td>63.1%</td><td>64.6%</td><td>55.2%</td><td>39.2%</td><td>37.4%</td><td>13%</td><td>9%</td><td>48%</td><td>47%</td><td>34%</td></tr><tr><td>Gross profit</td><td>15.1%</td><td>5.6%</td><td>7.1%</td><td>34.8%</td><td>31.2%</td><td>53.1%</td><td>87.5%</td><td>82.5%</td><td>87.4%</td><td>75.8%</td><td>59.2%</td><td>57.4%</td><td>16%</td><td>15%</td><td>65%</td><td>68%</td><td>48%</td></tr><tr><td>Operating income</td><td>30.8%</td><td>8.7%</td><td>14.0%</td><td>63.1%</td><td>49.2%</td><td>68.4%</td><td>100.5%</td><td>95.0%</td><td>100.6%</td><td>90.0%</td><td>72.4%</td><td>66.0%</td><td>14%</td><td>27%</td><td>80%</td><td>79%</td><td>53%</td></tr><tr><td>Net income</td><td>20.5%</td><td>-8.3%</td><td>12.5%</td><td>82.5%</td><td>45.2%</td><td>93.3%</td><td>91.4%</td><td>102.4%</td><td>92.6%</td><td>86.7%</td><td>72.0%</td><td>65.5%</td><td>11%</td><td>22%</td><td>84%</td><td>77%</td><td>53%</td></tr></table>
+
+Source: Company data, GS Global Investment Research
+
+## Valuation and risks - Raise TP to NT\$1,490 with much better pricing visibility and sustainability
+
+We reiterate our Buy rating on Yageo with a new TP of NT\$1,490 (from NT\$346), implying 43% upside. We believe the company will continue to deliver a solid earnings growth rate (83%+ 2025-28E EPS CAGR) which is much faster than MLCC industry peers (45% CAGR 2025-28).
+
+Our 12-month target price is based on a higher 26x PB/ROE (up from 15x previously), and we roll over our valuation base from 2H26-1H27E to 2028E to factor in the long visibility of the pricing upcycle this time (we expect demand will continue to be driven by the AI server related demand in at least the next 2.5-3 years). The 26x PB/ROE multiple is in line with the past 10-year peak multiple (Exhibit 17), and is in-line with the JP/KR MLCC suppliers' P/E multiples today, despite Yageo's fast earnings growth (Exhibit 19).
+
+Our TP-implied 10.8x 2028E P/B is much higher than the company's average P/B multiple in the past (Exhibit 18); however, after considering the high ROE (increasing to $23\% / 36\% / 41\%$ in 2026/27/28E based on GSe), we believe this higher implied multiple is justified as the company should be traded at a premium considering our forecast of its accelerating expansion in ROE in coming years.
+
+Overall, considering the company's ongoing earnings expansion trend and the solid pricing outlook as well as the long S/D visibility (to end of 2028), we maintain our positive view on Yageo's fundamentals and stock price upside, and see a good opportunity for a valuation rerating if the company can continue to deliver good earnings performance. Reiterate our Buy rating on Yageo, with a new TP of NT\$1,490.
+
+Exhibit 17: Yageo's avg PB/ROE multiple in the past 10-years is at 11x, but peak multiple was 26x 12-m forward PB/ROE trend in the past 10 years  
+![](images/48844dbf3137a20bf0d46767b9db31b635b6e2ea7b1f63bd696fb935af0c6f4b.jpg)  
+Source: Company data, GS Global Investment Research
+
+Exhibit 18: The solid ROE uptrend suggests a much higher P/B multiple in the coming years  
+![](images/c5c870c75149fe95b026c7adaded23f0b3e90a12e3cae1fc9aa183d3b651710c.jpg)  
+Source: Company data, GS Global Investment Research
+
+Exhibit 19: We expect accelerating EPS growth for Yageo in coming years, suggesting a potential rerating opportunity in coming quarters  
+![](images/3828a5c6de960f4c990ffdd6401b6c9803576a92ec453e0e5b6900adbcf272d4.jpg)  
+Source: Company data, GS Global Investment Research
+
+Exhibit 20: The high P/B is slightly below industry linear regression (vs. ROE), and we expect the company will deliver a solid ROE outlook in coming years  
+![](images/1b10f77113b47ce0c277e49936637e3cc3821070f6011d396e4c46db871ee61b.jpg)  
+Source: Company data, GS Global Investment Research
+
+## Investment thesis and Valuation & Risks
+
+Yageo, as the third largest MLCC and largest resistor / tantalum capacitor supplier globally, should see a stronger then peers earnings growth in the future, underpinned by better pricing environment, product upgrade, expansion strategy and more diversified product portfolio given the recent Kemet, Chilisin and Shibaura acquisitions. Yageo continues to penetrate into the high-end MLCC market (especially automotive/EV, industrial and high-end computing), which has a better S/D outlook compared to the commoditized market. Also, high-end MLCC market demand visibility is much clearer, with a more stable pricing trend, which suggests a less volatile earnings outlook. Yageo has started to benefit from an improving pricing environment for low-end MLCCs, driven by tightening supply. We hold a positive view on Yageo, given it is the supplier with the broadest product portfolio, which should help the company increase its market share by cross-selling and up-selling. Valuation offers attractive risk-reward with shares trading below historical multiples. Key downside risks: (1) weaker inventory builds from OEMs; (2) softer IT end-demand; and (3) slower-than-expected integration of
+
+Kemet/Chilisin/Telemecanique/Shibaura.
+
+Our 12m TP of NT\$1,490 is based on a 26x average 2028E PB/ROE (in-line with the peak valuation historically and is in-line with JP peers' average 2027/28E PB/ROE). Key downside risks: (1) weaker inventory builds from OEMs; (2) softer IT end-demand; and (3) slower-than-expected integration of Kemet/Chilisin/Telemecanique/Shibaura.
+
+## Disclosure Appendix
+
+## Reg AC
+
+We, Chao Wang, Allen Chang, Daiki Takayama and Al Wang, hereby certify that all of the views expressed in this report accurately reflect our personal views about the subject company or companies and its or their securities. We also certify that no part of our compensation was, is or will be, directly or indirectly, related to the specific recommendations or views expressed in this report.
+
+Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.
+
+Contributing Authors: Chao Wang GS (Asia) L.L.C., Taipei Branch, Allen Chang GS (Asia) L.L.C., Daiki Takayama GS Japan Co., Ltd., Al Wang GS (Asia) L.L.C., Taipei Branch.
+
+Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.
+
+## GS Factor Profile
+
+The GS Factor Profile provides investment context for a stock by comparing key attributes to the market (i.e. our universe of rated stocks) and its sector peers. The four key attributes depicted are: Growth, Financial Returns, Multiple (e.g. valuation) and Integrated (a composite of Growth, Financial Returns and Multiple). Growth, Financial Returns and Multiple are calculated by using normalized ranks for specific metrics for each stock. The normalized ranks for the metrics are then averaged and converted into percentiles for the relevant attribute. The precise calculation of each metric may vary depending on the fiscal year, industry and region, but the standard approach is as follows:
+
+Growth is based on a stock's forward-looking sales growth, EBITDA growth and EPS growth (for financial stocks, only EPS and sales growth), with a higher percentile indicating a higher growth company. Financial Returns is based on a stock's forward-looking ROE, ROCE and CROCI (for financial stocks, only ROE), with a higher percentile indicating a company with higher financial returns. Multiple is based on a stock's forward-looking P/E, P/B, price/dividend (P/D), EV/EBITDA, EV/FCF and EV/Debt Adjusted Cash Flow (DACF) (for financial stocks, only P/E, P/B and P/D), with a higher percentile indicating a stock trading at a higher multiple. The Integrated percentile is calculated as the average of the Growth percentile, Financial Returns percentile and (100% - Multiple percentile).
+
+Financial Returns and Multiple use the GS analyst forecasts at the fiscal year-end at least three quarters in the future. Growth uses inputs for the fiscal year at least seven quarters in the future compared with the year at least three quarters in the future (on a per-share basis for all metrics).
+
+For a more detailed description of how we calculate the GS Factor Profile, please contact your GS representative.
+
+## M&A Rank
+
+Across our global coverage, we examine stocks using an M&A framework, considering both qualitative factors and quantitative factors (which may vary across sectors and regions) to incorporate the potential that certain companies could be acquired. We then assign a M&A rank as a means of scoring companies under our rated coverage from 1 to 3, with 1 representing high (30%-50%) probability of the company becoming an acquisition target, 2 representing medium (15%-30%) probability and 3 representing low (0%-15%) probability. For companies ranked 1 or 2, in line with our standard departmental guidelines we incorporate an M&A component into our target price. M&A rank of 3 is considered immaterial and therefore does not factor into our price target, and may or may not be discussed in research.
+
+## Quantum
+
+Quantum is GS' proprietary database providing access to detailed financial statement histories, forecasts and ratios. It can be used for in-depth analysis of a single company, or to make comparisons between companies in different sectors and markets.
+
+## Disclosures
+
+The rating(s) for Yageo Corp. is/are relative to the other companies in its/their coverage universe: AWSC, Airtac International Group, Co-Tech Development Corp., Delta Electronics, Elite Material, GCE, Hiwin Corp., ITEQ Corp, Kinsus, Lotes, NYPCB, Taiwan Union Technology Corp., Unimicron Technology, Win Semiconductors Corp., Yageo Corp., Zhen Ding Technology Holding
+
+## Company-specific regulatory disclosures
+
+The following disclosures relate to relationships between The GS Group, Inc. (with its affiliates, “GS”) and companies covered by GS Global Investment Research and referred to in this research.
+
+GS beneficially owned 1% or more of common equity (excluding positions managed by affiliates and business units not required to be aggregated under US securities law) as of the second most recent month end: Yageo Corp. (NT\$1,045.00)
+
+GS has received compensation for investment banking services in the past 12 months: Yageo Corp. (NT\$1,045.00)
+
+GS expects to receive or intends to seek compensation for investment banking services in the next 3 months: Yageo Corp. (NT\$1,045.00)
+
+GS had an investment banking services client relationship during the past 12 months with: Yageo Corp. (NT\$1,045.00)
+
+GS had a non-investment banking securities-related services client relationship during the past 12 months with: Yageo Corp. (NT\$1,045.00)
+
+GS had a non-securities services client relationship during the past 12 months with: Yageo Corp. (NT\$1,045.00)
+
+## Distribution of ratings/investment banking relationships
+
+GS Investment Research global Equity coverage universe
+
+<table><tr><td rowspan="2"></td><td colspan="3">Rating Distribution</td><td colspan="3">Investment Banking Relationships</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>Global</td><td>50%</td><td>34%</td><td>16%</td><td>65%</td><td>60%</td><td>45%</td></tr></table>
+
+As of April 1, 2026, GS Global Investment Research had investment ratings on 3,074 equity securities. GS assigns stocks as
+
+Buys and Sells on various regional Investment Lists; stocks not so assigned are deemed Neutral. Such assignments equate to Buy, Hold and Sell for the purposes of the above disclosure required by the FINRA Rules. See ‘Ratings, Coverage universe and related definitions’ below. The Investment Banking Relationships chart reflects the percentage of subject companies within each rating category for whom GS has provided investment banking services within the previous twelve months.
+
+## Price target and rating history chart(s)
+
+Date of report Target price (NT\$) Closing price (NT\$)  
+![](images/fe33c2e4b979d8802b8adecb0b9a96eac2b968294af6a8e09b93b50d427b0616.jpg)  
+The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets.
+
+## Target price history table(s) Yageo Corp. (2327.TW)
+
+<table><tr><td>15-Apr-26</td><td>346.00</td><td>322.00</td></tr><tr><td>26-Feb-26</td><td>302.00</td><td>298.00</td></tr><tr><td>31-Oct-25</td><td>265.00</td><td>249.00</td></tr><tr><td>17-Apr-25</td><td>600.00</td><td>114.25</td></tr><tr><td>27-Feb-25</td><td>660.00</td><td>141.50</td></tr><tr><td>30-Oct-24</td><td>693.00</td><td>139.50</td></tr><tr><td>30-Jul-24</td><td>850.00</td><td>152.74</td></tr><tr><td>03-Jul-24</td><td>825.00</td><td>152.95</td></tr><tr><td>18-Apr-24</td><td>720.00</td><td>124.08</td></tr><tr><td>29-Feb-24</td><td>695.00</td><td>116.75</td></tr><tr><td>03-Jan-24</td><td>715.00</td><td>120.94</td></tr><tr><td>26-Oct-23</td><td>625.00</td><td>106.71</td></tr><tr><td>17-Jul-23</td><td>630.00</td><td>105.24</td></tr></table>
+
+Price targets shown in table(s) are unadjusted for corporate actions.
+
+## Regulatory disclosures
+
+## Disclosures required by United States laws and regulations
+
+See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; 1% or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.
+
+The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.
+
+## Additional disclosures required under the laws and regulations of jurisdictions other than the United States
+
+The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client's objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client's own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS' Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details, a copy of the annual compliance audit report and other relevant information and disclosures can be found at this link:
+
+https://www.goldmansachs.com/worldwide/india/research-analyst. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.
+
+European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.
+
+Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.
+
+## Ratings, coverage universe and related definitions
+
+Buy (B), Neutral (N), Sell (S) Analysts recommend stocks as Buys or Sells for inclusion on various regional Investment Lists. Being assigned a Buy or Sell on an Investment List is determined by a stock's total return potential relative to its coverage universe. Any stock not assigned as a Buy or a Sell on an Investment List with an active rating (i.e., a stock that is not Rating Suspended, Not Rated, Early-Stage Biotech, Coverage Suspended or Not Covered), is deemed Neutral. Each region manages Regional Conviction Lists, which are selected from Buy rated stocks on the respective region's Investment Lists and represent investment recommendations focused on the size of the total return potential and/or the likelihood of the realization of the return across their respective areas of coverage. The addition or removal of stocks from such Conviction Lists are managed by the Investment Review Committee or other designated committee in each respective region and do not represent a change in the analysts' investment rating for such stocks.
+
+Total return potential represents the upside or downside differential between the current share price and the price target, including all paid or anticipated dividends, expected during the time horizon associated with the price target. Price targets are required for all covered stocks. The total return potential, price target and associated time horizon are stated in each report adding or reiterating an Investment List membership.
+
+Coverage Universe: A list of all stocks in each coverage universe is available by primary analyst, stock and coverage universe at https://www.gs.com/research/hedge.html.
+
+Not Rated (NR). The investment rating, target price and earnings estimates (where relevant) are removed pursuant to GS policy when GS is acting in an advisory capacity in a merger or in a strategic transaction involving this company, when there are legal, regulatory or policy constraints due to GS' involvement in a transaction, and in certain other circumstances. Early-Stage Biotech (ES). An investment rating and a target price are not assigned pursuant to GS policy when this company has neither a drug, treatment or medical device that has passed a Phase II clinical trial nor a license to distribute a post-Phase II drug, treatment or medical device. Rating Suspended (RS). GS has suspended the investment rating and price target for this stock, because there is not a sufficient fundamental basis for determining an investment rating or target price. The previous investment rating and target price, if any, are no longer in effect for this stock and should not be relied upon. Coverage Suspended (CS). GS has suspended coverage of this company. Not Covered (NC). GS does not cover this company.
+
+## Global product; distributing entities
+
+GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.
+
+GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.
+
+European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.
+
+## General disclosures
+
+This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.
+
+GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).
+
+Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.
+
+The analysts named in this report may have from time to time discussed with our clients, including GS salespersons and traders, or may discuss in this report, trading strategies that reference catalysts or events that may have a near-term impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein.
+
+We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
+
+The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.
+
+Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.
+
+This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.
+
+Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\_fcm\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.
+
+Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.
+
+All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.
+
+Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.
+
+© 2026 GS.
+
+You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.

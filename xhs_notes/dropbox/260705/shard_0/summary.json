@@ -1,0 +1,124 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_1u_ub3dc/pdfs/0001-01-GS-Fujian Wanchen Food -300972-- Robust store openings and healthy per-store GMV growth YTD amid rational competition- Reiterate Buy-260704.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "零食连锁店的新玩法：",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：万辰新店投资回收期控制在2年内，GS称增长可见度正在增强",
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_1u_ub3dc/pdfs/0002-02-GS-KOSPI dropped by 4- amid continued market volatility and foreign outflows- fP E fell to the lowest level since the G.F.C-260704.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "韩国市场跌到估值冰点",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：韩国股市跌至金融危机以来最低估值，反弹信号已现",
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_1u_ub3dc/pdfs/0003-03-GS-Yageo Corp. -2327.TW-Commodity MLCC pricing upcycle is coming- with more capacity transferred into AI industry- Buy- with new TP of NT-1-490 -from NT-346--260705.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "MLCC涨价周期来了",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "GS：汽车和手机撑起非AIMLCC，9%复合增长稳定",
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_1u_ub3dc/pdfs/0004-04-NOM-Bizlink-3665.TW-Penang site visit takeaways-260705.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "马来西亚槟城工厂看了",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "sanitize_wechat_stock_line",
+      "(?:投资建议|操作建议|买卖建议)->研究交流 x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "NOM：槟城工厂揭示AI供应链被低估的制造能力升级",
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_1u_ub3dc/pdfs/0005-05-JPM-EHang- ADR-EH.US-Downgrade to Underweight- commercialization delayed- first-mover advantage diminished-260704.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "eVTOL商业化，卡",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "remove_target_price_clause x1",
+      "减持->观点偏谨慎 x1",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line",
+      "sanitize_wechat_stock_line",
+      "remove_target_price_clause x1",
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "JPM：亿航商业化不是时间问题，是路径问题",
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]
