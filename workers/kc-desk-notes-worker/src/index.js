@@ -61,6 +61,8 @@ const BBG_SHOW_REPO = "yt-feng/bbg-show";
 const BBG_SHOW_PREFIX = "rendered-clips";
 const ENTERTAIN_CUT_REPO = "yt-feng/entertain_cut";
 const KC_ENTERTAIN_PREFIX = "outputs/kc_entertain";
+const RPT2VID_REPO = "yt-feng/rpt2vid";
+const RPT2VID_PDF_KC_PREFIX = "videos/pdf_kc";
 const GITHUB_CACHE_PREFIX = "_account/github-cache";
 const GITHUB_CACHE_RETENTION_MS = 3 * 24 * 60 * 60 * 1000;
 const WECHAT_DRAFT_SOURCES = [
@@ -2870,6 +2872,7 @@ function githubRepo(env) {
 function githubRef(env, repo = githubRepo(env)) {
   if (repo === BBG_SHOW_REPO) return DEFAULT_GITHUB_REF;
   if (repo === ENTERTAIN_CUT_REPO) return DEFAULT_GITHUB_REF;
+  if (repo === RPT2VID_REPO) return DEFAULT_GITHUB_REF;
   const configured = cleanEnv(env.GH_REF) || cleanEnv(env.GITHUB_BRANCH) || cleanEnv(env.GITHUB_REF);
   if (!configured) return DEFAULT_GITHUB_REF;
   return configured.startsWith("refs/heads/") ? configured.slice("refs/heads/".length) : configured;
@@ -5125,6 +5128,47 @@ function bbgVideoAccountRecommendation(path, info) {
   };
 }
 
+function explicitKcVideoAccountLabel(value) {
+  const text = String(value || "");
+  if (/KC桌面/i.test(text)) return "KC桌面";
+  if (/KC偏见/i.test(text)) return "KC偏见";
+  return "";
+}
+
+function rpt2vidAccountRecommendation(path) {
+  const fileName = String(path || "").split("/").pop() || "";
+  const explicit = explicitKcVideoAccountLabel(fileName);
+  const text = bbgVideoTitleText(path);
+  const desktop = accountLabelMatch(text, DESKTOP_VIDEO_RULES);
+  const bias = accountLabelMatch(text, BIAS_VIDEO_RULES);
+  if (explicit) {
+    if (explicit === "KC桌面") desktop.score += 6;
+    if (explicit === "KC偏见") bias.score += 6;
+    return {
+      recommended_account: explicit,
+      account_label_confidence: "高",
+      account_label_reason: "文件名显式标注",
+      kc_bias_score: Number(bias.score.toFixed(2)),
+      kc_desktop_score: Number(desktop.score.toFixed(2)),
+    };
+  }
+  if (desktop.score === 0 && bias.score === 0) {
+    desktop.score += 0.8;
+    desktop.reasons.push("报告视频默认偏投研/报告解读");
+  }
+  const account = desktop.score > bias.score ? "KC桌面" : "KC偏见";
+  const diff = Math.abs(desktop.score - bias.score);
+  const confidence = diff >= 3.5 ? "高" : (diff >= 1.5 ? "中" : "低");
+  const reasons = account === "KC桌面" ? desktop.reasons : bias.reasons;
+  return {
+    recommended_account: account,
+    account_label_confidence: confidence,
+    account_label_reason: reasons.slice(0, 3).join("；") || "两边接近，按默认内容风格推荐",
+    kc_bias_score: Number(bias.score.toFixed(2)),
+    kc_desktop_score: Number(desktop.score.toFixed(2)),
+  };
+}
+
 function applyBbgVideoGroupMajority(files) {
   const groups = new Map();
   for (const file of files || []) {
@@ -5330,6 +5374,64 @@ async function latestKcEntertainmentFiles(env, maxItems = 12) {
   return results;
 }
 
+function rpt2vidDateFromPath(path) {
+  const clean = String(path || "").replace(/^\/+/, "");
+  const escapedPrefix = RPT2VID_PDF_KC_PREFIX.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const match = clean.match(new RegExp(`^${escapedPrefix}/(\\d{6}|\\d{8})/`));
+  return match ? dateFolderIso(match[1]) : "";
+}
+
+function rpt2vidNote(path, date) {
+  const fileName = String(path || "").split("/").pop() || "";
+  const stem = fileName
+    .replace(/\.mp4$/i, "")
+    .replace(/_KC(?:桌面|偏见)$/i, "")
+    .replace(/[-_]+/g, " ")
+    .trim();
+  const notes = [];
+  if (date) notes.push(`生成日期 ${date}`);
+  if (stem) notes.push(stem.slice(0, 120));
+  return notes.join(" · ");
+}
+
+async function latestRpt2vidPdfKcFiles(env, maxItems = 20) {
+  let entries = [];
+  try {
+    entries = await githubContents(env, RPT2VID_PDF_KC_PREFIX, RPT2VID_REPO);
+  } catch (_error) {
+    return [];
+  }
+  const dateDirs = sortGithubDirsDesc(entries)
+    .filter((item) => /^(?:\d{6}|20\d{6})$/.test(String(item.name || "")));
+  const results = [];
+  for (const dateDir of dateDirs.slice(0, 8)) {
+    let files = [];
+    try {
+      files = await githubContents(env, dateDir.path, RPT2VID_REPO);
+    } catch (_error) {
+      continue;
+    }
+    const videos = files
+      .filter((item) => item && item.type === "file" && /\.mp4$/i.test(item.name || ""))
+      .sort((a, b) => String(a.name || "").localeCompare(String(b.name || "")));
+    for (const video of videos) {
+      const path = String(video.path || "");
+      const date = rpt2vidDateFromPath(path) || dateFolderIso(dateDir.name);
+      results.push(adminGithubFile(
+        "rpt2vid-pdf-kc",
+        "报告视频",
+        video,
+        date,
+        rpt2vidNote(path, date),
+        RPT2VID_REPO,
+        rpt2vidAccountRecommendation(path),
+      ));
+      if (results.length >= maxItems) return results;
+    }
+  }
+  return results;
+}
+
 async function latestSiteVideoFiles(env, maxItems = 6) {
   const results = [];
   const dateDirs = sortGithubDirsDesc(await githubContents(env, "bilingual_podcast_videos"));
@@ -5386,17 +5488,18 @@ async function latestGithubArtifacts(env) {
 }
 
 async function latestAdminGithubFiles(env) {
-  const [bbg, market, entertainVideos, siteVideos] = await Promise.all([
+  const [bbg, market, entertainVideos, rpt2vidVideos, siteVideos] = await Promise.all([
     latestBbgRenderedClipFiles(env).catch(() => []),
     latestMarketViewFiles(env).catch(() => []),
     latestKcEntertainmentFiles(env).catch(() => []),
+    latestRpt2vidPdfKcFiles(env).catch(() => []),
     latestSiteVideoFiles(env).catch(() => []),
   ]);
   const artifacts = await latestGithubArtifacts(env);
   const fallback = [];
   if (!market.length) fallback.push(...artifacts.filter((item) => item.kind === "market-views").slice(0, 3));
   if (!siteVideos.length) fallback.push(...artifacts.filter((item) => item.kind === "site-video").slice(0, 3));
-  return [...bbg, ...market, ...fallback, ...entertainVideos, ...siteVideos];
+  return [...bbg, ...market, ...fallback, ...entertainVideos, ...rpt2vidVideos, ...siteVideos];
 }
 
 function operatorVisibleAdminFiles(files) {
@@ -5563,6 +5666,7 @@ function normalizeGithubRepoParam(env, value) {
   if (repo === githubRepo(env) || repo === DEFAULT_GITHUB_REPO) return githubRepo(env);
   if (repo === BBG_SHOW_REPO) return BBG_SHOW_REPO;
   if (repo === ENTERTAIN_CUT_REPO) return ENTERTAIN_CUT_REPO;
+  if (repo === RPT2VID_REPO) return RPT2VID_REPO;
   return "";
 }
 
@@ -5571,6 +5675,7 @@ function isAllowedAdminGithubFile(env, repo, path) {
   if (clean.includes("..")) return false;
   if (repo === BBG_SHOW_REPO) return /^rendered-clips\/.+\.mp4$/i.test(clean);
   if (repo === ENTERTAIN_CUT_REPO) return /^outputs\/kc_entertain\/20\d{2}-\d{2}-\d{2}\/.+\.mp4$/i.test(clean);
+  if (repo === RPT2VID_REPO) return /^videos\/pdf_kc\/(?:\d{6}|20\d{6})\/[^/]+\.mp4$/i.test(clean);
   if (/^bilingual_podcast_videos\/.+\.mp4$/i.test(clean)) return true;
   if (/^market_view_summaries\/.+\.pdf$/i.test(clean)) return true;
   return false;
