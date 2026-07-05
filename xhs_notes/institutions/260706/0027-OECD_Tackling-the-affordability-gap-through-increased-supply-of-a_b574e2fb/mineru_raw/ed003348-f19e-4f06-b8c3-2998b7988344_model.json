@@ -1,0 +1,6103 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.024,
+                0.06,
+                0.186,
+                0.1
+            ],
+            "angle": 0,
+            "content": "OECD\nBETTER POLICIES FOR BETTER LIVES"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.296,
+                0.046,
+                0.739,
+                0.111
+            ],
+            "angle": 0,
+            "content": "Policy Brief"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.123,
+                0.205,
+                0.822,
+                0.329
+            ],
+            "angle": 0,
+            "content": "Tackling the affordability gap through increased supply of affordable and social housing"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.797,
+                0.366,
+                0.87,
+                0.383
+            ],
+            "angle": 0,
+            "content": "July 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.114,
+                0.407,
+                0.294,
+                0.432
+            ],
+            "angle": 0,
+            "content": "Key messages"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.14,
+                0.452,
+                0.881,
+                0.547
+            ],
+            "angle": 0,
+            "content": "- The housing affordability crisis in OECD/EU countries reflects, in part, an imbalance between housing supply and demand. Driven by multiple factors, such as rising construction costs, labour shortages in the construction sector, higher borrowing costs to finance construction, restrictive land-use policies and low public investment, the consequences are clear: rising housing costs, a growing housing cost burden for many households, and a shrinking social rental sector that is insufficient to meet demand.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.141,
+                0.549,
+                0.881,
+                0.643
+            ],
+            "angle": 0,
+            "content": "- Expanding the supply of affordable and social rental housing is a key part of the policy solution. This has the dual benefit of protecting low-income and vulnerable households, while also easing upward pressure on house prices. In a context of increasing pressures on public finances, two broad policy avenues can be pursued in parallel: i) Mobilising the existing stock as a source of affordable and social rental housing; and ii) Leveraging public and private funding to develop new affordable and social rental housing.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.141,
+                0.646,
+                0.882,
+                0.724
+            ],
+            "angle": 0,
+            "content": "- Activating the existing building stock – namely vacant and/or underutilised properties – for affordable and social rental housing can ease short-term pressure in tight markets, with the potential to improve building quality and energy efficiency. How much vacant housing can be mobilised for affordable and social housing depends on the scale, location and quality of vacant properties, as well as the reasons for vacancy. Potential instruments include:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.169,
+                0.726,
+                0.881,
+                0.774
+            ],
+            "angle": 0,
+            "content": "○ Rental intermediation schemes offer diverse incentives and/or guarantees to property owners to lease available units at below-market rates; their design can be tailored to different policy challenges and country contexts.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.169,
+                0.776,
+                0.88,
+                0.824
+            ],
+            "angle": 0,
+            "content": "- Fiscal tools – such as reduced tax rates on rental income from leasing at affordable rates, or levies on vacant properties – can complement rental intermediation schemes, but may be more effective at improving housing availability than affordability.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.141,
+                0.826,
+                0.881,
+                0.859
+            ],
+            "angle": 0,
+            "content": "- Leveraging public and private funding can support sustainable investment in affordable and social rental housing while ensuring that funding is effectively used. Options include:",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.105,
+                0.916,
+                0.869,
+                0.931
+            ],
+            "angle": 0,
+            "content": "TACKLING THE AFFORDABILITY GAP THROUGH INCREASED SUPPLY OF AFFORDABLE AND SOCIAL HOUSING © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.205,
+                0.82,
+                0.242
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.249,
+                0.768,
+                0.283
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.29,
+                0.399,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.799,
+                0.367,
+                0.869,
+                0.387
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.112,
+                0.407,
+                0.295,
+                0.433
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.453,
+                0.88,
+                0.467
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.469,
+                0.88,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.484,
+                0.878,
+                0.499
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.501,
+                0.878,
+                0.513
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.516,
+                0.878,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.531,
+                0.58,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.549,
+                0.878,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.565,
+                0.878,
+                0.579
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.581,
+                0.88,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.598,
+                0.878,
+                0.61
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.612,
+                0.878,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.627,
+                0.563,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.646,
+                0.88,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.661,
+                0.879,
+                0.676
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.677,
+                0.881,
+                0.692
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.692,
+                0.879,
+                0.707
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.708,
+                0.876,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.729,
+                0.195,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.2,
+                0.726,
+                0.879,
+                0.742
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.2,
+                0.742,
+                0.879,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.203,
+                0.758,
+                0.561,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.17,
+                0.776,
+                0.878,
+                0.791
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.2,
+                0.791,
+                0.878,
+                0.807
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.2,
+                0.807,
+                0.707,
+                0.823
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.17,
+                0.826,
+                0.88,
+                0.841
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.842,
+                0.88,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.105,
+                0.757,
+                0.892,
+                0.773
+            ],
+            "angle": 0,
+            "content": "Source: Panel A: OECD (2025), OECD Affordable Housing Database – indicator HM1.2. Housing prices,"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.106,
+                0.075,
+                0.128,
+                0.091
+            ],
+            "angle": 0,
+            "content": "2 |"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.169,
+                0.117,
+                0.881,
+                0.21
+            ],
+            "angle": 0,
+            "content": "○ Establishing sustainable funding mechanisms for new affordable and social housing through special-purpose instruments, using public support to mobilise private funding. To be successful, funding volumes should be based on regular assessments of housing needs; rent-setting should ideally cover development costs while remaining affordable; and changes to borrowing and construction costs should be systematically monitored to inform both rent-setting and subsidy decisions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.17,
+                0.213,
+                0.881,
+                0.292
+            ],
+            "angle": 0,
+            "content": "- Supporting the role and emergence of specialised providers of affordable and social housing – whether public, semi-public, or private non- or limited-profit actors – to ensure the take up of funding and the effective delivery and management of affordable and social rental dwellings. Ensuring viable business models, e.g. by indexing rent levels to inflation and updating rent levels in line with increases in tenants’ income, is key.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.104,
+                0.351,
+                0.284,
+                0.369
+            ],
+            "angle": 0,
+            "content": "What's the issue?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.384,
+                0.895,
+                0.465
+            ],
+            "angle": 0,
+            "content": "Over the past three decades, real house prices have increased in nearly all OECD countries (Figure 1, Panel A), and the share of housing-related spending in total consumption spending has been on the rise, raising concerns about housing affordability (OECD, 2025[1]). With earnings not keeping up with this increase, high housing prices mean that many households must allocate a larger share of their budget to cover mortgage or rent, and less on other key consumption items (Figure 1, Panel B).",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.103,
+                0.481,
+                0.829,
+                0.516
+            ],
+            "angle": 0,
+            "content": "Figure 1. A 30-year surge in housing prices, with housing costs rising faster than any other household expense"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.115,
+                0.525,
+                0.492,
+                0.741
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.527,
+                0.525,
+                0.871,
+                0.737
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.104,
+                0.771,
+                0.893,
+                0.799
+            ],
+            "angle": 0,
+            "content": "https://www.oecd.org/content/oecd/en/data/datasets/oecd-affordable-housing-database.html, drawing on OECD Analytical House Price Database. Panel B: (OECD, 2025[2]); OECD Economic Outlook 117 database; OECD National Accounts database; and OECD calculations."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.82,
+                0.895,
+                0.884
+            ],
+            "angle": 0,
+            "content": "Home ownership rates have been declining in a number of OECD countries, especially among young people. For instance, between the 1980s and mid-2010s, home ownership rates dropped among people aged 25-34 in Australia, Denmark, Germany, the Netherlands, the United Kingdom and the United States (Smith et al., 2022[3]; Flynn, 2019[4]; Lennartz, Arundel and Ronald, 2015[5]; Hochstenbach and Arundel,",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.129,
+                0.916,
+                0.894,
+                0.931
+            ],
+            "angle": 0,
+            "content": "TACKLING THE AFFORDABILITY GAP THROUGH INCREASED SUPPLY OF AFFORDABLE AND SOCIAL HOUSING © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.12,
+                0.186,
+                0.131
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.202,
+                0.118,
+                0.88,
+                0.132
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.202,
+                0.133,
+                0.879,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.202,
+                0.149,
+                0.879,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.201,
+                0.164,
+                0.88,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.203,
+                0.18,
+                0.878,
+                0.192
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.202,
+                0.194,
+                0.498,
+                0.208
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.217,
+                0.19,
+                0.227
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.201,
+                0.214,
+                0.879,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.201,
+                0.23,
+                0.878,
+                0.243
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.201,
+                0.245,
+                0.878,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.2,
+                0.26,
+                0.879,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.201,
+                0.276,
+                0.706,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.354,
+                0.28,
+                0.368
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.386,
+                0.891,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.401,
+                0.889,
+                0.414
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.418,
+                0.891,
+                0.429
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.434,
+                0.889,
+                0.444
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.449,
+                0.743,
+                0.46
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.82,
+                0.891,
+                0.834
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.835,
+                0.891,
+                0.85
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.852,
+                0.889,
+                0.863
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.11,
+                0.868,
+                0.889,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.875,
+                0.076,
+                0.894,
+                0.09
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.109,
+                0.895,
+                0.249
+            ],
+            "angle": 0,
+            "content": "2021[6]; Wood et al., 2015[7]; Clark, 2018[8]; Arundel and Ronald, 2020[9]). By contrast, in Italy and Norway, home ownership rates among young people increased over this period by 5 and 8 percentage points (p.p.), respectively (Flynn, 2019[4]). As a consequence, more people have turned to the rental market, resulting in rising rents. Over the past decade, the share of tenants in the private rental market who spent more than \\(40\\%\\) of their disposable income on rent increased from \\(12.8\\%\\) of tenants in 2012 to \\(17.9\\%\\) in 2023, on average in the OECD (OECD, 2025[1]). Housing affordability is a particular challenge for low-income households and young people: around two in five low-income tenants spend over \\(40\\%\\) of their disposable income on rent, and the majority of young people aged 20-29 live with their parents in more than half of OECD countries (OECD, 2025[1]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.102,
+                0.255,
+                0.895,
+                0.365
+            ],
+            "angle": 0,
+            "content": "With house prices and private rents rising faster than incomes, and rental overburden increasingly widespread, expanding affordable and social rental housing \\( ^{1} \\) can help address affordability pressures that the market alone has proven unable to resolve. However, in around two-thirds of OECD countries, social rental housing makes up less than 5% of the total housing stock; only in the Netherlands, Austria and Denmark does it account for more than 20% of the total stock (OECD, 2025 \\( ^{[1]} \\) ). In fact, the share of social rental housing as a percentage of the total housing stock has declined since 2010 in all but three OECD countries with available data (OECD, 2026, forthcoming \\( ^{[10]} \\) ).",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.104,
+                0.389,
+                0.33,
+                0.408
+            ],
+            "angle": 0,
+            "content": "Why is this important?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.423,
+                0.894,
+                0.501
+            ],
+            "angle": 0,
+            "content": "Housing has implications for macroeconomic development, financial stability and environmental performance. It is often households' largest asset as well as their largest financial liability. It impacts resource allocation and productivity and accounts for an important share of \\(\\mathrm{CO}_{2}\\) emissions (OECD, 2024[11]). Deterioration in housing affordability has far-reaching impacts on the economy, as well as implications for households' pocketbooks and prospects:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.132,
+                0.507,
+                0.894,
+                0.553
+            ],
+            "angle": 0,
+            "content": "- Access to affordable housing and a well-functioning housing market can inform the efficient reallocation of resources and affect productivity growth, resilience to economic shocks as well as environmental outcomes (OECD, 2021[12]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.132,
+                0.556,
+                0.894,
+                0.603
+            ],
+            "angle": 0,
+            "content": "- Difficulties in accessing affordable housing options reduce residential mobility, which in turn can exacerbate skill mismatches and contribute to skill shortages, making labour markets less resilient (OECD, 2021[12]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.132,
+                0.606,
+                0.894,
+                0.668
+            ],
+            "angle": 0,
+            "content": "- Increases in household spending on housing can have a negative effect on total fertility rates (Fluchtmann, van Veen and Adema, 2023[13]; OECD, 2024[14]) – a key concern for policymakers in a context of declining fertility, ageing-related fiscal pressures and major demographic transformations.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.133,
+                0.672,
+                0.892,
+                0.703
+            ],
+            "angle": 0,
+            "content": "- For most households, housing represents the largest asset, and is thus a fundamental driver of the accumulation and distribution of wealth (Causa, Woloszko and Leite, 2019[15]; OECD, 2021[12]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.133,
+                0.705,
+                0.893,
+                0.738
+            ],
+            "angle": 0,
+            "content": "- In some OECD countries, there is evidence that the shortage of affordable housing has contributed to increases in homelessness and housing insecurity (OECD, 2026, forthcoming[16]).",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.104,
+                0.764,
+                0.86,
+                0.782
+            ],
+            "angle": 0,
+            "content": "What's driving the affordability crisis, and what can policymakers do about it?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.797,
+                0.895,
+                0.891
+            ],
+            "angle": 0,
+            "content": "The drivers of the housing affordability crisis in OECD countries are multiple and context specific. On the supply side, rising construction costs, labour shortages in the construction sector, higher interest rates that increase the cost of financing construction, restrictive land use policies, limited availability of land for development in high-demand areas, the effects of short-term rentals in some areas, and declining public investment in housing constrain the production of new housing (OECD, 2021[12]). At the same time, demand pressures, including demographic changes – such as population ageing and migration flows –",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.104,
+                0.916,
+                0.869,
+                0.93
+            ],
+            "angle": 0,
+            "content": "TACKLING THE AFFORDABILITY GAP THROUGH INCREASED SUPPLY OF AFFORDABLE AND SOCIAL HOUSING © OECD 2026"
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.632,
+                0.317,
+                0.69,
+                0.332
+            ],
+            "latex": "",
+            "score": 0.6209
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.706,
+                0.454,
+                0.742,
+                0.468
+            ],
+            "latex": "",
+            "score": 0.6808
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.437,
+                0.622,
+                0.623,
+                0.637
+            ],
+            "latex": "",
+            "score": 0.5488
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.677,
+                0.687,
+                0.741,
+                0.702
+            ],
+            "latex": "",
+            "score": 0.6552
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.11,
+                0.891,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.125,
+                0.891,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.14,
+                0.891,
+                0.154
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.156,
+                0.892,
+                0.168
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.172,
+                0.891,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.187,
+                0.891,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.203,
+                0.891,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.219,
+                0.892,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.233,
+                0.358,
+                0.247
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.256,
+                0.889,
+                0.269
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.271,
+                0.892,
+                0.283
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.288,
+                0.889,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.303,
+                0.891,
+                0.315
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.318,
+                0.629,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.69,
+                0.318,
+                0.891,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.333,
+                0.891,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.348,
+                0.551,
+                0.362
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.391,
+                0.326,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.425,
+                0.889,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.44,
+                0.889,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.455,
+                0.705,
+                0.467
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.743,
+                0.455,
+                0.89,
+                0.467
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.471,
+                0.89,
+                0.482
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.487,
+                0.528,
+                0.498
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.137,
+                0.507,
+                0.891,
+                0.521
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.163,
+                0.522,
+                0.891,
+                0.536
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.539,
+                0.482,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.163,
+                0.558,
+                0.891,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.573,
+                0.892,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.167,
+                0.59,
+                0.294,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.163,
+                0.608,
+                0.891,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.166,
+                0.624,
+                0.434,
+                0.635
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.626,
+                0.624,
+                0.891,
+                0.635
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.638,
+                0.891,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.166,
+                0.655,
+                0.286,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.163,
+                0.673,
+                0.889,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.166,
+                0.689,
+                0.674,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.743,
+                0.688,
+                0.868,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.708,
+                0.89,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.723,
+                0.788,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.765,
+                0.856,
+                0.78
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.797,
+                0.889,
+                0.81
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.814,
+                0.891,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.83,
+                0.889,
+                0.84
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.844,
+                0.891,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.859,
+                0.889,
+                0.871
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.876,
+                0.891,
+                0.887
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.106,
+                0.076,
+                0.124,
+                0.09
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.109,
+                0.893,
+                0.156
+            ],
+            "angle": 0,
+            "content": "and shifts toward smaller and more numerous households, put further pressure on an already strained housing supply. The intensity of affordability pressures, as well as the relative importance of different contributing factors, varies across and within countries.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.162,
+                0.894,
+                0.303
+            ],
+            "angle": 0,
+            "content": "As part of a range of reforms to address the housing affordability crisis (OECD, 2021[12]; OECD, 2023[17]), many OECD countries are exploring ways to increase the supply of affordable and social rental housing. Expanding access to affordable and social rental housing can help cushion some of the effects of the housing crisis in the short term, while also supporting housing affordability objectives over the longer term. The increased focus on the rental market represents a shift in the housing policy approach in some OECD countries, which has traditionally emphasised access to home ownership. There is growing recognition that support for home ownership can yield benefits, yet also comes with important costs (Box 1). The shift towards the development of the rental market (subsidised and private) diversifies and balances available housing options, helping to meet the needs of a broader range of households.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.308,
+                0.894,
+                0.34
+            ],
+            "angle": 0,
+            "content": "This brief focusses on two approaches to increase the supply of affordable and social rental housing that could help make the best use of constrained fiscal and environmental resources:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.132,
+                0.346,
+                0.892,
+                0.378
+            ],
+            "angle": 0,
+            "content": "- Identifying opportunities to mobilise the existing building stock as a source of affordable and social rental housing; and",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.133,
+                0.38,
+                0.892,
+                0.412
+            ],
+            "angle": 0,
+            "content": "- Supporting the development and funding of new affordable and social housing by leveraging public and private resources.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.117,
+                0.438,
+                0.582,
+                0.457
+            ],
+            "angle": 0,
+            "content": "Box 1. The costs and benefits of home ownership support"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.116,
+                0.467,
+                0.881,
+                0.531
+            ],
+            "angle": 0,
+            "content": "In many OECD countries, support for home ownership has traditionally formed the backbone of housing policy. Public support takes various forms, such as the provision of direct subsidies, subsidised mortgages or mortgage guarantees to first-time homebuyers; favourable tax treatment of home ownership; and funding (or other support) to build new housing. \\( ^{1} \\)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.116,
+                0.537,
+                0.881,
+                0.584
+            ],
+            "angle": 0,
+            "content": "Home ownership can bring important benefits, including as a vehicle for asset and wealth accumulation; for its role in generating positive outcomes for children; and, according to some research, for its link to higher levels of civic engagement.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.59,
+                0.882,
+                0.684
+            ],
+            "angle": 0,
+            "content": "Nevertheless, home ownership – along with the public policies designed to facilitate its expansion – also generates costs that can extend beyond its budgetary cost. Most importantly, in the context of constrained supply, demand-side housing support (including financial and fiscal incentives that aim to support first-time home buyers or existing homeowners) can increase demand for housing and push up house prices, thereby reducing housing affordability overall and redistributing income from (younger) first-time buyers towards (older) existing homeowners.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.689,
+                0.88,
+                0.737
+            ],
+            "angle": 0,
+            "content": "Further, countries with higher home-ownership rates tend to have lower residential mobility, which can make more difficult to meet labour demands, and tax advantages that favour home ownership tend to be regressive, primarily benefitting higher-income households.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.741,
+                0.881,
+                0.81
+            ],
+            "angle": 0,
+            "content": "1. Refer to the OECD Affordable Housing Database for an overview of national-level policies in place to support affordable housing (indicator PH1.1. Policy instruments and level of government); for more details on specific measures to facilitate access to home ownership (indicators PH2.1. Support for homebuyers and PH5.1. Measures to support affordable housing development) (OECD, 2025[1]).\nSource: (Andrews and Caldera Sánchez, 2011[18]; Salvi del Pero et al., 2016[19]; OECD, 2021[12]; Causa, Woloszko and Leite, 2019[15]; Andrews, Caldera Sánchez and Johansson, 2011[20]; OECD, 2022[21]; André, 2010[22]; Causa and Pichelmann, 2020[23]).",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.129,
+                0.917,
+                0.893,
+                0.93
+            ],
+            "angle": 0,
+            "content": "TACKLING THE AFFORDABILITY GAP THROUGH INCREASED SUPPLY OF AFFORDABLE AND SOCIAL HOUSING © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.11,
+                0.889,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.126,
+                0.891,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.141,
+                0.516,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.163,
+                0.89,
+                0.176
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.179,
+                0.89,
+                0.191
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.194,
+                0.891,
+                0.206
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.21,
+                0.889,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.225,
+                0.89,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.24,
+                0.891,
+                0.253
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.257,
+                0.891,
+                0.268
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.272,
+                0.889,
+                0.283
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.288,
+                0.684,
+                0.299
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.31,
+                0.891,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.326,
+                0.707,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.161,
+                0.348,
+                0.891,
+                0.36
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.364,
+                0.309,
+                0.375
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.162,
+                0.382,
+                0.891,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.166,
+                0.398,
+                0.331,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.437,
+                0.582,
+                0.456
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.468,
+                0.879,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.484,
+                0.878,
+                0.498
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.5,
+                0.878,
+                0.513
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.514,
+                0.598,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.537,
+                0.879,
+                0.551
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.552,
+                0.878,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.569,
+                0.374,
+                0.582
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.589,
+                0.881,
+                0.605
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.605,
+                0.879,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.621,
+                0.878,
+                0.635
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.637,
+                0.88,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.652,
+                0.878,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.668,
+                0.525,
+                0.682
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.69,
+                0.877,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.706,
+                0.878,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.721,
+                0.584,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.741,
+                0.879,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.755,
+                0.879,
+                0.768
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.768,
+                0.758,
+                0.782
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.78,
+                0.878,
+                0.795
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.794,
+                0.779,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.875,
+                0.075,
+                0.894,
+                0.09
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.105,
+                0.108,
+                0.801,
+                0.126
+            ],
+            "angle": 0,
+            "content": "Mobilise the existing stock as a source of affordable and social rental housing"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.136,
+                0.895,
+                0.215
+            ],
+            "angle": 0,
+            "content": "Many governments are exploring how to mobilise the existing housing stock as a source of affordable and social rental housing. Activating the existing stock can help relieve some short-term pressures in tight housing markets, while also making more efficient use of vacant or underutilised buildings. It can also be an avenue to upgrade the building stock, including in terms of quality and energy efficiency, representing a more environmentally sustainable alternative to new construction.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.221,
+                0.894,
+                0.299
+            ],
+            "angle": 0,
+            "content": "Different types of stock can be considered, including vacant or underutilised dwellings and/or properties owned by public or institutional actors (e.g. hospitals, military barracks, etc.) that are no longer in use and can be adapted for new purposes, including affordable and social housing. Additionally, public authorities can also consider acquiring existing dwellings as an additional source of affordable and social rental housing.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.305,
+                0.894,
+                0.369
+            ],
+            "angle": 0,
+            "content": "Vacant dwellings make up at least 7% of the total housing stock in 21 countries with available data, on average (and at least 10% in those countries that also include seasonal/holiday homes \\( ^{2} \\) ) (OECD, 2026, forthcoming \\( ^{[10]} \\) ). Despite growing interest in the potential for adaptive reuse of ageing and underutilised properties owned by public or institutional actors, there are no cross-national data on the size of the stock.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.374,
+                0.895,
+                0.531
+            ],
+            "angle": 0,
+            "content": "Not all vacant dwellings are worth activating or acquiring, and their potential as a source of affordable housing use should not be overestimated, as the dwellings may be in poor condition or in areas where there is little demand for housing. Accordingly, it is important to undertake a detailed assessment of the scale, location, ownership status and quality of vacant or underutilised properties, as well as the main reasons for vacancy, to determine the viability of bringing such properties back into the market. In addition to census and survey data, administrative data as well as data from public utilities can inform this assessment (OECD, 2025[24]). Policymakers can then consider different approaches to activate vacant or idle properties for affordable rent, including by introducing incentive schemes and mediating actors (such as social rental agencies) to encourage owners to lease properties at below-market rates, and/or other instruments, including fiscal tools (OECD, 2025[24]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.542,
+                0.876,
+                0.575
+            ],
+            "angle": 0,
+            "content": "Rental intermediation schemes to encourage property owners to lease dwellings at affordable rates",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.587,
+                0.895,
+                0.65
+            ],
+            "angle": 0,
+            "content": "Rental intermediation schemes function by offering incentives to property owners to lease dwellings at below-market rates. Such schemes may be operated by a formal intermediary between property owners and tenants – such as a social rental agency (SRA) – which assumes some of the risks and day-to-day responsibilities associated with leasing a dwelling and can also provide additional support to tenants.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.655,
+                0.893,
+                0.687
+            ],
+            "angle": 0,
+            "content": "There are considerable differences in the design and implementation of rental intermediation schemes, reflecting that such schemes can be adapted to address specific challenges and contexts:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.132,
+                0.693,
+                0.894,
+                0.74
+            ],
+            "angle": 0,
+            "content": "- Type of eligible properties: Schemes may apply to any rental dwelling, provided that it meets minimum quality standards, or focus only on certain dwellings, such as privately- or publicly-owned flats, long-term vacant dwellings, and/or vacant dwellings in need of renovation.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.133,
+                0.743,
+                0.893,
+                0.774
+            ],
+            "angle": 0,
+            "content": "- Tenant eligibility: Schemes may aim to support the most vulnerable tenants (people at risk of, or experiencing, homelessness) or have broader eligibility criteria.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.133,
+                0.778,
+                0.894,
+                0.824
+            ],
+            "angle": 0,
+            "content": "- Contractual arrangements: In some schemes, tenants sign a rental contract directly with the owner; in others, an intermediary body (e.g. SRA) signs the lease on behalf of the tenant, who then subleases the unit from the SRA.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.133,
+                0.827,
+                0.894,
+                0.874
+            ],
+            "angle": 0,
+            "content": "- Benefits/guarantees to tenants: While rent level calculations vary, all schemes provide tenants with below-market rents and guaranteed tenancy for a specified period; in some cases, additional social support may be made available to tenants as relevant.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.105,
+                0.916,
+                0.869,
+                0.93
+            ],
+            "angle": 0,
+            "content": "TACKLING THE AFFORDABILITY GAP THROUGH INCREASED SUPPLY OF AFFORDABLE AND SOCIAL HOUSING © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.109,
+                0.797,
+                0.125
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.139,
+                0.891,
+                0.149
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.154,
+                0.891,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.168,
+                0.889,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.184,
+                0.889,
+                0.197
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.201,
+                0.608,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.11,
+                0.222,
+                0.888,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.238,
+                0.889,
+                0.248
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.253,
+                0.889,
+                0.263
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.268,
+                0.891,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.283,
+                0.173,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.307,
+                0.89,
+                0.318
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.321,
+                0.89,
+                0.333
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.337,
+                0.889,
+                0.348
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.352,
+                0.89,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.376,
+                0.891,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.392,
+                0.891,
+                0.402
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.406,
+                0.891,
+                0.419
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.422,
+                0.891,
+                0.433
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.438,
+                0.891,
+                0.448
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.453,
+                0.889,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.468,
+                0.889,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.483,
+                0.891,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.5,
+                0.889,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.515,
+                0.488,
+                0.528
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.544,
+                0.873,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.56,
+                0.154,
+                0.575
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.588,
+                0.891,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.604,
+                0.889,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.617,
+                0.891,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.635,
+                0.856,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.656,
+                0.891,
+                0.669
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.672,
+                0.774,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.14,
+                0.694,
+                0.891,
+                0.707
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.711,
+                0.891,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.725,
+                0.756,
+                0.738
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.161,
+                0.744,
+                0.889,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.166,
+                0.761,
+                0.633,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.162,
+                0.779,
+                0.891,
+                0.791
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.166,
+                0.795,
+                0.891,
+                0.806
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.166,
+                0.81,
+                0.411,
+                0.821
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.163,
+                0.829,
+                0.889,
+                0.84
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.166,
+                0.845,
+                0.889,
+                0.856
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.166,
+                0.86,
+                0.617,
+                0.871
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.106,
+                0.075,
+                0.13,
+                0.09
+            ],
+            "angle": 0,
+            "content": "6 |"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.132,
+                0.109,
+                0.895,
+                0.186
+            ],
+            "angle": 0,
+            "content": "- Incentives/guarantees to participating property owners: Incentive structures vary considerably. Most include regular rental payments; they may also include the management of the administrative aspects of tenancy agreements; payment and/or management of all/part of maintenance/repairs; fiscal incentives (e.g. tax relief on rental income); and/or financial support, including to undertake renovations.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.193,
+                0.896,
+                0.365
+            ],
+            "angle": 0,
+            "content": "At least 10 OECD/EU countries report some form of rental intermediation scheme, according to the 2025 OECD Questionnaire on Affordable and Social Housing (QuASH). The approach is relatively well developed in Belgium, Chile, France, Ireland and the United States, and in a pilot phase in Greece, Poland and Spain. In France, 93 000 units have been mobilised through rental intermediation, largely accommodating people experiencing or at risk of homelessness (Délégation interministérielle à l'hébergement et à l'accès au logement (DIHAL), France, 2023[25]). In Belgium, around 30 000 dwellings have been mobilised through rental intermediation, through 96 SRAs. In Ireland, the Rental Accommodation Scheme – managed by local authorities – contracts directly with private landlords to house individuals with a long-term housing need. Common challenges include the identification of potential properties and/or property owners, as well as the design of the appropriate incentives to encourage property owners to participate.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.37,
+                0.895,
+                0.496
+            ],
+            "angle": 0,
+            "content": "While SRAs can help increase access to below-market rate housing, they do not represent a structural market fix. Challenges to scale up rental intermediation include competition from the private rental sector and the need to maintain sufficiently attractive incentives to encourage sustained participation from property owners – especially in tight rental markets where market rent levels are high. The cost effectiveness of sustained public support for rental intermediation (e.g. guarantees, fiscal incentives and/or renovation subsidies, along with any public support for the operation of SRAs), as well as the efficiency and affordability levels achieved through rental intermediation vis a vis the development of new affordable and social housing, requires careful consideration and assessment.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.105,
+                0.508,
+                0.782,
+                0.524
+            ],
+            "angle": 0,
+            "content": "Other instruments to activate vacant or idle properties for lease at affordable rates"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.536,
+                0.895,
+                0.646
+            ],
+            "angle": 0,
+            "content": "Tax incentives, along with broader tax reforms, can be another avenue to activate the vacant or underutilised stock for affordable rental housing. The tax regime in most OECD countries makes it generally more fiscally advantageous for homeowners to occupy their home rather than rent it to others; this is because rental income is generally taxable, whereas imputed rents (the rental value of living in an owned unit) is often tax-free (OECD, 2022[21]). Nevertheless, some OECD countries offer fiscal incentives, such as lower tax rates on rental income, to property owners who lease their properties at below-market rent, including Australia, France and Italy (OECD, 2022[21]; OECD, 2023[26]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.651,
+                0.895,
+                0.823
+            ],
+            "angle": 0,
+            "content": "One alternative is to levy a tax (or higher tax rate) on vacant or idle properties or land to encourage more efficient use of the housing stock. However, taxes on vacant properties require close monitoring and enforcement and have not been consistently effective in increasing both housing availability and affordability, with experiences in Australia, Canada, France, Portugal and the United Kingdom (Segú, 2020[27]; OECD, 2022[21]; Caracciolo and Miglino, 2024[28]; OECD, 2026[29]). For instance, an empty-homes tax introduced in Vancouver, Canada, in 2017 was shown to help address housing availability by reducing the overall vacancy rate, but did not affect housing affordability, with no change observed to average rent levels – suggesting that additional measures might be needed to improve housing affordability (Caracciolo and Miglino, 2024[28]). Effective implementation of vacancy taxes also requires extensive monitoring and enforcing mechanisms, the costs of which should be carefully assessed against the benefits of these taxes (OECD, 2025[24]; OECD, 2022[21]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.827,
+                0.895,
+                0.891
+            ],
+            "angle": 0,
+            "content": "Ultimately, the introduction of specific tax incentives or levies may be a next-best option, following broader tax reforms, including, inter alia, improving the design and functioning of property taxes, evaluating fiscal support for home ownership, and considering a mix of tax and non-tax policies to increase the supply of affordable housing (see OECD (2022[21]; 2024[11])).",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.129,
+                0.916,
+                0.894,
+                0.93
+            ],
+            "angle": 0,
+            "content": "TACKLING THE AFFORDABILITY GAP THROUGH INCREASED SUPPLY OF AFFORDABLE AND SOCIAL HOUSING © OECD 2026"
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.418,
+                0.628,
+                0.666,
+                0.644
+            ],
+            "latex": "",
+            "score": 0.5008
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.107,
+                0.712,
+                0.17,
+                0.727
+            ],
+            "latex": "",
+            "score": 0.5374
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.229,
+                0.712,
+                0.292,
+                0.727
+            ],
+            "latex": "",
+            "score": 0.5092
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.471,
+                0.712,
+                0.534,
+                0.727
+            ],
+            "latex": "",
+            "score": 0.5314
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.593,
+                0.712,
+                0.655,
+                0.727
+            ],
+            "latex": "",
+            "score": 0.5193
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.17,
+                0.806,
+                0.233,
+                0.821
+            ],
+            "latex": "",
+            "score": 0.4501
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.342,
+                0.874,
+                0.479,
+                0.89
+            ],
+            "latex": "",
+            "score": 0.5805
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.163,
+                0.109,
+                0.891,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.125,
+                0.89,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.141,
+                0.892,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.166,
+                0.157,
+                0.889,
+                0.168
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.166,
+                0.172,
+                0.425,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.194,
+                0.891,
+                0.206
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.21,
+                0.892,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.225,
+                0.891,
+                0.237
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.24,
+                0.891,
+                0.253
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.257,
+                0.892,
+                0.269
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.272,
+                0.891,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.287,
+                0.891,
+                0.299
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.303,
+                0.891,
+                0.315
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.319,
+                0.89,
+                0.329
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.333,
+                0.891,
+                0.346
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.351,
+                0.334,
+                0.361
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.37,
+                0.891,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.387,
+                0.889,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.403,
+                0.889,
+                0.414
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.418,
+                0.892,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.432,
+                0.892,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.449,
+                0.889,
+                0.46
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.464,
+                0.889,
+                0.475
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.481,
+                0.609,
+                0.492
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.111,
+                0.51,
+                0.778,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.537,
+                0.891,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.552,
+                0.892,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.568,
+                0.891,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.584,
+                0.891,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.599,
+                0.891,
+                0.611
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.614,
+                0.891,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.63,
+                0.414,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.651,
+                0.891,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.667,
+                0.891,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.683,
+                0.891,
+                0.695
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.698,
+                0.889,
+                0.711
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.713,
+                0.227,
+                0.726
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.293,
+                0.713,
+                0.469,
+                0.726
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.535,
+                0.713,
+                0.591,
+                0.726
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.656,
+                0.713,
+                0.889,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.729,
+                0.891,
+                0.742
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.746,
+                0.891,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.761,
+                0.891,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.776,
+                0.891,
+                0.788
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.792,
+                0.889,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.805,
+                0.169,
+                0.819
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.236,
+                0.805,
+                0.36,
+                0.82
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.11,
+                0.829,
+                0.891,
+                0.841
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.845,
+                0.891,
+                0.856
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.86,
+                0.891,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.876,
+                0.336,
+                0.887
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.104,
+                0.5,
+                0.888,
+                0.53
+            ],
+            "angle": 0,
+            "content": "Note: Real gross fixed capital in residential housing, weighted average of 17 OECD countries. The shaded area shows the interquartile range. Source: (OECD, 2025[2]); OECD Economic Outlook 117 database; OECD National Accounts database; and OECD calculations."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.871,
+                0.075,
+                0.893,
+                0.091
+            ],
+            "angle": 0,
+            "content": "| 7"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.105,
+                0.108,
+                0.727,
+                0.126
+            ],
+            "angle": 0,
+            "content": "Enable the development and funding of affordable and social housing"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.136,
+                0.895,
+                0.215
+            ],
+            "angle": 0,
+            "content": "One key driver of the housing affordability crisis is that housing investment has been uneven, with several shocks, including the Global Financial Crisis, the COVID-19 pandemic and the rise in energy costs in its aftermath further contributing to a slowdown in construction activity (Figure 2). While most constraints concern private investment in housing, low rates of public investment have also contributed to the lack of affordable housing (OECD, 2023[17]).",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.104,
+                0.233,
+                0.673,
+                0.252
+            ],
+            "angle": 0,
+            "content": "Figure 2. Housing investment has experienced several negative shocks"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.26,
+                0.443,
+                0.278
+            ],
+            "angle": 0,
+            "content": "Annual growth in real housing investment, OECD",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.301,
+                0.29,
+                0.683,
+                0.484
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.55,
+                0.895,
+                0.629
+            ],
+            "angle": 0,
+            "content": "Greater public investment in affordable and social housing has the dual benefit of protecting low-income or vulnerable households, while expanding the housing supply and easing upward pressure on house prices. Governments can enable the development of new affordable and social housing by: i) helping to establish sustainable funding mechanisms, and ii) facilitating the emergence of specialised providers of affordable and social housing.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.105,
+                0.641,
+                0.696,
+                0.658
+            ],
+            "angle": 0,
+            "content": "Sustainable funding mechanisms for new affordable and social housing"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.669,
+                0.895,
+                0.732
+            ],
+            "angle": 0,
+            "content": "Special-purpose funding instruments can facilitate investment in affordable and social housing over the medium- to long-term, using public support to leverage private funding. These instruments can include a “revolving” element, using a share of the rents to finance new development of affordable and social rental housing over time. Funding mechanisms can be grouped into four broad categories:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.131,
+                0.737,
+                0.894,
+                0.8
+            ],
+            "angle": 0,
+            "content": "- Dedicated affordable housing funds with a revolving element, using a mix of public and private loans, as well as public and, in some cases, EU funding, with a share of rents or loan repayments paid into the fund to finance new development of affordable and social housing (Canada, Denmark, Iceland and Latvia) (OECD, 2023[30]; OECD, 2023[31]; OECD, 2025[32]; OECD, 2026[33]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.132,
+                0.803,
+                0.894,
+                0.85
+            ],
+            "angle": 0,
+            "content": "- Systems of loan guarantees, public loans and equity contributions from specialised affordable and social housing providers, with a share of tenant contributions used to finance new affordable housing development (Austria, the Netherlands) (OECD, 2023[30]; OECD, 2025[34]; OECD, 2026[35]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.132,
+                0.853,
+                0.894,
+                0.885
+            ],
+            "angle": 0,
+            "content": "- Specialised investment funds and dedicated credit lines, with an initial equity provided by the government to generate stable, long-term returns to finance affordable and social housing and",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.105,
+                0.916,
+                0.869,
+                0.931
+            ],
+            "angle": 0,
+            "content": "TACKLING THE AFFORDABILITY GAP THROUGH INCREASED SUPPLY OF AFFORDABLE AND SOCIAL HOUSING © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.11,
+                0.111,
+                0.722,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.137,
+                0.891,
+                0.15
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.152,
+                0.891,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.168,
+                0.891,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.185,
+                0.891,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.2,
+                0.381,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.11,
+                0.236,
+                0.669,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.263,
+                0.438,
+                0.276
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.551,
+                0.891,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.567,
+                0.891,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.582,
+                0.891,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.599,
+                0.891,
+                0.61
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.613,
+                0.331,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.643,
+                0.693,
+                0.657
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.67,
+                0.891,
+                0.682
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.686,
+                0.889,
+                0.698
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.702,
+                0.889,
+                0.713
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.716,
+                0.732,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.162,
+                0.737,
+                0.891,
+                0.751
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.163,
+                0.753,
+                0.891,
+                0.767
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.768,
+                0.889,
+                0.782
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.784,
+                0.81,
+                0.798
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.161,
+                0.804,
+                0.891,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.166,
+                0.82,
+                0.891,
+                0.832
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.835,
+                0.891,
+                0.848
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.137,
+                0.854,
+                0.889,
+                0.866
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.87,
+                0.891,
+                0.882
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.106,
+                0.076,
+                0.124,
+                0.09
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.16,
+                0.108,
+                0.894,
+                0.155
+            ],
+            "angle": 0,
+            "content": "match funding from private capital (Australia) or special savings accounts to fund concessional special-purpose loans for affordable and social housing development (France) (OECD, 2025[24]; OECD, 2026[36]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.132,
+                0.158,
+                0.895,
+                0.236
+            ],
+            "angle": 0,
+            "content": "- Housing funds with a broad remit, which, in addition to funding new affordable and social rental housing, may also include funding for affordable home ownership, renovation and construction of social rental housing through low-interest loans, with loan repayments as the main source of re-financing (Norway, the Slovak Republic, Slovenia) (OECD, 2023[30]; OECD, 2024[37]; OECD, 2024[38]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.243,
+                0.894,
+                0.275
+            ],
+            "angle": 0,
+            "content": "While the set-up and financing mechanisms vary significantly, country experiences point to several enabling factors that can facilitate both the instruments' effectiveness and financial sustainability:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.132,
+                0.281,
+                0.895,
+                0.374
+            ],
+            "angle": 0,
+            "content": "- Assessment of housing and financing needs: Resources and lending/financing volumes are usually grounded in an assessment of housing needs, even for those mechanisms that are independent from state financing (for example, Denmark) and in some cases based on a bottom-up exercise conducted with municipalities (for example, Slovenia). Such assessments help maintain the adequacy of the funding instruments, including on the maintenance of the housing stock (OECD, 2023[30]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.132,
+                0.377,
+                0.895,
+                0.486
+            ],
+            "angle": 0,
+            "content": "- Cost recovery and rent setting: When financing is directed toward the development of affordable and social rental housing, rent levels are ideally set at a level that covers construction costs and remain affordable over time (for example, Austria). Borrowing costs can also be adapted to specific target groups, by funding housing developments with more expensive loans to finance housing for moderate-income households and cheaper loans to support housing for very low and low-income households (for example, France). This can help reduce the overall cost of housing development, while facilitating social mixing (OECD, 2023[30]; OECD, 2025[24]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.132,
+                0.489,
+                0.895,
+                0.584
+            ],
+            "angle": 0,
+            "content": "- Monitoring and data collection: Funding systems can also be set up to facilitate monitoring of the financial sustainability of the investment. This generally includes careful monitoring of changes to borrowing and construction costs, which can help inform rent-setting mechanisms, or the need to provide subsidies to close the rent gap for more vulnerable tenants. Over time, these data can be enriched with social and economic data (for example, Denmark), which can in turn help inform housing policy design and implementation (OECD, 2023[30]).",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.106,
+                0.596,
+                0.556,
+                0.613
+            ],
+            "angle": 0,
+            "content": "Specialised providers of affordable and social housing"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.623,
+                0.894,
+                0.702
+            ],
+            "angle": 0,
+            "content": "The impact of the financing instruments also depends on the capacity of institutions responsible for managing affordable and social housing – in many cases, subnational entities – to effectively use the funds. While public authorities have responsibilities for the policies for affordable and social housing – including, for instance, setting eligibility criteria and allocating affordable and social housing – in several countries, specialised actors provide and manage affordable and social rental housing.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.707,
+                0.895,
+                0.849
+            ],
+            "angle": 0,
+            "content": "These providers may be companies owned by regional or municipal authorities for the provision of a public service (Ireland, Poland and some providers in Belgium and France) or private firms, co-operatives or associations operating under the strict obligation of building and managing affordable dwellings (Austria, Australia, Denmark and the Netherlands, and some providers in Belgium and France) (OECD, 2023[30]; OECD, 2025[24]; OECD, 2025[39]). In general, they operate on a limited- or not-for-profit business model to ensure financial sustainability and constant reinvestment into the affordable and social dwelling stock. These providers can generally receive financial support for the sole purpose of developing affordable and social rental dwellings, which are made available to eligible households (OECD, 2025[24]). Auditing and control mechanisms help ensure that these providers meet their obligations (OECD, 2023[30]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.853,
+                0.894,
+                0.886
+            ],
+            "angle": 0,
+            "content": "The primary role of specialised providers is to ensure that affordable and social rental housing is delivered, maintained and serviced over time. They are also the interface for tenants on matters related to",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.129,
+                0.916,
+                0.894,
+                0.93
+            ],
+            "angle": 0,
+            "content": "TACKLING THE AFFORDABILITY GAP THROUGH INCREASED SUPPLY OF AFFORDABLE AND SOCIAL HOUSING © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.11,
+                0.891,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.124,
+                0.891,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.166,
+                0.142,
+                0.289,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.163,
+                0.16,
+                0.891,
+                0.172
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.175,
+                0.892,
+                0.188
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.166,
+                0.192,
+                0.891,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.206,
+                0.89,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.221,
+                0.232,
+                0.235
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.244,
+                0.891,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.261,
+                0.825,
+                0.272
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.283,
+                0.89,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.298,
+                0.89,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.313,
+                0.89,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.328,
+                0.892,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.344,
+                0.89,
+                0.356
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.359,
+                0.339,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.378,
+                0.891,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.394,
+                0.892,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.409,
+                0.89,
+                0.421
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.425,
+                0.891,
+                0.437
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.44,
+                0.891,
+                0.452
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.456,
+                0.889,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.163,
+                0.47,
+                0.641,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.49,
+                0.892,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.505,
+                0.891,
+                0.518
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.521,
+                0.891,
+                0.533
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.536,
+                0.892,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.552,
+                0.89,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.567,
+                0.611,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.597,
+                0.551,
+                0.611
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.624,
+                0.89,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.641,
+                0.889,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.655,
+                0.89,
+                0.668
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.672,
+                0.89,
+                0.682
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.686,
+                0.674,
+                0.699
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.709,
+                0.891,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.725,
+                0.891,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.739,
+                0.891,
+                0.753
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.755,
+                0.891,
+                0.768
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.771,
+                0.891,
+                0.782
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.787,
+                0.889,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.802,
+                0.889,
+                0.813
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.817,
+                0.891,
+                0.83
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.833,
+                0.8,
+                0.846
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.855,
+                0.889,
+                0.867
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.87,
+                0.89,
+                0.882
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.874,
+                0.076,
+                0.893,
+                0.089
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.109,
+                0.894,
+                0.172
+            ],
+            "angle": 0,
+            "content": "maintenance and management of the dwellings and, in some cases, they support the development of communal spaces and forms of active participation in the life of the building. They can collaborate with other relevant organisations to facilitate housing for households with special needs and facilitate social inclusion (OECD, 2025[24]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.178,
+                0.894,
+                0.303
+            ],
+            "angle": 0,
+            "content": "However, their business model, which is based on the recovery of the costs of building and maintaining quality affordable and social rental housing, needs to remain viable. Even in countries with a well-developed network of specialised housing providers like the Limited-Profit Housing Associations in Austria and the Housing Associations in the Netherlands, these bodies are under considerable stress due to rising construction and energy costs and the need to respond to increasing demand for affordable and social housing. Indexation of rents to inflation, as well as updating rent levels in line with increases in household income, can provide additional resources to these bodies and help maintain the viability of the model (OECD, 2025[34]; OECD, 2020[40]; OECD, 2026[35]).",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.105,
+                0.318,
+                0.706,
+                0.335
+            ],
+            "angle": 0,
+            "content": "Reorienting housing policies to tackle the housing affordability gap"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.345,
+                0.895,
+                0.532
+            ],
+            "angle": 0,
+            "content": "Tacking the affordability gap requires well-targeted actions and sustained investment. By coupling short-term measures to mobilise existing dwellings with medium- to long-term strategies that leverage public and private funding to expand affordable and social rental housing, governments can ease housing affordability pressures today and lay the foundation for a more inclusive housing market tomorrow, without undermining the path towards fiscal consolidation. They should be part of strategies and policies that aim to support a balanced housing market over the long-term, including through updated regulation that ensure the provision of affordable rental housing. Together, these two approaches – mobilising the existing building stock as a source of affordable and social rental housing and leveraging public and private resources to develop and manage new affordable and social housing – reflect a broader reorientation in housing policy in some OECD countries, away from an exclusive focus on facilitating home ownership, toward a more balanced and diversified housing sector capable of meeting the needs of households who are increasingly priced out of the market.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.105,
+                0.557,
+                0.221,
+                0.575
+            ],
+            "angle": 0,
+            "content": "References"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.111,
+                0.608,
+                0.889,
+                0.64
+            ],
+            "angle": 0,
+            "content": "André, C. (2010), “A Bird’s Eye View of OECD Housing Markets”, OECD Economics Department Working Papers, No. 746, OECD Publishing, Paris, https://doi.org/10.1787/5kmlh5qvz1s4-en. [22]"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.112,
+                0.649,
+                0.888,
+                0.696
+            ],
+            "angle": 0,
+            "content": "Andrews, D. and A. Caldera Sánchez (2011), “Drivers of Homeownership Rates in Selected OECD Countries”, OECD Economics Department Working Papers, No. 849, OECD Publishing, Paris, https://doi.org/10.1787/5kgg9mcwc7jf-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.112,
+                0.706,
+                0.888,
+                0.753
+            ],
+            "angle": 0,
+            "content": "Andrews, D., A. Caldera Sánchez and Á. Johansson (2011), “Housing Markets and Structural Policies in OECD Countries”, OECD Economics Department Working Papers, No. 836, OECD Publishing, Paris, https://doi.org/10.1787/5kgk8t2k9vf3-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.112,
+                0.764,
+                0.886,
+                0.81
+            ],
+            "angle": 0,
+            "content": "Arundel, R. and R. Ronald (2020), “The false promise of homeownership: Homeowner societies in an era of declining access and rising inequality”, Urban Studies, Vol. 58/6, pp. 1120-1140, https://doi.org/10.1177/0042098019895227."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.112,
+                0.82,
+                0.888,
+                0.882
+            ],
+            "angle": 0,
+            "content": "Caracciolo, G. and E. Miglino (2024), “Ripple Effects: The Impact of an Empty-Homes Tax on the Housing Market”, Ripple Effects: The Impact of an Empty-Homes Tax on the Housing Market – C.D. Howe Institute, https://cdhowe.org/publication/ripple-effects-impact-empty-homes-tax-housing-market/."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.105,
+                0.916,
+                0.869,
+                0.93
+            ],
+            "angle": 0,
+            "content": "TACKLING THE AFFORDABILITY GAP THROUGH INCREASED SUPPLY OF AFFORDABLE AND SOCIAL HOUSING © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.109,
+                0.892,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.126,
+                0.889,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.142,
+                0.889,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.156,
+                0.308,
+                0.17
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.177,
+                0.89,
+                0.192
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.195,
+                0.89,
+                0.206
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.21,
+                0.89,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.226,
+                0.889,
+                0.237
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.241,
+                0.89,
+                0.252
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.257,
+                0.89,
+                0.268
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.272,
+                0.89,
+                0.283
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.287,
+                0.484,
+                0.3
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.318,
+                0.703,
+                0.334
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.345,
+                0.891,
+                0.359
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.363,
+                0.891,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.378,
+                0.889,
+                0.389
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.392,
+                0.891,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.407,
+                0.892,
+                0.421
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.424,
+                0.889,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.439,
+                0.891,
+                0.453
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.455,
+                0.889,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.469,
+                0.891,
+                0.483
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.485,
+                0.891,
+                0.499
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.5,
+                0.891,
+                0.514
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.517,
+                0.29,
+                0.528
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.558,
+                0.219,
+                0.575
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.107,
+                0.075,
+                0.134,
+                0.09
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.111,
+                0.112,
+                0.828,
+                0.159
+            ],
+            "angle": 0,
+            "content": "Causa, O. and J. Pichelmann (2020), “Should I stay or should I go? Housing and residential mobility across OECD countries”, OECD Economics Department Working Papers, No. 1626, OECD Publishing, Paris, https://doi.org/10.1787/d91329c2-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.111,
+                0.169,
+                0.807,
+                0.215
+            ],
+            "angle": 0,
+            "content": "Causa, O., N. Woloszko and D. Leite (2019), “Housing, wealth accumulation and wealth distribution: Evidence and stylized facts”, OECD Economics Department Working Papers, No. 1588, OECD Publishing, Paris, https://doi.org/10.1787/86954c10-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.112,
+                0.225,
+                0.832,
+                0.272
+            ],
+            "angle": 0,
+            "content": "Clark, W. (2018), “Millennials in the Housing Market: The Transition to Ownership in Challenging Contexts”, Housing, Theory and Society, Vol. 36/2, pp. 206-227, https://doi.org/10.1080/14036096.2018.1510852."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.112,
+                0.282,
+                0.888,
+                0.345
+            ],
+            "angle": 0,
+            "content": "Délégation interministérielle à l'hébergement et à l'accès au logement (DIHAL), France (2023), Deuxième plan quinquennal pour le Logement d'abord (2023-2027), https://www.ecologie.gouv.fr/sites/default/files/documents/20.06.2023_DP_Logement_dabord2.pdf."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.112,
+                0.355,
+                0.819,
+                0.402
+            ],
+            "angle": 0,
+            "content": "Fluchtmann, J., V. van Veen and W. Adema (2023), “Fertility, employment and family policy: A cross-country panel analysis”, OECD Social, Employment and Migration Working Papers, No. 299, OECD Publishing, Paris, https://doi.org/10.1787/326844f0-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.112,
+                0.411,
+                0.888,
+                0.444
+            ],
+            "angle": 0,
+            "content": "Flynn, L. (2019), “The young and the restless: housing access in the critical years”, West European Politics, Vol. 43/2, pp. 321-343, https://doi.org/10.1080/01402382.2019.1603679."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.112,
+                0.453,
+                0.888,
+                0.501
+            ],
+            "angle": 0,
+            "content": "Hochstenbach, C. and R. Arundel (2021), “The unequal geography of declining young adult homeownership: Divides across age, class, and space”, Transactions of the Institute of British Geographers, Vol. 46/4, pp. 973-994, https://doi.org/10.1111/tran.12466."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.111,
+                0.51,
+                0.888,
+                0.558
+            ],
+            "angle": 0,
+            "content": "Lennartz, C., R. Arundel and R. Ronald (2015), “Younger Adults and Homeownership in Europe Through the Global Financial Crisis”, Population, Space and Place, Vol. 22/8, pp. 823-835, https://doi.org/10.1002/psp.1961."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.112,
+                0.567,
+                0.73,
+                0.599
+            ],
+            "angle": 0,
+            "content": "OECD (2026), OECD Economic Surveys: Australia 2026, OECD Publishing, Paris, https://doi.org/10.1787/d22a1efd-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.112,
+                0.608,
+                0.889,
+                0.641
+            ],
+            "angle": 0,
+            "content": "OECD (2026), OECD Economic Surveys: Austria 2026, OECD Publishing, Paris, [35] https://doi.org/10.1787/7cea027b-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.111,
+                0.65,
+                0.889,
+                0.683
+            ],
+            "angle": 0,
+            "content": "OECD (2026), OECD Economic Surveys: Denmark 2026, OECD Publishing, Paris, https://doi.org/10.1787/3d6cb4b8-en. [33]"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.111,
+                0.691,
+                0.888,
+                0.724
+            ],
+            "angle": 0,
+            "content": "OECD (2026), OECD Economic Surveys: Portugal 2026, OECD Publishing, Paris, [29] https://doi.org/10.1787/025b3445-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.112,
+                0.734,
+                0.888,
+                0.765
+            ],
+            "angle": 0,
+            "content": "OECD (2025), Affordable Housing Database, http://www.oecd.org/social/affordable-housing-database.htm. [1]"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.111,
+                0.775,
+                0.889,
+                0.807
+            ],
+            "angle": 0,
+            "content": "OECD (2025), Housing Reforms in Czechia and Poland, OECD Publishing, Paris, [24] https://doi.org/10.1787/4988c473-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.111,
+                0.817,
+                0.888,
+                0.849
+            ],
+            "angle": 0,
+            "content": "OECD (2025), OECD Economic Outlook, Volume 2025 Issue 1: Tackling Uncertainty, Reviving Growth, OECD Publishing, Paris, https://doi.org/10.1787/83363382-en. [2]"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.111,
+                0.858,
+                0.888,
+                0.876
+            ],
+            "angle": 0,
+            "content": "OECD (2025), OECD Economic Surveys: Canada 2025, OECD Publishing, Paris, [32]"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.129,
+                0.916,
+                0.894,
+                0.93
+            ],
+            "angle": 0,
+            "content": "TACKLING THE AFFORDABILITY GAP THROUGH INCREASED SUPPLY OF AFFORDABLE AND SOCIAL HOUSING © OECD 2026"
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.859,
+                0.075,
+                0.892,
+                0.091
+            ],
+            "angle": 0,
+            "content": "| 11"
+        },
+        {
+            "type": "index",
+            "bbox": [
+                0.109,
+                0.11,
+                0.892,
+                0.883
+            ],
+            "angle": 0,
+            "content": "https://doi.org/10.1787/28f9e02c-en.\n\nOECD (2025), OECD Economic Surveys: Ireland 2025, OECD Publishing, Paris, https://doi.org/10.1787/9a368560-en.\n\nOECD (2025), OECD Economic Surveys: Netherlands 2025, OECD Publishing, Paris, https://doi.org/10.1787/2dd1f4aa-en.\n\nOECD (2024), An Agenda for Housing Policy Reform, OECD Publishing, Paris, https://doi.org/10.1787/ddb57031-en.\n\nOECD (2024), OECD Economic Surveys: Slovak Republic 2024, OECD Publishing, Paris, https://doi.org/10.1787/397ca086-en.\n\nOECD (2024), OECD Economic Surveys: Slovenia 2024, OECD Publishing, Paris, https://doi.org/10.1787/bc4a107b-en.\n\nOECD (2024), Society at a Glance 2024: OECD Social Indicators, OECD Publishing, Paris, https://doi.org/10.1787/918d8db3-en.\n\nOECD (2023), Brick by Brick (Volume 2): Better Housing Policies in the Post-COVID-19 Era, OECD Publishing, Paris, https://doi.org/10.1787/e91cb19d-en.\n\nOECD (2023), OECD Economic Surveys: Iceland 2023, OECD Publishing, Paris, https://doi.org/10.1787/b3880f1a-en.\n\nOECD (2023), Policy Actions for Affordable Housing in Lithuania, OECD Publishing, Paris, https://doi.org/10.1787/ca16ff6d-en.\n\nOECD (2023), Strengthening Latvia's Housing Affordability Fund, OECD Publishing, Paris, https://doi.org/10.1787/84736a67-en.\n\nOECD (2022), Housing Taxation in OECD Countries, OECD Tax Policy Studies, No. 29, OECD Publishing, Paris, https://doi.org/10.1787/03dfe007-en.\n\nOECD (2021), Brick by Brick: Building Better Housing Policies, OECD Publishing, Paris, https://doi.org/10.1787/b453b043-en.\n\nOECD (2020), \"Social housing: A key part of past and future housing policy\", Employment, Labour and Social Affairs Policy Briefs, https://www.oecd.org/en/publications/2020/10/social-housing-a-key-part-of-past-and-future-housing-policy_ef96d6d9.html.\n\nOECD (2026, forthcoming), OECD Affordable Housing Database, https://www.oecd.org/content/oecd/en/data/datasets/oecd-affordable-housing-database.html.\n\nOECD (2026, forthcoming), Understanding the main drivers of homelessness in OECD and EU countries, OECD Publishing, Paris.\n\nSalvi del Pero, A. et al. (2016), \"Policies to promote access to good-quality affordable housing in OECD countries\", OECD Social, Employment and Migration Working Papers, No. 176, OECD Publishing, Paris, https://doi.org/10.1787/5jm3p5gl4djd-en.\n\nSegú, M. (2020), \"The impact of taxing vacancy on housing markets: Evidence from France\", Journal of Public Economics, Vol. 185, p. 104079, https://doi.org/10.1016/j.jpubeco.2019.104079."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.105,
+                0.916,
+                0.869,
+                0.93
+            ],
+            "angle": 0,
+            "content": "TACKLING THE AFFORDABILITY GAP THROUGH INCREASED SUPPLY OF AFFORDABLE AND SOCIAL HOUSING © OECD 2026"
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.107,
+                0.075,
+                0.135,
+                0.09
+            ],
+            "angle": 0,
+            "content": "12"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.112,
+                0.112,
+                0.812,
+                0.158
+            ],
+            "angle": 0,
+            "content": "Smith, S. et al. (2022), “Housing and economic inequality in the long run: The retreat of owner occupation”, Economy and Society, Vol. 51/2, pp. 161-186, https://doi.org/10.1080/03085147.2021.2003086."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.112,
+                0.168,
+                0.853,
+                0.214
+            ],
+            "angle": 0,
+            "content": "Wood, G. et al. (2015), “Life on the edge: a perspective on precarious home ownership in Australia and the UK”, International Journal of Housing Policy, Vol. 17/2, pp. 201-226, https://doi.org/10.1080/14616718.2015.1115225."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.105,
+                0.287,
+                0.189,
+                0.304
+            ],
+            "angle": 0,
+            "content": "Contact"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.319,
+                0.892,
+                0.398
+            ],
+            "angle": 0,
+            "content": "Marissa Plouin, OECD Employment, Labour and Social Affairs Directorate, (✉ Marissa.Plouin@oecd.org).\nFilippo Cavassini, OECD Economics Department, (✉ Filippo.Cavassini@oecd.org).\nThe contributions of Ali Bargu, Mary Berman, Fátima Talidi and Esther Raineau-Rispal are gratefully acknowledged.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.105,
+                0.423,
+                0.169,
+                0.44
+            ],
+            "angle": 0,
+            "content": "Notes"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.469,
+                0.34,
+                0.487
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\)  The OECD (2020 \\( ^{[40]} \\) ) defines:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.134,
+                0.499,
+                0.893,
+                0.531
+            ],
+            "angle": 0,
+            "content": "- Social housing as “residential rental accommodation provided at sub-market prices that is targeted and allocated according to specific rules, such as identified need or waiting lists.”",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.135,
+                0.543,
+                0.893,
+                0.575
+            ],
+            "angle": 0,
+            "content": "- Affordable housing as “rental and owner-occupied dwellings that are made more affordable to households through a broad range of supply- and demand-side support”.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.585,
+                0.893,
+                0.634
+            ],
+            "angle": 0,
+            "content": "In practice, in some OECD countries, there is no distinction between affordable and social housing; in others, social housing is targeted to very low-income and vulnerable households, and affordable housing is made more broadly available to moderate- and low-income households.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.645,
+                0.894,
+                0.743
+            ],
+            "angle": 0,
+            "content": "\\( ^{2} \\)  Data reported by governments in the 2025 OECD Questionnaire on Affordable and Social Housing (QuASH). Information on the number of vacant dwellings is only available for some countries. Where data on vacancy rates are available, some countries consider seasonal and holidays homes as part of the vacant dwelling stock, while other countries exclude them, making cross-country comparison difficult (see indicator HM1.1 in (OECD, 2025 \\( ^{[1]} \\) )). Further, these data reflect the privately-owned residential stock, and do not take into account, for example, inactive properties owned by public or institutional actors.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.76,
+                0.893,
+                0.789
+            ],
+            "angle": 0,
+            "content": "This work is issued under the responsibility of the Secretary-General of the OECD, and does not necessarily reflect the official views of OECD Member countries.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.794,
+                0.893,
+                0.823
+            ],
+            "angle": 0,
+            "content": "This document, as well as any data and map included herein, are without prejudice to the status of or sovereignty over any territory, to the delimitation of international frontiers and boundaries and to the name of any territory, city or area.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.129,
+                0.916,
+                0.893,
+                0.93
+            ],
+            "angle": 0,
+            "content": "TACKLING THE AFFORDABILITY GAP THROUGH INCREASED SUPPLY OF AFFORDABLE AND SOCIAL HOUSING © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.288,
+                0.187,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.32,
+                0.887,
+                0.333
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.342,
+                0.731,
+                0.358
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.364,
+                0.889,
+                0.38
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.382,
+                0.221,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.423,
+                0.167,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.471,
+                0.337,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.167,
+                0.5,
+                0.891,
+                0.513
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.169,
+                0.516,
+                0.768,
+                0.528
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.167,
+                0.545,
+                0.89,
+                0.557
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.169,
+                0.56,
+                0.709,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.588,
+                0.889,
+                0.599
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.603,
+                0.891,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.619,
+                0.657,
+                0.63
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.645,
+                0.891,
+                0.662
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.11,
+                0.664,
+                0.889,
+                0.675
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.679,
+                0.89,
+                0.692
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.696,
+                0.889,
+                0.707
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.712,
+                0.89,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.728,
+                0.818,
+                0.738
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.762,
+                0.891,
+                0.774
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.776,
+                0.411,
+                0.785
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.796,
+                0.891,
+                0.807
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.808,
+                0.887,
+                0.82
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.859,
+                0.075,
+                0.894,
+                0.091
+            ],
+            "angle": 0,
+            "content": "| 13"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.105,
+                0.108,
+                0.209,
+                0.121
+            ],
+            "angle": 0,
+            "content": "© OECD 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.107,
+                0.13,
+                0.195,
+                0.153
+            ],
+            "angle": 0,
+            "content": "CC BY"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.204,
+                0.142,
+                0.495,
+                0.156
+            ],
+            "angle": 0,
+            "content": "Attribution 4.0 International (CC BY 4.0)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.159,
+                0.892,
+                0.186
+            ],
+            "angle": 0,
+            "content": "This work is made available under the Creative Commons Attribution 4.0 International licence. By using this work, you accept to be bound by the terms of this licence (https://creativecommons.org/licenses/by/4.0/).",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.105,
+                0.189,
+                0.36,
+                0.202
+            ],
+            "angle": 0,
+            "content": "Attribution – you must cite the work."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.205,
+                0.894,
+                0.245
+            ],
+            "angle": 0,
+            "content": "Translations – you must cite the original work, identify changes to the original and add the following text: In the event of any discrepancy between the original work and the translation, only the text of original work should be considered valid.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.248,
+                0.894,
+                0.288
+            ],
+            "angle": 0,
+            "content": "Adaptations – you must cite the original work and add the following text: This is an adaptation of an original work by the OECD. The opinions expressed and arguments employed in this adaptation should not be reported as representing the official views of the OECD or of its Member countries.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.291,
+                0.892,
+                0.318
+            ],
+            "angle": 0,
+            "content": "Third-party material – the licence does not apply to third-party material in the work. If using such material, you are responsible for obtaining permission from the third party and for any claims of infringement.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.32,
+                0.892,
+                0.348
+            ],
+            "angle": 0,
+            "content": "You must not use the OECD logo, visual identity or cover image without express permission or suggest the OECD endorses your use of the work.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.35,
+                0.894,
+                0.39
+            ],
+            "angle": 0,
+            "content": "Any dispute arising under this licence shall be settled by arbitration in accordance with the Permanent Court of Arbitration (PCA) Arbitration Rules 2012. The seat of arbitration shall be Paris (France). The number of arbitrators shall be one.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.106,
+                0.917,
+                0.869,
+                0.93
+            ],
+            "angle": 0,
+            "content": "TACKLING THE AFFORDABILITY GAP THROUGH INCREASED SUPPLY OF AFFORDABLE AND SOCIAL HOUSING © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.207,
+                0.144,
+                0.491,
+                0.155
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.159,
+                0.89,
+                0.171
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.174,
+                0.735,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.189,
+                0.357,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.207,
+                0.89,
+                0.216
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.22,
+                0.89,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.233,
+                0.221,
+                0.242
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.249,
+                0.891,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.261,
+                0.89,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.274,
+                0.491,
+                0.286
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.292,
+                0.889,
+                0.303
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.306,
+                0.716,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.322,
+                0.889,
+                0.333
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.335,
+                0.315,
+                0.346
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.351,
+                0.891,
+                0.362
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.364,
+                0.889,
+                0.375
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.377,
+                0.194,
+                0.389
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

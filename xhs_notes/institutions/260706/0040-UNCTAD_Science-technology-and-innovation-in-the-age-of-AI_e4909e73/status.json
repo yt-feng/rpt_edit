@@ -1,0 +1,24 @@
+{
+  "source_pdf": "/tmp/pdf_batch_008_fvq05yic/pdfs/0040-UNCTAD_Science-technology-and-innovation-in-the-age-of-AI_e4909e73.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "联合国贸发会议",
+  "cover_short_title": "AI正在重塑科研的底",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "联合国贸发会议：发展中国家面临AI研发重构，不是追赶权而是参与权问题",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

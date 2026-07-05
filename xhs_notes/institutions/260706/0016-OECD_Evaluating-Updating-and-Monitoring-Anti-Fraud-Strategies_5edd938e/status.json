@@ -1,0 +1,26 @@
+{
+  "source_pdf": "/tmp/pdf_batch_004_s6rebesd/pdfs/0016-OECD_Evaluating-Updating-and-Monitoring-Anti-Fraud-Strategies_5edd938e.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "经合组织",
+  "cover_short_title": "反欺诈策略，如何做到",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "经合组织：5万亿美元欺诈损失背后，经合组织揭示战略评估缺失",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

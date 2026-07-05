@@ -1,0 +1,1659 @@
+[
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/46b1ffb01908b74c2c2b7d08a5cb4529f68a79c404db26b08eef9eb1717d59ce.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                0,
+                1000,
+                369
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "February 2025\nUNCTAD/PRESS/PB/2025/1 (No. 118)"
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                382,
+                463,
+                414
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Harnessing regional integration and green industrial policy for enhancing sustainable development in Latin America"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                171,
+                434,
+                853,
+                583
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "KEY POINTS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                179,
+                606,
+                307,
+                627
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Latin America has a green energy matrix and abundance of minerals of critical importance for energy transition. There are, however, challenges on the horizon including a danger of replicating the history of resource-dependent enclave economies."
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                643,
+                825,
+                708
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Taking full advantage of green potential requires a strategic policy approach. Economic diversification should be a central pillar of this approach. This entails first identifying sectors for diversification based on defined national development criteria and global markets and technological trends, and then deploying tailored policy instruments across industrial, trade, investment, infrastructure, environment and technology policies to facilitate the transition."
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                719,
+                823,
+                815
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A regional approach and proactive South-South cooperation efforts are key for promoting and supporting sustainable economic transformation. Latin American countries with different strengths and potentials, from mineral wealth to manufacturing expertise, can explore opportunities for developing a regional industrial ecosystem around low-carbon technologies."
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                825,
+                825,
+                906
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "UN trade & development"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                30,
+                359,
+                142
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "1"
+                    }
+                ]
+            },
+            "bbox": [
+                492,
+                953,
+                504,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Latin America, endowed with a rich renewable energy matrix and abundant critical minerals, is well positioned to embark on green transition. Sowing the seeds for a greener future, however, requires its economies to think about energy transition not simply in terms of carbon mitigation but also in terms of overcoming hurdles to green economic transformation. This brief discusses the importance of industrial policy and of regional integration aimed at exploiting complementarities."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                134,
+                825,
+                244
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Issues at stake"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                173,
+                259,
+                376,
+                279
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Latin America is facing a double crisis as structural economic fragilities are now compounding with climate related hazards. A slowdown in growth has already given rise to a “lost decade” with many countries suffering a premature loss of industrial capacity. The details vary across countries but boom and bust cycles in insufficiently diversified economies are a common feature behind this performance.1"
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                291,
+                825,
+                372
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "At the same time, the region is increasingly vulnerable to the effects of climate change. Changing precipitation patterns, rising temperatures and increasing frequency of extreme weather events all threaten to take a growing economic toll. Thirteen out of the fifty countries most affected by climate change, like Haiti or Venezuela, are in the region.2"
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                382,
+                825,
+                462
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy makers will have to address these challenges simultaneously and creatively to increase the prospects of meeting the sustainable development goals by 2030. This requires strategic economic diversification, identifying new sectors that leverage existing capabilities while aligning with the global digital and low-carbon transition. Strategic diversification would create the conditions for rapid, major, and inter-linked structural-technological changes in different sectors of the economy, with interdependent changes spanning across value chains at the local, national, regional, and global levels. As in China, US and Europe, new industrial policy initiatives can be launched to orchestrate and steer the structural transformation of several sectors, especially those more energy- and material-intensive, in the region."
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                473,
+                825,
+                645
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "An opportunity for Latin America."
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                173,
+                659,
+                613,
+                681
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Against the backdrop of a (still uneven) global push toward decarbonization, Latin American countries are well positioned to embark on a green transition and accelerate progress on the SDGs."
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                692,
+                823,
+                741
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As reported by the UNFCCC,  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{3}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " the share of global greenhouse gas emissions from the continent is proportional to its share of the total world population (8.4%), slightly higher than its share of total gross domestic product (6.4%), but lower than the per capita emissions of other regions at a similar development level. Its energy matrix is also greener; thanks to successful initiatives and policies to take advantage of ample wind and sun, and strong rivers (Figure 1), according to the latest report of"
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                752,
+                825,
+                848
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy brief"
+                    }
+                ]
+            },
+            "bbox": [
+                184,
+                28,
+                248,
+                59
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "February 2025"
+                    }
+                ]
+            },
+            "bbox": [
+                712,
+                43,
+                823,
+                59
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "#118"
+                    }
+                ]
+            },
+            "bbox": [
+                779,
+                30,
+                823,
+                43
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                492,
+                952,
+                505,
+                964
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "1 https://unctad.org/publication/recent-commodity-price-surge-boon-latin-america-and-caribbean."
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                873,
+                759,
+                888
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "2 https://www.oecd.org/dev/americas/economic-outlook/."
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                889,
+                529,
+                904
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "3 https://unfccc.int/annualreport."
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                904,
+                381,
+                919
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "IRENA, 33% of its total energy supply currently comes from renewable sources compared to only 13% globally.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{4}"
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                134,
+                823,
+                167
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/1a2c02080c752274348109e1b3b7bc4ce88f1fe650501b1b36e0aac1daa7da56.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                122,
+                175,
+                159,
+                206
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Figure 1."
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                174,
+                177,
+                255,
+                193
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Renewable Energy Production as a Share of Total Energy Generation and Type of Specialization by Country."
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                191,
+                823,
+                223
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/89312cb3f0da55a8699d8adcd53c70fd044f194a1845505c75e8badbcd197a66.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: IRENA (2023)."
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                299,
+                820,
+                568
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "According to USGS's Mineral Commodity Summaries, the region is also home to important reserves of critical minerals: more than half the world's lithium, used in electric-vehicle batteries; over a third of its copper, for electrical wiring; and more than half its silver, crucial for solar panels (Figure 2). "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{5}"
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                607,
+                823,
+                671
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The region is also home to around half of the world's biodiversity and a quarter of its forests. Countries like Costa Rica, Chile and Uruguay, are proactive on on climate-related sectors, including in renewable energy and biodiversity conservation initiatives. "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{6}"
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                683,
+                823,
+                747
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy brief"
+                    }
+                ]
+            },
+            "bbox": [
+                181,
+                28,
+                250,
+                60
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "#118\nFebruary 2025"
+                    }
+                ]
+            },
+            "bbox": [
+                710,
+                30,
+                823,
+                60
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "4 IRENA (International Renewable Energy Agency). (2023). Renewable Energy Statistics."
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                860,
+                699,
+                877
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{5}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  USGS. (2023). MINERAL COMMODITY SUMMARIES. US Geological Survey; U.S. Department of the Interior."
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                877,
+                784,
+                902
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                492,
+                952,
+                505,
+                964
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "6 A. Lebdioui (2022). https://www.americasquarterly.org/article/why-latin-america-needs-a-green-new-deal/."
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                904,
+                813,
+                919
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/6246f293acf61ce4ae3c41ed1a94a8efa2a1279e5c88ad825156a51f5cfd793d.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 2."
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                121,
+                133,
+                159,
+                162
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/cc493c88f2f260830f499e07e40c0f45d32dae518219e5f711ef28a71d9a80a7.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Selected Critical Minerals Production in Latin American Countries as percentage of total World Production"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                174,
+                186,
+                816,
+                357
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/d1d3ae43bf3e106b4c53aa56b73445c0816c696e684a5648059daec2076939dd.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Lithium, mine production"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                174,
+                391,
+                816,
+                545
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b025cdec5f90c50596efb681f4cb46239b30004ce2945ce2eb86d1b46af6257f.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Copper"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: USGS (2024)."
+                    }
+                ]
+            },
+            "bbox": [
+                174,
+                576,
+                821,
+                726
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "There are, however, challenges in the horizon. Beyond the environmental risks of mining in terms of deforestation, water and air pollution, erosion of soil and damage to marine ecosystem  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{7}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " . Furthermore, the IEA suggests that significant uncertainty characterizes the long-term outlook for critical minerals, given potential technological disruption amid global research and development efforts globally to generate alternative technologies that rely on substitute materials (such as phosphate-based or hydrogen-based batteries to replace lithium-ion batteries).  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{8}"
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                763,
+                825,
+                844
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy brief"
+                    }
+                ]
+            },
+            "bbox": [
+                184,
+                28,
+                250,
+                59
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "#118\nFebruary 2025"
+                    }
+                ]
+            },
+            "bbox": [
+                710,
+                30,
+                825,
+                60
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "7 https://climate-diplomacy.org/magazine/environment/extracted-forests-unearthing-role-mining-related-deforestation-driver-global."
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                892,
+                788,
+                919
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                492,
+                953,
+                505,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                171,
+                134,
+                823,
+                167
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Furthermore, acquiring the capacity to add value along potential value chains, replicating successful experiences such as Indonesia's management of its nickel deposits, critically relies on market size and on effective bargaining power when it comes to negotiating contracts with leading multinationals and fostering technology transfer. "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{9}"
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                178,
+                823,
+                258
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "From a social and economic perspective, the risk remains of replicating the history of resource-dependent enclave economies that fail to build a wider productive base and with the economic gains uneven distributed.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{10}"
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                268,
+                825,
+                318
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Challenges to Green Industrialization."
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                171,
+                332,
+                670,
+                353
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Greening the production structure of an economy comes with several challenges linked to building sustainable value chains and a whole of economy structured around alternative energy sources, transportation and food systems. From a structural perspective, reducing emissions is particularly hard because changing the sources of energy production from fossil fuels to renewables will affect trade, industry and government finance, and carry distributional consequences across income groups and regions generating in the process winners and losers. Such a massive distributional impact will compound the costs associated with measures to retire fossil fuel-based assets that risk becoming stranded. As stressed recently by UNCTAD, this challenge is particularly pernicious for some developing countries, in particular for least-developed countries that are placed at higher and more widespread risk of depleting their already narrow sets of productive capacities and stranding the associated employment.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{11}"
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                365,
+                825,
+                568
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "At the domestic level, addressing these challenges requires a fully strategic approach to policy design, going beyond the familiar calls to account for externalities. Although price-based measures have a role to play, there has been an increasing recognition that markets cannot internalise environmental costs on the scale and at the speed required to steer economies along a just energy and production transition.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{12}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  The reason is not only that markets perform poorly in mobilising and allocating large-scale resources under conditions of asymmetric information and systemic uncertainty, but also that the individual decisions of profit-seeking firms over the assets they control do not automatically align with the broader social demands implied by a large-scale economic transition.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{13}"
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                579,
+                825,
+                736
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy brief"
+                    }
+                ]
+            },
+            "bbox": [
+                181,
+                27,
+                250,
+                60
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "#118\nFebruary 2025"
+                    }
+                ]
+            },
+            "bbox": [
+                710,
+                30,
+                823,
+                60
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "8 https://www.iea.org/commentaries/critical-minerals-threaten-a-decades-long-trend-of-cost-declines-for-clean-energy-technologies-"
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                791,
+                801,
+                819
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "9 See also: https://unctad.org/publication/least-developed-countries-report-2023."
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                819,
+                665,
+                834
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{10}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  https://unctad.org/publication/commodities-and-development-report-2023"
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                834,
+                638,
+                850
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "11 https://unctad.org/system/files/official-document/aldc2022d10_en.pdf"
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                848,
+                613,
+                865
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{12}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " See, for example, OECD's work on the subject: Net Zero+ : Climate and Economic Resilience in a Changing World | OECD iLibrary (oecd-ilibrary.org)."
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                865,
+                823,
+                892
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{13}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " See UNCTAD's work on the issue. For example, https://unctad.org/publication/trade-and-development-report-2019 and https://unctad.org/system/files/official-document/gp_ggnd_2019_en.pdf."
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                892,
+                796,
+                920
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                492,
+                952,
+                505,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A structured approach to strategic economic diversification is essential. This involves two key steps: (1) identifying potential new goods and services with high priority for diversification based on socio-economic and environmental goals, including technological feasibility and local capabilities, and (2) implementing targeted policies across multiple areas—industrial, trade, innovation, education, and finance—to facilitate and attract that potential new production."
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                134,
+                825,
+                229
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Targeted interventions at the sectoral and sub-sectoral levels have better chances to accelerate the energy transition than across-the-board policy measures. These measures should not simply ‘encourage entry’ of new technology or actors, but also ‘facilitate the exit’ and restructuring of incumbents. Feed-in tariff (FIT) and tradable green certificate (TGC) schemes can be effective in this respect. The former scheme mandates that the network operators be obliged to connect electricity generated from renewable sources, and that the producers be subsidized to compensate for higher cost of renewable electricity. The later system is more market-based. But the investment challenge and the related task of restructuring existing linkages and building new ones suggest the need for developmental states and financing institutions. UNCTAD’s research highlights that developing countries need renewable energy investments of about $1.7 trillion each year but attracted only $544 billion in clean energy FDI in 2022. "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{14}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " In this context, development banks, with their distinct capacity to blend finance and public policy, have a key role to play."
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                240,
+                825,
+                458
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In a nutshell, what is needed is “active” green industrial policy that does not simply aim at reducing the costs of doing business, but explicitly targets deeper changes in state and corporate structure and behaviour."
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                469,
+                825,
+                518
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Global and Regional action."
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                173,
+                532,
+                539,
+                554
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "There is a limit to what countries can do on their own to meet the combination of climate and development challenges. At the global level common but differentiated responsibility frames the challenge around international climate action and complements the commitment to special and differential treatment for developing countries around matters of global economic governance."
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                565,
+                825,
+                646
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "If developing countries are to build climate resilient development paths, a better mix of international public financial resources and effective multilateral coordination is urgently needed including mechanisms to help build capacity in developing countries to mitigate future emissions and adapt to climate shocks. This can only happen through the transfer of technology and know-how, exploiting for example South-South cooperation (as in the case of China and Indonesia for nickel),  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{15}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " and a significant transfer of resources through mechanisms such as the loss and damage from climate shocks."
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                656,
+                825,
+                782
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The regional dimension is equally important. Regional cooperation and partnerships can help diversifying short- and long-term risks and challenges along critical value chains, foster duplicity which is essential to overcome the intrinsic limitation of renewable intermittent energy forces and increase the bargaining power of national governments when negotiating exploitation contracts with multinationals willing to invest in Latin America."
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                793,
+                825,
+                841
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "A"
+                    }
+                ]
+            },
+            "bbox": [
+                480,
+                970,
+                517,
+                992
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy brief"
+                    }
+                ]
+            },
+            "bbox": [
+                181,
+                28,
+                250,
+                60
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "#118\nFebruary 2025"
+                    }
+                ]
+            },
+            "bbox": [
+                710,
+                30,
+                823,
+                60
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "14 https://unctad.org/publication/world-investment-report-2023."
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                865,
+                556,
+                879
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{15}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  See, for example, Rosada, F., Wibisana, R. A. A. and Paksi, A. K. (2023) “The Impact of Indonesia-China Nickel Cooperations on Indonesia’s Economy and Environment”, Nation State: Journal of International Studies, 6(2), pp. 96 - 116. doi: 10.24076/nsjis.v6i2.1270."
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                879,
+                803,
+                919
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                492,
+                953,
+                505,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                171,
+                134,
+                823,
+                181
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Each Latin American country has different strengths, from mineral wealth to manufacturing expertise, to proximity to important trade routes. A strategic economic diversification approach at the regional level can help harness these complementarities by identifying synergies between countries and designing policies that enable value addition in key digital and energy transition sectors. This means not only leveraging mineral wealth but also ensuring that local processing and technology development capacities are strengthened. All these assets can therefore be part of a carefully designed plan to develop an efficient regional industrial ecosystem around low carbon technologies, including regional content policies to achieve a better production integration among countries but also appropriate business incubation initiatives, R&D support, the promotion of low carbon industrial clusters, as well as green skills development programmes to train the workforce required for decarbonised industries and reskill energy sector workers."
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                193,
+                825,
+                397
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The road to a regional climate action plan is paved with challenges, especially regarding financing and political will. "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{16}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " But Latin America's recent success in signing regional agreements, such as the 2018 Escazú Agreement on the right to access environmental information, the Eastern Tropical Pacific Marine Corridor, announced by four Latin American countries in 2021, or the Belem Agreement signed in 2023, which focuses on conservation of the Amazon and places sustainable mining as one of the main objectives, demonstrates the power of regional collaboration. Latin American governments, along with civil society, the business sector and international partners, can and should take bolder steps commensurate with the scale of the opportunities and challenges facing the region."
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                407,
+                825,
+                565
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Pathways to Greening Latin America."
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                173,
+                579,
+                662,
+                600
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "UNCTAD stands ready to support coordinated industrial policies at the regional level, based on intellectual property and technology available within Latin America (or, more in general, within other partners from the Global South). A key aspect of these coordinated policies should be the adoption of strategic economic diversification frameworks. By systematically identifying and fostering new sectors, countries can create productive capacities beyond extractive industries, ensuring that green industrial policies are not just about emissions reduction but also about building sustainable, diversified economies. UNCTAD also calls for strengthening cooperation on finance and technology to boost intra-regional and South-South trade and strengthen regional financial preparedness to shield Latin America economies from global economic fluctuations."
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                612,
+                825,
+                784
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "However, scaling up this strategy requires an effective multilateral system that gives developing countries the necessary policy space and financial support. UNCTAD will continue working in international fora to ensure a multilateral governance more fit for purpose and foster a more active role of the global community in providing the support needed for green industrial policies in developing countries to succeed."
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                789,
+                825,
+                869
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy brief"
+                    }
+                ]
+            },
+            "bbox": [
+                181,
+                28,
+                248,
+                60
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "February 2025"
+                    }
+                ]
+            },
+            "bbox": [
+                712,
+                43,
+                823,
+                59
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "#118"
+                    }
+                ]
+            },
+            "bbox": [
+                779,
+                30,
+                823,
+                43
+            ]
+        },
+        {
+            "type": "page_aside_text",
+            "content": {
+                "page_aside_text_content": [
+                    {
+                        "type": "text",
+                        "content": "This document has not been formally edited."
+                    }
+                ]
+            },
+            "bbox": [
+                971,
+                725,
+                986,
+                866
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "16 https://unctad.org/press-material/trade-and-development-report-2023."
+                    }
+                ]
+            },
+            "bbox": [
+                173,
+                904,
+                611,
+                919
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                492,
+                952,
+                505,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Contact\nPress Office\n41 22 917 5828\nunctadpress@unctad.org\nunctad.org\nX\nInstagram\nf\nYouTube\nin\nUN\ntrade & development"
+                    }
+                ]
+            },
+            "bbox": [
+                1,
+                451,
+                889,
+                994
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy brief"
+                    }
+                ]
+            },
+            "bbox": [
+                184,
+                28,
+                250,
+                59
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "#118\nFebruary 2025"
+                    }
+                ]
+            },
+            "bbox": [
+                710,
+                30,
+                825,
+                60
+            ]
+        }
+    ]
+]

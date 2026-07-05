@@ -1,0 +1,25 @@
+{
+  "source_pdf": "/tmp/pdf_batch_006_k6syfswo/pdfs/0030-UNCTAD_Financing-development-External-flows-of-financial-capital-to_8a424867.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "联合国贸发会议",
+  "cover_short_title": "发展中国家借钱越来越",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "联合国贸发会议：联合国贸发报告，发展中国家每流入1美元，72美分流回境外",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

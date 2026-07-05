@@ -1,0 +1,28 @@
+{
+  "source_pdf": "/tmp/pdf_batch_005_c14kcs_c/pdfs/0022-OECD_OECD-Survey-on-Drivers-of-Trust-in-Public-Institutions-2026-_fc47da81.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "经合组织",
+  "cover_short_title": "OECD信任调查20",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "经合组织：不是意识形态而是治理能力，经合组织揭示政府信任的真正驱动力",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

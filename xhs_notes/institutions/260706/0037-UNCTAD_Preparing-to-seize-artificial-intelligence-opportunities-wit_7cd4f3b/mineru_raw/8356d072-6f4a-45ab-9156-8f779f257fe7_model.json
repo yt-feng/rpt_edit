@@ -1,0 +1,3641 @@
+[
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.031,
+                0.361,
+                0.145
+            ],
+            "angle": 0,
+            "content": "UN trade & development",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.244,
+                0.609,
+                0.31
+            ],
+            "angle": 0,
+            "content": "Policy brief",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.146,
+                0.351,
+                0.221,
+                0.373
+            ],
+            "angle": 0,
+            "content": "#120",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.173,
+                0.383,
+                0.465,
+                0.416
+            ],
+            "angle": 0,
+            "content": "August 2025\nUNCTAD/PRESS/PB/2025/3 (No. 120)",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.174,
+                0.471,
+                0.814,
+                0.578
+            ],
+            "angle": 0,
+            "content": "Preparing to seize artificial\nintelligence opportunities with\nstrategic national policies"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.181,
+                0.601,
+                0.309,
+                0.62
+            ],
+            "angle": 0,
+            "content": "KEY POINTS"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.174,
+                0.635,
+                0.825,
+                0.699
+            ],
+            "angle": 0,
+            "content": "As value in the global economy shifts toward knowledge-intensive activities, decision makers need to support the adoption and development of new technologies, as well as the creation, dissemination and absorption of productive knowledge",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.174,
+                0.71,
+                0.825,
+                0.759
+            ],
+            "angle": 0,
+            "content": "- Without timely and tailored strategies for integrating artificial intelligence into broader industrial and innovation policies that support inclusive and sustainable development, developing countries risk falling behind",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.173,
+                0.77,
+                0.825,
+                0.835
+            ],
+            "angle": 0,
+            "content": "- Successful national artificial intelligence policies combine high-level direction with concrete actions across key sectors; drawing from global examples, countries need to align policies across research and development, data governance, workforce training and digital infrastructure",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.173,
+                0.845,
+                0.826,
+                0.925
+            ],
+            "angle": 0,
+            "content": "- UNCTAD has devised the frontier technologies readiness index, to assess country preparedness for such technologies, and offers an analytical framework, to help countries evaluate strengths and weaknesses in terms of infrastructure, data and skills, according to national capacity for the adoption and development of artificial intelligence",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.494,
+                0.954,
+                0.505,
+                0.965
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.166,
+                0.028,
+                0.363,
+                0.077
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.299,
+                0.071,
+                0.354,
+                0.079
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.074,
+                0.363,
+                0.119
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.122,
+                0.115,
+                0.362,
+                0.141
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.234,
+                0.621,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.137,
+                0.345,
+                0.221,
+                0.376
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.385,
+                0.278,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.401,
+                0.461,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.472,
+                0.743,
+                0.506
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.509,
+                0.813,
+                0.542
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.544,
+                0.719,
+                0.577
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.6,
+                0.31,
+                0.621
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.637,
+                0.192,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.206,
+                0.637,
+                0.822,
+                0.65
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.206,
+                0.652,
+                0.822,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.205,
+                0.668,
+                0.822,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.206,
+                0.683,
+                0.386,
+                0.697
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.712,
+                0.192,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.204,
+                0.711,
+                0.822,
+                0.726
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.206,
+                0.727,
+                0.822,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.206,
+                0.743,
+                0.735,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.772,
+                0.192,
+                0.783
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.205,
+                0.772,
+                0.822,
+                0.785
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.205,
+                0.787,
+                0.822,
+                0.801
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.206,
+                0.803,
+                0.822,
+                0.816
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.206,
+                0.818,
+                0.66,
+                0.831
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.848,
+                0.192,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.206,
+                0.847,
+                0.822,
+                0.86
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.206,
+                0.862,
+                0.821,
+                0.876
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.205,
+                0.878,
+                0.823,
+                0.891
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.206,
+                0.894,
+                0.822,
+                0.907
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.205,
+                0.909,
+                0.533,
+                0.922
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.184,
+                0.029,
+                0.251,
+                0.06
+            ],
+            "angle": 0,
+            "content": "Policy brief"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.722,
+                0.031,
+                0.825,
+                0.061
+            ],
+            "angle": 0,
+            "content": "#120\nAugust 2025"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.174,
+                0.133,
+                0.806,
+                0.235
+            ],
+            "angle": 0,
+            "content": "Preparing to seize artificial intelligence opportunities with strategic national policies"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.171,
+                0.28,
+                0.826,
+                0.562
+            ],
+            "angle": 0,
+            "content": "Developing countries need to strengthen national readiness and design targeted policies in order to prepare for a world rapidly being reshaped by artificial intelligence and other frontier technologies. National competitiveness increasingly depends on science, technology and innovation (STI) and knowledge-intensive services. Some developing countries show significant potential relative to income levels; most need to design industrial and innovation policies that take into account the role of knowledge-intensive services and the uncertainties concerning research and development. It is also critical to consider the diffusion and direction of frontier technologies and their impact on the economy, and to adapt catch-up strategies accordingly. Developing countries need to quickly respond to the challenges posed by artificial intelligence, implementing policies that align with national development goals and agendas. It may be more feasible to immediately support the adoption of artificial intelligence for particular sectoral needs, yet developing countries should also formulate long-term strategic plans to steer national artificial intelligence development. Otherwise, as latecomers, they may be left with few options. \\( ^{1} \\)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.174,
+                0.575,
+                0.689,
+                0.619
+            ],
+            "angle": 0,
+            "content": "Preparing to seize artificial intelligence opportunities"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.172,
+                0.631,
+                0.826,
+                0.804
+            ],
+            "angle": 0,
+            "content": "Developing countries need to prepare for a world rapidly transformed by artificial intelligence and other frontier technologies. UNCTAD has devised the frontier technologies readiness index, to offer a comprehensive measure of a country's preparedness for such technologies. The index includes indicators on access to finance, industrial capacity, information and communications technology (ICT) deployment, research and development activity and skills. In general, countries with a greater gross domestic product (GDP) per capita tend to be better prepared for frontier technologies. However, some countries perform significantly above the ranking that their income levels might suggest (figure 1), indicating significant potential to seize the opportunities offered by frontier technologies in order to drive economic growth and development.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.174,
+                0.868,
+                0.791,
+                0.907
+            ],
+            "angle": 0,
+            "content": "This policy brief builds on the findings in chapters III and IV of UNCTAD, 2025, Technology and Innovation Report 2025: Inclusive Artificial Intelligence for Development (United Nations publication, sales No. E.25.II.D.1, Geneva)."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.173,
+                0.905,
+                0.764,
+                0.92
+            ],
+            "angle": 0,
+            "content": "Note: Mention of any firm or licenced process does not imply the endorsement of the United Nations."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.493,
+                0.953,
+                0.507,
+                0.965
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.134,
+                0.736,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.167,
+                0.807,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.2,
+                0.714,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.283,
+                0.822,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.298,
+                0.822,
+                0.311
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.313,
+                0.822,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.329,
+                0.822,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.344,
+                0.821,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.36,
+                0.822,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.375,
+                0.822,
+                0.388
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.389,
+                0.823,
+                0.405
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.406,
+                0.822,
+                0.419
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.42,
+                0.823,
+                0.436
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.438,
+                0.822,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.451,
+                0.823,
+                0.467
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.468,
+                0.822,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.484,
+                0.822,
+                0.497
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.499,
+                0.822,
+                0.512
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.514,
+                0.822,
+                0.527
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.53,
+                0.822,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.544,
+                0.294,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.179,
+                0.577,
+                0.686,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.599,
+                0.353,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.634,
+                0.822,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.649,
+                0.822,
+                0.661
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.664,
+                0.822,
+                0.676
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.68,
+                0.822,
+                0.692
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.695,
+                0.82,
+                0.707
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.711,
+                0.822,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.726,
+                0.822,
+                0.739
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.742,
+                0.822,
+                0.754
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.757,
+                0.822,
+                0.77
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.773,
+                0.821,
+                0.785
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.788,
+                0.464,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.172,
+                0.133,
+                0.799,
+                0.197
+            ],
+            "angle": 0,
+            "content": "Figure 1 Brazil, China, India and the Philippines: Developing countries outperforming in technology readiness (Correlation between frontier technologies readiness index score and GDP per capita)"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.185,
+                0.029,
+                0.25,
+                0.06
+            ],
+            "angle": 0,
+            "content": "Policy brief"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.722,
+                0.031,
+                0.825,
+                0.061
+            ],
+            "angle": 0,
+            "content": "#120\nAugust 2025"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.118,
+                0.134,
+                0.155,
+                0.164
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.174,
+                0.202,
+                0.822,
+                0.615
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.174,
+                0.62,
+                0.705,
+                0.635
+            ],
+            "angle": 0,
+            "content": "Note: GDP per capita is in current international dollars, purchasing power parity (logarithm)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.172,
+                0.697,
+                0.826,
+                0.901
+            ],
+            "angle": 0,
+            "content": "A common feature of better-performing countries is greater research and development activity and stronger industrial capacities, which enable them to keep pace with technological development and eventually take the lead in some frontier technologies. This highlights the importance of making efforts to improve the national innovation ecosystem. The frontier technologies readiness index may be complemented by a detailed assessment of a country's preparedness for the adoption and development of artificial intelligence, which critically depends on the three leverage points of infrastructure, data and skills (table 1). Each element contributes to technological progress, but only in combination can they fully catalyse artificial intelligence diffusion. Such interactions have driven breakthroughs such as generative artificial intelligence, which has redefined the technology landscape. By supporting development at these critical leverage points, decision makers can trigger transformational economic cascades.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.493,
+                0.953,
+                0.506,
+                0.965
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.699,
+                0.822,
+                0.712
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.715,
+                0.821,
+                0.727
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.731,
+                0.822,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.745,
+                0.821,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.761,
+                0.821,
+                0.774
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.777,
+                0.822,
+                0.79
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.793,
+                0.822,
+                0.805
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.808,
+                0.822,
+                0.82
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.823,
+                0.822,
+                0.836
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.839,
+                0.822,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.854,
+                0.821,
+                0.868
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.87,
+                0.821,
+                0.882
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.885,
+                0.531,
+                0.897
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.178,
+                0.658,
+                0.803,
+                0.867
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.185,
+                0.029,
+                0.25,
+                0.06
+            ],
+            "angle": 0,
+            "content": "Policy brief"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.722,
+                0.03,
+                0.825,
+                0.061
+            ],
+            "angle": 0,
+            "content": "#120\nAugust 2025"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.128,
+                0.134,
+                0.166,
+                0.171
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.174,
+                0.134,
+                0.749,
+                0.168
+            ],
+            "angle": 0,
+            "content": "Table 1\nKey elements of artificial intelligence adoption and development"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.177,
+                0.177,
+                0.821,
+                0.37
+            ],
+            "angle": 0,
+            "content": "<table><tr><td></td><td>Infrastructure</td><td>Data</td><td>Skills</td><td>Policy and governance</td></tr><tr><td>Adoption</td><td>ElectricityICTDigital devices</td><td>Access to domain-specific dataData storage and processing power</td><td>Basic digital skills (e.g. data literacy)Awareness and understanding of artificial intelligenceTechnical knowledge</td><td rowspan=\"2\">PrinciplesGovernancePolicies (e.g. industrial, innovation)Strategies</td></tr><tr><td>Development</td><td>International connectivityData centres and high-speed networks</td><td>Large and diverse data setsHigh quality, standardized and interoperable dataPrivacy, security, anonymization</td><td>Advanced digital skills (e.g. data science, machine-learning)Artificial intelligence-specific skills and experiencesCognitive skills (e.g. problem-solving)</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.175,
+                0.383,
+                0.285,
+                0.398
+            ],
+            "angle": 0,
+            "content": "Source: UNCTAD."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.172,
+                0.455,
+                0.826,
+                0.552
+            ],
+            "angle": 0,
+            "content": "Countries may be considered under four categories of artificial intelligence adoption and development capacity (figure 2). This serves to identify the current position of a country according to relative strengths and weaknesses and potential catch-up trajectories (e.g. from laggards to practitioners, then to leaders). Catch-up policies and trajectories should be tailored to align with national development goals and particular challenges, rather than following a one-size-fits-all approach.",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.128,
+                0.602,
+                0.165,
+                0.632
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.127,
+                0.602,
+                0.767,
+                0.65
+            ],
+            "angle": 0,
+            "content": "Figure 2\nFour categories of artificial intelligence adoption and development capacity"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.174,
+                0.877,
+                0.284,
+                0.892
+            ],
+            "angle": 0,
+            "content": "Source: UNCTAD."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.493,
+                0.953,
+                0.506,
+                0.965
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.457,
+                0.822,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.472,
+                0.822,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.488,
+                0.822,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.504,
+                0.821,
+                0.516
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.52,
+                0.822,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.535,
+                0.737,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.184,
+                0.029,
+                0.25,
+                0.06
+            ],
+            "angle": 0,
+            "content": "Policy brief"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.722,
+                0.045,
+                0.824,
+                0.06
+            ],
+            "angle": 0,
+            "content": "August 2025"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.778,
+                0.031,
+                0.824,
+                0.044
+            ],
+            "angle": 0,
+            "content": "#120"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.172,
+                0.135,
+                0.826,
+                0.323
+            ],
+            "angle": 0,
+            "content": "The comparative assessment of country preparedness relies on selected proxy indicators that have wide country coverage. The assessment may be further refined through detailed reviews of a country's STI ecosystem. For example, with regard to skills, artificial intelligence adoption capacity may be proxied by the share of the working-age population with tertiary education and development capacity may be proxied by the number of developers on the platform Github (which allows for the creation, storage, management and sharing of code) as a share of the working-age population. Differences in the level of artificial intelligence skills preparedness are observable across country groupings, with the least developed countries scoring low under both indicators (figure 3). Developed economies rank higher than developing economies under both indicators, with the exceptions of Hong Kong (China) and Singapore.",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.128,
+                0.36,
+                0.166,
+                0.389
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.177,
+                0.36,
+                0.253,
+                0.375
+            ],
+            "angle": 0,
+            "content": "Figure 3"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.174,
+                0.374,
+                0.785,
+                0.407
+            ],
+            "angle": 0,
+            "content": "Developed countries lead in artificial intelligence skills preparedness (Percentage)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.181,
+                0.416,
+                0.695,
+                0.433
+            ],
+            "angle": 0,
+            "content": "- Developed countries\n- Developing countries\n- Least developed countries",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.18,
+                0.456,
+                0.56,
+                0.471
+            ],
+            "angle": 0,
+            "content": "Share of working-age population with advanced degree"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.179,
+                0.469,
+                0.817,
+                0.801
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.175,
+                0.815,
+                0.285,
+                0.828
+            ],
+            "angle": 0,
+            "content": "Source: UNCTAD."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.173,
+                0.834,
+                0.797,
+                0.884
+            ],
+            "angle": 0,
+            "content": "Notes: Names of economies are abbreviated using International Organization for Standardization alpha-3 codes. Hong Kong (China) and Singapore have high shares of developers on Github with regard to the working-age population, at 25 and 27 per cent, respectively; values have been truncated at 10 per cent for clarity of presentation.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.494,
+                0.954,
+                0.505,
+                0.965
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.138,
+                0.822,
+                0.15
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.153,
+                0.821,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.168,
+                0.822,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.184,
+                0.822,
+                0.196
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.199,
+                0.821,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.214,
+                0.822,
+                0.227
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.23,
+                0.823,
+                0.242
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.246,
+                0.822,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.261,
+                0.822,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.277,
+                0.822,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.291,
+                0.823,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.307,
+                0.455,
+                0.32
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.361,
+                0.252,
+                0.377
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.376,
+                0.781,
+                0.389
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.393,
+                0.27,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.187,
+                0.422,
+                0.202,
+                0.428
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.203,
+                0.419,
+                0.692,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.837,
+                0.782,
+                0.846
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.848,
+                0.768,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.86,
+                0.794,
+                0.87
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.872,
+                0.305,
+                0.882
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.722,
+                0.031,
+                0.825,
+                0.061
+            ],
+            "angle": 0,
+            "content": "#120\nAugust 2025"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.481,
+                0.971,
+                0.518,
+                0.995
+            ],
+            "angle": 0,
+            "content": "A"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.183,
+                0.029,
+                0.251,
+                0.061
+            ],
+            "angle": 0,
+            "content": "Policy brief"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.172,
+                0.135,
+                0.826,
+                0.246
+            ],
+            "angle": 0,
+            "content": "Countries with large populations might have a small share of developers with regard to the workforce yet still possess a critical mass of developers with which to build artificial intelligence-related advantages. For example, despite small shares, India and China have the second and third largest developer communities worldwide, enabling the leveraging of significant talent pools, to advance on artificial intelligence-related innovation. The size of a country influences strategic options for the adoption and development of artificial intelligence.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.172,
+                0.259,
+                0.692,
+                0.304
+            ],
+            "angle": 0,
+            "content": "Designing national policies for artificial intelligence"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.172,
+                0.315,
+                0.826,
+                0.441
+            ],
+            "angle": 0,
+            "content": "Over the last few decades, the increase in ICTs has been accompanied by decreasing costs, improved reliability and advancements in information management. Automation and capital-deepening are eroding the cheap labour advantages of low-income economies. \\( ^{2} \\)  In addition, value is increasingly shifting towards knowledge economies in which competitiveness is driven by intangible capital. \\( ^{3} \\)  As a result, innovation is increasingly concentrated in knowledge-intensive services, and the emergence of digital platforms is transforming economies toward data-driven systems. \\( ^{4} \\)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.172,
+                0.452,
+                0.825,
+                0.516
+            ],
+            "angle": 0,
+            "content": "To adapt to the transformations brought by digitalization and the rise of artificial intelligence, new industrial and innovation policies should prioritize enhancing technology, fostering innovation and developing knowledge-intensive services alongside modern industries.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.172,
+                0.527,
+                0.826,
+                0.67
+            ],
+            "angle": 0,
+            "content": "Most artificial intelligence policies have originated in developed countries. By end-2023, about two thirds of developed countries had adopted a national artificial intelligence policy; of 89 national policies worldwide, only six were from the least developed countries (figure 4). Policies implemented by major economies can generate significant spillover effects, influencing the policy options of other countries. Therefore, developing countries need to quickly set and implement artificial intelligence policies that align with national development goals and priorities. Following the paths set by others may not address their needs and challenges.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.172,
+                0.803,
+                0.709,
+                0.818
+            ],
+            "angle": 0,
+            "content": "\\( ^{2} \\)  Rodrik D, 2016, Premature deindustrialization, Journal of Economic Growth, 21(1):1–33."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.172,
+                0.818,
+                0.802,
+                0.844
+            ],
+            "angle": 0,
+            "content": "\\( ^{3} \\)  Foray D, 2004, The Economics of Knowledge (Massachusetts Institute of Technology Press, Cambridge, United States)."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.172,
+                0.842,
+                0.805,
+                0.893
+            ],
+            "angle": 0,
+            "content": "Note: Intangible capital can be classified under three main categories, namely, digitalized information (i.e. software and databases), innovative property (e.g. research and development or design and related property rights) and economic competences (e.g. branding and business models), which are increasingly determining the competitiveness of firms and countries."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.172,
+                0.893,
+                0.804,
+                0.92
+            ],
+            "angle": 0,
+            "content": "4 UNCTAD, 2019, Digital Economy Report 2019: Value Creation and Capture – Implications for Developing Countries (United Nations publication, sales No. E.19.II.D.17, Geneva)."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.493,
+                0.953,
+                0.506,
+                0.965
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.137,
+                0.822,
+                0.15
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.153,
+                0.822,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.167,
+                0.822,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.184,
+                0.822,
+                0.196
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.199,
+                0.822,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.214,
+                0.821,
+                0.227
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.23,
+                0.693,
+                0.243
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.179,
+                0.261,
+                0.688,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.282,
+                0.33,
+                0.302
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.318,
+                0.821,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.333,
+                0.822,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.348,
+                0.822,
+                0.361
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.363,
+                0.821,
+                0.376
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.379,
+                0.822,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.395,
+                0.822,
+                0.407
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.41,
+                0.822,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.425,
+                0.35,
+                0.437
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.454,
+                0.822,
+                0.467
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.47,
+                0.822,
+                0.483
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.485,
+                0.82,
+                0.498
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.5,
+                0.407,
+                0.514
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.529,
+                0.82,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.546,
+                0.822,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.561,
+                0.822,
+                0.573
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.576,
+                0.822,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.591,
+                0.822,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.607,
+                0.822,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.622,
+                0.822,
+                0.635
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.638,
+                0.821,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.654,
+                0.267,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.185,
+                0.029,
+                0.25,
+                0.06
+            ],
+            "angle": 0,
+            "content": "Policy brief"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.722,
+                0.03,
+                0.825,
+                0.061
+            ],
+            "angle": 0,
+            "content": "#120\nAugust 2025"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.126,
+                0.134,
+                0.163,
+                0.164
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.173,
+                0.134,
+                0.77,
+                0.179
+            ],
+            "angle": 0,
+            "content": "Figure 4\nMost national artificial intelligence policies produced by developed countries"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.175,
+                0.18,
+                0.66,
+                0.197
+            ],
+            "angle": 0,
+            "content": "(Share of countries with policies, by country grouping; percentage)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.173,
+                0.206,
+                0.819,
+                0.417
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.175,
+                0.425,
+                0.285,
+                0.44
+            ],
+            "angle": 0,
+            "content": "Source: UNCTAD."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.172,
+                0.496,
+                0.825,
+                0.562
+            ],
+            "angle": 0,
+            "content": "Artificial intelligence policy and governance play a critical role in shaping overall direction, establishing institutional and cultural guardrails and creating a socioeconomic and structural environment conducive to the development of artificial intelligence ecosystems.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.172,
+                0.572,
+                0.826,
+                0.683
+            ],
+            "angle": 0,
+            "content": "Policies targeting adoption can support the uptake and diffusion of artificial intelligence products and solutions in the economy, while providing training for upskilling and reskilling workers exposed to artificial intelligence. Policies targeting development should consider the need for more advanced infrastructure, robust data systems and the skills and capabilities needed to stay at the technological frontier. The two approaches are not mutually exclusive, and countries need to find a balance between them.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.172,
+                0.693,
+                0.826,
+                0.867
+            ],
+            "angle": 0,
+            "content": "There are many examples of policy instruments implemented by economies at various stages of development (table 2). Beyond regulation, overarching approaches in major economies include substantial increases in research and development and investment across the artificial intelligence supply chain, from semiconductors to data centres, to foster the emergence of new industries. Many may struggle to match increasing research and development budgets and, as leading countries set higher benchmarks and focus on future technologies, not all countries are equally positioned to keep up. This can deepen disparities, widening the gaps between advanced economies and those working to catch up. International cooperation and knowledge-sharing can enhance national efforts, particularly if domestic resources and capacities are limited.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.493,
+                0.953,
+                0.506,
+                0.965
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.137,
+                0.25,
+                0.149
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.15,
+                0.767,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.166,
+                0.261,
+                0.177
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.497,
+                0.822,
+                0.513
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.514,
+                0.822,
+                0.527
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.53,
+                0.822,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.545,
+                0.435,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.574,
+                0.822,
+                0.587
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.59,
+                0.822,
+                0.603
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.606,
+                0.821,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.621,
+                0.823,
+                0.633
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.636,
+                0.822,
+                0.649
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.652,
+                0.822,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.667,
+                0.38,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.695,
+                0.823,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.712,
+                0.821,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.727,
+                0.822,
+                0.739
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.742,
+                0.822,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.758,
+                0.821,
+                0.77
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.773,
+                0.821,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.789,
+                0.82,
+                0.801
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.805,
+                0.82,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.82,
+                0.821,
+                0.833
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.835,
+                0.821,
+                0.847
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.85,
+                0.65,
+                0.862
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.186,
+                0.03,
+                0.25,
+                0.06
+            ],
+            "angle": 0,
+            "content": "Policy brief"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.722,
+                0.031,
+                0.825,
+                0.061
+            ],
+            "angle": 0,
+            "content": "#120\nAugust 2025"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.126,
+                0.135,
+                0.162,
+                0.164
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.174,
+                0.135,
+                0.8,
+                0.167
+            ],
+            "angle": 0,
+            "content": "Table 2\nPolicies for artificial intelligence adoption and development: Examples"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.177,
+                0.176,
+                0.823,
+                0.48
+            ],
+            "angle": 0,
+            "content": "<table><tr><td></td><td>Adoption (supporting uptake and diffusion of artificial intelligence)</td><td>Development (cultivating capacity to generate new artificial intelligence)</td></tr><tr><td>Overarching approaches</td><td colspan=\"2\">Interim Measures for the Administration of Generative Artificial Intelligence Services (China)Creating Helpful Incentives to Produce Semiconductors (CHIPS) and Science Act (United States)Artificial Intelligence Act (Regulation 2024/1689; European Union)</td></tr><tr><td>Infrastructure</td><td>Digital inclusion and connectivity (Brazil)Electronic agriculture project (Côte d’Ivoire)</td><td>High-Performance Computing Infrastructure (Japan)Act on Restriction on Special Cases Concerning Taxation (K-Chips Act; Republic of Korea)</td></tr><tr><td>Data</td><td>Data Observatory (Chile)Mobility Data Space (Germany)Ethical Guidelines for Application of Artificial Intelligence in Biomedical Research and Health Care (India)</td><td>Sandbox on privacy by design and by default in artificial intelligence projects (Colombia)Provision on computational data analysis in Copyright Act 2021 (Singapore)</td></tr><tr><td>Skills</td><td>Digital Workforce Competitiveness Act (Republic Act No. 11927; Philippines)National Plan for Digital Skills (Spain)</td><td>National junior high school computing curriculum (Ghana)Artificial Intelligence Research Scheme (Nigeria)</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.176,
+                0.49,
+                0.285,
+                0.504
+            ],
+            "angle": 0,
+            "content": "Source: UNCTAD."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.173,
+                0.54,
+                0.825,
+                0.65
+            ],
+            "angle": 0,
+            "content": "The design and implementation of policies for the adoption and development of artificial intelligence should also account for national specificities involving the three key leverage points of infrastructure, data and skills. In this regard, infrastructure entails both digital connectivity and computing power; data are a critical production factor in the knowledge economy; and skilled workers, in both data science and the application of artificial intelligence to particular business operations, are essential for adoption and development.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.173,
+                0.66,
+                0.825,
+                0.741
+            ],
+            "angle": 0,
+            "content": "Renewed interest in industrial and STI policies and the rapid growth in artificial intelligence capabilities have brought artificial intelligence policies to the forefront of current policymaking. Such policies are essential in achieving structural transformation and productivity growth, as well as in addressing social, ethical and environmental challenges arising from the diffusion of the technology.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.493,
+                0.953,
+                0.506,
+                0.965
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.541,
+                0.823,
+                0.554
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.557,
+                0.822,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.572,
+                0.822,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.587,
+                0.821,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.603,
+                0.822,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.618,
+                0.822,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.634,
+                0.423,
+                0.647
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.663,
+                0.822,
+                0.676
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.678,
+                0.822,
+                0.691
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.693,
+                0.822,
+                0.706
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.709,
+                0.822,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.725,
+                0.758,
+                0.738
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.185,
+                0.029,
+                0.25,
+                0.06
+            ],
+            "angle": 0,
+            "content": "Policy brief"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.722,
+                0.031,
+                0.825,
+                0.06
+            ],
+            "angle": 0,
+            "content": "#120\nAugust 2025"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.174,
+                0.135,
+                0.504,
+                0.156
+            ],
+            "angle": 0,
+            "content": "Policy recommendations"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.174,
+                0.177,
+                0.825,
+                0.242
+            ],
+            "angle": 0,
+            "content": "Position strategically. Governments should assess national artificial intelligence capacity in infrastructure, data and skills, to identify gaps and set priorities for action; targeted catch-up strategies can guide progress towards long-term development goals.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.174,
+                0.262,
+                0.825,
+                0.328
+            ],
+            "angle": 0,
+            "content": "Strengthen innovation systems. Countries can assess artificial intelligence-related opportunities and challenges through technology assessment and the evaluation of innovation ecosystems; UNCTAD can support such efforts through the technology assessments and STI policy reviews.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.174,
+                0.348,
+                0.826,
+                0.459
+            ],
+            "angle": 0,
+            "content": "Align national policies. Coordinated actions across government agencies and institutions, particularly those focused on industry, education and STI, are key in shaping artificial intelligence policies that align with national goals; such policies should go beyond incentives such as tax deductions and include regulations (such as on consumer protection, digital platforms and data protection), along with governance and enforcement, to guide the direction of technological change.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.174,
+                0.48,
+                0.826,
+                0.622
+            ],
+            "angle": 0,
+            "content": "Prioritize the three key leverage points of artificial intelligence. Upgrading digital infrastructure, along with leveraging private investment, and ensuring interoperability across systems are essential in supporting artificial intelligence development; promoting open data and data-sharing can help improve access and collaboration, and it is important to balance innovation with rights, ensuring privacy and accountability; and population-wide artificial intelligence literacy should be built, from early schooling onwards and including lifelong learning, and academia-industry partnerships should be fostered, to help develop talents aligned with industry needs.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.493,
+                0.953,
+                0.506,
+                0.965
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.135,
+                0.504,
+                0.155
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.174,
+                0.207,
+                0.197
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.225,
+                0.18,
+                0.822,
+                0.193
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.224,
+                0.196,
+                0.822,
+                0.209
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.224,
+                0.21,
+                0.822,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.224,
+                0.227,
+                0.533,
+                0.24
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.259,
+                0.206,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.224,
+                0.265,
+                0.821,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.225,
+                0.281,
+                0.822,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.224,
+                0.296,
+                0.822,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.226,
+                0.313,
+                0.704,
+                0.324
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.224,
+                0.351,
+                0.822,
+                0.364
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.224,
+                0.366,
+                0.822,
+                0.379
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.225,
+                0.382,
+                0.822,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.225,
+                0.398,
+                0.822,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.224,
+                0.413,
+                0.822,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.225,
+                0.429,
+                0.821,
+                0.441
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.225,
+                0.444,
+                0.492,
+                0.457
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.224,
+                0.482,
+                0.82,
+                0.495
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.226,
+                0.499,
+                0.822,
+                0.511
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.225,
+                0.514,
+                0.821,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.225,
+                0.529,
+                0.821,
+                0.542
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.224,
+                0.545,
+                0.822,
+                0.557
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.225,
+                0.56,
+                0.821,
+                0.573
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.225,
+                0.576,
+                0.821,
+                0.588
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.225,
+                0.592,
+                0.821,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.224,
+                0.607,
+                0.732,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                1.0,
+                0.418
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.156,
+                0.496,
+                0.206,
+                0.725
+            ],
+            "angle": 0,
+            "content": "X\nf\n YouTube\nin",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.651,
+                0.457,
+                0.827,
+                0.49
+            ],
+            "angle": 0,
+            "content": "Contact"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.55,
+                0.51,
+                0.826,
+                0.593
+            ],
+            "angle": 0,
+            "content": "Torbjörn Fredriksson\nOfficer-In-Charge, Division on Technology and Logistics, UNCTAD\n41 22 917 2143\nTorbjorn.Fredriksson@unctad.org",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.55,
+                0.605,
+                0.826,
+                0.687
+            ],
+            "angle": 0,
+            "content": "Angel Gonzalez Sanz\nOfficer-In-Charge, Division on Technology and Logistics, UNCTAD\n41 22 917 5508\nAngel.Gonzalez-Sanz@unctad.org",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.628,
+                0.714,
+                0.826,
+                0.78
+            ],
+            "angle": 0,
+            "content": "Press Office\n41 22 917 5828\nunctadpress@unctad.org\nunctad.org",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.637,
+                0.825,
+                0.885,
+                0.938
+            ],
+            "angle": 0,
+            "content": "UN trade & development",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.501,
+                0.196,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.166,
+                0.543,
+                0.193,
+                0.559
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.167,
+                0.578,
+                0.193,
+                0.603
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.618,
+                0.196,
+                0.639
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.701,
+                0.196,
+                0.718
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.171,
+                0.701,
+                0.175,
+                0.704
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.648,
+                0.457,
+                0.828,
+                0.49
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.646,
+                0.512,
+                0.823,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.599,
+                0.528,
+                0.823,
+                0.542
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.552,
+                0.544,
+                0.822,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.697,
+                0.558,
+                0.822,
+                0.573
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.568,
+                0.573,
+                0.823,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.646,
+                0.608,
+                0.823,
+                0.621
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.599,
+                0.622,
+                0.822,
+                0.636
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.551,
+                0.637,
+                0.823,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.698,
+                0.654,
+                0.823,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.562,
+                0.668,
+                0.823,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.718,
+                0.716,
+                0.825,
+                0.73
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.698,
+                0.732,
+                0.823,
+                0.745
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.628,
+                0.746,
+                0.823,
+                0.762
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.736,
+                0.764,
+                0.822,
+                0.777
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.694,
+                0.824,
+                0.83,
+                0.871
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.823,
+                0.864,
+                0.877,
+                0.873
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.636,
+                0.868,
+                0.887,
+                0.913
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.643,
+                0.909,
+                0.885,
+                0.936
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

@@ -1,0 +1,25 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_i_5tvc4i/pdfs/0003-ADB_Exploring-the-Impact-and-Opportunities-of-Carbon-Pricing-in-_49e41a4f.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "亚洲开发银行",
+  "cover_short_title": "交通碳定价，一次说清",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "亚洲开发银行：碳定价在交通领域真正机会，不是征税，而是循环投资",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

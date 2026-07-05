@@ -1,0 +1,1651 @@
+[
+    {
+        "type": "text",
+        "text": "To what extent can green infrastructure investment mitigate China's clean-energy overcapacity?",
+        "text_level": 1,
+        "bbox": [
+            90,
+            137,
+            862,
+            261
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Alicia García-Herrero and Haoxin Mu",
+        "bbox": [
+            89,
+            294,
+            524,
+            319
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "China's industrial policies have made it the global leader in the manufacturing of solar panels, wind turbines and other renewable technologies, but at the cost of severe overcapacity that is now compressing margins across the entire sector. This paper evaluates greater investment in power infrastructure as a potential solution to stimulate energy demand, reduce curtailment and alleviate the renewable tech manufacturing overcapacity problem. Using scenario analysis, we show that grid expansion provides meaningful near-term demand relief, though supply-side consolidation remains necessary to restore durable market equilibrium.",
+        "bbox": [
+            87,
+            376,
+            905,
+            510
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Alicia García-Herrero (alicia.garcia-herrero@bruegel.org) is a Senior Fellow at Bruegel Haoxin Mu is an Economist at Natixis Corporate & Investment Banking",
+        "bbox": [
+            89,
+            719,
+            742,
+            757
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Working Paper 15/2026",
+        "bbox": [
+            90,
+            65,
+            544,
+            98
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "bruegel",
+        "bbox": [
+            838,
+            49,
+            905,
+            110
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "Recommended citation: García-Herrero, A. and H. Mu (2026) 'To what extent can green infrastructure investment mitigate China's clean-energy overcapacity?' Working Paper 15/2026, Bruegel, available at https://doi.org/10.64153/DVIX4182",
+        "bbox": [
+            90,
+            889,
+            877,
+            936
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Contents",
+        "text_level": 2,
+        "bbox": [
+            90,
+            86,
+            230,
+            108
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "1 Introduction 3\n2 Literature review 4\n3 China's supply-driven approach to the energy transition 5\n4 The hidden costs: subsidies, overcapacity and involution 8\n5 Infrastructure as a demand-side solution 12\n6 Scenario analysis: the medium-term impact of infrastructure investment 14\n7 Conclusions 17\nReferences 17",
+        "bbox": [
+            90,
+            143,
+            907,
+            435
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n°15/26 | June 2026",
+        "bbox": [
+            90,
+            929,
+            381,
+            942
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            892,
+            931,
+            905,
+            942
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "1 Introduction",
+        "text_level": 2,
+        "bbox": [
+            92,
+            86,
+            299,
+            108
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Few topics sit so squarely at the intersection of geoeconomics, industrial policy and climate policy as China's energy transition. Since 2020, China has installed more than 1,300 gigawatts of renewable power capacity (for comparison, total installed capacity in Europe in 2024 was 848 GW $^{1}$ ), accounting for approximately 60 percent of all new global installations over the period. China's rise in renewable energy capacity has been built on a comprehensive industrial strategy anchored in state subsidisation, the strategic acquisition of foreign technology and the cultivation of a hyper-competitive domestic market (García Herrero, 2026). This model has achieved unparalleled production capacity, but has also exposed internal contradictions.",
+        "bbox": [
+            87,
+            131,
+            699,
+            299
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "For example, China now manufactures 92 percent of the world's solar modules and 82 percent of wind turbines, and has already built sufficient capacity in terms of production of renewable energy technologies to supply the entire global energy transition (García Herrero and Mu, 2025). However, it now faces severe overcapacity precisely because actual global demand remains far below levels needed to reduce greenhouse gas emissions to net-zero. Prices have collapsed across nearly all renewable products, and sector-wide profitability has turned sharply down or even negative, especially for solar, for which demand elasticity is higher because of its retail nature.",
+        "bbox": [
+            87,
+            302,
+            699,
+            451
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "This paper focuses on the domestic dimension, with particular emphasis on the proposed infrastructure remedy. García Herrero and Mu (2025) argued that China should redirect its green capital expenditure from manufacturing to green infrastructure. The State Grid Corporation of China has since committed to a 40 percent expansion in capital expenditure over the next five years, and grid investment surged 43 percent year-on-year in the first quarter of 2026 $^{2}$ . This paper tests whether that commitment, if delivered, is sufficient to rebalance the market.",
+        "bbox": [
+            87,
+            455,
+            700,
+            583
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "China faces\novercapacity\nprecisely because\nglobal demand for\nrenewable energy\ntechnologies is far\nbelow levels needed\nto reduce emissions\nto net-zero",
+        "bbox": [
+            714,
+            359,
+            902,
+            527
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "We make three contributions. First, we provide an updated account of how China's supply-driven model produced structural overcapacity. Second, we quantify the transmission infrastructure gap and its relationship to renewable curtailment. Third, we model two scenarios to evaluate the medium-term trajectory of manufacturing utilisation rates.",
+        "bbox": [
+            89,
+            587,
+            699,
+            678
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Section 2 presents a short literature review on this topic. Section 3 introduces the history and strategic logic of China's energy transition. Section 4 analyses the hidden costs of China's green industrial policies. Section 5 examines grid infrastructure expansion as a demand-side solution. Section 6 presents the scenario analysis. Section 7 concludes.",
+        "bbox": [
+            89,
+            682,
+            699,
+            774
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_footnote",
+        "text": "1 Emilia Lardizabal, 'Europe reached 848 GW of renewables in 2024: Germany, Spain, France, and Italy account for 50%', Strategic Energy, 27 March 2025, https://www.energiaestrategica.com/strategicenergy/en/notes/europe-reaches-848-gw-2024.",
+        "bbox": [
+            89,
+            831,
+            695,
+            869
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_footnote",
+        "text": "2 Reuters, 'China's power grid investments to surge to record \\$574 billion in 2026-2030', 15 January 2026, https://www.reuters.com/sustainability/boards-policy-regulation/chinas-power-grid-investments-surge-record-574-billion-2026-2030-2026-01-15/.",
+        "bbox": [
+            90,
+            870,
+            677,
+            908
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n°15/26 | June 2026",
+        "bbox": [
+            90,
+            929,
+            381,
+            944
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            892,
+            931,
+            905,
+            942
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "2 Literature review",
+        "text_level": 2,
+        "bbox": [
+            90,
+            86,
+            364,
+            108
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The overcapacity that has resulted from China's supply-driven energy transition has shifted the analytical focus from manufacturing dominance to consumption constraints. While its total installed renewable power capacity of over 1800 GW has established China as a global clean energy titan, the structural efficacy of this model is increasingly bottlenecked by lagging downstream infrastructure. García Herrero and Mu (2025) noted that China's national carbon and energy intensities have dropped less than expected compared to the rapid upstream capacity additions. This paradox arises because fossil fuels still provide the actual baseline power load, leaving a relatively high portion of newly installed wind and solar farms sitting idle, waiting to connect to the grid (IEA, 2024).",
+        "bbox": [
+            87,
+            131,
+            699,
+            300
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "China has become a global clean energy titan, but the structural efficacy of its model is increasingly bottlenecked by lagging downstream infrastructure",
+        "bbox": [
+            714,
+            187,
+            902,
+            356
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "This consumption gap is the direct product of a severe investment asymmetry within China's energy portfolio. Following the 2020 'dual carbon' declaration – goals of peaking carbon emissions by 2030 and reaching carbon neutrality by $2060^{3}$ – capital flowing into power generation grew exponentially, while capital expenditures earmarked for power-grid infrastructure remained comparatively stagnant. Empirical tracking by the Centre for Research on Energy and Clean Air (CREA) shows that this divergence has triggered a sharp rise in green energy curtailment rates, or periods in which solar or wind power generators are forced to disconnect from the grid because of insufficient power load. Curtailment has reached unprecedented highs in western provinces as local networks failed to keep pace with generation capacity (Myllyvirta, 2026). This rise in curtailment is depressing capacity factors, eroding the predictable revenue streams of renewable projects $^{4}$ .",
+        "bbox": [
+            87,
+            302,
+            700,
+            527
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Unable to export or integrate this power, the domestic market has turned inward, aggravating 'involution,' a pattern of self-defeating competition in which firms undercut one another below cost in pursuit of market share, eroding the viability of the industry as a whole (García Herrero, 2026). This hyper-competitive landscape has created severe industrial strain, forcing multiple large solar manufacturers into technical bankruptcy (Hove, 2026). To resolve these interconnected crises, García Herrero and Mu (2025) advocated a fundamental macroeconomic shift: redirecting green capital expenditure away from overbuilt manufacturing sectors and to green infrastructure. Because grid modernisation constitutes a non-tradable asset, this structural pivot avoids triggering further international tariff escalations with the EU or the US (García Herrero, 2024). Crucially, doubling the allocation of grid infrastructure within national fixed-asset investment frameworks could cushion the economic slowdown by boosting overall growth by 1.1 percentage points (García Herrero and Mu, 2025).",
+        "bbox": [
+            87,
+            531,
+            700,
+            775
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "As highlighted by the State Grid Corporation of China's commitment to a 40 percent expansion in capital expenditure and a 43 percent year-on-year investment surge in the first quarter of 2026, Beijing is actively attempting to operationalise this remedy. This infrastructure drive is explicitly centred on ultra-high voltage (UHV) transmission networks, which do most of the work of cross-region grid networks because they offer lower transmission loss.",
+        "bbox": [
+            110,
+            778,
+            699,
+            793
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_footnote",
+        "text": "3 The State Council of the People's Republic of China, 'Carbon Peaking and Carbon Neutrality China's Plans and Solutions', Xinhua, 8 November 2025, https://english.www.gov.cn/archive/whitepaper/202511/08/content\\_WS690ee812c6d00ca5f9a076cd.html.",
+        "bbox": [
+            90,
+            822,
+            680,
+            862
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_footnote",
+        "text": "4 See Wood Mackenzie press release of 4 November 2025, 'China shifts to 'High-quality' renewable growth with new pricing mechanism following 264 GW boom in H1 2025', https://www.woodmac.com/press-releases/new-page3/.",
+        "bbox": [
+            90,
+            863,
+            678,
+            902
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n°15/26 | June 2026",
+        "bbox": [
+            90,
+            929,
+            381,
+            944
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            892,
+            931,
+            905,
+            942
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            87,
+            74,
+            699,
+            166
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "This pivot sets the stage for our empirical analysis. While the capital injection is clear, the core macroeconomic question remains whether this targeted infrastructure remedy can catch up with the sheer scale of the supply glut. The following sections test whether this commitment is sufficient to bridge the transmission gap, reduce curtailment and ultimately rebalance manufacturing utilisation rates.",
+        "bbox": [
+            89,
+            170,
+            699,
+            262
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "3 China's supply-driven approach to the energy transition",
+        "text_level": 2,
+        "bbox": [
+            90,
+            313,
+            658,
+            369
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "China is increasingly recognised as a frontrunner in the global energy transition as it has achieved rapid deployment and extensive domestic production of renewable technology at a scale that has reshaped global markets. In 2025 alone, China installed 434 GW, more than the combined installed renewable capacities of France, Germany, Italy and Spain, as of 2024, according to data from the International Renewable Energy Agency and Global Wind Energy Council.",
+        "bbox": [
+            89,
+            398,
+            699,
+            508
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "However, China's energy transition considerably predates the post-2020 acceleration. China's share of global renewable power generation remained broadly flat until 2005, when the National People's Congress enacted the Renewable Energy Law $^{5}$ . The government subsequently introduced quantitative capacity targets from 2007, prompting a sustained surge in renewable installation since then.",
+        "bbox": [
+            89,
+            512,
+            699,
+            604
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "A critical structural driver of this transition was China's accession to the World Trade Organisation (WTO) in 2001. Prior to that, domestic energy production covered more than 95 percent of consumption. The ensuing wave of industrialisation and integration into global value chains generated a sharp increase in energy demand and a corresponding rise in fossil-fuel imports, particularly crude oil, reducing energy self-sufficiency to approximately 85 percent by the mid-2000s (Figure 2). This dependence on imported fossil fuels introduced strategic vulnerabilities that Beijing moved to address through the clean energy transition.",
+        "bbox": [
+            89,
+            607,
+            700,
+            756
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "5 The law came into force in 2006. See Ministry of Commerce, PRC, 'Renewable Energy Law of the People's Republic of China', https://english.mofcom.gov.cn/Policies/LawsRegulations/art/2013/art\\_f1de59700ebd47c69367af1013f6daef.html.",
+        "bbox": [
+            90,
+            863,
+            645,
+            901
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n°15/26 | June 2026",
+        "bbox": [
+            90,
+            929,
+            381,
+            944
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            892,
+            931,
+            905,
+            942
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/687232e8ade9d2ea3578cd11cb54a54b581f3835b3174453dcd153d34488e4a2.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 1: China's share of global emissions and energy (%)"
+        ],
+        "chart_footnote": [
+            "Source: Bruegel based on International Renewable Energy Agency, Global Wind Energy Council, British Petroleum."
+        ],
+        "bbox": [
+            102,
+            102,
+            695,
+            379
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b56a356357055962d0abdc10d5757fb7bb63eb3050d9183bc52dd04fc1fbc8af.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 2: Chinese domestic energy production as a share of demand (%)"
+        ],
+        "chart_footnote": [
+            "Source: Bruegel based on National Bureau of Statistics."
+        ],
+        "bbox": [
+            105,
+            474,
+            690,
+            770
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The government's response was to frame the clean-energy transition as a dual-purpose project: reducing environmental externalities while restoring energy independence. From 2007, Beijing deployed an expanding toolkit of support measures, including the Development Plan for Renewable Energy, consistent efforts spanning multiple Five-Year Plans and the New Energy Security Strategy, as summarised in Table 1.",
+        "bbox": [
+            87,
+            816,
+            700,
+            908
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n°15/26 | June 2026",
+        "bbox": [
+            90,
+            929,
+            381,
+            944
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            892,
+            931,
+            905,
+            942
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/996dacbf766fa1b99dabfe2e38dbcb3b59b7eaf24bf3c34a17ed28f98a48e28a.jpg",
+        "table_caption": [
+            "Table 1: Main renewable energy policy milestones in China"
+        ],
+        "table_footnote": [
+            "Source: Bruegel."
+        ],
+        "table_body": "<table><tr><td>Period</td><td>Year</td><td>Policy</td><td>Content</td><td>Outcome</td></tr><tr><td>Preparation</td><td>2001</td><td>The 10th Five-Year Plan</td><td>Promoted renewable energy as long-term strategy for the sustainable development of the energy industry; planned to promote solar energy in resource-rich rural areas and accelerate the domestication of wind power supply chain</td><td></td></tr><tr><td rowspan=\"5\">Exploration</td><td>2005</td><td>Renewable Energy Law</td><td>Provided a legal framework for the expansion of renewable energy sector with supportive policies including mandatory grid connection and purchase, favourable pricing and cost sharing</td><td></td></tr><tr><td>2007</td><td>11th Five-Year Plan</td><td>Targeted an increase in non-fossil fuel energy&#x27;s share of primary energy consumption to 8.1%</td><td>Non-fossil fuel energy&#x27;s share increased to 9.4% by 2010</td></tr><tr><td>2007</td><td>Medium and Long-term Development Plan for Renewable Energy</td><td>Targeted an increase in hydro power capacity to 190 GW, wind to 10 GW, and solar to 0.3 GW by 2010</td><td>Hydro power capacity increased to 220 GW, wind to 31 GW and solar to 0.86 GW by 2010</td></tr><tr><td>2010</td><td>Decision of the State Council on Accelerating the Cultivation and Development of Strategic Emerging Industries</td><td>Outlined renewable energy as a strategic energy industry and paved the way for more policy support</td><td></td></tr><tr><td>2011</td><td>12th Five-Year Plan</td><td>Targeted an increase in non-fossil fuel energy&#x27;s share of energy consumption to 11.4% by 2015, while increasing hydro power capacity to 290 GW, wind to 100 GW and solar to 21 GW</td><td>Non-fossil fuel energy&#x27;s share increased to 12.1%; hydro power capacity increased to 320 GW, wind to 130 GW and solar to 43 GW by 2015</td></tr><tr><td rowspan=\"2\">Foundation</td><td>2014</td><td>New Energy Security Strategy (&#x27;Four Revolutions&#x27; and &#x27;One Cooperation&#x27;)</td><td>Formalised the central role of renewable energy in China&#x27;s energy security strategy and promoted a faster energy transition</td><td></td></tr><tr><td>2016</td><td>13th Five-Year Plan</td><td>Targeted an increase in non-fossil fuel energy&#x27;s share in energy consumption to 15% by 2020, while increasing hydro power capacity to 340 GW, wind to 210 GW and solar to 110 GW</td><td>Non-fossil fuel energy&#x27;s share increased to 15.9%; hydro power capacity increased to 370 GW, wind to 280 GW and solar to 250 GW by 2020</td></tr><tr><td rowspan=\"3\">Acceleration</td><td>2020</td><td>‘3060&#x27; Dual Carbon Targets</td><td>Targeted at achieving carbon emission peak by 2030 and carbon neutrality by 2060</td><td></td></tr><tr><td>2022</td><td>14th Five-Year Plan for a Modern Energy System</td><td>Targeted an increase in non-fossil fuel energy&#x27;s share in energy consumption to 20% by 2025, while increasing hydro power capacity to 380 GW by 2025, and wind and solar combined to 1200 GW by 2030</td><td>Hydro power capacity increased to 445 GW, and wind and solar combined to 1760 GW by 2025</td></tr><tr><td>2025</td><td>Energy Law</td><td>Formalied the prioritised role of renewable energy in China&#x27;s energy system</td><td></td></tr></table>",
+        "bbox": [
+            92,
+            87,
+            905,
+            702
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The massive installation not only reversed China's reliance on imported energy but also fostered economies of scale that dramatically reduced the cost of renewable technology. Since 2010, the levelised cost of energy (LCOE) for solar photovoltaic power in China has fallen by approximately 90 percent, while onshore wind has declined by around 67 percent (IRENA, 2025). By 2025, as Figure 3 illustrates, the LCOE for both technologies had fallen below those of coal-fired and nuclear power.",
+        "bbox": [
+            89,
+            740,
+            700,
+            851
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n°15/26 | June 2026",
+        "bbox": [
+            90,
+            929,
+            381,
+            944
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            892,
+            931,
+            905,
+            942
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/77f9045547ac5f005135366fb23569e4498ffd9ebb3947bf6ecde1d279189058.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 3: Levelised cost of power generation by energy source (renminbi/kWh, 2025)"
+        ],
+        "chart_footnote": [
+            "Source: Bruegel based on China Power Equipment Management."
+        ],
+        "bbox": [
+            100,
+            101,
+            695,
+            378
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "4 The hidden costs: subsidies, overcapacity and involution",
+        "text_level": 2,
+        "bbox": [
+            90,
+            483,
+            519,
+            539
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "4.1 The fiscal burden of renewable subsidies",
+        "text_level": 2,
+        "bbox": [
+            90,
+            565,
+            522,
+            583
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "China's renewable build-out was not achieved without substantial fiscal transfers. From 2011, the government levied a renewable power surcharge to fund a price floor for on-grid renewable electricity set materially above the benchmark coal power price (Figure 4). Official data indicates that the surcharge accumulated a deficit of 821 billion renminbi (\\$126 billion) between 2012 and 2024, equivalent to 5.5 percent of total expenditure from the Government Fund account (Ministry of Finance of China, 2025).",
+        "bbox": [
+            89,
+            587,
+            699,
+            697
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Even after the formal removal of above-cost support in 2020, renewable power continued to be priced with reference to the benchmark coal tariff, effectively maintaining a floor price. Our estimate suggests that the embedded premium in renewable power pricing had generated an accumulative transfer of approximately 1.4 trillion renminbi (\\$220 billion) as of 2024, exceeding the cumulative fiscal deficit from the renewable power surcharge. Figure 5 shows the evolution of effective subsidies over time.",
+        "bbox": [
+            89,
+            702,
+            700,
+            813
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n°15/26 | June 2026",
+        "bbox": [
+            90,
+            929,
+            381,
+            944
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            892,
+            931,
+            905,
+            942
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/505246132a8e8eb50bb4c2bc45f04f0ce74159b8b6aaee0363360f968d96846b.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 4: China on-grid power price\\* by energy source (RMB/kWh)",
+            "Source: Bruegel based on National Energy Administration. Note: \\* the on-grid power price is the amount the grid company pays to solar/wind farms after accounting for subsidies."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            100,
+            105,
+            673,
+            395
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a9b20d8b287fc5a0a564a280725f61f85401c19c2068e52e56b8b93cbc1bb436.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 5: Effective subsidies from renewable power sales (RMB billions)"
+        ],
+        "chart_footnote": [
+            "Source: Bruegel based on China's Ministry of Finance."
+        ],
+        "bbox": [
+            100,
+            497,
+            658,
+            753
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "4.2 The overcapacity problem",
+        "text_level": 2,
+        "bbox": [
+            90,
+            814,
+            384,
+            831
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Following President Xi Jinping's announcement of China's 'dual-carbon' targets – peak carbon emissions by 2030 and carbon neutrality by 2060 (see section 2) – renewable equipment manufacturers dramatically expanded capital expenditure. Total solar manufacturing capacity increased by six to seven times across all production stages between 2020 and 2024 (Figure 6), reaching a level approximately twice the world's entire annual installation demand.",
+        "bbox": [
+            87,
+            834,
+            700,
+            908
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n°15/26 | June 2026",
+        "bbox": [
+            90,
+            929,
+            381,
+            944
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            892,
+            931,
+            905,
+            942
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            87,
+            74,
+            699,
+            109
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/69777e8e61e08c39fb4d2106034680535bc644503362cadfe63b31ad36d5afbf.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 6: Chinese solar manufacturing capacity (GW)"
+        ],
+        "chart_footnote": [
+            "Source: Bruegel based on Natixis."
+        ],
+        "bbox": [
+            110,
+            162,
+            689,
+            424
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e03f4c2c431eeba8bc3ebf35a8633d78648f825b081829c9815463628c19f4fc.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 7: Solar product prices (indexed, 3 November 2020 = 100)"
+        ],
+        "chart_footnote": [
+            "Source: Bruegel based on Natixis, CEIC."
+        ],
+        "bbox": [
+            102,
+            501,
+            685,
+            789
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The surge in capacity proved poorly calibrated to demand. Overseas demand for Chinese renewable equipment decelerated sharply from 2023, as tighter financial conditions and deteriorating fiscal positions in many importing countries prompted reductions or elimination of renewable energy subsidies. Between 2023 and 2025, the value of China's solar module exports fell by more than 40 percent, while export volumes rose by approximately 60 percent, implying that export prices were cut by around two-thirds. Figure 7 tracks the resulting collapse in solar product prices.",
+        "bbox": [
+            89,
+            834,
+            700,
+            890
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n°15/26 | June 2026",
+        "bbox": [
+            90,
+            929,
+            381,
+            944
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            884,
+            929,
+            905,
+            942
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            89,
+            74,
+            699,
+            147
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The price war spread quickly to the domestic market and intensified into what Chinese commentators term 'involution' $^{6}$ (内卷; see section 2), eroding the viability of the industry as a whole. This mirrors the dynamics Garcia Herrero and Xu (2019) identified in earlier rounds of Chinese industrial overexpansion.",
+        "bbox": [
+            89,
+            151,
+            699,
+            223
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The financial consequences have been severe (Figure 8). The industry-wide return on equity for Chinese solar manufacturers collapsed from approximately 25 percent in 2022 to -5 percent in 2024, indicating sector-wide losses. The EBITDA-to-interest expense ratio deteriorated from roughly 34x to 8x over the same period, signalling rapidly declining debt-service capacity.",
+        "bbox": [
+            90,
+            227,
+            699,
+            318
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d157e2c94e45dbc620d94bd3ec8cdba8d14c3368d7902f7470166dfbfe452204.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 8: Renewable sector financial health"
+        ],
+        "chart_footnote": [
+            "Source: Bruegel based on company annual reports. Note: EBITDA = earnings before interest, taxes, depreciation and amortisation."
+        ],
+        "bbox": [
+            124,
+            365,
+            692,
+            634
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_footnote",
+        "text": "6 Wei Qijia, 'Comprehensive Regulation of \"Involutionary\" Competition', National Development and Reform Commission, 14 July 2025, https://www.ndrc.gov.cn/wsdwhfz/202507/t20250714\\_1399160.html (in Chinese).",
+        "bbox": [
+            90,
+            863,
+            672,
+            901
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n°15/26 | June 2026",
+        "bbox": [
+            90,
+            929,
+            381,
+            944
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            884,
+            929,
+            905,
+            942
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "5 Infrastructure as a demand-side solution",
+        "text_level": 2,
+        "bbox": [
+            90,
+            86,
+            697,
+            109
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "5.1 The grid-generation gap",
+        "text_level": 2,
+        "bbox": [
+            90,
+            149,
+            366,
+            166
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Since late 2024, Chinese authorities have publicly acknowledged the ‘involution’ dynamic and called on companies to exercise pricing discipline (see footnote 5). However, the structural economics of the renewable tech sector make voluntary restraint inherently unstable: with predominantly private ownership and highly fragmented production, the sector is caught by a textbook prisoner’s dilemma in which price-cutting remains the dominant individual strategy.",
+        "bbox": [
+            87,
+            170,
+            699,
+            280
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Accordingly, Chinese policymakers have shifted attention to the demand side, with power grid infrastructure as the primary lever. Renewable energy sources accounted for approximately 47 percent of China's total installed generation capacity as of 2025, yet contributed only around 22 percent of total electricity generation (Figure 9). This echoes Body's (2026) findings of not only intermittency but structurally inadequate transmission infrastructure.",
+        "bbox": [
+            89,
+            284,
+            700,
+            394
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d77bb29b1b6eb5a7967971aef8d7da21df061e21eaae07766d9a4df5b984efd5.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 9: China's power mix: installed capacity vs. generation (%)",
+            "Source: Bruegel based on Natixis, China Electricity Council."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            100,
+            442,
+            675,
+            662
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Figure 10 illustrates the investment divergence that underlies this gap. Annual investment in power generation capacity accelerated from approximately 328 billion renminbi (\\$50 billion) in 2019 to 1.2 trillion renminbi (\\$185 billion) in 2024, driven by the rapid installation of solar and wind projects. Grid investment, which involves longer planning, regulatory approval and construction timelines, remained flat and failed to keep pace with the upstream generation expansion, elevating curtailment rates across renewable projects.",
+        "bbox": [
+            89,
+            721,
+            700,
+            851
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n°15/26 | June 2026",
+        "bbox": [
+            90,
+            929,
+            381,
+            944
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            884,
+            929,
+            905,
+            942
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6bd20c2430e5bd767f8748f8aad907a6453f895a615e6d24d1667866e9ec3713.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 10: Chinese power investment by category (RMB billions)"
+        ],
+        "chart_footnote": [
+            "Source: Bruegel based on Natixis, China Electricity Council."
+        ],
+        "bbox": [
+            104,
+            99,
+            685,
+            344
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/81f45c3b88d9c9ad4a3f7f6269df85395aa6b24a3b7206684cf0b34fdf431fbc.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 11: Power supply surplus/deficit by region (TWh)"
+        ],
+        "chart_footnote": [
+            "Source: Bruegel based on China National Bureau of Statistics."
+        ],
+        "bbox": [
+            100,
+            437,
+            690,
+            709
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "5.2 The east-west dimension",
+        "text_level": 2,
+        "bbox": [
+            90,
+            776,
+            374,
+            791
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The geography of China's energy system imposes another fundamental structural challenge. China's most abundant wind and solar resources are concentrated in the sparsely populated western provinces, while electricity demand is heavily concentrated in the eastern coastal industrial centres. As Figure 11 shows, the east-west deficit in power supply has widened consistently, creating a mismatch that local grid infrastructure cannot resolve without long-distance, high-capacity transmission links. Therefore, the demand for large-scale, cross-regional grid infrastructure is ever growing.",
+        "bbox": [
+            87,
+            797,
+            700,
+            889
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n°15/26 | June 2026",
+        "bbox": [
+            90,
+            929,
+            381,
+            944
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            884,
+            929,
+            905,
+            942
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            90,
+            74,
+            699,
+            109
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "In this context, China restarted the construction of ultra-high voltage (UHV) transmission lines in 2022, contributing to a 10 percent annual increase in grid investment over the next two years. In the first quarter of 2026, grid investment growth accelerated to 43 percent year-on-year.",
+        "bbox": [
+            87,
+            112,
+            699,
+            186
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "6 Scenario analysis: the medium-term impact of infrastructure investment",
+        "text_level": 2,
+        "bbox": [
+            90,
+            237,
+            631,
+            293
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "6.1 Modelling framework",
+        "text_level": 2,
+        "bbox": [
+            90,
+            319,
+            336,
+            337
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "To assess the impact of infrastructure investment on China's renewable energy demand and manufacturing utilisation rates, we construct two stylised scenarios based on China Energy's forecast of power demand growth, incorporating binding policy targets, including raising the share of non-fossil fuels in total primary energy consumption to 25 percent by 2030 and 80 percent by 2060. We hold manufacturing capacity constant over the next decade and assume a modest increase in external demand for Chinese solar modules. Figure 12 sets out the baseline power demand trajectory.",
+        "bbox": [
+            87,
+            341,
+            699,
+            470
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0b1cb296d9d2113745fbf987147e04f9a9493be277d681e98054cb7c338990ce.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 12: Annual power demand forecast for China (TWh)"
+        ],
+        "chart_footnote": [
+            "Source: Bruegel."
+        ],
+        "bbox": [
+            102,
+            521,
+            682,
+            745
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The two scenarios are defined by contrasting assumptions about the demand effect of grid improvements, drawing on the theoretical dichotomy between demand frontloading and permanent demand stimulation under Jevons' paradox (Alcott, 2005; Jevons, 1865).",
+        "bbox": [
+            89,
+            797,
+            699,
+            851
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n°15/26 | June 2026",
+        "bbox": [
+            90,
+            929,
+            381,
+            944
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            884,
+            929,
+            905,
+            942
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "6.2 Scenario 1: demand frontloading",
+        "text_level": 2,
+        "bbox": [
+            90,
+            72,
+            445,
+            90
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "In the first scenario, improved grid infrastructure primarily accelerates, rather than augments, the overall demand trajectory. Better connectivity and lower curtailment rates incentivise faster installation between 2026 and 2030 by improving project economics, but the total volume of installations between 2030 and 2060 is correspondingly reduced as deferred projects are absorbed earlier. In this scenario, annual renewable demand increases by approximately 133 percent over the next five years, translating to solar and wind installation rates of approximately 320 GW and 170 GW per year by 2030 (Figure 13).",
+        "bbox": [
+            87,
+            93,
+            700,
+            224
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4cf932bd44665a94ecbc8180a0d3bb0a3595c8c3ac029797320dd1b9c86fba4e.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 13: Scenario 1, five-year demand frontloading"
+        ],
+        "chart_footnote": [
+            "Source: Bruegel."
+        ],
+        "bbox": [
+            97,
+            265,
+            699,
+            542
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The near-term relief is significant: wind equipment manufacturing utilisation rates would recover from approximately 53 percent in 2021–2025 to 85 percent in 2026–2030. However, after 2030, annual installation would fall sharply, pushing manufacturing utilisation to 29 percent and 25 percent for solar and wind respectively. In this scenario, infrastructure investment merely shifts the timing of overcapacity, rather than resolving it.",
+        "bbox": [
+            87,
+            587,
+            700,
+            697
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "6.3 Scenario 2: demand uplift via the Jevons effect",
+        "text_level": 2,
+        "bbox": [
+            90,
+            719,
+            584,
+            734
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The second scenario draws on Jevons' paradox: as the effective cost of consuming renewable electricity declines through improved grid efficiency and reduced curtailment, new applications become economically viable, generating additional electricity demand that would not otherwise materialise. We model a 1.2x positive shock to total renewable energy demand up to 2060, representing a structural expansion of demand. Figure 14 shows the resulting installation profile.",
+        "bbox": [
+            89,
+            739,
+            700,
+            851
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n°15/26 | June 2026",
+        "bbox": [
+            90,
+            929,
+            381,
+            944
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            884,
+            929,
+            905,
+            942
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "chart",
+        "img_path": "images/fb68a8248be5346793f22b746f7623e066cf9d0f50cbdad2873a0f0273d86ef6.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 14. Scenario 2, 20 percent uplift in renewable demand"
+        ],
+        "chart_footnote": [
+            "Source: Bruegel."
+        ],
+        "bbox": [
+            104,
+            99,
+            695,
+            370
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "This scenario produces a more modest near-term demand increase of approximately 108 percent, equivalent to annual solar and wind installation of 260 GW and 140 GW respectively. Manufacturing utilisation for wind reaches approximately 70 percent in 2026–2030 then declines gradually to 45 percent in 2031–2035. The longer-term trajectory is considerably more stable and avoids the sharp utilisation cliff associated with pure frontloading.",
+        "bbox": [
+            87,
+            417,
+            700,
+            527
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "6.4 Summary",
+        "text_level": 2,
+        "bbox": [
+            90,
+            548,
+            223,
+            565
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Table 2 summarises the utilisation outcomes in both scenarios. The real-world trajectory will almost certainly combine both effects. However, the critical finding is invariant to the scenario mix: even under optimistic demand assumptions, solar manufacturing utilisation rates will remain far below financially viable thresholds. The overcapacity problem is structural, not cyclical.",
+        "bbox": [
+            87,
+            568,
+            700,
+            661
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "table",
+        "img_path": "images/840ae6df604a5e95a085eb2c47ada3a9adaf471798fa440395e4bcbeca481434.jpg",
+        "table_caption": [
+            "Table 2: Manufacturing utilisation rate projections in two scenarios (%)"
+        ],
+        "table_footnote": [
+            "Source: Bruegel."
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">Scenarios</td><td colspan=\"3\">Solar mfg utilisation rate (%)</td><td colspan=\"3\">Wind mfg utilisation rate (%)</td></tr><tr><td>2021-2025</td><td>2026-2030</td><td>2031-2035</td><td>2021-2025</td><td>2026-2030</td><td>2031-2035</td></tr><tr><td>5Y frontloading</td><td>48</td><td>46↓</td><td>29↓</td><td>53</td><td>85↑</td><td>25↓</td></tr><tr><td>20% uplift in demand</td><td>48</td><td>41↓</td><td>35↓</td><td>53</td><td>70↑</td><td>45↓</td></tr></table>",
+        "bbox": [
+            92,
+            697,
+            791,
+            766
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n°15/26 | June 2026",
+        "bbox": [
+            90,
+            929,
+            381,
+            944
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            884,
+            929,
+            905,
+            942
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "7 Conclusions",
+        "text_level": 2,
+        "bbox": [
+            92,
+            86,
+            295,
+            108
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "This paper has examined whether China's planned expansion of power-grid infrastructure can credibly resolve the structural overcapacity that has accumulated in its renewable energy manufacturing sector. Our analysis yields two main conclusions.",
+        "bbox": [
+            90,
+            131,
+            697,
+            185
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "First, China's overcapacity problem is the direct consequence of a supply-driven industrial policy model that successfully achieved cost competitiveness and energy deployment at scale, but at the cost of a persistent and severe mismatch between manufacturing capacity and sustainable demand. As documented by García Herrero (2026), the policy instruments that propelled China to global leadership in renewables also created incentive structures that systematically encouraged overinvestment. The resulting involution dynamic has inflicted severe financial damage on manufacturers and brings material risks to the long-term viability of the sector's current structure.",
+        "bbox": [
+            89,
+            189,
+            699,
+            337
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Second, infrastructure investment is a necessary but insufficient condition for market rebalancing. The transmission gap between China's renewable-rich west and its energy-hungry east is real and material. Addressing this constraint will provide genuine near-term demand relief, and the State Grid's commitment to a 40 percent increase in capital expenditure over the next five years suggests the policy intent is credible. However, as our scenario analysis demonstrates, the demand boost from infrastructure improvement is insufficient to absorb the existing capacity surplus on a sustained basis. The infrastructure pivot has been the key policy lever, but our finding confirms that the overcapacity cannot be fixed through infrastructure demand stimulus alone.",
+        "bbox": [
+            87,
+            341,
+            699,
+            508
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "References",
+        "text_level": 2,
+        "bbox": [
+            92,
+            562,
+            260,
+            583
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "ref_text",
+        "text": "Alcott, B. (2005) 'Jevons' paradox', Ecological Economics 54(1): 9–21, available at https://doi.org/10.1016/j.ecolecon.2005.03.020",
+        "bbox": [
+            92,
+            607,
+            653,
+            639
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "ref_text",
+        "text": "Body, P. (2026) 'China's power grid: leading the world and barely keeping up', CKGSB Knowledge, 4 January, available at https://english.ckgsb.edu.cn/knowledge/article/china-power-grid-challenges/",
+        "bbox": [
+            92,
+            645,
+            673,
+            696
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "ref_text",
+        "text": "García Herrero, A. (2026) 'China green tech and its industrial policy', WIDER Working Paper 46/2026, UNU-WIDER, available at https://doi.org/10.35188/UNU-WIDER/2026/721-3",
+        "bbox": [
+            92,
+            702,
+            640,
+            734
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "ref_text",
+        "text": "García Herrero, A. and H. Mu (2025) 'China can decarbonise the world – but even that won't fix its overcapacity problem', Analysis 34/2025, Bruegel, available at https://www.bruegel.org/analysis/china-can-decarbonise-world-even-wont-fix-its-overcapacity-problem",
+        "bbox": [
+            92,
+            741,
+            665,
+            791
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "ref_text",
+        "text": "García Herrero, A. and J. Xu (2019) 'China's investment in Africa: what the data really say, and the implications for Europe', Bruegel Blog, 22 July, available at https://www.bruegel.org/blog-post/chinas-investment-africa-what-data-really-says-and-implications-europe",
+        "bbox": [
+            92,
+            797,
+            687,
+            848
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "ref_text",
+        "text": "Hove, A. (2026) 'China's Messy Power Sector Mid-Game', OIES Energy Comment, April, Oxford Institute for Energy Studies, available at https://www.oxfordenergy.org/wpcms/wp-content/uploads/2026/04/Comment-Chinas-Messy-Power-Sector-Mid-Game.pdf",
+        "bbox": [
+            92,
+            854,
+            670,
+            906
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n°15/26 | June 2026",
+        "bbox": [
+            90,
+            929,
+            381,
+            944
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            884,
+            929,
+            905,
+            942
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "ref_text",
+        "text": "IEA (2024) Renewables 2024: Analysis and forecasts to 2030, International Energy Agency, available at https://www.iea.org/reports/renewables-2024",
+        "bbox": [
+            85,
+            76,
+            640,
+            108
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "ref_text",
+        "text": "IEA (2025) World Energy Investment 2025, International Energy Agency, available at https://www.iea.org/reports/world-energy-investment-2025",
+        "bbox": [
+            85,
+            112,
+            675,
+            146
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "ref_text",
+        "text": "IRENA (2025) Renewable Power Generation Costs in 2024, International Renewable Energy Agency, available at https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2025/Jul/IRENA\\_TEC\\_RPGC\\_in\\_2024\\_2025.pdf",
+        "bbox": [
+            85,
+            151,
+            690,
+            203
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "ref_text",
+        "text": "Jevons, W.S. (1865) The Coal Question, Macmillan, available at https://oll.libertyfund.org/titles/jevons-the-coal-question",
+        "bbox": [
+            85,
+            208,
+            660,
+            241
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "ref_text",
+        "text": "Ministry of Finance of China (2025) Report on Government Fund Account Revenues and Expenditures 2024",
+        "bbox": [
+            85,
+            246,
+            623,
+            279
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "ref_text",
+        "text": "Myllyvirta, L. (2026) 'Analysis: China's CO2 climbs 2% in early 2026 due to \"wasted\" wind and solar', Carbon Brief, 4 June, available at https://www.carbonbrief.org/analysis-chinas-co2-climbs-2-in-early-2026-due-to-wasted-wind-and-solar/",
+        "bbox": [
+            85,
+            284,
+            692,
+            336
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n°15/26 | June 2026",
+        "bbox": [
+            90,
+            929,
+            381,
+            944
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            884,
+            929,
+            905,
+            942
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "© Bruegel 2026. Bruegel publications can be freely republished and quoted according to the Creative Commons licence CC BY-ND 4.0. Please provide a full reference, clearly stating the relevant author(s) and including a prominent hyperlink to the original publication on Bruegel's website. You may do so in any reasonable manner, but not in any way that suggests the author(s) or Bruegel endorse you or your use. Any reproduction must be unaltered and in the original language. For any alteration (for example, translation), please contact us at press@bruegel.org. Publication of altered content (for example, translated content) is allowed only with Bruegel's explicit written approval. Bruegel takes no institutional standpoint. All views expressed are the researchers' own.",
+        "bbox": [
+            297,
+            644,
+            907,
+            814
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "image",
+        "img_path": "images/64598e0fe98ac2dec0c04fe19cd775874edd541a895d257cf28946d123956eba.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            90,
+            797,
+            203,
+            900
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Bruegel, Rue de la Charité 33, B-1210 Brussels (+32) 2 227 4210\ninfo@bruegel.org\nwww.bruegel.org",
+        "bbox": [
+            299,
+            832,
+            623,
+            898
+        ],
+        "page_idx": 18
+    }
+]

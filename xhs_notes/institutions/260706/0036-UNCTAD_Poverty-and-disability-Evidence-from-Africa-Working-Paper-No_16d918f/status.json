@@ -1,0 +1,22 @@
+{
+  "source_pdf": "/tmp/pdf_batch_008_fvq05yic/pdfs/0036-UNCTAD_Poverty-and-disability-Evidence-from-Africa-Working-Paper-No_16d918fb.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "联合国贸发会议",
+  "cover_short_title": "非洲27国数据：残疾",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "联合国贸发会议：非洲残疾与贫困循环，数据揭示被低估的结构性挑战",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

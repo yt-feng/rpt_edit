@@ -1,0 +1,295 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs",
+  "total_pdf_count_before_shard": 41,
+  "pdf_count_before_skip": 41,
+  "pdf_count": 41,
+  "generated_report_count": 36,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 0,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/ADB_Asian-Development-Bank-and-Brunei-Darussalam-Fact-Sheet_88a518f0.pdf",
+          "batch_file": "/tmp/pdf_batch_001_i_5tvc4i/pdfs/0001-ADB_Asian-Development-Bank-and-Brunei-Darussalam-Fact-Sheet_88a518f0.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/ADB_Corporate-Digital-Transformation-and-Environmental-Performan_7fbe8c48.pdf",
+          "batch_file": "/tmp/pdf_batch_001_i_5tvc4i/pdfs/0002-ADB_Corporate-Digital-Transformation-and-Environmental-Performan_7fbe8c48.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/ADB_Exploring-the-Impact-and-Opportunities-of-Carbon-Pricing-in-_49e41a4f.pdf",
+          "batch_file": "/tmp/pdf_batch_001_i_5tvc4i/pdfs/0003-ADB_Exploring-the-Impact-and-Opportunities-of-Carbon-Pricing-in-_49e41a4f.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/ADB_Outlook-and-Challenges-for-Local-Currency-Transactions-An-An_c0baca7d.pdf",
+          "batch_file": "/tmp/pdf_batch_001_i_5tvc4i/pdfs/0004-ADB_Outlook-and-Challenges-for-Local-Currency-Transactions-An-An_c0baca7d.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/ADB_Reimagining-Net-Zero-Cities-Exploring-the-Role-of-the-Privat_893ac97e.pdf",
+          "batch_file": "/tmp/pdf_batch_001_i_5tvc4i/pdfs/0005-ADB_Reimagining-Net-Zero-Cities-Exploring-the-Role-of-the-Privat_893ac97e.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 2,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/ADB_Satellite-Earth-Observation-A-Compendium-of-Capabilities-and_657bb97b.pdf",
+          "batch_file": "/tmp/pdf_batch_002__4euzvpi/pdfs/0006-ADB_Satellite-Earth-Observation-A-Compendium-of-Capabilities-and_657bb97b.pdf",
+          "stable_index": "6"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/ADB_The-Unfolding-Heat-Crisis-in-Thailand-and-Southeast-Asia-Cha_f10cf555.pdf",
+          "batch_file": "/tmp/pdf_batch_002__4euzvpi/pdfs/0007-ADB_The-Unfolding-Heat-Crisis-in-Thailand-and-Southeast-Asia-Cha_f10cf555.pdf",
+          "stable_index": "7"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/Bruegel_Artificial-intelligence-competition-in-Europe-the-role-of-DM_f95c5014.pdf",
+          "batch_file": "/tmp/pdf_batch_002__4euzvpi/pdfs/0008-Bruegel_Artificial-intelligence-competition-in-Europe-the-role-of-DM_f95c5014.pdf",
+          "stable_index": "8"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/Bruegel_Defence-innovation-and-procurement-reform-an-empirical-evalu_39327e58.pdf",
+          "batch_file": "/tmp/pdf_batch_002__4euzvpi/pdfs/0009-Bruegel_Defence-innovation-and-procurement-reform-an-empirical-evalu_39327e58.pdf",
+          "stable_index": "9"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/Bruegel_European-Union-capital-requirements-on-megabanks-the-low-roa_5f932072.pdf",
+          "batch_file": "/tmp/pdf_batch_002__4euzvpi/pdfs/0010-Bruegel_European-Union-capital-requirements-on-megabanks-the-low-roa_5f932072.pdf",
+          "stable_index": "10"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 3,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/Bruegel_Green-finance-or-financing-green-Bridging-the-EU-s-sustainab_ba8ec90a.pdf",
+          "batch_file": "/tmp/pdf_batch_003_mkdx1wnz/pdfs/0011-Bruegel_Green-finance-or-financing-green-Bridging-the-EU-s-sustainab_ba8ec90a.pdf",
+          "stable_index": "11"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/Bruegel_Progress-made-by-EU-candidate-countries-on-accession-related_64a9e107.pdf",
+          "batch_file": "/tmp/pdf_batch_003_mkdx1wnz/pdfs/0012-Bruegel_Progress-made-by-EU-candidate-countries-on-accession-related_64a9e107.pdf",
+          "stable_index": "12"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/Bruegel_To-what-extent-can-green-infrastructure-investment-mitigate-_6f58e0a8.pdf",
+          "batch_file": "/tmp/pdf_batch_003_mkdx1wnz/pdfs/0013-Bruegel_To-what-extent-can-green-infrastructure-investment-mitigate-_6f58e0a8.pdf",
+          "stable_index": "13"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_A-Review-of-Greek-Emigrants_ef5b5dbd.pdf",
+          "batch_file": "/tmp/pdf_batch_003_mkdx1wnz/pdfs/0014-OECD_A-Review-of-Greek-Emigrants_ef5b5dbd.pdf",
+          "stable_index": "14"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_Adopting-the-OECD-Regional-Attractiveness-Approach-to-Enhanc_ff18607b.pdf",
+          "batch_file": "/tmp/pdf_batch_003_mkdx1wnz/pdfs/0015-OECD_Adopting-the-OECD-Regional-Attractiveness-Approach-to-Enhanc_ff18607b.pdf",
+          "stable_index": "15"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 4,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_Evaluating-Updating-and-Monitoring-Anti-Fraud-Strategies_5edd938e.pdf",
+          "batch_file": "/tmp/pdf_batch_004_s6rebesd/pdfs/0016-OECD_Evaluating-Updating-and-Monitoring-Anti-Fraud-Strategies_5edd938e.pdf",
+          "stable_index": "16"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_Geographic-disparities-in-service-accessibility-in-Estonia-a_916b9437.pdf",
+          "batch_file": "/tmp/pdf_batch_004_s6rebesd/pdfs/0017-OECD_Geographic-disparities-in-service-accessibility-in-Estonia-a_916b9437.pdf",
+          "stable_index": "17"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_Masculinity-and-Gender-Equality_e46cc3fa.pdf",
+          "batch_file": "/tmp/pdf_batch_004_s6rebesd/pdfs/0018-OECD_Masculinity-and-Gender-Equality_e46cc3fa.pdf",
+          "stable_index": "18"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_OECD-Economic-Outlook-Volume-2026-Issue-1_707a1978.pdf",
+          "batch_file": "/tmp/pdf_batch_004_s6rebesd/pdfs/0019-OECD_OECD-Economic-Outlook-Volume-2026-Issue-1_707a1978.pdf",
+          "stable_index": "19"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_OECD-FAO-Agricultural-Outlook-2026-2035_8f58ce75.pdf",
+          "batch_file": "/tmp/pdf_batch_004_s6rebesd/pdfs/0020-OECD_OECD-FAO-Agricultural-Outlook-2026-2035_8f58ce75.pdf",
+          "stable_index": "20"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 5,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_OECD-Responsible-Business-Outlook-2026_cf2bc1ff.pdf",
+          "batch_file": "/tmp/pdf_batch_005_c14kcs_c/pdfs/0021-OECD_OECD-Responsible-Business-Outlook-2026_cf2bc1ff.pdf",
+          "stable_index": "21"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_OECD-Survey-on-Drivers-of-Trust-in-Public-Institutions-2026-_fc47da81.pdf",
+          "batch_file": "/tmp/pdf_batch_005_c14kcs_c/pdfs/0022-OECD_OECD-Survey-on-Drivers-of-Trust-in-Public-Institutions-2026-_fc47da81.pdf",
+          "stable_index": "22"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_OECD-Tourism-Trends-and-Policies-2026_065dcf78.pdf",
+          "batch_file": "/tmp/pdf_batch_005_c14kcs_c/pdfs/0023-OECD_OECD-Tourism-Trends-and-Policies-2026_065dcf78.pdf",
+          "stable_index": "23"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_Restoring-Public-Finances_aa16a2cb.pdf",
+          "batch_file": "/tmp/pdf_batch_005_c14kcs_c/pdfs/0024-OECD_Restoring-Public-Finances_aa16a2cb.pdf",
+          "stable_index": "24"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_Revisiting-local-tax-attribution-under-central-control_c7704470.pdf",
+          "batch_file": "/tmp/pdf_batch_005_c14kcs_c/pdfs/0025-OECD_Revisiting-local-tax-attribution-under-central-control_c7704470.pdf",
+          "stable_index": "25"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 6,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_SME-Policy-Index-for-Western-Balkans-and-T-rkiye-2026-Econom_75702c02.pdf",
+          "batch_file": "/tmp/pdf_batch_006_k6syfswo/pdfs/0026-OECD_SME-Policy-Index-for-Western-Balkans-and-T-rkiye-2026-Econom_75702c02.pdf",
+          "stable_index": "26"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_Tackling-the-affordability-gap-through-increased-supply-of-a_b574e2fb.pdf",
+          "batch_file": "/tmp/pdf_batch_006_k6syfswo/pdfs/0027-OECD_Tackling-the-affordability-gap-through-increased-supply-of-a_b574e2fb.pdf",
+          "stable_index": "27"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_Tax-Inspectors-Without-Borders-Annual-Report-2026_5e58878f.pdf",
+          "batch_file": "/tmp/pdf_batch_006_k6syfswo/pdfs/0028-OECD_Tax-Inspectors-Without-Borders-Annual-Report-2026_5e58878f.pdf",
+          "stable_index": "28"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_The-regulation-of-non-compete-clauses-across-OECD-countries_69b02f12.pdf",
+          "batch_file": "/tmp/pdf_batch_006_k6syfswo/pdfs/0029-OECD_The-regulation-of-non-compete-clauses-across-OECD-countries_69b02f12.pdf",
+          "stable_index": "29"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/UNCTAD_Financing-development-External-flows-of-financial-capital-to_8a424867.pdf",
+          "batch_file": "/tmp/pdf_batch_006_k6syfswo/pdfs/0030-UNCTAD_Financing-development-External-flows-of-financial-capital-to_8a424867.pdf",
+          "stable_index": "30"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 7,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/UNCTAD_Fostering-environmentally-sustainable-electronic-commerce-UN_b11ac369.pdf",
+          "batch_file": "/tmp/pdf_batch_007_03pf5g44/pdfs/0031-UNCTAD_Fostering-environmentally-sustainable-electronic-commerce-UN_b11ac369.pdf",
+          "stable_index": "31"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/UNCTAD_Fragile-prosperity-Natural-disasters-and-economic-growth-in-_4315e558.pdf",
+          "batch_file": "/tmp/pdf_batch_007_03pf5g44/pdfs/0032-UNCTAD_Fragile-prosperity-Natural-disasters-and-economic-growth-in-_4315e558.pdf",
+          "stable_index": "32"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/UNCTAD_Global-collaboration-for-inclusive-and-equitable-artificial-_ea66ea75.pdf",
+          "batch_file": "/tmp/pdf_batch_007_03pf5g44/pdfs/0033-UNCTAD_Global-collaboration-for-inclusive-and-equitable-artificial-_ea66ea75.pdf",
+          "stable_index": "33"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/UNCTAD_Harnessing-regional-integration-and-green-industrial-policy-_28677bd7.pdf",
+          "batch_file": "/tmp/pdf_batch_007_03pf5g44/pdfs/0034-UNCTAD_Harnessing-regional-integration-and-green-industrial-policy-_28677bd7.pdf",
+          "stable_index": "34"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/UNCTAD_Integrating-Beninese-SMEs-into-regional-value-chains-Sectora_54134647.pdf",
+          "batch_file": "/tmp/pdf_batch_007_03pf5g44/pdfs/0035-UNCTAD_Integrating-Beninese-SMEs-into-regional-value-chains-Sectora_54134647.pdf",
+          "stable_index": "35"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 8,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/UNCTAD_Poverty-and-disability-Evidence-from-Africa-Working-Paper-No_16d918fb.pdf",
+          "batch_file": "/tmp/pdf_batch_008_fvq05yic/pdfs/0036-UNCTAD_Poverty-and-disability-Evidence-from-Africa-Working-Paper-No_16d918fb.pdf",
+          "stable_index": "36"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/UNCTAD_Preparing-to-seize-artificial-intelligence-opportunities-wit_7cd4f3b8.pdf",
+          "batch_file": "/tmp/pdf_batch_008_fvq05yic/pdfs/0037-UNCTAD_Preparing-to-seize-artificial-intelligence-opportunities-wit_7cd4f3b8.pdf",
+          "stable_index": "37"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/UNCTAD_Review-of-the-Papua-New-Guinea-tariff-reduction-programme_a28e794e.pdf",
+          "batch_file": "/tmp/pdf_batch_008_fvq05yic/pdfs/0038-UNCTAD_Review-of-the-Papua-New-Guinea-tariff-reduction-programme_a28e794e.pdf",
+          "stable_index": "38"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/UNCTAD_Revisiting-the-trade-poverty-nexus-in-developing-countries-W_d66f713f.pdf",
+          "batch_file": "/tmp/pdf_batch_008_fvq05yic/pdfs/0039-UNCTAD_Revisiting-the-trade-poverty-nexus-in-developing-countries-W_d66f713f.pdf",
+          "stable_index": "39"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/UNCTAD_Science-technology-and-innovation-in-the-age-of-AI_e4909e73.pdf",
+          "batch_file": "/tmp/pdf_batch_008_fvq05yic/pdfs/0040-UNCTAD_Science-technology-and-innovation-in-the-age-of-AI_e4909e73.pdf",
+          "stable_index": "40"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 9,
+      "pdf_count": 1,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/UNCTAD_Strategic-diversification-Empirical-insights-for-leveraging-_dce1164f.pdf",
+          "batch_file": "/tmp/pdf_batch_009_eq4raw9d/pdfs/0041-UNCTAD_Strategic-diversification-Empirical-insights-for-leveraging-_dce1164f.pdf",
+          "stable_index": "41"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

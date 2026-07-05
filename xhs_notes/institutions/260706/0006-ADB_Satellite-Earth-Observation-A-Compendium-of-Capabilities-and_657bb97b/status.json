@@ -1,0 +1,25 @@
+{
+  "source_pdf": "/tmp/pdf_batch_002__4euzvpi/pdfs/0006-ADB_Satellite-Earth-Observation-A-Compendium-of-Capabilities-and_657bb97b.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "亚洲开发银行",
+  "cover_short_title": "卫星遥感，不只是看地",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "亚洲开发银行：不是卫星数量，而是数据应用，亚洲发展的新测量逻辑",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

@@ -1,0 +1,27 @@
+{
+  "source_pdf": "/tmp/pdf_batch_002__4euzvpi/pdfs/0009-Bruegel_Defence-innovation-and-procurement-reform-an-empirical-evalu_39327e58.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "布鲁盖尔研究所",
+  "cover_short_title": "美军采购改革，到底有",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "布鲁盖尔研究所：五角大楼用十年验证，硅谷创新如何真正融入国防",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

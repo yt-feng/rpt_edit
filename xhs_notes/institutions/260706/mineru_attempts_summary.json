@@ -1,0 +1,19 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 1,
+    "successful_pdf_count": 1,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_009_eq4raw9d/pdfs/0041-UNCTAD_Strategic-diversification-Empirical-insights-for-leveraging-_dce1164f.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

@@ -1,0 +1,6047 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.091,
+                0.066,
+                0.547,
+                0.099
+            ],
+            "angle": 0,
+            "content": "Working Paper 17/2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.84,
+                0.05,
+                0.907,
+                0.111
+            ],
+            "angle": 0,
+            "content": "bruegel"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.09,
+                0.138,
+                0.808,
+                0.22
+            ],
+            "angle": 0,
+            "content": "Artificial-intelligence competition in Europe: the role of DMA Article 6(7)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.257,
+                0.325,
+                0.282
+            ],
+            "angle": 0,
+            "content": "Fiona Scott Morton",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.377,
+                0.91,
+                0.513
+            ],
+            "angle": 0,
+            "content": "The European Commission's first Digital Markets Act Article 6(7) specification, issued in draft form in April 2026, is a substantive and well-targeted intervention. It identifies the access points that determine whether an artificial-intelligence assistant can function effectively on a Google Android device (through invocation surfaces, contextual data, on-device actions and system-level model resources) and it requires Google to share those access points with qualifying rival providers on terms equivalent to those Google's own services receive. If the specification is finalised and enforced as drafted, it will prevent monopolisation of AI services and shortcut the need for a long and likely ineffective antitrust case.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.53,
+                0.91,
+                0.627
+            ],
+            "angle": 0,
+            "content": "The specification may also create a valuable side effect: a material increase in AI innovation in Europe. European AI entrants and non-European AI providers serving European consumers will see that Europe is a level playing field on which innovators can compete. The merits of an AI service, rather than whether it already owns a distribution channel, will determine its commercial success. The expected return from founding an AI company in Europe would rise accordingly, as would the expected return from investing in one.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.644,
+                0.91,
+                0.72
+            ],
+            "angle": 0,
+            "content": "The remaining gap is on the iOS side. It seems likely that Apple will not want to wait too long before selling Siri-enabled handsets to 500 million European citizens. Apple's compliance with the DMA will determine if the Apple-Google Gemini partnership needs to be investigated to ensure it does not lessen competition in AI services in Europe.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.739,
+                0.719,
+                0.758
+            ],
+            "angle": 0,
+            "content": "Fiona Scott Morton (fiona.scottmorton@bruegel.org) is a Senior Fellow at Bruegel",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.091,
+                0.89,
+                0.869,
+                0.938
+            ],
+            "angle": 0,
+            "content": "Recommended citation: Scott Morton, F. (2026) 'Artificial-intelligence competition in Europe: the role of DMA Article 6(7),' Working Paper 17/2026, Bruegel, available at https://doi.org/10.64153/UWQF5070"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.138,
+                0.807,
+                0.177
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.182,
+                0.784,
+                0.216
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.258,
+                0.322,
+                0.281
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.378,
+                0.907,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.398,
+                0.907,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.417,
+                0.908,
+                0.432
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.437,
+                0.907,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.455,
+                0.907,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.474,
+                0.905,
+                0.488
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.493,
+                0.611,
+                0.508
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.531,
+                0.908,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.55,
+                0.907,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.569,
+                0.906,
+                0.584
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.588,
+                0.907,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.608,
+                0.813,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.643,
+                0.908,
+                0.661
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.664,
+                0.908,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.683,
+                0.906,
+                0.697
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.702,
+                0.26,
+                0.717
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.738,
+                0.718,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.086,
+                0.232,
+                0.109
+            ],
+            "angle": 0,
+            "content": "Contents"
+        },
+        {
+            "type": "index",
+            "bbox": [
+                0.09,
+                0.145,
+                0.909,
+                0.36
+            ],
+            "angle": 0,
+            "content": "1 A question of interoperability 3\n2 The AI bottleneck on mobile 4\n3 The access points reserved for Gemini today 6\n4 A familiar playbook 9\n5 Conclusion 13\nReferences 13"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.092,
+                0.931,
+                0.377,
+                0.945
+            ],
+            "angle": 0,
+            "content": "Working Paper | Issue n°17/26 | July 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.893,
+                0.932,
+                0.907,
+                0.943
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.086,
+                0.229,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.092,
+                0.086,
+                0.539,
+                0.112
+            ],
+            "angle": 0,
+            "content": "1 A question of interoperability"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.132,
+                0.701,
+                0.3
+            ],
+            "angle": 0,
+            "content": "Competition in artificial intelligence is at a critical juncture in Europe. Whether the next generation of consumer-facing AI services is provided by a single dominant firm or from a vibrant contestable market depends on regulatory choices being made now. The European Union's 2022 Digital Markets Act (DMA, Regulation (EU) 2022/1925) gives EU regulators the tools to prevent the AI services market from tipping, or passing the point at which the winner might take all in the market. The first important test of whether the EU will exercise this capacity started in April 2026, when the European Commission set out draft measures Google Android must take to comply with DMA provisions on opening its operating system to rivals\\(^{1}\\).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.303,
+                0.7,
+                0.395
+            ],
+            "angle": 0,
+            "content": "Specifically, Article 6(7) of the DMA requires gatekeepers – or ubiquitous platforms designated under the DMA via which other companies get access to end users – to offer rival service providers effective interoperability with operating-system features on the same terms the gatekeeper provides to its own services. That mechanism is now being applied for the first time to AI services on Google Android.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.398,
+                0.701,
+                0.624
+            ],
+            "angle": 0,
+            "content": "The Commission's move is significant because generative artificial intelligence is reshaping how people interact with their mobile devices. AI-powered virtual assistants are becoming the central access point through which users navigate their digital lives, compose messages, schedule appointments, draft documents, plan trips and shop, just to name a few applications. The AI services European consumers access deploy on devices with operating systems provided (almost entirely) by one of two suppliers: Apple's iOS and Alphabet's Google Android. Device operating systems control the functionality of rival AI services and, importantly, can limit that functionality. Whether competition among AI service providers – independents and those affiliated with an operating system – survives the AI transition depends on whether competitors other than the operating-system (OS) owner can reach end users. Because end users 'single home', meaning they generally carry and use only one mobile device, access to that device is necessary to serve users.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.714,
+                0.397,
+                0.904,
+                0.528
+            ],
+            "angle": 0,
+            "content": "AI-powered virtual assistants are becoming the central access point through which users navigate their digital lives",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.626,
+                0.7,
+                0.718
+            ],
+            "angle": 0,
+            "content": "Regulation is required to ensure that in the EU, interoperability with the OS is available to rival AI service providers, equivalent to gatekeepers' access (Scott Morton et al, 2023). The DMA applies ex-ante obligations on the largest digital gatekeepers directly, rather than waiting for case-by-case antitrust enforcement that can take a decade to produce remedies.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.722,
+                0.7,
+                0.776
+            ],
+            "angle": 0,
+            "content": "On effective interoperability between Google Android and AI services from third-party providers (Case DMA.100220), the European Commission is expected to take a final decision by 27 July 2026 that will make the measures legally binding on Alphabet,",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.091,
+                0.831,
+                0.699,
+                0.909
+            ],
+            "angle": 0,
+            "content": "1 The European Commission opened a consultation on preliminary findings and draft interoperability measures for Google Android under the DMA in April 2026, concluding in May 2026. At the time, the finalisation of the draft measures is awaited. See European Commission, 'DMA.100220 – Consultation on the proposed measures for interoperability with Google Android (Article 6(7) of the DMA)', 27 April 2026, https://digital-markets-act.ec.europa.eu/dma100220-consultation-proposed-measures-interoperability-google-android-article-67-dma_en."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.092,
+                0.931,
+                0.377,
+                0.945
+            ],
+            "angle": 0,
+            "content": "Working Paper | Issue n°17/26 | July 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.893,
+                0.932,
+                0.907,
+                0.944
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.087,
+                0.534,
+                0.112
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.135,
+                0.696,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.154,
+                0.697,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.173,
+                0.696,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.192,
+                0.696,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.211,
+                0.696,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.23,
+                0.696,
+                0.242
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.249,
+                0.696,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.269,
+                0.696,
+                0.279
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.286,
+                0.158,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.306,
+                0.696,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.325,
+                0.696,
+                0.336
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.344,
+                0.696,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.363,
+                0.695,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.381,
+                0.482,
+                0.393
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.401,
+                0.696,
+                0.411
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.42,
+                0.696,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.439,
+                0.696,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.458,
+                0.697,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.478,
+                0.696,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.496,
+                0.696,
+                0.507
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.515,
+                0.696,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.534,
+                0.696,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.553,
+                0.696,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.572,
+                0.696,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.59,
+                0.695,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.611,
+                0.646,
+                0.621
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.719,
+                0.399,
+                0.885,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.719,
+                0.418,
+                0.845,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.718,
+                0.436,
+                0.843,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.719,
+                0.456,
+                0.9,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.719,
+                0.475,
+                0.9,
+                0.488
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.719,
+                0.493,
+                0.901,
+                0.506
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.717,
+                0.512,
+                0.763,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.629,
+                0.696,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.648,
+                0.696,
+                0.659
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.667,
+                0.696,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.687,
+                0.695,
+                0.697
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.705,
+                0.163,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.724,
+                0.696,
+                0.734
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.742,
+                0.697,
+                0.754
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.761,
+                0.696,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.076,
+                0.7,
+                0.205
+            ],
+            "angle": 0,
+            "content": "Google's parent\\(^{2}\\). If the measures are finalised as proposed and enforced effectively, they will take the first step in preventing Google from monopolising AI services in exactly the same way it monopolised search. The European Commission and the United States Department of Justice spent more than a decade attempting to discipline Google's conduct in general search services and remedying the resulting monopoly, largely without success (see section 4). That enforcement experience showed that it is far preferable to prevent market power from forming in AI services in the first place.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.208,
+                0.7,
+                0.339
+            ],
+            "angle": 0,
+            "content": "The specification and its follow-on actions could also help make Europe an attractive location for AI innovation. Interoperability for European devices when it comes to AI services would make entry and innovation possible in Europe, creating a favourable climate for risky investment. If Google successfully tips the US market, or if the risk of that tipping remains significant, entrants will not be willing to enter and invest in the US. Significant AI investment in Europe could help close the innovation gap described in the Draghi Report on EU competitiveness (Draghi, 2024).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.342,
+                0.7,
+                0.434
+            ],
+            "angle": 0,
+            "content": "This paper explains why the DMA 6(7) specification matters, what it does, why it is the right instrument at the right time and why it will likely require follow-on specifications and enforcement. The paper also argues that a separate investigation into Google's other AI partnerships, particularly that with Apple announced in January \\(2026^{3}\\), is needed to complete the protection of competition in AI services in Europe.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.486,
+                0.519,
+                0.509
+            ],
+            "angle": 0,
+            "content": "2 The AI bottleneck on mobile"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.532,
+                0.7,
+                0.68
+            ],
+            "angle": 0,
+            "content": "AI assistants integrate with devices already owned by users. To be useful, an assistant must have features for invocation (calling the AI), context (learning what the user is trying to do by accessing relevant data from their apps), actions on apps and the operating system (carrying out tasks for the user) and access to resources (ability to process locally). All of these functions run through a device's operating system. If a rival's functionality is inferior because of degraded access to an iOS or Google Android device, the Google or Apple AI service will benefit, not because their services are necessarily better, but because they are using their control over their OS to benefit their own businesses.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.684,
+                0.7,
+                0.776
+            ],
+            "angle": 0,
+            "content": "The strategic problem is acute for rivals because users single-home: each user typically uses one mobile device, and will only use an AI assistant that is available on that device. The mobile device is therefore the critical channel through which any AI service provider must pass to reach end consumers. The strategic problem is also acute for reasons of timing. In May 2026, Google announced that within days Google search would be replaced by an",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.09,
+                0.798,
+                0.697,
+                0.876
+            ],
+            "angle": 0,
+            "content": "2 The legal basis for the specification procedure is Article 8(2) DMA; the preliminary findings rest on Articles 8(5)-(6) DMA. The final decision must be adopted within six months of the opening of the specification proceedings, which happened on 26 January 2026. See European Commission press release of 26 January 2026, 'Commission opens proceedings to assist Google in complying with interoperability and online search data sharing obligations under the Digital Markets Act', https://ec.europa.eu/commission/presscorner/detail/en/ip_26_202."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.091,
+                0.876,
+                0.693,
+                0.903
+            ],
+            "angle": 0,
+            "content": "3 See Google Blog, 'Joint statement from Google and Apple', 12 January 2026, https://blog.google/company-news/inside-google/company-announcements/joint-statement-google-apple/."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.092,
+                0.931,
+                0.377,
+                0.945
+            ],
+            "angle": 0,
+            "content": "Working Paper | Issue n°17/26 | July 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.894,
+                0.932,
+                0.907,
+                0.943
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.078,
+                0.697,
+                0.089
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.097,
+                0.697,
+                0.108
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.116,
+                0.697,
+                0.127
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.136,
+                0.696,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.154,
+                0.698,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.172,
+                0.695,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.192,
+                0.55,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.211,
+                0.696,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.23,
+                0.697,
+                0.24
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.248,
+                0.696,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.267,
+                0.697,
+                0.279
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.287,
+                0.695,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.306,
+                0.695,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.325,
+                0.455,
+                0.335
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.344,
+                0.696,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.363,
+                0.696,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.382,
+                0.696,
+                0.393
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.401,
+                0.696,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.42,
+                0.531,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.487,
+                0.516,
+                0.509
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.534,
+                0.698,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.553,
+                0.697,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.572,
+                0.698,
+                0.584
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.59,
+                0.697,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.61,
+                0.696,
+                0.621
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.628,
+                0.697,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.648,
+                0.696,
+                0.659
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.667,
+                0.525,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.686,
+                0.697,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.705,
+                0.697,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.723,
+                0.698,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.743,
+                0.695,
+                0.754
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.762,
+                0.697,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.076,
+                0.701,
+                0.186
+            ],
+            "angle": 0,
+            "content": "AI experience \\( ^{4} \\) . In practice, this has been described as replacing the familiar blue links that deliver traffic externally with AI-designed custom results that keep users on the page. The new AI format for Google search will be formally launched in July 2026. While it is not clear at time of writing exactly how, or if, Google will execute a foreclosure strategy in AI services, it is clear that any authority wanting to protect competition in AI services needs to put safeguards in place immediately.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.19,
+                0.578,
+                0.204
+            ],
+            "angle": 0,
+            "content": "Article 6(7) of the DMA addresses precisely this problem. It provides:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.228,
+                0.68,
+                0.319
+            ],
+            "angle": 0,
+            "content": "\"The gatekeeper shall allow providers of services and providers of hardware, free of charge, effective interoperability with, and access for the purposes of interoperability to, the same hardware and software features accessed or controlled via the operating system or virtual assistant listed in the designation decision pursuant to Article 3(9) as are available to services or hardware provided by the gatekeeper\".",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.342,
+                0.7,
+                0.471
+            ],
+            "angle": 0,
+            "content": "Alphabet is a designated gatekeeper under Article 3(9) of the DMA. Google Android, being an operating system, is one of its designated Core Platform Services (Scott Morton, 2023). Article 6(7) accordingly requires Google to share with rival providers of AI services the OS features that Google's own AI services use. The Commission's preliminary findings (see footnote 1) document that, on Google Android currently, those features are reserved for Google's own AI services. The Commission Case Summary explains the underlying market dynamic in plain terms\\(^{5}\\):",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.494,
+                0.68,
+                0.604
+            ],
+            "angle": 0,
+            "content": "\"The smart mobile device market is at a technological inflection point, with AI services becoming central access points on mobile devices. In parallel, there is a clear consumer demand for AI-powered devices supported by an industry-wide push towards AI. AI based services such as AI assistants are gaining user traction on mobile devices as they allow users to navigate their mobile habits with increasing ease of use\".",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.628,
+                0.701,
+                0.795
+            ],
+            "angle": 0,
+            "content": "The strategy of self-preferencing by Google on mobile devices should be familiar to anyone working on competition who followed the US Google Search case (see section 4). By paying Google Android device manufacturers, independent browsers, carriers and Apple to lock in default placement across the points at which users initiate queries, Google ensured that almost every search query on a mobile device flowed through Google Search. Those distribution arrangements, which cost Google tens of billions of dollars per year, foreclosed rival search engines from the query volume they needed to improve their products and achieve scale. The reservation of mobile AI access points for Gemini, Google's AI assistant, is the same playbook applied in a new market – and it may have the same effect.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.798,
+                0.699,
+                0.812
+            ],
+            "angle": 0,
+            "content": "A relevant question for enforcers in this context is the stage of development of the",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.092,
+                0.837,
+                0.644,
+                0.863
+            ],
+            "angle": 0,
+            "content": "4 Sarah Perez, 'Google Search as you know it is over', TechCrunch, 19 May 2026, https://techcrunch.com/2026/05/19/google-search-as-you-know-it-is-over/."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.092,
+                0.864,
+                0.626,
+                0.903
+            ],
+            "angle": 0,
+            "content": "5 See European Commission Case Summary, 'DMA.100220 – Case Summary – Google Android – interoperability', page 1, https://ec.europa.eu/competition/digital_markets_act/cases/202619/DMA_100220_2145.pdf (hereafter 'case summary')."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.092,
+                0.931,
+                0.377,
+                0.945
+            ],
+            "angle": 0,
+            "content": "Working Paper | Issue n°17/26 | July 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.894,
+                0.932,
+                0.906,
+                0.943
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.078,
+                0.697,
+                0.089
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.096,
+                0.696,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.116,
+                0.696,
+                0.126
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.134,
+                0.696,
+                0.146
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.154,
+                0.696,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.173,
+                0.313,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.192,
+                0.575,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.23,
+                0.677,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.249,
+                0.675,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.267,
+                0.675,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.288,
+                0.675,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.306,
+                0.578,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.344,
+                0.696,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.363,
+                0.697,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.381,
+                0.697,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.4,
+                0.697,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.42,
+                0.698,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.438,
+                0.697,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.458,
+                0.305,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.495,
+                0.675,
+                0.506
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.515,
+                0.674,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.534,
+                0.674,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.552,
+                0.674,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.572,
+                0.674,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.591,
+                0.203,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.628,
+                0.697,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.648,
+                0.697,
+                0.659
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.667,
+                0.696,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.687,
+                0.696,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.705,
+                0.696,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.724,
+                0.696,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.743,
+                0.696,
+                0.754
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.762,
+                0.695,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.781,
+                0.629,
+                0.793
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.799,
+                0.695,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.076,
+                0.7,
+                0.282
+            ],
+            "angle": 0,
+            "content": "AI services market. When Google first came out with its exclusive contracts in search, it faced competition from rivals such as Yahoo and Bing. Today the AI-services market arguably has even more robust competition with Gemini, Anthropic, OpenAI, Meta and xAI, among others, competing to provide AI services. However, the development and growth in AI has happened at lightning speed; will it 'tip' just as quickly? With a huge market share of users, Google may learn from user interactions to improve inference-time behaviour, fine-tuning and pre-training. It also may more easily navigate problems of monetization and financial constraints than its emerging rivals. Developments in AI happen so quickly that if rivals are shut out, they may not have those interactions or be able to improve and the market may tip in Google's favour in the very near future. Such a path would be a repetition in AI services of the same conduct Google successfully executed in search.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.285,
+                0.7,
+                0.358
+            ],
+            "angle": 0,
+            "content": "The Article 6(7) specification proceedings are thus the first step in the European Commission's attempt to forestall an AI-services monopoly. Forestalling a digital monopoly up front would be far more successful and less costly than allowing entrenchment to happen and then trying to fix it a decade hence.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.41,
+                0.666,
+                0.465
+            ],
+            "angle": 0,
+            "content": "3 The access points reserved for Gemini today"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.494,
+                0.701,
+                0.643
+            ],
+            "angle": 0,
+            "content": "A knowledgeable reader may be familiar with the relevant AI services access points, but for those who are not, a brief description follows. The Commission's preliminary findings on Google Android from April group the relevant AI access points into four themes, mirrored in the annex of draft measures (see footnote 1): features for invocation, features for context, features for actions on apps and the operating system, and features for access to resources. Each theme corresponds to a step in the user's interaction with an AI assistant. Each step contains a feature currently reserved for Alphabet's (hereafter Google's) own AI services. The annex specifies the measures Google must take in each case.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.663,
+                0.232,
+                0.679
+            ],
+            "angle": 0,
+            "content": "3.1 Invocation"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.684,
+                0.701,
+                0.833
+            ],
+            "angle": 0,
+            "content": "The most prominent contextual invocation surface on every Android device, namely the long-press of the home button (LPH) or the navigation handle (LPNH), is currently mapped to Google's own entry points ('Circle to Search' and Gemini), giving Google's tools access to the screen context the user is looking at. Without seeing that context, an AI rival cannot adequately help the user. The draft Commission specification would require Google to provide third parties with access to the same feature on equally effective terms, including the ability to be invoked through these access points, to receive contextual data upon invocation and to overlay content on top of the user's current activities\\(^{6}\\).",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.091,
+                0.87,
+                0.696,
+                0.909
+            ],
+            "angle": 0,
+            "content": "6 European Commission, 'DMA.100220 – Annex (draft measures) – Google Android – interoperability', 27 April 2026 (hereafter 'annex'), Section 1.1, paragraphs (1)–(8), https://digital-markets-act.ec.europa.eu/document/download/bb7151ff-5d0a-420e-abaa-a2bdbfd30c26_en. Implementation deadline: 1 January 2027."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.091,
+                0.931,
+                0.377,
+                0.945
+            ],
+            "angle": 0,
+            "content": "Working Paper | Issue n°17/26 | July 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.893,
+                0.932,
+                0.907,
+                0.944
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.078,
+                0.696,
+                0.088
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.097,
+                0.698,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.115,
+                0.697,
+                0.126
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.135,
+                0.697,
+                0.146
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.154,
+                0.697,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.172,
+                0.696,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.192,
+                0.697,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.21,
+                0.697,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.229,
+                0.697,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.249,
+                0.697,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.268,
+                0.692,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.286,
+                0.696,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.305,
+                0.697,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.325,
+                0.696,
+                0.336
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.344,
+                0.537,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.411,
+                0.663,
+                0.433
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.44,
+                0.209,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.496,
+                0.696,
+                0.506
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.514,
+                0.696,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.534,
+                0.696,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.553,
+                0.696,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.572,
+                0.696,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.59,
+                0.696,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.611,
+                0.696,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.63,
+                0.599,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.664,
+                0.228,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.686,
+                0.696,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.705,
+                0.696,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.723,
+                0.697,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.743,
+                0.696,
+                0.753
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.762,
+                0.696,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.782,
+                0.696,
+                0.792
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.8,
+                0.696,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.819,
+                0.588,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.091,
+                0.818,
+                0.664,
+                0.832
+            ],
+            "angle": 0,
+            "content": "7 Annex, Section 1.2, paragraphs (9)-(20). Implementation deadlines: 1 January 2027 for the third-party"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.076,
+                0.701,
+                0.224
+            ],
+            "angle": 0,
+            "content": "In parallel, the always-on hotword detection feature ('Hey Google') runs continuously on dedicated digital-signal-processing (DSP) hardware on the device; that hardware path has been closed to third parties. The specification would require Google to enable third-party developers to enrol their own sound models on the device's DSP, give them the same technical access and let them operate concurrently with Google's own hotwords \\( ^{7} \\) . This latter requirement – that a device could hold more than one hotword – would allow both for multihoming in AI services and would reduce Google's ability to control the single default as it did in search.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.245,
+                0.21,
+                0.26
+            ],
+            "angle": 0,
+            "content": "3.2 Context"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.266,
+                0.701,
+                0.376
+            ],
+            "angle": 0,
+            "content": "To deliver useful assistance, an AI service needs to read the user's content across the user's installed applications. On Google Android, that capability is delivered currently through AppSearch, a centralised on-device data API that is tied to the default-assistant role. Because Google has designed this feature so that only one assistant can hold that role at a time, no rival assistant can use AppSearch concurrently with Gemini, effectively denying access to user data.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.38,
+                0.701,
+                0.49
+            ],
+            "angle": 0,
+            "content": "The specification would require Google to provide third parties, on a concurrent and equal basis, access to data stored centrally on-device, and to ensure that data stored by Google's own apps and shared with Gemini is equally accessible by third parties\\(^{8}\\). This is critical because Google's apps are very popular on both Android and iOS. Critical data for effective AI services is likely stored in apps including Google Maps, Google Drive, Google Calendar and Gmail.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.494,
+                0.701,
+                0.739
+            ],
+            "angle": 0,
+            "content": "The same part of the specification also addresses three related features: proactive suggestions (the surfacing of relevant information and actions across apps), context-aware intelligence (the use of device sensors and on-device processing to deliver continuously active intelligent experiences such as live translation or song recognition) and access to ambient data (the continuous stream of inputs from microphone, camera, screen and sensors that underpins those experiences). The latter two require access to the device hardware. But in all cases the specification would require that rival AI services have access on the same terms as Google's own services, including the amount of latency, recency, background access and the design and amount of user consent \\( ^{9} \\) . This last point reflects learning from past remedies in digital markets when platforms defeated user choices with many burdensome permissions and warnings. Google's conduct around app stores and distribution on Android—making alternative distribution routes technically available but effectively moot—as well as its unhelpful choice screens",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.09,
+                0.844,
+                0.699,
+                0.87
+            ],
+            "angle": 0,
+            "content": "8 Annex, Section 2.1, paragraphs (21)-(28). Implementation by the release of Android 17 QPR2 and in any case by 1 January 2027."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.091,
+                0.87,
+                0.683,
+                0.909
+            ],
+            "angle": 0,
+            "content": "9 Annex, Section 2.2 (proactive suggestions), paragraphs (29)–(38); Section 2.3 (context-aware intelligence), paragraphs (39)–(47); Section 2.4 (access to ambient data), paragraphs (48)–(56). Implementation by 1 January 2027."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.091,
+                0.931,
+                0.377,
+                0.945
+            ],
+            "angle": 0,
+            "content": "Working Paper | Issue n°17/26 | July 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.894,
+                0.932,
+                0.906,
+                0.943
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.078,
+                0.696,
+                0.088
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.097,
+                0.697,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.115,
+                0.697,
+                0.127
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.134,
+                0.696,
+                0.146
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.153,
+                0.696,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.173,
+                0.696,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.192,
+                0.696,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.211,
+                0.214,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.245,
+                0.208,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.268,
+                0.696,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.286,
+                0.696,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.306,
+                0.697,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.324,
+                0.697,
+                0.336
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.344,
+                0.696,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.363,
+                0.292,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.382,
+                0.696,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.401,
+                0.696,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.419,
+                0.696,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.439,
+                0.696,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.458,
+                0.696,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.477,
+                0.232,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.496,
+                0.696,
+                0.507
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.514,
+                0.697,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.534,
+                0.696,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.552,
+                0.696,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.571,
+                0.696,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.591,
+                0.696,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.61,
+                0.696,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.629,
+                0.697,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.648,
+                0.696,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.667,
+                0.697,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.686,
+                0.696,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.705,
+                0.696,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.724,
+                0.697,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.076,
+                0.576,
+                0.09
+            ],
+            "angle": 0,
+            "content": "for search in the EU are two recent examples from antitrust litigation \\( ^{10} \\) .",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.111,
+                0.207,
+                0.127
+            ],
+            "angle": 0,
+            "content": "3.3 Actions"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.133,
+                0.701,
+                0.318
+            ],
+            "angle": 0,
+            "content": "An AI assistant is most useful when it can act on the user's behalf within the user's applications, by, for example, drafting a reply, booking a reservation or adjusting a setting. On Google Android currently, the structured on-device integration channels that enable such actions (App Actions, App Functions, the Computer Control API) are available only to Gemini. The specification would require Google to enable third-party AI services to discover, execute and observe structured on-device integrations across applications, to autonomously control installed applications under user supervision and to integrate with the operating system and its settings on the same terms as Google's own services\\(^{11}\\). Without these functionalities, it is difficult to see how a rival AI would be attractive to a user.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.34,
+                0.329,
+                0.355
+            ],
+            "angle": 0,
+            "content": "3.4 Access to resources"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.361,
+                0.701,
+                0.509
+            ],
+            "angle": 0,
+            "content": "To perform inference at acceptable latency, an AI assistant on a mobile device benefits from access to on-device foundation models, to hardware acceleration and to the ability to execute in the background. Google currently reserves AICore, the system service that hosts its on-device foundation model Gemini Nano, for its own services. The specification would require Google to make system-level, on-device models available to all third parties, to allow third parties to use their own on-device models on Android devices in an effective manner, and to permit background execution of third-party AI services on terms equivalent to those that Google's services receive \\( ^{12} \\) .",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.513,
+                0.701,
+                0.738
+            ],
+            "angle": 0,
+            "content": "On-device processing may be the most difficult to regulate because it is intertwined with the device manufacturer's strategy. For example, Apple has long been known to favour powerful hardware that it can sell at a high price. The reliance on fancy hardware then drives a privacy focus because the handset can process personal data locally rather than sending it to the cloud. More powerful hardware likewise can run advanced games on the device, leading Apple to oppose the growth of cloud gaming that could be played on cheaper handsets\\(^{13}\\). For the same reason, AI processing on the device requires more capable hardware, while local processing will permit more data to stay on the handset rather than be sent to the cloud. Some of Apple's rivals compete by offering cheaper hardware with less local functionality. This strategy can be attractive when cloud services can serve as complements and carry the data processing load, though that has concomitant privacy and latency consequences.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.093,
+                0.773,
+                0.692,
+                0.823
+            ],
+            "angle": 0,
+            "content": "10 Epic Games, Inc. v. Google LLC, 147 F.4th 917 (9th Cir. 2025); Hausfeld, 'Landmark EU General Court Google Android Decision Signals Tougher Antitrust Enforcement', Hausfeld Perspectives & Blogs, 14 September 2022, https://www.hausfeld.com/what-we-think/perspectives-blogs/landmark-eu-general-court-google-android-decision-signals-tougher-antitrust-enforcement."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.093,
+                0.825,
+                0.694,
+                0.862
+            ],
+            "angle": 0,
+            "content": "11 Annex, Section 3.1 (structured on-device integration, covering App Actions and App Functions), paragraphs (57)–(62); Section 3.2 (screen automation); Section 3.3 (integration with first-party services); Section 3.4 (system integration)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.094,
+                0.864,
+                0.685,
+                0.889
+            ],
+            "angle": 0,
+            "content": "12 Annex, Section 4.1 (system-level on-device models, including the on-device foundation models hosted by AlCore), Section 4.2 (on-device model implementation), Section 4.3 (background execution)."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.094,
+                0.89,
+                0.348,
+                0.902
+            ],
+            "angle": 0,
+            "content": "13 See for example, chapter 6 of CMA (2022)."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.092,
+                0.931,
+                0.377,
+                0.945
+            ],
+            "angle": 0,
+            "content": "Working Paper | Issue n°17/26 | July 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.893,
+                0.932,
+                0.907,
+                0.943
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.078,
+                0.574,
+                0.088
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.112,
+                0.203,
+                0.128
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.136,
+                0.696,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.154,
+                0.695,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.173,
+                0.696,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.192,
+                0.696,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.211,
+                0.696,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.23,
+                0.696,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.248,
+                0.696,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.268,
+                0.696,
+                0.279
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.288,
+                0.696,
+                0.296
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.305,
+                0.131,
+                0.318
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.341,
+                0.325,
+                0.356
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.363,
+                0.696,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.382,
+                0.696,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.401,
+                0.697,
+                0.411
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.42,
+                0.696,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.439,
+                0.696,
+                0.449
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.457,
+                0.697,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.477,
+                0.696,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.496,
+                0.452,
+                0.507
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.514,
+                0.697,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.533,
+                0.696,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.553,
+                0.696,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.572,
+                0.696,
+                0.582
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.591,
+                0.696,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.61,
+                0.696,
+                0.621
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.629,
+                0.696,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.649,
+                0.696,
+                0.659
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.668,
+                0.696,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.686,
+                0.696,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.705,
+                0.696,
+                0.715
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.724,
+                0.428,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.076,
+                0.701,
+                0.3
+            ],
+            "angle": 0,
+            "content": "This divergence in strategy is relevant for interoperability mandates. Suppose a device is optimised for local processing and follows interoperability regulations, meaning any AI services provider can be efficient on the device. If, however, the user chooses a virtual assistant with the other strategy – cloud focussed – their hardware will be underutilised. The opposite could also happen: a user picks a virtual assistant that is designed to process locally with tight integration to the hardware, but the user owns the cheaper hardware without enough power. Users will need to learn about the match between virtual assistants and device manufacturers in order to obtain a good user experience. Such variation is not a problem as it should lead to innovation and more choice. Critically however, Google Android must be fully interoperable so that on-device AI rivals can work closely with Android original equipment manufacturers (OEMs) to design compelling products.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.321,
+                0.307,
+                0.337
+            ],
+            "angle": 0,
+            "content": "3.5 General measures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.342,
+                0.7,
+                0.452
+            ],
+            "angle": 0,
+            "content": "The Commission's draft specification also contains other important obligations\\(^{14}\\). Users, of course, must consent as they give away their data and agency. Google may apply eligibility criteria that third-party AI providers must meet so that access is given only to parties that behave responsibly. Critically, an equal-effectiveness obligation would require that the interoperability solution be as effective as the solution Google uses for its own services. The interoperability must be provided free of charge.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.456,
+                0.701,
+                0.7
+            ],
+            "angle": 0,
+            "content": "Each of these access points has a direct functional analogue in the experience a user receives when using an AI assistant. A rival cannot offer the same contextual responsiveness as Gemini when only Gemini can be summoned from the home button. It cannot offer the same hands-free responsiveness when only Gemini's hotword runs on the dedicated DSP. It cannot offer the same ability to look up data from a user's apps when only Gemini holds the default-assistant role. It cannot offer the same action capabilities in a user's apps when only Gemini receives the App Actions and Computer Control APIs. Finally, it cannot match Gemini Nano's latency and reliability when only Google's AI service is permitted to run locally. The collective effect of the current regime is substantial foreclosure. The foreclosure is not absolute because a user with enough technical sophistication can install and invoke a rival assistant as an ordinary app. But since that app cannot carry out the most useful activities the user expects, it is unlikely to be successful in the marketplace.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.093,
+                0.858,
+                0.681,
+                0.909
+            ],
+            "angle": 0,
+            "content": "14 Annex, Section 5, 'Measures for all features', paragraphs (122) ff., setting out general obligations on implementation across the Google Android ecosystem (5.1), user consent (5.2), integrity (5.3), eligibility of beneficiaries (5.4), equal effectiveness (5.5), the free-of-charge obligation (5.6), documentation and APIs (5.7), assistance and testing (5.8), future updates (5.9) and reporting (5.10)."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.092,
+                0.931,
+                0.377,
+                0.945
+            ],
+            "angle": 0,
+            "content": "Working Paper | Issue n°17/26 | July 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.893,
+                0.932,
+                0.906,
+                0.943
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.078,
+                0.696,
+                0.088
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.097,
+                0.697,
+                0.108
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.116,
+                0.696,
+                0.126
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.134,
+                0.696,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.154,
+                0.696,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.172,
+                0.697,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.192,
+                0.696,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.211,
+                0.696,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.23,
+                0.696,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.25,
+                0.696,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.268,
+                0.696,
+                0.279
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.287,
+                0.161,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.322,
+                0.302,
+                0.336
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.343,
+                0.696,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.362,
+                0.696,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.382,
+                0.696,
+                0.393
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.401,
+                0.695,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.42,
+                0.696,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.438,
+                0.573,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.457,
+                0.696,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.477,
+                0.696,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.496,
+                0.697,
+                0.507
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.515,
+                0.696,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.534,
+                0.696,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.552,
+                0.697,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.572,
+                0.697,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.591,
+                0.695,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.61,
+                0.696,
+                0.621
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.628,
+                0.696,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.648,
+                0.696,
+                0.659
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.667,
+                0.695,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.686,
+                0.323,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.087,
+                0.397,
+                0.111
+            ],
+            "angle": 0,
+            "content": "4 A familiar playbook"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.133,
+                0.701,
+                0.395
+            ],
+            "angle": 0,
+            "content": "The conduct described in the Commission's preliminary findings is not novel. It repeats the strategy by which Google built and defended its monopoly in general search. In United States v. Google LLC, the United States District Court for the District of Columbia found, after a full trial on the merits, that Google had violated Section 2 of the Sherman Act by maintaining its monopoly in general search through a web of exclusive distribution agreements: payments to Apple of approximately 36 percent of search revenue for default placement of Google search across Safari, Siri and Spotlight on iOS, and the Mobile Application Distribution Agreements (MADAs) that required Android device manufacturers to preinstall Google Search and place it on the home screen of every certified Google Android device\\(^{15}\\). The court found that these arrangements foreclosed competition by depriving rivals of the distribution channels through which they could have accumulated the query volume necessary to improve their products. The European Commission brought a case against Google in Shopping which did not focus on search generally, but which established self-preferencing as an antitrust violation in Europe\\(^{16}\\).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.398,
+                0.701,
+                0.624
+            ],
+            "angle": 0,
+            "content": "Google now appears to be repeating the same conduct – self-preferencing on Android and a contract with Apple – in a new service, AI, located deeper in the technology stack. On Google Android, the foreclosure occurs through OS integration and API access in addition to default placement of Gemini in Google's own apps. Crucially, however, the second prong of the conduct in the Google Search strategy, the relationship with Apple, is not part of the specification because it has nothing to do with Android interoperability. Yet the agreement by which Apple will use Gemini to support AI on iOS devices risks closing the iOS channel to rival AI providers \\( ^{17} \\) . Relatively few details are known about this agreement, and therefore an external observer cannot evaluate the competitive effects of the contract the way an antitrust agency could. However, the risk is serious as foreclosure of iOS would mean that both major distribution channels for AI services on European mobile devices would be unavailable to rivals.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.715,
+                0.398,
+                0.903,
+                0.565
+            ],
+            "angle": 0,
+            "content": "Google now appears to be repeating self-preferencing on Android and a contract with Apple in a new service, AI, located deeper in the technology stack",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.627,
+                0.7,
+                0.68
+            ],
+            "angle": 0,
+            "content": "Instead of a default placement of the search engine, the default in popular Google apps is Gemini. In addition, the self-preferencing behaviour extends to APIs, hardware and processing.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.701,
+                0.516,
+                0.718
+            ],
+            "angle": 0,
+            "content": "4.1 The Apple side: a separate investigation"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.722,
+                0.7,
+                0.776
+            ],
+            "angle": 0,
+            "content": "Public reporting on the partnership reveals that Apple's next-generation foundation models will be based on Google's Gemini, Google will become Apple's 'preferred cloud provider' for AI infrastructure and Apple will receive a custom trillion-parameter Gemini",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.092,
+                0.811,
+                0.674,
+                0.85
+            ],
+            "angle": 0,
+            "content": "15 United States District Court for the District of Columbia, 'United States of America et al v Google LLC', Memorandum Opinion, 5 August 2024, https://cdn.arstechnica.net/wp-content/uploads/2024/08/US-v-Google-Opinion-8-5-2024.pdf."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.091,
+                0.85,
+                0.69,
+                0.876
+            ],
+            "angle": 0,
+            "content": "16 See European Commission, 'AT.39740 Google Search (Shopping)', https://competition-cases.ec.europa.eu/cases/AT.39740."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.091,
+                0.876,
+                0.693,
+                0.903
+            ],
+            "angle": 0,
+            "content": "17 See Google Blog, 'Joint statement from Google and Apple', 12 January 2026, https://blog.google/company-news/inside-google/company-announcements/joint-statement-google-apple/."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.092,
+                0.931,
+                0.377,
+                0.945
+            ],
+            "angle": 0,
+            "content": "Working Paper | Issue n°17/26 | July 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.885,
+                0.931,
+                0.907,
+                0.944
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.086,
+                0.393,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.134,
+                0.696,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.153,
+                0.696,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.173,
+                0.696,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.192,
+                0.696,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.211,
+                0.696,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.23,
+                0.697,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.248,
+                0.696,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.268,
+                0.696,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.287,
+                0.696,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.306,
+                0.696,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.325,
+                0.696,
+                0.335
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.343,
+                0.696,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.363,
+                0.696,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.381,
+                0.681,
+                0.393
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.401,
+                0.695,
+                0.411
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.42,
+                0.696,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.44,
+                0.696,
+                0.449
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.458,
+                0.696,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.477,
+                0.696,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.496,
+                0.696,
+                0.506
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.515,
+                0.696,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.534,
+                0.696,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.553,
+                0.696,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.572,
+                0.697,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.591,
+                0.696,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.611,
+                0.474,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.718,
+                0.397,
+                0.902,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.718,
+                0.416,
+                0.856,
+                0.432
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.718,
+                0.435,
+                0.875,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.719,
+                0.455,
+                0.87,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.718,
+                0.474,
+                0.895,
+                0.489
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.718,
+                0.493,
+                0.865,
+                0.507
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.718,
+                0.512,
+                0.883,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.718,
+                0.53,
+                0.874,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.718,
+                0.55,
+                0.771,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.629,
+                0.696,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.649,
+                0.695,
+                0.659
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.668,
+                0.204,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.701,
+                0.513,
+                0.717
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.724,
+                0.696,
+                0.734
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.743,
+                0.696,
+                0.753
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.761,
+                0.697,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.076,
+                0.701,
+                0.186
+            ],
+            "angle": 0,
+            "content": "variant for on-device distillation. Apple will apparently pay Google approximately $1 billion per year, with a multi-year total estimated at up to $5 billion\\( ^{18} \\). Note that the interpretation of this payment is uncertain, given that Google pays Apple more than $20 billion per year in search revenue, and could easily increase that payment to reverse the sign of the AI payment. Apple continues to partner with ChatGPT, though that relationship does not seem to be relevant to the strategy.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.19,
+                0.7,
+                0.3
+            ],
+            "angle": 0,
+            "content": "Apple claims that Apple Intelligence will interface with apps and personal data, keeping that data from migrating to the cloud. It also claims it will use Google's Gemini model to answer questions, activate the app or generally carry out tasks. Apple will use its World Knowledge database (instead of the Google search database) for grounding, run its calculation on Nvidia chips and use the Gemini model's parameters. Apple will then discard the personal data.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.304,
+                0.701,
+                0.491
+            ],
+            "angle": 0,
+            "content": "If Apple's Siri personal assistant accesses device or software APIs through certain interfaces – regardless of whose third party AI model it then employs – then those hardware or software features are subject to 6(7) because iOS is designated a Core Platform Service. Under the DMA, Apple is not permitted to allow its own AI services powered by Gemini models to run on iOS while foreclosing other models from running on the same device. For example, if the Gemini model has access to hardware APIs, and Apple's OS or Siri uses those Gemini models, then competing models need to have access to those APIs. In short, Apple isn't absolved of its Article 6(7) obligations by running its services through a third party. Apple remains the OS provider with decision-making authority over how these components are composed.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.494,
+                0.701,
+                0.681
+            ],
+            "angle": 0,
+            "content": "For this reason, the European Commission has reportedly required Apple to offer interoperability with iOS if it wishes to offer the new Siri on its devices in Europe \\( ^{19} \\) . Rival providers of AI services would then be able to serve European users who carry iOS devices. Apple often argues that it cannot open its system to third parties because that would harm user privacy and security, which are integral to its brand. But in the case of AI services, it is users who are actively requesting a product that can, for example, read their emails, check their bank balance and answer messages. Apple has also already effectively permitted Google to offer AI services to iOS users. These two factors combined with the possibility to set standards for third parties requesting access effectively demolishes the privacy argument.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.684,
+                0.7,
+                0.737
+            ],
+            "angle": 0,
+            "content": "For the moment, Apple has chosen not to offer the Siri service in Europe \\( ^{20} \\) . If Google handsets offer a variety of AI service providers, each offering innovative and valuable AI services, Apple may find itself losing market share in Europe.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.093,
+                0.811,
+                0.681,
+                0.85
+            ],
+            "angle": 0,
+            "content": "18 See for example Mark Gurman, 'Apple Nears $1 Billion-a Year Deal to Use Google AI for Siri', Bloomberg, 5 November 2025, https://www.bloomberg.com/news/articles/2025-11-05/apple-plans-to-use-1-2-trillion-parameter-google-gemini-model-to-power-new-siri."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.093,
+                0.851,
+                0.678,
+                0.876
+            ],
+            "angle": 0,
+            "content": "19 Adam Satariano, 'Why Apple's A.I. Upgrade for Siri Won't Be Available in Europe', New York Times, 9 June 2026, https://www.nytimes.com/2026/06/09/business/apple-siri-ai-europe.html."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.092,
+                0.877,
+                0.686,
+                0.903
+            ],
+            "angle": 0,
+            "content": "20 See Apple news of 8 June 2026, 'Due to DMA, Siri AI delayed in EU for iOS 27 and iPadOS 27', https://www.apple.com/newsroom/2026/06/due-to-dma-siri-ai-delayed-in-eu-for-ios-27-and-ipados-27/."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.092,
+                0.931,
+                0.377,
+                0.945
+            ],
+            "angle": 0,
+            "content": "Working Paper | Issue n°17/26 | July 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.885,
+                0.932,
+                0.906,
+                0.943
+            ],
+            "angle": 0,
+            "content": "11"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.078,
+                0.696,
+                0.089
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.096,
+                0.696,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.115,
+                0.695,
+                0.127
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.135,
+                0.696,
+                0.146
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.154,
+                0.697,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.173,
+                0.337,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.192,
+                0.696,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.21,
+                0.697,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.23,
+                0.696,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.248,
+                0.695,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.268,
+                0.697,
+                0.279
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.287,
+                0.274,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.305,
+                0.696,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.324,
+                0.696,
+                0.336
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.344,
+                0.696,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.363,
+                0.696,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.381,
+                0.696,
+                0.393
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.401,
+                0.696,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.419,
+                0.696,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.44,
+                0.696,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.458,
+                0.697,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.477,
+                0.516,
+                0.489
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.496,
+                0.696,
+                0.507
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.515,
+                0.696,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.534,
+                0.696,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.553,
+                0.696,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.572,
+                0.696,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.591,
+                0.696,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.61,
+                0.696,
+                0.621
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.629,
+                0.696,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.649,
+                0.696,
+                0.659
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.668,
+                0.218,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.686,
+                0.695,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.706,
+                0.696,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.723,
+                0.508,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.074,
+                0.534,
+                0.091
+            ],
+            "angle": 0,
+            "content": "4.2 A template for innovation policy in Europe"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.094,
+                0.701,
+                0.301
+            ],
+            "angle": 0,
+            "content": "Europe's innovation gap relative to the United States was the central diagnosis of the Draghi Report on European competitiveness (Draghi, 2024). EU companies spend about half as much on research and innovation as a share of GDP as US companies, with the investment differential concentrated in the tech sector\\(^{21}\\). The pattern is sharpest in the technologies that drive present-day productivity growth: of total global funding for AI start-ups, 61 percent goes to US companies, 17 percent to Chinese companies and 6 percent to European companies\\(^{22}\\). Draghi (2024) attributed the gap not to a shortage of European scientific talent or to a lack of fundamental research, but to weaknesses along the innovation lifecycle, including insufficient commercialisation of European research and a single market that does not yet provide the demand-side conditions under which European AI ventures could reach the scale that justifies the investment they need.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.304,
+                0.701,
+                0.491
+            ],
+            "angle": 0,
+            "content": "The DMA could play a major role in this environment because it creates a single market for AI entrants and therefore large demand and the opportunity to scale. An interoperability specification provides legal certainty to AI innovators that they can obtain distribution on mobile devices in Europe. Consider the position of a European AI provider, established or aspiring, at the moment the Commission's specification takes effect. That provider's service can be invoked through the home button, run a hotword on the device's DSP, read user content through AppSearch, take in-application actions through App Actions or App Functions and use the system-level, on-device foundation models hosted by AlCore. The entrant can differentiate or innovate on top of these functionalities to attract consumers. Interoperability will be an effective pro-innovation and pro-competitive intervention.",
+            "merge_prev": false
+        },
+        {
+            "type": "aside_text",
+            "bbox": [
+                0.715,
+                0.302,
+                0.888,
+                0.471
+            ],
+            "angle": 0,
+            "content": "An interoperability specification provides legal certainty to AI innovators that they can obtain distribution on mobile devices in Europe"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.494,
+                0.701,
+                0.796
+            ],
+            "angle": 0,
+            "content": "The US has no comparable instrument, so an equivalent innovator selling to US consumers will be constrained by the functionalities Google chooses to make available to its AI rivals. US regulators may try to bring an antitrust case against Google to limit the foreclosure in AI, but antitrust cases take many years to complete and the market is likely to tip in favour of Google before a successful case could have an impact. In Europe, the playing field will be level, while in other parts of the world, Apple and Google may be able to favour their own AI services unless those nations also regulate. Countries like Australia, Korea, Japan, and Brazil have been active digital regulators and may wish to follow the EU on this issue. Such a situation will cause an ambitious AI entrepreneur to locate in Europe, where she will be able to get access to end users and scale her business. Likewise venture capitalists want to fund startups that have secure access to a market of end users. European innovators will be able to serve any consumer in the Google Android installed base, and perhaps soon in the iOS installed base as well. The DMA specification thus could raise expected market size in Europe, which in turn would raise the expected return on each euro of investment. In such a setting, innovators who want to work at the technology frontier will invest more in Europe and draw AI-services investment into Europe.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.091,
+                0.818,
+                0.689,
+                0.87
+            ],
+            "angle": 0,
+            "content": "21 In Draghi (2024): \"At the root of Europe's weak position in digital tech is a static industrial structure which produces a vicious circle of low investment and low innovation\". On the comparative figures: \"In 2021, EU companies spent about half as much on R&I as share of GDP as US companies – around EUR 270 billion – a gap driven by much higher investment rates in the US tech sector\"."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.091,
+                0.87,
+                0.69,
+                0.909
+            ],
+            "angle": 0,
+            "content": "22 In Draghi (2024): \"61% of total global funding for AI start-ups goes to US companies, 17% to those in China and just 6% to those in the EU. For quantum computing, EU companies attract only 5% of global private funding compared with a 50% share attracted by US companies\"."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.092,
+                0.931,
+                0.377,
+                0.945
+            ],
+            "angle": 0,
+            "content": "Working Paper | Issue n°17/26 | July 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.885,
+                0.931,
+                0.907,
+                0.944
+            ],
+            "angle": 0,
+            "content": "12"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.074,
+                0.53,
+                0.09
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.097,
+                0.696,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.116,
+                0.697,
+                0.127
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.134,
+                0.696,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.154,
+                0.696,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.174,
+                0.696,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.192,
+                0.697,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.212,
+                0.696,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.23,
+                0.696,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.248,
+                0.696,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.268,
+                0.696,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.286,
+                0.648,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.306,
+                0.696,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.324,
+                0.696,
+                0.336
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.344,
+                0.696,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.364,
+                0.696,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.382,
+                0.696,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.401,
+                0.696,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.42,
+                0.696,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.44,
+                0.696,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.458,
+                0.696,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.477,
+                0.655,
+                0.489
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.495,
+                0.696,
+                0.507
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.514,
+                0.696,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.534,
+                0.696,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.552,
+                0.696,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.572,
+                0.696,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.591,
+                0.695,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.611,
+                0.696,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.628,
+                0.696,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.649,
+                0.696,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.667,
+                0.696,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.687,
+                0.696,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.705,
+                0.697,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.723,
+                0.697,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.743,
+                0.696,
+                0.753
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.762,
+                0.696,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.782,
+                0.625,
+                0.791
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.076,
+                0.701,
+                0.263
+            ],
+            "angle": 0,
+            "content": "A wider point is worth stating directly. European regulators have been accused of regulating digital technology in ways that impede European innovation. The Article 6(7) specification is an example of regulation that has the potential to do the opposite. It does not specify product features, pick winners or impose prices, but instead maintains competition. The regulation maintains competition by identifying the access points that the gatekeeper has closed to rivals at the same time that the gatekeeper has used those functionalities to make its own product attractive. The law requires the gatekeeper to share those access points without monetary charge and with equal functionality, increasing contestability and entry. If Europe is serious about closing the innovation gap that the Draghi Report diagnoses, this is the way to deploy the DMA.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.092,
+                0.316,
+                0.281,
+                0.337
+            ],
+            "angle": 0,
+            "content": "5 Conclusion"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.361,
+                0.7,
+                0.452
+            ],
+            "angle": 0,
+            "content": "The Commission's specification on Google Android could help prevent another decade-long ineffective digital antitrust case, create an environment in which any AI provider can compete on the merits and allow European AI innovation to flourish. However, a parallel investigation of Google's Gemini partnership with Apple may be necessary to protect contestability in Europe.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.093,
+                0.506,
+                0.261,
+                0.527
+            ],
+            "angle": 0,
+            "content": "References"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.094,
+                0.552,
+                0.688,
+                0.602
+            ],
+            "angle": 0,
+            "content": "CMA (2022) Mobile ecosystems, Market study final report, UK Competition and Markets Authority, available at https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1138104/Mobile_Ecosystems_Final_Report_amended_2.pdf"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.094,
+                0.609,
+                0.667,
+                0.66
+            ],
+            "angle": 0,
+            "content": "Draghi, M. (2024) The future of European competitiveness: Part A, A competitiveness strategy for Europe, European Commission, available at https://commission.europa.eu/document/download/97e481fd-2dc3-412d-be4c-f152a8232961_en"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.094,
+                0.666,
+                0.674,
+                0.717
+            ],
+            "angle": 0,
+            "content": "Scott Morton, F. (2023) 'Digital Market Act designations: the interoperability of Google Android', Analysis 34/2023, Bruegel, available at https://www.bruegel.org/analysis/digital-market-act-designations-interoperability-google-android-0"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.093,
+                0.723,
+                0.69,
+                0.793
+            ],
+            "angle": 0,
+            "content": "Scott Morton, F., G. Crawford, J. Crémer, D. Dinielli, A. Fletcher, P. Heidhues and M. Schnitzer (2023) 'Equitable Interoperability: The \"Supertool\" of Digital Platform Governance', Yale Journal on Regulation 40(3): 1013-1055, available at https://www.yalejreg.com/print/equitable-interoperability-the-supertool-of-digital-platform-governance/"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.092,
+                0.931,
+                0.377,
+                0.945
+            ],
+            "angle": 0,
+            "content": "Working Paper | Issue n°17/26 | July 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.885,
+                0.932,
+                0.907,
+                0.944
+            ],
+            "angle": 0,
+            "content": "13"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.078,
+                0.697,
+                0.088
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.097,
+                0.696,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.117,
+                0.696,
+                0.126
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.135,
+                0.696,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.154,
+                0.696,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.173,
+                0.696,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.192,
+                0.696,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.21,
+                0.696,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.231,
+                0.695,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.249,
+                0.559,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.315,
+                0.279,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.363,
+                0.697,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.381,
+                0.697,
+                0.393
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.401,
+                0.697,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.419,
+                0.697,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.44,
+                0.26,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.505,
+                0.259,
+                0.528
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.299,
+                0.645,
+                0.909,
+                0.815
+            ],
+            "angle": 0,
+            "content": "© Bruegel 2026. Bruegel publications can be freely republished and quoted according to the Creative Commons licence CC BY-ND 4.0. Please provide a full reference, clearly stating the relevant author(s) and including a prominent hyperlink to the original publication on Bruegel's website. You may do so in any reasonable manner, but not in any way that suggests the author(s) or Bruegel endorse you or your use. Any reproduction must be unaltered and in the original language. For any alteration (for example, translation), please contact us at press@bruegel.org. Publication of altered content (for example, translated content) is allowed only with Bruegel's explicit written approval. Bruegel takes no institutional standpoint. All views expressed are the researchers' own.",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.091,
+                0.799,
+                0.204,
+                0.901
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.3,
+                0.833,
+                0.625,
+                0.899
+            ],
+            "angle": 0,
+            "content": "Bruegel, Rue de la Charité 33, B-1210 Brussels (+32) 2 227 4210\ninfo@bruegel.org\nwww.bruegel.org",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.645,
+                0.907,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.299,
+                0.664,
+                0.907,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.684,
+                0.907,
+                0.698
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.703,
+                0.906,
+                0.715
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.723,
+                0.906,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.741,
+                0.906,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.76,
+                0.906,
+                0.774
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.299,
+                0.779,
+                0.906,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.299,
+                0.798,
+                0.373,
+                0.812
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.375,
+                0.798,
+                0.624,
+                0.812
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.628,
+                0.799,
+                0.704,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.709,
+                0.799,
+                0.738,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.741,
+                0.799,
+                0.771,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.773,
+                0.798,
+                0.865,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.868,
+                0.798,
+                0.906,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.834,
+                0.624,
+                0.847
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.85,
+                0.422,
+                0.863
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.299,
+                0.866,
+                0.425,
+                0.882
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.885,
+                0.427,
+                0.897
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

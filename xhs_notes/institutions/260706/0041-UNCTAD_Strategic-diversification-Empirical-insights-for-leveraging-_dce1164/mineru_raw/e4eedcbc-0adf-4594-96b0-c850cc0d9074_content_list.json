@@ -1,0 +1,4596 @@
+[
+    {
+        "type": "image",
+        "img_path": "images/8240c0d684f4c10bef3f215a99e5efd3dbd45722905157f5ed3253f55d2c714f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            0,
+            1000,
+            284
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "#13",
+        "bbox": [
+            124,
+            263,
+            183,
+            285
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "March 2026\nUNCTAD/WP/2026/2",
+        "bbox": [
+            131,
+            294,
+            295,
+            326
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Strategic diversification: Empirical insights for leveraging economic complexity to break free from commodity dependence",
+        "text_level": 1,
+        "bbox": [
+            384,
+            315,
+            897,
+            430
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Clovis Freire\nExtractive Commodities\nSection, Division on\nInternational Trade and\nCommodities, UNCTAD\nfreire@un.org",
+        "bbox": [
+            78,
+            507,
+            299,
+            620
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Sofia Dominguez\nCosimo Frontera\nExtractive Commodities\nSection, Division on\nInternational Trade and\nCommodities, UNCTAD\nditcinfo@unctad.org",
+        "bbox": [
+            78,
+            640,
+            299,
+            772
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Abstract",
+        "text_level": 2,
+        "bbox": [
+            386,
+            458,
+            475,
+            474
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Export diversification has long been promoted to reduce commodity dependence, yet its empirical relationship with commodity dependence may be more complex than traditionally understood. Using data from 183 countries between 1995 and 2019, this paper explores how economic complexity, a measure of the sophistication and technological intensity of a country's productive capacities, affects commodity dependence. This approach provides a more comprehensive understanding of how countries can design policies moving beyond diversification, shifting focus from the number of exports to the types of exportable products and the local productive capacities required to produce them. While the relationship between complexity and commodity dependence contains a definitional component in that commodities are inherently less complex products, the empirical analysis quantifies the magnitude of this association, uncovering heterogeneity across development stages, and identifying conditions under which complexity most effectively reduces commodity reliance. The results from a fixed effects model find that diversification towards higher complexity sectors significantly reduces commodity dependence. Importantly, the results indicate that economies with relatively less severe cases of commodity dependence, where commodities account for 60-80 per cent of exports, stand to benefit the most from policies aimed at increasing complexity. Paradoxically, the study also finds that global average income growth tends to deepen commodity dependence in exporting countries, reinforcing the global division of labour in which developing countries specialize in exporting raw materials. While the economic complexity framework offers valuable diagnostic insights for identifying promising diversification pathways, policymakers should recognize its function as a strategic compass rather than a prescriptive policy toolkit, requiring complementary context-specific analysis for implementation. These findings offer policy insights and highlight the importance of international collaboration in supporting commodity-dependent developing countries in creating a complex economic environment by building technological and productive capabilities. By adopting strategic diversification strategies grounded in product relatedness and complexity theory, these countries can better promote sustainable growth and drive economic transformations.",
+        "bbox": [
+            384,
+            478,
+            907,
+            804
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Key words",
+        "text_level": 2,
+        "bbox": [
+            386,
+            814,
+            492,
+            831
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Economic complexity, strategic diversification, commodity dependence, development.",
+        "bbox": [
+            384,
+            835,
+            843,
+            869
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "UNITED NATIONS CONFERENCE ON TRADE AND DEVELOPMENT",
+        "bbox": [
+            90,
+            0,
+            687,
+            53
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "The image contains a logo featuring the United Nations Human Rights Organization (UNHIRS) emblem, which is centered around the globe and is enclosed in a circle with the national flag. There is no textual content to extract.",
+        "bbox": [
+            55,
+            910,
+            147,
+            966
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "United Nations",
+        "bbox": [
+            156,
+            912,
+            297,
+            967
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "The findings, interpretations and conclusions expressed herein are those of the author(s) and do not necessarily reflect the views of the United Nations or its officials or Member States. The designations employed and the presentation of material on any map in this work do not imply the expression of any opinion whatsoever on the part of the United Nations concerning the legal status of any country, territory, city, or area or of its authorities, or concerning the delimitation of its frontiers and boundaries. This paper has not been formally edited. This Working Paper should be referenced as: “Dominguez S, Frontera C, and Freire C (2026). Strategic diversification: Empirical insights for leveraging economic complexity to break free from commodity dependence. UNCTAD working paper #13, March 2026.”",
+        "bbox": [
+            381,
+            887,
+            905,
+            967
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Contents",
+        "text_level": 2,
+        "bbox": [
+            248,
+            229,
+            443,
+            263
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "1. Introduction......3\n2. Economic complexity and commodity dependence....6\n3. Estimation approach......11\n3.1 Theoretical model......12\n3.2 Empirical specification......15\n3.3 Data sources and variable definitions......17\n3.4 Descriptive statistics......18\n4. Regression results......22\n4.1 Results......22\n4.2 Robustness checks......26\n5. Conclusions......29\nReferences......31\nAppendix......34\nA. Computation of the modified economic complexity index...34\nB. Diagnostic tests......35\nC. Countries in the analysis (full sample)......37",
+        "bbox": [
+            243,
+            294,
+            823,
+            643
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            176,
+            28,
+            262,
+            65
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "#13 March 2026",
+        "bbox": [
+            722,
+            24,
+            835,
+            59
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "Acknowledgments",
+        "bbox": [
+            161,
+            812,
+            347,
+            831
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "The authors are grateful to Luz Maria de La Mora, Anida Yupari Aguado, Graham Mott and two anonymous referees for helpful comments and suggestions.",
+        "bbox": [
+            159,
+            835,
+            808,
+            869
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "1. Introduction",
+        "text_level": 1,
+        "bbox": [
+            163,
+            133,
+            421,
+            228
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Economic diversification and complexity together are vital for sustainable growth, especially for commodity-dependent developing countries (CDDCs). UNCTAD defines an economy as commodity-dependent when over 60 per cent of merchandise export revenues come from primary commodities, such as food and agricultural raw materials, fuels, and minerals. In 2021, 101 countries met this criterion, of which 95 were developing countries and 34 least developed countries (UNCTAD, 2023a). These countries face significant challenges, as their reliance on commodity exports renders them highly vulnerable to external shocks stemming from volatility in commodity prices. Combined with factors like exchange rate overvaluation, market fluctuations and resource depletion, this reliance hampers stability, long-term planning, industrialization and the potential for sustainable investments in growth and development (UNCTAD, 2018). Recent global crises, including ongoing conflicts, and long-term global megatrends such as the impact of climate change and the digital and decarbonization agendas, further underscore the urgency for CDDCs to pursue strategic diversification. $^{1}$",
+        "bbox": [
+            157,
+            279,
+            836,
+            530
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Export diversification indicates the degree to which an economy exports products across various sectors or trading partners and can mitigate the risks of commodity dependence by enhancing resilience, stabilising revenues, and creating jobs and growth (Dominguez and Nkurunziza, 2024). However, while diversification is conceptually straightforward, its empirical relationship with commodity dependence may be more complex. Traditional measures of diversification focus on export market concentration or deviations from global trade patterns, offering a broad overview of export structures. Yet, diversification is not necessarily the contrary of commodity dependence, typically measured by the share of commodity exports in total exports. An economy may diversify its exports while maintaining or increasing the volume of commodity exports. For instance, an economy may diversify into other commodity sectors, going from exporting raw cotton to exporting raw cotton and bamboo.",
+        "bbox": [
+            159,
+            537,
+            838,
+            726
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            173,
+            28,
+            260,
+            65
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "#13\nMarch 2026",
+        "bbox": [
+            722,
+            28,
+            836,
+            61
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_footnote",
+        "text": "In this paper, strategic diversification refers to a systematic approach for evaluating diversification opportunities at a granular level, based on a country's existing capacities, constraints, and defined goals. This approach is grounded in an analysis rooted in economic complexity and product relatedness, which helps identify targeted sectors. It is similar to the smart specialisation concept developed by the European Commission, a place-based prioritisation approach that builds on the assets and resources available on the territory (See https://ec.europa.eu/regional\\_policy/policy/communities-and-networks/s3-community-of-practice/about\\_en). The smart specialisation concept focuses investments “on a limited number of well-defined research and innovation priorities developed [...] through continuous interaction between policymakers and [stakeholders], and supported by a sound multi-level governance structure (Hegyi et al., 2021) launched in 2020 as part of a research project performed by the Smart Specialisation platform to gain new insights on the Smart Specialisation (S3)\". While similar in intent, strategic diversification here relies also on data-driven tools to guide the analysis, rather than solely on expert judgment for sector targeting.",
+        "bbox": [
+            161,
+            746,
+            836,
+            920
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            494,
+            950,
+            507,
+            961
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Alternatively, an economy could diversify into commodity and non-commodity sectors simultaneously or increase commodity exports in quantities that outweigh the growth in the number of products exported. In such cases, the commodity export ratio would remain unchanged or even rise during diversification.",
+        "bbox": [
+            159,
+            134,
+            836,
+            198
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Increasing the number of products exported does not automatically reduce reliance on commodities, this is where economic complexity provides deeper insights. While diversification captures export variety, economic complexity measures an economy's sophistication and technological intensity, based on the diversity and ubiquity of its exports (Hidalgo and Hausmann, 2009). $^{2}$ In this context, diversity refers to the number of products exported by a country, while ubiquity refers to the number of countries exporting each product, indicating how common exported products are globally. This would provide information on the type rather than the number of exports, offering a more precise tool for understanding how economies can reduce their dependence on primary commodities. The empirical relationship between economic complexity and commodity dependence remains underexplored, with most related studies focusing on the links between economic complexity and development, natural resource rents, or export concentration. This paper addresses this gap by proposing a model derived from Pasinetti's (1993) model of structural change and economic dynamics, incorporating common assumptions from the economic complexity literature $^{3}$ regarding countries, capabilities, and products, and linking complexity to commodity dependence. To our knowledge, this is the first paper to propose such a framework. The model provides a strong theoretical foundation, identifies relevant covariates, and informs the expected associations of regressors. It is calibrated using data from 183 economies between 1995 and 2019 using a fixed effects model to examine the relationship between economic complexity and commodity dependence. Heterogeneity across different levels of commodity dependence is also explored. This study calculates economic complexity values using Hidalgo and Hausmann's (2009) Method of Reflections, with the modifications proposed by Freire (2017), which disaggregate Harmonized System (HS) 6-digit codes by quantity unit and unit price.",
+        "bbox": [
+            159,
+            206,
+            838,
+            596
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The analytical value of investigating this relationship extends beyond the observation that commodities are inherently less sophisticated products. Rather, the empirical contribution lies in quantifying the magnitude and potential heterogeneity across different development stages, and identifying the conditions under which increases in complexity most effectively reduce commodity export shares. This distinction is crucial because it explains why some countries experience significant increases in diversification yet fail to reduce commodity dependence, while others achieve substantial reductions despite more modest diversification gains. These patterns cannot be understood through observation alone but require econometric investigation that isolates the independent contribution of complexity while controlling for alternative explanations such as commodity price dynamics, exchange rate movements, and shifts in global demand. By treating complexity and diversification as complementary but distinct analytical dimensions, this paper addresses a substantive gap in the literature on how the sophistication of productive capabilities, rather than the mere number of products exported, drives structural economic transformation.",
+        "bbox": [
+            159,
+            602,
+            838,
+            791
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            174,
+            28,
+            262,
+            65
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "#13",
+        "bbox": [
+            794,
+            26,
+            835,
+            40
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "March 2026",
+        "bbox": [
+            722,
+            42,
+            833,
+            58
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{2}$ Using these indicators, the strand of literature on economic complexity has developed methods to calculate economic complexity measures, which proxies the productive capacities of an economy.",
+        "bbox": [
+            159,
+            813,
+            836,
+            843
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_footnote",
+        "text": "3 Economic complexity literature refers to research that employs various methods, such as the Method of Reflections (Hidalgo and Hausmann, 2009) and country fitness (Tacchella et al., 2012), among others, which share common assumptions: products require specific sets of capabilities to be produced, countries possess a certain number of these capabilities, and they will produce goods for which they have the necessary capabilities. For a comprehensive review of the literature on economic complexity and its role in structural transformation, see Freire (2021).",
+        "bbox": [
+            159,
+            846,
+            836,
+            928
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            494,
+            951,
+            507,
+            961
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            159,
+            134,
+            836,
+            183
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Beyond its theoretical contributions, the study offers practical insights for policymakers shaping industrial, trade, and innovation policies in CDDCs. The findings suggest that CDDCs should target not only diversification but also complexity in their export structures, a distinction that can inform more effective strategies to reduce vulnerability to commodity price fluctuations and achieve sustainable growth. Economic complexity metrics have already been applied in countries such as Rwanda (Hausmann and Chauvin, 2015), Brazil (Romero and Freitas, 2018; Romero and Silveira, 2019; Queiroz et al., 2023; Romero et al., 2024), Paraguay (Hartmann et al., 2019), and Panama (Obach et al., 2017), among many others, identifying promising development pathways.",
+        "bbox": [
+            159,
+            191,
+            836,
+            347
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "However, policymakers should recognize that economic complexity functions as a diagnostic lens for identifying feasible targets rather than a prescriptive policy toolkit. Following Hidalgo (2023), complexity approaches excel at answering “what” questions: which products or sectors offer promising diversification targets, but require complementary analysis to address “how” questions regarding implementation mechanisms, institutional requirements, and policy instruments.",
+        "bbox": [
+            159,
+            355,
+            836,
+            450
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "An added value of this paper lies in its use of disaggregated trade data by unit price, which enables more granular targeting of diversification opportunities within specific price ranges and sectors. For example, if the analysis reveals several promising diversification opportunities in the chemical sector, and this sector is prioritized by policymakers, then policy can be designed at the product and aggregate sector level. A targeted intervention, for instance, might involve training a specified number of chemical or production engineers by expanding enrollment in existing institutions in a specific city, or by updating curricula to include specialized modules aligned with industry needs. This contrasts with broader, abstract policy prescriptions, which, while valuable, may lack the specificity required to support targeted diversification. Consequently, the recommendations emerging from this analysis provide directional guidance for strategic planning rather than detailed blueprints for policy implementation.",
+        "bbox": [
+            159,
+            457,
+            838,
+            646
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The paper is organised as follows. Section 2 reviews the literature on economic complexity and commodity dependence. Section 3 introduces the empirical specification and estimation method adopted in the paper, together with the variables and data used. Section 4 discusses the results and robustness checks. Section 5 presents the conclusions.",
+        "bbox": [
+            159,
+            653,
+            836,
+            733
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            173,
+            28,
+            260,
+            65
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "March 2026",
+        "bbox": [
+            724,
+            45,
+            835,
+            61
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "#13",
+        "bbox": [
+            796,
+            28,
+            835,
+            43
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            494,
+            950,
+            507,
+            961
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "2.",
+        "bbox": [
+            161,
+            134,
+            245,
+            191
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Economic complexity and commodity dependence",
+        "text_level": 1,
+        "bbox": [
+            161,
+            199,
+            705,
+            266
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Economic complexity, rooted in the seminal works of Hidalgo et al. (2007) and Hidalgo and Hausmann (2009), examines the relationship between a country's productive capabilities and its export structure. This measure is derived from the diversity and the ubiquity of a country's exports. Studies in this strand of the literature use algorithms, mostly the Method of Reflections (Hidalgo and Hausmann, 2009) or the Fitness method (Tacchella et al., 2012), to estimate the complexity of economies by iteratively calculating averages of the diversity and ubiquity of countries based on the similarity of their export baskets. $^{4}$",
+        "bbox": [
+            157,
+            318,
+            836,
+            460
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The core premise of economic complexity is that a country's exports reflect its underlying capabilities (Hidalgo and Hausmann, 2009). A bipartite network model links countries to the products they can produce based on these capabilities. The model shows that the average ubiquity of a country's products tends to decrease as its level of diversification increases. In short, more diverse economies tend to export less ubiquitous goods, and because complex products require a higher number of capabilities, fewer countries can produce them (Hidalgo and Hausmann, 2009). This theoretical framework also suggests that the economic and product complexity indices can help estimate the technological level of countries and products, with more complex products requiring higher technology. In turn, diversification towards more complex products is associated with development, spurring technology and innovation, productivity growth and resilience to external shocks (Freire, 2017).",
+        "bbox": [
+            157,
+            500,
+            838,
+            689
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Beyond Hidalgo and Hausmann (2009), empirical studies support the idea that an economy's productive structure influences long-term growth prospects. For instance, Anand et al. (2012) $^{5}$ and Ourens (2013) $^{6}$ cite a positive association between economic complexity and long-term growth. Bastos and Wang (2015) $^{7}$ also find a positive association between economic complexity and long-term growth of real GDP per capita. Zhu and Li (2017) $^{8}$ find similar results, citing the positive impact of economic complexity and varying levels of human capital on both long- and short-term growth.",
+        "bbox": [
+            159,
+            696,
+            836,
+            808
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "4 A similar computation is made for product complexity indices.",
+        "bbox": [
+            159,
+            824,
+            591,
+            840
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "5 Using a dynamic panel estimation of 100 countries from 1990 to 2008.",
+        "bbox": [
+            159,
+            843,
+            650,
+            860
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "$^{6}$ Using a sample of 178 countries over 1995-2007.",
+        "bbox": [
+            159,
+            863,
+            515,
+            879
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "7 Using a panel of 103 countries for 1970-2010.",
+        "bbox": [
+            159,
+            883,
+            492,
+            900
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "8 Using a panel of 139 countries from 1995 to 2010",
+        "bbox": [
+            159,
+            903,
+            517,
+            919
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            174,
+            28,
+            263,
+            65
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "#13\nMarch 2026",
+        "bbox": [
+            722,
+            26,
+            836,
+            59
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            494,
+            950,
+            507,
+            961
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Moreover, measuring the economic complexity of 210 countries, they (Zhu and Li, 2017) support the general notion that high-income economies have higher complexity than low- and middle-income economies.",
+        "bbox": [
+            159,
+            134,
+            836,
+            181
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Other empirical studies reveal heterogeneity in the relationship between economic complexity and growth across different contexts. For instance, Ozguzer and Binatli (2015) note that for European Union countries below a certain complexity threshold, the relationship between complexity and growth is negative, while those above the threshold exhibit a positive correlation. The authors argue that the former's negative correlation may be attributed to new European Union member states leveraging access to the European Union market and trade agreements to accelerate growth, predominantly through producing goods that do not require high economic complexity (Ozguzer and Binatli, 2015). Similarly, Demiral (2016) finds that while complexity is positively associated with growth in factor-driven, efficiency-driven and transitioning economies, there is a negative association for innovation-based economies. $^{9}$",
+        "bbox": [
+            159,
+            191,
+            838,
+            363
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Economic complexity offers a structured and data-driven framework to identify feasible pathways for economic diversification. By applying an iterative formula to global export data, this assigns a measure of productive capabilities to each country, capturing the country's average positioning relative to the world in their product sophistication. When used alongside complementary analytical tools, such as product relatedness, it can inform strategic planning that accounts for a country's existing endowments and capabilities, including their stage of development. By assigning a value of complexity, this approach allows for a directional move in structural transformation that would be conducive to development (Freire, 2017, 2021).",
+        "bbox": [
+            159,
+            370,
+            836,
+            512
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "This approach aligns with a strategy of related diversification, which is more prevalent empirically (Boschma, 2017; Xiao et al., 2018). Countries tend to diversify more easily into activities that are closely related to their existing productive capabilities, developing comparative advantages in new products that build on and combine local capabilities (Boschma, 2017). Considering the link between economic complexity and growth, targeting products that are within or adjacent to current capabilities allows governments to pursue diversification opportunities with higher likelihood of successful structural transformation while mitigating the risks associated with entering entirely new sectors (Xiao et al., 2018). This is particularly relevant for countries with constrained fiscal space, where large-scale interventions for diversification may be prohibitively expensive or too risky to be politically attractive.",
+        "bbox": [
+            159,
+            519,
+            838,
+            692
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "On the other hand, commodity dependence, characterised by heavy reliance on primary commodities for export revenue, is associated with poor socio-economic performance (UNCTAD, 2023b). Commodity-dependent economies are highly vulnerable to price volatility, which disrupts revenue stability and hinders long-term planning and investment. Additionally, commodity dependence is linked to Dutch disease (UNCTAD, 2017; 2021a), where the rapid development of the commodity sector in an economy results in increasing export revenues and the appreciation of the currency. This harms the competitiveness of other export sectors, increasing the fragility of the economy. Moreover, low productivity growth and the impending depletion of finite natural resources present significant obstacles to sustainable economic development in CDDCs. Nkurunziza et al. (2017) $^{10}$ ascertain the negative relationship between commodity export dependence and human development in developing countries. This negative association holds irrespective of the groups of exported products considered.",
+        "bbox": [
+            159,
+            699,
+            838,
+            826
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            171,
+            28,
+            260,
+            65
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "#13",
+        "bbox": [
+            796,
+            28,
+            835,
+            43
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "March 2026",
+        "bbox": [
+            724,
+            45,
+            835,
+            61
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_footnote",
+        "text": "Based on 86 countries from 1995 to 2011. Demiral (2016) divide the results by country development stages following the World Economic Forum's (WEF) three-group development taxonomy. According to WEF (2014), factor-driven countries are at the first stage of development, efficiency-driven are at the second stage, and innovation-driven countries occupy the third, highest stage of development. There are also transitioning countries between stage 1 to stage 2 and from stage 2 to stage 3.",
+        "bbox": [
+            159,
+            851,
+            836,
+            920
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            494,
+            950,
+            507,
+            961
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            159,
+            134,
+            836,
+            229
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "While empirical studies directly addressing the relationship between commodity dependence and economic complexity are scarce, some literature exists on export concentration and complexity and the association between complexity and natural resource rents. $^{[11]}$ Drawing from these related research areas, we can gain a better understanding of potential parallels in the context of commodity dependence and economic complexity.",
+        "bbox": [
+            159,
+            236,
+            836,
+            332
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Martines de Camargo and Gala (2017) $^{12}$ find a negative association between export concentration and economic complexity. In testing the impact of Dutch disease $^{13}$ on economic complexity, they introduce an interactive term for export concentration and the complexity of the main exported product. Results indicate that a higher product complexity positively influences changes in overall complexity even at high levels of concentration. Conversely, a greater concentration of low-complex exports reduces a country's overall economic complexity. This implies that countries heavily dependent on low-complexity products, including commodities, face challenges in fostering innovation and multiplying know-how.",
+        "bbox": [
+            159,
+            338,
+            838,
+            481
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "On the other hand, empirical studies on the relationship between economic complexity and natural resource rents suggest an inverted U-shaped association. UI-Durar et al. (2023) report these results using a panel quantile regression and an error correction model in resource-rich economies between 2000 and 2021. The authors find that economic complexity may initially increase natural resource extraction and use due to greater economic activities. However, in the long run, the production of complex goods decreases natural resource rents and dependence by upgrading production processes and increasing exports of value-added goods. This shift is attributed to the adoption of new production technologies and a transition towards knowledge-based activities, which diversifies production and reduces natural resource extraction.",
+        "bbox": [
+            159,
+            488,
+            838,
+            646
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Similarly, Li et al. (2024) $^{14}$ find an inverted U-shaped relationship between economic complexity and natural resource rents, indicating that while initial increases in complexity boost production and the demand for natural resources, economies eventually reach a threshold where specialisation in technology-based activities becomes more prominent.",
+        "bbox": [
+            159,
+            653,
+            838,
+            732
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            174,
+            28,
+            263,
+            65
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "#13",
+        "bbox": [
+            794,
+            26,
+            835,
+            40
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "March 2026",
+        "bbox": [
+            722,
+            42,
+            835,
+            58
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{10}$ Using a quantile regression and a dynamic panel model of 163 countries between 1995-2013.",
+        "bbox": [
+            159,
+            784,
+            803,
+            801
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{11}$ Defined as the difference in value of produced natural resources at world prices and its cost of production, expressed as a percentage of GDP. This is based on World Bank Indicators.",
+        "bbox": [
+            159,
+            804,
+            836,
+            834
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{12}$ Using a generalised method of moments (GMM) estimator on a panel of 122 countries spanning over 12 four-year periods between 1965 and 2013.",
+        "bbox": [
+            159,
+            837,
+            836,
+            866
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{13}$ Defined as export concentration in a low-complexity product in their paper.",
+        "bbox": [
+            159,
+            869,
+            673,
+            887
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{14}$ Based on a panel quantile regression and GMM on ten newly industrial economies from 1975 to 2020.",
+        "bbox": [
+            159,
+            890,
+            836,
+            919
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            494,
+            950,
+            507,
+            961
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "This facilitates a transition from low-ubiquity resource-intensive products and diminishes reliance on resource rents.",
+        "bbox": [
+            159,
+            134,
+            836,
+            167
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Contrary to these findings, Canh et al. (2020) report a linear negative association between economic complexity and natural resource rents. When disaggregating by income group, the authors find that the relationship holds true in two out of three subsamples, comprising low- and middle-income and high-income economies, with upper-middle-income economies exhibiting non-significant associations. They propose two mechanisms to explain this relationship: in low and middle-income economies, a negative association is attributed to complexity inducing a shift towards manufacturing over raw materials exports. In higher-income counterparts, complexity brings about innovation and knowledge-based industries that reduce reliance on natural resources.",
+        "bbox": [
+            159,
+            175,
+            838,
+            332
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "This provides valuable insights into the potential relationship between complexity and commodity dependence and points towards a negative association between the two. An important distinction between studies focusing on concentration and resource rents is that while economic complexity may drive resource inputs in the short term (as observed in studies by Canh et al. 2020; Ul-Durar et al., 2023; and Li et al., 2024), this may not necessarily lead to increased export concentration, especially if these resources are used to produce more complex goods. Consequently, countries undergoing an increase in their economy's complexity would theoretically experience a decline in their commodity export ratio.",
+        "bbox": [
+            159,
+            338,
+            836,
+            481
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "However, this is not consistently supported by a straightforward correlation. For instance, while both Brazil and Viet Nam witnessed an increase in complexity between 1995-2020, Viet Nam's commodity dependence decreased significantly, whereas Brazil's increased. Based on the discussion on natural resource rents, this discrepancy could be due to heterogeneity in complexity levels, with countries with less complex structures requiring greater natural resource inputs and thus translating into greater exports. Nonetheless, in this case, Brazil shows greater levels of economic complexity than Viet Nam, with reported values ranging between 0.5 to 1.1 compared to -0.3 to 0.7, respectively $^{15}$ . This divergence is noteworthy: if the relationship between complexity and commodity dependence were purely definitional, both countries should have exhibited similar outcomes given their parallel complexity trajectories. Instead, the contrasting outcomes demonstrate that the relationship is mediated by additional factors, including potential heterogeneity across different levels of commodity dependence and indicating the need for further empirical investigation.",
+        "bbox": [
+            159,
+            488,
+            838,
+            708
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The empirical investigation of this relationship is analytically valuable despite the definitional observation that commodities are inherently less sophisticated products. While product complexity indices assign lower scores to primary commodities than to manufactured goods, reflecting the fewer capabilities required for commodity extraction relative to complex manufacturing, this definitional foundation does not render the empirical analysis circular. Rather, three dimensions of variation justify econometric investigation: First, understanding the magnitude of the complexity-dependence relationship matters for policy: Whether a one-unit increase in complexity corresponds to a 0.5, 2, or 5 per cent reduction in commodity dependence directly affects expected returns to investments. Second, the heterogeneity across different levels of commodity dependence, as explored through subsample analysis, cannot be derived from definitional reasoning alone and reveals whether complexity interventions are uniformly effective or more powerful at particular development stages. Third, whether and under what conditions countries actually transition toward greater complexity and lower commodity dependence over time constitute genuine empirical phenomena shaped by policy choices, external shocks, and path dependencies. By incorporating control variables for alternative mechanisms, the analysis isolates the specific contribution of productive capabilities, demonstrating that complexity captures meaningful variation beyond definitional overlap.",
+        "bbox": [
+            159,
+            714,
+            838,
+            841
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "#13\nMarch 2026",
+        "bbox": [
+            724,
+            28,
+            836,
+            61
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            171,
+            28,
+            260,
+            65
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{15}$ The measure of economic complexity in these graphs is calculated considering 0 as the average of the world distribution, and 1 is a standard deviation of the distribution. Therefore, negative values indicate that the country has a complexity value below the global average. For more details, see Appendix A.",
+        "bbox": [
+            161,
+            864,
+            836,
+            919
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            494,
+            950,
+            507,
+            961
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            159,
+            134,
+            838,
+            307
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/7eea445e05a2741706a80f9e2b04ebdf833a1164c049d528c7433f749282af3d.jpg",
+        "image_caption": [
+            "Figure 1\nRelationship between complexity and commodity dependence in Viet Nam and Brazil, 1995 - 2020"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            107,
+            406,
+            144,
+            436
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/05d7c204e4971494744e7008c29af5547730a14c77533f1a765b91d31483efa6.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Author's calculation."
+        ],
+        "bbox": [
+            117,
+            462,
+            492,
+            837
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/69ba50815fb19f2576267c152d75d8396f7e17262a7e41bdedc7000ee3f51af4.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            502,
+            479,
+            875,
+            837
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            174,
+            28,
+            263,
+            65
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "#13",
+        "bbox": [
+            794,
+            26,
+            835,
+            40
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "March 2026",
+        "bbox": [
+            722,
+            42,
+            835,
+            58
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            490,
+            950,
+            510,
+            961
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Estimation approach",
+        "text_level": 1,
+        "bbox": [
+            164,
+            193,
+            600,
+            229
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "To empirically explore the relationship between economic complexity and commodity dependence, we first need a theoretical model to guide the analysis and interpretation of results. The objective is to integrate these concepts and show how changes in one could impact the other.",
+        "bbox": [
+            157,
+            279,
+            836,
+            344
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Commodity dependence is a straightforward concept, measured as the ratio of commodity exports to total exports. Conversely, economic complexity is more abstract, reflecting an economy's set of productive capacities. Freire (2017) reviews the literature on economic complexity and finds that few formal models have been proposed to explain the empirical regularities related to diversification and ubiquity, and most are not particularly grounded in economic theory. This limits their use to link concepts of complexity with economic variables such as output, exports, and prices. To fill this gap, Freire (2017) proposes a model based on Pasinetti's (1993) structural change and economic dynamics, incorporating assumptions common in the economic complexity literature and linking economic complexity with commodity dependence.",
+        "bbox": [
+            159,
+            379,
+            836,
+            552
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/2bfec8610130ea358853cc48eb9006f129f8529b91e5bc01f1183d31dec1a064.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            557,
+            1000,
+            1000
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            174,
+            28,
+            260,
+            65
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "#13\nMarch 2026",
+        "bbox": [
+            722,
+            28,
+            836,
+            61
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "3.1 Theoretical model",
+        "text_level": 2,
+        "bbox": [
+            159,
+            134,
+            428,
+            152
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "This paper uses a simple labour-only multi-sector macro-economic model to guide the analysis. In this model, an economy at time t comprises m production sectors, each producing one type of product through labour alone, and a household sector that supplies labour and consumes the output. Each sector has a labour coefficient $l_{i}$ , indicating the labour required per unit of product, and a per-capita consumption coefficient $c_{i}$ , indicating household per-capita demand. Freire (2017) links this model with economic complexity by assuming that $l_{i}$ depends on the productive knowledge specific to producing i. This assumption follows Hidalgo and Hausmann (2009), who propose that: 1) products require specific capabilities to be produced; 2) countries have some, but not all, of these capabilities; and 3) only products with available capability sets in a country are produced in that country. Formally, $l_{i}$ is a function of the set of labour-embodied technologies ( $\\tau_{i}$ ):",
+        "bbox": [
+            159,
+            171,
+            833,
+            370
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\boldsymbol {l} _ {i} = \\boldsymbol {f} (\\boldsymbol {\\tau} _ {i})\n$$",
+        "text_format": "latex",
+        "bbox": [
+            411,
+            374,
+            487,
+            391
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "$$\ni = 1, 2, \\dots , m,\\tag{1}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            621,
+            375,
+            704,
+            390
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "From Pasinetti's (1993) model, Freire's (2017) model takes the following relations: Quantities produced in each sector $i \\left( Q_i \\right)$ are given by the per-capita consumption coefficient $c_i$ multiplied by the population size ( $N$ ):",
+        "bbox": [
+            159,
+            399,
+            831,
+            454
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "$$\nQ _ {i} = c _ {i} N\n$$",
+        "text_format": "latex",
+        "bbox": [
+            411,
+            458,
+            484,
+            475
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "$$\ni = 1, 2, \\dots , m,\\tag{2}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            621,
+            458,
+            705,
+            474
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Product prices are given by the labour coefficient $l_{i}$ multiplied by the wage rate in the country, which is taken as the numeraire and is considered as 1 for simplification. Thus, the price of a product i is given by:",
+        "bbox": [
+            159,
+            483,
+            833,
+            531
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\boldsymbol {p} _ {i} = \\boldsymbol {l} _ {i}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            349,
+            536,
+            406,
+            552
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "$$\ni = 1, 2, \\dots , m,\\tag{3}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            621,
+            536,
+            704,
+            551
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Based on (2) and (3), the total output of a sector $i(Y_{i})$ is the product of price and quantity:",
+        "bbox": [
+            161,
+            560,
+            831,
+            593
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "$$\nY _ {i} = p _ {i} Q _ {i} = l _ {i} c _ {i} N\n$$",
+        "text_format": "latex",
+        "bbox": [
+            349,
+            598,
+            490,
+            614
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "$$\ni = 1, 2, \\dots , m,\\tag{4}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            621,
+            598,
+            704,
+            613
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Summing outputs across m sectors gives the total economy output:",
+        "bbox": [
+            161,
+            623,
+            726,
+            639
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "$$\nY = \\sum_ {i = 1} ^ {m} Y _ {i} = N \\sum_ {i = 1} ^ {m} l _ {i} c _ {i}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            349,
+            644,
+            544,
+            661
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "$$\ni = 1, 2, \\dots , m,\\tag{5}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            621,
+            645,
+            702,
+            659
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Based on (1) and (5), Freire (2017) links total output to the set of technologies:",
+        "bbox": [
+            161,
+            669,
+            805,
+            686
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\boldsymbol {Y} = N \\sum_ {i = 1} ^ {m} \\boldsymbol {f} (\\boldsymbol {\\tau} _ {i}) \\boldsymbol {c} _ {i}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            406,
+            690,
+            549,
+            708
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "$$\ni = 1, 2, \\dots , m,\\tag{6}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            615,
+            692,
+            697,
+            707
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "This implies that a country's output is given by (a) the population size and (b) the sum of the result of the function of technologies required to produce each product, weighted by consumption coefficients. Based on the assumptions related to a specific set of technologies required for the production of a given product, Freire (2017) assumes that the measure of economic complexity can be used as a proxy of (b).",
+        "bbox": [
+            159,
+            715,
+            833,
+            808
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            174,
+            29,
+            262,
+            64
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "#13",
+        "bbox": [
+            794,
+            26,
+            835,
+            40
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "March 2026",
+        "bbox": [
+            722,
+            43,
+            833,
+            58
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            490,
+            950,
+            510,
+            961
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "However, since Pasinetti's (1993) framework assumes a closed economy, this paper introduces a term representing the exchange rate $(\\lambda_t)$ as a proxy for change in foreign consumption of domestically produced goods. When the exchange rate increases, the local currency depreciates relative to foreign currency, making the country's exports more affordable abroad, thus, increasing foreign demand. Conversely, a lower exchange rate reduces foreign consumption. We include this as a multiplicative term with population to account for the growing size of the consuming population when including foreign consumption. Thus, equation (6) for a country $k$ becomes:",
+        "bbox": [
+            159,
+            135,
+            835,
+            273
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "equation",
+        "text": "$$\nY _ {k t} \\approx N _ {k t} \\lambda_ {k t} C o m p l e x i t y _ {k t}\\tag{7}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            349,
+            279,
+            561,
+            294
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Having established an equation linking economic complexity to output, we now turn to derive a relation linking commodity dependence to output.",
+        "bbox": [
+            159,
+            303,
+            833,
+            336
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "We start by considering the ratio of commodity exports of country k in time t, denoted $X_{kt}^{\\alpha}$ , to the total output ( $Y_{kt}$ ). This ratio can then be expressed as a function of complexity as in equation (7):",
+        "bbox": [
+            159,
+            341,
+            833,
+            388
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\frac {X _ {k t} ^ {\\alpha}}{Y _ {k t}} \\approx \\frac {X _ {k t} ^ {\\alpha}}{N _ {k t} \\lambda_ {k t} C o m p l e x i t y _ {k t}}\\tag{8}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            289,
+            393,
+            460,
+            420
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Given that the definition of commodity dependence in country k in time t ( $Dependence_{kt}$ ) is the share of total commodity exports ( $X_{kt}^{\\alpha}$ ), to total exports ( $X_{kt}$ ), we can derive the relationship between commodity dependence and economic complexity by multiplying both sides of (8) by the inverse of the export-to-total-output ratio ( $\\frac{Y_{kt}}{X_{kt}}$ ):",
+        "bbox": [
+            159,
+            428,
+            833,
+            513
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\frac {X _ {k t} ^ {\\alpha}}{Y _ {k t}} \\frac {Y _ {k t}}{X _ {k t}} \\approx \\frac {X _ {k t} ^ {\\alpha}}{N _ {k t} \\lambda_ {k t} C o m p l e x i t y _ {k t}} \\frac {Y _ {k t}}{X _ {k t}}\\tag{9}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            289,
+            520,
+            515,
+            548
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The left side of (9) is the same as the commodity dependence in country k in time $t(Dependence_{kt})$ . Thus:",
+        "bbox": [
+            159,
+            555,
+            833,
+            587
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "equation",
+        "text": "$$\nD e p e n d e n c e _ {k t} \\approx \\frac {X _ {k t} ^ {\\alpha}}{N _ {k t} \\lambda_ {k t} C o m p l e x i t y _ {k t}} \\frac {Y _ {k t}}{X _ {k t}}\\tag{10}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            221,
+            593,
+            512,
+            619
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "We assume that commodity prices are exogenously determined by the international market. The commodity prices for each country are estimated based on the shares of exports of the different commodities. Therefore, total commodity export is a function of the endogenized international prices of commodities $(P_{kt}^{\\alpha})$ multiplied by the quantity exported $(Q_{kt}^{\\alpha})$ :",
+        "bbox": [
+            159,
+            627,
+            833,
+            706
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "equation",
+        "text": "$$\nX _ {k t} ^ {\\alpha} \\approx P _ {k t} ^ {\\alpha} Q _ {k t} ^ {\\alpha}\\tag{11}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            400,
+            709,
+            507,
+            728
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            173,
+            28,
+            260,
+            64
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "March 2026",
+        "bbox": [
+            724,
+            45,
+            835,
+            61
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "#13",
+        "bbox": [
+            796,
+            28,
+            835,
+            43
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            490,
+            950,
+            510,
+            961
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "While the commodity price index captures pure price effects on dependence, $^{16}$ we use global per-capita consumption as a proxy for the quantity of commodities exported. Since consumption is a function of income, we assume per-capita consumption is a function of per-capita income. This decision is based on the nature of exports, where our interest lies in the consumption of all importers globally. Global GDP per capita serves as a proxy for quantity/demand-side dynamics. We express global per-capita GDP ( $GDPpc_{t}$ ) in constant (2015) US prices:",
+        "bbox": [
+            157,
+            137,
+            833,
+            259
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "equation",
+        "text": "$$\nX _ {k t} ^ {\\alpha} \\approx P _ {k t} ^ {\\alpha} G D P p c _ {t}\\tag{12}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            400,
+            263,
+            549,
+            281
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "And substitute into $Dependence_{kt}$ :",
+        "bbox": [
+            159,
+            290,
+            448,
+            306
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "equation",
+        "text": "$$\nD e p e n d e n c e _ {k t} \\approx \\frac {P _ {k t} ^ {\\alpha} G D P p c _ {t}}{N _ {k t} \\lambda_ {k t} C o m p l e x i t y _ {k t}} \\frac {Y _ {k t}}{X _ {k t}}\\tag{13}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            310,
+            312,
+            596,
+            338
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Taking natural logarithms on both sides of the equation, we simplify:",
+        "bbox": [
+            159,
+            347,
+            727,
+            363
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\ln (D e p e n d e n c e _ {i t}) \\approx \\ln (P _ {k t} ^ {\\alpha}) + \\ln (G D P p c _ {t}) - \\ln (\\lambda_ {k t}) - \\ln (C o m p l e x i t y _ {i t}) - \\ln (N _ {i t}) - \\ln \\left(\\frac {X _ {k t}}{Y _ {k t}}\\right)\\tag{14}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            159,
+            368,
+            761,
+            388
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/2a319783f7345a8cd42b927d82f354dc8c86c4a0eee6fe033d274e589f4152b8.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            428,
+            998,
+            799
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            174,
+            29,
+            263,
+            64
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "#13",
+        "bbox": [
+            794,
+            26,
+            835,
+            40
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "March 2026",
+        "bbox": [
+            722,
+            43,
+            835,
+            58
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{16}$ The positive relationship between commodity prices and commodity dependence is explicitly modelled as a price effect. The commodity price variable used in our regressions is a commodity price index, which is a time-varying, country-invariant index defined as a weighted average of international prices across three major commodity groups: agriculture, fuels, and minerals.",
+        "bbox": [
+            159,
+            843,
+            833,
+            896
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            490,
+            950,
+            510,
+            961
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "3.2",
+        "text_level": 2,
+        "bbox": [
+            161,
+            134,
+            200,
+            149
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Empirical specification",
+        "text_level": 2,
+        "bbox": [
+            282,
+            134,
+            526,
+            152
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The resulting equation from the modelling exercise suggests that the association between a country's commodity dependence and economic complexity can be analysed by a panel data approach with a fixed-effects model that includes time-varying global GDP per capita, as well as country and time-varying variables, including a commodity-weighted price index, population size, the exchange rate of the country to US\\$, and the export-to-GDP ratio. Using a fixed effects linear approach to estimate this relationship, the econometric model is given by Equation (15):",
+        "bbox": [
+            159,
+            168,
+            836,
+            293
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\ln {(D e p e n d e n c e _ {i t})} = \\alpha + \\beta_ {1} \\ln {(C o m p l e x i t y _ {i t})} + \\beta_ {2} ^ {\\prime} \\mathbf {Z} _ {i t} + \\mu_ {i} + \\delta_ {t} + \\varepsilon_ {i t}\\tag{15}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            191,
+            298,
+            724,
+            315
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "where subscripts i and t indicate, respectively, country and time. The share of commodity exports to total merchandise exports serves as the dependent variable, representing Dependence of country i in time t. Economic Complexity is calibrated using three different variables defined in 3.2. Given that the model is expressed in logarithmic terms, the relationship mirrors a full elasticity, whereby coefficient $\\beta_{1}$ indicates the average percentage change in commodity share within a country i at a given time t, corresponding to a one-percentage increase in economic complexity. This coefficient captures within-country dynamics, explaining how economic complexity relates to shifts in commodity export dependence within countries over time. Based on the derivation, we expect the coefficient to be negative. Vector $Z_{it}$ represents country-specific and time-varying variables, including a commodity-weighted price index, population (in log), the exchange rate (in log), and the export-to-GDP ratio (in log). $\\beta_{2}'$ is a vector of coefficients on these variables. The commodity price index is defined as a weighted average of prices across the different commodity groups. The index is calculated as a weighted sum of the prices of agricultural, mining and fuel commodity groups, where the weights are determined by the shares of agricultural exports to total exports, fuel exports to total exports and mining exports to total exports. Nominal exchange rates are used because we are observing the evolution of economic complexity within countries on a yearly basis, where the nominal exchange rate directly reflects the value of the country's currency in global markets. We expect the coefficient for commodity prices to be positive and the coefficients for population, the exchange rate, and the export-to-GDP ratio to be negative.",
+        "bbox": [
+            159,
+            322,
+            836,
+            690
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The term $\\mu_{i}$ captures the country-fixed effects to account for unobserved time-invariant heterogeneity across countries, which is removed by the fixed effects estimation, while $\\delta_{t}$ denotes time-specific factors that affect all countries simultaneously, including macroeconomic conditions and financial crises (e.g. financial crisis of 2008). This includes the logarithmic form of global GDP per capita, which is expected to have a positive coefficient. Finally, $\\varepsilon_{it}$ is the error term.",
+        "bbox": [
+            159,
+            696,
+            836,
+            804
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            174,
+            28,
+            260,
+            64
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "#13\nMarch 2026",
+        "bbox": [
+            724,
+            28,
+            836,
+            61
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            490,
+            950,
+            510,
+            961
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "We assess multicollinearity using a correlation matrix and find that all correlation coefficients were below the threshold of 0.8, indicating no signs of multicollinearity among the independent variables. $^{17}$ We also conduct a diagnostic test to check for model misspecification and confirm no issues are present. $^{18}$",
+        "bbox": [
+            159,
+            137,
+            831,
+            200
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Establishing causality is challenging due to potential simultaneity bias, where the association between complexity and commodity dependence in time t makes it difficult to disentangle the direction of the causal relationship. To address this potential endogeneity, we run equation (1) with a lagged term for complexity $(Complexity_{t-1})$ , such that it is predetermined in time t.",
+        "bbox": [
+            159,
+            205,
+            831,
+            284
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "To explore heterogeneity across levels of commodity dependence, regressions are run on various subsamples. Economies are categorised into non-commodity-dependence (below 60 per cent share of commodity exports to total merchandise exports) and further split commodity dependence (over 60 per cent) into two: commodity dependence (between 60 and 80 per cent share) and strong commodity dependence (above 80 per cent share). $^{19}$ Commodity dependence groups are assigned following UNCTAD's State of Commodity Dependence series. $^{20}$ An economy falls under a specific commodity dependence group if 60 per cent of its exports come from commodities and 30 per cent of those commodity exports are from a particular group (i.e. agricultural, mining or fuel products). $^{21}$ To support the validity of the results, robustness checks using a randomized sample exercise and two alternate measures for commodity dependence are performed.",
+        "bbox": [
+            159,
+            288,
+            833,
+            488
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "image",
+        "img_path": "images/92d9074969a35a7929ffa835ed27714645c1ff6156ecd761f990133117c66765.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            163,
+            500,
+            833,
+            717
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            174,
+            28,
+            263,
+            65
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "#13",
+        "bbox": [
+            794,
+            26,
+            835,
+            40
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "March 2026",
+        "bbox": [
+            722,
+            42,
+            833,
+            58
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{17}$ A common rule of thumb for multicollinearity (Shrestha, 2020). Correlation table included in Appendix B.",
+        "bbox": [
+            159,
+            757,
+            830,
+            784
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_footnote",
+        "text": "18 See Appendix B.",
+        "bbox": [
+            161,
+            784,
+            302,
+            797
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{19}$ This threshold has been previously established in the literature. See Nkurunziza, JD. 2021. “The Commodity Dependence Trap.” Contemporary Issues in African Trade and Trade Finance 7 (1): 80–92. In the study, subsamples are determined based on levels of commodity dependence in the initial period of the sample.",
+        "bbox": [
+            159,
+            797,
+            830,
+            851
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{20}$ See latest edition here https://unctad.org/topic/commodities/state-of-commodity-dependence",
+        "bbox": [
+            159,
+            851,
+            826,
+            866
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{21}$ We also conduct regressions for different commodity groups. Although coefficients are larger for agricultural CDDCs, the limited sample size within each group likely reduces the power of the statistical tests. As a result, we have opted not to include these group-specific results here; however, they are available upon request.",
+        "bbox": [
+            159,
+            865,
+            830,
+            917
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            490,
+            950,
+            510,
+            961
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "3.3 Data sources and variable definitions",
+        "text_level": 2,
+        "bbox": [
+            159,
+            134,
+            626,
+            152
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "The dependent variable is the share of commodity export values to total merchandise export values. The paper follows the classification of commodities defined in UNCTAD (2023a) and uses trade data from United Nations COMTRADE under the Harmonized System (HS) 2017 classification at the 6-digit level to calculate this variable.",
+        "bbox": [
+            159,
+            170,
+            836,
+            233
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "As a robustness check, the share of commodity export values to total merchandise values is also calculated using the Standard International Trade Classification (SITC), computed using UNCTAD statistics. A second robustness check uses an export concentration indicator based on a modified Finger-Kreinin measure of similarity of trade, which reflects the extent to which a country's export structure differs from the world pattern. This measure ranges from 0 to 1, where values closer to 1 indicate a greater divergence from the world pattern and imply a narrow export basket (relative to the world export structure) and, thus, greater export concentration. This typically corresponds to greater commodity dependence, as the country relies on a few exports. $^{22}$ This variable was also sourced from UNCTAD statistics.",
+        "bbox": [
+            159,
+            241,
+            838,
+            398
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "The main independent variable is the economic complexity index. Three metrics for this variable are considered. First, a modified economic complexity index is computed using the Method of Reflections (Hidalgo and Hausmann, 2009) with modifications proposed by Freire (2017). For the computation of the index, $^{23}$ disaggregated trade data from COMTRADE, using the HS 2002 classification at the 6-digit level, is used for 233 economies from 1995 to 2019. $^{24}$ Following Freire's (2017) method, the data is further disaggregated by quantity unit code and unit price range. $^{25}$ This approach statistically computes interquartile ranges of unit value distributions for each product, taken from bilateral trade data, treating products within different unit value ranges as distinct. This approach assesses countries' different capabilities when exporting the same HS 6-digit product at various price points, serving as a proxy for product quality and the required capabilities for production. This assumes product differentiation based on price to approximate real-world dynamics. The paper also considers Harvard's Growth Lab economic complexity index (referred to in the paper onwards as ECI) and the Economic Fitness measure, another indicator of the complexity of a country's productive structure. $^{26}$ These variables were drawn from Harvard Dataverse and the World Bank, respectively.",
+        "bbox": [
+            159,
+            406,
+            838,
+            671
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Additional variables include population and commodity-weighted price index as country-specific variables, along with a time-varying country-invariant variable, the global average GDP per capita (in current US\\$). Data for the price index, population, and world GDP per capita was drawn from UNCTAD. The export-to-GDP and exchange rate data are drawn from the World Bank.",
+        "bbox": [
+            159,
+            678,
+            836,
+            728
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            173,
+            28,
+            260,
+            65
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "#13\nMarch 2026",
+        "bbox": [
+            724,
+            28,
+            836,
+            61
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{22}$ See Appendix B for a correlation matrix of the robustness checks.",
+        "bbox": [
+            159,
+            746,
+            613,
+            762
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{23}$ See Appendix A.",
+        "bbox": [
+            161,
+            765,
+            297,
+            781
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_footnote",
+        "text": "24 Economic complexity relates to the productive capacities of the whole economy and not only of exporting sectors. Therefore, its estimation would require disaggregated national production data. However, due to the limited availability of this information, particularly for less industrialised developing and least developed countries, the usual approach in this strand of the literature is to use trade data as a proxy of production data.",
+        "bbox": [
+            159,
+            785,
+            836,
+            854
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{25}$ Freire (2017) reports that about 10 per cent of country data does not report quantities and it is thus excluded in the computation of unit values and the analysis.",
+        "bbox": [
+            159,
+            857,
+            836,
+            887
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{26}$ The ECI follows Hidalgo and Hausmann's (2009) methodology, while the Economic Fitness measure follows Tacchella et al.'s (2012) approach.",
+        "bbox": [
+            159,
+            890,
+            836,
+            919
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            490,
+            950,
+            510,
+            961
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            159,
+            133,
+            836,
+            167
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "3.4 Descriptive statistics",
+        "text_level": 2,
+        "bbox": [
+            159,
+            184,
+            458,
+            203
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Table 1 presents the definitions and descriptive statistics of the variables used. The data covers the period from 1995 to 2019 and includes 183 economies, $^{27}$ resulting in an unbalanced panel of 3,841 $^{28}$ observations. About 51 per cent of the sampled countries are classified as CDDCs. Of these, about 19 per cent are agricultural CDDCs, 19 per cent are fuel CDDCs, and 13 per cent are mining CDDCs.",
+        "bbox": [
+            159,
+            219,
+            838,
+            300
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "image",
+        "img_path": "images/27c9daf6dc060646d1b606d1054b261bec014cbc8f69042b0b65dcea783ec92f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            105,
+            309,
+            142,
+            337
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Table 1 Descriptive statistics",
+        "text_level": 2,
+        "bbox": [
+            161,
+            309,
+            354,
+            340
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "table",
+        "img_path": "images/66cc9165ff4e609ef73a9ba1dd1f3fd457b278d11750b93a6499e9de85bcf04b.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Authors' calculations."
+        ],
+        "table_body": "<table><tr><td>Variables</td><td>N</td><td>Mean</td><td>Median</td><td>Min</td><td>Max</td></tr><tr><td>Commodity export ratio, HS</td><td>3,841</td><td>58.72</td><td>63.22</td><td>2.22</td><td>99.92</td></tr><tr><td>Commodity export ratio, SITC</td><td>3,821</td><td>55.87</td><td>59.19</td><td>2.72</td><td>100.00</td></tr><tr><td>Export concentration index</td><td>3,841</td><td>0.66</td><td>0.71</td><td>0.23</td><td>0.94</td></tr><tr><td>Economic complexity (modified)</td><td>3,841</td><td>0.22</td><td>-0.32</td><td>-0.56</td><td>5.68</td></tr><tr><td>ECI, HS</td><td>3,251</td><td>-0.01</td><td>-0.11</td><td>-3.05</td><td>2.68</td></tr><tr><td>Economic fitness</td><td>2,586</td><td>1.105</td><td>0.47</td><td>0</td><td>10.69</td></tr><tr><td>Population (in thousands)</td><td>3,841</td><td>42,545.44</td><td>9,455.73</td><td>17.95</td><td>1,424,930.00</td></tr><tr><td>Official exchange rate</td><td>3,841</td><td>633.77</td><td>9.76</td><td>1.00</td><td>42,001.00</td></tr><tr><td>Commodity price index</td><td>3,841</td><td>99.93</td><td>101.73</td><td>30.78</td><td>197.64</td></tr><tr><td>World GDP per capita (in thousands)</td><td>3,841</td><td>9.09</td><td>9.18</td><td>7.17</td><td>10.69</td></tr><tr><td>Export to GDP ratio</td><td>3,841</td><td>0.27</td><td>0.23</td><td>0.02</td><td>3.61</td></tr><tr><td>Number of economies</td><td>183</td><td>183</td><td>183</td><td>183</td><td>183</td></tr></table>",
+        "bbox": [
+            164,
+            343,
+            884,
+            696
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Note: This scatter plot illustrates the average values of economic complexity and commodity dependence for each economy over the 25-year period between 1995 and 2020. This plot excludes commodity-dependent developed countries Australia, Iceland, New Zealand and Norway to avoid potential skewing of the relationship due to their development status.",
+        "bbox": [
+            159,
+            739,
+            828,
+            790
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            174,
+            28,
+            263,
+            65
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "#13",
+        "bbox": [
+            794,
+            26,
+            835,
+            40
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "March 2026",
+        "bbox": [
+            722,
+            42,
+            835,
+            58
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{27}$ See Appendix C for a list of the sampled economies.",
+        "bbox": [
+            159,
+            870,
+            529,
+            885
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{28}$ This is based on the final regression with the modified economic complexity measure as the main independent variable.",
+        "bbox": [
+            159,
+            890,
+            836,
+            919
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            490,
+            950,
+            510,
+            961
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "image",
+        "img_path": "images/ba7ca06cd087940f3e8a50f44e762b0b26c331ed927af82c6236793a547804ce.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            105,
+            274,
+            142,
+            303
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "The preliminary analysis shows a strong negative correlation between the share of commodity exports and economic complexity, using the modified index (Figure 2). This correlation is particularly pronounced among CDDCs, which show lower economic complexity levels than non-CDDCs. In the sample, within the CDDC group, South Africa stands out with the highest complexity index, registering a value of 1.22. This is well above the global average economic complexity of 0.11 between 1995-2020. In contrast, many developed non-CDDCs demonstrate substantially higher levels of economic complexity, with several surpassing a value of 2.",
+        "bbox": [
+            157,
+            133,
+            838,
+            261
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Figure 2 Average economic complexity and commodity dependence between 1995-2020",
+        "text_level": 2,
+        "bbox": [
+            105,
+            274,
+            690,
+            321
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "chart",
+        "img_path": "images/602ac34a043f9fac012d4ea9265932dded2a594b86d9fdb393ddf32e2a46b7d2.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Authors' calculations."
+        ],
+        "bbox": [
+            105,
+            336,
+            875,
+            783
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Note: The graphs illustrate the average values of economic complexity and commodity dependence by commodity dependence ranges over the 25-year period between 1995 and 2020. This plot excludes commodity-dependent developed countries Australia, Iceland, New Zealand and Norway to avoid potential skewing of the relationship due to their development status.",
+        "bbox": [
+            161,
+            814,
+            833,
+            865
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            173,
+            28,
+            260,
+            65
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "March 2026",
+        "bbox": [
+            724,
+            45,
+            835,
+            61
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "#13",
+        "bbox": [
+            796,
+            28,
+            835,
+            43
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            490,
+            950,
+            510,
+            961
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "When disaggregating countries by levels of commodity dependence, a more distinct pattern emerges (Figure 3). While non-commodity-dependent countries maintain an average index of 0.58, this decreases to -0.26 for countries with commodity export ratios between 60 and 80 per cent. The index drops further to -0.40 for commodity-dependent countries with over 80 per cent of commodity exports. Moreover, the scatter plot reveals that countries with high levels of commodity dependence exhibit the strongest correlation between economic complexity and commodity reliance, as shown by the relative steepness of their trendlines.",
+        "bbox": [
+            159,
+            134,
+            838,
+            261
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "image",
+        "img_path": "images/df5794c16d2f948f440f30dbd0024186be17e0f011207e3f33efe2fa7f3df087.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            105,
+            266,
+            142,
+            294
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Figure 3",
+        "text_level": 2,
+        "bbox": [
+            161,
+            267,
+            240,
+            282
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Average economic complexity and commodity dependence by levels of commodity dependence, 1995-2020",
+        "bbox": [
+            159,
+            281,
+            796,
+            312
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/49972522be5b7c32ce60d0fb94c0b3884ec3e6956375c8711471075b5c7fd5fd.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            161,
+            323,
+            833,
+            602
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4561cbf58b8cae243c5bf765a244af40a90dbcab8bb754f0fb9faee17876edd9.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Authors' calculations.",
+            "Note: The graphs illustrate the average values of economic complexity and commodity dependence by commodity dependence ranges over the 25-year period between 1995 and 2020. This plot excludes commodity-dependent developed countries Australia, Iceland, New Zealand and Norway to avoid potential skewing of the relationship due to their development status."
+        ],
+        "bbox": [
+            159,
+            615,
+            835,
+            848
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            174,
+            28,
+            263,
+            65
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "#13",
+        "bbox": [
+            794,
+            26,
+            835,
+            40
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "March 2026",
+        "bbox": [
+            722,
+            42,
+            835,
+            58
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "20",
+        "bbox": [
+            490,
+            950,
+            510,
+            961
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Figure 4 offers insights into the average complexity and its association with commodity dependence for CDDCs, categorised by the sectors on which they rely on. Albeit small, there are some differences in the average complexity across groups. All groups exhibit a negative complexity index, below the world average of 0.11. Among CDDCs, agricultural-dependent countries exhibit the largest level of complexity (-0.33), possibly due to the greater variation in economic complexity and levels of development within this group, e.g. exemplified by countries such as the Central African Republic, Fiji and Argentina. Countries relying on the export of fuels have only a slightly lower average value compared to agriculture, at -0.34. In contrast, mining countries have the lowest level of complexity on average, at -0.41.",
+        "bbox": [
+            159,
+            133,
+            838,
+            291
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "image",
+        "img_path": "images/bad03fcd96cc48ee617a5ce592179ed6310ac0cfae2ab31e174d12e520f15bd0.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            105,
+            302,
+            142,
+            331
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Figure 4",
+        "text_level": 2,
+        "bbox": [
+            161,
+            303,
+            240,
+            319
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "chart",
+        "img_path": "images/12c08e86f3eb3fd4dee2c7fa033cc62fb7ca115227d55b0ca5be6ccaeca601d5.jpg",
+        "content": "",
+        "chart_caption": [
+            "Average economic complexity and commodity dependence by commodity group, 1995-2020"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            163,
+            375,
+            835,
+            642
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "image",
+        "img_path": "images/d832d578db4c1822948c59d17058cb0271ee11e748420571ba76cc94dc0b69dc.jpg",
+        "image_caption": [
+            "Economic complexity index"
+        ],
+        "image_footnote": [
+            "Source: Authors' calculations.",
+            "Note: The graphs illustrate the average values of economic complexity and commodity dependence by commodity dependence group over the 25-year period between 1995 and 2020. This plot excludes commodity-dependent developed countries Australia, Iceland, New Zealand and Norway to avoid potential skewing of the relationship due to their development status."
+        ],
+        "content": "",
+        "bbox": [
+            159,
+            676,
+            835,
+            848
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            173,
+            28,
+            260,
+            65
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "March 2026",
+        "bbox": [
+            724,
+            45,
+            835,
+            61
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "#13",
+        "bbox": [
+            796,
+            28,
+            835,
+            43
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "21",
+        "bbox": [
+            490,
+            950,
+            510,
+            961
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "image",
+        "img_path": "images/3f7b9b466463f9e5a8c7ecd606ac0f05c295a6f48426b2d5b72ff5622fc5cfdd.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            163,
+            124,
+            243,
+            180
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "4. Regression results",
+        "text_level": 1,
+        "bbox": [
+            161,
+            124,
+            556,
+            218
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "4.1 Results",
+        "text_level": 2,
+        "bbox": [
+            159,
+            278,
+            317,
+            296
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Table 2 shows the results of the fixed effects model for the full sample, examining the relationship between commodity dependence (ratio of commodity exports to total merchandise exports) and economic complexity, measured by three different metrics. Column 1 reports the model's results when considering the modified economic complexity; column 2 corresponds to the results with the ECI, and column 3 uses economic fitness as the main independent variable.",
+        "bbox": [
+            157,
+            313,
+            836,
+            424
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Column 1 presents the best-performing model, with all variables except for the export-to-GDP ratio showing statistical significance. This model confirms a statistically significant negative association between commodity dependence and economic complexity, consistent at the 1 per cent level. As a country's economic complexity increases, indicating a more diverse and technologically advanced economy, its share of commodity exports declines. The coefficient of -1.714 indicates that a 1 per cent increase in complexity in the previous year corresponds to a 1.714 per cent decrease in the share of commodity exports in time t. While the ECI in column 2 does not yield a statistically significant coefficient, the economic fitness index in column 3 shows significance at the 5 per cent level, though with a smaller magnitude than the modified economic complexity measure. The modified economic complexity index and economic fitness are highly correlated, $^{29}$ while the ECI is less aligned with the modified complexity measure, possibly explaining the variation in statistical significance. Overall, this suggests that higher economic complexity correlates with a lower share of commodity exports, as corroborated by subsample regressions and robustness checks.",
+        "bbox": [
+            159,
+            460,
+            838,
+            709
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "This association indicates that economies with more diversified and sophisticated exports tend to rely less on commodities. This can be attributed to their greater productive and technological capacity. As technological capabilities grow, economies transition from exporting raw materials to more advanced goods. These findings align with Martines de Camargo and Gala (2017) and Canh et al. (2020), who report negative associations between export concentration and economic complexity and economic complexity and natural resource rents, respectively. In addition, the results expand on Freire (2017) work on economic complexity and development, highlighting the link between technological advancement and reduced reliance on commodity exports, often associated with lower socio-economic and development indicators.",
+        "bbox": [
+            159,
+            717,
+            838,
+            875
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            174,
+            29,
+            263,
+            65
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "#13\nMarch 2026",
+        "bbox": [
+            722,
+            26,
+            836,
+            59
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{29}$ See Appendix B.",
+        "bbox": [
+            161,
+            903,
+            295,
+            919
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_number",
+        "text": "22",
+        "bbox": [
+            490,
+            950,
+            510,
+            961
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "The results suggest an interesting relationship between global GDP per capita and dependence on commodity exports. The coefficient is positive across all three models but is only statistically significant in the first model (at 1 per cent), suggesting that in this specification, higher global GDP per capita is associated with a higher share of commodity exports. Specifically, there is a 0.312 per cent increase in the share of commodity exports for a one per cent increase in the global GDP per capita of the previous year. This points to a perverse relationship between commodity dependence and global economic progress. $^{30}$ As world GDP per capita increases, consumption levels and the demand for commodities also increase, which is beneficial for CDDCs' exporters in the short term. However, this dynamic may push these countries further into commodity dependence if not accompanied by policies and strategies to increase diversification and economic complexity. It is important to note that the increase in dependence is outpaced by the increase in global income, indicating that while global economic activity drives higher demand for commodities, the proportionate increase in commodity dependence is smaller.",
+        "bbox": [
+            159,
+            134,
+            838,
+            368
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Concerning the effect of population, for every 1 per cent increase, there is a 0.162 and a 0.212 per cent decrease in the share of commodity exports for specifications 1 and 3, respectively. The direction of the effect aligns with our priors, as defined in the theoretical model. Larger populations tend to have a smaller share of their exports coming from raw materials. This result aligns with findings reported in UNCTAD (2019, 2021b), which shows that, generally, smaller countries, in terms of population, are more likely to be commodity-dependent. The studies attribute this to smaller countries often having fewer resources and industries to diversify their economies, leading to a heavy reliance on exporting a few primary commodities (UNCTAD, 2019, 2021b). In addition, larger populations may drive greater domestic demand for various goods and services, which could encourage diversification in production and exports, reducing reliance on commodity exports.",
+        "bbox": [
+            159,
+            375,
+            838,
+            564
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "In line with the theoretical framework, commodity prices (measured by a composite index) are positively associated with commodity dependence. This result is significant across all models at the 1 per cent significance level, with coefficients ranging from 0.159 to 0.174. This suggests that higher commodity prices prompt economies to rely more on commodity exports, as the increased profitability of their revenues incentivises production and exports. Similarly, Nkurunziza et al. (2017) found a positive correlation between commodity prices and commodity dependence, noting that commodity price booms can stimulate economic growth in CDDCs. However, the growth generated by sudden rises in commodity prices may not be sustainable in the long term due to commodity price volatility and short-termism in planning. This can hinder smoothing the spending of commodity windfalls over booms and bust cycles, inhibiting long-term development planning and sustainable development for CDDCs.",
+        "bbox": [
+            159,
+            571,
+            838,
+            774
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            173,
+            28,
+            260,
+            65
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "header",
+        "text": "March 2026",
+        "bbox": [
+            724,
+            45,
+            835,
+            61
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "header",
+        "text": "#13",
+        "bbox": [
+            796,
+            28,
+            835,
+            43
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_footnote",
+        "text": "30 The period analyzed coincides with a phase of rapid economic growth in China, during which it was a major importer of commodities. To account for this, we have tested the model with a variable measuring China's GDP per capita instead of world GDP per capita. While this variable is statistically significant, its effect size is relatively small, with a coefficient of 0.05. Notably, this impact is comparable to that of GDP per capita in another large economy, such as India, which also produced a positive and statistically significant coefficient of around 0.08. Therefore, the positive relationship between global income and dependence on commodity exports cannot be attributed to the economic growth experienced by China alone.",
+        "bbox": [
+            159,
+            810,
+            836,
+            919
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_number",
+        "text": "23",
+        "bbox": [
+            490,
+            950,
+            510,
+            961
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "image",
+        "img_path": "images/4ded2125d7cd860a38bae689fe101e676f30258fd7616418c09fd0c0d921d5d6.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            105,
+            133,
+            142,
+            162
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "table",
+        "img_path": "images/4ef0751c5d10d0204a96e82fc0548ce22109787f5afe30aa9628f74bcc7f3c93.jpg",
+        "table_caption": [
+            "Fixed effects coefficients, commodity dependence (HS codes), full sample"
+        ],
+        "table_footnote": [
+            "Note: Robust standard errors in parentheses. \\*\\*\\* p<0.01, \\*\\* p<0.05, \\* p<0.1."
+        ],
+        "table_body": "<table><tr><td></td><td>Economic complexity (modified) (1)</td><td>ECI (2)</td><td>Economic fitness (3)</td></tr><tr><td rowspan=\"2\">L.Economic complexity (in log)</td><td>-1.714***</td><td>-0.067</td><td>-0.310**</td></tr><tr><td>(0.65)</td><td>(0.09)</td><td>(0.13)</td></tr><tr><td rowspan=\"2\">L.World GDP per capita (in log)</td><td>0.312***</td><td>0.178</td><td>0.202</td></tr><tr><td>(0.11)</td><td>(0.12)</td><td>(0.12)</td></tr><tr><td rowspan=\"2\">Population (in log)</td><td>-0.162**</td><td>-0.116</td><td>-0.212**</td></tr><tr><td>(0.08)</td><td>(0.08)</td><td>(0.08)</td></tr><tr><td rowspan=\"2\">Commodity price index (in log)</td><td>0.160***</td><td>0.159***</td><td>0.174***</td></tr><tr><td>(0.02)</td><td>(0.02)</td><td>(0.03)</td></tr><tr><td rowspan=\"2\">Official exchange rate (in log)</td><td>-0.027**</td><td>-0.021*</td><td>-0.021**</td></tr><tr><td>(0.01)</td><td>(0.01)</td><td>(0.01)</td></tr><tr><td rowspan=\"2\">Export to GDP ratio (in log)</td><td>-0.020</td><td>-0.036</td><td>-0.012</td></tr><tr><td>(0.03)</td><td>(0.04)</td><td>(0.04)</td></tr><tr><td rowspan=\"2\">Constant</td><td>7.076***</td><td>3.923***</td><td>4.845***</td></tr><tr><td>(1.37)</td><td>(0.55)</td><td>(0.60)</td></tr><tr><td>Observations</td><td>3,841</td><td>3,251</td><td>2,724</td></tr><tr><td>R-squared</td><td>0.123</td><td>0.145</td><td>0.172</td></tr><tr><td>Number of economies</td><td>183</td><td>144</td><td>147</td></tr></table>",
+        "bbox": [
+            161,
+            180,
+            836,
+            613
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Lastly, the results reveal a small but statistically significant negative association between the exchange rate and commodity dependence. This is consistent across all specifications, with the coefficient oscillating at -0.023. A higher exchange rate against foreign currency (depreciation of the local currency) renders domestically produced goods cheaper for foreign buyers. This theoretically boosts foreign demand for exports across all sectors. However, non-commodity goods, often more sensitive to price fluctuations due to greater substitutability and differentiation, appear to experience a stronger demand increase than commodities, which are typically less price-elastic.",
+        "bbox": [
+            159,
+            697,
+            838,
+            840
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "The subsample analysis highlights a consistently negative association between economic complexity and commodity dependence across different ranges of commodity export ratios, with significant results in 7 out of 9 specifications (Table 3). The magnitude of the coefficients varies, reflecting the different impacts of complexity on countries at varying stages of commodity dependence. For countries with a commodity export ratio below 60 per cent (not considered commodity-dependent), the coefficients for economic complexity are significant for the modified index (-1.722) and economic fitness (-0.315), while the ECI specification shows no statistical significance. This suggests that in relatively diversified economies, further gains in complexity can lead to reductions in the share of commodity exports, albeit with a modest impact.",
+        "bbox": [
+            159,
+            847,
+            836,
+            913
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            174,
+            29,
+            263,
+            65
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "header",
+        "text": "March 2026",
+        "bbox": [
+            722,
+            42,
+            835,
+            58
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "page_number",
+        "text": "#13",
+        "bbox": [
+            794,
+            24,
+            835,
+            40
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "page_number",
+        "text": "24",
+        "bbox": [
+            490,
+            950,
+            510,
+            961
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            157,
+            134,
+            838,
+            244
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "image",
+        "img_path": "images/6e260d331320243a1dfae60d7bd442c2f986bdf27ad57cf1d33c3fa1b9b42a1c.jpg",
+        "image_caption": [
+            "Fixed effects coefficients (subsamples, by commodity dependence level)"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            25,
+            267,
+            62,
+            297
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "table",
+        "img_path": "images/0c1d95f3ddb2fb5bdf534d3932684e9337862bface842ba7c93798151ea005c7.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Note: Robust standard errors in parentheses. \\*\\*\\* p<0.01, \\*\\* p<0.05, \\* p<0.1. Countries Norway and New Zealand are excluded from the subsample of countries with a commodity export ratio between 60 and 80 per cent such that only developing countries remain. Australia and Iceland are also excluded from the subsample of countries with a commodity export ratio above 80 per cent to only consider developing countries."
+        ],
+        "table_body": "<table><tr><td rowspan=\"3\">Variables</td><td colspan=\"3\">Economic complexity (Modified)</td><td colspan=\"3\">ECI</td><td colspan=\"3\">Economic fitness</td></tr><tr><td>Below 60%</td><td>Between 60% and 80%</td><td>Over 80%</td><td>Below 60%</td><td>Between 60% and 80%</td><td>Over 80%</td><td>Below 60%</td><td>Between 60% and 80%</td><td>Over 80%</td></tr><tr><td>(1)</td><td>(2)</td><td>(3)</td><td>(4)</td><td>(5)</td><td>(6)</td><td>(7)</td><td>(8)</td><td>(9)</td></tr><tr><td rowspan=\"2\">L.Economic complexity (in log)</td><td>-1.722**</td><td>-6.552**</td><td>-1.448*</td><td>-0.108</td><td>-0.517</td><td>-0.058**</td><td>-0.315*</td><td>-0.560**</td><td>-0.483***</td></tr><tr><td>(0.66)</td><td>(2.75)</td><td>(0.73)</td><td>(0.30)</td><td>(0.59)</td><td>(0.02)</td><td>(0.17)</td><td>(0.24)</td><td>(0.12)</td></tr><tr><td rowspan=\"2\">L.World GDP per capita (in log)</td><td>0.113</td><td>0.418</td><td>0.031</td><td>-0.039</td><td>-0.608</td><td>0.176</td><td>-0.110</td><td>-0.654</td><td>0.093</td></tr><tr><td>(0.16)</td><td>(0.25)</td><td>(0.13)</td><td>(0.15)</td><td>(0.64)</td><td>(0.11)</td><td>(0.17)</td><td>(0.42)</td><td>(0.07)</td></tr><tr><td rowspan=\"2\">Population (in log)</td><td>0.239</td><td>-0.043</td><td>0.001</td><td>0.329*</td><td>0.465</td><td>-0.100*</td><td>0.284</td><td>0.139</td><td>-0.019</td></tr><tr><td>(0.19)</td><td>(0.24)</td><td>(0.08)</td><td>(0.19)</td><td>(0.28)</td><td>(0.06)</td><td>(0.25)</td><td>(0.16)</td><td>(0.06)</td></tr><tr><td rowspan=\"2\">Commodity price index (in log)</td><td>0.326***</td><td>0.081</td><td>0.038**</td><td>0.324***</td><td>0.106</td><td>0.022</td><td>0.362***</td><td>0.149***</td><td>0.029*</td></tr><tr><td>(0.04)</td><td>(0.07)</td><td>(0.02)</td><td>(0.04)</td><td>(0.08)</td><td>(0.02)</td><td>(0.05)</td><td>(0.05)</td><td>(0.02)</td></tr><tr><td rowspan=\"2\">Official exchange rate (in log)</td><td>-0.009</td><td>-0.036</td><td>-0.012*</td><td>-0.006</td><td>0.009</td><td>-0.012</td><td>-0.009</td><td>-0.016</td><td>-0.004</td></tr><tr><td>(0.02)</td><td>(0.07)</td><td>(0.01)</td><td>(0.02)</td><td>(0.08)</td><td>(0.01)</td><td>(0.02)</td><td>(0.09)</td><td>(0.00)</td></tr><tr><td rowspan=\"2\">Export to GDP ratio (in log)</td><td>-0.028</td><td>-0.039</td><td>0.014</td><td>-0.089</td><td>-0.080</td><td>0.043***</td><td>-0.028</td><td>-0.011</td><td>0.021</td></tr><tr><td>(0.06)</td><td>(0.09)</td><td>(0.03)</td><td>(0.07)</td><td>(0.15)</td><td>(0.01)</td><td>(0.08)</td><td>(0.15)</td><td>(0.02)</td></tr><tr><td rowspan=\"2\">Constant</td><td>2.588</td><td>14.748**</td><td>6.796***</td><td>-1.260</td><td>0.893</td><td>5.143***</td><td>-0.627</td><td>3.637***</td><td>4.434***</td></tr><tr><td>(2.05)</td><td>(5.61)</td><td>(1.09)</td><td>(1.72)</td><td>(2.32)</td><td>(0.35)</td><td>(2.19)</td><td>(1.16)</td><td>(0.41)</td></tr><tr><td>Observations</td><td>1,741</td><td>461</td><td>1,374</td><td>1,587</td><td>397</td><td>1,076</td><td>1,240</td><td>311</td><td>1,049</td></tr><tr><td>R-squared</td><td>0.283</td><td>0.134</td><td>0.033</td><td>0.355</td><td>0.055</td><td>0.116</td><td>0.363</td><td>0.079</td><td>0.106</td></tr><tr><td>Number of economies</td><td>79</td><td>21</td><td>66</td><td>67</td><td>17</td><td>49</td><td>64</td><td>16</td><td>58</td></tr></table>",
+        "bbox": [
+            78,
+            312,
+            954,
+            812
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            173,
+            28,
+            260,
+            65
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "page_number",
+        "text": "#13",
+        "bbox": [
+            796,
+            28,
+            835,
+            43
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "header",
+        "text": "March 2026",
+        "bbox": [
+            724,
+            43,
+            835,
+            61
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "page_number",
+        "text": "25",
+        "bbox": [
+            490,
+            950,
+            510,
+            961
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "In contrast, for countries with a commodity export ratio between 60 and 80 per cent, the coefficients for economic complexity are much stronger under the modified index and the economic fitness specifications. The modified economic complexity index shows a significant coefficient of -6.552, indicating that increases in complexity have the greatest potential to reduce commodity dependence in this group. These countries are likely at a transitional stage, which may offer more potential for diversification, making gains in economic complexity more impactful.",
+        "bbox": [
+            159,
+            134,
+            836,
+            244
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "In countries with commodity export ratios above 80 per cent, economic complexity remains consistently significant across all models. However, the effect appears to weaken compared to countries in the 60-80 per cent range, possibly due to entrenched structural dependencies and fewer alternatives for diversification.",
+        "bbox": [
+            159,
+            252,
+            836,
+            317
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Other variables show mixed effects across the subsamples. The commodity price index remains positively associated with commodity dependence across most specifications, particularly in the below 60 per cent category. Meanwhile, the exchange rate does not show a consistent pattern, though it is marginally significant under one specification.",
+        "bbox": [
+            159,
+            323,
+            836,
+            405
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "4.2 Robustness checks",
+        "text_level": 2,
+        "bbox": [
+            159,
+            423,
+            445,
+            439
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Robustness checks are important for assessing the reliability of the findings. To evaluate the statistical associations observed in the full sample, we conduct a random subsampling exercise. We sort the data by economy identifiers and randomly select 50 per cent of the economies, retaining all years for each selected economy. This approach preserves temporal and cross-sectional diversity while introducing variation through random selection, allowing us to determine whether the results hold under a different subsample.",
+        "bbox": [
+            159,
+            458,
+            836,
+            568
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Table 4 replicates the main regression results in Table 2. The findings from the random sample reaffirm a statistically significant negative association between economic complexity and commodity dependence for the modified economic complexity and economic fitness indices. This supports the robustness of the observed relationship. World GDP per capita is positive and consistently significant across all specifications. Indeed, all other covariates (excluding the export to GDP ratio) remain statistically significant.",
+        "bbox": [
+            159,
+            576,
+            836,
+            687
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "We also explore the relationship between economic complexity and commodity dependence using alternate measures of commodity dependence. We compute the share of commodity export values to total merchandise values using the SITC codes and consider an export concentration index as a dependent variable for the full sample (Table 5). The negative association between the commodity export ratio and economic complexity remains statistically significant across these specifications.",
+        "bbox": [
+            159,
+            695,
+            838,
+            790
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            174,
+            28,
+            262,
+            65
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "page_number",
+        "text": "#13",
+        "bbox": [
+            794,
+            26,
+            835,
+            40
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "header",
+        "text": "March 2026",
+        "bbox": [
+            722,
+            43,
+            833,
+            58
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "page_number",
+        "text": "26",
+        "bbox": [
+            490,
+            950,
+            510,
+            961
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "table",
+        "img_path": "images/ad9ff87051068c36704def307dff8d927e0d8c12e85ee2ba7fb7721f9f199bbc.jpg",
+        "table_caption": [
+            "Table 4\nRobustness check, randomized sample"
+        ],
+        "table_footnote": [
+            "Note: Robust standard errors in parentheses. \\*\\*\\* p<0.01, \\*\\* p<0.05, \\* p<0.1."
+        ],
+        "table_body": "<table><tr><td></td><td>Economic complexity (modified) (1)</td><td>ECI (2)</td><td>Economic fitness (3)</td></tr><tr><td rowspan=\"2\">L.Economic complexity (in log)</td><td>-2.566**</td><td>-0.167</td><td>-0.371**</td></tr><tr><td>(1.192)</td><td>(0.148)</td><td>(0.176)</td></tr><tr><td rowspan=\"2\">L.World GDP per capita (in log)</td><td>0.588***</td><td>0.313*</td><td>0.373*</td></tr><tr><td>(0.167)</td><td>(0.187)</td><td>(0.213)</td></tr><tr><td rowspan=\"2\">Population (in log)</td><td>-0.372***</td><td>-0.268***</td><td>-0.312**</td></tr><tr><td>(0.118)</td><td>(0.0886)</td><td>(0.135)</td></tr><tr><td rowspan=\"2\">Commodity price index (in log)</td><td>0.158***</td><td>0.154***</td><td>0.174***</td></tr><tr><td>(0.0365)</td><td>(0.0355)</td><td>(0.0444)</td></tr><tr><td rowspan=\"2\">Official exchange rate (in log)</td><td>-0.0351*</td><td>-0.0277*</td><td>-0.0230</td></tr><tr><td>(0.0191)</td><td>(0.0154)</td><td>(0.0145)</td></tr><tr><td rowspan=\"2\">Export to GDP ratio (in log)</td><td>-0.00467</td><td>-0.0529</td><td>0.0113</td></tr><tr><td>(0.0402)</td><td>(0.0514)</td><td>(0.0490)</td></tr><tr><td rowspan=\"2\">Constant</td><td>9.989***</td><td>5.237***</td><td>5.485***</td></tr><tr><td>(2.519)</td><td>(0.586)</td><td>(0.892)</td></tr><tr><td>Observations</td><td>1,905</td><td>1,605</td><td>1,366</td></tr><tr><td>R-squared</td><td>0.149</td><td>0.164</td><td>0.199</td></tr><tr><td>Number of economies</td><td>91</td><td>70</td><td>73</td></tr></table>",
+        "bbox": [
+            163,
+            179,
+            836,
+            613
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            174,
+            29,
+            260,
+            65
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "header",
+        "text": "March 2026",
+        "bbox": [
+            724,
+            45,
+            835,
+            61
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "header",
+        "text": "#13",
+        "bbox": [
+            796,
+            28,
+            835,
+            43
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "page_number",
+        "text": "27",
+        "bbox": [
+            490,
+            948,
+            510,
+            961
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "image",
+        "img_path": "images/1dd2b205ef482e46080cf3d410ba34d26f645de1631c8dc7cfb19e160bf7307f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            38,
+            133,
+            75,
+            162
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Table 5",
+        "text_level": 2,
+        "bbox": [
+            95,
+            133,
+            164,
+            149
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Robustness check, alternate commodity dependence measures (full sample)",
+        "bbox": [
+            95,
+            148,
+            776,
+            165
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "table",
+        "img_path": "images/fb6a5c09429ce82940b29191d3e34c47c620ac05dc382bcec090d5275bd17eb3.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Note: Robust standard errors in parentheses. \\*\\*\\* p<0.01, \\*\\* p<0.05, \\* p<0.1."
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"3\">Commodity export ratio (in log) SITC</td><td colspan=\"3\">Export concentration (in log)</td></tr><tr><td>Economic complexity (modified) (1)</td><td>ECI (2)</td><td>Economic fitness (3)</td><td>Economic complexity (modified) (4)</td><td>ECI (5)</td><td>Economic fitness (6)</td></tr><tr><td rowspan=\"2\">L.Economic complexity (in log)</td><td>-1.786***</td><td>-0.138</td><td>-0.328**</td><td>-1.212***</td><td>-0.133***</td><td>-0.273***</td></tr><tr><td>(0.69)</td><td>(0.10)</td><td>(0.14)</td><td>(0.20)</td><td>(0.03)</td><td>(0.04)</td></tr><tr><td rowspan=\"2\">L.World GDP per capita (in log)</td><td>0.172</td><td>0.033</td><td>0.001</td><td>0.138***</td><td>0.021</td><td>0.038</td></tr><tr><td>(0.12)</td><td>(0.13)</td><td>(0.13)</td><td>(0.04)</td><td>(0.05)</td><td>(0.05)</td></tr><tr><td rowspan=\"2\">Population (in log)</td><td>-0.144*</td><td>-0.101</td><td>-0.199**</td><td>-0.030</td><td>0.021</td><td>-0.015</td></tr><tr><td>(0.08)</td><td>(0.08)</td><td>(0.09)</td><td>(0.03)</td><td>(0.04)</td><td>(0.04)</td></tr><tr><td rowspan=\"2\">Commodity price index (in log)</td><td>0.138***</td><td>0.152***</td><td>0.166***</td><td>-0.043***</td><td>-0.042***</td><td>-0.038***</td></tr><tr><td>(0.02)</td><td>(0.02)</td><td>(0.02)</td><td>(0.01)</td><td>(0.01)</td><td>(0.01)</td></tr><tr><td rowspan=\"2\">Official exchange rate (in log)</td><td>-0.014</td><td>-0.007</td><td>-0.012</td><td>-0.003</td><td>0.002</td><td>-0.002</td></tr><tr><td>(0.01)</td><td>(0.01)</td><td>(0.01)</td><td>(0.00)</td><td>(0.00)</td><td>(0.00)</td></tr><tr><td rowspan=\"2\">Export to GDP ratio (in log)</td><td>0.020</td><td>-0.031</td><td>-0.015</td><td>0.026***</td><td>0.024***</td><td>0.016*</td></tr><tr><td>(0.02)</td><td>(0.03)</td><td>(0.03)</td><td>(0.01)</td><td>(0.01)</td><td>(0.01)</td></tr><tr><td rowspan=\"2\">Constant</td><td>7.423***</td><td>4.140***</td><td>5.127***</td><td>1.961***</td><td>-0.328</td><td>-0.071</td></tr><tr><td>(1.47)</td><td>(0.57)</td><td>(0.64)</td><td>(0.41)</td><td>(0.29)</td><td>(0.28)</td></tr><tr><td>Observations</td><td>3,821</td><td>3,231</td><td>2,704</td><td>3,841</td><td>3,251</td><td>2,724</td></tr><tr><td>R-squared</td><td>0.088</td><td>0.102</td><td>0.134</td><td>0.144</td><td>0.076</td><td>0.189</td></tr><tr><td>Number of economies</td><td>180</td><td>141</td><td>144</td><td>183</td><td>144</td><td>147</td></tr></table>",
+        "bbox": [
+            95,
+            178,
+            959,
+            631
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            176,
+            29,
+            263,
+            65
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "header",
+        "text": "March 2026",
+        "bbox": [
+            722,
+            42,
+            835,
+            59
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "header",
+        "text": "#13",
+        "bbox": [
+            794,
+            24,
+            835,
+            40
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "page_number",
+        "text": "28",
+        "bbox": [
+            490,
+            948,
+            510,
+            961
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "5. Conclusions",
+        "text_level": 2,
+        "bbox": [
+            161,
+            134,
+            426,
+            227
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "Economic complexity is crucial for CDDCs and developing economies to build the technological capabilities and know-how needed for producing a more diverse and sophisticated industrial base. This is important for diversification, which can mitigate the adverse effects of commodity dependence and strengthen performance by broadening income sources. While important, studies of the relationship between economic complexity and commodity dependence remains scarce. This paper contributes to the literature by examining the relationship between commodity dependence (measured by the ratio of commodity exports to total merchandised exports) and economic complexity (using three different metrics), proposing a simplified theoretical model based on Pasinetti (1993) and Freire (2017) that explains the link between the two.",
+        "bbox": [
+            157,
+            279,
+            838,
+            468
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "The empirical findings support the idea that diversifying into more complex products, rather than merely increasing the number of exported products, is important for reducing commodity dependence. The analysis reveals a statistically significant negative correlation between economic complexity and commodity dependence, robust when using a randomized sample and other measures of commodity dependence. These findings align with our established priors and suggest that increasing economic complexity can help countries reduce their reliance on commodity exports. In addition, there is a positive association between global income per capita and commodity dependence, likely due to higher per capita income driving greater consumption and demand for commodities. This would help explain the persistence of commodity dependence.",
+        "bbox": [
+            159,
+            502,
+            836,
+            676
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "The results also hold across subsamples with different ranges of commodity dependence, with the strongest effect observed in economies where commodity exports account for 60-80 per cent of total merchandise exports. These economies are likely at a transitional stage where improvements in complexity can lead to significant reductions in commodity dependence. For countries with the highest commodity export ratios, the magnitude of the effect may be diminished due to entrenched structural dependencies and limited alternatives for diversification. In countries below the 60 per cent threshold, the effect remains significant but less pronounced.",
+        "bbox": [
+            159,
+            683,
+            838,
+            810
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "This has important implications for policymakers and international cooperation. CDDCs should focus not only on diversifying exports but also on enhancing the complexity of the goods they produce. This requires a strategic multi-sectoral policy approach that promotes innovation, invests in human capital, and supports the development of industries capable of producing higher-value, complex products. Targeted investments in productive and human capital are needed to build the technological and industrial foundations necessary for economic complexity. Partnerships with science, technology and research institutions are encouraged, as these collaborations can accelerate technology transfer, spur innovation and build specialized expertise in key sectors. Governments must create an enabling environment through regulatory reforms, infrastructure development, and incentives that attract private investment in complex industries.",
+        "bbox": [
+            159,
+            816,
+            838,
+            913
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            174,
+            28,
+            260,
+            65
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "header",
+        "text": "#13\nMarch 2026",
+        "bbox": [
+            724,
+            28,
+            836,
+            61
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "page_number",
+        "text": "29",
+        "bbox": [
+            490,
+            950,
+            510,
+            961
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            159,
+            134,
+            836,
+            229
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "These findings must be interpreted with an awareness of the analytical strengths and limitations of the economic complexity framework. While the definitional overlap between commodity dependence and low product complexity might suggest a simplistic relationship, the empirical analysis reveals policy-relevant insights that go beyond mere definition: the magnitude of the complexity-dependence association, its heterogeneity across development stages, and its persistence after controlling for alternative factors show that complexity captures meaningful variation in productive capabilities with development consequences. However, policymakers should recognize that economic complexity functions primarily as a directional tool—identifying what to target and where opportunities exist—rather than as a prescriptive framework specifying how to implement diversification strategies or which specific policy instruments to deploy. The latter requires complementary sector feasibility studies, institutional capacity assessments, and context-specific policy design that addresses implementation challenges, financing constraints, and political economy considerations.",
+        "bbox": [
+            159,
+            236,
+            836,
+            470
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Aligning industrial policies with national development plans that support strategic diversification is crucial. In a broader sense, these plans should be based on economic complexity and relatedness metrics to identify sectors with high growth potential. A clear understanding of a country's current productive capabilities and position in the product space is vital for identifying strategic sectors. Applied microeconomic research can help pinpoint promising products or sectors at national, sub-regional or municipal levels. By adopting data-informed diversification strategies towards complex products, CDDCs can reduce their vulnerability to global commodity market fluctuations and achieve more sustainable economic growth.",
+        "bbox": [
+            159,
+            478,
+            836,
+            620
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            176,
+            28,
+            262,
+            65
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "page_number",
+        "text": "#13",
+        "bbox": [
+            794,
+            26,
+            835,
+            40
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "header",
+        "text": "March 2026",
+        "bbox": [
+            724,
+            43,
+            833,
+            58
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "page_number",
+        "text": "30",
+        "bbox": [
+            490,
+            950,
+            510,
+            961
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "References",
+        "text_level": 2,
+        "bbox": [
+            161,
+            134,
+            317,
+            154
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Anand R, Mishra S and Spatafora N (2012). Structural Transformation and the Sophistication of Production. IMF Working Paper. 12/5951.",
+        "bbox": [
+            161,
+            161,
+            836,
+            191
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Bastos F and Wang K (2015). Long-Run Growth in Latin America and the Caribbean: The Role of Economic Diversification and Complexity. Regional Economic Outlook: Western Hemisphere.",
+        "bbox": [
+            163,
+            196,
+            836,
+            225
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Boschma R (2017). Relatedness as driver of regional diversification: a research agenda. Regional Studies. 51(3):351–364.",
+        "bbox": [
+            163,
+            231,
+            835,
+            262
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Canh NP, Schinckus C and Thanh SD (2020). The natural resources rents: Is economic complexity a solution for resource curse? Resources Policy. 69101800.",
+        "bbox": [
+            161,
+            268,
+            836,
+            298
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Demiral M (2016). Knowledge, complexity and economic growth: Multi-country evidence by development stages. Journal of Knowledge Management, Economics and Information Technology. 6(1):1–27.",
+        "bbox": [
+            163,
+            304,
+            835,
+            335
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Dominguez S and Nkurunziza JD (2024). Economic diversification: Its relationship with inequality and ensuing policy options. UNCTAD Working Papers.",
+        "bbox": [
+            163,
+            340,
+            835,
+            370
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Freire C (2017). Diversification and structural economic dynamics. Maastricht University / United Nations University.",
+        "bbox": [
+            163,
+            376,
+            835,
+            406
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Freire C (2021). Economic Complexity Perspectives on Structural Change. In Foster-McGregor N, Alcorta L, Szirmai A and Verspagen B (eds.), New Perspectives on Structural Change: Causes and Consequences of Structural Change in the Global Economy. Oxford University Press, Oxford: 188–214.",
+        "bbox": [
+            163,
+            412,
+            835,
+            470
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Hartmann D, Bezerra M and Pinheiro FL (2019). Identifying Smart Strategies for Economic Diversification and Inclusive Growth in Developing Economies. The Case of Paraguay March. Available at https://papers.ssrn.com/abstract=3346790 (accessed 5 September 2024).",
+        "bbox": [
+            161,
+            478,
+            836,
+            524
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Hausmann R and Chauvin J (2015). Moving to the Adjacent Possible: Discovering Paths for Export Diversification in Rwanda. CID Working Papers. CID Working Papers, Center for International Development at Harvard University.",
+        "bbox": [
+            161,
+            530,
+            835,
+            576
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Hegyi FB, Guzzo F, Perianez Forte I and Gianelle C (2021). The Smart Specialisation Policy Experience: Perspective of National and Regional Authorities. Publications Office of the European Union, Luxembourg.",
+        "bbox": [
+            163,
+            581,
+            835,
+            627
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Hidalgo CA (2023). The policy implications of economic complexity. Research Policy. 52(10), 104863.",
+        "bbox": [
+            161,
+            633,
+            821,
+            648
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Hidalgo CA and Hausmann R (2009). The building blocks of economic complexity. Proceedings of the National Academy of Sciences. 106(26):10570–10575.",
+        "bbox": [
+            163,
+            653,
+            835,
+            683
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Hidalgo CA, Klinger B, Barabási A-L and Hausmann R (2007). The Product Space Conditions the Development of Nations. Science. 317(5837):482–487, American Association for the Advancement of Science.",
+        "bbox": [
+            163,
+            689,
+            835,
+            734
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Li Z, Doğan B, Ghosh S, Chen W-M and Lorente DB (2024). Economic complexity, natural resources and economic progress in the era of sustainable development: Findings in the context of resource deployment challenges. Resources Policy. 88104504.",
+        "bbox": [
+            161,
+            741,
+            835,
+            785
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Martines de Camargo JS and Gala P (2017). The resource curse reloaded: revisiting the Dutch disease with economic complexity analysis. Sao Paulo School of Economics Woking Paper. 448.",
+        "bbox": [
+            161,
+            791,
+            835,
+            822
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Nkurunziza JD, Tsowou K and Cazzaniga S (2017). Commodity Dependence and Human Development. African Development Review. 29(S1):27–41.",
+        "bbox": [
+            163,
+            828,
+            833,
+            857
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Nkurunziza, JD. 2021. “The Commodity Dependence Trap.” Contemporary Issues in African Trade and Trade Finance 7 (1): 80–92.",
+        "bbox": [
+            163,
+            863,
+            835,
+            892
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            173,
+            28,
+            260,
+            65
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "header",
+        "text": "#13\nMarch 2026",
+        "bbox": [
+            724,
+            28,
+            836,
+            61
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "page_number",
+        "text": "31",
+        "bbox": [
+            490,
+            950,
+            510,
+            961
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Obach J, Santos MA and Hausmann R (2017). Appraising the Economic Potential of Panama Policy Recommendations for Sustainable and Inclusive Growth. CID Working Papers. CID Working Papers, Center for International Development at Harvard University.",
+        "bbox": [
+            161,
+            134,
+            836,
+            180
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Ourens G (2013). Can the Method of Reflections help predict future growth? Discussion Paper 2013-8. Institut de Recherches Économiques et Sociales de l'Université catholique de Louvain.",
+        "bbox": [
+            161,
+            185,
+            833,
+            216
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Ozguzer GE and Binatli AO (2015). Economic Convergence in the EU: A Complexity Approach. Working Paper No. 1503. Izmir University of Economics. (accessed 26 February 2024).",
+        "bbox": [
+            161,
+            221,
+            835,
+            252
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Pasinetti L (1993). Structural Economic Dynamics: A Theory of the Economic Consequences of Human Learning. Cambridge University Press.",
+        "bbox": [
+            163,
+            256,
+            835,
+            287
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Queiroz AR, Romero JP and Freitas EE (2023). Economic complexity and employment in Brazilian states. CEPAL Review. 2023(139):177–196, United Nations.",
+        "bbox": [
+            161,
+            293,
+            835,
+            323
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Romero JP et al. (2024). Complexity-based diversification strategies: a new method for ranking promising activities for regional diversification. Spatial Economic Analysis. 1–24.",
+        "bbox": [
+            163,
+            329,
+            835,
+            359
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Romero JP and Freitas E (2018). Setores Promissores Para o Desenvolvimento Do Brasil: Complexidade e Espaço Do Produto Como Instrumentos de Política. In M. Viegas, & E. Albuquerque (Eds.), Alternativas Para Uma Crise de Múltiplas Dimensões. First edition, pp. 358–374. Cedeplar-UFMG.",
+        "bbox": [
+            163,
+            365,
+            835,
+            411
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Romero JP and Silveira F (2019). Mudança estrutural e complexidade econômica: identificando setores promissores para o desenvolvimento dos estados brasileiros. Oficina de la CEPAL en Brasília (Estudios e Investigaciones). Oficina de la CEPAL en Brasília (Estudios e Investigaciones), Naciones Unidas Comisión Econômica para América Latina y el Caribe (CEPAL).",
+        "bbox": [
+            163,
+            416,
+            835,
+            478
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Shrestha N (2020). Detecting Multicollinearity in Regression Analysis. American Journal of Applied Mathematics and Statistics. 8(2):39–42.",
+        "bbox": [
+            163,
+            483,
+            835,
+            513
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Tacchella, A., Cristelli, M., Caldarelli, G., Gabrielli, A. and Pietronero, L. (2012). A New metrics for countries' fitness and products' complexity. Scientific Reports, 2: 723, DOI:10.1038/srep00723.",
+        "bbox": [
+            164,
+            519,
+            835,
+            550
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Ul-Durar S, Arshed N, Anwar A, Sharif A and Liu W (2023). How does economic complexity affect natural resource extraction in resource rich countries? Resources Policy. 86104214.",
+        "bbox": [
+            163,
+            554,
+            835,
+            586
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "UNCTAD (2015). Reaping Benefits from Trade Facilitation. UNCTAD, Policy Brief, No. 42, no. December 2015.",
+        "bbox": [
+            163,
+            590,
+            835,
+            621
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "UNCTAD (2017). Commodity dependence and the Sustainable Development Goals. Note by the UNCTAD secretariat for the Multi-year Expert Meeting on Commodities and Development, ninth session, Geneva, 12–13 October 2017. TD/B/C.I/MEM.2/37.",
+        "bbox": [
+            163,
+            627,
+            836,
+            673
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "UNCTAD (2018). Diversification and value addition. Note by the UNCTAD secretariat for the Multi-year Expert Meeting on Commodities and Development, tenth session, Geneva, 25–26 April 2018. TD/B/C.I/MEM.2/42.",
+        "bbox": [
+            163,
+            678,
+            836,
+            722
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "UNCTAD (2019). Commodity Dependence: A Twenty-Year Perspective. UNCTAD. Geneva.",
+        "bbox": [
+            161,
+            728,
+            754,
+            745
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "UNCTAD, ed. (2021a). Escaping from the Commodity Dependence Trap through Technology and Innovation. Commodities and development report, No. 2021. United Nations. New York.",
+        "bbox": [
+            163,
+            749,
+            835,
+            781
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "UNCTAD (2021b). State of Commodity Dependence 2021. State of Commodity Dependency No. E.21.\nII.D.17. UNCTAD. Geneva.",
+        "bbox": [
+            163,
+            785,
+            833,
+            816
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "UNCTAD (2023a). The State of Commodity Dependence 2023. The State of Commodity Dependence 2023. United Nations Conference on Trade and Development. Geneva.",
+        "bbox": [
+            163,
+            822,
+            835,
+            852
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "UNCTAD (2023b). Commodities and Development Report 2023: Inclusive Diversification and Energy Transition. Commodities and Development Report. United Nations Conference on Trade and Development. UNCTAD. Geneva.",
+        "bbox": [
+            163,
+            857,
+            836,
+            903
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            174,
+            28,
+            263,
+            65
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "header",
+        "text": "#13",
+        "bbox": [
+            794,
+            26,
+            835,
+            40
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "header",
+        "text": "March 2026",
+        "bbox": [
+            722,
+            43,
+            835,
+            58
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "page_number",
+        "text": "32",
+        "bbox": [
+            490,
+            950,
+            510,
+            961
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "World Economic Forum (2014). The Global Competitiveness Report 2014-2015. World Economic Forum. Geneva.",
+        "bbox": [
+            161,
+            133,
+            833,
+            164
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "ref_text",
+        "text": "Xiao J, Boschma R and Andersson M (2018). Industrial Diversification in Europe: The Differentiated Role of Relatedness. Economic Geography. 94(5):514–549.",
+        "bbox": [
+            161,
+            168,
+            833,
+            200
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "ref_text",
+        "text": "Zhu S and Li R (2017). Economic complexity, human capital and economic growth: empirical research based on cross-country panel data. Applied Economics. 49(38):3815–3828.",
+        "bbox": [
+            161,
+            205,
+            833,
+            235
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            174,
+            28,
+            260,
+            65
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "header",
+        "text": "#13\nMarch 2026",
+        "bbox": [
+            724,
+            28,
+            836,
+            61
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "page_number",
+        "text": "33",
+        "bbox": [
+            490,
+            950,
+            510,
+            961
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "Appendix",
+        "text_level": 2,
+        "bbox": [
+            159,
+            134,
+            292,
+            155
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "A. Computation of the modified economic complexity index",
+        "text_level": 2,
+        "bbox": [
+            159,
+            167,
+            828,
+            186
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "This study applies the Method of Reflections (Hidalgo and Hausmann, 2009) modified by Freire (2017) to consider all exports, not just those with a certain revealed comparative advantage (RCA), as the RCA measure is volatile for countries with low levels of diversification and high commodity export reliance.",
+        "bbox": [
+            159,
+            210,
+            835,
+            273
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "The Method of Reflections constructs a country-product network and iteratively calculates generalised measures of diversification and ubiquity:",
+        "bbox": [
+            159,
+            278,
+            833,
+            311
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "equation",
+        "text": "$$\nk _ {c, N} = \\frac {1}{K _ {c , 0}} \\sum_ {p} M _ {c p} k _ {p, N - 1}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            403,
+            315,
+            589,
+            353
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "equation",
+        "text": "$$\nk _ {p, N} = \\frac {1}{K _ {p , 0}} \\sum_ {c} M _ {c p} k _ {c, N - 1}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            403,
+            361,
+            589,
+            398
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\mathrm{for} N > 0\n$$",
+        "text_format": "latex",
+        "bbox": [
+            403,
+            405,
+            477,
+            420
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "$M_{cp}$ is a matrix with 1 if country c exports product p, and 0 otherwise. $k_{c,0}$ is the number of products exported by country c and $k_{p,0}$ is the number of countries exporting product p. For each country c, the Method of Reflections produces an ordered list of N real numbers ( $k_{c,0}$ , $k_{c,1}$ , $k_{c,2}$ , ..., $k_{c,N}$ ), where N is the number of iterations. The measure of economic complexity of countries considers the information in that ordered list as follows:",
+        "bbox": [
+            161,
+            431,
+            835,
+            525
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "equation",
+        "text": "$$\nE c o n \\_ c o m p l e x i t y = \\frac {k _ {c , 0} \\times k _ {c , 2} \\times k _ {c , 4} \\times k _ {c , 6} \\times k _ {c , 8} \\times k _ {c , 1 0} \\times k _ {c , 1 2} \\times k _ {c , 1 4} \\times k _ {c , 1 6} \\times k _ {c , 1 8}}{k _ {c , 1} \\times k _ {c , 3} \\times k _ {c , 5} \\times k _ {c , 7} \\times k _ {c , 9} \\times k _ {c , 1 1} \\times k _ {c , 1 3} \\times k _ {c , 1 5} \\times k _ {c , 1 7} \\times k _ {c , 1 9}}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            186,
+            530,
+            806,
+            564
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "For analysis, we calculate Complexity as:",
+        "bbox": [
+            161,
+            573,
+            519,
+            590
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "equation",
+        "text": "$$\nC o m p l e x i t y = \\frac {E c o n \\_ c o m p l e x i t y - \\overline {{E c o n \\_ c o m p l e x i t y}}}{\\sigma}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            317,
+            596,
+            709,
+            627
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "Where $Econ\\_complexity$ is the mean and $\\sigma$ is the standard deviation of the distribution of countries' economic complexity. To ensure positive values when taking the logarithm, we add 3. $^{31}$",
+        "bbox": [
+            159,
+            636,
+            833,
+            684
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            174,
+            28,
+            262,
+            65
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "header",
+        "text": "#13",
+        "bbox": [
+            794,
+            26,
+            835,
+            40
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "header",
+        "text": "March 2026",
+        "bbox": [
+            722,
+            42,
+            835,
+            58
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{31}$ For the ECI, we add 4 to keep the logarithm transformation positive, and for economic fitness, we add 1.",
+        "bbox": [
+            161,
+            888,
+            833,
+            916
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "page_number",
+        "text": "34",
+        "bbox": [
+            490,
+            950,
+            510,
+            961
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "image",
+        "img_path": "images/1b885e776d62c5a229090b50ef3497c5dc23a36845628225122b99b8ab212935.jpg",
+        "image_caption": [
+            "Table B1\nCorrelation matrix independent variable and controls"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            107,
+            700,
+            144,
+            731
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "B. Diagnostic tests",
+        "text_level": 2,
+        "bbox": [
+            159,
+            133,
+            410,
+            153
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "image",
+        "img_path": "images/b11e83855fefa3444bc5a611f88b398a0e2c6d51d5c02b1f71fc1ec1ee75f75a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            60,
+            183,
+            100,
+            214
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "table",
+        "img_path": "images/01408766bc1ec04c13f0d4ec7c2a62a1ac0f6854819a8f1b24e266385ad330d8.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td>L.Modified economic complexity (in log)</td><td>L.World GDP per capita (in log)</td><td>Population (in log)</td><td>Commodity price index (in log)</td><td>Official exchange rate (in log)</td><td>Export to GDP ratio (in log)</td></tr><tr><td>L.Modified economic complexity (in log)</td><td>1</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>L.World GDP per capita (in log)</td><td>0.0172</td><td>1</td><td></td><td></td><td></td><td></td></tr><tr><td>Population (in log)</td><td>0.44</td><td>0.0464</td><td>1</td><td></td><td></td><td></td></tr><tr><td>Commodity price index (in log)</td><td>-0.0166</td><td>0.7219</td><td>0.0135</td><td>1</td><td></td><td></td></tr><tr><td>Official exchange rate (in log)</td><td>-0.2912</td><td>0.0385</td><td>0.2244</td><td>0.024</td><td>1</td><td></td></tr><tr><td>Export to GDP ratio (in log)</td><td>0.1409</td><td>0.018</td><td>-0.0037</td><td>0.0753</td><td>-0.122</td><td>1</td></tr></table>",
+        "bbox": [
+            119,
+            214,
+            931,
+            451
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "table",
+        "img_path": "images/7650f173dd6e75478bb4b90202875a3f97f322f1a8f788a0e0a8c5050074bfc0.jpg",
+        "table_caption": [
+            "Table B2\nCorrelation matrix independent variable and controls"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td>Modified economic complexity (in log)</td><td>ECI (in log)</td><td>Economic fitness (in log)</td></tr><tr><td>Modified economic complexity (in log)</td><td>1</td><td></td><td></td></tr><tr><td>ECI (in log)</td><td>0.7041</td><td>1</td><td></td></tr><tr><td>Economic fitness (in log)</td><td>0.8972</td><td>0.8012</td><td>1</td></tr></table>",
+        "bbox": [
+            164,
+            550,
+            838,
+            651
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "table",
+        "img_path": "images/41e5e91c43680685a3ef7cddc958abcd0987b16b1397a935d0c81e042517d4f7.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td>Commodity export ratio (in log), HS</td><td>Commodity export ratio (in log), SITC</td><td>Export concentration index (in log)</td></tr><tr><td>Commodity export ratio (in log), HS</td><td>1</td><td></td><td></td></tr><tr><td>Commodity export ratio (in log), SITC</td><td>0.9417</td><td>1</td><td></td></tr><tr><td>Export concentration index (in log)</td><td>0.58</td><td>0.6241</td><td>1</td></tr></table>",
+        "bbox": [
+            164,
+            731,
+            838,
+            828
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            173,
+            28,
+            260,
+            65
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "header",
+        "text": "#13\nMarch 2026",
+        "bbox": [
+            722,
+            28,
+            836,
+            61
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "page_number",
+        "text": "35",
+        "bbox": [
+            490,
+            950,
+            510,
+            961
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "B.4 Specification test",
+        "text_level": 2,
+        "bbox": [
+            159,
+            134,
+            394,
+            149
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "To assess the correct specification of the model, we use the Ramsey Regression Equation Specification Error Test (RESET), which verifies if non-linear combinations of fitted values help explain the dependent variable. Significant results indicate potential model misspecification due to omitted variables or incorrect functional form. In our case, the F-test result was not statistically significant $(F(1,189)=2.07, p=0.1514)$ , suggesting the model captures the main factors without non-linear relationships. This result supports the model's structure as an adequate representation of the relationships between variables, with no evidence of misspecification.",
+        "bbox": [
+            159,
+            168,
+            836,
+            294
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            176,
+            28,
+            262,
+            65
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "header",
+        "text": "#13",
+        "bbox": [
+            794,
+            26,
+            835,
+            40
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "header",
+        "text": "March 2026",
+        "bbox": [
+            722,
+            42,
+            835,
+            58
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "page_number",
+        "text": "36",
+        "bbox": [
+            490,
+            950,
+            510,
+            961
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "C. Countries in the analysis (full sample)",
+        "text_level": 2,
+        "bbox": [
+            159,
+            131,
+            628,
+            154
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "table",
+        "img_path": "images/747750137a22ad50671907f3961cb967ead5a7e059eeae6e97592b9d80cd65a4.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Note: CDDCs are in bold. \\*This grouping follows UNCTAD's target economies classification (see https://unctadstat.unctad.org/EN/Classifications/DimCountries\\_TargetEconomies\\_Classification.pdf), and are counted as a single country in this study."
+        ],
+        "table_body": "<table><tr><td>Afghanistan</td><td>Chad</td><td>Grenada</td></tr><tr><td>Albania</td><td>Chile</td><td>Guatemala</td></tr><tr><td>Algeria</td><td>China</td><td>Guinea</td></tr><tr><td>Angola</td><td>Colombia</td><td>Guinea-Bissau</td></tr><tr><td>Antigua and Barbuda</td><td>Comoros</td><td>Guyana</td></tr><tr><td>Argentina</td><td>Congo</td><td>Haiti</td></tr><tr><td>Armenia</td><td>Congo, Dem. Rep. of the</td><td>Honduras</td></tr><tr><td>Australia</td><td></td><td>Hungary</td></tr><tr><td>Austria</td><td>Costa Rica</td><td>Iceland</td></tr><tr><td>Azerbaijan</td><td>Croatia</td><td>India</td></tr><tr><td>Bahamas</td><td>Cyprus</td><td>Indonesia</td></tr><tr><td>Bahrain</td><td>Czechia</td><td>Indonesia (...2002)</td></tr><tr><td>Bangladesh</td><td>Côte d'lvoire</td><td rowspan=\"2\">Iran (Islamic Republic of)</td></tr><tr><td>Barbados</td><td>Denmark</td></tr><tr><td>Belarus</td><td>Djibouti</td><td>Iraq</td></tr><tr><td>Belgium</td><td>Dominica</td><td>Ireland</td></tr><tr><td>Belize</td><td>Dominican Republic</td><td>Israel</td></tr><tr><td>Benin</td><td>Ecuador</td><td>Italy</td></tr><tr><td>Bhutan</td><td>Egypt</td><td>Jamaica</td></tr><tr><td rowspan=\"2\">Bolivia (Plurinational State of)</td><td>El Salvador</td><td>Japan</td></tr><tr><td>Equatorial Guinea</td><td>Jordan</td></tr><tr><td>Bosnia and Herzegovina</td><td>Eritrea</td><td>Kazakhstan</td></tr><tr><td>Botswana</td><td>Estonia</td><td>Kenya</td></tr><tr><td>Brazil</td><td>Eswatini</td><td>Korea, Republic of</td></tr><tr><td>Brunei Darussalam</td><td>Ethiopia</td><td>Kuwait</td></tr><tr><td>Bulgaria</td><td>Fiji</td><td>Kyrgyzstan</td></tr><tr><td>Burkina Faso</td><td>Finland</td><td rowspan=\"2\">Lao People's Dem. Rep.</td></tr><tr><td>Burundi</td><td>France</td></tr><tr><td>Cabo Verde</td><td>Gabon</td><td>Latvia</td></tr><tr><td>Cambodia</td><td>Gambia</td><td>Lebanon</td></tr><tr><td>Cameroon</td><td>Georgia</td><td>Lesotho</td></tr><tr><td>Canada</td><td>Germany</td><td>Liberia</td></tr><tr><td rowspan=\"2\">Central African Republic</td><td>Ghana</td><td>Libya</td></tr><tr><td>Greece</td><td>Lithuania</td></tr><tr><td>Luxembourg</td><td>Philippines</td><td>Liechtenstein*</td></tr><tr><td>Madagascar</td><td>Poland</td><td>Syrian Arab Republic</td></tr><tr><td>Malawi</td><td>Portugal</td><td>Tajikistan</td></tr><tr><td>Malaysia</td><td>Qatar</td><td rowspan=\"2\">Tanzania, UnitedRepublic of</td></tr><tr><td>Maldives</td><td>Romania</td></tr><tr><td>Mali</td><td>Russian Federation</td><td rowspan=\"2\">Thailand</td></tr><tr><td>Malta</td><td>Rwanda</td></tr><tr><td>Mauritania</td><td>Saint Kitts and Nevis</td><td>Timor-Leste</td></tr><tr><td>Mauritius</td><td>Saint Lucia</td><td>Togo</td></tr><tr><td>Mexico</td><td>Saint Vincent and the Grenadines</td><td>Tonga</td></tr><tr><td>Moldova, Republic of</td><td>Samoa</td><td>Trinidad and Tobago</td></tr><tr><td>Mongolia</td><td>Sao Tome and Principe</td><td>Tunisia</td></tr><tr><td>Montenegro</td><td>Saudi Arabia</td><td>Turkmenistan</td></tr><tr><td>Morocco</td><td>Senegal</td><td>Türkiye</td></tr><tr><td>Mozambique</td><td>Serbia</td><td>Uganda</td></tr><tr><td>Myanmar</td><td>Serbia and Montenegro</td><td>Ukraine</td></tr><tr><td>Namibia</td><td>Seychelles</td><td>United Arab Emirates</td></tr><tr><td>Nepal</td><td>Sierra Leone</td><td>United Kingdom</td></tr><tr><td>Netherlands</td><td>Singapore</td><td>United States of America</td></tr><tr><td>New Zealand</td><td>Slovakia</td><td>Uruguay</td></tr><tr><td>Nicaragua</td><td>Slovenia</td><td>Uzbekistan</td></tr><tr><td>Niger</td><td>Solomon Islands</td><td>Vanuatu</td></tr><tr><td>Nigeria</td><td>Somalia</td><td>Venezuela (Bolivarian Rep. of)</td></tr><tr><td>North Macedonia</td><td>South Africa</td><td>Viet Nam</td></tr><tr><td>Norway</td><td>Spain</td><td>Yemen</td></tr><tr><td>Oman</td><td>Sri Lanka</td><td rowspan=\"7\">Zambia</td></tr><tr><td>Pakistan</td><td>Sudan</td></tr><tr><td>Palau</td><td>Sudan (...2011)</td></tr><tr><td>Panama</td><td>Suriname</td></tr><tr><td>Papua New Guinea</td><td>Sweden</td></tr><tr><td>Paraguay</td><td>Switzerland,</td></tr><tr><td>Peru</td><td></td></tr></table>",
+        "bbox": [
+            159,
+            168,
+            815,
+            922
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            173,
+            28,
+            260,
+            65
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "header",
+        "text": "#13\nMarch 2026",
+        "bbox": [
+            722,
+            28,
+            836,
+            61
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "page_number",
+        "text": "37",
+        "bbox": [
+            490,
+            948,
+            510,
+            961
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "table",
+        "img_path": "",
+        "table_caption": [],
+        "table_footnote": [
+            ""
+        ],
+        "bbox": [
+            157,
+            131,
+            825,
+            850
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "header",
+        "text": "Working paper",
+        "bbox": [
+            174,
+            28,
+            263,
+            65
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "header",
+        "text": "March 2026",
+        "bbox": [
+            722,
+            42,
+            835,
+            59
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "page_number",
+        "text": "#13",
+        "bbox": [
+            794,
+            24,
+            835,
+            40
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "page_number",
+        "text": "38",
+        "bbox": [
+            490,
+            950,
+            510,
+            961
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "image",
+        "img_path": "images/a57fc780679ffb1136050275ea749f0c8358d5372a0017318de52efd485424e7.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            352,
+            442,
+            400,
+            474
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "@UNCTAD\n@UNCTAD\nunctad.org/facebook\nunctad.org/youtube\nunctad.org/flickr\nunctad.org/linkedin",
+        "bbox": [
+            0,
+            5,
+            1000,
+            995
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "image",
+        "img_path": "images/97d62bbd847723cab001cd2b052b9ee7f5b164e34ee9d1b476d35e770180e911.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            354,
+            483,
+            400,
+            513
+        ],
+        "page_idx": 38
+    }
+]

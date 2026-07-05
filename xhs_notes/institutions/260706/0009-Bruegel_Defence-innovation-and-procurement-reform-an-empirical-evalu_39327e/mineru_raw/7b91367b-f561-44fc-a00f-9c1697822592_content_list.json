@@ -1,0 +1,2835 @@
+[
+    {
+        "type": "text",
+        "text": "Defence innovation and procurement reform: an empirical evaluation of the US Defense Innovation Unit",
+        "text_level": 1,
+        "bbox": [
+            90,
+            137,
+            887,
+            258
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ethan B. Kapstein, Javier Ospital and Guntram B. Wolff",
+        "bbox": [
+            90,
+            294,
+            732,
+            319
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Abstract",
+        "text_level": 2,
+        "bbox": [
+            90,
+            376,
+            181,
+            393
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Battlefields are evolving rapidly, with new technologies reshaping military strategy and tactics. Many of the new technologies originate in firms outside the traditional defence sector, rather than with the existing prime contractors. In the United States, the Department of Defense (DoD) created the Defense Innovation Unit (DIU) in 2015 to incentivise commercial tech companies to work on national security challenges. How successful has this new unit been in achieving its mission? We provide the first causal evaluation of the DIU's effects on defence procurement. Using administrative procurement data and a firm-level panel covering 2017-2025, and employing propensity score matching, additional firm-level covariates and a staggered difference-in-differences design, we find that the DIU has expanded both the extensive and intensive margins of defence contracting. We find not only a significant increase in the likelihood of receiving a DoD contract because of DIU treatment, but also in the size of the contract. Our findings show that defence innovation organisations can broaden and deepen the defence-supplier base. Governments updating their defence acquisition strategies in response to the lessons from recent conflicts can benefit from reforms that facilitate firm entry into procurement, overcoming the transaction cost and information asymmetry problems typical in defence markets.",
+        "bbox": [
+            87,
+            395,
+            909,
+            663
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Authors",
+        "text_level": 2,
+        "bbox": [
+            90,
+            680,
+            174,
+            697
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ethan B. Kapstein is Executive Director of the Empirical Studies of Conflict Project, Princeton University Javier Ospital (octavio.ospital@bruegel.org) is a Research Assistant at Bruegel Guntram B. Wolff (guntram.wolff@bruegel.org) is a Senior Fellow at Bruegel and a Professor at Université Libre de Bruxelles",
+        "bbox": [
+            87,
+            699,
+            884,
+            776
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "Recommended citation:",
+        "bbox": [
+            90,
+            889,
+            265,
+            903
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Working Paper 10/2026",
+        "bbox": [
+            89,
+            65,
+            544,
+            98
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "bruegel",
+        "bbox": [
+            838,
+            49,
+            905,
+            110
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "Kapstein E., J. Ospital and G. B. Wolff (2026) 'Defence innovation and procurement reform: an empirical evaluation of the US Defense Innovation Unit,' Working Paper 10/2026, Bruegel, available at https://doi.org/10.64153/ZMLX1187",
+        "bbox": [
+            90,
+            903,
+            885,
+            935
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Contents",
+        "text_level": 2,
+        "bbox": [
+            90,
+            85,
+            228,
+            108
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "1 Introduction 3\n2 How US military procurement has changed to improve access for new firms 5\n3 Data collection and descriptive statistics 8\n4 Data matching 11\n5 Regression methodology: difference-in-difference with staggered adoption time 14\n6 Empirical results 16\n7 Robustness checks 18\n8 Conclusions 20\nReferences 20\nAnnex 23",
+        "bbox": [
+            87,
+            145,
+            907,
+            512
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n° 10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            892,
+            931,
+            905,
+            942
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "1 Introduction",
+        "text_level": 2,
+        "bbox": [
+            92,
+            86,
+            295,
+            108
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The experience in Ukraine of real-time battlefield innovation and rapidly changing defence technologies is generating a stream of lessons for military forces. Ukraine has transformed its military procurement through a highly decentralised and digitalised system, sometimes described as an \"Amazon for weaponry\", allowing the country to become a world leader in new defence tech with multiple companies producing for the armed forces and competing for contracts. The armament strategies of the United States, the United Kingdom and France, among others, are starting to reflect these lessons. The US Department of Defense (DoD), for example, issued in November 2025 an Acquisition Transformation Strategy to accelerate delivery of high-tech weaponry $^{2}$ , while the UK Strategic Defence Review 2025 shows a substantive doctrinal shift characterised by the integration of conventional forces with digitally enabled and increasingly autonomous systems such as drones (Ministry of Defence, 2025).",
+        "bbox": [
+            87,
+            131,
+            700,
+            356
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "In most countries, the defence ecosystem is dominated by a relatively small number of 'prime' contractors; yet Ukraine's experience and the new defence strategy documents mentioned highlight the need to enlarge the defence industrial base and tap into new, highly innovative firms. How can governments reshape procurement processes to facilitate the entry of new, predominantly commercial firms that are at the forefront of defence-related innovations or civilian innovation with large dual-use potential? The answer to that question has major implications for security and possibly also economic growth (Goolsbee, 1998; Wolff and Reinthaler, 2008; Pallante et al, 2023; Santoleri et al, 2024; Gazzani et al, 2025; Antolin-Diaz and Surico, 2025).",
+        "bbox": [
+            87,
+            360,
+            700,
+            527
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Howell et al (2025) provide causal evidence that the design of procurement mechanisms matters for outcomes. They evaluate a 2018 reform of the US Air Force Small Business Innovation Research (SBIR) programme and show that 'open' bottom-up solicitations, which allow firms to propose technologies rather than respond to the requests of procurement officers, significantly increase subsequent defence contracts, venture capital funding and patenting, while conventional competitions have no statistically significant effects. Earlier work on the SBIR program documents positive long-run effects on firm growth and commercialisation (Lerner, 1999). In its review of SBIR at the DoD, the National Academy of Sciences (2026) similarly found open-topic competitions have expanded participation in SBIR solicitations.",
+        "bbox": [
+            87,
+            531,
+            700,
+            718
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "This paper builds on that literature to study another major innovation in how defence procurement is organised. Specifically, it investigates whether a key US institutional reform – the creation of the Defence Innovation Unit (DIU) in 2015 – has had a measurable impact on defence procurement from new and highly innovative firms. In seeking to draw such firms into the weapon-acquisition ecosystem, the DIU's mission was to minimise the high transaction costs for commercial tech firms that might have an interest in working with the Pentagon (Williamson, 1975, 1985) along with overcoming information asymmetries concerning the demand for defence-related products (Aghion and Tirole, 1997). These transaction costs and information asymmetries are important barriers to entry for new firms and bind procurement agencies and big incumbent contractors into mutual, self-reinforcing lock-ups (Becht et al, 2026) $^{3}$ . Has the DIU reduced these barriers to entry? Are new entrants indeed receiving DoD contracts? This Working Paper seeks to answer these questions. Government reporting has highlighted the DIU's positive contributions (GAO, 2025a), but a systematic evaluation is still missing.",
+        "bbox": [
+            89,
+            721,
+            700,
+            813
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "aside_text",
+        "text": "The armament strategies of the US, UK and France, among others, are starting to reflect lessons from Ukraine",
+        "bbox": [
+            714,
+            225,
+            884,
+            355
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_footnote",
+        "text": "1 Serhii Kuzan, 'Pick and Mix: Ukraine Opens an Amazon for Weaponry', Insights & Analysis, 3 September 2025, Center for European Policy Analysis, https://cepa.org/article/pick-and-mix-ukraine-opens-an-amazon-for-weaponry/.",
+        "bbox": [
+            90,
+            835,
+            695,
+            875
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_footnote",
+        "text": "2 See US Department of Defense pamphlet, undated, 'Acquisition Transformation Strategy', https://media.defense.gov/2025/Nov/10/2003819441/-1/-1/1/ACQUISITION-TRANSFORMATION-STRATEGY.PDF.",
+        "bbox": [
+            90,
+            875,
+            672,
+            902
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n° 10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            892,
+            931,
+            905,
+            942
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            87,
+            74,
+            700,
+            243
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Studying the effectiveness of the DIU is also relevant for policymakers in Europe, India and Canada, where governments have begun opening dedicated defence-innovation agencies, such as France's Agence de l'Innovation de Défense opened in September 2018, Canada's Defence Innovation Secure Hubs (DISHs) opened in November 2025 and Germany's Innovationszentrum Bundeswehr opened in February 2026. The Indian Ministry of Defence (MoD) even launched its Defence Acceleration Ecosystem (INDUS-X) in collaboration with the US DIU. Whether such institutional reforms successfully broaden the defence industrial base on which governments can draw remains an open empirical question.",
+        "bbox": [
+            87,
+            246,
+            700,
+            413
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The DIU seeks to accelerate the adoption of commercial technologies by selecting firms to develop prototypes which are then featured in its Commercial Solutions Catalogue, used by DoD agencies for procurement. We analyse whether this DIU treatment leads to measurable changes in procurement. Our analysis compares likelihood of procurement from, and value of contracts with, treated and non-treated firms. First, we use administrative data from the US General Service Administration (GSA) to match firms appearing in the DIU catalogue to a large pool of DoD contractors that are comparable in their location, sector and products sold to the DoD. In a second matching step, we use firm-level data from the database Orbis and the US Patent and Trademark Office (USPTO) to account for differences in firm revenue, age, number of employees and patenting. This two-step approach allows us to estimate the effects of DIU treatment relative to a group of untreated firms that resemble treated firms across a broad set of covariates.",
+        "bbox": [
+            87,
+            417,
+            700,
+            642
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Our empirical results provide strong causal evidence of the benefits of DIU: prior to engaging with DIU, our treated and comparison groups of defence contractors have the same likelihood of receiving a DoD contract; after a listing in the DIU catalogue, the likelihood of winning a defence procurement contract increases significantly. We also show that the size of procurement contracts increases substantially thanks to DIU treatment. These results are robust to numerous robustness checks.",
+        "bbox": [
+            89,
+            645,
+            700,
+            755
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The remainder of the paper is structured as follows. Section 2 describes policy initiatives to reform US defence procurement and the workings of the DIU in detail. Section 3 describes the administrative data for this study. Section 4 explains the propensity-score",
+        "bbox": [
+            89,
+            759,
+            700,
+            813
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The likelihood of a contractor winning a defence procurement contract increases significantly after listing in the DIU catalogue",
+        "bbox": [
+            714,
+            643,
+            885,
+            793
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_footnote",
+        "text": "3 These lock-ups occur when the contractor has committed workforce and client-specific weapon knowledge, while the government cannot easily switch to alternative suppliers due to years of accumulated programme knowledge. The mutual hold-up power is strong, which hinders innovation and makes entry by new firms more difficult.",
+        "bbox": [
+            90,
+            848,
+            695,
+            901
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n° 10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            892,
+            931,
+            905,
+            942
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "matching procedure used to construct the comparison group and describes the additional firm-level data collected from Orbis and the USPTO. Section 5 presents the empirical strategy, a staggered difference-in-differences design that accounts for firm fixed effects, time effects, and variation in treatment timing. Sections 6 and 7 present our findings and robustness checks, while section 8 concludes.",
+        "bbox": [
+            87,
+            74,
+            700,
+            167
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "2 How US military procurement has changed to improve access for new firms",
+        "text_level": 2,
+        "bbox": [
+            90,
+            218,
+            623,
+            303
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Procurement by the US Department of Defense $^{4}$ (also called the Department of War by the Trump Administration) is a complex and lengthy process, and as such favours those firms that can navigate it and have established relations with the DoD (Sorenson, 2008). This process, governed by the Federal Acquisition Regulation (FAR), is primarily designed to acquire goods and services at scale, which is a barrier to entry for smaller firms. Further, the DoD imposes numerous operating conditions on firms (eg regarding the handling of classified information) which are costly to incorporate, creating additional barriers. The National Research Council (2014) found that the standard US procurement process favours firms with government contracting experience, because of the need to comply with these extensive administrative and reporting requirements $^{5}$ .",
+        "bbox": [
+            87,
+            322,
+            700,
+            508
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "To reduce high transaction costs and increase the participation of small firms and startups, the DoD has introduced several grant-based innovation programmes $^{6}$ . The Small Business Innovation Research (SBIR) is a government-wide programme, overseen by the US Small Business Administration, funds research in small businesses. Launched in 1982, the programme was augmented in 1992 by the Small Business Technology Transfer (STTR) programme, which requires small businesses to partner with research institutions $^{7}$ . The DoD has made over 13,400 awards via SBIR/STTR during the programme's lifetime (NAS, 2026). The DoD is its largest user, accounting for roughly for 80 percent of SBIR/STTR spending since 2014 $^{8}$ . In 2018, the US Air Force reformed its implementation of the SBIR programme by introducing an 'open topic' solicitation mechanism (GAO, 2025b), which Howell et al (2025) showed to have been a successful policy reform $^{9}$ . Since the success of this reform, the SBIR and STTR Extension Act of 2022 mandated that the DoD expand its open topic program beyond the Air Force and apply it to the entire department.",
+        "bbox": [
+            87,
+            512,
+            700,
+            699
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "4 The US Department of Defense was renamed to the Department of War by executive order on 5 September 2025. However, the legal name remains the Department of Defense until it is changed by an act of Congress, and thus this paper uses Department of Defense. See White House (2025).",
+        "bbox": [
+            89,
+            731,
+            695,
+            771
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "5 GAO (2025c) also found that this acquisition process leads to lengthy adoption timelines, with major defence acquisition programmes taking nearly twelve years on average to deliver a usable first version of a system.",
+        "bbox": [
+            90,
+            771,
+            697,
+            797
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "6 See for example the US Small Business Administration website 'Scorecard Details', updated 14 July 2025, https://www.sba.gov/federal-contracting/contracting-data/small-business-procurement-scorecard/scorecard-details?agency=DOD&year=2024.",
+        "bbox": [
+            90,
+            797,
+            680,
+            835
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "7 The STTR requires awardees to work with organisations that have tech-transfer expertise (eg universities or federally funded research centres) to facilitate commercialisation. STTR was created to complement SBIR (GAO, 2025b). We include STTR within SBIR contracting.",
+        "bbox": [
+            89,
+            835,
+            690,
+            875
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "8 Since 2018, the DoD has awarded \\$38 billion in SBIR/STTR contracts to small companies, amounting to 15 percent of total DoD research spending in 2025. See Kapstein et al (2026).",
+        "bbox": [
+            90,
+            875,
+            687,
+            902
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n°10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            892,
+            931,
+            905,
+            942
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            89,
+            74,
+            699,
+            129
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "2.1 The Defense Innovation Unit (DIU)",
+        "text_level": 2,
+        "bbox": [
+            90,
+            149,
+            453,
+            165
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The Defense Innovation Unit (DIU) is an organisation created in 2015 to increase the uptake of commercial technologies at the DoD and to bridge the gap between defence procurement and Silicon Valley (Shah and Kirchhoff, 2024). Operating directly under the Secretary of Defense, the DIU's primary goal is to transition commercially available technologies into military use throughout the entire department. Following the creation of the DIU, the DoD has launched additional innovation organisations embedded within specific services and agencies. Howell et al (2025) study the effect of a policy change implemented by one of these organisations, AFWERX, at the Air force $^{10}$ . Instead of commercially available technologies across the department, these organisations are focused on the development of new technologies fit for the operational needs of their particular unit.",
+        "bbox": [
+            87,
+            170,
+            700,
+            375
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Based in Silicon Valley, the DIU engages innovative companies in the US and allied countries to develop prototypes using commercially available technologies (Beck, 2024). The DIU uses a bottom-up solicitation mechanism by calling for proposals through so-called commercial solutions openings (CSO). CSOs set out a defence problem and invite companies to submit short proposals without stipulating technical requirements that restrict participation (GAO, 2025a). The DIU evaluates how viable these proposals are and then selects companies to present prototypes $^{11}$ . Successful prototypes are then published as products by the DIU in its Commercial Solutions Catalogue, for procurement by DoD agencies $^{12}$ .",
+        "bbox": [
+            89,
+            379,
+            700,
+            546
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_footnote",
+        "text": "9 The purpose was to reduce the contracting and administrative burdens that typically make DoD agencies unattractive customers for new entrants (GAO, 2025a).",
+        "bbox": [
+            90,
+            758,
+            680,
+            784
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_footnote",
+        "text": "10 In addition to AFWERX, other focused defence innovation organisations include the Army Applications Lab, Naval X, AFWERX, SOFWERX, DEFENSEWERX, the National Security Innovation Network and the Army Venture Capital Initiative.",
+        "bbox": [
+            90,
+            784,
+            690,
+            822
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_footnote",
+        "text": "11 Grants for prototype development are awarded through Other Transaction Agreements (OTAs), which allow the DoD to enter into research, prototyping and production contracts outside the normal procurement system, and are therefore not featured in standard administrative procurement data. See DIU presentation of Winter 2025, 'Defense Innovation Unit: Other Transaction Contract and Success Memo Guidance', https://s3.us-gov-west-1.amazonaws.com/publicdocs.diu.mil/DIU\\_Success\\_Memo\\_Walkthrough\\_Feb25.pdf.",
+        "bbox": [
+            90,
+            822,
+            695,
+            888
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_footnote",
+        "text": "12 See DIU website, 'Commercial Solutions Catalogue', undated, https://www.diu.mil/solutions/portfolio/catalog.",
+        "bbox": [
+            92,
+            889,
+            697,
+            902
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n° 10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            892,
+            931,
+            905,
+            942
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ba773ce8f9489d3e468d1b0d6e63b355b244279610b6502357c3dca6047e3a77.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 1: Number of proposals received by the DIU",
+            "Source: Bruegel based on DIU. Note: 'Awarded' refers to 'other transaction agreements' (OTAs) granted to commercial companies, while 'rejected' means that a proposal was received but an OTA was not granted."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            97,
+            102,
+            677,
+            357
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "In 2020, the DIU received 1016 proposals in response to CSOs, more than double the previous year (Figure 1). Even though few of these proposals became operational products $^{13}$ , GAO (2025a) argues that the DIU has demonstrated the military application of commercial technologies. The GAO report uses document reviews and interviews with DIU officials and end users to assess six DIU projects $^{14}$ . In the successful cases where DIU engagement led to procurement contracts with the DoD, officials highlighted three features important for success: (1) frequent interaction between the DIU, military end users, and firms; (2) DIU staff's 'dual fluency' in both defence needs and commercial technologies; and (3) the use of broadly framed problem statements in CSOs, which allow firms to propose feasible commercial solutions rather than requiring the DoD to define a solution in advance.",
+        "bbox": [
+            87,
+            417,
+            699,
+            621
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "This descriptive evidence suggests that the DIU can increase DoD procurement of commercial technologies by reducing information asymmetries and transaction costs between defence buyers and commercial technology suppliers $^{15}$ . Anduril Industries, a company created in 2017, develops AI software for the autonomous control of defence platforms. Since its first product was published in the Commercial Solutions Catalogue in 2021, it has grown as a DoD vendor, reaching 300 million in sales to the DoD in 2025 $^{16}$ . From 2017 to 2025, the DIU has published products from 126 other companies in its catalogue $^{17}$ across five different technological areas (Figure 2). While there has still been no empirical evaluation of the agency's effectiveness in engaging with these companies, the US Defense Innovation Board has recommended additional congressional funding for the DIU to expand its activities and focus on scaling up the production of commercial solutions (DIB, 2025).",
+        "bbox": [
+            87,
+            626,
+            700,
+            756
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_footnote",
+        "text": "13 Of all proposals submitted since 2016, about 6 percent have been awarded a contract for prototype development (Figure 1).",
+        "bbox": [
+            90,
+            797,
+            653,
+            822
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_footnote",
+        "text": "14 While GAO (2025a) is perhaps the most comprehensive evaluation of the DIU to date, it remains a small sample exercise that is descriptive rather than causal.",
+        "bbox": [
+            90,
+            822,
+            668,
+            848
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_footnote",
+        "text": "15 At the same time, the report warns that the DIU lacks the performance measures needed to assess whether it is solving DoD's most critical operational gaps at scale (GAO, 2025a).",
+        "bbox": [
+            90,
+            848,
+            692,
+            875
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_footnote",
+        "text": "16 See DoD announcement of 23 September 2020, 'Contracts For Sep. 23, 2020', https://www.war.gov/News/Contracts/Contract/Article/2358917/.",
+        "bbox": [
+            90,
+            875,
+            687,
+            901
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n°10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            892,
+            931,
+            905,
+            942
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            87,
+            74,
+            700,
+            167
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2abf73dd38dab39d081af0d4172301aea4adc14e527a67d39eb0f9fc64610101.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 2: Number of products published in the DIU's catalogue by technological area"
+        ],
+        "chart_footnote": [
+            "Source: Bruegel based on DIU. Note: 'AI/ML': artificial intelligence and machine learning applications. 'Cyber': software for the protection of critical infrastructure and warfighting systems. 'Autonomy': small, unmanned aircraft systems, maritime systems and drones. 'Space': access to space, satellite capabilities and broadband. 'Energy': strengthening military installations and operations. 'Human Systems': capabilities that improve the war fighter's readiness, survivability and lethality."
+        ],
+        "bbox": [
+            100,
+            217,
+            678,
+            450
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "3 Data collection and descriptive statistics",
+        "text_level": 2,
+        "bbox": [
+            90,
+            600,
+            695,
+            621
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "To evaluate the effectiveness of the DIU, we first constructed a novel dataset of DoD procurement. Our dependent variable is whether a contract was awarded by the DoD (to capture the extensive margin) and how large the contracts are (to capture the intensive margin). We compile this data from the US government's GSA database $^{18}$ . Specifically, we downloaded data on all the contracts awarded by the DoD from 2017 to $2025^{19}$ . We aggregated the value of these contracts in 2024 dollars at the level of the vendor's parent company and the year of the award to obtain the annual value of contracts with the DoD by firm.",
+        "bbox": [
+            87,
+            645,
+            700,
+            756
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_footnote",
+        "text": "17 See DIU, 'Commercial Solutions Catalogue', undated, https://www.diu.mil/solutions/portfolio/catalog.",
+        "bbox": [
+            90,
+            788,
+            653,
+            802
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_footnote",
+        "text": "18 See the GSA Data Bank, undated, https://sam.gov/reports/awards/adhoc, and the GSA tutorial 'Contract Data: How to use contract data ad hoc reports', undated, https://www.fsd.gov/gsafsd\\_sp/en/video-tutorials-how-to-use-contract-data-ad-hoc-reports?id=kb\\_article\\_view&sysparm\\_article=KB0042536.",
+        "bbox": [
+            90,
+            801,
+            694,
+            841
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_footnote",
+        "text": "19 We filtered for contract award data from the 'Defense, Dept. of' and selected the following fields: 'Year', 'Ultimate Parent Unique Entity ID', 'Unique Entity ID', 'Legal Business Name', 'Vendor Zip Code', 'NAICS Code', 'PSC Code', 'SBIR/STTR Code', 'Contracting Officers Business Size Determination Code' and 'Dollars Obligated'. We downloaded the data separately for small businesses and for all other firms at two-year intervals. The resulting datasets were appended to create a consolidated dataset of 806086 contracts.",
+        "bbox": [
+            90,
+            841,
+            690,
+            907
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n° 10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            892,
+            931,
+            905,
+            942
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            87,
+            74,
+            699,
+            108
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Second, we obtained data on the DIU's engagement with companies by downloading its Commercial Solutions Catalogue $^{20}$ . We then merged this information with our procurement dataset matching company names and years $^{21}$ . The resulting dataset is a large, balanced, firm-year panel comprising 118,159 firms over eight years, covering all firms with procurement relationships with the DoD from 2017 to 2025. The large number of firms is evidence of the wide-ranging procurement relationships of the DoD: the dataset covers all kinds of purchases, including gardening and cleaning services for facilities.",
+        "bbox": [
+            87,
+            112,
+            700,
+            261
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "In addition to annual contract values, the GSA database provides detailed information on vendor characteristics by contract, including their location, sector, business size and the types of products and services it sells. Each contract is classified using the six-digit North American Industry Classification System (NAICS) for industry and a four-character Product and Service Code (PSC) for the type of good or service being sold. We aggregate both classification systems at the two-digit level and, for each firm-year, count how many contracts fall into each NAICS and PSC category. Federal procurement records also contain a vendor ZIP code, which we map to their corresponding metropolitan areas (Core-Based Statistical Areas, CBSAs) and create indicators that capture firms' location by metropolitan area.",
+        "bbox": [
+            87,
+            263,
+            700,
+            451
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The treatment variable is defined as the first year in which a firm has had a solution published in the DIU's catalogue, while untreated firms are those that did not receive either DIU treatment or any SBIR/STTR award. $^{22}$ We face the problem that only 122 firms were treated with the DIU catalogue listing while 118037 firms were not listed: a large imbalance between the number of treated and untreated firms. We therefore need to match treated firms with untreated firms with similar characteristics. To assess the similarity between treated and untreated firms, we compute the standardised mean difference (SMD) for each covariate $k^{23}$ . To compute the SMD, let $x_{itk}$ be covariate k for firm i in year t. We average this covariate across all observed years $T_{i}$ to obtain a firm-level average:",
+        "bbox": [
+            87,
+            455,
+            700,
+            642
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\bar {x} _ {i k} = \\frac {1}{T _ {i}} \\sum_ {t} x _ {i t k}.\\tag{1}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            304,
+            645,
+            468,
+            669
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_footnote",
+        "text": "20 See the DIU's Commercial Solutions Catalogue, undated, https://www.diu.mil/solutions/portfolio/catalog.",
+        "bbox": [
+            90,
+            771,
+            675,
+            784
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_footnote",
+        "text": "21 The 30 companies that appear in the solutions catalogue but not in the procurement data were kept in the dataset, with their procurement values set to zero. Of the 127 firms included in the catalogue, five did not have a usable treatment year and were therefore excluded.",
+        "bbox": [
+            90,
+            784,
+            682,
+            822
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_footnote",
+        "text": "22 Since we do not have data on which firms were selected for prototypes by the DIU but are not featured in the DIU catalogue, we cannot disentangle the effects of these two steps of engaging with the DIU.",
+        "bbox": [
+            90,
+            822,
+            695,
+            848
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_footnote",
+        "text": "23 We use the SMD rather than a t-test because, as Imbens and Wooldridge (2009) noted, t-tests are sensitive to differences in sample size and become less informative when there is a large difference in the number of treated and untreated firms. Instead, standardised differences are used in matching studies (Caliendo and Kopeinig, 2008; Hotchkiss et al, 2012)",
+        "bbox": [
+            90,
+            848,
+            689,
+            902
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n°10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            892,
+            931,
+            905,
+            942
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Second, we average $\\bar{X}_{Tk}$ separately for treated and untreated firms, resulting in treated $(\\bar{X}_{Tk})$ and untreated group means, as shown in equation (2). $N_{T}$ and $N_{U}$ denote the numbers of treated and untreated firms:",
+        "bbox": [
+            89,
+            74,
+            699,
+            128
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\bar {X} _ {T k} = \\frac {1}{N _ {T}} \\sum_ {i \\in T} \\bar {x} _ {i k}, \\bar {X} _ {U k} = \\frac {1}{N _ {U}} \\sum_ {i \\in U} \\bar {x} _ {i k}.\\tag{2}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            189,
+            141,
+            598,
+            165
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The SMD for a covariate k, shown in equation (3), is then the difference between the treated $(\\bar{X}_{Tk})$ and untreated $(\\bar{X}_{Uk})$ group means, divided by the pooled standard deviation $(S_{p,k})$ . Here, $s_{Tk}^{2}$ and $s_{Uk}^{2}$ denote the variances of the firm-level time averages for each group:",
+        "bbox": [
+            89,
+            187,
+            699,
+            261
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\mathbf {S M D} _ {\\mathrm{k}} = \\frac {\\bar {\\mathbf {X}} _ {\\mathrm{T,k}} - \\bar {\\mathbf {X}} _ {\\mathrm{U,k}}}{\\mathbf {s} _ {\\mathrm{p,k}}}, \\quad \\mathbf {s} _ {\\mathrm{p,k}} = \\sqrt {\\frac {\\left(\\mathbf {N} _ {\\mathrm{T}} - 1\\right) \\mathbf {s} _ {\\mathrm{T,k}} ^ {2} + \\left(\\mathbf {N} _ {\\mathrm{U}} - 1\\right) \\mathbf {s} _ {\\mathrm{U,k}} ^ {2}}{\\mathbf {N} _ {\\mathrm{T}} + \\mathbf {N} _ {\\mathrm{U}} - 2}}.\\tag{3}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            149,
+            262,
+            636,
+            300
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "We compute $SMD_{k}$ for all twenty-seven covariates. Table 1 shows the six covariates that have the highest absolute SMD values for sector, products and services and location. Following standard practice in propensity-score matching, we interpret an absolute SMD below 0.1 as a negligible imbalance (Cutler et al, 2022; Gomez-Montero et al, 2026). Using this benchmark for significance, we observe that DIU-backed firms are more concentrated in scientific and technical sectors, sell IT and R&D services and products and are based in the San Francisco metropolitan area more often than other DoD vendors.",
+        "bbox": [
+            89,
+            321,
+            699,
+            451
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "table",
+        "img_path": "images/c08baee4e99e12052617cfb44b2d0d6f347b0a8a621c2978cb254affb5b9a45f.jpg",
+        "table_caption": [
+            "Table 1: Absolute SMD between treated and untreated firms"
+        ],
+        "table_footnote": [
+            "Source: Bruegel based on GSA Database."
+        ],
+        "table_body": "<table><tr><td>Category</td><td colspan=\"2\">Covariate k</td></tr><tr><td rowspan=\"6\">Sector (NAICS)</td><td>Scientific/Technical (54)</td><td>0.206</td></tr><tr><td>Information (51)</td><td>0.170</td></tr><tr><td>Retail trade (44)</td><td>0.136</td></tr><tr><td>Machinery/Electronics (33)</td><td>0.105</td></tr><tr><td>Other sectors</td><td>0.088</td></tr><tr><td>Manufacturing (32)</td><td>0.077</td></tr><tr><td rowspan=\"6\">Products and services (PSC)</td><td>IT R&amp;D (AD)</td><td>0.280</td></tr><tr><td>Communication equipment (58)</td><td>0.236</td></tr><tr><td>Other products/services</td><td>0.204</td></tr><tr><td>IT equipment (70)</td><td>0.188</td></tr><tr><td>IT services (D3)</td><td>0.179</td></tr><tr><td>Technical support (R4)</td><td>0.163</td></tr><tr><td rowspan=\"6\">Location</td><td>San Francisco</td><td>0.146</td></tr><tr><td>Boston</td><td>0.070</td></tr><tr><td>Washington DC</td><td>0.056</td></tr><tr><td>Miami</td><td>0.017</td></tr><tr><td>Philadelphia</td><td>0.014</td></tr><tr><td>Los Angeles</td><td>0.013</td></tr></table>",
+        "bbox": [
+            92,
+            487,
+            695,
+            837
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Figure 3 documents that the location of treated and untreated firms is quite different.",
+        "bbox": [
+            110,
+            873,
+            697,
+            888
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n° 10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            884,
+            929,
+            905,
+            942
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "It follows that treated and untreated firms differ systematically on their sector, products, services and location. To address these differences, we leverage our large pool of untreated firms and detailed covariate data to match treated companies to a comparable group of non-treated firms.",
+        "bbox": [
+            89,
+            74,
+            699,
+            148
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/da541adbfa24897be9a8a6be21199bc5599ffbf20a1caad9a7d8ace6832fa94d.jpg",
+        "image_caption": [
+            "Figure 3: Location of treated and untreated DoD vendors by US metropolitan area"
+        ],
+        "image_footnote": [
+            "Source: Bruegel based on GSA Database. Note: 'Treated' refers to firms that had a solution published in the DIU's Commercial Solutions Catalogue, while 'Untreated' refers to DoD vendors that did not have a solution published nor were awarded an SBIR/STTR contract."
+        ],
+        "content": "",
+        "bbox": [
+            92,
+            197,
+            682,
+            400
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "4 Data matching",
+        "text_level": 2,
+        "bbox": [
+            90,
+            524,
+            324,
+            546
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "To ensure comparability between treated and untreated firms, we use propensity score matching to identify within the large pool of untreated companies those that are most similar to the treated ones. We proceed in two steps. First, we estimate each firm's probability of receiving DIU treatment as a function of the covariates described above. Second, we use additional firm-level specific data from Orbis to further ensure comparability between the treated and untreated firms. These two steps are necessary, as collecting data in the Orbis dataset for the very large set of untreated firms would otherwise have been impractical. As shown below, the first step already ensures substantial comparability between treated with untreated firms.",
+        "bbox": [
+            87,
+            569,
+            700,
+            736
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "In the first step, we use nearest-neighbour matching with replacement and a caliper restriction: each treated firm was matched to a set of untreated firms with similar estimated propensity scores $^{24}$ . The result is a sample of 115 treated firms and 456 matched untreated firms that are balanced on their sector, the products sold and location (See Figure 4). Due to our caliper restriction, seven treated firms do not have sufficiently comparable untreated matches and are therefore excluded from the sample. After matching, the absolute SMD in the estimated propensity score declines from 0.309 before matching to 0.000159 after matching $^{25}$ . Balance in the estimated propensity score indicates that treated and matched untreated firms are similar in their estimated likelihood of treatment given the covariates used in the first step.",
+        "bbox": [
+            89,
+            740,
+            700,
+            833
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_footnote",
+        "text": "24 Matching with replacement allows untreated firms to serve as controls for multiple treated firms, improving match quality. We also impose a caliper of 0.2, which restricts matches to treated and untreated firms with sufficiently similar propensity scores.",
+        "bbox": [
+            90,
+            862,
+            685,
+            902
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n° 10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            884,
+            929,
+            905,
+            942
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            87,
+            74,
+            700,
+            167
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/350c7cb1ee1d0e86e8b791f194af127efc506f45d11f90004e14b9a7cc732ca8.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 4: Absolute SMD before and after propensity score matching"
+        ],
+        "chart_footnote": [
+            "Source: Bruegel. Note: the figure reports absolute SMDs between treated and untreated firms, before and after propensity score matching. Sector variables are based on two-digit NAICS, product/service variables are based on PSC categories used in US federal procurement data. Metropolitan areas correspond to CBSAs defined by the US Office of Management and Budget. The San Francisco CBSA includes San Francisco, Oakland, Berkeley, and surrounding counties. An SMD below 0.10 indicates good covariate balance."
+        ],
+        "bbox": [
+            92,
+            200,
+            697,
+            693
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "After constructing a matched sample that resembles the treated firms in terms of industry, location and products sold, we compare the two groups' other characteristics in a second step. From the Orbis database, we collect the incorporation date, number of employees and revenue from 2017 to 2025 for the 115 treated firms and 456 matched untreated firms. In addition, we match these firms to the USPTO Patents View database using standardised firm names and construct a firm-year panel of patenting activity. Orbis data were not used in the first matching stage because collecting firm-level information for 118,149 firms would have been both impractical and unnecessary at that stage. We do not want to take into account untreated firms located far away from treated firms, which operate in totally different sectors or sell products (such as gardening services) that are unrelated to the DIU's focus. Instead, we base our matching procedure on the industry, product and location covariates that are available for the universe of DoD vendors and then collect data from Orbis for the much smaller sample of 571 firms.",
+        "bbox": [
+            87,
+            797,
+            700,
+            851
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_footnote",
+        "text": "25 'Propensity score' is the probability that a firm receives DIU treatment, estimated on the observed covariates.",
+        "bbox": [
+            90,
+            879,
+            640,
+            904
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n° 10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            884,
+            929,
+            905,
+            942
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            87,
+            74,
+            699,
+            262
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Using this Orbis data, we construct an additional set of firm-level covariates. We calculate a firm's age as the number of years since its incorporation, while employment and revenue variables are computed as averages over the years in which Orbis reports non-missing values for that firm. We also construct an indicator for whether Orbis information is missing and then calculate the average value of each covariate for the treated and matched untreated groups. Table 1 compares the two groups on these covariates. Differences in missing data, firm age, employment and revenues are small in magnitude and not statistically significant. This indicates that treated firms and matched untreated firms are comparable on the additional covariates collected from Orbis. Indeed, average values of awarded contracts are similar across the two groups and not statistically different.",
+        "bbox": [
+            87,
+            265,
+            700,
+            470
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "table",
+        "img_path": "images/d67ae64938b13adfff96f24185923db9609740040fde17a75c190378cb54593f.jpg",
+        "table_caption": [
+            "Table 2: Data on treated group and matched untreated"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Covariates</td><td>Treated</td><td>Matched untreated</td><td>Difference</td><td>p-value</td></tr><tr><td colspan=\"5\">Averages for entire period</td></tr><tr><td>Missing data</td><td>0.026</td><td>0.028</td><td>-0.002</td><td>0.923</td></tr><tr><td>Firm age (years)</td><td>14.365</td><td>15.689</td><td>-1.323</td><td>0.512</td></tr><tr><td>Employees (thousands)</td><td>0.782</td><td>0.820</td><td>-0.038</td><td>0.961</td></tr><tr><td>Revenue ($ millions)</td><td>0.299</td><td>0.236</td><td>0.063</td><td>0.843</td></tr><tr><td colspan=\"5\">Pre-treatment averages</td></tr><tr><td>Awarded contracts (log)</td><td>4.190</td><td>4.481</td><td>-0.291</td><td>0.617</td></tr><tr><td>Number of patents</td><td>27.611</td><td>0.942</td><td>26.669</td><td>0.262</td></tr></table>",
+        "bbox": [
+            92,
+            507,
+            694,
+            688
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Source: Bruegel based on Orbis and US Patent Office. Note: this table reports the mean values of Orbis covariates for firms in the treated group and firms in the matched untreated sample. N of treated firms = 115. N of matched untreated firms = 456. Table 2 also compares the average pre-treatment outcomes of treated firms to the average outcomes of the matched untreated group over the entire timespan $^{26}$ . The reported p-values are the product of a difference-in-means t-test. Patent data was obtained from the USPTO Patents View database.",
+        "bbox": [
+            90,
+            699,
+            690,
+            760
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "There is one notable difference: treated firms have a much higher average number of patents. This difference is not statistically significant because patenting is highly skewed, with one firm, Google, having had many patents before treatment $^{27}$ . Google accounts for approximately 84 percent of the treated-group mean for pre-treatment patents $^{28}$ . In the next section, we account for this difference between treated and control firms by introducing patenting as an adjustment variable in the estimator. We also examine whether the main results are driven by these patenting outliers through a leave-one-out exercise in section 7, which shows that high-patenting treated firms do not explain the estimated effects on DoD contracting.",
+        "bbox": [
+            90,
+            778,
+            699,
+            812
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_footnote",
+        "text": "26 Note that the treatment occurs in different periods for treated firms while untreated firms do not have a treatment time, so there is no pre-treatment time window to compute outcomes for untreated firms. Instead, we compute their mean value over the entire timespan of the data.",
+        "bbox": [
+            90,
+            866,
+            695,
+            906
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n° 10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            884,
+            929,
+            905,
+            942
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            87,
+            74,
+            700,
+            205
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "5 Regression methodology: difference-in-difference with staggered adoption time",
+        "text_level": 2,
+        "bbox": [
+            90,
+            256,
+            692,
+            312
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "After constructing the matched sample and assessing that observed characteristics of treated and non-treated firms are similar, we aim to identify the effect of the DIU treatment. This still presents three challenges. First, firms are potentially selected to participate in the program based on unobservable characteristics that may affect their contracting outcomes. Second, because defence procurement changes over time, comparing firms before and after treatment risks attributing general time trends to the policy rather than identifying its causal effect. Third, since treatment occurs at different periods, treated firms need to be compared to contemporaneous controls.",
+        "bbox": [
+            87,
+            341,
+            700,
+            489
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Equation (4) summarises these key issues; a company's outcomes ( $Y_{it}$ ) are given by firm-fixed effects ( $\\alpha_i$ ), time-fixed effects ( $\\lambda_t$ ) and the effect of DIU treatment ( $\\tau_{it}$ ) after firm first appears in the Commercial Solutions Catalogue $^{29}$ .",
+        "bbox": [
+            87,
+            492,
+            699,
+            546
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "equation",
+        "text": "$$\nY _ {i t} = \\alpha_ {i} + \\lambda_ {t} + \\tau_ {i t} + \\varepsilon_ {i t}\\tag{4}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            300,
+            555,
+            485,
+            571
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "A staggered difference-in-differences estimator allows us to address the possible effects of unobserved characteristics, time trends and different treatment times (see Callaway and Sant'Anna, 2021). First, comparing outcomes for firms before and after treatment removes firm-fixed effects $(\\alpha_{i})$ . Second, time-fixed effects $(\\lambda_{t})$ are eliminated by comparing treated firms to control firms observed in the same year. Third, staggered treatment timing is handled by constructing group-time average treatment effects: firms first treated in year $g$ are compared in year $t$ only to firms that have not been treated in year. This avoids the bias that arises in simple fixed effects models with time and firm dummies when already-treated firms are used as controls $^{30}$ . In this framework, the estimated coefficient of interest is the average treatment effect on the treated (ATT):",
+        "bbox": [
+            87,
+            587,
+            700,
+            775
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_footnote",
+        "text": "27 The median number of patents of the treated group is 0, and excluding the two largest outliers lowers the mean from 27.6 to 0.83 patents.",
+        "bbox": [
+            87,
+            797,
+            680,
+            822
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_footnote",
+        "text": "28 This contribution is calculated by dividing Google's firm-level pre-treatment patent average by the number of treated firms and then expressing that quantity as a share of the overall treated-group mean.",
+        "bbox": [
+            89,
+            822,
+            687,
+            848
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_footnote",
+        "text": "29 Once treated, a firm remains treated in all subsequent years since their product remains in the catalogue. For firms with more than one product, we consider their first one as their treated timing.",
+        "bbox": [
+            90,
+            848,
+            697,
+            875
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_footnote",
+        "text": "30 Standard two-way fixed-effects estimators can be biased when treatment is staggered over time and treatment effects are heterogeneous (Goodman-Bacon, 2021; Callaway and Sant'Anna, 2021).",
+        "bbox": [
+            90,
+            876,
+            660,
+            902
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n°10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            884,
+            931,
+            905,
+            942
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "equation",
+        "text": "$$\nA T T (g, t) = \\mathbb {E} [ Y _ {i t} (1) - Y _ {i t} (0) | G _ {i} = g ]\\tag{5}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            255,
+            85,
+            536,
+            101
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Here, $Y_{it}$ (1) denotes the outcome for firm in year under treatment, and $Y_{it}$ (0) denotes the corresponding untreated potential outcome. $G_{i}$ is the first period in which firm receives treatment. Because $Y_{it}$ (0) is unobservable for treated firms, it is identified using the outcomes of matched firms that have not been treated in the corresponding year. In the baseline specification (4), we estimate ATT on the matched sample without additional post-matching covariates, comparing firms that have been matched on observed metropolitan location, industry, and product.",
+        "bbox": [
+            87,
+            112,
+            699,
+            242
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "This estimator also allows us to adjust the treated-control comparison by introducing additional firm-level characteristics at the estimation stage. These covariates enter as adjustment variables within the difference-in-differences estimator, so that treatment effects are identified by comparing treated firms to control firms that are also similar in these additional characteristics. This augmented specification allows us to assess whether the estimated ATT is sensitive to additional firm-level characteristics not fully accounted for in the initial matching stage. It particularly allows us to test whether the difference in patenting observed across treated and control firms in the previous section helps explain the differences in outcomes between the two groups. The corresponding treatment effect can be written as:",
+        "bbox": [
+            87,
+            246,
+            700,
+            432
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "$$\nA T T (g, t; X) = E \\left[ Y _ {i t} (1) - Y _ {i t} (0) \\mid G _ {i} = g, X _ {i} \\right]\\tag{6}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            230,
+            445,
+            561,
+            462
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "In this augmented specification, firm age, revenue, employment and innovative profile are introduced at the estimation stage through the covariate vector $X_{i}$ . In our main results, innovative profile is proxied by patenting activity, measured using pre-treatment patents for treated firms and patents observed over the sample period for controls. Section 7 shows that the results are robust to alternative definitions of this variable, including symmetric pre-treatment time-window measures applied equally to treated and control firms.",
+        "bbox": [
+            87,
+            474,
+            699,
+            602
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Because the DIU is a relatively recent institutional innovation and the number of treated firms is limited, the available data are better suited to identify short-run effects rather than longer-run dynamics. Therefore, our analysis focuses on a short-run event window that summarises the group-time treatment effects defined in equations (4) and (5). Let e denote event time relative to treatment; we define the short-run effect as:",
+        "bbox": [
+            87,
+            607,
+            699,
+            697
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "$$\nA T T ^ {S R} (X) = \\frac {1}{2} \\sum_ {e \\in \\{0, 1 \\}} A T T (e; X).\\tag{7}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            257,
+            706,
+            531,
+            728
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "That is, the short-run ATT is the average of the estimated treatment effects in the treatment year and the first post-treatment year. We restrict the analysis to this event-time window because it captures the relevant short-run pre-treatment and post-treatment periods, and because support remains broad across this range in terms of treated firms and cohorts (see annex Table 1). In the baseline specification, $ATT^{SR}$ is estimated on the matched sample without additional post-matching covariates. In the augmented specification $[ATT^{SR}(X)]$ the estimate is conditioned on the vector $X_{i}$ of additional covariates.",
+        "bbox": [
+            87,
+            740,
+            700,
+            888
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n° 10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            884,
+            931,
+            905,
+            942
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Identification in this empirical design relies on a parallel-trends assumption: absent treatment, treated firms and their matched controls would have followed similar outcome paths. To assess the plausibility of this assumption, we estimate an event-study specification that reports group-time treatment effects by event time; we do not find statistically significant coefficients, which is consistent with comparable pre-treatment trends over the immediate pre-treatment window $^{31}$ . This assumption is made more plausible by the matching procedure, which produces treated and control firms with similar characteristics, and by the additional covariates showing the two groups are also broadly comparable in firm age, employment, revenue and data coverage.",
+        "bbox": [
+            87,
+            74,
+            700,
+            244
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "6 Empirical results",
+        "text_level": 2,
+        "bbox": [
+            90,
+            294,
+            363,
+            319
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "In our baseline specification, DIU treatment is associated with a large and statistically significant increase in contracts with the DoD. We examine this effect on both the extensive and intensive margins. The extensive margin outcome captures whether a firm was awarded any contracts in a given year, while the intensive margin outcome captures the value of those contracts. On the extensive margin, we find that treatment raises the likelihood that a firm is awarded a contract by 11.7 percentage points, relative to the control. On the intensive margin, the baseline estimate shows a large increase in the value of procurement received by treated firms. The effect reported in Table 3 corresponds to an approximate increase of 447 percent in the value of contracts relative to matched control firms $^{32}$ . Having a product published in the DIU's catalogue therefore makes firms more likely to secure at least one DoD contract and substantially increases the value of the contracts they receive.",
+        "bbox": [
+            87,
+            341,
+            700,
+            565
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Table 3 also shows augmented specifications that account for additional firm characteristics and still find large and statistically significant increases in DoD contracting. Across these specifications, the extensive-margin effect ranges from a 11.5 to 10.9 percentage-point increase in the likelihood of being awarded a contract after treatment. The intensive-margin effect remains large after we control for firm age, employment, revenue and innovative profile, corresponding to an increase of roughly 370 percent in the value of DoD contracts. While section 4 noted a large difference in the average number of patents between treated and control firms, this difference in firm's innovation profile does not explain the estimated treatment effects on DoD contracting. The results thus remain robust after adjusting for these additional characteristics, indicating that DIU treatment is highly effective.",
+        "bbox": [
+            87,
+            569,
+            700,
+            775
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_footnote",
+        "text": "31 Annex Table 4 and Figure 5 report the dynamic effects by event-time period.",
+        "bbox": [
+            90,
+            841,
+            527,
+            854
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_footnote",
+        "text": "32 On the intensive margin, we do not estimate percentage changes directly. Instead, the specification yields effects in log-points which cannot be interpreted as exact percentage effects (see Chen and Roth, 2024). For ease of interpretation, we translate these into approximate percentage terms by $\\% \\Delta Y = (e^{ATT}|1) \\times 100$ (van Garderen and Shah, 2002)",
+        "bbox": [
+            90,
+            854,
+            685,
+            907
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n° 10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            884,
+            931,
+            905,
+            942
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "table",
+        "img_path": "images/34a674b269ec09b25da9172bd2324592e9acce0e55a4c3d687177d09cb8ee1f2.jpg",
+        "table_caption": [
+            "Table 3: Effects of the DIU, never-treated firms in control $^{4}$"
+        ],
+        "table_footnote": [
+            "Source: Bruegel. Note: the intensive margin is measured as $\\log\\left(1 + Y_{it}\\right)$ , where $Y_{it}$ denotes awarded contracts in 2024 dollars or number of patents. The extensive margin outcome is an indicator equal to 1 if the firm had any contract awarded or if it had any patenting in that event-time period. Extensive-margin coefficients are interpreted as percentage-point changes, and intensive-margin coefficients are reported in log points. All estimates use the original matched sample; the additional covariates are introduced at the estimation stage, we capture 'innovative profile' through the number of patents of each firm. Standard errors clustered at the firm level are in parentheses. \\* p<0.10, \\*\\* p<0.05, \\*\\*\\* p<0.01. The one firm treated in 2017 is dropped from the estimator because it has no pre-treatment observations in the panel."
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">Specification</td><td colspan=\"2\">Awarded contracts</td></tr><tr><td>Intensive</td><td>Extensive</td></tr><tr><td>Baseline [ATT $^{SR}$ ]</td><td></td><td></td></tr><tr><td rowspan=\"2\">No post-match conditioning on covariates</td><td>1.699***</td><td>0.117***</td></tr><tr><td>(0.558)</td><td>(0.041)</td></tr><tr><td>Augmented [ATT $^{SR}$ (X)]</td><td></td><td></td></tr><tr><td rowspan=\"2\">Innovative profile</td><td>1.594***</td><td>0.115***</td></tr><tr><td>(0.550)</td><td>(0.044)</td></tr><tr><td rowspan=\"2\">Innovative profile and age</td><td>1.591***</td><td>0.111**</td></tr><tr><td>(0.526)</td><td>(0.045)</td></tr><tr><td rowspan=\"2\">Innovative profile and employees</td><td>1.512***</td><td>0.112***</td></tr><tr><td>(0.584)</td><td>(0.042)</td></tr><tr><td rowspan=\"2\">Innovative profile and revenue</td><td>1.563***</td><td>0.111**</td></tr><tr><td>(0.555)</td><td>(0.047)</td></tr><tr><td rowspan=\"2\">Innovative profile, age, employees, and revenue</td><td>1.549***</td><td>0.109**</td></tr><tr><td>(0.580)</td><td>(0.044)</td></tr><tr><td>Number of treated</td><td>114</td><td>114</td></tr><tr><td>Number of control</td><td>456</td><td>456</td></tr></table>",
+        "bbox": [
+            92,
+            89,
+            697,
+            404
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Figure 5 supports the validity of our specification when it comes to the treatment effect. Specifically, the chart shows that prior to treatment there is no discernible difference between treated and untreated firms, while the differences post treatment are statistically significant both at the intensive and extensive margins.",
+        "bbox": [
+            89,
+            531,
+            699,
+            604
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_footnote",
+        "text": "33 Annex Table 2 shows additional combinations of covariates in the augmented specification. Because a small number of firms in the matched sample have missing covariates, we re-estimate the specification after excluding these firms and the estimates remain close to the main results (see section 7 and annex table 6).",
+        "bbox": [
+            90,
+            866,
+            694,
+            907
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n° 10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            884,
+            929,
+            905,
+            942
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9e6cc7e34199983324b1f9ed07a3d811319f9fb368cc5617ff4defe6fc8fc9f9.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 5: Dynamic effects of the augmented specification, awarded contracts"
+        ],
+        "chart_footnote": [
+            "Source: Bruegel. Note: this figure shows the ATT(X) conditioned on missingness, revenues, employees and firm age, by event-time period. The left panel reports the intensive margin effects, and the right panel reports the extensive margin. Extensive-margin coefficients are interpreted as percentage-point changes, and intensive-margin coefficients are reported in log points. Vertical bars denote 95 percent confidence intervals, the dashed horizontal line marks zero effect, orange markers indicate pre-treatment periods and blue markers indicate post-treatment periods. Annex tables 3 and 4 show the estimated dynamic effects of the baseline and augmented specifications on awarded contracts and patenting."
+        ],
+        "bbox": [
+            102,
+            97,
+            682,
+            306
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "7 Robustness checks",
+        "text_level": 2,
+        "bbox": [
+            90,
+            466,
+            396,
+            488
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "This section details various tests to assess the robustness of our findings. First, we conduct time placebo tests, in which treatment is assigned to treated firms two years before the actual treatment date. After re-estimating the short-run effects under this placebo timing, we find no statistically significant effects on either margin (see annex table 5). All four estimates are small relative to the main results and statistically indistinguishable from zero, which suggests that our findings are unlikely to be driven by pre-existing short-run trends before treatment.",
+        "bbox": [
+            87,
+            512,
+            700,
+            642
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Second, we consider unit placebo tests, in which 'fake' treatment is assigned at random to untreated firms. We repeat this procedure 500 times for both specifications and find placebo effects centred on zero, far from the large effects estimated for the actual treated firms (see annex figures 1 and 2). Taken together, these two placebo tests indicate that the large positive effects we identify are specific both to treated firms and to the timing of that treatment.",
+        "bbox": [
+            87,
+            645,
+            699,
+            755
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Third, we conduct a leave-one-out exercise, in which we re-estimate each specification repeatedly while omitting one treated firm at a time (see annex figures 3 and 4). The resulting estimates remain clustered around the original effects for both specifications and both outcomes. This indicates that our findings are not driven by any single treated firm but instead reflect a broader pattern across the treated sample. Although the treated-group average for pre-treatment patents is heavily skewed (section 4), this leave-one-out robustness check shows that excluding patent-intensive firms does not change the estimated effects. In particular, omitting Google leaves both the intensive- and extensive-margin estimates close to their full-sample values and statistically significant.",
+        "bbox": [
+            87,
+            759,
+            700,
+            890
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n° 10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            884,
+            929,
+            905,
+            942
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            89,
+            74,
+            699,
+            109
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Fourth, we modify our specifications to isolate the effect of DIU treatment. We re-estimate the baseline specification after excluding firms that received an SBIR/STTR grant from the DoD from the treated group $^{34}$ . This reduces the estimating sample from 114 to 65 firms, but the estimated effects remain large, statistically significant and close to our baseline estimates (See annex Table 6). This indicates that the DIU, and no other DoD policy interventions, are driving our main results.",
+        "bbox": [
+            87,
+            112,
+            700,
+            223
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Fifth, we assess whether missing Orbis covariates affect our results. We re-estimate excluding the three treated firms and 15 control firms that have missing Orbis data, and the estimated effects remain positive, statistically significant and close to the main estimates (annex Table 6). This suggests the small number of firms with missing firm-level data do not affect our estimates.",
+        "bbox": [
+            89,
+            227,
+            700,
+            318
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Sixth, we test the sensitivity of the results to using a control group composed of firms that receive DIU treatment in the future but have not yet been treated. This approach addresses concerns that remaining differences between treated firms and never-treated firms in our matched control group may be driving the results. Re-estimating the specification with this alternative control group, we find that the estimated effects remain positive and are close to those obtained in our augmented specifications (annex Table 6). Although these estimates should be interpreted with caution because this alternative design reduces the sample size, they provide evidence that our main results are not simply a consequence of how the matched control group is constructed.",
+        "bbox": [
+            87,
+            322,
+            700,
+            489
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Seventh, we show that our results are robust to alternative constructions of the patenting covariate. We re-estimate the augmented specification using patenting measures constructed over the same pre-treatment windows for both groups (annex Table 8) $^{35}$ . We do this for three different windows, and in each case exclude firms already treated during the relevant period. The estimated effects remain positive, statistically significant, and close to our main augmented estimates, indicating that our findings are not driven by how the patenting covariate.",
+        "bbox": [
+            89,
+            493,
+            700,
+            623
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Finally, we consider whether DIU treatment causes patenting on the intensive and extensive margins to rise. In annex Table 3, we re-estimate our baseline and augmented specifications with these alternative outcomes, we do not find statistically significant differences between treated and matched control firms before treatment, nor do we find evidence that they were on diverging patenting trajectories prior to treatment (see annex Table 4). After treatment, we do not find evidence that DIU participation increases patenting on either margin. This suggests that the positive effects of the DIU on contract awards are neither driven by pre-existing differences in patenting nor accompanied by measurable short-run increases in patenting.",
+        "bbox": [
+            87,
+            626,
+            700,
+            794
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_footnote",
+        "text": "35 In our main results, a firm's innovative profile is defined asymmetrically: it is based on pre-treatment patents",
+        "bbox": [
+            90,
+            875,
+            692,
+            891
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "aside_text",
+        "text": "We do not find evidence that DIU participation increases patenting",
+        "bbox": [
+            714,
+            624,
+            895,
+            697
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_footnote",
+        "text": "34 Our administrative data allow us to identify DoD SBIR/STTR recipients, but not the type of solicitation through which the award was made, so we cannot distinguish between open and closed SBIR calls and exclude all firms that ever received a DoD SBIR/STTR award.",
+        "bbox": [
+            90,
+            835,
+            665,
+            875
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_footnote",
+        "text": "for treated firms and on patents observed over the sample period for never-treated controls.",
+        "bbox": [
+            110,
+            889,
+            615,
+            902
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n°10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            884,
+            931,
+            905,
+            942
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "8 Conclusions",
+        "text_level": 2,
+        "bbox": [
+            90,
+            86,
+            295,
+            108
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "This paper provides the first causal analysis of the effects of the US Defense Innovation Unit (DIU) on firm-level outcomes. We find that engagement with the DIU leads to economically large and statistically significant increases in contracting with the DoD, on both the intensive and extensive margins. By contrast, we find no measurable effects on patenting activity, suggesting that DIU's impact operates primarily through procurement and commercialisation rather than the development of new technologies.",
+        "bbox": [
+            89,
+            131,
+            699,
+            242
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Our results add to the previous work of Howell et al (2025), which examined the effects of SBIR on defence procurement. We focus on DIU, which is defined here as an institution that allows sellers of commercial technologies to gain easier access to the US DoD and thereby overcome important transaction-cost and information asymmetries. Our results show that making information on commercially available technologies more accessible to procurement agencies, for example through a catalogue of products, can substantially increase procurement from these firms. Facilitating access and reducing administrative burdens can increase the pool of innovative companies that want to work with the DoD. These lessons are also relevant for European and other countries that are seeking to reform defence procurement processes in line with revised national defence strategies. This US experience suggests that similar dedicated defence-innovation organisations may also be effective in reforming defence procurement around the world.",
+        "bbox": [
+            87,
+            246,
+            699,
+            470
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Future research, once longer observation horizons are available, should aim to capture the longer-run impacts of DIU creation on contracting, innovation or integration into defence procurement.",
+        "bbox": [
+            90,
+            474,
+            697,
+            527
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "References",
+        "text_level": 2,
+        "bbox": [
+            92,
+            581,
+            258,
+            602
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "ref_text",
+        "text": "Aghion, P. and J. Tirole (1997) 'Formal and real authority in organizations', Journal of Political Economy 105: 1-29, available at https://doi.org/10.1086/262063",
+        "bbox": [
+            92,
+            627,
+            653,
+            659
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "ref_text",
+        "text": "Antolin-Diaz, J. and S. Paolo (2025) 'The Long-Run Effects of Government Spending', American Economic Review 115(7): 2376–2413, available at https://doi.org/10.1257/aer.20231278",
+        "bbox": [
+            92,
+            665,
+            668,
+            696
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "ref_text",
+        "text": "Becht, M., J. Mejino López and G.B. Wolff (2026) 'Who controls the defence industry?', Working Paper 08/2026, Bruegel, available at https://doi.org/10.64153/QGUR7847",
+        "bbox": [
+            92,
+            702,
+            667,
+            734
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "ref_text",
+        "text": "Beck, D.A. (2024) DIU 3.0: Scaling Defense Innovation for Strategic Impact, US Department of Defense, available at https://www.diu.mil/latest/diu-3-0-scaling-defense-innovation-for-strategic-impact",
+        "bbox": [
+            92,
+            741,
+            658,
+            791
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "ref_text",
+        "text": "Callaway, B. and P.H.C. Sant'Anna (2021) 'Difference-in-Differences with Multiple Time Periods', Journal of Econometrics 225(2): 200-230, available at https://doi.org/10.1016/j.jeconom.2020.12.001",
+        "bbox": [
+            92,
+            797,
+            653,
+            848
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "ref_text",
+        "text": "Caliendo, M. and S. Kopeinig (2008) 'Some Practical Guidance for the Implementation of Propensity Score Matching', Journal of Economic Surveys 22(1): 31-72, available at https://doi.org/10.1111/j.1467-6419.2007.00527.x",
+        "bbox": [
+            92,
+            854,
+            689,
+            904
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n° 10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "20",
+        "bbox": [
+            884,
+            931,
+            905,
+            942
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "ref_text",
+        "text": "Chen, J. and J. Roth (2024) 'Logs with Zeros? Some Problems and Solutions', Quarterly Journal of Economics 139(2): 891-936, available at https://doi.org/10.1093/qje/qjad054",
+        "bbox": [
+            92,
+            76,
+            687,
+            108
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "ref_text",
+        "text": "Cutler, D., M.K. Ghosh, K.L. Messer, T. Raghunathan, A.B. Rosen and S.T. Stewart (2022) 'A Satellite Account for Health in the United States', American Economic Review 112(2): 494-533, available at http://doi.org/10.1257/aer.20201480",
+        "bbox": [
+            92,
+            112,
+            692,
+            165
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "ref_text",
+        "text": "DIB (2025) Scaling Nontraditional Defense Innovation, Report, Defense Innovation Board, 8 January, available at https://stib.cto.mil/wp-content/uploads/2026/01/2025-2\\_DIB-ScalingNontraditionalDefenseInnovation\\_250113PUBLISHED\\_9ee4ae.pdf",
+        "bbox": [
+            92,
+            170,
+            697,
+            222
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "ref_text",
+        "text": "Gazzani, A., J. Martinez, F. Natoli and P. Surico (2025) 'The Public Origins of American Innovation', CEPR Discussion Paper No. 20788, Centre for Economic Policy Research, available at: https://cepr.org/publications/dp20788",
+        "bbox": [
+            92,
+            227,
+            692,
+            279
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "ref_text",
+        "text": "Gomez-Montero, A., A. Garcia-Lopez, S. Cabas, A.A. Nieves-Rico and F. Giron-Luque (2026) 'Methodological Guidance on Implementing Propensity Score Matching in Observational Studies of Kidney Transplantation', Scientific Reports 16(1):1878, available at https://doi.org/10.1038/s41598-025-31596-9.",
+        "bbox": [
+            92,
+            285,
+            653,
+            355
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "ref_text",
+        "text": "Goodman-Bacon, A. (2021) 'Difference-in-differences with variation in treatment timing', Journal of Econometrics 225(2), 254-277, available at: https://doi.org/10.1016/j.jeconom.2021.03.014",
+        "bbox": [
+            92,
+            361,
+            695,
+            394
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "ref_text",
+        "text": "Goolsbee, A. (1998) 'Does Government R&D Policy Mainly Benefit Scientists and Engineers?', American Economic Review 88(2): 298-302, available at https://www.jstor.org/stable/116937",
+        "bbox": [
+            92,
+            399,
+            678,
+            432
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "ref_text",
+        "text": "GAO (2025a) DEFENSE INNOVATION UNIT Actions Needed to Assess Progress and Further Enhance Collaboration, Report to Congressional Committees GAO-25-106856, United States Government Accountability Office, available at https://www.gao.gov/products/gao-25-106856",
+        "bbox": [
+            92,
+            436,
+            685,
+            489
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "ref_text",
+        "text": "GAO (2025b) SMALL BUSINESS RESEARCH PROGRAMS Clearer Guidance Could Improve Award Data to More Effectively Measure Outcomes, Report to Congressional Committees GAO-25-107942, United States Government Accountability Office, available at https://www.gao.gov/products/gao-25-107942",
+        "bbox": [
+            92,
+            493,
+            682,
+            564
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "ref_text",
+        "text": "GAO (2025c) Defense Acquisition Reform: Persistent Challenges Require New Iterative Approaches to Delivering Capability with Speed, Report to Congressional Committees GAO-25-108528, United States Government Accountability Office, available at https://www.gao.gov/products/gao-25-108528",
+        "bbox": [
+            92,
+            569,
+            695,
+            640
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "ref_text",
+        "text": "Hotchkiss, J.L., M. Quispe-Agnoli and F. Rios-Avila (2012) 'The wage impact of undocumented workers', FRB Atlanta Working Paper 2012-4, Federal Reserve Bank of Atlanta, available at http://dx.doi.org/10.2139/ssrn.2060667",
+        "bbox": [
+            92,
+            645,
+            663,
+            697
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "ref_text",
+        "text": "Howell, S.T., J. Rathje, J.V. Reenen and J. Wong (2025) 'Opening up military innovation: casual effects of \"bottom-up\" reforms to US defense research', Journal of Political Economy 133(11), available at http://doi.org/10.3386/w28700",
+        "bbox": [
+            92,
+            702,
+            685,
+            753
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "ref_text",
+        "text": "Imbens, G.W. and J.M. Wooldridge (2009) 'Recent Developments in the Econometrics of Program Evaluation', Journal of Economic Literature 47(1): 5-86, available at http://doi.org/10.1257/jel.47.1.5",
+        "bbox": [
+            92,
+            759,
+            680,
+            810
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "ref_text",
+        "text": "Kapstein, E., J. Ospital and G. Wolff (2026) 'Reforming European defence procurement to boost military innovation and startups', Policy Brief 04/2026, Bruegel, available at http://doi.org/10.64153/DRNO4343",
+        "bbox": [
+            92,
+            816,
+            668,
+            868
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n°10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "21",
+        "bbox": [
+            882,
+            931,
+            905,
+            942
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "ref_text",
+        "text": "Lerner, J. (1999) 'The Government as Venture Capitalist: The Long-Run Impact of the SBIR Program', The Journal of Business 72(3): 285-318, available at https://doi.org/10.1086/209616",
+        "bbox": [
+            92,
+            76,
+            689,
+            109
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "ref_text",
+        "text": "Ministry of Defence (2025) The Strategic Defence Review 2025: Making Britain safer, secure at home, strong abroad, Policy Paper, available at https://www.gov.uk/government/publications/the-strategic-defence-review-2025-making-britain-safer-secure-at-home-strong-abroad",
+        "bbox": [
+            92,
+            112,
+            672,
+            185
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "ref_text",
+        "text": "NAS (2026) Review of the SBIR and STTR Programs at the Department of Defense (2026), Consensus Study Report, National Academy of Sciences, available at https://www.nationalacademies.org/projects/PGA-STEP-17-08",
+        "bbox": [
+            92,
+            189,
+            636,
+            241
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "ref_text",
+        "text": "National Research Council (2014) SBIR at the Department of Defense, National Research Council of the National Academy of Sciences, available at https://www.nationalacademies.org/projects/PGAD-Q-06-01-A/publication/18821",
+        "bbox": [
+            92,
+            246,
+            695,
+            298
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "ref_text",
+        "text": "Pallante, G., E. Russo and A. Roventini (2023) 'Does public R&D funding crowd-in private R&D investment? Evidence from military R&D expenditures for US states', Research Policy 52(8), available at http://doi.org/10.1016/j.respol.2023.104807",
+        "bbox": [
+            92,
+            303,
+            668,
+            355
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "ref_text",
+        "text": "Santoleri, P., A. Mina, A. Di Minin and I. Martelli (2024) 'The Causal Effects of R&D Grants: Evidence from a Regression Discontinuity', The Review of Economics and Statistics 106(6): 1495-1510, available at https://dx.doi.org/10.2139/ssrn.3637867",
+        "bbox": [
+            92,
+            361,
+            685,
+            412
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "ref_text",
+        "text": "Shah, R.M. and C. Kirchhoff, (2024) Unit X: How the Pentagon and Silicon Valley are transforming the future of war, Scribner",
+        "bbox": [
+            92,
+            417,
+            697,
+            450
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "ref_text",
+        "text": "Sorenson, D.S. (2008) The Process and Politics of Defense Acquisition: A Reference Handbook, Praeger",
+        "bbox": [
+            92,
+            456,
+            670,
+            489
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "ref_text",
+        "text": "van Garderen, K.J. and C. Shah (2002) 'Exact Interpretation of Dummy Variables in Semilogarithmic Equations', The Econometrics Journal 5(1): 149-159, available at https://www.jstor.org/stable/23114086",
+        "bbox": [
+            92,
+            493,
+            690,
+            545
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "ref_text",
+        "text": "Williamson, O.E. (1975) Markets and Hierarchies: Analysis and Antitrust Implications, Free Press\nWilliamson, O.E. (1985) The Economic Institutions of Capitalism: Firms, Markets, Relational Contracting, Free Press",
+        "bbox": [
+            92,
+            551,
+            670,
+            602
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "ref_text",
+        "text": "White House (2025) Restoring the United States Department of War, Executive order, available at https://www.whitehouse.gov/presidential-actions/2025/09/restoring-the-united-states-department-of-war/",
+        "bbox": [
+            92,
+            607,
+            668,
+            659
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "ref_text",
+        "text": "Wolff, G.B. and V. Reinthaler (2008) 'The effectiveness of subsidies revisited: Accounting for wage and employment effects in business R&D', Research Policy 37(8): 1403-1412, available at https://doi.org/10.1016/j.respol.2008.04.023",
+        "bbox": [
+            92,
+            664,
+            682,
+            715
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n° 10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_number",
+        "text": "22",
+        "bbox": [
+            882,
+            929,
+            905,
+            942
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Annex",
+        "text_level": 2,
+        "bbox": [
+            90,
+            87,
+            186,
+            108
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "table",
+        "img_path": "images/733c85567faed0d64de399cf0f5836c483ad54c77911ac31dc034e19f0e5bf5d.jpg",
+        "table_caption": [
+            "Table 1: Support by event time in the baseline specification"
+        ],
+        "table_footnote": [
+            "Source: Bruegel. Note: counts are computed from the actual estimator sample used in the baseline dynamic-effects specification with never-treated controls. The table shows the number of treated firms and treatment cohorts contributing to each event period."
+        ],
+        "table_body": "<table><tr><td>Event time</td><td>Number of firms</td><td>Number of cohorts</td></tr><tr><td>-5</td><td>81</td><td>4</td></tr><tr><td>-4</td><td>98</td><td>5</td></tr><tr><td>-3</td><td>106</td><td>6</td></tr><tr><td>-2</td><td>112</td><td>7</td></tr><tr><td>-1</td><td>113</td><td>7</td></tr><tr><td>0</td><td>111</td><td>7</td></tr><tr><td>1</td><td>93</td><td>6</td></tr><tr><td>2</td><td>60</td><td>6</td></tr><tr><td>3</td><td>47</td><td>4</td></tr></table>",
+        "bbox": [
+            92,
+            165,
+            695,
+            338
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "table",
+        "img_path": "images/ff4308e0e991c000304d620b2fc83834446f9bba7a5ccb5d638a48c611d89941.jpg",
+        "table_caption": [
+            "Table 2: Effects of the DIU, never treated firms in control"
+        ],
+        "table_footnote": [
+            "Source: Bruegel. Note: standard errors clustered at the firm level are in parentheses. \\* p<0.10, \\*\\* p<0.05, \\*\\*\\* p<0.01."
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">Augmented [ATT $^{SR}$  (X)]</td><td colspan=\"2\">Awarded contracts</td></tr><tr><td>Intensive</td><td>Extensive</td></tr><tr><td>Pre-treatment patent history, age, and employees</td><td>1.551***(0.573)</td><td>0.110***(0.043)</td></tr><tr><td>Pre-treatment patent history, age, and revenue</td><td>1.576***(0.585)</td><td>0.109**(0.045)</td></tr><tr><td>Pre-treatment patent history, employees, and revenue</td><td>1.516***(0.558)</td><td>0.108**(0.043)</td></tr><tr><td>Number of treated</td><td>114</td><td>114</td></tr><tr><td>Number of control</td><td>456</td><td>456</td></tr></table>",
+        "bbox": [
+            92,
+            431,
+            695,
+            604
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n° 10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_number",
+        "text": "23",
+        "bbox": [
+            882,
+            929,
+            905,
+            942
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "table",
+        "img_path": "images/7a1d532b8064e54a1dc8a697634df1906b57ab2f453e748ff1119a92703afa42.jpg",
+        "table_caption": [
+            "Table 3: Effects of the DIU, never-treated firms in control"
+        ],
+        "table_footnote": [
+            "Source: Bruegel. Note: this table reports the ATT in the corresponding event-time period. The intensive margin is measured as $\\log\\left(1 + Y_{it}\\right)$ , where $Y_{it}$ denotes the number of patents corresponding to firm i in year t. The extensive margin outcome is an indicator equal to one if the firm filed for any patent in that year. Extensive-margin coefficients are interpreted as percentage-point changes, and intensive-margin coefficients are reported in log points."
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">Specification</td><td colspan=\"2\">Patenting</td></tr><tr><td>Intensive</td><td>Extensive</td></tr><tr><td>Baseline [ATT $^{SR}$ ]</td><td></td><td></td></tr><tr><td>No post-match conditioning on covariates</td><td>-0.0186(0.0391)</td><td>-0.0334(0.0326)</td></tr><tr><td>Augmented [ATT $^{SR}$ (X)]</td><td></td><td></td></tr><tr><td>Age</td><td>-0.0183(0.0421)</td><td>-0.0326(0.0335)</td></tr><tr><td>Employees</td><td>-0.0192(0.0422)</td><td>-0.0328(0.0336)</td></tr><tr><td>Revenue</td><td>-0.0185(0.0415)</td><td>-0.0333(0.0298)</td></tr><tr><td>Age, employees and revenue</td><td>-0.0200(0.0426)</td><td>-0.0329(0.0326)</td></tr><tr><td>Number of treated</td><td>114</td><td>114</td></tr><tr><td>Number of control</td><td>456</td><td>456</td></tr></table>",
+        "bbox": [
+            92,
+            89,
+            694,
+            369
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "table",
+        "img_path": "images/a6370a023877183f93d5dc0cebb2ee8e5a628e5f328772c24733a17bd77cdb68.jpg",
+        "table_caption": [
+            "Table 4: Dynamic effects of the DIU"
+        ],
+        "table_footnote": [
+            "Source: Bruegel. Note: this table reports the ATT (X) conditioned on innovative profile, age, revenues and employees in the corresponding event-time period. The intensive margin is measured as $\\log(1 + Y_{it})$ , where $Y_{it}$ denotes either awarded contracts (in 2024 dollars) or the number of patents corresponding to firm i in year t. The extensive margin outcome is an indicator equal to one if the firm had any contracts with the DoD in that year, or if the firm filed for any patent in that year. Extensive-margin coefficients are interpreted as percentage-point changes, and intensive-margin coefficients are reported in log points."
+        ],
+        "table_body": "<table><tr><td></td><td colspan=\"2\">Awarded contracts</td><td colspan=\"2\">Patenting</td></tr><tr><td>Event time</td><td>Intensive</td><td>Extensive</td><td>Intensive</td><td>Extensive</td></tr><tr><td>-2</td><td>0.274(0.598)</td><td>0.014(0.047)</td><td>0.054(0.056)</td><td>0.056(0.043)</td></tr><tr><td>-1</td><td>0.073(0.641)</td><td>-0.007(0.045)</td><td>0.055(0.046)</td><td>0.047(0.038)</td></tr><tr><td>0</td><td>2.079***(0.505)</td><td>0.141***(0.039)</td><td>-0.064(0.042)</td><td>-0.051(0.035)</td></tr><tr><td>1</td><td>1.020(0.842)</td><td>0.078(0.058)</td><td>0.023(0.061)</td><td>-0.009(0.042)</td></tr><tr><td>Number of treated</td><td>114</td><td>114</td><td>114</td><td>114</td></tr><tr><td>Number of control</td><td>456</td><td>456</td><td>456</td><td>456</td></tr></table>",
+        "bbox": [
+            92,
+            487,
+            694,
+            720
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n° 10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "page_number",
+        "text": "24",
+        "bbox": [
+            882,
+            929,
+            905,
+            942
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "table",
+        "img_path": "images/ec7147b98303c3af3cfa30bf6d83b82e1393750f652d4a623e3dd0c658a9f7ca.jpg",
+        "table_caption": [
+            "Table 5: Time placebo tests for short-run effects on awarded contracts"
+        ],
+        "table_footnote": [
+            "Source: Bruegel. Note: this table reports time placebo estimates for short-run effects on awarded contracts. Treatment is artificially reassigned to two years before the true treatment date for treated firms. None of the placebo estimates are statistically significant. Extensive-margin coefficients are interpreted as percentage-point changes, and intensive-margin coefficients are reported in log points."
+        ],
+        "table_body": "<table><tr><td></td><td colspan=\"2\">Baseline</td><td colspan=\"2\">Augmented</td></tr><tr><td>Awarded contracts</td><td>ATT</td><td>p-value</td><td>ATT(X)</td><td>p-value</td></tr><tr><td>Intensive</td><td>0.470</td><td>0.395</td><td>0.271</td><td>0.637</td></tr><tr><td>Extensive</td><td>0.021</td><td>0.585</td><td>0.010</td><td>0.801</td></tr></table>",
+        "bbox": [
+            92,
+            89,
+            694,
+            160
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "table",
+        "img_path": "images/f11cd21ba997d16fc9d533cc34052098266f205ddce9cd5b64d79c6b6944d108.jpg",
+        "table_caption": [
+            "Table 6: Alternative specifications"
+        ],
+        "table_footnote": [
+            "Source: Bruegel. Note: this table reports estimates from modified versions of the ATT $^{SR}$ specification In alternative specification (1), excluding firms that ever-received SBIR/STTR grants reduces the number of treated firms to 65. In specification (2), not-yet-treated firms are used as controls, which reduces the number of treated to 53 because the first and last treated cohorts cannot serve as controls. In specification (3), excluding firms with missing Orbis data reduces the sample from 114 treated and 456 control firms to 111 treated and 441 control firms. Extensive-margin coefficients are interpreted as percentage-point changes, and intensive-margin coefficients are reported in log points. Standard errors clustered at the firm level are reported in parentheses. \\*p<0.10, \\*\\*p<0.05, \\*\\*\\*p<0.01."
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">Alternative specification</td><td colspan=\"2\">Awarded contracts</td><td colspan=\"2\">Patenting</td><td rowspan=\"2\">N. of treated</td><td rowspan=\"2\">N. of control</td></tr><tr><td>Intensive</td><td>Extensive</td><td>Intensive</td><td>Extensive</td></tr><tr><td>(1) Exclude SBIR/STTR treated firms</td><td>1.747***(0.641)</td><td>0.133***(0.050)</td><td>-0.031(0.048)</td><td>-0.049(0.037)</td><td>65</td><td>456</td></tr><tr><td>(2) Exclude firms with missing Orbis data</td><td>1.602***(0.606)</td><td>0.113**(0.048)</td><td>-0.017(0.044)</td><td>-0.031(0.036)</td><td>111</td><td>441</td></tr><tr><td>(3) Not-yet-treated firms in control group</td><td>2.223**(0.899)</td><td>0.161**(0.071)</td><td>-0.152(0.097)</td><td>-0.110(0.067)</td><td>53</td><td>-</td></tr></table>",
+        "bbox": [
+            92,
+            279,
+            694,
+            426
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "table",
+        "img_path": "images/821c664b30af91b5c663c4b7a6415f465cebad48d6cbffe1c2f46fa2874edb16.jpg",
+        "table_caption": [
+            "Table 7: Effects of the DIU across periods excluding SBIR-treated firms"
+        ],
+        "table_footnote": [
+            "Source: Bruegel. Note: this table reports the ATT in the corresponding event-time period for alternative specification (1) in annex table 6. Extensive-margin coefficients are interpreted as percentage-point changes, and intensive-margin coefficients are reported in log points."
+        ],
+        "table_body": "<table><tr><td></td><td colspan=\"2\">Awarded contracts</td><td colspan=\"2\">Patenting</td></tr><tr><td>Event time</td><td>Intensive</td><td>Extensive</td><td>Intensive</td><td>Extensive</td></tr><tr><td>-2</td><td>0.052(0.632)</td><td>-0.002(0.048)</td><td>0.060(0.088)</td><td>0.035(0.052)</td></tr><tr><td>-1</td><td>-0.355(0.701)</td><td>-0.037(0.055)</td><td>0.014(0.064)</td><td>0.032(0.046)</td></tr><tr><td>0</td><td>1.785***(0.598)</td><td>0.134***(0.045)</td><td>-0.068(0.051)</td><td>-0.078*(0.040)</td></tr><tr><td>1</td><td>1.709**(0.790)</td><td>0.132**(0.061)</td><td>0.006(0.058)</td><td>-0.021(0.034)</td></tr><tr><td>N. of treated</td><td>65</td><td>65</td><td>65</td><td>65</td></tr><tr><td>N. of control</td><td>456</td><td>456</td><td>456</td><td>456</td></tr></table>",
+        "bbox": [
+            92,
+            583,
+            694,
+            801
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n° 10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "page_number",
+        "text": "25",
+        "bbox": [
+            882,
+            929,
+            905,
+            942
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "table",
+        "img_path": "images/445be6b383502d15c54120b30fc88a7083f6dfb0d7937794943218390fa02124.jpg",
+        "table_caption": [
+            "Table 8: Robustness to alternative patent-based measures of firms' innovative profiles"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\">Alternative measures of innovation profile</td><td colspan=\"2\">Awarded contracts</td><td rowspan=\"2\">N. of treated</td><td rowspan=\"2\">N. of control</td></tr><tr><td>Intensive</td><td>Extensive</td></tr><tr><td rowspan=\"2\">Pre-treatment window, 2017-2018</td><td>1.670***</td><td>0.114***</td><td>113</td><td>456</td></tr><tr><td>(0.566)</td><td>(0.042)</td><td></td><td></td></tr><tr><td rowspan=\"2\">Pre-treatment window, 2017-2019</td><td>1.582***</td><td>0.108**</td><td>107</td><td>456</td></tr><tr><td>(0.607)</td><td>(0.045)</td><td></td><td></td></tr><tr><td rowspan=\"2\">Pre-treatment window, 2017-2020</td><td>1.517**</td><td>0.112**</td><td>99</td><td>456</td></tr><tr><td>(0.616)</td><td>(0.050)</td><td></td><td></td></tr><tr><td rowspan=\"2\">Full observed period, 2017-2025</td><td>1.514***</td><td>0.106**</td><td>114</td><td>456</td></tr><tr><td>(0.581)</td><td>(0.043)</td><td></td><td></td></tr></table>",
+        "bbox": [
+            92,
+            90,
+            695,
+            263
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Source: Bruegel. Note: estimates report the augmented $ATT(X)^{SR}$ for awarded contracts. In each specification, innovative profile is proxied by patenting activity measured over a common time window applied identically to treated and control firms. For the pre-treatment window specifications, treated firms whose treatment year falls within the relevant window are excluded to avoid contamination from post-treatment patenting. Extensive-margin coefficients are interpreted as percentage-point changes, and intensive-margin coefficients are reported in log points.",
+        "bbox": [
+            87,
+            274,
+            690,
+            348
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Annex Figures 1 and 2 show that the unit-placebo distributions are centred near zero in their central mass, while our actual short-run estimates, shown by the red vertical lines, lie in the right tail of each distribution. For the augmented specification on the intensive margin, the placebo density is based on 344 successful replications, since 156 of the 500 placebo replications did not converge $^{36}$ . The estimation failed in these replications because, after random assignment to treatment and conditioning on covariates, some placebo-treated firms had too few comparable control observations for reliable estimation. This does not alter the substantive conclusion, since most placebo replications are successful and continue to produce estimates centred near zero and far from the observed effect.",
+        "bbox": [
+            87,
+            379,
+            700,
+            565
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "page_footnote",
+        "text": "36 All 156 failed placebo replications on the intensive margin were singular-matrix errors, indicating that after random placebo assignment and conditioning on covariates, some placebo samples became too sparse for reliable estimation. No failures occur on the extensive margin.",
+        "bbox": [
+            90,
+            863,
+            694,
+            902
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n°10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "page_number",
+        "text": "26",
+        "bbox": [
+            882,
+            929,
+            905,
+            942
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "chart",
+        "img_path": "images/fa19f0afbbfb9f500c600e244086533c44eec1f63963be56cd5183b5e20c5d0f.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure A1: Distribution of unit-placebo tests, intensive margin of DoD awarded contracts\nATT\nATT[X]"
+        ],
+        "chart_footnote": [
+            "Source: Bruegel. Note: the figure reports the distribution of unit-placebo $ATT^{SR}$ estimates on the intensive margin of awarded contracts. The left panel shows the baseline matched specification ( $ATT^{SR}$ ), and the right panel shows the covariate-adjusted specification ( $ATT^{SR}(X)$ ). The red vertical line marks our estimated effect for each specification. In the augmented specification, the distribution is computed from successful placebo replications only."
+        ],
+        "bbox": [
+            92,
+            90,
+            687,
+            290
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b9980aef0e7be862bd9f906b6e3d7b9dc647902778d781de846fc47576bf1e1b.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 2: Distribution of unit-placebo tests, extensive margin of awarded contracts"
+        ],
+        "chart_footnote": [
+            "Source: Bruegel. Note: the figure reports the distribution unit-placebo $ATT^{SR}$ estimates on the extensive margin of awarded contracts to the DoD. The left panel shows the baseline specification ( $ATT^{SR}$ ) and the right panel shows the covariate-adjusted specification ( $ATT^{SR}(X)$ ). The red vertical line marks our estimated effect for each specification."
+        ],
+        "bbox": [
+            92,
+            414,
+            690,
+            621
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "Figures 3 and 4 show that the resulting leave-one-out estimates are clustered around the original estimated effects for both specifications and outcomes. This indicates that no single firm is driving our estimated effects; instead, they reflect a broad pattern of increases in contracting across the treated sample. In the baseline specification, all leave-one-out replications remain statistically significant. In the augmented specification, which conditions on firm age, employment, revenue and patent history, all leave-one-out replications also remain positive and statistically significant on both margins. Taken together, these results indicate that the estimated effects are broadly shared across treated firms rather than being driven by any single outlier.",
+        "bbox": [
+            87,
+            702,
+            700,
+            871
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n°10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "page_number",
+        "text": "27",
+        "bbox": [
+            882,
+            929,
+            905,
+            942
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7f804ad66937f13e1a9f32346903724adfb3c17f19a31faeac9455b1f6aafb40.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure A3: Leave-one-out replications, baseline specification"
+        ],
+        "chart_footnote": [
+            "Source: Bruegel. Note: the figure shows the distribution of leave-one-out $ATT^{SR}$ estimates for the baseline specification. In each replication, one treated firm is omitted, and the short-run effect is re-estimated without re-matching the sample. The red vertical line marks the corresponding estimate in the full sample."
+        ],
+        "bbox": [
+            95,
+            91,
+            690,
+            304
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "chart",
+        "img_path": "images/315db6dbb2084f788a82209852b8028c96e38ce81181ec2f52fa017e7520f3f0.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure A4: Leave-one-out replications, augmented specification"
+        ],
+        "chart_footnote": [
+            "Source: Bruegel. Note: the figure shows the distribution of leave-one-out estimates for the augmented specification, $ATT^{SR}(X)$ . In each replication, one treated firm is omitted, and the short-run effect is re-estimated without re-matching the sample. The red vertical line marks the corresponding estimate in the full sample."
+        ],
+        "bbox": [
+            92,
+            414,
+            690,
+            623
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "footer",
+        "text": "Working Paper | Issue n° 10/26 | May 2026",
+        "bbox": [
+            90,
+            929,
+            376,
+            944
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "page_number",
+        "text": "28",
+        "bbox": [
+            882,
+            929,
+            905,
+            942
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "© Bruegel 2026. Bruegel publications can be freely republished and quoted according to the Creative Commons licence CC BY-ND 4.0. Please provide a full reference, clearly stating the relevant author(s) and including a prominent hyperlink to the original publication on Bruegel's website. You may do so in any reasonable manner, but not in any way that suggests the author(s) or Bruegel endorse you or your use. Any reproduction must be unaltered and in the original language. For any alteration (for example, translation), please contact us at press@bruegel.org. Publication of altered content (for example, translated content) is allowed only with Bruegel's explicit written approval. Bruegel takes no institutional standpoint. All views expressed are the researchers' own.",
+        "bbox": [
+            297,
+            645,
+            907,
+            814
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "image",
+        "img_path": "images/08afdfb80e8004990cd9577446a13f548ea6b0755e8eba7b45f91ac7ecf26596.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            90,
+            797,
+            203,
+            900
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "Bruegel, Rue de la Charité 33, B-1210 Brussels (+32) 2 227 4210\ninfo@bruegel.org\nwww.bruegel.org",
+        "bbox": [
+            299,
+            832,
+            623,
+            898
+        ],
+        "page_idx": 28
+    }
+]

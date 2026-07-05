@@ -1,0 +1,5152 @@
+{
+    "pdf_info": [
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        67,
+                        30,
+                        306,
+                        68
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                30,
+                                306,
+                                68
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        30,
+                                        306,
+                                        68
+                                    ],
+                                    "type": "text",
+                                    "content": "ASIAN DEVELOPMENT BANK MEMBER FACT SHEET"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 2
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        25,
+                        71,
+                        378,
+                        285
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                25,
+                                71,
+                                378,
+                                285
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        25,
+                                        71,
+                                        378,
+                                        285
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                25,
+                                                71,
+                                                378,
+                                                285
+                                            ],
+                                            "type": "image",
+                                            "image_path": "4d052caa737a1a85e7908027a2bf47fa36d05c11698e51426b7d05a0b0fc33bf.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 1
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "bbox": [
+                        50,
+                        289,
+                        288,
+                        352
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                50,
+                                289,
+                                288,
+                                352
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        50,
+                                        289,
+                                        288,
+                                        352
+                                    ],
+                                    "type": "text",
+                                    "content": "Total ADB operations in 2025 amounted to $29.3 billion, with cofinancing of $14.7 billion."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        386,
+                        218,
+                        561,
+                        242
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                386,
+                                218,
+                                561,
+                                242
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        386,
+                                        218,
+                                        561,
+                                        242
+                                    ],
+                                    "type": "text",
+                                    "content": "BRUNEI DARUSSALAM: SHAREHOLDING AND VOTING POWER"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        387,
+                        245,
+                        495,
+                        266
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                387,
+                                245,
+                                495,
+                                266
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        387,
+                                        245,
+                                        495,
+                                        266
+                                    ],
+                                    "type": "text",
+                                    "content": "Number of shares held: 37,386 (0.351% of total shares)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        387,
+                        268,
+                        517,
+                        298
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                387,
+                                268,
+                                517,
+                                298
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        387,
+                                        268,
+                                        517,
+                                        298
+                                    ],
+                                    "type": "text",
+                                    "content": "Votes:\n75,933 (0.571% of total membership,\n0.872% of total regional membership)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        387,
+                        300,
+                        501,
+                        320
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                387,
+                                300,
+                                501,
+                                320
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        387,
+                                        300,
+                                        501,
+                                        320
+                                    ],
+                                    "type": "text",
+                                    "content": "*Overall capital subscription: $512.45 million"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        387,
+                        323,
+                        500,
+                        343
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                387,
+                                323,
+                                500,
+                                343
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        387,
+                                        323,
+                                        500,
+                                        343
+                                    ],
+                                    "type": "text",
+                                    "content": "*Paid-in capital subscription: $25.67 million"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        387,
+                        346,
+                        559,
+                        356
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                387,
+                                346,
+                                559,
+                                356
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        387,
+                                        346,
+                                        559,
+                                        356
+                                    ],
+                                    "type": "text",
+                                    "content": "*United States dollar figures are valued at the rate as of 31 December 2025."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        53,
+                        371,
+                        362,
+                        399
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                53,
+                                371,
+                                362,
+                                399
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        53,
+                                        371,
+                                        362,
+                                        399
+                                    ],
+                                    "type": "text",
+                                    "content": "BRUNEI DARUSSALAM"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        50,
+                        411,
+                        366,
+                        456
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                50,
+                                411,
+                                366,
+                                456
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        50,
+                                        411,
+                                        366,
+                                        456
+                                    ],
+                                    "type": "text",
+                                    "content": "The Asian Development Bank (ADB) works alongside governments, development partners, and other stakeholders to confront the complex challenges presented by persistent poverty, geopolitical instability, and other pressing development issues facing the Asia and Pacific region."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        50,
+                        458,
+                        365,
+                        514
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                50,
+                                458,
+                                365,
+                                514
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        50,
+                                        458,
+                                        365,
+                                        514
+                                    ],
+                                    "type": "text",
+                                    "content": "In 2025, ADB made institutional changes that allow the bank to scale up for development impact well into the future. These include an amendment to the bank's founding charter to remove a lending limitation and enable ADB to expand support for developing member countries (DMCs) in addressing critical priorities without requiring a general capital increase from shareholders."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        50,
+                        516,
+                        371,
+                        561
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                50,
+                                516,
+                                371,
+                                561
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        50,
+                                        516,
+                                        371,
+                                        561
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB also introduced new guidance for integrating private sector solutions at every stage of the project cycle. The approach focuses on improving enabling environments through policy reforms, developing bankable projects, and mobilizing private capital to complement public investments."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        50,
+                        563,
+                        370,
+                        618
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                50,
+                                563,
+                                370,
+                                618
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        50,
+                                        563,
+                                        370,
+                                        618
+                                    ],
+                                    "type": "text",
+                                    "content": "The bank updated its energy policy in 2025, strengthening its commitment to increasing energy access and improving energy security for DMCs. While continuing with strong support for renewable energy generation, the changes enable ADB to support nuclear power—subject to rigorous assessments; strong safety, security, and environmental and social safeguards; and whole-of-life cost assessments."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        51,
+                        620,
+                        367,
+                        665
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                51,
+                                620,
+                                367,
+                                665
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        51,
+                                        620,
+                                        367,
+                                        665
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB's updated Results-Based Lending Policy introduces greater flexibility to help DMCs deliver sustainable outcomes. Results-based lending can now be combined with other types of ADB financing—such as investment loans—to strengthen government institutions and support complementary projects."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        51,
+                        666,
+                        366,
+                        700
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                51,
+                                666,
+                                366,
+                                700
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        51,
+                                        666,
+                                        366,
+                                        700
+                                    ],
+                                    "type": "text",
+                                    "content": "Brunei Darussalam joined ADB in 2006. It had provided $512.45 million in capital subscription to ADB as of 31 December 2025. It has also contributed and committed $22.31 million to ADB's special funds since becoming a member."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        386,
+                        388,
+                        511,
+                        408
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                386,
+                                388,
+                                511,
+                                408
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        386,
+                                        388,
+                                        511,
+                                        408
+                                    ],
+                                    "type": "text",
+                                    "content": "CONTRIBUTIONS TO SPECIAL FUNDS RESOURCES"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 18,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        386,
+                        414,
+                        558,
+                        495
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                386,
+                                414,
+                                558,
+                                495
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        386,
+                                        414,
+                                        558,
+                                        495
+                                    ],
+                                    "type": "text",
+                                    "content": "Brunei Darussalam contributes to the Asian Development Fund (ADF) and the Technical Assistance Special Fund (TASF). The ADF provides grants to ADB's low-income developing member countries. The TASF provides technical assistance grants to developing member countries to help prepare projects and undertake technical or policy studies."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 19,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        386,
+                        501,
+                        515,
+                        533
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                386,
+                                501,
+                                515,
+                                533
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        386,
+                                        501,
+                                        515,
+                                        533
+                                    ],
+                                    "type": "text",
+                                    "content": "Contributions:\n**ADF (committed): $21.21 million\n**TASF (committed): $1.1 million"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 20,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        388,
+                        540,
+                        539,
+                        558
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                388,
+                                540,
+                                539,
+                                558
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        388,
+                                        540,
+                                        539,
+                                        558
+                                    ],
+                                    "type": "text",
+                                    "content": "** Valued at exchange rates per relevant Board of Governors' Resolutions."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 21,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        51,
+                        703,
+                        369,
+                        726
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                51,
+                                703,
+                                369,
+                                726
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        51,
+                                        703,
+                                        369,
+                                        726
+                                    ],
+                                    "type": "text",
+                                    "content": "Since 1966, 1 consulting contract worth \\$3,000 has been awarded to consultants from Brunei Darussalam in 2025."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16
+                },
+                {
+                    "bbox": [
+                        50,
+                        728,
+                        363,
+                        761
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                50,
+                                728,
+                                363,
+                                761
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        50,
+                                        728,
+                                        363,
+                                        761
+                                    ],
+                                    "type": "text",
+                                    "content": "As of 31 December 2025, there were two international staff from Brunei Darussalam in ADB (one man and one woman), which represents 0.12% of the total international staff."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17
+                },
+                {
+                    "bbox": [
+                        512,
+                        677,
+                        567,
+                        731
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                512,
+                                677,
+                                567,
+                                731
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        512,
+                                        677,
+                                        567,
+                                        731
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 22
+                }
+            ],
+            "page_size": [
+                612,
+                792
+            ],
+            "page_idx": 0,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        67,
+                        30,
+                        306,
+                        68
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                30,
+                                306,
+                                68
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        30,
+                                        306,
+                                        68
+                                    ],
+                                    "type": "text",
+                                    "content": "ASIAN DEVELOPMENT BANK MEMBER FACT SHEET"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 2
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        25,
+                        71,
+                        378,
+                        285
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                25,
+                                71,
+                                378,
+                                285
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        25,
+                                        71,
+                                        378,
+                                        285
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                25,
+                                                71,
+                                                378,
+                                                285
+                                            ],
+                                            "type": "image",
+                                            "image_path": "4d052caa737a1a85e7908027a2bf47fa36d05c11698e51426b7d05a0b0fc33bf.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 1
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "bbox": [
+                        50,
+                        289,
+                        288,
+                        352
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                50,
+                                289,
+                                288,
+                                352
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        50,
+                                        289,
+                                        288,
+                                        352
+                                    ],
+                                    "type": "text",
+                                    "content": "Total ADB operations in 2025 amounted to $29.3 billion, with cofinancing of $14.7 billion."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        386,
+                        218,
+                        561,
+                        242
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                386,
+                                218,
+                                561,
+                                242
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        386,
+                                        218,
+                                        561,
+                                        242
+                                    ],
+                                    "type": "text",
+                                    "content": "BRUNEI DARUSSALAM: SHAREHOLDING AND VOTING POWER"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        387,
+                        245,
+                        495,
+                        266
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                387,
+                                245,
+                                495,
+                                266
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        387,
+                                        245,
+                                        495,
+                                        266
+                                    ],
+                                    "type": "text",
+                                    "content": "Number of shares held: 37,386 (0.351% of total shares)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        387,
+                        268,
+                        517,
+                        298
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                387,
+                                268,
+                                517,
+                                298
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        387,
+                                        268,
+                                        517,
+                                        298
+                                    ],
+                                    "type": "text",
+                                    "content": "Votes:\n75,933 (0.571% of total membership,\n0.872% of total regional membership)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        387,
+                        300,
+                        501,
+                        320
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                387,
+                                300,
+                                501,
+                                320
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        387,
+                                        300,
+                                        501,
+                                        320
+                                    ],
+                                    "type": "text",
+                                    "content": "*Overall capital subscription: $512.45 million"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        387,
+                        323,
+                        500,
+                        343
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                387,
+                                323,
+                                500,
+                                343
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        387,
+                                        323,
+                                        500,
+                                        343
+                                    ],
+                                    "type": "text",
+                                    "content": "*Paid-in capital subscription: $25.67 million"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        387,
+                        346,
+                        559,
+                        356
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                387,
+                                346,
+                                559,
+                                356
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        387,
+                                        346,
+                                        559,
+                                        356
+                                    ],
+                                    "type": "text",
+                                    "content": "*United States dollar figures are valued at the rate as of 31 December 2025."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        53,
+                        371,
+                        362,
+                        399
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                53,
+                                371,
+                                362,
+                                399
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        53,
+                                        371,
+                                        362,
+                                        399
+                                    ],
+                                    "type": "text",
+                                    "content": "BRUNEI DARUSSALAM"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        50,
+                        411,
+                        366,
+                        456
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                50,
+                                411,
+                                366,
+                                456
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        50,
+                                        411,
+                                        366,
+                                        456
+                                    ],
+                                    "type": "text",
+                                    "content": "The Asian Development Bank (ADB) works alongside governments, development partners, and other stakeholders to confront the complex challenges presented by persistent poverty, geopolitical instability, and other pressing development issues facing the Asia and Pacific region."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        50,
+                        458,
+                        365,
+                        514
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                50,
+                                458,
+                                365,
+                                514
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        50,
+                                        458,
+                                        365,
+                                        514
+                                    ],
+                                    "type": "text",
+                                    "content": "In 2025, ADB made institutional changes that allow the bank to scale up for development impact well into the future. These include an amendment to the bank's founding charter to remove a lending limitation and enable ADB to expand support for developing member countries (DMCs) in addressing critical priorities without requiring a general capital increase from shareholders."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        50,
+                        516,
+                        371,
+                        561
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                50,
+                                516,
+                                371,
+                                561
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        50,
+                                        516,
+                                        371,
+                                        561
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB also introduced new guidance for integrating private sector solutions at every stage of the project cycle. The approach focuses on improving enabling environments through policy reforms, developing bankable projects, and mobilizing private capital to complement public investments."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        50,
+                        563,
+                        370,
+                        618
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                50,
+                                563,
+                                370,
+                                618
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        50,
+                                        563,
+                                        370,
+                                        618
+                                    ],
+                                    "type": "text",
+                                    "content": "The bank updated its energy policy in 2025, strengthening its commitment to increasing energy access and improving energy security for DMCs. While continuing with strong support for renewable energy generation, the changes enable ADB to support nuclear power—subject to rigorous assessments; strong safety, security, and environmental and social safeguards; and whole-of-life cost assessments."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        51,
+                        620,
+                        367,
+                        665
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                51,
+                                620,
+                                367,
+                                665
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        51,
+                                        620,
+                                        367,
+                                        665
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB's updated Results-Based Lending Policy introduces greater flexibility to help DMCs deliver sustainable outcomes. Results-based lending can now be combined with other types of ADB financing—such as investment loans—to strengthen government institutions and support complementary projects."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        51,
+                        666,
+                        366,
+                        700
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                51,
+                                666,
+                                366,
+                                700
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        51,
+                                        666,
+                                        366,
+                                        700
+                                    ],
+                                    "type": "text",
+                                    "content": "Brunei Darussalam joined ADB in 2006. It had provided $512.45 million in capital subscription to ADB as of 31 December 2025. It has also contributed and committed $22.31 million to ADB's special funds since becoming a member."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        386,
+                        388,
+                        511,
+                        408
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                386,
+                                388,
+                                511,
+                                408
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        386,
+                                        388,
+                                        511,
+                                        408
+                                    ],
+                                    "type": "text",
+                                    "content": "CONTRIBUTIONS TO SPECIAL FUNDS RESOURCES"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 18,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        386,
+                        414,
+                        558,
+                        495
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                386,
+                                414,
+                                558,
+                                495
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        386,
+                                        414,
+                                        558,
+                                        495
+                                    ],
+                                    "type": "text",
+                                    "content": "Brunei Darussalam contributes to the Asian Development Fund (ADF) and the Technical Assistance Special Fund (TASF). The ADF provides grants to ADB's low-income developing member countries. The TASF provides technical assistance grants to developing member countries to help prepare projects and undertake technical or policy studies."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 19,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        386,
+                        501,
+                        515,
+                        533
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                386,
+                                501,
+                                515,
+                                533
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        386,
+                                        501,
+                                        515,
+                                        533
+                                    ],
+                                    "type": "text",
+                                    "content": "Contributions:\n**ADF (committed): $21.21 million\n**TASF (committed): $1.1 million"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 20,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        388,
+                        540,
+                        539,
+                        558
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                388,
+                                540,
+                                539,
+                                558
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        388,
+                                        540,
+                                        539,
+                                        558
+                                    ],
+                                    "type": "text",
+                                    "content": "** Valued at exchange rates per relevant Board of Governors' Resolutions."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 21,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        43,
+                        27,
+                        186,
+                        40
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                27,
+                                186,
+                                40
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        27,
+                                        186,
+                                        40
+                                    ],
+                                    "type": "text",
+                                    "content": "FINANCING PARTNERSHIPS"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        41,
+                        46,
+                        553,
+                        91
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                41,
+                                46,
+                                553,
+                                91
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        41,
+                                        46,
+                                        553,
+                                        91
+                                    ],
+                                    "type": "text",
+                                    "content": "Financing partnerships enable ADB's partner governments or their agencies, multilateral financing institutions, and private organizations to participate in financing ADB projects. The additional funds provided may be in the form of loans and grants, technical assistance, and private sector cofinancing. More information on cofinanced investment projects can be found on www.adb.org/what-we-do/financing-partnerships."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        41,
+                        99,
+                        541,
+                        133
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                41,
+                                99,
+                                541,
+                                133
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        41,
+                                        99,
+                                        541,
+                                        133
+                                    ],
+                                    "type": "text",
+                                    "content": "Trust funds. ADB manages trust funds established through financing agreements initially from single donors targeting specific sectors. It has been increasingly switching to thematic trust funds and financing partnership facilities that link various forms of assistance to support priority areas such as water, clean energy, regional cooperation and integration, urban sector financing, and health."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        44,
+                        156,
+                        158,
+                        169
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                44,
+                                156,
+                                158,
+                                169
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        44,
+                                        156,
+                                        158,
+                                        169
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB AT A GLANCE"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        43,
+                        174,
+                        288,
+                        236
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                174,
+                                288,
+                                236
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        174,
+                                        288,
+                                        236
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB is a leading multilateral development bank supporting inclusive, resilient, and sustainable growth across Asia and the Pacific. Founded in 1966, ADB is owned by 69 members—50 from the region and 19 outside. ADB is headquartered in Manila, Philippines, and has 43 offices around the world. Its 4,436 staff represented 67 of its 69 members as of 31 December 2025."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        43,
+                        238,
+                        286,
+                        281
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                238,
+                                286,
+                                281
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        238,
+                                        286,
+                                        281
+                                    ],
+                                    "type": "text",
+                                    "content": "Working with its members and partners to solve complex challenges together, ADB's financial and technical support is transforming lives and economies across Asia and the Pacific—fueling prosperity, strengthening communities, and protecting the planet."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        43,
+                        282,
+                        294,
+                        314
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                282,
+                                294,
+                                314
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        282,
+                                        294,
+                                        314
+                                    ],
+                                    "type": "text",
+                                    "content": "In 2025, ADB sharpened its focus on promoting private sector development as a key driver of growth. ADB's investments in 2025 across Asia and the Pacific are expected to generate more than 3.3 million jobs."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        43,
+                        316,
+                        293,
+                        358
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                316,
+                                293,
+                                358
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        316,
+                                        293,
+                                        358
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB operations. In 2025, ADB committed $29.3 billion in loans, grants, equity investments, guarantees, private sector programs, and technical assistance to its borrowing members. ADB bolstered its total support with cofinancing of $14.7 billion."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        43,
+                        360,
+                        288,
+                        402
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                360,
+                                288,
+                                402
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        360,
+                                        288,
+                                        402
+                                    ],
+                                    "type": "text",
+                                    "content": "As of 31 December 2025, ADB's cumulative commitments in 46 members stood at $423.4 billion covering 4,659 loans, $15.7 billion in 719 grants, and $6.3 billion in technical assistance grants, including regional technical assistance grants."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        43,
+                        404,
+                        291,
+                        436
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                404,
+                                291,
+                                436
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        404,
+                                        291,
+                                        436
+                                    ],
+                                    "type": "text",
+                                    "content": "In addition to loans, grants, and technical assistance, ADB used equity investments, guarantees, and private sector programs to help its developing member countries."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        43,
+                        439,
+                        294,
+                        491
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                439,
+                                294,
+                                491
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        439,
+                                        294,
+                                        491
+                                    ],
+                                    "type": "text",
+                                    "content": "Total project commitments in private sector loans, equity investments, and guarantees from ADB's own funds in 2025 amounted to $3.1 billion for 49 transactions in economic and social infrastructure, the finance sector, and agribusiness. Commitments in ADB's Trade and Supply Chain Finance Program and Microfinance Program amounted to $2.4 billion."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        43,
+                        492,
+                        293,
+                        524
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                492,
+                                293,
+                                524
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        492,
+                                        293,
+                                        524
+                                    ],
+                                    "type": "text",
+                                    "content": "In 2025, ADB also directly mobilized $6 billion in private capital across 35 projects, with an additional $3.7 billion directly mobilized through its trade and supply chain finance and microfinance programs."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        43,
+                        526,
+                        286,
+                        558
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                526,
+                                286,
+                                558
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        526,
+                                        286,
+                                        558
+                                    ],
+                                    "type": "text",
+                                    "content": "Total outstanding balances and undisbursed commitments of private sector transactions funded by ADB's own resources stood at $15.1 billion as of 31 December 2025."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        44,
+                        569,
+                        187,
+                        582
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                44,
+                                569,
+                                187,
+                                582
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        44,
+                                        569,
+                                        187,
+                                        582
+                                    ],
+                                    "type": "text",
+                                    "content": "FINANCING PARTNERSHIPS"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        44,
+                        587,
+                        279,
+                        598
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                44,
+                                587,
+                                279,
+                                598
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        44,
+                                        587,
+                                        279,
+                                        598
+                                    ],
+                                    "type": "text",
+                                    "content": "Total public and private sector cofinancing commitments, 2025"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        44,
+                        603,
+                        200,
+                        613
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                44,
+                                603,
+                                200,
+                                613
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        44,
+                                        603,
+                                        200,
+                                        613
+                                    ],
+                                    "type": "text",
+                                    "content": "- $14.7 billion for 224 projects, of which:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        55,
+                        613,
+                        203,
+                        624
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                55,
+                                613,
+                                203,
+                                624
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        55,
+                                        613,
+                                        203,
+                                        624
+                                    ],
+                                    "type": "text",
+                                    "content": "» $13.7 billion, 92 investment projects,"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        55,
+                        624,
+                        247,
+                        634
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                55,
+                                624,
+                                247,
+                                634
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        55,
+                                        624,
+                                        247,
+                                        634
+                                    ],
+                                    "type": "text",
+                                    "content": "» $173.6 million, 130 technical assistance projects,"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        55,
+                        634,
+                        286,
+                        645
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                55,
+                                634,
+                                286,
+                                645
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        55,
+                                        634,
+                                        286,
+                                        645
+                                    ],
+                                    "type": "text",
+                                    "content": "» $781.18 million transaction advisory services for 2 projects.*"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 18,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        43,
+                        649,
+                        277,
+                        670
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                649,
+                                277,
+                                670
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        649,
+                                        277,
+                                        670
+                                    ],
+                                    "type": "text",
+                                    "content": "Cumulative public and private sector cofinancing commitments, 1970–2025"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 19,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        44,
+                        675,
+                        214,
+                        685
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                44,
+                                675,
+                                214,
+                                685
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        44,
+                                        675,
+                                        214,
+                                        685
+                                    ],
+                                    "type": "text",
+                                    "content": "- $197.72 billion for 3,777 projects, of which:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 20,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        55,
+                        685,
+                        219,
+                        696
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                55,
+                                685,
+                                219,
+                                696
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        55,
+                                        685,
+                                        219,
+                                        696
+                                    ],
+                                    "type": "text",
+                                    "content": "» $189.9 billion, 1,430 investment projects,"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 21,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        55,
+                        696,
+                        247,
+                        706
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                55,
+                                696,
+                                247,
+                                706
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        55,
+                                        696,
+                                        247,
+                                        706
+                                    ],
+                                    "type": "text",
+                                    "content": "» $3.41 billion, 2,332 technical assistance projects,"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 22,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        55,
+                        706,
+                        279,
+                        716
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                55,
+                                706,
+                                279,
+                                716
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        55,
+                                        706,
+                                        279,
+                                        716
+                                    ],
+                                    "type": "text",
+                                    "content": "» $4.4 billion transaction advisory services for 15 projects.**"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 23,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        44,
+                        723,
+                        292,
+                        746
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                44,
+                                723,
+                                292,
+                                746
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        44,
+                                        723,
+                                        292,
+                                        746
+                                    ],
+                                    "type": "text",
+                                    "content": "* Adjusted to exclude $12.5 million A Loans mobilized under transaction advisory services reported under private sector operations financing, and $158.8 million cofinancing reported in private sector projects cofinancing."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 24,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        44,
+                        746,
+                        290,
+                        770
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                44,
+                                746,
+                                290,
+                                770
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        44,
+                                        746,
+                                        290,
+                                        770
+                                    ],
+                                    "type": "text",
+                                    "content": "** Adjusted to exclude $53.9 million A Loans mobilized under transaction advisory services reported under private sector operations financing, and $334.58 million cofinancing reported in private sector projects cofinancing."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 25,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        308,
+                        155,
+                        392,
+                        167
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                308,
+                                155,
+                                392,
+                                167
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        308,
+                                        155,
+                                        392,
+                                        167
+                                    ],
+                                    "type": "text",
+                                    "content": "PROCUREMENT"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 26,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        307,
+                        172,
+                        584,
+                        194
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                307,
+                                172,
+                                584,
+                                194
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        307,
+                                        172,
+                                        584,
+                                        194
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB's procurement contracts in Asia and the Pacific for goods, works, and related services under loan and grant operations:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 27,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        308,
+                        197,
+                        403,
+                        207
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                308,
+                                197,
+                                403,
+                                207
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        308,
+                                        197,
+                                        403,
+                                        207
+                                    ],
+                                    "type": "text",
+                                    "content": "• $13.98 billion in 2024"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 28,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        308,
+                        207,
+                        402,
+                        217
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                308,
+                                207,
+                                402,
+                                217
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        308,
+                                        207,
+                                        402,
+                                        217
+                                    ],
+                                    "type": "text",
+                                    "content": "• $14.89 billion in 2025"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 29,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        308,
+                        217,
+                        570,
+                        237
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                308,
+                                217,
+                                570,
+                                237
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        308,
+                                        217,
+                                        570,
+                                        237
+                                    ],
+                                    "type": "text",
+                                    "content": "- $292.29 billion covering 238,051 contracts, cumulative procurement since 1966"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 30,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        307,
+                        240,
+                        588,
+                        262
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                307,
+                                240,
+                                588,
+                                262
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        307,
+                                        240,
+                                        588,
+                                        262
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB's procurement contracts in Asia and the Pacific for consulting services under loan, grant, and technical assistance operations:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 31,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        308,
+                        265,
+                        411,
+                        275
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                308,
+                                265,
+                                411,
+                                275
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        308,
+                                        265,
+                                        411,
+                                        275
+                                    ],
+                                    "type": "text",
+                                    "content": "• $524.54 million in 2024"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 32,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        309,
+                        275,
+                        411,
+                        285
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                309,
+                                275,
+                                411,
+                                285
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        309,
+                                        275,
+                                        411,
+                                        285
+                                    ],
+                                    "type": "text",
+                                    "content": "• $758.66 million in 2025"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 33,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        308,
+                        285,
+                        591,
+                        297
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                308,
+                                285,
+                                591,
+                                297
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        308,
+                                        285,
+                                        591,
+                                        297
+                                    ],
+                                    "type": "text",
+                                    "content": "- $17.5 billion covering 91,335 contracts, cumulative procurement since 1966"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 34,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        320,
+                        310,
+                        449,
+                        320
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                320,
+                                310,
+                                449,
+                                320
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        320,
+                                        310,
+                                        449,
+                                        320
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB Governor: Amin Liew Abdullah"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 35,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        319,
+                        322,
+                        572,
+                        344
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                319,
+                                322,
+                                572,
+                                344
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        319,
+                                        322,
+                                        572,
+                                        344
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB Alternate Governor: Pengiran Datin Zety Sufina Pengiran Dato Sani\nADB Director: Amiruddin Muhamed (Malaysia)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 36,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        319,
+                        346,
+                        511,
+                        357
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                319,
+                                346,
+                                511,
+                                357
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        319,
+                                        346,
+                                        511,
+                                        357
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB Alternate Director: Shreekrishna Nepal (Nepal)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 37,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        319,
+                        357,
+                        539,
+                        380
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                319,
+                                357,
+                                539,
+                                380
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        319,
+                                        357,
+                                        539,
+                                        380
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB Director's Advisors: Pimpatchara Kusolvititkul (Thailand), Hafiz Daud (Brunei Darussalam), and Yonca Saka Sezgin (Türkiye)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 38,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        320,
+                        395,
+                        380,
+                        407
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                320,
+                                395,
+                                380,
+                                407
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        320,
+                                        395,
+                                        380,
+                                        407
+                                    ],
+                                    "type": "text",
+                                    "content": "CONTACTS"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 39,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        320,
+                        411,
+                        443,
+                        422
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                320,
+                                411,
+                                443,
+                                422
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        320,
+                                        411,
+                                        443,
+                                        422
+                                    ],
+                                    "type": "text",
+                                    "content": "Ministry of Finance and Economy"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 40,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        319,
+                        420,
+                        494,
+                        476
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                319,
+                                420,
+                                494,
+                                476
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        319,
+                                        420,
+                                        494,
+                                        476
+                                    ],
+                                    "type": "text",
+                                    "content": "Level 18, Ministry of Finance and Economy Building  \nCommonwealth Drive, BB3910  \nBrunei Darussalam  \nTel: (673) 238 3819  \nFax: (673) 238 3816  \nmdb.brunei@mofe.gov.bn"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 41,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        320,
+                        480,
+                        392,
+                        491
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                320,
+                                480,
+                                392,
+                                491
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        320,
+                                        480,
+                                        392,
+                                        491
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB Headquarters"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 42,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        320,
+                        490,
+                        438,
+                        537
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                320,
+                                490,
+                                438,
+                                537
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        320,
+                                        490,
+                                        438,
+                                        537
+                                    ],
+                                    "type": "text",
+                                    "content": "6 ADB Avenue, Mandaluyong City\n1550 Metro Manila, Philippines\nTel: +63 2 8632 4444\nFax: +63 2 8636 2444\nwww.adb.org"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 43,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        320,
+                        552,
+                        399,
+                        562
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                320,
+                                552,
+                                399,
+                                562
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        320,
+                                        552,
+                                        399,
+                                        562
+                                    ],
+                                    "type": "text",
+                                    "content": "Useful ADB websites"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 44,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        320,
+                        566,
+                        408,
+                        586
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                320,
+                                566,
+                                408,
+                                586
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        320,
+                                        566,
+                                        408,
+                                        586
+                                    ],
+                                    "type": "text",
+                                    "content": "Asian Development Bank\nwww.adb.org"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 45,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        320,
+                        591,
+                        414,
+                        612
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                320,
+                                591,
+                                414,
+                                612
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        320,
+                                        591,
+                                        414,
+                                        612
+                                    ],
+                                    "type": "text",
+                                    "content": "Publications\nwww.adb.org/publications"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 46,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        320,
+                        616,
+                        505,
+                        637
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                320,
+                                616,
+                                505,
+                                637
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        320,
+                                        616,
+                                        505,
+                                        637
+                                    ],
+                                    "type": "text",
+                                    "content": "Annual Reports\nwww.adb.org/documents/series/adb-annual-reports"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 47,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        320,
+                        642,
+                        506,
+                        662
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                320,
+                                642,
+                                506,
+                                662
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        320,
+                                        642,
+                                        506,
+                                        662
+                                    ],
+                                    "type": "text",
+                                    "content": "Partnership Reports\nwww.adb.org/documents/series/partnership-reports"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 48,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        320,
+                        666,
+                        533,
+                        687
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                320,
+                                666,
+                                533,
+                                687
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        320,
+                                        666,
+                                        533,
+                                        687
+                                    ],
+                                    "type": "text",
+                                    "content": "Asian Development Outlook\nwww.adb.org/publications/series/asian-development-outlook"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 49,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        320,
+                        691,
+                        383,
+                        712
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                320,
+                                691,
+                                383,
+                                712
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        320,
+                                        691,
+                                        383,
+                                        712
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB Data Library\ndata.adb.org"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 50,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        320,
+                        716,
+                        406,
+                        737
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                320,
+                                716,
+                                406,
+                                737
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        320,
+                                        716,
+                                        406,
+                                        737
+                                    ],
+                                    "type": "text",
+                                    "content": "Asian Development Blog https://blogs.adb.org/"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 51,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        318,
+                        752,
+                        577,
+                        772
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                318,
+                                752,
+                                577,
+                                772
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        318,
+                                        752,
+                                        577,
+                                        772
+                                    ],
+                                    "type": "text",
+                                    "content": "Notes: (i) Figures are estimated by ADB unless otherwise stated. \"$\" refers to United States dollars. (ii) Data are updated as of 31 December 2025 unless otherwise indicated."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 52,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        478,
+                        773,
+                        599,
+                        784
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                478,
+                                773,
+                                599,
+                                784
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        478,
+                                        773,
+                                        599,
+                                        784
+                                    ],
+                                    "type": "text",
+                                    "content": "Publication Stock No. ARM260162"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 53
+                }
+            ],
+            "page_size": [
+                612,
+                792
+            ],
+            "page_idx": 1,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        43,
+                        27,
+                        186,
+                        40
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                27,
+                                186,
+                                40
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        27,
+                                        186,
+                                        40
+                                    ],
+                                    "type": "text",
+                                    "content": "FINANCING PARTNERSHIPS"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        41,
+                        46,
+                        553,
+                        91
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                41,
+                                46,
+                                553,
+                                91
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        41,
+                                        46,
+                                        553,
+                                        91
+                                    ],
+                                    "type": "text",
+                                    "content": "Financing partnerships enable ADB's partner governments or their agencies, multilateral financing institutions, and private organizations to participate in financing ADB projects. The additional funds provided may be in the form of loans and grants, technical assistance, and private sector cofinancing. More information on cofinanced investment projects can be found on www.adb.org/what-we-do/financing-partnerships."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        41,
+                        99,
+                        541,
+                        133
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                41,
+                                99,
+                                541,
+                                133
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        41,
+                                        99,
+                                        541,
+                                        133
+                                    ],
+                                    "type": "text",
+                                    "content": "Trust funds. ADB manages trust funds established through financing agreements initially from single donors targeting specific sectors. It has been increasingly switching to thematic trust funds and financing partnership facilities that link various forms of assistance to support priority areas such as water, clean energy, regional cooperation and integration, urban sector financing, and health."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        44,
+                        156,
+                        158,
+                        169
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                44,
+                                156,
+                                158,
+                                169
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        44,
+                                        156,
+                                        158,
+                                        169
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB AT A GLANCE"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        43,
+                        174,
+                        288,
+                        236
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                174,
+                                288,
+                                236
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        174,
+                                        288,
+                                        236
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB is a leading multilateral development bank supporting inclusive, resilient, and sustainable growth across Asia and the Pacific. Founded in 1966, ADB is owned by 69 members—50 from the region and 19 outside. ADB is headquartered in Manila, Philippines, and has 43 offices around the world. Its 4,436 staff represented 67 of its 69 members as of 31 December 2025."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        43,
+                        238,
+                        286,
+                        281
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                238,
+                                286,
+                                281
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        238,
+                                        286,
+                                        281
+                                    ],
+                                    "type": "text",
+                                    "content": "Working with its members and partners to solve complex challenges together, ADB's financial and technical support is transforming lives and economies across Asia and the Pacific—fueling prosperity, strengthening communities, and protecting the planet."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        43,
+                        282,
+                        294,
+                        314
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                282,
+                                294,
+                                314
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        282,
+                                        294,
+                                        314
+                                    ],
+                                    "type": "text",
+                                    "content": "In 2025, ADB sharpened its focus on promoting private sector development as a key driver of growth. ADB's investments in 2025 across Asia and the Pacific are expected to generate more than 3.3 million jobs."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        43,
+                        316,
+                        293,
+                        358
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                316,
+                                293,
+                                358
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        316,
+                                        293,
+                                        358
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB operations. In 2025, ADB committed $29.3 billion in loans, grants, equity investments, guarantees, private sector programs, and technical assistance to its borrowing members. ADB bolstered its total support with cofinancing of $14.7 billion."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        43,
+                        360,
+                        288,
+                        402
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                360,
+                                288,
+                                402
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        360,
+                                        288,
+                                        402
+                                    ],
+                                    "type": "text",
+                                    "content": "As of 31 December 2025, ADB's cumulative commitments in 46 members stood at $423.4 billion covering 4,659 loans, $15.7 billion in 719 grants, and $6.3 billion in technical assistance grants, including regional technical assistance grants."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        43,
+                        404,
+                        291,
+                        436
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                404,
+                                291,
+                                436
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        404,
+                                        291,
+                                        436
+                                    ],
+                                    "type": "text",
+                                    "content": "In addition to loans, grants, and technical assistance, ADB used equity investments, guarantees, and private sector programs to help its developing member countries."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        43,
+                        439,
+                        294,
+                        491
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                439,
+                                294,
+                                491
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        439,
+                                        294,
+                                        491
+                                    ],
+                                    "type": "text",
+                                    "content": "Total project commitments in private sector loans, equity investments, and guarantees from ADB's own funds in 2025 amounted to $3.1 billion for 49 transactions in economic and social infrastructure, the finance sector, and agribusiness. Commitments in ADB's Trade and Supply Chain Finance Program and Microfinance Program amounted to $2.4 billion."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        43,
+                        492,
+                        293,
+                        524
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                492,
+                                293,
+                                524
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        492,
+                                        293,
+                                        524
+                                    ],
+                                    "type": "text",
+                                    "content": "In 2025, ADB also directly mobilized $6 billion in private capital across 35 projects, with an additional $3.7 billion directly mobilized through its trade and supply chain finance and microfinance programs."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        43,
+                        526,
+                        286,
+                        558
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                526,
+                                286,
+                                558
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        526,
+                                        286,
+                                        558
+                                    ],
+                                    "type": "text",
+                                    "content": "Total outstanding balances and undisbursed commitments of private sector transactions funded by ADB's own resources stood at $15.1 billion as of 31 December 2025."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        44,
+                        569,
+                        187,
+                        582
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                44,
+                                569,
+                                187,
+                                582
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        44,
+                                        569,
+                                        187,
+                                        582
+                                    ],
+                                    "type": "text",
+                                    "content": "FINANCING PARTNERSHIPS"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        44,
+                        587,
+                        279,
+                        598
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                44,
+                                587,
+                                279,
+                                598
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        44,
+                                        587,
+                                        279,
+                                        598
+                                    ],
+                                    "type": "text",
+                                    "content": "Total public and private sector cofinancing commitments, 2025"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        44,
+                        603,
+                        200,
+                        613
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                44,
+                                603,
+                                200,
+                                613
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        44,
+                                        603,
+                                        200,
+                                        613
+                                    ],
+                                    "type": "text",
+                                    "content": "- $14.7 billion for 224 projects, of which:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        55,
+                        613,
+                        203,
+                        624
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                55,
+                                613,
+                                203,
+                                624
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        55,
+                                        613,
+                                        203,
+                                        624
+                                    ],
+                                    "type": "text",
+                                    "content": "» $13.7 billion, 92 investment projects,"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        55,
+                        624,
+                        247,
+                        634
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                55,
+                                624,
+                                247,
+                                634
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        55,
+                                        624,
+                                        247,
+                                        634
+                                    ],
+                                    "type": "text",
+                                    "content": "» $173.6 million, 130 technical assistance projects,"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        55,
+                        634,
+                        286,
+                        645
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                55,
+                                634,
+                                286,
+                                645
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        55,
+                                        634,
+                                        286,
+                                        645
+                                    ],
+                                    "type": "text",
+                                    "content": "» $781.18 million transaction advisory services for 2 projects.*"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 18,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        43,
+                        649,
+                        277,
+                        670
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                649,
+                                277,
+                                670
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        649,
+                                        277,
+                                        670
+                                    ],
+                                    "type": "text",
+                                    "content": "Cumulative public and private sector cofinancing commitments, 1970–2025"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 19,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        44,
+                        675,
+                        214,
+                        685
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                44,
+                                675,
+                                214,
+                                685
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        44,
+                                        675,
+                                        214,
+                                        685
+                                    ],
+                                    "type": "text",
+                                    "content": "- $197.72 billion for 3,777 projects, of which:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 20,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        55,
+                        685,
+                        219,
+                        696
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                55,
+                                685,
+                                219,
+                                696
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        55,
+                                        685,
+                                        219,
+                                        696
+                                    ],
+                                    "type": "text",
+                                    "content": "» $189.9 billion, 1,430 investment projects,"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 21,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        55,
+                        696,
+                        247,
+                        706
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                55,
+                                696,
+                                247,
+                                706
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        55,
+                                        696,
+                                        247,
+                                        706
+                                    ],
+                                    "type": "text",
+                                    "content": "» $3.41 billion, 2,332 technical assistance projects,"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 22,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        55,
+                        706,
+                        279,
+                        716
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                55,
+                                706,
+                                279,
+                                716
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        55,
+                                        706,
+                                        279,
+                                        716
+                                    ],
+                                    "type": "text",
+                                    "content": "» $4.4 billion transaction advisory services for 15 projects.**"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 23,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        44,
+                        723,
+                        292,
+                        746
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                44,
+                                723,
+                                292,
+                                746
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        44,
+                                        723,
+                                        292,
+                                        746
+                                    ],
+                                    "type": "text",
+                                    "content": "* Adjusted to exclude $12.5 million A Loans mobilized under transaction advisory services reported under private sector operations financing, and $158.8 million cofinancing reported in private sector projects cofinancing."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 24,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        44,
+                        746,
+                        290,
+                        770
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                44,
+                                746,
+                                290,
+                                770
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        44,
+                                        746,
+                                        290,
+                                        770
+                                    ],
+                                    "type": "text",
+                                    "content": "** Adjusted to exclude $53.9 million A Loans mobilized under transaction advisory services reported under private sector operations financing, and $334.58 million cofinancing reported in private sector projects cofinancing."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 25,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        308,
+                        155,
+                        392,
+                        167
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                308,
+                                155,
+                                392,
+                                167
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        308,
+                                        155,
+                                        392,
+                                        167
+                                    ],
+                                    "type": "text",
+                                    "content": "PROCUREMENT"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 26,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        307,
+                        172,
+                        584,
+                        194
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                307,
+                                172,
+                                584,
+                                194
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        307,
+                                        172,
+                                        584,
+                                        194
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB's procurement contracts in Asia and the Pacific for goods, works, and related services under loan and grant operations:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 27,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        308,
+                        197,
+                        403,
+                        207
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                308,
+                                197,
+                                403,
+                                207
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        308,
+                                        197,
+                                        403,
+                                        207
+                                    ],
+                                    "type": "text",
+                                    "content": "• $13.98 billion in 2024"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 28,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        308,
+                        207,
+                        402,
+                        217
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                308,
+                                207,
+                                402,
+                                217
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        308,
+                                        207,
+                                        402,
+                                        217
+                                    ],
+                                    "type": "text",
+                                    "content": "• $14.89 billion in 2025"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 29,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        308,
+                        217,
+                        570,
+                        237
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                308,
+                                217,
+                                570,
+                                237
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        308,
+                                        217,
+                                        570,
+                                        237
+                                    ],
+                                    "type": "text",
+                                    "content": "- $292.29 billion covering 238,051 contracts, cumulative procurement since 1966"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 30,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        307,
+                        240,
+                        588,
+                        262
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                307,
+                                240,
+                                588,
+                                262
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        307,
+                                        240,
+                                        588,
+                                        262
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB's procurement contracts in Asia and the Pacific for consulting services under loan, grant, and technical assistance operations:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 31,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        308,
+                        265,
+                        411,
+                        275
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                308,
+                                265,
+                                411,
+                                275
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        308,
+                                        265,
+                                        411,
+                                        275
+                                    ],
+                                    "type": "text",
+                                    "content": "• $524.54 million in 2024"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 32,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        309,
+                        275,
+                        411,
+                        285
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                309,
+                                275,
+                                411,
+                                285
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        309,
+                                        275,
+                                        411,
+                                        285
+                                    ],
+                                    "type": "text",
+                                    "content": "• $758.66 million in 2025"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 33,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        308,
+                        285,
+                        591,
+                        297
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                308,
+                                285,
+                                591,
+                                297
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        308,
+                                        285,
+                                        591,
+                                        297
+                                    ],
+                                    "type": "text",
+                                    "content": "- $17.5 billion covering 91,335 contracts, cumulative procurement since 1966"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 34,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        320,
+                        310,
+                        449,
+                        320
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                320,
+                                310,
+                                449,
+                                320
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        320,
+                                        310,
+                                        449,
+                                        320
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB Governor: Amin Liew Abdullah"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 35,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        319,
+                        322,
+                        572,
+                        344
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                319,
+                                322,
+                                572,
+                                344
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        319,
+                                        322,
+                                        572,
+                                        344
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB Alternate Governor: Pengiran Datin Zety Sufina Pengiran Dato Sani\nADB Director: Amiruddin Muhamed (Malaysia)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 36,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        319,
+                        346,
+                        511,
+                        357
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                319,
+                                346,
+                                511,
+                                357
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        319,
+                                        346,
+                                        511,
+                                        357
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB Alternate Director: Shreekrishna Nepal (Nepal)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 37,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        319,
+                        357,
+                        539,
+                        380
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                319,
+                                357,
+                                539,
+                                380
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        319,
+                                        357,
+                                        539,
+                                        380
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB Director's Advisors: Pimpatchara Kusolvititkul (Thailand), Hafiz Daud (Brunei Darussalam), and Yonca Saka Sezgin (Türkiye)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 38,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        320,
+                        395,
+                        380,
+                        407
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                320,
+                                395,
+                                380,
+                                407
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        320,
+                                        395,
+                                        380,
+                                        407
+                                    ],
+                                    "type": "text",
+                                    "content": "CONTACTS"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 39,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        320,
+                        411,
+                        443,
+                        422
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                320,
+                                411,
+                                443,
+                                422
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        320,
+                                        411,
+                                        443,
+                                        422
+                                    ],
+                                    "type": "text",
+                                    "content": "Ministry of Finance and Economy"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 40,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        319,
+                        420,
+                        494,
+                        476
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                319,
+                                420,
+                                494,
+                                476
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        319,
+                                        420,
+                                        494,
+                                        476
+                                    ],
+                                    "type": "text",
+                                    "content": "Level 18, Ministry of Finance and Economy Building  \nCommonwealth Drive, BB3910  \nBrunei Darussalam  \nTel: (673) 238 3819  \nFax: (673) 238 3816  \nmdb.brunei@mofe.gov.bn"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 41,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        320,
+                        480,
+                        392,
+                        491
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                320,
+                                480,
+                                392,
+                                491
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        320,
+                                        480,
+                                        392,
+                                        491
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB Headquarters"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 42,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        320,
+                        490,
+                        438,
+                        537
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                320,
+                                490,
+                                438,
+                                537
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        320,
+                                        490,
+                                        438,
+                                        537
+                                    ],
+                                    "type": "text",
+                                    "content": "6 ADB Avenue, Mandaluyong City\n1550 Metro Manila, Philippines\nTel: +63 2 8632 4444\nFax: +63 2 8636 2444\nwww.adb.org"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 43,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        320,
+                        552,
+                        399,
+                        562
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                320,
+                                552,
+                                399,
+                                562
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        320,
+                                        552,
+                                        399,
+                                        562
+                                    ],
+                                    "type": "text",
+                                    "content": "Useful ADB websites"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 44,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        320,
+                        566,
+                        408,
+                        586
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                320,
+                                566,
+                                408,
+                                586
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        320,
+                                        566,
+                                        408,
+                                        586
+                                    ],
+                                    "type": "text",
+                                    "content": "Asian Development Bank\nwww.adb.org"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 45,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        320,
+                        591,
+                        414,
+                        612
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                320,
+                                591,
+                                414,
+                                612
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        320,
+                                        591,
+                                        414,
+                                        612
+                                    ],
+                                    "type": "text",
+                                    "content": "Publications\nwww.adb.org/publications"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 46,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        320,
+                        616,
+                        505,
+                        637
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                320,
+                                616,
+                                505,
+                                637
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        320,
+                                        616,
+                                        505,
+                                        637
+                                    ],
+                                    "type": "text",
+                                    "content": "Annual Reports\nwww.adb.org/documents/series/adb-annual-reports"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 47,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        320,
+                        642,
+                        506,
+                        662
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                320,
+                                642,
+                                506,
+                                662
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        320,
+                                        642,
+                                        506,
+                                        662
+                                    ],
+                                    "type": "text",
+                                    "content": "Partnership Reports\nwww.adb.org/documents/series/partnership-reports"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 48,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        320,
+                        666,
+                        533,
+                        687
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                320,
+                                666,
+                                533,
+                                687
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        320,
+                                        666,
+                                        533,
+                                        687
+                                    ],
+                                    "type": "text",
+                                    "content": "Asian Development Outlook\nwww.adb.org/publications/series/asian-development-outlook"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 49,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        320,
+                        691,
+                        383,
+                        712
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                320,
+                                691,
+                                383,
+                                712
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        320,
+                                        691,
+                                        383,
+                                        712
+                                    ],
+                                    "type": "text",
+                                    "content": "ADB Data Library\ndata.adb.org"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 50,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        320,
+                        716,
+                        406,
+                        737
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                320,
+                                716,
+                                406,
+                                737
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        320,
+                                        716,
+                                        406,
+                                        737
+                                    ],
+                                    "type": "text",
+                                    "content": "Asian Development Blog https://blogs.adb.org/"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 51,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        318,
+                        752,
+                        577,
+                        772
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                318,
+                                752,
+                                577,
+                                772
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        318,
+                                        752,
+                                        577,
+                                        772
+                                    ],
+                                    "type": "text",
+                                    "content": "Notes: (i) Figures are estimated by ADB unless otherwise stated. \"$\" refers to United States dollars. (ii) Data are updated as of 31 December 2025 unless otherwise indicated."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 52,
+                    "merge_prev": false
+                }
+            ]
+        }
+    ],
+    "_backend": "hybrid",
+    "_effort": "medium",
+    "_ocr_enable": true,
+    "_version_name": "3.4.0"
+}

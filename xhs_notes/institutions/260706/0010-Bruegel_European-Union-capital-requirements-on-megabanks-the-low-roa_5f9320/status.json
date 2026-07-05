@@ -1,0 +1,20 @@
+{
+  "source_pdf": "/tmp/pdf_batch_002__4euzvpi/pdfs/0010-Bruegel_European-Union-capital-requirements-on-megabanks-the-low-roa_5f932072.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "布鲁盖尔研究所",
+  "cover_short_title": "欧洲大行资本新规，看",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "布鲁盖尔研究所：欧盟银行业政策碎片化才是真正挑战，而非美国监管竞争",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}
