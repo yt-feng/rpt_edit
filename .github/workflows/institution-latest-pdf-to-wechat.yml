@@ -1,15 +1,16 @@
 name: Institution latest PDF to WeChat
 
 # Daily companion to the Dropbox main flow. Instead of Dropbox, it pulls the newest
-# public PDF reports from IMF / BIS / World Bank / RAND / Brookings, runs them through
-# the existing MinerU -> KC translated -> WeChat draft pipeline, and archives the
-# original PDF links. The source PDFs themselves are transient and never committed.
+# public PDF reports from IMF / World Bank / BIS / OECD / ADB / WEF / UNCTAD / WTO /
+# Bruegel, runs them through the existing MinerU -> KC translated -> WeChat draft
+# pipeline, and archives the original PDF links. The source PDFs themselves are
+# transient and never committed. Daily volume is bounded by max_total (default 100).
 
 on:
   workflow_dispatch:
     inputs:
       institutions:
-        description: "Comma list of sources, or all (imf,bis,worldbank,rand,brookings)"
+        description: "Comma list of sources, or all (imf,worldbank,bis,oecd,adb,wef,unctad,wto,bruegel; rand/brookings only when named explicitly)"
         required: true
         default: "all"
       since_days:
@@ -19,7 +20,11 @@ on:
       max_per_institution:
         description: "Cap new PDFs per institution (0 = no cap)"
         required: true
-        default: "0"
+        default: "25"
+      max_total:
+        description: "Cap new PDFs across all institutions per run (0 = no cap)"
+        required: true
+        default: "100"
       force_reprocess:
         description: "Ignore seen-state and overwrite today's generated outputs"
         required: true
@@ -105,7 +110,8 @@ jobs:
             --date "$DATE" \
             --institutions "${{ github.event.inputs.institutions || 'all' }}" \
             --since-days "${{ github.event.inputs.since_days || '7' }}" \
-            --max-per-institution "${{ github.event.inputs.max_per_institution || '0' }}" \
+            --max-per-institution "${{ github.event.inputs.max_per_institution || '25' }}" \
+            --max-total "${{ github.event.inputs.max_total || '100' }}" \
             --force-reprocess "${{ github.event.inputs.force_reprocess || 'false' }}" \
             2>&1 | tee institution_fetch_progress.log
 

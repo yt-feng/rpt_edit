@@ -5,11 +5,18 @@
 This is a standalone *source* module, sitting next to ``download_dropbox_latest_pdfs.py``.
 Instead of reading PDFs from Dropbox, it pulls the newest publications from:
 
-- IMF        国际货币基金组织   (publications RSS feeds)
-- BIS        国际清算银行       (working papers RSS feed)
+- IMF        国际货币基金组织   (Coveo search API)
 - World Bank 世界银行           (Documents & Reports JSON API)
-- RAND       兰德公司           (latest publications Atom feed)
-- Brookings  布鲁金斯学会       (WordPress research feed)
+- BIS        国际清算银行       (research / BCBS / CGFS RSS feeds)
+- OECD       经合组织           (publications listing, Firefox fingerprint)
+- ADB        亚洲开发银行       (publications RSS feed, includes ADBI)
+- WEF        世界经济论坛       (publications listing, Chrome fingerprint)
+- UNCTAD     联合国贸发会议     (publications listing)
+- WTO        世界贸易组织       (news RSS feed; report launches carry PDFs)
+- Bruegel    布鲁盖尔研究所     (publications RSS feed)
+
+RAND and Brookings remain configured for explicit --institutions runs but are
+excluded from the default set (topics too politically sensitive for WeChat).
 
 Design goals
 ------------
@@ -127,9 +134,15 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
             # working papers. The old wppubls feed only covered working papers.
             "https://www.bis.org/doclist/bis_fsi_publs.rss",
             "https://www.bis.org/doclist/wppubls.rss",
+            # Basel Committee (bis.org/bcbs/publ/dNNN.htm) and Committee on the
+            # Global Financial System (bis.org/publ/cgfsNN.htm) publications.
+            "https://www.bis.org/doclist/bcbspubls.rss",
+            "https://www.bis.org/doclist/cgfs_publs.rss",
         ],
-        # Only keep substantive publication pages, skip speeches / central-bank reviews.
-        "include": r"bis\.org/publ/",
+        # Only keep substantive publication pages, skip speeches / central-bank
+        # reviews. Publication paths vary by committee: /publ/, /bcbs/publ/,
+        # /fsi/publ/ all carry the swap-htm-for-pdf convention.
+        "include": r"bis\.org/(?:\w+/)?publ/",
     },
     "worldbank": {
         "name_en": "World Bank",
@@ -149,6 +162,98 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
             # Substantive research reports, not loan / project agreements.
             "docty_exact": "Policy Research Working Paper",
         },
+    },
+    "oecd": {
+        "name_en": "OECD",
+        "name_cn": "经合组织",
+        "token": "OECD",
+        # oecd.org is behind Akamai and 403s both plain requests and the Chrome
+        # curl_cffi fingerprint, but accepts the Firefox one. The publications
+        # landing page is server-rendered with the newest reports; each report
+        # page links its PDF under /content/dam/.
+        "kind": "html_listing",
+        "pdf": "scrape",
+        "impersonate": True,
+        "impersonate_profile": "firefox135",
+        "recency_filter": False,
+        "listing_urls": [
+            "https://www.oecd.org/en/publications.html",
+        ],
+        # Real publications look like /en/publications/<slug>_<id>-en.html; the
+        # trailing _<id> distinguishes them from nav pages.
+        "item_link_pattern": r"oecd\.org/en/publications/[a-z0-9][a-z0-9-]*_[a-z0-9-]+\.html",
+    },
+    "adb": {
+        "name_en": "ADB",
+        "name_cn": "亚洲开发银行",
+        "token": "ADB",
+        # Plain requests work; the feed also carries ADBI (ADB Institute) papers.
+        "kind": "rss",
+        "pdf": "scrape",
+        "feeds": [
+            "https://www.adb.org/rss/publications",
+        ],
+        "include": r"adb\.org/(?:adbi/)?publications/",
+    },
+    "wef": {
+        "name_en": "World Economic Forum",
+        "name_cn": "世界经济论坛",
+        "token": "WEF",
+        # weforum.org 403s plain requests but accepts the Chrome fingerprint. The
+        # publications listing is server-rendered; report pages link PDFs on
+        # reports.weforum.org/docs/.
+        "kind": "html_listing",
+        "pdf": "scrape",
+        "impersonate": True,
+        "recency_filter": False,
+        "listing_urls": [
+            "https://www.weforum.org/publications/",
+        ],
+        "item_link_pattern": r"weforum\.org/publications/(?!series\b)[a-z0-9-]+/?$",
+    },
+    "unctad": {
+        "name_en": "UNCTAD",
+        "name_cn": "联合国贸发会议",
+        "token": "UNCTAD",
+        # Server-rendered Drupal listing; publication pages link PDFs under
+        # unctad.org/system/files/.
+        "kind": "html_listing",
+        "pdf": "scrape",
+        "recency_filter": False,
+        "listing_urls": [
+            "https://unctad.org/publications",
+        ],
+        "item_link_pattern": r"unctad\.org/publication/[a-z0-9-]+$",
+        # Every UNCTAD page links the generic "UNCTAD at a glance" brochure;
+        # never mistake it for the publication's own PDF.
+        "pdf_exclude": r"at-a-glance",
+    },
+    "wto": {
+        "name_en": "WTO",
+        "name_cn": "世界贸易组织",
+        "token": "WTO",
+        # The WTO has no publications feed (library/rss/latest_pubs_e.xml is a
+        # dead HTML page), so use the news feed: report launches carry a PDF on
+        # the news page, plain announcements are skipped as no_pdf.
+        "kind": "rss",
+        "pdf": "scrape",
+        "feeds": [
+            "https://www.wto.org/library/rss/latest_news_e.xml",
+        ],
+        "include": r"wto\.org/english/news_e/",
+    },
+    "bruegel": {
+        "name_en": "Bruegel",
+        "name_cn": "布鲁盖尔研究所",
+        "token": "Bruegel",
+        "kind": "rss",
+        "pdf": "scrape",
+        "feeds": [
+            "https://www.bruegel.org/feed/publications-feed.xml",
+        ],
+        # Keep report-style pieces (which carry PDFs); datasets / events / web
+        # commentary are skipped.
+        "include": r"bruegel\.org/(?:working-paper|policy-brief|blueprint|essay|report)",
     },
     "rand": {
         "name_en": "RAND",
@@ -227,7 +332,13 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         "sitemap_max_age_days": 120,
     },
 }
-DEFAULT_PUBLIC_INSTITUTION_KEYS = ["imf", "bis", "worldbank", "rand", "brookings"]
+# Sources the scheduled WeChat run pulls by default. Ordered by priority: when
+# --max-total binds, earlier sources keep their quota. RAND and Brookings are
+# deliberately NOT here (topics too politically sensitive for the WeChat
+# account); they remain in INSTITUTIONS for explicit --institutions runs.
+DEFAULT_PUBLIC_INSTITUTION_KEYS = [
+    "imf", "worldbank", "bis", "oecd", "adb", "wef", "unctad", "wto", "bruegel",
+]
 
 
 def log(message: str) -> None:
@@ -416,13 +527,15 @@ def parse_feed(content: bytes) -> list[dict[str, str]]:
 # Item collection per institution
 # ------------------------------------------------------------------
 
-def http_get(session: requests.Session, url: str, timeout: int, impersonate: bool = False, stream: bool = False):
-    """GET via curl_cffi (Chrome fingerprint) when impersonate is requested and the
+def http_get(session: requests.Session, url: str, timeout: int, impersonate: bool = False, stream: bool = False, profile: str | None = None):
+    """GET via curl_cffi (browser fingerprint) when impersonate is requested and the
     library is installed; otherwise via the shared requests session. The returned
     object exposes .status_code/.headers/.content/.text/.raise_for_status like requests.
+    ``profile`` overrides the default Chrome fingerprint (e.g. OECD only accepts
+    Firefox).
     """
     if impersonate and _HAS_CFFI:
-        return cffi_requests.get(url, timeout=timeout, impersonate=CFFI_IMPERSONATE, allow_redirects=True, stream=stream)
+        return cffi_requests.get(url, timeout=timeout, impersonate=profile or CFFI_IMPERSONATE, allow_redirects=True, stream=stream)
     return session.get(url, timeout=timeout, allow_redirects=True, stream=stream)
 
 
@@ -431,7 +544,7 @@ def collect_rss_items(cfg: dict[str, Any], session: requests.Session, timeout: i
     items: list[dict[str, Any]] = []
     for feed_url in cfg["feeds"]:
         try:
-            resp = http_get(session, feed_url, timeout, cfg.get("impersonate", False))
+            resp = http_get(session, feed_url, timeout, cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"))
             resp.raise_for_status()
             parsed = parse_feed(resp.content)
         except Exception as exc:  # noqa: BLE001 - isolate feed failures
@@ -499,6 +612,14 @@ def collect_worldbank_items(cfg: dict[str, Any], session: requests.Session, time
 # ------------------------------------------------------------------
 # PDF resolution + download
 # ------------------------------------------------------------------
+
+def _title_from_url_slug(url: str) -> str:
+    """Fallback title: the last path segment of the landing URL, dashes as spaces."""
+    segments = [s for s in urlsplit(url).path.split("/") if s]
+    if not segments:
+        return ""
+    return unquote(segments[-1]).replace("-", " ").replace("_", " ").strip()
+
 
 def _extract_html_title(html_text: str) -> str:
     """Best-effort article title from an HTML page (og:title, then <title>)."""
@@ -608,6 +729,7 @@ def collect_sitemap_items(cfg: dict[str, Any], session: requests.Session, timeou
     include = re.compile(cfg["include"], re.I) if cfg.get("include") else None
     child_filter = re.compile(cfg["child_filter"], re.I) if cfg.get("child_filter") else None
     impersonate = cfg.get("impersonate", False)
+    profile = cfg.get("impersonate_profile")
     to_fetch = list(cfg["sitemap_urls"])
     fetched = 0
     entries: list[tuple[str, str]] = []  # (lastmod, loc)
@@ -619,7 +741,7 @@ def collect_sitemap_items(cfg: dict[str, Any], session: requests.Session, timeou
         seen_sm.add(sm)
         fetched += 1
         try:
-            resp = http_get(session, sm, timeout, impersonate)
+            resp = http_get(session, sm, timeout, impersonate, profile=profile)
             resp.raise_for_status()
             text = resp.text
         except Exception as exc:  # noqa: BLE001 - isolate sitemap failures
@@ -668,7 +790,7 @@ def collect_html_listing_items(cfg: dict[str, Any], session: requests.Session, t
     seen_links: set[str] = set()
     for url in cfg["listing_urls"]:
         try:
-            resp = session.get(url, timeout=timeout)
+            resp = http_get(session, url, timeout, cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"))
             resp.raise_for_status()
         except Exception as exc:  # noqa: BLE001 - isolate listing failures
             warn(f"listing failed: {url}: {exc}")
@@ -785,7 +907,7 @@ def scrape_pdf_candidates(html_text: str, base_url: str) -> list[str]:
     return sorted(candidates, key=score, reverse=True)
 
 
-def download_pdf(session: requests.Session, urls: Iterable[str], dest: Path, timeout: int, max_bytes: int, impersonate: bool = False) -> tuple[str | None, str]:
+def download_pdf(session: requests.Session, urls: Iterable[str], dest: Path, timeout: int, max_bytes: int, impersonate: bool = False, profile: str | None = None) -> tuple[str | None, str]:
     """Try each candidate URL; save the first that is a real PDF. Returns (used_url, status)."""
     last_status = "no_candidate"
     for url in urls:
@@ -794,7 +916,7 @@ def download_pdf(session: requests.Session, urls: Iterable[str], dest: Path, tim
         try:
             if impersonate and _HAS_CFFI:
                 # curl_cffi: read fully (bounded below), no chunked streaming API needed.
-                resp = cffi_requests.get(url, timeout=timeout, impersonate=CFFI_IMPERSONATE, allow_redirects=True)
+                resp = cffi_requests.get(url, timeout=timeout, impersonate=profile or CFFI_IMPERSONATE, allow_redirects=True)
                 if resp.status_code >= 400:
                     last_status = f"http_{resp.status_code}"
                     continue
@@ -888,6 +1010,7 @@ def main() -> int:
     parser.add_argument("--imf-rows", type=int, default=60, help="Coveo results to scan for IMF (newest first).")
     parser.add_argument("--ddg-df", default="", help="DuckDuckGo date filter for search sources: d/w/m/y or '' for none. The html endpoint returns nothing with a date filter, so default is none; recent reports still surface by relevance and seen-dedup avoids reprocessing.")
     parser.add_argument("--force-reprocess", default="false", help="Ignore seen-state dedup and redownload matching fresh PDFs.")
+    parser.add_argument("--max-total", type=int, default=0, help="Cap new PDFs across ALL institutions this run (0 = no cap). Keeps the daily WeChat output bounded; earlier institutions in the list get priority.")
     parser.add_argument("--request-timeout", type=int, default=60)
     parser.add_argument("--user-agent", default=DEFAULT_USER_AGENT)
     args = parser.parse_args()
@@ -925,8 +1048,12 @@ def main() -> int:
 
     downloaded: list[dict[str, Any]] = []
     skipped: list[dict[str, Any]] = []
+    used_pdf_urls: set[str] = set()
 
     for key in enabled:
+        if args.max_total and len(downloaded) >= args.max_total:
+            log(f"Reached --max-total {args.max_total}; skipping remaining institutions.")
+            break
         cfg = INSTITUTIONS[key]
         log(f"== {cfg['name_en']} ({cfg['name_cn']}) ==")
         try:
@@ -950,6 +1077,8 @@ def main() -> int:
         for item in items:
             if args.max_per_institution and new_count >= args.max_per_institution:
                 break
+            if args.max_total and len(downloaded) >= args.max_total:
+                break
 
             dedup_key = f"{key}:{item['guid'] or item['source_url']}"
             if dedup_key in seen_items and not force_reprocess:
@@ -965,7 +1094,7 @@ def main() -> int:
             candidates = list(item["pdf_candidates"])
             if not candidates and item.get("scrape_url"):
                 try:
-                    page = http_get(session, item["scrape_url"], args.request_timeout, cfg.get("impersonate", False))
+                    page = http_get(session, item["scrape_url"], args.request_timeout, cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"))
                     page.raise_for_status()
                     candidates = scrape_pdf_candidates(page.text, item["scrape_url"])
                     if not item["title"]:
@@ -973,6 +1102,11 @@ def main() -> int:
                 except Exception as exc:  # noqa: BLE001 - network error: retry next run
                     warn(f"  landing fetch failed, will retry next run: {item['source_url']}: {exc}")
                     continue
+            if cfg.get("pdf_exclude"):
+                candidates = [c for c in candidates if not re.search(cfg["pdf_exclude"], c, re.I)]
+            # Some sites (e.g. WEF) return the bare site name as og:title.
+            if item["title"].strip().lower() in {"", cfg["name_en"].lower()}:
+                item["title"] = _title_from_url_slug(item["source_url"]) or item["title"]
 
             if not candidates:
                 # Page reachable but has no downloadable PDF (e.g. a Brookings op-ed).
@@ -983,12 +1117,21 @@ def main() -> int:
             title = item["title"] or item["guid"] or item["source_url"]
             filename = f"{cfg['token']}_{slug(title)}_{short_hash(dedup_key)}.pdf"
             dest = output_dir / filename
-            used_url, status = download_pdf(session, candidates[:3], dest, args.request_timeout, max_bytes, impersonate=cfg.get("impersonate", False))
+            used_url, status = download_pdf(session, candidates[:3], dest, args.request_timeout, max_bytes, impersonate=cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"))
             if status != "ok" or used_url is None:
                 # Could not download; do NOT mark seen so a transient failure is retried.
                 warn(f"  download failed ({status}): {title[:80]}")
                 skipped.append({"institution": key, "title": title, "reason": status, "source_url": item["source_url"]})
                 continue
+
+            if used_url in used_pdf_urls:
+                # Two feed/listing items resolved to the same PDF (e.g. a shared
+                # brochure link); keep only the first.
+                dest.unlink(missing_ok=True)
+                seen_items[dedup_key] = {"first_seen": today, "status": "duplicate_pdf"}
+                skipped.append({"institution": key, "title": title, "reason": "duplicate_pdf", "source_url": item["source_url"]})
+                continue
+            used_pdf_urls.add(used_url)
 
             seen_items[dedup_key] = {"first_seen": today, "status": "downloaded"}
             record = {

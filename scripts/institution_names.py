@@ -32,6 +32,12 @@ INSTITUTION_PATTERNS: tuple[tuple[re.Pattern[str], str], ...] = (
     (re.compile(r"\bBIS\b|Bank\s+for\s+International\s+Settlements", re.I), "国际清算银行"),
     (re.compile(r"\bRAND\b", re.I), "兰德公司"),
     (re.compile(r"\bBrookings\b", re.I), "布鲁金斯学会"),
+    (re.compile(r"\bOECD\b|Organisation\s+for\s+Economic\s+Co-?operation", re.I), "经合组织"),
+    (re.compile(r"\bADBI?\b|Asian\s+Development\s+Bank", re.I), "亚洲开发银行"),
+    (re.compile(r"\bWEF\b|World\s+Economic\s+Forum", re.I), "世界经济论坛"),
+    (re.compile(r"\bUNCTAD\b|United\s+Nations\s+Conference\s+on\s+Trade", re.I), "联合国贸发会议"),
+    (re.compile(r"\bWTO\b|World\s+Trade\s+Organi[sz]ation", re.I), "世界贸易组织"),
+    (re.compile(r"\bBruegel\b", re.I), "布鲁盖尔研究所"),
     (re.compile(r"\bARK\s+Invest\b|\bARKInvest\b|\bARKK\b|Cathie\s+Wood", re.I), "木头姐ARK"),
     # MBB strategy consultancies.
     (re.compile(r"\bMcKinsey\b", re.I), "麦肯锡"),

@@ -1,15 +1,15 @@
 name: Institution fetch test
 
 # Lightweight test of scripts/fetch_institution_latest_pdfs.py only.
-# Hits the live IMF / BIS / World Bank / RAND / Brookings sources, validates that
-# the downloaded files are real PDFs, and uploads the manifest + link archive.
-# It does NOT run MinerU / DeepSeek / WeChat, and commits nothing.
+# Hits the live IMF / World Bank / BIS / OECD / ADB / WEF / UNCTAD / WTO / Bruegel
+# sources, validates that the downloaded files are real PDFs, and uploads the
+# manifest + link archive. It does NOT run MinerU / DeepSeek / WeChat, and commits nothing.
 
 on:
   workflow_dispatch:
     inputs:
       institutions:
-        description: "Comma list or all (imf,bis,worldbank,rand,brookings)"
+        description: "Comma list or all (imf,worldbank,bis,oecd,adb,wef,unctad,wto,bruegel)"
         required: true
         default: "all"
       since_days:

@@ -59,6 +59,12 @@ INSTITUTION_KEY_TO_CN = {
     "bis": "国际清算银行",
     "worldbank": "世界银行",
     "world bank": "世界银行",
+    "oecd": "经合组织",
+    "adb": "亚洲开发银行",
+    "wef": "世界经济论坛",
+    "unctad": "联合国贸发会议",
+    "wto": "世界贸易组织",
+    "bruegel": "布鲁盖尔研究所",
     "rand": "兰德公司",
     "brookings": "布鲁金斯学会",
 }

@@ -379,7 +379,7 @@ pdfs/
 xhs_notes/<报告文件夹>/
 ```
 
-### 3.8 Institution latest PDF to WeChat（IMF / BIS / 世界银行 / 兰德 / 布鲁金斯）
+### 3.8 Institution latest PDF to WeChat（IMF / 世界银行 / BIS / OECD / 亚开行 / 世界经济论坛 / 联合国贸发会议 / WTO / Bruegel）
 
 相关文件：
 
@@ -397,12 +397,16 @@ MinerU → KC 中文精译 → 微信公众号草稿 链路，把它们也加工
 | 机构 | 来源 | PDF 定位方式 |
 | --- | --- | --- |
 | IMF 国际货币基金组织 | Coveo 搜索 API（`imfproduction561s308u.org.coveo.com`，按 `@imfdate` 倒序、筛 English PUBS）。IMF 官网是 JS+Akamai，RSS 已废，但搜索后端 Coveo 不在 WAF 后 | 用 `curl_cffi`（Chrome 指纹）打开 imf.org 落地页，提取 `.pdf` / `.ashx`（含 JSON 内嵌链接） |
-| BIS 国际清算银行 | `doclist/wppubls.rss` 工作论文 | 把 `.htm` 落地页直接换成 `.pdf` |
 | World Bank 世界银行 | `search.worldbank.org/api/v2/wds` JSON API，默认只取 Policy Research Working Paper | API 直接返回 `pdfurl` |
-| RAND 兰德公司 | `pubs/new.xml` 最新发布 Atom feed | 打开落地页，提取 PDF 链接 |
-| Brookings 布鲁金斯学会 | RSS 已下线，改抓 `brookings.edu/research/` 列表页 HTML 取文章链接 | 打开文章页，提取 PDF；纯网页评论无 PDF 时自动跳过 |
+| BIS 国际清算银行 | 4 条 RSS：`bis_fsi_publs`（研究报告，含年报/Bulletin/FSI）、`wppubls`（工作论文）、`bcbspubls`（巴塞尔委员会）、`cgfs_publs`（CGFS） | 把 `.htm` 落地页直接换成 `.pdf` |
+| OECD 经合组织 | `oecd.org/en/publications.html` 列表页（服务端渲染）。Akamai 会拦 Chrome 指纹，但放行 Firefox 指纹（`impersonate_profile: firefox135`） | 打开报告页，提取 `/content/dam/` 下的 PDF |
+| ADB 亚洲开发银行 | `adb.org/rss/publications`（含 ADBI 研究所论文），普通 requests 即可 | 打开落地页，提取 PDF |
+| WEF 世界经济论坛 | `weforum.org/publications/` 列表页（服务端渲染，需 Chrome 指纹） | 打开报告页，提取 `reports.weforum.org/docs/` 的 PDF |
+| UNCTAD 联合国贸发会议 | `unctad.org/publications` 列表页（服务端渲染） | 打开报告页，提取 PDF；已排除每页都挂的 "UNCTAD at a glance" 宣传册 |
+| WTO 世界贸易组织 | `library/rss/latest_news_e.xml` 新闻 feed（出版物 feed 已死链） | 报告发布类新闻页带 PDF，纯公告自动跳过 |
+| Bruegel 布鲁盖尔研究所 | `bruegel.org/feed/publications-feed.xml`，只保留 working-paper / policy-brief 等报告类 | 打开文章页，提取 PDF |
 
-5 个来源均已云端实测可抓到真实 PDF。每个来源相互隔离，单个失败不影响其它。
+9 个来源均已实测可抓到真实 PDF。每个来源相互隔离，单个失败不影响其它。RAND 兰德、Brookings 布鲁金斯的配置仍保留，但已移出默认名单（话题偏敏感、涉华负面内容多），只有手动指定 `--institutions rand,brookings` 时才会抓。
 
 触发方式：
 
@@ -411,9 +415,10 @@ MinerU → KC 中文精译 → 微信公众号草稿 链路，把它们也加工
 
 主要参数（手动运行）：
 
-- `institutions`：默认 `all`，可填 `imf,bis,worldbank,rand,brookings` 的子集。
-- `since_days`：默认 `1`，只抓最近 N 天内发布的报告。**去重靠 seen 状态文件，不靠日期**，所以把它调大到 3~7 也不会重复处理旧报告，反而能兜住 World Bank / IMF 这类不是每天都发的来源。
-- `max_per_institution`：默认 `0`（不限量）。
+- `institutions`：默认 `all` = `imf,worldbank,bis,oecd,adb,wef,unctad,wto,bruegel`（按优先级排序；总量达到上限时靠前的机构优先保额度）。`rand` / `brookings` 不在 `all` 里，必须显式指定才会抓。
+- `since_days`：默认 `7`，只抓最近 N 天内发布的报告。**去重靠 seen 状态文件，不靠日期**，所以调大也不会重复处理旧报告，反而能兜住不是每天都发的来源。
+- `max_per_institution`：默认 `25`，单机构限量，防止某一家刷屏。
+- `max_total`：默认 `100`，单次运行全部机构合计的新 PDF 上限，对应"每天 100 篇公众号文章以内"的要求。
 - `max_translated`：默认 `all`，翻译并生成公众号草稿的报告数量。
 - `dry_run`：默认 `false`，真正写公众号草稿箱；测试时设 `true` 只产出 payload。
 - `publish`：默认 `false`，公众号发布接口开通前保持 false。
@@ -421,7 +426,7 @@ MinerU → KC 中文精译 → 微信公众号草稿 链路，把它们也加工
 数据流（与 Dropbox 主流程并行、互不干扰）：
 
 ```text
-IMF/BIS/WB/RAND/Brookings feeds
+IMF/WB/BIS/OECD/ADB/WEF/UNCTAD/WTO/Bruegel feeds
   -> _institution_latest_pdfs/            # 中转 PDF，已 gitignore，不入库
   -> xhs_notes/institutions/<日期>/<报告>/source_mineru.md ...
   -> kc_translated_reports/institutions/<日期>/<报告>/kc_translated_report_XX.pdf
@@ -441,14 +446,14 @@ institution_feeds/seen_state.json                 # 去重状态，标记 downlo
 - 每个来源相互隔离：某个机构 feed 失败不会影响其它机构。
 - 网络错误（feed / 落地页拉取失败）不会写入 seen，下次运行会重试；只有“已下载”和“确认无 PDF”才会标记 seen。
 - 复用的 secret 和主流程一致：`MINER_U`、`DEEPSEEK_API_KEY`、`WECHAT_MP_APPID`、`WECHAT_MP_APPSECRET`。微信上传仍走带 `wechat-draft` label 的固定 IP self-hosted runner。
-- 机构中文名通过 `scripts/institution_names.py` 推断（已新增 IMF / BIS / 世界银行 / 兰德 / 布鲁金斯），公众号标题会自动带上机构名。
+- 机构中文名通过 `scripts/institution_names.py` 推断（含 IMF / 世界银行 / BIS / 经合组织 / 亚洲开发银行 / 世界经济论坛 / 联合国贸发会议 / 世界贸易组织 / 布鲁盖尔研究所 / 兰德 / 布鲁金斯），公众号标题会自动带上机构名。
 - 调整抓取来源 / feed / 文档类型：编辑 `scripts/fetch_institution_latest_pdfs.py` 顶部的 `INSTITUTIONS` 配置。
 - IMF 走 Coveo 搜索 API，用的是公网浏览器可见的 search key（写在 `INSTITUTIONS["imf"]["coveo_token"]`）。如 IMF 轮换该 key，可用 `IMF_COVEO_TOKEN` 环境变量覆盖，无需改代码。`--imf-rows` 控制每次扫描的 Coveo 结果数（默认 60）。IMF PUBS 每天发很多（工作论文、国别报告、Selected Issues、FSAP、Article IV 等）；如只想要部分，收紧 `coveo_aq` 的 `@imfcontenttype` 过滤即可。
 - World Bank 的 WDS `docdt` 比实际发布滞后数月，因此该来源不按日期过滤（`recency_filter=False`），只按 `docdt` 倒序取最新若干篇并靠 seen 去重；其余来源按 `since_days` 过滤。
-- 依赖 `curl_cffi`（已加入 `requirements.txt`），用 Chrome TLS 指纹绕过 IMF 的 Akamai WAF；未安装时对 IMF 以外来源无影响。整条链路不需要无头浏览器。
-- **微信公众号合规：5 家都会抓取并进 MinerU（供 market views 用），但只有 IMF / BIS / 世界银行 会进公众号草稿；RAND 兰德、Brookings 布鲁金斯 因内容偏敏感，已在精译步骤用 `--exclude-institutions "rand,brookings"` 整体排除，不翻译、不上公众号。**
-- **标题敏感性审核：精译步骤加了 `--title-guard`，对剩余 3 家逐篇用 DeepSeek 审核标题（是否唱衰中国 / 攻击中国制度 / 涉敏感政治议题）。判为 SENSITIVE 的不翻译、不进草稿箱；DeepSeek 报错或结论不明时按"宁可漏发"处理（跳过）。被跳过的记录在 `kc_translated_reports/institutions/<日期>/translation_summary.json` 的 `sensitive_skipped` 里。**
-- market views 汇总 PDF 不做敏感过滤，5 家（含 RAND / Brookings）全部纳入，见 §3.3。
+- 依赖 `curl_cffi`（已加入 `requirements.txt`）：IMF / WEF 用 Chrome TLS 指纹，OECD 用 Firefox 指纹（Akamai 对 Chrome 指纹更严）。未安装时对无指纹要求的来源无影响。整条链路不需要无头浏览器。
+- **微信公众号合规：RAND / Brookings 已从默认抓取名单移除；精译步骤仍保留 `--exclude-institutions "rand,brookings"` 双保险，即使手动抓了也不翻译、不上公众号。**
+- **标题敏感性审核：精译步骤加了 `--title-guard`，对进入精译的每篇用 DeepSeek 审核标题（是否唱衰中国 / 攻击中国制度 / 涉敏感政治议题）。判为 SENSITIVE 的不翻译、不进草稿箱；DeepSeek 报错或结论不明时按"宁可漏发"处理（跳过）。被跳过的记录在 `kc_translated_reports/institutions/<日期>/translation_summary.json` 的 `sensitive_skipped` 里。**
+- market views 汇总 PDF 不做敏感过滤，当天抓到的机构全部纳入，见 §3.3。
 
 ### 3.9 Consulting latest PDF to WeChat（MBB：麦肯锡 / BCG，贝恩暂缓）
 
