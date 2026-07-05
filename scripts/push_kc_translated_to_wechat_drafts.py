@@ -42,9 +42,7 @@ AUTHOR = "KC桌面"
 BOTTOM_DISCLAIMER = "For informational purposes only. Not investment advice."
 DEFAULT_BODY_HOOK = (
     "更多国际信源汇编&评论，扫码交流，每日更新，汇总国际主流叙事&数据&图表，观测边际变化。"
-    "星球里会把单篇报告放回当天的国际投行、咨询公司、国际机构主线里，整理成中文摘要、KC评论和图表合集，"
-    "便于喂给AI，也便于人工快速扫市场dynamics。汇聚了头部券商、PE/VC、投行、并购、hedge fund、"
-    "资管机构、战略咨询、智库等朋友，期待交流"
+    "汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询、智库等朋友，期待交流"
 )
 DEFAULT_BODY_VISIBLE_CHARS = 2000
 DEFAULT_MIN_INLINE_IMAGES = 3
@@ -809,15 +807,14 @@ def keyword_bridge_html(keywords: list[str]) -> str:
 
 
 def mid_article_cta_html(hook_text: str, keywords: list[str]) -> str:
-    keyword_hint = "、".join(keywords[:3])
-    lead = f"如果你是从「{html.escape(keyword_hint)}」这类线索搜到这里，" if keyword_hint else "如果你长期跟这类国际信源，"
+    keyword_hint = "、".join(keywords[:2])
+    lead = f"沿着「{html.escape(keyword_hint)}」继续看，" if keyword_hint else "继续看原文，"
     return (
-        '<section style="margin:18px 0;padding:14px 16px;background:#EAF2FB;'
-        'border-left:4px solid #2E6FB7;color:#152033;font-size:15px;line-height:1.75;">'
-        f"{lead}单篇文章只能解决一个切片。"
-        "我每天会把国际投行、咨询公司和国际机构的新增报告整理成中文摘要、KC评论和图表合集，"
-        "适合直接喂给AI追问，也适合人工快速扫当天市场主线。"
-        f"<br/><span style=\"color:#596579;\">{html.escape(truncate_visible_text(hook_text, 86, suffix=''))}</span>"
+        '<section style="margin:18px 0;padding:12px 14px;background:#F5F8FC;'
+        'border-left:3px solid #2E6FB7;color:#26364A;font-size:15px;line-height:1.7;">'
+        f"{lead}真正值得读的是原文里的"
+        '<strong style="color:#2457A7;">图表、假设和验证路径</strong>。'
+        "完整报告和KC评论会放进每日汇编，方便追问和横向比较。"
         "</section>"
     )
 

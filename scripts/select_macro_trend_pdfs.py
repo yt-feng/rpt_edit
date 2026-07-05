@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
-"""Select macro/industry-trend PDFs from a downloaded Dropbox manifest.
+"""Select PDFs from a downloaded Dropbox manifest.
 
 Input: a folder produced by download_dropbox_latest_pdfs.py that contains
 `dropbox_manifest.json` and downloaded PDF files.
 
 Output:
-- selected_macro_candidates.json: up to --candidate-count macro/trend candidates.
+- selected_macro_candidates.json: up to --candidate-count selected candidates.
 - selected_to_process_manifest.json: the first --process-count candidates copied for processing.
 - selected PDFs copied into --output-dir.
 
-Classification is primarily done by DeepSeek from filenames/titles. If DeepSeek
-fails or returns invalid JSON, a conservative filename heuristic is used.
+Classification is primarily done by DeepSeek from filenames/titles, and can be
+used either as metadata for all reports or as a legacy macro/trend filter. If
+DeepSeek fails or returns invalid JSON, a conservative filename heuristic is used.
 """
 from __future__ import annotations
 
@@ -261,7 +262,10 @@ def classify_with_heuristic(pdfs: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return rows
 
 
-def select_candidates(classified: list[dict[str, Any]], candidate_count: int) -> list[dict[str, Any]]:
+def select_candidates(classified: list[dict[str, Any]], candidate_count: int, selection_mode: str) -> list[dict[str, Any]]:
+    if selection_mode == "all":
+        return classified[:candidate_count]
+
     macro = [r for r in classified if str(r.get("category")) == "macro_trend"]
     macro.sort(
         key=lambda r: (
@@ -292,6 +296,12 @@ def main() -> int:
     parser.add_argument("--output-dir", required=True)
     parser.add_argument("--candidate-count", type=int, default=10)
     parser.add_argument("--process-count", type=int, default=5)
+    parser.add_argument(
+        "--selection-mode",
+        choices=["all", "macro"],
+        default=os.getenv("REPORT_SELECTION_MODE", "all"),
+        help="all keeps every downloaded PDF; macro keeps only macro/trend reports.",
+    )
     parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-chat"))
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
     args = parser.parse_args()
@@ -300,7 +310,7 @@ def main() -> int:
     output_dir = Path(args.output_dir).resolve()
     try:
         pdfs = load_manifest(input_dir)
-        log(f"Loaded {len(pdfs)} PDFs for macro classification.")
+        log(f"Loaded {len(pdfs)} PDFs for classification.")
         try:
             classified = classify_with_deepseek(pdfs, args)
             classified = apply_macro_preference_guard(classified)
@@ -309,7 +319,7 @@ def main() -> int:
             log(f"DeepSeek classification failed, using heuristic fallback: {exc}")
             classified = classify_with_heuristic(pdfs)
 
-        candidates = select_candidates(classified, max(1, args.candidate_count))
+        candidates = select_candidates(classified, max(1, args.candidate_count), args.selection_mode)
         copied = copy_selected(candidates, output_dir, max(1, args.process_count))
 
         classification_path = output_dir / "macro_classification_all.json"
@@ -322,7 +332,8 @@ def main() -> int:
         write_github_output("candidate_count", str(len(candidates)))
         write_github_output("process_count", str(len(copied)))
         write_github_output("selected_input_dir", str(output_dir))
-        log(f"Selected {len(candidates)} macro candidates; copied {len(copied)} PDFs for processing to {output_dir}")
+        label = "all report candidates" if args.selection_mode == "all" else "macro candidates"
+        log(f"Selection mode={args.selection_mode}; selected {len(candidates)} {label}; copied {len(copied)} PDFs for processing to {output_dir}")
         return 0
     except Exception as exc:
         print(f"ERROR: {exc}", file=sys.stderr)

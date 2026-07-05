@@ -8,7 +8,7 @@ on:
         required: true
         default: "/zip_backup"
       model:
-        description: "DeepSeek model for macro selection and content generation"
+        description: "DeepSeek model for report classification and content generation"
         required: true
         default: "deepseek-chat"
       deepseek_base_url:
@@ -28,11 +28,11 @@ on:
         required: true
         default: "true"
       shard_count:
-        description: "Parallel shard count. 40 shards x 5 macro reports covers 200 reports."
+        description: "Parallel shard count. 40 shards x 5 reports covers 200 reports."
         required: true
         default: "40"
       reports_per_shard:
-        description: "Max macro reports each shard processes"
+        description: "Max reports each shard processes"
         required: true
         default: "5"
       batch_size:
@@ -45,9 +45,13 @@ on:
         type: boolean
         default: false
       max_total_reports:
-        description: "Max macro/trend reports after DeepSeek selection. 0 means all macro candidates."
+        description: "Max reports after selection. 0 means all selected candidates."
         required: true
         default: "0"
+      report_selection_mode:
+        description: "Report selection mode: all publishes every downloaded PDF; macro keeps only macro/trend reports."
+        required: true
+        default: "all"
       wechat_length:
         description: "Target Chinese character count for WeChat article"
         required: true
@@ -55,7 +59,7 @@ on:
       community_cta:
         description: "CTA style hint; DeepSeek rewrites it naturally for each article"
         required: true
-        default: "更多国际信源汇编&评论，扫码交流，每日更新，汇总国际主流叙事&数据&图表，观测边际变化。星球会把单篇报告放回当天国际投行、咨询公司、国际机构主线里，整理成中文摘要、KC评论和图表合集，便于喂给AI，也便于人工快速扫市场dynamics。汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询、智库等朋友，期待交流"
+        default: "更多国际信源汇编&评论，扫码交流，每日更新，汇总国际主流叙事&数据&图表，观测边际变化。汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询、智库等朋友，期待交流"
       podcast_minutes:
         description: "Target length for Chinese and English podcast scripts. Audio/video are disabled here."
         required: true
@@ -128,6 +132,7 @@ jobs:
       batch_size: ${{ steps.vars.outputs.batch_size }}
       force_reprocess: ${{ steps.vars.outputs.force_reprocess }}
       max_total_reports: ${{ steps.vars.outputs.max_total_reports }}
+      report_selection_mode: ${{ steps.vars.outputs.report_selection_mode }}
       wechat_length: ${{ steps.vars.outputs.wechat_length }}
       community_cta: ${{ steps.vars.outputs.community_cta }}
       podcast_minutes: ${{ steps.vars.outputs.podcast_minutes }}
@@ -155,8 +160,9 @@ jobs:
           echo "batch_size=${{ github.event.inputs.batch_size || '5' }}" >> "$GITHUB_OUTPUT"
           echo "force_reprocess=${{ github.event.inputs.force_reprocess || 'false' }}" >> "$GITHUB_OUTPUT"
           echo "max_total_reports=${{ github.event.inputs.max_total_reports || '0' }}" >> "$GITHUB_OUTPUT"
+          echo "report_selection_mode=${{ github.event.inputs.report_selection_mode || 'all' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_length=${{ github.event.inputs.wechat_length || '3000' }}" >> "$GITHUB_OUTPUT"
-          echo "community_cta=${{ github.event.inputs.community_cta || '更多国际信源汇编&评论，扫码交流，每日更新，汇总国际主流叙事&数据&图表，观测边际变化。星球会把单篇报告放回当天国际投行、咨询公司、国际机构主线里，整理成中文摘要、KC评论和图表合集，便于喂给AI，也便于人工快速扫市场dynamics。汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询、智库等朋友，期待交流' }}" >> "$GITHUB_OUTPUT"
+          echo "community_cta=${{ github.event.inputs.community_cta || '更多国际信源汇编&评论，扫码交流，每日更新，汇总国际主流叙事&数据&图表，观测边际变化。汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询、智库等朋友，期待交流' }}" >> "$GITHUB_OUTPUT"
           echo "podcast_minutes=${{ github.event.inputs.podcast_minutes || '5' }}" >> "$GITHUB_OUTPUT"
           echo "translated_report_count=${{ github.event.inputs.translated_report_count || 'all' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_draft_upload=${{ github.event.inputs.wechat_draft_upload || 'true' }}" >> "$GITHUB_OUTPUT"
@@ -170,8 +176,8 @@ jobs:
       - name: Print resolved plan
         run: |
           echo "::notice::Daily schedule is 05:00 Asia/Shanghai. Audio/video are disabled."
-          echo "::notice::DeepSeek filters macro/trend reports first; stock/company reports are skipped."
-          echo "::notice::Default plan processes ALL macro candidates, sharded as 40 x 5 = up to 200 macro reports."
+          echo "::notice::Report selection mode=${{ steps.vars.outputs.report_selection_mode }}. Default all mode keeps stock/company reports for long-tail WeChat search."
+          echo "::notice::Default plan processes ALL selected candidates, sharded as 40 x 5 = up to 200 reports."
           echo "::notice::WeChat draft upload defaults to xhs_notes, so successful MinerU report articles can enter drafts without waiting for KC translated PDFs."
           echo "::notice::WeChat freepublish is opt-in because it requires separate Official Account API permission."
           echo "::notice::At the end, publish-ready split ZIPs will be created from generated report folders, excluding MinerU raw files."
@@ -202,10 +208,10 @@ jobs:
           DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
           DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
         run: |
-          echo "::notice::Downloading latest Dropbox PDFs once for macro selection."
+          echo "::notice::Downloading latest Dropbox PDFs once for report selection."
           python scripts/download_dropbox_latest_pdfs.py --dropbox-root "${{ needs.resolve-inputs.outputs.dropbox_root }}" --output-dir "_dropbox_latest_pdfs"
           echo "::notice::Latest Dropbox folder=${{ steps.dropbox.outputs.latest_folder }}, pdf_count=${{ steps.dropbox.outputs.pdf_count }}."
-      - name: Select macro/trend reports with DeepSeek
+      - name: Select reports with DeepSeek
         id: select_macro
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
@@ -214,16 +220,17 @@ jobs:
           set -o pipefail
           CANDIDATE_COUNT="${{ needs.resolve-inputs.outputs.max_total_reports }}"
           if [ "$CANDIDATE_COUNT" = "0" ]; then CANDIDATE_COUNT="9999"; fi
-          echo "::notice::Classifying PDFs with DeepSeek and selecting macro/trend reports only. Candidate cap=$CANDIDATE_COUNT."
+          echo "::notice::Classifying PDFs with DeepSeek. Selection mode=${{ needs.resolve-inputs.outputs.report_selection_mode }}; candidate cap=$CANDIDATE_COUNT."
           python scripts/select_macro_trend_pdfs.py \
             --input-dir "_dropbox_latest_pdfs" \
             --output-dir "_selected_macro_pdfs" \
             --candidate-count "$CANDIDATE_COUNT" \
             --process-count "$CANDIDATE_COUNT" \
+            --selection-mode "${{ needs.resolve-inputs.outputs.report_selection_mode }}" \
             --model "${{ needs.resolve-inputs.outputs.model }}" \
             --deepseek-base-url "${{ needs.resolve-inputs.outputs.deepseek_base_url }}" 2>&1 | tee "macro_selection_progress.log"
           cp "macro_selection_progress.log" "_selected_macro_pdfs/macro_selection_progress.log"
-          echo "::notice::Macro candidates=${{ steps.select_macro.outputs.candidate_count }}, selected=${{ steps.select_macro.outputs.process_count }}. Company/stock reports are skipped."
+          echo "::notice::Report candidates=${{ steps.select_macro.outputs.candidate_count }}, selected=${{ steps.select_macro.outputs.process_count }}."
       - name: Compute shard matrix
         id: shard_matrix
         env:
@@ -327,7 +334,7 @@ jobs:
           cp "_selected_macro_pdfs/selected_macro_candidates.json" "$OUTPUT_DIR/selected_macro_candidates.json" || true
           cp "_selected_macro_pdfs/selected_to_process_manifest.json" "$OUTPUT_DIR/selected_to_process_manifest.json" || true
           cp "_selected_macro_pdfs/macro_selection_progress.log" "$OUTPUT_DIR/macro_selection_progress.log" || true
-          echo "::notice::Shard ${{ matrix.shard_index }} generating text/images from selected macro reports into $OUTPUT_DIR."
+          echo "::notice::Shard ${{ matrix.shard_index }} generating text/images from selected reports into $OUTPUT_DIR."
           python scripts/run_pdf_to_xhs_in_batches.py \
             --input-dir "_selected_macro_pdfs" \
             --output-dir "$OUTPUT_DIR" \
@@ -385,9 +392,9 @@ jobs:
           # Shard ${{ matrix.shard_index }} summary
 
           - Latest Dropbox folder: ${{ needs.select-macro-reports.outputs.latest_folder }}
-          - Dropbox PDF count before filtering: ${{ needs.select-macro-reports.outputs.pdf_count }}
-          - Macro candidates selected: ${{ needs.select-macro-reports.outputs.macro_candidate_count }}
-          - Macro PDFs available to shards: ${{ needs.select-macro-reports.outputs.selected_count }}
+          - Dropbox PDF count before selection: ${{ needs.select-macro-reports.outputs.pdf_count }}
+          - Report candidates selected: ${{ needs.select-macro-reports.outputs.macro_candidate_count }}
+          - Selected PDFs available to shards: ${{ needs.select-macro-reports.outputs.selected_count }}
           - Shard index: ${{ matrix.shard_index }}
           - Shard count: ${{ needs.resolve-inputs.outputs.shard_count }}
           - Reports per shard: ${{ needs.resolve-inputs.outputs.reports_per_shard }}
@@ -402,7 +409,7 @@ jobs:
       - name: Commit this shard to repo immediately
         if: ${{ steps.gate.outputs.run == 'true' && needs.resolve-inputs.outputs.commit_results == 'true' }}
         run: |
-          bash scripts/commit_output_dir.sh "$OUTPUT_DIR" "Generate macro Dropbox shard ${{ matrix.shard_index }} outputs ${{ needs.select-macro-reports.outputs.latest_folder }}" 8
+          bash scripts/commit_output_dir.sh "$OUTPUT_DIR" "Generate Dropbox shard ${{ matrix.shard_index }} outputs ${{ needs.select-macro-reports.outputs.latest_folder }}" 8
       - name: Upload shard artifact
         if: ${{ steps.gate.outputs.run == 'true' && always() }}
         uses: actions/upload-artifact@v4

@@ -215,9 +215,7 @@ def main() -> int:
         "--community-cta",
         default=(
             "更多国际信源汇编&评论，扫码交流，每日更新，汇总国际主流叙事&数据&图表，观测边际变化。"
-            "星球会把单篇报告放回当天国际投行、咨询公司、国际机构主线里，整理成中文摘要、KC评论和图表合集，"
-            "便于喂给AI，也便于人工快速扫市场dynamics。汇聚了头部券商、PE/VC、投行、并购、hedge fund、"
-            "资管机构、战略咨询、智库等朋友，期待交流"
+            "汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询、智库等朋友，期待交流"
         ),
     )
     parser.add_argument("--no-wechat-title-refine", dest="wechat_title_refine", action="store_false",
