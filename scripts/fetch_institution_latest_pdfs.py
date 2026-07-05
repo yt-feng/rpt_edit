@@ -175,6 +175,9 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         "pdf": "scrape",
         "impersonate": True,
         "impersonate_profile": "firefox135",
+        # GitHub runner IPs get 403s from Akamai intermittently; route through
+        # the VPS proxy when PROXY_SUBSCRIPTION_URL is configured.
+        "use_proxy": True,
         "recency_filter": False,
         "listing_urls": [
             "https://www.oecd.org/en/publications.html",
@@ -250,12 +253,14 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         "name_en": "Bruegel",
         "name_cn": "布鲁盖尔研究所",
         "token": "Bruegel",
-        # bruegel.org 403s GitHub-hosted runner IPs; the Chrome fingerprint is
-        # still blocked there, but Firefox passes.
+        # Cloudflare blocks GitHub-hosted runner IPs outright (every fingerprint
+        # 403s), so this source needs the VPS proxy on CI; fingerprint alone is
+        # enough from residential IPs.
         "kind": "rss",
         "pdf": "scrape",
         "impersonate": True,
         "impersonate_profile": "firefox135",
+        "use_proxy": True,
         "feeds": [
             "https://www.bruegel.org/feed/publications-feed.xml",
         ],
@@ -415,6 +420,77 @@ def is_pdf_bytes(data: bytes) -> bool:
 
 
 # ------------------------------------------------------------------
+# Optional VPS proxy for sources whose WAF blocks GitHub runner IPs.
+#
+# Same subscription format as bbg-show: PROXY_SUBSCRIPTION_URL points at a
+# (possibly base64-wrapped) node list; only curl-compatible nodes are used
+# (https:// entries whose payload base64-decodes to user:pass@host:port,
+# plain http://, and socks5:// which curl needs as socks5h://). Sources opt
+# in with "use_proxy": True; everything else keeps fetching directly.
+# ------------------------------------------------------------------
+
+PROXY_TEST_URL = "https://www.gstatic.com/generate_204"
+
+
+def _b64_text(value: str) -> str | None:
+    import base64
+    stripped = value.strip()
+    try:
+        return base64.b64decode(stripped + "=" * (-len(stripped) % 4)).decode("utf-8")
+    except Exception:  # noqa: BLE001
+        return None
+
+
+def _normalize_proxy_node(node: str) -> str | None:
+    node = node.split("#", 1)[0].strip()  # drop display label
+    if node.startswith("https://"):
+        decoded = _b64_text(node[len("https://"):])
+        if decoded and "@" in decoded:
+            return "https://" + decoded.split("/", 1)[0]
+        return node
+    if node.startswith("socks5://"):
+        return "socks5h://" + node[len("socks5://"):]
+    if node.startswith(("http://", "socks5h://")):
+        return node
+    return None  # vmess/anytls/... not curl-compatible
+
+
+def mask_proxy(proxy: str) -> str:
+    return re.sub(r"//[^@/]+@", "//***@", proxy)
+
+
+def resolve_working_proxy(subscription_url: str, timeout: int) -> str | None:
+    """Fetch the subscription and return the first node that can reach the web."""
+    try:
+        resp = requests.get(subscription_url, timeout=timeout)
+        resp.raise_for_status()
+        body = resp.text.strip()
+    except Exception as exc:  # noqa: BLE001
+        warn(f"proxy subscription fetch failed: {exc}")
+        return None
+    if "://" not in body.splitlines()[0]:
+        body = _b64_text(body) or body
+    candidates = [p for p in (_normalize_proxy_node(l) for l in body.splitlines() if l.strip()) if p]
+    log(f"proxy subscription: {len(candidates)} curl-compatible node(s)")
+    # Bound the health check so a subscription full of dead nodes cannot stall
+    # the whole run: at most 10 nodes, 10s each.
+    for proxy in candidates[:10]:
+        if not _HAS_CFFI:
+            break
+        try:
+            resp = cffi_requests.get(
+                PROXY_TEST_URL, timeout=10, impersonate=CFFI_IMPERSONATE,
+                proxies={"http": proxy, "https": proxy},
+            )
+            if resp.status_code in (200, 204):
+                return proxy
+        except Exception:  # noqa: BLE001
+            continue
+    warn("no working proxy node found in subscription")
+    return None
+
+
+# ------------------------------------------------------------------
 # Feed parsing (RSS 2.0, RSS 1.0/RDF, Atom)
 # ------------------------------------------------------------------
 
@@ -535,15 +611,18 @@ def parse_feed(content: bytes) -> list[dict[str, str]]:
 # Item collection per institution
 # ------------------------------------------------------------------
 
-def http_get(session: requests.Session, url: str, timeout: int, impersonate: bool = False, stream: bool = False, profile: str | None = None):
+def http_get(session: requests.Session, url: str, timeout: int, impersonate: bool = False, stream: bool = False, profile: str | None = None, proxy: str | None = None):
     """GET via curl_cffi (browser fingerprint) when impersonate is requested and the
     library is installed; otherwise via the shared requests session. The returned
     object exposes .status_code/.headers/.content/.text/.raise_for_status like requests.
     ``profile`` overrides the default Chrome fingerprint (e.g. OECD only accepts
-    Firefox).
+    Firefox); ``proxy`` routes the impersonated request through a VPS node.
     """
     if impersonate and _HAS_CFFI:
-        return cffi_requests.get(url, timeout=timeout, impersonate=profile or CFFI_IMPERSONATE, allow_redirects=True, stream=stream)
+        return cffi_requests.get(
+            url, timeout=timeout, impersonate=profile or CFFI_IMPERSONATE, allow_redirects=True, stream=stream,
+            proxies={"http": proxy, "https": proxy} if proxy else None,
+        )
     return session.get(url, timeout=timeout, allow_redirects=True, stream=stream)
 
 
@@ -552,7 +631,7 @@ def collect_rss_items(cfg: dict[str, Any], session: requests.Session, timeout: i
     items: list[dict[str, Any]] = []
     for feed_url in cfg["feeds"]:
         try:
-            resp = http_get(session, feed_url, timeout, cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"))
+            resp = http_get(session, feed_url, timeout, cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"), proxy=cfg.get("_proxy"))
             resp.raise_for_status()
             parsed = parse_feed(resp.content)
         except Exception as exc:  # noqa: BLE001 - isolate feed failures
@@ -738,6 +817,7 @@ def collect_sitemap_items(cfg: dict[str, Any], session: requests.Session, timeou
     child_filter = re.compile(cfg["child_filter"], re.I) if cfg.get("child_filter") else None
     impersonate = cfg.get("impersonate", False)
     profile = cfg.get("impersonate_profile")
+    proxy = cfg.get("_proxy")
     to_fetch = list(cfg["sitemap_urls"])
     fetched = 0
     entries: list[tuple[str, str]] = []  # (lastmod, loc)
@@ -749,7 +829,7 @@ def collect_sitemap_items(cfg: dict[str, Any], session: requests.Session, timeou
         seen_sm.add(sm)
         fetched += 1
         try:
-            resp = http_get(session, sm, timeout, impersonate, profile=profile)
+            resp = http_get(session, sm, timeout, impersonate, profile=profile, proxy=proxy)
             resp.raise_for_status()
             text = resp.text
         except Exception as exc:  # noqa: BLE001 - isolate sitemap failures
@@ -798,7 +878,7 @@ def collect_html_listing_items(cfg: dict[str, Any], session: requests.Session, t
     seen_links: set[str] = set()
     for url in cfg["listing_urls"]:
         try:
-            resp = http_get(session, url, timeout, cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"))
+            resp = http_get(session, url, timeout, cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"), proxy=cfg.get("_proxy"))
             resp.raise_for_status()
         except Exception as exc:  # noqa: BLE001 - isolate listing failures
             warn(f"listing failed: {url}: {exc}")
@@ -915,7 +995,7 @@ def scrape_pdf_candidates(html_text: str, base_url: str) -> list[str]:
     return sorted(candidates, key=score, reverse=True)
 
 
-def download_pdf(session: requests.Session, urls: Iterable[str], dest: Path, timeout: int, max_bytes: int, impersonate: bool = False, profile: str | None = None) -> tuple[str | None, str]:
+def download_pdf(session: requests.Session, urls: Iterable[str], dest: Path, timeout: int, max_bytes: int, impersonate: bool = False, profile: str | None = None, proxy: str | None = None) -> tuple[str | None, str]:
     """Try each candidate URL; save the first that is a real PDF. Returns (used_url, status)."""
     last_status = "no_candidate"
     for url in urls:
@@ -924,7 +1004,10 @@ def download_pdf(session: requests.Session, urls: Iterable[str], dest: Path, tim
         try:
             if impersonate and _HAS_CFFI:
                 # curl_cffi: read fully (bounded below), no chunked streaming API needed.
-                resp = cffi_requests.get(url, timeout=timeout, impersonate=profile or CFFI_IMPERSONATE, allow_redirects=True)
+                resp = cffi_requests.get(
+                    url, timeout=timeout, impersonate=profile or CFFI_IMPERSONATE, allow_redirects=True,
+                    proxies={"http": proxy, "https": proxy} if proxy else None,
+                )
                 if resp.status_code >= 400:
                     last_status = f"http_{resp.status_code}"
                     continue
@@ -1058,6 +1141,20 @@ def main() -> int:
     skipped: list[dict[str, Any]] = []
     used_pdf_urls: set[str] = set()
 
+    proxy_url: str | None = None
+    if any(INSTITUTIONS[k].get("use_proxy") for k in enabled):
+        subscription = os.getenv("PROXY_SUBSCRIPTION_URL", "").strip()
+        if subscription:
+            proxy_url = resolve_working_proxy(subscription, args.request_timeout)
+            if proxy_url:
+                log(f"Using VPS proxy for WAF-blocked sources: {mask_proxy(proxy_url)}")
+            else:
+                warn("proxy unavailable; use_proxy sources will fetch directly and may 403")
+        else:
+            log("PROXY_SUBSCRIPTION_URL not set; use_proxy sources fetch directly.")
+    for key in INSTITUTIONS:
+        INSTITUTIONS[key]["_proxy"] = proxy_url if INSTITUTIONS[key].get("use_proxy") else None
+
     for key in enabled:
         if args.max_total and len(downloaded) >= args.max_total:
             log(f"Reached --max-total {args.max_total}; skipping remaining institutions.")
@@ -1102,7 +1199,7 @@ def main() -> int:
             candidates = list(item["pdf_candidates"])
             if not candidates and item.get("scrape_url"):
                 try:
-                    page = http_get(session, item["scrape_url"], args.request_timeout, cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"))
+                    page = http_get(session, item["scrape_url"], args.request_timeout, cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"), proxy=cfg.get("_proxy"))
                     page.raise_for_status()
                     candidates = scrape_pdf_candidates(page.text, item["scrape_url"])
                     if not item["title"]:
@@ -1125,7 +1222,7 @@ def main() -> int:
             title = item["title"] or item["guid"] or item["source_url"]
             filename = f"{cfg['token']}_{slug(title)}_{short_hash(dedup_key)}.pdf"
             dest = output_dir / filename
-            used_url, status = download_pdf(session, candidates[:3], dest, args.request_timeout, max_bytes, impersonate=cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"))
+            used_url, status = download_pdf(session, candidates[:3], dest, args.request_timeout, max_bytes, impersonate=cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"), proxy=cfg.get("_proxy"))
             if status != "ok" or used_url is None:
                 # Could not download; do NOT mark seen so a transient failure is retried.
                 warn(f"  download failed ({status}): {title[:80]}")

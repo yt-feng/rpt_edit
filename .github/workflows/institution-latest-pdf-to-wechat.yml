@@ -101,6 +101,8 @@ jobs:
 
       - name: Fetch latest institution PDFs
         id: fetch
+        env:
+          PROXY_SUBSCRIPTION_URL: ${{ secrets.PROXY_SUBSCRIPTION_URL }}
         run: |
           set -o pipefail
           DATE="$(TZ=Asia/Shanghai date +%y%m%d)"
