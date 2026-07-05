@@ -20,10 +20,16 @@ from typing import Any
 import requests
 
 try:
-    from sensitive_content_guard import run_sensitive_guard, build_arg_parser as build_sensitive_arg_parser
+    from sensitive_content_guard import (
+        build_arg_parser as build_sensitive_arg_parser,
+        run_sensitive_guard,
+        sanitize_wechat_stock_language,
+    )
 except Exception:
     run_sensitive_guard = None
     build_sensitive_arg_parser = None
+    def sanitize_wechat_stock_language(text: str) -> tuple[str, list[str]]:
+        return text, []
 
 TEXT_SUFFIXES = {".md", ".txt", ".json", ".srt", ".vtt"}
 ZSXQ_IMAGE_MD = "![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)"
@@ -155,6 +161,7 @@ def enforce_xianyu_constraints_in_dir(output_dir: Path) -> int:
 
 def normalize_wechat_ending(text: str, include_zsxq: bool) -> str:
     text = sanitize_text(text).strip()
+    text, _stock_changes = sanitize_wechat_stock_language(text)
     for pattern in CHINESE_DISCLAIMER_PATTERNS:
         text = re.sub(pattern, "", text, flags=re.IGNORECASE).strip()
     text = re.sub(r'<p\s+style="color:#999999;font-size:12px;">Personal reading notes and learning share only\. Not investment advice\.</p>', "", text, flags=re.IGNORECASE).strip()

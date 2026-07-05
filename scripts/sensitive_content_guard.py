@@ -44,6 +44,40 @@ SAFE_XHS_TAGS = ["#学习笔记", "#研究笔记", "#学习研究", "#研报解�
 DISALLOWED_XHS_TAGS_RE = re.compile(r"#(?:投资学习|财经|金融|股票|基金|理财|小红书笔记|笔记分享|干货分享)\b")
 SAFE_XIANYU_TAGS = ["#学习资料", "#研究笔记", "#学习笔记", "#行业研究", "#研报资料", "#资料整理", "#报告学习", "#案例研究"]
 DISALLOWED_XIANYU_TAGS_RE = re.compile(r"#(?:财经|投资|股票|基金|理财|暴富|内幕|买入|卖出|稳赚|保本)\b")
+WECHAT_STOCK_ARTICLE_FILENAMES = {"wechat_article.md", "wechat_article_en.md"}
+EN_RATING_PATTERN = (
+    r"(?<![A-Za-z])(?:strong\s+buy|buy|sell|overweight|underweight|outperform|underperform|"
+    r"equal-?weight|market\s+perform|neutral|hold)(?![A-Za-z])"
+)
+EN_PRICE_TOKEN_PATTERN = r"(?<![A-Za-z])(?:PT|TP|PO)(?![A-Za-z])"
+WECHAT_STOCK_TARGET_CLAUSE_RE = re.compile(
+    r"(?:(?:上调|下调|维持|重申|给予|首予|首次覆盖|恢复|raise|raised|lower|lowered|maintain|"
+    r"maintained|initiate|initiated|resume|resumed)\s*)?"
+    r"[^，。；;\n]{0,24}"
+    r"(?:目标价|目标价格|价格目标|目标估值|target\s+price|price\s+target|price\s+objective)"
+    r"[^，。；;\n]{0,70}"
+    rf"|(?:(?:new|raise|raised|lower|lowered|maintain|maintained)\s+)?{EN_PRICE_TOKEN_PATTERN}"
+    r"[^，。；;\n]{0,45}",
+    re.I,
+)
+WECHAT_STOCK_PAREN_RE = re.compile(
+    r"[（(][^()（）\n]{0,90}(?:目标价|目标价格|target\s+price|price\s+target|"
+    rf"{EN_PRICE_TOKEN_PATTERN}|买入|卖出|增持|减持|强烈推荐|推荐|荐股|"
+    rf"{EN_RATING_PATTERN})[^()（）\n]{{0,90}}[）)]",
+    re.I,
+)
+WECHAT_STOCK_CONTEXT_RE = re.compile(
+    r"(?:评级|目标价|目标价格|价格目标|荐股|股票|股价|个股|券商|报告|研究覆盖|"
+    rf"target\s+price|price\s+target|{EN_PRICE_TOKEN_PATTERN}|{EN_RATING_PATTERN})",
+    re.I,
+)
+WECHAT_STOCK_FORBIDDEN_RE = re.compile(
+    r"(?:目标价|目标价格|价格目标|目标估值|target\s+price|price\s+target|price\s+objective|"
+    r"买入评级|卖出评级|增持评级|减持评级|强烈买入|推荐买入|建议买入|建议卖出|"
+    r"强烈推荐|荐股|投资建议|操作建议|买卖建议|推荐|"
+    rf"{EN_RATING_PATTERN})",
+    re.I,
+)
 
 LOCAL_REPLACEMENTS: list[tuple[str, str]] = [
     (r"不构成任何投资建议", "仅为个人阅读分享"),
@@ -96,6 +130,19 @@ LOCAL_REPLACEMENTS: list[tuple[str, str]] = [
     (r"绝对", "相对"),
 ]
 
+WECHAT_STOCK_REPLACEMENTS: list[tuple[str, str]] = [
+    (r"(?:投资建议|操作建议|买卖建议)", "研究交流"),
+    (r"(?:荐股|推荐标的|推荐个股)", "公司研究"),
+    (r"(?:强烈推荐|推荐买入|建议买入|建议卖出)", "报告观点"),
+    (r"(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\s*(?:评级|建议|观点)?", "更新公司观点"),
+    (rf"(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\s*{EN_RATING_PATTERN}\s*(?:rating|rated|recommendation)?", "公司观点更新"),
+    (r"(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\s*(?:评级|建议)", "公司观点"),
+    (r"评级\s*(?:上调|下调|维持|重申|恢复)?\s*(?:至|为)?\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)", "公司观点更新"),
+    (rf"{EN_RATING_PATTERN}\s*(?:rating|rated|recommendation)?", "报告观点"),
+    (r"(?:上调|下调|维持|重申|恢复)\s*评级", "更新公司观点"),
+    (r"推荐", "提到"),
+]
+
 PROTECTED_TERMS = {
     "投研": "__PROTECT_TOUYAN__",
     "投行": "__PROTECT_TOUHANG__",
@@ -125,6 +172,73 @@ def apply_local_guard(text: str) -> tuple[str, list[str]]:
         protected = protected.replace(token, key)
     protected = re.sub(r"\n{4,}", "\n\n\n", protected)
     return protected, changes
+
+
+def sanitize_wechat_stock_language(text: str) -> tuple[str, list[str]]:
+    """Remove broker target-price/rating/recommendation wording from WeChat text."""
+    changes: list[str] = []
+    out_lines: list[str] = []
+    for raw in (text or "").splitlines():
+        line = raw.rstrip()
+        stripped = line.strip()
+        if stripped.startswith("![") or re.fullmatch(r"\[\[KC_IMAGE_\d{3}\]\]", stripped):
+            out_lines.append(line)
+            continue
+
+        original_line = line
+        heading_prefix = ""
+        marker = re.match(r"^(\s*#{1,6}\s+)(.*)$", line)
+        if marker:
+            heading_prefix = marker.group(1)
+            line = marker.group(2)
+        is_heading = bool(heading_prefix)
+        target_repl = "公司情况更新" if is_heading else ""
+        line, n = WECHAT_STOCK_PAREN_RE.subn("", line)
+        if n:
+            changes.append(f"remove_stock_parenthetical x{n}")
+        line, n = WECHAT_STOCK_TARGET_CLAUSE_RE.subn(target_repl, line)
+        if n:
+            changes.append(f"remove_target_price_clause x{n}")
+
+        stock_context = bool(WECHAT_STOCK_CONTEXT_RE.search(original_line))
+        for pattern, repl in WECHAT_STOCK_REPLACEMENTS:
+            if pattern == "推荐" or stock_context or re.search(pattern, line, flags=re.I):
+                line, n = re.subn(pattern, repl, line, flags=re.I)
+                if n:
+                    changes.append(f"{pattern}->{repl} x{n}")
+
+        if stock_context:
+            for word, repl in [("买入", "观点偏积极"), ("卖出", "观点偏谨慎"), ("增持", "观点偏积极"), ("减持", "观点偏谨慎")]:
+                line, n = re.subn(word, repl, line)
+                if n:
+                    changes.append(f"{word}->{repl} x{n}")
+
+        line = re.sub(r"\s{2,}", " ", line)
+        line = re.sub(r"\s*([，。；;,:：])\s*", r"\1", line)
+        line = re.sub(r"[，,；;]\s*(?:并)?(?:报告观点|公司观点|更新公司观点|公司观点更新)\s*(?:该股|该公司)?", "", line)
+        line = re.sub(r"(?:[，,；;]\s*){2,}", "，", line)
+        line = re.sub(r"[，,；;：:]\s*(?=$)", "", line)
+        line = re.sub(r"(公司情况更新){2,}", "公司情况更新", line)
+        if re.fullmatch(r"[\s，,。；;]*(?:并)?(?:报告观点|公司观点|公司观点更新|更新公司观点|观点偏积极|观点偏谨慎|该股|该公司)+[。.]?", line):
+            line = ""
+        if is_heading:
+            heading = line.strip(" ：:，,；;")
+            heading = re.sub(r"[，,]?(?:更新公司观点|公司观点更新|公司观点|报告观点)$", "", heading).strip(" ：:，,；;")
+            if not heading:
+                heading = "公司情况更新"
+            elif len(heading) < 6:
+                heading = (heading + "：公司情况更新").strip("：")
+            line = heading_prefix + heading
+        if line != original_line:
+            changes.append("sanitize_wechat_stock_line")
+        out_lines.append(line)
+    cleaned = "\n".join(out_lines)
+    cleaned = re.sub(r"\n{4,}", "\n\n\n", cleaned)
+    return cleaned, changes
+
+
+def contains_wechat_stock_forbidden_language(text: str) -> bool:
+    return bool(WECHAT_STOCK_FORBIDDEN_RE.search(text or ""))
 
 
 def normalize_xhs_note_tags(text: str) -> tuple[str, list[str]]:
@@ -246,10 +360,8 @@ def deepseek_rewrite(text: str, detected_hits: list[dict[str, Any]], model: str,
 {json.dumps(detected_hits, ensure_ascii=False)}
 
 原文：
-"""
 {text}
-"""
-""".strip()
+    """.strip()
     response = requests.post(
         base_url.rstrip("/") + "/chat/completions",
         headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
@@ -282,6 +394,9 @@ def should_process(path: Path) -> bool:
 def guard_file(path: Path, args: argparse.Namespace) -> dict[str, Any]:
     original = path.read_text(encoding="utf-8", errors="ignore")
     local_text, local_changes = apply_local_guard(original)
+    if path.name in WECHAT_STOCK_ARTICLE_FILENAMES:
+        local_text, stock_changes = sanitize_wechat_stock_language(local_text)
+        local_changes.extend(stock_changes)
     check = {"hit": False, "hits": [], "errors": []}
     final_text = local_text
     rewrite_error = ""

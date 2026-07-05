@@ -11,6 +11,8 @@ import json
 import re
 from typing import Any
 
+from sensitive_content_guard import sanitize_wechat_stock_language
+
 
 INSTITUTION_TITLE_ALIASES: list[tuple[str, list[str]]] = [
     ("高盛", ["GS", "Goldman Sachs"]),
@@ -385,6 +387,7 @@ def truncate_chars(text: str, max_chars: int) -> str:
 
 def clean_wechat_title(title: str, institution_name: str = "", max_chars: int = 64) -> str:
     cleaned = strip_markdown_markup(title)
+    cleaned, _stock_changes = sanitize_wechat_stock_language(cleaned)
     cleaned = re.sub(r"^(?:标题|微信标题|公众号标题)\s*[：:]\s*", "", cleaned)
     cleaned = re.sub(r"[《》#>*]+", "", cleaned)
     cleaned = remove_redundant_title_aliases(cleaned)
@@ -396,6 +399,8 @@ def clean_wechat_title(title: str, institution_name: str = "", max_chars: int = 
     if institution_name:
         cleaned = strip_unexpected_leading_institution_prefix(cleaned, institution_name)
         cleaned = ensure_title_has_institution_local(cleaned, institution_name)
+        if cleaned.strip("：:，, ") == canonicalize_institution_title_name(institution_name):
+            cleaned = f"{canonicalize_institution_title_name(institution_name)}：公司情况更新"
     cleaned = remove_redundant_title_aliases(cleaned)
     cleaned = limit_title_colons(cleaned)
     return truncate_chars(cleaned, max_chars).strip("：: -—")
@@ -555,7 +560,8 @@ def build_wechat_title_refinement_prompt(
 4. 如果有机构名，只保留中文机构名，不要写 GS、JPM、JEF、NOM、BARC、MS、DB、Citi 等英文简称。
 5. 标题要包含一个清晰钩子：大机构/大人物、可搜索主题词、反常识判断、市场误判、数据节点、政策/行业变量，至少命中其中两个。
 6. 不要用“核心观点”“关键要点”“研报速览”“一文看懂”“震惊”“爆了”等机械或廉价词。
-7. 不要夸大原文证据。
+7. 单一公司/个股报告的标题只能写公司情况、行业变化、业务进展或竞争格局；禁止写目标价、评级、买入、卖出、增持、减持、推荐、荐股、Buy、Sell、Overweight、Underweight、Outperform、Underperform、PT、TP、PO。
+8. 不要夸大原文证据。
 
 已识别机构：{institution_name or "未知"}
 原报告标题：{source_title}

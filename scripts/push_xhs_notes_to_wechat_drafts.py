@@ -64,6 +64,7 @@ from push_kc_translated_to_wechat_drafts import (  # noqa: E402
 )
 
 from institution_names import ensure_title_has_institution, infer_institution_name  # noqa: E402
+from sensitive_content_guard import sanitize_wechat_stock_language  # noqa: E402
 
 DATE_DIR_RE = re.compile(r"^\d{6,8}$")
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp"}
@@ -123,7 +124,8 @@ def clean_xhs_markdown(markdown: str) -> str:
         if line.startswith("<p") and ("not investment advice" in lowered or "personal reading notes" in lowered):
             continue
         cleaned.append(raw)
-    return "\n".join(cleaned).strip()
+    text, _stock_changes = sanitize_wechat_stock_language("\n".join(cleaned).strip())
+    return text
 
 
 def generation_failure_skip_reason(markdown: str) -> str:
@@ -154,7 +156,9 @@ def xhs_article_title(markdown: str, fallback: str, institution_name: str) -> st
 
 def xhs_article_title_metadata(report_dir: Path) -> dict[str, str]:
     markdown_path = report_dir / "wechat_article.md"
-    markdown = clean_xhs_markdown(markdown_path.read_text(encoding="utf-8", errors="ignore"))
+    markdown, stock_changes = sanitize_wechat_stock_language(clean_xhs_markdown(markdown_path.read_text(encoding="utf-8", errors="ignore")))
+    if stock_changes:
+        log(f"Sanitized stock wording for {report_dir.name}: {len(stock_changes)} change(s).")
     status = read_json(report_dir / "status.json")
     institution_name = infer_institution_name(
         report_dir.name,

@@ -37,6 +37,7 @@ from wechat_title_optimizer import (
     extract_title_candidates,
     extract_wechat_keywords,
 )
+from sensitive_content_guard import sanitize_wechat_stock_language
 
 MINERU_BASE_URL = "https://mineru.net"
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp", ".bmp"}
@@ -849,11 +850,21 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
     wechat_prompt = build_wechat_prompt(Path(args.wechat_prompt_template), source_text, args, institution_name)
     (item_dir / "prompt_for_wechat.md").write_text(wechat_prompt, encoding="utf-8")
     wechat_article = safe_generate_text(wechat_prompt, args, "WeChat article")
+    wechat_article, stock_changes = sanitize_wechat_stock_language(wechat_article)
+    if stock_changes:
+        status["wechat_stock_language_sanitized"] = stock_changes[:40]
     wechat_article = ensure_markdown_h1_institution(wechat_article, institution_name)
     refined_wechat_title = refine_wechat_article_title(pdf_path.stem, wechat_article, institution_name, args)
+    refined_wechat_title, title_stock_changes = sanitize_wechat_stock_language(refined_wechat_title)
+    if title_stock_changes:
+        status["wechat_title_stock_language_sanitized"] = title_stock_changes[:20]
     wechat_article = replace_first_markdown_heading(wechat_article, refined_wechat_title)
     status["wechat_title"] = refined_wechat_title
     wechat_article = embed_images_in_wechat_article(wechat_article, status.get("images", []), max_images=3)
+    wechat_article, stock_changes_after_images = sanitize_wechat_stock_language(wechat_article)
+    if stock_changes_after_images:
+        status.setdefault("wechat_stock_language_sanitized", [])
+        status["wechat_stock_language_sanitized"].extend(stock_changes_after_images[:20])
     (item_dir / "wechat_article.md").write_text(wechat_article, encoding="utf-8")
     try:
         make_cover(pdf_path, assets_dir / "cover.png", title, subtitle, args.watermark)

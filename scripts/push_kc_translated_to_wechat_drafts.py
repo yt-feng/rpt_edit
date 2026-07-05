@@ -35,6 +35,7 @@ from wechat_title_optimizer import (
     clean_wechat_title as optimizer_clean_wechat_title,
     extract_wechat_keywords,
 )
+from sensitive_content_guard import sanitize_wechat_stock_language
 
 
 BRAND = "KC桌面——外资精译"
@@ -449,6 +450,7 @@ def clean_source_report_name(value: Any) -> str:
     name = Path(raw).name
     name = re.sub(r"\.pdf$", "", name, flags=re.I)
     name = re.sub(r"^\d{4}-", "", name)
+    name, _stock_changes = sanitize_wechat_stock_language(name)
     name = re.sub(r"\s+", " ", name.replace("_", " ")).strip(" -._")
     return name[:240]
 
@@ -528,7 +530,8 @@ def clean_markdown(markdown: str) -> str:
         if TRAILING_DISCLOSURE_RE.search(line):
             break
         cleaned.append(line)
-    return "\n".join(cleaned).strip()
+    text, _stock_changes = sanitize_wechat_stock_language("\n".join(cleaned).strip())
+    return text
 
 
 def highlight_terms_pattern(terms: list[str]) -> re.Pattern[str]:
@@ -599,8 +602,6 @@ HIGHLIGHT_UPSIDE_RE = highlight_terms_pattern(
         "扩张",
         "降息",
         "宽松",
-        "买入",
-        "增持",
     ]
 )
 HIGHLIGHT_RISK_RE = highlight_terms_pattern(
@@ -772,6 +773,8 @@ def footer_html(disclaimer: str) -> str:
 
 
 def source_report_footer_html(source_report_name: str) -> str:
+    source_report_name, _stock_changes = sanitize_wechat_stock_language(source_report_name)
+    source_report_name = normalize_space(source_report_name).strip(" -_.,，;；:：")
     if not source_report_name:
         return ""
     return (
@@ -953,6 +956,10 @@ def markdown_to_wechat_html(
     max_visible_chars: int,
     max_chars: int,
 ) -> tuple[str, int, int]:
+    title, _title_stock_changes = sanitize_wechat_stock_language(title)
+    title = optimizer_clean_wechat_title(title, "", max_chars=WECHAT_TITLE_MAX_CHARS)
+    if len(title) < 6:
+        title = "公司情况更新"
     keyword_terms = extract_wechat_keywords(title, f"{source_report_name}\n{markdown}", max_keywords=8)
     parts: list[str] = [brand_header_html(brand, title)]
     bridge = keyword_bridge_html(keyword_terms)
@@ -1796,7 +1803,9 @@ def build_article(
     trailing_image_url: str,
 ) -> dict[str, Any]:
     translated_path = report_dir / "translated.md"
-    markdown = translated_path.read_text(encoding="utf-8", errors="ignore")
+    markdown, stock_changes = sanitize_wechat_stock_language(translated_path.read_text(encoding="utf-8", errors="ignore"))
+    if stock_changes:
+        log(f"Sanitized stock wording for {report_dir.name}: {len(stock_changes)} change(s).")
     status = read_json(report_dir / "translation_status.json")
     title_metadata = translated_article_title_metadata(report_dir, markdown, status)
     institution_name = title_metadata["institution_name"]

@@ -49,6 +49,7 @@ from wechat_title_optimizer import (
     extract_title_candidates,
     extract_wechat_keywords,
 )
+from sensitive_content_guard import sanitize_wechat_stock_language
 
 # Maps the institution keys used by fetch_institution_latest_pdfs.py to the Chinese
 # names institution_names.infer_institution_name returns, so --exclude-institutions
@@ -888,7 +889,8 @@ def build_article_style_prompt(markdown: str, title: str, institution_name: str,
 6. 插入 2 条 `> KC评论：...`。KC评论要用大白话解释“这对市场/企业/政策观察意味着什么”，不要空泛。
 7. 如有可用图表占位符，只能从这些 token 里选 1-3 个并原样插入，单独成行：{token_text}
 8. 第一条 KC评论 后可以自然补一句短提示，限 45 字以内：继续看原文，真正有价值的是图表、假设和验证路径；完整报告与 KC评论 在每日汇编。不要写扫码、社群、付费等硬广表达。
-9. 不要输出代码块，不要输出英文原文，不要输出“以下是”等解释。
+9. 如果是单一公司/个股报告，只写公司情况、行业变化、业务进展、竞争格局和报告事实；禁止输出目标价、评级、买入、卖出、增持、减持、推荐、荐股、Buy、Sell、Overweight、Underweight、Outperform、Underperform、PT、TP、PO 等卖方操作口径。
+10. 不要输出代码块，不要输出英文原文，不要输出“以下是”等解释。
 
 机构中文名：{institution_name or "该机构"}
 原报告标题：{title}
@@ -920,6 +922,7 @@ def generate_article_style_markdown(
     )
     article = article.replace("```markdown", "").replace("```", "")
     article = insert_article_tokens(article, image_tokens)
+    article, _stock_changes = sanitize_wechat_stock_language(article)
     return sanitize_text(article).strip() + "\n"
 
 
@@ -1166,8 +1169,11 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
         translated_md = generate_article_style_markdown(clean_md, source_title, institution_name, figures, args)
     else:
         translated_md = translate_markdown(clean_md, args)
+    translated_md, stock_changes = sanitize_wechat_stock_language(translated_md)
     display_title = refine_wechat_title_with_deepseek(source_title, translated_md, institution_name, args)
+    display_title, title_stock_changes = sanitize_wechat_stock_language(display_title)
     translated_md = replace_first_heading(translated_md, display_title)
+    translated_md, stock_changes_after_title = sanitize_wechat_stock_language(translated_md)
     translated_path = report_out_dir / "translated.md"
     translated_path.write_text(translated_md, encoding="utf-8")
 
@@ -1184,6 +1190,7 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
         "figure_count": len(figures),
         "institution_name": institution_name,
         "article_style": article_style,
+        "stock_language_sanitized": stock_changes[:40] + title_stock_changes[:20] + stock_changes_after_title[:20],
     }
     (report_out_dir / "translation_status.json").write_text(json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8")
     return {**status, "output_dir": str(report_out_dir), "pdf_path": str(output_pdf)}
