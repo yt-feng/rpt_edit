@@ -52,7 +52,7 @@ jobs:
     timeout-minutes: 60
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment_1.outputs.page_url || steps.deployment_2.outputs.page_url || steps.deployment_3.outputs.page_url || 'https://kcdesk.com' }}
 
     steps:
       - name: Checkout repository
@@ -133,8 +133,35 @@ jobs:
           path: _kc_desk_notes_pages
 
       - name: Deploy GitHub Pages
-        id: deployment
+        id: deployment_1
         uses: actions/deploy-pages@v4
+        continue-on-error: true
+
+      - name: Wait before retrying GitHub Pages deploy
+        if: ${{ steps.deployment_1.outcome != 'success' }}
+        run: sleep 30
+
+      - name: Deploy GitHub Pages retry 2
+        id: deployment_2
+        if: ${{ steps.deployment_1.outcome != 'success' }}
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+
+      - name: Wait before final GitHub Pages retry
+        if: ${{ steps.deployment_1.outcome != 'success' && steps.deployment_2.outcome != 'success' }}
+        run: sleep 60
+
+      - name: Deploy GitHub Pages retry 3
+        id: deployment_3
+        if: ${{ steps.deployment_1.outcome != 'success' && steps.deployment_2.outcome != 'success' }}
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+
+      - name: Verify GitHub Pages deployment
+        if: ${{ steps.deployment_1.outcome != 'success' && steps.deployment_2.outcome != 'success' && steps.deployment_3.outcome != 'success' }}
+        run: |
+          echo "GitHub Pages deployment failed after 3 attempts."
+          exit 1
 
       - name: Commit persistent catalog
         run: |
@@ -150,7 +177,7 @@ jobs:
           R2_BUCKET_NAME: ${{ secrets.R2_BUCKET || vars.R2_BUCKET || 'kc-desk-notes-pdfs' }}
           PASSWORD_SECRET: ${{ secrets.PASSWORD_SECRET }}
           KC_DESK_DOWNLOAD_PASSWORD: ${{ secrets.KC_DESK_DOWNLOAD_PASSWORD }}
-          PAGES_URL: ${{ vars.KC_DESK_PAGES_URL || steps.deployment.outputs.page_url || 'https://kcdesk.com' }}
+          PAGES_URL: ${{ vars.KC_DESK_PAGES_URL || steps.deployment_1.outputs.page_url || steps.deployment_2.outputs.page_url || steps.deployment_3.outputs.page_url || 'https://kcdesk.com' }}
           R2_OBJECT_PREFIX: ${{ vars.R2_OBJECT_PREFIX || 'reports' }}
           NEWSFEED_EMAIL_PROVIDER: ${{ vars.NEWSFEED_EMAIL_PROVIDER || 'cloudflare' }}
         run: |

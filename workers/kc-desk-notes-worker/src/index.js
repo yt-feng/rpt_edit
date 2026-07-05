@@ -5152,10 +5152,67 @@ function applyBbgVideoGroupMajority(files) {
       row.account_label_reason = `同源视频多数原则：${rows.length}条同组视频统一为${chosen}（${chosenCount}/${rows.length}）；${previousReason}`;
     }
   }
+  applyBbgVideoAccountBalance(files);
   return (files || []).map((file) => {
     if (file && Object.prototype.hasOwnProperty.call(file, "_bbg_group_key")) delete file._bbg_group_key;
     return file;
   });
+}
+
+function applyBbgVideoAccountBalance(files) {
+  const groups = new Map();
+  (files || []).forEach((file, index) => {
+    const account = String(file && file.recommended_account || "");
+    if (account !== "KC桌面" && account !== "KC偏见") return;
+    const key = String(file && file._bbg_group_key || `single:${index}`);
+    const rows = groups.get(key) || [];
+    rows.push(file);
+    groups.set(key, rows);
+  });
+  const blocks = [...groups.values()].map((rows) => {
+    const desktopScore = rows.reduce((sum, row) => sum + Number(row.kc_desktop_score || 0), 0);
+    const biasScore = rows.reduce((sum, row) => sum + Number(row.kc_bias_score || 0), 0);
+    const desktopRows = rows.filter((row) => row.recommended_account === "KC桌面").length;
+    const biasRows = rows.filter((row) => row.recommended_account === "KC偏见").length;
+    const account = desktopRows >= biasRows ? "KC桌面" : "KC偏见";
+    return {
+      rows,
+      account,
+      size: rows.length,
+      margin: Math.abs(desktopScore - biasScore) / Math.max(1, rows.length),
+    };
+  });
+  let desktopTotal = blocks.reduce((sum, block) => sum + (block.account === "KC桌面" ? block.size : 0), 0);
+  let biasTotal = blocks.reduce((sum, block) => sum + (block.account === "KC偏见" ? block.size : 0), 0);
+  for (let guard = 0; guard < blocks.length && Math.abs(desktopTotal - biasTotal) > 1; guard += 1) {
+    const majority = desktopTotal > biasTotal ? "KC桌面" : "KC偏见";
+    const minority = majority === "KC桌面" ? "KC偏见" : "KC桌面";
+    const currentDiff = Math.abs(desktopTotal - biasTotal);
+    const candidate = blocks
+      .filter((block) => block.account === majority)
+      .map((block) => {
+        const nextDesktop = majority === "KC桌面" ? desktopTotal - block.size : desktopTotal + block.size;
+        const nextBias = majority === "KC偏见" ? biasTotal - block.size : biasTotal + block.size;
+        return { block, nextDiff: Math.abs(nextDesktop - nextBias) };
+      })
+      .filter((entry) => entry.nextDiff < currentDiff)
+      .sort((a, b) => a.nextDiff - b.nextDiff || a.block.margin - b.block.margin || a.block.size - b.block.size)[0];
+    if (!candidate) break;
+    candidate.block.account = minority;
+    if (majority === "KC桌面") {
+      desktopTotal -= candidate.block.size;
+      biasTotal += candidate.block.size;
+    } else {
+      biasTotal -= candidate.block.size;
+      desktopTotal += candidate.block.size;
+    }
+    for (const row of candidate.block.rows) {
+      const previousReason = String(row.account_label_reason || "");
+      row.recommended_account = minority;
+      row.account_label_confidence = row.account_label_confidence === "低" ? "低" : "中";
+      row.account_label_reason = `数量均衡：后台列表 KC桌面/KC偏见 数量偏差，整组调整为${minority}；${previousReason}`;
+    }
+  }
 }
 
 function bbgClipTakeLimit(source) {
