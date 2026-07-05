@@ -5803,6 +5803,25 @@ async function cacheAdminGithubFilesWithConcurrency(env, files, concurrency = 4)
   return results.filter(Boolean);
 }
 
+function adminGithubWarmPriority(file) {
+  if (!file || file.type === "artifact") return 4;
+  const name = String(file.name || file.path || "");
+  if (/\.mp4$/i.test(name)) return 0;
+  if (/\.pdf$/i.test(name)) return 1;
+  if (/\.zip$/i.test(name)) return 2;
+  return 3;
+}
+
+function sortAdminGithubWarmTargets(files) {
+  return [...(files || [])].sort((a, b) => {
+    const priority = adminGithubWarmPriority(a) - adminGithubWarmPriority(b);
+    if (priority) return priority;
+    const date = dateScore(b.date || b.path || b.name) - dateScore(a.date || a.path || a.name);
+    if (date) return date;
+    return Number(b.size_bytes || 0) - Number(a.size_bytes || 0);
+  });
+}
+
 async function pruneGithubCache(env, now = Date.now()) {
   if (!env.REPORT_BUCKET || typeof env.REPORT_BUCKET.list !== "function") return { deleted: 0 };
   const cutoffTime = now - GITHUB_CACHE_RETENTION_MS;
@@ -5839,7 +5858,7 @@ async function pruneGithubCache(env, now = Date.now()) {
 
 async function warmAdminGithubCache(env, files = null) {
   const targetFiles = Array.isArray(files) ? files : await latestAdminGithubFiles(env);
-  const warmTargets = targetFiles.filter((item) => item && (item.type === "file" || item.type === "artifact")).slice(0, 64);
+  const warmTargets = sortAdminGithubWarmTargets(targetFiles.filter((item) => item && (item.type === "file" || item.type === "artifact"))).slice(0, 96);
   const warmed = await cacheAdminGithubFilesWithConcurrency(env, warmTargets, 4);
   const cleanup = await pruneGithubCache(env).catch((error) => ({ deleted: 0, error: String(error && error.message || error || "") }));
   return {
