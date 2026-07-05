@@ -54,6 +54,7 @@ import html
 import json
 import os
 import re
+import subprocess
 import sys
 import time
 import xml.etree.ElementTree as ET
@@ -459,14 +460,39 @@ def mask_proxy(proxy: str) -> str:
     return re.sub(r"//[^@/]+@", "//***@", proxy)
 
 
+def _fetch_subscription(url: str, timeout: int) -> str | None:
+    """The subscription host is picky about clients; try several fetch methods."""
+    try:
+        resp = requests.get(url, timeout=timeout, headers={"User-Agent": DEFAULT_USER_AGENT})
+        resp.raise_for_status()
+        return resp.text.strip()
+    except Exception as exc:  # noqa: BLE001
+        warn(f"subscription via requests failed: {exc}")
+    try:  # plain curl CLI is what bbg-show uses successfully
+        out = subprocess.run(
+            ["curl", "--location", "--fail", "--silent", "--show-error", url],
+            capture_output=True, text=True, timeout=90,
+        )
+        if out.returncode == 0 and out.stdout.strip():
+            return out.stdout.strip()
+        warn(f"subscription via curl failed: rc={out.returncode} {out.stderr.strip()[:120]}")
+    except Exception as exc:  # noqa: BLE001
+        warn(f"subscription via curl failed: {exc}")
+    if _HAS_CFFI:
+        try:
+            resp = cffi_requests.get(url, timeout=timeout, impersonate=CFFI_IMPERSONATE)
+            if resp.status_code < 400 and resp.text.strip():
+                return resp.text.strip()
+            warn(f"subscription via curl_cffi failed: http_{resp.status_code}")
+        except Exception as exc:  # noqa: BLE001
+            warn(f"subscription via curl_cffi failed: {exc}")
+    return None
+
+
 def resolve_working_proxy(subscription_url: str, timeout: int) -> str | None:
     """Fetch the subscription and return the first node that can reach the web."""
-    try:
-        resp = requests.get(subscription_url, timeout=timeout)
-        resp.raise_for_status()
-        body = resp.text.strip()
-    except Exception as exc:  # noqa: BLE001
-        warn(f"proxy subscription fetch failed: {exc}")
+    body = _fetch_subscription(subscription_url, timeout)
+    if not body:
         return None
     if "://" not in body.splitlines()[0]:
         body = _b64_text(body) or body
