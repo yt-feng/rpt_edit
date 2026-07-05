@@ -5784,6 +5784,25 @@ async function cacheGithubArtifact(env, file) {
   return { ok: true, cached: false, key: cacheKey };
 }
 
+async function cacheAdminGithubFilesWithConcurrency(env, files, concurrency = 4) {
+  const results = [];
+  let cursor = 0;
+  async function worker() {
+    while (cursor < files.length) {
+      const index = cursor;
+      cursor += 1;
+      const file = files[index];
+      try {
+        results[index] = file.type === "artifact" ? await cacheGithubArtifact(env, file) : await cacheGithubFile(env, file);
+      } catch (error) {
+        results[index] = { ok: false, error: String(error && error.message || error || "cache failed").slice(0, 200) };
+      }
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(concurrency, files.length) }, () => worker()));
+  return results.filter(Boolean);
+}
+
 async function pruneGithubCache(env, now = Date.now()) {
   if (!env.REPORT_BUCKET || typeof env.REPORT_BUCKET.list !== "function") return { deleted: 0 };
   const cutoffTime = now - GITHUB_CACHE_RETENTION_MS;
@@ -5820,14 +5839,8 @@ async function pruneGithubCache(env, now = Date.now()) {
 
 async function warmAdminGithubCache(env, files = null) {
   const targetFiles = Array.isArray(files) ? files : await latestAdminGithubFiles(env);
-  const warmed = [];
-  for (const file of targetFiles.filter((item) => item && (item.type === "file" || item.type === "artifact")).slice(0, 64)) {
-    try {
-      warmed.push(file.type === "artifact" ? await cacheGithubArtifact(env, file) : await cacheGithubFile(env, file));
-    } catch (error) {
-      warmed.push({ ok: false, error: String(error && error.message || error || "cache failed").slice(0, 200) });
-    }
-  }
+  const warmTargets = targetFiles.filter((item) => item && (item.type === "file" || item.type === "artifact")).slice(0, 64);
+  const warmed = await cacheAdminGithubFilesWithConcurrency(env, warmTargets, 4);
   const cleanup = await pruneGithubCache(env).catch((error) => ({ deleted: 0, error: String(error && error.message || error || "") }));
   return {
     warmed,
@@ -5877,7 +5890,7 @@ async function prepareAdminGithubFileCache(request, env) {
     path,
     repo,
     name: path.split("/").pop() || "download",
-    date: renderedClipDate(path) || kcEntertainmentDateFromPath(path) || "",
+    date: renderedClipDate(path) || kcEntertainmentDateFromPath(path) || rpt2vidDateFromPath(path) || "",
   });
   return jsonResponse(request, env, result.ok ? 200 : 502, result.ok
     ? { ok: true, cached: Boolean(result.cached), key: result.key || "" }
@@ -5994,6 +6007,7 @@ async function fetchGithubRawFile(env, path, request, repo = githubRepo(env), ct
         ref,
         path: path.slice(0, 900),
         cached_at: new Date().toISOString(),
+        file_date: String(renderedClipDate(path) || kcEntertainmentDateFromPath(path) || rpt2vidDateFromPath(path) || "").slice(0, 40),
       },
     }).catch(() => null));
     return new Response(clientBody, {

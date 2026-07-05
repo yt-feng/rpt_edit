@@ -1422,7 +1422,7 @@
     return new Blob(chunks, { type: first.response.headers.get("Content-Type") || contentTypeFromFilename(fallbackName) });
   }
 
-  async function prepareSegmentedAdminDownload(workerUrl, button, signal, progress) {
+  async function prepareSegmentedAdminDownload(workerUrl, button, signal, progress, options = {}) {
     const kind = String(button && button.dataset.kind || "");
     if (kind !== "file" && kind !== "artifact") return;
     const key = button.dataset.key || "";
@@ -1441,7 +1441,7 @@
     const response = await fetch(url.toString(), {
       cache: "no-store",
       headers: authHeaders(),
-      signal: timeoutSignal(signal, 25000),
+      signal: timeoutSignal(signal, options.timeoutMs || 25000),
     });
     const data = await response.json().catch(() => ({}));
     if (!response.ok || !data.ok) {
@@ -1785,19 +1785,20 @@
         if (segmented && isVideoDownloadButton(button)) {
           const directUrl = withDownloadToken(endpoint);
           try {
-            setDownloadMessage(progress, "正在准备高速缓存…", 8);
-            await prepareSegmentedAdminDownload(workerUrl, button, timeoutSignal(controller.signal, 8000), progress);
+            status.textContent = "正在准备高速缓存，首次视频可能需要几十秒…";
+            setDownloadMessage(progress, "正在准备高速缓存，首次视频可能需要几十秒…", 8);
+            await prepareSegmentedAdminDownload(workerUrl, button, controller.signal, progress, { timeoutMs: 90000 });
           } catch (error) {
             if (error && error.name === "AbortError" && controller.signal.aborted) throw error;
-            status.textContent = "缓存准备较慢，正在尝试高速下载…";
+            status.textContent = "缓存准备较慢，正在尝试分段下载…";
           }
           try {
-            status.textContent = "正在高速下载…";
-            setDownloadMessage(progress, "正在高速下载…", 10);
-            blob = await segmentedAdminDownload(endpoint, name, progress, controller.signal, { firstChunkTimeoutMs: 8000 });
+            status.textContent = "正在从高速缓存分段下载…";
+            setDownloadMessage(progress, "正在从高速缓存分段下载…", 10);
+            blob = await segmentedAdminDownload(endpoint, name, progress, controller.signal, { firstChunkTimeoutMs: 30000 });
           } catch (error) {
             if (error && error.name === "AbortError" && controller.signal.aborted) throw error;
-            setDownloadMessage(progress, "高速通道无响应，已切换浏览器下载。", 18);
+            setDownloadMessage(progress, "高速缓存仍未就绪，已切换浏览器下载。", 18);
             triggerNativeDownload(directUrl, name);
             status.textContent = "已切换浏览器下载。";
             status.classList.add("ok");
