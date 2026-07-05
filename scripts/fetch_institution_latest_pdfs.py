@@ -250,10 +250,12 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         "name_en": "Bruegel",
         "name_cn": "布鲁盖尔研究所",
         "token": "Bruegel",
-        # bruegel.org 403s GitHub-hosted runner IPs without a browser fingerprint.
+        # bruegel.org 403s GitHub-hosted runner IPs; the Chrome fingerprint is
+        # still blocked there, but Firefox passes.
         "kind": "rss",
         "pdf": "scrape",
         "impersonate": True,
+        "impersonate_profile": "firefox135",
         "feeds": [
             "https://www.bruegel.org/feed/publications-feed.xml",
         ],
