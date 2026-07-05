@@ -1,0 +1,23 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/institutions/260706/0027-OECD_Tackling-the-affordability-gap-through-increased-supply-of-a_b574e2fb/mineru_raw/images/ab4f8b57e05906af7a12962d10feaf89ed044307c041f9be2e36d1134a0a70a4.jpg",
+    "path": "kc_translated_reports/institutions/260706/22-0027-OECD_Tackling-the-affordability-gap-through-increased-supply-of-a_b574e2fb/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=4;non_chart_context,chart_context,chart_ratio,edge:0.25"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/institutions/260706/0027-OECD_Tackling-the-affordability-gap-through-increased-supply-of-a_b574e2fb/mineru_raw/images/a7cf52cd160eff2ed938a19997688fdc5848655e751859cb0956c4efc7bfb3de.jpg",
+    "path": "kc_translated_reports/institutions/260706/22-0027-OECD_Tackling-the-affordability-gap-through-increased-supply-of-a_b574e2fb/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=5;non_chart_context,chart_context,chart_ratio,edge:0.17,contrast"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/institutions/260706/0027-OECD_Tackling-the-affordability-gap-through-increased-supply-of-a_b574e2fb/mineru_raw/images/fd95a94e32d06a7c46bfd3e520ef9cbbd7cab5a209e9d8c3a5e8f0c4232b6630.jpg",
+    "path": "kc_translated_reports/institutions/260706/22-0027-OECD_Tackling-the-affordability-gap-through-increased-supply-of-a_b574e2fb/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=9;chart_context,chart_ratio,edge:0.18"
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/institutions/260706/0028-OECD_Tax-Inspectors-Without-Borders-Annual-Report-2026_5e58878f/mineru_raw/images/8163884bc788abdf76307a7a2d4cf543a0064a9cbde1d4e499049b882e1ee416.jpg",
+    "path": "kc_translated_reports/institutions/260706/23-0028-OECD_Tax-Inspectors-Without-Borders-Annual-Report-2026_5e58878f/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=7;chart_context,chart_ratio"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/institutions/260706/0028-OECD_Tax-Inspectors-Without-Borders-Annual-Report-2026_5e58878f/mineru_raw/images/f94e931723dcafb7ea779d0535fc378bfc68f7ec6caaaf08ce72fd14a0f766cf.jpg",
+    "path": "kc_translated_reports/institutions/260706/23-0028-OECD_Tax-Inspectors-Without-Borders-Annual-Report-2026_5e58878f/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=9;chart_context,edge:0.18,contrast"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/institutions/260706/0028-OECD_Tax-Inspectors-Without-Borders-Annual-Report-2026_5e58878f/mineru_raw/images/a651152cd9b5554587b27c98c266de38eb47c160945d333f117bb309124b6736.jpg",
+    "path": "kc_translated_reports/institutions/260706/23-0028-OECD_Tax-Inspectors-Without-Borders-Annual-Report-2026_5e58878f/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.34,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_004]]",
+    "source_path": "xhs_notes/institutions/260706/0028-OECD_Tax-Inspectors-Without-Borders-Annual-Report-2026_5e58878f/mineru_raw/images/3805dbe0f56e20a7833a328af1cad8d9140d7768b75a4a2c2cdecba69393e0f2.jpg",
+    "path": "kc_translated_reports/institutions/260706/23-0028-OECD_Tax-Inspectors-Without-Borders-Annual-Report-2026_5e58878f/assets/fig_004.jpg",
+    "relative_path": "fig_004.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.25,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_005]]",
+    "source_path": "xhs_notes/institutions/260706/0028-OECD_Tax-Inspectors-Without-Borders-Annual-Report-2026_5e58878f/mineru_raw/images/d9d6127248e695d409664292abbf96f535c94b61632b664f2257003eb5ec5f5f.jpg",
+    "path": "kc_translated_reports/institutions/260706/23-0028-OECD_Tax-Inspectors-Without-Borders-Annual-Report-2026_5e58878f/assets/fig_005.jpg",
+    "relative_path": "fig_005.jpg",
+    "chart_filter": "score=8;chart_context,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_006]]",
+    "source_path": "xhs_notes/institutions/260706/0028-OECD_Tax-Inspectors-Without-Borders-Annual-Report-2026_5e58878f/mineru_raw/images/19cffc48d1511ddcc14a58886f2235e4d1462523cf8582888f8283d3468740c7.jpg",
+    "path": "kc_translated_reports/institutions/260706/23-0028-OECD_Tax-Inspectors-Without-Borders-Annual-Report-2026_5e58878f/assets/fig_006.jpg",
+    "relative_path": "fig_006.jpg",
+    "chart_filter": "score=10;chart_context,edge:0.18,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_007]]",
+    "source_path": "xhs_notes/institutions/260706/0028-OECD_Tax-Inspectors-Without-Borders-Annual-Report-2026_5e58878f/mineru_raw/images/ade3bec150336c2b0ff95cfbacbc5b68e7cfda08912353227e5ef1932503528d.jpg",
+    "path": "kc_translated_reports/institutions/260706/23-0028-OECD_Tax-Inspectors-Without-Borders-Annual-Report-2026_5e58878f/assets/fig_007.jpg",
+    "relative_path": "fig_007.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.29,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_008]]",
+    "source_path": "xhs_notes/institutions/260706/0028-OECD_Tax-Inspectors-Without-Borders-Annual-Report-2026_5e58878f/mineru_raw/images/9c963f22f2af6fdf736c5f25bf965142700fdaab22bbf7439bec417aef2430b1.jpg",
+    "path": "kc_translated_reports/institutions/260706/23-0028-OECD_Tax-Inspectors-Without-Borders-Annual-Report-2026_5e58878f/assets/fig_008.jpg",
+    "relative_path": "fig_008.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.23,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_009]]",
+    "source_path": "xhs_notes/institutions/260706/0028-OECD_Tax-Inspectors-Without-Borders-Annual-Report-2026_5e58878f/mineru_raw/images/a8dfea6e701f60e7b3d7de140924d89b203653a1ac7ead9b7abf5306f2054714.jpg",
+    "path": "kc_translated_reports/institutions/260706/23-0028-OECD_Tax-Inspectors-Without-Borders-Annual-Report-2026_5e58878f/assets/fig_009.jpg",
+    "relative_path": "fig_009.jpg",
+    "chart_filter": "score=9;chart_context,edge:0.13,contrast"
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/institutions/260706/0007-ADB_The-Unfolding-Heat-Crisis-in-Thailand-and-Southeast-Asia-Cha_f10cf555/mineru_raw/images/4a4cc4591ed015de99f8220fd06283b0019dbd31063be0f3f17161cec17f760c.jpg",
+    "path": "kc_translated_reports/institutions/260706/06-0007-ADB_The-Unfolding-Heat-Crisis-in-Thailand-and-Southeast-Asia-Cha_f10cf555/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.13,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/institutions/260706/0007-ADB_The-Unfolding-Heat-Crisis-in-Thailand-and-Southeast-Asia-Cha_f10cf555/mineru_raw/images/f227bba2eaf09767c6e5afdeb8741fa1691358d4a7a9b405b3733b7255b48d86.jpg",
+    "path": "kc_translated_reports/institutions/260706/06-0007-ADB_The-Unfolding-Heat-Crisis-in-Thailand-and-Southeast-Asia-Cha_f10cf555/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=6;non_chart_context,chart_context,chart_ratio,edge:0.28,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/institutions/260706/0007-ADB_The-Unfolding-Heat-Crisis-in-Thailand-and-Southeast-Asia-Cha_f10cf555/mineru_raw/images/6aea8f5ad2bd78e7fd7b56719123eb3fd0d8c65ac59fdee6566dbe5c33cd2a85.jpg",
+    "path": "kc_translated_reports/institutions/260706/06-0007-ADB_The-Unfolding-Heat-Crisis-in-Thailand-and-Southeast-Asia-Cha_f10cf555/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.15,large"
+  },
+  {
+    "token": "[[KC_IMAGE_004]]",
+    "source_path": "xhs_notes/institutions/260706/0007-ADB_The-Unfolding-Heat-Crisis-in-Thailand-and-Southeast-Asia-Cha_f10cf555/mineru_raw/images/699b7914eb1c0ee5a93ed7e7a1786f79a2676bd5c688fa099c6d17b8d7d8b210.jpg",
+    "path": "kc_translated_reports/institutions/260706/06-0007-ADB_The-Unfolding-Heat-Crisis-in-Thailand-and-Southeast-Asia-Cha_f10cf555/assets/fig_004.jpg",
+    "relative_path": "fig_004.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.20,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_005]]",
+    "source_path": "xhs_notes/institutions/260706/0007-ADB_The-Unfolding-Heat-Crisis-in-Thailand-and-Southeast-Asia-Cha_f10cf555/mineru_raw/images/c2e23af00f8e7ac8ed2adb393f2dd33d82ce32a5f87883e66942becd3c3acab3.jpg",
+    "path": "kc_translated_reports/institutions/260706/06-0007-ADB_The-Unfolding-Heat-Crisis-in-Thailand-and-Southeast-Asia-Cha_f10cf555/assets/fig_005.jpg",
+    "relative_path": "fig_005.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.16,large"
+  },
+  {
+    "token": "[[KC_IMAGE_006]]",
+    "source_path": "xhs_notes/institutions/260706/0007-ADB_The-Unfolding-Heat-Crisis-in-Thailand-and-Southeast-Asia-Cha_f10cf555/mineru_raw/images/3f59b695447ed7e61f29445bd6d5b43d39c1ca30f20d07bb48d55eba2dbfff00.jpg",
+    "path": "kc_translated_reports/institutions/260706/06-0007-ADB_The-Unfolding-Heat-Crisis-in-Thailand-and-Southeast-Asia-Cha_f10cf555/assets/fig_006.jpg",
+    "relative_path": "fig_006.jpg",
+    "chart_filter": "score=5;non_chart_context,chart_context,edge:0.26,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_007]]",
+    "source_path": "xhs_notes/institutions/260706/0007-ADB_The-Unfolding-Heat-Crisis-in-Thailand-and-Southeast-Asia-Cha_f10cf555/mineru_raw/images/3d476dd3100555bf5b5cd11a26980629b46a8f9a93465bbd3b041b6dfec34e1e.jpg",
+    "path": "kc_translated_reports/institutions/260706/06-0007-ADB_The-Unfolding-Heat-Crisis-in-Thailand-and-Southeast-Asia-Cha_f10cf555/assets/fig_007.jpg",
+    "relative_path": "fig_007.jpg",
+    "chart_filter": "score=6;non_chart_context,chart_context,chart_ratio,edge:0.28,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_008]]",
+    "source_path": "xhs_notes/institutions/260706/0007-ADB_The-Unfolding-Heat-Crisis-in-Thailand-and-Southeast-Asia-Cha_f10cf555/mineru_raw/images/d6be6bd9b44237a115f042b9c09020cc77291d0d7e59bcb023a2f27e0a6bc9eb.jpg",
+    "path": "kc_translated_reports/institutions/260706/06-0007-ADB_The-Unfolding-Heat-Crisis-in-Thailand-and-Southeast-Asia-Cha_f10cf555/assets/fig_008.jpg",
+    "relative_path": "fig_008.jpg",
+    "chart_filter": "score=9;chart_context,edge:0.25,contrast"
+  },
+  {
+    "token": "[[KC_IMAGE_009]]",
+    "source_path": "xhs_notes/institutions/260706/0007-ADB_The-Unfolding-Heat-Crisis-in-Thailand-and-Southeast-Asia-Cha_f10cf555/mineru_raw/images/98db068460342d023139be035654d178afea6581f19988b1358ed880d421e286.jpg",
+    "path": "kc_translated_reports/institutions/260706/06-0007-ADB_The-Unfolding-Heat-Crisis-in-Thailand-and-Southeast-Asia-Cha_f10cf555/assets/fig_009.jpg",
+    "relative_path": "fig_009.jpg",
+    "chart_filter": "score=9;chart_context,chart_ratio,contrast,large"
+  }
+]

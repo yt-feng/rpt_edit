@@ -1,0 +1,23 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/institutions/260706/0002-ADB_Corporate-Digital-Transformation-and-Environmental-Performan_7fbe8c48/mineru_raw/images/75d80df692df0a57eed47238b45fa93388e24f9b2bdca32dd685059574618278.jpg",
+    "path": "kc_translated_reports/institutions/260706/02-0002-ADB_Corporate-Digital-Transformation-and-Environmental-Performan_7fbe8c48/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=5;non_chart_context,chart_context,chart_ratio,edge:0.32,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/institutions/260706/0002-ADB_Corporate-Digital-Transformation-and-Environmental-Performan_7fbe8c48/mineru_raw/images/4162139ed32cc3a67615bee84c2fc74a1fa6760d1e14d51230e681d671ff58d2.jpg",
+    "path": "kc_translated_reports/institutions/260706/02-0002-ADB_Corporate-Digital-Transformation-and-Environmental-Performan_7fbe8c48/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=6;non_chart_context,chart_context,chart_ratio,edge:0.48,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/institutions/260706/0002-ADB_Corporate-Digital-Transformation-and-Environmental-Performan_7fbe8c48/mineru_raw/images/e1a4c0f4a162d905fc4746b01af811fa7a99ea24174ce67b0c29b186b9aa167b.jpg",
+    "path": "kc_translated_reports/institutions/260706/02-0002-ADB_Corporate-Digital-Transformation-and-Environmental-Performan_7fbe8c48/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=6;non_chart_context,chart_context,chart_ratio,edge:0.22,contrast,large"
+  }
+]

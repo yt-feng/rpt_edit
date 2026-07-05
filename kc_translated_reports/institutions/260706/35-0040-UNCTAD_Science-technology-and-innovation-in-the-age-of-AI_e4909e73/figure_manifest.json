@@ -1,0 +1,23 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/institutions/260706/0040-UNCTAD_Science-technology-and-innovation-in-the-age-of-AI_e4909e73/mineru_raw/images/ec11f47e5952a0231367212640cd71c80a5c7231bcb5c24be6bab40392cbb8a5.jpg",
+    "path": "kc_translated_reports/institutions/260706/35-0040-UNCTAD_Science-technology-and-innovation-in-the-age-of-AI_e4909e73/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.19,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/institutions/260706/0040-UNCTAD_Science-technology-and-innovation-in-the-age-of-AI_e4909e73/mineru_raw/images/2cf8a7104b0efe4f0f7a6a951bc58e170bb9eb3a6a7aa6eed54a9877821c61a8.jpg",
+    "path": "kc_translated_reports/institutions/260706/35-0040-UNCTAD_Science-technology-and-innovation-in-the-age-of-AI_e4909e73/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.24,large"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/institutions/260706/0040-UNCTAD_Science-technology-and-innovation-in-the-age-of-AI_e4909e73/mineru_raw/images/c5c9d88ab269b2ba0b666c75d77709befd84f9bf8dabc457e77b1cdd750c1f83.jpg",
+    "path": "kc_translated_reports/institutions/260706/35-0040-UNCTAD_Science-technology-and-innovation-in-the-age-of-AI_e4909e73/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.28,contrast,large"
+  }
+]
