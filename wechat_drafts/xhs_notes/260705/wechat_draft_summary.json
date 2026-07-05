@@ -1,0 +1,155 @@
+{
+  "date_folder": "260705",
+  "source": "xhs_notes/dropbox",
+  "dry_run": false,
+  "publish": false,
+  "max_articles": "all",
+  "input_selected_count": 7,
+  "selected_count": 6,
+  "skipped_title_policy_count": 1,
+  "skipped_title_policy": [
+    {
+      "report_dir": "xhs_notes/dropbox/260705/shard_1/0001-06-Morgan-Stanley-Robotaxi-Diffusion---Robots--Taxis-and-the-Trillion-Dolla",
+      "wechat_markdown": "xhs_notes/dropbox/260705/shard_1/0001-06-Morgan-Stanley-Robotaxi-Diffusion---Robots--Taxis-and-the-Trillion-Dolla/wechat_article.md",
+      "title": "摩根士丹利：中国供应链通缩被低估，Robotaxi成本2027年降至4万美元",
+      "wechat_title": "摩根士丹利：中国供应链通缩被低估，Robotaxi成本2027年降至4万美元",
+      "institution_name": "摩根士丹利",
+      "source_report_name": "06-MS-Robotaxi Diffusion - Robots- Taxis and the Trillion-Dollar Traffic Portal-260703",
+      "generation_failure_reason": "",
+      "skip_reason": "china_negative_title_terms=中国;negative=通缩"
+    }
+  ],
+  "articles_per_draft": 8,
+  "draft_count": 1,
+  "max_body_chars": 2000,
+  "max_content_chars": 19500,
+  "max_content_bytes": 18000,
+  "min_inline_images": 3,
+  "max_inline_images": 3,
+  "body_hook": "更多国际信源汇编&评论，扫码交流，每日更新，汇总国际主流叙事&数据&图表，观测边际变化。汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询、智库等朋友，期待交流",
+  "trailing_image": "/opt/actions-runner-rpt-edit/_work/rpt_edit/rpt_edit/prompts/zsxq_img.jpg",
+  "drafts": [
+    {
+      "draft_index": 1,
+      "media_id": "avPwUQVH0p7DPpCFFkit84bvHuR8nYSUjdR0sQpszPqVoR72q_oQ2CTr8FOF4YFL",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 6,
+      "payload_bytes": 80086,
+      "payload": "wechat_drafts/xhs_notes/260705/draft_payload_01.json",
+      "titles": [
+        "高盛：万辰新店投资回收期控制在2年内，GS称增长可见度正在增强",
+        "高盛：韩国股市跌至金融危机以来最低估值，市场关注反弹信号",
+        "高盛：汽车和手机撑起非AIMLCC，9%复合增长稳定",
+        "野村：槟城工厂揭示AI供应链被低估的制造能力升级",
+        "摩根大通：亿航商业化不是时间问题，是路径问题",
+        "野村：2026年人形机器人数据成稀缺资源，遥操作数据最贵"
+      ],
+      "wechat_titles": [
+        "高盛：万辰新店投资回收期控制在2年内，GS称增长可见度正在增强",
+        "高盛：韩国股市跌至金融危机以来最低估值，市场关注反弹信号",
+        "高盛：汽车和手机撑起非AIMLCC，9%复合增长稳定",
+        "野村：槟城工厂揭示AI供应链被低估的制造能力升级",
+        "摩根大通：亿航商业化不是时间问题，是路径问题",
+        "野村：2026年人形机器人数据成稀缺资源，遥操作数据最贵"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 6,
+        "expected_article_count": 6,
+        "matches_expected_article_count": true,
+        "titles": [
+          "é«çï¼ä¸è¾°æ°åºæèµåæ¶ææ§å¶å¨2å¹´å ï¼GSç§°å¢é¿å¯è§åº¦æ­£å¨å¢å¼º",
+          "é«çï¼é©å½è¡å¸è·è³éèå±æºä»¥æ¥æä½ä¼°å¼ï¼å¸åºå ³æ³¨åå¼¹ä¿¡å·",
+          "é«çï¼æ±½è½¦åææºæèµ·éAIMLCCï¼9%å¤åå¢é¿ç¨³å®",
+          "éæï¼æ§åå·¥åæ­ç¤ºAIä¾åºé¾è¢«ä½ä¼°çå¶é è½ååçº§",
+          "æ©æ ¹å¤§éï¼äº¿èªåä¸åä¸æ¯æ¶é´é®é¢ï¼æ¯è·¯å¾é®é¢",
+          "éæï¼2026å¹´äººå½¢æºå¨äººæ°æ®æç¨ç¼ºèµæºï¼é¥æä½æ°æ®æè´µ"
+        ],
+        "create_time": 1783290956,
+        "update_time": 1783290957
+      }
+    }
+  ],
+  "articles": [
+    {
+      "title": "高盛：万辰新店投资回收期控制在2年内，GS称增长可见度正在增强",
+      "wechat_title": "高盛：万辰新店投资回收期控制在2年内，GS称增长可见度正在增强",
+      "institution_name": "高盛",
+      "source_report_name": "01-GS-Fujian Wanchen Food -300972-- Robust store openings and healthy per-store GMV growth YTD amid rational competition- Reiterate 报告观点-260704",
+      "report_dir": "xhs_notes/dropbox/260705/shard_0/0001-01-Goldman-Sachs-Fujian-Wanchen-Food--300972---Robust-store-openings-and-he",
+      "content_chars": 8654,
+      "content_bytes": 12880,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260705/shard_0/0001-01-Goldman-Sachs-Fujian-Wanchen-Food--300972---Robust-store-openings-and-he/assets/cover.png"
+    },
+    {
+      "title": "高盛：韩国股市跌至金融危机以来最低估值，市场关注反弹信号",
+      "wechat_title": "高盛：韩国股市跌至金融危机以来最低估值，市场关注反弹信号",
+      "institution_name": "高盛",
+      "source_report_name": "02-GS-KOSPI dropped by 4- amid continued market volatility and foreign outflows- fP E fell to the lowest level since the G.F.C-260704",
+      "report_dir": "xhs_notes/dropbox/260705/shard_0/0002-02-Goldman-Sachs-KOSPI-dropped-by-4--amid-continued-market-volatility-and-f",
+      "content_chars": 9509,
+      "content_bytes": 13379,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260705/shard_0/0002-02-Goldman-Sachs-KOSPI-dropped-by-4--amid-continued-market-volatility-and-f/assets/cover.png"
+    },
+    {
+      "title": "高盛：汽车和手机撑起非AIMLCC，9%复合增长稳定",
+      "wechat_title": "高盛：汽车和手机撑起非AIMLCC，9%复合增长稳定",
+      "institution_name": "高盛",
+      "source_report_name": "03-GS-Yageo Corp. -2327.TW-Commodity MLCC pricing upcycle is coming- with more capacity transferred into AI industry- 报告观点- with",
+      "report_dir": "xhs_notes/dropbox/260705/shard_0/0003-03-Goldman-Sachs-Yageo-Corp.--2327.TW-Commodity-MLCC-pricing-upcycle-is-com",
+      "content_chars": 10250,
+      "content_bytes": 13796,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260705/shard_0/0003-03-Goldman-Sachs-Yageo-Corp.--2327.TW-Commodity-MLCC-pricing-upcycle-is-com/assets/cover.png"
+    },
+    {
+      "title": "野村：槟城工厂揭示AI供应链被低估的制造能力升级",
+      "wechat_title": "野村：槟城工厂揭示AI供应链被低估的制造能力升级",
+      "institution_name": "野村",
+      "source_report_name": "04-NOM-Bizlink-3665.TW-Penang site visit takeaways-260705",
+      "report_dir": "xhs_notes/dropbox/260705/shard_0/0004-04-Nomura-Bizlink-3665.TW-Penang-site-visit-takeaways-260705",
+      "content_chars": 7498,
+      "content_bytes": 11856,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260705/shard_0/0004-04-Nomura-Bizlink-3665.TW-Penang-site-visit-takeaways-260705/assets/cover.png"
+    },
+    {
+      "title": "摩根大通：亿航商业化不是时间问题，是路径问题",
+      "wechat_title": "摩根大通：亿航商业化不是时间问题，是路径问题",
+      "institution_name": "摩根大通",
+      "source_report_name": "05-JPM-EHang- ADR-EH.US-Downgrade to 报告观点- commercialization delayed- first-mover advantage diminished-260704",
+      "report_dir": "xhs_notes/dropbox/260705/shard_0/0005-05-J.P.-Morgan-EHang--ADR-EH.US-Downgrade-to-Underweight--commercialization",
+      "content_chars": 9148,
+      "content_bytes": 13168,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260705/shard_0/0005-05-J.P.-Morgan-EHang--ADR-EH.US-Downgrade-to-Underweight--commercialization/assets/cover.png"
+    },
+    {
+      "title": "野村：2026年人形机器人数据成稀缺资源，遥操作数据最贵",
+      "wechat_title": "野村：2026年人形机器人数据成稀缺资源，遥操作数据最贵",
+      "institution_name": "野村",
+      "source_report_name": "07-NOM-China Robotics-Data emerges as the critical part for robotics-260705",
+      "report_dir": "xhs_notes/dropbox/260705/shard_1/0002-07-Nomura-China-Robotics-Data-emerges-as-the-critical-part-for-robotics-260",
+      "content_chars": 7852,
+      "content_bytes": 12175,
+      "visible_text_chars": 2000,
+      "inline_image_count": 2,
+      "body_image_count": 2,
+      "cover_image": "xhs_notes/dropbox/260705/shard_1/0002-07-Nomura-China-Robotics-Data-emerges-as-the-critical-part-for-robotics-260/assets/cover.png"
+    }
+  ]
+}
