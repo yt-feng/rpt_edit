@@ -1,0 +1,22 @@
+{
+  "source_pdf": "/tmp/pdf_batch_006_fnk9g7rq/pdfs/0026-WEF_Top-10-Emerging-Technologies-of-2026_2c9c2a6a.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "世界经济论坛",
+  "cover_short_title": "封面短标题",
+  "cover_subtitle": "封面副标题",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "世界经济论坛：锂提取技术颠覆全球供应链，18个月缩至数小时",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

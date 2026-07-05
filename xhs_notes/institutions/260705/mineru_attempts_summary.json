@@ -1,0 +1,56 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 4,
+    "successful_pdf_count": 2,
+    "retry_pdf_count": 2,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_007_krh40534/pdfs/0031-WTO_The-value-of-the-WTO-An-economic-viewpoint-in-six-instalment_57110e1f.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_007_krh40534/pdfs/0032-WTO_WTO-Fish-Fund-to-support-17-more-members-in-implementing-Agr_57639fcd.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_007_krh40534/pdfs/0033-WTO_WTO-OIF-report-highlights-the-transformative-impact-of-digit_475d678c.pdf",
+        "state": "failed",
+        "error": "number of pages exceeds limit (200 pages), please split the file and try again"
+      },
+      {
+        "pdf": "/tmp/pdf_batch_007_krh40534/pdfs/0034-WTO_WTO-issues-new-edition-of-World-Tariff-Profiles_1ba037ee.pdf",
+        "state": "failed",
+        "error": "number of pages exceeds limit (200 pages), please split the file and try again"
+      }
+    ]
+  },
+  {
+    "attempt": 2,
+    "round": 2,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 2,
+    "successful_pdf_count": 0,
+    "retry_pdf_count": 2,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_007_krh40534/pdfs/0033-WTO_WTO-OIF-report-highlights-the-transformative-impact-of-digit_475d678c.pdf",
+        "state": "failed",
+        "error": "number of pages exceeds limit (200 pages), please split the file and try again"
+      },
+      {
+        "pdf": "/tmp/pdf_batch_007_krh40534/pdfs/0034-WTO_WTO-issues-new-edition-of-World-Tariff-Profiles_1ba037ee.pdf",
+        "state": "failed",
+        "error": "number of pages exceeds limit (200 pages), please split the file and try again"
+      }
+    ]
+  }
+]

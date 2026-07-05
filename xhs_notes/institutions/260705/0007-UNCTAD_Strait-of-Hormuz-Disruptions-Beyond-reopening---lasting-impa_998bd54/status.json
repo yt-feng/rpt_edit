@@ -1,0 +1,25 @@
+{
+  "source_pdf": "/tmp/pdf_batch_002_3s0pwp__/pdfs/0007-UNCTAD_Strait-of-Hormuz-Disruptions-Beyond-reopening---lasting-impa_998bd54c.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "联合国贸发会议",
+  "cover_short_title": "霍尔木兹海峡重开，然",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "联合国贸发会议：中国关注，全球供应链修复需数月，脆弱经济体债务承压",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

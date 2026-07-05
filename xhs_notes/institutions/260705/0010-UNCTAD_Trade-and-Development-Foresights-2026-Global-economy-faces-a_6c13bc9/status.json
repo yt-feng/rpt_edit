@@ -1,0 +1,25 @@
+{
+  "source_pdf": "/tmp/pdf_batch_002_3s0pwp__/pdfs/0010-UNCTAD_Trade-and-Development-Foresights-2026-Global-economy-faces-a_6c13bc9e.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "联合国贸发会议",
+  "cover_short_title": "全球增长踩刹车，地缘",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "联合国贸发会议：AI硬件曾是贸易最大亮点，但2026年全球经济增速放缓",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

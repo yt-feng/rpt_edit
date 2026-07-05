@@ -1,0 +1,27 @@
+{
+  "source_pdf": "/tmp/pdf_batch_004_vtjy4dmq/pdfs/0016-WEF_Biodiversity-and-Plastic-Pollution-a-Global-Overview_11ae3c8b.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "世界经济论坛",
+  "cover_short_title": "塑料污染，正在吃掉你",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "世界经济论坛：不是垃圾问题而是经济风险，世界经济论坛报告链接塑料与生物多样性",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

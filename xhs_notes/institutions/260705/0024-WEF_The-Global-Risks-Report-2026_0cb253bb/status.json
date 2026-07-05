@@ -1,0 +1,25 @@
+{
+  "source_pdf": "/tmp/pdf_batch_005_6moenji0/pdfs/0024-WEF_The-Global-Risks-Report-2026_0cb253bb.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "世界经济论坛",
+  "cover_short_title": "全球风险报告2026",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "世界经济论坛：AI风险短期被低估长期被高估，治理框架缺失成隐患",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

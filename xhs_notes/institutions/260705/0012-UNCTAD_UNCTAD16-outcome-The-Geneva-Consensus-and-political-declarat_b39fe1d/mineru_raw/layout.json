@@ -1,0 +1,1587 @@
+{
+    "pdf_info": [
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        389,
+                        105,
+                        462,
+                        118
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                389,
+                                105,
+                                462,
+                                118
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        389,
+                                        105,
+                                        462,
+                                        118
+                                    ],
+                                    "type": "text",
+                                    "content": "Original: English"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        54,
+                        221,
+                        89,
+                        233
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                54,
+                                221,
+                                89,
+                                233
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        54,
+                                        221,
+                                        89,
+                                        233
+                                    ],
+                                    "type": "text",
+                                    "content": "Geneva"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        54,
+                        207,
+                        144,
+                        220
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                54,
+                                207,
+                                144,
+                                220
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        54,
+                                        207,
+                                        144,
+                                        220
+                                    ],
+                                    "type": "text",
+                                    "content": "Sixteenth session"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        54,
+                        233,
+                        140,
+                        245
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                54,
+                                233,
+                                140,
+                                245
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        54,
+                                        233,
+                                        140,
+                                        245
+                                    ],
+                                    "type": "text",
+                                    "content": "20–23 October 2025"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        110,
+                        298,
+                        467,
+                        329
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                110,
+                                298,
+                                467,
+                                329
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        110,
+                                        298,
+                                        467,
+                                        329
+                                    ],
+                                    "type": "text",
+                                    "content": "The Geneva Consensus for a just and sustainable economic order: Political declaration"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        110,
+                        341,
+                        483,
+                        378
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                110,
+                                341,
+                                483,
+                                378
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        110,
+                                        341,
+                                        483,
+                                        378
+                                    ],
+                                    "type": "text",
+                                    "content": "We, the member States of the United Nations Conference on Trade and Development (UNCTAD), gathered in Geneva, Switzerland, from 20 to 23 October 2025 for the sixteenth session of the Conference, agree on the following declaration."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        109,
+                        383,
+                        483,
+                        456
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                109,
+                                383,
+                                483,
+                                456
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        109,
+                                        383,
+                                        483,
+                                        456
+                                    ],
+                                    "type": "text",
+                                    "content": "1. We endorse and support the consensual outcome document of the Conference. The document outlines our shared priorities for trade and development, reaffirms the UNCTAD mandate and gives guidelines for the work of the organization in the coming four years through its three pillars of consensus-building, research and analysis and technical assistance in the areas of finance, science and technology, investments and sustainable development."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        109,
+                        461,
+                        483,
+                        533
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                109,
+                                461,
+                                483,
+                                533
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        109,
+                                        461,
+                                        483,
+                                        533
+                                    ],
+                                    "type": "text",
+                                    "content": "2. We value the UNCTAD contribution to an equitable and inclusive international trading system based on rules and appreciate the role of the organization in the establishment of scientific evidence in economic affairs. We commend the function of UNCTAD as the global platform for dialogue on trade and development and recognize the contribution of the organization to the implementation of the Sustainable Development Goals."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        109,
+                        538,
+                        483,
+                        612
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                109,
+                                538,
+                                483,
+                                612
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        109,
+                                        538,
+                                        483,
+                                        612
+                                    ],
+                                    "type": "text",
+                                    "content": "3. We note with appreciation that we are meeting in the Assembly Hall of the Palais des Nations in Geneva, the very same place where UNCTAD was created in 1964, and recognize it as a powerful reminder of the historic commitment of our countries to multilateral cooperation for development. Since the establishment of UNCTAD sixty-one years ago, our countries have worked together to reduce development gaps between us by promoting trade, investments and economic cooperation."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        109,
+                        618,
+                        483,
+                        678
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                109,
+                                618,
+                                483,
+                                678
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        109,
+                                        618,
+                                        483,
+                                        678
+                                    ],
+                                    "type": "text",
+                                    "content": "4. From a historical perspective, we acknowledge that we have succeeded in implementing development policies that have borne fruit in several areas. Simultaneously, we are conscious that our common objective of a world where prosperity, social development and well-being are equitably shared by countries and peoples is not yet achieved, requiring renewed commitment and solidarity to ensure no one is left behind."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        109,
+                        683,
+                        483,
+                        769
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                109,
+                                683,
+                                483,
+                                769
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        109,
+                                        683,
+                                        483,
+                                        769
+                                    ],
+                                    "type": "text",
+                                    "content": "5. We value the rich exchanges we had during the sixteenth session of the Conference under the theme of “Shaping the future: Driving economic transformation for equitable, inclusive and sustainable development”. The Conference enabled us to agree on the fact that the global economic order is confronted with major shocks and crises and that it has entered a phase of transition marked by both destabilizing uncertainties and promising opportunities. To prepare for the future in this challenging context and changing environment, we agree on a new consensus for a just and sustainable economic order by"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        117,
+                        37,
+                        205,
+                        52
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                117,
+                                37,
+                                205,
+                                52
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        117,
+                                        37,
+                                        205,
+                                        52
+                                    ],
+                                    "type": "text",
+                                    "content": "United Nations"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        465,
+                        37,
+                        539,
+                        54
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                465,
+                                37,
+                                539,
+                                54
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        465,
+                                        37,
+                                        539,
+                                        54
+                                    ],
+                                    "type": "text",
+                                    "content": "TD/561/Add.1"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "bbox": [
+                        58,
+                        62,
+                        114,
+                        108
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                58,
+                                62,
+                                114,
+                                108
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        58,
+                                        62,
+                                        114,
+                                        108
+                                    ],
+                                    "type": "text",
+                                    "content": "The image contains a logo or emblem, not text. It is a graphic design featuring the United Nations emblem, which is centered around a circle with radial lines and a globe outline. There is no textual content to extract."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2
+                },
+                {
+                    "bbox": [
+                        117,
+                        63,
+                        318,
+                        101
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                117,
+                                63,
+                                318,
+                                101
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        117,
+                                        63,
+                                        318,
+                                        101
+                                    ],
+                                    "type": "text",
+                                    "content": "United Nations Conference\non Trade and Development"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3
+                },
+                {
+                    "bbox": [
+                        389,
+                        69,
+                        453,
+                        81
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                389,
+                                69,
+                                453,
+                                81
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        389,
+                                        69,
+                                        453,
+                                        81
+                                    ],
+                                    "type": "text",
+                                    "content": "Distr.: General"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4
+                },
+                {
+                    "bbox": [
+                        390,
+                        81,
+                        459,
+                        94
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                390,
+                                81,
+                                459,
+                                94
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        390,
+                                        81,
+                                        459,
+                                        94
+                                    ],
+                                    "type": "text",
+                                    "content": "12 January 2026"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5
+                },
+                {
+                    "bbox": [
+                        55,
+                        802,
+                        129,
+                        814
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                55,
+                                802,
+                                129,
+                                814
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        55,
+                                        802,
+                                        129,
+                                        814
+                                    ],
+                                    "type": "text",
+                                    "content": "GE.26-00317 (E)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17
+                },
+                {
+                    "bbox": [
+                        413,
+                        804,
+                        470,
+                        815
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                413,
+                                804,
+                                470,
+                                815
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        413,
+                                        804,
+                                        470,
+                                        815
+                                    ],
+                                    "type": "text",
+                                    "content": "Please recycle"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 18
+                },
+                {
+                    "bbox": [
+                        470,
+                        794,
+                        489,
+                        816
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                470,
+                                794,
+                                489,
+                                816
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        470,
+                                        794,
+                                        489,
+                                        816
+                                    ],
+                                    "type": "text",
+                                    "content": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 19
+                },
+                {
+                    "bbox": [
+                        495,
+                        776,
+                        541,
+                        822
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                495,
+                                776,
+                                541,
+                                822
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        495,
+                                        776,
+                                        541,
+                                        822
+                                    ],
+                                    "type": "text",
+                                    "content": "The image provided is a QR code. It does not contain any text, mathematical formulas, tables, or figures that can be processed according to the OCR instructions. Therefore, no textual content can be extracted from this image."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 20
+                }
+            ],
+            "page_size": [
+                595,
+                842
+            ],
+            "page_idx": 0,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        389,
+                        105,
+                        462,
+                        118
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                389,
+                                105,
+                                462,
+                                118
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        389,
+                                        105,
+                                        462,
+                                        118
+                                    ],
+                                    "type": "text",
+                                    "content": "Original: English"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        54,
+                        221,
+                        89,
+                        233
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                54,
+                                221,
+                                89,
+                                233
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        54,
+                                        221,
+                                        89,
+                                        233
+                                    ],
+                                    "type": "text",
+                                    "content": "Geneva"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        54,
+                        207,
+                        144,
+                        220
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                54,
+                                207,
+                                144,
+                                220
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        54,
+                                        207,
+                                        144,
+                                        220
+                                    ],
+                                    "type": "text",
+                                    "content": "Sixteenth session"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        54,
+                        233,
+                        140,
+                        245
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                54,
+                                233,
+                                140,
+                                245
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        54,
+                                        233,
+                                        140,
+                                        245
+                                    ],
+                                    "type": "text",
+                                    "content": "20–23 October 2025"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        110,
+                        298,
+                        467,
+                        329
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                110,
+                                298,
+                                467,
+                                329
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        110,
+                                        298,
+                                        467,
+                                        329
+                                    ],
+                                    "type": "text",
+                                    "content": "The Geneva Consensus for a just and sustainable economic order: Political declaration"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        110,
+                        341,
+                        483,
+                        378
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                110,
+                                341,
+                                483,
+                                378
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        110,
+                                        341,
+                                        483,
+                                        378
+                                    ],
+                                    "type": "text",
+                                    "content": "We, the member States of the United Nations Conference on Trade and Development (UNCTAD), gathered in Geneva, Switzerland, from 20 to 23 October 2025 for the sixteenth session of the Conference, agree on the following declaration."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        109,
+                        383,
+                        483,
+                        456
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                109,
+                                383,
+                                483,
+                                456
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        109,
+                                        383,
+                                        483,
+                                        456
+                                    ],
+                                    "type": "text",
+                                    "content": "1. We endorse and support the consensual outcome document of the Conference. The document outlines our shared priorities for trade and development, reaffirms the UNCTAD mandate and gives guidelines for the work of the organization in the coming four years through its three pillars of consensus-building, research and analysis and technical assistance in the areas of finance, science and technology, investments and sustainable development."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        109,
+                        461,
+                        483,
+                        533
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                109,
+                                461,
+                                483,
+                                533
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        109,
+                                        461,
+                                        483,
+                                        533
+                                    ],
+                                    "type": "text",
+                                    "content": "2. We value the UNCTAD contribution to an equitable and inclusive international trading system based on rules and appreciate the role of the organization in the establishment of scientific evidence in economic affairs. We commend the function of UNCTAD as the global platform for dialogue on trade and development and recognize the contribution of the organization to the implementation of the Sustainable Development Goals."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        109,
+                        538,
+                        483,
+                        612
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                109,
+                                538,
+                                483,
+                                612
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        109,
+                                        538,
+                                        483,
+                                        612
+                                    ],
+                                    "type": "text",
+                                    "content": "3. We note with appreciation that we are meeting in the Assembly Hall of the Palais des Nations in Geneva, the very same place where UNCTAD was created in 1964, and recognize it as a powerful reminder of the historic commitment of our countries to multilateral cooperation for development. Since the establishment of UNCTAD sixty-one years ago, our countries have worked together to reduce development gaps between us by promoting trade, investments and economic cooperation."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        109,
+                        618,
+                        483,
+                        678
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                109,
+                                618,
+                                483,
+                                678
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        109,
+                                        618,
+                                        483,
+                                        678
+                                    ],
+                                    "type": "text",
+                                    "content": "4. From a historical perspective, we acknowledge that we have succeeded in implementing development policies that have borne fruit in several areas. Simultaneously, we are conscious that our common objective of a world where prosperity, social development and well-being are equitably shared by countries and peoples is not yet achieved, requiring renewed commitment and solidarity to ensure no one is left behind."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        109,
+                        683,
+                        483,
+                        769
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                109,
+                                683,
+                                483,
+                                769
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        109,
+                                        683,
+                                        483,
+                                        769
+                                    ],
+                                    "type": "text",
+                                    "content": "5. We value the rich exchanges we had during the sixteenth session of the Conference under the theme of “Shaping the future: Driving economic transformation for equitable, inclusive and sustainable development”. The Conference enabled us to agree on the fact that the global economic order is confronted with major shocks and crises and that it has entered a phase of transition marked by both destabilizing uncertainties and promising opportunities. To prepare for the future in this challenging context and changing environment, we agree on a new consensus for a just and sustainable economic order by"
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                110,
+                                71,
+                                482,
+                                95
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        110,
+                                        71,
+                                        482,
+                                        95
+                                    ],
+                                    "type": "text",
+                                    "content": "which we both reaffirm the fundamental values in which we believe and commit to reforms needed for the future.",
+                                    "cross_page": true
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        110,
+                        71,
+                        482,
+                        95
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                110,
+                                71,
+                                482,
+                                95
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        110,
+                                        71,
+                                        482,
+                                        95
+                                    ],
+                                    "type": "text",
+                                    "content": "which we both reaffirm the fundamental values in which we believe and commit to reforms needed for the future."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        110,
+                        101,
+                        483,
+                        138
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                110,
+                                101,
+                                483,
+                                138
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        110,
+                                        101,
+                                        483,
+                                        138
+                                    ],
+                                    "type": "text",
+                                    "content": "6. Our first shared value is that every human being must be able to live in dignity and overcome poverty. While many factors may contribute to this fundamental objective, we believe that economic development remains one of the most effective ones."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        110,
+                        143,
+                        483,
+                        217
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                110,
+                                143,
+                                483,
+                                217
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        110,
+                                        143,
+                                        483,
+                                        217
+                                    ],
+                                    "type": "text",
+                                    "content": "7. We are convinced that any economic development must respect the natural limits of the planet. Our responsibility to future generations is to implement policies that guarantee a healthy and preserved environment. In this context, we call on Governments to ensure effective enforcement of regulations, to guarantee enabling conditions for the deployment of private initiatives and to engage in international cooperation to promote innovation, economic growth, social development and environmental protection."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        110,
+                        222,
+                        483,
+                        282
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                110,
+                                222,
+                                483,
+                                282
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        110,
+                                        222,
+                                        483,
+                                        282
+                                    ],
+                                    "type": "text",
+                                    "content": "8. We reaffirm our conviction that trade and investments between countries are powerful drivers of economic development and prosperity, provided they take place within an established and respected framework. That is why a rules-based, fair, open, transparent, predictable, inclusive, non-discriminatory and equitable multilateral trading system is more indispensable than ever."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        110,
+                        287,
+                        483,
+                        384
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                110,
+                                287,
+                                483,
+                                384
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        110,
+                                        287,
+                                        483,
+                                        384
+                                    ],
+                                    "type": "text",
+                                    "content": "9. Our conviction is that the creation of conditions of stability and well-being are necessary for peaceful and friendly relations among countries and that, within the multilateral system, cooperation between countries is essential for achieving peace. That is why we strongly call for a strengthening of the multilateral system with the United Nations at its core. While globally agreed frameworks, such as the 2030 Agenda for Sustainable Development, must continue to be implemented with redoubled effort, we hereby affirm our commitment to work together to reform multilateralism and make it capable of responding to current and future challenges."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        110,
+                        389,
+                        483,
+                        437
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                110,
+                                389,
+                                483,
+                                437
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        110,
+                                        389,
+                                        483,
+                                        437
+                                    ],
+                                    "type": "text",
+                                    "content": "10. With its knowledge and expertise built over sixty-one years, we count on UNCTAD, in coordination with other international organizations, to support our countries in the implementation of our joint commitment for a just and sustainable economic system for a new era."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        54,
+                        42,
+                        111,
+                        53
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                54,
+                                42,
+                                111,
+                                53
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        54,
+                                        42,
+                                        111,
+                                        53
+                                    ],
+                                    "type": "text",
+                                    "content": "TD/561/Add.1"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        55,
+                        804,
+                        62,
+                        812
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                55,
+                                804,
+                                62,
+                                812
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        55,
+                                        804,
+                                        62,
+                                        812
+                                    ],
+                                    "type": "text",
+                                    "content": "2"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7
+                }
+            ],
+            "page_size": [
+                595,
+                842
+            ],
+            "page_idx": 1,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        110,
+                        71,
+                        482,
+                        95
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [],
+                    "index": 1,
+                    "merge_prev": false,
+                    "lines_deleted": true
+                },
+                {
+                    "bbox": [
+                        110,
+                        101,
+                        483,
+                        138
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                110,
+                                101,
+                                483,
+                                138
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        110,
+                                        101,
+                                        483,
+                                        138
+                                    ],
+                                    "type": "text",
+                                    "content": "6. Our first shared value is that every human being must be able to live in dignity and overcome poverty. While many factors may contribute to this fundamental objective, we believe that economic development remains one of the most effective ones."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        110,
+                        143,
+                        483,
+                        217
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                110,
+                                143,
+                                483,
+                                217
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        110,
+                                        143,
+                                        483,
+                                        217
+                                    ],
+                                    "type": "text",
+                                    "content": "7. We are convinced that any economic development must respect the natural limits of the planet. Our responsibility to future generations is to implement policies that guarantee a healthy and preserved environment. In this context, we call on Governments to ensure effective enforcement of regulations, to guarantee enabling conditions for the deployment of private initiatives and to engage in international cooperation to promote innovation, economic growth, social development and environmental protection."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        110,
+                        222,
+                        483,
+                        282
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                110,
+                                222,
+                                483,
+                                282
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        110,
+                                        222,
+                                        483,
+                                        282
+                                    ],
+                                    "type": "text",
+                                    "content": "8. We reaffirm our conviction that trade and investments between countries are powerful drivers of economic development and prosperity, provided they take place within an established and respected framework. That is why a rules-based, fair, open, transparent, predictable, inclusive, non-discriminatory and equitable multilateral trading system is more indispensable than ever."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        110,
+                        287,
+                        483,
+                        384
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                110,
+                                287,
+                                483,
+                                384
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        110,
+                                        287,
+                                        483,
+                                        384
+                                    ],
+                                    "type": "text",
+                                    "content": "9. Our conviction is that the creation of conditions of stability and well-being are necessary for peaceful and friendly relations among countries and that, within the multilateral system, cooperation between countries is essential for achieving peace. That is why we strongly call for a strengthening of the multilateral system with the United Nations at its core. While globally agreed frameworks, such as the 2030 Agenda for Sustainable Development, must continue to be implemented with redoubled effort, we hereby affirm our commitment to work together to reform multilateralism and make it capable of responding to current and future challenges."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        110,
+                        389,
+                        483,
+                        437
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                110,
+                                389,
+                                483,
+                                437
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        110,
+                                        389,
+                                        483,
+                                        437
+                                    ],
+                                    "type": "text",
+                                    "content": "10. With its knowledge and expertise built over sixty-one years, we count on UNCTAD, in coordination with other international organizations, to support our countries in the implementation of our joint commitment for a just and sustainable economic system for a new era."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                }
+            ]
+        }
+    ],
+    "_backend": "hybrid",
+    "_effort": "medium",
+    "_ocr_enable": true,
+    "_version_name": "3.4.0"
+}

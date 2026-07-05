@@ -1,0 +1,816 @@
+WORLD ECONOMIC FORUM
+
+# Closing the Gender Gap in Senior Leadership
+
+INSIGHT REPORT
+
+JUNE 2026
+
+## Contents
+
+Preface 3
+Executive summary 4
+1 Introduction 5
+2 The state of play 5
+2.1 Overall representation 6
+2.2 Representation in the C-suite 10
+2.3 Representation on boards 13
+3 Factors shaping gender gaps at the top 17
+3.1 Non-linear career pathways 17
+3.2 Professional networks and sponsorship 19
+3.3 Career breaks and care penalty 21
+3.4 Evaluation systems 22
+3.5 Institutions, policies and laws shaping leadership pathways 22
+4 A future-fit framework for senior leadership parity 24
+Conclusion 35
+Appendix 36
+Contributors 38
+Acknowledgements 39
+Disclaimer
+This document is published by the World Economic Forum as a contribution to a project, insight area or interaction. The findings, interpretations and conclusions expressed herein are a result of a collaborative process facilitated and endorsed by the World Economic Forum but whose results do not necessarily represent the views of the World Economic Forum, nor the entirety of its Members, Partners or other stakeholders.
+© 2026 World Economic Forum. All rights reserved. No part of this publication may be reproduced or transmitted in any form or by any means, including photocopying and recording, or by any information storage and retrieval system.
+
+# Preface
+
+![](images/88e6704b1d91a0620eff74ac3ac2f4cd52325db9d8301f7067b2ad9ac94c0aed.jpg)
+
+Silja Baller
+
+Head, Economic Inclusion,
+
+World Economic Forum
+
+Over the past two decades, women's representation in leadership has advanced significantly. Around the world, women now occupy some of the most influential positions in government, business and public life. By breaking long-standing barriers, these women have redefined what leadership looks like and inspired a new generation to aspire to the highest levels of decision-making.
+
+Yet the path they forged remains narrow and recent gains are proving fragile. The COVID-19 pandemic set back progress on global gender parity by a generation, increasing the estimated time to parity from 100 years in 2020 to 132 years in 2022. Emerging evidence also suggests that economic downturns disproportionately affect women's advancement, with tougher economic conditions consistently associated with fewer women being hired into leadership positions. This trend is particularly challenging at a time when the global economic outlook has become more uncertain.
+
+Against this backdrop, this report explores the state of women's advancement into senior leadership in 2026. Drawing on unique data from LinkedIn and Egon Zehnder on CEO, C-suite and board representation, respectively, it provides a comprehensive picture of recent trends and the current landscape. The findings reveal where gains are being sustained, where momentum is faltering or reversing, and what will be required to reignite progress toward gender-balanced leadership. The report explores factors contributing to these dynamics and presents a forward-looking framework for action. It also showcases examples of corporate practices that have demonstrably advanced parity in senior leadership.
+
+At the World Economic Forum, the Centre for the New Economy and Society is complementing the work on gender parity in senior leadership with a growing portfolio of related insight products, action initiatives and leadership communities focused on economic inclusion. The report contributes to the Forum's Global Gender Parity Sprint 2030, which provides a global platform, bringing together businesses, governments, international organizations and other stakeholders to accelerate economic parity. The Global Gender Gap Report, now in its 20th year, benchmarks global, national and industry gender gaps. The Centre also advances economic inclusion through its work with the Community of Chief Diversity and Inclusion Officers, and through collaborations with academics and civil society organizations. It is also building a new workstream on economic mobility, exploring emerging pathways to mobility amid shifting labour-and financial-market conditions.
+
+We are deeply grateful to our data and thought partners at LinkedIn and Egon Zehnder as well as participants in the high-level dialogue series which ran between November 2025 and May 2026. We also thank the members of the Sprint Champions Group, the Centre for the New Economy and Society Advisory Board and the more than 190 partners of the Centre for their commitment to shaping an economic future that creates opportunities for all. We would further like to express our gratitude to Saadia Zahidi for her support and leadership and to the project team, Julia Hakspiel and Yanjun Guo, for the dedication and expertise they brought to this report.
+
+# Executive summary
+
+Today's senior leaders are navigating an unprecedented convergence of challenges, from technological transformation, geopolitical instability and economic volatility to changes in established business models and shifting workforce expectations. As the demands placed on senior leadership shift rapidly, so too does the urgency of ensuring that the pathways to the top are open to the full range of available talent.
+
+This report draws on novel insights, from LinkedIn Economic Graph Research Institute data on senior leadership and Egon Zehnder data on board representation, to provide an understanding of where progress toward gender parity in leadership stands today and the factors shaping outcomes. It further draws on case studies based on real business practices and experiences, alongside insights from a high-level dialogue series with leaders across business, government, academia and civil society, to surface emerging practices and actionable levers for change and inform a framework for advancing parity across evolving senior leadership structures.
+
+The past decade has seen incremental but modest gains towards parity at the top. Between 2015 and 2025, women's representation in top management has increased 2.8 percentage points (pp), outpacing gains in the overall workforce (2.0 pp). With an overall workforce representation of $41.7\%$ , women today hold $24.6\%$ of C-suite roles and $29.3\%$ of board seats. By 2024, more than nine in 10 boards included at least one woman. In particular, substantial progress has been made in women's appointment into executive board positions, though women still only represent $5.2\%$ of board chairs and serve shorter tenures in CEO and other core C-suite roles than their male peers.
+
+Yet, the progress achieved in recent years is looking increasingly fragile. Since 2022, there has been a loss of momentum, as hiring of women into senior leadership roles has stalled, and even regressed in the case of board appointments. As conditions that may have supported earlier progress, including C-suite expansion, heightened corporate focus on inclusion, and a favourable economic environment, have ebbed, so too has progress on representation in senior leadership.
+
+Reversing these trends is becoming more urgent. As organizations enter an era defined by artificial intelligence (AI), economic volatility and demographic change, leadership is being redefined. The disruption of established career models and organizational structures presents an opportunity to significantly broaden the pathways to the top and redesign the conditions for leadership to reflect the realities
+
+of modern careers. When organizations advance capable talent from across the full workforce, they not only boost fairness but also increase innovation capacity and economic resilience.
+
+Gains to date have been uneven. The past decade has seen positive progress in women's representation in senior leadership, yet gains have been concentrated in C-suite positions other than CEO, pointing to where the next frontier lies. Within the C-suite, women tend to have better representation in people-focused or market-facing roles, such as chief human resources officer (CHRO), chief people officer (CPO) and chief marketing officer (CMO), while they remain underrepresented in traditional enterprise-authority roles with direct links to revenue generation, such as chief financial officer (CFO) and chief operating officer (COO), that currently serve as dominant pathways to the CEO seat.
+
+Senior leadership pipeline dynamics also vary significantly by industry. Women's representation decreases with seniority across all industries, but the stage at which the largest drop occurs is different. Closing the gap in senior leadership therefore requires industry-specific, stage-specific approaches that address where women are most likely to be lost from the leadership pipeline.
+
+These gaps reflect the design of talent systems rather than the supply of talent, as evidenced by a relatively equal representation at entry-level positions. Progress in parity at the top has been limited not by a shortage of qualified women but by systems designed for a different era. Access to senior roles remains mediated by informal networks, where sponsorship acts as a critical gatekeeper to advancement. Women have smaller professional networks and are less likely to be connected to senior leaders, and while they often bring broader, non-linear experience, current systems do not fully value and reintegrate these trajectories. As a result, investments in women's education and professional development over the past decade have had limited impact at the top, as they have not shifted access to the experiences, relationships and visible opportunities through which leadership power is allocated.
+
+Addressing these dynamics requires a step change in how leadership systems are designed. By evolving the definition of leadership capabilities, rewiring power pathways, building fair selection systems and redesigning the conditions for leadership, organizations can build talent systems that are both more inclusive and resilient.
+
+# 1 Introduction
+
+This Insights Report, produced by the World Economic Forum as part of the Global Gender Parity in Sprint, presents a cross-industry analysis of where progress toward gender parity in senior leadership stands today and the structural factors that continue to shape it. Drawing on novel data from LinkedIn Economic Graph Research Institute and Egon Zehnder, alongside academic and practitioner evidence, it is intended to support business leaders as they navigate the complex task of building senior leadership systems that are both more inclusive and better aligned with the demands of a rapidly evolving operating environment. The report further draws on insights from a high-level dialogue series convening leaders across business, academia and civil society, and on case studies grounded in real organizational practice, to surface the emerging approaches and actionable levers that are reshaping how capable talent reaches the top.
+
+It comes at a time when organizations face acute pressure to attract and retain talent in globally competitive markets, navigate the implications of technological transformation and demographic change, and sustain organizational resilience under conditions of economic and geopolitical uncertainty. As AI reshapes the nature of work and organizational structures and redefines what effective leadership demands, the systems through which senior leaders are identified, developed and selected are themselves overdue for redesign. In this context, organizations' ability to draw on the full depth of available talent becomes not only a matter of fairness but a strategic and competitive strength.
+
+Progress toward gender parity in senior leadership has been real but uneven, and in some areas, fragile. Over the past decade, women's representation in top-level management has risen from $26.8\%$ to $29.6\%$ , and the share of board seats held by women has nearly doubled from $15.2\%$ to $29.3\%$ . Yet recent data point to a deceleration: the share of women among new C-suite hires and board appointments has plateaued since 2022, and women remain underrepresented in roles with enterprise-wide leadership mandates that most reliably serve as pathways to the CEO position. Structural gaps persist across industries, geographies and seniority levels, and the factors that drive them are deeply embedded in how leadership pathways are designed, how potential is assessed, and how career systems accommodate modern working lives.
+
+The report is structured in four parts. It opens with an analysis of the current state of representation across the C-suite and corporate boards, offering a granular view of where gaps are largest and where momentum has stalled. It then examines the structural and systemic factors, including non-linear career trajectories, network architecture, and selection and evaluation systems, that explain the persistence of these gaps and point toward where leverage lies. This diagnostic is followed by a forward-looking framework for action, organized around four interconnected pillars: evolving how leadership capabilities are defined, rewiring the pathways through which talent reaches the top, building fair and structured selection systems, and redesigning the conditions under which leadership is exercised.
+
+## 2 The state of play
+
+The representation of women across the workforce and in leadership positions is an important indicator of how effectively economies and organizations utilize available talent. Worldwide, considerable progress has been made toward gender parity in the economic and political spheres since 2006, as benchmarked by the Forum's Global Gender Gap Report. Most notably, gender parity in legislators, senior officials, and managers has seen the largest progress of any indicator monitored by the Global Gender Gap Index. Complementing these broader measures, LinkedIn Economic Graph Research Institute and Egon Zehnder data presented in this section provide novel insights into women's representation across workforce seniority levels, senior leadership roles and corporate boards, offering a more granular view of gender parity across organizational hierarchies and decision-making structures.
+
+Progress has been made over the past decade, yet disparities persist, particularly in roles with the greatest influence, pointing to the next frontier for advancing parity. At the same time, organizational leadership structures are evolving in response to technological change, workforce transformation and growing organizational complexity, creating new pathways into senior leadership alongside traditional executive roles. However, women's representation across these evolving leadership structures remains uneven across industries and functions. Recent trends also suggest that some of the gains observed in the late 2010s may have been supported by favourable macroeconomic and organizational conditions. As these conditions have shifted, progress in some areas appears to have moderated, and even reversed.
+
+The data presented in this section offers a global picture of where women stand in senior leadership today. It is important to note at the outset that the barriers documented here are not experienced equally across all women. Research consistently shows that women facing compounding disadvantages related to race, ethnicity, socioeconomic background, disability or geographic context encounter steeper and more persistent obstacles than aggregate data can capture. $^{1}$ Disaggregated data at the intersection
+
+of gender and other dimensions of identity remains limited at the scale required for global analysis; as the evidence base develops, more granular approaches to measuring and addressing compounding disadvantage will be increasingly important to ensuring that progress at the aggregate level does not mask widening gaps for certain groups.
+
+## 2.1 | Overall representation
+
+Over the past decade, women have increased their participation in the workforce, with slightly more pronounced gains in top-level management. According to data from LinkedIn Economic Graph Research Institute covering 70 economies, the share of women in the overall workforce rose from 39.7% in 2015 to 41.8% in 2023–2024, with a
+
+marginal decline to 41.7% in 2025.
+
+Over the same period, their representation in top-level management (e.g. vice president, C-suite and organizational governance) increased more steadily, from 26.8% in 2015 to 29.6% in 2025 (Figure 2.1). This upward trend in top-level management representation is observed across industries.
+
+## FIGURE 2.1
+
+Share of women in the overall workforce and top-level management positions, 2015-2025
+
+![](images/eb6b40c38764a95ecf978822e77596e68688ea3f466efda35ec73447dff139bd.jpg)
+
+Note: Sample covers LinkedIn members employed in companies with at least 51 employees. Values refer to the simple average across 70 economies with available data for the entire time series: Algeria, Argentina, Australia, Austria, Bahamas, Bahrain, Bangladesh, Barbados, Belgium, Bolivia, Brazil, Canada, Chile, Colombia, Costa Rica, Croatia, Cyprus, Czechia, Denmark, Dominican Republic, Ecuador, Egypt, Estonia, Finland, France, Germany, Ghana, Guatemala, Hong Kong SAR, China, India, Ireland, Israel, Italy, Jamaica, Jordan, Kenya, Lithuania, Luxembourg, Malaysia, Malta, Mexico, Morocco, Nepal, Netherlands, New Zealand, Norway, Pakistan, Panama, Peru, Philippines, Poland, Portugal, Puerto Rico, Qatar, Romania, Saudi Arabia, Singapore, South Africa, Spain, Sweden, Switzerland, Trinidad and Tobago, Tunisia, Türkiye, Ukraine, United Arab Emirates, United Kingdom, United States of America, Uruguay and Venezuela. These averages may differ from those in other figures because of differences in economy coverage. Refer to the Appendix for seniority level taxonomy.
+Source: LinkedIn Economic Graph Research Institute.
+
+Despite these gains, women remain underrepresented, accounting for less than half of the workforce and less than one-third of top-level management roles globally. This gap points to an opportunity for economies and organizations to better leverage available talent.
+
+The opportunity is particularly notable given that women represent the majority of tertiary students in most economies, suggesting that educational attainment is far from translating into workforce participation and leadership representation. $^{2}$
+
+## Leadership gaps by region
+
+Women in top-level management are better represented in Latin America and the Caribbean and Northern America in 2025, at 34.6% and 33.7%, respectively. Europe ranked third at 29.7%, followed by the Middle East and Northern Africa at 20.6%, with Southern Asia recording the lowest share at 15.0% (Figure 2.2).
+
+## FIGURE 2.2
+
+## Share of women in top-level management positions, selected regions, 2015-2025
+
+![](images/7d312fec34b3d04859e269a9a32fe2e351cecd25744380dd407d544c3b671d1c.jpg)
+
+Note: Only regions where LinkedIn-covered economies represent over 80% of the regional population are shown in the figure. Sample covers LinkedIn members employed in companies with at least 51 employees. Regional averages from Algeria, Argentina, Austria, Bahamas, Bahrain, Bangladesh, Barbados, Belgium, Bolivia, Brazil, Canada, Chile, Colombia, Costa Rica, Croatia, Cyprus, Czechia, Denmark, Dominican Republic, Ecuador, Egypt, Estonia, Finland, France, Germany, Guatemala, India, Ireland, Israel, Italy, Jamaica, Jordan, Lithuania, Luxembourg, Malta, Mexico, Morocco, Nepal, Netherlands, Norway, Pakistan, Panama, Peru, Poland, Portugal, Puerto Rico, Qatar, Romania, Saudi Arabia, Spain, Sweden, Switzerland, Trinidad and Tobago, Tunisia, Türkiye, Ukraine, United Arab Emirates, United Kingdom, United States of America, Uruguay, and Venezuela. Refer to the Appendix for the regional taxonomy.
+
+Source: LinkedIn Economic Graph Research Institute.
+
+Over the past decade, women's representation in top-level management has advanced across all five regions, though the pace varies. In Northern America and Europe, regions that began the period with relatively high representation, progress has been incremental, rising by 2.0 and 2.5 percentage points, respectively — equivalent to $6.4\%$ and $9.2\%$ relative growth from their 2015 levels. Southern
+
+Asia and the Middle East and Northern Africa have experienced faster growth, each gaining approximately 15%, though both regions still trail the leading ones in absolute terms. Latin America and the Caribbean stands out as the only region that combined an initially high baseline with double-digit percentage growth over the same period (Figure 2.2).
+
+## Leadership gaps by industry
+
+The persistent gaps between women's representation in the workforce and in senior leadership echoes the “drop to the top” phenomenon as documented across recent editions of the Global Gender Gap Report, $^{3}$ whereby women's representation declines from entry-level positions to the C-suite. $^{4}$ However, as Figure 2.3 shows, while women's representation consistently decreases with higher seniority levels, the pace
+
+of these declines vary across industries. In some industries, the representation decreases relatively evenly across career stages, whereas in others the sharpest drop occurs at a specific transition point suggesting different bottlenecks depending on the industry. Throughout this section, percentage declines refer to relative changes from the previous career level, rather than percentage-point differences.
+
+## FIGURE 2.3 Share of women in the workforce, by seniority level and industry, 2025
+
+![](images/3d6a603e7a27206103bdf376e7bda4a931443cef07b6d0a16b4f441c18e68795.jpg)
+
+Note: Sample covers LinkedIn members employed in companies with at least 51 employees. Industries are presented in descending order of the percentage of women in top-level management positions. Values refer to the simple average across 40 economies with available data for all industries and seniority levels presented in the figure: Argentina, Australia, Austria, Belgium, Brazil, Canada, Chile, Colombia, Denmark, Ecuador, Finland, France, Germany, India, Ireland, Israel, Italy, Kenya, Malaysia, Mexico, Netherlands, New Zealand, Norway, Pakistan, Peru, Philippines, Poland, Portugal, Romania, Singapore, South Africa, Spain, Sweden, Switzerland, Türkiye, Ukraine, United Arab Emirates, United Kingdom, United States of America, and Venezuela. Refer to the Appendix for seniority level taxonomy.
+
+In industries where women are already the most underrepresented among individual contributor roles, which typically do not involve management responsibilities, the steepest decline occurs early in the career pipeline. In Oil, Gas and Mining as well as in Construction, women account for less than 30% of individual contributors. Their representation then drops by around one-third at the transition to mid-level management, the steepest decline across industries, falling to just below 20%, before decreasing by a further 10% at the top-management level. A similar pattern is observed in a few industries where women's representation was relatively high among individual contributors. In Accommodation and Food Services, Administrative and Support Services, Entertainment Providers, Government Administration, and Retail, the decline from individual contributors to mid-level management (15–25%) is greater than from mid-level to top-level management (<10%). In these industries, improving entry and early-career progression is critical to strengthening the pipeline to leadership (Figure 2.3).
+
+By contrast, in some industries where women have a comparably strong presence at entry level, the most significant barriers emerge at higher seniority levels.
+
+For example, in Education, women make up more than half of the workforce at both individual contributors and mid-level management positions, but experience sharper declines at the senior level. A similar pattern is observed in Financial Services as well as in Technology, Information and Media, where women's representation declines relatively modestly (at around 15%) from individual contributors to mid-level management roles, but drops by almost 25% at the transition to top-level management (Figure 2.3). In these industries, improving progression from mid-level to top-level management is particularly important to closing the gender gaps at the top.
+
+Furthermore, the stage at which women's representation declines most sharply, whether early or late in the career pipeline, remains largely unchanged between 2015 and 2025, suggesting that structural barriers to women's advancement persist at similar points over time. Closing the gender gaps at the senior leadership will therefore require targeted, stage-specific approaches tailored to the distinct challenges faced by each industry.
+
+## 2.2
+
+## Representation in the C-suite
+
+According to data from LinkedIn Economic Graph Research Institute covering 39 economies, women's representation declines slightly from $29.1\%$ in top-level management roles to $24.6\%$ in executive positions (e.g. CXO and president), when excluding vice president roles and focusing only on C-suite positions (Figure 2.4).
+
+The structure and composition of executive teams vary across companies and geographies, and
+
+roles continue to evolve in response to changing organizational needs. While there is no standardized C-suite structure, the chief executive officer (CEO), chief financial officer (CFO) and chief operating officer (COO) remain the most common roles. Among these most common C-suite positions, women represent 19.1% of CEO positions, and around one-quarter of CFO and COO positions (Figure 2.4).
+
+## FIGURE 2.4
+
+![](images/4bec437a0ad068af3d444be7974d93514828b29927b52632ca61e8c1ce472e6c.jpg)  
+Note: C-suite positions are presented in descending order by their average share among all C-suite positions, regardless of gender. Values refer to the simple average across 39 economies with available data for all C-suite positions presented in the figure: Argentina, Australia, Austria, Belgium, Brazil, Canada, Colombia, Czechia, Denmark, Ecuador, Egypt, Finland, France, Germany, Hong Kong SAR, China, India, Ireland, Israel, Italy, Mexico, Morocco, Netherlands, Norway, Pakistan, Peru, Philippines, Poland, Portugal, Romania, Saudi Arabia, Singapore, Spain, Sweden, Switzerland, Türkiye, Ukraine, United Arab Emirates, United Kingdom, and United States of America. These averages may differ from those in other figures because of differences in economy coverage.  
+Source: LinkedIn Economic Graph Research Institute.
+
+The academic literature suggests that organizations adapt executive structures in response to emerging strategic priorities and external uncertainties. $^{5}$ Over the past two decades technological complexity, digitalization, stakeholder pressures and organizational interdependence have contributed to a more functionally specialized C-suite, where a broader range of enterprise-wide functions are represented within executive leadership teams. $^{6}$ In parallel, traditional business-unit leadership and divisional management roles have declined somewhat in relative representation as firms
+
+became more functionally centralized and technologically integrated. $^{7}$
+
+More recently, however, leading organizations have begun to move beyond functional specialization toward deliberate role hybridization, by designing C-suite positions that sit across traditional boundaries and serve as integration points for interconnected strategic priorities, such as combined chief product and technology officers or chief growth officers uniting sales, marketing and product. $^{8}$ As a result, executive leadership
+
+is becoming more distributed and fluid, and increasingly oriented toward enterprise-wide collaboration and cross-domain integration, as organizations respond to technological disruption, institutional complexity and shifting stakeholder expectations. $^{9}$
+
+Against these broader organizational shifts, there is also an uneven distribution of women across executive functions. Women's representation is remarkably higher in some functionally oriented C-suite positions, while they remain
+
+underrepresented in others. For example, women account for around two-thirds of CHROs and CPOs in the LinkedIn sample, and slightly less than half of CMO positions. By contrast, women occupy a relatively small proportion of positions that have gained prominence in today's corporate leadership structure with AI. Notably, women represent less than one in five chief information officers (CIO) and their representation is lowest in chief technology officer (CTO) positions, at 8.6% (Figure 2.4). $^{10}$
+
+## FIGURE 2.5
+
+Share of women in selected C-suite positions, by industry, 2025  
+![](images/c7422aff91e2e46ebc5c176d27929c68c80d16317444fd1999976701ef72efa2.jpg)
+
+## C-suite representation by industry
+
+Across industries, the pattern remains consistent with previous findings: women's representation tends to be higher across the broader C-suite than in CEO positions, though the size of this gap varies across industries (Figure 2.5).
+
+The structure of the C-suite is also shaped by industry-specific priorities and organizational environments. Industries facing different strategic pressures tend to elevate different executive functions within leadership teams. As previously discussed, the CTO has emerged as one of the most prominent function-specific C-suite positions as companies increasingly integrate AI, digitalization and data-driven operations into their business models. Yet women's representation in CTO positions remains low across C-suite positions and across industries. Women account for less than one in 10 CTO positions in two-thirds of the industries with available data from the LinkedIn sample. In Hospitals and Health Care; Financial Services; Accommodation and Food Services; Utilities; Wholesale; and Transportation, Logistics, Supply Chain and Storage, women's representation is slightly above $10\%$ (Figures 2.4 and Figure 2.5).
+
+## Hiring patterns
+
+For senior leadership hiring, the share of women increased from the mid-2010s through the first year of the COVID-19 pandemic, before plateauing and slightly declining thereafter.
+
+Previous studies also indicate that weaker labour market conditions are associated with a lower share of women among senior leadership hires. $^{11}$
+
+## FIGURE 2.6
+
+Share of women among new hires to CEO, CFO, COO, CIO and CTO roles, 2015-2025  
+![](images/10fbe78b4f66ad637fd0892396f5906d9d44530aa37b49ab787ccde05ee888e6.jpg)
+
+Note: Sample covers LinkedIn members employed in companies with at least 51 employees. Values refer to the simple average across 41 economies with available data for the C-suite positions presented in the figure: Argentina, Australia, Austria, Belgium, Brazil, Canada, Chile, Colombia, Czechia, Denmark, Ecuador, Egypt, Finland, France, Germany, Hong Kong SAR, China, India, Ireland, Israel, Italy, Kenya, Mexico, Morocco, Netherlands, New Zealand, Norway, Pakistan, Peru, Philippines, Poland, Portugal, Saudi Arabia, Singapore, Spain, Sweden, Switzerland, Türkiye, Ukraine, United Arab Emirates, United Kingdom, and United States of America. CEO = Chief executive officer, CFO = Chief financial officer, COO = Chief operating officer, CTO = Chief technology officer, CIO = Chief information officer.
+Source: LinkedIn Economic Graph Research Institute.
+
+A similar pattern is observed when focusing specifically on C-suite positions. Over the past decade, the share of women among new C-suite hires increased from 20.2% in 2015 to 26.6% in 2022, and has plateaued at around 27% thereafter (Figure 2.6). The increase between 2015 and 2021/2022 occurred during a period when C-suite teams were expanding, with organizations adding new roles to address increasing business complexity and demand for specialized capabilities. $^{12}$ However, academic research suggests that firms adapt executive structures in response to changing institutional pressures and organizational complexity, creating, reshaping and sometimes eliminating executive roles as strategic priorities evolve. Since 2022, the stabilization in women's share of C-suite hires has occurred alongside signs of consolidation in executive teams, including a shift toward expanding the scope of existing roles rather than creating new ones. $^{13}$ While not all newly created C-suite functions become permanent features of executive leadership, some emerging roles linked to the technology-driven transformation are becoming increasingly integrated into enterprise-wide strategy and coordination rather than remaining isolated specialist functions. $^{14}$
+
+Looking more specifically at the traditional enterprise-authority C-suite roles (CEO, CFO, COO), together with CTO and CIO roles which have gained prominence in the current senior leadership structure, the share of women among new hires has generally remained at or below the overall C-suite average over the past 10 years (Figure 2.6), suggesting that women's share of C-suite hiring is more pronounced in other executive roles outside this group.
+
+Trends across these individual most common C-suite roles confirms the overall picture: considerable gains in hiring were realized between 2015 and 2022, but the momentum of progress has become less visible since then. For example, the share of women hired as CEOs increased from 15.3% in 2015 to 20.1% in 2022, equivalent to an annualized growth rate of 3.9%. Between 2022 and 2025, this share continued to rise, but only from 20.1% to 21.1%, corresponding to a slower annualized growth rate of 1.7%.
+
+## 2.3 | Representation on boards
+
+Gender representation at the board level provides a complementary view of leadership in corporate governance. Boards are responsible for strategic oversight, risk management, executive accountability and the long-term stewardship of the organization. They also exercise influence over key talent and workforce issues – setting executive pay and performance criteria, succession planning, commissioning and reviewing workforce and culture data, and holding management accountable for progress against stated commitments.
+
+The CTO role recorded the fastest increase between 2015 and 2022 among the five positions shown in Figure 2.6, rising from 6.0% to 9.0%, equivalent to an annualized growth rate of 5.9%. Since then, however, the share has fluctuated at around 9%. Realizing more sustained progress will likely depend on strengthening the longer-term pipeline into technology leadership roles, particularly by improving retention in STEM careers, where a portion of women currently exit the field in the early years of their careers. $^{15}$
+
+Taken together, these findings suggest that the modern C-suite is becoming increasingly functionally specialized, with organizations expanding and reshaping executive teams in response to technological change, workforce transformation and growing organizational complexity. This broader senior leadership structure is associated with higher representation of women across the overall C-suite than in traditional executive positions such as CEO, CFO and COO. However, women's representation remains uneven across C-suite positions, industries and hiring trends. While women are more represented in some emerging and functionally specialized leadership roles, these positions do not always carry the same strategic influence, stability or long-term institutionalization within organizations.
+
+A parallel pattern can be observed in the political sphere. Women in cabinet positions are today most commonly appointed to portfolios related to gender, health and social affairs, while they remain underrepresented in ministries that shape economic strategy, defence and infrastructure. $^{16}$
+
+At the same time, women continue to be underrepresented in several technology-oriented and enterprise-wide leadership roles that are becoming increasingly central to firms' strategic direction. While changes in executive structures alone may not be sufficient to achieve more balanced representation across the most strategically influential leadership positions, the growing diversification of executive functions may broaden the range of pathways through which women enter senior leadership.
+
+The composition of boards therefore shapes the perspectives that inform some of the most consequential decisions an organization makes, including succession decisions and development of future leadership pipelines.
+
+In a recent study covering 450 board directors worldwide, more than nine in 10 directors report that embracing different viewpoints is a strategic priority, with 90% indicating that it strengthens decision-making. $^{17}$
+
+While changes in the C-suite are often shaped by internal talent pipelines and succession processes, which may evolve more gradually, trends at the board level have followed a somewhat different dynamic. Over the past decade, women's representation on corporate boards has increased across many economies, supported by deliberate corporate efforts and a combination of external governance measures, including legislative requirements such as quotas, as well as voluntary targets, disclosure practices and growing investor expectations. $^{18}$ The strategic prioritization of diverse perspectives, reinforced by transparency and accountability mechanisms, has been a principal driver of these gains.
+
+Between 2014 and 2024, the share of board seats held by women nearly doubled, from $15.2\%$ to $29.3\%$ . Over the same period, the executive board positions held by women increased at a slightly faster pace from $4.4\%$ to $10.1\%$ , despite the overall level remaining low (Figure 2.7). This comparatively low representation of women in executive board seats mirrors, in part, the composition of executive board positions, which are often held by individuals in core C-suite roles such as CEO, CFO and COO, where women's representation remains relatively low compared to other C-suite positions (Figure 2.4).
+
+## FIGURE 2.7
+
+Share of board positions held by women, by role type, 2014-2024  
+![](images/90fb38428fef5fa1d0c0cad1827cac256a78763eec8b300a1979aaa3f12d7a96.jpg)  
+Note: Sample covers the largest publicly traded companies. Values refer to the weighted averages for 44 economies: Argentina, Australia, Austria, Belgium, Brazil, Canada, Chile, Colombia, People's Republic of China, Czechia, Denmark, Finland, France, Germany, Greece, Hong Kong SAR, China, Hungary, India, Indonesia, Ireland, Israel, Italy, Japan, Luxembourg, Malaysia, Mexico, Netherlands, New Zealand, Norway, Poland, Portugal, Saudi Arabia, Russia, Republic of Korea, Singapore, South Africa, Spain, Sweden, Switzerland, Taiwan, China, Türkiye, United Arab Emirates, United Kingdom, and United States of America.
+Source: Egon Zehnder Global Board Diversity Tracker.
+
+By 2024, over 95% of boards in the sample of 44 economies include at least one woman. This progress goes beyond minimal compliance with gender diversity requirements that are implemented in some economies. While the share of boards with at least two or three women remains lower than the share with at least one, it has continuously increased between 2016 and 2024: the share of boards with at least two women increased from
+
+61.0% in 2016 to 82.3% in 2024, and the share of boards with at least three women increased from 36.2% to 65.4% over the same period (Figure 2.8). Together, these trends suggest that representation has expanded beyond single-seat inclusion and reflects broader participation across boards.
+
+![](images/432d23666142afdce5a578d6a340ff53a70f04b8623b755169f587cf04b6848c.jpg)  
+Note: Sample covers the largest publicly traded companies. Values refer to the weighted averages for 44 economies: Argentina, Australia, Austria, Belgium, Brazil, Canada, Chile, Colombia, People's Republic of China, Czechia, Denmark, Finland, France, Germany, Greece, Hong Kong SAR, China, Hungary, India, Indonesia, Ireland, Israel, Italy, Japan, Luxembourg, Malaysia, Mexico, Netherlands, New Zealand, Norway, Poland, Portugal, Saudi Arabia, Russia, Republic of Korea, Singapore, South Africa, Spain, Sweden, Switzerland, Taiwan, China, Türkiye, United Arab Emirates, United Kingdom, and United States of America.
+Source: Egon Zehnder Global Board Diversity Tracker.
+
+However, while women are slightly more likely than men to hold multiple board positions, the share of women holding more than one board seat is becoming slightly less common, with the share dropping from 12.9% in 2022 to 12.4% in 2024. $^{19}$ This suggests that recent gains may reflect a broader distribution of board seats rather than
+
+increased concentration among a smaller group of individuals. At the same time, there are early indications of a slowdown in the share of women among new board appointments, which declined slightly from 35.2% to 34.9% between 2022 and 2024. While this trend is not yet conclusive, it warrants continued monitoring.
+
+![](images/6f65036477bf6aa0330e4327e4772ec37b78416def392decd5a1f8276a2f43a1.jpg)  
+Note: Sample covers the largest publicly traded companies. Values refer to the weighted averages for 44 economies: Argentina, Australia, Austria, Belgium, Brazil, Canada, Chile, Colombia, People's Republic of China, Czechia, Denmark, Finland, France, Germany, Greece, Hong Kong SAR, China, Hungary, India, Indonesia, Ireland, Israel, Italy, Japan, Luxembourg, Malaysia, Mexico, Netherlands, New Zealand, Norway, Poland, Portugal, Russia, Saudi Arabia, Singapore, South Africa, South Korea, Spain, Sweden, Switzerland, Taiwan, China, Türkiye, United Arab Emirates, United Kingdom, and United States of America. Source: Egon Zehnder Global Board Diversity Tracker.
+
+The progress in representation has not yet translated into equivalent gains in board leadership positions, where women remain underrepresented. In 2024, women accounted for 5.2% of board chair positions, up from 3.2% a decade earlier, but below the recent peak of 6.2% observed in 2022 (Figure 2.9). The board chair role carries significant influence over how a board operates:
+
+setting the agenda, shaping the culture of the boardroom, determining which voices carry weight in deliberations, and managing the relationship with the CEO. Chairs also play a central role in board composition decisions, including director recruitment, committee assignments and succession planning for board leadership itself.
+
+# Factors shaping gender gaps at the top
+
+![](images/52f3ed95570d07a0d9944486716133916e89305370617486a81117d415fc48ba.jpg)
+
+The data presented in Section 2 points to a consistent pattern: across industries and geographies, leadership pipelines continue to narrow as seniority increases. When capable talent goes unrecognized across an organization's full workforce, the implications extend beyond representation. They affect the strength of succession pipelines, constrain innovation capacity, and reduce organizational resilience.
+
+Understanding this dynamic requires looking beyond representation metrics to the systems through which leadership opportunities are
+
+identified, developed and allocated. This section examines five interconnected factors that help explain the persistence of gender gaps at senior levels: career pathways and feeder role access, professional networks and sponsorship, career breaks and caregiving responsibilities, selection and evaluation processes, and the broader normative and policy environment. Together they can explain not just where the gaps are, but why they are so durable, and point towards the system-level shifts required to address them.
+
+## 3.1 | Non-linear career pathways
+
+Across most industries, pathways to senior leadership remain deeply concentrated. In 2025, 76% of CEOs at the largest publicly traded companies across 27 markets worldwide had prior C-suite experience – and 46% of them had previously served as CEO and around 20% as CFO and/or COO. $^{20}$ With women accounting for around 20% of CEO roles and approximately 30% of CFO and COO roles (Figure 2.4), their underrepresentation in precisely the positions that most commonly serve as springboards to the top creates a self-reinforcing cycle that limits their path to decision-making power within organizations.
+
+However, even women who are in CEO feeder roles, are currently less likely to become CEO compared to their male counterparts, suggesting that barriers women face are not resolved simply by entering the pipeline but persist through processes and selection decisions that determine who reaches the top. $^{21}$
+
+The trend is similar for boards, where prioritization of operational, technology and finance experience for board candidates significantly narrows the
+
+candidate pool. CEO and CFO experience remain the dominant backgrounds among board members, accounting for around two-thirds of directors' prior executive experience, regardless of whether they serve in executive or non-executive roles. $^{22}$
+
+These very narrow paths to the top reflect a mismatch between how women build careers and how organizations define readiness for the most senior roles. Women who reach the C-suite have, on average, accumulated experience across a broader range of functions and industries than their male peers (Figure 3.1). But that breadth has often been accumulated at lower seniority levels compared to men, meaning that women arrive at the C-suite with wider exposure but less experience in the high-stakes, high-visibility roles that current pathways to the top reward. Critically they often lack exposure in “power alley roles” with P&L leadership, enterprise-wide transformation mandates, and board-facing assignments that most reliably convert accumulated experience into succession candidacy. $^{23}$
+
+![](images/7c44ed43cc7ff54d4e2cfa5e277c8962ab7dc813bc4bfe5652635b11dd6b12bb.jpg)
+
+![](images/36c1ff3ea6f832f5d5bb46dce23b226a116dbc6b116de64c3bc8d6eafc97a6a4.jpg)  
+Source: LinkedIn Economic Graph Research Institute for the Global Gender Gap Report 2025.
+Note: Values refer to the simple average across 20 economies: Australia, Brazil, Canada, Germany, Spain, France, Ireland, Israel, India, Italy, Mexico, Malaysia, Netherlands, New Zealand, Philippines, Singapore, Sweden, United Arab Emirates, United Kingdom and United States of America.
+
+Once arrived, women CEOs tend to serve shorter tenures than men. Data from Egon Zehnder shows that, across the largest publicly traded companies, the average tenure of women CEOs is approximately 3.7 years, compared to 5.2 years for men. A similar pattern is observed in CFO roles, where women serve an average of 3.4 years, versus 4.1 years for men.
+
+At the same time, women on boards are often younger compared to men. On average, Egon Zehnder data shows that women on boards are around 59.8 years old compared to 62.3 for men on boards. Taken together, these patterns point to a divergence in career trajectories between female and male leaders. Women's shorter tenures in the most powerful C-suite positions, combined with earlier entry into board positions, suggest a shift away from operational leadership at a relatively earlier stage. While board service ensures that experience and expertise continue to be utilized, it represents a different form of influence than executive leadership.
+
+These findings underscore two points. First, gender-balanced succession pipelines for core leadership roles such as P&L, CFO and COO positions must be strengthened, and the criteria used to identify and assess candidates for top leadership posts expanded, especially as ongoing transformations imply a broader set of leadership capabilities. Second, it will be important to pay attention not only to who is appointed, but to the conditions under which leaders are set up to succeed. Ensuring that women who reach CEO and other critical C-suite roles are supported with the mandate, resources and stability needed to deliver results and to persist in their role is essential to building a durable pipeline of experienced leaders.
+
+These considerations are supported by structural shifts already underway in how senior leadership roles are defined. The optimal skill set for CEOs is undergoing a fundamental shift, away from deep functional expertise and toward cross-domain integration, transformation leadership, AI fluency and stakeholder management. $^{24}$ Simultaneously, the non-traditional CXO roles where women tend to have relatively stronger presence (Figure 2.4), are themselves evolving, with growing influence over enterprise outcomes. Analysis of Fortune 100 executive teams finds that CHRO, CIO, chief diversity officer (CDO) and chief communications officer (CCO) roles have been among the most frequently added to executive committees between 2020 and 2023. $^{25}$
+
+LinkedIn's research finds that the growing number and representation of women in chief of staff roles, combined with the role's high rates of transition
+
+into executive leadership positions, may likewise enable more women to use it as a springboard into the C-suite. $^{26}$ As roles once considered support functions converge with traditional power-alley positions around the same broader, integrative skill set, the distance between these “functional” pathways and the CEO could narrow, opening new opportunities to close gender gaps at the very top.
+
+## 3.2 | Professional networks and sponsorship
+
+Networks are a critical but often invisible mediator of career progression. They shape career trajectories by regulating access to opportunities, channelling information and referrals, building influence and reputation, and increasing the likelihood and speed of promotion. $^{27}$ Strong professional networks create benefits not just for individuals, but also for organizations and are often an important criterion in the selection of board directors.
+
+The Global Gender Gap Report 2024 finds that men tend to have larger online professional networks than women, and they make new connections at a faster rate than women. In addition to the differences in size, men's networks also show slightly “stronger” ties between connections in the majority of the economies analysed by LinkedIn. In comparison, women have more “weak” ties, and, on average, less dispersed than men's (Figure 3.2). $^{28}$
+
+FIGURE 3.2
+
+Gender differences in network strength and gaps, 2024
+
+![](images/c3cd86c0aca63549ad24d74a44719ac3ebac07289bc593b5ab95ff1db3679ae5.jpg)
+
+Women's networks are more likely to be characterized as a tighter circle with more weak ties. Their clustering coefficient is higher than their closure coefficient, meaning women's contacts are more likely to be connected to each other.
+
+![](images/e52975cd3d3028b344990439f8033028f387b212087eef5bbee560fce8c9fea8.jpg)
+
+Men's networks are more likely to be characterized as spheric. Their closure coefficient is higher than their cluster coefficient, meaning men's contacts are more likely to be connected in different groupings, creating multiple spheres of connection.
+
+Breaking the data down by seniority level, 2025 data from LinkedIn suggests that gender gaps in the size of online professional networks persist across seniority levels, although the gap tends to be smaller among C-suite professionals (Figure 3.3).
+
+Furthermore, while the gender gap widens as the seniority level of one's connections increases, disparities are especially pronounced among professionals below top-level management positions. For example, among non C-suite
+
+professionals, men have on average 24.7% more connections than women to peers at the same level, but 51.7% more connections to C-suite professionals. Among C-suite professionals themselves, men have on average 20.5% more connections than women to professionals below top-level management level, and 30.8% more connections to other C-suite professionals (Figure 3.3).
+
+- Gender gap in the average number of connections to positions below top-level management
+- Gender gap in the average number of connections top-level management other than C-suite
+- Gender gap in the average number of connections to C-suite  
+FIGURE 3.3  
+Gender differences in online professional network size and pattern, by seniority level, 2025  
+![](images/dda47fee289820973a0bd4a301e5e64d73a097128178ab1a8efdadcb32aeb04b.jpg)  
+Source: LinkedIn Economic Graph Research Institute.
+
+These patterns suggest a structural imbalance in access to senior networks, especially for women in non-senior positions. Smaller overall network sizes, combined with fewer connections to senior leaders, may limit women's access to mentorship and informal pathways for career advancement.
+
+This gap is further reinforced by women's underrepresentation in senior roles and by the tendency for people to form same-gender networks. $^{29}$ As a result, women's weaker networks yield fewer leadership opportunities, provide less visibility and generate less recognition and endorsement. $^{30}$
+
+These disparities are also reflected in access to sponsorship, which sits at the intersection of network strength and advancement, and the same structural disparities are visible here. In the United States, 45% of men report having a sponsor compared to 31% of women; at the vice-presidential level and above, the gap narrows but persists, with 72% of men versus 66% of women having a sponsor. $^{31}$ Critically, women are not only sponsored less frequently than men but are also promoted less frequently even when they are sponsored, suggesting that sponsorship alone cannot compensate for the broader disadvantages in promotion that women face. Taken together, these findings point to a professional advancement architecture that continues to privilege familiarity and access to informal networks.
+
+## 3.3 | Career breaks and care penalty
+
+The combination of longer work lives and growing care demands is producing a new career architecture, defined less by linear ascent than by cycles of lateral movement, sector transition and re-entry after breaks. Women are 55% more likely than men to take career breaks, and when they do, they spend longer away from work – on average 19.6 months compared to 13.9 months for men. $^{32}$
+
+Among professionals below top-level management, women are 8.4 times more likely than men to have stepped away from work for full-time parenting at any point in their career. This gap rises to around 11 times among those in top-level management positions, with little difference between VP and CXO levels. These patterns suggest that women who reach senior leadership are far more likely than their male peers to have had substantial caregiving responsibilities at some point in their careers. While the data does not show when these career breaks occurred, the persistence of gender gaps
+
+in full-time parental leave among VP and CXO-level professionals might suggest that women's pathways to senior leadership more often include periods of full-time parenting than men's (Figure 3.4).
+
+This has important implications for leadership progression. Senior roles are often associated with expectations of continuous presence, visibility and sustained performance. Extended time away from work at this stage can affect access to critical assignments, reduce exposure to decision-makers and slow the accumulation of the track record typically required for C-suite appointments. Stereotypes and bias can also shape these outcomes: research on the “motherhood penalty” shows that mothers are often perceived as less competent and less committed, while fatherhood is not penalized in the same way and may even confer workplace advantages. $^{33}$
+
+## FIGURE 3.4
+
+Gender difference in the likelihood of taking career breaks for full-time parental leave, by seniority level, 2025  
+![](images/5d08562845b12c0b49f48cba2f3cd513b43453eba2eb6e648362904a7af0d03b.jpg)
+
+Note: Values refer to the simple average across 56 economies with available data: Argentina, Australia, Austria, Bangladesh, Belgium, Brazil, Canada, Chile, Colombia, Costa Rica, Croatia, Czechia, Denmark, Dominican Republic, Ecuador, Egypt, Estonia, Finland, France, Germany, Ghana, Hong Kong SAR, China, India, Ireland, Israel, Italy, Jordan, Kenya, Lithuania, Luxembourg, Malta, Mexico, Morocco, Netherlands, New Zealand, Norway, Pakistan, Peru, Philippines, Poland, Portugal, Puerto Rico, Qatar, Romania, Saudi Arabia, Singapore, Spain, Sweden, Switzerland, Türkiye, Ukraine, United Arab Emirates, United Kingdom, United States of America, Uruguay, and Venezuela.
+Source: LinkedIn Economic Graph Research Institute.
+
+These patterns are closely linked to modern caregiving dynamics, where the timing of the care penalty can compound its severity. With shifting demographic patterns, many women face the heaviest care burden precisely at the life stage when they are most likely to be consolidating their professional experience and entering senior leadership roles – what research identifies as the “sandwich generation” dynamic, in which responsibility for young children and ageing parents converges in mid-career.
+
+## 3.4 | Evaluation systems
+
+The persistence of the gender gap at senior leadership is not only a reflection of who is in the pipeline, but also of how leadership potential is evaluated and how search, selection, and promotion systems are designed.
+
+A central mechanism still at play in many cases is bias — the way prior assumptions about who belongs in leadership shape judgments about individual candidates, both consciously and unconsciously. These assumptions operate against a broader backdrop of persistent gender norms. According to the UNDP Gender Social Norms Index (2023), two in five people globally believe that men make better business leaders than women and this belief holds across regions, income levels and development contexts. $^{34}$ The Reykjavik Index for Leadership shows that perceptions of women's suitability for leadership vary by sector, and are lower in sectors traditionally associated with power and authority, such as defence and police or engineering. At the same time, norms also operate in reverse: men are often perceived as less suitable for leadership in sectors traditionally associated with women, such as childcare. $^{35}$
+
+Such beliefs and norms represent a baseline against which women are evaluated at every stage of the leadership pipeline, and they face a higher bar: research finds that identical profiles are assessed more favourably when attributed to male candidates, and the performance standard applied to women is systematically more demanding and more narrowly defined. $^{36}$
+
+Demographic patterns across most advanced economies means that these pressures are set to intensify. The conventional model of leadership progression, built around an uninterrupted upward trajectory, was designed for a workforce and career patterns that no longer reflect the realities of modern working lives. Organizations that redesign their leadership systems to value broader, cyclical experience and structured re-entry will access a deeper and more capable succession pool and be better positioned to develop the cross-domain, adaptive leadership that the next era demands.
+
+Current search, selection and promotion systems often rely on outdated processes and subjective judgments that allow for bias to slip in at key decision points. $^{37}$ Criteria set for top executive searches are frequently overly prescriptive than the role genuinely requires, narrowing the candidate pool unnecessarily, while the composition of search and evaluation teams can also heavily influence outcomes. $^{38}$ A large body of research shows that bias is most likely to enter when selection and promotion decisions rely on subjective judgments, ambiguous criteria, informal sponsorship or discretionary assessments of “fit” and “potential”. $^{39}$ Women may receive strong performance evaluations yet still be judged as less promotion-ready, because leadership potential is often assessed through gendered expectations of ambition, availability, confidence and authority. $^{40}$ In this manner, evaluation and hiring frameworks can end up reinforcing many of the barriers around career pathways, professional networks and caregiving responsibilities described above.
+
+Experiences of bias can also shape women's career choices: prior exposure to exclusion, biased feedback and limited recognition can weaken women's leadership self-efficacy and disrupt the identity-building process through which women come to see themselves as leaders. $^{41}$ As a result, some women may choose to opt out of applying for senior roles not because they lack ambition, but because promotion systems signal that advancement is less attainable or less fair. $^{42}$
+
+# Institutions, policies and laws shaping leadership pathways
+
+Organization-level action takes place within a broader policy environment that either facilitates or constrains it. Behind persistent gender gaps in senior leadership lies a range of systemic barriers that limit women's full participation in the labour market and restrict their progression into leadership roles.
+
+At the institutional level, unequal labour market and social protection laws and policies create structural constraints that shape women's career trajectories over time. These gender differences accumulate across the life course, narrowing the pipeline of women eligible for senior leadership positions.
+
+The “care penalty”, as illustrated above, provides a clear example of how legal frameworks and their implementation contribute to these cumulative disadvantages. According to the World Bank’s Women, Business and the Law, while nearly all of the 190 economies assessed (184) have legal provisions for paid maternity leave, only 124 provide paid paternity leave. Among economies that offer both, there is a substantial disparity in duration: women receive, on average, over five months more leave than men, with differences ranging from less than one month to more than three years. Only four economies provide equal parental leave durations by law. Moreover, implementation gaps persist: 38 economies offer incentives to encourage fathers to take paternity leave. $^{43}$ Existing research shows that smaller gaps between maternal and paternal leave are associated with higher female labour-force participation, while longer maternity leave alone is correlated with lower female workforce attachment. $^{44}$ These patterns reinforce gendered divisions of care and contribute to slower career progression for women.
+
+Similar disparities exist in workplace flexibility. Eighty-three of the 190 economies assessed provide a legal right for employees to request flexible working arrangements, and fewer than half of these offer instructional resource for private sector to adopt such arrangements. $^{45}$ This limits the ability of workers, particularly women, who disproportionately shoulder caregiving responsibilities, to remain attached to the labour market on equal terms.
+
+In addition, retirement policies further constrain women's long-term career progression. In 51 out of 190 economies assessed, women are eligible for full pension benefits at an earlier age than men. $^{46}$ Existing literature suggests that genderdifferentiated retirement age may shorten women's career horizons and remove them from the labour force precisely during the late-career phase when senior leadership positions are most often attained. As a result, women may exit the pool of eligible candidates while men remain under consideration for top roles. $^{47}$
+
+Taken together, these legal and policy differences contribute to a cumulative disadvantage. When career advancement systems reward tenure, experience, and continuous employment, gender gaps embedded in labour market and social protection frameworks can indirectly but systematically limit women's opportunities to reach senior leadership.
+
+Beyond these pipeline constraints, there are also legal measures more directly targeted at improving gender parity in leadership. According to the World Bank, 40 out of 190 economies assessed in the Women, Business and the Law survey have introduced mandatory minimum representation of women on corporate boards. In addition, transparency mechanisms are increasingly used to support accountability: 72 economies assessed publish sex-disaggregated data on women in private-sector leadership positions. Such measures can help monitor progress, inform policy-making, and create incentives for change. Despite a fragmented global landscape, examples of board quotas and gender-disaggregated reporting are found across regions. $^{48}$
+
+Ultimately, gender gaps in leadership are the result of the interaction between institutional constraints and societal expectations. Addressing them requires coordinated action across legal frameworks, policy design and cultural change, alongside efforts within firms themselves.
+
+![](images/571df95f446042a1523c698c209fa7577320916dbc06c5cb8d40b25493e09bdc.jpg)
+
+# A future-fit framework for senior leadership parity
+
+The framework that follows translates the insights in Section 3 into a practical set of actions, organized around four sequential pillars:
+
+\- Redefining the capabilities that define leadership readiness
+
+\- Rewiring power pathways that convert potential into leadership opportunity
+
+– Building fair selection and promotion processes
+
+\- Redesigning the conditions under which leadership is exercised
+
+These pillars target specific leverage points within existing systems and, together, they form a coherent approach to strengthening how organizations identify, develop and advance leadership talent. Each pillar is supported by proven corporate examples drawn from the World Economic Forum's Future of Inclusion Lighthouse network, demonstrating what these efforts look like in practice across different industries and geographies.
+
+The industry analysis in Section 2 points to two distinct patterns of attrition across the leadership pipeline. In some industries, such as Oil, Gas and Mining as well as Construction, the sharpest drop in women's representation occurs at the early-to-mid career transition, where efforts to surface and develop talent through structured pathways, as well as to redesign the conditions under which careers are built will have the greatest impact. In others, including Financial Services; Technology, Information and Media; and Education, women are well-represented in the mid-level pipeline but lose out at the transition to senior leadership, where broadening defining leadership capability and engineering fairer selection processes are the higher-leverage interventions. While all four pillars are mutually reinforcing and relevant across contexts, the industry analysis points to the value of diagnosing where attrition is greatest and directing efforts accordingly.
+
+## A Future-Fit Framework for Senior Leadership Parity
+
+## PILLAR 1
+
+## Redefine Leadership Capabilities
+
+Define a leadership capability framework fit for the transformation era
+
+## PILLAR 2
+
+## Rewire Power Pathways
+
+Widen access to
+
+experiences,
+
+relationships and visible
+
+opportunities
+
+## PILLAR 3
+
+## Build Fair Selection Systems
+
+Build fairness,
+
+transparency and
+
+inclusion into selection
+
+and promotion
+
+processes
+
+## PILLAR 4
+
+## Redesign Conditions for Leadership
+
+Redesign norms, workloads and support systems for modern careers
+
+## Pillar 1: Redefine Leadership Capabilities
+
+Leadership readiness is still too often defined through legacy proxies: linear career paths, traditional feeder functions, and subjective judgments such as “executive presence” or “fit”. Updating these proxies to reflect the capabilities increasingly required in a more complex, technology-driven and cross-functional environment creates an opportunity to broaden the talent
+
+pool and build more effective leadership teams simultaneously. As AI transforms business models and organizational structures, and demographic change redefines workforce expectations, the capabilities most in demand at the top are shifting toward cross-domain integration, transformation leadership, stakeholder navigation, and the ability to lead teams through sustained uncertainty. $^{49}$
+
+Emerging future-fit leadership capabilities are based on the demands of the next era. By defining these, assessing candidates consistently against them and building these capabilities across their leadership bench, organizations can build stronger succession pipelines.
+
+Emerging actionable levers include:
+
+\- Defining a future-fit leadership capability framework. Articulate what effective leadership at the top of the organization requires over the next decade, prioritizing adaptive, cross-functional and human-centric capabilities alongside commercial and operational strength.
+
+\- Applying the framework consistently. Use an agreed capability framework as the common standard across talent identification, succession planning and senior appointment decisions.
+
+\- Using the current disruption moment deliberately. As AI reshapes operating models and elevates new functions, organizations have an opportunity to update their definition of leadership readiness and draw on a broader talent pool in the process.
+
+The framework below defines eight future-fit leadership capabilities, drawing on established research – importantly, Champions for Change's CEO Pipeline criteria – to identify the behaviours and experiences needed to meet today's
+
+organizational demands and lead through the next era of transformation. Organizations can draw on it as a starting point, tailoring the capabilities to their specific industry, regional context and strategic priorities.
+
+<table><tr><td>Capability</td><td>What it requires</td><td>How it&#x27;s demonstrated</td></tr><tr><td>Strategic vision</td><td>Strategic foresight, decisive choice-making under uncertainty and the ability to enrol diverse teams in shared direction.</td><td>Leading transformational change, restructuring or turnarounds. Scenario planning and strategic decision-making under uncertainty.</td></tr><tr><td>Accountable, adaptive and inclusive leadership</td><td>Accountability and stewardship, emotional intelligence and inclusive and high-performing culture-building.</td><td>People leadership with demonstrated ability to build high-performing teams across varied backgrounds and functions. Experience leading through periods of significant cultural or organizational change.</td></tr><tr><td>Stakeholder engagement</td><td>Trust-building across employees, investors, customers, regulators and communities; empathetic, inclusive communication.</td><td>Board and investor engagement. Leading complex, multistakeholder processes. Cross-sector or cross-cultural engagement. Managing significant reputational or regulatory challenge.</td></tr><tr><td>Commercial acumen and delivery excellence</td><td>Translating strategy into measurable outcomes, P&amp;L accountability and disciplined execution alongside transformation.</td><td>Experience driving performance, sustainable growth and innovation.</td></tr><tr><td>Digital fluency and transformation leadership</td><td>Harnessing AI and digital transformation for innovation, while defining guardrails.</td><td>Experience harnessing emerging technology, AI and digital transformation to enable inclusive, data-driven decision-making and innovation. Leading significant innovation or business model change.</td></tr><tr><td>Resilience and curiosity</td><td>Determination and resilience under setbacks, continuous learning, and curiosity and operating effectively in first-time conditions.</td><td>Leading complex change initiatives. Exposure to high-pressure or crisis situations. Cross-functional, international or entrepreneurial assignments.</td></tr><tr><td>Financial and governance acumen</td><td>Financial reporting, capital allocation, regulatory compliance and board-level governance responsibility.</td><td>Budget planning, audit oversight and financial leadership. Exposure to board-level governance and risk responsibility. Investor relations and capital markets engagement.</td></tr><tr><td>Customer and market orientation</td><td>Deep market understanding and integrating diverse perspectives into commercial strategy.</td><td>Cross-market or cross-cultural commercial experience. Experience navigating significant market disruption or competitive challenge.</td></tr></table>
+
+## Pillar 2: Rewire Power Pathways
+
+Qualified female talent is present in most organizations' leadership pipelines, yet often not identified, developed or positioned in the roles and relationships that convert accumulated experience and potential into credible succession candidacy.
+
+Future-fit organizations can close this gap by deliberately widening access to experiences, relationships and visible opportunities through which leadership power is allocated.
+
+Emerging actionable levers include:
+
+\- Mapping feeder role access. Identifying the roles that most reliably lead to senior leadership in specific organizational contexts. Tracking gender patterns in access, inflow and outflow and treating persistent imbalance as a risk requiring recalibration.
+
+\- Institutionalizing sponsorship. Formal sponsorship programmes create structured opportunities for senior leaders to advocate for, nominate, and build the visibility of high-potential talent, as well as help them navigate organizational context. Sponsorship programmes that are designed to be inclusive create more opportunities for sponsorship ties to emerge across different profiles. $^{50}$
+
+\- Building board and executive exposure intentionally. Ensure that high-potential leaders accumulate the cross-functional, cross-sector and external visibility, including through nonprofit, advisory and sector body roles that senior selection processes reward.
+
+\- Making pathways visible and accessible. Publishing clear criteria for succession consideration, making explicit which roles serve as genuine feeders to senior leadership, and ensuring that stretch assignments, cross-functional rotations and high-visibility opportunities are allocated deliberately rather than contingent on proximity to the right people.
+
+## Case studies of organizational practices
+
+## LVMH: Building a global talent pipeline $^{51}$
+
+LVMH's EllesVMH programme illustrates how organizations can surface and develop talent by building infrastructure that makes career progression more intentional and accessible at scale. When the programme launched in 2007, an internal assessment revealed that while over $70\%$ of employees were women, only $23\%$ of key positions were held by them. In response, LVMH implemented a multi-layered, system-level strategy. This included embedding women's representation into succession planning and inclusive hiring processes, launching coaching and leadership development programmes, and creating the EllesVMH network with 17 local chapters that now connect more than 10,000 employees globally. The company also introduced a dedicated career development platform offering self-development tools, personal branding resources and opportunities to strengthen internal networks. In 2024, LVMH launched EllesVMH Collective, a digital mentoring platform that matches participants across functions, geographies and Maisons based on expertise and interests, with over 7,500 enrolled employees. This system-level approach, sustained over nearly two decades with direct accountability to the Executive Committee of the Group, has driven women's representation in key positions from 23% in 2017 to 50% in 2025, with 27 Maisons led by female CEOs across the group, up from none in 2007.
+
+## Pillar 3: Build Fair Selection Systems
+
+As outlined in Section 3, leadership selection systems are often not designed for fairness from the outset and too often rely on subjective judgments
+
+and informal notions of what is considered “fit,” allowing bias to enter at multiple points and limiting who is seen as credible for leadership.
+
+Future-fit organizations build fairness, transparency and inclusion into selection and promotion decision-making from the outset.
+
+Emerging actional levers include:
+
+\- Broadening search criteria deliberately. Interrogating where criteria are genuinely predictive of success rather than proxies for familiarity tends to widen the talent pool and strengthen the quality of the slate. $^{52}$
+
+\- Establishing transparent promotion and succession planning processes. Defining promotion and selection criteria explicitly, anchored in observable and future-oriented competencies. Requiring structured, comparative assessment and evaluating candidates against agreed criteria rather than sequentially and in isolation. $^{53}$
+
+\- Interrupting bias at the point of decision. Building gender balance and varied professional backgrounds into search committees and promotion panels and deploying targeted, just-in-time bias interruption at the specific moments when evaluative bias is most likely to influence outcomes, such as talent reviews, promotion and succession discussions. $^{54}$
+
+\- Building accountability into selection decisions. Documenting rationale for senior appointments, ensuring transparency in how succession slates are constructed, and providing structured post-decision feedback and development support to strong candidates who are not selected.
+
+## Case studies of organizational practices
+
+## Shiseido: Surfacing and developing talent through structured pathways $^{55}$
+
+Shiseido's approach demonstrates how organizations can surface talent by systematically strengthening pathways into leadership. Faced with low representation of women in management in Japan despite a majority-female workforce, the company identified structural barriers including tenure-based promotion systems, limited visibility of female role models and insufficient access to development opportunities. In response, Shiseido implemented a comprehensive strategy combining leadership development, sponsorship and systemic process changes. Its flagship Next Leadership for Women programme builds capability and
+
+confidence among high-potential women, supported by coaching, mentoring and active sponsorship from senior leaders. At the same time, the company redesigned promotion and succession processes, shifting to performance-based evaluation and requiring gender-balanced succession pipelines, to ensure women are actively considered for advancement. This integrated approach has translated into stronger progression outcomes, with 44% of programme participants promoted to senior roles and a 24% increase in female representation in senior leadership from 2017 to 2022.
+
+## Pillar 3: Build Fair Selection Systems
+
+Case studies of organizational practices
+
+INGKA: Achieving 50/50 Gender Balance Across Leadership $^{56}$
+
+More than a decade ago, the Ingka Group – the largest IKEA retailer – committed to achieving gender parity across its entire business, including 50/50 gender balance in senior leadership and pay equity across all their business. A central shift was the integration of gender balance into hiring and succession processes. Leaders are supported to build diverse candidate pipelines and ensure that succession plans include women for senior roles, supported by structured evaluation criteria aligned to future leadership needs. This reduces reliance on intuition and familiarity and expands the pool of credible candidates considered for advancement. Crucially, INGKA integrated these changes with strong accountability mechanisms. Gender parity was embedded into business planning, with regular reviews and transparent tracking to ensure that selection decisions are monitored and challenged where necessary. In parallel, the company's commitment to gender pay equity through standardized, gender-neutral salary review processes helped remove structural disincentives and reinforce fair outcomes across the pipeline, ensuring that advancement decisions translate into equitable rewards and sustained progression. This system-level redesign has enabled INGKA to achieve gender balance across management, with women holding half of manager roles and country CEO positions. The case highlights that fair selection is not achieved through isolated interventions, but by embedding structure, transparency and accountability into how leadership decisions are made.
+
+## Pillar 4: Redesign Conditions for Leadership
+
+Current leadership models reward uninterrupted, linear progression and frequently penalize the flexible arrangements, career breaks and non-traditional trajectories that an increasing share of leaders navigate. Leadership systems that treat caregiving as an individual responsibility rather than an organizational variable will continue to lose female talent.
+
+Future-fit organizations can redesign the norms, workloads, career models and support systems that determine who can lead and thrive, so that leadership is compatible with modern careers, care realities and diverse life trajectories.
+
+Emerging actionable levers include:
+
+\- Redesigning workloads and normalizing flexibility at senior levels without penalty. Designing flexibility into role structures, meeting cultures and travel expectations at every level of leadership, and actively modelling uptake among senior leaders of both genders.
+
+\- Building structured re-entry pathways. Establishing return-from-break programmes that combine personalized reintegration plans, sponsorship support and calibrated performance evaluation for the first post-leave review cycle.
+
+\- Addressing care burden at the leadership transition. Proactive workload management, access to emergency care support and explicit acknowledgement of dual care responsibilities in career planning at the life stage when caregiving responsibilities most often coincide with consolidation of senior leadership roles.
+
+## Case studies of organizational practices
+
+## Wipro: Redesigning career progression around life-stage realities $^{57}$
+
+Wipro's Women of Wipro initiative demonstrates how career progression systems can be designed to better reflect the realities of modern careers, caregiving and non-linear growth paths. Rather than relying on a one-size-fits-all programme, Wipro has adopted a life stage-based approach that addresses the different challenges women face at various points in their careers – building exposure early on, enabling flexibility and smoother transitions through motherhood and caregiving phases, and strengthening confidence, mentorship and sponsorship at mid to senior levels.
+
+These measures include guidance for managers to support employees before, during, and after maternity leave; support for mothers returning to work; and the Begin Again programme for women re-entering the workforce after a break. The results underline the value of this approach. Between FY21 and FY25 women's representation in senior leadership rose from 7.3% to 18.8%, while the proportion of women leaving the workforce as they advanced in their careers declined from 18% to 8.4%. Wipro also reports a 99.9% return-to-work rate for new mothers and nearly 75% retention among women re-entering through its returnship pathway.
+
+## Pillar 4: Redesign Conditions for Leadership
+
+## Case studies of organizational practices
+
+## McKinsey & Company: Structured re-entry support $^{58}$
+
+McKinsey & Company's global reboarding programme ensures that all eligible colleagues are well supported after approved extended leaves by providing them with structural support and resources to ensure successful re-entry and, by doing so, reducing attrition gaps between them and the rest of the firm. Analysis of internal data showed higher attrition among employees, particularly women, returning from extended leave. In response, McKinsey's reboarding programme introduced a structured re-entry model for all eligible colleagues that combines personalized reintegration plans, sponsorship support, coaching and calibrated performance evaluations for the first post-leave review. The programme also includes practical measures such as additional resourcing for teams and flexible work arrangements, and is complemented with comprehensive parental benefits such as subsidized and emergency childcare. Since its launch, the programme has reduced attrition among returning EU mothers by 20% and scaled globally with local adaptation.
+
+## Process enablers
+
+The four pillars of the framework operate at the level of organizational decision-making. Two internal process enablers – data-driven decision-making
+
+and the responsible use of AI – determine whether the actions taken within each pillar are visible, accountable and sustained over time.
+
+## Data-driven decision-making
+
+Organizations at the frontier have been moving beyond headcount metrics to a dynamic, granular view of how talent moves through the system. This means tracking representation, inflow, outflow, promotion velocity and succession depth across functions, business units and seniority levels, with particular attention to the feeder roles and transformation-critical positions that most reliably lead to senior management. Quantitative tracking can be complemented by qualitative evidence: surveys, listening sessions, exit interviews and input from employee resource groups are essential for understanding not just where women are stalling but why. Used well, data makes the leadership system legible. It allows organizations to identify precisely where the pipeline narrows, hold leaders accountable for outcomes rather than activities, and treat persistent imbalance as a critical talent and governance issue.
+
+Emerging actionable levers include:
+
+\- Building a dynamic, granular picture of how talent moves through the pipeline. Tracking representation, inflow, outflow and promotion velocity across functions and seniority levels, complemented with qualitative insight from exit interviews, engagement surveys and listening sessions to understand why gaps appear where they do.
+
+\- Using data to set clear and quantifiable aspirations. These may include specific opportunity areas, such as pipeline composition or promotion velocity. Reporting progress transparently, both internally to senior leadership and boards, and externally where required or strategically valuable.
+
+## Case studies of organizational practices
+
+## Siemens: Data-driven approach to systematically advance gender equity $^{59}$
+
+Siemens launched its global Gender Equity Program in 2022 to advance gender equity systematically across its entire organization. The Program takes a data-driven approach to monitoring KPIs on gender equity. Supporting these efforts, Siemens established a global dashboard with quarterly updates accessible to all CEOs, business leaders, the HR community and the Siemens Managing Board to ensure continuous collaboration, while keeping all employees informed about gender equity progress and fostering a culture of inclusivity and global awareness.
+
+## Process enablers
+
+## Responsible use of AI
+
+AI is rapidly becoming embedded in the talent processes through which leadership pipelines are built and managed, from candidate sourcing and CV screening to performance assessment, promotion modelling and workforce planning. Used well and with appropriate guardrails, AI can support more evidence-based talent decisions. Used without safeguards, it can replicate and accelerate the very biases this framework is designed to interrupt.
+
+The potential of AI as a positive enabler is significant. Across the four pillars of this framework, AI tools can support broaden search parameters in executive search and internal mobility beyond the narrow criteria that collapse candidate pools; support more systematic identification of high-potential talent beyond the informal networks that have historically dominated senior search; flag gender disparities in promotion velocity, assignment allocation and performance ratings before they compound; and make pipeline data easier to interpret at scale, enabling faster and more targeted intervention.
+
+But AI is not inherently neutral. Systems trained on historical data encode the patterns of the past, including the selection biases, network effects and career path assumptions documented in Section 3. Moreover, even with historical biases corrected, AI can still reflect who is represented in the data. As shown in Section 2, men continue to occupy the majority of most senior roles, and AI training datasets therefore contain a disproportionate number of male profiles. This can make it harder for algorithms to recognize and surface qualified candidates with different backgrounds or career paths. $^{60}$ Deployed without safeguards, AI tools can automate discrimination in ways that are harder to detect and challenge than human judgement.
+
+## Emerging actionable levers include:
+
+\- Governing AI use in talent processes transparently. Requiring clear disclosure of where and how AI tools are used in hiring, promotion and succession and ensure that human review remains part of any consequential decision.
+
+\- Auditing AI-driven talent outcomes regularly. Disaggregating results by gender to detect adverse patterns early. Assigning clear organizational accountability for addressing any disparities that emerge.
+
+# Conclusion
+
+The data presented in this report shows that we are making real progress towards gender parity in senior leadership: over the past decade, women's representation in top-level management has risen, board composition has shifted, and new pathways into executive leadership have begun to emerge. Yet recently momentum has slowed. Hiring into C-suite and board positions has slowed down or even regressed since 2022, women remain concentrated in some functionally specialized roles rather than those with enterprise-wide authority that most reliably lead to the CEO position, and the structural factors that shape who reaches the top have proven more durable than individual initiatives have been able to shift.
+
+The explanation lies not in a shortage of qualified women, but in systems designed for a different era. Leadership pipelines built around uninterrupted linear careers, informal network access, and narrow definitions of readiness continue to filter out capable talent at key stages of progression.
+
+This moment is one of genuine opportunity. As AI transforms organizational structures, redefines the capabilities required at the top, and disrupts the career models through which leadership has traditionally been built, the architecture of senior leadership is already in motion. The organizations best positioned to lead through this era will be those that seize the disruption deliberately, by broadening how leadership capability is defined, widening the pathways through which talent reaches the top, building selection systems designed for fairness from the outset, and creating the conditions under which leadership is compatible with modern careers.
+
+Organizations making the most durable progress share a common orientation: rather than focusing only on preparing women for leadership and helping them manoeuvre existing systems, they have focused on redesigning the processes, pathways and conditions through which leadership is allocated, building more inclusive and resilient talent systems in the process. The framework presented here is intended to support that work, translating the evidence into a practical set of levers that organizations can adapt to their own industry, context, pipeline stage, and strategic priorities.
+
+Closing these gaps at scale will require more than organizational action alone. The policy environment shapes the conditions within which firms operate, determining the availability of parental leave, the right to flexible working, and the transparency and accountability mechanisms that can accelerate progress. As this report shows, legal and policy frameworks vary significantly across economies, and in many contexts continue to embed structural disadvantages that compound over the course of women's careers.
+
+Closing these gaps requires sustained collaboration between the public and private sectors: governments creating the enabling conditions through legislation, disclosure requirements and targeted incentives; and organizations going beyond compliance to embed fair processes and broaden leadership pathways within their own systems. The World Economic Forum's Global Gender Parity Sprint is one effort to support and accelerate that collaboration, by convening leaders across sectors to share evidence, build commitment and drive coordinated action. The foundations for meaningful progress exist; what remains is the organizational and political will to act on them.
+
+## Appendix
+
+## Seniority level taxonomy for LinkedIn data
+
+Below are the definitions of LinkedIn's seniority levels used in this Insights Report. These standardized categories support consistent analysis and interpretation of workforce and talent data across industries and economies.
+
+Individual contributors: includes entry-level, experienced and distinguished professionals.
+
+Mid-level management: includes entry-level and experienced managers and directors.
+
+Top-level management: includes vice-president, C-suite positions (including president), and organizational governance.
+
+## Regional taxonomy for Figure 2.2
+
+<table><tr><td>Region</td><td>Economy</td></tr><tr><td>Europe</td><td>Austria</td></tr><tr><td>Europe</td><td>Belgium</td></tr><tr><td>Europe</td><td>Croatia</td></tr><tr><td>Europe</td><td>Cyprus</td></tr><tr><td>Europe</td><td>Czechia</td></tr><tr><td>Europe</td><td>Denmark</td></tr><tr><td>Europe</td><td>Estonia</td></tr><tr><td>Europe</td><td>Finland</td></tr><tr><td>Europe</td><td>France</td></tr><tr><td>Europe</td><td>Germany</td></tr><tr><td>Europe</td><td>Ireland</td></tr><tr><td>Europe</td><td>Italy</td></tr><tr><td>Europe</td><td>Lithuania</td></tr><tr><td>Europe</td><td>Luxembourg</td></tr><tr><td>Europe</td><td>Malta</td></tr><tr><td>Europe</td><td>Netherlands</td></tr><tr><td>Europe</td><td>Norway</td></tr><tr><td>Europe</td><td>Poland</td></tr><tr><td>Europe</td><td>Portugal</td></tr><tr><td>Europe</td><td>Romania</td></tr><tr><td>Europe</td><td>Spain</td></tr><tr><td>Europe</td><td>Sweden</td></tr></table>
+
+<table><tr><td>Region</td><td>Economy</td></tr><tr><td>Europe</td><td>Switzerland</td></tr><tr><td>Europe</td><td>Türkiye</td></tr><tr><td>Europe</td><td>Ukraine</td></tr><tr><td>Europe</td><td>United Kingdom</td></tr><tr><td>Latin America and the Caribbean</td><td>Argentina</td></tr><tr><td>Latin America and the Caribbean</td><td>Bahamas</td></tr><tr><td>Latin America and the Caribbean</td><td>Barbados</td></tr><tr><td>Latin America and the Caribbean</td><td>Bolivia</td></tr><tr><td>Latin America and the Caribbean</td><td>Brazil</td></tr><tr><td>Latin America and the Caribbean</td><td>Chile</td></tr><tr><td>Latin America and the Caribbean</td><td>Colombia</td></tr><tr><td>Latin America and the Caribbean</td><td>Costa Rica</td></tr><tr><td>Latin America and the Caribbean</td><td>Dominican Republic</td></tr><tr><td>Latin America and the Caribbean</td><td>Ecuador</td></tr><tr><td>Latin America and the Caribbean</td><td>Guatemala</td></tr><tr><td>Latin America and the Caribbean</td><td>Jamaica</td></tr></table>
+
+<table><tr><td>Region</td><td>Economy</td><td>Region</td><td>Economy</td></tr><tr><td>Latin America and the Caribbean</td><td>Mexico</td><td>Middle East and Northern Africa</td><td>Jordan</td></tr><tr><td>Latin America and the Caribbean</td><td>Panama</td><td>Middle East and Northern Africa</td><td>Morocco</td></tr><tr><td>Latin America and the Caribbean</td><td>Peru</td><td>Middle East and Northern Africa</td><td>Qatar</td></tr><tr><td>Latin America and the Caribbean</td><td>Puerto Rico</td><td>Middle East and Northern Africa</td><td>Saudi Arabia</td></tr><tr><td>Latin America and the Caribbean</td><td>Trinidad and Tobago</td><td>Middle East and Northern Africa</td><td>Tunisia</td></tr><tr><td>Latin America and the Caribbean</td><td>Uruguay</td><td>Middle East and Northern Africa</td><td>United Arab Emirates</td></tr><tr><td>Latin America and the Caribbean</td><td>Venezuela</td><td>Northern America</td><td>Canada</td></tr><tr><td>Middle East and Northern Africa</td><td>Algeria</td><td>Northern America</td><td>United States of America</td></tr><tr><td>Middle East and Northern Africa</td><td>Bahrain</td><td>Southern Asia</td><td>Bangladesh</td></tr><tr><td>Middle East and Northern Africa</td><td>Egypt</td><td>Southern Asia</td><td>India</td></tr><tr><td>Middle East and Northern Africa</td><td>Israel</td><td>Southern Asia</td><td>Nepal</td></tr><tr><td colspan="2"></td><td>Southern Asia</td><td>Pakistan</td></tr></table>
+
+## Contributors
+
+Silja Baller
+Head of Mission, Economic Inclusion, Centre for the New Economy and Society
+
+Yanjun Guo
+Insights Specialist, Economic Inclusion, Centre for the New Economy and Society
+
+Julia Hakspiel
+Action Lead, Economic Inclusion, Centre for the New Economy and Society
+
+Saadi Zahidi
+Managing Director, World Economic Forum
+
+## LinkedIn
+
+Matthew Baird
+Senior Staff Economist, LinkedIn Economic Graph Research Institute
+
+Silvia Lara
+Senior Data Scientist, LinkedIn Economic Graph Research Institute
+
+Sarah Steinberg
+Head of Global Public Policy Partnerships, LinkedIn
+
+## Egon Zehnder
+
+Luisa Bond
+Global Senior Content Manager, Egon Zehnder
+
+Martin Klussman
+Global Head of Marketing and Communications, Egon Zehnder International
+
+Cheryl Soltis Martel
+Global Head of Content, Egon Zehnder
+
+Cynthia Soledad
+Co-Lead, Global Diversity & Inclusion; Consultant, Chief Marketing Officer and Consumer Practice, Egon Zehnder
+
+## Production
+
+Mike Fisher
+Editor
+
+Alessandra Facchin
+Designer, Accurat
+
+Pietro Guinea Montalvo
+
+Designer, Accurat
+
+## Acknowledgements
+
+We would like to thank the participants from the High-level Dialogue Series on Closing the Gender Gaps in Senior Leadership for their thought leadership and feedback for this insights report. We would equally like to express our gratitude to the champions and members of the Global Gender Parity Sprint community for their ongoing commitment and support of the Centre for the New Economy and Society and for contributing to this effort.
+
+We further wish to express our sincere appreciation to members of the broader core community of the Centre for the New Economy and Society who generously agreed to share case studies of organizational practices featured in this report.
+
+We are also grateful to our colleague Kim Piaget for her feedback.
+
+The views expressed in this insights report do not necessarily represent the views of the World Economic Forum or its Members and Partners. Insights Reports are contributions to the World Economic Forum's insight and interaction activities and are published to elicit comments and further debate.
+
+## Endnotes
+
+1. McKinsey & Company. (2024). Women in the workplace 2024.
+
+2. World Economic Forum. (2025). Global Gender Gap Report 2025.
+
+3. World Economic Forum. (2023). Global Gender Gap Report 2023; World Economic Forum. (2024). Global Gender Gap Report 2024.
+
+4. World Economic Forum. (2024). Global Gender Gap Report 2024.
+
+5. Pfeffer, J. P., & Salancik, G. R. (1978). The external control of organizations: A resource dependence perspective. Stanford Business Books; Ocasio, W. (1997). Towards an attention-based view of the firm. Strategic Management Journal, 18, 187–206; Malik, F. S., & Terzidis, O. (2025). Thriving in turbulence: Resilience and strategic adaptation in global business. Review of Managerial Science.
+
+6. Guadalupe, M., Li, H., & Wulf, J. (2013). Who lives in the C-suite? Organizational structure and the division of labor in top management (Strategy Unit Working Paper). Harvard Business School Strategy.
+
+7. Tonello, M. (2026, April 2). How the C-suite is evolving: NEO titles and compensation at US public companies. Harvard Law School Forum on Corporate Governance. https://corpgov.law.harvard.edu/2026/04/02/how-the-c-suite-is-evolving-neo-titles-and-compensation-at-us-public-companies; Svejenova, S., & Alvarez, J. L. (2017). Changing the C-suite: New chief officer roles as strategic responses to institutional complexity. In G. Krücken, P. Walgenbach, C. Mazza, & R. E. Meyer (Eds.), New themes in institutional analysis: Topics and issues from European research (pp. 135–161). Edward Elgar Publishing.
+
+8. Auerbach, A., & Trout, L. (2025). C-suite remix: Evolving top talent roles to meet complex global marketplace. Egon Zehnder.
+
+9. Alvarez, J. L., & Svejenova, S. (2022). The changing C-suite: Executive power in transformation. Oxford University Press; Egon Zehnder. (2025). 2025 Global Board Inclusion Study. https://www.egonzehnder.com/board-members-say-inclusion-has-improved-business-and-board-performance
+
+10. McKinsey & Company. (2023, December 11). What are the responsibilities of a CIO versus a CTO? https://www.mckinsey.com/featured-insights/mckinsey-explainers/what-are-the-responsibilities-of-a-cio-versus-a-cto; McKinsey & Company. (2026, February 9). McKinsey Global Tech Agenda 2026. https://www.mckinsey.com/capabilities/mckinsey-technology/our-insights/mckinsey-global-tech-agenda-2026
+
+11. Lara, S., & Baird, M. (2024). The impact of changes in labor market conditions on women hired into leadership roles. LinkedIn Economic Graph Research Institute; World Economic Forum. (2024). Global Gender Gap Report 2024; Auerbach, A., & Trout, L. (2025). C-Suite Remix: Evolving Top Talent Roles to Meet Complex Global Marketplace. Egon Zehnder.
+
+12. Deloitte. (2024, March 21). Women in the boardroom: A global perspective. https://www.deloitte.com/nz/en/services/risk-advisory/research/women-in-the-boardroom-2024.html
+
+13. Korn Ferry. (2025, March 18). The shrinking C-suite? https://www.kornferry.com/insights/this-week-in-leadership/even-c-suite-roles-are-vanishing
+
+14. Financial Times Longitude. (n.d.). The C-suite evolution: Is your thought leadership staying ahead? https://longitude.ft.com/blog/the-c-suite-is-evolving-is-your-thought-leadership/
+
+15. LinkedIn Economic Graph Institute. (2023). International gender representation in STEM employment and skills. https://economicgraph.linkedin.com/content/dam/me/economicgraph/en-us/PDF/international-gender-representation-in-stem.pdf; World Economic Forum. (2023). Global Gender Gap Report 2023.
+
+16. World Economic Forum. (2025). Global Gender Gap Report 2025.
+
+17. Egon Zehnder. (2025). 2025 Global Board Inclusion Study: Board Members Say Inclusion Has Improved Business and Board Performance. https://www.egonzehnder.com/board-members-say-inclusion-has-improved-business-and-board-performance
+
+18. UN Inter-Agency Task Force on Social and Solidarity Economy. (2026). Increasing women's representation on corporate boards: A global inventory of rules; Deloitte. (2024). Women in the boardroom: A global perspective. https://www.deloitte.com/nz/en/services/risk-advisory/research/women-in-the-boardroom-2024.html
+
+19. Egon Zehnder. (2024). Global Board Diversity Tracker 2024: The Progress of Board Diversity: Slow Advancement Amid Waves of Change. https://www.egonzehnder.com/global-board-diversity-tracker
+
+20. Heidrick & Struggles. (2025). Route to the Top 2025. https://www.heidrick.com/en/insights/chief-executive-officer/route-to-the-top-2025-the-ascent-redefined
+
+21. Russell Reynolds. (2024). Gender diversity in the C-Suite: Women's representation in the 2024 S&P 100. https://www.russellreynolds.com/en/insights/articles/gender-diversity-in-the-c-suite-women-representation-in-the-2024-sp-100
+
+22. Egon Zehnder. (2024). Global Board Diversity Tracker 2024: The Progress of Board Diversity: Slow Advancement Amid Waves of Change. https://www.egonzehnder.com/global-board-diversity-tracker
+
+23. Ellingrud, K., Yee, L., & Martínez, M. D. M. (2025). The Broken Rung. Harvard Business Review Press.
+
+24. Egon Zehnder. (2025). C-Suite Remix: Evolving Top Talent Roles to Meet a Complex Global Marketplace. https://www.egonzehnder.com/what-we-do/executive-search/insights/c-suite-remix-evolving-top-talent-roles-to-meet-a-complex-global-marketplace
+
+25. Russell Reynolds. (2024). Gender diversity in the C-suite: Women's representation in the 2024 S&P 100. https://www.russellreynolds.com/en/insights/articles/gender-diversity-in-the-c-suite-women-representation-in-the-2024-sp-100
+
+26. LinkedIn Economic Graph Research Institute. (2026). The Rise of the Chief of Staff.
+
+27. Ely, R., Ibarra, H., & Kolb, D. (2011, September 3). Taking gender into account: Theory and design for women's leadership development programs. Herminia Ibarra. https://herminiaibarra.com/taking-gender-into-account-theory-and-design-for-womens-leadership-development-programs/
+
+28. LinkedIn. (2024). Measuring Gender Gaps in Economic Network Strength in the US. https://economicgraph.linkedin.com/content/dam/me/economicgraph/en-us/PDF/network-strength-white-paper.pdf; World Economic Forum. (2024). Global Gender Gap Report 2024.
+
+29. McPherson, M., Smith-Lovin, L., & Cook, J. M. (2001). Birds of a Feather: Homophily in Social Networks. Annual Review of Sociology, 27, 415–444.
+
+30. Ely, R., Ibarra, H., & Kolb, D. (2011, September 3). Taking gender into account: Theory and design for women's leadership development programs. Herminia Ibarra. https://herminiaibarra.com/taking-gender-into-account-theory-and-design-for-womens-leadership-development-programs/
+
+31. McKinsey & Company. (2025). Women in the Workplace 2025.
+
+32. World Economic Forum. (2025). Global Gender Gap Report 2025.
+
+33. Correll, S., Benard, S., & Paik, I. (2017). Getting a Job: Is there a Motherhood Penalty? American Journal of Sociology, 112(5), 1297–1339.
+
+34. United Nations Development Programme. (2023). 2023 Gender Social Norms Index.
+
+35. Harrison, M., & Taylor, L. (2026, March 12). The Reykjavik index for leadership. Verian Group. https://www.veriangroup.com/news-and-insights/the-reykjavik-index-for-leadership
+
+36. Moss-Racusin, C. A., Dovidio, J. F., Brescoll, V. L., Graham, M. J., & Handelsman, J. (2012). Science faculty's subtle gender biases favor male students. Proceedings of the National Academy of Sciences, 109(41), 16474–16479; Goldin, C., & Rouse, C. (2000). Orchestrating impartiality: The impact of "blind" auditions on female musicians. American Economic Review, 112(4), 715–741; Bohnet, I. (2016). What works: Gender equality by design. Harvard University Press.
+
+37. Bohnet, I., & Chilazi, S. (2025). Make Work Fair. Harper Business.
+
+38. Egon Zehnder. (2023). Search 2.0: Future of Leadership Appointments.
+
+39. Bohnet, I. (2016). What Works: Gender Equality by Design. Harvard University Press.
+
+40. Benson, A., Li, D., & Shuen, K. (2026). "Potential" and the Gender Promotion Gap. American Economic Review, 116(2), 345–417.
+
+41. Ibarra, H., Ely, R., & Kolb, D. (2013). Women Rising: The Unseen Barriers. Harvard Business Review.
+
+42. Brands, A., & Fernandez-Mateo, I. (2017). Leaning out: How negative recruitment experiences shape women's decisions to compete for executive roles. Administrative Science Quarterly, 62(3), 405–442; McKinsey & Company. (2025). Women in the Workplace 2025.
+
+43. World Bank. (2026). Women, Business and the Law 2026.
+
+44. Hyland, M., & Shen, L. (2022). The Evolution of Maternity and Paternity Leave Policies over Five Decades: A global analysis (Policy Research Working Paper No. 10215). World Bank.
+
+45. World Bank. (2026). Women, Business and the Law 2026.
+
+46. World Bank. (2026). Women, Business and the Law 2026.
+
+47. Kou, C.-W., & Tsai, W.-H. (2014). Sprinting with small steps: Towards promotion: Solutions for the age dilemma in the CCP cadre appointment system. The China Journal, 153–171.
+
+48. World Bank. (2026). Women, Business and the Law 2026.
+
+49. Egon Zehnder. (2025). C-Suite Remix: Evolving Top Talent Roles to Meet a Complex Global Marketplace https://www.egonzehnder.com/what-we-do/executive-search/insights/c-suite-remix-evolving-top-talent-roles-to-meet-a-complex-global-marketplace; McKinsey & Company. (2026, January 12). Building leaders in the age of AI. https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/building-leaders-in-the-age-of-ai
+
+50. | IMD. (2026). Why leadership systems fail women and how to fix them.
+
+51. | World Economic Forum. (2025). Diversity, Equity and Inclusion Lighthouses 2025.
+
+52. Egon Zehnder. (2023). Search 2.0: The Future of Leadership Appointments.
+
+53. Bohnet, I., van Geen, A., & Bazerman, M. (2015). When performance trumps gender bias: Joint vs. separate evaluation. Management Science, 62(5), 1225–1234.
+
+54. Bohnet, I., & Chilazi, S. (2025). Make Work Fair. Harper Business.
+
+55. World Economic Forum. (2023). Diversity, Equity and Inclusion Lighthouses 2023.
+
+56. World Economic Forum. (2024). Diversity, Equity and Inclusion Lighthouses 2024.
+
+57. World Economic Forum. (2025). Diversity, Equity and Inclusion Lighthouses 2025.
+
+58. World Economic Forum. (2024). Diversity, Equity and Inclusion Lighthouses 2024.
+
+60. Reuters. (2018, October 11). Insight: Amazon scraps secret AI recruiting tool that showed bias against women. https://www.reuters.com/article/us-amazon-com-jobs-automation-insight-idUSKCN1MK08G/
+
+59. World Economic Forum. (2025). Diversity, Equity and Inclusion Lighthouses 2025.
+
+WORLD ECONOMIC FORUM
+
+COMMITTED TO IMPROVING THE STATE OF THE WORLD
+
+The World Economic Forum, committed to improving the state of the world, is the International Organization for Public-Private Cooperation.
+
+The Forum engages the foremost political, business and other leaders of society to shape global, regional and industry agendas.

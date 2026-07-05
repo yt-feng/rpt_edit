@@ -1,0 +1,25 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_h0yaoiob/pdfs/0005-UNCTAD_Handbook-of-Statistics-2025_72eb26bc.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "联合国贸发会议",
+  "cover_short_title": "2025全球贸易数据",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "联合国贸发会议：2025年贸易增长非普惠，亚洲生产全球消费格局加剧",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}
