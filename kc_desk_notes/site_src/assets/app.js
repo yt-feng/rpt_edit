@@ -306,10 +306,18 @@
     return end ? `有效期至 ${end}` : "";
   }
 
+  function accountRightUsageText(row = {}) {
+    const limit = Number(row.download_limit || 0);
+    if (!limit) return "";
+    const count = Math.max(0, Number(row.download_count || 0));
+    const remaining = Math.max(0, limit - count);
+    return `体验剩余 ${remaining}/${limit} 篇`;
+  }
+
   function accountRightSummary(data = {}) {
     const access = data && data.access;
     if (access && access.active) {
-      return [accountRightLabel(access), accountRightExpiryText(access)].filter(Boolean).join("，");
+      return [accountRightLabel(access), accountRightExpiryText(access), accountRightUsageText(access)].filter(Boolean).join("，");
     }
     const entitlement = data && data.entitlement;
     if (entitlement && entitlement.active && (entitlement.plan === "annual" || entitlement.plan === "super" || entitlement.plan === "operator")) {
@@ -708,7 +716,31 @@
             <div class="account-admin-heading">
               <strong>用户信息</strong>
               <span id="accountAdminUserCount"></span>
+              <button class="secondary-button" id="accountAdminNewUser" type="button">新增用户</button>
             </div>
+            <form id="accountAdminUserCreator" class="account-admin-user-editor" hidden>
+              <div class="account-admin-user-editor-head">
+                <strong>新增用户</strong>
+                <button class="secondary-button" id="accountAdminUserCreatorClose" type="button">关闭</button>
+              </div>
+              <div class="account-admin-form-grid">
+                <label>
+                  <span>用户名</span>
+                  <input id="accountAdminNewUsername" type="text" autocomplete="off" placeholder="username">
+                </label>
+                <label>
+                  <span>邮箱</span>
+                  <input id="accountAdminNewEmail" type="email" autocomplete="off" placeholder="name@example.com">
+                </label>
+                <label>
+                  <span>临时密码</span>
+                  <input id="accountAdminNewPassword" type="text" autocomplete="off" placeholder="至少4位">
+                </label>
+              </div>
+              <div class="account-admin-user-editor-actions">
+                <button class="primary" type="submit">创建用户</button>
+              </div>
+            </form>
             <form id="accountAdminUserEditor" class="account-admin-user-editor" hidden>
               <div class="account-admin-user-editor-head">
                 <strong id="accountAdminUserEditorTitle">编辑用户权限</strong>
@@ -748,6 +780,7 @@
                   <tr>
                     <th>用户名</th>
                     <th>邮箱</th>
+                    <th>状态</th>
                     <th>账号</th>
                     <th>下载权限</th>
                     <th>到期</th>
@@ -776,15 +809,18 @@
     if (user && user.role === "super") return "全站报告";
     const access = user && user.access || {};
     if (!access.active) return "未开通";
-    if (access.access_mode === "all") return "全站报告";
+    const suffix = accountRightUsageText(access);
+    if (access.access_mode === "all") return suffix ? `全站报告 · ${suffix}` : "全站报告";
     if (access.access_mode === "filters") {
       const parts = [];
       if (Array.isArray(access.institutions) && access.institutions.length) parts.push(`机构 ${access.institutions.length}`);
       if (Array.isArray(access.industries) && access.industries.length) parts.push(`行业 ${access.industries.length}`);
       if (Array.isArray(access.page_ranges) && access.page_ranges.length) parts.push(`页数 ${access.page_ranges.length}`);
-      return parts.length ? parts.join(" / ") : "条件报告";
+      const label = parts.length ? parts.join(" / ") : "条件报告";
+      return suffix ? `${label} · ${suffix}` : label;
     }
-    return access.access_mode || "active";
+    const label = access.access_mode || "active";
+    return suffix ? `${label} · ${suffix}` : label;
   }
 
   function adminUserAccessExpiry(user) {
@@ -798,18 +834,34 @@
   function adminUserRow(user) {
     const email = user.email || "";
     const editable = user.role !== "super";
+    const disabled = Boolean(user.disabled);
     return `
-      <tr data-email="${escapeHtml(email)}">
+      <tr data-email="${escapeHtml(email)}"${disabled ? ' class="is-disabled-user"' : ""}>
         <td>${escapeHtml(user.username || "")}</td>
         <td>${escapeHtml(email)}</td>
+        <td><span class="account-admin-user-status${disabled ? " is-disabled" : ""}">${disabled ? "已禁用" : "正常"}</span></td>
         <td>${escapeHtml(adminUserEntitlementLabel(user))}</td>
         <td>${escapeHtml(adminUserAccessLabel(user))}</td>
         <td>${escapeHtml(adminUserAccessExpiry(user))}</td>
         <td>${escapeHtml(String(user.created_at || "").slice(0, 10))}</td>
         <td>${escapeHtml(String(user.last_login_at || "").replace("T", " ").slice(0, 16))}</td>
-        <td>${editable ? `<button class="secondary-button account-admin-edit-user" type="button" data-email="${escapeHtml(email)}">编辑</button>` : ""}</td>
+        <td>${editable ? `
+          <div class="account-admin-row-actions">
+            <button class="secondary-button account-admin-edit-user" type="button" data-email="${escapeHtml(email)}">编辑</button>
+            <button class="secondary-button account-admin-toggle-user" type="button" data-email="${escapeHtml(email)}" data-disabled="${disabled ? "false" : "true"}">${disabled ? "启用" : "禁用"}</button>
+          </div>
+        ` : ""}</td>
       </tr>
     `;
+  }
+
+  function renderAdminUserTable(targets) {
+    if (!targets || !targets.users) return;
+    const rows = [...accountAdminUsersByEmail.values()];
+    if (targets.userCount) targets.userCount.textContent = `${rows.length} users`;
+    targets.users.innerHTML = rows.length
+      ? rows.map(adminUserRow).join("")
+      : '<tr><td colspan="9">暂无用户。</td></tr>';
   }
 
   function optionMarkup(options = [], selected = []) {
@@ -840,7 +892,7 @@
     targets.accessEmail.value = user.email || "";
     targets.userEditorTitle.textContent = `编辑权限：${username}`;
     targets.accessMode.innerHTML = optionMarkup(options.modes || [], [access.access_mode || "none"]);
-    targets.accessDuration.innerHTML = optionMarkup(options.durations || [], [access.lifetime ? "lifetime" : "12"]);
+    targets.accessDuration.innerHTML = optionMarkup(options.durations || [], [access.lifetime ? "lifetime" : (access.duration_value || "12")]);
     targets.accessInstitutions.innerHTML = optionMarkup(options.institutions || [], access.institutions || []);
     targets.accessIndustries.innerHTML = optionMarkup(options.industries || [], access.industries || []);
     setSelectValues(targets.accessInstitutions, access.institutions || []);
@@ -901,6 +953,41 @@
     else {
       const existing = accountAdminUsersByEmail.get(email) || { email };
       accountAdminUsersByEmail.set(email, { ...existing, access: data.access });
+    }
+    return data;
+  }
+
+  async function createAdminUser(workerUrl, targets) {
+    const payload = {
+      username: targets.newUsername.value || "",
+      email: targets.newEmail.value || "",
+      password: targets.newPassword.value || "",
+    };
+    const response = await fetch(`${workerUrl}/account-admin/user`, {
+      method: "POST",
+      cache: "no-store",
+      headers: { "Content-Type": "application/json", ...authHeaders() },
+      body: JSON.stringify(payload),
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(data.detail || "创建用户失败。");
+    if (data.user && data.user.email) {
+      accountAdminUsersByEmail.set(String(data.user.email), data.user);
+    }
+    return data;
+  }
+
+  async function updateAdminUserStatus(workerUrl, email, disabled) {
+    const response = await fetch(`${workerUrl}/account-admin/user-status`, {
+      method: "POST",
+      cache: "no-store",
+      headers: { "Content-Type": "application/json", ...authHeaders() },
+      body: JSON.stringify({ email, disabled: Boolean(disabled) }),
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(data.detail || "账号状态更新失败。");
+    if (data.user && data.user.email) {
+      accountAdminUsersByEmail.set(String(data.user.email), data.user);
     }
     return data;
   }
@@ -1554,10 +1641,7 @@
         targets.wechatSchedule.innerHTML = renderAdminWechatSchedule(wechatSchedule);
       }
       if (canViewUsers && targets.userCount && targets.users) {
-        targets.userCount.textContent = `${users.length} users`;
-        targets.users.innerHTML = users.length
-          ? users.map(adminUserRow).join("")
-          : '<tr><td colspan="8">暂无用户。</td></tr>';
+        renderAdminUserTable(targets);
       }
       if (canViewAnalytics && targets.analytics && targets.analyticsCount) {
         targets.analyticsCount.textContent = analytics ? `近 ${analytics.range_days || 30} 天 · ${analytics.event_count || 0} events` : "";
@@ -1602,6 +1686,12 @@
     const userCount = document.getElementById("accountAdminUserCount");
     const users = document.getElementById("accountAdminUsers");
     const usersSection = document.getElementById("accountAdminUsersSection");
+    const newUser = document.getElementById("accountAdminNewUser");
+    const userCreator = document.getElementById("accountAdminUserCreator");
+    const userCreatorClose = document.getElementById("accountAdminUserCreatorClose");
+    const newUsername = document.getElementById("accountAdminNewUsername");
+    const newEmail = document.getElementById("accountAdminNewEmail");
+    const newPassword = document.getElementById("accountAdminNewPassword");
     const userEditor = document.getElementById("accountAdminUserEditor");
     const userEditorTitle = document.getElementById("accountAdminUserEditorTitle");
     const userEditorClose = document.getElementById("accountAdminUserEditorClose");
@@ -1631,6 +1721,12 @@
       userCount,
       users,
       usersSection,
+      newUser,
+      userCreator,
+      userCreatorClose,
+      newUsername,
+      newEmail,
+      newPassword,
       userEditor,
       userEditorTitle,
       userEditorClose,
@@ -1654,17 +1750,78 @@
     });
     refresh.addEventListener("click", () => loadAccountAdminSummary(workerUrl, targets));
     if (accessMode) accessMode.addEventListener("change", () => updateUserAccessEditorMode(targets));
+    if (newUser && userCreator) {
+      newUser.addEventListener("click", () => {
+        userCreator.hidden = false;
+        if (userEditor) userEditor.hidden = true;
+        status.className = "status-line ok";
+        status.textContent = "正在新增用户。";
+        requestAnimationFrame(() => {
+          userCreator.scrollIntoView({ block: "nearest", behavior: "smooth" });
+          if (newUsername) newUsername.focus({ preventScroll: true });
+        });
+      });
+    }
+    if (userCreatorClose && userCreator) {
+      userCreatorClose.addEventListener("click", () => {
+        userCreator.hidden = true;
+      });
+    }
+    if (userCreator) {
+      userCreator.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const submit = userCreator.querySelector("button[type='submit']");
+        if (submit) submit.disabled = true;
+        status.className = "status-line";
+        status.textContent = "正在创建用户…";
+        try {
+          await createAdminUser(workerUrl, targets);
+          renderAdminUserTable(targets);
+          if (newUsername) newUsername.value = "";
+          if (newEmail) newEmail.value = "";
+          if (newPassword) newPassword.value = "";
+          status.textContent = "用户已创建。";
+          status.classList.add("ok");
+        } catch (error) {
+          status.textContent = error.message || "创建用户失败。";
+          status.classList.add("error");
+        } finally {
+          if (submit) submit.disabled = false;
+        }
+      });
+    }
     if (userEditorClose) {
       userEditorClose.addEventListener("click", () => {
         if (userEditor) userEditor.hidden = true;
       });
     }
     if (users) {
-      users.addEventListener("click", (event) => {
+      users.addEventListener("click", async (event) => {
+        const toggle = event.target.closest(".account-admin-toggle-user");
+        if (toggle) {
+          const email = String(toggle.dataset.email || "");
+          const disabled = toggle.dataset.disabled === "true";
+          toggle.disabled = true;
+          status.className = "status-line";
+          status.textContent = disabled ? "正在禁用账号…" : "正在启用账号…";
+          try {
+            await updateAdminUserStatus(workerUrl, email, disabled);
+            renderAdminUserTable(targets);
+            status.textContent = disabled ? "账号已禁用。" : "账号已启用。";
+            status.classList.add("ok");
+          } catch (error) {
+            status.textContent = error.message || "账号状态更新失败。";
+            status.classList.add("error");
+          } finally {
+            toggle.disabled = false;
+          }
+          return;
+        }
         const button = event.target.closest(".account-admin-edit-user");
         if (!button) return;
         const user = accountAdminUsersByEmail.get(String(button.dataset.email || ""));
         if (user) {
+          if (userCreator) userCreator.hidden = true;
           fillUserAccessEditor(user, targets);
         } else {
           status.className = "status-line error";
@@ -1681,10 +1838,7 @@
         status.textContent = "正在保存用户权限…";
         try {
           await saveUserAccess(workerUrl, targets);
-          const updatedUsers = [...accountAdminUsersByEmail.values()];
-          users.innerHTML = updatedUsers.length
-            ? updatedUsers.map(adminUserRow).join("")
-            : '<tr><td colspan="8">暂无用户。</td></tr>';
+          renderAdminUserTable(targets);
           status.textContent = "用户权限已保存。";
           status.classList.add("ok");
         } catch (error) {
@@ -2985,6 +3139,7 @@
 
   function downloadErrorMessage(status, message, data) {
     const text = String(message || "");
+    if (data && data.limit_exceeded) return text || `3天体验下载已满 10 篇，请联系微信 ${CONTACT_WECHAT}。`;
     if (
       data && data.archived ||
       status === 404 && /pdf|object|mirrored|archived|not found/i.test(text)
@@ -2994,6 +3149,13 @@
     if (/password/i.test(text)) return text;
     if (/configured/i.test(text)) return "PDF download is temporarily unavailable. Please try again later.";
     return text || "Download failed.";
+  }
+
+  function maybeAlertDownloadLimit(message) {
+    const text = String(message || "");
+    if (/体验下载已满|limit_exceeded|MacroGate/i.test(text) && /体验|limit_exceeded/i.test(text)) {
+      window.alert(text || `3天体验下载已满 10 篇，请联系微信 ${CONTACT_WECHAT}。`);
+    }
   }
 
   function adminPanelMarkup() {
@@ -3133,7 +3295,9 @@
       try {
         await downloadHandler(statusTarget);
       } catch (error) {
-        statusTarget(error.message || "下载失败。", "error");
+        const message = error.message || "下载失败。";
+        maybeAlertDownloadLimit(message);
+        statusTarget(message, "error");
       } finally {
         accountDownload.disabled = false;
       }
@@ -3453,7 +3617,9 @@
             error: error.message || "Download failed.",
           });
         }
-        status.textContent = error.message || "Download failed.";
+        const message = error.message || "Download failed.";
+        maybeAlertDownloadLimit(message);
+        status.textContent = message;
         status.classList.add("error");
       } finally {
         button.disabled = false;
@@ -3570,8 +3736,9 @@
     }
     if (!response.ok) {
       let message = `下载失败 (${response.status})`;
+      let data = {};
       try {
-        const data = await response.json();
+        data = await response.json();
         if (data.error) message = data.error;
       } catch (_error) {
         // Keep generic message.
@@ -3583,7 +3750,7 @@
         status: String(response.status),
         error: message,
       });
-      throw new Error(message);
+      throw new Error(downloadErrorMessage(response.status, message, data));
     }
     const blob = await response.blob();
     triggerBlobDownload(blob, response.headers.get("Content-Disposition"), `${item.id}.pdf`);
@@ -3789,7 +3956,9 @@
           pollExternalDetail(workerUrl, item.id, input.value, setStatus, () => submitDownload());
         }
       } catch (error) {
-        setStatus(error.message || "下载失败。", "error");
+        const message = error.message || "下载失败。";
+        maybeAlertDownloadLimit(message);
+        setStatus(message, "error");
       } finally {
         button.disabled = false;
       }

@@ -14,6 +14,9 @@ const SUPER_ACCOUNT_EMAILS = new Set(["twotigers@users.kcdesk.com"]);
 const OPERATOR_ACCOUNT_USERNAMES = new Set(["liuxin"]);
 const OPERATOR_ACCOUNT_EMAILS = new Set(["liuxin@users.kcdesk.com"]);
 const ACCESS_MODES = new Set(["none", "all", "filters"]);
+const TRIAL_3D_DURATION_VALUE = "trial_3d";
+const TRIAL_3D_DOWNLOAD_LIMIT = 10;
+const TRIAL_LIMIT_MESSAGE = `3天体验下载已满 ${TRIAL_3D_DOWNLOAD_LIMIT} 篇，请联系微信 ${CONTACT_WECHAT}。`;
 const ACCESS_PAGE_RANGE_OPTIONS = [
   { value: "under5", label: "5页以下" },
   { value: "5_10", label: "5-10页" },
@@ -21,6 +24,7 @@ const ACCESS_PAGE_RANGE_OPTIONS = [
   { value: "over20", label: "20页以上" },
 ];
 const ACCESS_DURATION_OPTIONS = [
+  { value: TRIAL_3D_DURATION_VALUE, label: "3天体验（10篇）", days: 3, download_limit: TRIAL_3D_DOWNLOAD_LIMIT },
   { value: "1", label: "1个月", months: 1 },
   { value: "2", label: "2个月", months: 2 },
   { value: "3", label: "3个月", months: 3 },
@@ -654,6 +658,8 @@ function publicUser(user) {
     email_is_generated: Boolean(user.email_is_generated) || isGeneratedEmail(email),
     created_at: user.created_at || "",
     updated_at: user.updated_at || "",
+    disabled: accountDisabled(user),
+    disabled_at: user.disabled_at || "",
     role,
     is_super: role === "super",
     is_operator: role === "operator",
@@ -852,13 +858,73 @@ async function updateSiteUser(env, userId, fields) {
   }
 }
 
+function accountDisabled(user) {
+  return Boolean(user && (user.disabled || user.account_status === "disabled" || user.status === "disabled"));
+}
+
+function disabledAccountMessage() {
+  return `账号已禁用，请联系微信 ${CONTACT_WECHAT}。`;
+}
+
+function userAdminStateKeys(user = {}) {
+  const keys = [];
+  const email = normalizeEmail(user.email);
+  const id = String(user.id || "").trim();
+  if (email) keys.push(accountKey("user-state", "email", email));
+  if (id) keys.push(accountKey("user-state", "id", id));
+  return keys;
+}
+
+async function findUserAdminState(env, user = {}) {
+  const keys = userAdminStateKeys(user);
+  if (!keys.length) return {};
+  const rows = await Promise.all(keys.map((key) => safeR2GetJson(env, key)));
+  return rows.reduce((merged, row) => row && typeof row === "object" ? { ...merged, ...row } : merged, {});
+}
+
+async function mergeSiteUserAdminState(env, user) {
+  if (!user) return null;
+  const state = await findUserAdminState(env, user);
+  return {
+    ...user,
+    disabled: Boolean(state.disabled),
+    account_status: state.disabled ? "disabled" : "active",
+    disabled_at: state.disabled_at || "",
+    disabled_by: state.disabled_by || "",
+  };
+}
+
+async function saveUserAdminState(env, user, fields, adminUser) {
+  const now = new Date().toISOString();
+  const existing = await findUserAdminState(env, user);
+  const disabled = Boolean(fields.disabled);
+  const payload = {
+    ...existing,
+    user_id: String(user.id || existing.user_id || ""),
+    username: normalizeUsername(user.username || existing.username || ""),
+    email: normalizeEmail(user.email || existing.email || ""),
+    disabled,
+    account_status: disabled ? "disabled" : "active",
+    disabled_at: disabled ? (existing.disabled_at || now) : "",
+    disabled_by: disabled ? (normalizeEmail(adminUser && adminUser.email) || String(adminUser && adminUser.username || "")) : "",
+    updated_at: now,
+    updated_by: normalizeEmail(adminUser && adminUser.email) || String(adminUser && adminUser.username || ""),
+  };
+  const keys = userAdminStateKeys({ ...user, ...payload });
+  if (!keys.length) throw new Error("User identity is required.");
+  await Promise.all(keys.map((key) => r2PutJson(env, key, payload)));
+  return payload;
+}
+
 async function currentUserFromRequest(env, request) {
   const token = bearerToken(request);
   if (!token) throw new Error("Please log in.");
   const payload = await verifyAccountPayload(env, token, "user");
   const user = await findSiteUserByUsername(env, normalizeUsername(payload.username));
   if (!user) throw new Error("Account not found.");
-  return user;
+  const merged = await mergeSiteUserAdminState(env, user);
+  if (accountDisabled(merged)) throw new Error(disabledAccountMessage());
+  return merged;
 }
 
 async function siteUserPasswordMatches(env, user, password) {
@@ -873,16 +939,24 @@ async function siteUserPasswordMatches(env, user, password) {
 
 async function authSuccessResponse(request, env, status, user, extra = {}) {
   const repaired = await repairSiteUserIndexesInR2(env, user);
+  const merged = await mergeSiteUserAdminState(env, repaired);
+  if (accountDisabled(merged)) {
+    return jsonResponse(request, env, 403, { detail: disabledAccountMessage() });
+  }
   return jsonResponse(request, env, status, {
-    token: await createUserToken(env, repaired),
-    user: publicUser(repaired),
+    token: await createUserToken(env, merged),
+    user: publicUser(merged),
     ...extra,
   });
 }
 
 async function recoverExistingUserResponse(request, env, user, password) {
-  if (!await siteUserPasswordMatches(env, user, password)) return null;
-  return authSuccessResponse(request, env, 200, user, { recovered: true });
+  const merged = await mergeSiteUserAdminState(env, user);
+  if (!await siteUserPasswordMatches(env, merged, password)) return null;
+  if (accountDisabled(merged)) {
+    return jsonResponse(request, env, 403, { detail: disabledAccountMessage() });
+  }
+  return authSuccessResponse(request, env, 200, merged, { recovered: true });
 }
 
 async function findEntitlement(env, email) {
@@ -1073,12 +1147,33 @@ function accessGrantActive(row) {
   return ACTIVE_STATUSES.has(status) && (Boolean(row.lifetime) || periodIsCurrent(row.current_period_end));
 }
 
+function cleanAccessCount(value) {
+  const number = Number(value);
+  return Number.isFinite(number) && number > 0 ? Math.floor(number) : 0;
+}
+
+function accessDurationSpec(value) {
+  const text = String(value || "").trim();
+  return ACCESS_DURATION_OPTIONS.find((option) => String(option.value) === text) || null;
+}
+
+function accessGrantDownloadLimit(row) {
+  return cleanAccessCount(row && row.download_limit);
+}
+
+function accessGrantDownloadCount(row) {
+  const items = Array.isArray(row && row.download_items) ? row.download_items.filter(Boolean).length : 0;
+  return Math.max(cleanAccessCount(row && row.download_count), items);
+}
+
 function publicAccessGrant(row) {
   const source = row && row.source || "";
   const mode = ACCESS_MODES.has(String(row && row.access_mode || "")) ? String(row.access_mode) : "none";
   const lifetime = Boolean(row && row.lifetime);
   const currentPeriodEnd = row && row.current_period_end || null;
   const status = row && row.status || "inactive";
+  const downloadLimit = accessGrantDownloadLimit(row);
+  const downloadCount = accessGrantDownloadCount(row);
   return {
     email: row && row.email || "",
     access_mode: mode,
@@ -1086,6 +1181,10 @@ function publicAccessGrant(row) {
     lifetime,
     current_period_end: currentPeriodEnd,
     active: accessGrantActive(row),
+    duration_value: String(row && row.duration_value || (lifetime ? "lifetime" : "")),
+    download_limit: downloadLimit,
+    download_count: downloadCount,
+    downloads_remaining: downloadLimit ? Math.max(0, downloadLimit - downloadCount) : null,
     institutions: normalizeAccessList(row && row.institutions),
     industries: normalizeAccessList(row && row.industries),
     page_ranges: normalizeAccessList(row && row.page_ranges, ACCESS_PAGE_RANGE_OPTIONS.length)
@@ -1120,11 +1219,22 @@ async function findAccessGrant(env, email) {
 function accessDurationEndIso(durationMonths) {
   const text = String(durationMonths || "").trim();
   if (text === "lifetime") return null;
+  const spec = accessDurationSpec(text);
+  if (spec && Number(spec.days || 0) > 0) {
+    const date = new Date();
+    date.setUTCDate(date.getUTCDate() + Math.min(365, Math.round(Number(spec.days))));
+    return date.toISOString();
+  }
   const months = Number(text);
   if (!Number.isFinite(months) || months <= 0) return null;
   const date = new Date();
   date.setUTCMonth(date.getUTCMonth() + Math.min(120, Math.round(months)));
   return date.toISOString();
+}
+
+function accessDurationDownloadLimit(durationValue) {
+  const spec = accessDurationSpec(durationValue);
+  return cleanAccessCount(spec && spec.download_limit);
 }
 
 async function saveAccessGrant(env, email, fields, adminUser) {
@@ -1137,6 +1247,15 @@ async function saveAccessGrant(env, email, fields, adminUser) {
   const lifetime = activeMode && duration === "lifetime";
   const currentPeriodEnd = activeMode ? (lifetime ? null : accessDurationEndIso(duration || "1")) : null;
   const now = new Date().toISOString();
+  const downloadLimit = activeMode ? accessDurationDownloadLimit(duration) : 0;
+  const sameLimitedGrant = Boolean(
+    downloadLimit &&
+    existing &&
+    String(existing.duration_value || "") === duration &&
+    accessGrantActive(existing),
+  );
+  const existingItems = Array.isArray(existing && existing.download_items) ? existing.download_items.map(String).filter(Boolean) : [];
+  const downloadItems = sameLimitedGrant ? [...new Set(existingItems)].slice(0, downloadLimit) : [];
   const payload = {
     ...(existing || {}),
     email: normalized,
@@ -1144,6 +1263,10 @@ async function saveAccessGrant(env, email, fields, adminUser) {
     status: activeMode ? "active" : "inactive",
     lifetime,
     current_period_end: currentPeriodEnd,
+    duration_value: activeMode ? (duration || "1") : "",
+    download_limit: downloadLimit,
+    download_count: downloadLimit ? downloadItems.length : 0,
+    download_items: downloadLimit ? downloadItems : [],
     institutions: mode === "filters" ? normalizeAccessList(fields.institutions) : [],
     industries: mode === "filters" ? normalizeAccessList(fields.industries) : [],
     page_ranges: mode === "filters"
@@ -1204,6 +1327,42 @@ function accessGrantMatchesReport(grant, report, source) {
   return Boolean(institutionFilters.length || industryFilters.length || pageFilters.length);
 }
 
+function accessGrantDownloadItemKey(reportId, source) {
+  return `${String(source || "catalog")}:${String(reportId || "").trim()}`;
+}
+
+function limitedAccessNeedsConsumption(access) {
+  const grant = publicAccessGrant(access);
+  return grant.active && grant.download_limit > 0;
+}
+
+async function consumeLimitedAccessDownload(env, email, reportId, source) {
+  const normalized = normalizeEmail(email);
+  if (!normalized) return { ok: true, access: publicAccessGrant(null) };
+  const key = accountKey("access", normalized);
+  const stored = await safeR2GetJson(env, key);
+  const access = publicAccessGrant(stored);
+  if (!limitedAccessNeedsConsumption(access)) return { ok: true, access };
+  const itemKey = accessGrantDownloadItemKey(reportId, source);
+  const existingItems = Array.isArray(stored && stored.download_items) ? stored.download_items.map(String) : [];
+  const uniqueItems = [...new Set(existingItems.filter(Boolean))];
+  if (uniqueItems.includes(itemKey)) return { ok: true, access };
+  if (uniqueItems.length >= access.download_limit) {
+    return { ok: false, access, error: TRIAL_LIMIT_MESSAGE, contact: CONTACT_WECHAT };
+  }
+  const updatedItems = [...uniqueItems, itemKey].slice(0, access.download_limit);
+  const now = new Date().toISOString();
+  const updated = {
+    ...(stored || {}),
+    email: normalized,
+    download_items: updatedItems,
+    download_count: updatedItems.length,
+    updated_at: now,
+  };
+  await r2PutJson(env, key, updated);
+  return { ok: true, access: publicAccessGrant(updated) };
+}
+
 function superEntitlement(user) {
   return {
     email: normalizeEmail(user && user.email) || "",
@@ -1214,6 +1373,14 @@ function superEntitlement(user) {
     active: true,
     updated_at: new Date().toISOString(),
   };
+}
+
+function shouldConsumeAccessGrantDownload(accessResult) {
+  if (!accessResult || !limitedAccessNeedsConsumption(accessResult.access)) return false;
+  const entitlement = publicEntitlement(accessResult.entitlement);
+  const annual = entitlement.active && entitlement.plan === "annual";
+  const purchased = Boolean(accessResult.purchase);
+  return !annual && !purchased;
 }
 
 async function reportAccessForUser(env, user, reportId, source) {
@@ -1264,14 +1431,49 @@ async function reportAccessForUser(env, user, reportId, source) {
   };
 }
 
-async function accountCanDownload(env, request, reportId, source) {
+async function accountDownloadDecision(env, request, reportId, source) {
   try {
     const user = await currentUserFromRequest(env, request);
     const access = await reportAccessForUser(env, user, reportId, source);
-    return access.can_download;
-  } catch (_error) {
-    return false;
+    if (!access.can_download) {
+      return {
+        allowed: false,
+        user,
+        access,
+        status: 402,
+        error: "Please log in, purchase this report, or enter the report password.",
+      };
+    }
+    return {
+      allowed: true,
+      user,
+      access,
+      consume_limited_access: shouldConsumeAccessGrantDownload(access),
+    };
+  } catch (error) {
+    return {
+      allowed: false,
+      status: /disabled|禁用/i.test(String(error && error.message || "")) ? 403 : 401,
+      error: error && error.message || "Please log in.",
+    };
   }
+}
+
+async function finalizeAccountDownloadDecision(env, decision, reportId, source) {
+  if (!decision || !decision.allowed || !decision.consume_limited_access) return { ok: true };
+  const email = normalizeEmail(decision.user && decision.user.email);
+  const consumed = await consumeLimitedAccessDownload(env, email, reportId, source);
+  if (!consumed.ok) return consumed;
+  decision.access = {
+    ...(decision.access || {}),
+    access: consumed.access,
+  };
+  return { ok: true, access: consumed.access };
+}
+
+async function accountCanDownload(env, request, reportId, source) {
+  const decision = await accountDownloadDecision(env, request, reportId, source);
+  return Boolean(decision.allowed);
 }
 
 async function captchaAnswerHash(env, answer, nonce) {
@@ -1860,9 +2062,14 @@ async function handleDownload(request, env) {
   if (!/^[a-f0-9]{16,64}$/i.test(id)) {
     return jsonResponse(request, env, 400, { error: "Invalid report id." });
   }
-  const accountAllowed = await accountCanDownload(env, request, id, "catalog");
+  const accountDecision = await accountDownloadDecision(env, request, id, "catalog");
+  const accountAllowed = Boolean(accountDecision.allowed);
   if (!password && !accountAllowed) {
-    return jsonResponse(request, env, 402, { error: "Please log in, purchase this report, or enter the report password." });
+    return jsonResponse(request, env, accountDecision.status || 402, {
+      error: accountDecision.error || "Please log in, purchase this report, or enter the report password.",
+      contact: accountDecision.contact || undefined,
+      limit_exceeded: Boolean(accountDecision.limit_exceeded),
+    });
   }
 
   let catalog;
@@ -1918,6 +2125,15 @@ async function handleDownload(request, env) {
       error: `PDF is not currently available. Contact WeChat: ${CONTACT_WECHAT}.`,
       archived: true,
       contact: CONTACT_WECHAT,
+    });
+  }
+
+  const consumed = await finalizeAccountDownloadDecision(env, accountDecision, id, "catalog");
+  if (!consumed.ok) {
+    return jsonResponse(request, env, 403, {
+      error: consumed.error || TRIAL_LIMIT_MESSAGE,
+      contact: consumed.contact || CONTACT_WECHAT,
+      limit_exceeded: true,
     });
   }
 
@@ -2803,13 +3019,14 @@ async function listSiteUsers(env) {
         limit: "500",
       });
       const rows = await supabaseRequest(env, "GET", `/rest/v1/site_users?${query}`);
-      if (Array.isArray(rows)) return rows;
+      if (Array.isArray(rows)) return Promise.all(rows.map((row) => mergeSiteUserAdminState(env, row)));
     } catch (_error) {
       // Fall through to the R2 mirror.
     }
   }
   const rows = await listR2JsonObjects(env, accountKey("users", "id", ""), 500);
-  return rows.sort((a, b) => String(b.updated_at || "").localeCompare(String(a.updated_at || "")));
+  const merged = await Promise.all(rows.map((row) => mergeSiteUserAdminState(env, row)));
+  return merged.sort((a, b) => String(b.updated_at || "").localeCompare(String(a.updated_at || "")));
 }
 
 async function listEntitlementRows(env) {
@@ -5608,6 +5825,98 @@ async function handleAccountAdminUserAccess(request, env) {
   }
 }
 
+async function handleAccountAdminUserCreate(request, env) {
+  let adminUser;
+  try {
+    adminUser = await requireSuperUser(request, env);
+  } catch (error) {
+    return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+  }
+
+  let payload = {};
+  try {
+    payload = await request.json();
+  } catch (_error) {
+    return jsonResponse(request, env, 400, { detail: "Invalid JSON body." });
+  }
+
+  const username = normalizeUsername(payload.username);
+  const email = normalizeEmail(payload.email);
+  const password = String(payload.password || "");
+  if (!USERNAME_PATTERN.test(username)) {
+    return jsonResponse(request, env, 400, { detail: "用户名需为 3-32 位小写字母、数字、点、短横线或下划线。" });
+  }
+  if (!email) {
+    return jsonResponse(request, env, 400, { detail: "请输入有效邮箱。" });
+  }
+  if (password.length < 4 || password.length > 128) {
+    return jsonResponse(request, env, 400, { detail: "密码需为 4-128 位。" });
+  }
+
+  try {
+    if (await findSiteUserByUsername(env, username)) {
+      return jsonResponse(request, env, 409, { detail: "用户名已被注册。" });
+    }
+    if (await findSiteUserByEmail(env, email)) {
+      return jsonResponse(request, env, 409, { detail: "邮箱已被注册。" });
+    }
+    const now = new Date().toISOString();
+    const passwordFields = await hashUserPassword(env, password);
+    const user = await createSiteUser(env, {
+      username,
+      email,
+      email_is_generated: false,
+      ...passwordFields,
+      created_at: now,
+      updated_at: now,
+    });
+    const merged = await mergeSiteUserAdminState(env, user);
+    return jsonResponse(request, env, 201, {
+      ok: true,
+      user: adminVisibleUser(merged, await findEntitlement(env, email).catch(() => null), await findAccessGrant(env, email).catch(() => publicAccessGrant(null))),
+    });
+  } catch (error) {
+    const text = String(error && error.message || "");
+    if (/duplicate|409|unique/i.test(text)) {
+      return jsonResponse(request, env, 409, { detail: "用户名或邮箱已被注册。" });
+    }
+    return jsonResponse(request, env, 400, { detail: error.message || "Could not create user." });
+  }
+}
+
+async function handleAccountAdminUserStatus(request, env) {
+  let adminUser;
+  try {
+    adminUser = await requireSuperUser(request, env);
+  } catch (error) {
+    return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+  }
+
+  let payload = {};
+  try {
+    payload = await request.json();
+  } catch (_error) {
+    return jsonResponse(request, env, 400, { detail: "Invalid JSON body." });
+  }
+
+  const email = normalizeEmail(payload.email);
+  if (!email) return jsonResponse(request, env, 400, { detail: "Email is required." });
+
+  try {
+    const user = await findSiteUserByEmail(env, email);
+    if (!user) return jsonResponse(request, env, 404, { detail: "User not found." });
+    if (isSuperAccount(user)) return jsonResponse(request, env, 400, { detail: "管理员账号不能禁用。" });
+    const state = await saveUserAdminState(env, user, { disabled: Boolean(payload.disabled) }, adminUser);
+    const merged = await mergeSiteUserAdminState(env, { ...user, ...state });
+    return jsonResponse(request, env, 200, {
+      ok: true,
+      user: adminVisibleUser(merged, await findEntitlement(env, email).catch(() => null), await findAccessGrant(env, email).catch(() => publicAccessGrant(null))),
+    });
+  } catch (error) {
+    return jsonResponse(request, env, 400, { detail: error.message || "Could not update user status." });
+  }
+}
+
 async function handleAccountAdminReportPdf(request, env) {
   try {
     await requireOperationsUser(request, env);
@@ -6387,9 +6696,14 @@ async function handleExternalPdf(request, env) {
   if (!isExternalId(id)) {
     return jsonResponse(request, env, 400, { error: "Invalid report id." });
   }
-  const accountAllowed = await accountCanDownload(env, request, id, "external");
+  const accountDecision = await accountDownloadDecision(env, request, id, "external");
+  const accountAllowed = Boolean(accountDecision.allowed);
   if (!password && !accountAllowed) {
-    return jsonResponse(request, env, 402, { error: "Please log in, purchase this report, or enter the report password." });
+    return jsonResponse(request, env, accountDecision.status || 402, {
+      error: accountDecision.error || "Please log in, purchase this report, or enter the report password.",
+      contact: accountDecision.contact || undefined,
+      limit_exceeded: Boolean(accountDecision.limit_exceeded),
+    });
   }
   if (!accountAllowed && !(await sharedReportPasswordMatches(env, id, password))) {
     return jsonResponse(request, env, 401, { error: "Password is incorrect." });
@@ -6401,6 +6715,14 @@ async function handleExternalPdf(request, env) {
     try {
       const pdf = await fetchWithTimeout(direct.url, { headers: { "User-Agent": EXTERNAL_UA } }, UPSTREAM_PDF_TIMEOUT_MS);
       if (pdf.ok) {
+        const consumed = await finalizeAccountDownloadDecision(env, accountDecision, id, "external");
+        if (!consumed.ok) {
+          return jsonResponse(request, env, 403, {
+            error: consumed.error || TRIAL_LIMIT_MESSAGE,
+            contact: consumed.contact || CONTACT_WECHAT,
+            limit_exceeded: true,
+          });
+        }
         return await externalPdfResponse(request, env, pdf.body, direct.title, id);
       }
     } catch (_error) {
@@ -6412,6 +6734,14 @@ async function handleExternalPdf(request, env) {
   if (env.REPORT_BUCKET) {
     const object = await env.REPORT_BUCKET.get(externalObjectKey(id));
     if (object) {
+      const consumed = await finalizeAccountDownloadDecision(env, accountDecision, id, "external");
+      if (!consumed.ok) {
+        return jsonResponse(request, env, 403, {
+          error: consumed.error || TRIAL_LIMIT_MESSAGE,
+          contact: consumed.contact || CONTACT_WECHAT,
+          limit_exceeded: true,
+        });
+      }
       return await externalPdfResponse(request, env, object.body, direct.title, id);
     }
   }
@@ -6833,6 +7163,14 @@ export default {
 
     if (pathname === "/account-admin/user-access" && request.method === "POST") {
       return handleAccountAdminUserAccess(request, env);
+    }
+
+    if (pathname === "/account-admin/user" && request.method === "POST") {
+      return handleAccountAdminUserCreate(request, env);
+    }
+
+    if (pathname === "/account-admin/user-status" && request.method === "POST") {
+      return handleAccountAdminUserStatus(request, env);
     }
 
     if (pathname === "/account-admin/github-file" && request.method === "GET") {

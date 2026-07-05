@@ -995,7 +995,7 @@ button.primary:disabled {
 
 .account-admin-table {
   width: 100%;
-  min-width: 760px;
+  min-width: 920px;
   border-collapse: collapse;
   font-size: 13px;
 }
@@ -1064,6 +1064,7 @@ button.primary:disabled {
 }
 
 .account-admin-form-grid select,
+.account-admin-form-grid input,
 .account-admin-note-field input {
   min-height: 42px;
   border: 1px solid var(--line);
@@ -1076,6 +1077,36 @@ button.primary:disabled {
 
 .account-admin-form-grid select[multiple] {
   min-height: 122px;
+}
+
+.account-admin-row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.account-admin-user-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  border: 1px solid #b7d8d3;
+  border-radius: 8px;
+  padding: 0 8px;
+  color: var(--accent-strong);
+  background: #ecfdf5;
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.account-admin-user-status.is-disabled {
+  border-color: #fecaca;
+  color: #991b1b;
+  background: #fef2f2;
+}
+
+.account-admin-table tr.is-disabled-user td {
+  background: #fff7f7;
 }
 
 .account-admin-page-ranges {
