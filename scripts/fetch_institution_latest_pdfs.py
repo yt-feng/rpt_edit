@@ -187,9 +187,13 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         "name_en": "ADB",
         "name_cn": "亚洲开发银行",
         "token": "ADB",
-        # Plain requests work; the feed also carries ADBI (ADB Institute) papers.
+        # The feed also carries ADBI (ADB Institute) papers. adb.org's WAF blocks
+        # Chrome-family TLS fingerprints (and GitHub runner IPs on plain requests)
+        # but accepts Firefox/Safari fingerprints.
         "kind": "rss",
         "pdf": "scrape",
+        "impersonate": True,
+        "impersonate_profile": "firefox135",
         "feeds": [
             "https://www.adb.org/rss/publications",
         ],
@@ -246,8 +250,10 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         "name_en": "Bruegel",
         "name_cn": "布鲁盖尔研究所",
         "token": "Bruegel",
+        # bruegel.org 403s GitHub-hosted runner IPs without a browser fingerprint.
         "kind": "rss",
         "pdf": "scrape",
+        "impersonate": True,
         "feeds": [
             "https://www.bruegel.org/feed/publications-feed.xml",
         ],
