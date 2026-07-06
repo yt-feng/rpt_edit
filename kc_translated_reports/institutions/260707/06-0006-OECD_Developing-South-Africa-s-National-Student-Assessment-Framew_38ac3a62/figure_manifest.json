@@ -1,0 +1,30 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/institutions/260707/0006-OECD_Developing-South-Africa-s-National-Student-Assessment-Framew_38ac3a62/mineru_raw/images/f1c1c026ec121dbf90cf7bffa8bd00eb9715c759cfa14d45e012bb4e0310964d.jpg",
+    "path": "kc_translated_reports/institutions/260707/06-0006-OECD_Developing-South-Africa-s-National-Student-Assessment-Framew_38ac3a62/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=9;chart_context,chart_ratio,edge:0.24"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/institutions/260707/0006-OECD_Developing-South-Africa-s-National-Student-Assessment-Framew_38ac3a62/mineru_raw/images/38744d4cf210ca66a66e7fce960b7b4dd3ac6ffea7d7221a165b40042633ee0f.jpg",
+    "path": "kc_translated_reports/institutions/260707/06-0006-OECD_Developing-South-Africa-s-National-Student-Assessment-Framew_38ac3a62/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.32,contrast"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/institutions/260707/0006-OECD_Developing-South-Africa-s-National-Student-Assessment-Framew_38ac3a62/mineru_raw/images/bc627819e986bdf1a06be1675fff99adadf354446d06fed89d79fc97b795ea9f.jpg",
+    "path": "kc_translated_reports/institutions/260707/06-0006-OECD_Developing-South-Africa-s-National-Student-Assessment-Framew_38ac3a62/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=6;non_chart_context,chart_context,chart_ratio,edge:0.24,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_004]]",
+    "source_path": "xhs_notes/institutions/260707/0006-OECD_Developing-South-Africa-s-National-Student-Assessment-Framew_38ac3a62/mineru_raw/images/4bb9a10bb4e46c623c8f289ba763c2ac25f1ee07a20ae2b0636a46cbb8b1b833.jpg",
+    "path": "kc_translated_reports/institutions/260707/06-0006-OECD_Developing-South-Africa-s-National-Student-Assessment-Framew_38ac3a62/assets/fig_004.jpg",
+    "relative_path": "fig_004.jpg",
+    "chart_filter": "score=8;chart_context,chart_ratio,large"
+  }
+]

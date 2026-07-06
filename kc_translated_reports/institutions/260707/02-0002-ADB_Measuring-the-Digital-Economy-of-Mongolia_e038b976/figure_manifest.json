@@ -1,0 +1,37 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/institutions/260707/0002-ADB_Measuring-the-Digital-Economy-of-Mongolia_e038b976/mineru_raw/images/dc02f117496d30f29d71064828b16217cb1fe10b13385c6b0975fa5c57d245d9.jpg",
+    "path": "kc_translated_reports/institutions/260707/02-0002-ADB_Measuring-the-Digital-Economy-of-Mongolia_e038b976/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=5;non_chart_context,chart_context,chart_ratio,edge:0.14,contrast"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/institutions/260707/0002-ADB_Measuring-the-Digital-Economy-of-Mongolia_e038b976/mineru_raw/images/fa96c61324e0137239cab2ac98e413b4435dfa479c3d01b7bcdf717f51429241.jpg",
+    "path": "kc_translated_reports/institutions/260707/02-0002-ADB_Measuring-the-Digital-Economy-of-Mongolia_e038b976/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=5;non_chart_context,chart_context,edge:0.22,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/institutions/260707/0002-ADB_Measuring-the-Digital-Economy-of-Mongolia_e038b976/mineru_raw/images/192189c05419e33e5d154c1089284a6f0c241538ff2fb68e92d3ebc0e91f180b.jpg",
+    "path": "kc_translated_reports/institutions/260707/02-0002-ADB_Measuring-the-Digital-Economy-of-Mongolia_e038b976/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=6;non_chart_context,chart_context,chart_ratio,edge:0.23,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_004]]",
+    "source_path": "xhs_notes/institutions/260707/0002-ADB_Measuring-the-Digital-Economy-of-Mongolia_e038b976/mineru_raw/images/ead1d27766b73cca1cf3edcbfe1b509af43e53ce27e7b436ab0f7aa804656e56.jpg",
+    "path": "kc_translated_reports/institutions/260707/02-0002-ADB_Measuring-the-Digital-Economy-of-Mongolia_e038b976/assets/fig_004.jpg",
+    "relative_path": "fig_004.jpg",
+    "chart_filter": "score=6;non_chart_context,chart_context,chart_ratio,edge:0.24,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_005]]",
+    "source_path": "xhs_notes/institutions/260707/0002-ADB_Measuring-the-Digital-Economy-of-Mongolia_e038b976/mineru_raw/images/b086a7b4554b6fe8612562314942acd268d12b59984a13c7ec67e8272f0f7aa9.jpg",
+    "path": "kc_translated_reports/institutions/260707/02-0002-ADB_Measuring-the-Digital-Economy-of-Mongolia_e038b976/assets/fig_005.jpg",
+    "relative_path": "fig_005.jpg",
+    "chart_filter": "score=6;non_chart_context,chart_context,chart_ratio,edge:0.20,contrast,large"
+  }
+]
