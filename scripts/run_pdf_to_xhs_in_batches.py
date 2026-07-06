@@ -210,7 +210,7 @@ def main() -> int:
     parser.add_argument("--language", default="en")
     parser.add_argument("--ocr", default="true")
     parser.add_argument("--length", type=int, default=1000)
-    parser.add_argument("--wechat-length", type=int, default=3000)
+    parser.add_argument("--wechat-length", type=int, default=1200)
     parser.add_argument(
         "--community-cta",
         default=(

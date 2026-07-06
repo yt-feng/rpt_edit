@@ -52,7 +52,7 @@ on:
       max_body_chars:
         description: "Approximate visible Chinese character budget for each article"
         required: true
-        default: "2000"
+        default: "1200"
       min_inline_images:
         description: "Minimum body images per article"
         required: true

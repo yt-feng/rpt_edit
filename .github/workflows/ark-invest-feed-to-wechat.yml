@@ -195,7 +195,7 @@ jobs:
             --output-root "wechat_drafts/ark" \
             --max-articles "all" \
             --articles-per-draft "${{ github.event.inputs.articles_per_draft || '8' }}" \
-            --max-body-chars "2000" \
+            --max-body-chars "1200" \
             --min-inline-images "3" \
             --max-inline-images "3" \
             "${ARGS[@]}" 2>&1 | tee ark_wechat_progress.log

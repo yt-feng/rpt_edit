@@ -55,7 +55,7 @@ on:
       wechat_length:
         description: "Target Chinese character count for WeChat article"
         required: true
-        default: "3000"
+        default: "1200"
       community_cta:
         description: "CTA style hint; DeepSeek rewrites it naturally for each article"
         required: true
@@ -89,7 +89,7 @@ on:
       wechat_draft_max_body_chars:
         description: "Approximate visible Chinese character budget for each WeChat draft article."
         required: true
-        default: "2000"
+        default: "1200"
       wechat_draft_min_inline_images:
         description: "Minimum body images per WeChat draft article; xhs_notes uses report images, kc_translated can fill missing slots."
         required: true
@@ -161,7 +161,7 @@ jobs:
           echo "force_reprocess=${{ github.event.inputs.force_reprocess || 'false' }}" >> "$GITHUB_OUTPUT"
           echo "max_total_reports=${{ github.event.inputs.max_total_reports || '0' }}" >> "$GITHUB_OUTPUT"
           echo "report_selection_mode=${{ github.event.inputs.report_selection_mode || 'all' }}" >> "$GITHUB_OUTPUT"
-          echo "wechat_length=${{ github.event.inputs.wechat_length || '3000' }}" >> "$GITHUB_OUTPUT"
+          echo "wechat_length=${{ github.event.inputs.wechat_length || '1200' }}" >> "$GITHUB_OUTPUT"
           echo "community_cta=${{ github.event.inputs.community_cta || '更多完整报告、中文摘要、KC评论和图表合集，会放进每日国际信源汇编。适合快速扫当天主流叙事，也方便后续追问和横向比较。' }}" >> "$GITHUB_OUTPUT"
           echo "podcast_minutes=${{ github.event.inputs.podcast_minutes || '5' }}" >> "$GITHUB_OUTPUT"
           echo "translated_report_count=${{ github.event.inputs.translated_report_count || 'all' }}" >> "$GITHUB_OUTPUT"
@@ -169,7 +169,7 @@ jobs:
           echo "wechat_draft_source=${{ github.event.inputs.wechat_draft_source || 'xhs_notes' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_freepublish=${{ github.event.inputs.wechat_freepublish || 'false' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_draft_articles_per_draft=${{ github.event.inputs.wechat_draft_articles_per_draft || '8' }}" >> "$GITHUB_OUTPUT"
-          echo "wechat_draft_max_body_chars=${{ github.event.inputs.wechat_draft_max_body_chars || '2000' }}" >> "$GITHUB_OUTPUT"
+          echo "wechat_draft_max_body_chars=${{ github.event.inputs.wechat_draft_max_body_chars || '1200' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_draft_min_inline_images=${{ github.event.inputs.wechat_draft_min_inline_images || '3' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_draft_max_inline_images=${{ github.event.inputs.wechat_draft_max_inline_images || '3' }}" >> "$GITHUB_OUTPUT"
           echo "commit_results=${{ github.event.inputs.commit_results || 'true' }}" >> "$GITHUB_OUTPUT"
