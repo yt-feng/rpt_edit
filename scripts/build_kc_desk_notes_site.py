@@ -75,6 +75,13 @@ def load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def load_json_default(path: Path, default: dict[str, Any]) -> dict[str, Any]:
+    try:
+        return load_json(path)
+    except (OSError, json.JSONDecodeError):
+        return default
+
+
 def write_json(path: Path, data: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -196,6 +203,168 @@ def iter_bank_catalog_titles(root: Path) -> list[tuple[str, str]]:
     return titles
 
 
+def trailing_date_from_title(value: str) -> str:
+    text = strip_extension(str(value or "")).strip()
+    match = re.search(r"[-_\s~]+(?:20)?(\d{6}|\d{8})$", text)
+    if not match:
+        return ""
+    date = match.group(1)
+    if len(date) == 8 and date.startswith("20"):
+        return date[2:]
+    return date
+
+
+def source_date_from_path(source_path: str) -> str:
+    for part in Path(source_path).parts:
+        if re.fullmatch(r"\d{6}", part):
+            return part
+    return ""
+
+
+def archive_item_id(title: str, bank_code: str) -> str:
+    key = normalize_search_text(f"{bank_code} {strip_extension(title)}")
+    return hashlib.sha256(f"kcdesk-archive-title:{key}".encode("utf-8")).hexdigest()[:24]
+
+
+def normalize_archive_item(item: dict[str, Any], updated_at_bjt: str) -> dict[str, Any]:
+    title = str(item.get("title") or item.get("filename") or "").strip()
+    filename = str(item.get("filename") or f"{title}.pdf").strip()
+    bank_code = str(item.get("bank_code") or item.get("bank_name") or "Archive").strip() or "Archive"
+    date_folder = str(item.get("date_folder") or trailing_date_from_title(title) or "").strip()
+    date_folders = item.get("date_folders") if isinstance(item.get("date_folders"), list) else []
+    date_folders = sorted({str(value) for value in date_folders if str(value or "").strip()}, key=sort_date_value)
+    if date_folder and date_folder not in date_folders:
+        date_folders.append(date_folder)
+        date_folders = sorted(set(date_folders), key=sort_date_value)
+    report_id = str(item.get("id") or archive_item_id(title, bank_code)).strip()
+    return {
+        "id": report_id,
+        "title": title,
+        "title_zh": str(item.get("title_zh") or "").strip(),
+        "filename": filename,
+        "date_folder": date_folder,
+        "date_folders": date_folders,
+        "bank_code": bank_code,
+        "bank_name": str(item.get("bank_name") or bank_code).strip(),
+        "password_group": str(item.get("password_group") or "default").strip(),
+        "size_bytes": int(item.get("size_bytes") or 0),
+        "first_seen_at_bjt": str(item.get("first_seen_at_bjt") or updated_at_bjt or "").strip(),
+        "last_seen_at_bjt": str(item.get("last_seen_at_bjt") or updated_at_bjt or "").strip(),
+        "available": False,
+        "present_in_latest_scan": False,
+        "industry": str(item.get("industry") or "").strip(),
+        "sector": str(item.get("sector") or "").strip(),
+        "category": str(item.get("category") or "").strip(),
+        "pdf_archived": True,
+        "pdf_archived_at_bjt": str(item.get("pdf_archived_at_bjt") or updated_at_bjt or "").strip(),
+        "archive_reason": str(item.get("archive_reason") or "text_only_archive").strip(),
+        "page_count": item.get("page_count") or None,
+    }
+
+
+def archive_sort_key(item: dict[str, Any]) -> tuple[int, int, str, str]:
+    rank, date_num, date_text = sort_date_value(str(item.get("date_folder") or ""))
+    valid_rank = 0 if rank == 0 else 1
+    return (valid_rank, -date_num, date_text, normalize_search_text(str(item.get("title") or "")))
+
+
+def build_archive_catalog(
+    live_catalog: dict[str, Any],
+    previous_archive: dict[str, Any],
+    bank_catalog_root: Path,
+) -> dict[str, Any]:
+    updated_at_bjt = str(live_catalog.get("updated_at_bjt") or "")
+    live_items = [item for item in live_catalog.get("items", []) if item.get("id")]
+    live_lookup = build_title_lookup(live_items)
+    archive_by_id: dict[str, dict[str, Any]] = {}
+
+    for item in previous_archive.get("items", []):
+        if not isinstance(item, dict):
+            continue
+        normalized = normalize_archive_item(item, updated_at_bjt)
+        if not normalized["id"] or match_report_id(normalized["title"], live_lookup):
+            continue
+        archive_by_id[normalized["id"]] = normalized
+
+    archive_lookup = build_title_lookup(live_items + list(archive_by_id.values()))
+    source_counts = {
+        "previous_archive_items": len(archive_by_id),
+        "bank_catalog_titles": 0,
+        "archive_items_added": 0,
+        "archive_items_updated": 0,
+        "live_matches_skipped": 0,
+    }
+
+    for title, source_path in iter_bank_catalog_titles(bank_catalog_root):
+        source_counts["bank_catalog_titles"] += 1
+        if match_report_id(title, live_lookup):
+            source_counts["live_matches_skipped"] += 1
+            continue
+
+        bank_code = Path(source_path).stem or "Archive"
+        report_id = match_report_id(title, archive_lookup) or archive_item_id(title, bank_code)
+        source_date = source_date_from_path(source_path)
+        title_date = trailing_date_from_title(title)
+        date_folder = title_date or source_date
+        existing = archive_by_id.get(report_id)
+        if existing:
+            folders = set(existing.get("date_folders") or [])
+            if source_date:
+                folders.add(source_date)
+            if title_date:
+                folders.add(title_date)
+            existing["date_folders"] = sorted(folders, key=sort_date_value)
+            if date_folder:
+                existing["date_folder"] = date_folder
+            existing["last_seen_at_bjt"] = updated_at_bjt
+            source_counts["archive_items_updated"] += 1
+            continue
+
+        archive_item = normalize_archive_item({
+            "id": report_id,
+            "title": title,
+            "filename": f"{title}.pdf",
+            "date_folder": date_folder,
+            "date_folders": [value for value in (source_date, title_date) if value],
+            "bank_code": bank_code,
+            "bank_name": bank_code,
+        }, updated_at_bjt)
+        archive_by_id[report_id] = archive_item
+        for key in title_keys(title):
+            archive_lookup.setdefault(key, report_id)
+        source_counts["archive_items_added"] += 1
+
+    archive_items = sorted(archive_by_id.values(), key=archive_sort_key)
+    return {
+        "schema_version": 1,
+        "updated_at_bjt": updated_at_bjt,
+        "item_count": len(archive_items),
+        "sources": source_counts,
+        "items": archive_items,
+    }
+
+
+def catalog_with_archive_items(catalog: dict[str, Any], archive_catalog: dict[str, Any]) -> dict[str, Any]:
+    live_items = [item for item in catalog.get("items", []) if item.get("id")]
+    live_ids = {str(item.get("id")) for item in live_items}
+    live_lookup = build_title_lookup(live_items)
+    archive_items: list[dict[str, Any]] = []
+    for item in archive_catalog.get("items", []):
+        if not isinstance(item, dict):
+            continue
+        report_id = str(item.get("id") or "")
+        if not report_id or report_id in live_ids:
+            continue
+        if match_report_id(str(item.get("title") or item.get("filename") or ""), live_lookup):
+            continue
+        archive_items.append({key: item.get(key) for key in PUBLIC_ITEM_KEYS if key in item})
+    merged = dict(catalog)
+    merged["items"] = live_items + archive_items
+    merged["item_count"] = len(merged["items"])
+    merged["archive_item_count"] = len(archive_items)
+    return merged
+
+
 def mineru_source_title(item_dir: Path) -> str:
     status_path = item_dir / "status.json"
     if status_path.exists():
@@ -284,6 +453,44 @@ def build_search_index(
         "item_count": len(public_items),
         "sources": source_counts,
         "items": public_items,
+    }
+
+
+def merge_search_indexes(
+    previous_index: dict[str, Any],
+    current_index: dict[str, Any],
+    catalog: dict[str, Any],
+) -> dict[str, Any]:
+    catalog_ids = {str(item.get("id")) for item in catalog.get("items", []) if item.get("id")}
+    previous_by_id = {
+        str(item.get("id")): str(item.get("text") or "")
+        for item in previous_index.get("items", [])
+        if isinstance(item, dict) and item.get("id")
+    }
+    current_by_id = {
+        str(item.get("id")): str(item.get("text") or "")
+        for item in current_index.get("items", [])
+        if isinstance(item, dict) and item.get("id")
+    }
+
+    merged_items: list[dict[str, str]] = []
+    for report_id in sorted(catalog_ids):
+        chunks: list[str] = []
+        append_unique_text(chunks, previous_by_id.get(report_id, ""))
+        append_unique_text(chunks, current_by_id.get(report_id, ""))
+        text = " ".join(chunks).strip()
+        if text:
+            merged_items.append({"id": report_id, "text": text})
+
+    sources = dict(current_index.get("sources") or {})
+    sources["previous_search_entries"] = len(previous_by_id)
+    sources["previous_search_entries_kept"] = sum(1 for report_id in previous_by_id if report_id in catalog_ids)
+    return {
+        "schema_version": 1,
+        "updated_at_bjt": current_index.get("updated_at_bjt") or catalog.get("updated_at_bjt", ""),
+        "item_count": len(merged_items),
+        "sources": sources,
+        "items": merged_items,
     }
 
 
@@ -427,6 +634,8 @@ def main() -> int:
     parser.add_argument("--site-src", default="kc_desk_notes/site_src")
     parser.add_argument("--output-dir", default="_kc_desk_notes_pages")
     parser.add_argument("--catalog-path", default="kc_desk_notes/data/catalog.json")
+    parser.add_argument("--archive-catalog-path", default="kc_desk_notes/data/archive_catalog.json")
+    parser.add_argument("--search-index-path", default="kc_desk_notes/data/search_index.json")
     parser.add_argument("--password-rules", default="kc_desk_notes/password_rules.json")
     parser.add_argument("--worker-base-url", default="")
     parser.add_argument("--bank-catalog-root", default="bank_report_catalogs")
@@ -445,11 +654,24 @@ def main() -> int:
     copy_site(site_src, output_dir)
 
     catalog = public_catalog(load_json(Path(args.catalog_path)))
-    search_index = build_search_index(
+    archive_catalog_path = Path(args.archive_catalog_path)
+    archive_catalog = build_archive_catalog(
+        live_catalog=catalog,
+        previous_archive=load_json_default(archive_catalog_path, {"items": []}),
+        bank_catalog_root=Path(args.bank_catalog_root),
+    )
+    catalog = catalog_with_archive_items(catalog, archive_catalog)
+    current_search_index = build_search_index(
         catalog=catalog,
         bank_catalog_root=Path(args.bank_catalog_root),
         mineru_root=Path(args.mineru_root),
         text_limit=args.search_text_limit,
+    )
+    search_index_path = Path(args.search_index_path)
+    search_index = merge_search_indexes(
+        previous_index=load_json_default(search_index_path, {"items": []}),
+        current_index=current_search_index,
+        catalog=catalog,
     )
     search_index = limit_search_index_by_size(
         index=search_index,
@@ -461,6 +683,8 @@ def main() -> int:
     write_json(output_dir / "data" / "search_index.json", search_index)
     write_json(output_dir / "data" / "password_rules.json", rules)
     write_json(output_dir / "data" / "config.json", {"worker_base_url": args.worker_base_url.rstrip("/")})
+    write_json(archive_catalog_path, archive_catalog)
+    write_json(search_index_path, search_index)
     version_assets(output_dir)
     print(
         f"Built {output_dir} with {catalog['item_count']} catalog items "

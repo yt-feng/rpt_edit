@@ -245,18 +245,23 @@ bilingual_podcast_videos/<日期>/<run_id>/<报告文件夹>/
 
 ```text
 kc_desk_notes/data/catalog.json      # 长期 catalog，受 KC Desk Notes 8GiB PDF 总量上限约束
+kc_desk_notes/data/search_index.json # 长期全文/标题检索索引，跟随 catalog 生成并提交
+kc_desk_notes/data/archive_catalog.json # Dropbox PDF 已不在但仍保留标题/正文线索的文字归档条目
 kc_desk_notes/password_rules.json    # 全局密码组 hash 对照表和分配规则，作为备用
 kc_desk_notes/site_src/              # GitHub Pages 静态站点源码
 workers/kc-desk-notes-worker/        # Cloudflare Worker 代码
 ```
 
-Pages artifact 会额外生成但不提交到 repo：
+Pages artifact 会从这些长期数据生成前端可访问文件：
 
 ```text
+_kc_desk_notes_pages/data/catalog.json
 _kc_desk_notes_pages/data/search_index.json
 ```
 
 这个索引按 `report_id` 绑定搜索文本，来源包括 `bank_report_catalogs/<日期>/<投行>.txt` 里的报告条目，以及仓库中能按标题匹配到 catalog 的 `xhs_notes/dropbox/<日期>/shard_*/<报告>/source_mineru.md`。前端只用它过滤搜索结果，不在列表页展示正文片段；由于 GitHub Pages 是公开站点，进入索引的文本本身也会成为公开可下载数据。
+
+如果 Dropbox 已经清理掉某个 PDF，但仓库里还出现过对应投行目录标题，构建会生成 `archive_catalog.json` 里的文字归档条目：该条目 `available=false`、`pdf_archived=true`，仍可在首页按标题/正文搜索到；进入详情页时只展示文字记录和联系 MacroGate 获取原文的提示，不提供直接 PDF 下载。
 
 流程：
 
@@ -265,7 +270,7 @@ _kc_desk_notes_pages/data/search_index.json
 3. 合并到长期 `catalog.json`，并统计页面可见 PDF 总容量。
 4. 如果 catalog PDF 总容量超过 `storage_limit_gb`（默认 8GiB），按 `date_folder` 从旧到新删除整日旧报告，并删除对应 R2 object。
 5. 将仍保留且当前扫描到的 PDF 上传到私有 R2，object key 为 `reports/<report_id>.pdf`。
-6. 生成 Pages artifact，其中 `catalog.json` 供列表和详情页使用，`search_index.json` 供全文搜索使用。
+6. 生成并提交 `search_index.json`、`archive_catalog.json`，再生成 Pages artifact；其中 `catalog.json` 供列表和详情页使用，`search_index.json` 供全文搜索使用。
 7. 部署 GitHub Pages。
 8. Cloudflare 配置齐全时，自动部署 Worker。
 
@@ -611,6 +616,7 @@ wechat_drafts/institutions/
 - 代码、workflow、prompt、文档：以本地明确修改为准。
 - 上面列出的日期型生成目录：以远端 Actions 产物为准。
 - KC Desk Notes 的 `kc_desk_notes/data/catalog.json` 不按最近 3 天清理；它按页面可见 PDF 总容量控制，默认超过 8GiB 后从最旧 `date_folder` 开始删除整日旧报告，并同步删除对应 R2 object。
+- KC Desk Notes 的 `kc_desk_notes/data/search_index.json` 和 `kc_desk_notes/data/archive_catalog.json` 也不按最近 3 天清理；它们用于保留历史文本检索能力。`search_index.json` 受构建参数 `--search-index-limit-gb` 控制，默认最多 2GiB，超出后按旧日期从文本索引中移除。
 
 清理逻辑：
 

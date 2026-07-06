@@ -163,9 +163,9 @@ jobs:
           echo "GitHub Pages deployment failed after 3 attempts."
           exit 1
 
-      - name: Commit persistent catalog
+      - name: Commit persistent catalog and search archive
         run: |
-          bash scripts/commit_output_dir.sh "kc_desk_notes/data" "Update KC Desk Notes catalog" 8
+          bash scripts/commit_output_dir.sh "kc_desk_notes/data" "Update KC Desk Notes catalog and search archive" 8
 
       - name: Prepare Cloudflare Worker deploy config
         id: worker_config
