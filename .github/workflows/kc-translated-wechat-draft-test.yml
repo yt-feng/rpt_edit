@@ -75,6 +75,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
+          clean: false
 
       - name: Pull latest generated translated reports
         run: |
