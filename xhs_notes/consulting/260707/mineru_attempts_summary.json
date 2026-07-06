@@ -1,0 +1,19 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 1,
+    "successful_pdf_count": 1,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_ei7bwcmc/pdfs/0001-BCG_Sustainability-Reporting-in-Europe-From-Compliance-to-Strate_43e096d4.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

@@ -1,0 +1,5085 @@
+[
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                1.0,
+                0.393
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.051,
+                0.431,
+                0.324,
+                0.448
+            ],
+            "angle": 0,
+            "content": "CLIMATE CHANGE AND SUSTAINABILITY",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.477,
+                0.699,
+                0.681
+            ],
+            "angle": 0,
+            "content": "Sustainability\nReporting in Europe:\nFrom Compliance to\nStrategy"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.705,
+                0.754,
+                0.744
+            ],
+            "angle": 0,
+            "content": "By Lorenzo Fantini, Vuk Trifkovic, Jannik Leiendecker, Eleonora Tieri, Solène Chataigné, and Julie Foucault",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.767,
+                0.362,
+                0.786
+            ],
+            "angle": 0,
+            "content": "ARTICLE JULY 06, 2026 15 MIN READ",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.847,
+                0.541,
+                0.889
+            ],
+            "angle": 0,
+            "content": "Executive Summary"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.437,
+                0.317,
+                0.444
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.475,
+                0.479,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.039,
+                0.527,
+                0.704,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.577,
+                0.687,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.625,
+                0.311,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.708,
+                0.75,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.726,
+                0.194,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.772,
+                0.358,
+                0.783
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.845,
+                0.542,
+                0.889
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.943,
+                0.207
+            ],
+            "angle": 0,
+            "content": "Sustainability reporting in Europe has reached a pivotal point. Following the first wave of Corporate Sustainability Reporting Directive (CSRD) disclosures for FY2024 and the subsequent FY2025 reporting cycle, companies are facing a great deal of complexity and significant cost, while displaying a tendency to overreport. Although the introduction of the European Sustainability Reporting Standards (ESRS) has significantly boosted transparency, it has also led many organizations to adopt a compliance-driven approach, often at the expense of strategic clarity and decision usefulness.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.22,
+                0.938,
+                0.32
+            ],
+            "angle": 0,
+            "content": "Indeed, our analysis of recent sustainability reporting practices reveals that most companies continue to operate within a compliance-oriented paradigm. Reports frequently cover a broad range of material topics, many of which are only loosely connected to the company's underlying business model or strategic priorities. This leads to lengthy disclosures, a heavy operational burden, and limited value for decision makers.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.333,
+                0.953,
+                0.434
+            ],
+            "angle": 0,
+            "content": "The forthcoming introduction of ESRS Set 2 is likely to change this dynamic. The revised standards—applicable from FY2026 onward—reduce the number of required data points by approximately 60% to 70% and place greater emphasis on materiality and decision usefulness. As a result, companies have an opportunity to fundamentally rethink their approach to sustainability reporting.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.447,
+                0.929,
+                0.548
+            ],
+            "angle": 0,
+            "content": "BCG's point of view is clear: companies can use this moment to make the transition from compliance-driven reporting to a strategy-led sustainability reporting model based on smart compliance. They have the opportunity not only to refine what they report, but also to redesign how they carry out sustainability reporting. To support this change, we envision an approach grounded on three core elements:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.575,
+                0.919,
+                0.596
+            ],
+            "angle": 0,
+            "content": "- Sustainability Strategy. Reestablish the linkage between disclosure and strategic priorities.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.611,
+                0.899,
+                0.631
+            ],
+            "angle": 0,
+            "content": "- Sustainability Reporting Process. Redesign reporting as an efficient, end-to-end process.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.645,
+                0.79,
+                0.666
+            ],
+            "angle": 0,
+            "content": "- Enablers. Use AI, governance, and organizational capabilities to scale impact.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.696,
+                0.924,
+                0.796
+            ],
+            "angle": 0,
+            "content": "Companies that act now—using FY2026 as a reset point—can reduce their reporting costs, improve the clarity and relevance of their disclosures, and strengthen the connection between sustainability and business strategy. Inaction, on the other hand, could carry the risk of further entrenching inefficient processes, causing companies to miss a crucial opportunity to turn sustainability reporting into a source of competitive advantage.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.866,
+                0.633,
+                0.91
+            ],
+            "angle": 0,
+            "content": "Seizing the Opportunity"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.068,
+                0.868,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.089,
+                0.935,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.108,
+                0.903,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.128,
+                0.828,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.149,
+                0.94,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.167,
+                0.912,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.188,
+                0.339,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.223,
+                0.908,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.243,
+                0.913,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.262,
+                0.934,
+                0.279
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.283,
+                0.893,
+                0.296
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.301,
+                0.475,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.334,
+                0.95,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.356,
+                0.946,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.374,
+                0.895,
+                0.391
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.395,
+                0.875,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.416,
+                0.138,
+                0.432
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.451,
+                0.868,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.469,
+                0.901,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.49,
+                0.923,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.509,
+                0.897,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.53,
+                0.361,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.577,
+                0.916,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.612,
+                0.895,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.648,
+                0.787,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.698,
+                0.893,
+                0.713
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.717,
+                0.921,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.738,
+                0.918,
+                0.753
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.757,
+                0.881,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.778,
+                0.633,
+                0.793
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.864,
+                0.632,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.949,
+                0.147
+            ],
+            "angle": 0,
+            "content": "Over the past decade, sustainability reporting has undergone a far-reaching transformation. What was once a largely voluntary exercise has evolved into a mandatory and increasingly complex regulatory requirement. Anchored in the European Green Deal, the EU’s policy framework seeks to guide capital allocation and corporate disclosures toward sustainability-related objectives.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.161,
+                0.947,
+                0.26
+            ],
+            "angle": 0,
+            "content": "The Corporate Sustainability Reporting Directive (CSRD), operationalized through the European Sustainability Reporting Standards (ESRS), represents one of the most comprehensive attempts to standardize sustainability disclosures globally. Its objective is to provide reliable, comparable, and decision-useful information across a range of environmental, social, and governance dimensions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.275,
+                0.952,
+                0.375
+            ],
+            "angle": 0,
+            "content": "However, the early stages of its implementation have exposed significant challenges. The first wave of CSRD reports, for FY2024, and the subsequent FY2025 reporting cycle, have demonstrated that sustainability reporting under ESRS is both operationally demanding and costly. Companies must collect, validate, and disclose large volumes of data across multiple dimensions, often spanning complex value chains and involving numerous internal stakeholders.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.388,
+                0.94,
+                0.488
+            ],
+            "angle": 0,
+            "content": "As a result, sustainability reporting has evolved into a cross-functional process requiring input from sustainability, finance, risk, IT, and legal teams—frequently supported by external advisors and assurance providers. Recurring annual costs for large organizations exceed €1 million and can be significantly higher when taking into account the full scope of internal and external endeavors.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.503,
+                0.951,
+                0.582
+            ],
+            "angle": 0,
+            "content": "More importantly, the structure of the current standards has led to unintended behaviors. Faced with a highly prescriptive framework, many companies opt for a broad interpretation of materiality, resulting in disclosures that cover a multitude of topics. This has led to a tendency toward overreporting, severing the envisioned linkage between disclosure and strategic priorities.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.596,
+                0.952,
+                0.873
+            ],
+            "angle": 0,
+            "content": "The result has been sustainability reports that may be lengthy, complex, and difficult to interpret —both for preparers and for users. Recognizing these challenges, European policymakers have initiated a process of regulatory simplification. The initial EU Omnibus Package, introduced in early 2025, extended implementation timelines and reduced the scope of the regulation. The subsequent development of ESRS Set 2 marked a further adjustment of the underlying regulatory intent. The revised standards reduce the number of mandatory data points by approximately 60% to 70% and eliminate certain voluntary disclosures. They also clarify the application of double materiality, which focuses on how sustainability issues affect the company’s position and how, in turn, the entity impacts the environment and society at large. More fundamentally, the revised standards signal a transition from a focus on completeness toward a stronger emphasis on decision usefulness. This change presents companies with a unique inflection point. For the first time since the introduction of CSRD, organizations are in a position to fundamentally reimagine their sustainability reporting. FY2026 will be the first reporting cycle that fully enables this new approach.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.887,
+                0.891,
+                0.927
+            ],
+            "angle": 0,
+            "content": "Nevertheless, realizing this opportunity calls for more than simply adjusting disclosures. Companies should rethink the design and execution of their sustainability reporting across",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.071,
+                0.946,
+                0.084
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.09,
+                0.914,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.935,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.129,
+                0.908,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.162,
+                0.933,
+                0.179
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.183,
+                0.936,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.204,
+                0.941,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.223,
+                0.865,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.243,
+                0.16,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.277,
+                0.913,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.298,
+                0.82,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.317,
+                0.903,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.337,
+                0.898,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.356,
+                0.946,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.39,
+                0.919,
+                0.405
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.41,
+                0.935,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.431,
+                0.919,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.451,
+                0.885,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.47,
+                0.149,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.504,
+                0.936,
+                0.519
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.524,
+                0.852,
+                0.539
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.542,
+                0.915,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.563,
+                0.947,
+                0.578
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.598,
+                0.943,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.618,
+                0.928,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.636,
+                0.91,
+                0.653
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.657,
+                0.903,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.676,
+                0.944,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.696,
+                0.95,
+                0.712
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.716,
+                0.914,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.735,
+                0.935,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.756,
+                0.92,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.775,
+                0.889,
+                0.791
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.796,
+                0.934,
+                0.81
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.814,
+                0.929,
+                0.83
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.833,
+                0.928,
+                0.85
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.854,
+                0.142,
+                0.868
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.887,
+                0.865,
+                0.906
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.909,
+                0.886,
+                0.924
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.042,
+                0.068,
+                0.494,
+                0.088
+            ],
+            "angle": 0,
+            "content": "strategy, processes, and underlying capabilities."
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.157,
+                0.797,
+                0.279
+            ],
+            "angle": 0,
+            "content": "Challenge: Sustainability\nReporting Between Market\nPractice and Regulatory Intent"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.304,
+                0.953,
+                0.403
+            ],
+            "angle": 0,
+            "content": "The latest State of Play study from the European Financial Reporting Advisory Group (EFRAG), published in early July 2026 and more than 900 reports for FY2025, summarizes how companies currently approach sustainability reporting. Because these reports were prepared under the existing ESRS Set 1, they strongly reflect current market practices rather than the intended future state under ESRS Set 2.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.418,
+                0.95,
+                0.498
+            ],
+            "angle": 0,
+            "content": "EFRAG's analysis is based on a structured framework of 18 key questions spanning areas such as materiality assessment, target setting, and report structure. (See Exhibit 1.) Building on their insights, BCG further established distinct archetypes that permitted the identification and classification of observed market practices.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.155,
+                0.656,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.198,
+                0.719,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.237,
+                0.8,
+                0.279
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.307,
+                0.914,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.327,
+                0.929,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.347,
+                0.899,
+                0.361
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.366,
+                0.95,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.384,
+                0.264,
+                0.399
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.421,
+                0.948,
+                0.436
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.44,
+                0.902,
+                0.455
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.461,
+                0.877,
+                0.474
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.478,
+                0.451,
+                0.495
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.045,
+                0.065,
+                0.109,
+                0.078
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 1"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.043,
+                0.081,
+                0.707,
+                0.12
+            ],
+            "angle": 0,
+            "content": "Identification of Emerging Markets and Best Practices in the EFRAG State of Play 2026 Report"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.047,
+                0.127,
+                0.73,
+                0.567
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"2\" colspan=\"2\">Standard/topics</td><td rowspan=\"2\">Questions</td><td colspan=\"3\">Archetypes</td></tr><tr><td>Type 1</td><td>Type 2</td><td>Type 3</td></tr><tr><td rowspan=\"10\">General disclosures</td><td rowspan=\"4\">DMA</td><td>1 What is the company&#x27;s DMA methodology?</td><td>Bottom-up</td><td>Hybrid</td><td>Top-down</td></tr><tr><td>2 How many IROs has the company identified?</td><td>&lt;25</td><td>25-31</td><td>&gt;31</td></tr><tr><td>3 How many material topics has the company identified (excluding entity-specific topics)?</td><td>&lt;5</td><td>5-7</td><td>&gt;7</td></tr><tr><td>4 How many material subtopics has the company identified (excluding entity-specific topics)?</td><td>&lt;12</td><td>12-16</td><td>&gt;16</td></tr><tr><td rowspan=\"2\">Strategy</td><td>5 How many topics are covered by measurable and time-bound targets?</td><td>&lt;3</td><td>3-6</td><td>&gt;6</td></tr><tr><td>6 Are targets for material topics embedded into incentive schemes/remuneration?</td><td>No</td><td>-</td><td>Yes</td></tr><tr><td rowspan=\"4\">Descriptive topics</td><td>7 What is the number of pages?</td><td>&lt;90</td><td>90-110</td><td>&gt;110</td></tr><tr><td>8 What is the number of characters?</td><td>&lt;200,000</td><td>200,000-350,000</td><td>&gt;350,000</td></tr><tr><td>9 What is the share of the annual/management report dedicated to the CSRD report?</td><td>&lt;20%</td><td>20-40%</td><td>&gt;40%</td></tr><tr><td>10 Does the company use an executive summary for its CSRD report?</td><td>No</td><td>-</td><td>Yes</td></tr><tr><td rowspan=\"3\">E</td><td>Transition plan (CTP)</td><td>11 Has the company adopted a CTP?</td><td>No</td><td>-</td><td>Yes</td></tr><tr><td rowspan=\"2\">Nonclimate metrics</td><td>12 Do companies state that near-term and long-term targets are compatible with 1.5°C?</td><td>No disclosure</td><td>No</td><td>Yes</td></tr><tr><td>13 What is the level of geographic disaggregation for E2-E5 metrics?</td><td>Global</td><td>Regional</td><td>Site</td></tr><tr><td rowspan=\"3\">S</td><td rowspan=\"3\">Own workforce and S2-S4</td><td>14 What is the company&#x27;s unadjusted gender pay gap?</td><td>&lt;10%</td><td>10-15%</td><td>&gt;15%</td></tr><tr><td>15 Do companies report on discrimination and human rights incidents?</td><td>No</td><td>-</td><td>Yes</td></tr><tr><td>16 Do companies have human rights policies covering ESR S2 and S3?</td><td>No</td><td>-</td><td>Yes</td></tr><tr><td rowspan=\"2\">G</td><td>Supplier management</td><td>17 Do companies take into account ESG criteria in the selection of suppliers?</td><td>No</td><td>-</td><td>Yes</td></tr><tr><td>Payments</td><td>18 Do companies disclose an average payment term for SMEs?</td><td>No</td><td>-</td><td>Yes</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.043,
+                0.583,
+                0.73,
+                0.621
+            ],
+            "angle": 0,
+            "content": "Sources: EFRAG State of Play 2026; BCG analysis.\nNote: CSRD = Corporate Sustainability Reporting Directive; CTP = climate transition plan; DG Clima = Directorate-General for Climate Action; DMA = double materiality assessment; E = environmental; ESG = environmental, social, and governance; ESRS = European Sustainability Reporting Standards; G = governance; IRO = impact, risk, and opportunity; S = social; SME = small or medium-size enterprise."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.724,
+                0.731,
+                0.761
+            ],
+            "angle": 0,
+            "content": "A Compliance-Driven Equilibrium"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.787,
+                0.921,
+                0.867
+            ],
+            "angle": 0,
+            "content": "Across different industries, a consistent pattern emerges. Most companies approach sustainability reporting primarily as a compliance exercise. Although there are some notable exceptions, the dominant pattern involves fulfilling regulatory requirements rather than using sustainability reporting as a strategic tool.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.88,
+                0.94,
+                0.921
+            ],
+            "angle": 0,
+            "content": "This is particularly apparent from the number of material sustainability topics that companies cover in their reporting that are only partially covered by concrete targets or incentive schemes.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.726,
+                0.728,
+                0.76
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.788,
+                0.831,
+                0.804
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.809,
+                0.905,
+                0.823
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.829,
+                0.916,
+                0.844
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.848,
+                0.437,
+                0.862
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.883,
+                0.92,
+                0.898
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.903,
+                0.936,
+                0.918
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.952,
+                0.147
+            ],
+            "angle": 0,
+            "content": "This broken connection between strategic priorities and disclosures has several undesirable consequences. The large number of material topics increases the amount of required disclosures, intensifies data collection efforts, and ultimately drives up the cost and complexity of reporting. And crucially, it diverts the report's focus away from the issues that matter most.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.175,
+                0.854,
+                0.242
+            ],
+            "angle": 0,
+            "content": "AI as a Promised Step Change, but One That Has Yet to Materialize"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.271,
+                0.929,
+                0.332
+            ],
+            "angle": 0,
+            "content": "Across the sustainability reporting ecosystem, software providers and advisors increasingly characterize AI as a potential game changer. The promise is compelling: faster data processing, reduced manual effort, improved report quality, and more decision-useful disclosures.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.345,
+                0.953,
+                0.385
+            ],
+            "angle": 0,
+            "content": "In principle, a wide range of AI use cases could arise along the end-to-end sustainability reporting cycle. (See Exhibit 2.)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.417,
+                0.111,
+                0.431
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 2"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.434,
+                0.644,
+                0.473
+            ],
+            "angle": 0,
+            "content": "Existence of Various AI Use Cases Across the End-to-End ESG Reporting Journey",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.045,
+                0.481,
+                0.728,
+                0.846
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.043,
+                0.875,
+                0.708,
+                0.901
+            ],
+            "angle": 0,
+            "content": "Sources: News reports and industry publications; BCG analysis.\nNote: EFRAG = European Financial Reporting Advisory Group; ESG = environmental, social, and governance; ESRS = European Sustainability Reporting Standards; IFRS = International Financial Reporting Standards; KPI = key performance indicator; PCF = product carbon footprint."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.069,
+                0.903,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.091,
+                0.946,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.109,
+                0.931,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.129,
+                0.786,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.173,
+                0.854,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.211,
+                0.609,
+                0.242
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.272,
+                0.89,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.292,
+                0.924,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.312,
+                0.835,
+                0.328
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.347,
+                0.95,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.367,
+                0.242,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.42,
+                0.108,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.436,
+                0.641,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.454,
+                0.226,
+                0.473
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.56,
+                0.087
+            ],
+            "angle": 0,
+            "content": "These include applications focused on three elements:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.117,
+                0.707,
+                0.136
+            ],
+            "angle": 0,
+            "content": "- Automation of repetitive tasks such as data collection and validation",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.152,
+                0.629,
+                0.171
+            ],
+            "angle": 0,
+            "content": "- Advanced analytics and interpretation of sustainability data",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.187,
+                0.892,
+                0.227
+            ],
+            "angle": 0,
+            "content": "- More recent agentic solutions that aim to orchestrate workflows and support end-to-end reporting processes with limited human intervention",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.256,
+                0.942,
+                0.356
+            ],
+            "angle": 0,
+            "content": "However, discussions with reporting teams and preparers point to a growing disconnect between ambition and reality. While expectations—often reinforced by vendor narratives and internal management pressure—are rising rapidly, actual deployment of AI in sustainability reporting remains limited in both scope and impact. Many current applications fail to achieve anticipated efficiency gains or quality improvements.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.37,
+                0.949,
+                0.528
+            ],
+            "angle": 0,
+            "content": "Several underlying factors help explain this gap between vision and results. First, use cases often lack sufficient alignment with specific pain points of the reporting process, leading to solutions that are technically feasible but operationally irrelevant. Second, fragmented data landscapes and weak data governance can limit the effectiveness of AI models. Third, the implementation process may not be properly integrated into broader reporting workflows, resulting in isolated pilots rather than scalable solutions. And finally, organizational readiness—incorporating skills, processes, and a general confidence in what AI can achieve—may lag behind the technological ambition.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.543,
+                0.951,
+                0.622
+            ],
+            "angle": 0,
+            "content": "As a result, AI in sustainability reporting today contributes less to transformation at scale and more to experimentation at the margins. Realizing its full potential will require a more disciplined focus on high-impact use cases, stronger data foundations, and a systematic integration of AI into the end-to-end reporting process.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.692,
+                0.797,
+                0.851
+            ],
+            "angle": 0,
+            "content": "Proposed Solution: A Strategy-Led Sustainability Reporting Model Based on Smart Compliance"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.878,
+                0.891,
+                0.918
+            ],
+            "angle": 0,
+            "content": "The transition to ESRS Set 2 offers companies a unique opportunity to redefine their sustainability reporting. However, capturing this opportunity requires more than piecemeal",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.069,
+                0.556,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.119,
+                0.704,
+                0.134
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.154,
+                0.624,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.189,
+                0.888,
+                0.205
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.209,
+                0.555,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.259,
+                0.94,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.279,
+                0.912,
+                0.294
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.299,
+                0.911,
+                0.314
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.319,
+                0.933,
+                0.333
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.338,
+                0.426,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.372,
+                0.95,
+                0.388
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.392,
+                0.923,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.413,
+                0.92,
+                0.426
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.432,
+                0.915,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.451,
+                0.917,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.47,
+                0.938,
+                0.486
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.492,
+                0.924,
+                0.506
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.508,
+                0.137,
+                0.527
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.545,
+                0.918,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.565,
+                0.948,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.584,
+                0.945,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.604,
+                0.359,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.689,
+                0.799,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.729,
+                0.749,
+                0.775
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.77,
+                0.613,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.81,
+                0.343,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.88,
+                0.825,
+                0.896
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.9,
+                0.887,
+                0.916
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.067,
+                0.956,
+                0.168
+            ],
+            "angle": 0,
+            "content": "adjustments. It calls for a shift from compliance-driven reporting to a strategy-led model grounded in what BCG refers to as smart compliance. Smart compliance does not entail less rigor. Rather, it reflects a more focused and structured approach that prioritizes material, decision-useful disclosures while minimizing unnecessary complexity and effort. To effect this change, we propose a three-layer approach involving strategy, the reporting process, and enablers. (See Exhibit 3.)",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.042,
+                0.196,
+                0.613,
+                0.238
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 3 Proposal to Approach Sustainability Reporting Holistically"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.048,
+                0.258,
+                0.727,
+                0.614
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.043,
+                0.632,
+                0.422,
+                0.654
+            ],
+            "angle": 0,
+            "content": "Source: BCG analysis.\nNote: ESG = environmental, social, and governance; KPI = key performance indicator."
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.043,
+                0.684,
+                0.859,
+                0.79
+            ],
+            "angle": 0,
+            "content": "Sustainability Strategy: Reestablishing the Linkage Between Materiality and Strategic Priorities"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.815,
+                0.92,
+                0.916
+            ],
+            "angle": 0,
+            "content": "A refined approach to double materiality lies at the core of the framework, moving away from a purely bottom-up, compliance-driven exercise. Although this orientation has always been permissible, ESRS Set 2 places stronger emphasis on a more explicit top-down perspective, allowing companies to use their strategic understanding of the business as a starting point to identify material topics.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.953,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.089,
+                0.923,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.109,
+                0.871,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.127,
+                0.952,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.149,
+                0.911,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.684,
+                0.861,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.721,
+                0.828,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.754,
+                0.444,
+                0.79
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.818,
+                0.918,
+                0.833
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.838,
+                0.868,
+                0.853
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.858,
+                0.896,
+                0.873
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.878,
+                0.91,
+                0.893
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.897,
+                0.267,
+                0.912
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.95,
+                0.147
+            ],
+            "angle": 0,
+            "content": "This strategic approach helps reduce the complexity and burden of the assessment. Rather than cataloging an exhaustive list of potential sustainability topics, companies can apply a more sharply focused lens, guided by their business model and peer practices. The end result is a more disciplined and prioritized set of material issues.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.161,
+                0.943,
+                0.262
+            ],
+            "angle": 0,
+            "content": "At the same time, any top-down perspective need not merely reflect the status quo. Existing strategies may themselves be incomplete or evolving, and external stakeholder perspectives—including those from civil society and NGOs—offer a critical counterbalance. A robust double materiality assessment therefore supports strategic judgment with structured bottom-up validation, ensuring identification and assessment of sometimes overlooked but relevant topics.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.275,
+                0.955,
+                0.355
+            ],
+            "angle": 0,
+            "content": "The objective is to reestablish a clear and credible linkage between material topics and strategic priorities. Companies should explicitly connect material sustainability issues to their strategic agenda, supported by defined targets and embedded in management processes. This strengthens the internal relevance of sustainability and boosts the external credibility of disclosures.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.369,
+                0.952,
+                0.45
+            ],
+            "angle": 0,
+            "content": "Double materiality should serve not merely as a reporting requirement, but also as a tool to forge a stronger and more responsive sustainability strategy. When applied effectively, it can help companies concentrate on what really matters in terms of impact and financial relevance, enabling them to build a foundation for more decision-useful, strategically aligned reporting.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.043,
+                0.476,
+                0.841,
+                0.611
+            ],
+            "angle": 0,
+            "content": "Smart Compliance and the\nSustainability Reporting Process:\nDesigning How Reporting Works End-\nto-End"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.64,
+                0.949,
+                0.74
+            ],
+            "angle": 0,
+            "content": "Building on a clear strategic foundation, companies should design sustainability reporting as an end-to-end process. Unfortunately, in practice, many organizations still suffer from fragmented setups characterized by siloed responsibilities, multiple handovers, and a large amount of manual intervention. This not only increases cost and effort, but also introduces inconsistencies, weakens controls, and complicates assurance.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.753,
+                0.927,
+                0.814
+            ],
+            "angle": 0,
+            "content": "A smart compliance approach tackles these challenges by structuring sustainability reporting across seven clearly defined and interconnected steps, from initial scoping to final publication and subsequent continuous improvement:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.842,
+                0.927,
+                0.923
+            ],
+            "angle": 0,
+            "content": "1. Scope and Governance—Define Scope and Decision Logic. The first step in the process involves defining the reporting boundary—covering legal entities, sites, and joint ventures—and establishing a suitable approach to consolidation (that is, financial versus operational control). This approach enables companies to translate regulatory requirements such as",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.939,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.09,
+                0.894,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.946,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.129,
+                0.496,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.163,
+                0.9,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.183,
+                0.93,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.203,
+                0.91,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.223,
+                0.866,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.242,
+                0.938,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.277,
+                0.943,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.297,
+                0.918,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.316,
+                0.949,
+                0.331
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.337,
+                0.869,
+                0.35
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.371,
+                0.949,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.39,
+                0.897,
+                0.405
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.409,
+                0.887,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.429,
+                0.898,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.475,
+                0.616,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.511,
+                0.748,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.545,
+                0.841,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.578,
+                0.192,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.643,
+                0.932,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.661,
+                0.926,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.681,
+                0.883,
+                0.698
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.702,
+                0.946,
+                0.717
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.722,
+                0.479,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.754,
+                0.921,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.774,
+                0.923,
+                0.791
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.794,
+                0.441,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.845,
+                0.883,
+                0.86
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.865,
+                0.924,
+                0.879
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.885,
+                0.908,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.904,
+                0.889,
+                0.92
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.063,
+                0.068,
+                0.852,
+                0.108
+            ],
+            "angle": 0,
+            "content": "CSRD/ESRS into an organization-specific framework, supported by clear governance structures, roles, timelines, and sign-off processes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.122,
+                0.925,
+                0.261
+            ],
+            "angle": 0,
+            "content": "2. Materiality and Sustainability Scoping—Minimize Scope with a Defensible Rationale. A structured double materiality assessment identifies and prioritizes impacts, risks, and opportunities throughout the value chain, including upstream activities, own operations, and downstream activities. Using defined scoring methodologies, the assessment determines material topics and translates them into a focused set of ESRS disclosures and data points, taking into account phase-ins and justified exclusions. Robust documentation ensures transparency and auditor alignment.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.045,
+                0.275,
+                0.934,
+                0.394
+            ],
+            "angle": 0,
+            "content": "3. Disclosure and KPI Design—Design Once, Control Systematically. This step involves translating reporting requirements into a clear disclosure architecture, including defining KPIs and the underlying data model (such as units, boundaries, and frequency). The company establishes methodologies such as carbon accounting rules to ensure consistency over time. In parallel, it designs a control framework that defines validation thresholds, evidence requirements, and control points across the process.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.408,
+                0.935,
+                0.547
+            ],
+            "angle": 0,
+            "content": "4. Data Collection and Processing—Industrialize Data Capture. The approach captures sustainability data, including primary activity data (for example, metered energy), at the source, and integrates the data points into controlled, repeatable data flows across systems such as enterprise resource planning, EHS, HR, and procurement. Where required, the assessment collects value-chain data through supplier engagement and audits. Data quality triage—covering completeness checks, outlier detection, and initial plausibility assessments—ensures early identification of data issues.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.561,
+                0.912,
+                0.681
+            ],
+            "angle": 0,
+            "content": "5. Calculation, Roll-up, and Control—Make Sustainability Numbers Finance-Grade. Defined calculation methodologies (such as carbon accounting) transform collected data into reportable sustainability metrics, consolidating results across business units and at group level, supported by systematic reconciliations and plausibility checks. Mechanisms for restatements and version control ensure transparency and auditability in case of methodological or boundary changes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.695,
+                0.924,
+                0.814
+            ],
+            "angle": 0,
+            "content": "6. Narrative, Review, and Assurance—Explain, Validate, and Assure. The method then translates quantitative results into ESRS-aligned narratives, ensuring clear linkage between KPIs and disclosures. Consistency checks validate the coherence of the overall reporting story. Internal reviews across functions (such as finance and legal) ensure accuracy and alignment, while structured evidence packs, walkthroughs, and sampling facilitate a smooth external assurance process.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.045,
+                0.827,
+                0.911,
+                0.928
+            ],
+            "angle": 0,
+            "content": "7. Publication and Continuous Improvement—Close, Communicate, and Improve. The final step is to prepare disclosures for publication, with full digital readiness, distributing sustainability information across multiple channels such as integrated reports, corporate websites, and sustainability rating submissions. Reporting outcomes provide a basis for tracking progress against internal targets and inform strategic steering. The process",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.069,
+                0.848,
+                0.088
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.089,
+                0.536,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.124,
+                0.895,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.143,
+                0.863,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.163,
+                0.919,
+                0.177
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.183,
+                0.889,
+                0.197
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.202,
+                0.915,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.223,
+                0.863,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.242,
+                0.409,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.277,
+                0.862,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.298,
+                0.892,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.317,
+                0.928,
+                0.331
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.336,
+                0.927,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.356,
+                0.863,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.375,
+                0.557,
+                0.391
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.41,
+                0.865,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.43,
+                0.878,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.45,
+                0.923,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.47,
+                0.863,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.489,
+                0.921,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.509,
+                0.931,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.529,
+                0.484,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.563,
+                0.907,
+                0.577
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.583,
+                0.855,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.601,
+                0.903,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.622,
+                0.871,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.642,
+                0.826,
+                0.656
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.661,
+                0.416,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.696,
+                0.845,
+                0.711
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.717,
+                0.92,
+                0.731
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.734,
+                0.891,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.755,
+                0.883,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.776,
+                0.916,
+                0.79
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.796,
+                0.331,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.049,
+                0.83,
+                0.908,
+                0.844
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.85,
+                0.84,
+                0.864
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.87,
+                0.897,
+                0.884
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.889,
+                0.877,
+                0.904
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.909,
+                0.846,
+                0.924
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.063,
+                0.068,
+                0.811,
+                0.107
+            ],
+            "angle": 0,
+            "content": "consistently captures feedback from the reporting cycle to reinforce continuous improvement.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.137,
+                0.95,
+                0.257
+            ],
+            "angle": 0,
+            "content": "Across these seven steps, the objective of smart compliance is to redesign report execution without compromising on rigor. This involves minimizing unnecessary data points, standardizing workflows, clarifying ownership, and embedding robust governance and controls throughout the process. Meanwhile, a well-structured end-to-end process builds the foundation for targeted technology and AI enablement, allowing organizations to automate repetitive tasks and enhance data quality to create tangible value.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.27,
+                0.95,
+                0.349
+            ],
+            "angle": 0,
+            "content": "Companies should treat sustainability reporting not as a sequence of disconnected activities, but rather as an integrated process with clear accountability and seamless data flows. In this way, they can reduce cost, enhance reliability, and meet growing regulatory and assurance expectations.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.377,
+                0.704,
+                0.482
+            ],
+            "angle": 0,
+            "content": "Enablers: Embedding AI and Strengthening Governance and Organization"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.507,
+                0.926,
+                0.588
+            ],
+            "angle": 0,
+            "content": "To achieve the desired impact from sustainability reporting transformation, companies need to adopt a more disciplined and integrated approach to AI. Rather than pursuing isolated pilots, leading organizations focus on systematically embedding the technology along the end-to-end reporting process and on prioritizing high-impact, process-aligned use cases.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.602,
+                0.498,
+                0.622
+            ],
+            "angle": 0,
+            "content": "These use cases typically span three categories:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.652,
+                0.869,
+                0.69
+            ],
+            "angle": 0,
+            "content": "- Automation of repetitive and rules-based tasks such as data collection, validation, and reconciliation",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.707,
+                0.874,
+                0.745
+            ],
+            "angle": 0,
+            "content": "- Advanced analytics to derive insights, identify anomalies, and strengthen management decision making",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.761,
+                0.846,
+                0.799
+            ],
+            "angle": 0,
+            "content": "- Emerging agentic solutions that orchestrate workflows and support the drafting and refinement of disclosures",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.83,
+                0.953,
+                0.91
+            ],
+            "angle": 0,
+            "content": "Crucially, the effectiveness of these applications depends on their integration into existing processes and control frameworks, as well as on the availability of reliable, well-structured data. In parallel, organizations need to invest in targeted capability building, equipping sustainability, finance, and data teams with the skills necessary to interpret, challenge, and continually improve",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "11"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.068,
+                0.808,
+                0.088
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.091,
+                0.198,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.139,
+                0.892,
+                0.154
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.158,
+                0.93,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.178,
+                0.927,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.198,
+                0.898,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.217,
+                0.947,
+                0.235
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.238,
+                0.387,
+                0.253
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.273,
+                0.948,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.292,
+                0.912,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.313,
+                0.835,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.333,
+                0.174,
+                0.346
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.374,
+                0.649,
+                0.414
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.411,
+                0.706,
+                0.448
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.447,
+                0.322,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.509,
+                0.923,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.53,
+                0.907,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.549,
+                0.92,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.569,
+                0.754,
+                0.584
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.602,
+                0.496,
+                0.621
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.652,
+                0.867,
+                0.67
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.675,
+                0.195,
+                0.688
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.708,
+                0.871,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.728,
+                0.22,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.763,
+                0.845,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.782,
+                0.303,
+                0.798
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.832,
+                0.886,
+                0.847
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.853,
+                0.936,
+                0.866
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.87,
+                0.935,
+                0.888
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.891,
+                0.95,
+                0.907
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.915,
+                0.108
+            ],
+            "angle": 0,
+            "content": "AI-driven outputs. In this way, AI can cease to be merely a technology experiment and instead become a core operational capability within reporting.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.122,
+                0.958,
+                0.261
+            ],
+            "angle": 0,
+            "content": "It is equally important to establish robust governance and an organizational setup that enables cross-functional interoperability. Sustainability reporting naturally sits at the intersection of sustainability, finance, risk, and IT. In many organizations, however, responsibilities remain fragmented and the decision-making process is unclear. To resolve this issue, companies need to clearly define roles and accountability across the end-to-end process, supported by governance mechanisms that ensure consistency, escalation pathways, and alignment with financial reporting standards.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.274,
+                0.949,
+                0.414
+            ],
+            "angle": 0,
+            "content": "Effective models typically combine centralized coordination (such as through a dedicated sustainability reporting function or steering body) with distributed ownership of data and content across business units. At the same time, governance must evolve to accommodate AI-enabled processes, including oversight of model use, validation of outputs, and alignment with assurance requirements. Working together, a fit-for-purpose organizational model and strong governance structures provide a firm foundation for scaling sustainability reporting in a manner that is controlled, efficient, and audit-ready.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.043,
+                0.484,
+                0.672,
+                0.566
+            ],
+            "angle": 0,
+            "content": "Conclusion: What Should Happen Now"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.591,
+                0.912,
+                0.711
+            ],
+            "angle": 0,
+            "content": "The evolution of sustainability reporting in Europe has reached a pivotal moment. The introduction of ESRS Set 2 gives companies a unique opportunity to reset their approach and move beyond compliance-driven reporting. FY2026 will be the first reporting cycle that fully incorporates this new direction. Organizations that take advantage of this moment to rethink their reporting model can achieve significant benefits—reducing cost, improving clarity, and strengthening the link between sustainability and business strategy.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.724,
+                0.95,
+                0.785
+            ],
+            "angle": 0,
+            "content": "On the other hand, companies that persist in following the approaches of the past may find themselves locked into inefficient processes that burden them with continuing cost pressure and prevent them from deriving full value from their reporting efforts.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.797,
+                0.804,
+                0.818
+            ],
+            "angle": 0,
+            "content": "To navigate this essential transition, organizations should prioritize three actions:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.847,
+                0.871,
+                0.889
+            ],
+            "angle": 0,
+            "content": "- Revisit double materiality as a strategic lens. Reduce and prioritize material topics to ensure alignment with business strategy and stakeholder relevance.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "12"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.069,
+                0.912,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.088,
+                0.55,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.124,
+                0.937,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.145,
+                0.901,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.163,
+                0.88,
+                0.179
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.183,
+                0.937,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.204,
+                0.936,
+                0.22
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.224,
+                0.952,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.243,
+                0.146,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.277,
+                0.874,
+                0.293
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.297,
+                0.947,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.316,
+                0.917,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.336,
+                0.936,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.355,
+                0.914,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.375,
+                0.883,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.395,
+                0.385,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.482,
+                0.673,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.525,
+                0.377,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.592,
+                0.841,
+                0.61
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.612,
+                0.907,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.632,
+                0.892,
+                0.649
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.652,
+                0.906,
+                0.668
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.671,
+                0.897,
+                0.688
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.691,
+                0.682,
+                0.707
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.726,
+                0.889,
+                0.742
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.745,
+                0.947,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.765,
+                0.648,
+                0.782
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.799,
+                0.801,
+                0.816
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.849,
+                0.868,
+                0.866
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.87,
+                0.702,
+                0.886
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.921,
+                0.109
+            ],
+            "angle": 0,
+            "content": "- Implement smart compliance through process redesign. Transform sustainability reporting into an integrated, end-to-end process that focuses on efficiency and decision usefulness.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.121,
+                0.922,
+                0.162
+            ],
+            "angle": 0,
+            "content": "- Strengthen AI, governance, and organizational capabilities. Build the necessary foundation to scale reporting effectively and sustainably.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.191,
+                0.944,
+                0.271
+            ],
+            "angle": 0,
+            "content": "Companies should view sustainability reporting not as a regulatory imposition, but as a strategic capability. Companies that embrace this perspective and act decisively will be in a good position to create value, manage risk, and compete in an economy that increasingly focuses on sustainability.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.285,
+                0.765,
+                0.306
+            ],
+            "angle": 0,
+            "content": "Thank you to Constantine Karlis, LuAnn Buck, Anas El Baghdadi and Bianca Catricalà.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.378,
+                0.247,
+                0.416
+            ],
+            "angle": 0,
+            "content": "Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.069,
+                0.461,
+                0.221,
+                0.567
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.613,
+                0.22,
+                0.72
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.246,
+                0.463,
+                0.421,
+                0.485
+            ],
+            "angle": 0,
+            "content": "Lorenzo Fantini"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.496,
+                0.437,
+                0.538
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nMilan"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.246,
+                0.542,
+                0.275,
+                0.559
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.533,
+                0.461,
+                0.683,
+                0.567
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.463,
+                0.853,
+                0.486
+            ],
+            "angle": 0,
+            "content": "Vuk Trifkovic"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.496,
+                0.911,
+                0.538
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner,\nBCG X\nBerlin"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.542,
+                0.738,
+                0.559
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.244,
+                0.622,
+                0.457,
+                0.645
+            ],
+            "angle": 0,
+            "content": "Jannik Leiendecker"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.243,
+                0.655,
+                0.46,
+                0.684
+            ],
+            "angle": 0,
+            "content": "Partner and Associate Director\nMunich",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.69,
+                0.275,
+                0.706
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.535,
+                0.612,
+                0.678,
+                0.72
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.622,
+                0.869,
+                0.645
+            ],
+            "angle": 0,
+            "content": "Eleonora Tieri"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.69,
+                0.738,
+                0.706
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.071,
+                0.768,
+                0.22,
+                0.872
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.656,
+                0.815,
+                0.684
+            ],
+            "angle": 0,
+            "content": "Project Leader\nMilan"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.775,
+                0.443,
+                0.798
+            ],
+            "angle": 0,
+            "content": "Solène Chataigné"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.246,
+                0.843,
+                0.275,
+                0.859
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.809,
+                0.417,
+                0.838
+            ],
+            "angle": 0,
+            "content": "Manager - BCG Vantage\nLondon Canary Wharf"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.532,
+                0.766,
+                0.682,
+                0.872
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.705,
+                0.776,
+                0.861,
+                0.799
+            ],
+            "angle": 0,
+            "content": "Julie Foucault"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.843,
+                0.738,
+                0.86
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.706,
+                0.808,
+                0.878,
+                0.837
+            ],
+            "angle": 0,
+            "content": "Manager - BCG Vantage Paris"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "13"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.069,
+                0.917,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.09,
+                0.899,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.124,
+                0.918,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.143,
+                0.489,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.194,
+                0.939,
+                0.209
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.213,
+                0.94,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.234,
+                0.846,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.254,
+                0.177,
+                0.269
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.289,
+                0.76,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.376,
+                0.247,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.244,
+                0.624,
+                0.453,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.658,
+                0.456,
+                0.669
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.672,
+                0.299,
+                0.682
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.103,
+                0.436,
+                0.121
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.138,
+                0.952,
+                0.258
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "14"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.105,
+                0.433,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.14,
+                0.95,
+                0.155
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.159,
+                0.9,
+                0.176
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.18,
+                0.904,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.199,
+                0.911,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.218,
+                0.933,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.238,
+                0.593,
+                0.255
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]
