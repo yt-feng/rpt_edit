@@ -1,0 +1,1280 @@
+[
+    {
+        "type": "text",
+        "text": "ASIAN DEVELOPMENT BANK MEMBER FACT SHEET",
+        "text_level": 2,
+        "bbox": [
+            109,
+            37,
+            498,
+            85
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/7f5a1e973c073d44d2c4185cdfe48e9fc9f9e1a128d37cf4caef1c1be9011a29.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            40,
+            34,
+            968,
+            310
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Maldives: 2025 Commitments (\\$ million) $^{a}$",
+        "text_level": 2,
+        "bbox": [
+            55,
+            320,
+            315,
+            334
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/9609e1912afb4d85d67b118d5073364432e12ca561bfbd6d7ccd59a91afa3fbd.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Product Type</td><td>Public Sector</td><td>Private Sector</td><td>Total</td></tr><tr><td>Technical  $Assistance^b$ </td><td>2.01</td><td>0.01</td><td>2.02</td></tr><tr><td>Total</td><td>2.01</td><td>0.01</td><td>2.02</td></tr></table>",
+        "bbox": [
+            53,
+            335,
+            346,
+            373
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Note:",
+        "text_level": 2,
+        "bbox": [
+            55,
+            376,
+            84,
+            386
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Commitment is the financing approved by ADB's Board of Directors or Management for which the legal agreement has been signed by the borrower, recipient, or the investee company and ADB. It comprises the amount indicated in the investment agreement, which—depending on the exchange rate at the time of signing—may or may not be equal to the approved amount.",
+        "bbox": [
+            55,
+            385,
+            348,
+            441
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "$^{a}$ Numbers may not sum up precisely because of rounding.",
+        "bbox": [
+            55,
+            443,
+            303,
+            454
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "$^{b}$ Financing for technical assistance projects with regional coverage is distributed to their specific ADB developing member countries where a breakdown is available.",
+        "bbox": [
+            55,
+            453,
+            338,
+            481
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/22dd47f548d2611bde34175633977966d2abc44d70d38ba6eadaeb2029fd952b.jpg",
+        "table_caption": [
+            "Maldives: Cumulative Commitments $^{a,b,c}$"
+        ],
+        "table_footnote": [
+            "- = nil."
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">Sector</td><td rowspan=\"2\">No.</td><td colspan=\"2\">Total Amount ($ million)d</td></tr><tr><td>Public Sector</td><td>Private Sector</td></tr><tr><td>Agriculture, Natural Resources, and Rural Development</td><td>6</td><td>24.29</td><td>-</td></tr><tr><td>Education</td><td>8</td><td>14.97</td><td>-</td></tr><tr><td>Energy</td><td>20</td><td>136.34</td><td>-</td></tr><tr><td>Finance</td><td>9</td><td>0.90</td><td>30.62</td></tr><tr><td>Health</td><td>4</td><td>12.80</td><td>-</td></tr><tr><td>Industry and Trade</td><td>10</td><td>30.42</td><td>0.08</td></tr><tr><td>Information and Communication Technology</td><td>1</td><td>0.15</td><td>20.14</td></tr><tr><td>Multisector</td><td>5</td><td>33.73</td><td>-</td></tr><tr><td>Public Sector Management</td><td>35</td><td>130.64</td><td>-</td></tr><tr><td>Transport</td><td>21</td><td>46.76</td><td>-</td></tr><tr><td>Water and Other Urban Infrastructure and Services</td><td>9</td><td>124.64</td><td>-</td></tr><tr><td>Total</td><td>128</td><td>555.65</td><td>50.83</td></tr></table>",
+        "bbox": [
+            50,
+            527,
+            348,
+            746
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "a Includes loans, grants, equity investments, and technical assistance.\nb Using primary sector in the reporting of commitments.",
+        "bbox": [
+            55,
+            762,
+            346,
+            781
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "$^{c}$ From 2020, financing for technical assistance projects with regional coverage is distributed to their specific ADB developing member countries where a breakdown is available.",
+        "bbox": [
+            55,
+            780,
+            346,
+            808
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "$^{d}$ Numbers may not sum up precisely because of rounding.",
+        "bbox": [
+            55,
+            806,
+            303,
+            819
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "ADB is helping Maldives through investment projects and technical assistance across various sectors, while fostering fiscal sustainability, inclusive growth, and regional cooperation.",
+        "bbox": [
+            392,
+            325,
+            918,
+            415
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "MALDIVES",
+        "text_level": 2,
+        "bbox": [
+            397,
+            459,
+            633,
+            494
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Maldives joined the Asian Development Bank (ADB) in 1978. The country partnership strategy (CPS), 2020–2024, continues to guide ADB's engagement in the country. Its priorities include enhancing public sector efficiency and fiscal sustainability, strengthening competitiveness and diversifying the economy, and improving quality of life while ensuring environmental sustainability. The country is eligible for grants and concessional funding through the Asian Development Fund (ADF).",
+        "bbox": [
+            393,
+            521,
+            929,
+            607
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Recent ADB projects notably boost resilience and food security by improving flood and coastal protection and investing in local agri-food systems. ADB supports upgrading power grids to accommodate higher shares of renewable energy, while helping the government tender new solar power capacity. Efforts to advance social protection include building shelters for victims of domestic abuse and violence against women and girls. Investment in vaccine cold storage bolsters public health, while the development of an electronic single window aims to simplify export procedures. ADB also supports solid waste management through improved waste collection and converting waste to electricity, leading to lower emissions and greater energy independence.",
+        "bbox": [
+            393,
+            612,
+            924,
+            753
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Public sector operations. As of 31 December 2025, ADB had committed 121 public sector loans, grants, and technical assistance totaling \\$556 million to Maldives. ADB's current public sector portfolio in the country includes 5 loans and 10 grants worth \\$253.3 million. $^{1}$",
+        "bbox": [
+            393,
+            758,
+            928,
+            816
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{1}$ Public sector portfolio consists of ADB-financed loans, grants, equity investments, and public sector guarantees committed and not financially closed. Regional projects with loans/grants to multiple countries are reported separately.",
+        "bbox": [
+            395,
+            904,
+            785,
+            935
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "ADB",
+        "bbox": [
+            836,
+            854,
+            926,
+            922
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "Updated as of July 2026",
+        "bbox": [
+            815,
+            965,
+            970,
+            979
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "In 2025, ADB approved a technical assistance project to help modernize Maldives' customs service. The country may also benefit from several regional technical assistance projects approved in 2025. These initiatives support evidence-based approaches to resilience and sustainability and accountability through stronger audit institutions. Technical assistance also emphasizes regional cooperation, supporting the regional cooperation and integration agenda of the South Asian Association for Regional Cooperation, as well as trade and transport facilitation in South Asia. Additional assistance focuses on expanding capacity development networks for government officials.",
+        "bbox": [
+            66,
+            65,
+            470,
+            234
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Private sector operations. Total outstanding balances and undisbursed commitments of ADB's private sector transactions in Maldives as of 31 December 2025 amounted to \\$23.32 million, representing 0.15% of ADB's total private sector portfolio.",
+        "bbox": [
+            68,
+            239,
+            478,
+            297
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Cumulative disbursements. Cumulative public and private sector loan and grant disbursements to Maldives amount to \\$392 million. These were financed by regular and concessional ordinary capital resources, ADF, and other special funds.",
+        "bbox": [
+            68,
+            303,
+            468,
+            361
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Operational challenges. A limited human resource pool limits the country's capacity to design and implement complex projects. In response, ADB provides technical assistance to strengthen the government's institutional and technical capacity. In addition, Maldives' weak business environment, small market size, and limited access to credit hinder opportunities for private-sector investments. ADB helps the country in this area through technical assistance and project financing.",
+        "bbox": [
+            66,
+            366,
+            480,
+            479
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "KNOWLEDGE WORK",
+        "text_level": 2,
+        "bbox": [
+            70,
+            500,
+            243,
+            515
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "In 2025, ADB released a study identifying sociocultural obstacles to workforce participation among women and disadvantaged groups, highlighting the need for stronger social protection, childcare, inclusive urban planning, and financing for women-owned businesses. Another study using machine learning generated granular poverty indicators to help tackle spatial inequality. ADB also supported efforts to diversify the economy within and beyond the dominant fisheries and tourism sectors. In 2025, a series of workshops brought business, civil society, and government stakeholders together to explore opportunities. The Maldives Tuna Think Tank workshop looked into strengthening sustainability, efficiency, and access to financing in the tuna value chain. Stakeholder workshops and policy dialogue deepened collaboration among local actors to support creative entrepreneurship, improve the livelihoods of island communities, and introduce new services for tourists visiting Maldives.",
+        "bbox": [
+            66,
+            522,
+            473,
+            762
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/5aa4fed06f8d2d8d53c81c2d1e5ac3dfad0ddb71a25c0639a99c8ce2c013feaa.jpg",
+        "table_caption": [
+            "Maldives: Share of Procurement Contracts for Loan, Grant, and Technical Assistance Projects"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\">Item</td><td colspan=\"2\">Goods, Works, and Related Services</td></tr><tr><td>Amount($ million)</td><td>% ofADB Total</td></tr><tr><td>2024</td><td>1.17</td><td>0.01</td></tr><tr><td>2025</td><td>2.22</td><td>0.01</td></tr><tr><td>Cumulative (as of 31 Dec 2025)</td><td>166.80</td><td>0.06</td></tr></table>",
+        "bbox": [
+            504,
+            99,
+            911,
+            170
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/8511adb6f20bd3335873bb36d4bae7705f1726c660f81945e8460d473243f3e6.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\">Item</td><td colspan=\"2\">Consulting Services</td></tr><tr><td>Amount($ million)</td><td>% ofADB Total</td></tr><tr><td>2024</td><td>0.74</td><td>0.14</td></tr><tr><td>2025</td><td>1.12</td><td>0.15</td></tr><tr><td>Cumulative (as of 31 Dec 2025)</td><td>8.40</td><td>0.05</td></tr></table>",
+        "bbox": [
+            504,
+            176,
+            913,
+            247
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/24475688016ba840857e817869affefd01d9f725e107776693fff36dc4f231a7.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\">Item</td><td colspan=\"2\">Total Procurement</td></tr><tr><td>Amount($ million)</td><td>% ofADB Total</td></tr><tr><td>2024</td><td>1.91</td><td>0.01</td></tr><tr><td>2025</td><td>3.34</td><td>0.02</td></tr><tr><td>Cumulative (as of 31 Dec 2025)</td><td>175.20</td><td>0.06</td></tr></table>",
+        "bbox": [
+            504,
+            252,
+            913,
+            323
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/bac9beb33bf7882a84397adf13fe279e2e0adc2c423da5bbcbccccd4ed484757.jpg",
+        "table_caption": [
+            "Top 5 Contractors/Suppliers from Maldives Involved in Goods, Works, and Related Services Contracts under ADB Loan and Grant Projects, 1 January 2021–31 December 2025"
+        ],
+        "table_footnote": [
+            "HLT = health, IND = industry and trade, WUS = water and other urban infrastructure and services."
+        ],
+        "table_body": "<table><tr><td>Contractor/Supplier</td><td>Sector</td><td>Contract Amount($ million)</td></tr><tr><td>Central Line Pvt. Ltd.</td><td>WUS</td><td>1.65</td></tr><tr><td>Roseware Corporation Pvt. Ltd.</td><td>HLT, IND</td><td>0.98</td></tr><tr><td>Sunnyland Investments Pvt. Ltd.</td><td>WUS</td><td>0.51</td></tr><tr><td>Tradenet Corp. Ltd.</td><td>IND</td><td>0.26</td></tr><tr><td>Wee Hour Investment Pvt. Ltd.</td><td>WUS</td><td>0.22</td></tr><tr><td>Others</td><td></td><td>20.69</td></tr><tr><td>Total</td><td></td><td>24.31</td></tr></table>",
+        "bbox": [
+            506,
+            393,
+            911,
+            502
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Top 5 Consultants from Maldives Involved in Consulting Services Contracts under ADB Loan, Grant, and Technical Assistance Projects, 1 January 2021–31 December 2025",
+        "text_level": 2,
+        "bbox": [
+            509,
+            531,
+            908,
+            571
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/30dc1c05dafbe532d20df24844b05c108761e3bd272317fda04636e135d267c4.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "ANR = agriculture, natural resources, and rural development; ENE = energy."
+        ],
+        "table_body": "<table><tr><td>Consultant</td><td>Sector</td><td>Contract Amount($ million)</td></tr><tr><td>Land and Marine Environmental Resource Group</td><td>ANR</td><td>0.45</td></tr><tr><td>Water Solutions Pvt. Ltd.</td><td>ENE</td><td>0.10</td></tr><tr><td>Individual Consultants</td><td></td><td>2.74</td></tr><tr><td>Others</td><td></td><td>0.24</td></tr><tr><td>Total</td><td></td><td>3.53</td></tr></table>",
+        "bbox": [
+            506,
+            573,
+            911,
+            669
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/59aa53a87b66edabfb3470ffbe7c89f92ae4412f5e366082a44ae8221000c5d9.jpg",
+        "table_caption": [
+            "Maldives: Ordinary Capital Resources Private Sector Commitments by Product"
+        ],
+        "table_footnote": [
+            "- = nil, OCR = ordinary capital resources."
+        ],
+        "table_body": "<table><tr><td></td><td>2025</td><td>2021–2025</td></tr><tr><td>Number of Transactions Signed (OCR)</td><td>0</td><td>2</td></tr><tr><td>Number of Transactions Signed (Programs)</td><td>0</td><td>0</td></tr><tr><td></td><td colspan=\"2\">Amount ($ million)</td></tr><tr><td>Loans</td><td>-</td><td>33.00</td></tr><tr><td>Equity Investments</td><td>-</td><td>-</td></tr><tr><td>Guarantees</td><td>-</td><td>-</td></tr><tr><td>Debt Security</td><td>-</td><td>-</td></tr><tr><td>Trade and Supply Chain Finance Programand Microfinance Program</td><td>-</td><td>-</td></tr><tr><td>Total</td><td>-</td><td>33.00</td></tr></table>",
+        "bbox": [
+            504,
+            724,
+            913,
+            859
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "FINANCING PARTNERSHIPS",
+        "text_level": 2,
+        "bbox": [
+            84,
+            64,
+            316,
+            80
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Financing partnerships enable ADB's partner governments or their agencies, multilateral financing institutions, and private organizations to participate in financing ADB projects. The additional funds provided may be in the form of loans and grants, technical assistance, and private sector cofinancing.",
+        "bbox": [
+            83,
+            89,
+            486,
+            160
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Cumulative cofinancing commitments in Maldives:",
+        "bbox": [
+            84,
+            165,
+            408,
+            180
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Public sector cofinancing: \\$239.54 million for 10 investment projects and \\$7.45 million for 10 technical assistance projects since 1981",
+        "bbox": [
+            84,
+            186,
+            467,
+            228
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Private sector cofinancing: \\$24.91 million for 2 investment projects since 2022",
+        "bbox": [
+            84,
+            229,
+            475,
+            258
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Through its private sector operations, ADB also actively mobilizes capital by attracting funding from other institutions and helping close funding gaps to increase development impact across the region.",
+        "bbox": [
+            83,
+            263,
+            480,
+            321
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "A summary of projects with cofinancing from 1 January 2021 to 31 December 2025 is available at www.adb.org/where-we-work/maldives/cofinancing.",
+        "bbox": [
+            83,
+            327,
+            491,
+            371
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "FUTURE DIRECTIONS",
+        "text_level": 2,
+        "bbox": [
+            84,
+            390,
+            264,
+            407
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "ADB's strategic directions will be guided by Maldives' forthcoming long-term national development plan, which will set development objectives by 2040. This forward-looking framework will notably target structural transformation, productivity gains, and inclusive, sustainable development. ADB's action will also be guided by ADB's Strategy 2030 and its midterm review. ADB is engaging with the government on a new country partnership strategy, which will remain anchored in strengthening fiscal sustainability, development sustainability, economic growth, and resilience.",
+        "bbox": [
+            81,
+            414,
+            490,
+            556
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/e630a58f34596faf0033c49b0b2fcb5428b2769d9c1786e2870690053101fc1e.jpg",
+        "table_caption": [
+            "Maldives: Portfolio Performance Quality Indicators for Public Sector Lending and Grants, 2024–2025"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>No. of Ongoing Loans $^{a}$  (as of 31 Dec 2025)</td><td colspan=\"2\">5</td></tr><tr><td></td><td>2024 ($ million)</td><td>2025 ($ million)</td></tr><tr><td>Contract Awards $^{b}$ </td><td>1.34</td><td>-</td></tr><tr><td>Disbursements $^{c}$ </td><td>13.18</td><td>5.82</td></tr><tr><td>No. of Ongoing Grants $^{d}$  (as of 31 Dec 2025)</td><td colspan=\"2\">10</td></tr><tr><td></td><td>2024 ($ million)</td><td>2025 ($ million)</td></tr><tr><td>Contract Awards $^{b}$ </td><td>5.66</td><td>5.63</td></tr><tr><td>Disbursements $^{c,e}$ </td><td>15.25</td><td>11.96</td></tr><tr><td>At Risk Projects (\\%) $^{f}$  (as of 31 Dec 2025)</td><td colspan=\"2\">-</td></tr></table>",
+        "bbox": [
+            519,
+            99,
+            926,
+            203
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- = nil.",
+        "bbox": [
+            524,
+            205,
+            555,
+            217
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "$^{a}$ Includes ADB-financed public sector loans committed and not financially closed.",
+        "bbox": [
+            524,
+            219,
+            872,
+            229
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "b Includes closed loans that had contract awards during the year. Excludes policy-based lending, results-based lending, financial intermediation (FI) and FI component for combined FI/PROJECT, grants funded by the Asia Pacific Disaster Response Fund (APDRF), and ADB-financed projects administered by an external agency.",
+        "bbox": [
+            524,
+            229,
+            905,
+            267
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "c Includes closed loans/grants that had disbursements during the year.",
+        "bbox": [
+            524,
+            266,
+            818,
+            277
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "$^{d}$ Covers public sector grants financed by the Asian Development Fund (ADF) and other ADB special funds committed and not financially closed.",
+        "bbox": [
+            524,
+            276,
+            916,
+            297
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "e Includes only the ADF.",
+        "bbox": [
+            524,
+            296,
+            632,
+            306
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "$^{f}$ Covers active projects as of 31 December 2025.",
+        "bbox": [
+            524,
+            305,
+            733,
+            316
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/3f4c9e5c4d202e847d37f286ec7d14f172da98dc66f9261f1b7b55e6c1e188ef.jpg",
+        "table_caption": [
+            "Maldives: Independent Evaluation Ratings for Public and Private Sector Operations, 2016–2025"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td rowspan=\"2\">Total Number of Validated and Evaluated Projects and Programs</td><td colspan=\"3\">Evaluation Ratings</td></tr><tr><td>Highly successful and successful</td><td>Less than successful</td><td>Unsuccessful</td></tr><tr><td>Public Sector Operations</td><td>3</td><td>2</td><td>1</td><td>-</td></tr><tr><td>Private Sector Operations</td><td>1</td><td>1</td><td>-</td><td>-</td></tr></table>",
+        "bbox": [
+            519,
+            390,
+            924,
+            494
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Note: The numbers indicate public and private sector operations in the country that have been validated or evaluated by the Independent Evaluation Department (IED) and their overall performance ratings. The coverage consists of all validated or evaluated project completion reports and extended annual review reports circulated by ADB within the 10-year period from 1 July 2015 to 30 June 2025. The rating of one COVID-19 Pandemic Response Option (CPRO) project completed (validated) in 2023 is not included in the total. See evaluations related to Maldives.",
+        "bbox": [
+            522,
+            511,
+            923,
+            569
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Source: IED success rate database.",
+        "bbox": [
+            524,
+            570,
+            665,
+            582
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Maldives: Projects Cofinanced,",
+        "text_level": 2,
+        "bbox": [
+            524,
+            614,
+            730,
+            628
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/c63d43de1632a566f6e5b52e2d352c7d4672768cb8db78402211ab7a4bafea8f.jpg",
+        "table_caption": [
+            "1 January 2021–31 December 2025"
+        ],
+        "table_footnote": [
+            "$^{a}$ A project with more than one source of cofinancing is counted once."
+        ],
+        "table_body": "<table><tr><td>Cofinancing</td><td>No. of Projects</td><td>Amount ($ million)</td></tr><tr><td>Public sector projects $^{a}$ </td><td>3</td><td>49.00</td></tr><tr><td>Loans</td><td>2</td><td>30.00</td></tr><tr><td>Grants</td><td>2</td><td>19.00</td></tr><tr><td>Private sector projects</td><td>2</td><td>25.91</td></tr><tr><td>Technical Assistance</td><td>3</td><td>3.23</td></tr></table>",
+        "bbox": [
+            519,
+            643,
+            926,
+            724
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "ADB AT A GLANCE",
+        "text_level": 2,
+        "bbox": [
+            57,
+            37,
+            243,
+            55
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "ADB is a leading multilateral development bank supporting inclusive, resilient, and sustainable growth across Asia and the Pacific. Founded in 1966, ADB is owned by 69 members—50 from the region and 19 outside. ADB is headquartered in Manila, Philippines, and has 43 offices around the world. Its 4,436 staff represented 67 of its 69 members as of 31 December 2025.",
+        "bbox": [
+            55,
+            61,
+            542,
+            128
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Working with its members and partners to solve complex challenges together, ADB's financial and technical support is transforming lives and economies across Asia and the Pacific—fueling prosperity, strengthening communities, and protecting the planet.",
+        "bbox": [
+            55,
+            132,
+            552,
+            174
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "In 2025, ADB sharpened its focus on promoting private sector development as a key driver of growth. ADB's investments in 2025 across Asia and the Pacific are expected to generate more than 3.3 million jobs.",
+        "bbox": [
+            55,
+            178,
+            547,
+            218
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "ADB operations. In 2025, ADB committed \\$29.3 billion in loans, grants, equity investments, guarantees, private sector programs, and technical assistance to its borrowing members. ADB bolstered its total support with cofinancing of \\$14.7 billion.",
+        "bbox": [
+            55,
+            223,
+            549,
+            263
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "As of 31 December 2025, ADB's cumulative commitments in 46 members stood at \\$423.4 billion covering 4,659 loans, \\$15.7 billion in 719 grants, and \\$6.3 billion in technical assistance grants, including regional technical assistance grants.",
+        "bbox": [
+            55,
+            267,
+            531,
+            309
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "In addition to loans, grants, and technical assistance, ADB used equity investments, guarantees, and private sector programs to help its developing member countries.",
+        "bbox": [
+            55,
+            313,
+            537,
+            340
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Total project commitments in private sector loans, equity investments, and guarantees from ADB's own funds in 2025 amounted to \\$3.1 billion for 49 transactions in economic and social infrastructure, the finance sector, and agribusiness. Commitments in ADB's Trade and Supply Chain Finance Program and Microfinance Program amounted to \\$2.4 billion.",
+        "bbox": [
+            55,
+            345,
+            553,
+            411
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "In 2025, ADB also directly mobilized \\$6 billion in private capital across 35 projects, with an additional \\$3.7 billion directly mobilized through its trade and supply chain finance and microfinance programs.",
+        "bbox": [
+            55,
+            415,
+            532,
+            455
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Total outstanding balances and undisbursed commitments of private sector transactions funded by ADB's own resources stood at \\$15.1 billion as of 31 December 2025.",
+        "bbox": [
+            55,
+            459,
+            496,
+            500
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "FINANCING PARTNERSHIPS",
+        "text_level": 2,
+        "bbox": [
+            57,
+            513,
+            290,
+            529
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Total public and private sector cofinancing commitments, 2025",
+        "bbox": [
+            55,
+            535,
+            439,
+            550
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- \\$14.7 billion for 224 projects, of which:",
+        "bbox": [
+            57,
+            556,
+            312,
+            569
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "» \\$13.7 billion, 92 investment projects,",
+        "bbox": [
+            75,
+            569,
+            316,
+            582
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "» \\$173.6 million, 130 technical assistance projects,",
+        "bbox": [
+            75,
+            582,
+            388,
+            595
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "» \\$781.18 million transaction advisory services for 2 projects.\\*",
+        "bbox": [
+            75,
+            594,
+            452,
+            608
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Cumulative public and private sector cofinancing commitments, 1970–2025",
+        "bbox": [
+            55,
+            614,
+            508,
+            628
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- \\$197.72 billion for 3,777 projects, of which:",
+        "bbox": [
+            55,
+            633,
+            334,
+            648
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "» \\$189.9 billion, 1,430 investment projects,",
+        "bbox": [
+            75,
+            648,
+            343,
+            660
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "» \\$3.41 billion, 2,332 technical assistance projects,",
+        "bbox": [
+            76,
+            660,
+            388,
+            672
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "» \\$4.4 billion transaction advisory services for 15 projects.\\*\\*",
+        "bbox": [
+            75,
+            672,
+            441,
+            686
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\* Adjusted to exclude \\$12.5 million A Loans mobilized under transaction advisory services reported under private sector operations financing, and \\$158.8 million cofinancing reported in private sector projects cofinancing.",
+        "bbox": [
+            55,
+            694,
+            547,
+            715
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\*\\* Adjusted to exclude \\$53.9 million A Loans mobilized under transaction advisory services reported under private sector operations financing, and \\$334.58 million cofinancing reported in private sector projects cofinancing.",
+        "bbox": [
+            55,
+            715,
+            550,
+            736
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "PROCUREMENT",
+        "text_level": 2,
+        "bbox": [
+            57,
+            748,
+            192,
+            763
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "ADB's procurement contracts in Asia and the Pacific for goods, works, and related services under loan and grant operations:",
+        "bbox": [
+            55,
+            771,
+            555,
+            797
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "• \\$13.98 billion in 2024",
+        "bbox": [
+            57,
+            804,
+            210,
+            816
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "• \\$14.89 billion in 2025",
+        "bbox": [
+            57,
+            816,
+            210,
+            829
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- \\$292.29 billion covering 238,051 contracts, cumulative procurement since 1966",
+        "bbox": [
+            55,
+            829,
+            550,
+            844
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "ADB's procurement contracts in Asia and the Pacific for consulting services under loan, grant, and technical assistance operations:",
+        "bbox": [
+            55,
+            849,
+            552,
+            877
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "• \\$524.54 million in 2024",
+        "bbox": [
+            57,
+            881,
+            225,
+            893
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- \\$758.66 million in 2025",
+        "bbox": [
+            57,
+            893,
+            223,
+            907
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- \\$17.5 billion covering 91,335 contracts, cumulative procurement since 1966",
+        "bbox": [
+            55,
+            907,
+            519,
+            922
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "MORE ABOUT MALDIVES AND ADB",
+        "text_level": 2,
+        "bbox": [
+            594,
+            36,
+            844,
+            69
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Shareholding and Voting Power",
+        "text_level": 2,
+        "bbox": [
+            594,
+            83,
+            785,
+            95
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Number of shares held: 426 (0.004% of total shares)\nVotes: 38,973 (0.293% of total membership, 0.448% of total regional membership)\n\\*Overall capital subscription: \\$5.84 million\n\\*Paid-in capital subscription: \\$288,000",
+        "bbox": [
+            594,
+            95,
+            968,
+            154
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\*United States dollar figures are valued at the rate as of 31 December 2025.",
+        "bbox": [
+            594,
+            159,
+            955,
+            172
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "ADB Governor: Hassan Zareer",
+        "text_level": 2,
+        "bbox": [
+            594,
+            186,
+            777,
+            199
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "ADB Alternate Governor: Zidna Ibrahim  \nADB Director: Noor Ahmed (Pakistan)  \nADB Alternate Director: Rolando Tungpalan (Philippines)  \nADB Director's Advisors: Tanya Real (Philippines) and Ali Irufan (Maldives)",
+        "bbox": [
+            593,
+            199,
+            967,
+            265
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "CONTACTS",
+        "text_level": 2,
+        "bbox": [
+            594,
+            291,
+            694,
+            306
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Maldives Coordination Office\nEstablished: 2021\nDesk Officer: Jules Hugot",
+        "bbox": [
+            594,
+            320,
+            774,
+            358
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "ADB South Asia Department - Regional Cooperation and Operations Coordination Division\n6 ADB Avenue, Mandaluyong City, 1550 Metro Manila, Philippines\nTel: +632-8632-4444\nwww.adb.org/maldives",
+        "bbox": [
+            593,
+            362,
+            960,
+            422
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "ADB Headquarters",
+        "text_level": 2,
+        "bbox": [
+            594,
+            434,
+            714,
+            446
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "6 ADB Avenue, Mandaluyong City\n1550 Metro Manila, Philippines\nTel: +63 2 8632 4444\nFax: +63 2 8636 2444\nwww.adb.org",
+        "bbox": [
+            594,
+            446,
+            789,
+            503
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Ministry of Finance and Planning",
+        "text_level": 2,
+        "bbox": [
+            594,
+            516,
+            794,
+            530
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Ameenee Magu\nBlock 379 Malé, Republic of Maldives\nTel: +960 334 9200\nadmin@finance.gov.mv",
+        "bbox": [
+            594,
+            529,
+            803,
+            575
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Useful ADB websites",
+        "text_level": 2,
+        "bbox": [
+            594,
+            602,
+            723,
+            616
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Asian Development Bank\nwww.adb.org",
+        "bbox": [
+            594,
+            621,
+            740,
+            647
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Publications\nwww.adb.org/publications",
+        "bbox": [
+            594,
+            659,
+            750,
+            685
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Annual Reports\nwww.adb.org/documents/series/adb-annual-reports",
+        "bbox": [
+            594,
+            696,
+            898,
+            723
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Asian Development Outlook\nwww.adb.org/publications/series/asian-development-outlook",
+        "bbox": [
+            594,
+            734,
+            944,
+            761
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "ADB Data Library\ndata.adb.org",
+        "bbox": [
+            594,
+            773,
+            697,
+            797
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Asian Development Blog https://blogs.adb.org/",
+        "bbox": [
+            594,
+            810,
+            736,
+            837
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Notes: (i) Figures are estimated by ADB unless otherwise stated. \"\\$\" refers to United States dollars. (ii) Data are updated as of 31 December 2025 unless otherwise indicated.",
+        "bbox": [
+            599,
+            926,
+            911,
+            963
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "Publication Stock No. ARM260162",
+        "bbox": [
+            781,
+            976,
+            978,
+            989
+        ],
+        "page_idx": 3
+    }
+]

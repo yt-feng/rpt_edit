@@ -1,0 +1,6485 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.031,
+                0.058,
+                0.195,
+                0.097
+            ],
+            "angle": 0,
+            "content": "OECD\nBETTER POLICIES FOR BETTER LIVES"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.305,
+                0.044,
+                0.747,
+                0.109
+            ],
+            "angle": 0,
+            "content": "Policy Brief"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.102,
+                0.164,
+                0.737,
+                0.229
+            ],
+            "angle": 0,
+            "content": "Developing South Africa's National Student Assessment Framework"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.785,
+                0.253,
+                0.87,
+                0.27
+            ],
+            "angle": 0,
+            "content": "6 July 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.289,
+                0.882,
+                0.384
+            ],
+            "angle": 0,
+            "content": "South Africa has made significant progress in expanding access to education over the past three decades. However, low learning outcomes and persistent inequalities between schools remain key challenges. Recognising the role of assessment in improving education quality, South Africa's Department of Basic Education requested the OECD's advice on how to further develop its National Student Assessment Framework. This Policy Brief summarises the conclusions of this analysis, and puts forward the following policy recommendations:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.389,
+                0.883,
+                0.515
+            ],
+            "angle": 0,
+            "content": "- Update the National Student Assessment Framework to include all major assessments and clarify their key characteristics, including their purpose and use of results. Including the General Education Certificate and the National Senior Certificate will be important as they represent key milestones in students' progression. The Framework should provide direction on South Africa's school-based assessment policy to better balance formative and summative functions. This may require reconsidering how assessments contribute to term or end-of-year marks. Finally, explicit mentioning of key objectives and indicators from the Strategic Plan 2025–30 would promote greater policy coherence and enhance the Framework's role in system-level monitoring and policy making.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.519,
+                0.882,
+                0.614
+            ],
+            "angle": 0,
+            "content": "- Expand the National Student Assessment Framework to include additional standardised assessments resources. To address gaps in reliable assessment data, South Africa should consider introducing additional standardised assessment resources, such as national diagnostic assessments and an item bank, to support teaching and learning. Administering national diagnostic assessments at the start of the school year or term would help maintain their diagnostic focus and support a more balanced approach between formative and summative school-based assessment.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.619,
+                0.882,
+                0.745
+            ],
+            "angle": 0,
+            "content": "- Use the National Student Assessment Framework to guide the further development and implementation of South Africa's Systemic Evaluation. While the Systemic Evaluation is well-designed, the level of detail and content of the proficiency-level descriptors vary across grades and could be improved. In mapping the assessment framework against international benchmarks, the OECD also identified a couple of areas where the content of the tests might be further developed. Any changes should align with the revised school curriculum. South Africa might also consider piloting digital assessment in future Systemic Evaluation cycles. This could shorten reporting timelines and offer additional benefits, such as strengthened data analytics.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.75,
+                0.882,
+                0.876
+            ],
+            "angle": 0,
+            "content": "- Further enhance the monitoring of teaching practice and teachers' working conditions through the National Student Assessment Framework. The Systemic Evaluation Teacher Questionnaire could be strengthened in several areas, such as the monitoring of teachers' workload and work-related stress, their professional development, and their pedagogical and assessment practices, and prioritised in line with national objectives. Field-testing the revised questionnaire would help avoid significant increases in survey length. The Framework should also provide direction on future participation in the Teaching and Learning International Survey (TALIS) and set out plans for analysing and sharing data on teachers.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.105,
+                0.916,
+                0.732,
+                0.929
+            ],
+            "angle": 0,
+            "content": "DEVELOPING SOUTH AFRICA'S NATIONAL STUDENT ASSESSMENT FRAMEWORK © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.165,
+                0.735,
+                0.193
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.203,
+                0.456,
+                0.227
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.786,
+                0.254,
+                0.868,
+                0.272
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.112,
+                0.288,
+                0.88,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.305,
+                0.879,
+                0.32
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.321,
+                0.88,
+                0.335
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.337,
+                0.879,
+                0.349
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.352,
+                0.88,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.112,
+                0.368,
+                0.501,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.389,
+                0.88,
+                0.403
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.405,
+                0.88,
+                0.419
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.419,
+                0.881,
+                0.434
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.436,
+                0.88,
+                0.449
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.451,
+                0.88,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.468,
+                0.88,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.482,
+                0.879,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.144,
+                0.496,
+                0.88,
+                0.514
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.52,
+                0.88,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.535,
+                0.88,
+                0.55
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.552,
+                0.879,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.567,
+                0.88,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.583,
+                0.879,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.598,
+                0.877,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.619,
+                0.88,
+                0.634
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.635,
+                0.88,
+                0.649
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.651,
+                0.88,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.667,
+                0.88,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.682,
+                0.878,
+                0.695
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.697,
+                0.88,
+                0.711
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.713,
+                0.879,
+                0.727
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.144,
+                0.727,
+                0.707,
+                0.742
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.751,
+                0.88,
+                0.764
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.767,
+                0.88,
+                0.78
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.782,
+                0.88,
+                0.795
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.796,
+                0.88,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.813,
+                0.88,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.828,
+                0.88,
+                0.841
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.843,
+                0.881,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.859,
+                0.544,
+                0.873
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.869,
+                0.075,
+                0.894,
+                0.091
+            ],
+            "angle": 0,
+            "content": "| 2"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.103,
+                0.146,
+                0.863,
+                0.165
+            ],
+            "angle": 0,
+            "content": "Why is South Africa in updating its National Student Assessment Framework?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.102,
+                0.179,
+                0.895,
+                0.351
+            ],
+            "angle": 0,
+            "content": "South Africa has expanded access to education over the past three decades. However, low learning outcomes and wide inequalities between schools remain a challenge. Results from the country's new national standardised student assessment, South Africa's Systemic Evaluation (SASE), reveal that large shares of students in Grades 3, 6 and 9 perform at the lowest proficiency levels in reading and numeracy. In Grade 3, for example, \\(37\\%\\) of students in 2021 were \"Emerging\" level readers. This means they were just beginning to develop grade-level foundational knowledge and skills and require extensive guidance and support. International assessments confirm these patterns (see Figure 1) and help explain the high rates of grade repetition and dropout later in schooling. These outcomes reflect long-standing structural inequalities among South African schools, including uneven access to qualified teachers and learning resources. In this context, South Africa's Department of Basic Education has made raising learning outcomes a core objective in its Strategic Plan 2025-30 (Department of Basic Education, 2025[1]).",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.103,
+                0.369,
+                0.65,
+                0.388
+            ],
+            "angle": 0,
+            "content": "Figure 1. Low learning outcomes are a key challenge in South Africa"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.101,
+                0.407,
+                0.487,
+                0.622
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.515,
+                0.407,
+                0.923,
+                0.629
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.104,
+                0.63,
+                0.872,
+                0.656
+            ],
+            "angle": 0,
+            "content": "Note: Grade repetition rate calculated based on the number of students who will repeat in the next year, divided by the total students in the current year."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.105,
+                0.655,
+                0.672,
+                0.669
+            ],
+            "angle": 0,
+            "content": "Source: A : von Daviet et al. (2024[2]), TIMSS 2023 International Results in Mathematics and Science,"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.105,
+                0.669,
+                0.733,
+                0.683
+            ],
+            "angle": 0,
+            "content": "https://doi.org/10.6017/lse.tpisc.timss.rs6460; Mullis et al. (2023[3]), PIRLS 2021 International Results in Reading,"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.105,
+                0.681,
+                0.885,
+                0.709
+            ],
+            "angle": 0,
+            "content": "https://doi.org/10.6017/lse.tpisc.tr2103.kb5342; B : Department of Basic Education (2024[4]), South African Systemic Evaluation 2022 Volume 2 Learner Proficiency Report."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.731,
+                0.895,
+                0.841
+            ],
+            "angle": 0,
+            "content": "Recognising the role assessments can play in helping to improve learning outcomes, the Department of Basic Education is now further developing the National Student Assessment Framework. This framework will set out South Africa's overarching vision for student assessment and intends to define the primary purposes and key characteristics of different assessments (e.g. classroom-based assessments, examinations, and national standardised assessments). It will also explain how different assessments complement each other to support quality objectives across the school system, such as identifying learning gaps and providing targeted interventions to support student learning.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.105,
+                0.916,
+                0.732,
+                0.929
+            ],
+            "angle": 0,
+            "content": "DEVELOPING SOUTH AFRICA'S NATIONAL STUDENT ASSESSMENT FRAMEWORK © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.147,
+                0.859,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.18,
+                0.891,
+                0.193
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.195,
+                0.891,
+                0.208
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.211,
+                0.891,
+                0.223
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.227,
+                0.889,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.242,
+                0.891,
+                0.254
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.257,
+                0.891,
+                0.269
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.273,
+                0.891,
+                0.285
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.289,
+                0.891,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.304,
+                0.891,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.318,
+                0.891,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.333,
+                0.831,
+                0.349
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.733,
+                0.891,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.748,
+                0.891,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.763,
+                0.891,
+                0.775
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.779,
+                0.889,
+                0.791
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.795,
+                0.891,
+                0.805
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.81,
+                0.889,
+                0.822
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.825,
+                0.624,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.872,
+                0.075,
+                0.894,
+                0.09
+            ],
+            "angle": 0,
+            "content": "| 3"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.104,
+                0.109,
+                0.767,
+                0.128
+            ],
+            "angle": 0,
+            "content": "Features of national student assessment frameworks internationally"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.102,
+                0.142,
+                0.895,
+                0.266
+            ],
+            "angle": 0,
+            "content": "While national student assessment frameworks vary in form and function across countries, they have common attributes (OECD, 2013[5]). Typically presented as a policy document, national student assessment frameworks clarify the purposes of different assessments and explain how they relate to each other and national education objectives. Well-designed frameworks can strengthen accountability and public confidence in the school system by transparently reporting results. By aligning assessment, curriculum and system objectives, they can also strengthen teaching and learning and help avoid duplication and over-testing. Key features of well-designed national student assessment frameworks include:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.134,
+                0.273,
+                0.894,
+                0.336
+            ],
+            "angle": 0,
+            "content": "- Clear statements of purpose that explain how assessments will support student learning and can be used to orient decisions on test design and the use and reporting of test results. For example, assessments used for system-level monitoring imply different choices in terms of test design, sample size and frequency than those used for diagnosing individual student learning;",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.134,
+                0.342,
+                0.894,
+                0.39
+            ],
+            "angle": 0,
+            "content": "- An overview of how assessment supports other aspirations for the school system – notably how assessments will promote the learning and pedagogical goals of the curriculum and whether and how assessments will be used for monitoring and accountability at different levels of the system;",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.134,
+                0.396,
+                0.895,
+                0.442
+            ],
+            "angle": 0,
+            "content": "- A strong emphasis on ensuring coherence and balance in the use of assessments – including attention to the overall volume of assessments and duplication, and how potential tensions between the formative and summative functions will be managed.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.105,
+                0.464,
+                0.818,
+                0.481
+            ],
+            "angle": 0,
+            "content": "Features of South Africa's draft National Student Assessment Framework"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.496,
+                0.895,
+                0.637
+            ],
+            "angle": 0,
+            "content": "In 2022, the Department of Basic Education developed a Concept Document outlining an initial draft of South Africa's National Student Assessment Framework (Department of Basic Education, Unpublished[6]). The Concept Document explains that the Framework intends to serve as a “basket of fit for purpose assessment programmes targeted at measuring and monitoring learning outcomes and supporting teachers in assessment practice” (ibid.). It outlines three interrelated pillars of formative, summative and system-wide wide assessments (i.e. national and international assessments). It also mentions the different assessment instruments currently in use in South Africa (see Figure 2). The Department subsequently developed a detailed PowerPoint presentation to reflect its evolving vision for the National Student Assessment Framework.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.104,
+                0.655,
+                0.717,
+                0.673
+            ],
+            "angle": 0,
+            "content": "Figure 2. Overview of South Africa's national assessment and survey system"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.197,
+                0.678,
+                0.8,
+                0.872
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.105,
+                0.881,
+                0.684,
+                0.896
+            ],
+            "angle": 0,
+            "content": "Source: Developed by the authors based on the draft NAF Concept Document and supporting materials."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.104,
+                0.916,
+                0.733,
+                0.93
+            ],
+            "angle": 0,
+            "content": "DEVELOPING SOUTH AFRICA'S NATIONAL STUDENT ASSESSMENT FRAMEWORK © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.109,
+                0.762,
+                0.126
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.144,
+                0.891,
+                0.155
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.159,
+                0.891,
+                0.171
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.174,
+                0.891,
+                0.187
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.19,
+                0.891,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.206,
+                0.889,
+                0.217
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.22,
+                0.891,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.236,
+                0.891,
+                0.248
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.251,
+                0.168,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.167,
+                0.272,
+                0.891,
+                0.287
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.167,
+                0.288,
+                0.891,
+                0.302
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.167,
+                0.304,
+                0.891,
+                0.318
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.167,
+                0.319,
+                0.808,
+                0.334
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.342,
+                0.891,
+                0.356
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.168,
+                0.36,
+                0.891,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.168,
+                0.375,
+                0.884,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.142,
+                0.397,
+                0.891,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.167,
+                0.412,
+                0.891,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.169,
+                0.427,
+                0.655,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.465,
+                0.814,
+                0.479
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.498,
+                0.891,
+                0.509
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.512,
+                0.891,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.528,
+                0.891,
+                0.541
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.543,
+                0.891,
+                0.557
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.56,
+                0.889,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.575,
+                0.891,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.59,
+                0.891,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.606,
+                0.891,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.623,
+                0.293,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.869,
+                0.076,
+                0.894,
+                0.09
+            ],
+            "angle": 0,
+            "content": "| 4"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.109,
+                0.896,
+                0.249
+            ],
+            "angle": 0,
+            "content": "While the Concept Document and PowerPoint presentation have informed policy dialogue with education stakeholders, they have not been publicly released. Moreover, it is not clear how data will be used to monitor progress towards national objectives for learning set out in the Department of Basic Education Strategic Plan 2025-30. There are also some notable gaps in these supporting materials. For example, while the key characteristics of SASE are well defined (except for its frequency), there is a lack of information on school-based assessments and national examinations. Without further developing and publicly releasing the National Student Assessment Framework, it will be difficult for South Africa to promote a coherent set of assessment programmes to monitor student performance, strengthen teaching and learning and build public confidence in the school system.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.133,
+                0.263,
+                0.434,
+                0.278
+            ],
+            "angle": 0,
+            "content": "National standardised assessments"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.289,
+                0.896,
+                0.493
+            ],
+            "angle": 0,
+            "content": "The Concept Document of South Africa's National Student Assessment Framework references two national standardised assessments: SASE and the Early Learning National Assessment (ELNA). The SASE, which was introduced in 2021, is a sample-based national assessment of reading and mathematics for students in Grades 3, 6 and 9. While not clearly stated in the Concept Document, South Africa plans to administer the SASE every three years, with the next cycle scheduled for 2026. The Concept Document explains that the SASE is designed to provide comparable data across grades and provinces to inform policy and monitor progress over time. The OECD conducted a comparative mapping of the SASE assessment framework against those of international reference assessments. This analysis found SASE's framework to be well designed for its monitoring purpose and broadly aligned with the domains, test design features and reporting processes of international assessments. However, differences in content coverage and proficiency levels were also identified as warranting potential modifications to the SASE framework in the future (see Box 1 and Recommendation 3: Use the National Student Assessment Framework to guide the further development and implementation of South Africa's Systemic Evaluation).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.504,
+                0.895,
+                0.629
+            ],
+            "angle": 0,
+            "content": "ELNA is a sample-based national assessment of Grade 1 students that was administered in 2022 and 2025. ELNA aims to measure the emerging literacy and numeracy skills of Grade 1 students as they enter formal schooling and to assess their readiness for learning. The assessment generates national and provincial estimates of students' early literacy and numeracy levels, and provides insights that can inform targeted support and interventions. However, the Concept Document provides limited information on ELNA. It briefly identifies the target population (Grade 1 students) and the domains assessed – emerging literacy, numeracy, and school readiness skills – but other key details, such as its purpose (outlined above) and frequency, are not provided.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.105,
+                0.643,
+                0.433,
+                0.659
+            ],
+            "angle": 0,
+            "content": "International assessments and surveys"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.67,
+                0.895,
+                0.78
+            ],
+            "angle": 0,
+            "content": "The Concept Document and supporting material state that South Africa will continue to participate in the Trends in International Mathematics and Science Study (TIMMS), Progress in International Reading Literacy Study (PIRLS), the Southern and Eastern Africa Consortium for Monitoring Educational Quality (SACMEQ) and OECD's Teaching and Learning Survey (TALIS) to benchmark performance internationally and inform education policy. However, reference to the country's participation in TALIS, which collects data from teachers and school leaders on teaching practices, professional development and school leadership, was not included in the 2022 Concept Document, only in the supporting material.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.105,
+                0.916,
+                0.732,
+                0.929
+            ],
+            "angle": 0,
+            "content": "DEVELOPING SOUTH AFRICA'S NATIONAL STUDENT ASSESSMENT FRAMEWORK © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.111,
+                0.89,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.126,
+                0.89,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.142,
+                0.89,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.155,
+                0.891,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.171,
+                0.892,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.187,
+                0.891,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.203,
+                0.891,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.218,
+                0.891,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.235,
+                0.57,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.137,
+                0.264,
+                0.43,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.291,
+                0.891,
+                0.302
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.307,
+                0.89,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.321,
+                0.892,
+                0.334
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.336,
+                0.892,
+                0.35
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.352,
+                0.893,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.367,
+                0.891,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.383,
+                0.891,
+                0.396
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.399,
+                0.891,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.414,
+                0.891,
+                0.427
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.429,
+                0.891,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.446,
+                0.891,
+                0.457
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.462,
+                0.89,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.477,
+                0.73,
+                0.488
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.506,
+                0.889,
+                0.517
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.522,
+                0.889,
+                0.533
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.537,
+                0.891,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.552,
+                0.891,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.568,
+                0.889,
+                0.579
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.582,
+                0.891,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.599,
+                0.889,
+                0.61
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.613,
+                0.351,
+                0.627
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.644,
+                0.429,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.672,
+                0.891,
+                0.682
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.685,
+                0.891,
+                0.699
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.702,
+                0.889,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.718,
+                0.889,
+                0.73
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.733,
+                0.889,
+                0.745
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.747,
+                0.889,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.764,
+                0.707,
+                0.776
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.874,
+                0.075,
+                0.894,
+                0.09
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.125,
+                0.13,
+                0.842,
+                0.169
+            ],
+            "angle": 0,
+            "content": "Box 1. Main findings from the OECD mapping of the SASE assessment framework against international assessments"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.125,
+                0.177,
+                0.873,
+                0.237
+            ],
+            "angle": 0,
+            "content": "The OECD's mapping of the SASE assessment framework against selected international reference assessments – PISA, PIRLS, TIMMS and the Southeast Asia Primary Learning Metrics (SEA-PLM) – focused on: assessment domains (including content strands, cognitive processes and contexts); test design features (such as item proportions and item types); and approaches to reporting results (including proficiency scale scores and levels). It revealed:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.155,
+                0.24,
+                0.873,
+                0.312
+            ],
+            "angle": 0,
+            "content": "- SASE is a well-designed national assessment for system-level monitoring of student performance. It provides a comprehensive picture of student learning outcomes at key stages, tracks national and provincial trends, and generates evidence to inform policy and programming. Questionnaires for students, parents, school principals, teachers, a sample of district officials and a separate Whole-School Evaluation Questionnaire provide valuable contextual information to consider alongside results.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.155,
+                0.316,
+                0.874,
+                0.416
+            ],
+            "angle": 0,
+            "content": "- The SASE assessment framework is clear, but some aspects could be modified. While the SASE framework covers similar content domains and cognitive processes as international assessments, some differences were identified. In SASE's mathematics framework, the coverage of Data (see Table 1. Comparison of the content strands in mathematics frameworks) is relatively lower and proficiency levels place less of an emphasis on broader mathematical competencies related to problem solving. In reading, there is broad equivalence between SASE's reading comprehension and the reading literacy frameworks of PISA, PIRLS, and SEA-PLM, but, unlike the latter, SASE does not cover writing skills.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.128,
+                0.434,
+                0.697,
+                0.452
+            ],
+            "angle": 0,
+            "content": "Table 1. Comparison of the content strands in mathematics frameworks"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.201,
+                0.46,
+                0.798,
+                0.661
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"2\">SASE</td><td rowspan=\"2\">PISA (15-year-olds)</td><td colspan=\"2\">TIMSS/PIRLS</td><td rowspan=\"2\">SEA-PLM (Grade 5)</td></tr><tr><td>Grade 4</td><td>Grade 8</td></tr><tr><td>Numbers, Operations and Relationships: (G3:50; G6:40; G9:20)</td><td>Change and Relationships (25)</td><td>Number (50)</td><td>Number (30)</td><td>Number and Algebra (35-45)</td></tr><tr><td>Patterns, Functions and Algebra: (G3:10; G6:10; G9:30)</td><td></td><td></td><td>Algebra (30)</td><td></td></tr><tr><td>Space and Shape Geometry: (G3:15; G6:20; G9:20)</td><td>Space and Shape (25)</td><td>Measurement and Geometry (30)</td><td>Measurement and Geometry (20)</td><td>Measurement and Geometry (35-45)</td></tr><tr><td>Measurement: (G3:15; G6:20; G9:20)</td><td>Quantity (25)</td><td></td><td></td><td></td></tr><tr><td>Data Handling: (G3: 10; G6:10; G9:15)</td><td>Uncertainty and Data (25)</td><td>Data (20)</td><td>Data and Probability (20)</td><td>Chance and Data (15-25)</td></tr></table>"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.126,
+                0.668,
+                0.872,
+                0.698
+            ],
+            "angle": 0,
+            "content": "Note: Numbers in parentheses refer to intended percentage of test items that correspond to each domain dimension. The column for the Systemic Evaluation shows the respective percentages for Grades 3, 6 and 9.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.155,
+                0.716,
+                0.874,
+                0.83
+            ],
+            "angle": 0,
+            "content": "- Reporting is comprehensive but timeliness and clarity could be improved. The analysis and reporting of SASE results target key stakeholders and is of high technical quality. However, there is a notable time lag (close to two years) between the SASE's administration and when its results are available. Moreover, the level of detail and content in the proficiency-level descriptors vary across grades. In mathematics, the Grade 3 and Grade 6 proficiency levels emphasise progression in general cognitive skills (e.g. “estimate and measure”), whereas the Grade 9 descriptors provide a more balanced combination of cognitive processes and concrete skill expectations. In reading, the Grade 6 proficiency levels offer more detailed performance descriptions than those of Grade 3, while the Grade 9 descriptors are substantially less detailed.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.126,
+                0.852,
+                0.872,
+                0.882
+            ],
+            "angle": 0,
+            "content": "Source: OECD (Unpublished[7]), Mapping South Africa's System Evaluation Assessment Framework against international reference assessments - PISA, PIRLS, TIMMS and SEA-PLM.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.106,
+                0.916,
+                0.732,
+                0.929
+            ],
+            "angle": 0,
+            "content": "DEVELOPING SOUTH AFRICA'S NATIONAL STUDENT ASSESSMENT FRAMEWORK © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.129,
+                0.841,
+                0.15
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.151,
+                0.338,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.177,
+                0.871,
+                0.192
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.192,
+                0.87,
+                0.207
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.206,
+                0.871,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.22,
+                0.681,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.189,
+                0.24,
+                0.872,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.19,
+                0.256,
+                0.87,
+                0.268
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.19,
+                0.27,
+                0.869,
+                0.282
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.189,
+                0.283,
+                0.87,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.189,
+                0.296,
+                0.508,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.19,
+                0.317,
+                0.871,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.189,
+                0.331,
+                0.872,
+                0.344
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.188,
+                0.344,
+                0.872,
+                0.358
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.189,
+                0.36,
+                0.871,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.189,
+                0.373,
+                0.871,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.189,
+                0.386,
+                0.871,
+                0.399
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.188,
+                0.399,
+                0.464,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.669,
+                0.871,
+                0.682
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.682,
+                0.579,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.19,
+                0.717,
+                0.871,
+                0.73
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.189,
+                0.732,
+                0.871,
+                0.744
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.189,
+                0.745,
+                0.871,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.189,
+                0.758,
+                0.871,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.189,
+                0.773,
+                0.871,
+                0.785
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.189,
+                0.786,
+                0.871,
+                0.799
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.189,
+                0.799,
+                0.871,
+                0.812
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.189,
+                0.813,
+                0.558,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.853,
+                0.87,
+                0.867
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.868,
+                0.418,
+                0.881
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.875,
+                0.075,
+                0.894,
+                0.09
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.106,
+                0.109,
+                0.34,
+                0.124
+            ],
+            "angle": 0,
+            "content": "School-based assessments"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.136,
+                0.895,
+                0.277
+            ],
+            "angle": 0,
+            "content": "School-based assessment (SBA) – assessments developed and administered by teachers at the school level – plays a central role in South Africa's assessment system, particularly in the absence of full-cohort standardised student assessments. SBA contributes to students' end-of-year grades across all school phases, though its weighting decreases as students progress. In the Foundation Phase (Grades R–3), SBA accounts for 100% of grades. In the Intermediate Phase (Grades 4–6), SBA contributes 80%, with 20% from standardised assessments. In the Senior Phase (Grades 7–9), SBA contributes 60%, while standardised assessments account for 40%. However, evidence indicates considerable variation between SBA and national standards. This variability poses a particular challenge, as end-of-year grades carry significant stakes for students, determining their promotion to the next grade.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.282,
+                0.895,
+                0.439
+            ],
+            "angle": 0,
+            "content": "While the Concept Document and supporting material recognise the importance of both formative and summative SBAs, they provide limited information on their key characteristics, including the different forms of assessment (e.g., classroom tests and quizzes, written assignments, projects), their timing, and their purposes. Although the Concept Document refers to the Curriculum and Assessment Policy Statements (CAPS) for further details, the National Student Assessment Framework would benefit from greater clarity on the different forms of formative and summative SBAs, as well as from promoting a more balanced approach between them. While the CAPS supports formative assessment, implementation in practice often leans more strongly towards summative purposes, particularly because SBA results contribute to term and final end-of-year marks. Teachers in South Africa devote a lot of time to marking and correcting student's work; more than any other TALIS-participating country (OECD, 2025[8]).",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.134,
+                0.451,
+                0.342,
+                0.467
+            ],
+            "angle": 0,
+            "content": "Diagnostic assessments"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.478,
+                0.895,
+                0.588
+            ],
+            "angle": 0,
+            "content": "The Concept Document outlines plans to develop diagnostic assessments starting from 2022. Since then, the Department of Basic Education has developed diagnostic assessments for Grades 3, 6, and 9 to identify gaps in literacy and numeracy skills and to inform teaching and student learning. The diagnostic assessments comprise test items, guidelines for teachers, and marking schemes. Their administration and marking are carried out by teachers in schools. Given low student outcomes, the limited reliability of teacher assessments, and absence of full-cohort, standardised assessment data, there is a clear need to expand access to standardised diagnostic and other formative assessments, including for additional subjects.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.601,
+                0.306,
+                0.617
+            ],
+            "angle": 0,
+            "content": "National examinations"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.628,
+                0.895,
+                0.722
+            ],
+            "angle": 0,
+            "content": "Although the Concept Document does not explicitly refer to the National Senior Certificate (NSC), the supporting material does, indicating an intention to cover all assessments from Grades 1 to 12 in the Framework. The NSC is South Africa's main school-leaving qualification. It is awarded at the end of Grade 12 and is aligned with Level 4 of the National Qualifications Framework. The NSC combines school-based assessment and national examinations, and its results determine access to different post-school education and training options.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.728,
+                0.895,
+                0.838
+            ],
+            "angle": 0,
+            "content": "South Africa has also recently developed a new Grade 9 qualification aligned with Level 1 of the National Qualifications Framework, the General Education Certificate (GEC). The GEC combines school-based assessment with nationally developed curriculum tests (i.e. examinations) in languages, sciences, economics and mathematics, alongside locally developed assessments in other subjects. It also includes an inclination (career aptitude) assessment to guide learners' choices of upper secondary pathways (academic, vocational or occupational). Following a pilot phase, the Department of Basic Education began phased implementation of the GEC in 2025, with full roll-out expected by 2027.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.843,
+                0.895,
+                0.875
+            ],
+            "angle": 0,
+            "content": "As with the NSC, the Concept Document does not explicitly refer to the GEC, although it is referenced in supporting material. Including the GEC in the National Student Assessment Framework would signal its",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.105,
+                0.916,
+                0.732,
+                0.929
+            ],
+            "angle": 0,
+            "content": "DEVELOPING SOUTH AFRICA'S NATIONAL STUDENT ASSESSMENT FRAMEWORK © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.11,
+                0.111,
+                0.336,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.136,
+                0.891,
+                0.15
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.153,
+                0.891,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.168,
+                0.891,
+                0.18
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.183,
+                0.891,
+                0.196
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.199,
+                0.891,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.213,
+                0.891,
+                0.227
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.23,
+                0.891,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.245,
+                0.891,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.263,
+                0.678,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.284,
+                0.889,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.298,
+                0.889,
+                0.311
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.314,
+                0.891,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.33,
+                0.891,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.345,
+                0.889,
+                0.358
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.361,
+                0.891,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.376,
+                0.891,
+                0.388
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.392,
+                0.891,
+                0.404
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.408,
+                0.891,
+                0.419
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.423,
+                0.639,
+                0.436
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.454,
+                0.338,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.48,
+                0.889,
+                0.492
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.496,
+                0.891,
+                0.506
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.511,
+                0.891,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.527,
+                0.891,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.542,
+                0.891,
+                0.554
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.557,
+                0.889,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.573,
+                0.86,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.602,
+                0.302,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.629,
+                0.891,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.645,
+                0.891,
+                0.656
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.659,
+                0.889,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.11,
+                0.676,
+                0.889,
+                0.687
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.692,
+                0.891,
+                0.702
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.708,
+                0.26,
+                0.719
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.73,
+                0.889,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.745,
+                0.891,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.761,
+                0.889,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.776,
+                0.891,
+                0.788
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.791,
+                0.891,
+                0.804
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.807,
+                0.889,
+                0.819
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.822,
+                0.693,
+                0.834
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.845,
+                0.889,
+                0.856
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.861,
+                0.891,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.871,
+                0.075,
+                0.893,
+                0.091
+            ],
+            "angle": 0,
+            "content": "| 7"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.109,
+                0.894,
+                0.141
+            ],
+            "angle": 0,
+            "content": "importance and clarify its key features, including the different assessment components and how they contribute to students' final marks.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.147,
+                0.894,
+                0.211
+            ],
+            "angle": 0,
+            "content": "The OECD has conducted a review of the GEC and recommended, among other measures, that the Grade 9 curriculum tests focus on core subjects in order to prioritise teaching and learning time. It has also recommended reconsidering the current teacher assessment of students' 21st-century skills and instead assessing these through the Integrated Project and student self-evaluation (OECD, forthcoming[8]).",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.104,
+                0.23,
+                0.849,
+                0.268
+            ],
+            "angle": 0,
+            "content": "Policy recommendations to improve the design and implementation of South Africa's National Student Assessment Framework"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.282,
+                0.88,
+                0.316
+            ],
+            "angle": 0,
+            "content": "Recommendation 1: Update the National Student Assessment Framework to include all major assessments and clarify their key characteristics, including their purpose and use of results",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.327,
+                0.895,
+                0.436
+            ],
+            "angle": 0,
+            "content": "South Africa's draft National Student Assessment Framework has several strengths. The 2022 Concept Document signals a commitment to improving assessment practices, outlines how assessment data are expected to inform interventions at national, district and school levels, and aims to align assessment more closely with national education objectives. The PowerPoint presentation that the Department of Basic Education subsequently developed reflects its evolving vision for the National Student Assessment Framework that includes all assessments from Grades 1 to 12. Together these documents have informed policy dialogue with education stakeholders.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.442,
+                0.895,
+                0.567
+            ],
+            "angle": 0,
+            "content": "However, the Concept Document provides limited clarity on how data will be used to monitor progress towards the objectives set out in the Department of Basic Education Strategic Plan 2025–30. There are also notable gaps. The document does not specify the frequency of the SASE, nor does it refer to the new qualification examination, the GEC or the NSC. While the Concept Document and supporting material recognise the importance of formative and summative SBAs, they provide limited information on their key characteristics and instead refer to the Curriculum and Assessment Policy Statements for further details. Furthermore, in practice, classroom-based assessment in many schools remains strongly associated with summative purposes, particularly because SBA results contribute to term and year-end marks.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.16,
+                0.578,
+                0.794,
+                0.61
+            ],
+            "angle": 0,
+            "content": "What can South Africa do to further develop the National Student Assessment Framework?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.62,
+                0.895,
+                0.762
+            ],
+            "angle": 0,
+            "content": "As the Department of Basic Education finalises the National Student Assessment Framework, it will be important to include all major assessments and clarify their key characteristics, including their primary purpose and the intended use of the data. The inclusion of the GEC and the NSC would signal their importance as key milestones in students' progression. The National Student Assessment Framework can also serve as an important tool to promote South Africa's SBA policy and reinforce the intent to support continuous, formative assessment. However, achieving a more balanced approach between formative and summative assessment in practice may require reconsideration of the policy, including how SBA results contribute to term and year-end marks. Reducing the amount of formal or reported SBA could help free up teacher time which could instead be used to students who are struggling (OECD, forthcoming[8]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.767,
+                0.895,
+                0.893
+            ],
+            "angle": 0,
+            "content": "In addition, in order to strengthen alignment with national education objectives, the National Student Assessment Framework should explain how assessments will be used to monitor the key indicators and targets from the Strategic Plan 2025–30, such as Outcome Indicator 3.1, which refers to average scores in the SASE for Grades 3, 6 and 9 (Department of Basic Education, 2025[1]). Explicitly mentioning these in the National Student Assessment Framework would promote greater policy coherence and enhance the use of assessment data in system-level monitoring, policy making and planning. Australia's National Student Assessment Framework provides an example of how nationally agreed performance measures can be systematically linked to assessment and reporting cycles (see Box 2).",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.104,
+                0.916,
+                0.732,
+                0.929
+            ],
+            "angle": 0,
+            "content": "DEVELOPING SOUTH AFRICA'S NATIONAL STUDENT ASSESSMENT FRAMEWORK © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.111,
+                0.889,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.127,
+                0.362,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.149,
+                0.889,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.164,
+                0.889,
+                0.175
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.18,
+                0.89,
+                0.191
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.194,
+                0.84,
+                0.207
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.232,
+                0.846,
+                0.246
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.251,
+                0.587,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.284,
+                0.876,
+                0.296
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.299,
+                0.852,
+                0.314
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.327,
+                0.891,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.345,
+                0.889,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.359,
+                0.891,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.375,
+                0.891,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.391,
+                0.891,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.404,
+                0.891,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.422,
+                0.436,
+                0.432
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.442,
+                0.891,
+                0.456
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.46,
+                0.889,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.474,
+                0.891,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.489,
+                0.891,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.505,
+                0.889,
+                0.516
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.521,
+                0.889,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.537,
+                0.889,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.552,
+                0.809,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.166,
+                0.581,
+                0.791,
+                0.592
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.596,
+                0.265,
+                0.607
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.622,
+                0.889,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.637,
+                0.891,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.653,
+                0.891,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.669,
+                0.891,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.684,
+                0.891,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.7,
+                0.891,
+                0.711
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.714,
+                0.891,
+                0.728
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.73,
+                0.891,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.746,
+                0.825,
+                0.759
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.769,
+                0.891,
+                0.78
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.785,
+                0.891,
+                0.796
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.798,
+                0.891,
+                0.812
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.814,
+                0.891,
+                0.827
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.831,
+                0.891,
+                0.842
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.846,
+                0.891,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.861,
+                0.891,
+                0.873
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.876,
+                0.681,
+                0.89
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.875,
+                0.075,
+                0.893,
+                0.09
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.153,
+                0.845,
+                0.191
+            ],
+            "angle": 0,
+            "content": "Box 2. The Measurement Framework for Schooling in Australia 2025 – an example of linking assessments to national objectives"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.201,
+                0.883,
+                0.28
+            ],
+            "angle": 0,
+            "content": "The Measurement Framework for Schooling in Australia 2025 is a nationally agreed framework that defines how the performance of Australia's school system is measured and reported to the public. It sets out key performance measures against which progress towards national education goals — as articulated in the Alice Springs (Mparntwe) Education Declaration — is monitored. The table below provides an example how performance measures are linked to specific assessments and reporting cycles.",
+            "merge_prev": false
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.117,
+                0.287,
+                0.88,
+                0.426
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Measures</td><td>Source(s)</td><td>Frequency</td><td>2023</td><td>2024</td><td>2025</td><td>2026</td><td>2027</td></tr><tr><td colspan=\"8\">Student achievement: NAP – Literacy</td></tr><tr><td>NAPLAN mean scale scores for reading in Grades 3, 5, 7 and 9</td><td>NAPLAN</td><td>Annual</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td>Proportion of participating 15-year-old students achieving at or above the proficient standard (Level 3) on the OECD PISA combined reading scale</td><td>PISA</td><td>Four yearly</td><td></td><td></td><td>X</td><td></td><td></td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.117,
+                0.429,
+                0.588,
+                0.444
+            ],
+            "angle": 0,
+            "content": "Source: ACARA (2025[10]), Measurement Framework for Schooling in Australia 2025."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.468,
+                0.894,
+                0.547
+            ],
+            "angle": 0,
+            "content": "Conducting a new round of consultations based on an updated Concept Document could help the Department of Basic Education build ownership and ensure the relevance of the new Framework among key education stakeholders. Once the Framework is finalised, establishing a timeline for its regular review, widely disseminating the policy document, and ensuring that it is easily accessible would help to promote transparency and build public confidence in South Africa's school system.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.558,
+                0.891,
+                0.592
+            ],
+            "angle": 0,
+            "content": "Recommendation 2: Expand the National Student Assessment Framework to include additional standardised assessments resources",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.603,
+                0.895,
+                0.729
+            ],
+            "angle": 0,
+            "content": "A positive feature of the Concept Document is the emphasis it places on diagnostic assessments. Many OECD countries use such assessments as an alternative or complement to full-cohort national assessments because they provide reliable data for formative purposes. In the context of South Africa, diagnostic assessments are particularly important as they can strengthen the reliability of teacher assessment data and support improvements in classroom assessment and teaching practice. However, given persistently low student outcomes, the limited reliability of teacher assessment data and absence of national standardised assessments, the efforts of the Department of Basic Education to develop standardised diagnostic assessment resources may be considered too modest.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.161,
+                0.74,
+                0.885,
+                0.756
+            ],
+            "angle": 0,
+            "content": "What can South Africa do to improve the availability of reliable student assessment data?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.767,
+                0.895,
+                0.892
+            ],
+            "angle": 0,
+            "content": "The purpose statement of the National Student Assessment Framework, as set out in the Concept Document, emphasises its role in supporting teacher assessment practices. In line with this objective, and to generate more reliable assessment data, the Department of Basic Education should consider developing additional standardised diagnostic assessments. Schools could be encouraged to use these diagnostic assessments to monitor whether students are progressing in line with expectations and identify those requiring additional support. Administering them at the start of the school year or term would help maintain their diagnostic focus and could support a more balanced approach between formative and summative SBA. Given their value in identifying learning gaps and misconceptions at an early stage, the Department",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.105,
+                0.916,
+                0.732,
+                0.929
+            ],
+            "angle": 0,
+            "content": "DEVELOPING SOUTH AFRICA'S NATIONAL STUDENT ASSESSMENT FRAMEWORK © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.151,
+                0.843,
+                0.172
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.174,
+                0.4,
+                0.191
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.202,
+                0.881,
+                0.216
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.218,
+                0.881,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.233,
+                0.881,
+                0.248
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.248,
+                0.881,
+                0.264
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.265,
+                0.333,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.469,
+                0.891,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.485,
+                0.89,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.499,
+                0.89,
+                0.512
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.516,
+                0.89,
+                0.527
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.532,
+                0.654,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.559,
+                0.889,
+                0.574
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.578,
+                0.415,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.602,
+                0.889,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.618,
+                0.891,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.636,
+                0.889,
+                0.647
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.649,
+                0.891,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.667,
+                0.891,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.681,
+                0.892,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.698,
+                0.889,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.714,
+                0.697,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.166,
+                0.742,
+                0.881,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.769,
+                0.891,
+                0.78
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.784,
+                0.891,
+                0.795
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.798,
+                0.891,
+                0.812
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.815,
+                0.891,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.831,
+                0.889,
+                0.842
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.845,
+                0.891,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.861,
+                0.889,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.875,
+                0.892,
+                0.889
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.872,
+                0.075,
+                0.894,
+                0.09
+            ],
+            "angle": 0,
+            "content": "| 9"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.109,
+                0.895,
+                0.188
+            ],
+            "angle": 0,
+            "content": "could initially prioritise the development of such assessment resources for students in the early years of primary education. The Department may look towards the example of Wales (United Kingdom), which has developed online, adaptive student assessments in reading and numeracy for students in Grades 2 to 9. The automatically generated student feedback reports provide detailed information on students' strengths and the specific skills they need to work on (Welsh Government, 2025[11])",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.193,
+                0.895,
+                0.35
+            ],
+            "angle": 0,
+            "content": "In addition, the Department could use the National Student Assessment Framework to signal longer terms plans for enriching the availability of national assessment resources, including through the greater use of online resources as the national digital infrastructure matures. Many OECD countries and emerging economies are looking to draw more on digital resources to both complement and strengthen teacher assessment practice (OECD, 2023[12]; OECD, 2023[13]). For example, New Zealand's e-asTTle Assessment Tool generates standardised assessments for classroom use in reading, mathematics, writing. Teachers can create tests online by selecting content domains and levels from a 10,000-item bank. The system then auto-assembles the test or applies an adaptive algorithm if delivered online. Closed items are auto scored, while open items are marked by teachers using rubrics and exemplars. Interactive graphical reports show achievement relative to curriculum objectives and tracks growth over time.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.103,
+                0.362,
+                0.854,
+                0.396
+            ],
+            "angle": 0,
+            "content": "Recommendation 3: Use the National Student Assessment Framework to guide the further development and implementation of South Africa's Systemic Evaluation"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.102,
+                0.406,
+                0.895,
+                0.593
+            ],
+            "angle": 0,
+            "content": "A central aspect of the National Student Assessment Framework will be the direction it sets out for further enhancing the design and implementation of the South Africa's Systemic Evaluation (SASE). The OECD has conducted an assessment framework mapping and found SASE is a well-designed national assessment for system-level monitoring of student performance. However, while the analysis and reporting of assessment results are robust, there is a notable time lag with data collection and the level of detail and content in the proficiency-level descriptors varies across grades (see Box 1). In addition, although the mapping of assessment content shows no significant gaps in the SASE assessment framework compared to international reference assessments, some differences warrant attention. In mathematics there is relatively lower coverage of data handling and problem-solving skills, while these are likely to become increasingly important for students in the future. In reading, there is an opportunity to expand SASE to include some aspects of writing skills to get a clearer picture of student's language skills (OECD, Unpublished[7]).",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.16,
+                0.605,
+                0.826,
+                0.637
+            ],
+            "angle": 0,
+            "content": "What can South Africa do to guide the further development and implementation of Systemic Evaluation through the National Student Assessment Framework?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.647,
+                0.895,
+                0.757
+            ],
+            "angle": 0,
+            "content": "The Department of Basic Education should use the National Student Assessment Framework to guide the further development and implementation of SASE in future cycles. First, building on ongoing efforts to expand the use of digital technologies in schools, combined with advances in automated scoring, it should consider piloting computer-based assessment in future SASE cycles. This transition could help reduce the reporting period and bring other benefits such as enhanced measurement precision (for example through adaptive testing) and better data quality and analytics (by providing deeper insights into student strategies and learning processes), among others.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.77,
+                0.895,
+                0.895
+            ],
+            "angle": 0,
+            "content": "Second, once the ongoing curriculum review is concluded, the Department should review the proficiency levels to ensure alignment. One issue to consider in reviewing the proficiency levels is whether performance expectations could be better harmonised across grades through a more balanced combination of references to general cognitive skills and specific performance skills. This approach may make the proficiency levels easier to interpret by teachers and non-experts, such as parents and the public. Ideally, the updated proficiency scales would be used for any standardised assessment resources that are developed (see Conducting a new round of consultations based on an updated Concept Document could help the Department of Basic Education build ownership and ensure the relevance of the new Framework",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.104,
+                0.916,
+                0.732,
+                0.93
+            ],
+            "angle": 0,
+            "content": "DEVELOPING SOUTH AFRICA'S NATIONAL STUDENT ASSESSMENT FRAMEWORK © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.11,
+                0.892,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.126,
+                0.889,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.142,
+                0.889,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.156,
+                0.891,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.171,
+                0.652,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.195,
+                0.889,
+                0.205
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.211,
+                0.891,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.223,
+                0.892,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.241,
+                0.892,
+                0.253
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.256,
+                0.891,
+                0.268
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.271,
+                0.889,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.287,
+                0.889,
+                0.299
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.302,
+                0.891,
+                0.315
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.317,
+                0.891,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.333,
+                0.833,
+                0.346
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.363,
+                0.852,
+                0.377
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.11,
+                0.381,
+                0.692,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.408,
+                0.891,
+                0.419
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.422,
+                0.891,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.438,
+                0.889,
+                0.449
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.454,
+                0.889,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.469,
+                0.891,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.485,
+                0.891,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.499,
+                0.892,
+                0.512
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.516,
+                0.891,
+                0.527
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.531,
+                0.891,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.547,
+                0.891,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.561,
+                0.891,
+                0.575
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.577,
+                0.224,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.166,
+                0.607,
+                0.822,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.622,
+                0.774,
+                0.634
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.648,
+                0.891,
+                0.661
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.664,
+                0.891,
+                0.676
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.68,
+                0.891,
+                0.692
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.695,
+                0.891,
+                0.707
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.711,
+                0.891,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.727,
+                0.889,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.743,
+                0.403,
+                0.753
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.77,
+                0.891,
+                0.783
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.787,
+                0.891,
+                0.798
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.801,
+                0.892,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.817,
+                0.889,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.832,
+                0.889,
+                0.845
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.849,
+                0.889,
+                0.86
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.864,
+                0.889,
+                0.875
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.879,
+                0.889,
+                0.891
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.865,
+                0.075,
+                0.894,
+                0.09
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.109,
+                0.895,
+                0.157
+            ],
+            "angle": 0,
+            "content": "among key education stakeholders. Once the Framework is finalised, establishing a timeline for its regular review, widely disseminating the policy document, and ensuring that it is easily accessible would help to promote transparency and build public confidence in South Africa's school system.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.162,
+                0.895,
+                0.242
+            ],
+            "angle": 0,
+            "content": "Recommendation 2: Expand the National Student Assessment Framework to include additional standardised assessments resources). Finally, the Department might want to consider the findings of the assessment framework mapping in future revisions of SASE in order to make sure important skills are covered. Any modifications should be guided by their value in terms of supporting South Africa's curriculum and national learning goals.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.253,
+                0.892,
+                0.288
+            ],
+            "angle": 0,
+            "content": "Recommendation 4: Further enhance the monitoring of teaching practice and teachers' working conditions through the National Student Assessment Framework",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.298,
+                0.895,
+                0.345
+            ],
+            "angle": 0,
+            "content": "The National Student Assessment Framework should signal the main surveys that South Africa will use to collect contextual information related to student learning. Of these, TALIS and the SASE Teacher Questionnaire are important given the influence teaching practice has on student outcomes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.102,
+                0.351,
+                0.895,
+                0.539
+            ],
+            "angle": 0,
+            "content": "The OECD conducted a mapping of the SASE Teacher Questionnaire against the OECD TALIS Teacher Questionnaire (OECD, Unpublished[15]). It found that, while comprehensive in scope, the questionnaire provides limited insight into several key areas that are relevant to the national context and policy priorities. In particular, concerning teachers' professional development it focuses narrowly on participation in in-service courses. Information on district-level support is limited to frequency and does not address quality or impact. Teaching and assessment practices are only partially covered, omitting key areas such as differentiated instruction, active learning strategies, the use of digital technologies for instruction, and support for students' social and emotional learning. Finally, the questionnaire provides only a partial picture of teachers' workloads and well-being, focusing on teaching hours rather than the full range of professional tasks and work-related stress, which is relevant given evidence of high stress levels among South African teachers (see Figure 2). The Department of Basic Education may want to revise the Teacher Questionnaire in light of these findings.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.103,
+                0.557,
+                0.738,
+                0.575
+            ],
+            "angle": 0,
+            "content": "Figure 2. Most common sources of teachers' stress in South Africa, TALIS 2024"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.254,
+                0.588,
+                0.743,
+                0.803
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.105,
+                0.812,
+                0.737,
+                0.828
+            ],
+            "angle": 0,
+            "content": "Source: OECD (2025[8]), Results from TALIS 2024 – Country notes: South Africa, TALIS, OECD Publishing, Paris."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.105,
+                0.916,
+                0.732,
+                0.929
+            ],
+            "angle": 0,
+            "content": "DEVELOPING SOUTH AFRICA'S NATIONAL STUDENT ASSESSMENT FRAMEWORK © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.11,
+                0.891,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.127,
+                0.891,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.142,
+                0.721,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.163,
+                0.891,
+                0.176
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.18,
+                0.891,
+                0.191
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.194,
+                0.891,
+                0.207
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.211,
+                0.889,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.226,
+                0.313,
+                0.237
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.254,
+                0.888,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.273,
+                0.637,
+                0.285
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.3,
+                0.891,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.11,
+                0.316,
+                0.889,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.33,
+                0.79,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.353,
+                0.889,
+                0.364
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.369,
+                0.889,
+                0.38
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.382,
+                0.889,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.399,
+                0.891,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.413,
+                0.891,
+                0.427
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.43,
+                0.889,
+                0.441
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.446,
+                0.891,
+                0.457
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.462,
+                0.891,
+                0.473
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.477,
+                0.891,
+                0.488
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.493,
+                0.889,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.507,
+                0.889,
+                0.518
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.521,
+                0.289,
+                0.535
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.86,
+                0.075,
+                0.892,
+                0.09
+            ],
+            "angle": 0,
+            "content": "| 11"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.16,
+                0.108,
+                0.848,
+                0.14
+            ],
+            "angle": 0,
+            "content": "What can South Africa do to further enhance the monitoring of teaching practice and teachers' working conditions through the National Student Assessment Framework?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.15,
+                0.893,
+                0.182
+            ],
+            "angle": 0,
+            "content": "The Department of Basic Education should review the SASE Teacher Questionnaire by considering the following options:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.134,
+                0.189,
+                0.893,
+                0.236
+            ],
+            "angle": 0,
+            "content": "- incorporating additional items on teachers' workload and work-related stress, such as lesson planning, marking and feedback, administrative duties, collaboration, and professional learning, alongside a small number of items on work-related stress.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.135,
+                0.242,
+                0.893,
+                0.29
+            ],
+            "angle": 0,
+            "content": "- broadening the definition of teacher professional development to reflect a wider range of effective learning activities, followed by the inclusion of items on additional forms of professional development, barriers to participation, teachers' development needs and self-efficacy;",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.135,
+                0.296,
+                0.894,
+                0.342
+            ],
+            "angle": 0,
+            "content": "- including items on teachers' engagement in collaborative professional practices, such as joint lesson planning, team teaching and classroom observation, which are known to support improvements in teaching;",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.135,
+                0.348,
+                0.642,
+                0.364
+            ],
+            "angle": 0,
+            "content": "- expanding coverage of pedagogical and assessment practices;",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.135,
+                0.371,
+                0.894,
+                0.417
+            ],
+            "angle": 0,
+            "content": "- expanding school-based support questions with items on the quality and perceived impact of support and in-service courses and aligning the Teacher and Principal Questionnaires in these areas to enable triangulation of findings.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.424,
+                0.894,
+                0.471
+            ],
+            "angle": 0,
+            "content": "To avoid substantial increases in the length of the questionnaire, the Department will need to prioritise these options in line with national education objectives set out in its Strategic Plan 2025–30. Field-testing the revised questionnaire would support prioritisation decisions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.477,
+                0.895,
+                0.571
+            ],
+            "angle": 0,
+            "content": "Second, with regard to TALIS, as well as signalling plans for future participation in the survey and its use for monitoring purposes, the National Student Assessment Framework might also set out plans for the analysis and sharing of data. For example, a national report on teachers that brings together information from TALIS, the SASE Teacher Questionnaire and other national sources would be a valuable resource for policymaking. It would also help in identifying any redundancy and/or gaps in the collection of teacher-related data in South Africa.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.105,
+                0.916,
+                0.732,
+                0.929
+            ],
+            "angle": 0,
+            "content": "DEVELOPING SOUTH AFRICA'S NATIONAL STUDENT ASSESSMENT FRAMEWORK © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.109,
+                0.843,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.126,
+                0.842,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.151,
+                0.889,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.168,
+                0.238,
+                0.18
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.166,
+                0.191,
+                0.891,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.168,
+                0.205,
+                0.889,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.17,
+                0.222,
+                0.599,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.167,
+                0.244,
+                0.89,
+                0.255
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.167,
+                0.259,
+                0.891,
+                0.271
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.169,
+                0.276,
+                0.805,
+                0.287
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.165,
+                0.296,
+                0.891,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.169,
+                0.313,
+                0.89,
+                0.324
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.169,
+                0.328,
+                0.366,
+                0.341
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.351,
+                0.638,
+                0.362
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.164,
+                0.372,
+                0.892,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.169,
+                0.388,
+                0.891,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.169,
+                0.404,
+                0.466,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.425,
+                0.89,
+                0.437
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.441,
+                0.89,
+                0.453
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.456,
+                0.579,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.479,
+                0.891,
+                0.491
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.494,
+                0.891,
+                0.507
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.51,
+                0.891,
+                0.522
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.525,
+                0.891,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.541,
+                0.891,
+                0.553
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.558,
+                0.315,
+                0.568
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.861,
+                0.075,
+                0.894,
+                0.09
+            ],
+            "angle": 0,
+            "content": "| 12"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.117,
+                0.161,
+                0.478,
+                0.179
+            ],
+            "angle": 0,
+            "content": "Box 3. What is this OECD Policy Brief about?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.191,
+                0.882,
+                0.269
+            ],
+            "angle": 0,
+            "content": "This Policy Brief is part of a larger OECD technical assistance project designed to support South Africa's Department of Basic Education and part of the OECD Education Policy Committee's work on implementation reviews and technical assistance. The project consists of three related strands of work providing analysis and advice on: 1) South Africa's General Education Certificate, the new Grade 9 qualification; 2) the draft National Student Assessment Framework; and 3) South Africa's Systemic Evaluation (SASE), the recently introduced national standardised assessment of student outcomes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.274,
+                0.882,
+                0.338
+            ],
+            "angle": 0,
+            "content": "This brief concerns work strands two and three. It provides an overview of the strengths and challenges of South Africa's current national assessment system and policy recommendations to help the country further develop and implement its National Student Assessment Framework and SASE. Together, these efforts aim to support South Africa's broader goal of using assessments to enhance the quality and equity of student outcomes.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.117,
+                0.344,
+                0.516,
+                0.36
+            ],
+            "angle": 0,
+            "content": "Research and analysis that informed this OECD Policy Brief"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.366,
+                0.881,
+                0.413
+            ],
+            "angle": 0,
+            "content": "The analysis provided in this Policy Brief is based on a desk review of key policy documents; in-person and online interviews with staff from the Department of Basic Education and other education stakeholders; as well as stakeholder workshops. The Policy Brief also draws on research and in-depth analysis of SASE, specifically to:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.146,
+                0.419,
+                0.881,
+                0.45
+            ],
+            "angle": 0,
+            "content": "- map the SASE assessment framework against the reference assessments of PISA, PIRLS, TIMSS, and SEA-PLM (OECD, Unpublished \\( ^{[15]} \\) ).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.147,
+                0.451,
+                0.874,
+                0.467
+            ],
+            "angle": 0,
+            "content": "- map the SASE Teacher Questionnaire against the OECD TALIS Teacher Questionnaire (OECD, Unpublished[15]).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.473,
+                0.881,
+                0.521
+            ],
+            "angle": 0,
+            "content": "These mapping studies sought to identify ways for strengthening the SASE by learning from international assessments and surveys, while recognising South Africa's national context and policy priorities. The full findings from these studies were presented to the Department of Basic Education in a set of unpublished background reports.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.526,
+                0.882,
+                0.59
+            ],
+            "angle": 0,
+            "content": "This Policy Brief was prepared by the OECD Directorate for Education and Skills Secretariat. The OECD team comprised Marco Kools, Adelina Pupelyte, Nate Reinertsen and Jeffery Marshall (external expert). Elizabeth Fordham reviewed and provided valuable contributions to the brief. The team is grateful for the overall guidance from Andreas Schleicher and Paulo Santiago.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.106,
+                0.632,
+                0.221,
+                0.648
+            ],
+            "angle": 0,
+            "content": "References"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.668,
+                0.838,
+                0.729
+            ],
+            "angle": 0,
+            "content": "ACARA (2025), Measurement Framework for Schooling in Australia 2025, https://dataandreporting.blob.core.windows.net/anrdataportal/ANR-Documents/Measurement%20Framework%20for%20Schooling%20in%20Australia%202025.pdf (accessed on 20 June 2025)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.861,
+                0.667,
+                0.887,
+                0.68
+            ],
+            "angle": 0,
+            "content": "[10]"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.118,
+                0.74,
+                0.885,
+                0.77
+            ],
+            "angle": 0,
+            "content": "Department of Basic Education (2025), Strategic Plan 2025-2030, Department of Basic Education of South Africa. [1]"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.782,
+                0.886,
+                0.812
+            ],
+            "angle": 0,
+            "content": "Department of Basic Education (2024), South African Systemic Evaluation 2022 Volume 2 [4] Learner Proficiency Report, Department of Basic Education."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.118,
+                0.824,
+                0.887,
+                0.869
+            ],
+            "angle": 0,
+            "content": "Department of Basic Education (Unpublished), National Assessment Framework (NAF) for imporving schooling outcomes - Concept document - January 2022, Department of Basic Education, Republic of South Africa. [6]"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.105,
+                0.916,
+                0.732,
+                0.929
+            ],
+            "angle": 0,
+            "content": "DEVELOPING SOUTH AFRICA'S NATIONAL STUDENT ASSESSMENT FRAMEWORK © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.161,
+                0.478,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.191,
+                0.881,
+                0.205
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.206,
+                0.88,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.221,
+                0.88,
+                0.236
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.238,
+                0.88,
+                0.251
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.253,
+                0.786,
+                0.268
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.275,
+                0.881,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.291,
+                0.879,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.307,
+                0.881,
+                0.32
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.322,
+                0.577,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.344,
+                0.516,
+                0.36
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.367,
+                0.88,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.383,
+                0.879,
+                0.396
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.397,
+                0.621,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.42,
+                0.88,
+                0.434
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.18,
+                0.435,
+                0.334,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.45,
+                0.872,
+                0.467
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.473,
+                0.881,
+                0.488
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.489,
+                0.879,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.506,
+                0.681,
+                0.519
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.526,
+                0.881,
+                0.541
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.542,
+                0.881,
+                0.557
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.558,
+                0.881,
+                0.573
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.113,
+                0.572,
+                0.181,
+                0.591
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.633,
+                0.218,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.86,
+                0.667,
+                0.889,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.867,
+                0.075,
+                0.893,
+                0.09
+            ],
+            "angle": 0,
+            "content": "13"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.111,
+                0.889,
+                0.143
+            ],
+            "angle": 0,
+            "content": "Mullis, I. et al. (2023), PIRLS 2021 International Results in Reading, Boston College, TIMSS & PIRLS International Study Center, https://doi.org/10.6017/lse.tpisc.tr2103.kb5342. [3]"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.152,
+                0.888,
+                0.2
+            ],
+            "angle": 0,
+            "content": "OECD (2025), Results from TALIS 2024 – Country notes: South Africa, OECD Publishing, Paris, [8] https://www.oecd.org/en/publications/results-from-talis-2024-country-notes_e127f9e2-en/south-africa_49ebbcf9-en.html."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.209,
+                0.888,
+                0.242
+            ],
+            "angle": 0,
+            "content": "OECD (2023), OECD Digital Education Outlook 2023: Towards an Effective Digital Education Ecosystem, OECD Publishing, Paris, https://doi.org/10.1787/c74f03de-en. [12]"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.251,
+                0.888,
+                0.283
+            ],
+            "angle": 0,
+            "content": "OECD (2023), Untapping the potential of resource banks in the classroom, OECD Publishing, Paris, https://doi.org/10.1787/f1a19b94-en. [13]"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.292,
+                0.888,
+                0.34
+            ],
+            "angle": 0,
+            "content": "OECD (2013), Synergies for Better Learning: An International Perspective on Evaluation and Assessment, OECD Reviews of Evaluation and Assessment in Education, OECD Publishing, Paris, https://doi.org/10.1787/9789264190658-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.116,
+                0.349,
+                0.888,
+                0.367
+            ],
+            "angle": 0,
+            "content": "OECD (forthcoming), Consolidating the General Education Certification in South Africa. [9]"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.376,
+                0.888,
+                0.408
+            ],
+            "angle": 0,
+            "content": "OECD (Unpublished), Mapping South Africa's System Evaluation Assessment Framework against international reference assessments - PISA, PIRLS, TIMMS and SEA-PLM. [7]"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.417,
+                0.888,
+                0.449
+            ],
+            "angle": 0,
+            "content": "OECD (Unpublished), Mapping South Africa's Systemic Evaluation Teacher Questionnaire against the OECD TALIS Teacher Questionnaire. [14]"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.459,
+                0.888,
+                0.506
+            ],
+            "angle": 0,
+            "content": "von Davier, M. et al. (2024), TIMSS 2023 International Results in Mathematics and Science, Boston College, TIMSS & PIRLS International Study Center, https://doi.org/10.6017/lse.tpisc.timss.rs6460. [2]"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.117,
+                0.516,
+                0.888,
+                0.563
+            ],
+            "angle": 0,
+            "content": "Welsh Government (2025), Hwb - Personalised assessments, https://hwb.gov.wales/curriculum-for-wales/reading-and-numeracy-assessments/personalised-assessments (accessed on 2 November 2025)."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.106,
+                0.917,
+                0.732,
+                0.929
+            ],
+            "angle": 0,
+            "content": "DEVELOPING SOUTH AFRICA'S NATIONAL STUDENT ASSESSMENT FRAMEWORK © OECD 2026"
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.859,
+                0.075,
+                0.894,
+                0.09
+            ],
+            "angle": 0,
+            "content": "| 14"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.106,
+                0.108,
+                0.188,
+                0.124
+            ],
+            "angle": 0,
+            "content": "Contact"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.105,
+                0.133,
+                0.394,
+                0.148
+            ],
+            "angle": 0,
+            "content": "Marco Kools (marco.kools@oecd.org)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.162,
+                0.894,
+                0.215
+            ],
+            "angle": 0,
+            "content": "This work is published under the responsibility of the Secretary-General of the OECD. The opinions expressed and arguments employed herein do not necessarily reflect the official views of the Member countries of the OECD. This document, as well as any data included herein, are without prejudice to the status of or sovereignty over any territory, to the delimitation of international frontiers and boundaries and to the name of any territory, city or area.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.222,
+                0.193,
+                0.233
+            ],
+            "angle": 0,
+            "content": "© OECD 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.106,
+                0.243,
+                0.195,
+                0.267
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.202,
+                0.257,
+                0.446,
+                0.269
+            ],
+            "angle": 0,
+            "content": "Attribution 4.0 International (CC BY 4.0)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.273,
+                0.893,
+                0.298
+            ],
+            "angle": 0,
+            "content": "This work is made available under the Creative Commons Attribution 4.0 International licence. By using this work, you accept to be bound by the terms of this licence (https://creativecommons.org/licenses/by/4.0/).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.106,
+                0.304,
+                0.319,
+                0.316
+            ],
+            "angle": 0,
+            "content": "Attribution – you must cite the work.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.319,
+                0.894,
+                0.346
+            ],
+            "angle": 0,
+            "content": "Translations – you must cite the original work, identify changes to the original and add the following text: In the event of any discrepancy between the original work and the translation, only the text of original work should be considered valid.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.35,
+                0.895,
+                0.388
+            ],
+            "angle": 0,
+            "content": "Adaptations – you must cite the original work and add the following text: This is an adaptation of an original work by the OECD. The opinions expressed and arguments employed in this adaptation should not be reported as representing the official views of the OECD or of its Member countries.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.392,
+                0.893,
+                0.418
+            ],
+            "angle": 0,
+            "content": "Third-party material – the licence does not apply to third-party material in the work. If using such material, you are responsible for obtaining permission from the third party and for any claims of infringement.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.422,
+                0.894,
+                0.447
+            ],
+            "angle": 0,
+            "content": "You must not use the OECD logo, visual identity or cover image without express permission or suggest the OECD endorses your use of the work.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.451,
+                0.894,
+                0.478
+            ],
+            "angle": 0,
+            "content": "Any dispute arising under this licence shall be settled by arbitration in accordance with the Permanent Court of Arbitration (PCA) Arbitration Rules 2012. The seat of arbitration shall be Paris (France). The number of arbitrators shall be one.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.105,
+                0.917,
+                0.732,
+                0.929
+            ],
+            "angle": 0,
+            "content": "DEVELOPING SOUTH AFRICA'S NATIONAL STUDENT ASSESSMENT FRAMEWORK © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.109,
+                0.187,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.133,
+                0.391,
+                0.146
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.165,
+                0.89,
+                0.173
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.178,
+                0.889,
+                0.186
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.191,
+                0.89,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.204,
+                0.297,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.224,
+                0.19,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.205,
+                0.258,
+                0.441,
+                0.268
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.274,
+                0.891,
+                0.285
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.287,
+                0.503,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.305,
+                0.316,
+                0.314
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.32,
+                0.891,
+                0.331
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.335,
+                0.679,
+                0.344
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.352,
+                0.891,
+                0.36
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.364,
+                0.891,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.11,
+                0.378,
+                0.162,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.393,
+                0.891,
+                0.404
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.407,
+                0.475,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.422,
+                0.891,
+                0.433
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.437,
+                0.14,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.453,
+                0.891,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.466,
+                0.657,
+                0.475
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

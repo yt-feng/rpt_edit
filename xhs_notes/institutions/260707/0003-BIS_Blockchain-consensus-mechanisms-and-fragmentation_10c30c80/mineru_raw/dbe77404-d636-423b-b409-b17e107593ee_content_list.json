@@ -1,0 +1,918 @@
+[
+    {
+        "type": "text",
+        "text": "BIS Bulletin",
+        "text_level": 2,
+        "bbox": [
+            84,
+            381,
+            522,
+            445
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "No 126",
+        "text_level": 2,
+        "bbox": [
+            727,
+            474,
+            949,
+            526
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Blockchain consensus mechanisms and fragmentation",
+        "text_level": 2,
+        "bbox": [
+            84,
+            627,
+            873,
+            715
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Daniel Eidan, Jon Frost, Rudraksh Kansal, Ulf Lewrick, Sang Hyuk Lim and Tomasz Rybarczyk",
+        "bbox": [
+            84,
+            734,
+            794,
+            797
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "BIS",
+        "bbox": [
+            87,
+            80,
+            334,
+            140
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "6 July 2026",
+        "bbox": [
+            95,
+            917,
+            252,
+            946
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "BIS Bulletins are written by staff members of the Bank for International Settlements, and from time to time by other economists, and are published by the Bank. The papers are on subjects of topical interest and are technical in character. The views expressed in this publication are those of the authors and do not necessarily reflect the views of the BIS or its member central banks. The authors thank Matteo Aquilina, Sebastian Doerr, Pablo Hernández de Cos, Hyun Song Shin and Leanne Zhang for helpful comments and suggestions, and Nicola Faessler for administrative support.",
+        "bbox": [
+            87,
+            317,
+            875,
+            420
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The editors of the BIS Bulletin series are Gaston Gelos and Frank Smets.",
+        "bbox": [
+            89,
+            428,
+            623,
+            445
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "This publication is available on the BIS website (www.bis.org).",
+        "bbox": [
+            89,
+            624,
+            549,
+            640
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_footnote",
+        "text": "© Bank for International Settlements 2026. All rights reserved. Brief excerpts may be reproduced or translated provided the source is stated.",
+        "bbox": [
+            90,
+            697,
+            873,
+            731
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "ISSN: 2708-0420 (online)\nISBN: 978-92-9259-964-5 (online)",
+        "bbox": [
+            89,
+            829,
+            346,
+            864
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Blockchain consensus mechanisms and fragmentation",
+        "text_level": 1,
+        "bbox": [
+            90,
+            186,
+            734,
+            210
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Key takeaways",
+        "text_level": 2,
+        "bbox": [
+            104,
+            259,
+            231,
+            277
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- While all permissionless blockchains use token-based incentives to sustain honest validation, differences in how validator rewards, coordination and participation are structured lead to distinct equilibria and trade-offs between decentralisation, security and scalability.",
+        "bbox": [
+            102,
+            284,
+            890,
+            335
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- These trade-offs underpin the emergence of multiple layer 1 networks and the expansion of layer 2 solutions, resulting in fragmentation of infrastructure, liquidity and assets across and within chains.",
+        "bbox": [
+            104,
+            342,
+            890,
+            376
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Tools to mitigate fragmentation – eg bridges and native multi-chain issuance – can reduce frictions, but they reintroduce new dependencies on trust, governance and operational resilience.",
+        "bbox": [
+            102,
+            382,
+            890,
+            418
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Public permissionless blockchains reduce reliance on centralised intermediaries by using decentralised, open infrastructure. Since the emergence of Bitcoin and Ethereum, activity built on distributed ledger technology (DLT) has expanded rapidly, spanning payments, decentralised finance and broader digital asset markets. Yet rather than converging on a single scalable infrastructure, a multitude of networks have arisen, fragmenting liquidity and diluting network effects. This Bulletin describes consensus mechanisms, asks why fragmentation occurs and explores what it means for market structure and resilience.",
+        "bbox": [
+            87,
+            443,
+            873,
+            539
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "We examine how consensus mechanisms in permissionless blockchains balance decentralisation, security and scalability. $^{1}$ These choices shape validator participation, costs and coordination and generate distinct equilibria across different layer 1 (L1) blockchains. They have also driven the growth of layer 2 (L2) solutions that execute off-chain. L1s are the base networks that validate, process and finalise transactions directly in the shared ledger (on-chain). L2s, in turn, run on top of an L1 to enhance efficiency and scalability. We assess how this architecture fragments activity across and within chains, and how mitigation tools reduce frictions while introducing new trust, governance and operational dependencies. We conclude with implications for the potential role of permissionless blockchains as financial market infrastructures and for policy. The online appendix provides further details and a glossary.",
+        "bbox": [
+            87,
+            545,
+            875,
+            689
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Consensus mechanisms: equilibria and trade-offs",
+        "text_level": 2,
+        "bbox": [
+            90,
+            709,
+            532,
+            727
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Blockchains are append-only, shared databases (ledgers) maintained by validators who may not know or trust one another. In permissionless settings, anyone may attempt to validate or propose blocks; thus, incentives must align validators' private rewards with the public good of a coherent ledger (eg Budish (2025); Saleh (2021)). Participation depends on chain-specific requirements such as energy expenditure (work), minimum “locked” resources (stake), hardware capacity and voting or participation costs (eg fees for attestations or votes).",
+        "bbox": [
+            87,
+            743,
+            875,
+            808
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Daniel Eidan    Jon Frost    Rudraksh Kansal    Ulf Lewrick    Sang Hyuk Lim    Tomasz Rybarczyk\ndaniel.eidan@bis.org    jon.frost@bis.org    rudraksh.kansal@bis.org    ulf.lewrick@bis.org    sanghyuk.lim@bis.org    tomasz.rybarczyk@bis.org",
+        "bbox": [
+            115,
+            84,
+            914,
+            124
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_footnote",
+        "text": "1 Permissionless blockchains rely on so-called consensus, with incentives in the form of tokens, to align participants whose identities are hidden behind an address (pseudonym). Anyone with the required software can participate without prior approval. Permissioned blockchains use approved (known) validators and established governance. The latter thus resemble governance structures in the traditional financial system, prioritising scalability and security over decentralisation (Bains (2025)).",
+        "bbox": [
+            89,
+            857,
+            875,
+            910
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "BIS Bulletin",
+        "bbox": [
+            92,
+            934,
+            159,
+            946
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "1",
+        "bbox": [
+            862,
+            933,
+            873,
+            942
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            89,
+            85,
+            873,
+            117
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "To sustain an honest equilibrium, validators must be compensated not only for operating costs but also for coordination risks arising from relying on other validators' participation. For example, Bitcoin miners incur energy and hardware costs to earn block rewards (proof of work). Ethereum validators must lock up their native token (Ether) and risk \"slashing\" penalties (loss of staked tokens) for deviating from predetermined rules (proof of stake). These and other incentives shape validator behaviour and determine whether consensus is maintained. Overly large sets of validators raise coordination costs, while excessive concentration increases the risk of disruption or control (Auer et al (2025)). Seen through this economic lens, blockchain consensus mechanisms are best understood as a range of token-incentivised equilibria (supported by \"tokenomics\"), in which validator behaviour depends on how rewards, penalties and participation costs are structured.",
+        "bbox": [
+            87,
+            123,
+            873,
+            282
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The trilemma associated with achieving consensus $^{1}$",
+        "bbox": [
+            90,
+            296,
+            510,
+            313
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Graph 1",
+        "bbox": [
+            815,
+            298,
+            872,
+            313
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/ff7a032bda1f054dc2e93e3925d70d46c91c0469d2ea40a1cb2373783a6f73b0.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "$^{1}$ Triangle positions represent general tendencies of consensus mechanisms. The triangle's exact shape and placement may vary by blockchain implementation and configuration. $^{2}$ Proof of work (PoW) and proof of stake (PoS) support broad validator participation and thus decentralisation but can introduce scalability constraints in layer 1 networks. $^{3}$ Delegated proof of stake (DPoS) and proof of staked authority (PoSA) rely on smaller validator sets, which can enhance coordination efficiency and speed, but reflect different assumptions about validator participation and governance (see Table 1)."
+        ],
+        "content": "",
+        "bbox": [
+            310,
+            321,
+            655,
+            537
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Sources: BIS (2022), Buterin (2021); authors' elaboration.",
+        "bbox": [
+            90,
+            611,
+            406,
+            626
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The “blockchain trilemma” highlights the trade-offs between decentralisation, security and scalability (Buterin (2021)). Consensus mechanisms position themselves differently along these dimensions (Graph 1). Allowing many validators to independently verify and confirm blocks supports decentralisation and security, but it also increases communication and verification costs. This limits throughput and raises latency (ie the time needed to confirm transactions), as in proof of work and proof of stake blockchains (red triangle). By contrast, designs that prioritise scalability achieve higher throughput and lower latency confirmations by reducing the number of validators or increasing hardware requirements, which narrows participation and weakens decentralisation, as in delegated proof of stake (eg Tron) or proof of staked authority (eg BNB Smart Chain) (blue triangle). These design choices reflect different economic equilibria rather than purely technical constraints.",
+        "bbox": [
+            87,
+            640,
+            873,
+            799
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Security considerations reinforce these trade-offs. When the value secured by a blockchain increases, the resources required to compromise the network – the attack cost – must also rise to deter malicious behaviour. In permissionless blockchains, these costs are borne by users through fees, congestion rents or dilution of tokens, implying that higher security standards come with tighter capacity constraints.",
+        "bbox": [
+            87,
+            804,
+            873,
+            869
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "L1 networks feature distinct consensus mechanisms, shaping cost, latency and resilience (ie the ability to recover from disruptions). Their coexistence reflects competition among platforms to attract users with diverse needs and preferences. Early blockchains such as Bitcoin and Ethereum prioritised decentralisation and security through broad validator participation. This approach limits scalability: when demand for scarce block space rises, congestion intensifies and transaction fees increase, pushing out more price-sensitive users (Boissay et al (2022); Shin (2026)). Proof-of-stake systems can also face scalability constraints when security relies on large validator sets and frequent coordination. In response, newer L1s feature greater degrees of centralisation, such as smaller validator sets or higher hardware requirements, to raise throughput while lowering latency and fees (Table 1; Table A.1 in the online appendix).",
+        "bbox": [
+            87,
+            875,
+            873,
+            907
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "BIS Bulletin",
+        "bbox": [
+            92,
+            934,
+            159,
+            946
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            860,
+            933,
+            873,
+            942
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            87,
+            85,
+            873,
+            197
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/abbbf69c73109e16a832567bfd5d6c9d1f7b332802ee124cef900b6c0c36159e.jpg",
+        "table_caption": [
+            "No one size fits all: the plethora of layer 1 consensus mechanisms"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Design [example]</td><td>Consensus mechanism</td><td>Trade-offs</td></tr><tr><td>Proof of work (PoW)[eg Bitcoin]</td><td>Participants expend computing power to add blocks by competing to solve cryptographic puzzles. The protocol adjusts difficulty to maintain steady block times as computing power changes.</td><td>Robust and decentralised, but throughput is intentionally low; energy consumption depends on hardware efficiency.</td></tr><tr><td>Proof of stake (PoS)[eg Ethereum]</td><td>Participants lock up (stake) native tokens and are selected to propose/verify blocks; misbehaviour such as proposing conflicting blocks or failing to attest as required can result in part of the stake being forfeited (slashing). Finality is achieved through many stakers attesting to the same block.</td><td>More efficient than PoW and supports rollups for scale, but still faces challenges to decentralisation, due to stake concentration risks, and coordination, due to consensus requiring a supermajority, which can also face scalability constraints.</td></tr><tr><td>Time ordering + BFT[eg Solana (PoH + PoS/Tower BFT)]</td><td>A cryptographic clock orders events, enabling faster agreement, followed by Byzantine fault tolerance (BFT), in which a supermajority of validators must agree before blocks are confirmed.</td><td>Low latency and high throughput, but hardware and bandwidth needs raise barriers to entry for validators, potentially limiting decentralisation.</td></tr><tr><td>Probabilistic sampling[eg Avalanche (Snow*)]</td><td>Nodes repeatedly poll small, random subsets of validators until the network converges, achieving fast finality with high probability.</td><td>Fast confirmation and flexible subnets, but security and liveness depend on sampling settings and the distribution of stake in the network.</td></tr><tr><td>Delegated validator sets[eg Tron (DPoS), BNB Smart Chain (PoSA)]</td><td>A small, elected or rotating group of validators produces blocks, with selection based on votes or delegated stake.</td><td>High throughput and quick finality but concentrates governance and validation power, which may reduce decentralisation.</td></tr></table>",
+        "bbox": [
+            89,
+            219,
+            873,
+            677
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "BFT = Byzantine fault tolerance (a class of consensus methods that allow the system to function correctly even if some validators are faulty or malicious); PoH = proof of history (a cryptographic time source used to create a verifiable and consistent ordering of events); PoSA = proof of staked authority (a small, governance-approved validator set is selected based on a combination of stake and authority); Snow = Avalanche \"Snow\" family of probabilistic sampling protocols (eg Snowball, Snowman, which achieve consensus through repeated random sampling of small validator subsets); DPoS = delegated proof of stake (token holders delegate their stake to elect a limited, rotating set of validators who produce blocks on their behalf).",
+        "bbox": [
+            89,
+            684,
+            875,
+            758
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Source: authors' elaboration.",
+        "bbox": [
+            90,
+            762,
+            255,
+            775
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The diversity of networks separates users and liquidity across different, siloed networks. While Ethereum remains dominant in decentralised finance (DeFi), new L1s have expanded “horizontally” (Graph 2.A). Some have disappeared, eg Terra – which grew rapidly before failing spectacularly in 2022 – or have seen falling use, eg Fantom. Meanwhile, some networks have shifted towards modular architectures that split functions “vertically” across layers, providing separation of execution, settlement, data availability and sequencing across specialised layers (Graph 2.B). While specific design features vary (see Table A.2 in the online appendix), all L2 solutions work by processing transactions off-chain and writing results back to their base L1 for settlement and data availability. $^{2}$ This modularity raises efficiency when systems are robust and governance is clear. But it also creates distinct execution environments, each with its own transaction ordering, pricing and points of failure. L2s develop their own liquidity pools and governance mechanisms, adding vertical fragmentation to the patchwork of networks. Modularity thus redistributes, rather than eliminates, trade-offs across layers and introduces new governance and interoperability challenges.",
+        "bbox": [
+            87,
+            797,
+            875,
+            910
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "BIS Bulletin",
+        "bbox": [
+            90,
+            933,
+            159,
+            946
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            860,
+            933,
+            873,
+            944
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/c7d63695dca1e253becb31a9bc6f81f1ba5ea58c3d9af2488becef7996b107e0.jpg",
+        "content": "",
+        "chart_caption": [
+            "Graph 2"
+        ],
+        "chart_footnote": [
+            "$^{1}$ Also includes L2 networks $^{2}$ L2s have been selected based on Token Terminal's methodology",
+            "Sources: DefiLlama; Token Terminal; BIS; authors' calculations."
+        ],
+        "bbox": [
+            90,
+            239,
+            873,
+            495
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            87,
+            85,
+            873,
+            181
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Rising fragmentation across layer 1 (L1) and layer 2 (L2) networks",
+        "text_level": 2,
+        "bbox": [
+            90,
+            193,
+            626,
+            212
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "As a percentage of total value locked",
+        "bbox": [
+            90,
+            218,
+            344,
+            234
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Mitigation mechanisms: benefits and trade-offs",
+        "text_level": 2,
+        "bbox": [
+            90,
+            564,
+            517,
+            582
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Rising fragmentation across L1 and L2 networks has increased demand for mechanisms to connect assets, liquidity and applications across blockchains. These mitigation mechanisms aim to reduce frictions while preserving basic security and permissionless participation. But none eliminates fragmentation entirely. Instead, each shifts risks based on introducing new trust assumptions, governance arrangements and operational dependencies.",
+        "bbox": [
+            87,
+            596,
+            873,
+            682
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Bridges. Bridges transfer value across blockchains by locking an asset on one network and issuing (minting) a corresponding representation on another. Bridges can be implemented via custodial groups, guardian sets, relayers/oracles or on-chain light-client verification. Bridges are convenient for users, but they concentrate risk: compromised keys, falsified messages and bugs in smart contracts have led to large losses (eg USD 625 million in the March 2022 Ronin Network hack).",
+        "bbox": [
+            119,
+            690,
+            873,
+            775
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Native multi-chain issuance. Large issuers (eg of stablecoins) mint native versions of their tokens across several chains. While these tokens have identical names, they cannot be transferred across chains, and the same user has different wallet addresses on each chain (Graph 3.A). Each version typically trades in its own liquidity pool, deepening fragmentation and reliance on cross-chain arbitrageurs to mitigate price differences. This form of issuance shifts the operational burden from bridges to issuer coordination, treasury management and consistent governance across chains.",
+        "bbox": [
+            119,
+            783,
+            873,
+            816
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_footnote",
+        "text": "2 One example of how L2s scale is rollups, which batch transactions and post compressed data to the base chain, lowering fees while inheriting L1 security. Optimistic rollups assume validity subject to fraud proofs during a challenge window, whereas zero-knowledge rollups use validity proofs for faster finality but with greater implementation complexity. Other models include validiums (most data are kept off-chain, changing data-availability assumptions), sidechains (eg Polygon PoS, which is independent and bridged, but does not inherit L1 security) and state channels (eg Lightning Network, which moves repeated interactions off-chain with periodic L1 settlement). Table A.2 in the online appendix gives further details.",
+        "bbox": [
+            87,
+            831,
+            873,
+            910
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "BIS Bulletin",
+        "bbox": [
+            92,
+            934,
+            159,
+            946
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            862,
+            933,
+            873,
+            942
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4023791b8a63ef60c425144c74d60f844b4f5e327f26c107605baab16ce557bb.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            485,
+            571,
+            873,
+            801
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            147,
+            85,
+            873,
+            153
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- Shared layers for security, data and sequencing. Some ecosystems seek to reduce fragmentation in their own environments by providing shared services to multiple rollups. These include shared security, where a common pool of stake backs several L2s; shared data-availability layers that store and publish transaction data so that anyone can verify execution; and shared sequencers that determine transaction ordering across rollups. By coordinating execution and reducing delays, these shared layers can improve efficiency and limit the scope for rents. At the same time, they concentrate governance and operational risk in a small number of components that may become systemically relevant within an ecosystem.",
+        "bbox": [
+            119,
+            160,
+            873,
+            297
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- Interoperability protocols (message-passing/state coordination). Rather than moving assets across blockchains, interoperability protocols allow chains to communicate by verified messages or proofs, enabling applications to act remotely (eg mint, redeem, settle). Some systems rely on cryptographic verification, where one blockchain verifies another's state on-chain. Others depend on external parties (eg relayers or oracles) to transmit messages. By keeping assets on their original chains, these designs reduce duplication and fragmentation but introduce new trust assumptions that on-chain verification rather than external intermediaries should minimise.",
+        "bbox": [
+            119,
+            304,
+            875,
+            423
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Rising fragmentation has fuelled rapid growth in the use of interoperability protocols in particular (Graph 3.B). Mitigation mechanisms could reduce some frictions but introduce new dependencies. As private sector experimentation continues, designs that combine verifiable security, transparent governance and clearly defined failure modes are more likely to emerge and to be more robust. At the same time, market participants may converge around a limited number of shared layers, warranting heightened attention to their operational resilience and governance arrangements.",
+        "bbox": [
+            87,
+            430,
+            873,
+            527
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Rising fragmentation has spurred demand for mitigation mechanisms",
+        "bbox": [
+            90,
+            544,
+            663,
+            563
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/c42a5cfa1ae51de0c5a0b99be4640e1b83e22d69984e558e81154b280b98ae71.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "$^{1}$ The graph provides a stylised example of how a stablecoin (eg USDT) can be issued natively on multiple blockchains (eg Ethereum and Solana) by the issuer. While this improves availability across blockchains, tokens remain siloed and non-tradable across chains. Wallets are represented with a certain value of tokens (blue or red circles) and wallet address below them. Without mitigation mechanisms, sending stablecoins between wallets on different blockchains (eg Solana to Ethereum) may fail, risking permanent loss. $^{2}$ Axelar Network, Circle Cross-Chain Transfer Protocol (CCTP), Chainlink, deBridge, LayerZero. $^{3}$ Across, Allbridge Core, deBridge Liquidity Network (DLN), Everclear, Hop Protocol, Hyperbridge, Ren, Stargate, Synapse, zkSync Era Bridge."
+        ],
+        "content": "",
+        "bbox": [
+            92,
+            570,
+            873,
+            801
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Sources: Token Terminal; BIS; authors' elaboration.",
+        "bbox": [
+            90,
+            888,
+            374,
+            902
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "BIS Bulletin",
+        "bbox": [
+            92,
+            934,
+            159,
+            946
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            862,
+            933,
+            873,
+            942
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The prospect of permissionless blockchains as financial market infrastructures",
+        "text_level": 2,
+        "bbox": [
+            90,
+            86,
+            784,
+            103
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Permissionless blockchains, including the applications built on them, are intended to provide general purpose financial infrastructure. In practice, however, binding economic constraints drive them towards specialisation and fragmentation. Consensus trade-offs generate multiple equilibria rather than convergence towards a single, unified infrastructure. Mitigation mechanisms designed to reconnect fragmented systems often reintroduce intermediaries and new dependencies. These dynamics limit the extent to which permissionless chains can naturally evolve into financial market infrastructures (FMIs) without additional governance and oversight. If permissionless blockchains are to support functions akin to FMIs, several policy dimensions warrant consideration:",
+        "bbox": [
+            87,
+            120,
+            873,
+            255
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Operational and cyber resilience. Diverse consensus mechanisms, validator incentives and governance models complicate risk assessment, incident response and recovery planning. While consolidation around common middleware can reduce fragmentation, it may create critical points of failure if a small number of shared services become critical to system functioning.",
+        "bbox": [
+            119,
+            263,
+            873,
+            330
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Regulatory perimeter and oversight. Shared sequencers, data-availability layers and cross-chain messaging services increasingly perform functions similar to those of traditional market infrastructures. As these components grow in scale, they may warrant governance arrangements, resilience standards and supervisory attention comparable to those applied to FMIs.",
+        "bbox": [
+            119,
+            338,
+            873,
+            406
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Competition versus standardisation. Open and interoperable standards can help reduce fragmentation while preserving innovation and competition among platforms. At the same time, cross-border coordination may be needed to mitigate operational risks and regulatory arbitrage, as activities span multiple jurisdictions and infrastructures.",
+        "bbox": [
+            119,
+            414,
+            873,
+            481
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Ultimately, the case for decentralisation is strongest in environments where trust is limited and reliance on central intermediaries is costly or impractical. Still, sustaining robust consensus equilibria at scale requires careful calibration of incentives, transparent governance and effective operational controls. Where permissionless systems take on more mainstream or infrastructure-like roles, the trade-offs inherent in their design should be made explicit and managed in ways that prioritise resilience and accountability, with particular scrutiny of shared components that could become systemically important.",
+        "bbox": [
+            87,
+            489,
+            873,
+            585
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "References",
+        "text_level": 2,
+        "bbox": [
+            90,
+            606,
+            193,
+            621
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "Auer, R, C Monnet and H S Shin (2025): \"Distributed ledgers and the governance of money\", Journal of Financial Economics, vol 167, 104026.",
+        "bbox": [
+            90,
+            640,
+            873,
+            671
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "Bains, P (2025): \"Blockchain consensus mechanisms: a primer for supervisors\", IMF Working Papers, no 186.",
+        "bbox": [
+            90,
+            678,
+            870,
+            694
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "Bank for International Settlements (BIS) (2022): \"The future monetary system\", Annual Economic Report 2022, Chapter III.",
+        "bbox": [
+            90,
+            701,
+            872,
+            732
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "Boissay, F, G Cornelli, S Doerr and J Frost (2022): \"Blockchain scalability and the fragmentation of crypto\", BIS Bulletin, no 56.",
+        "bbox": [
+            92,
+            740,
+            870,
+            771
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "Budish, E (2025): \"Trust at scale: the economic limits of cryptocurrencies and blockchains\", Quarterly Journal of Economics, vol 140, no 1.",
+        "bbox": [
+            90,
+            778,
+            872,
+            810
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "Buterin, V (2021): \"Why sharding is great: demystifying the technical properties\", available at https://vitalik.eth.limo/general/2021/04/07/sharding.html.",
+        "bbox": [
+            90,
+            816,
+            873,
+            848
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "Saleh, F (2021): \"Blockchain without waste: proof-of-stake\", Review of Financial Studies, vol 34, no 3.",
+        "bbox": [
+            90,
+            856,
+            828,
+            871
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "Shin, H S (2026): \"Tokenomics and blockchain fragmentation\", BIS Working Papers, no 1335.",
+        "bbox": [
+            90,
+            879,
+            771,
+            895
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "BIS Bulletin",
+        "bbox": [
+            92,
+            934,
+            159,
+            945
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            860,
+            933,
+            873,
+            942
+        ],
+        "page_idx": 7
+    }
+]

@@ -1,0 +1,6040 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.015,
+                0.062,
+                0.122,
+                0.086
+            ],
+            "angle": 0,
+            "content": "NO. 398"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.042,
+                0.105,
+                0.095,
+                0.14
+            ],
+            "angle": 0,
+            "content": "JUNE\n2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.343,
+                0.073,
+                0.796,
+                0.135
+            ],
+            "angle": 0,
+            "content": "ADB BRIEFS"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.138,
+                0.175,
+                0.267,
+                0.195
+            ],
+            "angle": 0,
+            "content": "KEY POINTS"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.139,
+                0.204,
+                0.339,
+                0.35
+            ],
+            "angle": 0,
+            "content": "- This brief presents experimental estimates on Mongolia's digital economy. The analysis applies the Digital Supply and Use Table (DSUT) framework to measure digitalization across three dimensions—digital industries, digital products, and digital transactions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.139,
+                0.355,
+                0.336,
+                0.53
+            ],
+            "angle": 0,
+            "content": "- Using Mongolia's 2015–2019 Supply and Use Tables, experimental DSUTs are compiled, focusing on digitally enabling industries due to data limitations. Preliminary results show that the digital economy contributed an average of 1.6% to Mongolia's gross domestic product from 2015 to 2019.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.139,
+                0.535,
+                0.329,
+                0.697
+            ],
+            "angle": 0,
+            "content": "- To complement the DSUT-based estimates, the analysis also applies the Asian Development Bank's input-output-based value flow methodology. Estimates derived from the two approaches highlight the growing importance of digital activities in Mongolia's economy.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.139,
+                0.701,
+                0.336,
+                0.805
+            ],
+            "angle": 0,
+            "content": "- This brief also discusses the use of alternative data sources and further methodological refinements to enhance and enable broader coverage of future estimates.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.372,
+                0.175,
+                0.848,
+                0.237
+            ],
+            "angle": 0,
+            "content": "Measuring the Digital Economy of Mongolia"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.372,
+                0.273,
+                0.64,
+                0.358
+            ],
+            "angle": 0,
+            "content": "Sameeksha Jain\nConsultant\nEconomic Research and Development\nImpact Department (ERDI)\nAsian Development Bank (ADB)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.373,
+                0.37,
+                0.632,
+                0.421
+            ],
+            "angle": 0,
+            "content": "Mahinthan Joseph Mariasingham\nPrincipal Statistician\nERDI, ADB",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.656,
+                0.273,
+                0.836,
+                0.326
+            ],
+            "angle": 0,
+            "content": "Aparajita Pandharkar\nConsultant\nPacific Department, ADB",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.656,
+                0.338,
+                0.78,
+                0.389
+            ],
+            "angle": 0,
+            "content": "Maegan Saroca\nConsultant\nERDI, ADB",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.374,
+                0.435,
+                0.456,
+                0.486
+            ],
+            "angle": 0,
+            "content": "Nuri Ohn\nStatistician\nERDI, ADB",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.656,
+                0.402,
+                0.752,
+                0.453
+            ],
+            "angle": 0,
+            "content": "Irene Talam\nConsultant\nERDI, ADB",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.375,
+                0.536,
+                0.549,
+                0.556
+            ],
+            "angle": 0,
+            "content": "INTRODUCTION"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.372,
+                0.569,
+                0.934,
+                0.645
+            ],
+            "angle": 0,
+            "content": "The emergence of the digital economy marks a pivotal transformation in the global economic landscape, fundamentally reshaping how economic activities are conducted and how products are created, managed, stored, and exchanged. This shift has been driven by the widespread adoption of technology and has revolutionized business operations, consumer behavior, supply chains, and the flow of goods and services across the world.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.371,
+                0.655,
+                0.919,
+                0.818
+            ],
+            "angle": 0,
+            "content": "In Mongolia, the development of information and communication technology (ICT) is recognized as a key driver of economic diversification and long-term growth. This priority aligns with the Government of Mongolia's Vision 2050, which identifies science, technology, and innovation as central pillars of national development. Policy initiatives led by the Ministry of Digital Development, Innovation, and Communications aim to promote software and digital content production and expand exports of digital goods and services (Government of Mongolia, Ministry of Digital Development, Innovation, and Communications n.d.). Strengthening ICT infrastructure and improving internet connectivity are expected to enhance e-commerce, help overcome geographical constraints, and contribute to economic diversification (United Nations Trade and Development 2023).",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.075,
+                0.866,
+                0.342,
+                0.944
+            ],
+            "angle": 0,
+            "content": "ISBN 978-92-9277-871-2 (print)\nISBN 978-92-9277-872-9 (PDF)\nISSN 2071-7202 (print)\nISSN 2218-2675 (PDF)\nPublication Stock No. BRF260300-2\nDOI: http://dx.doi.org/10.22617/BRF260300-2"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.372,
+                0.829,
+                0.926,
+                0.881
+            ],
+            "angle": 0,
+            "content": "The authors acknowledge the contributions of Terbish Jambaldorj and Enkhzaya Dambiijantsan from National Statistics Office of Mongolia. The authors also extend their sincere appreciation to Elaine Tan, Martino Pelli, Stephanie Moscoso, and Nomundari Baatar from the Asian Development Bank for their valuable comments."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.869,
+                0.884,
+                0.954,
+                0.95
+            ],
+            "angle": 0,
+            "content": "ADB"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.142,
+                0.178,
+                0.263,
+                0.193
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.144,
+                0.206,
+                0.27,
+                0.217
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.221,
+                0.321,
+                0.232
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.234,
+                0.326,
+                0.248
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.153,
+                0.249,
+                0.302,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.263,
+                0.296,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.153,
+                0.277,
+                0.331,
+                0.29
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.292,
+                0.335,
+                0.305
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.307,
+                0.316,
+                0.319
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.32,
+                0.322,
+                0.334
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.336,
+                0.302,
+                0.347
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.142,
+                0.357,
+                0.335,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.372,
+                0.299,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.153,
+                0.387,
+                0.307,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.4,
+                0.293,
+                0.414
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.153,
+                0.415,
+                0.324,
+                0.427
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.429,
+                0.298,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.443,
+                0.306,
+                0.456
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.457,
+                0.308,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.473,
+                0.316,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.486,
+                0.306,
+                0.5
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.153,
+                0.502,
+                0.299,
+                0.513
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.153,
+                0.516,
+                0.239,
+                0.527
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.144,
+                0.537,
+                0.279,
+                0.55
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.551,
+                0.305,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.567,
+                0.302,
+                0.578
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.58,
+                0.304,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.595,
+                0.326,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.151,
+                0.609,
+                0.308,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.151,
+                0.623,
+                0.323,
+                0.636
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.639,
+                0.312,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.151,
+                0.652,
+                0.305,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.153,
+                0.668,
+                0.282,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.681,
+                0.286,
+                0.695
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.143,
+                0.704,
+                0.304,
+                0.715
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.717,
+                0.286,
+                0.73
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.153,
+                0.732,
+                0.307,
+                0.744
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.746,
+                0.332,
+                0.759
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.761,
+                0.296,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.775,
+                0.281,
+                0.788
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.79,
+                0.26,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.176,
+                0.845,
+                0.207
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.206,
+                0.556,
+                0.236
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.276,
+                0.496,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.293,
+                0.455,
+                0.305
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.309,
+                0.638,
+                0.321
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.394,
+                0.325,
+                0.582,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.341,
+                0.598,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.371,
+                0.628,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.39,
+                0.515,
+                0.403
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.406,
+                0.455,
+                0.42
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.659,
+                0.275,
+                0.82,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.659,
+                0.292,
+                0.738,
+                0.306
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.659,
+                0.309,
+                0.831,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.659,
+                0.34,
+                0.777,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.658,
+                0.356,
+                0.738,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.659,
+                0.373,
+                0.737,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.375,
+                0.436,
+                0.451,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.375,
+                0.453,
+                0.454,
+                0.467
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.47,
+                0.454,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.66,
+                0.403,
+                0.749,
+                0.417
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.658,
+                0.42,
+                0.737,
+                0.434
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.658,
+                0.436,
+                0.737,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.378,
+                0.538,
+                0.546,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.572,
+                0.882,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.586,
+                0.906,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.6,
+                0.93,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.615,
+                0.904,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.63,
+                0.905,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.658,
+                0.915,
+                0.67
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.672,
+                0.879,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.687,
+                0.914,
+                0.698
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.701,
+                0.877,
+                0.713
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.715,
+                0.864,
+                0.727
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.73,
+                0.878,
+                0.742
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.744,
+                0.891,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.758,
+                0.881,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.773,
+                0.889,
+                0.785
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.788,
+                0.909,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.802,
+                0.783,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.056,
+                0.045,
+                0.248,
+                0.064
+            ],
+            "angle": 0,
+            "content": "ADB BRIEFS NO. 398"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.054,
+                0.109,
+                0.491,
+                0.27
+            ],
+            "angle": 0,
+            "content": "As digital transformation advances, the availability of robust, consistent, and policy-relevant statistics becomes increasingly important for understanding the scale, structure, and evolution of the digital economy. This policy brief is a product of the collaborative initiative between the Asian Development Bank (ADB) and the National Statistics Office of Mongolia, with support from the Republic of Korea e-Asia and Knowledge Partnership Fund, to compile an experimental Digital Supply and Use Table (DSUT) for Mongolia. The DSUT framework provides a systematic approach to measuring digitalization by distinguishing between digital industries, digital products, and digital transactions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.054,
+                0.281,
+                0.493,
+                0.385
+            ],
+            "angle": 0,
+            "content": "The experimental DSUTs cover 2015–2019 and focus on digitally enabling industries, reflecting current data availability. This brief presents preliminary results, discusses key methodological and data challenges, and introduces an alternative input-output-based value flow approach developed by ADB. Together, these methods provide complementary insights into the role of digital activities in Mongolia's economy and inform future statistical development efforts.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.054,
+                0.396,
+                0.493,
+                0.515
+            ],
+            "angle": 0,
+            "content": "Preliminary findings indicate that digital industries comprised an estimated \\(1.51\\%\\) to \\(1.81\\%\\) of Mongolia's gross domestic product (GDP) between 2015 and 2019. Comparing the growth of digital industries with that of the overall economy provides valuable insights for policymakers in formulating strategies to advance Mongolia's digitalization agenda. Future iterations of the DSUTs are expected to refine these estimates, incorporate additional digital industries, and expand coverage to other dimensions of the digital economy.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.054,
+                0.541,
+                0.405,
+                0.6
+            ],
+            "angle": 0,
+            "content": "CONSTRUCTION OF MONGOLIA'S 2015–2019 DIGITAL SUPPLY AND USE TABLES"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.054,
+                0.61,
+                0.462,
+                0.641
+            ],
+            "angle": 0,
+            "content": "Methodology and Data Sources for the Compilation of the Digital Supply and Use Tables"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.054,
+                0.642,
+                0.494,
+                0.802
+            ],
+            "angle": 0,
+            "content": "The experimental DSUTs of Mongolia follow the recommendations of the Organisation for Economic Co-operation and Development (OECD) framework on measuring the digital economy. Under this framework, digitalization is captured across three key dimensions: digital industries, digital products, and digital transactions. Due to data constraints, the current compilation focuses solely on digital industries and, within this category, is limited only to the digitally enabling industries. The remaining six digital industries (Table 1), as well as the dimensions of digital products and digital transactions, will be incorporated in future iterations of the tables as more detailed data becomes available.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.054,
+                0.814,
+                0.479,
+                0.931
+            ],
+            "angle": 0,
+            "content": "The foundation for the construction of Mongolia's 2015–2019 experimental DSUTs are the conventional 2015–2019 Supply and Use Tables (SUTs). The methodology involves reallocating output, intermediate consumption, and gross value added (GVA) from existing SUT industry columns to a newly defined column representing digitally enabling industries. Reallocation ratios are derived using revenue data from the Statistical Business Register (SBR) of Mongolia.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.602,
+                0.104,
+                0.848,
+                0.121
+            ],
+            "angle": 0,
+            "content": "Table 1: List of Digital Industries"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.508,
+                0.126,
+                0.942,
+                0.264
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>1</td><td>Digitally enabling industries</td></tr><tr><td>2</td><td>Digital intermediation platforms charging a fee</td></tr><tr><td>3</td><td>Data- and advertising-driven digital platforms</td></tr><tr><td>4</td><td>Producers dependent on digital intermediation platforms</td></tr><tr><td>5</td><td>E-tailers</td></tr><tr><td>6</td><td>Financial service providers predominantly operating digitally</td></tr><tr><td>7</td><td>Other producers only operating digitally</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.506,
+                0.27,
+                0.93,
+                0.297
+            ],
+            "angle": 0,
+            "content": "Source: OECD. 2023. OECD Handbook on Compiling Digital Supply and Use Tables. OECD Publishing."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.505,
+                0.31,
+                0.941,
+                0.471
+            ],
+            "angle": 0,
+            "content": "Digitally enabling industries comprise producers of goods and services that facilitate digital transformation, such as manufacturers of ICT equipment and providers of ICT services. Compared to other digital industries, this classification is based on the nature of production activities and not the “digital activity” generated. Digitally enabling industries correspond broadly to “ICT industries” as defined by the OECD. They include the manufacture of computers, electronics, and optical products; wholesale and repairs of ICT products; software publishing; telecommunications; and production of IT and information services (OECD 2023). A more detailed list of these ICT industries is provided in Table 2.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.567,
+                0.49,
+                0.885,
+                0.525
+            ],
+            "angle": 0,
+            "content": "Table 2: Information and Communication Technology Industries"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.508,
+                0.531,
+                0.941,
+                0.898
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>International Standard Industrial Classification Code</td><td>Description</td></tr><tr><td>2610</td><td>Manufacture of electronic components and boards</td></tr><tr><td>2620</td><td>Manufacture of computers and peripheral equipment</td></tr><tr><td>2630</td><td>Manufacture of communication equipment</td></tr><tr><td>2640</td><td>Manufacture of consumer electronics</td></tr><tr><td>2680</td><td>Manufacture of magnetic and optical media</td></tr><tr><td>4651</td><td>Wholesale of computers, computer peripheral equipment, and software</td></tr><tr><td>4652</td><td>Wholesale of electronic and telecommunications equipment and parts</td></tr><tr><td>5820</td><td>Software publishing</td></tr><tr><td>61</td><td>Telecommunications</td></tr><tr><td>62</td><td>Computer programming, consultancy, and related activities</td></tr><tr><td>6311</td><td>Data processing, hosting, and related activities</td></tr><tr><td>6312</td><td>Web portals</td></tr><tr><td>9511</td><td>Repair of computers and peripheral equipment</td></tr><tr><td>9512</td><td>Repair of communication equipment</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.505,
+                0.905,
+                0.896,
+                0.932
+            ],
+            "angle": 0,
+            "content": "Source: International Standard Industrial Classification of All Economic Activities (ISIC) Revision 4."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.056,
+                0.941,
+                0.072,
+                0.957
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.111,
+                0.434,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.126,
+                0.447,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.14,
+                0.469,
+                0.151
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.155,
+                0.488,
+                0.166
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.169,
+                0.455,
+                0.18
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.182,
+                0.439,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.197,
+                0.446,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.212,
+                0.474,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.225,
+                0.481,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.241,
+                0.482,
+                0.252
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.256,
+                0.311,
+                0.266
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.283,
+                0.465,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.298,
+                0.457,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.312,
+                0.481,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.327,
+                0.482,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.342,
+                0.484,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.355,
+                0.49,
+                0.368
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.371,
+                0.428,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.399,
+                0.458,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.412,
+                0.451,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.427,
+                0.461,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.442,
+                0.489,
+                0.454
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.457,
+                0.46,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.471,
+                0.486,
+                0.483
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.485,
+                0.479,
+                0.498
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.5,
+                0.44,
+                0.511
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.543,
+                0.402,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.563,
+                0.384,
+                0.578
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.583,
+                0.178,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.612,
+                0.459,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.626,
+                0.339,
+                0.641
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.644,
+                0.49,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.658,
+                0.484,
+                0.669
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.672,
+                0.481,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.686,
+                0.478,
+                0.699
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.702,
+                0.476,
+                0.713
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.715,
+                0.477,
+                0.728
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.729,
+                0.47,
+                0.742
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.745,
+                0.488,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.758,
+                0.478,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.774,
+                0.446,
+                0.785
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.788,
+                0.267,
+                0.798
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.815,
+                0.456,
+                0.828
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.83,
+                0.45,
+                0.843
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.844,
+                0.462,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.86,
+                0.476,
+                0.871
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.874,
+                0.462,
+                0.885
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.888,
+                0.466,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.903,
+                0.471,
+                0.915
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.917,
+                0.182,
+                0.929
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.51,
+                0.313,
+                0.899,
+                0.324
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.327,
+                0.938,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.342,
+                0.903,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.356,
+                0.909,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.369,
+                0.906,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.385,
+                0.932,
+                0.396
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.398,
+                0.881,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.414,
+                0.934,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.428,
+                0.91,
+                0.439
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.441,
+                0.924,
+                0.454
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.457,
+                0.87,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.56,
+                0.046,
+                0.944,
+                0.065
+            ],
+            "angle": 0,
+            "content": "Measuring the Digital Economy of Mongolia"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.054,
+                0.109,
+                0.49,
+                0.269
+            ],
+            "angle": 0,
+            "content": "Some ICT industries exhibit a one-to-one correspondence with the industries already identified in Mongolia's SUTs, namely electronic components and board manufacturing, communication equipment manufacturing, electrical connection and computer programming, and consulting and related activities. The entire columns of these industries are reallocated to the digitally enabling industries column. Other ICT industries are only partially digital. Hence, the following industry codes were disaggregated to reallocate the output, intermediate consumption, and GVA of the digital subindustries into the “digitally enabling industry” column in the DSUT:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.055,
+                0.281,
+                0.434,
+                0.31
+            ],
+            "angle": 0,
+            "content": "(a) 465—wholesale of machinery, equipment, and their accessories;",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.055,
+                0.31,
+                0.426,
+                0.325
+            ],
+            "angle": 0,
+            "content": "(b) 58—original preparation and publication activities;",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.055,
+                0.325,
+                0.349,
+                0.34
+            ],
+            "angle": 0,
+            "content": "(c) 63—information service activities; and",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.055,
+                0.34,
+                0.483,
+                0.369
+            ],
+            "angle": 0,
+            "content": "(d) 95—repair and service of goods for personal and household use, computers.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.055,
+                0.382,
+                0.446,
+                0.399
+            ],
+            "angle": 0,
+            "content": "The following steps were undertaken to compile the DSUTs:",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.055,
+                0.41,
+                0.217,
+                0.428
+            ],
+            "angle": 0,
+            "content": "Digital Supply Table"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.055,
+                0.439,
+                0.484,
+                0.47
+            ],
+            "angle": 0,
+            "content": "(a) Full reallocation of ICT industries with one-to-one correspondence to the digitally enabling industries column;",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.055,
+                0.469,
+                0.486,
+                0.497
+            ],
+            "angle": 0,
+            "content": "(b) Computation of output reallocation ratios using the revenue data from the SBR; and",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.055,
+                0.498,
+                0.462,
+                0.542
+            ],
+            "angle": 0,
+            "content": "(c) Disaggregation of partially digital ICT industries using the reallocation ratios and reallocation of the digital subindustries to the digitally enabling industries column.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.055,
+                0.553,
+                0.194,
+                0.57
+            ],
+            "angle": 0,
+            "content": "Digital Use Table"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.055,
+                0.613,
+                0.478,
+                0.642
+            ],
+            "angle": 0,
+            "content": "(b) Computation of GVA reallocation ratios using the revenue data from the SBR as proxy indicator(s);",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.055,
+                0.642,
+                0.411,
+                0.67
+            ],
+            "angle": 0,
+            "content": "(c) Derivation of the GVA for digital and non-digital subindustries;",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.055,
+                0.67,
+                0.438,
+                0.713
+            ],
+            "angle": 0,
+            "content": "(d) Residual estimation of intermediate consumption by subtracting the derived GVA from the derived gross output; and",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.055,
+                0.714,
+                0.484,
+                0.773
+            ],
+            "angle": 0,
+            "content": "(e) Distribution of intermediate consumption across product rows using the original SUT use structure, assuming similar production processes for digital and non-digital firms within the same industry.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.054,
+                0.784,
+                0.458,
+                0.815
+            ],
+            "angle": 0,
+            "content": "Challenges in the Compilation of the Digital Supply and Use Tables and Future Refinements"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.054,
+                0.815,
+                0.462,
+                0.917
+            ],
+            "angle": 0,
+            "content": "The primary challenge of compiling Mongolia's experimental DSUTs is the limited scope of the digital economy that can be captured given current data availability. While the OECD framework distinguishes seven digital industries and features three dimensions of digitalization, the present estimates are focused only on the digitally enabling industries. The reliance on SBR revenue data alone constrains the ability to compute",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.109,
+                0.921,
+                0.241
+            ],
+            "angle": 0,
+            "content": "reallocation ratios for other digital industries, such as e-tailers and digital intermediary platforms. Expanding coverage will require access to more granular and diverse data sources, including establishment lists, enterprise microdata, financial statements, annual reports, and e-commerce-specific surveys. Improved data integration would also enable future DSUT iterations to incorporate digital products and transactions, thereby providing a more comprehensive view of Mongolia's digital economy.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.505,
+                0.263,
+                0.879,
+                0.282
+            ],
+            "angle": 0,
+            "content": "PRELIMINARY AGGREGATE RESULTS"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.295,
+                0.929,
+                0.443
+            ],
+            "angle": 0,
+            "content": "The experimental estimates indicate that Mongolia's digital economy exhibited strong growth during the period particularly between 2016 and 2019 (Figure 1). The growth of the digital GDP was higher than the non-digital GDP and overall economy in the years 2016 and 2019, likely reflecting the increased adoption of internet and mobile technologies in the country. The digital economy increased in absolute terms over the 5-year period despite a slowdown in its growth in 2017. This underscores the rising demand for digital technologies and products among households and businesses during this period.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.454,
+                0.932,
+                0.558
+            ],
+            "angle": 0,
+            "content": "Figure 2 illustrates the relative size of the digital economy as a share of Mongolia's economy-wide GDP, showing a gradual decline from \\(1.77\\%\\) in 2015 to \\(1.58\\%\\) in 2019. However, this trend should not be interpreted as a reduction in the economic significance of digital activities. On the contrary, digital GDP increased in absolute terms over the period, reflecting continued expansion of the digital sector.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.544,
+                0.587,
+                0.906,
+                0.655
+            ],
+            "angle": 0,
+            "content": "Figure 1: Comparison of Digital Gross Domestic Product and Total Economy Gross Domestic Product Growth Rates, 2015–2019\n(%)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.516,
+                0.666,
+                0.934,
+                0.862
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.524,
+                0.869,
+                0.699,
+                0.883
+            ],
+            "angle": 0,
+            "content": "GDP = gross domestic product."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.522,
+                0.881,
+                0.925,
+                0.908
+            ],
+            "angle": 0,
+            "content": "Source: Authors' calculations using National Statistics Office of Mongolia Supply and Use Tables and data from the Statistical Business Register."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.928,
+                0.941,
+                0.943,
+                0.956
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.111,
+                0.471,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.126,
+                0.444,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.14,
+                0.486,
+                0.151
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.155,
+                0.468,
+                0.166
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.169,
+                0.461,
+                0.18
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.183,
+                0.432,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.197,
+                0.485,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.212,
+                0.482,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.226,
+                0.484,
+                0.237
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.241,
+                0.476,
+                0.252
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.255,
+                0.143,
+                0.266
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.283,
+                0.431,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.298,
+                0.175,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.312,
+                0.423,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.327,
+                0.346,
+                0.34
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.341,
+                0.481,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.357,
+                0.199,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.385,
+                0.444,
+                0.396
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.411,
+                0.214,
+                0.427
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.441,
+                0.423,
+                0.455
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.457,
+                0.476,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.47,
+                0.485,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.485,
+                0.246,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.498,
+                0.441,
+                0.514
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.514,
+                0.428,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.529,
+                0.457,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.555,
+                0.191,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.614,
+                0.475,
+                0.627
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.628,
+                0.355,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.642,
+                0.408,
+                0.657
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.657,
+                0.189,
+                0.67
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.672,
+                0.435,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.687,
+                0.428,
+                0.698
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.701,
+                0.174,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.714,
+                0.468,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.73,
+                0.473,
+                0.742
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.744,
+                0.48,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.759,
+                0.215,
+                0.77
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.784,
+                0.455,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.8,
+                0.369,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.817,
+                0.454,
+                0.828
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.83,
+                0.444,
+                0.843
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.845,
+                0.45,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.859,
+                0.456,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.873,
+                0.452,
+                0.886
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.887,
+                0.458,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.903,
+                0.455,
+                0.915
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.111,
+                0.912,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.125,
+                0.896,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.14,
+                0.885,
+                0.152
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.155,
+                0.902,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.169,
+                0.918,
+                0.18
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.183,
+                0.891,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.198,
+                0.891,
+                0.209
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.212,
+                0.904,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.226,
+                0.616,
+                0.237
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.264,
+                0.876,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.298,
+                0.888,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.313,
+                0.915,
+                0.324
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.327,
+                0.927,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.341,
+                0.896,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.356,
+                0.92,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.37,
+                0.906,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.385,
+                0.896,
+                0.396
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.399,
+                0.908,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.413,
+                0.887,
+                0.426
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.428,
+                0.804,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.51,
+                0.457,
+                0.898,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.47,
+                0.904,
+                0.483
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.485,
+                0.887,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.5,
+                0.917,
+                0.511
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.515,
+                0.898,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.529,
+                0.928,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.543,
+                0.707,
+                0.554
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.248,
+                0.624,
+                0.752,
+                0.66
+            ],
+            "angle": 0,
+            "content": "Figure 3: Composition of the Digital Economy, 2015–2019 (% each component contributed to digital gross domestic product)"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.056,
+                0.045,
+                0.249,
+                0.064
+            ],
+            "angle": 0,
+            "content": "ADB BRIEFS NO. 398"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.264,
+                0.119,
+                0.735,
+                0.138
+            ],
+            "angle": 0,
+            "content": "Figure 2: Size of the Digital Economy of Mongolia, 2015–2019"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.076,
+                0.147,
+                0.924,
+                0.286
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.076,
+                0.291,
+                0.394,
+                0.305
+            ],
+            "angle": 0,
+            "content": "GDP = gross domestic product, LCU = local currency unit."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.075,
+                0.303,
+                0.856,
+                0.319
+            ],
+            "angle": 0,
+            "content": "Source: Authors' calculations using National Statistics Office of Mongolia Supply and Use Tables and data from the Statistical Business Register."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.054,
+                0.353,
+                0.489,
+                0.472
+            ],
+            "angle": 0,
+            "content": "The observed decline in the digital economy's share of GDP should therefore be interpreted with caution. The strong growth of overall GDP during 2015–2019 mechanically affects the relative weight of the digital economy, as total GDP serves as the denominator in computing its share. As the broader economy expands, particularly resource-based and traditional sectors, the proportional contribution of digital activities may appear smaller even when digital output is rising in absolute terms.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.054,
+                0.483,
+                0.481,
+                0.587
+            ],
+            "angle": 0,
+            "content": "Additionally, the estimates are expressed in current prices and have not been adjusted for inflation. Given that the prices of digital products and services tend to decline over time due to rapid technological progress and productivity gains, current-price measures may understate real growth in the digital economy. The use of constant-price data will provide a more accurate assessment of real growth in the digital economy.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.353,
+                0.933,
+                0.529
+            ],
+            "angle": 0,
+            "content": "In examining the digital economy by sector, telecommunications consistently accounted for the largest share of digital GDP from 2015 to 2019 (Figure 3). This is followed by the providers of computer programming, consulting, and related services; then wholesalers of computers and peripheral equipment. The remaining digitally enabling industries made up only around 1.48% to 2.91% of total digital GDP during the given period. The fastest growing among all the digital sectors was computer programming, consulting, and related services, showing significant growth from 2018 onward. As this sector becomes a larger part of the economy today, the need to capture its full extent more accurately intensifies.",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.175,
+                0.663,
+                0.825,
+                0.883
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.075,
+                0.89,
+                0.857,
+                0.906
+            ],
+            "angle": 0,
+            "content": "Source: Authors' calculations using National Statistics Office of Mongolia Supply and Use Tables and data from the Statistical Business Register."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.057,
+                0.941,
+                0.073,
+                0.956
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.354,
+                0.482,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.37,
+                0.478,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.385,
+                0.462,
+                0.396
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.399,
+                0.458,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.413,
+                0.422,
+                0.426
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.428,
+                0.488,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.443,
+                0.455,
+                0.454
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.457,
+                0.31,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.485,
+                0.455,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.499,
+                0.445,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.514,
+                0.45,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.528,
+                0.476,
+                0.541
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.543,
+                0.448,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.558,
+                0.441,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.571,
+                0.373,
+                0.584
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.356,
+                0.923,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.37,
+                0.884,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.384,
+                0.908,
+                0.396
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.399,
+                0.891,
+                0.411
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.413,
+                0.881,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.427,
+                0.92,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.441,
+                0.886,
+                0.454
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.456,
+                0.913,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.471,
+                0.932,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.485,
+                0.912,
+                0.497
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.5,
+                0.907,
+                0.511
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.515,
+                0.649,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.56,
+                0.046,
+                0.943,
+                0.065
+            ],
+            "angle": 0,
+            "content": "Measuring the Digital Economy of Mongolia"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.054,
+                0.11,
+                0.486,
+                0.168
+            ],
+            "angle": 0,
+            "content": "MEASURING MONGOLIA'S DIGITAL ECONOMY USING ADB'S INPUT-OUTPUT-BASED VALUE FLOW METHODOLOGY"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.054,
+                0.181,
+                0.483,
+                0.342
+            ],
+            "angle": 0,
+            "content": "While highly valuable for disaggregating a country's digital economy estimates, the development of DSUTs has extensive data requirements. ADB proposes an alternative approach to measuring the scale of the digital economy grounded in input-output framework analysis. This method measures both the direct and indirect value-added contributions of digital industries to economy-wide GDP. This input-output-based measurement framework, fundamentally rooted in Leontief's analytical insights (Leontief 1936), assesses the direct and indirect value-added contributions of identified digital industries to the production of final goods and services.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.054,
+                0.353,
+                0.492,
+                0.472
+            ],
+            "angle": 0,
+            "content": "Under this framework, digital products are defined as goods and services primarily used to generate, process, or store digitized data. Industries that predominantly produce these products are classified as digital industries. Five “core” digital products/industries are identified: (i) hardware, (ii) software publishing, (iii) web publishing, (iv) telecommunications services, and (v) specialized and support services. Table 3 lays out the five “core” digital products/industries, including their subcomponents.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.054,
+                0.483,
+                0.491,
+                0.573
+            ],
+            "angle": 0,
+            "content": "By focusing on these core components, the input–output-based value flow approach adopts a narrow scope to produce estimates of the digital economy, providing a solid basis for informed policymaking while avoiding the uncertainty associated with judging the degree of “digitalization” in products whose functions are only partly digital, such as conventional appliances with smart features.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.056,
+                0.592,
+                0.492,
+                0.644
+            ],
+            "angle": 0,
+            "content": "Table 3: Main Digital Industries by International Standard Industrial Classification of All Economic Activities Revision 4 (ISIC Rev. 4)"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.055,
+                0.65,
+                0.49,
+                0.886
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Main Activity Group</td><td>Code</td><td>Industry</td></tr><tr><td rowspan=\"2\">Hardware</td><td>2620</td><td>Manufacture of computers and peripheral equipment</td></tr><tr><td>2680</td><td>Manufacture of magnetic and optical media</td></tr><tr><td>Software publishing</td><td>5820</td><td>Software publishing</td></tr><tr><td>Web publishing</td><td>6312</td><td>Web portals</td></tr><tr><td>Telecommunication services</td><td>61</td><td>Telecommunication services</td></tr><tr><td rowspan=\"2\">Specialized and support services</td><td>62</td><td>Computer programming services, consulting, and other related services</td></tr><tr><td>6311</td><td>Data processing, hosting, and related activities</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.054,
+                0.894,
+                0.489,
+                0.933
+            ],
+            "angle": 0,
+            "content": "Source: Special Supplement to 2021 ADB Key Indicators for Asia and the Pacific—Capturing the Digital Economy: A Proposed Measurement Framework and Its Applications."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.505,
+                0.108,
+                0.881,
+                0.14
+            ],
+            "angle": 0,
+            "content": "The core-digital GDP equation used in this measurement framework is specified as follows:",
+            "merge_prev": false
+        },
+        {
+            "type": "equation",
+            "bbox": [
+                0.508,
+                0.151,
+                0.922,
+                0.21
+            ],
+            "angle": 0,
+            "content": "\\[\nGDP_{digital} = \\underbrace{i^{T}\\hat{v}B\\hat{y}\\varepsilon_{1}}_{\\text{Backward linkage}} + \\underbrace{i^{T}(\\hat{v}B\\hat{y})^{T}\\varepsilon_{1}}_{\\text{Forward linkage}} - \\underbrace{\\left[\\text{diag}(\\hat{v}B\\hat{y})\\right]^{T}\\varepsilon_{1}}_{\\text{Double - counted term}} + \\underbrace{(i - \\varepsilon_{1})^{T}\\hat{v}B\\hat{y}\\hat{r}\\varepsilon_{2}}_{\\substack{\\text{Backward linkage to other fixed investments by digital sectors}}}\n\\]"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.224,
+                0.938,
+                0.313
+            ],
+            "angle": 0,
+            "content": "where,  \\( \\hat{V} \\)  is the diagonalized vector of value-added to gross output ratios, B is the Leontief (1936) inverse,  \\( \\hat{y} \\)  is the diagonalized vector final demands, i is a summation vector, and  \\( E_{1} \\)  and  \\( E_{2} \\)  are the first eliminator vector, which excludes transactions related to non-digital industries, and the second eliminator vector, which excludes fixed assets in digital products.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.325,
+                0.94,
+                0.514
+            ],
+            "angle": 0,
+            "content": "The first term from this equation accounts for the backward linkages between the digital industries and the industries from which they purchase inputs, which may be interpreted as the “digitally enabling industries.” The second term accounts for the value-added contributions of the digital industries to those sectors to which they sell—the “digitally enabled industries.” The third term captures the double counted items, i.e., the digital inputs that digital industries use to produce their own products. It is removed from the estimate to avoid double counting, for it appears in each of the first two terms. Finally, the fourth term accounts for the value-added contributions of the digitally enabling industries through the production of fixed capital goods that the core digital industries invest in.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.505,
+                0.525,
+                0.938,
+                0.659
+            ],
+            "angle": 0,
+            "content": "Each term of the digital GDP framework (equation 1) captures a different channel of digital value creation, allowing focus on the components most relevant to analytical or policy needs. The approach is also flexible and can be adapted—for example, by expanding the set of digital products or incorporating digital value chain indicators—making it suitable for country-specific priorities. A fuller discussion of the framework and its extensions is available in ADB’s Special Supplement to the Key Indicators for Asia and the Pacific 2021 (ADB 2021).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.67,
+                0.942,
+                0.774
+            ],
+            "angle": 0,
+            "content": "Figure 4 illustrates the results obtained from applying the ADB input–output-based value flow method to Mongolia's input–output tables for 2015–2019. The value added generated by Mongolia's digital economy averaged about 1.89% of GDP during this period, peaking at 2.16% in 2016. This pattern is broadly consistent with the results derived from the DSUT method and may partly reflect the use of current price data, which are unadjusted for inflation.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.785,
+                0.942,
+                0.86
+            ],
+            "angle": 0,
+            "content": "Over the 5-year period, the digital economy recorded a compound annual growth rate of \\(7.44\\%\\), following the trend of the overall GDP with a compound annual growth rate of \\(10.18\\%\\). This indicates that digital sectors continued to play an important role in driving Mongolia's economic growth during the period.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.872,
+                0.915,
+                0.931
+            ],
+            "angle": 0,
+            "content": "It is worth noting that the digital economy estimates derived from the ADB input–output-based value flow method are consistently higher than the ones produced using the DSUT method. This difference is primarily attributable to the broader",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.927,
+                0.94,
+                0.943,
+                0.957
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.871,
+                0.255,
+                0.887,
+                0.269
+            ],
+            "latex": "",
+            "score": 0.4574
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.111,
+                0.414,
+                0.126
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.131,
+                0.484,
+                0.146
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.15,
+                0.438,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.182,
+                0.428,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.197,
+                0.456,
+                0.209
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.212,
+                0.449,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.225,
+                0.459,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.24,
+                0.482,
+                0.252
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.255,
+                0.452,
+                0.266
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.27,
+                0.452,
+                0.281
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.283,
+                0.473,
+                0.296
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.299,
+                0.451,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.313,
+                0.469,
+                0.324
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.328,
+                0.214,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.356,
+                0.468,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.37,
+                0.451,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.384,
+                0.466,
+                0.397
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.398,
+                0.49,
+                0.411
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.414,
+                0.443,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.428,
+                0.474,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.442,
+                0.434,
+                0.454
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.457,
+                0.394,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.485,
+                0.466,
+                0.497
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.5,
+                0.471,
+                0.511
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.515,
+                0.426,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.528,
+                0.488,
+                0.541
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.543,
+                0.475,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.558,
+                0.475,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.11,
+                0.878,
+                0.125
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.126,
+                0.723,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.226,
+                0.885,
+                0.237
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.24,
+                0.935,
+                0.253
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.507,
+                0.254,
+                0.871,
+                0.267
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.888,
+                0.254,
+                0.935,
+                0.267
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.27,
+                0.899,
+                0.281
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.284,
+                0.909,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.299,
+                0.765,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.51,
+                0.327,
+                0.894,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.342,
+                0.906,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.356,
+                0.899,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.37,
+                0.919,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.384,
+                0.938,
+                0.396
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.398,
+                0.909,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.414,
+                0.936,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.429,
+                0.929,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.441,
+                0.895,
+                0.454
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.456,
+                0.914,
+                0.467
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.471,
+                0.924,
+                0.482
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.485,
+                0.928,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.51,
+                0.501,
+                0.632,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.527,
+                0.908,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.542,
+                0.902,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.558,
+                0.892,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.571,
+                0.934,
+                0.584
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.587,
+                0.929,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.6,
+                0.933,
+                0.613
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.615,
+                0.931,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.63,
+                0.916,
+                0.641
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.644,
+                0.669,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.672,
+                0.904,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.687,
+                0.938,
+                0.699
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.701,
+                0.913,
+                0.713
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.715,
+                0.921,
+                0.728
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.73,
+                0.937,
+                0.742
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.745,
+                0.924,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.759,
+                0.887,
+                0.77
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.51,
+                0.788,
+                0.936,
+                0.799
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.801,
+                0.939,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.817,
+                0.906,
+                0.828
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.83,
+                0.922,
+                0.843
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.845,
+                0.811,
+                0.856
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.874,
+                0.895,
+                0.885
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.888,
+                0.881,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.903,
+                0.894,
+                0.915
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.917,
+                0.911,
+                0.929
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.056,
+                0.045,
+                0.249,
+                0.064
+            ],
+            "angle": 0,
+            "content": "ADB BRIEFS NO. 398"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.134,
+                0.118,
+                0.865,
+                0.155
+            ],
+            "angle": 0,
+            "content": "Figure 4: Estimated Size of Mongolia's Digital Economy Using ADB's Input-Output-Based Value Flow Methodology, 2015–2019"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.201,
+                0.162,
+                0.796,
+                0.442
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.075,
+                0.449,
+                0.576,
+                0.464
+            ],
+            "angle": 0,
+            "content": "ADB= Asian Development Bank, GDP = gross domestic product, MNT = Mongolian togrog."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.075,
+                0.462,
+                0.855,
+                0.477
+            ],
+            "angle": 0,
+            "content": "Source: Authors' calculations using National Statistics Office of Mongolia Supply and Use Tables and data from the Statistical Business Register."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.054,
+                0.512,
+                0.489,
+                0.63
+            ],
+            "angle": 0,
+            "content": "analytical scope of the input–output-based framework approach, which captures not only the direct value added generated by digital industries (i.e., forward linkages) but also their indirect impacts through backward linkages (i.e., supplier relationships), as well as the value added embodied in non-digital capital goods used by digital industries. In contrast, the DSUT approach estimates only cover the value added generated directly within the digitally enabling industries themselves, without accounting for these",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.512,
+                0.936,
+                0.586
+            ],
+            "angle": 0,
+            "content": "additional indirect effects. The differences between the two sets of estimates can be attributed to methodological variations and data limitations related to industry-level disaggregation. As further refinements are introduced and additional data become available, the results of the two methodologies are expected to improve.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.505,
+                0.598,
+                0.939,
+                0.629
+            ],
+            "angle": 0,
+            "content": "Figure 5 presents the different components of the digital economy, as captured by equation 1, for 2015–2019.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.277,
+                0.662,
+                0.722,
+                0.681
+            ],
+            "angle": 0,
+            "content": "Figure 5: Zooming In on Mongolia's Digital Transformation"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.131,
+                0.693,
+                0.812,
+                0.898
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.071,
+                0.904,
+                0.854,
+                0.92
+            ],
+            "angle": 0,
+            "content": "Source: Authors' calculations using National Statistics Office of Mongolia Supply and Use Tables and data from the Statistical Business Register."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.056,
+                0.941,
+                0.073,
+                0.957
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.515,
+                0.475,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.529,
+                0.488,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.542,
+                0.461,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.558,
+                0.456,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.571,
+                0.459,
+                0.584
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.586,
+                0.461,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.601,
+                0.47,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.615,
+                0.448,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.514,
+                0.922,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.527,
+                0.918,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.543,
+                0.935,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.558,
+                0.93,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.57,
+                0.908,
+                0.584
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.6,
+                0.936,
+                0.613
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.615,
+                0.777,
+                0.627
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.56,
+                0.046,
+                0.943,
+                0.065
+            ],
+            "angle": 0,
+            "content": "Measuring the Digital Economy of Mongolia"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.054,
+                0.109,
+                0.481,
+                0.299
+            ],
+            "angle": 0,
+            "content": "Further, the availability of a time series of digital economy estimates for Mongolia also enables a structural assessment of its key components over time. Direct value added from digital industries (i.e., forward linkages) remains the largest component of the digital economy, with a relatively stable contribution throughout the period. Backward linkages between “digital industries” and “digitally enabling industries” represent the second largest component and exhibit a strengthening intersectoral linkage over time. Meanwhile, the contribution of fixed capital investments by the digital sectors shows significant fluctuations across the period, which could stem from episodic digital infrastructure upgrades and shifts in economic and policy conditions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.054,
+                0.31,
+                0.471,
+                0.5
+            ],
+            "angle": 0,
+            "content": "Table 4 shows the digital economy as a share of GDP for selected economies using the ADB measurement framework. The estimates show considerable variation across countries, reflecting differences in economic structure and the extent of digital integration. Mongolia's digital economy share is comparable to those of its Central Asian peers, including Georgia and Kazakhstan, while remaining below levels observed in more digitally advanced economies including Singapore, Malaysia, and Australia. This pattern is consistent with differing stages of digital development across the sample and underscores the usefulness of the ADB framework for producing consistent and comparable digital economy estimates across countries.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.088,
+                0.532,
+                0.462,
+                0.583
+            ],
+            "angle": 0,
+            "content": "Table 4: Digital Economy as Percentage of Gross Domestic Product: Core Framework Estimates for Selected Economies"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.056,
+                0.594,
+                0.49,
+                0.818
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"2\">Economy</td><td colspan=\"2\">Input-Output-Based Framework Estimates (Core)</td></tr><tr><td>Year</td><td>Percentage of Gross Domestic Product</td></tr><tr><td>Georgia</td><td>2018</td><td>2.5</td></tr><tr><td>Kazakhstan</td><td>2018</td><td>2.4</td></tr><tr><td>Indonesia</td><td>2016</td><td>2.9</td></tr><tr><td rowspan=\"2\">Singapore</td><td>2016</td><td>6.8</td></tr><tr><td>2019</td><td>6.5</td></tr><tr><td rowspan=\"2\">Malaysia</td><td>2015</td><td>7.6</td></tr><tr><td>2020</td><td>8.7</td></tr><tr><td rowspan=\"2\">Australia</td><td>2018</td><td>5.0</td></tr><tr><td>2021</td><td>5.3</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.056,
+                0.825,
+                0.188,
+                0.839
+            ],
+            "angle": 0,
+            "content": "Source: ADB estimates."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.506,
+                0.105,
+                0.93,
+                0.124
+            ],
+            "angle": 0,
+            "content": "CONCLUSION AND RECOMMENDATIONS"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.504,
+                0.137,
+                0.945,
+                0.428
+            ],
+            "angle": 0,
+            "content": "The compilation of the experimental DSUTs for 2015–2019 marks a significant milestone for the statistical system of Mongolia. This statistical framework facilitates a fuller understanding of the state, evolution, and impact of economic digitalization. Although the experimental DSUTs are limited to digitally enabling industries, they provide valuable initial evidence on the scale and growth dynamics of digital activities in the country. Addressing existing data gaps will be essential for expanding coverage to other digital industries and dimensions of digitalization. Strengthening administrative and survey data, enhancing the SBR, and integrating alternative data sources will support more accurate estimates. ADB's input-output-based framework offers a useful complementary perspective and can serve as a validation tool for DSUT-based results. Continued collaboration between ADB and the National Statistics Office of Mongolia, combined with sustained investment in statistical capacity building, will be critical for advancing digital economy measurement in Mongolia. Improved statistics will help policymakers design evidence-based strategies to harness digitalization as a driver of inclusive and sustainable economic growth.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.506,
+                0.45,
+                0.641,
+                0.47
+            ],
+            "angle": 0,
+            "content": "REFERENCES"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.507,
+                0.483,
+                0.939,
+                0.541
+            ],
+            "angle": 0,
+            "content": "ADB. 2021. Capturing the Digital Economy: A Proposed Measurement Framework and Its Applications—A Special Supplement to Key Indicators for Asia and the Pacific 2021. http://dx.doi.org/10.22617/FLS210307-3."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.508,
+                0.555,
+                0.924,
+                0.6
+            ],
+            "angle": 0,
+            "content": "Government of Mongolia, Ministry of Digital Development, Innovation, and Communications. n.d. Strategic Goals. (In Mongolian.) https://mddic.gov.mn/mn/strategic-goals/."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.508,
+                0.612,
+                0.941,
+                0.642
+            ],
+            "angle": 0,
+            "content": "OECD. 2023. OECD Handbook on Compiling Digital Supply and Use Tables. OECD Publishing. https://doi.org/10.1787/11a0db02-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.508,
+                0.655,
+                0.939,
+                0.7
+            ],
+            "angle": 0,
+            "content": "United Nations Trade and Development. 2023. Mongolia Eyes E-Commerce to Diversify Its Economy. 8 June. https://unctad.org/news/mongolia-eyes-e-commerce-diversify-its-economy."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.507,
+                0.713,
+                0.931,
+                0.756
+            ],
+            "angle": 0,
+            "content": "W. Leontief. 1936. Quantitative Input and Output Relations in the Economic System of the United States. Review of Economics and Statistics. 18."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.927,
+                0.94,
+                0.942,
+                0.956
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.111,
+                0.435,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.126,
+                0.452,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.139,
+                0.435,
+                0.151
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.154,
+                0.444,
+                0.166
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.169,
+                0.437,
+                0.18
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.183,
+                0.478,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.196,
+                0.468,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.211,
+                0.442,
+                0.225
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.226,
+                0.469,
+                0.237
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.241,
+                0.476,
+                0.252
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.254,
+                0.471,
+                0.267
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.269,
+                0.437,
+                0.281
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.284,
+                0.175,
+                0.296
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.312,
+                0.432,
+                0.324
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.327,
+                0.462,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.34,
+                0.457,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.356,
+                0.451,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.37,
+                0.434,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.383,
+                0.436,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.399,
+                0.416,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.414,
+                0.438,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.428,
+                0.461,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.441,
+                0.467,
+                0.454
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.456,
+                0.422,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.471,
+                0.442,
+                0.483
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.486,
+                0.238,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.106,
+                0.928,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.139,
+                0.941,
+                0.15
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.154,
+                0.905,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.168,
+                0.911,
+                0.18
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.183,
+                0.894,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.196,
+                0.941,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.212,
+                0.935,
+                0.223
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.226,
+                0.92,
+                0.237
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.24,
+                0.889,
+                0.253
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.255,
+                0.889,
+                0.266
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.27,
+                0.907,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.284,
+                0.921,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.298,
+                0.935,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.313,
+                0.938,
+                0.324
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.327,
+                0.923,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.342,
+                0.921,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.356,
+                0.927,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.37,
+                0.933,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.385,
+                0.936,
+                0.396
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.399,
+                0.908,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.414,
+                0.706,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.452,
+                0.639,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.056,
+                0.045,
+                0.248,
+                0.063
+            ],
+            "angle": 0,
+            "content": "ADB BRIEFS NO. 398"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.075,
+                0.65,
+                0.281,
+                0.662
+            ],
+            "angle": 0,
+            "content": "About the Asian Development Bank"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.074,
+                0.662,
+                0.492,
+                0.74
+            ],
+            "angle": 0,
+            "content": "ADB is a leading multilateral development bank supporting inclusive, resilient, and sustainable growth across Asia and the Pacific. Working with its members and partners to solve complex challenges together, ADB harnesses innovative financial tools and strategic partnerships to transform lives, build quality infrastructure, and safeguard our planet. Founded in 1966, ADB is owned by 69 members—50 from the region.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.074,
+                0.75,
+                0.493,
+                0.815
+            ],
+            "angle": 0,
+            "content": "ADB Briefs are based on papers or notes prepared by ADB staff and their resource persons. The series is designed to provide concise, nontechnical accounts of policy issues of topical interest, with a view to facilitating informed debate. The Department of Communications and Knowledge Management administers the series.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.075,
+                0.826,
+                0.317,
+                0.84
+            ],
+            "angle": 0,
+            "content": "www.adb.org/publications/series/adb-briefs",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.505,
+                0.65,
+                0.921,
+                0.778
+            ],
+            "angle": 0,
+            "content": "The views expressed in this publication are those of the authors and do not necessarily reflect the views and policies of ADB or its Board of Governors or the governments they represent. ADB does not guarantee the accuracy of the data included here and accepts no responsibility for any consequence of their use. The mention of specific companies or products of manufacturers does not imply that they are endorsed or recommended by ADB in preference to others of a similar nature that are not mentioned. By making any designation of or reference to a particular territory or geographic area in this document, ADB does not intend to make any judgments as to the legal or other status of any territory or area.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.506,
+                0.789,
+                0.699,
+                0.84
+            ],
+            "angle": 0,
+            "content": "Asian Development Bank\n6 ADB Avenue, Mandaluyong City\n1550 Metro Manila, Philippines\nwww.adb.org",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.076,
+                0.848,
+                0.188,
+                0.879
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.196,
+                0.868,
+                0.558,
+                0.882
+            ],
+            "angle": 0,
+            "content": "Creative Commons Attribution 3.0 IGO license (CC BY 3.0 IGO)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.074,
+                0.885,
+                0.744,
+                0.915
+            ],
+            "angle": 0,
+            "content": "© 2026 ADB. The CC license does not apply to non-ADB copyright materials in this publication.\nhttps://www.adb.org/terms-use#openaccess http://www.adb.org/publications/corrigenda pubsmarketing@adb.org",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.057,
+                0.941,
+                0.072,
+                0.956
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.651,
+                0.278,
+                0.661
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.663,
+                0.449,
+                0.674
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.677,
+                0.475,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.689,
+                0.451,
+                0.699
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.077,
+                0.701,
+                0.482,
+                0.712
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.715,
+                0.489,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.077,
+                0.726,
+                0.358,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.077,
+                0.752,
+                0.463,
+                0.763
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.765,
+                0.463,
+                0.775
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.077,
+                0.777,
+                0.49,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.077,
+                0.79,
+                0.478,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.803,
+                0.195,
+                0.812
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.828,
+                0.315,
+                0.839
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.51,
+                0.652,
+                0.909,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.663,
+                0.905,
+                0.674
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.676,
+                0.904,
+                0.687
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.689,
+                0.916,
+                0.7
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.702,
+                0.919,
+                0.712
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.51,
+                0.715,
+                0.917,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.727,
+                0.918,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.739,
+                0.914,
+                0.75
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.752,
+                0.911,
+                0.763
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.51,
+                0.766,
+                0.632,
+                0.775
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.509,
+                0.79,
+                0.648,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.802,
+                0.695,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.815,
+                0.678,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.508,
+                0.827,
+                0.581,
+                0.839
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.199,
+                0.87,
+                0.555,
+                0.881
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.886,
+                0.599,
+                0.897
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.902,
+                0.741,
+                0.914
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

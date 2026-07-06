@@ -1,0 +1,2894 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.089,
+                0.082,
+                0.336,
+                0.141
+            ],
+            "angle": 0,
+            "content": "BIS"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.085,
+                0.382,
+                0.524,
+                0.446
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.729,
+                0.475,
+                0.95,
+                0.527
+            ],
+            "angle": 0,
+            "content": "No 126"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.085,
+                0.628,
+                0.875,
+                0.716
+            ],
+            "angle": 0,
+            "content": "Blockchain consensus mechanisms and fragmentation"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.735,
+                0.796,
+                0.799
+            ],
+            "angle": 0,
+            "content": "Daniel Eidan, Jon Frost, Rudraksh Kansal, Ulf Lewrick, Sang Hyuk Lim and Tomasz Rybarczyk",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.096,
+                0.919,
+                0.253,
+                0.947
+            ],
+            "angle": 0,
+            "content": "6 July 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.378,
+                0.529,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.723,
+                0.476,
+                0.952,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.626,
+                0.875,
+                0.67
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.677,
+                0.38,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.734,
+                0.793,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.767,
+                0.601,
+                0.796
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.318,
+                0.876,
+                0.421
+            ],
+            "angle": 0,
+            "content": "BIS Bulletins are written by staff members of the Bank for International Settlements, and from time to time by other economists, and are published by the Bank. The papers are on subjects of topical interest and are technical in character. The views expressed in this publication are those of the authors and do not necessarily reflect the views of the BIS or its member central banks. The authors thank Matteo Aquilina, Sebastian Doerr, Pablo Hernández de Cos, Hyun Song Shin and Leanne Zhang for helpful comments and suggestions, and Nicola Faessler for administrative support.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.429,
+                0.624,
+                0.447
+            ],
+            "angle": 0,
+            "content": "The editors of the BIS Bulletin series are Gaston Gelos and Frank Smets.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.625,
+                0.55,
+                0.642
+            ],
+            "angle": 0,
+            "content": "This publication is available on the BIS website (www.bis.org).",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.091,
+                0.698,
+                0.875,
+                0.732
+            ],
+            "angle": 0,
+            "content": "© Bank for International Settlements 2026. All rights reserved. Brief excerpts may be reproduced or translated provided the source is stated."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.09,
+                0.831,
+                0.347,
+                0.865
+            ],
+            "angle": 0,
+            "content": "ISSN: 2708-0420 (online)\nISBN: 978-92-9259-964-5 (online)"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.32,
+                0.871,
+                0.331
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.338,
+                0.871,
+                0.349
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.354,
+                0.872,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.372,
+                0.871,
+                0.383
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.389,
+                0.871,
+                0.4
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.406,
+                0.533,
+                0.417
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.432,
+                0.621,
+                0.444
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.627,
+                0.546,
+                0.641
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.117,
+                0.085,
+                0.915,
+                0.125
+            ],
+            "angle": 0,
+            "content": "Daniel Eidan    Jon Frost    Rudraksh Kansal    Ulf Lewrick    Sang Hyuk Lim    Tomasz Rybarczyk\ndaniel.eidan@bis.org    jon.frost@bis.org    rudraksh.kansal@bis.org    ulf.lewrick@bis.org    sanghyuk.lim@bis.org    tomasz.rybarczyk@bis.org"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.091,
+                0.187,
+                0.735,
+                0.211
+            ],
+            "angle": 0,
+            "content": "Blockchain consensus mechanisms and fragmentation"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.105,
+                0.26,
+                0.232,
+                0.278
+            ],
+            "angle": 0,
+            "content": "Key takeaways"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.285,
+                0.891,
+                0.336
+            ],
+            "angle": 0,
+            "content": "- While all permissionless blockchains use token-based incentives to sustain honest validation, differences in how validator rewards, coordination and participation are structured lead to distinct equilibria and trade-offs between decentralisation, security and scalability.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.343,
+                0.891,
+                0.378
+            ],
+            "angle": 0,
+            "content": "- These trade-offs underpin the emergence of multiple layer 1 networks and the expansion of layer 2 solutions, resulting in fragmentation of infrastructure, liquidity and assets across and within chains.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.384,
+                0.891,
+                0.419
+            ],
+            "angle": 0,
+            "content": "- Tools to mitigate fragmentation – eg bridges and native multi-chain issuance – can reduce frictions, but they reintroduce new dependencies on trust, governance and operational resilience.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.444,
+                0.875,
+                0.541
+            ],
+            "angle": 0,
+            "content": "Public permissionless blockchains reduce reliance on centralised intermediaries by using decentralised, open infrastructure. Since the emergence of Bitcoin and Ethereum, activity built on distributed ledger technology (DLT) has expanded rapidly, spanning payments, decentralised finance and broader digital asset markets. Yet rather than converging on a single scalable infrastructure, a multitude of networks have arisen, fragmenting liquidity and diluting network effects. This Bulletin describes consensus mechanisms, asks why fragmentation occurs and explores what it means for market structure and resilience.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.546,
+                0.877,
+                0.69
+            ],
+            "angle": 0,
+            "content": "We examine how consensus mechanisms in permissionless blockchains balance decentralisation, security and scalability. \\( ^{1} \\)  These choices shape validator participation, costs and coordination and generate distinct equilibria across different layer 1 (L1) blockchains. They have also driven the growth of layer 2 (L2) solutions that execute off-chain. L1s are the base networks that validate, process and finalise transactions directly in the shared ledger (on-chain). L2s, in turn, run on top of an L1 to enhance efficiency and scalability. We assess how this architecture fragments activity across and within chains, and how mitigation tools reduce frictions while introducing new trust, governance and operational dependencies. We conclude with implications for the potential role of permissionless blockchains as financial market infrastructures and for policy. The online appendix provides further details and a glossary.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.71,
+                0.533,
+                0.728
+            ],
+            "angle": 0,
+            "content": "Consensus mechanisms: equilibria and trade-offs"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.744,
+                0.877,
+                0.809
+            ],
+            "angle": 0,
+            "content": "Blockchains are append-only, shared databases (ledgers) maintained by validators who may not know or trust one another. In permissionless settings, anyone may attempt to validate or propose blocks; thus, incentives must align validators' private rewards with the public good of a coherent ledger (eg Budish (2025); Saleh (2021)). Participation depends on chain-specific requirements such as energy",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.09,
+                0.858,
+                0.876,
+                0.911
+            ],
+            "angle": 0,
+            "content": "1 Permissionless blockchains rely on so-called consensus, with incentives in the form of tokens, to align participants whose identities are hidden behind an address (pseudonym). Anyone with the required software can participate without prior approval. Permissioned blockchains use approved (known) validators and established governance. The latter thus resemble governance structures in the traditional financial system, prioritising scalability and security over decentralisation (Bains (2025))."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.093,
+                0.935,
+                0.16,
+                0.947
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.863,
+                0.934,
+                0.874,
+                0.944
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.187,
+                0.733,
+                0.209
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.261,
+                0.228,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.111,
+                0.289,
+                0.139,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.14,
+                0.287,
+                0.886,
+                0.299
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.305,
+                0.887,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.322,
+                0.574,
+                0.333
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.344,
+                0.886,
+                0.358
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.363,
+                0.857,
+                0.375
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.111,
+                0.387,
+                0.888,
+                0.399
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.143,
+                0.405,
+                0.742,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.446,
+                0.872,
+                0.458
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.461,
+                0.871,
+                0.473
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.477,
+                0.871,
+                0.489
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.493,
+                0.872,
+                0.506
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.51,
+                0.87,
+                0.52
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.525,
+                0.791,
+                0.536
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.548,
+                0.87,
+                0.559
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.563,
+                0.872,
+                0.575
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.58,
+                0.87,
+                0.591
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.595,
+                0.872,
+                0.606
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.61,
+                0.872,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.626,
+                0.87,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.641,
+                0.872,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.659,
+                0.872,
+                0.67
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.674,
+                0.756,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.712,
+                0.53,
+                0.726
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.744,
+                0.872,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.76,
+                0.871,
+                0.774
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.777,
+                0.871,
+                0.788
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.792,
+                0.872,
+                0.807
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.086,
+                0.874,
+                0.118
+            ],
+            "angle": 0,
+            "content": "expenditure (work), minimum “locked” resources (stake), hardware capacity and voting or participation costs (eg fees for attestations or votes).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.124,
+                0.875,
+                0.284
+            ],
+            "angle": 0,
+            "content": "To sustain an honest equilibrium, validators must be compensated not only for operating costs but also for coordination risks arising from relying on other validators' participation. For example, Bitcoin miners incur energy and hardware costs to earn block rewards (proof of work). Ethereum validators must lock up their native token (Ether) and risk \"slashing\" penalties (loss of staked tokens) for deviating from predetermined rules (proof of stake). These and other incentives shape validator behaviour and determine whether consensus is maintained. Overly large sets of validators raise coordination costs, while excessive concentration increases the risk of disruption or control (Auer et al (2025)). Seen through this economic lens, blockchain consensus mechanisms are best understood as a range of token-incentivised equilibria (supported by \"tokenomics\"), in which validator behaviour depends on how rewards, penalties and participation costs are structured.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.297,
+                0.512,
+                0.314
+            ],
+            "angle": 0,
+            "content": "The trilemma associated with achieving consensus \\( ^{1} \\)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.816,
+                0.299,
+                0.873,
+                0.314
+            ],
+            "angle": 0,
+            "content": "Graph 1",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.311,
+                0.322,
+                0.657,
+                0.538
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.091,
+                0.546,
+                0.875,
+                0.608
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\) Triangle positions represent general tendencies of consensus mechanisms. The triangle's exact shape and placement may vary by blockchain implementation and configuration. \\( ^{2} \\) Proof of work (PoW) and proof of stake (PoS) support broad validator participation and thus decentralisation but can introduce scalability constraints in layer 1 networks. \\( ^{3} \\) Delegated proof of stake (DPoS) and proof of staked authority (PoSA) rely on smaller validator sets, which can enhance coordination efficiency and speed, but reflect different assumptions about validator participation and governance (see Table 1)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.612,
+                0.407,
+                0.627
+            ],
+            "angle": 0,
+            "content": "Sources: BIS (2022), Buterin (2021); authors' elaboration.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.641,
+                0.875,
+                0.8
+            ],
+            "angle": 0,
+            "content": "The “blockchain trilemma” highlights the trade-offs between decentralisation, security and scalability (Buterin (2021)). Consensus mechanisms position themselves differently along these dimensions (Graph 1). Allowing many validators to independently verify and confirm blocks supports decentralisation and security, but it also increases communication and verification costs. This limits throughput and raises latency (ie the time needed to confirm transactions), as in proof of work and proof of stake blockchains (red triangle). By contrast, designs that prioritise scalability achieve higher throughput and lower latency confirmations by reducing the number of validators or increasing hardware requirements, which narrows participation and weakens decentralisation, as in delegated proof of stake (eg Tron) or proof of staked authority (eg BNB Smart Chain) (blue triangle). These design choices reflect different economic equilibria rather than purely technical constraints.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.806,
+                0.875,
+                0.87
+            ],
+            "angle": 0,
+            "content": "Security considerations reinforce these trade-offs. When the value secured by a blockchain increases, the resources required to compromise the network – the attack cost – must also rise to deter malicious behaviour. In permissionless blockchains, these costs are borne by users through fees, congestion rents or dilution of tokens, implying that higher security standards come with tighter capacity constraints.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.876,
+                0.875,
+                0.908
+            ],
+            "angle": 0,
+            "content": "L1 networks feature distinct consensus mechanisms, shaping cost, latency and resilience (ie the ability to recover from disruptions). Their coexistence reflects competition among platforms to attract users with",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.093,
+                0.935,
+                0.16,
+                0.947
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.862,
+                0.934,
+                0.874,
+                0.944
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.087,
+                0.871,
+                0.1
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.104,
+                0.384,
+                0.115
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.124,
+                0.872,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.142,
+                0.871,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.158,
+                0.872,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.172,
+                0.872,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.189,
+                0.871,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.204,
+                0.872,
+                0.217
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.221,
+                0.872,
+                0.232
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.237,
+                0.871,
+                0.248
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.253,
+                0.87,
+                0.264
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.269,
+                0.342,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.299,
+                0.509,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.818,
+                0.301,
+                0.874,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.615,
+                0.405,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.641,
+                0.872,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.658,
+                0.872,
+                0.67
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.675,
+                0.871,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.689,
+                0.872,
+                0.702
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.705,
+                0.872,
+                0.718
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.722,
+                0.872,
+                0.734
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.738,
+                0.871,
+                0.749
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.753,
+                0.872,
+                0.766
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.769,
+                0.872,
+                0.781
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.786,
+                0.386,
+                0.796
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.806,
+                0.872,
+                0.82
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.823,
+                0.871,
+                0.834
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.839,
+                0.872,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.853,
+                0.811,
+                0.867
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.877,
+                0.87,
+                0.891
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.893,
+                0.871,
+                0.906
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.086,
+                0.875,
+                0.198
+            ],
+            "angle": 0,
+            "content": "diverse needs and preferences. Early blockchains such as Bitcoin and Ethereum prioritised decentralisation and security through broad validator participation. This approach limits scalability: when demand for scarce block space rises, congestion intensifies and transaction fees increase, pushing out more price-sensitive users (Boissay et al (2022); Shin (2026)). Proof-of-stake systems can also face scalability constraints when security relies on large validator sets and frequent coordination. In response, newer L1s feature greater degrees of centralisation, such as smaller validator sets or higher hardware requirements, to raise throughput while lowering latency and fees (Table 1; Table A.1 in the online appendix).",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.091,
+                0.21,
+                0.631,
+                0.229
+            ],
+            "angle": 0,
+            "content": "No one size fits all: the plethora of layer 1 consensus mechanisms"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.09,
+                0.221,
+                0.874,
+                0.678
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Design [example]</td><td>Consensus mechanism</td><td>Trade-offs</td></tr><tr><td>Proof of work (PoW)[eg Bitcoin]</td><td>Participants expend computing power to add blocks by competing to solve cryptographic puzzles. The protocol adjusts difficulty to maintain steady block times as computing power changes.</td><td>Robust and decentralised, but throughput is intentionally low; energy consumption depends on hardware efficiency.</td></tr><tr><td>Proof of stake (PoS)[eg Ethereum]</td><td>Participants lock up (stake) native tokens and are selected to propose/verify blocks; misbehaviour such as proposing conflicting blocks or failing to attest as required can result in part of the stake being forfeited (slashing). Finality is achieved through many stakers attesting to the same block.</td><td>More efficient than PoW and supports rollups for scale, but still faces challenges to decentralisation, due to stake concentration risks, and coordination, due to consensus requiring a supermajority, which can also face scalability constraints.</td></tr><tr><td>Time ordering + BFT[eg Solana (PoH + PoS/Tower BFT)]</td><td>A cryptographic clock orders events, enabling faster agreement, followed by Byzantine fault tolerance (BFT), in which a supermajority of validators must agree before blocks are confirmed.</td><td>Low latency and high throughput, but hardware and bandwidth needs raise barriers to entry for validators, potentially limiting decentralisation.</td></tr><tr><td>Probabilistic sampling[eg Avalanche (Snow*)]</td><td>Nodes repeatedly poll small, random subsets of validators until the network converges, achieving fast finality with high probability.</td><td>Fast confirmation and flexible subnets, but security and liveness depend on sampling settings and the distribution of stake in the network.</td></tr><tr><td>Delegated validator sets[eg Tron (DPoS), BNB Smart Chain (PoSA)]</td><td>A small, elected or rotating group of validators produces blocks, with selection based on votes or delegated stake.</td><td>High throughput and quick finality but concentrates governance and validation power, which may reduce decentralisation.</td></tr></table>"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.685,
+                0.877,
+                0.759
+            ],
+            "angle": 0,
+            "content": "BFT = Byzantine fault tolerance (a class of consensus methods that allow the system to function correctly even if some validators are faulty or malicious); PoH = proof of history (a cryptographic time source used to create a verifiable and consistent ordering of events); PoSA = proof of staked authority (a small, governance-approved validator set is selected based on a combination of stake and authority); Snow = Avalanche \"Snow\" family of probabilistic sampling protocols (eg Snowball, Snowman, which achieve consensus through repeated random sampling of small validator subsets); DPoS = delegated proof of stake (token holders delegate their stake to elect a limited, rotating set of validators who produce blocks on their behalf).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.763,
+                0.256,
+                0.776
+            ],
+            "angle": 0,
+            "content": "Source: authors' elaboration.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.799,
+                0.876,
+                0.911
+            ],
+            "angle": 0,
+            "content": "The diversity of networks separates users and liquidity across different, siloed networks. While Ethereum remains dominant in decentralised finance (DeFi), new L1s have expanded “horizontally” (Graph 2.A). Some have disappeared, eg Terra – which grew rapidly before failing spectacularly in 2022 – or have seen falling use, eg Fantom. Meanwhile, some networks have shifted towards modular architectures that split functions “vertically” across layers, providing separation of execution, settlement, data availability and sequencing across specialised layers (Graph 2.B). While specific design features vary (see Table A.2 in the online appendix), all L2 solutions work by processing transactions off-chain and",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.092,
+                0.934,
+                0.16,
+                0.947
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.862,
+                0.934,
+                0.874,
+                0.945
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.087,
+                0.872,
+                0.099
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.103,
+                0.872,
+                0.115
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.118,
+                0.871,
+                0.13
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.134,
+                0.871,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.15,
+                0.871,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.166,
+                0.87,
+                0.179
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.182,
+                0.793,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.687,
+                0.872,
+                0.695
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.698,
+                0.874,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.711,
+                0.872,
+                0.719
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.723,
+                0.872,
+                0.731
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.735,
+                0.871,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.747,
+                0.27,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.766,
+                0.254,
+                0.775
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.8,
+                0.871,
+                0.813
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.816,
+                0.869,
+                0.828
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.832,
+                0.872,
+                0.845
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.848,
+                0.871,
+                0.86
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.863,
+                0.869,
+                0.875
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.879,
+                0.871,
+                0.892
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.896,
+                0.871,
+                0.908
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.816,
+                0.219,
+                0.874,
+                0.234
+            ],
+            "angle": 0,
+            "content": "Graph 2"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.091,
+                0.24,
+                0.874,
+                0.496
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.086,
+                0.875,
+                0.182
+            ],
+            "angle": 0,
+            "content": "writing results back to their base L1 for settlement and data availability. \\( ^{2} \\)  This modularity raises efficiency when systems are robust and governance is clear. But it also creates distinct execution environments, each with its own transaction ordering, pricing and points of failure. L2s develop their own liquidity pools and governance mechanisms, adding vertical fragmentation to the patchwork of networks. Modularity thus redistributes, rather than eliminates, trade-offs across layers and introduces new governance and interoperability challenges.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.195,
+                0.628,
+                0.213
+            ],
+            "angle": 0,
+            "content": "Rising fragmentation across layer 1 (L1) and layer 2 (L2) networks"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.219,
+                0.346,
+                0.235
+            ],
+            "angle": 0,
+            "content": "As a percentage of total value locked",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.092,
+                0.502,
+                0.634,
+                0.517
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\) Also includes L2 networks \\( ^{2} \\) L2s have been selected based on Token Terminal's methodology"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.091,
+                0.521,
+                0.437,
+                0.536
+            ],
+            "angle": 0,
+            "content": "Sources: DefiLlama; Token Terminal; BIS; authors' calculations."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.565,
+                0.518,
+                0.583
+            ],
+            "angle": 0,
+            "content": "Mitigation mechanisms: benefits and trade-offs"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.598,
+                0.875,
+                0.683
+            ],
+            "angle": 0,
+            "content": "Rising fragmentation across L1 and L2 networks has increased demand for mechanisms to connect assets, liquidity and applications across blockchains. These mitigation mechanisms aim to reduce frictions while preserving basic security and permissionless participation. But none eliminates fragmentation entirely. Instead, each shifts risks based on introducing new trust assumptions, governance arrangements and operational dependencies.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.12,
+                0.691,
+                0.875,
+                0.776
+            ],
+            "angle": 0,
+            "content": "- Bridges. Bridges transfer value across blockchains by locking an asset on one network and issuing (minting) a corresponding representation on another. Bridges can be implemented via custodial groups, guardian sets, relayers/oracles or on-chain light-client verification. Bridges are convenient for users, but they concentrate risk: compromised keys, falsified messages and bugs in smart contracts have led to large losses (eg USD 625 million in the March 2022 Ronin Network hack).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.12,
+                0.784,
+                0.875,
+                0.817
+            ],
+            "angle": 0,
+            "content": "- Native multi-chain issuance. Large issuers (eg of stablecoins) mint native versions of their tokens across several chains. While these tokens have identical names, they cannot be transferred across",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.089,
+                0.832,
+                0.875,
+                0.911
+            ],
+            "angle": 0,
+            "content": "2 One example of how L2s scale is rollups, which batch transactions and post compressed data to the base chain, lowering fees while inheriting L1 security. Optimistic rollups assume validity subject to fraud proofs during a challenge window, whereas zero-knowledge rollups use validity proofs for faster finality but with greater implementation complexity. Other models include validiums (most data are kept off-chain, changing data-availability assumptions), sidechains (eg Polygon PoS, which is independent and bridged, but does not inherit L1 security) and state channels (eg Lightning Network, which moves repeated interactions off-chain with periodic L1 settlement). Table A.2 in the online appendix gives further details."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.093,
+                0.935,
+                0.16,
+                0.947
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.863,
+                0.934,
+                0.874,
+                0.944
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.087,
+                0.872,
+                0.099
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.102,
+                0.871,
+                0.115
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.117,
+                0.872,
+                0.132
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.134,
+                0.872,
+                0.148
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.151,
+                0.872,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.167,
+                0.293,
+                0.179
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.197,
+                0.625,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.222,
+                0.342,
+                0.232
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.566,
+                0.515,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.601,
+                0.871,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.617,
+                0.872,
+                0.63
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.634,
+                0.871,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.651,
+                0.872,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.669,
+                0.289,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.153,
+                0.693,
+                0.871,
+                0.706
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.71,
+                0.872,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.727,
+                0.873,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.153,
+                0.744,
+                0.873,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.762,
+                0.853,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.785,
+                0.872,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.803,
+                0.872,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "bbox": [
+                0.487,
+                0.573,
+                0.875,
+                0.802
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.149,
+                0.086,
+                0.875,
+                0.154
+            ],
+            "angle": 0,
+            "content": "chains, and the same user has different wallet addresses on each chain (Graph 3.A). Each version typically trades in its own liquidity pool, deepening fragmentation and reliance on cross-chain arbitrageurs to mitigate price differences. This form of issuance shifts the operational burden from bridges to issuer coordination, treasury management and consistent governance across chains.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.12,
+                0.161,
+                0.875,
+                0.298
+            ],
+            "angle": 0,
+            "content": "- Shared layers for security, data and sequencing. Some ecosystems seek to reduce fragmentation in their own environments by providing shared services to multiple rollups. These include shared security, where a common pool of stake backs several L2s; shared data-availability layers that store and publish transaction data so that anyone can verify execution; and shared sequencers that determine transaction ordering across rollups. By coordinating execution and reducing delays, these shared layers can improve efficiency and limit the scope for rents. At the same time, they concentrate governance and operational risk in a small number of components that may become systemically relevant within an ecosystem.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.12,
+                0.305,
+                0.876,
+                0.424
+            ],
+            "angle": 0,
+            "content": "- Interoperability protocols (message-passing/state coordination). Rather than moving assets across blockchains, interoperability protocols allow chains to communicate by verified messages or proofs, enabling applications to act remotely (eg mint, redeem, settle). Some systems rely on cryptographic verification, where one blockchain verifies another's state on-chain. Others depend on external parties (eg relayers or oracles) to transmit messages. By keeping assets on their original chains, these designs reduce duplication and fragmentation but introduce new trust assumptions that on-chain verification rather than external intermediaries should minimise.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.431,
+                0.875,
+                0.528
+            ],
+            "angle": 0,
+            "content": "Rising fragmentation has fuelled rapid growth in the use of interoperability protocols in particular (Graph 3.B). Mitigation mechanisms could reduce some frictions but introduce new dependencies. As private sector experimentation continues, designs that combine verifiable security, transparent governance and clearly defined failure modes are more likely to emerge and to be more robust. At the same time, market participants may converge around a limited number of shared layers, warranting heightened attention to their operational resilience and governance arrangements.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.545,
+                0.664,
+                0.564
+            ],
+            "angle": 0,
+            "content": "Rising fragmentation has spurred demand for mitigation mechanisms",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.093,
+                0.571,
+                0.875,
+                0.802
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.09,
+                0.81,
+                0.876,
+                0.885
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\)  The graph provides a stylised example of how a stablecoin (eg USDT) can be issued natively on multiple blockchains (eg Ethereum and Solana) by the issuer. While this improves availability across blockchains, tokens remain siloed and non-tradable across chains. Wallets are represented with a certain value of tokens (blue or red circles) and wallet address below them. Without mitigation mechanisms, sending stablecoins between wallets on different blockchains (eg Solana to Ethereum) may fail, risking permanent loss.  \\( ^{2} \\)  Axelar Network, Circle Cross-Chain Transfer Protocol (CCTP), Chainlink, deBridge, LayerZero.  \\( ^{3} \\)  Across, Allbridge Core, deBridge Liquidity Network (DLN), Everclear, Hop Protocol, Hyperbridge, Ren, Stargate, Synapse, zkSync Era Bridge."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.091,
+                0.889,
+                0.375,
+                0.903
+            ],
+            "angle": 0,
+            "content": "Sources: Token Terminal; BIS; authors' elaboration.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.093,
+                0.935,
+                0.16,
+                0.947
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.863,
+                0.934,
+                0.874,
+                0.944
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.087,
+                0.87,
+                0.099
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.104,
+                0.871,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.153,
+                0.121,
+                0.871,
+                0.134
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.139,
+                0.857,
+                0.152
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.163,
+                0.871,
+                0.175
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.179,
+                0.872,
+                0.192
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.197,
+                0.872,
+                0.209
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.215,
+                0.871,
+                0.225
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.231,
+                0.871,
+                0.244
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.249,
+                0.87,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.265,
+                0.871,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.283,
+                0.464,
+                0.293
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.307,
+                0.871,
+                0.318
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.324,
+                0.872,
+                0.335
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.34,
+                0.87,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.357,
+                0.872,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.375,
+                0.871,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.392,
+                0.872,
+                0.403
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.409,
+                0.828,
+                0.42
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.433,
+                0.871,
+                0.444
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.448,
+                0.872,
+                0.461
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.464,
+                0.872,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.48,
+                0.872,
+                0.492
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.495,
+                0.87,
+                0.507
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.511,
+                0.707,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.548,
+                0.661,
+                0.561
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.891,
+                0.372,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.087,
+                0.785,
+                0.104
+            ],
+            "angle": 0,
+            "content": "The prospect of permissionless blockchains as financial market infrastructures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.121,
+                0.875,
+                0.256
+            ],
+            "angle": 0,
+            "content": "Permissionless blockchains, including the applications built on them, are intended to provide general purpose financial infrastructure. In practice, however, binding economic constraints drive them towards specialisation and fragmentation. Consensus trade-offs generate multiple equilibria rather than convergence towards a single, unified infrastructure. Mitigation mechanisms designed to reconnect fragmented systems often reintroduce intermediaries and new dependencies. These dynamics limit the extent to which permissionless chains can naturally evolve into financial market infrastructures (FMIs) without additional governance and oversight. If permissionless blockchains are to support functions akin to FMIs, several policy dimensions warrant consideration:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.12,
+                0.264,
+                0.875,
+                0.331
+            ],
+            "angle": 0,
+            "content": "- Operational and cyber resilience. Diverse consensus mechanisms, validator incentives and governance models complicate risk assessment, incident response and recovery planning. While consolidation around common middleware can reduce fragmentation, it may create critical points of failure if a small number of shared services become critical to system functioning.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.12,
+                0.34,
+                0.875,
+                0.407
+            ],
+            "angle": 0,
+            "content": "- Regulatory perimeter and oversight. Shared sequencers, data-availability layers and cross-chain messaging services increasingly perform functions similar to those of traditional market infrastructures. As these components grow in scale, they may warrant governance arrangements, resilience standards and supervisory attention comparable to those applied to FMIs.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.12,
+                0.415,
+                0.875,
+                0.482
+            ],
+            "angle": 0,
+            "content": "- Competition versus standardisation. Open and interoperable standards can help reduce fragmentation while preserving innovation and competition among platforms. At the same time, cross-border coordination may be needed to mitigate operational risks and regulatory arbitrage, as activities span multiple jurisdictions and infrastructures.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.49,
+                0.875,
+                0.586
+            ],
+            "angle": 0,
+            "content": "Ultimately, the case for decentralisation is strongest in environments where trust is limited and reliance on central intermediaries is costly or impractical. Still, sustaining robust consensus equilibria at scale requires careful calibration of incentives, transparent governance and effective operational controls. Where permissionless systems take on more mainstream or infrastructure-like roles, the trade-offs inherent in their design should be made explicit and managed in ways that prioritise resilience and accountability, with particular scrutiny of shared components that could become systemically important.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.607,
+                0.194,
+                0.623
+            ],
+            "angle": 0,
+            "content": "References"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.641,
+                0.874,
+                0.672
+            ],
+            "angle": 0,
+            "content": "Auer, R, C Monnet and H S Shin (2025): \"Distributed ledgers and the governance of money\", Journal of Financial Economics, vol 167, 104026."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.092,
+                0.68,
+                0.872,
+                0.695
+            ],
+            "angle": 0,
+            "content": "Bains, P (2025): \"Blockchain consensus mechanisms: a primer for supervisors\", IMF Working Papers, no 186."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.092,
+                0.702,
+                0.873,
+                0.733
+            ],
+            "angle": 0,
+            "content": "Bank for International Settlements (BIS) (2022): \"The future monetary system\", Annual Economic Report 2022, Chapter III."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.093,
+                0.741,
+                0.872,
+                0.772
+            ],
+            "angle": 0,
+            "content": "Boissay, F, G Cornelli, S Doerr and J Frost (2022): \"Blockchain scalability and the fragmentation of crypto\", BIS Bulletin, no 56."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.78,
+                0.873,
+                0.811
+            ],
+            "angle": 0,
+            "content": "Budish, E (2025): \"Trust at scale: the economic limits of cryptocurrencies and blockchains\", Quarterly Journal of Economics, vol 140, no 1."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.092,
+                0.818,
+                0.874,
+                0.85
+            ],
+            "angle": 0,
+            "content": "Buterin, V (2021): \"Why sharding is great: demystifying the technical properties\", available at https://vitalik.eth.limo/general/2021/04/07/sharding.html."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.092,
+                0.857,
+                0.83,
+                0.872
+            ],
+            "angle": 0,
+            "content": "Saleh, F (2021): \"Blockchain without waste: proof-of-stake\", Review of Financial Studies, vol 34, no 3."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.092,
+                0.88,
+                0.773,
+                0.896
+            ],
+            "angle": 0,
+            "content": "Shin, H S (2026): \"Tokenomics and blockchain fragmentation\", BIS Working Papers, no 1335."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.093,
+                0.935,
+                0.16,
+                0.946
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.862,
+                0.934,
+                0.874,
+                0.944
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.087,
+                0.784,
+                0.102
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.121,
+                0.872,
+                0.134
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.139,
+                0.872,
+                0.151
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.156,
+                0.872,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.173,
+                0.872,
+                0.186
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.191,
+                0.87,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.208,
+                0.87,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.224,
+                0.871,
+                0.237
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.241,
+                0.517,
+                0.254
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.266,
+                0.871,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.284,
+                0.871,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.299,
+                0.871,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.315,
+                0.775,
+                0.329
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.34,
+                0.872,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.358,
+                0.873,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.153,
+                0.374,
+                0.871,
+                0.389
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.392,
+                0.773,
+                0.403
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.417,
+                0.871,
+                0.428
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.433,
+                0.87,
+                0.445
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.153,
+                0.45,
+                0.871,
+                0.464
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.467,
+                0.583,
+                0.479
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.492,
+                0.871,
+                0.503
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.508,
+                0.872,
+                0.519
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.523,
+                0.871,
+                0.536
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.54,
+                0.871,
+                0.55
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.554,
+                0.871,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.57,
+                0.863,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.607,
+                0.193,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

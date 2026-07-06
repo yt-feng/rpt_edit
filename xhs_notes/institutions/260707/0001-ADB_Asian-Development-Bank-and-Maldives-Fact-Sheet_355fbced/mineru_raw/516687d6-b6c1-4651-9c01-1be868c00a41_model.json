@@ -1,0 +1,4095 @@
+[
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.111,
+                0.039,
+                0.499,
+                0.086
+            ],
+            "angle": 0,
+            "content": "ASIAN DEVELOPMENT BANK\nMEMBER FACT SHEET"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.042,
+                0.035,
+                0.97,
+                0.311
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.056,
+                0.321,
+                0.316,
+                0.335
+            ],
+            "angle": 0,
+            "content": "Maldives: 2025 Commitments (\\$ million)\\( ^{a} \\)"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.054,
+                0.337,
+                0.348,
+                0.374
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Product Type</td><td>Public Sector</td><td>Private Sector</td><td>Total</td></tr><tr><td>Technical <eq>Assistance^b</eq></td><td>2.01</td><td>0.01</td><td>2.02</td></tr><tr><td>Total</td><td>2.01</td><td>0.01</td><td>2.02</td></tr></table>"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.057,
+                0.377,
+                0.086,
+                0.387
+            ],
+            "angle": 0,
+            "content": "Note:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.386,
+                0.349,
+                0.443
+            ],
+            "angle": 0,
+            "content": "Commitment is the financing approved by ADB's Board of Directors or Management for which the legal agreement has been signed by the borrower, recipient, or the investee company and ADB. It comprises the amount indicated in the investment agreement, which—depending on the exchange rate at the time of signing—may or may not be equal to the approved amount.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.057,
+                0.444,
+                0.304,
+                0.455
+            ],
+            "angle": 0,
+            "content": "\\( ^{a} \\)  Numbers may not sum up precisely because of rounding.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.454,
+                0.339,
+                0.482
+            ],
+            "angle": 0,
+            "content": "\\( ^{b} \\)  Financing for technical assistance projects with regional coverage is distributed to their specific ADB developing member countries where a breakdown is available.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.058,
+                0.515,
+                0.309,
+                0.528
+            ],
+            "angle": 0,
+            "content": "Maldives: Cumulative Commitments \\( ^{a,b,c} \\)"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.052,
+                0.529,
+                0.349,
+                0.747
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"2\">Sector</td><td rowspan=\"2\">No.</td><td colspan=\"2\">Total Amount ($ million)d</td></tr><tr><td>Public Sector</td><td>Private Sector</td></tr><tr><td>Agriculture, Natural Resources, and Rural Development</td><td>6</td><td>24.29</td><td>-</td></tr><tr><td>Education</td><td>8</td><td>14.97</td><td>-</td></tr><tr><td>Energy</td><td>20</td><td>136.34</td><td>-</td></tr><tr><td>Finance</td><td>9</td><td>0.90</td><td>30.62</td></tr><tr><td>Health</td><td>4</td><td>12.80</td><td>-</td></tr><tr><td>Industry and Trade</td><td>10</td><td>30.42</td><td>0.08</td></tr><tr><td>Information and Communication Technology</td><td>1</td><td>0.15</td><td>20.14</td></tr><tr><td>Multisector</td><td>5</td><td>33.73</td><td>-</td></tr><tr><td>Public Sector Management</td><td>35</td><td>130.64</td><td>-</td></tr><tr><td>Transport</td><td>21</td><td>46.76</td><td>-</td></tr><tr><td>Water and Other Urban Infrastructure and Services</td><td>9</td><td>124.64</td><td>-</td></tr><tr><td>Total</td><td>128</td><td>555.65</td><td>50.83</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.056,
+                0.75,
+                0.089,
+                0.76
+            ],
+            "angle": 0,
+            "content": "- = nil."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.763,
+                0.348,
+                0.782
+            ],
+            "angle": 0,
+            "content": "a Includes loans, grants, equity investments, and technical assistance.\nb Using primary sector in the reporting of commitments.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.056,
+                0.781,
+                0.348,
+                0.809
+            ],
+            "angle": 0,
+            "content": "\\( ^{c} \\)  From 2020, financing for technical assistance projects with regional coverage is distributed to their specific ADB developing member countries where a breakdown is available."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.056,
+                0.808,
+                0.304,
+                0.82
+            ],
+            "angle": 0,
+            "content": "\\( ^{d} \\)  Numbers may not sum up precisely because of rounding."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.393,
+                0.327,
+                0.919,
+                0.416
+            ],
+            "angle": 0,
+            "content": "ADB is helping Maldives through investment projects and technical assistance across various sectors, while fostering fiscal sustainability, inclusive growth, and regional cooperation.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.398,
+                0.46,
+                0.634,
+                0.495
+            ],
+            "angle": 0,
+            "content": "MALDIVES"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.394,
+                0.522,
+                0.93,
+                0.608
+            ],
+            "angle": 0,
+            "content": "Maldives joined the Asian Development Bank (ADB) in 1978. The country partnership strategy (CPS), 2020–2024, continues to guide ADB's engagement in the country. Its priorities include enhancing public sector efficiency and fiscal sustainability, strengthening competitiveness and diversifying the economy, and improving quality of life while ensuring environmental sustainability. The country is eligible for grants and concessional funding through the Asian Development Fund (ADF).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.394,
+                0.613,
+                0.926,
+                0.755
+            ],
+            "angle": 0,
+            "content": "Recent ADB projects notably boost resilience and food security by improving flood and coastal protection and investing in local agri-food systems. ADB supports upgrading power grids to accommodate higher shares of renewable energy, while helping the government tender new solar power capacity. Efforts to advance social protection include building shelters for victims of domestic abuse and violence against women and girls. Investment in vaccine cold storage bolsters public health, while the development of an electronic single window aims to simplify export procedures. ADB also supports solid waste management through improved waste collection and converting waste to electricity, leading to lower emissions and greater energy independence.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.394,
+                0.759,
+                0.929,
+                0.817
+            ],
+            "angle": 0,
+            "content": "Public sector operations. As of 31 December 2025, ADB had committed 121 public sector loans, grants, and technical assistance totaling $556 million to Maldives. ADB's current public sector portfolio in the country includes 5 loans and 10 grants worth $253.3 million.\\( ^{1} \\)",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.396,
+                0.905,
+                0.786,
+                0.936
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\)  Public sector portfolio consists of ADB-financed loans, grants, equity investments, and public sector guarantees committed and not financially closed. Regional projects with loans/grants to multiple countries are reported separately."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.838,
+                0.855,
+                0.927,
+                0.924
+            ],
+            "angle": 0,
+            "content": "ADB"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.816,
+                0.966,
+                0.972,
+                0.981
+            ],
+            "angle": 0,
+            "content": "Updated as of July 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.112,
+                0.041,
+                0.496,
+                0.061
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.111,
+                0.064,
+                0.398,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.321,
+                0.314,
+                0.335
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.379,
+                0.085,
+                0.388
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.388,
+                0.333,
+                0.396
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.397,
+                0.338,
+                0.405
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.406,
+                0.347,
+                0.414
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.416,
+                0.342,
+                0.424
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.425,
+                0.336,
+                0.433
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.434,
+                0.149,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.445,
+                0.301,
+                0.454
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.454,
+                0.335,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.463,
+                0.335,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.473,
+                0.196,
+                0.48
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.764,
+                0.346,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.773,
+                0.291,
+                0.782
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.394,
+                0.327,
+                0.918,
+                0.349
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.398,
+                0.35,
+                0.914,
+                0.369
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.395,
+                0.371,
+                0.888,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.395,
+                0.393,
+                0.607,
+                0.414
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.396,
+                0.459,
+                0.635,
+                0.495
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.399,
+                0.525,
+                0.925,
+                0.535
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.398,
+                0.538,
+                0.903,
+                0.55
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.398,
+                0.552,
+                0.878,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.398,
+                0.566,
+                0.925,
+                0.579
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.399,
+                0.581,
+                0.911,
+                0.592
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.399,
+                0.594,
+                0.811,
+                0.605
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.399,
+                0.615,
+                0.917,
+                0.627
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.399,
+                0.629,
+                0.885,
+                0.641
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.398,
+                0.643,
+                0.904,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.399,
+                0.657,
+                0.914,
+                0.669
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.399,
+                0.671,
+                0.891,
+                0.683
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.398,
+                0.685,
+                0.913,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.399,
+                0.699,
+                0.882,
+                0.711
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.399,
+                0.713,
+                0.912,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.399,
+                0.727,
+                0.924,
+                0.738
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.398,
+                0.74,
+                0.539,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.398,
+                0.761,
+                0.927,
+                0.774
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.398,
+                0.775,
+                0.902,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.398,
+                0.789,
+                0.924,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.399,
+                0.803,
+                0.538,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.066,
+                0.472,
+                0.235
+            ],
+            "angle": 0,
+            "content": "In 2025, ADB approved a technical assistance project to help modernize Maldives' customs service. The country may also benefit from several regional technical assistance projects approved in 2025. These initiatives support evidence-based approaches to resilience and sustainability and accountability through stronger audit institutions. Technical assistance also emphasizes regional cooperation, supporting the regional cooperation and integration agenda of the South Asian Association for Regional Cooperation, as well as trade and transport facilitation in South Asia. Additional assistance focuses on expanding capacity development networks for government officials.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.24,
+                0.48,
+                0.299
+            ],
+            "angle": 0,
+            "content": "Private sector operations. Total outstanding balances and undisbursed commitments of ADB's private sector transactions in Maldives as of 31 December 2025 amounted to $23.32 million, representing 0.15% of ADB's total private sector portfolio.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.304,
+                0.469,
+                0.362
+            ],
+            "angle": 0,
+            "content": "Cumulative disbursements. Cumulative public and private sector loan and grant disbursements to Maldives amount to $392 million. These were financed by regular and concessional ordinary capital resources, ADF, and other special funds.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.367,
+                0.481,
+                0.481
+            ],
+            "angle": 0,
+            "content": "Operational challenges. A limited human resource pool limits the country's capacity to design and implement complex projects. In response, ADB provides technical assistance to strengthen the government's institutional and technical capacity. In addition, Maldives' weak business environment, small market size, and limited access to credit hinder opportunities for private-sector investments. ADB helps the country in this area through technical assistance and project financing.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.071,
+                0.5,
+                0.244,
+                0.516
+            ],
+            "angle": 0,
+            "content": "KNOWLEDGE WORK"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.523,
+                0.475,
+                0.763
+            ],
+            "angle": 0,
+            "content": "In 2025, ADB released a study identifying sociocultural obstacles to workforce participation among women and disadvantaged groups, highlighting the need for stronger social protection, childcare, inclusive urban planning, and financing for women-owned businesses. Another study using machine learning generated granular poverty indicators to help tackle spatial inequality. ADB also supported efforts to diversify the economy within and beyond the dominant fisheries and tourism sectors. In 2025, a series of workshops brought business, civil society, and government stakeholders together to explore opportunities. The Maldives Tuna Think Tank workshop looked into strengthening sustainability, efficiency, and access to financing in the tuna value chain. Stakeholder workshops and policy dialogue deepened collaboration among local actors to support creative entrepreneurship, improve the livelihoods of island communities, and introduce new services for tourists visiting Maldives.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.509,
+                0.072,
+                0.824,
+                0.099
+            ],
+            "angle": 0,
+            "content": "Maldives: Share of Procurement Contracts for Loan, Grant, and Technical Assistance Projects"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.506,
+                0.1,
+                0.913,
+                0.171
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"2\">Item</td><td colspan=\"2\">Goods, Works, and Related Services</td></tr><tr><td>Amount($ million)</td><td>% ofADB Total</td></tr><tr><td>2024</td><td>1.17</td><td>0.01</td></tr><tr><td>2025</td><td>2.22</td><td>0.01</td></tr><tr><td>Cumulative (as of 31 Dec 2025)</td><td>166.80</td><td>0.06</td></tr></table>"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.506,
+                0.178,
+                0.914,
+                0.248
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"2\">Item</td><td colspan=\"2\">Consulting Services</td></tr><tr><td>Amount($ million)</td><td>% ofADB Total</td></tr><tr><td>2024</td><td>0.74</td><td>0.14</td></tr><tr><td>2025</td><td>1.12</td><td>0.15</td></tr><tr><td>Cumulative (as of 31 Dec 2025)</td><td>8.40</td><td>0.05</td></tr></table>"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.506,
+                0.253,
+                0.914,
+                0.324
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"2\">Item</td><td colspan=\"2\">Total Procurement</td></tr><tr><td>Amount($ million)</td><td>% ofADB Total</td></tr><tr><td>2024</td><td>1.91</td><td>0.01</td></tr><tr><td>2025</td><td>3.34</td><td>0.02</td></tr><tr><td>Cumulative (as of 31 Dec 2025)</td><td>175.20</td><td>0.06</td></tr></table>"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.509,
+                0.352,
+                0.885,
+                0.392
+            ],
+            "angle": 0,
+            "content": "Top 5 Contractors/Suppliers from Maldives Involved in Goods, Works, and Related Services Contracts under ADB Loan and Grant Projects, 1 January 2021–31 December 2025"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.507,
+                0.395,
+                0.912,
+                0.503
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Contractor/Supplier</td><td>Sector</td><td>Contract Amount($ million)</td></tr><tr><td>Central Line Pvt. Ltd.</td><td>WUS</td><td>1.65</td></tr><tr><td>Roseware Corporation Pvt. Ltd.</td><td>HLT, IND</td><td>0.98</td></tr><tr><td>Sunnyland Investments Pvt. Ltd.</td><td>WUS</td><td>0.51</td></tr><tr><td>Tradenet Corp. Ltd.</td><td>IND</td><td>0.26</td></tr><tr><td>Wee Hour Investment Pvt. Ltd.</td><td>WUS</td><td>0.22</td></tr><tr><td>Others</td><td></td><td>20.69</td></tr><tr><td>Total</td><td></td><td>24.31</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.511,
+                0.507,
+                0.901,
+                0.518
+            ],
+            "angle": 0,
+            "content": "HLT = health, IND = industry and trade, WUS = water and other urban infrastructure and services."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.51,
+                0.532,
+                0.909,
+                0.572
+            ],
+            "angle": 0,
+            "content": "Top 5 Consultants from Maldives Involved in Consulting Services Contracts under ADB Loan, Grant, and Technical Assistance Projects, 1 January 2021–31 December 2025"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.508,
+                0.574,
+                0.912,
+                0.67
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Consultant</td><td>Sector</td><td>Contract Amount($ million)</td></tr><tr><td>Land and Marine Environmental Resource Group</td><td>ANR</td><td>0.45</td></tr><tr><td>Water Solutions Pvt. Ltd.</td><td>ENE</td><td>0.10</td></tr><tr><td>Individual Consultants</td><td></td><td>2.74</td></tr><tr><td>Others</td><td></td><td>0.24</td></tr><tr><td>Total</td><td></td><td>3.53</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.511,
+                0.674,
+                0.826,
+                0.686
+            ],
+            "angle": 0,
+            "content": "ANR = agriculture, natural resources, and rural development; ENE = energy."
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.51,
+                0.699,
+                0.783,
+                0.725
+            ],
+            "angle": 0,
+            "content": "Maldives: Ordinary Capital Resources Private Sector Commitments by Product"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.506,
+                0.726,
+                0.914,
+                0.86
+            ],
+            "angle": 0,
+            "content": "<table><tr><td></td><td>2025</td><td>2021–2025</td></tr><tr><td>Number of Transactions Signed (OCR)</td><td>0</td><td>2</td></tr><tr><td>Number of Transactions Signed (Programs)</td><td>0</td><td>0</td></tr><tr><td></td><td colspan=\"2\">Amount ($ million)</td></tr><tr><td>Loans</td><td>-</td><td>33.00</td></tr><tr><td>Equity Investments</td><td>-</td><td>-</td></tr><tr><td>Guarantees</td><td>-</td><td>-</td></tr><tr><td>Debt Security</td><td>-</td><td>-</td></tr><tr><td>Trade and Supply Chain Finance Programand Microfinance Program</td><td>-</td><td>-</td></tr><tr><td>Total</td><td>-</td><td>33.00</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.51,
+                0.863,
+                0.684,
+                0.875
+            ],
+            "angle": 0,
+            "content": "- = nil, OCR = ordinary capital resources."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.067,
+                0.465,
+                0.08
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.082,
+                0.458,
+                0.094
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.095,
+                0.444,
+                0.108
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.11,
+                0.461,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.124,
+                0.467,
+                0.136
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.138,
+                0.46,
+                0.149
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.152,
+                0.444,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.165,
+                0.426,
+                0.177
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.18,
+                0.447,
+                0.19
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.194,
+                0.437,
+                0.205
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.207,
+                0.444,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.221,
+                0.208,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.242,
+                0.436,
+                0.254
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.256,
+                0.468,
+                0.268
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.27,
+                0.477,
+                0.282
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.283,
+                0.427,
+                0.296
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.304,
+                0.451,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.32,
+                0.447,
+                0.331
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.332,
+                0.466,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.348,
+                0.428,
+                0.359
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.368,
+                0.459,
+                0.38
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.383,
+                0.428,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.396,
+                0.443,
+                0.408
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.41,
+                0.478,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.424,
+                0.472,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.438,
+                0.429,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.453,
+                0.464,
+                0.464
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.465,
+                0.391,
+                0.479
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.502,
+                0.242,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.525,
+                0.418,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.54,
+                0.422,
+                0.55
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.553,
+                0.464,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.567,
+                0.454,
+                0.579
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.581,
+                0.454,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.595,
+                0.45,
+                0.607
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.609,
+                0.452,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.623,
+                0.474,
+                0.634
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.637,
+                0.455,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.65,
+                0.434,
+                0.662
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.664,
+                0.47,
+                0.676
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.679,
+                0.431,
+                0.69
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.692,
+                0.456,
+                0.704
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.706,
+                0.459,
+                0.718
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.72,
+                0.458,
+                0.731
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.734,
+                0.445,
+                0.745
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.747,
+                0.181,
+                0.76
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.534,
+                0.906,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.514,
+                0.546,
+                0.875,
+                0.557
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.515,
+                0.559,
+                0.775,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.085,
+                0.065,
+                0.318,
+                0.082
+            ],
+            "angle": 0,
+            "content": "FINANCING PARTNERSHIPS"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.084,
+                0.09,
+                0.488,
+                0.161
+            ],
+            "angle": 0,
+            "content": "Financing partnerships enable ADB's partner governments or their agencies, multilateral financing institutions, and private organizations to participate in financing ADB projects. The additional funds provided may be in the form of loans and grants, technical assistance, and private sector cofinancing.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.166,
+                0.41,
+                0.181
+            ],
+            "angle": 0,
+            "content": "Cumulative cofinancing commitments in Maldives:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.187,
+                0.468,
+                0.229
+            ],
+            "angle": 0,
+            "content": "- Public sector cofinancing: $239.54 million for 10 investment projects and $7.45 million for 10 technical assistance projects since 1981",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.23,
+                0.476,
+                0.259
+            ],
+            "angle": 0,
+            "content": "- Private sector cofinancing: $24.91 million for 2 investment projects since 2022",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.084,
+                0.265,
+                0.481,
+                0.322
+            ],
+            "angle": 0,
+            "content": "Through its private sector operations, ADB also actively mobilizes capital by attracting funding from other institutions and helping close funding gaps to increase development impact across the region.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.084,
+                0.328,
+                0.492,
+                0.372
+            ],
+            "angle": 0,
+            "content": "A summary of projects with cofinancing from 1 January 2021 to 31 December 2025 is available at www.adb.org/where-we-work/maldives/cofinancing.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.085,
+                0.391,
+                0.265,
+                0.408
+            ],
+            "angle": 0,
+            "content": "FUTURE DIRECTIONS"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.083,
+                0.415,
+                0.491,
+                0.557
+            ],
+            "angle": 0,
+            "content": "ADB's strategic directions will be guided by Maldives' forthcoming long-term national development plan, which will set development objectives by 2040. This forward-looking framework will notably target structural transformation, productivity gains, and inclusive, sustainable development. ADB's action will also be guided by ADB's Strategy 2030 and its midterm review. ADB is engaging with the government on a new country partnership strategy, which will remain anchored in strengthening fiscal sustainability, development sustainability, economic growth, and resilience.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.525,
+                0.072,
+                0.888,
+                0.098
+            ],
+            "angle": 0,
+            "content": "Maldives: Portfolio Performance Quality Indicators for Public Sector Lending and Grants, 2024–2025"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.521,
+                0.1,
+                0.927,
+                0.204
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>No. of Ongoing Loans<eq>^{a}</eq> (as of 31 Dec 2025)</td><td colspan=\"2\">5</td></tr><tr><td></td><td>2024 ($ million)</td><td>2025 ($ million)</td></tr><tr><td>Contract Awards<eq>^{b}</eq></td><td>1.34</td><td>-</td></tr><tr><td>Disbursements<eq>^{c}</eq></td><td>13.18</td><td>5.82</td></tr><tr><td>No. of Ongoing Grants<eq>^{d}</eq> (as of 31 Dec 2025)</td><td colspan=\"2\">10</td></tr><tr><td></td><td>2024 ($ million)</td><td>2025 ($ million)</td></tr><tr><td>Contract Awards<eq>^{b}</eq></td><td>5.66</td><td>5.63</td></tr><tr><td>Disbursements<eq>^{c,e}</eq></td><td>15.25</td><td>11.96</td></tr><tr><td>At Risk Projects (\\%)<eq>^{f}</eq> (as of 31 Dec 2025)</td><td colspan=\"2\">-</td></tr></table>"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.526,
+                0.207,
+                0.557,
+                0.218
+            ],
+            "angle": 0,
+            "content": "- = nil.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.525,
+                0.22,
+                0.873,
+                0.231
+            ],
+            "angle": 0,
+            "content": "\\( ^{a} \\)  Includes ADB-financed public sector loans committed and not financially closed."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.525,
+                0.23,
+                0.906,
+                0.268
+            ],
+            "angle": 0,
+            "content": "b Includes closed loans that had contract awards during the year. Excludes policy-based lending, results-based lending, financial intermediation (FI) and FI component for combined FI/PROJECT, grants funded by the Asia Pacific Disaster Response Fund (APDRF), and ADB-financed projects administered by an external agency."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.525,
+                0.267,
+                0.82,
+                0.278
+            ],
+            "angle": 0,
+            "content": "c Includes closed loans/grants that had disbursements during the year.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.525,
+                0.277,
+                0.917,
+                0.298
+            ],
+            "angle": 0,
+            "content": "\\( ^{d} \\)  Covers public sector grants financed by the Asian Development Fund (ADF) and other ADB special funds committed and not financially closed.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.526,
+                0.297,
+                0.633,
+                0.307
+            ],
+            "angle": 0,
+            "content": "e Includes only the ADF.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.525,
+                0.306,
+                0.734,
+                0.318
+            ],
+            "angle": 0,
+            "content": "\\( ^{f} \\)  Covers active projects as of 31 December 2025.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.524,
+                0.364,
+                0.854,
+                0.39
+            ],
+            "angle": 0,
+            "content": "Maldives: Independent Evaluation Ratings for Public and Private Sector Operations, 2016–2025"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.521,
+                0.391,
+                0.926,
+                0.496
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"2\"></td><td rowspan=\"2\">Total Number of Validated and Evaluated Projects and Programs</td><td colspan=\"3\">Evaluation Ratings</td></tr><tr><td>Highly successful and successful</td><td>Less than successful</td><td>Unsuccessful</td></tr><tr><td>Public Sector Operations</td><td>3</td><td>2</td><td>1</td><td>-</td></tr><tr><td>Private Sector Operations</td><td>1</td><td>1</td><td>-</td><td>-</td></tr></table>"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.524,
+                0.512,
+                0.924,
+                0.57
+            ],
+            "angle": 0,
+            "content": "Note: The numbers indicate public and private sector operations in the country that have been validated or evaluated by the Independent Evaluation Department (IED) and their overall performance ratings. The coverage consists of all validated or evaluated project completion reports and extended annual review reports circulated by ADB within the 10-year period from 1 July 2015 to 30 June 2025. The rating of one COVID-19 Pandemic Response Option (CPRO) project completed (validated) in 2023 is not included in the total. See evaluations related to Maldives.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.525,
+                0.571,
+                0.666,
+                0.583
+            ],
+            "angle": 0,
+            "content": "Source: IED success rate database.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.525,
+                0.616,
+                0.732,
+                0.63
+            ],
+            "angle": 0,
+            "content": "Maldives: Projects Cofinanced,"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.525,
+                0.63,
+                0.757,
+                0.643
+            ],
+            "angle": 0,
+            "content": "1 January 2021–31 December 2025"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.521,
+                0.644,
+                0.927,
+                0.725
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Cofinancing</td><td>No. of Projects</td><td>Amount ($ million)</td></tr><tr><td>Public sector projects<eq>^{a}</eq></td><td>3</td><td>49.00</td></tr><tr><td>Loans</td><td>2</td><td>30.00</td></tr><tr><td>Grants</td><td>2</td><td>19.00</td></tr><tr><td>Private sector projects</td><td>2</td><td>25.91</td></tr><tr><td>Technical Assistance</td><td>3</td><td>3.23</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.525,
+                0.729,
+                0.815,
+                0.741
+            ],
+            "angle": 0,
+            "content": "\\( ^{a} \\)  A project with more than one source of cofinancing is counted once."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.068,
+                0.316,
+                0.08
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.091,
+                0.463,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.105,
+                0.455,
+                0.117
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.119,
+                0.447,
+                0.131
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.132,
+                0.484,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.147,
+                0.404,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.087,
+                0.167,
+                0.409,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.087,
+                0.188,
+                0.461,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.099,
+                0.203,
+                0.466,
+                0.216
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.098,
+                0.216,
+                0.163,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.23,
+                0.475,
+                0.244
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.099,
+                0.246,
+                0.228,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.265,
+                0.428,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.087,
+                0.28,
+                0.462,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.087,
+                0.295,
+                0.479,
+                0.307
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.309,
+                0.195,
+                0.321
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.329,
+                0.485,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.342,
+                0.489,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.087,
+                0.358,
+                0.224,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.394,
+                0.264,
+                0.407
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.416,
+                0.42,
+                0.429
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.087,
+                0.43,
+                0.473,
+                0.443
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.445,
+                0.456,
+                0.457
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.459,
+                0.434,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.087,
+                0.473,
+                0.455,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.485,
+                0.468,
+                0.498
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.5,
+                0.479,
+                0.513
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.514,
+                0.488,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.087,
+                0.528,
+                0.473,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.542,
+                0.294,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.526,
+                0.207,
+                0.558,
+                0.22
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.528,
+                0.268,
+                0.818,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.528,
+                0.28,
+                0.914,
+                0.286
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.536,
+                0.289,
+                0.746,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.528,
+                0.298,
+                0.63,
+                0.306
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.527,
+                0.307,
+                0.731,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.528,
+                0.514,
+                0.878,
+                0.521
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.528,
+                0.523,
+                0.901,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.528,
+                0.533,
+                0.915,
+                0.539
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.527,
+                0.541,
+                0.919,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.528,
+                0.55,
+                0.921,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.529,
+                0.56,
+                0.852,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.528,
+                0.573,
+                0.664,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.528,
+                0.616,
+                0.731,
+                0.63
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.058,
+                0.039,
+                0.245,
+                0.056
+            ],
+            "angle": 0,
+            "content": "ADB AT A GLANCE"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.063,
+                0.544,
+                0.129
+            ],
+            "angle": 0,
+            "content": "ADB is a leading multilateral development bank supporting inclusive, resilient, and sustainable growth across Asia and the Pacific. Founded in 1966, ADB is owned by 69 members—50 from the region and 19 outside. ADB is headquartered in Manila, Philippines, and has 43 offices around the world. Its 4,436 staff represented 67 of its 69 members as of 31 December 2025.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.133,
+                0.553,
+                0.175
+            ],
+            "angle": 0,
+            "content": "Working with its members and partners to solve complex challenges together, ADB's financial and technical support is transforming lives and economies across Asia and the Pacific—fueling prosperity, strengthening communities, and protecting the planet.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.179,
+                0.549,
+                0.219
+            ],
+            "angle": 0,
+            "content": "In 2025, ADB sharpened its focus on promoting private sector development as a key driver of growth. ADB's investments in 2025 across Asia and the Pacific are expected to generate more than 3.3 million jobs.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.224,
+                0.55,
+                0.265
+            ],
+            "angle": 0,
+            "content": "ADB operations. In 2025, ADB committed $29.3 billion in loans, grants, equity investments, guarantees, private sector programs, and technical assistance to its borrowing members. ADB bolstered its total support with cofinancing of $14.7 billion.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.268,
+                0.532,
+                0.31
+            ],
+            "angle": 0,
+            "content": "As of 31 December 2025, ADB's cumulative commitments in 46 members stood at $423.4 billion covering 4,659 loans, $15.7 billion in 719 grants, and $6.3 billion in technical assistance grants, including regional technical assistance grants.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.314,
+                0.538,
+                0.342
+            ],
+            "angle": 0,
+            "content": "In addition to loans, grants, and technical assistance, ADB used equity investments, guarantees, and private sector programs to help its developing member countries.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.346,
+                0.555,
+                0.412
+            ],
+            "angle": 0,
+            "content": "Total project commitments in private sector loans, equity investments, and guarantees from ADB's own funds in 2025 amounted to $3.1 billion for 49 transactions in economic and social infrastructure, the finance sector, and agribusiness. Commitments in ADB's Trade and Supply Chain Finance Program and Microfinance Program amounted to $2.4 billion.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.416,
+                0.534,
+                0.457
+            ],
+            "angle": 0,
+            "content": "In 2025, ADB also directly mobilized $6 billion in private capital across 35 projects, with an additional $3.7 billion directly mobilized through its trade and supply chain finance and microfinance programs.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.46,
+                0.498,
+                0.5
+            ],
+            "angle": 0,
+            "content": "Total outstanding balances and undisbursed commitments of private sector transactions funded by ADB's own resources stood at \\$15.1 billion as of 31 December 2025.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.058,
+                0.514,
+                0.292,
+                0.53
+            ],
+            "angle": 0,
+            "content": "FINANCING PARTNERSHIPS"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.536,
+                0.441,
+                0.551
+            ],
+            "angle": 0,
+            "content": "Total public and private sector cofinancing commitments, 2025",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.058,
+                0.557,
+                0.313,
+                0.57
+            ],
+            "angle": 0,
+            "content": "- $14.7 billion for 224 projects, of which:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.57,
+                0.318,
+                0.583
+            ],
+            "angle": 0,
+            "content": "» $13.7 billion, 92 investment projects,",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.583,
+                0.389,
+                0.596
+            ],
+            "angle": 0,
+            "content": "» $173.6 million, 130 technical assistance projects,",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.595,
+                0.454,
+                0.609
+            ],
+            "angle": 0,
+            "content": "» $781.18 million transaction advisory services for 2 projects.*",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.057,
+                0.615,
+                0.509,
+                0.629
+            ],
+            "angle": 0,
+            "content": "Cumulative public and private sector cofinancing commitments, 1970–2025",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.057,
+                0.635,
+                0.336,
+                0.649
+            ],
+            "angle": 0,
+            "content": "- $197.72 billion for 3,777 projects, of which:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.649,
+                0.344,
+                0.661
+            ],
+            "angle": 0,
+            "content": "» $189.9 billion, 1,430 investment projects,",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.077,
+                0.661,
+                0.389,
+                0.674
+            ],
+            "angle": 0,
+            "content": "» $3.41 billion, 2,332 technical assistance projects,",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.674,
+                0.442,
+                0.687
+            ],
+            "angle": 0,
+            "content": "» $4.4 billion transaction advisory services for 15 projects.**",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.057,
+                0.695,
+                0.548,
+                0.716
+            ],
+            "angle": 0,
+            "content": "* Adjusted to exclude $12.5 million A Loans mobilized under transaction advisory services reported under private sector operations financing, and $158.8 million cofinancing reported in private sector projects cofinancing.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.057,
+                0.716,
+                0.552,
+                0.737
+            ],
+            "angle": 0,
+            "content": "** Adjusted to exclude $53.9 million A Loans mobilized under transaction advisory services reported under private sector operations financing, and $334.58 million cofinancing reported in private sector projects cofinancing.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.058,
+                0.749,
+                0.194,
+                0.765
+            ],
+            "angle": 0,
+            "content": "PROCUREMENT"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.772,
+                0.557,
+                0.799
+            ],
+            "angle": 0,
+            "content": "ADB's procurement contracts in Asia and the Pacific for goods, works, and related services under loan and grant operations:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.058,
+                0.805,
+                0.212,
+                0.817
+            ],
+            "angle": 0,
+            "content": "• $13.98 billion in 2024",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.058,
+                0.818,
+                0.212,
+                0.83
+            ],
+            "angle": 0,
+            "content": "• $14.89 billion in 2025",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.057,
+                0.83,
+                0.551,
+                0.845
+            ],
+            "angle": 0,
+            "content": "- $292.29 billion covering 238,051 contracts, cumulative procurement since 1966",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.85,
+                0.553,
+                0.878
+            ],
+            "angle": 0,
+            "content": "ADB's procurement contracts in Asia and the Pacific for consulting services under loan, grant, and technical assistance operations:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.058,
+                0.882,
+                0.226,
+                0.895
+            ],
+            "angle": 0,
+            "content": "• $524.54 million in 2024",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.058,
+                0.895,
+                0.225,
+                0.908
+            ],
+            "angle": 0,
+            "content": "- $758.66 million in 2025",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.057,
+                0.908,
+                0.521,
+                0.923
+            ],
+            "angle": 0,
+            "content": "- $17.5 billion covering 91,335 contracts, cumulative procurement since 1966",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.595,
+                0.037,
+                0.845,
+                0.07
+            ],
+            "angle": 0,
+            "content": "MORE ABOUT MALDIVES AND ADB"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.596,
+                0.084,
+                0.786,
+                0.097
+            ],
+            "angle": 0,
+            "content": "Shareholding and Voting Power"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.595,
+                0.096,
+                0.969,
+                0.155
+            ],
+            "angle": 0,
+            "content": "Number of shares held: 426 (0.004% of total shares)\nVotes: 38,973 (0.293% of total membership, 0.448% of total regional membership)\n*Overall capital subscription: $5.84 million\n*Paid-in capital subscription: $288,000",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.595,
+                0.16,
+                0.956,
+                0.174
+            ],
+            "angle": 0,
+            "content": "*United States dollar figures are valued at the rate as of 31 December 2025.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.596,
+                0.187,
+                0.778,
+                0.2
+            ],
+            "angle": 0,
+            "content": "ADB Governor: Hassan Zareer"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.594,
+                0.2,
+                0.968,
+                0.266
+            ],
+            "angle": 0,
+            "content": "ADB Alternate Governor: Zidna Ibrahim  \nADB Director: Noor Ahmed (Pakistan)  \nADB Alternate Director: Rolando Tungpalan (Philippines)  \nADB Director's Advisors: Tanya Real (Philippines) and Ali Irufan (Maldives)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.596,
+                0.292,
+                0.695,
+                0.308
+            ],
+            "angle": 0,
+            "content": "CONTACTS"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.595,
+                0.321,
+                0.775,
+                0.359
+            ],
+            "angle": 0,
+            "content": "Maldives Coordination Office\nEstablished: 2021\nDesk Officer: Jules Hugot",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.594,
+                0.363,
+                0.961,
+                0.423
+            ],
+            "angle": 0,
+            "content": "ADB South Asia Department - Regional Cooperation and Operations Coordination Division\n6 ADB Avenue, Mandaluyong City, 1550 Metro Manila, Philippines\nTel: +632-8632-4444\nwww.adb.org/maldives",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.595,
+                0.435,
+                0.715,
+                0.447
+            ],
+            "angle": 0,
+            "content": "ADB Headquarters"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.595,
+                0.447,
+                0.79,
+                0.505
+            ],
+            "angle": 0,
+            "content": "6 ADB Avenue, Mandaluyong City\n1550 Metro Manila, Philippines\nTel: +63 2 8632 4444\nFax: +63 2 8636 2444\nwww.adb.org",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.596,
+                0.517,
+                0.795,
+                0.531
+            ],
+            "angle": 0,
+            "content": "Ministry of Finance and Planning"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.596,
+                0.53,
+                0.805,
+                0.577
+            ],
+            "angle": 0,
+            "content": "Ameenee Magu\nBlock 379 Malé, Republic of Maldives\nTel: +960 334 9200\nadmin@finance.gov.mv",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.596,
+                0.603,
+                0.725,
+                0.617
+            ],
+            "angle": 0,
+            "content": "Useful ADB websites"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.595,
+                0.622,
+                0.741,
+                0.648
+            ],
+            "angle": 0,
+            "content": "Asian Development Bank\nwww.adb.org",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.595,
+                0.66,
+                0.751,
+                0.686
+            ],
+            "angle": 0,
+            "content": "Publications\nwww.adb.org/publications",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.595,
+                0.698,
+                0.899,
+                0.724
+            ],
+            "angle": 0,
+            "content": "Annual Reports\nwww.adb.org/documents/series/adb-annual-reports",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.595,
+                0.735,
+                0.945,
+                0.762
+            ],
+            "angle": 0,
+            "content": "Asian Development Outlook\nwww.adb.org/publications/series/asian-development-outlook",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.596,
+                0.774,
+                0.699,
+                0.799
+            ],
+            "angle": 0,
+            "content": "ADB Data Library\ndata.adb.org",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.595,
+                0.811,
+                0.738,
+                0.838
+            ],
+            "angle": 0,
+            "content": "Asian Development Blog https://blogs.adb.org/",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.6,
+                0.928,
+                0.912,
+                0.964
+            ],
+            "angle": 0,
+            "content": "Notes: (i) Figures are estimated by ADB unless otherwise stated. \"$\" refers to United States dollars. (ii) Data are updated as of 31 December 2025 unless otherwise indicated.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.782,
+                0.977,
+                0.979,
+                0.99
+            ],
+            "angle": 0,
+            "content": "Publication Stock No. ARM260162"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.04,
+                0.244,
+                0.055
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.065,
+                0.528,
+                0.076
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.077,
+                0.529,
+                0.089
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.09,
+                0.533,
+                0.102
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.103,
+                0.54,
+                0.115
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.115,
+                0.279,
+                0.127
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.135,
+                0.544,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.147,
+                0.536,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.16,
+                0.552,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.178,
+                0.546,
+                0.193
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.191,
+                0.547,
+                0.205
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.206,
+                0.28,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.223,
+                0.514,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.238,
+                0.517,
+                0.25
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.25,
+                0.548,
+                0.263
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.269,
+                0.526,
+                0.282
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.282,
+                0.529,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.295,
+                0.478,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.314,
+                0.537,
+                0.328
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.328,
+                0.531,
+                0.341
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.347,
+                0.554,
+                0.36
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.36,
+                0.489,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.372,
+                0.485,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.385,
+                0.544,
+                0.397
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.399,
+                0.256,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.416,
+                0.532,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.429,
+                0.531,
+                0.443
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.443,
+                0.268,
+                0.456
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.461,
+                0.496,
+                0.473
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.473,
+                0.466,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.486,
+                0.174,
+                0.498
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.515,
+                0.291,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.055,
+                0.536,
+                0.44,
+                0.55
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.556,
+                0.312,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.57,
+                0.317,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.075,
+                0.582,
+                0.388,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.075,
+                0.595,
+                0.454,
+                0.609
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.055,
+                0.615,
+                0.509,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.635,
+                0.336,
+                0.649
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.075,
+                0.648,
+                0.343,
+                0.661
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.661,
+                0.388,
+                0.674
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.075,
+                0.673,
+                0.442,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.695,
+                0.547,
+                0.706
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.062,
+                0.705,
+                0.469,
+                0.715
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.716,
+                0.551,
+                0.727
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.726,
+                0.478,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.75,
+                0.194,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.055,
+                0.772,
+                0.556,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.786,
+                0.308,
+                0.798
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.805,
+                0.212,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.818,
+                0.212,
+                0.83
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.83,
+                0.55,
+                0.844
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.85,
+                0.552,
+                0.864
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.864,
+                0.345,
+                0.878
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.881,
+                0.226,
+                0.895
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.895,
+                0.224,
+                0.907
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.908,
+                0.52,
+                0.922
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.04,
+                0.842,
+                0.055
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.055,
+                0.692,
+                0.07
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.085,
+                0.783,
+                0.097
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.096,
+                0.726,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.759,
+                0.095,
+                0.918,
+                0.108
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.597,
+                0.107,
+                0.635,
+                0.119
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.759,
+                0.107,
+                0.964,
+                0.119
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.759,
+                0.119,
+                0.966,
+                0.13
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.13,
+                0.835,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.142,
+                0.816,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.599,
+                0.163,
+                0.952,
+                0.172
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.599,
+                0.189,
+                0.774,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.599,
+                0.202,
+                0.832,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.214,
+                0.819,
+                0.225
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.226,
+                0.929,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.239,
+                0.964,
+                0.25
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.253,
+                0.659,
+                0.263
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.295,
+                0.693,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.323,
+                0.772,
+                0.333
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.599,
+                0.335,
+                0.701,
+                0.344
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.345,
+                0.745,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.365,
+                0.898,
+                0.375
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.599,
+                0.377,
+                0.815,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.388,
+                0.958,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.599,
+                0.399,
+                0.719,
+                0.408
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.41,
+                0.721,
+                0.42
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.435,
+                0.712,
+                0.448
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.447,
+                0.785,
+                0.458
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.597,
+                0.458,
+                0.768,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.599,
+                0.47,
+                0.716,
+                0.48
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.481,
+                0.717,
+                0.491
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.597,
+                0.492,
+                0.671,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.519,
+                0.791,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.53,
+                0.686,
+                0.541
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.541,
+                0.801,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.599,
+                0.554,
+                0.707,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.565,
+                0.726,
+                0.575
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.599,
+                0.605,
+                0.722,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.625,
+                0.738,
+                0.634
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.635,
+                0.675,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.661,
+                0.666,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.674,
+                0.748,
+                0.683
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.599,
+                0.7,
+                0.684,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.599,
+                0.711,
+                0.896,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.738,
+                0.756,
+                0.748
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.75,
+                0.941,
+                0.759
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.774,
+                0.696,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.598,
+                0.785,
+                0.672,
+                0.798
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.599,
+                0.813,
+                0.735,
+                0.824
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.599,
+                0.825,
+                0.723,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.604,
+                0.931,
+                0.909,
+                0.94
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.603,
+                0.94,
+                0.892,
+                0.951
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.604,
+                0.952,
+                0.826,
+                0.961
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]
