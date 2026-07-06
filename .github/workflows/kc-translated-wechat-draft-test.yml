@@ -67,7 +67,7 @@ concurrency:
 
 jobs:
   build-wechat-drafts:
-    runs-on: [self-hosted, linux, x64, wechat-draft]
+    runs-on: [self-hosted, wechat-draft]
     timeout-minutes: 45
 
     steps:

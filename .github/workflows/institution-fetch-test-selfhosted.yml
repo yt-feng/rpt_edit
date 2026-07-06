@@ -28,7 +28,7 @@ env:
 
 jobs:
   fetch-test-selfhosted:
-    runs-on: [self-hosted, linux, x64, wechat-draft]
+    runs-on: [self-hosted, wechat-draft]
     timeout-minutes: 20
     steps:
       - name: Checkout repository

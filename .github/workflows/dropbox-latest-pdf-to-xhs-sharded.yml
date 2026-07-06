@@ -468,7 +468,7 @@ jobs:
   push-xhs-notes-wechat-drafts:
     needs: [resolve-inputs, select-macro-reports, package-publish-ready]
     if: ${{ !cancelled() && needs.package-publish-ready.result == 'success' && needs.resolve-inputs.outputs.wechat_draft_upload == 'true' && needs.resolve-inputs.outputs.wechat_draft_source == 'xhs_notes' }}
-    runs-on: [self-hosted, linux, x64, wechat-draft]
+    runs-on: [self-hosted, wechat-draft]
     timeout-minutes: 180
     steps:
       - name: Checkout repository
@@ -619,7 +619,7 @@ jobs:
   push-kc-translated-wechat-drafts:
     needs: [resolve-inputs, select-macro-reports, build-kc-translated-reports]
     if: ${{ !cancelled() && needs.build-kc-translated-reports.result == 'success' && needs.resolve-inputs.outputs.translated_report_count != '0' && needs.resolve-inputs.outputs.wechat_draft_upload == 'true' && needs.resolve-inputs.outputs.wechat_draft_source == 'kc_translated' }}
-    runs-on: [self-hosted, linux, x64, wechat-draft]
+    runs-on: [self-hosted, wechat-draft]
     timeout-minutes: 180
     steps:
       - name: Checkout repository

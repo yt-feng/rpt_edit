@@ -174,7 +174,7 @@ jobs:
   upload-wechat-drafts:
     needs: fetch-and-build
     if: ${{ needs.fetch-and-build.outputs.pdf_count != '0' }}
-    runs-on: [self-hosted, linux, x64, wechat-draft]
+    runs-on: [self-hosted, wechat-draft]
     timeout-minutes: 120
     steps:
       - name: Checkout repository
