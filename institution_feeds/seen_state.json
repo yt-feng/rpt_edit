@@ -1436,6 +1436,42 @@
     "bruegel:12312": {
       "first_seen": "2026-07-05",
       "status": "downloaded"
+    },
+    "imf:7c28e4d5166f36f0d2a1c9e08638e8ed3bb0e18e92c069306e65cbb15559": {
+      "first_seen": "2026-07-06",
+      "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publ/bisbull126.htm": {
+      "first_seen": "2026-07-06",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/tax-co-operation-for-development-2025_d652a08b-en.html": {
+      "first_seen": "2026-07-06",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/better-skills-data-for-smarter-financing-of-education-and-training_f77b4282-en.html": {
+      "first_seen": "2026-07-06",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/developing-south-africa-s-national-student-assessment-framework_df78c382-en.html": {
+      "first_seen": "2026-07-06",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/improving-learning-outcomes-in-catalonia-spain_238d6264-en.html": {
+      "first_seen": "2026-07-06",
+      "status": "downloaded"
+    },
+    "adb:27779": {
+      "first_seen": "2026-07-06",
+      "status": "downloaded"
+    },
+    "adb:1157681": {
+      "first_seen": "2026-07-06",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/acc_06jul26_442_e.htm": {
+      "first_seen": "2026-07-06",
+      "status": "no_pdf"
     }
   }
 }
