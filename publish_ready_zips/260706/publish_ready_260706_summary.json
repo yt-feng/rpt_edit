@@ -1,0 +1,133 @@
+{
+  "created_at_utc": "2026-07-06T23:11:45.943719+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260706",
+  "output_dir": "publish_ready_zips/260706",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 7,
+  "skipped_shards": [],
+  "total_files": 594,
+  "total_renamed_markdown_count": 170,
+  "total_raw_file_bytes": 83291031,
+  "zip_count": 1,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260706/publish_ready_260706.zip",
+      "size_bytes": 77236592,
+      "file_count": 594,
+      "renamed_markdown_count": 170,
+      "raw_file_bytes": 83291031,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_2",
+        "shard_3",
+        "shard_4",
+        "shard_5",
+        "shard_6"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 97,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15118337,
+      "reports": [
+        "0001-01-Bernstein-Electric-Revolution--Resilience---Software-and-IT-Services--St",
+        "0002-02-Bernstein-AstraZeneca-PLC-AZN.LN-AZN--O---non-oncology-upside-surprise--",
+        "0003-03-Bernstein-Continental-AG-CON.GR-Continental--Road-to-tyre-pureplay-almos",
+        "0004-04-Bernstein-Global-Luxury-Goods--Chinese---Western-Social-Media-Boxing-Rin",
+        "0005-05-Bernstein-Global-Semis-ASML-High-NA-EUV-cost-deep-dive-lifting-PT-to--23"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 107,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14421287,
+      "reports": [
+        "0001-06-Bernstein-Global-Semis--May-2026-WSTS-Tracker---Sales-16.1--MoM--above-t",
+        "0002-07-Goldman-Sachs-Americas-Technology-Semiconductors-2Q-Preview-Expect-broad",
+        "0003-08-Goldman-Sachs-Americas-Retail--Analyzing-Tractor-Supply-s-competitive-po",
+        "0004-09-Bernstein-U.S.-Multi-Industry---Electrical-Equipment-Liquid-Cooling-Prim",
+        "0005-10-Goldman-Sachs-Asia-Pacific-Growth-Monitor--Better-on-balance-as-energy-p"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 69,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 8841537,
+      "reports": [
+        "0001-11-Goldman-Sachs-Asia-Pacific-Machinery--Automation--Taiwan-trip-takeaways-",
+        "0002-12-Goldman-Sachs-Bayer-AG--BAYGn.DE-Expecting-a-broadly-inline-2Q--Pharma-d",
+        "0003-13-Goldman-Sachs-China-Resources-Beverage--2460.HK---APAC-Consumer---Leisur",
+        "0004-14-Goldman-Sachs-China--Three-things-in-China-260705",
+        "0005-15-Goldman-Sachs-China-Semis--Novosense--688052---Mgmt-call--AI-server-powe"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 71,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 9432892,
+      "reports": [
+        "0001-16-Goldman-Sachs-Guoquan--2517.HK---APAC-Consumer---Leisure-Corporate-Day-2",
+        "0002-17-Goldman-Sachs-Circle-Internet-Group--CRCL.US---Key-takeaways-from-manage",
+        "0003-18-Goldman-Sachs-GCC-Online-Food-Delivery-Competition-and-shift-to-q-commer",
+        "0004-19-Goldman-Sachs-Hengan--1044.HK---APAC-Consumer---Leisure-Corporate-Day-20",
+        "0005-20-Goldman-Sachs-Kuaishou-Technology--1024.HK-Kling-raises-up-to-US-3bn-imp"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 5,
+      "file_count": 103,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 17198275,
+      "reports": [
+        "0001-22-Goldman-Sachs-Netflix-Inc.--NFLX.US--Q2-2026-Earnings-Preview--Framing-K",
+        "0002-23-Goldman-Sachs-Murphy-USA-Inc.--MUSA.US-Favorable-macro-tailwinds-should-",
+        "0003-24-Goldman-Sachs-Metals---Mining--Gold--GMD-lodges-VAU-offer--targeting--A-",
+        "0004-25-Morgan-Stanley-KIOXIA-Holdings-285A---Japan-Starts-BiCS-10-Production-26",
+        "0005-26-Morgan-Stanley-Greater-China-Semiconductors---Asia-Pacific-CPO-Supply-Ch"
+      ]
+    },
+    {
+      "shard": "shard_5",
+      "report_count": 5,
+      "file_count": 89,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 11448680,
+      "reports": [
+        "0001-27-Goldman-Sachs-Sanofi--SASY.PA-Searching-for-reasons-to-be-more-positive-",
+        "0002-28-Morgan-Stanley-Semiconductors-Weekly-Meta-GPU-context--May-SIA-260706",
+        "0003-29-Morgan-Stanley-Semiconductor-Capital-Equipment-Rolling-over-PTs-to-2028-",
+        "0004-30-Nomura-China-Internet---New-Media-Takeaways-from-Douyin-ecommerce-expert",
+        "0005-31-Nomura-China-Internet---New-Media-Takeaways-from-Moonshot-AI-expert-call"
+      ]
+    },
+    {
+      "shard": "shard_6",
+      "report_count": 4,
+      "file_count": 58,
+      "renamed_markdown_count": 20,
+      "raw_file_bytes": 6830023,
+      "reports": [
+        "0001-32-Nomura-China-Internet---New-Media-Takeaways-from-air-travel-expert-call-",
+        "0002-33-Nomura-China-Internet---New-Media-Takeaways-from-TikTok-shop-logistics-e",
+        "0003-34-UBS-Memory-Semis-Monthly-July--26-Edition-Further-pricing-upside-amidst-",
+        "0004-35-Nomura-USD-CNY-fix-model-Projection--6.7853-260706"
+      ]
+    }
+  ]
+}
