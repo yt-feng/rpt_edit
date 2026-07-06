@@ -24,7 +24,7 @@ Required Markdown structure:
 - One section should identify what the report does not fully answer yet.
 - One section should translate the report into a decision framework for readers.
 - Final section: naturally invite readers to join the community or read the full report using this CTA: {community_cta}
-- End with: `*This article is for learning and discussion only and does not constitute investment advice.*`
+- End with: `*For informational purposes only. Portions may be generated, translated, summarized, or edited with AI assistance based on source materials and may contain omissions or errors. Please verify independently. This is not investment, legal, tax, accounting, or other professional advice.*`
 
 Content boundaries:
 - Do not mention specific investment bank names such as Goldman Sachs. Use "a global investment bank report" if needed.

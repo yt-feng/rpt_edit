@@ -40,7 +40,11 @@ from sensitive_content_guard import sanitize_wechat_stock_language
 
 BRAND = "KC桌面——外资精译"
 AUTHOR = "KC桌面"
-BOTTOM_DISCLAIMER = "For informational purposes only. Not investment advice."
+BOTTOM_DISCLAIMER = (
+    "For informational purposes only. Portions may be generated, translated, summarized, or edited with "
+    "AI assistance based on source materials and may contain omissions or errors. Please verify independently. "
+    "This is not investment, legal, tax, accounting, or other professional advice."
+)
 DEFAULT_BODY_HOOK = (
     "更多完整报告、中文摘要、KC评论和图表合集，会放进每日国际信源汇编。"
     "适合快速扫当天主流叙事，也方便后续追问和横向比较。"

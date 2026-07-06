@@ -33,7 +33,12 @@ except Exception:
 
 TEXT_SUFFIXES = {".md", ".txt", ".json", ".srt", ".vtt"}
 ZSXQ_IMAGE_MD = "![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)"
-GRAY_DISCLAIMER = '<p style="color:#999999;font-size:12px;">Personal reading notes and learning share only. Not investment advice.</p>'
+DISCLAIMER_TEXT = (
+    "For informational purposes only. Portions may be generated, translated, summarized, or edited with "
+    "AI assistance based on source materials and may contain omissions or errors. Please verify independently. "
+    "This is not investment, legal, tax, accounting, or other professional advice."
+)
+GRAY_DISCLAIMER = f'<p style="color:#999999;font-size:12px;">{DISCLAIMER_TEXT}</p>'
 XIANYU_MAX_CHARS = 1499
 EMOJI_RE = re.compile(
     "["
@@ -164,7 +169,12 @@ def normalize_wechat_ending(text: str, include_zsxq: bool) -> str:
     text, _stock_changes = sanitize_wechat_stock_language(text)
     for pattern in CHINESE_DISCLAIMER_PATTERNS:
         text = re.sub(pattern, "", text, flags=re.IGNORECASE).strip()
-    text = re.sub(r'<p\s+style="color:#999999;font-size:12px;">Personal reading notes and learning share only\. Not investment advice\.</p>', "", text, flags=re.IGNORECASE).strip()
+    text = re.sub(
+        r'<p\s+style="color:#999999;font-size:12px;">[^<]*(?:not investment advice|investment, legal, tax, accounting)[^<]*</p>',
+        "",
+        text,
+        flags=re.IGNORECASE,
+    ).strip()
     text = text.replace(ZSXQ_IMAGE_MD, "").strip()
     parts = [text]
     if include_zsxq:

@@ -116,7 +116,11 @@ except Exception:  # pragma: no cover
 BRAND = "KC桌面——外资精译"
 PDF_WATERMARK = "公众号：KC桌面"
 PDF_WATERMARK_COLOR = "#0B3B75"
-PDF_FOOTER_DISCLAIMER = "For informational purposes only. Not investment advice."
+PDF_FOOTER_DISCLAIMER = (
+    "For informational purposes only. Portions may be generated, translated, summarized, or edited with "
+    "AI assistance based on source materials and may contain omissions or errors. Please verify independently. "
+    "This is not investment, legal, tax, accounting, or other professional advice."
+)
 DATE_DIR_RE = re.compile(r"^\d{6,8}$")
 IMAGE_RE = re.compile(r"!\[[^\]]*\]\(([^\)]+)\)")
 IMAGE_TOKEN_RE = re.compile(r"\[\[KC_IMAGE_(\d{3})\]\]")
@@ -1048,6 +1052,21 @@ def build_styles(font: str) -> dict[str, ParagraphStyle]:
 
 
 def draw_page_brand(font: str):
+    def wrap_footer_lines(text: str, canvas, max_width: float) -> list[str]:
+        words = text.split()
+        lines: list[str] = []
+        current = ""
+        for word in words:
+            candidate = f"{current} {word}".strip()
+            if current and canvas.stringWidth(candidate, font, 6.2) > max_width:
+                lines.append(current)
+                current = word
+            else:
+                current = candidate
+        if current:
+            lines.append(current)
+        return lines[:3]
+
     def _draw(canvas, doc) -> None:
         width, height = A4
         canvas.saveState()
@@ -1057,8 +1076,10 @@ def draw_page_brand(font: str):
         canvas.drawCentredString(width / 2, height - 0.43 * cm, PDF_WATERMARK)
         canvas.drawCentredString(width / 2, 0.86 * cm, PDF_WATERMARK)
         canvas.setFillColor(colors.HexColor("#8A8A8A"))
-        canvas.setFont(font, 7)
-        canvas.drawCentredString(width / 2, 0.48 * cm, PDF_FOOTER_DISCLAIMER)
+        canvas.setFont(font, 6.2)
+        footer_lines = wrap_footer_lines(PDF_FOOTER_DISCLAIMER, canvas, width - 3.0 * cm)
+        for idx, line in enumerate(reversed(footer_lines)):
+            canvas.drawCentredString(width / 2, (0.34 + idx * 0.20) * cm, line)
         canvas.setFillColor(colors.HexColor(PDF_WATERMARK_COLOR))
         canvas.drawRightString(width - 1.45 * cm, 0.86 * cm, str(doc.page))
         canvas.restoreState()

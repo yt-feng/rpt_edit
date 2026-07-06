@@ -55,7 +55,7 @@
 7. 至少一个小节给出读者的观察框架，但不要命名为“对读者的启发”。
 8. 文末自然承接未解问题，只写一段很短的轻 CTA。不要照抄固定话术，不要堆身份名单；语义可以参考但不必全塞：{community_cta}。
 9. 在免责声明前，单独插入这张图片链接：`![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)`
-10. 结尾只输出英文灰色免责声明：`<p style="color:#999999;font-size:12px;">Personal reading notes and learning share only. Not investment advice.</p>`
+10. 结尾只输出英文灰色免责声明：`<p style="color:#999999;font-size:12px;">For informational purposes only. Portions may be generated, translated, summarized, or edited with AI assistance based on source materials and may contain omissions or errors. Please verify independently. This is not investment, legal, tax, accounting, or other professional advice.</p>`
 
 【hook 要求】
 - 不要硬插“加入社群”。
