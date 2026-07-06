@@ -880,7 +880,7 @@ def build_article_style_prompt(markdown: str, title: str, institution_name: str,
     token_text = ", ".join(image_tokens) if image_tokens else "无可用图表占位符"
     source = markdown[: min(len(markdown), 22_000)]
     return f"""
-你是“KC桌面”的微信公众号财经文章主笔。请把下面的公共机构/咨询公司英文报告，改写成和外资投行研报系列一致的中文微信文章。
+你是“KC桌面”的微信公众号研究导读主笔。请把下面的公共机构/咨询公司英文报告，改写成和国际机构报告系列一致的中文微信文章。
 
 写作目标：
 - 不是逐段翻译，而是基于原报告写一篇完整、顺滑、有主线的中文综述。
@@ -898,12 +898,14 @@ def build_article_style_prompt(markdown: str, title: str, institution_name: str,
 2. 正文控制在 900-1200 个中文字符，写成短导读，不要展开成完整长文。
 3. 开头 1-2 段要自然带出 4-6 个长尾关键词，例如国家/行业/政策/数据/公司/技术词，让读者从搜一搜进入也能立刻判断相关性。
 4. 使用 3 个 `##` 小节，每个小节标题都要是 action title，读标题就知道结论。
-5. 每个小节只保留 1 段，段落要像投行报告解读，避免散乱摘抄。
+5. 每个小节只保留 1 段，段落要像专业报告导读，避免散乱摘抄。
 6. 插入 1-2 条 `> KC评论：...`。KC评论要用大白话解释“这对市场/企业/政策观察意味着什么”，不要空泛，也不要夹带 CTA。
 7. 如有可用图表占位符，只能从这些 token 里选 1-3 个并原样插入，单独成行：{token_text}
 8. 正文中间禁止插入 CTA、广告、扫码、社群、知识星球、每日汇编、喂给 AI 等表达；中间只允许正文、图表占位和 KC评论。
-9. 如果是单一公司/个股报告，只写公司情况、行业变化、业务进展、竞争格局和报告事实；禁止输出目标价、评级、买入、卖出、增持、减持、推荐、荐股、Buy、Sell、Overweight、Underweight、Outperform、Underperform、PT、TP、PO 等卖方操作口径。
-10. 不要输出代码块，不要输出英文原文，不要输出“以下是”等解释。
+9. 标题、正文和 KC评论不要直接输出“经济、投资、财经、金融、股票、股价、股市、理财、证券、券商、收益率、资产定价”等直白词；改成“宏观环境、研究、观察、资金、公司、报价、市场、回报表现、市场定价”等中性表达。
+10. 涉及中国、国内、内地、大陆、人民币、A股、港股时，必须使用中性客观表达；不要写“不好、不行、疲弱、低迷、恶化、危机、衰退、崩盘、放缓、压力、拖累、唱衰”等负面判断。
+11. 如果是单一公司报告，只写公司情况、行业变化、业务进展、竞争格局和报告事实；禁止输出目标价、评级、买入、卖出、增持、减持、推荐、荐股、Buy、Sell、Overweight、Underweight、Outperform、Underperform、PT、TP、PO 等卖方操作口径。
+12. 不要输出代码块，不要输出英文原文，不要输出“以下是”等解释。
 
 机构中文名：{institution_name or "该机构"}
 原报告标题：{title}
@@ -923,8 +925,8 @@ def generate_article_style_markdown(
     image_tokens = [str(item.get("token") or "") for item in figures[:ARTICLE_STYLE_MAX_IMAGE_TOKENS] if item.get("token")]
     prompt = build_article_style_prompt(clean_markdown, title, institution_name, image_tokens)
     system_content = (
-        "你是专业中文财经编辑，擅长把英文公共机构、咨询公司、投行报告改写成"
-        "微信公众号可读的中文研报解读。只根据原文写作，不编造。"
+        "你是专业中文研究导读编辑，擅长把英文公共机构、咨询公司、国际机构报告改写成"
+        "微信公众号可读的中文报告导读。只根据原文写作，不编造。"
     )
     article = call_deepseek(
         prompt,

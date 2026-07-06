@@ -143,6 +143,75 @@ WECHAT_STOCK_REPLACEMENTS: list[tuple[str, str]] = [
     (r"推荐", "提到"),
 ]
 
+WECHAT_STRICT_WORD_REPLACEMENTS: list[tuple[str, str]] = [
+    (r"世界经济论坛", "WEF"),
+    (r"中国经济", "中国宏观环境"),
+    (r"国内经济", "国内宏观环境"),
+    (r"全球经济", "全球宏观环境"),
+    (r"世界经济", "全球宏观环境"),
+    (r"经济体", "地区"),
+    (r"经济", "宏观环境"),
+    (r"投资银行", "国际机构"),
+    (r"投行", "国际机构"),
+    (r"投研", "研究"),
+    (r"投资者", "读者"),
+    (r"投资人", "参与者"),
+    (r"投资组合", "组合观察"),
+    (r"投资回报", "回报表现"),
+    (r"投资收益", "回报表现"),
+    (r"投资周期", "研究周期"),
+    (r"投资启示", "观察提示"),
+    (r"投资", "研究"),
+    (r"财经", "研究"),
+    (r"金融机构", "机构"),
+    (r"金融市场", "市场"),
+    (r"金融条件", "资金条件"),
+    (r"金融", "资金"),
+    (r"A股|港股", "相关市场"),
+    (r"股票市场|股市", "市场"),
+    (r"股票|个股", "公司"),
+    (r"股价", "报价"),
+    (r"证券", "标的"),
+    (r"券商", "机构"),
+    (r"基金经理", "组合负责人"),
+    (r"基金", "产品"),
+    (r"理财", "资金规划"),
+    (r"收益率", "回报表现"),
+    (r"资产定价", "市场定价"),
+    (r"风险", "不确定性"),
+    (r"危机", "扰动"),
+    (r"不好|不行", "需要继续观察"),
+    (r"疲弱|乏力|低迷", "仍在调整"),
+    (r"恶化", "出现变化"),
+    (r"衰退|萎缩|收缩", "调整"),
+    (r"通缩", "价格变化"),
+    (r"崩盘|崩溃|暴跌", "明显波动"),
+    (r"下行|放缓", "节奏变化"),
+    (r"压力", "不确定性"),
+    (r"拖累", "影响"),
+    (r"负面", "谨慎"),
+    (r"唱衰", "谨慎讨论"),
+]
+
+WECHAT_CHINA_NEUTRAL_REPLACEMENTS: list[tuple[str, str]] = [
+    (
+        r"((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\n]{0,16})"
+        r"(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|"
+        r"暴跌|下行|放缓|压力|拖累|负面|唱衰)",
+        r"\1仍在调整",
+    ),
+    (r"中国不好|中国不行|唱衰中国", "相关表述需要中性处理"),
+]
+
+WECHAT_DIRECT_FORBIDDEN_RE = re.compile(
+    r"(?:经济|投资|投行|投研|财经|金融|股票|个股|股价|股市|A股|港股|炒股|理财|证券|券商|基金|收益率|资产定价|风险)"
+)
+WECHAT_CHINA_NEGATIVE_CONTEXT_RE = re.compile(
+    r"(?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\n]{0,20}"
+    r"(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|"
+    r"暴跌|下行|放缓|压力|拖累|负面|唱衰)"
+)
+
 PROTECTED_TERMS = {
     "投研": "__PROTECT_TOUYAN__",
     "投行": "__PROTECT_TOUHANG__",
@@ -172,6 +241,37 @@ def apply_local_guard(text: str) -> tuple[str, list[str]]:
         protected = protected.replace(token, key)
     protected = re.sub(r"\n{4,}", "\n\n\n", protected)
     return protected, changes
+
+
+def sanitize_wechat_strict_wording(text: str) -> tuple[str, list[str]]:
+    """Neutralize public-account wording that is too direct for finance-adjacent posts."""
+    changes: list[str] = []
+    cleaned = text or ""
+    for pattern, repl in WECHAT_CHINA_NEUTRAL_REPLACEMENTS + WECHAT_STRICT_WORD_REPLACEMENTS:
+        cleaned, n = re.subn(pattern, repl, cleaned, flags=re.I)
+        if n:
+            changes.append(f"{pattern}->{repl} x{n}")
+    cleanup_pairs = [
+        (r"宏观环境环境", "宏观环境"),
+        (r"资金资金", "资金"),
+        (r"研究研究", "研究"),
+        (r"产品产品", "产品"),
+        (r"市场市场", "市场"),
+        (r"公司公司", "公司"),
+        (r"(仍在调整){2,}", "仍在调整"),
+        (r"((?:中国|国内|内地|大陆)宏观环境)不确定性仍在调整", r"\1仍在调整"),
+        (r"仍在调整影响", "仍在调整，并影响"),
+        (r"仍在调整相关市场", "仍在调整，相关市场"),
+        (r"不确定性自担", "请自行判断"),
+        (r"不确定性提示", "观察提示"),
+        (r"研究建议", "观察提示"),
+        (r"操作提示", "观察提示"),
+    ]
+    for pattern, repl in cleanup_pairs:
+        cleaned, n = re.subn(pattern, repl, cleaned, flags=re.I)
+        if n:
+            changes.append(f"{pattern}->{repl} x{n}")
+    return cleaned, changes
 
 
 def sanitize_wechat_stock_language(text: str) -> tuple[str, list[str]]:
@@ -219,6 +319,12 @@ def sanitize_wechat_stock_language(text: str) -> tuple[str, list[str]]:
         line = re.sub(r"(?:[，,；;]\s*){2,}", "，", line)
         line = re.sub(r"[，,；;：:]\s*(?=$)", "", line)
         line = re.sub(r"(公司情况更新){2,}", "公司情况更新", line)
+        line, strict_changes = sanitize_wechat_strict_wording(line)
+        changes.extend(strict_changes)
+        line = re.sub(r"\s*([，。；;,:：])\s*", r"\1", line)
+        line = re.sub(r"[，,]+([。；;])", r"\1", line)
+        line = re.sub(r"(?:[，,；;]\s*){2,}", "，", line)
+        line = re.sub(r"[，,；;：:]\s*(?=$)", "", line)
         if re.fullmatch(r"[\s，,。；;]*(?:并)?(?:报告观点|公司观点|公司观点更新|更新公司观点|观点偏积极|观点偏谨慎|该股|该公司)+[。.]?", line):
             line = ""
         if is_heading:
@@ -233,12 +339,17 @@ def sanitize_wechat_stock_language(text: str) -> tuple[str, list[str]]:
             changes.append("sanitize_wechat_stock_line")
         out_lines.append(line)
     cleaned = "\n".join(out_lines)
+    cleaned = re.sub(r"(仍在调整){2,}", "仍在调整", cleaned)
     cleaned = re.sub(r"\n{4,}", "\n\n\n", cleaned)
     return cleaned, changes
 
 
 def contains_wechat_stock_forbidden_language(text: str) -> bool:
     return bool(WECHAT_STOCK_FORBIDDEN_RE.search(text or ""))
+
+
+def contains_wechat_strict_forbidden_language(text: str) -> bool:
+    return bool(WECHAT_DIRECT_FORBIDDEN_RE.search(text or "") or WECHAT_CHINA_NEGATIVE_CONTEXT_RE.search(text or ""))
 
 
 def normalize_xhs_note_tags(text: str) -> tuple[str, list[str]]:
@@ -349,12 +460,13 @@ def deepseek_rewrite(text: str, detected_hits: list[dict[str, Any]], model: str,
 1. 保留原有信息结构、标题层级、Markdown 链接和图片链接。
 2. 删除或替换金融操作建议、收益承诺、买卖暗示、极限词、夸张词、直接引导关注点赞等表达。
 3. 不要用谐音、拆字、错别字或黑话绕过平台规则；要改成自然、合规、克制的表达。
-4. “投资”相关词尽量改成“研究”“投研”“观察”“学习参考”等，视上下文自然处理。
+4. 微信文章里不要直接输出“经济、投资、财经、金融、股票、股价、股市、理财、证券、券商、收益率、资产定价”等直白词；改成“宏观环境、研究、观察、资金、公司、报价、市场、回报表现、市场定价”等中性表达。
 5. 不要新增事实、页数、价格、承诺、联系方式。
 6. 小红书 note.md 的标签只能使用 #学习笔记 #研究笔记 #学习研究 #研报解读。
 7. 闲鱼 xianyu_note.md 不要输出“建议价格”或“搜索关键词”，如需关键词请改成 Hashtag。
-8. 知乎 zhihu_article.md 保持理性长文风格，不要写关注点赞或财经操作建议。
-9. 只输出改写后的正文，不要解释。
+8. 涉及中国、国内、内地、大陆、人民币、A股、港股时，必须使用中性客观表达，不写“不好、不行、疲弱、低迷、恶化、危机、衰退、崩盘、放缓、压力、拖累、唱衰”等负面判断。
+9. 知乎 zhihu_article.md 保持理性长文风格，不要写关注点赞或操作建议。
+10. 只输出改写后的正文，不要解释。
 
 检测命中：
 {json.dumps(detected_hits, ensure_ascii=False)}
