@@ -66,7 +66,7 @@ WECHAT_UPLOADIMG_TARGET_BYTES = 930 * 1024
 DEFAULT_TRAILING_IMAGE = "prompts/zsxq_img.jpg"
 # Shown at the very end of every article, after the 星球 QR image.
 DEFAULT_AFTER_IMAGE_NOTE = (
-    "经常追国际信源的话，可以把「KC桌面」设为星标，方便回来查当天汇编。"
+    "因公众号机制调整，建议设置为星标，或联系MacroGate"
 )
 POLLINATIONS_BASE_URL = "https://image.pollinations.ai/prompt/"
 WECHAT_COVER_WIDTH = 1200
