@@ -33,15 +33,7 @@ const ACCESS_DURATION_OPTIONS = [
   { value: "24", label: "2年", months: 24 },
   { value: "lifetime", label: "长期", months: 0 },
 ];
-const BOOTSTRAP_ACCESS_GRANTS = {
-  "yjia0405@gmail.com": {
-    access_mode: "all",
-    status: "active",
-    lifetime: true,
-    current_period_end: null,
-    note: "Full-site report access.",
-  },
-};
+const BOOTSTRAP_ACCESS_GRANTS = {};
 const REPORT_INDUSTRY_RULES = [
   ["Macro / FX / Rates", /\b(macro|fx|foreign exchange|currency|cny|yuan|dollar|usd|rate|rates|yield|fed|ecb|boj|inflation|cpi|pmi|gdp|economy|economic|recession|treasury|bond|nominal|real rate)\b/],
   ["Equity Strategy", /\b(strategy|equity strategy|market strategy|asset allocation|portfolio|index|earnings revision|valuation|eps|target price)\b/],
@@ -144,6 +136,7 @@ const SEARCH_CACHE_FRESH_MS = 6 * 60 * 60 * 1000;
 const SEARCH_MIRROR_PREFIX = "_search-mirror";
 const SEARCH_MIRROR_STALE_MS = 36 * 60 * 60 * 1000;
 const ANALYTICS_PREFIX = "_analytics/events";
+const ANALYTICS_BACKUP_PREFIX = "_analytics_backup/events";
 const ANALYTICS_DASHBOARD_DAYS = 30;
 const ANALYTICS_DASHBOARD_LIMIT = 1800;
 const NEWSFEED_CACHE_PREFIX = "_newsfeed/cache";
@@ -1220,10 +1213,107 @@ function bootstrapAccessGrant(email) {
   });
 }
 
+function accessGrantBackupLatestKey(email) {
+  return accountKey("access_backup", "latest", email);
+}
+
+function accessGrantBackupHistoryKey(email, timestamp) {
+  return accountKey("access_backup", "history", email, String(timestamp || "").replace(/[^0-9A-Za-z_-]+/g, "-"));
+}
+
+function accessGrantAuditKey(email, timestamp) {
+  return accountKey("access_audit", email, String(timestamp || "").replace(/[^0-9A-Za-z_-]+/g, "-"));
+}
+
+function accessGrantUpdatedAtMs(row) {
+  const time = Date.parse(row && row.updated_at || "");
+  return Number.isFinite(time) ? time : 0;
+}
+
+function accessGrantComparable(row) {
+  const access = publicAccessGrant(row);
+  return {
+    email: normalizeEmail(access.email),
+    access_mode: access.access_mode,
+    status: access.status,
+    lifetime: Boolean(access.lifetime),
+    current_period_end: access.current_period_end || null,
+    duration_value: access.duration_value || "",
+    download_limit: access.download_limit || 0,
+    download_count: access.download_count || 0,
+    institutions: access.institutions,
+    industries: access.industries,
+    page_ranges: access.page_ranges,
+    note: access.note || "",
+  };
+}
+
+function accessGrantMatchesExpected(actual, expected) {
+  return JSON.stringify(accessGrantComparable(actual)) === JSON.stringify(accessGrantComparable(expected));
+}
+
+async function findStoredAccessGrant(env, email) {
+  const normalized = normalizeEmail(email);
+  if (!normalized) return null;
+  const [primary, latestBackup] = await Promise.all([
+    safeR2GetJson(env, accountKey("access", normalized)),
+    safeR2GetJson(env, accessGrantBackupLatestKey(normalized)),
+  ]);
+  const candidates = [primary, latestBackup].filter((row) => row && typeof row === "object");
+  if (!candidates.length) return null;
+  candidates.sort((a, b) => accessGrantUpdatedAtMs(b) - accessGrantUpdatedAtMs(a));
+  const best = { ...candidates[0], email: normalized };
+  if (!primary || accessGrantUpdatedAtMs(best) > accessGrantUpdatedAtMs(primary)) {
+    await r2PutJson(env, accountKey("access", normalized), best);
+  }
+  return best;
+}
+
+async function writeAccessGrantDurably(env, email, payload) {
+  const normalized = normalizeEmail(email);
+  const timestamp = payload.updated_at || new Date().toISOString();
+  const primaryKey = accountKey("access", normalized);
+  const latestKey = accessGrantBackupLatestKey(normalized);
+  const historyKey = accessGrantBackupHistoryKey(normalized, timestamp);
+  await Promise.all([
+    r2PutJson(env, primaryKey, payload),
+    r2PutJson(env, latestKey, payload),
+    r2PutJson(env, historyKey, payload),
+  ]);
+  const [primary, latestBackup, historyBackup] = await Promise.all([
+    r2GetJson(env, primaryKey),
+    r2GetJson(env, latestKey),
+    r2GetJson(env, historyKey),
+  ]);
+  if (
+    !accessGrantMatchesExpected(primary, payload) ||
+    !accessGrantMatchesExpected(latestBackup, payload) ||
+    !accessGrantMatchesExpected(historyBackup, payload)
+  ) {
+    throw new Error("Access save verification failed. Please retry.");
+  }
+  return primary;
+}
+
+async function writeAccessGrantAudit(env, email, previous, next, adminUser) {
+  const normalized = normalizeEmail(email);
+  const timestamp = next && next.updated_at || new Date().toISOString();
+  const audit = {
+    type: "user_access_update",
+    email: normalized,
+    updated_at: timestamp,
+    updated_by: normalizeEmail(adminUser && adminUser.email) || String(adminUser && adminUser.username || ""),
+    previous: previous ? publicAccessGrant(previous) : publicAccessGrant(null),
+    next: next ? publicAccessGrant(next) : publicAccessGrant(null),
+  };
+  await r2PutJson(env, accessGrantAuditKey(normalized, timestamp), audit);
+  return audit;
+}
+
 async function findAccessGrant(env, email) {
   const normalized = normalizeEmail(email);
   if (!normalized) return publicAccessGrant(null);
-  const stored = await safeR2GetJson(env, accountKey("access", normalized));
+  const stored = await findStoredAccessGrant(env, normalized);
   if (stored && typeof stored === "object") return publicAccessGrant({ ...stored, email: normalized });
   return bootstrapAccessGrant(normalized) || publicAccessGrant({ email: normalized });
 }
@@ -1252,7 +1342,7 @@ function accessDurationDownloadLimit(durationValue) {
 async function saveAccessGrant(env, email, fields, adminUser) {
   const normalized = normalizeEmail(email);
   if (!normalized) throw new Error("Email is required.");
-  const existing = await safeR2GetJson(env, accountKey("access", normalized));
+  const existing = await findStoredAccessGrant(env, normalized);
   const mode = ACCESS_MODES.has(String(fields.access_mode || "")) ? String(fields.access_mode) : "none";
   const activeMode = mode !== "none";
   const duration = String(fields.duration_months || "").trim();
@@ -1291,8 +1381,9 @@ async function saveAccessGrant(env, email, fields, adminUser) {
     updated_at: now,
     updated_by: normalizeEmail(adminUser && adminUser.email) || String(adminUser && adminUser.username || ""),
   };
-  await r2PutJson(env, accountKey("access", normalized), payload);
-  return publicAccessGrant(payload);
+  const saved = await writeAccessGrantDurably(env, normalized, payload);
+  await writeAccessGrantAudit(env, normalized, existing, saved, adminUser);
+  return publicAccessGrant(saved);
 }
 
 function accessPageRangeMatches(range, pages) {
@@ -2472,13 +2563,18 @@ async function persistAnalyticsEvent(request, env, payload) {
     analyticsIpHash(request, env),
   ]);
   const event = analyticsEventFromPayload(request, payload, user, ipHash);
-  const key = `${ANALYTICS_PREFIX}/${event.date}/${event.ts.replace(/[:.]/g, "-")}-${event.id}.json`;
-  await env.REPORT_BUCKET.put(key, JSON.stringify(event), {
+  const suffix = `${event.date}/${event.ts.replace(/[:.]/g, "-")}-${event.id}.json`;
+  const body = JSON.stringify(event);
+  const metadata = {
     httpMetadata: {
       contentType: "application/json; charset=utf-8",
       cacheControl: "no-store",
     },
-  });
+  };
+  await Promise.all([
+    env.REPORT_BUCKET.put(`${ANALYTICS_PREFIX}/${suffix}`, body, metadata),
+    env.REPORT_BUCKET.put(`${ANALYTICS_BACKUP_PREFIX}/${suffix}`, body, metadata),
+  ]);
   return event;
 }
 
@@ -2500,34 +2596,40 @@ async function handleAnalyticsEvent(request, env, ctx = null) {
 
 async function listAnalyticsEvents(env, days = ANALYTICS_DASHBOARD_DAYS, limit = ANALYTICS_DASHBOARD_LIMIT) {
   if (!env.REPORT_BUCKET || typeof env.REPORT_BUCKET.list !== "function") return [];
-  const rows = [];
-  for (const date of analyticsRecentDateKeys(days)) {
-    let cursor = undefined;
-    do {
-      const listed = await env.REPORT_BUCKET.list({
-        prefix: `${ANALYTICS_PREFIX}/${date}/`,
-        limit: Math.min(1000, Math.max(1, limit - rows.length)),
-        cursor,
-      });
-      const objects = Array.isArray(listed && listed.objects) ? listed.objects : [];
-      const batch = await Promise.all(objects.map(async (object) => {
-        try {
-          const stored = await env.REPORT_BUCKET.get(object.key);
-          return stored ? JSON.parse(await stored.text()) : null;
-        } catch (_error) {
-          return null;
+  const rowsById = new Map();
+  for (const prefixRoot of [ANALYTICS_PREFIX, ANALYTICS_BACKUP_PREFIX]) {
+    for (const date of analyticsRecentDateKeys(days)) {
+      let cursor = undefined;
+      do {
+        const listed = await env.REPORT_BUCKET.list({
+          prefix: `${prefixRoot}/${date}/`,
+          limit: Math.min(1000, Math.max(1, limit - rowsById.size)),
+          cursor,
+        });
+        const objects = Array.isArray(listed && listed.objects) ? listed.objects : [];
+        const batch = await Promise.all(objects.map(async (object) => {
+          try {
+            const stored = await env.REPORT_BUCKET.get(object.key);
+            return stored ? JSON.parse(await stored.text()) : null;
+          } catch (_error) {
+            return null;
+          }
+        }));
+        for (const event of batch) {
+          if (event && typeof event === "object") {
+            const id = String(event.id || `${event.ts || ""}:${event.type || ""}:${event.visitor_id || event.ip_hash || ""}`);
+            if (id && !rowsById.has(id)) rowsById.set(id, event);
+          }
+          if (rowsById.size >= limit) break;
         }
-      }));
-      for (const event of batch) {
-        if (event && typeof event === "object") rows.push(event);
-        if (rows.length >= limit) break;
-      }
-      if (rows.length >= limit || !listed || !listed.truncated || !listed.cursor) break;
-      cursor = listed.cursor;
-    } while (rows.length < limit);
-    if (rows.length >= limit) break;
+        if (rowsById.size >= limit || !listed || !listed.truncated || !listed.cursor) break;
+        cursor = listed.cursor;
+      } while (rowsById.size < limit);
+      if (rowsById.size >= limit) break;
+    }
+    if (rowsById.size >= limit) break;
   }
-  return rows.sort((a, b) => String(b.ts || "").localeCompare(String(a.ts || "")));
+  return [...rowsById.values()].sort((a, b) => String(b.ts || "").localeCompare(String(a.ts || "")));
 }
 
 function analyticsEventVisitorKey(event) {
@@ -5780,7 +5882,7 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
   try {
     const adminUser = await requireOperationsUser(request, env);
     const isSuper = isSuperAccount(adminUser);
-    const [userRows, entitlementRows, allFiles, catalog, searchIndex, wechatSchedule, analytics] = await Promise.all([
+    const [userRows, entitlementRows, allFiles, catalog, searchIndex, wechatSchedule, analyticsResult] = await Promise.all([
       isSuper ? listSiteUsers(env) : Promise.resolve([]),
       isSuper ? listEntitlementRows(env) : Promise.resolve([]),
       latestAdminGithubFiles(env),
@@ -5797,8 +5899,14 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
         total_articles: 0,
         batches: [],
       })) : Promise.resolve(null),
-      isSuper ? buildAnalyticsDashboard(env).catch(() => null) : Promise.resolve(null),
+      isSuper
+        ? buildAnalyticsDashboard(env)
+          .then((data) => ({ data, error: "" }))
+          .catch((error) => ({ data: null, error: error && error.message || "Analytics unavailable." }))
+        : Promise.resolve({ data: null, error: "" }),
     ]);
+    const analytics = analyticsResult && analyticsResult.data || null;
+    const analyticsError = analyticsResult && analyticsResult.error || "";
     const files = adminFilesForUser(allFiles, adminUser);
     const entitlementsByEmail = entitlementMap(entitlementRows);
     const accessByEmail = new Map();
@@ -5829,6 +5937,7 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
       daily_picks: dailyPicks,
       wechat_schedule: wechatSchedule || null,
       analytics: analytics || null,
+      analytics_error: analyticsError,
       repo: githubRepo(env),
       ref: githubRef(env),
       generated_at: new Date().toISOString(),
@@ -5858,10 +5967,16 @@ async function handleAccountAdminUserAccess(request, env) {
 
   try {
     const access = await saveAccessGrant(env, email, payload, adminUser);
+    const verifiedAccess = await findAccessGrant(env, email);
+    if (!accessGrantMatchesExpected(verifiedAccess, access)) {
+      throw new Error("Access save verification failed. Please retry.");
+    }
     let user = await findSiteUserByEmail(env, email).catch(() => null);
     if (!user && payload.username) user = await findSiteUserByUsername(env, normalizeUsername(payload.username)).catch(() => null);
     return jsonResponse(request, env, 200, {
       ok: true,
+      verified: true,
+      backup_count: 3,
       user: user ? adminVisibleUser(user, await findEntitlement(env, email).catch(() => null), access) : null,
       access,
     });

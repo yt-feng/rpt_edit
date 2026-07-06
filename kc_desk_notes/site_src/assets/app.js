@@ -949,6 +949,7 @@
     });
     const data = await response.json().catch(() => ({}));
     if (!response.ok) throw new Error(data.detail || "保存权限失败。");
+    if (!data.verified) throw new Error("权限保存后读回校验失败，请重试。");
     const updated = data.user || null;
     if (updated && updated.email) accountAdminUsersByEmail.set(String(updated.email), updated);
     else {
@@ -1623,6 +1624,7 @@
       const dailyPicks = Array.isArray(data.daily_picks) ? data.daily_picks : [];
       const wechatSchedule = data.wechat_schedule && typeof data.wechat_schedule === "object" ? data.wechat_schedule : {};
       const analytics = data.analytics && typeof data.analytics === "object" ? data.analytics : null;
+      const analyticsError = String(data.analytics_error || "");
       accountAdminUsersByEmail = new Map(users.map((user) => [String(user.email || ""), user]));
       accountAdminAccessOptions = data.access_options && typeof data.access_options === "object" ? data.access_options : {};
       const canViewUsers = data.can_view_users !== false;
@@ -1645,8 +1647,12 @@
         renderAdminUserTable(targets);
       }
       if (canViewAnalytics && targets.analytics && targets.analyticsCount) {
-        targets.analyticsCount.textContent = analytics ? `近 ${analytics.range_days || 30} 天 · ${analytics.event_count || 0} events` : "";
-        targets.analytics.innerHTML = renderAccountAdminAnalytics(analytics);
+        targets.analyticsCount.textContent = analytics
+          ? `近 ${analytics.range_days || 30} 天 · ${analytics.event_count || 0} events`
+          : (analyticsError ? "读取异常" : "");
+        targets.analytics.innerHTML = analyticsError
+          ? `<div class="empty-state">访问数据读取失败：${escapeHtml(analyticsError)}</div>`
+          : renderAccountAdminAnalytics(analytics);
       }
       targets.files.innerHTML = files.length
         ? files.map(adminFileRow).join("")
@@ -1839,8 +1845,8 @@
         status.textContent = "正在保存用户权限…";
         try {
           await saveUserAccess(workerUrl, targets);
-          renderAdminUserTable(targets);
-          status.textContent = "用户权限已保存。";
+          await loadAccountAdminSummary(workerUrl, targets);
+          status.textContent = "用户权限已保存，并已读回确认。";
           status.classList.add("ok");
         } catch (error) {
           status.textContent = error.message || "保存权限失败。";
