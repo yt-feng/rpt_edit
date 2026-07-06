@@ -53,10 +53,11 @@ DEFAULT_MAX_CONTENT_BYTES = 18000
 RAW_MARKDOWN_TITLE_MAX_CHARS = 96
 DISPLAY_TITLE_MAX_CHARS = 35
 WECHAT_AUTHOR_MAX_BYTES = 20
-WECHAT_DIGEST_MAX_BYTES = 120
 WECHAT_TITLE_MIN_CHARS = 20
 WECHAT_TITLE_MAX_CHARS = 35
 CONTENT_HEADER_TITLE_MAX_CHARS = 35
+WECHAT_DIGEST_SOFT_CHARS = 42
+WECHAT_DIGEST_MAX_CHARS = 120
 DEFAULT_WECHAT_IMAGE_UPLOAD_DELAY_SECONDS = 3.0
 DEFAULT_WECHAT_ARTICLE_DELAY_SECONDS = 12.0
 DEFAULT_WECHAT_DRAFT_DELAY_SECONDS = 90.0
@@ -679,12 +680,80 @@ def title_from_markdown(markdown: str, fallback: str) -> str:
     return truncate_chars(combined, RAW_MARKDOWN_TITLE_MAX_CHARS)
 
 
-def digest_from_markdown(markdown: str) -> str:
-    for raw in markdown.splitlines():
-        line = strip_markdown_markup(raw)
-        if len(line) >= 40 and not TRAILING_DISCLOSURE_RE.search(line):
-            return truncate_utf8_bytes(line, WECHAT_DIGEST_MAX_BYTES)
-    return ""
+def clean_digest_candidate(text: str) -> str:
+    cleaned = strip_markdown_markup(text)
+    cleaned = cleaned.replace(BRAND, "")
+    cleaned = re.sub(r"^KC桌面(?:[—-]+外资精译)?", "", cleaned)
+    cleaned = re.sub(r"^原创\s*[：:]?\s*[A-Za-z0-9_\-]+", "", cleaned, flags=re.I)
+    cleaned = re.sub(r"^(?:摘要|简介|导读)\s*[：:]\s*", "", cleaned)
+    cleaned = remove_redundant_title_aliases(cleaned)
+    cleaned = strip_title_institution_prefix(cleaned)
+    cleaned = remove_generic_title_noise(cleaned)
+    cleaned = TRAILING_DISCLOSURE_RE.sub("", cleaned)
+    cleaned = normalize_space(cleaned).strip(" ，,。；;：:、-—")
+    if not cleaned or MID_ARTICLE_CTA_RE.search(cleaned) or MID_ARTICLE_CTA_CONTEXT_RE.search(cleaned):
+        return ""
+    if re.match(r"^(?:图|表)\s*\d+[\.:：\s]", cleaned) or cleaned.startswith("来源："):
+        return ""
+    return cleaned
+
+
+def fit_digest_text(text: str) -> str:
+    cleaned = clean_digest_candidate(text)
+    if not cleaned:
+        return ""
+    delimiter_matches = list(re.finditer(r"[，,；;。！？!?]", cleaned))
+    if delimiter_matches:
+        tail = cleaned[delimiter_matches[-1].end() :].strip(" ，,。；;：:、-—")
+        tail_has_predicate = bool(re.search(r"(是|为|在|有|成|变|增|降|缩|涨|跌|创|破|回|需|将|会|已|能|吃掉|分水岭|缩水)", tail))
+        if tail and (len(tail) <= 4 or (len(tail) <= 7 and not tail_has_predicate)):
+            cleaned = cleaned[: delimiter_matches[-1].start()].strip(" ，,。；;：:、-—")
+    if len(cleaned) <= WECHAT_DIGEST_SOFT_CHARS:
+        return cleaned
+
+    soft_candidates: list[str] = []
+    soft_limit = min(WECHAT_DIGEST_SOFT_CHARS, WECHAT_DIGEST_MAX_CHARS)
+    for match in re.finditer(r"[，,；;。！？!?]", cleaned):
+        candidate = cleaned[: match.start()].strip(" ，,。；;：:、-—")
+        if 18 <= len(candidate) <= soft_limit:
+            soft_candidates.append(candidate)
+    if soft_candidates:
+        return soft_candidates[-1]
+
+    if len(cleaned) <= WECHAT_DIGEST_MAX_CHARS:
+        return cleaned
+    return trim_title_complete(cleaned, WECHAT_DIGEST_MAX_CHARS, 18).strip(" ，,。；;：:、-—")
+
+
+def digest_from_article_text(
+    markdown: str,
+    raw_title: str,
+    wechat_title: str,
+    header_title: str,
+) -> str:
+    candidates = [
+        raw_title,
+        f"{strip_title_institution_prefix(wechat_title)}，{header_title}" if header_title else "",
+        wechat_title,
+        header_title,
+    ]
+    for raw in clean_markdown(markdown).splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#") or line.startswith(">"):
+            continue
+        if IMAGE_TOKEN_RE.fullmatch(line) or MD_IMAGE_RE.fullmatch(line):
+            continue
+        candidates.append(line)
+
+    seen: set[str] = set()
+    for candidate in candidates:
+        digest = fit_digest_text(candidate)
+        key = title_fingerprint(digest)
+        if digest and key not in seen and len(digest) >= 12:
+            return digest
+        if key:
+            seen.add(key)
+    return fit_digest_text(wechat_title or header_title or raw_title)
 
 
 def clean_markdown(markdown: str) -> str:
@@ -2010,6 +2079,7 @@ def build_article(
     title_metadata = translated_article_title_metadata(report_dir, markdown, status)
     institution_name = title_metadata["institution_name"]
     source_report_name = title_metadata["source_report_name"]
+    raw_title = title_metadata["raw_title"]
     title = title_metadata["title"]
     wechat_title = title_metadata["wechat_title"]
     header_title = title_metadata["header_title"]
@@ -2121,12 +2191,13 @@ def build_article(
             f"Compressed article {index}: kept {fitted_image_count}/{len(uploaded_images)} body images "
             f"to fit WeChat content limit."
         )
+    digest = digest_from_article_text(markdown, raw_title, wechat_title, header_title)
 
     article: dict[str, Any] = {
         "article_type": "news",
         "title": wechat_title,
         "author": truncate_utf8_bytes(args.author, WECHAT_AUTHOR_MAX_BYTES),
-        "digest": "",
+        "digest": digest,
         "content": content,
         "thumb_media_id": thumb_media_id,
         "need_open_comment": 0,
@@ -2143,7 +2214,7 @@ def build_article(
         "title": title,
         "wechat_title": wechat_title,
         "header_title": header_title,
-        "digest": digest_from_markdown(markdown),
+        "digest": digest,
         "institution_name": institution_name,
         "source_report_name": source_report_name,
         "article": article,
@@ -2490,6 +2561,7 @@ def main() -> int:
                 "title": item["title"],
                 "wechat_title": item["wechat_title"],
                 "header_title": item.get("header_title", ""),
+                "digest": item.get("digest", ""),
                 "institution_name": item["institution_name"],
                 "source_report_name": item["source_report_name"],
                 "report_dir": item["report_dir"],
