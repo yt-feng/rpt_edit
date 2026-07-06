@@ -63,8 +63,10 @@ jobs:
 
       - name: Pull latest main
         run: |
-          git fetch --depth=1 origin main
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git fetch --no-tags --prune --depth=1 origin +refs/heads/main:refs/remotes/origin/main
           git reset --hard origin/main
+          git clean -fdx
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -150,8 +152,10 @@ jobs:
 
       - name: Pull latest generated ARK articles
         run: |
-          git fetch --depth=1 origin main
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git fetch --no-tags --prune --depth=1 origin +refs/heads/main:refs/remotes/origin/main
           git reset --hard origin/main
+          git clean -fdx
 
       - name: Set up Python
         uses: actions/setup-python@v5
