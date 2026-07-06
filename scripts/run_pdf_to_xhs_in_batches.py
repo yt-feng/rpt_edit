@@ -214,8 +214,8 @@ def main() -> int:
     parser.add_argument(
         "--community-cta",
         default=(
-            "更多国际信源汇编&评论，扫码交流，每日更新，汇总国际主流叙事&数据&图表，观测边际变化。"
-            "汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询、智库等朋友，期待交流"
+            "更多完整报告、中文摘要、KC评论和图表合集，会放进每日国际信源汇编。"
+            "适合快速扫当天主流叙事，也方便后续追问和横向比较。"
         ),
     )
     parser.add_argument("--no-wechat-title-refine", dest="wechat_title_refine", action="store_false",

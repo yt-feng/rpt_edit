@@ -445,9 +445,9 @@ def title_score(title: str, institution_name: str = "", source_keywords: list[st
     source_keywords = source_keywords or []
     cleaned = clean_wechat_title(title, institution_name, max_chars=80)
     score = 0
-    if 16 <= len(cleaned) <= 38:
+    if 20 <= len(cleaned) <= 35:
         score += 5
-    elif 10 <= len(cleaned) <= 46:
+    elif 16 <= len(cleaned) <= 40:
         score += 2
     else:
         score -= 4

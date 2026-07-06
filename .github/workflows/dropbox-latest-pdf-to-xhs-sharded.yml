@@ -59,7 +59,7 @@ on:
       community_cta:
         description: "CTA style hint; DeepSeek rewrites it naturally for each article"
         required: true
-        default: "更多国际信源汇编&评论，扫码交流，每日更新，汇总国际主流叙事&数据&图表，观测边际变化。汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询、智库等朋友，期待交流"
+        default: "更多完整报告、中文摘要、KC评论和图表合集，会放进每日国际信源汇编。适合快速扫当天主流叙事，也方便后续追问和横向比较。"
       podcast_minutes:
         description: "Target length for Chinese and English podcast scripts. Audio/video are disabled here."
         required: true
@@ -162,7 +162,7 @@ jobs:
           echo "max_total_reports=${{ github.event.inputs.max_total_reports || '0' }}" >> "$GITHUB_OUTPUT"
           echo "report_selection_mode=${{ github.event.inputs.report_selection_mode || 'all' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_length=${{ github.event.inputs.wechat_length || '3000' }}" >> "$GITHUB_OUTPUT"
-          echo "community_cta=${{ github.event.inputs.community_cta || '更多国际信源汇编&评论，扫码交流，每日更新，汇总国际主流叙事&数据&图表，观测边际变化。汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询、智库等朋友，期待交流' }}" >> "$GITHUB_OUTPUT"
+          echo "community_cta=${{ github.event.inputs.community_cta || '更多完整报告、中文摘要、KC评论和图表合集，会放进每日国际信源汇编。适合快速扫当天主流叙事，也方便后续追问和横向比较。' }}" >> "$GITHUB_OUTPUT"
           echo "podcast_minutes=${{ github.event.inputs.podcast_minutes || '5' }}" >> "$GITHUB_OUTPUT"
           echo "translated_report_count=${{ github.event.inputs.translated_report_count || 'all' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_draft_upload=${{ github.event.inputs.wechat_draft_upload || 'true' }}" >> "$GITHUB_OUTPUT"

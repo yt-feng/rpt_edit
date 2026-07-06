@@ -42,24 +42,31 @@ BRAND = "KC桌面——外资精译"
 AUTHOR = "KC桌面"
 BOTTOM_DISCLAIMER = "For informational purposes only. Not investment advice."
 DEFAULT_BODY_HOOK = (
-    "更多国际信源汇编&评论，扫码交流，每日更新，汇总国际主流叙事&数据&图表，观测边际变化。"
-    "汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询、智库等朋友，期待交流"
+    "更多完整报告、中文摘要、KC评论和图表合集，会放进每日国际信源汇编。"
+    "适合快速扫当天主流叙事，也方便后续追问和横向比较。"
 )
 DEFAULT_BODY_VISIBLE_CHARS = 2000
 DEFAULT_MIN_INLINE_IMAGES = 3
 DEFAULT_ARTICLES_PER_DRAFT = 8
 DEFAULT_MAX_CONTENT_CHARS = 19500
 DEFAULT_MAX_CONTENT_BYTES = 18000
-DISPLAY_TITLE_MAX_CHARS = 64
+RAW_MARKDOWN_TITLE_MAX_CHARS = 96
+DISPLAY_TITLE_MAX_CHARS = 35
 WECHAT_AUTHOR_MAX_BYTES = 20
 WECHAT_DIGEST_MAX_BYTES = 120
-WECHAT_TITLE_MAX_CHARS = 64
+WECHAT_TITLE_MIN_CHARS = 20
+WECHAT_TITLE_MAX_CHARS = 35
+CONTENT_HEADER_TITLE_MAX_CHARS = 35
+DEFAULT_WECHAT_IMAGE_UPLOAD_DELAY_SECONDS = 3.0
+DEFAULT_WECHAT_ARTICLE_DELAY_SECONDS = 12.0
+DEFAULT_WECHAT_DRAFT_DELAY_SECONDS = 90.0
+DEFAULT_WECHAT_DRAFT_VERIFY_DELAY_SECONDS = 8.0
 WECHAT_UPLOADIMG_MAX_BYTES = 1024 * 1024
 WECHAT_UPLOADIMG_TARGET_BYTES = 930 * 1024
 DEFAULT_TRAILING_IMAGE = "prompts/zsxq_img.jpg"
 # Shown at the very end of every article, after the 星球 QR image.
 DEFAULT_AFTER_IMAGE_NOTE = (
-    "关注后可以加微信从朋友圈查看更新&免费领取原文报告；经常读这类国际信源，也可以把「KC桌面」设为星标。"
+    "经常追国际信源的话，可以把「KC桌面」设为星标，方便回来查当天汇编。"
 )
 POLLINATIONS_BASE_URL = "https://image.pollinations.ai/prompt/"
 WECHAT_COVER_WIDTH = 1200
@@ -88,6 +95,17 @@ WECHAT_TITLE_CHINA_POLITICAL_RE = re.compile(
     r"(政治|政策|监管|管控|管制|供给侧|改革|政府|国务院|中央|官方|当局|审查|国安|"
     r"关税|贸易战|出口管制|资本管制|制裁|禁令|politic|policy|regulation|regulatory|"
     r"government|authority|official|censorship|tariff|trade war|export control|sanction|\bban\b)",
+    re.I,
+)
+MID_ARTICLE_CTA_RE = re.compile(
+    r"(扫码|社群|知识星球|星球|加微信|朋友圈|设为星标|设置星标|每日汇编|每天会把|"
+    r"每天我会|国际信源汇编|完整报告与\s*KC评论|完整报告和\s*KC评论|更多国际信源|"
+    r"喂给\s*AI|人工快速扫|市场\s*dynamics|图表合集|加入.*讨论|继续拆完整报告)",
+    re.I,
+)
+MID_ARTICLE_CTA_CONTEXT_RE = re.compile(
+    r"(单篇(?:文章|报告)|每天|每日|汇编|完整报告|KC评论|图表合集).{0,24}"
+    r"(AI|汇编|社群|扫码|星球|图表合集|市场主线|横向比较|继续追问)",
     re.I,
 )
 INSTITUTION_KEY_TO_CN = {
@@ -164,6 +182,13 @@ class WeChatError(RuntimeError):
 
 def log(message: str) -> None:
     print(message, flush=True)
+
+
+def pacing_sleep(label: str, seconds: float, dry_run: bool = False) -> None:
+    if dry_run or seconds <= 0:
+        return
+    log(f"{label}: pacing sleep {seconds:.1f}s")
+    time.sleep(seconds)
 
 
 def normalize_space(text: str) -> str:
@@ -327,6 +352,141 @@ def draft_title_key(title: str) -> str:
     return key
 
 
+def strip_title_institution_prefix(title: str) -> str:
+    cleaned = remove_redundant_title_aliases(title)
+    if "：" not in cleaned:
+        return cleaned
+    head, tail = cleaned.split("：", 1)
+    if len(head) <= 12:
+        return tail.strip(" ，,。；;：:")
+    return cleaned
+
+
+def title_fingerprint(title: str) -> str:
+    cleaned = strip_markdown_markup(title)
+    cleaned = remove_redundant_title_aliases(cleaned)
+    cleaned = re.sub(r"^(?:标题|微信标题|公众号标题)\s*[：:]\s*", "", cleaned)
+    cleaned = re.sub(r"[\s，,。；;：:、!！?？\-—“”\"'《》〈〉（）()【】\[\]]+", "", cleaned)
+    return cleaned.lower()
+
+
+def title_fingerprints(*titles: str) -> set[str]:
+    keys: set[str] = set()
+    for title in titles:
+        for value in [title, strip_title_institution_prefix(title)]:
+            key = title_fingerprint(value)
+            if len(key) >= 8:
+                keys.add(key)
+    return keys
+
+
+def text_is_duplicate_title(text: str, reference_titles: set[str]) -> bool:
+    key = title_fingerprint(text)
+    if len(key) < 8:
+        return False
+    for ref in reference_titles:
+        overlap = min(len(key), len(ref))
+        if overlap >= 10 and (key == ref or key in ref or ref in key):
+            return True
+    return False
+
+
+def trim_title_complete(text: str, max_chars: int, min_chars: int = 0) -> str:
+    cleaned = normalize_space(text).strip(" ，,。；;：:、-—")
+    if len(cleaned) <= max_chars:
+        return cleaned
+
+    candidates: list[str] = []
+    for match in re.finditer(r"[，,；;。！？!?]", cleaned):
+        candidate = cleaned[: match.start()].strip(" ，,。；;：:、-—")
+        if max(min_chars, 8) <= len(candidate) <= max_chars:
+            candidates.append(candidate)
+    if candidates:
+        return candidates[-1]
+
+    candidate = cleaned[:max_chars].strip(" ，,。；;：:、-—")
+    candidate = re.sub(r"(?:以及|或者|因为|如果|但是|只是|而是|正在|成为|显示|指出|包括|对于|通过|需要|不是|还是|可以|已经|将|的|和|与|及|在|对|为|从|向|到|但|而)$", "", candidate)
+    return candidate.strip(" ，,。；;：:、-—")
+
+
+def trim_title_primary_clause(text: str, max_chars: int, min_chars: int = 0) -> str:
+    cleaned = normalize_space(text).strip(" ，,。；;：:、-—")
+    if len(cleaned) <= max_chars:
+        return cleaned
+    for match in re.finditer(r"[，,；;。！？!?]", cleaned):
+        candidate = cleaned[: match.start()].strip(" ，,。；;：:、-—")
+        if max(min_chars, 8) <= len(candidate) <= max_chars:
+            return candidate
+    return trim_title_complete(cleaned, max_chars, min_chars)
+
+
+def remove_generic_title_noise(title: str) -> str:
+    cleaned = normalize_space(title)
+    candidate = re.sub(r"(?:[，,、]\s*)?公司情况更新(?:\s*[，,、])?", "，", cleaned)
+    candidate = re.sub(r"\s*([：:，,、])\s*", r"\1", candidate)
+    candidate = re.sub(r"[，,、]{2,}", "，", candidate)
+    candidate = re.sub(r"：[,，、]+", "：", candidate).strip(" ，,、：:")
+    if len(strip_title_institution_prefix(candidate)) >= 6:
+        return candidate
+    return cleaned
+
+
+def fit_wechat_title(title: str, institution_name: str = "") -> str:
+    cleaned = remove_redundant_title_aliases(title)
+    cleaned = remove_generic_title_noise(cleaned)
+    cleaned, _stock_changes = sanitize_wechat_stock_language(cleaned)
+    cleaned = optimizer_clean_wechat_title(
+        cleaned,
+        institution_name,
+        max_chars=max(RAW_MARKDOWN_TITLE_MAX_CHARS, WECHAT_TITLE_MAX_CHARS),
+    )
+    cleaned = remove_generic_title_noise(cleaned.replace("…", ""))
+    cleaned = limit_title_colons(cleaned)
+    if len(cleaned) <= WECHAT_TITLE_MAX_CHARS:
+        return cleaned.strip("：: -—")
+
+    prefix = ""
+    tail = cleaned
+    if "：" in cleaned:
+        head, rest = cleaned.split("：", 1)
+        if len(head) <= 12:
+            prefix = f"{head}："
+            tail = rest
+
+    if prefix and len(prefix) < WECHAT_TITLE_MAX_CHARS - 8:
+        tail_budget = WECHAT_TITLE_MAX_CHARS - len(prefix)
+        fitted_tail = trim_title_primary_clause(tail, tail_budget, max(8, WECHAT_TITLE_MIN_CHARS - len(prefix)))
+        if fitted_tail:
+            return f"{prefix}{fitted_tail}".strip("：: -—")
+    return trim_title_primary_clause(cleaned, WECHAT_TITLE_MAX_CHARS, WECHAT_TITLE_MIN_CHARS).strip("：: -—")
+
+
+def content_header_title(raw_title: str, wechat_title: str) -> str:
+    raw_clean = remove_redundant_title_aliases(raw_title).replace("…", "")
+    body = strip_title_institution_prefix(raw_clean)
+    outer_body = strip_title_institution_prefix(wechat_title)
+    refs = title_fingerprints(wechat_title, outer_body)
+
+    clauses = [
+        item.strip(" ，,。；;：:、-—")
+        for item in re.split(r"[，,；;。！？!?]+", body)
+        if item.strip(" ，,。；;：:、-—")
+    ]
+    if len(clauses) >= 2:
+        for start in range(1, len(clauses)):
+            candidate = "，".join(clauses[start:])
+            if 10 <= len(candidate) <= CONTENT_HEADER_TITLE_MAX_CHARS and not text_is_duplicate_title(candidate, refs):
+                return candidate
+            fitted = trim_title_complete(candidate, CONTENT_HEADER_TITLE_MAX_CHARS, 10)
+            if 10 <= len(fitted) <= CONTENT_HEADER_TITLE_MAX_CHARS and not text_is_duplicate_title(fitted, refs):
+                return fitted
+
+    fitted_body = trim_title_complete(body, CONTENT_HEADER_TITLE_MAX_CHARS, 10)
+    if fitted_body and not text_is_duplicate_title(fitted_body, refs):
+        return fitted_body
+    return trim_title_complete(strip_title_institution_prefix(wechat_title), CONTENT_HEADER_TITLE_MAX_CHARS, 8) or wechat_title
+
+
 def sharpen_wechat_title(title: str, institution_name: str = "") -> str:
     cleaned = remove_redundant_title_aliases(strip_markdown_markup(title))
     cleaned = re.sub(r"^(?:标题|微信标题)\s*[：:]\s*", "", cleaned)
@@ -338,13 +498,14 @@ def sharpen_wechat_title(title: str, institution_name: str = "") -> str:
         cleaned = strip_unexpected_leading_institution_prefix(cleaned, institution_name)
         cleaned = ensure_title_has_institution(cleaned, canonicalize_institution_title_name(institution_name))
     source_keywords = extract_wechat_keywords(cleaned, max_keywords=8)
-    return choose_best_wechat_title(
+    selected = choose_best_wechat_title(
         [cleaned, optimizer_clean_wechat_title(cleaned, institution_name, max_chars=WECHAT_TITLE_MAX_CHARS)],
         fallback=cleaned,
         institution_name=institution_name,
         source_keywords=source_keywords,
-        max_chars=WECHAT_TITLE_MAX_CHARS,
+        max_chars=max(RAW_MARKDOWN_TITLE_MAX_CHARS, WECHAT_TITLE_MAX_CHARS),
     )
+    return fit_wechat_title(selected, institution_name)
 
 
 def truncate_chars(text: str, max_chars: int) -> str:
@@ -398,7 +559,14 @@ def truncate_visible_text(text: str, max_chars: int, suffix: str = "…") -> str
             break
         kept.append(char)
         used += 1
-    return normalize_space("".join(kept)).rstrip("，,。；;：:") + suffix
+    candidate = normalize_space("".join(kept)).rstrip("，,。；;：:")
+    for pattern in [r"[。！？!?；;]", r"[，,]"]:
+        positions = [match.end() for match in re.finditer(pattern, candidate)]
+        positions = [pos for pos in positions if pos >= min(36, max(18, budget // 2))]
+        if positions:
+            return candidate[: positions[-1]].strip()
+    candidate = re.sub(r"(?:以及|或者|因为|如果|但是|只是|而是|正在|成为|显示|指出|包括|对于|通过|需要|不是|还是|可以|已经|将|的|和|与|及|在|对|为|从|向|到|但|而)$", "", candidate)
+    return candidate.strip("，,。；;：:") + ("。" if candidate else "")
 
 
 def latest_date_dir(root: Path) -> Path:
@@ -504,11 +672,11 @@ def title_from_markdown(markdown: str, fallback: str) -> str:
         if len(headings) >= 2:
             break
     if not headings:
-        return truncate_chars(fallback, DISPLAY_TITLE_MAX_CHARS)
+        return truncate_chars(fallback, RAW_MARKDOWN_TITLE_MAX_CHARS)
     if len(headings) == 1:
-        return truncate_chars(headings[0], DISPLAY_TITLE_MAX_CHARS)
+        return truncate_chars(headings[0], RAW_MARKDOWN_TITLE_MAX_CHARS)
     combined = f"{headings[0]}：{headings[1]}"
-    return truncate_chars(combined, DISPLAY_TITLE_MAX_CHARS)
+    return truncate_chars(combined, RAW_MARKDOWN_TITLE_MAX_CHARS)
 
 
 def digest_from_markdown(markdown: str) -> str:
@@ -538,6 +706,26 @@ def clean_markdown(markdown: str) -> str:
         cleaned.append(line)
     text, _stock_changes = sanitize_wechat_stock_language("\n".join(cleaned).strip())
     return text
+
+
+def is_mid_article_cta_text(text: str) -> bool:
+    cleaned = normalize_space(strip_markdown_markup(text))
+    if not cleaned:
+        return False
+    return bool(MID_ARTICLE_CTA_RE.search(cleaned) or MID_ARTICLE_CTA_CONTEXT_RE.search(cleaned))
+
+
+def strip_mid_article_cta_sentences(text: str) -> str:
+    cleaned = normalize_space(text)
+    if not is_mid_article_cta_text(cleaned):
+        return cleaned
+    sentences = re.findall(r"[^。！？!?；;]+[。！？!?；;]?", cleaned)
+    kept = [
+        sentence.strip()
+        for sentence in sentences
+        if sentence.strip() and not is_mid_article_cta_text(sentence)
+    ]
+    return normalize_space("".join(kept))
 
 
 def highlight_terms_pattern(terms: list[str]) -> re.Pattern[str]:
@@ -815,19 +1003,6 @@ def keyword_bridge_html(keywords: list[str]) -> str:
     )
 
 
-def mid_article_cta_html(hook_text: str, keywords: list[str]) -> str:
-    keyword_hint = "、".join(keywords[:2])
-    lead = f"沿着「{html.escape(keyword_hint)}」继续看，" if keyword_hint else "继续看原文，"
-    return (
-        '<section style="margin:18px 0;padding:12px 14px;background:#F5F8FC;'
-        'border-left:3px solid #2E6FB7;color:#26364A;font-size:15px;line-height:1.7;">'
-        f"{lead}真正值得读的是原文里的"
-        '<strong style="color:#2457A7;">图表、假设和验证路径</strong>。'
-        "完整报告和KC评论会放进每日汇编，方便追问和横向比较。"
-        "</section>"
-    )
-
-
 def referenced_markdown_image_keys(markdown: str) -> set[str]:
     keys: set[str] = set()
     for match in IMAGE_TOKEN_RE.finditer(markdown or ""):
@@ -890,6 +1065,7 @@ def render_fitted_wechat_html(
     max_visible_chars: int,
     max_content_chars: int,
     max_content_bytes: int,
+    outer_title: str = "",
 ) -> tuple[str, int, int, int]:
     image_limits = [len(uploaded_images)]
     for value in [2, 1, 0]:
@@ -934,6 +1110,7 @@ def render_fitted_wechat_html(
                 source_report_name,
                 visible_budget,
                 max_content_chars,
+                outer_title,
             )
             last_content = content
             last_visible = visible_text_chars
@@ -961,12 +1138,15 @@ def markdown_to_wechat_html(
     source_report_name: str,
     max_visible_chars: int,
     max_chars: int,
+    outer_title: str = "",
 ) -> tuple[str, int, int]:
     title, _title_stock_changes = sanitize_wechat_stock_language(title)
-    title = optimizer_clean_wechat_title(title, "", max_chars=WECHAT_TITLE_MAX_CHARS)
+    title = optimizer_clean_wechat_title(title, "", max_chars=CONTENT_HEADER_TITLE_MAX_CHARS)
+    title = trim_title_complete(title.replace("…", ""), CONTENT_HEADER_TITLE_MAX_CHARS, 8)
     if len(title) < 6:
         title = "公司情况更新"
-    keyword_terms = extract_wechat_keywords(title, f"{source_report_name}\n{markdown}", max_keywords=8)
+    duplicate_title_refs = title_fingerprints(title, outer_title)
+    keyword_terms = extract_wechat_keywords(f"{outer_title} {title}", f"{source_report_name}\n{markdown}", max_keywords=8)
     parts: list[str] = [brand_header_html(brand, title)]
     bridge = keyword_bridge_html(keyword_terms)
     if bridge:
@@ -986,7 +1166,6 @@ def markdown_to_wechat_html(
     body_budget = max(0, max_visible_chars - visible_char_count(hook_text))
     placement_budget = min(body_budget, max(visible_char_count(clean_markdown(markdown)), 1)) if body_budget else 0
     text_used = 0
-    mid_cta_inserted = False
 
     def remaining_chars() -> int:
         return max(0, body_budget - text_used)
@@ -1027,24 +1206,24 @@ def markdown_to_wechat_html(
             rendered_image_urls.add(url)
             floating_image_index += 1
 
-    def maybe_insert_mid_cta(force: bool = False) -> None:
-        nonlocal mid_cta_inserted
-        if mid_cta_inserted or not hook_text:
-            return
-        threshold = placement_budget * 0.36 if placement_budget else 0
-        if force or body_budget <= 0 or text_used >= threshold:
-            parts.append(mid_article_cta_html(hook_text, keyword_terms))
-            mid_cta_inserted = True
+    def should_skip_body_text(text: str) -> bool:
+        plain = strip_markdown_markup(text)
+        if is_mid_article_cta_text(plain):
+            return True
+        return visible_char_count(plain) <= 90 and text_is_duplicate_title(plain, duplicate_title_refs)
 
     def flush_paragraph() -> None:
         nonlocal paragraph
         if paragraph:
-            fitted = fit_text(" ".join(paragraph))
+            paragraph_text = strip_mid_article_cta_sentences(" ".join(paragraph))
+            if should_skip_body_text(paragraph_text):
+                paragraph = []
+                return
+            fitted = fit_text(paragraph_text)
             rendered = paragraph_html(fitted)
             if rendered:
                 parts.append(rendered)
                 maybe_insert_floating_image()
-                maybe_insert_mid_cta()
             paragraph = []
 
     def flush_list() -> None:
@@ -1052,6 +1231,9 @@ def markdown_to_wechat_html(
         if list_items:
             rendered_items = []
             for item in list_items:
+                item = strip_mid_article_cta_sentences(item)
+                if should_skip_body_text(item):
+                    continue
                 fitted = fit_text(item)
                 if fitted:
                     rendered_items.append(fitted)
@@ -1061,7 +1243,6 @@ def markdown_to_wechat_html(
                 body = "".join(f"<li>{inline_markdown(item, context='list')}</li>" for item in rendered_items)
                 parts.append(f'<ul style="margin:10px 0 12px;padding-left:22px;line-height:1.7;color:#202631;font-size:16px;">{body}</ul>')
                 maybe_insert_floating_image()
-                maybe_insert_mid_cta()
             list_items = []
 
     for raw in clean_markdown(markdown).splitlines():
@@ -1075,11 +1256,13 @@ def markdown_to_wechat_html(
             flush_paragraph()
             flush_list()
             quote = normalize_space(re.sub(r"^>\s?", "", line))
+            quote = strip_mid_article_cta_sentences(quote)
+            if should_skip_body_text(quote):
+                continue
             fitted = fit_text(quote)
             if fitted:
                 parts.append(kc_comment_html(fitted))
                 maybe_insert_floating_image()
-                maybe_insert_mid_cta(force=True)
             continue
 
         token_match = IMAGE_TOKEN_RE.fullmatch(line)
@@ -1111,6 +1294,8 @@ def markdown_to_wechat_html(
         if heading:
             flush_paragraph()
             flush_list()
+            if should_skip_body_text(heading.group(2)):
+                continue
             fitted = fit_text(heading.group(2))
             if fitted:
                 parts.append(heading_html(len(heading.group(1)), fitted))
@@ -1120,14 +1305,19 @@ def markdown_to_wechat_html(
         bullet = re.match(r"^[-*]\s+(.+)$", line)
         if bullet:
             flush_paragraph()
-            list_items.append(bullet.group(1))
+            bullet_text = strip_mid_article_cta_sentences(bullet.group(1))
+            if not should_skip_body_text(bullet_text):
+                list_items.append(bullet_text)
             continue
 
+        if should_skip_body_text(line):
+            flush_paragraph()
+            flush_list()
+            continue
         paragraph.append(line)
 
     flush_paragraph()
     flush_list()
-    maybe_insert_mid_cta(force=True)
     while floating_image_index < len(floating_images):
         maybe_insert_floating_image(force=True)
     supplemental_images = [
@@ -1785,15 +1975,19 @@ def translated_article_title_metadata(
         fallback_title = str(status.get("title") or fallback_title)
     institution_name = infer_institution_name(report_dir.name, status, markdown[:1200])
     source_report_name = source_report_name_from_translated_dir(report_dir, status)
+    raw_title = title_from_markdown(markdown, fallback_title)
     title = sharpen_wechat_title(
-        ensure_title_has_institution(title_from_markdown(markdown, fallback_title), institution_name),
+        ensure_title_has_institution(raw_title, institution_name),
         institution_name,
     )
-    wechat_title = truncate_chars(title, WECHAT_TITLE_MAX_CHARS)
+    wechat_title = fit_wechat_title(title, institution_name)
+    header_title = content_header_title(raw_title, wechat_title)
     return {
         "report_dir": str(report_dir),
+        "raw_title": raw_title,
         "title": title,
         "wechat_title": wechat_title,
+        "header_title": header_title,
         "institution_name": institution_name,
         "source_report_name": source_report_name,
     }
@@ -1818,6 +2012,7 @@ def build_article(
     source_report_name = title_metadata["source_report_name"]
     title = title_metadata["title"]
     wechat_title = title_metadata["wechat_title"]
+    header_title = title_metadata["header_title"]
     figure_paths = load_figure_paths(report_dir)
 
     tokens = []
@@ -1841,6 +2036,7 @@ def build_article(
                 raise RuntimeError("session and access_token are required outside dry-run")
             upload_path = prepare_article_upload_image(path, output_dir, f"article_{index:02d}_{token.strip('[]').lower()}")
             image_url = upload_article_image(session, access_token, upload_path, args.timeout)
+            pacing_sleep(f"After uploading inline image {index}:{token}", args.image_upload_delay_seconds, args.dry_run)
         image_urls[token] = image_url
         uploaded_images.append({"token": token, "path": str(upload_path), "url": image_url, "source": "mineru"})
 
@@ -1869,6 +2065,7 @@ def build_article(
             )
             ai_path = str(ai_path_obj)
             image_url = upload_article_image(session, access_token, ai_path_obj, args.timeout)
+            pacing_sleep(f"After uploading AI image {index}:{ai_token}", args.image_upload_delay_seconds, args.dry_run)
         uploaded_images.append(
             {
                 "token": ai_token,
@@ -1897,10 +2094,11 @@ def build_article(
         if session is None or access_token is None:
             raise RuntimeError("session and access_token are required outside dry-run")
         thumb_media_id = upload_cover_material(session, access_token, cover_image, args.timeout)
+        pacing_sleep(f"After uploading cover image {index}", args.image_upload_delay_seconds, args.dry_run)
 
     content, visible_text_chars, body_image_count, fitted_image_count = render_fitted_wechat_html(
         markdown,
-        title,
+        header_title,
         args.brand,
         image_urls,
         uploaded_images,
@@ -1911,6 +2109,7 @@ def build_article(
         args.max_body_chars,
         args.max_content_chars,
         args.max_content_bytes,
+        wechat_title,
     )
     if not content_within_limits(content, args.max_content_chars, args.max_content_bytes):
         raise RuntimeError(
@@ -1943,6 +2142,7 @@ def build_article(
         "translated_markdown": str(translated_path),
         "title": title,
         "wechat_title": wechat_title,
+        "header_title": header_title,
         "digest": digest_from_markdown(markdown),
         "institution_name": institution_name,
         "source_report_name": source_report_name,
@@ -2011,6 +2211,10 @@ def main() -> int:
     parser.add_argument("--body-hook", default=DEFAULT_BODY_HOOK)
     parser.add_argument("--trailing-image", default=DEFAULT_TRAILING_IMAGE)
     parser.add_argument("--content-source-url", default="")
+    parser.add_argument("--image-upload-delay-seconds", type=float, default=DEFAULT_WECHAT_IMAGE_UPLOAD_DELAY_SECONDS)
+    parser.add_argument("--article-delay-seconds", type=float, default=DEFAULT_WECHAT_ARTICLE_DELAY_SECONDS)
+    parser.add_argument("--draft-delay-seconds", type=float, default=DEFAULT_WECHAT_DRAFT_DELAY_SECONDS)
+    parser.add_argument("--draft-verify-delay-seconds", type=float, default=DEFAULT_WECHAT_DRAFT_VERIFY_DELAY_SECONDS)
     parser.add_argument("--wechat-appid", default=os.getenv("WECHAT_MP_APPID", ""))
     parser.add_argument("--wechat-secret", default=os.getenv("WECHAT_MP_APPSECRET", ""))
     parser.add_argument("--timeout", type=int, default=120)
@@ -2029,6 +2233,14 @@ def main() -> int:
         raise ValueError("--min-inline-images must be non-negative")
     if args.max_body_chars < 200:
         raise ValueError("--max-body-chars must be at least 200")
+    for attr in [
+        "image_upload_delay_seconds",
+        "article_delay_seconds",
+        "draft_delay_seconds",
+        "draft_verify_delay_seconds",
+    ]:
+        if getattr(args, attr) < 0:
+            raise ValueError(f"--{attr.replace('_', '-')} must be non-negative")
     if not args.dry_run and (not args.wechat_appid or not args.wechat_secret):
         raise ValueError("WECHAT_MP_APPID and WECHAT_MP_APPSECRET are required unless --dry-run is set")
 
@@ -2131,6 +2343,7 @@ def main() -> int:
                 raise RuntimeError("session and access_token are required outside dry-run")
             trailing_image_url = upload_article_image(session, access_token, trailing_image_path, args.timeout)
             log(f"Uploaded trailing image: {trailing_image_path}")
+            pacing_sleep("After uploading trailing image", args.image_upload_delay_seconds, args.dry_run)
 
     built_articles = []
     for idx, report_dir in enumerate(selected, 1):
@@ -2143,6 +2356,8 @@ def main() -> int:
             f"{article_item['wechat_title']} "
             f"(body_images={article_item['body_image_count']}, ai_images={article_item['ai_image_count']})"
         )
+        if idx < len(selected):
+            pacing_sleep(f"After building WeChat article {idx}/{len(selected)}", args.article_delay_seconds, args.dry_run)
 
     drafts = []
 
@@ -2184,6 +2399,7 @@ def main() -> int:
                 reused_existing = False
                 try:
                     log(f"Creating WeChat draft {draft_index}")
+                    pacing_sleep(f"Before creating WeChat draft {draft_index}", args.draft_delay_seconds, args.dry_run)
                     media_id = add_draft(session, access_token, articles, args.timeout)
                 except WeChatError as exc:
                     if is_cover_crop_error(exc):
@@ -2202,6 +2418,7 @@ def main() -> int:
                             article["thumb_media_id"] = safe_thumb_media_id
                             article["pic_crop_235_1"] = WECHAT_COVER_CROP_235_1
                             article["pic_crop_1_1"] = WECHAT_COVER_CROP_1_1
+                        pacing_sleep(f"Before retrying WeChat draft {draft_index}", args.draft_delay_seconds, args.dry_run)
                         media_id = add_draft(session, access_token, articles, args.timeout)
                     elif is_article_size_error(exc) and len(group) > 1:
                         split_at = max(1, len(group) // 2)
@@ -2214,6 +2431,7 @@ def main() -> int:
                         return
                     raise
             log(f"Verifying WeChat draft {draft_index}: media_id={media_id}")
+            pacing_sleep(f"Before verifying WeChat draft {draft_index}", args.draft_verify_delay_seconds, args.dry_run)
             draft_get = verify_draft_get(session, access_token, media_id, args.timeout, len(articles))
             publish_id = submit_publish(session, access_token, media_id, args.timeout) if args.publish else ""
 
@@ -2261,12 +2479,17 @@ def main() -> int:
         "min_inline_images": args.min_inline_images,
         "max_inline_images": args.max_inline_images,
         "body_hook": args.body_hook,
+        "image_upload_delay_seconds": args.image_upload_delay_seconds,
+        "article_delay_seconds": args.article_delay_seconds,
+        "draft_delay_seconds": args.draft_delay_seconds,
+        "draft_verify_delay_seconds": args.draft_verify_delay_seconds,
         "trailing_image": str(trailing_image_path) if trailing_image_path else "",
         "drafts": drafts,
         "articles": [
             {
                 "title": item["title"],
                 "wechat_title": item["wechat_title"],
+                "header_title": item.get("header_title", ""),
                 "institution_name": item["institution_name"],
                 "source_report_name": item["source_report_name"],
                 "report_dir": item["report_dir"],
