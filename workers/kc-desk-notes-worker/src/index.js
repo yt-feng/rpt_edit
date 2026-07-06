@@ -130,6 +130,9 @@ const THINKTANK_ARCHIVE_PATH = "institution_feeds/institution_pdf_archive.jsonl"
 const THINKTANK_WECHAT_DRAFT_ROOT = "wechat_drafts/institutions";
 const THINKTANK_SEARCH_PAGE_SIZE = 30;
 const THINKTANK_WECHAT_DATE_LIMIT = 45;
+const THINKTANK_WARM_PDF_LIMIT = 90;
+const THINKTANK_SEARCH_WARM_LIMIT = 8;
+const THINKTANK_WARM_CONCURRENCY = 3;
 const THINKTANK_R2_PREFIX = "thinktank";
 const THINKTANK_UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 " +
@@ -7113,32 +7116,38 @@ function scoreThinkTankItem(item, query, terms) {
   return score || (compact && haystack.includes(compact) ? 2 : 0);
 }
 
-async function thinkTankSearchPayload(env, query, page) {
+async function thinkTankSearchPayload(env, query, page, ctx = null) {
   const [rows, wechatTitles] = await Promise.all([
     thinkTankArchiveRows(env),
     thinkTankWechatTitleMap(env),
   ]);
   const terms = searchMirrorTerms(query);
   const scored = rows
-    .map((row) => slimThinkTankItem(row, wechatTitles))
-    .filter((item) => item.id && item.title)
-    .map((item) => ({ item, score: terms.length ? scoreThinkTankItem(item, query, terms) : 1 }))
+    .map((row) => ({ row, item: slimThinkTankItem(row, wechatTitles) }))
+    .filter((entry) => entry.item.id && entry.item.title)
+    .map((entry) => ({
+      ...entry,
+      score: terms.length ? scoreThinkTankItem(entry.item, query, terms) : 1,
+    }))
     .filter((entry) => entry.score > 0)
     .sort((a, b) => {
       if (b.score !== a.score) return b.score - a.score;
       return dateScore(b.item && b.item.date) - dateScore(a.item && a.item.date);
-    })
-    .map((entry) => entry.item);
+    });
   const start = Math.max(0, (page - 1) * THINKTANK_SEARCH_PAGE_SIZE);
+  const pageEntries = scored.slice(start, start + THINKTANK_SEARCH_PAGE_SIZE);
+  if (ctx && pageEntries.length) {
+    ctx.waitUntil(warmThinkTankRows(env, pageEntries.map((entry) => entry.row), THINKTANK_SEARCH_WARM_LIMIT).catch(() => null));
+  }
   return {
-    items: scored.slice(start, start + THINKTANK_SEARCH_PAGE_SIZE),
+    items: pageEntries.map((entry) => entry.item),
     page,
     total: scored.length,
     source: THINKTANK_SOURCE,
   };
 }
 
-async function handleThinkTankSearch(request, env) {
+async function handleThinkTankSearch(request, env, ctx = null) {
   const url = new URL(request.url);
   const query = String(url.searchParams.get("q") || "").trim();
   const page = Math.max(1, Number(url.searchParams.get("page") || "1") || 1);
@@ -7149,7 +7158,7 @@ async function handleThinkTankSearch(request, env) {
     page,
     total: 0,
     source: THINKTANK_SOURCE,
-  }, () => thinkTankSearchPayload(env, query, page), null, { skipFreshCache: true });
+  }, () => thinkTankSearchPayload(env, query, page, ctx), null, { skipFreshCache: true });
 }
 
 async function findThinkTankRow(env, id) {
@@ -7163,6 +7172,75 @@ function thinkTankObjectKey(id) {
   const parsed = parseThinkTankId(id);
   const slug = parsed ? parsed.slug : String(id || "").replace(/[^A-Za-z0-9._-]+/g, "-");
   return `${THINKTANK_R2_PREFIX}/${slug}.pdf`;
+}
+
+async function cacheThinkTankPdf(env, row) {
+  if (!env.REPORT_BUCKET || !row) return { ok: false, reason: "bucket-unavailable" };
+  const id = thinkTankId(row);
+  const key = thinkTankObjectKey(id);
+  const existing = await env.REPORT_BUCKET.head(key).catch(() => null);
+  if (existing) return { ok: true, cached: true, key };
+
+  const pdfUrl = String(row.pdf_url || "").trim();
+  if (!/^https?:\/\//i.test(pdfUrl)) return { ok: false, reason: "missing-url" };
+  const pdf = await fetchWithTimeout(pdfUrl, {
+    headers: {
+      "Accept": "application/pdf,*/*",
+      "User-Agent": THINKTANK_UA,
+    },
+    redirect: "follow",
+  }, Math.max(UPSTREAM_PDF_TIMEOUT_MS, 45000));
+  if (!pdf.ok) return { ok: false, reason: `http-${pdf.status}` };
+
+  const bytes = sanitizePdfExternalLinksBytes(new Uint8Array(await pdf.arrayBuffer()));
+  await env.REPORT_BUCKET.put(key, bytes, {
+    httpMetadata: {
+      contentType: "application/pdf",
+      contentDisposition: contentDisposition(`${row.title || id}.pdf`),
+      cacheControl: "public, max-age=2592000, immutable",
+    },
+    customMetadata: {
+      source: THINKTANK_SOURCE,
+      id,
+      cached_at: new Date().toISOString(),
+    },
+  });
+  return { ok: true, cached: false, key };
+}
+
+async function warmThinkTankRows(env, rows, limit = THINKTANK_WARM_PDF_LIMIT) {
+  if (!env.REPORT_BUCKET) return { ok: false, warmed: 0, reason: "bucket-unavailable" };
+  const queue = (Array.isArray(rows) ? rows : [])
+    .filter((row) => row && row.pdf_url)
+    .slice(0, Math.max(0, limit));
+  let warmed = 0;
+  let index = 0;
+  const workers = Array.from({ length: Math.min(THINKTANK_WARM_CONCURRENCY, Math.max(1, queue.length)) }, async () => {
+    while (index < queue.length) {
+      const row = queue[index];
+      index += 1;
+      try {
+        const result = await cacheThinkTankPdf(env, row);
+        if (result.ok) warmed += 1;
+      } catch (_error) {
+        // Best-effort cache warming; download path can still fetch on demand.
+      }
+    }
+  });
+  await Promise.allSettled(workers);
+  return { ok: true, warmed };
+}
+
+async function warmThinkTankPdfCache(env) {
+  const rows = await thinkTankArchiveRows(env);
+  const sorted = rows
+    .slice()
+    .sort((a, b) => {
+      const dateCompare = dateScore(thinkTankDate(b)) - dateScore(thinkTankDate(a));
+      if (dateCompare) return dateCompare;
+      return String(b.archived_at || "").localeCompare(String(a.archived_at || ""));
+    });
+  return warmThinkTankRows(env, sorted, THINKTANK_WARM_PDF_LIMIT);
 }
 
 async function handleThinkTankPdf(request, env) {
@@ -7213,47 +7291,18 @@ async function handleThinkTankPdf(request, env) {
     }
   }
 
-  const pdfUrl = String(row.pdf_url || "").trim();
-  if (!/^https?:\/\//i.test(pdfUrl)) {
-    return jsonResponse(request, env, 404, {
-      error: `PDF is not currently available. Contact WeChat: ${CONTACT_WECHAT}.`,
-      contact: CONTACT_WECHAT,
-    });
-  }
-  let pdf;
+  let cached = null;
   try {
-    pdf = await fetchWithTimeout(pdfUrl, {
-      headers: {
-        "Accept": "application/pdf,*/*",
-        "User-Agent": THINKTANK_UA,
-      },
-      redirect: "follow",
-    }, Math.max(UPSTREAM_PDF_TIMEOUT_MS, 45000));
+    await cacheThinkTankPdf(env, row);
+    cached = env.REPORT_BUCKET ? await env.REPORT_BUCKET.get(thinkTankObjectKey(id)) : null;
   } catch (_error) {
+    cached = null;
+  }
+  if (!cached) {
     return jsonResponse(request, env, 502, {
       error: `PDF is not currently available. Contact WeChat: ${CONTACT_WECHAT}.`,
       contact: CONTACT_WECHAT,
     });
-  }
-  if (!pdf.ok) {
-    return jsonResponse(request, env, 502, {
-      error: `PDF is not currently available. Contact WeChat: ${CONTACT_WECHAT}.`,
-      contact: CONTACT_WECHAT,
-    });
-  }
-  const bytes = await pdf.arrayBuffer();
-  if (env.REPORT_BUCKET) {
-    await env.REPORT_BUCKET.put(thinkTankObjectKey(id), bytes, {
-      httpMetadata: {
-        contentType: "application/pdf",
-        contentDisposition: contentDisposition(`${row.title || id}.pdf`),
-        cacheControl: "public, max-age=2592000, immutable",
-      },
-      customMetadata: {
-        source: THINKTANK_SOURCE,
-        id,
-      },
-    }).catch(() => null);
   }
   const consumed = await finalizeAccountDownloadDecision(env, accountDecision, id, THINKTANK_SOURCE);
   if (!consumed.ok) {
@@ -7263,7 +7312,7 @@ async function handleThinkTankPdf(request, env) {
       limit_exceeded: true,
     });
   }
-  return await externalPdfResponse(request, env, new Response(bytes).body, row.title, id);
+  return await externalPdfResponse(request, env, cached.body, row.title, id);
 }
 
 // ---------------------------------------------------------------------------
@@ -7550,7 +7599,7 @@ export default {
     }
 
     if (pathname === "/thinktank/search" && request.method === "GET") {
-      return handleThinkTankSearch(request, env);
+      return handleThinkTankSearch(request, env, ctx);
     }
 
     if (pathname === "/thinktank/pdf" && (request.method === "GET" || request.method === "POST")) {
@@ -7571,6 +7620,7 @@ export default {
   async scheduled(_event, env, ctx) {
     ctx.waitUntil(Promise.all([
       warmAdminGithubCache(env).catch(() => null),
+      warmThinkTankPdfCache(env).catch(() => null),
       warmNewsfeedCaches(env).catch(() => null),
       sendDueNewsfeedDigestEmails(env).catch(() => null),
     ]));
