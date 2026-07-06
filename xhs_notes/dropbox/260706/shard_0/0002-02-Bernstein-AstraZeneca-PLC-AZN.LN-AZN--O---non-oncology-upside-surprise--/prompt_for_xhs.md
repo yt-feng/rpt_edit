@@ -1,0 +1,220 @@
+你是资深小红书内容策划 + 投研翻译官，擅长把英文/中文研报改写成高互动、可收藏、可转发的中文小红书笔记。
+
+【目标】
+- 把下面的研报解析内容，改写成一篇中文小红书笔记。
+- 风格：投研博主风：信息密度高，但像给朋友讲逻辑
+- 长度：不超过 1000 字，信息密度高但不要写长文。
+- emoji 密度：中
+
+【必须输出的结构】
+1. 第一行：标题，20 字以内，不要像论文标题，也不要用夸张极限词。
+2. 第二行：封面短标题，10 字以内，适合放在图中间。
+3. 第三行：封面副标题，10-18 字，短句。
+4. 正文分段清晰，每段不超过 3 行，可以用编号、小标题或加粗。
+5. 正文要自然呈现观点，但不要暴露写作框架或思考过程。
+6. 末尾可以保留 2-4 个相关标签，只允许从这些标签里选择：`#学习笔记`、`#研究笔记`、`#学习研究`、`#研报解读`。
+
+【严禁输出】
+- 不要出现这些栏目名或类似栏目名：`一句话结论`、`我最想提醒的一点`、`配图建议`、`免责声明`、`非投资建议`、`仅做学习交流`、`仅作学习交流`。
+- 不要在正文最后追加配图建议，不要告诉我第 2/3/4 张图怎么配文。
+- 不要输出任何包含“投资”的免责声明，也不要输出“非投资建议”这种表述。
+- 不要输出财经敏感标签：`#投资学习`、`#财经`、`#金融`、`#股票`、`#基金`、`#理财`。
+- 不要输出无关标签：`#小红书笔记`、`#笔记分享`、`#干货分享`。
+- 不要写“关注”“点赞”“求关注”“评论区见”“评论区留言”等直接互动诱导；可以写“欢迎一起讨论”“可以继续交流”。
+
+【平台发布合规要求】
+- 不要写“爆款”“震惊”“必看”“必读”“最强”“最全”“唯一”“全网首发”等极限词或夸张词。
+- 不要写“投资建议”“买入”“卖出”“强烈推荐”“稳赚”“保本”“必涨”“抄底”“上车”“内幕”“翻倍”等金融操作或收益承诺表达。
+- “投资”相关词尽量改成“投研”“研究”“观察”“学习参考”；如果必须保留，也要放在中性语境里。
+- 不要承诺收益，不要引导交易，不要暗示确定性结果。
+
+【内容要求】
+- 只能基于研报原文和解析结果推导，不要编造数据、公司动作、引用。
+- 可以把专业表达翻成人话，但不能扭曲意思。
+- 遇到不确定或缺失信息：用“研报未给出”或“这里是推测”明确标注。
+- 默认避免出现具体投行品牌名，比如“GS”“GS”，统一写作“投行研报”。
+- 不要解释你的思考过程，不要输出多余说明。
+
+【推荐写法】
+- 开头直接给一个自然判断，不要加“结论：”标签。
+- 中间用 1/2/3 拆逻辑，但小标题要像正常内容标题，不要像写作模板。
+- 结尾可以留下一个自然讨论问题，但不要引导关注、点赞或评论。
+- 最后一行输出 2-4 个标签，优先：`#学习笔记 #研究笔记 #学习研究 #研报解读`。
+
+【研报解析内容】
+"""
+European Biopharmaceuticals
+
+AstraZeneca PLC
+
+Rating
+
+Outperform
+
+Price Target
+
+AZN.LN
+
+18,900 GBp (18,600 OLD)
+
+![](images/8f27a4ceacb9e0d8e14953c90b04345d8181ea3e444c886d270113e0e043645b.jpg)
+
+Justin Smith
++44 20 7762 5899
+justin.smith@bernsteinsg.com
+
+![](images/179a66dfd15bb24af4c2d34cac8e9a91e25ab78f130bd72cbdd90fc71d4fb2df.jpg)
+
+Shan Mian
++44 20 7676 8981
+shan.mian@bernsteinsg.com
+
+![](images/8922572168e1881c9c5621ae6af633bd857c33212af4f4b0db0e6f002e690a81.jpg)
+
+Maximilian Brewster
++44 20 7550 2193
+maximilian.brewster@bernsteinsg.com
+
+Specialist Sales
+
+![](images/026fa3b4e349ba1ceb0425965549a1402d844e36cee808b232c1697b1d4c4529.jpg)
+
+Christian Moore
++1 917 344 8555
+christian.moore@bernsteinsg.com
+
+# AZN (O): non-oncology upside surprise - why's our thesis now been strengthened?
+
+Despite the promising non-oncology phase 3 data since 3Q25, our channel checks indicate that this business still doesn't command its fair share of the debate. This is intriguing as non-oncology drives 65% of our group sales CAGR (26-31e) of 8% and all the top-line upside. Ourthesis is now strengthened post a deep dive into the \$20bn peak market for drugs which stop proteins strangling the heart (ATTR-CM). Our new 2036e AZN ATTR of \$10bn (up 60%) implies 10% upside to the consensus (Bloomberg) group sales. We expect positive 'CardioTTRansform' phase 3 data for AZN's Wainua in 2H26 to unlock this upside.
+
+What's changed? Our deep dive into the \$20bn potential market for drugs which stop protein ‘strangling’ of the heart (ATTR-CM). Post expert calls we now expect AZN to lead here for four reasons A/ AZN is the only company with all three validated drug mechanisms of action (doctors think combination therapy is the most effective approach) B/ precedents strongly suggest that AZN’s entrance should materially expand the market C/ AZN’s investment power means that physician awareness of Wainua is already high D/ the landmark CardioTTRansform trial should be the most competitive dataset. We thus upgrade our AZN ATTR 2036e franchise by 60% to \$10bn within which we now expect Wainua to become AZN’s 2nd largest non-oncology drug.
+
+What's the risk-reward? We calculate the impact on 2035e EBIT (= DCF proxy). In our bull case we derive 167% upside vs 97% bear case downside. The approved drugs account for 90% of the upside and 51% of the downside with top 3 contributors Ultomiris (Rare Diseases), Wainua & Enhertu (cancer). In the pipeline the top 3 variances are Baxfendy (blood pressure, kidney disease), camizestrant (breast cancer) and volrustomig (lung cancer).
+
+## Investment Implications
+
+How do we calculate our Price Target? Still the average of DCF (£156 (+5%); 8% WACC & 2.5% perpetuity growth; both unchanged) and EV/EBITA (£223 (-1%); 60% premium to EU peers retained). Our PT rises 2% to £189 due to our ATTTR upgrades. Considering AZN's leading R&D engine, our PT implies an adj PE30e of 15x for a 40% premium to EU peers. We also think AZN looks cheap on 5-year forward sales regression vs global peers.
+
+<table><tr><td>Adjusted EPS</td><td>F25A</td><td>F26E</td><td>F27E</td></tr><tr><td>AZN.LN (USD)</td><td>9.16</td><td>10.58</td><td>12.62</td></tr><tr><td>OLD</td><td>--</td><td>10.55</td><td>12.60</td></tr></table>
+
+Source: Bloomberg, Bernstein estimates and analysis.
+
+<table><tr><td>Close Date</td><td>2 Jul 2026</td></tr><tr><td>AZN.LN Close Price (GBp)</td><td>14,538</td></tr><tr><td>Price Target (GBp)</td><td>18,900</td></tr><tr><td>Upside/(Downside)</td><td>30%</td></tr><tr><td>52-Week Range</td><td>15,730/10,112</td></tr><tr><td>EDME</td><td>1,622.79</td></tr><tr><td>FYE</td><td>Dec</td></tr><tr><td>Div Yield</td><td>1.7%</td></tr><tr><td>Market Cap (GBP) (M)</td><td>223,130</td></tr><tr><td>EV (GBp) (M)</td><td>324,352</td></tr></table>
+
+<table><tr><td>Performance</td><td>YTD</td><td>1M</td><td>6M</td><td>12M</td></tr><tr><td>Absolute (%)</td><td>4.3</td><td>8.9</td><td>5.8</td><td>41.0</td></tr><tr><td>EDME (%)</td><td>10.4</td><td>5.1</td><td>7.9</td><td>21.2</td></tr><tr><td>Relative (%)</td><td>(6.0)</td><td>3.8</td><td>(2.1)</td><td>19.8</td></tr></table>
+
+Source: Bloomberg, Bernstein estimates and analysis.
+
+Price Performance, 1YR  
+![](images/bb8cb17fa2b0948f62c875e1fe7b2a61ddd0a0594b8d0ce1dfd98a8b5bc92590.jpg)
+
+<table><tr><td>Valuation Metrics</td><td>F25A</td><td>F26E</td><td>F27E</td></tr><tr><td>Adjusted P/E (x)</td><td>21.2</td><td>18.3</td><td>15.4</td></tr><tr><td>Div Yield (%)</td><td>1.6</td><td>1.7</td><td>1.8</td></tr><tr><td>EV/EBIT (x)</td><td>0.3</td><td>0.2</td><td>0.2</td></tr></table>
+
+## Table Of Contents
+
+Executive Summary - why should azn lead in a \$20bn peak non-oncology market?....2
+Valuation - Why is our AZN PT increasing?....5
+
+## DETAILS
+
+## EXECUTIVE SUMMARY - WHY SHOULD AZN LEAD IN A \$20BN PEAK NON-ONCOLOGY MARKET?
+
+Transthyretin amyloidosis (ATTR) is a disease where mis-folded proteins accumulate to cause life-threatening organ failure, most seriously in the heart (cardiomyopathy (ATTR-CM); ca 800k sufferers in the G8). Disease modifying treatments (unlike most drugs which alleviate symptoms) include stabilisers and more importantly gene silencers like Amvuttra (consensus peak \$9Bn) developed by Alnylam (Pickering; O). But mortality rates in ATTR-CM still mirror those in severe cancers, with US diagnosis rates of just 25%.
+
+In 2H26 AZN will release the landmark phase III study (cardioTTRansform) for its silencer Wainua (peak guidance >\$5Bn vs peak consensus of \$2Bn). In our view, strong results would secure best in class status and make Wainua AZN's second largest non-oncology drug. We also prosecute AZN's other promising ATTR-CM phase 3 drug (cliramitug; peak guidance \$3-5Bn vs consensus of \$2Bn) which has a new mechanism of action (depleter) and is first-in-class. Depleters uniquely remove the ATTR plaques which cause the debilitating symptoms in the heart.
+
+EXHIBIT 1: Wainua: change to Bernstein global sales forecasts and comparison to consensus (\$m)
+
+![](images/cdd76bc76ddf482aa93d70a1599840cb0701f84851b8b40f5db164f84a23af50.jpg)  
+Source: Bloomberg, Bernstein analysis & estimates  
+EXHIBIT 2: Cliramitug: change to Bernstein global sales forecasts and comparison to consensus (\$m)
+
+![](images/88a69b3ba767125c27c3193fd50b36739fa303a09e11f44974a3324ec0183efd.jpg)  
+Source: Bloomberg, Bernstein analysis & estimates
+
+## Why do we expect AstraZeneca to win in the \$20bn peak ATTR market (which offers a 10% CAGR to (26-36e))?
+
+We believe that Wainua & cliramitug, plus AZN's commercialization of stabiliser Attruby in Japan (BridgeBio (Pickering;O), global peak sales \$4Bn) makes it the only company with a complete portfolio of ATTR drugs. Key Opinion Leaders (KOLs) have emphasized to us that a combination drug approach will yield the best results. In addition, post our channel checks with experts, we understand that AZN's Alexion Rare Disease legacy is an important competitive advantage in ATTR-CM.
+
+Via thorough new bottom-up patient based modeling, corroborated by top-down US prescription data, we increased our 2036e risk adjusted base case Wainua and cliramitug forecasts by 20% and 4x to \$6.2Bn and \$3.3Bn respectively (Exhibit 1; Exhibit 2). Considering Rare Disease precedents, we also now expect greater market expansion in ATTR. Our newfound enthusiasm for the depleter mechanism also means that we now expect AZN to capture more share in ATTR (Exhibit 3) and price cliramitug much higher. We also now think silencers are far tougher to ‘generic copycat’ due to higher barriers.
+
+If the landmark phase 3 CardioTTRansform study proves that Wainua is more effective in silencer pre-treated patients it will take more share from Amvuttra, which lacks this data. In this bull case, our 2036e global Wainua forecast would increase by 37% to \$8.5bn for a 34% market share. This compares to a base case of 31% - 25% of US patients are currently diagnosed.
+
+EXHIBIT 3: Old v new Bernstein 2035 global ATTR market shares (by value)  
+![](images/243a3e9e6604b8a322c8a8efe83f2f7a10dba5bb1e0803fe8adf9062beb923ec.jpg)  
+Vyndamax respectively)
+
+EXHIBIT 4: Bernstein global sales forecast like for like (\$m)  
+![](images/e87ed22a565b010d1c96dc3cdc5d10ca4d5a1e27d597c7b23b8a8ba146b8dd6c.jpg)  
+Includes ATTR-PN (polyneuropathy) and ATTR-CM (cardiomyopathy). Alnylam bar Source: Bernstein analysis & estimates is Amvuttra (silencer); BridgeBio and Pfizer bars are both stabilisers (Attruby and  
+Source: Bernstein analysis & estimates, Bloomberg
+
+Our upgraded Wainua sales forecasts (Exhibit 1; Exhibit 2) now reasonably imply a ramp up in line with Amvuttra (Exhibit 4). We acknowledge that Alnylam could deliver a step-change in convenience via the launch of its twice yearly ‘next gen’ silencer nuresiran in the early 2030s. Nonetheless, we believe that AZN will lead long term due to its portfolio approach and better data (4 point MACE endpoint in cardioTTR transform vs 3 point MACE endpoint for nuresiran in the TRITON phase 3).
+
+Unlike Amvuttra, if nucesiran is approved no royalties would be payable by Alnylam to Sanofi (O). Hence, we think Alnylam's best path to maximize shareholder value is to drive the sales of nucesiran at the expense of Amvuttra (Exhibit 4). But consensus is assuming that the sales of nucesiran will be entirely supplemental to Amvuttra. We think this is unlikely, hence we expect intra-Alnylam cannibalization (Exhibit 5).
+
+EXHIBIT 5: Consensus - ATTR global market share  
+![](images/6791745fd001f1f1aa433b1b370d9045c02663dcc349822919d7ca2f53caa5d6.jpg)  
+Source: Bloomberg, Bernstein analysis & estimates  
+Includes both ATTR-PN (polyneuropathy) and ATTR-CM (cardiomyopathy). Alnylam includes nucesiran
+
+EXHIBIT 6: Bernstein - ATTR global market share  
+![](images/eb7274e5af4e6a5274f9e0cf960b21b41d59a03e6e5d3c47fcd5a7bb196d8b80.jpg)  
+Includes both ATTR-PN (polyneuropathy) and ATTR-CM (cardiomyopathy). Alnylam includes nucesiran
+Source: Bernstein analysis & estimates
+
+## VALUATION - WHY IS OUR AZN PT INCREASING?
+
+Our price targets in EU pharma are always a simple average of EV/EBITA valuation & DCF (which applies the perpetuity value at year 21 post a first decade of bottom up forecasts and a second decade projected with ‘fade’ assumptions). Our DCF also continues to assume a WACC of 8%, and perpetuity growth after 2045 of 2.5%. We believe that this approach appropriately balances the short and long term.
+
+Considering the upgrades to our Wainua and cliramitug forecasts described above, our DCF valuation is increasing to £156/share versus £148/share previously (Exhibit 7). Considering that the majority of the upside of our new ATTR-CM estimates manifests after 2028, our 2026-2028e EV/EBITA valuation is largely unchanged (Exhibit 11).
+
+EXHIBIT 7: AstraZeneca Price Target calculation (£)
+
+<table><tr><td></td><td>Old</td><td>New</td><td>% change</td><td>Assumptions</td></tr><tr><td>EV/EBITA</td><td>224</td><td>223</td><td>-1%</td><td>Premium to the EU pharma average 60% due to AZN&#x27;s sustainable, premium growth</td></tr><tr><td>DCF</td><td>148</td><td>156</td><td>5%</td><td>WACC 8%, fade (2036-2045) and perpetuity growth 2.5% as guidance implies 8% CAGR (23-30e)</td></tr><tr><td>Average (ie price target)</td><td>186</td><td>189</td><td>2%</td><td></td></tr><tr><td>Target PE26 (&#x27;core&#x27;)</td><td>23.7x</td><td>24.1x</td><td>2%</td><td></td></tr><tr><td>Sector PE26 (&#x27;core&#x27;)</td><td>15.2x</td><td>15.0x</td><td>-1%</td><td></td></tr></table>
+
+Source: Bernstein analysis & estimates
+
+Our new price target (PT) is now £189/share compared to our previous valuation of £186/share, for a 5% increase. Our new price target implies an adjusted PE26 of 25x for a 60% premium to peers (Exhibit 9), which we believe is robust considering AZN's best in class R&D engine and leading commercial execution and capital allocation. In 2030 our new PT implies an adjusted PE of 15x, for a 40% premium to EU (Exhibit 9). At its current forward valuation, AstraZeneca's prospective PE is just slightly ahead of its 15 year average (Exhibit 8).
+
+But we strongly believe that AZN looks cheap on 5-year forward sales regression vs global peers (Exhibit 10).
+
+EXHIBIT 8: AstraZeneca 12 month forward P/E history  
+![](images/07ddd2d9850b330a6b70ec4aeb60e9cb97d1b9550e3e72c610aa54e144d1571d.jpg)  
+Source: Company reports, Bernstein analysis and estimates, Bloomberg
+
+EXHIBIT 9: Bernstein P/E premium to peers - AstraZeneca  
+![](images/c4b44b144df4b21146c445a629e2f052999e3fe48a99bbb2eb973e037368c25f.jpg)  
+PT = price target; S/P - share price;
+Source: Bernstein analysis & estimates
+
+EXHIBIT 10: Global pharma sales regression  
+![](images/70283e7a889670fdf9a25a714aebf03f7a77a1ae2ffe95f41799948553d381ca.jpg)  
+Source: Company reports, Bernstein analysis and estimates
+
+EXHIBIT 11: AstraZeneca EV/EBITA calculation (\$m unless otherwise stated)
+
+<table><tr><td>(£) NEV/EBITA calculation (US$m, except per share data)</td><td>2026e</td><td>2027e</td><td>2028e</td><td>Premium</td><td>Average</td></tr><tr><td>EBITA</td><td>22,339</td><td>25,696</td><td>28,204</td><td></td><td></td></tr><tr><td>EU pharma</td><td>12.6x</td><td>11.7x</td><td>10.8x</td><td>60%</td><td></td></tr><tr><td>Multiple</td><td>20.1x</td><td>18.7x</td><td>17.3x</td><td></td><td></td></tr><tr><td>EV</td><td>449,941</td><td>480,262</td><td>487,745</td><td></td><td></td></tr><tr><td>Net Debt (incl pension &amp; Minorities)</td><td>19,000</td><td>8,301</td><td>-5,262</td><td></td><td></td></tr><tr><td>Equity</td><td>430,941</td><td>471,961</td><td>493,007</td><td></td><td></td></tr><tr><td># shares</td><td>1,549</td><td>1,549</td><td>1,549</td><td></td><td></td></tr><tr><td>Equity per share ($)</td><td>278</td><td>305</td><td>318</td><td></td><td></td></tr><tr><td>Equity per share (£)</td><td>206</td><td>226</td><td>236</td><td></td><td>223</td></tr><tr><td>Core EPS</td><td>10.58</td><td>12.62</td><td>14.31</td><td></td><td></td></tr><tr><td>Implied PE</td><td>26.3x</td><td>24.1x</td><td>22.2x</td><td></td><td></td></tr><tr><td>EU pharma (incl-NOVO)</td><td>15.0x</td><td>13.4x</td><td>12.0x</td><td></td><td></td></tr><tr><td>Premium to sector</td><td>75%</td><td>81%</td><td>85%</td><td></td><td></td></tr></table>
+
+Source: Bernstein analysis & estimates
+
+EXHIBIT 12: AstraZeneca: Discounted Cash Flow valuation (\$m unless otherwise stated)
+
+<table><tr><td>Euro Zenera Discounted Cash Flow valuation ($m unless otherwise stated)</td><td>2026e</td><td>2027e</td><td>2028e</td><td>2029e</td><td>2030e</td><td>2031e</td><td>2032e</td><td>2033e</td><td>2034e</td><td>2035e</td><td>2036e</td><td>2037e</td><td>2042e</td><td>2045e</td></tr><tr><td>Sales</td><td>64,155</td><td>70,816</td><td>77,211</td><td>84,376</td><td>89,473</td><td>93,998</td><td>96,142</td><td>93,764</td><td>90,455</td><td>90,120</td><td>92,373</td><td>94,682</td><td>107,124</td><td>115,361</td></tr><tr><td>% growth</td><td>9%</td><td>10%</td><td>9%</td><td>9%</td><td>6%</td><td>5%</td><td>2%</td><td>-2%</td><td>-4%</td><td>0%</td><td>3%</td><td>3%</td><td>3%</td><td>3%</td></tr><tr><td>EBITDA</td><td>23,885</td><td>27,355</td><td>29,993</td><td>33,293</td><td>35,240</td><td>36,865</td><td>37,519</td><td>35,789</td><td>33,926</td><td>33,899</td><td>34,747</td><td>35,615</td><td>40,295</td><td>43,394</td></tr><tr><td>Margin</td><td>37.2%</td><td>38.6%</td><td>38.8%</td><td>39.5%</td><td>39.4%</td><td>39.2%</td><td>39.0%</td><td>38.2%</td><td>37.5%</td><td>37.6%</td><td>37.6%</td><td>37.6%</td><td>37.6%</td><td>37.6%</td></tr><tr><td>Tax</td><td>-4,756</td><td>-5,447</td><td>-5,972</td><td>-6,629</td><td>-7,017</td><td>-7,341</td><td>-7,471</td><td>-7,126</td><td>-6,755</td><td>-6,750</td><td>-6,919</td><td>-7,092</td><td>-8,024</td><td>-8,641</td></tr><tr><td>Tax rate</td><td>-19.9%</td><td>-19.9%</td><td>-19.9%</td><td>-19.9%</td><td>-19.9%</td><td>-19.9%</td><td>-19.9%</td><td>-19.9%</td><td>-19.9%</td><td>-19.9%</td><td>-19.9%</td><td>-19.9%</td><td>-19.9%</td><td>-19.9%</td></tr><tr><td>Earnings before interest, depreciation &amp; amortization adjusted for tax</td><td>19,129</td><td>21,908</td><td>24,021</td><td>26,664</td><td>28,223</td><td>29,524</td><td>30,049</td><td>28,663</td><td>27,170</td><td>27,149</td><td>27,828</td><td>28,524</td><td>32,272</td><td>34,753</td></tr><tr><td>Change in WC</td><td>-1,574</td><td>-2,023</td><td>-1,809</td><td>-1,914</td><td>-1,424</td><td>-1,224</td><td>-525</td><td>796</td><td>1,058</td><td>252</td><td>-652</td><td>-668</td><td>-756</td><td>-814</td></tr><tr><td>Capex</td><td>-4,683</td><td>-4,644</td><td>-4,604</td><td>-4,565</td><td>-4,527</td><td>-4,488</td><td>-4,450</td><td>-4,413</td><td>-4,376</td><td>-4,339</td><td>-4,448</td><td>-4,559</td><td>-5,158</td><td>-5,554</td></tr><tr><td>As % sales</td><td>-7.3%</td><td>-6.6%</td><td>-6.0%</td><td>-5.4%</td><td>-5.1%</td><td>-4.8%</td><td>-4.6%</td><td>-4.7%</td><td>-4.8%</td><td>-4.8%</td><td>-4.8%</td><td>-4.8%</td><td>-4.8%</td><td>-4.8%</td></tr><tr><td>Operating FCF</td><td>12,871</td><td>15,241</td><td>17,608</td><td>20,185</td><td>22,273</td><td>23,812</td><td>25,073</td><td>25,045</td><td>23,852</td><td>23,062</td><td>22,729</td><td>23,297</td><td>26,358</td><td>28,385</td></tr><tr><td>Discount Factor</td><td>100%</td><td>93%</td><td>86%</td><td>79%</td><td>74
+
+[中间内容因长度限制已省略]
+
+tained herein are accurate, complete, not misleading or as to its fitness for the purpose intended even though the entities noted herein rely on reputable or trustworthy data providers, it should not be relied upon as such. Opinions expressed are the author(s)' current opinions as of the date appearing on the material only and we do not undertake to advise you of any change in the reported information or in the opinions herein.
+
+Any references to SG herein are purely factual, based upon publicly available information, and included for comparative purposes only. They do not constitute an opinion or recommendation with respect to the securities of SG.
+
+This publication was prepared and issued by the entity referred to herein for distribution to eligible counterparties or professional clients. The information in this report is intended for general circulation and does not constitute an offer to buy or sell any security, investment, legal or tax advice nor a personal recommendation, as defined by any of the aforementioned regulators. It does not take into account the particular investment objectives, financial situations, or needs of individual investors. The report has not been reviewed by any of the aforementioned regulators and does not represent any official recommendation from the aforementioned regulators. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with advice sought from a financial adviser regarding the suitability of the investment product, taking into account the specific investment objectives, financial situation or particular needs of any recipient of the recommendation, before the recipient makes a commitment to purchase the investment product.
+
+The analysis contained herein is based on numerous assumptions. Different assumptions could result in materially different results. The information in this report does not constitute, or form part of, any offer to sell or issue, or any offer to purchase or subscribe for shares, or to induce engagement in any other investment activity. The value of any securities or financial instruments mentioned in this report may fluctuate subject to market conditions. Information about past performance of an investment is not necessarily a guide to, indicative of, or assurance of future performance. Estimates of future performance mentioned by the research analyst in this report are based on assumptions that may not be realized due to unforeseen factors like market volatility/fluctuation. In relation to securities or financial instruments denominated in a foreign currency other than the clients' home currency, movements in exchange rates will have an effect on the value, either favorable or unfavorable. Before acting on any recommendations in this report, recipients should consider the appropriateness of investing in the subject securities or financial instruments mentioned in this report and, if necessary, seek independent professional advice.
+
+The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject the entities noted herein to any regulation or licensing requirement within such jurisdiction.
+
+Source: Bloomberg Index Services Limited. BLOOMBERG® is a trademark and service mark of Bloomberg Finance L.P. and its affiliates (collectively “Bloomberg”). Bloomberg or Bloomberg’s licensors own all proprietary rights in the Bloomberg Indices. Neither Bloomberg nor Bloomberg’s licensors approves or endorses this material, or guarantees the accuracy or completeness of any information herein, or makes any warranty, express or implied, as to the results to be obtained therefrom and, to the maximum extent allowed by law, neither shall have any liability or responsibility for injury or damages arising in connection therewith.
+
+No part of this material may be reproduced, distributed or transmitted or otherwise made available without prior consent of the entities noted herein. Copyright Bernstein Institutional Services LLC Bernstein Autonomous LLP, BSG France S.A., Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited and Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社). All rights reserved. The trademarks and service marks contained herein are the property of their respective owners. Any unauthorized use or disclosure is strictly prohibited. The entities noted herein may pursue legal action if the unauthorized use results in any defamation and/or reputational risk to the entities noted herein and research published under the Bernstein and Autonomous brands.
+"""
