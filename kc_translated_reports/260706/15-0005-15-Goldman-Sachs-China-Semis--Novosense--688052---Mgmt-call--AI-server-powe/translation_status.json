@@ -1,0 +1,24 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260706/shard_2/0005-15-Goldman-Sachs-China-Semis--Novosense--688052---Mgmt-call--AI-server-powe",
+  "title": "高盛：中国功率半导体受益AI数据中心需求，华润微提价信号",
+  "source_title": "GS：AI算力基建驱动功率半导体，GS调升华虹半导体前景",
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_15.pdf",
+  "figure_count": 0,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "股票|个股->公司 x3",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x3",
+    "股票|个股->公司 x4",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x2",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}
