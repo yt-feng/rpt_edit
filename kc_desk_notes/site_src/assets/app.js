@@ -3446,6 +3446,7 @@
     url.searchParams.set("id", item.id);
     if (item.source) url.searchParams.set("source", item.source);
     if (password) url.searchParams.set("password", password);
+    if (item.source === THINKTANK_SOURCE) return url.toString();
     if (item.title) url.searchParams.set("title", item.title);
     if (item.title_cn) url.searchParams.set("title_cn", item.title_cn);
     if (item.institution) url.searchParams.set("institution", item.institution);
@@ -3489,11 +3490,6 @@
   async function requestExternalPassword(workerUrl, id, source = EXTERNAL_SOURCE) {
     const token = getAdminToken();
     if (!canUseDeliveryTools()) throw new Error("Private tools are locked.");
-    if (source === THINKTANK_SOURCE) {
-      const password = getAdminPlainKey();
-      if (password) return { id, password };
-      throw new Error("Private tools are locked.");
-    }
     try {
       const response = await fetch(`${workerUrl}/admin/report-password`, {
         method: "POST",
@@ -3939,9 +3935,27 @@
     }
   }
 
+  async function fetchThinkTankDetailItem(workerUrl, item) {
+    if (!workerUrl || !isThinkTankItem(item) || !validDocId(item)) return item;
+    try {
+      const response = await fetch(`${workerUrl}/thinktank/item?id=${encodeURIComponent(item.id)}`, {
+        cache: "no-store",
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok || !data.item || !data.item.id) return item;
+      return {
+        ...item,
+        ...data.item,
+        source: THINKTANK_SOURCE,
+      };
+    } catch (_error) {
+      return item;
+    }
+  }
+
   async function initExternalDetail() {
     const params = new URLSearchParams(window.location.search);
-    const item = externalItemFromParams(params);
+    let item = externalItemFromParams(params);
     const target = document.getElementById("externalDetail");
     if (!validDocId(item)) {
       target.innerHTML = '<div class="error-state">Report not found.</div>';
@@ -3962,6 +3976,13 @@
     initAccountGate(workerUrl);
     initAdminGate(workerUrl);
     initNewsfeedNav();
+    item = await fetchThinkTankDetailItem(workerUrl, item);
+    if (isThinkTankItem(item)) {
+      const shortUrl = externalPageUrl(item, params.get("password") || "");
+      if (shortUrl.length < window.location.href.length) {
+        window.history.replaceState({}, "", shortUrl);
+      }
+    }
     trackEvent(workerUrl, "page_view", {
       page: "doc",
       ...analyticsReportPayload(item, item.source || EXTERNAL_SOURCE),
@@ -4114,7 +4135,8 @@
       deliveryStatus.textContent = "Generating...";
       try {
         const data = await requestExternalPassword(workerUrl, item.id, item.source);
-        linkInput.value = externalPageUrl(item, data.password);
+        const deliveryItem = data.id ? { ...item, id: data.id, source: item.source } : item;
+        linkInput.value = externalPageUrl(deliveryItem, data.password);
         trackEvent(workerUrl, "delivery_link_generate", analyticsReportPayload(item, item.source || EXTERNAL_SOURCE));
         deliveryStatus.className = "status-line ok";
         deliveryStatus.textContent = "Delivery link generated.";

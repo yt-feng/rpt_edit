@@ -2251,6 +2251,10 @@ async function handleAdminReportPassword(request, env) {
     if (!isExternalId(id)) {
       return jsonResponse(request, env, 400, { error: "Invalid report id." });
     }
+  } else if (source === THINKTANK_SOURCE) {
+    if (!parseThinkTankId(id)) {
+      return jsonResponse(request, env, 400, { error: "Invalid report id." });
+    }
   } else if (source === AUTHORITY_SOURCE) {
     if (!parseAuthorityId(id)) {
       return jsonResponse(request, env, 400, { error: "Invalid report id." });
@@ -2278,6 +2282,22 @@ async function handleAdminReportPassword(request, env) {
         id,
         source,
         password: await derivedReportPassword(env, id),
+      });
+    } catch (_error) {
+      return jsonResponse(request, env, 503, { error: "Could not calculate report password." });
+    }
+  }
+
+  if (source === THINKTANK_SOURCE) {
+    const row = await findThinkTankRow(env, id);
+    if (!row) return jsonResponse(request, env, 404, { error: "Report not found." });
+    const canonicalId = thinkTankId(row);
+    try {
+      return jsonResponse(request, env, 200, {
+        id: canonicalId,
+        source,
+        title: row.title || "",
+        password: await derivedReportPassword(env, canonicalId),
       });
     } catch (_error) {
       return jsonResponse(request, env, 503, { error: "Could not calculate report password." });
@@ -6971,7 +6991,8 @@ function thinkTankSlug(row) {
 }
 
 function thinkTankId(row) {
-  return `${THINKTANK_SOURCE}:${thinkTankSlug(row)}`;
+  const hash = thinkTankHashFromFilename(row && row.local_filename);
+  return `${THINKTANK_SOURCE}:${hash || thinkTankSlug(row)}`;
 }
 
 function parseThinkTankId(value) {
@@ -6982,6 +7003,12 @@ function parseThinkTankId(value) {
 function thinkTankHashFromFilename(value) {
   const match = String(value || "").match(/_([0-9a-f]{6,12})(?:\.pdf)?$/i);
   return match ? match[1].toLowerCase() : "";
+}
+
+function thinkTankRowMatchesId(row, parsed) {
+  if (!row || !parsed) return false;
+  const hash = thinkTankHashFromFilename(row.local_filename);
+  return parsed.slug === hash || parsed.slug === thinkTankSlug(row);
 }
 
 function thinkTankDate(row) {
@@ -7165,7 +7192,7 @@ async function findThinkTankRow(env, id) {
   const parsed = parseThinkTankId(id);
   if (!parsed) return null;
   const rows = await thinkTankArchiveRows(env);
-  return rows.find((row) => thinkTankId(row) === parsed.id) || null;
+  return rows.find((row) => thinkTankRowMatchesId(row, parsed)) || null;
 }
 
 function thinkTankObjectKey(id) {
@@ -7174,10 +7201,30 @@ function thinkTankObjectKey(id) {
   return `${THINKTANK_R2_PREFIX}/${slug}.pdf`;
 }
 
+function thinkTankObjectKeyForRow(row) {
+  return thinkTankObjectKey(thinkTankId(row));
+}
+
+async function handleThinkTankItem(request, env) {
+  const url = new URL(request.url);
+  const id = String(url.searchParams.get("id") || "").trim();
+  if (!parseThinkTankId(id)) {
+    return jsonResponse(request, env, 400, { error: "Invalid report id." });
+  }
+  const row = await findThinkTankRow(env, id);
+  if (!row) {
+    return jsonResponse(request, env, 404, { error: "Report not found." });
+  }
+  const wechatTitles = await thinkTankWechatTitleMap(env).catch(() => new Map());
+  return jsonResponse(request, env, 200, {
+    item: slimThinkTankItem(row, wechatTitles),
+  });
+}
+
 async function cacheThinkTankPdf(env, row) {
   if (!env.REPORT_BUCKET || !row) return { ok: false, reason: "bucket-unavailable" };
   const id = thinkTankId(row);
-  const key = thinkTankObjectKey(id);
+  const key = thinkTankObjectKeyForRow(row);
   const existing = await env.REPORT_BUCKET.head(key).catch(() => null);
   if (existing) return { ok: true, cached: true, key };
 
@@ -7262,8 +7309,10 @@ async function handleThinkTankPdf(request, env) {
   if (!row) {
     return jsonResponse(request, env, 404, { error: "Report not found." });
   }
+  const canonicalId = thinkTankId(row);
+  const cacheKey = thinkTankObjectKeyForRow(row);
 
-  const accountDecision = await accountDownloadDecision(env, request, id, THINKTANK_SOURCE);
+  const accountDecision = await accountDownloadDecision(env, request, canonicalId, THINKTANK_SOURCE);
   const accountAllowed = Boolean(accountDecision.allowed);
   if (!password && !accountAllowed) {
     return jsonResponse(request, env, accountDecision.status || 402, {
@@ -7272,14 +7321,14 @@ async function handleThinkTankPdf(request, env) {
       limit_exceeded: Boolean(accountDecision.limit_exceeded),
     });
   }
-  if (!accountAllowed && !(await sharedReportPasswordMatches(env, id, password))) {
+  if (!accountAllowed && !(await sharedReportPasswordMatches(env, canonicalId, password)) && !(id !== canonicalId && await sharedReportPasswordMatches(env, id, password))) {
     return jsonResponse(request, env, 401, { error: "Password is incorrect." });
   }
 
   if (env.REPORT_BUCKET) {
-    const object = await env.REPORT_BUCKET.get(thinkTankObjectKey(id));
+    const object = await env.REPORT_BUCKET.get(cacheKey);
     if (object) {
-      const consumed = await finalizeAccountDownloadDecision(env, accountDecision, id, THINKTANK_SOURCE);
+      const consumed = await finalizeAccountDownloadDecision(env, accountDecision, canonicalId, THINKTANK_SOURCE);
       if (!consumed.ok) {
         return jsonResponse(request, env, 403, {
           error: consumed.error || TRIAL_LIMIT_MESSAGE,
@@ -7294,7 +7343,7 @@ async function handleThinkTankPdf(request, env) {
   let cached = null;
   try {
     await cacheThinkTankPdf(env, row);
-    cached = env.REPORT_BUCKET ? await env.REPORT_BUCKET.get(thinkTankObjectKey(id)) : null;
+    cached = env.REPORT_BUCKET ? await env.REPORT_BUCKET.get(cacheKey) : null;
   } catch (_error) {
     cached = null;
   }
@@ -7304,7 +7353,7 @@ async function handleThinkTankPdf(request, env) {
       contact: CONTACT_WECHAT,
     });
   }
-  const consumed = await finalizeAccountDownloadDecision(env, accountDecision, id, THINKTANK_SOURCE);
+  const consumed = await finalizeAccountDownloadDecision(env, accountDecision, canonicalId, THINKTANK_SOURCE);
   if (!consumed.ok) {
     return jsonResponse(request, env, 403, {
       error: consumed.error || TRIAL_LIMIT_MESSAGE,
@@ -7600,6 +7649,10 @@ export default {
 
     if (pathname === "/thinktank/search" && request.method === "GET") {
       return handleThinkTankSearch(request, env, ctx);
+    }
+
+    if (pathname === "/thinktank/item" && request.method === "GET") {
+      return handleThinkTankItem(request, env);
     }
 
     if (pathname === "/thinktank/pdf" && (request.method === "GET" || request.method === "POST")) {
