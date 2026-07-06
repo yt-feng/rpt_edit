@@ -79,7 +79,7 @@ env:
   PYTHONUNBUFFERED: "1"
 
 concurrency:
-  group: kc-wechat-draft-maintenance
+  group: kc-wechat-draft-maintenance-${{ github.event.inputs.output_root || 'wechat_drafts' }}-${{ github.event.inputs.date_folder || 'latest' }}
   cancel-in-progress: false
 
 jobs:
