@@ -1,0 +1,25 @@
+{
+  "date_folder": "260707",
+  "max_reports": "all",
+  "selected_count": 1,
+  "successful_count": 1,
+  "sensitive_skipped_count": 0,
+  "sensitive_skipped": [],
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/consulting/260707/0001-BCG_Sustainability-Reporting-in-Europe-From-Compliance-to-Strate_43e096d4",
+      "title": "波士顿咨询：多数企业可持续报告仍陷低效流程，AI承诺未兑现",
+      "source_title": "波士顿咨询：AI在可持续报告中的承诺与现实，多数企业仍陷低效流程",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 2,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/consulting/260707/01-0001-BCG_Sustainability-Reporting-in-Europe-From-Compliance-to-Strate_43e096d4",
+      "pdf_path": "kc_translated_reports/consulting/260707/01-0001-BCG_Sustainability-Reporting-in-Europe-From-Compliance-to-Strate_43e096d4/kc_translated_report_01.pdf"
+    }
+  ]
+}
