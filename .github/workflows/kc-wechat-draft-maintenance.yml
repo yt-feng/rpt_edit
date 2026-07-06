@@ -92,11 +92,27 @@ jobs:
         with:
           fetch-depth: 1
           clean: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github
+            scripts
+            prompts
+            requirements.txt
+            ${{ inputs.translated_root }}
+            ${{ inputs.output_root }}
 
       - name: Pull latest main
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          git fetch --no-tags --prune --depth=1 origin +refs/heads/main:refs/remotes/origin/main
+          git sparse-checkout set --no-cone \
+            .github \
+            scripts \
+            prompts \
+            requirements.txt \
+            "${{ inputs.translated_root }}" \
+            "${{ inputs.output_root }}"
+          git fetch --filter=blob:none --no-tags --prune --depth=1 origin +refs/heads/main:refs/remotes/origin/main
           git reset --hard origin/main
           git clean -fdx
 
