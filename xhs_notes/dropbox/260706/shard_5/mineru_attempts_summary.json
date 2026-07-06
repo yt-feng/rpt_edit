@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_6dlwnhhx/pdfs/0001-27-GS-Sanofi -SASY.PA-Searching for reasons to be more positive- but pipeline rebuild will take time and valuation is insufficien-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6dlwnhhx/pdfs/0002-28-MS-Semiconductors Weekly Meta GPU context- May SIA-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6dlwnhhx/pdfs/0003-29-MS-Semiconductor Capital Equipment Rolling over PTs to 2028-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6dlwnhhx/pdfs/0004-30-NOM-China Internet - New Media-Takeaways from Douyin ecommerce expert call-260705.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6dlwnhhx/pdfs/0005-31-NOM-China Internet - New Media-Takeaways from Moonshot AI expert call-260706.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

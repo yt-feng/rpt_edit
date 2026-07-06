@@ -1,0 +1,25 @@
+EN_A: So I came across this report on Moonshot AI, a Chinese AI startup. It says their annualized revenue could hit one billion dollars by the end of this year. Is that for real?
+EN_B: It sounds ambitious, but based on our expert call, yes, it's plausible. By mid-2026, their ARR was already between 400 and 500 million dollars, and it was growing 10 to 20 percent month over month.
+EN_A: That is fast. What is actually driving that revenue? Are people paying for subscriptions or just using the API?
+EN_B: The mix is shifting. API calls are now the primary revenue driver, followed by consumer subscriptions. Private deployment, like licensing, is actually shrinking as a share of total revenue.
+EN_A: So what is behind the API growth? Is it just the hype around AI agents?
+EN_B: It is more than hype. The expert pointed to three things: continuous model improvements, rising adoption by overseas developers, and the release of specialized capabilities like AI coding. In fact, overseas revenue now makes up a bigger share than domestic.
+EN_A: Coding is hot, but the report suggests the total addressable market for AI coding might be limited. Why?
+EN_B: That is a key insight. The core user base that needs really sophisticated, high-frequency coding help is relatively small, even if they are willing to pay. Plus, global players like Anthropic and OpenAI already captured a big chunk of that demand. So the next frontier is bigger vertical markets.
+EN_A: Like healthcare, education, and finance?
+EN_B: Exactly. Healthcare is the most immediate opportunity because there is huge demand for AI in diagnosis, imaging, and drug R&D. Education also has many use cases. Finance will lag because of stricter regulations.
+EN_A: So who wins in these verticals? Pure AI labs like Moonshot or big platforms like Alibaba and ByteDance?
+EN_B: That is the big debate in the report. The expert believes pure-play labs are more focused and can outcompete the platforms. But our analysts disagree. We think the big platforms have too much capital, data, and strategic necessity to own their own models.
+EN_A: Strategic necessity? What does that mean?
+EN_B: Because the LLM is the brain for all future applications. If a platform gives that up, it loses control over its entire ecosystem. So we expect Alibaba and ByteDance to keep investing heavily to stay at the frontier.
+EN_A: So what is Moonshot doing to defend itself?
+EN_B: Two things. First, it is shifting to a closed-source strategy for its flagship models, while open-sourcing smaller models to attract developers. This protects margins. Second, it is using more domestic chips to cut inference costs. Its gross margin for inference is already approaching 30 percent.
+EN_A: So price wars do not necessarily mean a margin collapse?
+EN_B: Exactly. That is a key takeaway. API prices are falling industry-wide, but unit costs are also falling as chip efficiency and concurrency improve. So margins can be maintained.
+EN_A: What is the next big catalyst for Moonshot?
+EN_B: The K3 model, expected around September. It will have better multimodal capabilities, coding performance, and agent orchestration. But the launch date might shift depending on what competitors like DeepSeek and Alibaba's Qwen do.
+EN_A: Competitors include DeepSeek, Zhipu, MiniMax, and Qwen?
+EN_B: Yes, those are the main ones.
+EN_A: We have covered a lot today on Moonshot's monetization and strategy. But the report also dives deeper into something we only touched on: the data moat in vertical industries. Why companies like Meituan build their own models instead of using Moonshot's. That is a whole other layer.
+EN_B: Right. Data is the real differentiator. Which industries have the most valuable data and how to access it is a critical question for investors. The full report goes into much more detail on that.
+EN_A: If you want to dig deeper into the AI investment thesis, join our community to get the full report. Thanks for listening, and see you next time.
