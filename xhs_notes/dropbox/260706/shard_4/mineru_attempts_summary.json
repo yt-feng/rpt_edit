@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_4p5h0fse/pdfs/0001-22-GS-Netflix Inc. -NFLX.US- Q2 2026 Earnings Preview- Framing Key Themes - Investor Debates-260705.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_4p5h0fse/pdfs/0002-23-GS-Murphy USA Inc. -MUSA.US-Favorable macro tailwinds should support faster EBITDA growth moving forward - Upgrade to Neutral-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_4p5h0fse/pdfs/0003-24-GS-Metals - Mining- Gold- GMD lodges VAU offer- targeting -A-2bn synergies- RRL considering position-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_4p5h0fse/pdfs/0004-25-MS-KIOXIA Holdings(285A) - Japan Starts BiCS-10 Production-260705.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_4p5h0fse/pdfs/0005-26-MS-Greater China Semiconductors - Asia Pacific CPO Supply Chain Updates- More on GlassBridge-260705.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
