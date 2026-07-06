@@ -295,8 +295,50 @@ def clean_leading_report_slug(title: str) -> str:
     return readable_slug_tail(cleaned).strip(" -_")
 
 
+INSTITUTION_GENERIC_TITLE_PREFIX_RE = (
+    r"(?:报告认为|报告指出|报告显示|报告称|报告|研报|研究|会议|观点|展望|"
+    r"分析|简报|文章|数据显示|数据|指出|认为|称|表示)"
+)
+INSTITUTION_NAME_SUFFIX_RE = re.compile(r"(?:会议|报告|研究所|学会|公司|银行|咨询|组织|基金|论坛|委员会|集团|署|局|会)$")
+
+
+def institution_title_stems(name: str) -> list[str]:
+    base = canonicalize_institution_title_name(name).strip()
+    if not base:
+        return []
+    candidates = [base]
+    stem = INSTITUTION_NAME_SUFFIX_RE.sub("", base)
+    if 2 <= len(stem) < len(base):
+        candidates.append(stem)
+    return sorted(dict.fromkeys(candidates), key=len, reverse=True)
+
+
+def remove_redundant_institution_report_prefix(title: str) -> str:
+    cleaned = normalize_space(title).replace(":", "：")
+    if "：" not in cleaned:
+        return cleaned
+    head, tail = cleaned.split("：", 1)
+    head = head.strip()
+    tail = tail.strip()
+    if not head or not tail:
+        return cleaned
+    for stem in institution_title_stems(head):
+        escaped = re.escape(stem)
+        patterns = [
+            rf"^(?:{escaped})\s*(?:{INSTITUTION_GENERIC_TITLE_PREFIX_RE})\s*[：:，,、;；\-—]\s*",
+            rf"^(?:{escaped})\s*[：:，,、;；\-—]\s*",
+        ]
+        for pattern in patterns:
+            replaced = re.sub(pattern, "", tail, count=1, flags=re.I).strip(" ，,。；;：:、-—")
+            if replaced != tail:
+                tail = replaced
+                break
+    return f"{head}：{tail}" if tail else head
+
+
 def remove_redundant_title_aliases(title: str) -> str:
     cleaned = clean_leading_report_slug(canonicalize_institution_title_name(title))
+    cleaned = remove_redundant_institution_report_prefix(cleaned)
     for cn_name, aliases in INSTITUTION_TITLE_ALIASES:
         alias_group = "|".join(alias_pattern(alias) for alias in aliases)
         cleaned = re.sub(
@@ -323,6 +365,7 @@ def remove_redundant_title_aliases(title: str) -> str:
             cleaned,
             flags=re.I,
         )
+    cleaned = remove_redundant_institution_report_prefix(cleaned)
     cleaned = re.sub(r"\s*[：:]\s*", "：", cleaned)
     cleaned = re.sub(r"：{2,}", "：", cleaned)
     return limit_title_colons(cleaned).strip("：: -—")
