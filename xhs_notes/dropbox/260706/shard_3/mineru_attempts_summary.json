@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_oolibzv0/pdfs/0001-16-GS-Guoquan -2517.HK-- APAC Consumer - Leisure Corporate Day 2026 Takeaways- Jun on a tough base- large-store revamps driving SSSg-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_oolibzv0/pdfs/0002-17-GS-Circle Internet Group -CRCL.US-- Key takeaways from management meetings-260705.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_oolibzv0/pdfs/0003-18-GS-GCC Online Food Delivery-Competition and shift to q-commerce outweigh benefits from consolidation- Talabat to Sell from Buy-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_oolibzv0/pdfs/0004-19-GS-Hengan -1044.HK-- APAC Consumer - Leisure Corporate Day 2026 Takeaways- Still intense pricing competition- maintained SD- FY sales-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_oolibzv0/pdfs/0005-20-GS-Kuaishou Technology -1024.HK-Kling raises up to US-3bn implying US-15bn pre-money value while Kuaishou retains control- Buy-260705.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
