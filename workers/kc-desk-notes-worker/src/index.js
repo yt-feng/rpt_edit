@@ -125,6 +125,15 @@ const HIBOR_SEARCH_PAGE_SIZE = 30;
 const HIBOR_UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 " +
   "(KHTML, like Gecko) Chrome/137.0 Safari/537.36";
+const THINKTANK_SOURCE = "thinktank";
+const THINKTANK_ARCHIVE_PATH = "institution_feeds/institution_pdf_archive.jsonl";
+const THINKTANK_WECHAT_DRAFT_ROOT = "wechat_drafts/institutions";
+const THINKTANK_SEARCH_PAGE_SIZE = 30;
+const THINKTANK_WECHAT_DATE_LIMIT = 45;
+const THINKTANK_R2_PREFIX = "thinktank";
+const THINKTANK_UA =
+  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 " +
+  "(KHTML, like Gecko) Chrome/137.0 Safari/537.36";
 const UPSTREAM_SEARCH_TIMEOUT_MS = 28000;
 const UPSTREAM_PDF_TIMEOUT_MS = 15000;
 const SEARCH_CACHE_PREFIX = "_search-cache";
@@ -3153,6 +3162,19 @@ async function githubContentJson(env, path, repo = githubRepo(env), ref = github
     bytes[index] = binary.charCodeAt(index);
   }
   return JSON.parse(new TextDecoder().decode(bytes));
+}
+
+async function githubContentText(env, path, repo = githubRepo(env), ref = githubRef(env, repo)) {
+  const encoded = encodeGithubPath(path);
+  const data = await githubApiJson(env, `/contents/${encoded}?ref=${encodeURIComponent(ref)}`, {}, repo);
+  const content = String(data && data.content || "").replace(/\s/g, "");
+  if (!content) return "";
+  const binary = atob(content);
+  const bytes = new Uint8Array(binary.length);
+  for (let index = 0; index < binary.length; index += 1) {
+    bytes[index] = binary.charCodeAt(index);
+  }
+  return new TextDecoder().decode(bytes);
 }
 
 async function fetchWithTimeout(resource, init = {}, timeoutMs = UPSTREAM_SEARCH_TIMEOUT_MS) {
@@ -6923,6 +6945,328 @@ async function handleHiborSearch(request, env) {
 }
 
 // ---------------------------------------------------------------------------
+// International think-tank / institution PDF archive
+// ---------------------------------------------------------------------------
+
+function thinkTankBasename(value) {
+  return String(value || "")
+    .split(/[?#]/)[0]
+    .split("/")
+    .pop()
+    .replace(/\.pdf$/i, "")
+    .trim();
+}
+
+function thinkTankSlug(row) {
+  const base = thinkTankBasename(row && row.local_filename) ||
+    thinkTankBasename(row && row.pdf_url) ||
+    compactSearchQuery(row && row.title);
+  return String(base || "report")
+    .replace(/[^A-Za-z0-9._-]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 180) || "report";
+}
+
+function thinkTankId(row) {
+  return `${THINKTANK_SOURCE}:${thinkTankSlug(row)}`;
+}
+
+function parseThinkTankId(value) {
+  const match = String(value || "").trim().match(/^thinktank:([A-Za-z0-9._-]{3,220})$/);
+  return match ? { id: `thinktank:${match[1]}`, slug: match[1] } : null;
+}
+
+function thinkTankHashFromFilename(value) {
+  const match = String(value || "").match(/_([0-9a-f]{6,12})(?:\.pdf)?$/i);
+  return match ? match[1].toLowerCase() : "";
+}
+
+function thinkTankDate(row) {
+  const date = String(row && row.date || "").trim();
+  if (/^\d{6}$/.test(date)) return `20${date.slice(0, 2)}-${date.slice(2, 4)}-${date.slice(4, 6)}`;
+  if (/^\d{8}$/.test(date)) return `${date.slice(0, 4)}-${date.slice(4, 6)}-${date.slice(6, 8)}`;
+  const published = String(row && row.published || "").trim();
+  const iso = published.match(/(20\d{2})[-/](\d{2})[-/](\d{2})/);
+  if (iso) return `${iso[1]}-${iso[2]}-${iso[3]}`;
+  const archived = String(row && row.archived_at || "").slice(0, 10);
+  return /^\d{4}-\d{2}-\d{2}$/.test(archived) ? archived : "";
+}
+
+function thinkTankInstitution(row) {
+  const cn = String(row && row.institution_cn || "").trim();
+  const en = String(row && row.institution_en || row && row.institution || "").trim();
+  if (cn && en && cn.toLowerCase() !== en.toLowerCase()) return `${en} · ${cn}`;
+  return cn || en || "国际智库";
+}
+
+function slimThinkTankItem(row, wechatTitleMap = new Map()) {
+  const id = thinkTankId(row);
+  const hash = thinkTankHashFromFilename(row && row.local_filename);
+  const wechatTitle = hash ? String(wechatTitleMap.get(hash) || "").trim() : "";
+  const title = String(row && row.title || "").replace(/\s+/g, " ").trim();
+  return {
+    id,
+    source: THINKTANK_SOURCE,
+    title: title || "Untitled report",
+    title_cn: wechatTitle,
+    institution: thinkTankInstitution(row),
+    institution_en: String(row && row.institution_en || row && row.institution || "").trim(),
+    institution_cn: String(row && row.institution_cn || "").trim(),
+    date: thinkTankDate(row),
+    page_count: Number(row && row.page_count || 0) || 0,
+    size_bytes: Number(row && row.bytes || 0) || 0,
+    file_type: "pdf",
+  };
+}
+
+async function thinkTankArchiveRows(env) {
+  const text = await githubContentText(env, THINKTANK_ARCHIVE_PATH);
+  return String(text || "")
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .map((line) => {
+      try {
+        return JSON.parse(line);
+      } catch (_error) {
+        return null;
+      }
+    })
+    .filter((row) => row && row.pdf_url && row.title);
+}
+
+function thinkTankOriginalHashFromArticle(article) {
+  const content = String(article && article.content || article && article.content_html || "");
+  const match = content.match(/Original report:\s*[A-Za-z0-9._-]+\s+[\s\S]{0,220}?\s+([0-9a-f]{6,12})(?:\s|<|$)/i);
+  return match ? match[1].toLowerCase() : "";
+}
+
+async function thinkTankWechatTitleMap(env) {
+  const map = new Map();
+  let dateDirs = [];
+  try {
+    dateDirs = await githubContents(env, THINKTANK_WECHAT_DRAFT_ROOT);
+  } catch (_error) {
+    return map;
+  }
+  const dirs = dateDirs
+    .filter((entry) => entry && entry.type === "dir" && /^\d{6}$/.test(String(entry.name || "")))
+    .sort((a, b) => String(b.name || "").localeCompare(String(a.name || "")))
+    .slice(0, THINKTANK_WECHAT_DATE_LIMIT);
+
+  await Promise.allSettled(dirs.map(async (dir) => {
+    let files = [];
+    try {
+      files = await githubContents(env, `${THINKTANK_WECHAT_DRAFT_ROOT}/${dir.name}`);
+    } catch (_error) {
+      return;
+    }
+    const payloadFiles = files
+      .filter((entry) => /^draft_payload_\d+\.json$/i.test(String(entry && entry.name || "")))
+      .slice(0, 12);
+    await Promise.allSettled(payloadFiles.map(async (file) => {
+      let payload = null;
+      try {
+        payload = await githubContentJson(env, file.path);
+      } catch (_error) {
+        return;
+      }
+      const articles = Array.isArray(payload && payload.articles) ? payload.articles : [];
+      for (const article of articles) {
+        const hash = thinkTankOriginalHashFromArticle(article);
+        const title = cleanHtmlText(article && article.title || "");
+        if (hash && title && !map.has(hash)) map.set(hash, title);
+      }
+    }));
+  }));
+  return map;
+}
+
+function thinkTankSearchText(item) {
+  return [
+    item && item.title,
+    item && item.title_cn,
+    item && item.institution,
+    item && item.institution_en,
+    item && item.institution_cn,
+    item && item.date,
+    item && item.file_type,
+  ].filter(Boolean).join(" ").normalize("NFKC").toLowerCase();
+}
+
+function scoreThinkTankItem(item, query, terms) {
+  const compact = compactSearchQuery(query).toLowerCase();
+  const title = String(item && item.title || "").normalize("NFKC").toLowerCase();
+  const titleCn = String(item && item.title_cn || "").normalize("NFKC").toLowerCase();
+  const institution = String(item && item.institution || "").normalize("NFKC").toLowerCase();
+  const haystack = thinkTankSearchText(item);
+  let score = 0;
+  if (compact && title.includes(compact)) score += 90;
+  if (compact && titleCn.includes(compact)) score += 95;
+  if (compact && institution.includes(compact)) score += 60;
+  for (const term of terms) {
+    if (title.includes(term) || titleCn.includes(term)) score += 20;
+    else if (institution.includes(term)) score += 12;
+    else if (haystack.includes(term)) score += 4;
+    else return 0;
+  }
+  return score || (compact && haystack.includes(compact) ? 2 : 0);
+}
+
+async function thinkTankSearchPayload(env, query, page) {
+  const [rows, wechatTitles] = await Promise.all([
+    thinkTankArchiveRows(env),
+    thinkTankWechatTitleMap(env),
+  ]);
+  const terms = searchMirrorTerms(query);
+  const scored = rows
+    .map((row) => slimThinkTankItem(row, wechatTitles))
+    .filter((item) => item.id && item.title)
+    .map((item) => ({ item, score: terms.length ? scoreThinkTankItem(item, query, terms) : 1 }))
+    .filter((entry) => entry.score > 0)
+    .sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      return dateScore(b.item && b.item.date) - dateScore(a.item && a.item.date);
+    })
+    .map((entry) => entry.item);
+  const start = Math.max(0, (page - 1) * THINKTANK_SEARCH_PAGE_SIZE);
+  return {
+    items: scored.slice(start, start + THINKTANK_SEARCH_PAGE_SIZE),
+    page,
+    total: scored.length,
+    source: THINKTANK_SOURCE,
+  };
+}
+
+async function handleThinkTankSearch(request, env) {
+  const url = new URL(request.url);
+  const query = String(url.searchParams.get("q") || "").trim();
+  const page = Math.max(1, Number(url.searchParams.get("page") || "1") || 1);
+  if (!query) return jsonResponse(request, env, 200, { items: [], page: 1, total: 0, source: THINKTANK_SOURCE });
+
+  return handleCachedSearch(request, env, THINKTANK_SOURCE, query, page, {
+    items: [],
+    page,
+    total: 0,
+    source: THINKTANK_SOURCE,
+  }, () => thinkTankSearchPayload(env, query, page), null, { skipFreshCache: true });
+}
+
+async function findThinkTankRow(env, id) {
+  const parsed = parseThinkTankId(id);
+  if (!parsed) return null;
+  const rows = await thinkTankArchiveRows(env);
+  return rows.find((row) => thinkTankId(row) === parsed.id) || null;
+}
+
+function thinkTankObjectKey(id) {
+  const parsed = parseThinkTankId(id);
+  const slug = parsed ? parsed.slug : String(id || "").replace(/[^A-Za-z0-9._-]+/g, "-");
+  return `${THINKTANK_R2_PREFIX}/${slug}.pdf`;
+}
+
+async function handleThinkTankPdf(request, env) {
+  const url = new URL(request.url);
+  let payload = {};
+  if (request.method === "POST") {
+    try {
+      payload = await request.json();
+    } catch (_error) {
+      return jsonResponse(request, env, 400, { error: "Invalid JSON body." });
+    }
+  }
+  const id = String(payload.id || url.searchParams.get("id") || "").trim();
+  const password = String(payload.password || url.searchParams.get("password") || "");
+  if (!parseThinkTankId(id)) {
+    return jsonResponse(request, env, 400, { error: "Invalid report id." });
+  }
+  const row = await findThinkTankRow(env, id);
+  if (!row) {
+    return jsonResponse(request, env, 404, { error: "Report not found." });
+  }
+
+  const accountDecision = await accountDownloadDecision(env, request, id, THINKTANK_SOURCE);
+  const accountAllowed = Boolean(accountDecision.allowed);
+  if (!password && !accountAllowed) {
+    return jsonResponse(request, env, accountDecision.status || 402, {
+      error: accountDecision.error || "Please log in, purchase this report, or enter the report password.",
+      contact: accountDecision.contact || undefined,
+      limit_exceeded: Boolean(accountDecision.limit_exceeded),
+    });
+  }
+  if (!accountAllowed && !(await sharedReportPasswordMatches(env, id, password))) {
+    return jsonResponse(request, env, 401, { error: "Password is incorrect." });
+  }
+
+  if (env.REPORT_BUCKET) {
+    const object = await env.REPORT_BUCKET.get(thinkTankObjectKey(id));
+    if (object) {
+      const consumed = await finalizeAccountDownloadDecision(env, accountDecision, id, THINKTANK_SOURCE);
+      if (!consumed.ok) {
+        return jsonResponse(request, env, 403, {
+          error: consumed.error || TRIAL_LIMIT_MESSAGE,
+          contact: consumed.contact || CONTACT_WECHAT,
+          limit_exceeded: true,
+        });
+      }
+      return await externalPdfResponse(request, env, object.body, row.title, id);
+    }
+  }
+
+  const pdfUrl = String(row.pdf_url || "").trim();
+  if (!/^https?:\/\//i.test(pdfUrl)) {
+    return jsonResponse(request, env, 404, {
+      error: `PDF is not currently available. Contact WeChat: ${CONTACT_WECHAT}.`,
+      contact: CONTACT_WECHAT,
+    });
+  }
+  let pdf;
+  try {
+    pdf = await fetchWithTimeout(pdfUrl, {
+      headers: {
+        "Accept": "application/pdf,*/*",
+        "User-Agent": THINKTANK_UA,
+      },
+      redirect: "follow",
+    }, Math.max(UPSTREAM_PDF_TIMEOUT_MS, 45000));
+  } catch (_error) {
+    return jsonResponse(request, env, 502, {
+      error: `PDF is not currently available. Contact WeChat: ${CONTACT_WECHAT}.`,
+      contact: CONTACT_WECHAT,
+    });
+  }
+  if (!pdf.ok) {
+    return jsonResponse(request, env, 502, {
+      error: `PDF is not currently available. Contact WeChat: ${CONTACT_WECHAT}.`,
+      contact: CONTACT_WECHAT,
+    });
+  }
+  const bytes = await pdf.arrayBuffer();
+  if (env.REPORT_BUCKET) {
+    await env.REPORT_BUCKET.put(thinkTankObjectKey(id), bytes, {
+      httpMetadata: {
+        contentType: "application/pdf",
+        contentDisposition: contentDisposition(`${row.title || id}.pdf`),
+        cacheControl: "public, max-age=2592000, immutable",
+      },
+      customMetadata: {
+        source: THINKTANK_SOURCE,
+        id,
+      },
+    }).catch(() => null);
+  }
+  const consumed = await finalizeAccountDownloadDecision(env, accountDecision, id, THINKTANK_SOURCE);
+  if (!consumed.ok) {
+    return jsonResponse(request, env, 403, {
+      error: consumed.error || TRIAL_LIMIT_MESSAGE,
+      contact: consumed.contact || CONTACT_WECHAT,
+      limit_exceeded: true,
+    });
+  }
+  return await externalPdfResponse(request, env, new Response(bytes).body, row.title, id);
+}
+
+// ---------------------------------------------------------------------------
 // Authority report integration
 // ---------------------------------------------------------------------------
 
@@ -7203,6 +7547,14 @@ export default {
 
     if (pathname === "/report-a/search" && request.method === "GET") {
       return handleHiborSearch(request, env);
+    }
+
+    if (pathname === "/thinktank/search" && request.method === "GET") {
+      return handleThinkTankSearch(request, env);
+    }
+
+    if (pathname === "/thinktank/pdf" && (request.method === "GET" || request.method === "POST")) {
+      return handleThinkTankPdf(request, env);
     }
 
     if (pathname === "/authority/search" && request.method === "GET") {

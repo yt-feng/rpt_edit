@@ -10,6 +10,7 @@
   const VISITOR_ID_KEY = "kcdesk_visitor_id";
   const AUTHORITY_SOURCE = "authority";
   const REPORT_A_SOURCE = "report-a";
+  const THINKTANK_SOURCE = "thinktank";
   const EXTERNAL_SOURCE = "external";
   const NEWSFEED_TOPIC_LIMIT = 10000;
   const NEWSFEED_ACCOUNT_USERNAMES = new Set(["jacob"]);
@@ -2323,6 +2324,34 @@
     return textMatches(normalize([item.title, item.title_cn].join(" ")), cleanQuery);
   }
 
+  function thinkTankMeta(item) {
+    return [
+      item.institution,
+      item.date,
+      item.page_count ? `${item.page_count}页` : "",
+      formatSize(item.size_bytes),
+      item.file_type,
+    ]
+      .map((value) => String(value || "").trim())
+      .filter(Boolean)
+      .join(" · ");
+  }
+
+  function thinkTankRow(item) {
+    const meta = thinkTankMeta(item);
+    const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
+    const url = externalPageUrl({ ...item, source: THINKTANK_SOURCE }, "");
+    return `
+      <a class="related-row thinktank-row" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(item.id)}">
+        <span class="related-title">
+          <span>${escapeHtml(item.title)}</span>
+          ${zh ? `<span class="related-title-zh">${escapeHtml(zh)}</span>` : ""}
+        </span>
+        <span class="related-meta">${escapeHtml(meta)}</span>
+      </a>
+    `;
+  }
+
   function reportAMeta(item) {
     return [
       item.institution,
@@ -2615,6 +2644,10 @@
     // Live search through the Worker proxy. Rows open the same password-gated
     // detail flow used by primary reports.
     const externalUrl = workerUrl;
+    const thinkTankSection = document.getElementById("thinkTankSection");
+    const thinkTankResults = document.getElementById("thinkTankResults");
+    const thinkTankCount = document.getElementById("thinkTankCount");
+    const thinkTankStatus = document.getElementById("thinkTankStatus");
     const externalSection = document.getElementById("externalSection");
     const externalResults = document.getElementById("externalResults");
     const externalCount = document.getElementById("externalCount");
@@ -2628,6 +2661,7 @@
     const authorityCount = document.getElementById("authorityCount");
     const authorityStatus = document.getElementById("authorityStatus");
     let externalTimer = 0;
+    let thinkTankToken = 0;
     let externalToken = 0;
     let reportAToken = 0;
     let authorityToken = 0;
@@ -2635,9 +2669,25 @@
     let externalTitleMatchCount = 0;
     let externalQuery = "";
     let authorityQuery = "";
+    const thinkTankItems = new Map();
     const externalItems = new Map();
     const reportAItems = new Map();
     const authorityItems = new Map();
+
+    function setThinkTankStatus(text, kind) {
+      if (!thinkTankStatus) return;
+      thinkTankStatus.className = kind ? `status-line ${kind}` : "status-line";
+      thinkTankStatus.textContent = text || "";
+    }
+
+    function hideThinkTankResults() {
+      thinkTankToken += 1;
+      if (thinkTankSection) thinkTankSection.hidden = true;
+      if (thinkTankResults) thinkTankResults.innerHTML = "";
+      thinkTankItems.clear();
+      if (thinkTankCount) thinkTankCount.textContent = "";
+      setThinkTankStatus("");
+    }
 
     function setExternalStatus(text, kind) {
       if (!externalStatus) return;
@@ -2684,6 +2734,52 @@
       }
       if (authorityQuery === cleanQuery && authorityItems.size) return;
       runAuthoritySearch(cleanQuery);
+    }
+
+    async function runThinkTankSearch(query) {
+      if (!thinkTankSection || !thinkTankResults) return;
+      if (!externalUrl || !query) {
+        hideThinkTankResults();
+        return;
+      }
+      const token = ++thinkTankToken;
+      thinkTankSection.hidden = false;
+      if (thinkTankCount) thinkTankCount.textContent = "搜索中…";
+      setThinkTankStatus("");
+      thinkTankResults.innerHTML = `
+        <div class="loading-state">
+          <span class="loading-spinner" aria-hidden="true"></span>
+          <span>正在搜索国际智库…</span>
+        </div>
+      `;
+      try {
+        const response = await fetch(
+          `${externalUrl}/thinktank/search?q=${encodeURIComponent(query)}`,
+          { cache: "no-store" },
+        );
+        if (!response.ok) throw new Error(`搜索失败 (${response.status})`);
+        const data = await response.json();
+        if (token !== thinkTankToken) return;
+        const items = Array.isArray(data.items) ? data.items : [];
+        thinkTankItems.clear();
+        items.forEach((item) => thinkTankItems.set(String(item.id), item));
+        if (thinkTankCount) thinkTankCount.textContent = items.length ? `${items.length} 条` : "";
+        thinkTankResults.innerHTML = items.length
+          ? items.map(thinkTankRow).join("")
+          : '<div class="empty-state">暂无匹配结果。</div>';
+        trackEvent(workerUrl, "search", {
+          source: THINKTANK_SOURCE,
+          query,
+          result_count: items.length,
+          total_count: data.total || 0,
+          cache_status: data.cache_status || "",
+        });
+      } catch (error) {
+        if (token !== thinkTankToken) return;
+        if (thinkTankCount) thinkTankCount.textContent = "";
+        thinkTankResults.innerHTML = "";
+        setThinkTankStatus(error.message || "搜索暂不可用。", "error");
+      }
     }
 
     async function runExternalSearch(query) {
@@ -2847,6 +2943,7 @@
       window.clearTimeout(externalTimer);
       const query = input.value.trim();
       externalTimer = window.setTimeout(() => {
+        runThinkTankSearch(query);
         runExternalSearch(query);
         runReportASearch(query);
       }, 400);
@@ -2854,10 +2951,23 @@
 
     input.addEventListener("input", scheduleExternalSearch);
     clearFilters.addEventListener("click", () => {
+      hideThinkTankResults();
       runExternalSearch("");
       hideReportAResults();
       hideAuthorityResults();
     });
+    if (thinkTankResults) {
+      thinkTankResults.addEventListener("click", (event) => {
+        const row = event.target.closest(".thinktank-row");
+        if (!row) return;
+        const item = thinkTankItems.get(String(row.dataset.id || ""));
+        if (item) trackEvent(workerUrl, "report_open", analyticsReportPayload(item, THINKTANK_SOURCE));
+        if (isNativeNewTabLink(row)) return;
+        event.preventDefault();
+        event.stopPropagation();
+        if (item) openInNewTab(externalPageUrl({ ...item, source: THINKTANK_SOURCE }, ""));
+      });
+    }
     externalResults.addEventListener("click", (event) => {
       const row = event.target.closest(".external-row");
       if (!row) return;
@@ -3083,6 +3193,7 @@
 
   function docRelatedRow(item) {
     if (item.source === EXTERNAL_SOURCE) return externalRow(item);
+    if (item.source === THINKTANK_SOURCE) return thinkTankRow(item);
     if (item.source === REPORT_A_SOURCE) return reportARow(item);
     if (item.source === AUTHORITY_SOURCE) return authorityRow(item);
     return relatedRow(item);
@@ -3118,12 +3229,14 @@
 
     append(catalogRelatedForDoc(item, catalogItems, searchTextById, 4), "catalog");
 
-    const [externalResult, reportAResult, authorityResult] = await Promise.allSettled([
+    const [thinkTankResult, externalResult, reportAResult, authorityResult] = await Promise.allSettled([
+      fetchDocRelatedSource(workerUrl, "thinktank/search", query, THINKTANK_SOURCE, item, 4),
       fetchDocRelatedSource(workerUrl, "external/search", query, EXTERNAL_SOURCE, item, 4),
       fetchDocRelatedSource(workerUrl, "report-a/search", query, REPORT_A_SOURCE, item, 3),
       fetchDocRelatedSource(workerUrl, "authority/search", query, AUTHORITY_SOURCE, item, 3),
     ]);
 
+    if (thinkTankResult.status === "fulfilled") append(thinkTankResult.value, THINKTANK_SOURCE);
     if (externalResult.status === "fulfilled") append(externalResult.value, EXTERNAL_SOURCE);
     if (reportAResult.status === "fulfilled") append(reportAResult.value, REPORT_A_SOURCE);
     if (authorityResult.status === "fulfilled") append(authorityResult.value, AUTHORITY_SOURCE);
@@ -3340,6 +3453,7 @@
     if (item.file_type) url.searchParams.set("file_type", item.file_type);
     if (item.kind) url.searchParams.set("kind", item.kind);
     if (item.page_count) url.searchParams.set("page_count", item.page_count);
+    if (item.size_bytes) url.searchParams.set("size_bytes", item.size_bytes);
     if (item.report_type) url.searchParams.set("report_type", item.report_type);
     if (item.language) url.searchParams.set("language", item.language);
     if (item.category) url.searchParams.set("category", item.category);
@@ -3375,6 +3489,11 @@
   async function requestExternalPassword(workerUrl, id, source = EXTERNAL_SOURCE) {
     const token = getAdminToken();
     if (!canUseDeliveryTools()) throw new Error("Private tools are locked.");
+    if (source === THINKTANK_SOURCE) {
+      const password = getAdminPlainKey();
+      if (password) return { id, password };
+      throw new Error("Private tools are locked.");
+    }
     try {
       const response = await fetch(`${workerUrl}/admin/report-password`, {
         method: "POST",
@@ -3661,7 +3780,9 @@
     const rawSource = params.get("source");
     const source = rawSource === AUTHORITY_SOURCE
       ? AUTHORITY_SOURCE
-      : (rawSource === REPORT_A_SOURCE ? REPORT_A_SOURCE : EXTERNAL_SOURCE);
+      : (rawSource === REPORT_A_SOURCE
+        ? REPORT_A_SOURCE
+        : (rawSource === THINKTANK_SOURCE ? THINKTANK_SOURCE : EXTERNAL_SOURCE));
     return {
       id: String(params.get("id") || "").trim(),
       source,
@@ -3672,6 +3793,7 @@
       file_type: params.get("file_type") || "",
       kind: params.get("kind") || "",
       page_count: params.get("page_count") || "",
+      size_bytes: Number(params.get("size_bytes") || 0) || 0,
       report_type: params.get("report_type") || "",
       language: params.get("language") || "",
       category: params.get("category") || "",
@@ -3688,6 +3810,10 @@
     return item && item.source === REPORT_A_SOURCE;
   }
 
+  function isThinkTankItem(item) {
+    return item && item.source === THINKTANK_SOURCE;
+  }
+
   function isContactOnlyItem(item) {
     return isAuthorityItem(item) || isReportAItem(item);
   }
@@ -3695,16 +3821,19 @@
   function docSourceLabel(item) {
     if (isAuthorityItem(item)) return "高权报告";
     if (isReportAItem(item)) return "报告A";
+    if (isThinkTankItem(item)) return "国际智库";
     return "其他报告";
   }
 
   function docEndpoint(item) {
+    if (isThinkTankItem(item)) return "thinktank";
     return isAuthorityItem(item) ? "authority" : "external";
   }
 
   function validDocId(item) {
     if (isAuthorityItem(item)) return /^(foreign|foreign-rt):[0-9]{1,25}$/.test(item.id);
     if (isReportAItem(item)) return /^report-a:[a-f0-9]{16,64}$/i.test(item.id);
+    if (isThinkTankItem(item)) return /^thinktank:[A-Za-z0-9._-]{3,220}$/.test(item.id);
     return /^[0-9]{6,25}$/.test(item.id);
   }
 
@@ -3855,12 +3984,18 @@
         ${field("Category", item.category || "-")}
         ${field("Author", item.author || "-")}
         ${field("Pages", item.page_count ? `${item.page_count}页` : "-")}
+      ` : (isThinkTankItem(item) ? `
+        ${field("Source", docSourceLabel(item))}
+        ${field("Institution", item.institution || "-")}
+        ${field("Date", item.date || "-")}
+        ${field("Pages", item.page_count ? `${item.page_count}页` : "-")}
+        ${field("PDF", formatSize(item.size_bytes) || "Available")}
       ` : `
         ${field("Source", docSourceLabel(item))}
         ${field("Institution", item.institution || "-")}
         ${field("Date", item.date || "-")}
         ${field("Type", item.file_type || "-")}
-      `);
+      `));
     const detailHeader = `
       <div>
         <h1 class="detail-title">${escapeHtml(item.title || "Report")}</h1>
