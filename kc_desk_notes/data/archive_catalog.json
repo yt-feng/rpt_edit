@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "updated_at_bjt": "2026-07-06 23:29:00 +0800",
+  "updated_at_bjt": "2026-07-07 13:32:43 +0800",
   "item_count": 8,
   "sources": {
     "previous_archive_items": 8,
-    "bank_catalog_titles": 582,
+    "bank_catalog_titles": 750,
     "archive_items_added": 0,
-    "archive_items_updated": 21,
-    "live_matches_skipped": 561
+    "archive_items_updated": 28,
+    "live_matches_skipped": 722
   },
   "items": [
     {
@@ -21,14 +21,15 @@
         "260702",
         "260703",
         "260704",
-        "260705"
+        "260705",
+        "260706"
       ],
       "bank_code": "BofA",
       "bank_name": "BofA",
       "password_group": "default",
       "size_bytes": 0,
       "first_seen_at_bjt": "2026-07-06 13:52:32 +0800",
-      "last_seen_at_bjt": "2026-07-06 23:29:00 +0800",
+      "last_seen_at_bjt": "2026-07-07 13:32:43 +0800",
       "available": false,
       "present_in_latest_scan": false,
       "industry": "",
@@ -50,14 +51,15 @@
         "260702",
         "260703",
         "260704",
-        "260705"
+        "260705",
+        "260706"
       ],
       "bank_code": "BofA",
       "bank_name": "BofA",
       "password_group": "default",
       "size_bytes": 0,
       "first_seen_at_bjt": "2026-07-06 13:52:32 +0800",
-      "last_seen_at_bjt": "2026-07-06 23:29:00 +0800",
+      "last_seen_at_bjt": "2026-07-07 13:32:43 +0800",
       "available": false,
       "present_in_latest_scan": false,
       "industry": "",
@@ -79,14 +81,15 @@
         "260702",
         "260703",
         "260704",
-        "260705"
+        "260705",
+        "260706"
       ],
       "bank_code": "BofA",
       "bank_name": "BofA",
       "password_group": "default",
       "size_bytes": 0,
       "first_seen_at_bjt": "2026-07-06 13:52:32 +0800",
-      "last_seen_at_bjt": "2026-07-06 23:29:00 +0800",
+      "last_seen_at_bjt": "2026-07-07 13:32:43 +0800",
       "available": false,
       "present_in_latest_scan": false,
       "industry": "",
@@ -108,14 +111,15 @@
         "260702",
         "260703",
         "260704",
-        "260705"
+        "260705",
+        "260706"
       ],
       "bank_code": "BofA",
       "bank_name": "BofA",
       "password_group": "default",
       "size_bytes": 0,
       "first_seen_at_bjt": "2026-07-06 13:52:32 +0800",
-      "last_seen_at_bjt": "2026-07-06 23:29:00 +0800",
+      "last_seen_at_bjt": "2026-07-07 13:32:43 +0800",
       "available": false,
       "present_in_latest_scan": false,
       "industry": "",
@@ -136,14 +140,15 @@
         "260701",
         "260703",
         "260704",
-        "260705"
+        "260705",
+        "260706"
       ],
       "bank_code": "BofA",
       "bank_name": "BofA",
       "password_group": "default",
       "size_bytes": 0,
       "first_seen_at_bjt": "2026-07-06 13:52:32 +0800",
-      "last_seen_at_bjt": "2026-07-06 23:29:00 +0800",
+      "last_seen_at_bjt": "2026-07-07 13:32:43 +0800",
       "available": false,
       "present_in_latest_scan": false,
       "industry": "",
@@ -164,14 +169,15 @@
         "260701",
         "260703",
         "260704",
-        "260705"
+        "260705",
+        "260706"
       ],
       "bank_code": "BofA",
       "bank_name": "BofA",
       "password_group": "default",
       "size_bytes": 0,
       "first_seen_at_bjt": "2026-07-06 13:52:32 +0800",
-      "last_seen_at_bjt": "2026-07-06 23:29:00 +0800",
+      "last_seen_at_bjt": "2026-07-07 13:32:43 +0800",
       "available": false,
       "present_in_latest_scan": false,
       "industry": "",
@@ -193,14 +199,15 @@
         "260702",
         "260703",
         "260704",
-        "260705"
+        "260705",
+        "260706"
       ],
       "bank_code": "BofA",
       "bank_name": "BofA",
       "password_group": "default",
       "size_bytes": 0,
       "first_seen_at_bjt": "2026-07-06 13:52:32 +0800",
-      "last_seen_at_bjt": "2026-07-06 23:29:00 +0800",
+      "last_seen_at_bjt": "2026-07-07 13:32:43 +0800",
       "available": false,
       "present_in_latest_scan": false,
       "industry": "",
