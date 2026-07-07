@@ -1,0 +1,65 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/institutions/260708/0009-UNCTAD_World-Investment-Report-2026-International-investment-in-a-t_db74da1/mineru_raw/images/8125e2a7ee8359982cdeb124fd92764a361d3c7d3a96954a919e7bc1394e7e0b.jpg",
+    "path": "kc_translated_reports/institutions/260708/08-0009-UNCTAD_World-Investment-Report-2026-International-investment-in-a-t_db74da1/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.25,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/institutions/260708/0009-UNCTAD_World-Investment-Report-2026-International-investment-in-a-t_db74da1/mineru_raw/images/df2c0a6952710ed9c517e985e2f54da1ee1a88324ec9dbff826201a57180dd11.jpg",
+    "path": "kc_translated_reports/institutions/260708/08-0009-UNCTAD_World-Investment-Report-2026-International-investment-in-a-t_db74da1/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.16,contrast"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/institutions/260708/0009-UNCTAD_World-Investment-Report-2026-International-investment-in-a-t_db74da1/mineru_raw/images/fb80ccaab2e7c997d642825eaa131d97ca0e74d3cc223d104f181f33942b80ce.jpg",
+    "path": "kc_translated_reports/institutions/260708/08-0009-UNCTAD_World-Investment-Report-2026-International-investment-in-a-t_db74da1/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.40,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_004]]",
+    "source_path": "xhs_notes/institutions/260708/0009-UNCTAD_World-Investment-Report-2026-International-investment-in-a-t_db74da1/mineru_raw/images/d506c1386a931378c1994ab2f11cc57467874b7264271e1feebfb8929bad8efb.jpg",
+    "path": "kc_translated_reports/institutions/260708/08-0009-UNCTAD_World-Investment-Report-2026-International-investment-in-a-t_db74da1/assets/fig_004.jpg",
+    "relative_path": "fig_004.jpg",
+    "chart_filter": "score=10;chart_context,edge:0.18,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_005]]",
+    "source_path": "xhs_notes/institutions/260708/0009-UNCTAD_World-Investment-Report-2026-International-investment-in-a-t_db74da1/mineru_raw/images/96d1c6c81273c6de38363b1511a4b51c367ec718839fe0a87b272dc236ed1d1b.jpg",
+    "path": "kc_translated_reports/institutions/260708/08-0009-UNCTAD_World-Investment-Report-2026-International-investment-in-a-t_db74da1/assets/fig_005.jpg",
+    "relative_path": "fig_005.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.20,contrast"
+  },
+  {
+    "token": "[[KC_IMAGE_006]]",
+    "source_path": "xhs_notes/institutions/260708/0009-UNCTAD_World-Investment-Report-2026-International-investment-in-a-t_db74da1/mineru_raw/images/ebe37fe37c84d3c44ce7e9b649a4c9bba997b6093e93d9fe81e9c68fea014951.jpg",
+    "path": "kc_translated_reports/institutions/260708/08-0009-UNCTAD_World-Investment-Report-2026-International-investment-in-a-t_db74da1/assets/fig_006.jpg",
+    "relative_path": "fig_006.jpg",
+    "chart_filter": "score=10;chart_context,edge:0.33,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_007]]",
+    "source_path": "xhs_notes/institutions/260708/0009-UNCTAD_World-Investment-Report-2026-International-investment-in-a-t_db74da1/mineru_raw/images/31546189be42047939627e3d18ace9912d2fc13bef186729e5c60cbf8a876255.jpg",
+    "path": "kc_translated_reports/institutions/260708/08-0009-UNCTAD_World-Investment-Report-2026-International-investment-in-a-t_db74da1/assets/fig_007.jpg",
+    "relative_path": "fig_007.jpg",
+    "chart_filter": "score=9;chart_context,chart_ratio,edge:0.13"
+  },
+  {
+    "token": "[[KC_IMAGE_008]]",
+    "source_path": "xhs_notes/institutions/260708/0009-UNCTAD_World-Investment-Report-2026-International-investment-in-a-t_db74da1/mineru_raw/images/89234cf60ddaf6fd4b216b07be4dcceb7c37dac441596fddb58578155fc7e7c2.jpg",
+    "path": "kc_translated_reports/institutions/260708/08-0009-UNCTAD_World-Investment-Report-2026-International-investment-in-a-t_db74da1/assets/fig_008.jpg",
+    "relative_path": "fig_008.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.21,contrast"
+  },
+  {
+    "token": "[[KC_IMAGE_009]]",
+    "source_path": "xhs_notes/institutions/260708/0009-UNCTAD_World-Investment-Report-2026-International-investment-in-a-t_db74da1/mineru_raw/images/039d396ed3164446dac531d889a9aab8a53c022447a13ac2f694b2557e35192c.jpg",
+    "path": "kc_translated_reports/institutions/260708/08-0009-UNCTAD_World-Investment-Report-2026-International-investment-in-a-t_db74da1/assets/fig_009.jpg",
+    "relative_path": "fig_009.jpg",
+    "chart_filter": "score=10;chart_context,edge:0.39,contrast,large"
+  }
+]
