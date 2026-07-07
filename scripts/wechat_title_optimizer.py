@@ -394,6 +394,7 @@ def remove_inline_broker_aliases(title: str) -> str:
         cleaned,
         flags=re.I,
     )
+    cleaned = re.sub(INLINE_BROKER_ALIAS_PATTERN, "报告", cleaned, flags=re.I)
     cleaned = re.sub(r"报告报告", "报告", cleaned)
     cleaned = re.sub(r"[，,、]{2,}", "，", cleaned)
     cleaned = re.sub(r"：[,，、]+", "：", cleaned)
