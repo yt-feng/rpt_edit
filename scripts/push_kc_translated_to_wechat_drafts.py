@@ -102,7 +102,8 @@ MID_ARTICLE_CTA_RE = re.compile(
     r"(扫码|社群|知识星球|星球|加微信|朋友圈|设为星标|设置星标|每日汇编|每天会把|"
     r"每天我会|国际信源汇编|完整报告与\s*KC评论|完整报告和\s*KC评论|更多国际信源|"
     r"喂给\s*AI|人工快速扫|市场\s*dynamics|图表合集|加入.*讨论|继续拆完整报告|"
-    r"这篇可以沿着|几条线索看|重点不是复述报告|更新信息参见|kcdesk|ΚСⅾеѕk)",
+    r"这篇可以沿着|几条线索看|重点不是复述报告|如果你是从|单篇文章只能解决|"
+    r"更新信息参见|kcdesk|ΚСⅾеѕk)",
     re.I,
 )
 MID_ARTICLE_CTA_CONTEXT_RE = re.compile(
@@ -173,6 +174,11 @@ INSTITUTION_TITLE_ALIASES: list[tuple[str, list[str]]] = [
     ("美联储", ["Fed", "Federal Reserve"]),
 ]
 TITLE_ALIAS_SEPARATOR_RE = r"(?:[：:，,、;；\-—]\s*)?"
+INLINE_BROKER_ALIAS_PATTERN = (
+    r"(?<![A-Za-z])(?:GS|JPM|JEF|NOM|BARC|DB|BofA|UBS|Citi|Citigroup|Goldman|"
+    r"JPMorgan|Jefferies|Nomura|Barclays)(?![A-Za-z])"
+)
+INLINE_BROKER_ALIAS_RE = re.compile(INLINE_BROKER_ALIAS_PATTERN, re.I)
 
 
 class WeChatError(RuntimeError):
@@ -363,9 +369,33 @@ def remove_redundant_title_aliases(title: str) -> str:
             flags=re.I,
         )
     cleaned = remove_redundant_institution_report_prefix(cleaned)
+    cleaned = remove_inline_broker_aliases(cleaned)
     cleaned = re.sub(r"\s*[：:]\s*", "：", cleaned)
     cleaned = re.sub(r"：{2,}", "：", cleaned)
     return limit_title_colons(cleaned).strip("：: -—")
+
+
+def remove_inline_broker_aliases(title: str) -> str:
+    cleaned = normalize_space(title)
+    if not INLINE_BROKER_ALIAS_RE.search(cleaned):
+        return cleaned
+    action_words = r"(?:称|表示|认为|预计|拆解|发现|观察|调升|下调|重申|警告|指出|提到)"
+    cleaned = re.sub(
+        rf"{INLINE_BROKER_ALIAS_PATTERN}\s*(?={action_words})",
+        "报告",
+        cleaned,
+        flags=re.I,
+    )
+    cleaned = re.sub(
+        rf"([：:，,、;；\-—])\s*{INLINE_BROKER_ALIAS_PATTERN}\s*([：:，,、;；\-—])?",
+        r"\1",
+        cleaned,
+        flags=re.I,
+    )
+    cleaned = re.sub(r"报告报告", "报告", cleaned)
+    cleaned = re.sub(r"[，,、]{2,}", "，", cleaned)
+    cleaned = re.sub(r"：[,，、]+", "：", cleaned)
+    return cleaned.strip(" ，,。；;：:、-—")
 
 
 def strip_unexpected_leading_institution_prefix(title: str, institution_name: str) -> str:
@@ -475,6 +505,8 @@ def repair_wechat_title_structure(title: str) -> str:
     leading_focus = re.match(r"^(?:而是|但是|但)(?P<focus>[^，,。；;]{2,26})", body)
     if leading_focus:
         body = f"{polish_title_focus(leading_focus.group('focus'))}更关键"
+    body = re.sub(r"不是优先选项", "优先级降低", body)
+    body = re.sub(r"并非优先选项", "优先级降低", body)
     body = re.sub(r"^(?:而是|但是|但|其中|同时|并且|以及|所以|因为)", "", body)
     body = re.sub(r"^(?:真正)?(?:关键|重点)(?:不在|不是)[^，,。；;]{1,16}[，,]?(?:而是|是)", "", body)
 
@@ -811,6 +843,7 @@ def fit_digest_text(text: str) -> str:
     cleaned = clean_digest_candidate(text)
     if not cleaned:
         return ""
+    cleaned = repair_digest_structure(cleaned)
     delimiter_matches = list(re.finditer(r"[，,；;。！？!?]", cleaned))
     if delimiter_matches:
         tail = cleaned[delimiter_matches[-1].end() :].strip(" ，,。；;：:、-—")
@@ -818,7 +851,7 @@ def fit_digest_text(text: str) -> str:
         if tail and (len(tail) <= 4 or (len(tail) <= 7 and not tail_has_predicate)):
             cleaned = cleaned[: delimiter_matches[-1].start()].strip(" ，,。；;：:、-—")
     if len(cleaned) <= WECHAT_DIGEST_SOFT_CHARS:
-        return cleaned
+        return complete_digest_sentence(cleaned)
 
     soft_candidates: list[str] = []
     soft_limit = min(WECHAT_DIGEST_SOFT_CHARS, WECHAT_DIGEST_MAX_CHARS)
@@ -827,11 +860,39 @@ def fit_digest_text(text: str) -> str:
         if 18 <= len(candidate) <= soft_limit:
             soft_candidates.append(candidate)
     if soft_candidates:
-        return soft_candidates[-1]
+        return complete_digest_sentence(soft_candidates[-1])
 
     if len(cleaned) <= WECHAT_DIGEST_MAX_CHARS:
-        return cleaned
-    return trim_title_complete(cleaned, WECHAT_DIGEST_MAX_CHARS, 18).strip(" ，,。；;：:、-—")
+        return complete_digest_sentence(cleaned)
+    return complete_digest_sentence(trim_title_complete(cleaned, WECHAT_DIGEST_MAX_CHARS - 1, 18))
+
+
+def repair_digest_structure(text: str) -> str:
+    cleaned = normalize_space(text).strip(" ，,。；;：:、-—")
+    if not cleaned:
+        return ""
+    if re.search(r"(?:不是|而是|并非优先选项|不是优先选项)", cleaned) or re.match(
+        r"^(?:而是|但是|但|其中|同时|并且|以及|所以|因为)",
+        cleaned,
+    ):
+        cleaned = strip_title_institution_prefix(repair_wechat_title_structure(cleaned))
+    cleaned = re.sub(r"不是优先选项", "优先级降低", cleaned)
+    cleaned = re.sub(r"并非优先选项", "优先级降低", cleaned)
+    cleaned = re.sub(r"^(.{2,28})要看(.{2,40})$", r"\1的观察重点是\2", cleaned)
+    cleaned = re.sub(r"观察重点是观察重点是", "观察重点是", cleaned)
+    cleaned = re.sub(r"[，,、]{2,}", "，", cleaned)
+    return cleaned.strip(" ，,。；;：:、-—")
+
+
+def complete_digest_sentence(text: str) -> str:
+    cleaned = normalize_space(text).strip(" ，,。；;：:、-—")
+    if not cleaned:
+        return ""
+    if len(cleaned) >= WECHAT_DIGEST_MAX_CHARS:
+        cleaned = trim_title_complete(cleaned, WECHAT_DIGEST_MAX_CHARS - 1, 18)
+    if cleaned and cleaned[-1] not in "。！？!?":
+        cleaned += "。"
+    return cleaned
 
 
 def digest_from_article_text(

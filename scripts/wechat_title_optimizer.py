@@ -30,6 +30,11 @@ INSTITUTION_TITLE_ALIASES: list[tuple[str, list[str]]] = [
     ("美联储", ["Fed", "Federal Reserve"]),
 ]
 TITLE_ALIAS_SEPARATOR_RE = r"(?:[：:，,、;；\-—]\s*)?"
+INLINE_BROKER_ALIAS_PATTERN = (
+    r"(?<![A-Za-z])(?:GS|JPM|JEF|NOM|BARC|DB|BofA|UBS|Citi|Citigroup|Goldman|"
+    r"JPMorgan|Jefferies|Nomura|Barclays)(?![A-Za-z])"
+)
+INLINE_BROKER_ALIAS_RE = re.compile(INLINE_BROKER_ALIAS_PATTERN, re.I)
 TITLE_BROKER_TICKER_RE = re.compile(
     r"(?<![A-Za-z])(?:GS|JPM|JEF|NOM|BARC|MS|DB|BofA)(?=(?:Q[1-4]|\d|[^A-Za-z]|$))|"
     r"(?<![A-Za-z])(?:Citi|Citigroup|Goldman|JPMorgan|Jefferies|Nomura|Barclays)(?![A-Za-z])",
@@ -366,9 +371,33 @@ def remove_redundant_title_aliases(title: str) -> str:
             flags=re.I,
         )
     cleaned = remove_redundant_institution_report_prefix(cleaned)
+    cleaned = remove_inline_broker_aliases(cleaned)
     cleaned = re.sub(r"\s*[：:]\s*", "：", cleaned)
     cleaned = re.sub(r"：{2,}", "：", cleaned)
     return limit_title_colons(cleaned).strip("：: -—")
+
+
+def remove_inline_broker_aliases(title: str) -> str:
+    cleaned = normalize_space(title)
+    if not INLINE_BROKER_ALIAS_RE.search(cleaned):
+        return cleaned
+    action_words = r"(?:称|表示|认为|预计|拆解|发现|观察|调升|下调|重申|警告|指出|提到)"
+    cleaned = re.sub(
+        rf"{INLINE_BROKER_ALIAS_PATTERN}\s*(?={action_words})",
+        "报告",
+        cleaned,
+        flags=re.I,
+    )
+    cleaned = re.sub(
+        rf"([：:，,、;；\-—])\s*{INLINE_BROKER_ALIAS_PATTERN}\s*([：:，,、;；\-—])?",
+        r"\1",
+        cleaned,
+        flags=re.I,
+    )
+    cleaned = re.sub(r"报告报告", "报告", cleaned)
+    cleaned = re.sub(r"[，,、]{2,}", "，", cleaned)
+    cleaned = re.sub(r"：[,，、]+", "：", cleaned)
+    return cleaned.strip(" ，,。；;：:、-—")
 
 
 def repair_english_slug_tail(title: str) -> str:
