@@ -7,42 +7,42 @@ After uploading AI image 1:KC_AI_IMAGE_001: pacing sleep 3.0s
 After uploading AI image 1:KC_AI_IMAGE_002: pacing sleep 3.0s
 After uploading AI image 1:KC_AI_IMAGE_003: pacing sleep 3.0s
 After uploading cover image 1: pacing sleep 3.0s
-Built WeChat article 1/7 in 107.8s: 亚洲开发银行：马尔代夫要看财政纪律与产业韧性 (body_images=3, ai_images=3)
+Built WeChat article 1/7 in 17.7s: 亚洲开发银行：马尔代夫要看财政纪律与产业韧性 (body_images=3, ai_images=3)
 After building WeChat article 1/7: pacing sleep 12.0s
 Building WeChat article 2/7: 02-0002-ADB_Measuring-the-Digital-Economy-of-Mongolia_e038b976
 After uploading inline image 2:[[KC_IMAGE_001]]: pacing sleep 3.0s
 After uploading inline image 2:[[KC_IMAGE_002]]: pacing sleep 3.0s
 After uploading inline image 2:[[KC_IMAGE_003]]: pacing sleep 3.0s
 After uploading cover image 2: pacing sleep 3.0s
-Built WeChat article 2/7 in 15.6s: 亚洲开发银行：蒙古数字宏观环境仅占GDP1.6%，统计方法才是真正突破 (body_images=3, ai_images=0)
+Built WeChat article 2/7 in 15.5s: 亚洲开发银行：蒙古数字宏观环境仅占GDP1.6%，统计方法才是真正突破 (body_images=3, ai_images=0)
 After building WeChat article 2/7: pacing sleep 12.0s
 Building WeChat article 3/7: 03-0003-BIS_Blockchain-consensus-mechanisms-and-fragmentation_10c30c80
 After uploading inline image 3:[[KC_IMAGE_001]]: pacing sleep 3.0s
 After uploading inline image 3:[[KC_IMAGE_002]]: pacing sleep 3.0s
 After uploading inline image 3:[[KC_IMAGE_003]]: pacing sleep 3.0s
 After uploading cover image 3: pacing sleep 3.0s
-Built WeChat article 3/7 in 15.9s: 国际清算银行：区块链共识机制要看宏观环境均衡的结果 (body_images=3, ai_images=0)
+Built WeChat article 3/7 in 15.7s: 国际清算银行：区块链共识机制要看宏观环境均衡的结果 (body_images=3, ai_images=0)
 After building WeChat article 3/7: pacing sleep 12.0s
 Building WeChat article 4/7: 04-0004-IMF_Mali-Second-Review-Under-the-Staff-Monitored-Program-Press-R_082a5318
 After uploading inline image 4:[[KC_IMAGE_001]]: pacing sleep 3.0s
 After uploading inline image 4:[[KC_IMAGE_002]]: pacing sleep 3.0s
 After uploading inline image 4:[[KC_IMAGE_003]]: pacing sleep 3.0s
 After uploading cover image 4: pacing sleep 3.0s
-Built WeChat article 4/7 in 15.4s: IMF：马里宏观环境修复看矿业变量 (body_images=3, ai_images=0)
+Built WeChat article 4/7 in 16.2s: IMF：马里宏观环境修复看矿业变量 (body_images=3, ai_images=0)
 After building WeChat article 4/7: pacing sleep 12.0s
 Building WeChat article 5/7: 05-0005-OECD_Better-skills-data-for-smarter-financing-of-education-and-tr_ae1bb2d4
 After uploading inline image 5:[[KC_IMAGE_002]]: pacing sleep 3.0s
 After uploading inline image 5:[[KC_IMAGE_001]]: pacing sleep 3.0s
 After uploading AI image 5:KC_AI_IMAGE_001: pacing sleep 3.0s
 After uploading cover image 5: pacing sleep 3.0s
-Built WeChat article 5/7 in 18.3s: 经合组织：政府培训支出最大障碍要看缺数据 (body_images=3, ai_images=1)
+Built WeChat article 5/7 in 16.7s: 经合组织：政府培训支出最大障碍要看缺数据 (body_images=3, ai_images=1)
 After building WeChat article 5/7: pacing sleep 12.0s
 Building WeChat article 6/7: 06-0006-OECD_Developing-South-Africa-s-National-Student-Assessment-Framew_38ac3a62
 After uploading inline image 6:[[KC_IMAGE_001]]: pacing sleep 3.0s
 After uploading inline image 6:[[KC_IMAGE_002]]: pacing sleep 3.0s
 After uploading inline image 6:[[KC_IMAGE_003]]: pacing sleep 3.0s
 After uploading cover image 6: pacing sleep 3.0s
-Built WeChat article 6/7 in 15.5s: 经合组织：南非基础教育真正瓶颈要看评估体系 (body_images=3, ai_images=0)
+Built WeChat article 6/7 in 15.6s: 经合组织：南非基础教育真正瓶颈要看评估体系 (body_images=3, ai_images=0)
 After building WeChat article 6/7: pacing sleep 12.0s
 Building WeChat article 7/7: 07-0008-OECD_Tax-Co-operation-for-Development-2025_13fd4c01
 After uploading inline image 7:[[KC_IMAGE_001]]: pacing sleep 3.0s
@@ -50,12 +50,12 @@ After uploading inline image 7:[[KC_IMAGE_002]]: pacing sleep 3.0s
 After uploading inline image 7:[[KC_IMAGE_003]]: pacing sleep 3.0s
 After uploading cover image 7: pacing sleep 3.0s
 Built WeChat article 7/7 in 16.5s: 经合组织：全球最低税落地后，发展中国家的真正挑战才刚开始 (body_images=3, ai_images=0)
-Preparing WeChat draft 1: articles=7 payload_bytes=59465
+Preparing WeChat draft 1: articles=7 payload_bytes=59191
 Checking recent drafts before creating WeChat draft 1
 Creating WeChat draft 1
 Before creating WeChat draft 1: pacing sleep 90.0s
-Verifying WeChat draft 1: media_id=avPwUQVH0p7DPpCFFkit8_I1rVCfHLremfrRmN_uEwXKtn8fl7ognSgshYtoJj-W
+Verifying WeChat draft 1: media_id=avPwUQVH0p7DPpCFFkit81vg_y3xcqgc9cWMYAKbddQtLIeatL9v_fWRytmp9B4m
 Before verifying WeChat draft 1: pacing sleep 8.0s
-Verified draft/get: media_id=avPwUQVH0p7DPpCFFkit8_I1rVCfHLremfrRmN_uEwXKtn8fl7ognSgshYtoJj-W articles=7/7
-Draft 1: articles=7 media_id=avPwUQVH0p7DPpCFFkit8_I1rVCfHLremfrRmN_uEwXKtn8fl7ognSgshYtoJj-W
+Verified draft/get: media_id=avPwUQVH0p7DPpCFFkit81vg_y3xcqgc9cWMYAKbddQtLIeatL9v_fWRytmp9B4m articles=7/7
+Draft 1: articles=7 media_id=avPwUQVH0p7DPpCFFkit81vg_y3xcqgc9cWMYAKbddQtLIeatL9v_fWRytmp9B4m
 Wrote summary: wechat_drafts/institutions/260707/wechat_draft_summary.json
