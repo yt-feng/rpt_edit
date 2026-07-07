@@ -1,0 +1,19 @@
+Selected 1 translated reports from kc_translated_reports/consulting/260707 (institution_filtered=0, skipped_title_policy=0/1)
+Fetched WeChat access token
+Uploaded trailing image: /opt/actions-runner-rpt-edit/_work/rpt_edit/rpt_edit/prompts/zsxq_img.jpg
+After uploading trailing image: pacing sleep 3.0s
+Building WeChat article 1/1: 01-0001-BCG_Sustainability-Reporting-in-Europe-From-Compliance-to-Strate_43e096d4
+After uploading inline image 1:[[KC_IMAGE_001]]: pacing sleep 3.0s
+After uploading inline image 1:[[KC_IMAGE_002]]: pacing sleep 3.0s
+After uploading AI image 1:KC_AI_IMAGE_001: pacing sleep 3.0s
+After uploading cover image 1: pacing sleep 3.0s
+Built WeChat article 1/1 in 17.7s: 波士顿咨询：多数企业可持续报告仍陷低效流程，AI承诺未兑现 (body_images=3, ai_images=1)
+Preparing WeChat draft 1: articles=1 payload_bytes=7936
+Checking recent drafts before creating WeChat draft 1
+Creating WeChat draft 1
+Before creating WeChat draft 1: pacing sleep 90.0s
+Verifying WeChat draft 1: media_id=avPwUQVH0p7DPpCFFkit8_sMphAAo9iqn8lozcJPFmAXFoTO44_nME1kQ8vMb-y0
+Before verifying WeChat draft 1: pacing sleep 8.0s
+Verified draft/get: media_id=avPwUQVH0p7DPpCFFkit8_sMphAAo9iqn8lozcJPFmAXFoTO44_nME1kQ8vMb-y0 articles=1/1
+Draft 1: articles=1 media_id=avPwUQVH0p7DPpCFFkit8_sMphAAo9iqn8lozcJPFmAXFoTO44_nME1kQ8vMb-y0
+Wrote summary: wechat_drafts/consulting/260707/wechat_draft_summary.json
