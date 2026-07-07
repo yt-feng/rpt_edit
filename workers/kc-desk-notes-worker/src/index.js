@@ -1221,6 +1221,10 @@ function accessGrantBackupHistoryKey(email, timestamp) {
   return accountKey("access_backup", "history", email, String(timestamp || "").replace(/[^0-9A-Za-z_-]+/g, "-"));
 }
 
+function accessGrantBackupHistoryPrefix(email) {
+  return accountKey("access_backup", "history", email, "");
+}
+
 function accessGrantAuditKey(email, timestamp) {
   return accountKey("access_audit", email, String(timestamp || "").replace(/[^0-9A-Za-z_-]+/g, "-"));
 }
@@ -1259,7 +1263,11 @@ async function findStoredAccessGrant(env, email) {
     safeR2GetJson(env, accountKey("access", normalized)),
     safeR2GetJson(env, accessGrantBackupLatestKey(normalized)),
   ]);
-  const candidates = [primary, latestBackup].filter((row) => row && typeof row === "object");
+  let historyBackups = [];
+  if (!latestBackup) {
+    historyBackups = await listR2JsonObjects(env, accessGrantBackupHistoryPrefix(normalized), 20).catch(() => []);
+  }
+  const candidates = [primary, latestBackup, ...historyBackups].filter((row) => row && typeof row === "object");
   if (!candidates.length) return null;
   candidates.sort((a, b) => accessGrantUpdatedAtMs(b) - accessGrantUpdatedAtMs(a));
   const best = { ...candidates[0], email: normalized };
@@ -1462,7 +1470,7 @@ async function consumeLimitedAccessDownload(env, email, reportId, source) {
     download_count: updatedItems.length,
     updated_at: now,
   };
-  await r2PutJson(env, key, updated);
+  await writeAccessGrantDurably(env, normalized, updated);
   return { ok: true, access: publicAccessGrant(updated) };
 }
 
