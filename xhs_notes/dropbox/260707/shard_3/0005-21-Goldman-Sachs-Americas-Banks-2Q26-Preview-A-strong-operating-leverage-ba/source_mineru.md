@@ -1,0 +1,470 @@
+AMERICAS BANKS
+
+# 2Q26 Preview: A strong operating leverage backdrop, with valuation looking fair
+
+As we head into 2Q26 earnings, we expect investors to focus on three key themes: 1) the outlook for NII, given the strong loan growth environment, the forward curve baking in rate hikes by year end offset by the risk from higher deposit funding costs 2) the revenue increase from the step up in both ECM and M&A activity and the sustainability of elevated secondary trading activity; and 3) the prospects for a multi-year operating leverage cycle, driven by strong fee and NII growth, coupled with banks continuing to show robust expense discipline. Valuation for the group appears fair, after the 17% increase in share prices in 2Q26, which was largely multiple-driven. The average FY+2 P/E multiple now stands at the \~80th percentile and the group is trading at \~65% of the S&P 500 multiple (modestly above the historical level). However, we expect that large cap banks will continue to generate attractive ROTCEs given the strong revenue environment and benign credit outlook. In our view, the best positioned and most topical stocks remain BAC, C and WFC.
+
+We also modestly update our estimates and price targets within.
+
+Richard Ramsden
++1(212)357-9981 |
+richard.ramsden@gs.com
+GS & Co. LLC
+
+James Yaro
++1(212)902-1913 |
+james.e.yaro@gs.com
+GS & Co. LLC
+
+Divyam Harlalka
++1(332)245-7818 |
+divyam.harlalka@gs.com
+GS India SPL
+
+Matthew Weng
++1(212)902-8484 |
+matthew.weng@gs.com
+GS & Co. LLC
+
+Lokesh Kumar Sangewar
++1(332)245-7846 |
+lokesh.sangewar@gs.com
+GS India SPL
+
+## Table of Contents
+
+PM summary 3
+Key Debates 7
+Best positioned stocks 12
+Valuation 15
+New vs. old estimates 16
+Appendix 17
+Disclosure Appendix 18
+
+## PM summary
+
+## Key debates
+
+The outlook for NII remains strong on the back of: 1) continued robust loan growth driven by commercial loan demand; and 2) NIM expansion driven by fixed rate asset repricing, with upside to 2027 estimates, as the market forward curve prices in a rate hike by the end of the year and the long end of the curve remains elevated - We expect banks to see 8% NII growth in 2026E driven by 1) 9% loan growth, primarily driven by commercial loans (specifically C&I and NDFI); and 2) continued fixed rate asset repricing as the forward curve remains steep. Industry loan and deposit growth have continued to accelerate recently with 2Q26TD tracking \~6.1%/6.2% higher YoY (Exhibit 2), and 2Q26E loans for banks in our coverage expected to increase 8% YoY (Exhibit 3). We forecast limited deposit repricing in 2Q26E and expect deposit yields to remain largely stable, resulting in cumulative deposit betas continuing to converge towards the historical rate cutting cycle averages (Exhibit 6), decreasing from 52% through 2Q25, to 48% through 2Q26. Notably, as competition to fund loan growth is high, and the market forward curve now bakes in 1 Fed funds hikes by year-end, we forecast deposit yields to increase 7bps between 2Q26E-4Q26E (Exhibit 7). However, we do not expect material changes to the 2026 NII outlook, as the hikes are towards the end of the year, with strong asset growth and asset repricing somewhat offsetting the impact of higher funding cost. That being said, we see potential upside of \~1.0%/1.5% to 2027E NII/EPS upside in a scenario with 25bps parallel upward shift in forward curve (Exhibit 8). Overall, we expect most banks to deliver robust NII in 2026, at the high end of their full year guides, as loan growth, especially C&I continues to outperform expectations.
+
+Sizing the ECM opportunity, with record 2026E proceeds, and potential equities trading upside. US IPO proceeds are expected to reach all-time highs in 2026, following four consecutive years of muted issuance, based on GS' portfolio strategy estimates (report here). The portfolio strategy team estimates 2026E US IPO gross proceeds of \$225bn, \~530%/95% higher than the 2010-25 average/2021 peak (Exhibit 10). There is further upside to this from \~\$490bn worth of shares expiring from lockups (Exhibit 11). We estimate a 2026 US IPO fee pool of \~\$4.5bn-\$9.0bn, up \~90-280% YoY, based on a 2-4% fee rate (Exhibit 12). As such, we see upside potential depending on how underwriting mandates perform for the balance of the year, as Street 2026 ECM forecasts are up only \~25% YoY on average across banks (Exhibit 13). We see a strong correlation between ECM revenue and equities trading in periods of IPO spikes historically with 63% R-squared, indicating a possible multiplier effect in such periods (Exhibit 15). Furthermore, we estimate a \~10.5%/1.5% upside to 2026E equities trading/EPS estimates if 2H26E equities trading were to decline 10% sequentially vs. 1H, vs. a 28% decline estimated currently (Exhibit 16).
+
+We expect a multi-year operating leverage cycle for large cap banks, driven by strength in both fees and NII, with managements continuing to focus on
+
+expense discipline. Large banks have demonstrated robust expense discipline, with most banks committing to deliver over 200bps of operating leverage and core efficiency ratios falling to 58% in 2026E. While we forecast \~7% core expense growth in 2026E, this would be more than offset by \~11% core revenue growth, resulting in \~200bps lower core efficiency ratios YoY for the group in 2026E, and \~120bps YoY improvement in 2027E (Exhibit 20). We expect 4pp of operating leverage in 2Q26E, up 1pp sequentially, with 2H26E operating leverage modestly lower at 2pp (Exhibit 17). We continue to expect positive operating leverage through the cycle, particularly at BAC, C and MS. Banks have continued to highlight their focus on expense management through headcount rationalization, with 1Q26 headcount (ex. JPM) down 5% since 1Q24, while continuing to re-invest in technology, AI and process re-engineering across business segments leading to higher productivity.
+
+## Valuation
+
+After an 17% rise in stock prices in 2Q26, largely driven by multiple rerating, we believe the group is fairly valued, with \~12.5x FY+2 P/Es, currently above historical levels (\~80th %ile over the past decade), and the group trading at \~65% of the S&P 500 multiple, modestly above the historical relationship to the S&P 500's multiple.
+
+## Best positioned and topical stocks
+
+We are constructive on Buy-rated WFC, BAC, and C.
+
+1. BAC, Buy: We remain constructive on BAC's NII trajectory through 2026E/27E. We see BAC's NII growing \~7.0% YoY in 2027E, \~1pp higher than the large bank average for 2027E $^{1}$ (Exhibit 22). Further given BAC's asset sensitivity, and less exposure to capital markets revenue risk, we see an increasingly attractive top-line growth story. We are \~1% above consensus 2026E NII, and believe the high end of the guidance as achievable, driven by a combination of: 1) less pressure from short rates, coupled with BAC's asset sensitivity; 2) stronger loan and deposit growth YoY; 3) accretive fixed rate asset repricing; 4) better than expected deposit repricing. We expect further expense discipline, resulting in multiyear operating leverage; 2Q26E/2026E expenses are expected to increase \~7.5%/5% YoY at BAC, resulting in \~415bps/235bps of operating leverage. We see upside risk to BAC's capital return, given increasing excess capital levels from regulatory reform. Finally, we view BAC's current \~1.8x 2027E P/TBV as attractive on our expected \~17% ROTCE (Exhibit 35). Further, we continue to field discussions on:
+
+a. The drivers of the strong outlook for 2026 NII, and any potential upside from here.
+
+b. Where will BAC track on operating leverage in 2H26 relative to the guided 200bps-300bps of positive operating leverage in 2026.
+
+c. Whether the company will see a further step up in fee income growth given the strength in the capital markets and wealth businesses in H2
+
+2. C, Buy: Post its investor day, we believe C remains on track to deliver strong earnings and return growth as it continues to demonstrate disciplined execution of its transformation, along with continued share gains across its core businesses. Citi is pulling three key levers to drive earnings growth over the near and medium term that push our core EPS estimates 1%/6%/1% above Visible Alpha Consensus Data for 2026E/27E/28E, with an \~11.4% ROTCE in 2026E (above their 10-11% guidance, and \~20bps ahead of consensus), which should drive upside to the shares for a stock that is currently trading at the lowest P/TBV across large banks. The three levers are: 1) a robust 4% 2026E-28E core revenue CAGR, supported by share gains in capital markets and Wealth, in addition to through-the-cycle strength in the Services business as it leverages its global footprint; 2) meaningful efficiency improvements, driven by both structural productivity gains and reduction in stranded costs and transformation expenses; and 3) continued improvement in capital efficiency through further DTA utilization with improving US profitability, and more disciplined RWA deployment across the core businesses. We believe that C can generate \~5pp of positive core operating leverage in 2026E on 9% core revenue growth and only 4% core expense growth. In addition, we estimated a \~40bps YoY improvement in Citi's SCB during the 2026 Fed stress test, which, while non-binding, evidences that regulators are recognizing C's stronger US profitability and simpler risk profile. As a result, we continue to view management's capital outlook as conservative, embedding a 13.1% CET1 ratio by 2028, meaningfully above GSe/the Street at 12.5%/12.3%, which, in our view, leaves meaningful room for upside to its near and medium term return targets. We expect investor debate on:
+
+a. How will trading track relative to guidance of up mid-teens YoY given the significant pickup in activity in June and commentary around the sustainability of the run rate heading into H2.
+
+b. Will C moderate the mix of buybacks vs balance sheet investments given the higher valuation.
+
+c. Will management use revenue strength to deliver higher operating leverage or increase franchise investments in the near term.
+
+3. WFC, Buy, on CL: WFC offers an attractive mix of solid top-line growth across both NII and fees, supported by investment in businesses where it remains underindexed, alongside meaningful operating leverage from only modest expense growth over the next two years. We continue to see WFC as well positioned to achieve its 2026 NII target of \$50bn, with healthy loan growth more than offsetting higher deposit funding costs in H2, driven by both increased competition and an ongoing mix shift toward commercial deposits. In addition, continued share gains in key strategic growth areas, including capital markets and card, should support robust 5% YoY revenue growth in 2026E/27E. Further, against this constructive revenue backdrop, we forecast modest expense growth of 2%/2%/3% in 2026E/27E/28E, as the company should be able to self-fund a meaningful portion of incremental investments through cost saves, including lower regulatory-related expenses, supporting \~375bps/265bps/180bps of operating leverage and enabling WFC to achieve its medium-term ROTCE target of 17%-18%. Year-to-date, WFC has underperformed bank peers and the broader market by roughly 20pp and 15pp,
+
+respectively, primarily due to multiple de-rating to an NTM P/E of just 12.0x, or around the 65th percentile over the past decade. Further, WFC screens undervalued on a relative multiple basis in terms of P/TBV, which, in our view, presents an attractive entry point. Going into the quarter, we see the following key areas of debate:
+
+a. Will management change the NII guide for 2026 given the interplay between higher loan growth offset by increased deposit funding costs.
+
+b. Will fee revenue continue to track better than peers leading to revenue upgrades.
+
+c. Ability to continue managing expense as they ramp investments into growth businesses.
+
+Exhibit 1: Top ideas into 2Q26 earnings
+
+<table><tr><td>Ticker</td><td>GSe 2Q26 EPS</td><td>Cons. 2Q26 EPS</td><td>GSe vs. Street EPS</td><td>GSe 2Q26 PPNR ($bn)</td><td>Cons 2Q26 PPNR ($bn)</td><td>GSe vs Street PPNR</td><td>Bias into quarter</td><td>Comments</td></tr><tr><td>JPM</td><td>7.30</td><td>5.51</td><td>33%</td><td>29.5</td><td>23.6</td><td>25%</td><td>√</td><td>We are 14% higher on total revenue, largely driven by 27% higher fee income (17% higher trading &amp; 12% higher IB) and 1% higher NII, partially offset by 4% higher expenses, resulting in 25% higher PPNR estimates than consensus.</td></tr><tr><td>MS</td><td>3.44</td><td>2.82</td><td>22%</td><td>7.3</td><td>6.1</td><td>19%</td><td>√</td><td>We are 19% higher than consensus for PPNR, driven by 12% higher fee income (with 22% higher trading &amp; 16% higher IB) and 8% higher NII, partially offset by 7% higher expenses.</td></tr><tr><td>C</td><td>2.78</td><td>2.70</td><td>3%</td><td>9.7</td><td>9.4</td><td>2%</td><td>--</td><td>With 4% higher Markets, 4% higher GWM, 2% higher Services, partially offset by 2% lower Banking and 1% lower U.S. Consumer Cards, as well as 1% higher NII and 1% lower expenses, we expect 2% higher PPNR for the quarter.</td></tr><tr><td>WFC</td><td>1.71</td><td>1.71</td><td>0%</td><td>8.2</td><td>8.0</td><td>2%</td><td>--</td><td>With 3% higher fee income and in-line NII, as well as in-line total expenses, we expect 2% stronger PPNR.</td></tr><tr><td>BAC</td><td>1.11</td><td>1.12</td><td>-1%</td><td>12.4</td><td>12.2</td><td>2%</td><td>--</td><td>We are more constructive than the Street on fee revenue (+4% vs consensus) with an in-line NII, partially offset by 2% higher expenses, which suggests a 2% PPNR beat.</td></tr><tr><td>USB</td><td>1.27</td><td>1.27</td><td>0%</td><td>3.2</td><td>3.2</td><td>1%</td><td>--</td><td>We are 1% higher than consensus on PPNR, driven by 1% higher total revenue (on 2% higher fee income, and in-line NII) partially offset by 1% higher expenses.</td></tr><tr><td>PNC</td><td>4.30</td><td>4.40</td><td>-2%</td><td>2.5</td><td>2.6</td><td>-3%</td><td>×</td><td>We are 3% lower than the Street on PPNR, on 3% lower noninterest revenue, with in-line NII and core expenses.</td></tr><tr><td>Average</td><td>-</td><td>-</td><td>8%</td><td>-</td><td>-</td><td>7%</td><td>-</td><td>-</td></tr></table>
+
+Source: FactSet, Company data, GS Global Investment Research
+
+# The outlook for NII, as loan growth remains strong, and the market forward curve prices in a hike in 2026
+
+Exhibit 2: Industry-wide loans/deposits have grown by \~6.1%/6.2% YoY in 2Q26TD  
+![](images/b2fffae7774b963a0f18838601dc97f351741a2ceda6fcaf32df6f382d2d02a8.jpg)  
+Note: Data as of 06/17/26.  
+Source: Haver Analytics, GS Global Investment Research
+
+Exhibit 3: We expect 2Q26E average loans/deposits to be 8%/5% higher YoY, and their growth to stabilize at 4%/3% through 4Q28E  
+![](images/88a15702a58aa92fa23811cb3b86459c1295bd2e59fbf0cef75e108431fb73d2.jpg)  
+Note: JPM figures are adjusted for FRC acquisition; USB numbers adjusted for MUFG UB deal; Exclude PNC from average due to the FirstBank acquisition.  
+Source: Company data, GS Global Investment Research
+
+Exhibit 4: We expect 8%/6% NII growth in 2026E/27E
+
+<table><tr><td rowspan="2">($bn / %)</td><td colspan="2">NII</td><td colspan="2">NII ($) - GSe</td><td colspan="2">NII Growth YoY (%)</td><td>Avg. deposits</td><td>Avg. loans</td></tr><tr><td>2026 Guidance</td><td>Guide-impl. 2026 NII YoY</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>26E YoY</td><td>26E YoY</td></tr><tr><td>BAC</td><td>65.6</td><td>8.0%</td><td>65.7</td><td>70.1</td><td>8.2%</td><td>6.8%</td><td>3.0%</td><td>6.4%</td></tr><tr><td>C</td><td>52.9</td><td>-</td><td>64.5</td><td>67.5</td><td>7.8%</td><td>4.7%</td><td>7.6%</td><td>7.0%</td></tr><tr><td>JPM</td><td>103.0</td><td>7.4%</td><td>104.2</td><td>110.3</td><td>8.7%</td><td>5.8%</td><td>6.0%</td><td>9.1%</td></tr><tr><td>MS</td><td>-</td><td>-</td><td>11.8</td><td>11.9</td><td>17.3%</td><td>0.6%</td><td>8.8%</td><td>15.8%</td></tr><tr><td>PNC</td><td>16.5</td><td>14.5%</td><td>16.5</td><td>17.6</td><td>14.5%</td><td>6.6%</td><td>7.9%</td><td>11.5%</td></tr><tr><td>USB</td><td>17.6</td><td>5.0%</td><td>17.7</td><td>18.9</td><td>5.8%</td><td>6.8%</td><td>2.2%</td><td>5.3%</td></tr><tr><td>WFC</td><td>50.0</td><td>5.3%</td><td>50.0</td><td>52.7</td><td>5.3%</td><td>5.3%</td><td>8.5%</td><td>11.5%</td></tr><tr><td>Median</td><td></td><td></td><td></td><td></td><td>8.2%</td><td>5.8%</td><td>7.6%</td><td>9.1%</td></tr></table>
+
+Note: BAC guided to 2026E NII at the high end of +6-8% YoY; C guided to NII (ex Markets) up 5-6% YoY; JPM guided to \~\$103bn of NII in 2026E; PNC guided to 2026E NII up 14.5% YoY; USB guided to mid single digit NII growth; WFC guided to 2026 NII of \$50bn.
+
+Exhibit 5: We expect deposit yields to remain largely stable in 2Q26E, as Fed Funds are unchanged  
+![](images/6e396fe05cce28d2240f11a29f6db8fa379a60849453d8184382da6a142b7b33.jpg)  
+Note: MS is GWM deposit yield.  
+Source: Company data, GS Global Investment Research
+
+Exhibit 6: This cutting cycle's $48\%$ deposit betas are now approaching those of historical cycles  
+![](images/dc90e86d0a8349df1320264bac24f98a6f6e591d20d22915def149dafd79ec0e.jpg)  
+Source: SNL Financial, EPFR, Federal Reserve, FDIC, Company data, GS Global Investment Research
+
+Exhibit 7: We expect a 7bps increase in deposit yield between 2Q26E-4Q26E  
+![](images/60d7a812d0e016264a58e6deeb40a5b7cb108d066902017b9adc0a9be576305a.jpg)  
+Note: We use BAC, JPM, PNC, USB, and WFC.  
+Source: Company data, GS Global Investment Research
+
+Exhibit 8: We expect 2027E NII/EPS impact of 1.0%/1.4% in a scenario with 25bps parallel upward shift in forward curve  
+![](images/2fe4de11c27d269974e0718bdc270a6f672d540125e98de58177a85fbdefa1c2.jpg)  
+Source: SNL Financial, Company data, GS Global Investment Research
+
+Sizing the ECM opportunity, with record 2026E proceeds, and potential
+
+## equities trading upside
+
+Exhibit 9: ECM volumes have continued to grow since the trough of 2022, but 2026 ann. remains significantly below 2021
+
+![](images/c4494ddf7644c50cf68769244b11ad300a46e093ee942c77a08cf80e529ba85e.jpg)  
+Source: Dealogic, GS Global Investment Research  
+Exhibit 10: The overall backdrop has been supported by strong IPO trends, with 2026 IPO gross proceeds projected to be \$225bn...
+
+![](images/b288a8c225940a42f496673e4b9c4ffe82e317447771458a728f59aaa64dfc40.jpg)  
+Note: Data from GS Portfolio Strategy; Universe consists of US deals greater than \$25mn in value  
+Source: FactSet, GS Global Investment Research
+
+Exhibit 11: ...as we expect expiring lockups to further increase equity supply along with shares floated at IPO  
+![](images/7f1e9c9612168713e3555c5baa577736007ab88adfbe959570e47547cda73ea6.jpg)
+
+Note: Data from GS Portfolio Strategy; Value of shares from expiring lockups calculated as shares available for trading at lockup expiry date multiplied by the share price at the expiry date. Lockup expiry data based on data in company filings captured by FactSet. These data understate the total value of locked up shares because they are only available for roughly 60% of IPOs in our database.
+
+Source: Bloomberg, FactSet, GS Global Investment Research
+
+Exhibit 12: We estimate a 2026 US IPO fee pool of \~\$4.5bn-\$9.0bn, up \~184% YoY at the mid-point
+
+<table><tr><td colspan="5">Estimation of 2026 US IPO fee pool</td></tr><tr><td>$bn / %</td><td>Scenario 1</td><td>Scenario 2</td><td>Scenario 3</td><td>Key</td></tr><tr><td>GSe 2026E US IPO proceeds</td><td></td><td>225</td><td></td><td>A</td></tr><tr><td>Fee rate</td><td>2%</td><td>3%</td><td>4%</td><td>B</td></tr><tr><td>2026E US IPO fee pool</td><td>4.5</td><td>6.8</td><td>9.0</td><td> $C = A * B$ </td></tr><tr><td>Implied YoY</td><td>89%</td><td>184%</td><td>279%</td><td> $D = C / 2025 fees$ </td></tr><tr><td>vs. 2021</td><td>-53%</td><td>-30%</td><td>-6%</td><td> $E = C / 2021 fees$ </td></tr></table>
+
+Note: We consider US IPO deals greater than \$25mn in value.  
+Source: Dealogic, GS Global Investment Research
+
+Exhibit 13: Street projects 2026E ECM fees to be up 24% YoY on average  
+![](images/8a1f1aa8c1a37dc15353ab55a69be37992752a92bcefa28ed53241e67e63a404.jpg)  
+Source: Visible Alpha Consensus Data, Company data, GS Global Investment Research  
+Exhibit 14: 2026 YTD ECM fees are up 82% on average vs. 2025 YTD
+
+![](images/a6e5a94570875641c9b41422489a099b11f7c0a6e2db896e63b21194c8bd5a5a.jpg)  
+Source: Dealogic, Company data, GS Global Investment Research  
+Exhibit 15: US banks equities revenue is strongly correlated (RSQ of 63%) with ECM revenue in periods of IPO spikes
+
+US banks equities and ECM revenue during periods of IPO spikes  
+![](images/1e9413a5c926d626bdeedf7d2e2ee9d058444b8486ffb032318899b4f112dc99.jpg)  
+Note: We use 4Q12-3Q14, 1Q17-1Q18, and 4Q19-4Q21, periods where the average of quarterly IPO volume increase YoY is >60%  
+Exhibit 16: We see \~10.5%/1.5% upside to 2026E trading/EPS estimates from a stronger 2H26E trading backdrop
+
+■ 2026E equities revenue upside ■ 2026E EPS upside  
+![](images/dff6f76c192a164494be16c399caae571031c18636565633f69085eb3c14b8bb.jpg)  
+Source: Company data, GS Global Investment Research  
+Source: Company data, GS Global Investment Research
+
+Multi-year operating leverage cycle  
+Exhibit 17: We expect 4pp of operating leverage in 2Q26E, up 1pp sequentially, with 2H26E operating leverage modestly lower at 2pp
+
+<table><tr><td colspan="9">Large banks&#x27; YoY operating leverage trends</td></tr><tr><td>%</td><td>1Q26</td><td>2Q26E</td><td>3Q26E</td><td>4Q26E</td><td>1H26E</td><td>2H26E</td><td>2026E</td><td>2027E</td></tr><tr><td>BAC</td><td>2%</td><td>4%</td><td>1%</td><td>3%</td><td>3%</td><td>2%</td><td>3%</td><td>2%</td></tr><tr><td>C</td><td>7%</td><td>5%</td><td>3%</td><td>7%</td><td>6%</td><td>5%</td><td>5%</td><td>2%</td></tr><tr><td>JPM</td><td>-4%</td><td>0%</td><td>-1%</td><td>1%</td><td>-2%</td><td>0%</td><td>-1%</td><td>1%</td></tr><tr><td>MS</td><td>4%</td><td>10%</td><td>1%</td><td>1%</td><td>7%</td><td>1%</td><td>4%</td><td>1%</td></tr><tr><td>PNC</td><td>4%</td><td>3%</td><td>4%</td><td>5%</td><td>3%</td><td>4%</td><td>4%</td><td>3%</td></tr><tr><td>USB</td><td>4%</td><td>4%</td><td>-1%</td><td>0%</td><td>4%</td><td>0%</td><td>2%</td><td>2%</td></tr><tr><td>WFC</td><td>1%</td><td>4%</td><td>2%</td><td>3%</td><td>2%</td><td>3%</td><td>2%</td><td>3%</td></tr><tr><td>Average</td><td>3%</td><td>4%</td><td>1%</td><td>3%</td><td>3%</td><td>2%</td><td>3%</td><td>2%</td></tr></table>
+
+Note: For JPM, we exclude Visa B gain of \~\$4.6bn in 2Q26E. For C, we exclude \~\$1.2bn of loss to adjust for Russia HFS accounting treatment.  
+Source: Company data, GS Global Investment Research  
+■ Expense growth ◆ Revenue growth
+
+![](images/a04a4c775c986425922794af81c12243d97f48ce9677f3a61ec4aa6449498501.jpg)
+
+Exhibit 18: Large bank expenses forecasted to grow \~7%/3% YoY in 2026E/27E, on NII and cap. mkts growth...  
+Exhibit 19: ...with banks focused on limiting headcount growth (incl. JPM, going forward)...
+
+<table><tr><td colspan="12">Large banks headcount trend since 1Q24</td></tr><tr><td>000s / %</td><td>1Q24</td><td>2Q24</td><td>3Q24</td><td>4Q24</td><td>1Q25</td><td>2Q25</td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td># change</td><td>% change</td></tr><tr><td>BAC</td><td>213</td><td>209</td><td>213</td><td>214</td><td>213</td><td>211</td><td>212</td><td>213</td><td>212</td><td>1</td><td>0%</td></tr><tr><td>C</td><td>244</td><td>237</td><td>235</td><td>236</td><td>236</td><td>238</td><td>232</td><td>230</td><td>228</td><td>-18</td><td>-7%</td></tr><tr><td>JPM</td><td>307</td><td>309</td><td>312</td><td>313</td><td>314</td><td>313</td><td>314</td><td>314</td><td>315</td><td>10</td><td>3%</td></tr><tr><td>MS</td><td>80</td><td>79</td><td>80</td><td>80</td><td>81</td><td>80</td><td>82</td><td>83</td><td>84</td><td>2</td><td>3%</td></tr><tr><td>WFC</td><td>222</td><td>219</td><td>215</td><td>212</td><td>212</td><td>208</td><td>206</td><td>201</td><td>199</td><td>-23</td><td>-10%</td></tr><tr><td>PNC</td><td>56</td><td>55</td><td>55</td><td>55</td><td>55</td><td>55</td><td>55</td><td>55</td><td>58</td><td>-4</td><td>-6%</td></tr><tr><td>USB</td><td>72</td><td>72</td><td>70</td><td>69</td><td>69</td><td>68</td><td>68</td><td>67</td><td>67</td><td>-8</td><td>-11%</td></tr><tr><td>Total</td><td>1,194</td><td>1,180</td><td>1,180</td><td>1,179</td><td>1,179</td><td>1,173</td><td>1,168</td><td>1,163</td><td>1,163</td><td>-40</td><td>-3%</td></tr><tr><td>Total ex. JPM</td><td>886</td><td>871</td><td>868</td><td>866</td><td>865</td><td>861</td><td>855</td><td>849</td><td>848</td><td>-49</td><td>-5%</td></tr></table>
+
+Exhibit 20: ...resulting in 200bps/120bps/80bps better efficiency ratios in 2026E/27E/28E...
+
+![](images/9acf06042c9f2091129cdbe4ad83d599ac5d2a5e02f9db872cb762a81d921aed.jpg)  
+Source: Company data, GS Global Investment Research
+
+Exhibit 21: ...which would result in 2026E/27E/28E efficiency ratios falling to decade-low levels  
+![](images/96be4a7710349c9efc76640e8f92e89ea5d60906687f9776ceb84c911cc04136.jpg)  
+Source: Federal Reserve, FDIC, SNL Financial, Company data, GS Global Investment Research
+
+## Best positioned stocks
+
+## BAC
+
+Exhibit 22: We see BAC's NII growing \~7% YoY in 2027E, higher than peer average...
+
+![](images/587dd07bf47af327e4c19a6d976f29900499ca33bb658f242c39548de99af184.jpg)  
+Note: Peer average includes C, JPM, MS, WFC & USB. We exclude PNC due to FirstBank acquisition. For MS, we consider GWM NII.  
+Source: Company data, GS Global Investment Research  
+Exhibit 23: ...on greater than peer average 2027E NIM expansion of 7bps YoY
+
+![](images/d8591daed5e426d5d9d2b3dc273ccf70a6296c22583c4a90dc94b5250ec04d68.jpg)  
+Note: Peer average includes C, JPM, WFC, PNC & USB;  
+Source: Company data, GS Global Investment Research
+
+Exhibit 24: We expect continued strong expense discipline through 2028E  
+![](images/6503360e3446051f551547aa7ac29a63c2866fe2d15b025b8e66d4361ebb59c4.jpg)  
+Note: Peer average includes C, JPM, MS, WFC, PNC & USB  
+Source: Company data, GS Global Investment Research
+
+## C
+
+Exhibit 25: We see C generating stronger operating leverage through 2028E  
+![](images/4f8f39e734dff3689f5bc6f46df637a59078d799f257764a66163949dd622de6.jpg)  
+Source: Company data, GS Global Investment Research
+
+Exhibit 26: We expect C to have \~45% higher buybacks YoY in 2026E  
+![](images/680f6ecf089a36df0caa995e2f5fd223d398b0811b3e851cc973a04ba19b786e.jpg)  
+Source: Company data, GS Global Investment Research
+
+Exhibit 27: C remains on track to achieve their medium-term ROTCE targets  
+![](images/4f7a68a1932f6f2204516b423236188cb830aea69d4d5c88e325fceda625de25.jpg)  
+Source: Company data, GS Global Investment Research, Visible Alpha Consensus Data
+
+WFC  
+Exhibit 28: We see WFC's 2026E NII guide as achievable  
+![](images/daa21c949299cf4598d947c2c4e2e5614d6c006250eb6cde28c42d9bd64b25cc.jpg)  
+Source: Company data, GS Global Investment Research  
+Exhibit 29: We expect WFC to drive \~375bps/265bps/180bps
+
+![](images/73405ad769c175cf18f297390c496c94fbf82b69f8e3681f81fe4b083df57b8d.jpg)  
+Source: Company data, GS Global Investment Research
+
+Exhibit 30: ...which contributes to \~270bps ROTCE improvement to 17.3% by 2028E  
+![](images/8d00734fb852626e55fcbc35db655d8c2364b2f46cbcf5ad951115a81514dfe4.jpg)  
+Source: Company data, GS Global Investment Research
+
+Exhibit 31: WFC has underperformed bank peers and the market by \~20pp/15pp  
+![](images/792055e675487a9a6e9eb9d9e0bb6b0a91c0c7a53a9f33fa24197af790356da9.jpg)  
+Source: FactSet, Company data, GS Global Investment Research
+
+Exhibit 32: WFC is trading at only the 65th %-ile GSe/cons. NTM P/E over the past decade, below peers at \~85th/95th %-ile  
+![](images/957a9a713963a44bcce72d51844106f8d76d59fcdbb1c381fddb080e681622f1.jpg)  
+Source: FactSet, Company data, GS Global Investment Research
+
+## Valuation
+
+Exhibit 33: Large bank stock prices are up 17% in 2Q26, higher than S&P 500, driven by multiple rerating and higher estimates
+
+<table><tr><td colspan="8">Bank Performance</td></tr><tr><td rowspan="2">Ticker</td><td colspan="3">Performance - 2Q26</td><td colspan="3">Change in 2027 Estimates</td><td rowspan="2">Multiple Expansion</td></tr><tr><td>3/31/26</td><td>6/30/26</td><td>Delta</td><td>3/31/26</td><td>6/30/26</td><td>Delta</td></tr><tr><td>BAC</td><td>48.8</td><td>57.0</td><td>17%</td><td>4.98</td><td>5.09</td><td>2%</td><td>15%</td></tr><tr><td>C</td><td>113.4</td><td>140.0</td><td>23%</td><td>12.12</td><td>12.56</td><td>4%</td><td>20%</td></tr><tr><td>JPM</td><td>294.2</td><td>327.3</td><td>11%</td><td>23.30</td><td>23.71</td><td>2%</td><td>9%</td></tr><tr><td>MS</td><td>164.6</td><td>209.0</td><td>27%</td><td>12.37</td><td>12.94</td><td>5%</td><td>22%</td></tr><tr><td>PNC</td><td>208.1</td><td>246.2</td><td>18%</td><td>20.74</td><td>21.17</td><td>2%</td><td>16%</td></tr><tr><td>USB</td><td>52.0</td><td>60.4</td><td>16%</td><td>5.61</td><td>5.69</td><td>1%</td><td>15%</td></tr><tr><td>WFC</td><td>79.6</td><td>82.6</td><td>4%</td><td>7.98</td><td>7.92</td><td>-1%</td><td>5%</td></tr><tr><td>Large Bank Avg</td><td>-</td><td></td><td>17%</td><td>-</td><td>-</td><td>2%</td><td>15%</td></tr></table>
+
+Note: we use FactSet consensus EPS estimates.  
+Source: FactSet, GS Global Investment Research
+
+Exhibit 34: Large banks currently trade at 65% of the S&P 500 FY+2 P/E multiple, modestly above historical levels  
+![](images/6126084194e93bda533f8cf75ecb55c4c1722d75fbccf197c391038b59bbdb68.jpg)  
+Note: Price as of 07/01 close.
+
+<table><tr><td>Group</td><td>Average since 2014</td><td>Today</td><td>Delta</td></tr><tr><td>Lg. banks</td><td>10.9x</td><td>12.4x</td><td>1.5x</td></tr><tr><td>S&amp;P500</td><td>17.9x</td><td>18.9x</td><td>1.0x</td></tr><tr><td>Lg. banks vs S&amp;P500</td><td>-7.0x</td><td>-6.5x</td><td>-</td></tr><tr><td>Lg. banks % of S&amp;P 500 mult.</td><td>61%</td><td>65%</td><td>-</td></tr></table>
+
+Source: FactSet, Company data, GS Global Investment Research
+
+Exhibit 35: 2027E ROTCE/PTBV regression  
+![](images/6b5251f4024c4d4e6a5c1f38b0a98d474bd9674276d6f9c4e574ec4cd41d2a95.jpg)  
+Note: TBV, ROTCE are GS Estimates; price as of 07/01.  
+Source: Company data, GS Global Investment Research
+
+Exhibit 36: 2027E ROTCE/PTBV (ex. AOCI) regression  
+![](images/dd740d50ce9ad1bdb9dd297416c4f90d2221306f066cf99e6f513f1373439bf9.jpg)  
+Note: TBV (ex. AOCI), ROTCE are GS Estimates; price as of 07/01.  
+Source: Company data, GS Global Investment Research
+
+## New vs. old estimates
+
+We update estimates modestly to reflect overall management commentary from recent conferences, and capital markets data, with our 2026E/27E/28E EPS estimates revised up by 2%/1%/1% on average. We increase our target P/E multiples by 1.0x to account for higher market multiples, resulting in our 12-month price targets rising by 9% on average. We now see 17% average total return for the group, with 15% upside, and 2% dividend yields.
+
+Exhibit 37: Old vs. New
+
+<table><tr><td rowspan="3">Ticker</td><td rowspan="3">Price 7/1/26</td><td rowspan="3">Analyst</td><td colspan="7">Old Estimates</td><td colspan="7">New Estimates</td><td colspan="6">New vs. old</td><td colspan="3">Return</td></tr><tr><td rowspan="2">Rating</td><td rowspan="2">PT</td><td>P/E</td><td colspan="4">EPS</td><td rowspan="2">Rating</td><td rowspan="2">PT</td><td>P/E</td><td colspan="4">EPS</td><td colspan="4">EPS</td><td rowspan="2">P/E</td><td rowspan="2">PTs</td><td rowspan="2">Upside</td><td rowspan="2">Div</td><td rowspan="2">Total</td></tr><tr><td>2027</td><td>2Q26E</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2027</td><td>2Q26E</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2Q26E</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td>JPM</td><td>$334.07</td><td>Ramsden</td><td>Buy</td><td>$375.00</td><td>15.0x</td><td>5.60</td><td>23.20</td><td>25.03</td><td>27.92</td><td>Buy</td><td>$411.00</td><td>16.0x</td><td>7.30</td><td>25.09</td><td>25.66</td><td>28.63</td><td>30%</td><td>8%</td><td>3%</td><td>3%</td><td>1.0x</td><td>10%</td><td>23%</td><td>2%</td><td>25%</td></tr><tr><td>BAC</td><td>$58.36</td><td>Ramsden</td><td>Buy</td><td>$65.00</td><td>13.0x</td><td>1.06</td><td>4.40</td><td>5.02</td><td>5.70</td><td>Buy</td><td>$71.00</td><td>14.0x</td><td>1.11</td><td>4.45</td><td>5.04</td><td>5.73</td><td>5%</td><td>1%</td><td>0%</td><td>1%</td><td>1.0x</td><td>9%</td><td>22%</td><td>2%</td><td>24%</td></tr><tr><td>WFC</td><td>$85.94</td><td>Ramsden</td><td>Buy*</td><td>$93.00</td><td>11.5x</td><td>1.72</td><td>7.02</td><td>8.12</td><td>9.18</td><td>Buy*</td><td>$101.00</td><td>12.5x</td><td>1.73</td><td>7.04</td><td>8.08</td><td>9.23</td><td>1%</td><td>0%</td><td>-1%</td><td>1%</td><td>1.0x</td><td>9%</td><td>18%</td><td>3%</td><td>20%</td></tr><tr><td>C</td><td>$140.13</td><td>Ramsden</td><td>Buy</td><td>$149.00</td><td>11.5x</td><td>2.73</td><td>11.07</td><td>12.99</td><td>15.01</td><td>Buy</td><td>$162.00</td><td>12.5x</td><td>2.78</td><td>11.06</td><td>12.93</td><td>14.88</td><td>2%</td><td>0%</td><td>0%</td><td>-1%</td><td>1.0x</td><td>9%</td><td>16%</td><td>2%</td><td>18%</td></tr><tr><td>USB</td><td>$61.96</td><td>Ramsden</td><td>Neutral</td><td>$63.00</td><td>11.0x</td><td>1.26</td><td>5.09</td><td>5.75</td><td>6.25</td><td>Neutral</td><td>$69.00</td><td>12.0x</td><td>1.27</td><td>5.12</td><td>5.78</td><td>6.28</td><td>1%</td><td>1%</td><td>0%</td><td>0%</td><td>1.0x</td><td>10%</td><td>11%</td><td>2%</td><td>13%</td></tr><tr><td>MS</td><td>$211.86</td><td>Ramsden</td><td>Neutral</td><td>$211.00</td><td>15.5x</td><td>2.75</td><td>12.22</td><td>13.59</td><td>15.17</td><td>Neutral</td><td>$233.00</td><td>16.5x</td><td>3.44</td><td>13.01</td><td>14.11</td><td>15.66</td><td>25%</td><td>7%</td><td>4%</td><td>3%</td><td>1.0x</td><td>10%</td><td>10%</td><td>2%</td><td>12%</td></tr><tr><td>PNC</td><td>$251.62</td><td>Ramsden</td><td>Neutral</td><td>$244.00</td><td>11.5x</td><td>4.27</td><td>18.20</td><td>21.24</td><td>23.55</td><td>Neutral</td><td>$267.00</td><td>12.5x</td><td>4.30</td><td>18.31</td><td>21.34</td><td>23.58</td><td>1%</td><td>1%</td><td>1%</td><td>0%</td><td>1.0x</td><td>9%</td><td>6%</td><td>3%</td><td>10%</td></tr><tr><td>Avg.</td><td>-</td><td>-</td><td>-</td><td>-</td><td>12.7x</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>13.7x</td><td>-</td><td>-</td><td>-</td><td>-</td><td>9%</td><td>2%</td><td>1%</td><td>1%</td><td>1.0x</td><td>9%</td><td>15%</td><td>2%</td><td>17%</td></tr></table>
+
+Source: Company data, GS Global Investment Research
+
+Exhibit 38: Key risks to our investment views
+
+<table><tr><td rowspan="2">Ticker</td><td rowspan="2">Rating</td><td rowspan="2">New 12m Price Target</td><td colspan="2">Risks</td></tr><tr><td>Downside</td><td>Upside</td></tr><tr><td>JPM</td><td>Buy</td><td>$411.00</td><td>Lower deposit betas, smaller capital distributions, worsening credit conditions.</td><td>NA</td></tr><tr><td>BAC</td><td>Buy</td><td>$71.00</td><td>Less efficiency improvement from NII attrition and slower repricing of deposits.</td><td>NA</td></tr><tr><td>WFC</td><td>Buy*</td><td>$101.00</td><td>Slower loan growth, delayed completion of consent order and additional regulatory actions.</td><td>NA</td></tr><tr><td>C</td><td>Buy</td><td>$162.00</td><td>Slower revenue growth, higher card credit losses, international business underperformance</td><td>NA</td></tr><tr><td>USB</td><td>Neutral</td><td>$69.00</td><td>Slower revenue growth than forecast, lower cost savings from the integration of Union Bank, greater increase in credit losses and the risk of higher regulatory, IT and compliance costs.</td><td>Faster realization of cost synergies, the realization of material revenue synergies, and lower than expected credit losses</td></tr><tr><td>MS</td><td>Neutral</td><td>$233.00</td><td>Higher capital requirements, market share losses or more material normalization in trading and investment banking, the impact of lower market levels in WM and IM, and the potential for a slowdown in the robust inflows into wealth management that could impact investor perceptions of the growth potential.</td><td>Higher wealth mgmt. margin, stronger equity markets, better capital markets performance</td></tr><tr><td>PNC</td><td>Neutral</td><td>$267.00</td><td>Slower loan growth</td><td>Lower NIM compression, lower efficiency ratio, less credit deterioration</td></tr></table>
+
+\* on the US Conviction List - Directors' Cut  
+Source: Company data, GS Global Investment Research
+
+## Appendix
+
+Exhibit 39: 2026E equities trading revenue and EPS upside from a stronger 2H26 backdrop
+
+<table><tr><td colspan="7">2026E equities revenue and EPS upside from a stronger 2H26 equities backdrop</td></tr><tr><td>($bn, $mn, %)</td><td>BAC</td><td>C</td><td>JPM</td><td>MS</td><td>Total</td><td>Key</td></tr><tr><td colspan="5">2H vs. 1H equities revenue change over the past 10 years</td><td></td><td></td></tr><tr><td>Average change (%)</td><td>-11%</td><td>-18%</td><td>-20%</td><td>-9%</td><td>-14%</td><td>A</td></tr><tr><td>Minimum change (%)</td><td>0%</td><td>-3%</td><td>-12%</td><td>9%</td><td>-5%</td><td>B</td></tr><tr><td>Maximum change (%)</td><td>-27%</td><td>-38%</td><td>-31%</td><td>-24%</td><td>-28%</td><td>C</td></tr><tr><td colspan="5">2026E equities revenue and EPS upside</td><td></td><td></td></tr><tr><td>1H26E equities revenue ($bn)</td><td>5.4</td><td>4.0</td><td>9.7</td><td>11.0</td><td>30.1</td><td>D</td></tr><tr><td>2H26E equities revenue ($bn)</td><td>4.6</td><td>2.7</td><td>6.6</td><td>8.0</td><td>21.8</td><td>E</td></tr><tr><td>2H26E vs. 1H26E equities revenue (%)</td><td>-16%</td><td>-32%</td><td>-32%</td><td>-27%</td><td>-28%</td><td>F = D/E - 1</td></tr><tr><td>Assumed 2H26 decline (upside case - %)</td><td colspan="5">-10%</td><td>G = Avg. (A,B)</td></tr><tr><td>2H26E equities revenue (upside case - $bn)</td><td>4.9</td><td>3.6</td><td>8.8</td><td>10.0</td><td>27.2</td><td>H = D * (1+G)</td></tr><tr><td>2026E equities revenue upside (%)</td><td>3.5%</td><td>13.2%</td><td>13.5%</td><td>10.3%</td><td>10.4%</td><td>I = H/2026E trading revenue</td></tr><tr><td>Incremental margin (%)</td><td colspan="4">50%</td><td></td><td>J</td></tr><tr><td>2H26E pre-tax income upside ($mn)</td><td>175.8</td><td>438.0</td><td>1,104.8</td><td>980.7</td><td>2,699.3</td><td>K = (H-E) * J</td></tr><tr><td>2026E EPS upside (%)</td><td>0.4%</td><td>1.8%</td><td>1.3%</td><td>3.8%</td><td>1.5%</td><td>L=K*(1-0.21)/2026E net income</td></tr></table>
+
+Source: Company data, GS Global Investment Research
+
+## Disclosure Appendix
+
+## Reg AC
+
+We, Richard Ramsden, James Yaro, Divyam Harlalka, Matthew Weng and Lokesh Kumar Sangewar, hereby certify that all of the views expressed in this report accurately reflect our personal views about the subject company or companies and its or their securities. We also certify that no part of our compensation was, is or will be, directly or indirectly, related to the specific recommendations or views expressed in this report.
+
+Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.
+
+Contributing Authors: Richard Ramsden GS & Co. LLC, James Yaro GS & Co. LLC, Divyam Harlalka GS India SPL, Matthew Weng GS & Co. LLC, Lokesh Kumar Sangewar GS India SPL.
+
+Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.
+
+## GS Factor Profile
+
+The GS Factor Profile provides investment context for a stock by comparing key attributes to the market (i.e. our universe of rated stocks) and its sector peers. The four key attributes depicted are: Growth, Financial Returns, Multiple (e.g. valuation) and Integrated (a composite of Growth, Financial Returns and Multiple). Growth, Financial Returns and Multiple are calculated by using normalized ranks for specific metrics for each stock. The normalized ranks for the metrics are then averaged and converted into percentiles for the relevant attribute. The precise calculation of each metric may vary depending on the fiscal year, industry and region, but the standard approach is as follows:
+
+Growth is based on a stock's forward-looking sales growth, EBITDA growth and EPS growth (for financial stocks, only EPS and sales growth), with a higher percentile indicating a higher growth company. Financial Returns is based on a stock's forward-looking ROE, ROCE and CROCI (for financial stocks, only ROE), with a higher percentile indicating a company with higher financial returns. Multiple is based on a stock's forward-looking P/E, P/B, price/dividend (P/D), EV/EBITDA, EV/FCF and EV/Debt Adjusted Cash Flow (DACF) (for financial stocks, only P/E, P/B and P/D), with a higher percentile indicating a stock trading at a higher multiple. The Integrated percentile is calculated as the average of the Growth percentile, Financial Returns percentile and (100% - Multiple percentile).
+
+Financial Returns and Multiple use the GS analyst forecasts at the fiscal year-end at least three quarters in the future. Growth uses inputs for the fiscal year at least seven quarters in the future compared with the year at least three quarters in the future (on a per-share basis for all metrics).
+
+For a more detailed description of how we calculate the GS Factor Profile, please contact your GS representative.
+
+## M&A Rank
+
+Across our global coverage, we examine stocks using an M&A framework, considering both qualitative factors and quantitative factors (which may vary across sectors and regions) to incorporate the potential that certain companies could be acquired. We then assign a M&A rank as a means of scoring companies under our rated coverage from 1 to 3, with 1 representing high (30%-50%) probability of the company becoming an acquisition target, 2 representing medium (15%-30%) probability and 3 representing low (0%-15%) probability. For companies ranked 1 or 2, in line with our standard departmental guidelines we incorporate an M&A component into our target price. M&A rank of 3 is considered immaterial and therefore does not factor into our price target, and may or may not be discussed in research.
+
+## Quantum
+
+Quantum is GS' proprietary database providing access to detailed financial statement histories, forecasts and ratios. It can be used for in-depth analysis of a single company, or to make comparisons between companies in different sectors and markets.
+
+## Disclosures
+
+The rating(s) for BofA Corp., Citi Inc., JPM Chase & Co., MS & Co., PNC Financial Services, U.S. Bancorp and Wells Fargo & Co. is/are relative to the other companies in its/their coverage universe: BofA Corp., BitGo Holdings, Circle Internet Group, Citi Inc., Coinbase Global Inc., Evercore Inc., FTI Consulting Inc., Figure Technology Solutions Inc., Galaxy Digital Inc., Gemini Space Station Inc., Houlihan Lokey Inc., Interactive Brokers Group, JPM Chase & Co., JEF Financial Group, Lazard Inc., Lincoln International Inc., Moelis & Co., MS & Co., PJT Partners, PNC Financial Services, Perella Weinberg Partners, Piper Cos., Robinhood Markets Inc., U.S. Bancorp, Wealthfront Corp., Wells Fargo & Co., eToro Group
+
+## Company-specific regulatory disclosures
+
+Compendium report: please see disclosures at https://www.gs.com/research/hedge.html. Disclosures applicable to the companies included in this compendium can be found in the latest relevant published research
+
+## Distribution of ratings/investment banking relationships
+
+GS Investment Research global Equity coverage universe
+
+<table><tr><td rowspan="2"></td><td colspan="3">Rating Distribution</td><td colspan="3">Investment Banking Relationships</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>Global</td><td>50%</td><td>34%</td><td>16%</td><td>65%</td><td>60%</td><td>45%</td></tr></table>
+
+As of April 1, 2026, GS Global Investment Research had investment ratings on 3,074 equity securities. GS assigns stocks as Buys and Sells on various regional Investment Lists; stocks not so assigned are deemed Neutral. Such assignments equate to Buy, Hold and Sell for the purposes of the above disclosure required by the FINRA Rules. See ‘Ratings, Coverage universe and related definitions’ below. The Investment Banking Relationships chart reflects the percentage of subject companies within each rating category for whom GS has provided investment banking services within the previous twelve months.
+
+## Price target and rating history chart(s)
+
+Compendium report: please see disclosures at https://www.gs.com/research/hedge.html. Disclosures applicable to the companies included in this compendium can be found in the latest relevant published research
+
+Target price history table(s)  
+JPM Chase & Co. (JPM)
+
+<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>24-Apr-26</td><td>375.00</td><td>308.28</td><td>04-May-26</td><td>149.00</td><td>125.63</td></tr><tr><td>14-Apr-26</td><td>361.00</td><td>311.12</td><td>24-Apr-26</td><td>150.00</td><td>127.98</td></tr><tr><td>06-Apr-26</td><td>365.00</td><td>295.45</td><td>14-Apr-26</td><td>151.00</td><td>129.58</td></tr><tr><td>20-Mar-26</td><td>352.00</td><td>286.56</td><td>06-Apr-26</td><td>137.00</td><td>117.36</td></tr><tr><td>26-Jan-26</td><td>397.00</td><td>301.04</td><td>20-Mar-26</td><td>123.00</td><td>109.52</td></tr><tr><td>06-Jan-26</td><td>386.00</td><td>334.61</td><td>26-Jan-26</td><td>134.00</td><td>114.82</td></tr><tr><td>04-Dec-25</td><td>354.00</td><td>316.10</td><td>15-Jan-26</td><td>129.00</td><td>117.46</td></tr><tr><td>27-Oct-25</td><td>355.00</td><td>304.15</td><td>06-Jan-26</td><td>127.00</td><td>122.50</td></tr><tr><td>14-Oct-25</td><td>366.00</td><td>302.08</td><td>04-Dec-25</td><td>113.00</td><td>107.79</td></tr><tr><td>03-Oct-25</td><td>350.00</td><td>310.03</td><td>27-Oct-25</td><td>114.00</td><td>100.99</td></tr><tr><td>15-Jul-25</td><td>336.00</td><td>286.55</td><td>14-Oct-25</td><td>118.00</td><td>99.84</td></tr><tr><td>01-Jul-25</td><td>323.00</td><td>290.41</td><td>03-Oct-25</td><td>111.00</td><td>97.74</td></tr><tr><td>09-Jun-25</td><td>305.00</td><td>266.74</td><td>06-Aug-25</td><td>107.00</td><td>92.23</td></tr><tr><td>19-May-25</td><td>303.00</td><td>264.88</td><td>15-Jul-25</td><td>105.00</td><td>90.72</td></tr><tr><td>11-Apr-25</td><td>276.00</td><td>236.20</td><td>01-Jul-25</td><td>96.00</td><td>86.27</td></tr><tr><td>01-Apr-25</td><td>271.00</td><td>243.66</td><td>09-Jun-25</td><td>85.00</td><td>78.17</td></tr><tr><td>19-Mar-25</td><td>288.00</td><td>239.11</td><td>24-Apr-25</td><td>75.00</td><td>68.16</td></tr><tr><td>29-Jan-25</td><td>308.00</td><td>266.58</td><td>16-Apr-25</td><td>78.00</td><td>62.10</td></tr><tr><td>15-Jan-25</td><td>295.00</td><td>252.35</td><td>01-Apr-25</td><td>79.00</td><td>70.54</td></tr><tr><td>07-Jan-25</td><td>273.00</td><td>243.17</td><td>19-Mar-25</td><td>80.00</td><td>71.44</td></tr><tr><td>05-Dec-24</td><td>276.00</td><td>245.48</td><td>29-Jan-25</td><td>90.00</td><td>80.63</td></tr><tr><td>28-Oct-24</td><td>253.00</td><td>225.50</td><td>15-Jan-25</td><td>86.00</td><td>78.27</td></tr><tr><td>11-Oct-24</td><td>251.00</td><td>222.29</td><td>07-Jan-25</td><td>77.00</td><td>73.68</td></tr><tr><td>01-Oct-24</td><td>237.00</td><td>207.04</td><td>05-Dec-24</td><td>81.00</td><td>72.23</td></tr><tr><td>29-Jul-24</td><td>241.00</td><td>210.85</td><td>16-Oct-24</td><td>72.00</td><td>64.25</td></tr><tr><td>12-Jul-24</td><td>224.00</td><td>204.94</td><td>10-Sep-24</td><td>71.00</td><td>57.95</td></tr><tr><td>01-Jul-24</td><td>227.00</td><td>205.45</td><td>29-Jul-24</td><td>75.00</td><td>64.30</td></tr><tr><td>13-Jun-24</td><td>225.00</td><td>193.66</td><td>20-Jun-24</td><td>72.00</td><td>60.62</td></tr><tr><td>20-May-24</td><td>226.00</td><td>195.58</td><td>13-Jun-24</td><td>71.00</td><td>60.23</td></tr><tr><td>01-May-24</td><td>224.00</td><td>191.86</td><td>01-May-24</td><td>73.00</td><td>61.35</td></tr><tr><td>12-Apr-24</td><td>219.00</td><td>182.79</td><td>12-Apr-24</td><td>68.00</td><td>59.68</td></tr><tr><td>01-Apr-24</td><td>229.00</td><td>198.94</td><td>01-Apr-24</td><td>69.00</td><td>63.46</td></tr><tr><td>07-Mar-24</td><td>215.00</td><td>187.87</td><td>14-Mar-24</td><td>68.00</td><td>57.09</td></tr><tr><td>28-Jan-24</td><td>198.00</td><td>172.28</td><td>28-Jan-24</td><td>55.00</td><td>53.67</td></tr><tr><td>04-Jan-24</td><td>205.00</td><td>171.41</td><td>15-Jan-24</td><td>56.00</td><td>52.62</td></tr><tr><td>18-Dec-23</td><td>188.00</td><td>166.23</td><td>04-Jan-24</td><td>57.00</td><td>53.77</td></tr><tr><td>30-Nov-23</td><td>181.00</td><td>156.08</td><td>18-Dec-23</td><td>52.00</td><td>49.66</td></tr><tr><td>06-Nov-23</td><td>165.00</td><td>144.08</td><td>30-Nov-23</td><td>47.00</td><td>46.10</td></tr><tr><td>13-Oct-23</td><td>173.00</td><td>148.00</td><td>06-Nov-23</td><td>41.00</td><td>42.04</td></tr><tr><td>02-Oct-23</td><td>165.00</td><td>143.77</td><td>16-Oct-23</td><td>44.00</td><td>40.95</td></tr><tr><td>06-Aug-23</td><td>176.00</td><td>156.02</td><td>02-Oct-23</td><td>41.00</td><td>40.50</td></tr><tr><td>14-Jul-23</td><td>173.00</td><td>149.77</td><td>06-Aug-23</td><td>47.00</td><td>45.71</td></tr><tr><td></td><td></td><td></td><td>17-Jul-23</td><td>48.00</td><td>46.26</td></tr></table>
+
+Citi Inc. (C)
+
+BofA Corp. (BAC)
+
+<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>24-Apr-26</td><td>65.00</td><td>52.05</td></tr><tr><td>15-Apr-26</td><td>63.00</td><td>54.32</td></tr><tr><td>06-Apr-26</td><td>58.00</td><td>50.06</td></tr><tr><td>20-Mar-26</td><td>57.00</td><td>47.16</td></tr><tr><td>26-Jan-26</td><td>67.00</td><td>52.02</td></tr><tr><td>15-Jan-26</td><td>65.00</td><td>52.59</td></tr><tr><td>06-Jan-26</td><td>64.00</td><td>57.25</td></tr><tr><td>27-Oct-25</td><td>58.00</td><td>53.02</td></tr><tr><td>15-Oct-25</td><td>60.00</td><td>52.28</td></tr><tr><td>03-Oct-25</td><td>59.00</td><td>50.64</td></tr><tr><td>01-Jul-25</td><td>56.00</td><td>48.15</td></tr></table>
+
+U.S. Bancorp (USB)
+
+<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>24-Apr-26</td><td>63.00</td><td>55.58</td></tr><tr><td>16-Apr-26</td><td>61.00</td><td>55.48</td></tr><tr><td>06-Apr-26</td><td>57.00</td><td>53.44</td></tr><tr><td>20-Mar-26</td><td>55.00</td><td>51.25</td></tr><tr><td>26-Jan-26</td><td>60.00</td><td>55.83</td></tr><tr><td>21-Jan-26</td><td>58.00</td><td>55.47</td></tr><tr><td>06-Jan-26</td><td>54.00</td><td>56.08</td></tr><tr><td>27-Oct-25</td><td>50.00</td><td>47.80</td></tr><tr><td>16-Oct-25</td><td>52.00</td><td>45.65</td></tr><tr><td>03-Oct-25</td><td>51.00</td><td>48.07</td></tr><tr><td>17-Jul-25</td><td>47.00</td><td>45.21</td></tr></table>
+
+BofA Corp. (BAC)
+
+<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>09-Jun-25</td><td>52.00</td><td>44.87</td></tr><tr><td>15-Apr-25</td><td>46.00</td><td>37.99</td></tr><tr><td>01-Apr-25</td><td>48.00</td><td>41.49</td></tr><tr><td>19-Mar-25</td><td>50.00</td><td>42.21</td></tr><tr><td>29-Jan-25</td><td>54.00</td><td>46.75</td></tr><tr><td>07-Jan-25</td><td>52.00</td><td>46.08</td></tr><tr><td>05-Dec-24</td><td>53.00</td><td>47.00</td></tr><tr><td>28-Oct-24</td><td>49.00</td><td>42.62</td></tr><tr><td>01-Oct-24</td><td>48.00</td><td>39.22</td></tr><tr><td>29-Jul-24</td><td>50.00</td><td>41.09</td></tr><tr><td>16-Jul-24</td><td>48.00</td><td>44.13</td></tr><tr><td>01-Jul-24</td><td>45.00</td><td>40.01</td></tr><tr><td>01-May-24</td><td>44.00</td><td>36.95</td></tr><tr><td>16-Apr-24</td><td>41.00</td><td>34.68</td></tr><tr><td>01-Apr-24</td><td>42.00</td><td>37.52</td></tr><tr><td>07-Mar-24</td><td>41.00</td><td>35.63</td></tr><tr><td>12-Jan-24</td><td>38.00</td><td>32.80</td></tr><tr><td>04-Jan-24</td><td>39.00</td><td>33.80</td></tr><tr><td>18-Dec-23</td><td>36.00</td><td>33.43</td></tr><tr><td>30-Nov-23</td><td>33.00</td><td>30.49</td></tr><tr><td>06-Nov-23</td><td>30.00</td><td>28.33</td></tr><tr><td>17-Oct-23</td><td>31.00</td><td>27.62</td></tr><tr><td>02-Oct-23</td><td>32.00</td><td>26.70</td></tr><tr><td>18-Jul-23</td><td>35.00</td><td>30.70</td></tr></table>
+
+U.S. Bancorp (USB)
+
+<table><tr><td colspan="3">U.S. Bancorp (USB)</td></tr><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>01-Jul-25</td><td>49.00</td><td>46.49</td></tr><tr><td>09-Jun-25</td><td>46.00</td><td>44.87</td></tr><tr><td>24-Apr-25</td><td>41.00</td><td>40.05</td></tr><tr><td>16-Apr-25</td><td>42.00</td><td>37.82</td></tr><tr><td>01-Apr-25</td><td>44.00</td><td>41.77</td></tr><tr><td>19-Mar-25</td><td>45.00</td><td>42.68</td></tr><tr><td>29-Jan-25</td><td>51.00</td><td>47.66</td></tr><tr><td>17-Jan-25</td><td>49.00</td><td>48.36</td></tr><tr><td>07-Jan-25</td><td>50.00</td><td>48.70</td></tr><tr><td>05-Dec-24</td><td>53.00</td><td>52.12</td></tr><tr><td>28-Oct-24</td><td>50.00</td><td>48.59</td></tr><tr><td>16-Oct-24</td><td>49.00</td><td>49.21</td></tr><tr><td>10-Sep-24</td><td>46.00</td><td>45.03</td></tr><tr><td>29-Jul-24</td><td>48.00</td><td>45.37</td></tr><tr><td>17-Jul-24</td><td>47.00</td><td>45.26</td></tr><tr><td>18-Apr-24</td><td>42.00</td><td>39.44</td></tr><tr><td>01-Apr-24</td><td>45.00</td><td>43.95</td></tr><tr><td>28-Jan-24</td><td>43.00</td><td>42.64</td></tr><tr><td>17-Jan-24</td><td>44.00</td><td>40.82</td></tr><tr><td>04-Jan-24</td><td>48.00</td><td>43.21</td></tr><tr><td>18-Dec-23</td><td>42.00</td><td>44.05</td></tr><tr><td>30-Nov-23</td><td>37.00</td><td>38.12</td></tr><tr><td>06-Nov-23</td><td>33.00</td><td>35.27</td></tr><tr><td>02-Oct-23</td><td>35.00</td><td>32.14</td></tr><tr><td>06-Aug-23</td><td>41.00</td><td>39.86</td></tr><tr><td>19-Jul-23</td><td>39.00</td><td>38.91</td></tr></table>
+
+Wells Fargo & Co. (WFC)
+
+<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>24-Apr-26</td><td>93.00</td><td>79.42</td></tr><tr><td>14-Apr-26</td><td>92.00</td><td>81.70</td></tr><tr><td>06-Apr-26</td><td>96.00</td><td>81.85</td></tr><tr><td>20-Mar-26</td><td>93.00</td><td>77.60</td></tr><tr><td>26-Jan-26</td><td>109.00</td><td>88.05</td></tr><tr><td>15-Jan-26</td><td>104.00</td><td>88.96</td></tr><tr><td>06-Jan-26</td><td>105.00</td><td>96.39</td></tr><tr><td>27-Oct-25</td><td>97.00</td><td>87.01</td></tr><tr><td>14-Oct-25</td><td>100.00</td><td>84.56</td></tr><tr><td>03-Oct-25</td><td>95.00</td><td>80.67</td></tr><tr><td>15-Jul-25</td><td>91.00</td><td>78.86</td></tr><tr><td>01-Jul-25</td><td>92.00</td><td>81.49</td></tr><tr><td>09-Jun-25</td><td>86.00</td><td>76.46</td></tr><tr><td>24-Apr-25</td><td>76.00</td><td>69.56</td></tr><tr><td>11-Apr-25</td><td>77.00</td><td>62.51</td></tr><tr><td>01-Apr-25</td><td>78.00</td><td>71.31</td></tr><tr><td>19-Mar-25</td><td>79.00</td><td>72.76</td></tr><tr><td>29-Jan-25</td><td>87.00</td><td>78.37</td></tr><tr><td>15-Jan-25</td><td>83.00</td><td>75.95</td></tr><tr><td>07-Jan-25</td><td>77.00</td><td>71.59</td></tr><tr><td>05-Dec-24</td><td>82.00</td><td>73.66</td></tr><tr><td>28-Oct-24</td><td>72.00</td><td>65.61</td></tr><tr><td>11-Oct-24</td><td>68.00</td><td>60.99</td></tr><tr><td>01-Oct-24</td><td>64.00</td><td>55.39</td></tr><tr><td>10-Sep-24</td><td>65.00</td><td>53.95</td></tr><tr><td>29-Jul-24</td><td>68.00</td><td>59.59</td></tr><tr><td>12-Jul-24</td><td>64.00</td><td>56.54</td></tr><tr><td>13-Jun-24</td><td>71.00</td><td>57.27</td></tr><tr><td>01-May-24</td><td>69.00</td><td>59.52</td></tr></table>
+
+PNC Financial Services (PNC)
+
+<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>24-Apr-26</td><td>244.00</td><td>219.86</td></tr><tr><td>16-Apr-26</td><td>235.00</td><td>220.07</td></tr><tr><td>06-Apr-26</td><td>220.00</td><td>213.14</td></tr><tr><td>20-Mar-26</td><td>215.00</td><td>201.71</td></tr><tr><td>26-Jan-26</td><td>236.00</td><td>220.75</td></tr><tr><td>20-Jan-26</td><td>227.00</td><td>220.96</td></tr><tr><td>06-Jan-26</td><td>220.00</td><td>218.04</td></tr><tr><td>04-Dec-25</td><td>201.00</td><td>198.27</td></tr><tr><td>27-Oct-25</td><td>202.00</td><td>184.86</td></tr><tr><td>03-Oct-25</td><td>210.00</td><td>198.46</td></tr><tr><td>17-Jul-25</td><td>200.00</td><td>195.99</td></tr><tr><td>01-Jul-25</td><td>196.00</td><td>192.52</td></tr><tr><td>09-Jun-25</td><td>178.00</td><td>178.74</td></tr><tr><td>24-Apr-25</td><td>162.00</td><td>159.75</td></tr><tr><td>15-Apr-25</td><td>172.00</td><td>155.39</td></tr><tr><td>01-Apr-25</td><td>180.00</td><td>174.64</td></tr><tr><td>19-Mar-25</td><td>188.00</td><td>173.83</td></tr><tr><td>29-Jan-25</td><td>211.00</td><td>202.18</td></tr><tr><td>07-Jan-25</td><td>203.00</td><td>194.77</td></tr><tr><td>05-Dec-24</td><td>210.00</td><td>208.83</td></tr><tr><td>16-Oct-24</td><td>190.00</td><td>189.93</td></tr><tr><td>01-Oct-24</td><td>179.00</td><td>179.89</td></tr><tr><td>10-Sep-24</td><td>180.00</td><td>178.78</td></tr><tr><td>29-Jul-24</td><td>189.00</td><td>181.00</td></tr><tr><td>17-Jul-24</td><td>182.00</td><td>179.71</td></tr><tr><td>01-Jul-24</td><td>165.00</td><td>156.14</td></tr><tr><td>13-Jun-24</td><td>164.00</td><td>151.75</td></tr><tr><td>01-May-24</td><td>161.00</td><td>153.98</td></tr><tr><td>17-Apr-24</td><td>158.00</td><td>147.25</td></tr><tr><td colspan="3">Wells Fargo &amp; Co. (WFC)</td></tr><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>01-Apr-24</td><td>65.00</td><td>57.61</td></tr><tr><td>28-Jan-24</td><td>57.00</td><td>50.32</td></tr><tr><td>12-Jan-24</td><td>58.00</td><td>47.40</td></tr><tr><td>04-Jan-24</td><td>59.00</td><td>49.28</td></tr><tr><td>18-Dec-23</td><td>55.00</td><td>49.66</td></tr><tr><td>30-Nov-23</td><td>50.00</td><td>44.59</td></tr><tr><td>06-Nov-23</td><td>45.00</td><td>41.34</td></tr><tr><td>02-Oct-23</td><td>48.00</td><td>39.61</td></tr><tr><td>14-Jul-23</td><td>51.00</td><td>43.56</td></tr></table>
+
+## MS & Co. (MS)
+
+<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>24-Apr-26</td><td>211.00</td><td>188.07</td></tr><tr><td>15-Apr-26</td><td>205.00</td><td>191.62</td></tr><tr><td>06-Apr-26</td><td>186.00</td><td>166.55</td></tr><tr><td>20-Mar-26</td><td>172.00</td><td>161.47</td></tr><tr><td>26-Jan-26</td><td>196.00</td><td>181.88</td></tr><tr><td>15-Jan-26</td><td>191.00</td><td>191.23</td></tr><tr><td>06-Jan-26</td><td>190.00</td><td>187.75</td></tr><tr><td>04-Dec-25</td><td>172.00</td><td>174.89</td></tr><tr><td>27-Oct-25</td><td>173.00</td><td>166.02</td></tr><tr><td>15-Oct-25</td><td>177.00</td><td>162.65</td></tr><tr><td>03-Oct-25</td><td>164.00</td><td>157.59</td></tr><tr><td>06-Aug-25</td><td>145.00</td><td>141.30</td></tr><tr><td>17-Jul-25</td><td>146.00</td><td>140.90</td></tr><tr><td>01-Jul-25</td><td>147.00</td><td>141.07</td></tr><tr><td>09-Jun-25</td><td>136.00</td><td>131.95</td></tr><tr><td>24-Apr-25</td><td>121.00</td><td>115.60</td></tr><tr><td>11-Apr-25</td><td>122.00</td><td>108.12</td></tr><tr><td>01-Apr-25</td><td>121.00</td><td>115.74</td></tr><tr><td>19-Mar-25</td><td>126.00</td><td>119.85</td></tr><tr><td>29-Jan-25</td><td>144.00</td><td>138.71</td></tr><tr><td>16-Jan-25</td><td>138.00</td><td>135.81</td></tr><tr><td>07-Jan-25</td><td>128.00</td><td>126.88</td></tr><tr><td>05-Dec-24</td><td>130.00</td><td>130.32</td></tr><tr><td>28-Oct-24</td><td>120.00</td><td>119.13</td></tr><tr><td>16-Oct-24</td><td>121.00</td><td>119.51</td></tr><tr><td>01-Oct-24</td><td>106.00</td><td>104.42</td></tr><tr><td>10-Sep-24</td><td>105.00</td><td>96.62</td></tr><tr><td>29-Jul-24</td><td>122.00</td><td>102.48</td></tr><tr><td>16-Jul-24</td><td>120.00</td><td>106.22</td></tr><tr><td>01-Jul-24</td><td>112.00</td><td>99.16</td></tr><tr><td>13-Jun-24</td><td>113.00</td><td>95.21</td></tr><tr><td>01-May-24</td><td>110.00</td><td>91.54</td></tr><tr><td>16-Apr-24</td><td>112.00</td><td>89.14</td></tr><tr><td>01-Apr-24</td><td>108.00</td><td>93.53</td></tr><tr><td>07-Mar-24</td><td>107.00</td><td>86.14</td></tr><tr><td>28-Jan-24</td><td>103.00</td><td>87.73</td></tr><tr><td>16-Jan-24</td><td>104.00</td><td>85.97</td></tr><tr><td>04-Jan-24</td><td>105.00</td><td>92.15</td></tr><tr><td>18-Dec-23</td><td>100.00</td><td>90.76</td></tr><tr><td>30-Nov-23</td><td>89.00</td><td>79.34</td></tr><tr><td>06-Nov-23</td><td>83.00</td><td>75.92</td></tr><tr><td>18-Oct-23</td><td>86.00</td><td>74.88</td></tr><tr><td>09-Oct-23</td><td>91.00</td><td>79.91</td></tr><tr><td>02-Oct-23</td><td>93.00</td><td>80.41</td></tr></table>
+
+<table><tr><td colspan="3">PNC Financial Services (PNC)</td></tr><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>01-Apr-24</td><td>168.00</td><td>159.94</td></tr><tr><td>28-Jan-24</td><td>151.00</td><td>151.60</td></tr><tr><td>17-Jan-24</td><td>157.00</td><td>148.82</td></tr><tr><td>04-Jan-24</td><td>162.00</td><td>152.53</td></tr><tr><td>18-Dec-23</td><td>147.00</td><td>151.41</td></tr><tr><td>30-Nov-23</td><td>128.00</td><td>133.96</td></tr><tr><td>06-Nov-23</td><td>116.00</td><td>121.55</td></tr><tr><td>16-Oct-23</td><td>128.00</td><td>118.13</td></tr><tr><td>02-Oct-23</td><td>126.00</td><td>120.02</td></tr><tr><td>06-Aug-23</td><td>137.00</td><td>131.46</td></tr><tr><td>18-Jul-23</td><td>131.00</td><td>130.35</td></tr></table>
+
+Date of report Target price (\$) Closing price (\$)
+
+06-Aug-23 101.00 88.79
+
+18-Jul-23 105.00 91.94
+
+Price targets shown in table(s) are unadjusted for corporate actions.
+
+## Regulatory disclosures
+
+## Disclosures required by United States laws and regulations
+
+See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; 1% or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.
+
+The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.
+
+## Additional disclosures required under the laws and regulations of jurisdictions other than the United States
+
+The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details, a copy of the annual compliance audit report and other relevant information and disclosures can be found at this link:
+
+https://www.goldmansachs.com/worldwide/india/research-analyst. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.
+
+European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.
+
+Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.
+
+## Ratings, coverage universe and related definitions
+
+Buy (B), Neutral (N), Sell (S) Analysts recommend stocks as Buys or Sells for inclusion on various regional Investment Lists. Being assigned a Buy or Sell on an Investment List is determined by a stock's total return potential relative to its coverage universe. Any stock not assigned as a Buy or a Sell on an Investment List with an active rating (i.e., a stock that is not Rating Suspended, Not Rated, Early-Stage Biotech, Coverage Suspended or Not Covered), is deemed Neutral. Each region manages Regional Conviction Lists, which are selected from Buy rated stocks on the respective region's Investment Lists and represent investment recommendations focused on the size of the total return potential and/or the likelihood of the realization of the return across their respective areas of coverage. The addition or removal of stocks from such Conviction Lists are managed by the Investment Review Committee or other designated committee in each respective region and do not represent a change in the analysts' investment rating for such stocks.
+
+Total return potential represents the upside or downside differential between the current share price and the price target, including all paid or anticipated dividends, expected during the time horizon associated with the price target. Price targets are required for all covered stocks. The total return potential, price target and associated time horizon are stated in each report adding or reiterating an Investment List membership.
+
+Coverage Universe: A list of all stocks in each coverage universe is available by primary analyst, stock and coverage universe at https://www.gs.com/research/hedge.html.
+
+Not Rated (NR). The investment rating, target price and earnings estimates (where relevant) are removed pursuant to GS policy when GS is acting in an advisory capacity in a merger or in a strategic transaction involving this company, when there are legal, regulatory or policy constraints due to GS' involvement in a transaction, and in certain other circumstances. Early-Stage Biotech (ES). An investment rating and a target price are not assigned pursuant to GS policy when this company has neither a drug, treatment or medical device that has passed a Phase II clinical trial nor a license to distribute a post-Phase II drug, treatment or medical device. Rating Suspended (RS). GS has suspended the investment rating and price target for this stock, because there is not a sufficient fundamental basis for determining an investment rating or target price. The previous investment rating and target price, if any, are no longer in effect for this stock and should not be relied upon. Coverage Suspended (CS). GS has suspended coverage of this company. Not Covered (NC). GS does not cover this company.
+
+## Global product; distributing entities
+
+GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.
+
+GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.
+
+European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.
+
+## General disclosures
+
+This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.
+
+GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).
+
+Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.
+
+The analysts named in this report may have from time to time discussed with our clients, including GS salespersons and traders, or may discuss in this report, trading strategies that reference catalysts or events that may have a near-term impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein.
+
+We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
+
+The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.
+
+Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.
+
+This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.
+
+Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\_fcm\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.
+
+Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.
+
+All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.
+
+Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.
+
+## © 2026 GS.
+
+You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.
