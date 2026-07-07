@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 64,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 9,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/49-GS-Whirlpool Corp. （WHR.US） Appliances： Fourth of July 2026 Pricing Update-260706.pdf",
+          "batch_file": "/tmp/pdf_batch_001_r5jdwknp/pdfs/0001-49-GS-Whirlpool Corp. -WHR.US- Appliances- Fourth of July 2026 Pricing Update-260706.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/50-JPM-ASML（ASML.AS）2Q26 Preview：Capacity in ‘27 and beyond along with strong demand indications needed for stock break~out-260707.pdf",
+          "batch_file": "/tmp/pdf_batch_001_r5jdwknp/pdfs/0002-50-JPM-ASML-ASML.AS-2Q26 Preview-Capacity in -27 and beyond along with strong demand indications needed for stock break-out-260707.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/51-GS-Zhejiang Huahai Pharmaceutical （600521.SS）： 1H26 prelim results beat； TP up to Rmb13； Sell-260706.pdf",
+          "batch_file": "/tmp/pdf_batch_001_r5jdwknp/pdfs/0003-51-GS-Zhejiang Huahai Pharmaceutical -600521.SS-- 1H26 prelim results beat- TP up to Rmb13- Sell-260706.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/52-JPM-Dollar Tree， Inc.（DLTR.US）HQ Mgmt Meeting & G.O.L.D.Store Takes；Overweight Establishing $170 Price Target-260706.pdf",
+          "batch_file": "/tmp/pdf_batch_001_r5jdwknp/pdfs/0004-52-JPM-Dollar Tree- Inc.-DLTR.US-HQ Mgmt Meeting - G.O.L.D.Store Takes-Overweight Establishing -170 Price Target-260706.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/53-JPM-China Banks：Style rotation drives selloff； CMB the yield bright spot-260705.pdf",
+          "batch_file": "/tmp/pdf_batch_001_r5jdwknp/pdfs/0005-53-JPM-China Banks-Style rotation drives selloff- CMB the yield bright spot-260705.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
