@@ -1,0 +1,198 @@
+# WEEKLY FUND FLOWS
+
+# Energy Flows Come and Go
+
+## Global fund flows, week ending July 1
+
+■ Flows into mutual funds and related investment products remained negative for equities and positive for fixed income.
+
+Lexi Kanter  
++1(212)855-9701 | alexandra.kanter@gs.com GS & Co. LLC
+
+\- Net flows into global equity funds remained negative in the week ending July 1 (-\$14bn vs -\$5bn in the previous week). Within DM, US funds drove the net outflows. Within EM, Mainland China and global EM benchmark funds drove the net outflows while Taiwan and Korea equity funds saw net inflows. At the sector level, technology funds saw renewed inflows after seeing the largest net outflows the previous week. Meanwhile, energy funds saw net outflows as energy prices have continued to grind lower (see Chart of the Week). We recently noted that despite this reversal lower in energy prices, the terms of trade (ToT) imprint on FX has so far proved more durable. We think this stickier ToT imprint reflects divergent macro impacts which flow through economic data and firm-level performance over time, and we remain wary of the parallel to the 2022 energy shock where ToT FX differentiation peaked several months after energy prices did.
+
+\- Flows into global fixed income funds remained well-supported from inflows across fund types. Short-duration bond funds and inflation-protected bond funds have seen sustained inflows and flows into long-duration bond funds turned positive. In EM, hard-currency and local currency bond funds saw net inflows. Money market fund assets increased by -\$55bn.
+
+Cross-border FX flows were largely positive across the G10 but negative elsewhere. USD and EUR saw the strongest net demand. Asia broadly saw net outflows; CNY saw renewed outflows after seeing inflows the previous week.
+
+<table><tr><td rowspan="3"></td><td colspan="4">Global Fund Flows Summary</td></tr><tr><td colspan="2">Millions USD</td><td colspan="2">% AUM</td></tr><tr><td>4wk sum</td><td>1-Jul</td><td>4wk avg</td><td>1-Jul</td></tr><tr><td>Equity</td><td>139,067</td><td>-13,859</td><td>0.11</td><td>-0.04</td></tr><tr><td>Fixed Income</td><td>84,835</td><td>29,236</td><td>0.21</td><td>0.29</td></tr><tr><td>of which: EM</td><td>4,009</td><td>838</td><td>0.14</td><td>0.12</td></tr><tr><td>Money Markets</td><td>52,099</td><td>54,999</td><td>0.12</td><td>0.49</td></tr><tr><td>FX Flows*</td><td>60,550</td><td>3,811</td><td>0.09</td><td>0.02</td></tr></table>
+
+\*Cross-border fund flows, excluding hard currency and FX-hedged funds
+
+![](images/ca9912c6121530dc86ee6c9ff382e588895e5dc78002dc77e04228c9223650c5.jpg)  
+Source: EPFR, Haver Analytics, GS Global Investment Research
+
+## Global Fund Flow Trends
+
+![](images/496edd8dc7cf5ab05f5dc52ff903015fedf29e4d701b75b2af8c6ff2938b4131.jpg)  
+Source: EPFR, GS Global Investment Research
+
+![](images/85e500b1f3a277a7ecb88975a45e1e5b4695e538ad8279688b1f70e0976210eb.jpg)  
+Source: EPFR, GS Global Investment Research
+
+![](images/99c28a0a97124998a39365aee4dbd1b223343dea6f840809cc827faa34b55292.jpg)  
+Source: EPFR, GS Global Investment Research
+
+![](images/ab8e31eef6302ac764b7867505e147cd49da513e0cb2eb833c93521c727b9120.jpg)  
+Captures flows to sector-dedicated funds
+
+![](images/f938f5258a96ccd5e232493954a7d2b7fdbc5a75c8513d776083c39de471e279.jpg)  
+Captures flows to sector dedicated funds
+
+Source: EPFR, GS Global Investment Research  
+![](images/0e95c07ada5e6102f9c59252dc4d5290ef29b7eadd38c382cc56b4d3314e5fa6.jpg)  
+Captures flows to country- and region-dedicated funds  
+Source: EPFR, GS Global Investment Research
+
+Source: EPFR, GS Global Investment Research  
+![](images/3c57dadcfb938e03c1542180f9a1ba0dd74fdcbea207c19ae3739ed060a15f3a.jpg)  
+Captures flows to country- and region-dedicated funds  
+Source: EPFR, GS Global Investment Research
+
+![](images/6b15da3c9e5a9e111a4e436ee9e1bbf033271227207b3d43d9b9f0fea1dd52cb.jpg)  
+Source: EPFR, GS Global Investment Research
+
+![](images/681ee7c9932f69a75b8915d63bf1387bc6473dcea89ff45c340d8fc173d603f2.jpg)  
+Source: EPFR, GS Global Investment Research
+
+Total Unhedged Foreign Flows By Country  
+![](images/d70b963579e790065d18d83fbc91c199bf0bb7d0ad54365bf5a8232de325d6bc.jpg)
+
+![](images/ea769f4b8d87572b5690c09a50afb439629d91bbcf13510d8ecc3ec0af1b6170.jpg)
+
+![](images/2e2c952b66813578931dabebf5abe6e3711ecb5b22a953908756a3914def798a.jpg)
+
+![](images/5883dd395103a3affd1fa69ba2481ac2c310bda39f4b26a3ce3cfba8932c70d9.jpg)  
+Source: EPFR, GS Global Investment Research
+
+![](images/2cb81206dc731f05eccbe3a69660b891bbb0d0f8224af336dac461bab69ad1e7.jpg)
+
+![](images/72517eba809ab603d1f815b578ea3cb91f4de8356552ba97e072c8d04c330bcc.jpg)
+
+Net Unhedged Flows into US Equity Funds
+
+![](images/c82467a2126b56c27c023554038d30026531845b7d218ec4d1ff24c7e22444e6.jpg)  
+Source: EPFR, Haver Analytics, GS Global Investment Research
+
+Fixed Income & Equity Flows
+
+<table><tr><td rowspan="3"></td><td colspan="8">Global Fund Flows</td></tr><tr><td colspan="5">Millions USD</td><td colspan="2">% AUM</td><td rowspan="2">Z-score of 4wk sum</td></tr><tr><td>4wk sum</td><td>1-Jul</td><td>24-Jun</td><td>17-Jun</td><td>10-Jun</td><td>4wk avg</td><td>1-Jul</td></tr><tr><td>Total Equity</td><td>139,067</td><td>-13,859</td><td>-4,992</td><td>126,425</td><td>31,494</td><td>0.11</td><td>-0.04</td><td>2.12</td></tr><tr><td>Global Benchmarks1</td><td>50,255</td><td>8,921</td><td>14,361</td><td>15,116</td><td>11,857</td><td>0.17</td><td>0.12</td><td>2.00</td></tr><tr><td>Including US</td><td>35,165</td><td>5,584</td><td>9,300</td><td>8,317</td><td>11,963</td><td>0.17</td><td>0.10</td><td>2.09</td></tr><tr><td>Excluding US</td><td>15,090</td><td>3,337</td><td>5,061</td><td>6,799</td><td>-107</td><td>0.16</td><td>0.14</td><td>1.17</td></tr><tr><td>Developed Markets2</td><td>108,886</td><td>-18,751</td><td>-8,294</td><td>120,798</td><td>15,132</td><td>0.14</td><td>-0.09</td><td>2.29</td></tr><tr><td>US</td><td>110,784</td><td>-17,207</td><td>-8,548</td><td>119,189</td><td>17,350</td><td>0.17</td><td>-0.10</td><td>2.28</td></tr><tr><td>Western Europe</td><td>-10,075</td><td>-3,704</td><td>-1,294</td><td>-1,173</td><td>-3,904</td><td>-0.12</td><td>-0.18</td><td>-1.26</td></tr><tr><td>UK-dedicated</td><td>-734</td><td>-81</td><td>-676</td><td>185</td><td>-163</td><td>-0.06</td><td>-0.02</td><td>1.21</td></tr><tr><td>Other</td><td>-9,341</td><td>-3,623</td><td>-618</td><td>-1,359</td><td>-3,740</td><td>-0.13</td><td>-0.21</td><td>-1.39</td></tr><tr><td>Japan</td><td>4,280</td><td>1,855</td><td>475</td><td>1,166</td><td>784</td><td>0.09</td><td>0.15</td><td>0.68</td></tr><tr><td>Other</td><td>3,897</td><td>306</td><td>1,073</td><td>1,616</td><td>901</td><td>0.23</td><td>0.07</td><td>1.15</td></tr><tr><td>Emerging Markets3</td><td>-20,073</td><td>-4,030</td><td>-11,059</td><td>-9,489</td><td>4,506</td><td>-0.16</td><td>-0.13</td><td>-1.12</td></tr><tr><td>Global EM Benchmarks</td><td>-5,956</td><td>-2,013</td><td>-508</td><td>-570</td><td>-2,865</td><td>-0.11</td><td>-0.14</td><td>-1.03</td></tr><tr><td>Mainland China</td><td>-27,283</td><td>-5,729</td><td>-10,367</td><td>-9,051</td><td>-2,136</td><td>-1.04</td><td>-0.88</td><td>-1.12</td></tr><tr><td>Taiwan</td><td>9,768</td><td>2,426</td><td>1,077</td><td>1,031</td><td>5,234</td><td>1.03</td><td>0.97</td><td>2.95</td></tr><tr><td>Korea</td><td>9,825</td><td>4,545</td><td>-536</td><td>-76</td><td>5,892</td><td>1.22</td><td>2.12</td><td>2.46</td></tr><tr><td>India</td><td>-1,196</td><td>-250</td><td>-69</td><td>-416</td><td>-461</td><td>-0.37</td><td>-0.30</td><td>-1.07</td></tr><tr><td>Brazil</td><td>-608</td><td>-151</td><td>-196</td><td>-64</td><td>-198</td><td>-0.65</td><td>-0.65</td><td>-1.19</td></tr><tr><td>Other</td><td>-4,624</td><td>-2,859</td><td>-461</td><td>-344</td><td>-960</td><td>-0.30</td><td>-0.75</td><td>-1.92</td></tr><tr><td colspan="9">Equity Sector Flows</td></tr><tr><td>Commodities/Materials</td><td>-2,245</td><td>-1,843</td><td>-1,082</td><td>1,879</td><td>-1,198</td><td>-0.24</td><td>-0.72</td><td>-0.60</td></tr><tr><td>Consumer Goods</td><td>-2,335</td><td>412</td><td>74</td><td>-781</td><td>-2,039</td><td>-0.28</td><td>0.20</td><td>-0.45</td></tr><tr><td>Energy</td><td>-9,718</td><td>-5,602</td><td>-2,556</td><td>-526</td><td>-1,034</td><td>-0.78</td><td>-1.81</td><td>-2.10</td></tr><tr><td>Financials</td><td>6,819</td><td>4,008</td><td>-1,371</td><td>2,467</td><td>1,715</td><td>0.38</td><td>0.89</td><td>1.16</td></tr><tr><td>Health Care</td><td>4,835</td><td>2,502</td><td>687</td><td>536</td><td>1,109</td><td>0.31</td><td>0.62</td><td>1.90</td></tr><tr><td>Industrials</td><td>5,778</td><td>812</td><td>-2,487</td><td>6,288</td><td>1,165</td><td>0.51</td><td>0.28</td><td>0.78</td></tr><tr><td>Infrastructure</td><td>4,022</td><td>815</td><td>2,077</td><td>473</td><td>657</td><td>0.72</td><td>0.54</td><td>2.11</td></tr><tr><td>Real Estate</td><td>3,114</td><td>-230</td><td>2,110</td><td>1,529</td><td>-295</td><td>0.13</td><td>-0.04</td><td>1.98</td></tr><tr><td>Technology</td><td>49,214</td><td>15,937</td><td>-23,832</td><td>38,281</td><td>18,828</td><td>0.53</td><td>0.66</td><td>3.92</td></tr><tr><td>Telecom</td><td>3,797</td><td>3,163</td><td>-1,144</td><td>953</td><td>824</td><td>1.13</td><td>3.77</td><td>2.29</td></tr><tr><td>Utilities</td><td>54</td><td>550</td><td>346</td><td>-379</td><td>-463</td><td>0.01</td><td>0.30</td><td>-0.02</td></tr><tr><td>High Beta4</td><td>3,030</td><td>904</td><td>-3,400</td><td>5,216</td><td>310</td><td>0.10</td><td>0.13</td><td>0.00</td></tr><tr><td>Low Beta4</td><td>-703</td><td>38</td><td>907</td><td>132</td><td>-1,779</td><td>-0.03</td><td>0.01</td><td>0.49</td></tr><tr><td>Total Fixed Income</td><td>84,835</td><td>29,236</td><td>16,374</td><td>19,160</td><td>20,065</td><td>0.21</td><td>0.29</td><td>1.13</td></tr><tr><td>Developed Markets5</td><td>82,179</td><td>28,237</td><td>13,375</td><td>19,521</td><td>21,047</td><td>0.23</td><td>0.31</td><td>1.34</td></tr><tr><td>Government</td><td>11,221</td><td>4,736</td><td>-94</td><td>1,623</td><td>4,957</td><td>0.17</td><td>0.29</td><td>0.04</td></tr><tr><td>Mortgage-backed</td><td>2,560</td><td>293</td><td>477</td><td>609</td><td>1,180</td><td>0.21</td><td>0.10</td><td>0.34</td></tr><tr><td>Municipal</td><td>7,188</td><td>1,859</td><td>1,226</td><td>2,509</td><td>1,593</td><td>0.26</td><td>0.26</td><td>1.49</td></tr><tr><td>Agg-type</td><td>27,840</td><td>9,215</td><td>7,592</td><td>3,861</td><td>7,172</td><td>0.24</td><td>0.32</td><td>1.03</td></tr><tr><td>IG Credit</td><td>9,383</td><td>3,301</td><td>865</td><td>3,771</td><td>1,446</td><td>0.20</td><td>0.29</td><td>0.65</td></tr><tr><td>High yield</td><td>7,217</td><td>3,350</td><td>1,857</td><td>2,096</td><td>-86</td><td>0.26</td><td>0.48</td><td>0.80</td></tr><tr><td>Bank loan</td><td>3,309</td><td>806</td><td>486</td><td>1,020</td><td>998</td><td>0.46</td><td>0.44</td><td>0.58</td></tr><tr><td>Long-duration6</td><td>-569</td><td>1,124</td><td>-1,183</td><td>-1,046</td><td>537</td><td>-0.03</td><td>0.22</td><td>-1.14</td></tr><tr><td>Short-duration6</td><td>17,378</td><td>6,576</td><td>1,123</td><td>3,506</td><td>6,173</td><td>0.19</td><td>0.28</td><td>0.43</td></tr><tr><td>Inflation-protected</td><td>1,610</td><td>294</td><td>69</td><td>885</td><td>361</td><td>0.23</td><td>0.17</td><td>0.92</td></tr><tr><td>Emerging Markets</td><td>4,009</td><td>838</td><td>3,220</td><td>193</td><td>-242</td><td>0.14</td><td>0.12</td><td>0.40</td></tr><tr><td>Hard</td><td>446</td><td>162</td><td>578</td><td>267</td><td>-561</td><td>0.04</td><td>0.06</td><td>0.43</td></tr><tr><td>Blend</td><td>142</td><td>-81</td><td>142</td><td>52</td><td>28</td><td>0.05</td><td>-0.12</td><td>0.10</td></tr><tr><td>Local</td><td>3,421</td><td>757</td><td>2,500</td><td>-127</td><td>291</td><td>0.23</td><td>0.20</td><td>0.32</td></tr><tr><td>Money Markets</td><td>52,099</td><td>54,999</td><td>-25,536</td><td>25,110</td><td>-2,475</td><td>0.12</td><td>0.49</td><td>-0.39</td></tr></table>
+
+1. Primarily MSCI World and MSCI ACWI benchmarks. 2. Sum of DM country- and region-dedicated funds; excludes global DM benchmark funds (e.g. MSCI World funds). 3. Sum of Global EM benchmark funds and EM country- and region-dedicated funds. 4. High beta funds include commodity, financial, & industrial sector funds. Low beta funds include consumer goods, real estate, & utility sector funds. 5. Benchmarks may include some investment grade EM bonds; categories below include DM & EM funds. 6. Long-duration includes long-term Agg-type, long-term corporate, and long-term government bond funds. Short-duration includes short-term Agg-type, short-term corporate, and short-term government bond funds.
+
+<table><tr><td rowspan="3"></td><td colspan="8">FX Flows1</td></tr><tr><td colspan="5">Millions USD</td><td colspan="2">% AUM</td><td rowspan="2">Z-score of 4wk sum</td></tr><tr><td>4wk sum</td><td>1-Jul</td><td>24-Jun</td><td>17-Jun</td><td>10-Jun</td><td>4wk avg</td><td>1-Jul</td></tr><tr><td>Total</td><td>60,550</td><td>3,811</td><td>20,805</td><td>22,519</td><td>13,416</td><td>0.09</td><td>0.02</td><td>0.66</td></tr><tr><td>G10</td><td>59,065</td><td>7,573</td><td>16,737</td><td>20,480</td><td>14,275</td><td>0.14</td><td>0.07</td><td>1.65</td></tr><tr><td>USD</td><td>36,654</td><td>4,825</td><td>9,611</td><td>11,092</td><td>11,126</td><td>0.15</td><td>0.08</td><td>1.35</td></tr><tr><td>EUR</td><td>7,140</td><td>1,215</td><td>2,342</td><td>2,852</td><td>731</td><td>0.13</td><td>0.09</td><td>1.08</td></tr><tr><td>GBP</td><td>4,180</td><td>850</td><td>939</td><td>1,801</td><td>590</td><td>0.10</td><td>0.08</td><td>0.56</td></tr><tr><td>AUD</td><td>521</td><td>-192</td><td>238</td><td>313</td><td>161</td><td>0.07</td><td>-0.10</td><td>0.37</td></tr><tr><td>NZD</td><td>49</td><td>6</td><td>23</td><td>13</td><td>8</td><td>0.10</td><td>0.05</td><td>0.45</td></tr><tr><td>CAD</td><td>2,321</td><td>112</td><td>721</td><td>931</td><td>557</td><td>0.17</td><td>0.03</td><td>1.56</td></tr><tr><td>CHF</td><td>1,248</td><td>22</td><td>495</td><td>610</td><td>120</td><td>0.07</td><td>0.01</td><td>0.30</td></tr><tr><td>NOK</td><td>122</td><td>66</td><td>117</td><td>45</td><td>-106</td><td>0.03</td><td>0.07</td><td>-0.47</td></tr><tr><td>SEK</td><td>776</td><td>166</td><td>252</td><td>257</td><td>102</td><td>0.08</td><td>0.07</td><td>0.48</td></tr><tr><td>JPY</td><td>6,054</td><td>503</td><td>1,998</td><td>2,568</td><td>986</td><td>0.16</td><td>0.05</td><td>1.53</td></tr><tr><td>Asia</td><td>-911</td><td>-3,453</td><td>2,807</td><td>-295</td><td>31</td><td>-0.01</td><td>-0.14</td><td>-0.29</td></tr><tr><td>CNY</td><td>-2,617</td><td>-1,727</td><td>1,556</td><td>-1,761</td><td>-685</td><td>-0.09</td><td>-0.24</td><td>-0.51</td></tr><tr><td>HKD</td><td>376</td><td>-15</td><td>145</td><td>179</td><td>68</td><td>0.08</td><td>-0.01</td><td>0.70</td></tr><tr><td>INR</td><td>-1,843</td><td>-571</td><td>-51</td><td>-454</td><td>-766</td><td>-0.17</td><td>-0.21</td><td>-1.43</td></tr><tr><td>KRW</td><td>3,733</td><td>-257</td><td>804</td><td>1,305</td><td>1,881</td><td>0.19</td><td>-0.05</td><td>1.44</td></tr><tr><td>MYR</td><td>-95</td><td>-57</td><td>11</td><td>1</td><td>-51</td><td>-0.07</td><td>-0.17</td><td>-0.65</td></tr><tr><td>SGD</td><td>374</td><td>20</td><td>127</td><td>156</td><td>71</td><td>0.10</td><td>0.02</td><td>1.31</td></tr><tr><td>TWD</td><td>-1,016</td><td>-794</td><td>133</td><td>180</td><td>-535</td><td>-0.04</td><td>-0.14</td><td>-0.83</td></tr><tr><td>THB</td><td>-22</td><td>-58</td><td>6</td><td>30</td><td>1</td><td>-0.01</td><td>-0.14</td><td>-0.22</td></tr><tr><td>IDR</td><td>201</td><td>18</td><td>67</td><td>58</td><td>60</td><td>0.11</td><td>0.04</td><td>0.52</td></tr><tr><td>PHP</td><td>-4</td><td>-11</td><td>9</td><td>11</td><td>-13</td><td>0.00</td><td>-0.06</td><td>-0.11</td></tr><tr><td>Americas</td><td>-1,248</td><td>-569</td><td>241</td><td>29</td><td>-950</td><td>-0.08</td><td>-0.15</td><td>-0.91</td></tr><tr><td>ARS</td><td>21</td><td>-11</td><td>33</td><td>3</td><td>-4</td><td>0.06</td><td>-0.12</td><td>-0.20</td></tr><tr><td>BRL</td><td>-1,020</td><td>-426</td><td>115</td><td>-8</td><td>-702</td><td>-0.12</td><td>-0.21</td><td>-1.09</td></tr><tr><td>MXN</td><td>-246</td><td>-80</td><td>27</td><td>-17</td><td>-177</td><td>-0.06</td><td>-0.08</td><td>-0.82</td></tr><tr><td>CLP</td><td>-9</td><td>-17</td><td>32</td><td>15</td><td>-40</td><td>-0.01</td><td>-0.05</td><td>-0.41</td></tr><tr><td>PEN</td><td>-39</td><td>-23</td><td>9</td><td>4</td><td>-28</td><td>-0.04</td><td>-0.10</td><td>-0.54</td></tr><tr><td>COP</td><td>45</td><td>-12</td><td>25</td><td>32</td><td>0</td><td>0.05</td><td>-0.06</td><td>-0.09</td></tr><tr><td>EMEA</td><td>489</td><td>-108</td><td>205</td><td>420</td><td>-29</td><td>0.05</td><td>-0.04</td><td>-0.06</td></tr><tr><td>CZK</td><td>195</td><td>6</td><td>14</td><td>166</td><td>10</td><td>0.23</td><td>0.03</td><td>1.64</td></tr><tr><td>HUF</td><td>14</td><td>-8</td><td>14</td><td>18</td><td>-9</td><td>0.01</td><td>-0.03</td><td>-0.21</td></tr><tr><td>PLN</td><td>131</td><td>-34</td><td>50</td><td>61</td><td>54</td><td>0.07</td><td>-0.07</td><td>0.02</td></tr><tr><td>RON</td><td>28</td><td>1</td><td>7</td><td>17</td><td>3</td><td>0.04</td><td>0.01</td><td>-0.09</td></tr><tr><td>RUB</td><td>4</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0.10</td><td>0.07</td><td>0.49</td></tr><tr><td>TRY</td><td>-8</td><td>-5</td><td>24</td><td>14</td><td>-41</td><td>-0.01</td><td>-0.02</td><td>-0.32</td></tr><tr><td>ILS</td><td>266</td><td>40</td><td>71</td><td>97</td><td>59</td><td>0.14</td><td>0.08</td><td>0.89</td></tr><tr><td>ZAR</td><td>-141</td><td>-107</td><td>24</td><td>46</td><td>-104</td><td>-0.05</td><td>-0.15</td><td>-0.60</td></tr><tr><td>Frontier</td><td>-123</td><td>-52</td><td>12</td><td>-18</td><td>-65</td><td>-0.06</td><td>-0.11</td><td>-0.62</td></tr><tr><td>UAH</td><td>1</td><td>-1</td><td>1</td><td>1</td><td>-1</td><td>0.02</td><td>-0.04</td><td>-0.13</td></tr><tr><td>EGP</td><td>2</td><td>-4</td><td>6</td><td>2</td><td>-2</td><td>0.01</td><td>-0.04</td><td>-0.27</td></tr><tr><td>NGN</td><td>-3</td><td>-4</td><td>3</td><td>2</td><td>-4</td><td>-0.01</td><td>-0.06</td><td>-0.26</td></tr><tr><td>KWD</td><td>-3</td><td>-1</td><td>0</td><td>1</td><td>-4</td><td>-0.03</td><td>-0.03</td><td>-0.36</td></tr><tr><td>SAR</td><td>-120</td><td>-43</td><td>2</td><td>-24</td><td>-55</td><td>-0.09</td><td>-0.14</td><td>-0.78</td></tr></table>
+
+Note: AUM is calculated at the domicile level.  
+1. FX flows are measured as cross-border equity and fixed income fund flows (based on the domicile of underlying funds), excluding hard currency EM-bond funds and FX-hedged products.
+
+## The G10 FX Strategy Team
+
+Michael Cahill
+
+Karen Reichgott Fishman
+
++44(20)7552-8314
+
++1(212)855-6006
+
+Stuart Jenkins
+
++44(20)7051-4700
+
+michael.e.cahill@gs.com
+
+karen.fishman@gs.com
+
+GS International
+
+stuart.jenkins@gs.com
+
+GS & Co. LLC
+
+GS International
+
+Lexi Kanter
+
++1(212)855-9701
+
+alexandra.kanter@gs.com
+
+GS & Co. LLC
+
+## Disclosure Appendix
+
+## Reg AC
+
+I, Lexi Kanter, hereby certify that all of the views expressed in this report accurately reflect my personal views, which have not been influenced by considerations of the firm's business or client relationships.
+
+Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.
+
+Contributing Authors: Lexi Kanter GS & Co. LLC.
+
+Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.
+
+## Disclosures
+
+## Regulatory disclosures
+
+## Disclosures required by United States laws and regulations
+
+See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; $1\%$ or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.
+
+The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.
+
+## Additional disclosures required under the laws and regulations of jurisdictions other than the United States
+
+Additional disclosures required under the laws and regulations of jurisdictions other than the United States
+
+The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details, a copy of the annual compliance audit report and other relevant information and disclosures can be found at this link:
+
+https://www.goldmansachs.com/worldwide/india/research-analyst. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are
+
+available from GS International on request.
+
+European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.
+
+Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.
+
+## Global product; distributing entities
+
+GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.
+
+GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.
+
+European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.
+
+## General disclosures
+
+This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.
+
+GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).
+
+Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.
+
+We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
+
+The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.
+
+Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.
+
+This research is focused on investment themes across markets, industries and sectors. It does not attempt to distinguish between the prospects or performance of, or provide analysis of, individual companies within any industry or sector we describe.
+
+Any trading recommendation in this research relating to an equity or credit security or securities within an industry or sector is reflective of the investment theme being discussed and is not a recommendation of any such security in isolation.
+
+This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.
+
+Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\_fcm\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.
+
+Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints.
+
+As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.
+
+All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.
+
+Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.
+
+## © 2026 GS.
+
+You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.
