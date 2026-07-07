@@ -7,13 +7,13 @@ After uploading inline image 1:[[KC_IMAGE_001]]: pacing sleep 3.0s
 After uploading inline image 1:[[KC_IMAGE_002]]: pacing sleep 3.0s
 After uploading AI image 1:KC_AI_IMAGE_001: pacing sleep 3.0s
 After uploading cover image 1: pacing sleep 3.0s
-Built WeChat article 1/1 in 16.6s: 波士顿咨询：多数企业可持续报告仍陷低效流程，AI承诺未兑现 (body_images=3, ai_images=1)
-Preparing WeChat draft 1: articles=1 payload_bytes=7773
+Built WeChat article 1/1 in 16.8s: 波士顿咨询：多数企业可持续报告仍陷低效流程，AI承诺未兑现 (body_images=3, ai_images=1)
+Preparing WeChat draft 1: articles=1 payload_bytes=7788
 Checking recent drafts before creating WeChat draft 1
 Creating WeChat draft 1
 Before creating WeChat draft 1: pacing sleep 90.0s
-Verifying WeChat draft 1: media_id=avPwUQVH0p7DPpCFFkit85uFDS8dHmaEsbEf4mzQBf6ja_HRpI3P8B1oLphbYzFa
+Verifying WeChat draft 1: media_id=avPwUQVH0p7DPpCFFkit804TLJI2E-T1cjWKvjhAygQGi2xXkzWo9DohH2TkDNNR
 Before verifying WeChat draft 1: pacing sleep 8.0s
-Verified draft/get: media_id=avPwUQVH0p7DPpCFFkit85uFDS8dHmaEsbEf4mzQBf6ja_HRpI3P8B1oLphbYzFa articles=1/1
-Draft 1: articles=1 media_id=avPwUQVH0p7DPpCFFkit85uFDS8dHmaEsbEf4mzQBf6ja_HRpI3P8B1oLphbYzFa
+Verified draft/get: media_id=avPwUQVH0p7DPpCFFkit804TLJI2E-T1cjWKvjhAygQGi2xXkzWo9DohH2TkDNNR articles=1/1
+Draft 1: articles=1 media_id=avPwUQVH0p7DPpCFFkit804TLJI2E-T1cjWKvjhAygQGi2xXkzWo9DohH2TkDNNR
 Wrote summary: wechat_drafts/consulting/260707/wechat_draft_summary.json
