@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_1qe7qdk8/pdfs/0001-11-Bernstein-Japan Consumer-Best of Times-Worst of Times-Sell Me This Pen-Have You Met My AI--260707.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_1qe7qdk8/pdfs/0002-12-Bernstein-Korea Internet-Korea E-commerce- Coupang June GMV grew 4-...Getting richer doesn-t mean buying groceries twice-260707.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_1qe7qdk8/pdfs/0003-13-Bernstein-Technip Energies-TE.FP-Technip Energies- A -much- more confident pre-earnings call than we had imagined - we expect the share price to rise-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_1qe7qdk8/pdfs/0004-14-Bernstein-Sony Group Corp-6758.JP-Sony- Thoughts on Playstation going all-digital- and fan backlash-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_1qe7qdk8/pdfs/0005-15-Bernstein-Pan-Euro Pharma Primer- -protein strangling- -ATTR-- why should AZN -O- lead in this -20bn peak cardio market--260706.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
