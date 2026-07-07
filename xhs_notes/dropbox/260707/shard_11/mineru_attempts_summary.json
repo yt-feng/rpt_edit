@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_701g5k36/pdfs/0001-59-MS-Global Credit- What We-re Watching-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_701g5k36/pdfs/0002-60-MS-Are Software Vendors Taking a Bite Out of IT Services--260705.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_701g5k36/pdfs/0003-61-NOM-Asia Insights Asia- Is the export upcycle broadening beyond tech--260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_701g5k36/pdfs/0004-62-MS-Tianshan Aluminum-002532-Preliminary 1H26 earnings better than expected excluding tax impact-260705.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_701g5k36/pdfs/0005-63-MS-Tech Bytes - Asia Pacific Memory - Changing Tides-260706.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

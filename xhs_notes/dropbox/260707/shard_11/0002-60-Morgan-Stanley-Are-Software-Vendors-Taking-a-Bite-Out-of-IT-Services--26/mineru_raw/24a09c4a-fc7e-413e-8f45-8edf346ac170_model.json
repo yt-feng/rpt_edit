@@ -1,0 +1,5648 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.045,
+                0.366,
+                0.072
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.806,
+                0.05,
+                0.934,
+                0.068
+            ],
+            "angle": 0,
+            "content": "FOUNDATION"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.098,
+                0.359,
+                0.12
+            ],
+            "angle": 0,
+            "content": "Software Snippets | Europe",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.064,
+                0.131,
+                0.574,
+                0.201
+            ],
+            "angle": 0,
+            "content": "Are Software Vendors Taking a Bite Out of IT Services?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.062,
+                0.221,
+                0.583,
+                0.262
+            ],
+            "angle": 0,
+            "content": "Important events in the world of Software & Services in the week ahead, and key MS research / stories from the past week.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.068,
+                0.278,
+                0.204,
+                0.298
+            ],
+            "angle": 0,
+            "content": "Key Takeaways"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.062,
+                0.302,
+                0.488,
+                0.319
+            ],
+            "angle": 0,
+            "content": "- Big Tech's $3.5bn AI deployment push (#Software, #IT Services)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.062,
+                0.325,
+                0.553,
+                0.342
+            ],
+            "angle": 0,
+            "content": "■ Fewer flights, more tokens: SAP plans cost savings to fund AI push (#SAP)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.062,
+                0.347,
+                0.595,
+                0.364
+            ],
+            "angle": 0,
+            "content": "IT Services: Still room for further downside (*MS Research*, #Tieto, #IT Services)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.062,
+                0.37,
+                0.526,
+                0.387
+            ],
+            "angle": 0,
+            "content": "■ Buy versus build? Base44 launches its own LLM (#Software, #IONOS)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.063,
+                0.393,
+                0.521,
+                0.41
+            ],
+            "angle": 0,
+            "content": "■ Cloudflare to rein in AI crawlers (#RELX, #Wolters Kluwer, #Informa)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.063,
+                0.426,
+                0.595,
+                0.692
+            ],
+            "angle": 0,
+            "content": "1) Big Tech's $3.5bn AI deployment push (#Software, #IT Services): Microsoft (covered by Josh Baer) this week announced Microsoft Frontier Company \"a new operating business focused on delivering Frontier Transformation through AI\". Microsoft described the initiative as going beyond traditional Forward Deployed Engineering (FDE), with a $2.5bn investment, 6,000 embedded experts, and support from its SI partner ecosystem, including Capgemini. Separately, Amazon (covered by Brian Nowak) announced a dedicated AWS FDE organisation, backed by $1bn, which \"focuses on business outcomes and leaves customers self-sufficient with AI\". SAP CEO Christian Klein has also spoken about creating FDE teams (reportedly starting in July 2026). We see these announcements as evidence that enterprises may need more direct vendor support to move from AI experimentation to full deployment. As we have written about previously, this could raise questions about dedicated IT Services firms' role in enterprise AI implementation, as software/cloud vendors move further into hands-on AI transformation services – although Microsoft's partnerships suggest the outcome may prove more collaborative than disruptive.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.064,
+                0.7,
+                0.496,
+                0.717
+            ],
+            "angle": 0,
+            "content": "Exhibit 1: \"Forward deployed engineer\" mentions since Jan 2025"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.076,
+                0.736,
+                0.59,
+                0.887
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.239,
+                0.898,
+                0.427,
+                0.909
+            ],
+            "angle": 0,
+            "content": "■ Company Document Count ■ News Document Count"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.064,
+                0.917,
+                0.547,
+                0.939
+            ],
+            "angle": 0,
+            "content": "Note: Company document count and news document count as defined and captured by AlphaSense. Source: AlphaSense (02/07/2026), MS"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.622,
+                0.094,
+                0.936,
+                0.229
+            ],
+            "angle": 0,
+            "content": "<table><tr><td colspan=\"2\">MS &amp; CO. INTERNATIONAL PLC+</td></tr><tr><td colspan=\"2\">George W Webb</td></tr><tr><td colspan=\"2\">Equity Analyst</td></tr><tr><td>George.Webb@morganstanley.com</td><td>+44 20 7425-2686</td></tr><tr><td colspan=\"2\">Mark Hyatt</td></tr><tr><td colspan=\"2\">Equity Analyst</td></tr><tr><td>Mark.Hyatt@morganstanley.com</td><td>+44 20 7677-3663</td></tr><tr><td colspan=\"2\">William Richards</td></tr><tr><td colspan=\"2\">Research Associate</td></tr><tr><td>William.Richards1@morganstanley.com</td><td>+44 20 7425-0269</td></tr></table>"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.628,
+                0.236,
+                0.845,
+                0.25
+            ],
+            "angle": 0,
+            "content": "TECHNOLOGY - SOFTWARE & SERVICES"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.624,
+                0.261,
+                0.891,
+                0.275
+            ],
+            "angle": 0,
+            "content": "Industry View In-Line",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.623,
+                0.767,
+                0.932,
+                0.849
+            ],
+            "angle": 0,
+            "content": "MS does and seeks to do business with companies covered in MS. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of MS. Investors should consider MS as only a single factor in making their investment decision."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.624,
+                0.85,
+                0.919,
+                0.886
+            ],
+            "angle": 0,
+            "content": "For analyst certification and other important disclosures, refer to the Disclosure Section, located at the end of this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.623,
+                0.886,
+                0.932,
+                0.946
+            ],
+            "angle": 0,
+            "content": "+= Analysts employed by non-U.S. affiliates are not registered with FINRA, may not be associated persons of the member and may not be subject to FINRA restrictions on communications with a subject company, public appearances and trading securities held by a research analyst account.",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.099,
+                0.356,
+                0.119
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.13,
+                0.574,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.171,
+                0.451,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.223,
+                0.554,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.244,
+                0.578,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.28,
+                0.201,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.305,
+                0.482,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.328,
+                0.549,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.35,
+                0.591,
+                0.361
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.373,
+                0.521,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.395,
+                0.516,
+                0.407
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.428,
+                0.556,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.445,
+                0.571,
+                0.459
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.464,
+                0.546,
+                0.475
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.481,
+                0.567,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.498,
+                0.595,
+                0.511
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.516,
+                0.591,
+                0.528
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.533,
+                0.59,
+                0.547
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.551,
+                0.564,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.57,
+                0.584,
+                0.582
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.588,
+                0.583,
+                0.599
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.605,
+                0.576,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.623,
+                0.581,
+                0.635
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.64,
+                0.559,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.658,
+                0.552,
+                0.67
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.675,
+                0.573,
+                0.688
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.629,
+                0.237,
+                0.844,
+                0.25
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.627,
+                0.263,
+                0.698,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.849,
+                0.263,
+                0.887,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.626,
+                0.851,
+                0.916,
+                0.862
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.626,
+                0.862,
+                0.912,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.626,
+                0.875,
+                0.664,
+                0.886
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.628,
+                0.888,
+                0.928,
+                0.899
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.628,
+                0.9,
+                0.915,
+                0.909
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.628,
+                0.911,
+                0.862,
+                0.92
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.627,
+                0.922,
+                0.93,
+                0.933
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.628,
+                0.933,
+                0.908,
+                0.944
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.046,
+                0.251,
+                0.063
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.857,
+                0.05,
+                0.934,
+                0.063
+            ],
+            "angle": 0,
+            "content": "FOUNDATION"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.064,
+                0.107,
+                0.573,
+                0.123
+            ],
+            "angle": 0,
+            "content": "2) Fewer flights, more tokens: SAP plans cost savings to fund AI push (#SAP):"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.122,
+                0.599,
+                0.389
+            ],
+            "angle": 0,
+            "content": "Bloomberg reported this week that SAP is cutting back hiring and travel costs (unrelated to AI) to devote more resources to developing AI technology. The company reportedly said \"[we will] exclusively focus new hiring on selected profiles only, mainly core AI roles, that are critical for our long-term success\", echoing comments made at Sapphire, where SAP acknowledged the need for greater AI investment, including in AI engineering talent. The comments follow a separate management reshuffle reported earlier this week, with CPO Muhammad Alam's product and engineering responsibilities to be split among CEO Christian Klein and COO Sebastian Steinhäuser, according to the article, ahead of Alam's expected departure in early 2027. Bloomberg also reported that \"SAP will continue to search outside of the company for a new executive product lead [...] the company will target candidates in the US\". Taken together, we see this newsflow as reinforcing the scale of SAP's AI pivot: the company is not only prioritising AI investment, but also reallocating costs, sharpening hiring priorities and reshaping executive accountability around that strategy.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.399,
+                0.596,
+                0.681
+            ],
+            "angle": 0,
+            "content": "3) IT Services: Still room for further downside (*MS Research*, #Tieto, #IT Services): So far, 2026 has been a challenging year for IT Services, with the sector down ~30% YTD as investors grapple with a slower-than-expected recovery in enterprise IT budgets, and rising concerns that AI could structurally disrupt the labour-based revenue model. Despite this industry backdrop, Nordic leader Tieto has been an outlier: broadly flat YTD. Tieto trades on 11x CY26e adj. P/E, a 17%/34% premium to sector bellwethers Accenture and Capgemini, respectively. Given downside risk to both near-term growth expectations and the company's medium-term targets, we see the premium to global peers as unjustified, and reiterate our Underweight rating. See our full note on Tieto here. Our colleague Gaurav Rateria also recently wrote a deep dive on the Indian IT Services vendors, seeing room for further downside from here, and downgraded TCS to Equal-weight. Gaurav writes: \"On a relative basis, we find the risk-reward no longer favorable for TCS – we downgrade to EW. We see a lack of signs of any growth acceleration, likely lower margins with accelerated investments and low-single-digit earnings CAGR over the next two years.\" Read Gaurav's full note here.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.064,
+                0.69,
+                0.596,
+                0.724
+            ],
+            "angle": 0,
+            "content": "Exhibit 2: Historical NTM adj. P/E of Tieto, Accenture, Capgemini, and a group of global IT Services vendors"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.073,
+                0.729,
+                0.588,
+                0.914
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.064,
+                0.923,
+                0.594,
+                0.943
+            ],
+            "angle": 0,
+            "content": "Note: Global IT Services group constituents = ACN-US, GIB.A-CA, CAP-FR, CTSH-US, IBM-US, LDOS-US, NETC-CSE, 532281-IN, 500209-IN, 532540-IN, 532755-IN, SOP-PAR, 507685-IN, GLOB-US, 532541-IN. Source: FactSet data, MS."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.066,
+                0.969,
+                0.078,
+                0.979
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.108,
+                0.571,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.126,
+                0.554,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.143,
+                0.546,
+                0.157
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.161,
+                0.578,
+                0.173
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.18,
+                0.545,
+                0.192
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.198,
+                0.561,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.215,
+                0.561,
+                0.226
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.232,
+                0.564,
+                0.244
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.25,
+                0.582,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.268,
+                0.556,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.286,
+                0.585,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.304,
+                0.59,
+                0.315
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.321,
+                0.588,
+                0.333
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.339,
+                0.547,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.357,
+                0.595,
+                0.369
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.374,
+                0.199,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.4,
+                0.548,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.417,
+                0.575,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.436,
+                0.557,
+                0.448
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.453,
+                0.561,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.471,
+                0.595,
+                0.483
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.489,
+                0.563,
+                0.5
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.507,
+                0.547,
+                0.518
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.525,
+                0.578,
+                0.536
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.543,
+                0.576,
+                0.554
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.56,
+                0.586,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.578,
+                0.578,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.595,
+                0.581,
+                0.607
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.613,
+                0.545,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.631,
+                0.569,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.647,
+                0.578,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.666,
+                0.358,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.046,
+                0.251,
+                0.063
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.857,
+                0.05,
+                0.934,
+                0.063
+            ],
+            "angle": 0,
+            "content": "FOUNDATION"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.063,
+                0.107,
+                0.595,
+                0.372
+            ],
+            "angle": 0,
+            "content": "4) Buy versus build? Base44 launches its own LLM (#Software, #IONOS): Base44, an AI-centric software development platform - also known as \"vibe coding\" - has launched Base 1, its own proprietary LLM. The company was acquired by Wix (covered by Elizabeth Porter) in June 2025, which wrote in a press release this week: \"ownership of the model gives Base44 direct control over compute and inference spend, expected to result in a structurally stronger margin profile over time\". Back in June, we wrote about French-listed cloud services provider OVH Groupe, which also plans to train its own frontier AI models. While these examples are still anecdotal, they point to a broader strategic question for AI-native software platforms: when does it make sense to keep embedding third-party foundation models, and when does proprietary data, cost control and product differentiation justify owning more of the model layer? The improving capabilities of open-source LLMs may make this a question more companies will consider as they embed AI into their own product set. We have previously explored the implications of vibe coding platforms for web presence vendors, including IONOS, in our note: A Website Is More Than A 'Vibe'.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.381,
+                0.596,
+                0.664
+            ],
+            "angle": 0,
+            "content": "5) Cloudflare to rein in AI crawlers (#RELX, #Wolters Kluwer, #Informa): In a world where \"automated agents and bots drive more than half of all web requests\", Cloudflare (covered by Sanjit Singh) recognises that \"most site owners want to be discoverable in AI [...] [but] maximizing discovery shouldn't mean giving away intellectual property for free\". Starting September 15th, the company has announced that the default settings for new customers and for new sites for existing customers will be set to allow search, but block training and agent use on pages that display ads. This means that without permission from the site owner, crawlers that blend search, agent use, and training, could be blocked. We see this as part of a broader shift toward permissioned, attributable, and potentially monetised use of proprietary content in AI systems. This is particularly relevant for publishers and professional information providers such as RELX, Wolters Kluwer, and Informa, where proprietary data and trusted content remain central to their competitive moats. Relatedly, we note that back in May 2026 Elsevier, a part of RELX's STM business, joined a class-action complaint against Meta alleging the reproduction of copyrighted works in developing the Llama AI model.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.066,
+                0.674,
+                0.296,
+                0.688
+            ],
+            "angle": 0,
+            "content": "Exhibit 3: Key week ahead events"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.922,
+                0.969,
+                0.933,
+                0.98
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.066,
+                0.691,
+                0.596,
+                0.767
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Monday06/07/2026</td><td>Tuesday07/07/2026</td><td>Wednesday08/07/2026</td><td>Thursday09/07/2026</td><td>Friday10/07/2026</td></tr><tr><td></td><td></td><td></td><td>TCS 1Q27 Results</td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Key</td><td>MS Europe Coverage</td><td>Other Global Stocks</td><td>Industry Event</td><td>Other</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.066,
+                0.772,
+                0.204,
+                0.783
+            ],
+            "angle": 0,
+            "content": "Source: MS"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.066,
+                0.968,
+                0.242,
+                0.98
+            ],
+            "angle": 0,
+            "content": "MS"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.109,
+                0.589,
+                0.12
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.127,
+                0.565,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.145,
+                0.546,
+                0.156
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.162,
+                0.594,
+                0.173
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.18,
+                0.561,
+                0.191
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.198,
+                0.587,
+                0.209
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.215,
+                0.588,
+                0.226
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.233,
+                0.581,
+                0.244
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.25,
+                0.574,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.269,
+                0.569,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.286,
+                0.586,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.304,
+                0.585,
+                0.315
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.322,
+                0.579,
+                0.333
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.339,
+                0.585,
+                0.35
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.357,
+                0.58,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.381,
+                0.594,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.401,
+                0.544,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.418,
+                0.576,
+                0.429
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.435,
+                0.543,
+                0.449
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.454,
+                0.591,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.471,
+                0.593,
+                0.483
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.488,
+                0.575,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.507,
+                0.576,
+                0.518
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.525,
+                0.575,
+                0.536
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.542,
+                0.525,
+                0.554
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.56,
+                0.569,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.577,
+                0.561,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.595,
+                0.562,
+                0.607
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.613,
+                0.564,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.63,
+                0.582,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.648,
+                0.399,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.046,
+                0.048,
+                0.192,
+                0.07
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.891,
+                0.053,
+                0.952,
+                0.068
+            ],
+            "angle": 0,
+            "content": "FOUNDATION"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.047,
+                0.158,
+                0.5,
+                0.197
+            ],
+            "angle": 0,
+            "content": "Coverage Valuation vs. European Market"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.047,
+                0.218,
+                0.42,
+                0.239
+            ],
+            "angle": 0,
+            "content": "Exhibit 4: European Software & Services NTM P/E vs STOXX Europe 600"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.058,
+                0.251,
+                0.943,
+                0.844
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.047,
+                0.861,
+                0.521,
+                0.877
+            ],
+            "angle": 0,
+            "content": "NB: Mean of CAP, DSY, INF, NEM, REL, SGE, SAP, TEMN, TIETO, and WKL. Price at close as of T-1 business day. Source: FactSet, MS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.048,
+                0.96,
+                0.058,
+                0.972
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.05,
+                0.16,
+                0.498,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.922,
+                0.969,
+                0.934,
+                0.98
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.046,
+                0.251,
+                0.063
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.856,
+                0.049,
+                0.934,
+                0.063
+            ],
+            "angle": 0,
+            "content": "FOUNDATION"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.066,
+                0.113,
+                0.468,
+                0.143
+            ],
+            "angle": 0,
+            "content": "Long-Term Valuation Charts"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.065,
+                0.16,
+                0.318,
+                0.175
+            ],
+            "angle": 0,
+            "content": "Exhibit 5: Amadeus P/NTM Earnings"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.074,
+                0.178,
+                0.478,
+                0.391
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.065,
+                0.399,
+                0.402,
+                0.411
+            ],
+            "angle": 0,
+            "content": "NB: Price at close as of T-1 business day. Source: FactSet, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.513,
+                0.16,
+                0.774,
+                0.176
+            ],
+            "angle": 0,
+            "content": "Exhibit 6: Capgemini P/NTM Earnings"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.521,
+                0.178,
+                0.928,
+                0.391
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.512,
+                0.4,
+                0.85,
+                0.412
+            ],
+            "angle": 0,
+            "content": "NB: Price at close as of T-1 business day. Source: FactSet, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.065,
+                0.422,
+                0.379,
+                0.436
+            ],
+            "angle": 0,
+            "content": "Exhibit 7: Dassault Systemes P/NTM Earnings"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.067,
+                0.444,
+                0.482,
+                0.651
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.065,
+                0.66,
+                0.402,
+                0.672
+            ],
+            "angle": 0,
+            "content": "NB: Price at close as of T-1 business day. Source: FactSet, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.513,
+                0.422,
+                0.859,
+                0.436
+            ],
+            "angle": 0,
+            "content": "Exhibit 8: HBX Group International P/NTM Earnings"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.521,
+                0.44,
+                0.926,
+                0.652
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.513,
+                0.66,
+                0.85,
+                0.672
+            ],
+            "angle": 0,
+            "content": "NB: Price at close as of T-1 business day. Source: FactSet, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.066,
+                0.682,
+                0.289,
+                0.697
+            ],
+            "angle": 0,
+            "content": "Exhibit 9: Indra P/NTM Earnings"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.068,
+                0.703,
+                0.483,
+                0.911
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.065,
+                0.92,
+                0.402,
+                0.932
+            ],
+            "angle": 0,
+            "content": "NB: Price at close as of T-1 business day. Source: FactSet, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.513,
+                0.682,
+                0.755,
+                0.697
+            ],
+            "angle": 0,
+            "content": "Exhibit 10: Informa P/NTM Earnings"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.516,
+                0.705,
+                0.932,
+                0.929
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.512,
+                0.939,
+                0.85,
+                0.95
+            ],
+            "angle": 0,
+            "content": "NB: Price at close as of T-1 business day. Source: FactSet, MS"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.066,
+                0.968,
+                0.242,
+                0.98
+            ],
+            "angle": 0,
+            "content": "MS"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.115,
+                0.465,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.046,
+                0.251,
+                0.063
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.857,
+                0.05,
+                0.934,
+                0.063
+            ],
+            "angle": 0,
+            "content": "FOUNDATION"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.065,
+                0.113,
+                0.299,
+                0.129
+            ],
+            "angle": 0,
+            "content": "Exhibit 11: IONOS P/NTM Earnings"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.067,
+                0.137,
+                0.48,
+                0.344
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.065,
+                0.352,
+                0.402,
+                0.365
+            ],
+            "angle": 0,
+            "content": "NB: Price at close as of T-1 business day. Source: FactSet, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.513,
+                0.113,
+                0.828,
+                0.129
+            ],
+            "angle": 0,
+            "content": "Exhibit 12: Nemetschek Group P/NTM Earnings"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.518,
+                0.136,
+                0.931,
+                0.344
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.513,
+                0.353,
+                0.849,
+                0.365
+            ],
+            "angle": 0,
+            "content": "NB: Price at close as of T-1 business day. Source: FactSet, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.065,
+                0.374,
+                0.339,
+                0.39
+            ],
+            "angle": 0,
+            "content": "Exhibit 13: Netcompany P/NTM Earnings"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.067,
+                0.402,
+                0.479,
+                0.604
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.065,
+                0.613,
+                0.402,
+                0.626
+            ],
+            "angle": 0,
+            "content": "NB: Price at close as of T-1 business day. Source: FactSet, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.514,
+                0.374,
+                0.738,
+                0.389
+            ],
+            "angle": 0,
+            "content": "Exhibit 14: RELX P/NTM Earnings"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.516,
+                0.396,
+                0.925,
+                0.622
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.513,
+                0.631,
+                0.85,
+                0.644
+            ],
+            "angle": 0,
+            "content": "NB: Price at close as of T-1 business day. Source: FactSet, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.066,
+                0.652,
+                0.332,
+                0.668
+            ],
+            "angle": 0,
+            "content": "Exhibit 15: Sage Group P/NTM Earnings"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.068,
+                0.675,
+                0.476,
+                0.882
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.065,
+                0.892,
+                0.402,
+                0.903
+            ],
+            "angle": 0,
+            "content": "NB: Price at close as of T-1 business day. Source: FactSet, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.514,
+                0.652,
+                0.731,
+                0.667
+            ],
+            "angle": 0,
+            "content": "Exhibit 16: SAP P/NTM Earnings"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.515,
+                0.675,
+                0.924,
+                0.882
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.513,
+                0.891,
+                0.849,
+                0.903
+            ],
+            "angle": 0,
+            "content": "NB: Price at close as of T-1 business day. Source: FactSet, MS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.066,
+                0.969,
+                0.077,
+                0.979
+            ],
+            "angle": 0,
+            "content": "6"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.065,
+                0.046,
+                0.251,
+                0.063
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.857,
+                0.05,
+                0.934,
+                0.063
+            ],
+            "angle": 0,
+            "content": "FOUNDATION"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.066,
+                0.113,
+                0.316,
+                0.129
+            ],
+            "angle": 0,
+            "content": "Exhibit 17: Temenos P/NTM Earnings"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.068,
+                0.136,
+                0.476,
+                0.343
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.065,
+                0.353,
+                0.402,
+                0.365
+            ],
+            "angle": 0,
+            "content": "NB: Price at close as of T-1 business day. Source: FactSet, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.513,
+                0.113,
+                0.736,
+                0.129
+            ],
+            "angle": 0,
+            "content": "Exhibit 18: Tieto P/NTM Earnings"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.516,
+                0.145,
+                0.924,
+                0.343
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.513,
+                0.353,
+                0.849,
+                0.365
+            ],
+            "angle": 0,
+            "content": "NB: Price at close as of T-1 business day. Source: FactSet, MS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.922,
+                0.969,
+                0.933,
+                0.98
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.066,
+                0.374,
+                0.354,
+                0.389
+            ],
+            "angle": 0,
+            "content": "Exhibit 19: Wolters Kluwer P/NTM Earnings"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.068,
+                0.397,
+                0.478,
+                0.621
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.065,
+                0.631,
+                0.402,
+                0.643
+            ],
+            "angle": 0,
+            "content": "NB: Price at close as of T-1 business day. Source: FactSet, MS"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.066,
+                0.968,
+                0.242,
+                0.98
+            ],
+            "angle": 0,
+            "content": "MS"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.046,
+                0.251,
+                0.063
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.857,
+                0.05,
+                0.934,
+                0.063
+            ],
+            "angle": 0,
+            "content": "FOUNDATION"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.066,
+                0.113,
+                0.489,
+                0.144
+            ],
+            "angle": 0,
+            "content": "Coverage Company Guidance"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.065,
+                0.16,
+                0.365,
+                0.176
+            ],
+            "angle": 0,
+            "content": "Exhibit 20: Company Forward Guidance (1/2)"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.067,
+                0.179,
+                0.895,
+                0.905
+            ],
+            "angle": 0,
+            "content": "<table><tr><td colspan=\"3\">Published Company Guidance / Targets</td></tr><tr><td></td><td>FY26</td><td>Mid-term / Long-term</td></tr><tr><td>Amadeus</td><td>High single digit revenue growth (in cc)Adj. EBIT margin stable at cc (FY25: 29.1%)Adj. diluted EPS growth at low double-digitFCF between €1.35-1.45 billion</td><td>Over 2026-2028:High single digit annual revenue growth (in cc)Adj. EBIT margin expansion over the periodAdj. diluted EPS growth CAGR at low double-digitFCF growth CAGR at high single digit</td></tr><tr><td>Capgemini</td><td>Revenue growth of +6.5 to 8.5% cc (organic c. 1.5 to 4%, MSe)Operating margin of 13.6% to 13.8%Organic FCF of €1.8 to 1.9bn</td><td>2028 financial ambitions:2025-28 revenue CAGR at cc of +5.5-7.5% (c. +3.5-5.5% organic)Operating Profit pre-acquisition expense to reach 12.1-12.3% of revenue (c. 130-150bps expansion vs 2025)Cumulative organic FCF &gt;€6bn over 2026-28</td></tr><tr><td>Dassault Systemes</td><td>Total revenue growth between 3 to 5% (cc)Software revenue growth 3 to 5% (cc)Services revenue growth of 2 to 6% (cc)Adj. EBIT margin guidance is 32.2 to 32.6%EPS €1.30 to 1.34</td><td>Basic 2029 EPS of €2.4</td></tr><tr><td>HBX Group</td><td>+11 to +15% YoY growth in TTV-4 to +1% YoY revenue growth-5 to -2% adj. EBITDA growthc. 90 to 100% operating FCF conversion</td><td>Low-double digit TTV annual growthHigh-single digit revenue growthLow sixties adj. EBITDA margin %c. 100% cash conversion</td></tr><tr><td>Indra Sistemas</td><td>Revenue &gt;€7,000m in local currencyStated EBIT of &gt;€700mFree cash flow of &gt;€375m</td><td>Long-term (FY24-FY30):Revenues to reach €10bn in FY30EBITDA margins &gt;12% by FY26 and &gt;14% by FY30EBIT margin at 10% in FY26 and 12% in FY30Cumulative FCF of &gt;€3bn from FY24-FY30</td></tr><tr><td>Informa</td><td>6%± underlying revenue growth7%+ B2B Events underlying revenue growth4%± Taylor &amp; Francis underlying revenue growthReturn to revenue growth for TechTargetUnderlying double-digit growth in adj. EPS</td><td>5%+ underlying revenue growth p.a. out to FY28</td></tr><tr><td>IONOS Group</td><td>Group: c. 7% revenue growth with c. 37-38% adj. EBITDA margin (CC)Web Presence &amp; Productivity: 7-8% revenue growth (CC)Cloud Solutions: c. 10% revenue growth (CC)</td><td>Total revenue growth (CAGR) c. 10%Web Presence &amp; Productivity revenue growth (CAGR) c. 9%Cloud Solutions revenue growth (CAGR) c. 20%Adj. EBITDA margin c. 40%Capex (% of revenue) c. 6%</td></tr><tr><td>Nemetschek Group</td><td>14-15% constant currency revenue growth32-33% adj. EBITDA margin</td><td>None</td></tr><tr><td>Netcompany Group</td><td>Group revenue growth of 15-20% y/y (in CC), 5-10% excluding NBSAdj. EBITDA margin of 16-19%, 17-20% excluding NBS</td><td>Long-term:Annual organic revenue growth of 5-10% &quot;through any business cycle&quot;Adj. EBITDA margins &gt;20% by (in) FY29</td></tr><tr><td>RELX</td><td>&quot;We continue to see positive momentum across the group, and we expect another year of strong underlying growth in revenue and adjusted operating profit, as well as strong growth in adjusted earnings per share on a constant currency basis&quot;.Buybacks of £2,250m</td><td>None</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.065,
+                0.912,
+                0.316,
+                0.924
+            ],
+            "angle": 0,
+            "content": "Source: Company data, compiled by MS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.066,
+                0.969,
+                0.077,
+                0.98
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.115,
+                0.486,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.046,
+                0.251,
+                0.063
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.857,
+                0.05,
+                0.934,
+                0.063
+            ],
+            "angle": 0,
+            "content": "FOUNDATION"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.065,
+                0.107,
+                0.364,
+                0.123
+            ],
+            "angle": 0,
+            "content": "Exhibit 21: Company Forward Guidance (2/2)"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.069,
+                0.126,
+                0.931,
+                0.521
+            ],
+            "angle": 0,
+            "content": "<table><tr><td colspan=\"3\">Published Company Guidance / Targets</td></tr><tr><td></td><td>FY26</td><td>Mid-term / Long-term</td></tr><tr><td>Sage Group</td><td>Organic total revenue growth in FY26 to be above 9%Operating margins are expected to trend upwards in FY26 and beyond</td><td>None</td></tr><tr><td>SAP</td><td>Cloud revenue of €25.8-26.2bn at cc (23% to 25% cc growth).Cloud and software revenue of €36.3-36.8bn at cc (12%-13% cc growth).Non-IFRS EBIT of €11.9-12.3bn (14-18% cc growth).Free cash flow c. €10bn</td><td>Expect total revenue growth to accelerate in 2027.Total operating expenses are expected to grow at 80 to 90% of total revenue growth in 2027.</td></tr><tr><td>Temenos</td><td>ARR growth of c. 12%Subscription and SaaS growth of c. 9%EBIT growth c. 9%FCF growth c. 16% (reported)</td><td>Mid-term (FY28):ARR to reach &gt;$1.23bnNon-IFRS EBIT of at least c.$480mFCF of at least $410m</td></tr><tr><td>Tieto</td><td>Organic growth of -2% to 0% andAdj. EBITA margins of 14.8 to 15.8%</td><td>Annual revenue growth of over 5% CAGR in 2027-2028EBITA margins of over 16% by 2028</td></tr><tr><td>Wolters Kluwer</td><td>Good organic revenue growthAdj. EBIT margin: c. 28%Diluted adj. EPS growth (%, cc): High single digit growthAdj. FCF (EUR, cc): €1,300m to €1,350m</td><td>None</td></tr></table>",
+            "cell_merge": [
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.065,
+                0.528,
+                0.316,
+                0.54
+            ],
+            "angle": 0,
+            "content": "Source: Company data, compiled by MS"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.066,
+                0.968,
+                0.243,
+                0.98
+            ],
+            "angle": 0,
+            "content": "MS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.922,
+                0.969,
+                0.933,
+                0.98
+            ],
+            "angle": 0,
+            "content": "9"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.046,
+                0.048,
+                0.192,
+                0.071
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.891,
+                0.053,
+                0.952,
+                0.068
+            ],
+            "angle": 0,
+            "content": "FOUNDATION"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.047,
+                0.158,
+                0.656,
+                0.198
+            ],
+            "angle": 0,
+            "content": "Appendix: MS European Software & Services Coverage"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.048,
+                0.219,
+                0.209,
+                0.239
+            ],
+            "angle": 0,
+            "content": "Exhibit 22: Coverage Summary"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.049,
+                0.244,
+                0.303,
+                0.574
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Company</td><td>Analyst</td></tr><tr><td>Amadeus</td><td>George Webb</td></tr><tr><td>Capgemini</td><td>George Webb</td></tr><tr><td>Dassault Systemes</td><td>George Webb</td></tr><tr><td>HBX Group International</td><td>Mark Hyatt</td></tr><tr><td>Hexagon AB</td><td>George Webb</td></tr><tr><td>Indra Sistemas</td><td>Adam Wood</td></tr><tr><td>Informa</td><td>George Webb</td></tr><tr><td>IONOS Group</td><td>George Webb</td></tr><tr><td>Nemetschek Group</td><td>George Webb</td></tr><tr><td>Netcompany</td><td>George Webb</td></tr><tr><td>RELX</td><td>George Webb</td></tr><tr><td>Sage Group</td><td>George Webb</td></tr><tr><td>SAP</td><td>Adam Wood</td></tr><tr><td>Temenos</td><td>Mark Hyatt</td></tr><tr><td>Tieto</td><td>Mark Hyatt</td></tr><tr><td>Wolters Kluwer</td><td>George Webb</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.048,
+                0.581,
+                0.155,
+                0.595
+            ],
+            "angle": 0,
+            "content": "Source: MS"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.306,
+                0.243,
+                0.551,
+                0.574
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Rating</td><td colspan=\"2\">Price Target</td></tr><tr><td>Overweight</td><td>EUR</td><td>65.00</td></tr><tr><td>Equal-weight</td><td>EUR</td><td>117.00</td></tr><tr><td>Equal-weight</td><td>EUR</td><td>21.75</td></tr><tr><td>Equal-weight</td><td>EUR</td><td>7.90</td></tr><tr><td>N/A</td><td>N/A</td><td>N/A</td></tr><tr><td>Equal-weight</td><td>EUR</td><td>60.00</td></tr><tr><td>Overweight</td><td>GBp</td><td>1,085.00</td></tr><tr><td>Equal-weight</td><td>EUR</td><td>29.40</td></tr><tr><td>Equal-weight</td><td>EUR</td><td>74.25</td></tr><tr><td>Underweight</td><td>DKK</td><td>334.00</td></tr><tr><td>Equal-weight</td><td>GBp</td><td>2,970.00</td></tr><tr><td>Overweight</td><td>GBp</td><td>1,110.00</td></tr><tr><td>Overweight</td><td>EUR</td><td>190.00</td></tr><tr><td>Underweight</td><td>CHF</td><td>59.00</td></tr><tr><td>Underweight</td><td>EUR</td><td>16.00</td></tr><tr><td>Equal-weight</td><td>EUR</td><td>80.50</td></tr></table>"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.556,
+                0.244,
+                0.95,
+                0.573
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.049,
+                0.959,
+                0.063,
+                0.974
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.049,
+                0.16,
+                0.654,
+                0.197
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.046,
+                0.251,
+                0.063
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.857,
+                0.05,
+                0.934,
+                0.062
+            ],
+            "angle": 0,
+            "content": "FOUNDATION"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.098,
+                0.285,
+                0.117
+            ],
+            "angle": 0,
+            "content": "Disclosure Section"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.119,
+                0.935,
+                0.216
+            ],
+            "angle": 0,
+            "content": "The information and opinions in MS were prepared or are disseminated by MS Europe S.E., regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) and/or MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority. MS & Co. International plc disseminates in the UK research that it has prepared, and which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the \"Order\"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. As used in this disclosure section, MS includes RMB MS Proprietary Limited, MS Europe S.E., MS & Co International plc and its affiliates.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.216,
+                0.935,
+                0.257
+            ],
+            "angle": 0,
+            "content": "For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.258,
+                0.935,
+                0.3
+            ],
+            "angle": 0,
+            "content": "For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.306,
+                0.217,
+                0.321
+            ],
+            "angle": 0,
+            "content": "Analyst Certification"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.322,
+                0.934,
+                0.35
+            ],
+            "angle": 0,
+            "content": "The following analysts hereby certify that their views about the companies and their securities discussed in this report are accurately expressed and that they have not received and will not receive direct or indirect compensation in exchange for expressing specific recommendations or views in this report: Mark Hyatt; William Richards; George W Webb.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.371,
+                0.388,
+                0.386
+            ],
+            "angle": 0,
+            "content": "Global Research Conflict Management Policy"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.387,
+                0.934,
+                0.414
+            ],
+            "angle": 0,
+            "content": "MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.916,
+                0.969,
+                0.933,
+                0.98
+            ],
+            "angle": 0,
+            "content": "11"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.421,
+                0.471,
+                0.436
+            ],
+            "angle": 0,
+            "content": "Important Regulatory Disclosures on Subject Companies"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.438,
+                0.934,
+                0.464
+            ],
+            "angle": 0,
+            "content": "As of May 29, 2026, MS beneficially owned 1% or more of a class of common equity securities of the following companies covered in MS: Amadeus IT Holdings S.A., Capgemini, Indra, Informa, Nemetschek SE, RELX, Sage, SAP SE, Wolters Kluwer.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.465,
+                0.752,
+                0.478
+            ],
+            "angle": 0,
+            "content": "Within the last 12 months, MS managed or co-managed a public offering (or 144A offering) of securities of Capgemini, Informa, SAP SE.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.479,
+                0.902,
+                0.492
+            ],
+            "angle": 0,
+            "content": "Within the last 12 months, MS has received compensation for investment banking services from Capgemini, Dassault Systemes SA, Hexagon AB, Indra, Informa, SAP SE.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.493,
+                0.934,
+                0.52
+            ],
+            "angle": 0,
+            "content": "In the next 3 months, MS expects to receive or intends to seek compensation for investment banking services from Amadeus IT Holdings S.A., Capgemini, Dassault Systemes SA, Hexagon AB, Indra, Informa, IONOS Group SE, Nemetschek SE, Netcompany Group A/S, RELX, Sage, SAP SE, Temenos Group AG, Tieto Oyj, Wolters Kluwer.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.521,
+                0.934,
+                0.547
+            ],
+            "angle": 0,
+            "content": "Within the last 12 months, MS has received compensation for products and services other than investment banking services from Amadeus IT Holdings S.A., Capgemini, Dassault Systemes SA, HBX Group International PLC, Hexagon AB, Informa, RELX, SAP SE, Tieto Oyj.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.548,
+                0.935,
+                0.588
+            ],
+            "angle": 0,
+            "content": "Within the last 12 months, MS has provided or is providing investment banking services to, or has an investment banking client relationship with, the following company: Amadeus IT Holdings S.A., Capgemini, Dassault Systemes SA, Hexagon AB, Indra, Informa, IONOS Group SE, Nemetschek SE, Netcompany Group A/S, RELX, Sage, SAP SE, Temenos Group AG, Tieto Oyj, Wolters Kluwer.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.59,
+                0.935,
+                0.63
+            ],
+            "angle": 0,
+            "content": "Within the last 12 months, MS has either provided or is providing non-investment banking, securities-related services to and/or in the past has entered into an agreement to provide services or has a client relationship with the following company: Amadeus IT Holdings S.A., Capgemini, Dassault Systemes SA, HBX Group International PLC, Hexagon AB, Informa, RELX, Sage, SAP SE, Tieto Oyj, Wolters Kluwer.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.632,
+                0.429,
+                0.645
+            ],
+            "angle": 0,
+            "content": "MS & Co. International plc is a corporate broker to Informa, Sage.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.646,
+                0.934,
+                0.687
+            ],
+            "angle": 0,
+            "content": "The equity research analysts or strategists principally responsible for the preparation of MS have received compensation based upon various factors, including quality of research, investor client feedback, stock picking, competitive factors, firm revenues and overall investment banking revenues. Equity Research analysts' or strategists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.687,
+                0.935,
+                0.742
+            ],
+            "angle": 0,
+            "content": "MS and its affiliates do business that relates to companies/instruments covered in MS, including market making, providing liquidity, fund management, commercial banking, extension of credit, investment services and investment banking. MS sells to and buys from customers the securities/instruments of companies covered in MS on a principal basis. MS may have a position in the debt of the Company or instruments discussed in this report. MS trades or may trade as principal in the debt securities (or in related derivatives) that are the subject of the debt research report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.744,
+                0.564,
+                0.756
+            ],
+            "angle": 0,
+            "content": "Certain disclosures listed above are also for compliance with applicable regulations in non-US jurisdictions.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.764,
+                0.189,
+                0.777
+            ],
+            "angle": 0,
+            "content": "STOCK RATINGS"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.063,
+                0.78,
+                0.935,
+                0.849
+            ],
+            "angle": 0,
+            "content": "MS uses a relative rating system using terms such as Overweight, Equal-weight, Not-Rated or Underweight (see definitions below). MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold and sell. Investors should carefully read the definitions of all ratings used in MS. In addition, since MS contains more complete information concerning the analyst's views, investors should carefully read MS, in its entirety, and not infer the contents from the rating alone. In any case, ratings (or research) should not be used or relied upon as investment advice. An investor's decision to buy or sell a stock should depend on individual circumstances (such as the investor's existing holdings) and other considerations.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.855,
+                0.307,
+                0.87
+            ],
+            "angle": 0,
+            "content": "Global Stock Ratings Distribution"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.872,
+                0.169,
+                0.884
+            ],
+            "angle": 0,
+            "content": "(as of June 30, 2026)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.885,
+                0.766,
+                0.898
+            ],
+            "angle": 0,
+            "content": "The Stock Ratings described below apply to MS's Fundamental Equity Research and do not apply to Debt Research produced by the Firm.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.899,
+                0.935,
+                0.941
+            ],
+            "angle": 0,
+            "content": "For disclosure purposes only (in accordance with FINRA requirements), we include the category headings of Buy, Hold, and Sell alongside our ratings of Overweight, Equal-weight, Not-Rated and Underweight. MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold, and sell but represent recommended relative weightings (see definitions below). To satisfy regulatory requirements, we correspond Overweight, our most positive stock rating, with a",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.066,
+                0.968,
+                0.242,
+                0.98
+            ],
+            "angle": 0,
+            "content": "MS"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.097,
+                0.284,
+                0.12
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.12,
+                0.931,
+                0.13
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.135,
+                0.932,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.149,
+                0.931,
+                0.158
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.163,
+                0.931,
+                0.172
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.177,
+                0.931,
+                0.187
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.192,
+                0.931,
+                0.199
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.206,
+                0.588,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.218,
+                0.93,
+                0.227
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.232,
+                0.932,
+                0.242
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.246,
+                0.26,
+                0.255
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.26,
+                0.931,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.274,
+                0.931,
+                0.283
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.287,
+                0.93,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.307,
+                0.215,
+                0.321
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.324,
+                0.93,
+                0.334
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.338,
+                0.825,
+                0.348
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.371,
+                0.384,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.39,
+                0.931,
+                0.397
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.404,
+                0.424,
+                0.411
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.423,
+                0.468,
+                0.436
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.44,
+                0.931,
+                0.449
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.455,
+                0.462,
+                0.462
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.466,
+                0.748,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.481,
+                0.896,
+                0.49
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.495,
+                0.931,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.509,
+                0.792,
+                0.519
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.523,
+                0.931,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.537,
+                0.491,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.55,
+                0.931,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.565,
+                0.931,
+                0.574
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.579,
+                0.144,
+                0.587
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.593,
+                0.931,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.607,
+                0.93,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.62,
+                0.23,
+                0.63
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.634,
+                0.426,
+                0.644
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.647,
+                0.931,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.662,
+                0.932,
+                0.67
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.676,
+                0.76,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.689,
+                0.93,
+                0.699
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.703,
+                0.932,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.717,
+                0.932,
+                0.727
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.731,
+                0.563,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.745,
+                0.56,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.766,
+                0.187,
+                0.78
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.781,
+                0.931,
+                0.791
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.796,
+                0.932,
+                0.805
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.811,
+                0.931,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.824,
+                0.932,
+                0.833
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.837,
+                0.671,
+                0.846
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.856,
+                0.305,
+                0.87
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.874,
+                0.165,
+                0.883
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.887,
+                0.763,
+                0.897
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.901,
+                0.93,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.915,
+                0.931,
+                0.925
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.929,
+                0.931,
+                0.939
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.046,
+                0.251,
+                0.063
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.857,
+                0.05,
+                0.934,
+                0.062
+            ],
+            "angle": 0,
+            "content": "FOUNDATION"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.105,
+                0.676,
+                0.119
+            ],
+            "angle": 0,
+            "content": "buy recommendation; we correspond Equal-weight and Not-Rated to hold and Underweight to sell recommendations, respectively.",
+            "merge_prev": false
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.111,
+                0.138,
+                0.875,
+                0.284
+            ],
+            "angle": 0,
+            "content": "<table><tr><td></td><td colspan=\"2\">Coverage Universe</td><td colspan=\"3\">Investment Banking Clients (IBC)</td><td colspan=\"2\">Other Material Investment ServicesClients (MISC)</td></tr><tr><td>Stock RatingCategory</td><td>Count</td><td>% of Total</td><td>Count</td><td>% of Total IBC</td><td>% of RatingCategory</td><td>Count</td><td>% of Total OtherMISC</td></tr><tr><td>Overweight/Buy</td><td>1544</td><td>42%</td><td>453</td><td>49%</td><td>29%</td><td>757</td><td>44%</td></tr><tr><td>Equal-weight/Hold</td><td>1577</td><td>43%</td><td>390</td><td>42%</td><td>25%</td><td>769</td><td>44%</td></tr><tr><td>Not-Rated/Hold</td><td>3</td><td>0%</td><td>1</td><td>0%</td><td>33%</td><td>1</td><td>0%</td></tr><tr><td>Underweight/Sell</td><td>544</td><td>15%</td><td>89</td><td>10%</td><td>16%</td><td>204</td><td>12%</td></tr><tr><td>Total</td><td>3,668</td><td></td><td>933</td><td></td><td></td><td>1731</td><td></td></tr></table>"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.289,
+                0.934,
+                0.316
+            ],
+            "angle": 0,
+            "content": "Data include common stock and ADRs currently assigned ratings. Investment Banking Clients are companies from whom MS received investment banking compensation in the last 12 months. Due to rounding off of decimals, the percentages provided in the \"% of total\" column may not add up to exactly 100 percent.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.323,
+                0.226,
+                0.338
+            ],
+            "angle": 0,
+            "content": "Analyst Stock Ratings"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.339,
+                0.934,
+                0.365
+            ],
+            "angle": 0,
+            "content": "Overweight (O). The stock's total return is expected to exceed the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.367,
+                0.934,
+                0.393
+            ],
+            "angle": 0,
+            "content": "Equal-weight (E). The stock's total return is expected to be in line with the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.394,
+                0.934,
+                0.421
+            ],
+            "angle": 0,
+            "content": "Not-Rated (NR). Currently the analyst does not have adequate conviction about the stock's total return relative to the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.422,
+                0.934,
+                0.448
+            ],
+            "angle": 0,
+            "content": "Underweight (U). The stock's total return is expected to be below the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.45,
+                0.607,
+                0.463
+            ],
+            "angle": 0,
+            "content": "Unless otherwise specified, the time frame for price targets included in MS is 12 to 18 months.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.471,
+                0.235,
+                0.485
+            ],
+            "angle": 0,
+            "content": "Analyst Industry Views"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.487,
+                0.934,
+                0.512
+            ],
+            "angle": 0,
+            "content": "Attractive (A): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be attractive vs. the relevant broad market benchmark, as indicated below.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.063,
+                0.515,
+                0.934,
+                0.57
+            ],
+            "angle": 0,
+            "content": "In-Line (I): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be in line with the relevant broad market benchmark, as indicated below. Cautious (C): The analyst views the performance of his or her industry coverage universe over the next 12-18 months with caution vs. the relevant broad market benchmark, as indicated below. Benchmarks for each region are as follows: North America - S&P 500; Latin America - relevant MSCI country index or MSCI Latin America Index; Europe - MSCI Europe; Japan - TOPIX; Asia - relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.576,
+                0.58,
+                0.592
+            ],
+            "angle": 0,
+            "content": "Important Disclosures for MS Smith Barney LLC Customers"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.593,
+                0.934,
+                0.634
+            ],
+            "angle": 0,
+            "content": "Important disclosures regarding any material conflict of interest that can reasonably be expected to have influenced MS Smith Barney LLC's choice of a third-party research provider or the subject company of a third-party research report, are available on the MS Wealth Management disclosure website at www.morganstanley.com/online/researchdisclosures. For MS specific disclosures, you may refer to https://www.morganstanley.com/eqr/disclosures/webapp/generalresearch.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.635,
+                0.934,
+                0.661
+            ],
+            "angle": 0,
+            "content": "Each MS report is reviewed and approved on behalf of MS Smith Barney LLC. This review and approval is conducted by the same person who reviews the research report on behalf of MS. This could create a conflict of interest.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.669,
+                0.275,
+                0.683
+            ],
+            "angle": 0,
+            "content": "Other Important Disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.685,
+                0.935,
+                0.739
+            ],
+            "angle": 0,
+            "content": "MS policy is to update research reports as and when the Research Analyst and Research Management deem appropriate, based on developments with the issuer, the sector, or the market that may have a material impact on the research views or opinions stated therein. In addition, certain Research publications are intended to be updated on a regular periodic basis (weekly/monthly/quarterly/annual) and will ordinarily be updated with that frequency, unless the Research Analyst and Research Management determine that a different publication schedule is appropriate based on current conditions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.74,
+                0.935,
+                0.767
+            ],
+            "angle": 0,
+            "content": "MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.768,
+                0.935,
+                0.809
+            ],
+            "angle": 0,
+            "content": "MS produces an equity research product called a \"Tactical Idea.\" Views contained in a \"Tactical Idea\" on a particular stock may be contrary to the recommendations or views expressed in research on the same stock. This may be the result of differing time horizons, methodologies, market events, or other factors. For all research available on a particular stock, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.81,
+                0.935,
+                0.851
+            ],
+            "angle": 0,
+            "content": "MS is provided to our clients through our proprietary research portal on Matrix and also distributed electronically by MS to clients. Certain, but not all, MS products are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience. For access to all available MS, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.062,
+                0.851,
+                0.936,
+                0.95
+            ],
+            "angle": 0,
+            "content": "Any access and/or use of MS is subject to MS's Terms of Use (http://www.morganstanley.com/terms.html). By accessing and/or using MS, you are indicating that you have read and agree to be bound by our Terms of Use (http://www.morganstanley.com/terms.html). In addition you consent to MS processing your personal data and using cookies in accordance with our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy_pledge.html), including for the purposes of setting your preferences and to collect readership data so that we can deliver better and more personalized service and products to you. To find out more information about how MS processes personal data, how we use cookies and how to reject cookies see our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy_pledge.html). Please use the provided link to review the Terms and Conditions and Most Important Terms and Conditions for MS India Company Private Limited (https://www.morganstanley.com/assets/pdfs/about-us-global-offices/india/Terms_and_conditions.pdf) and the following link to review the audit report (https://ny.matrix.ms.com/eqr/research/webapp/researchdocs/",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.066,
+                0.969,
+                0.085,
+                0.98
+            ],
+            "angle": 0,
+            "content": "12"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.106,
+                0.673,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.292,
+                0.931,
+                0.299
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.304,
+                0.717,
+                0.314
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.324,
+                0.223,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.34,
+                0.932,
+                0.35
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.355,
+                0.131,
+                0.363
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.369,
+                0.931,
+                0.378
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.382,
+                0.172,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.395,
+                0.931,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.41,
+                0.349,
+                0.42
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.424,
+                0.932,
+                0.433
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.436,
+                0.132,
+                0.448
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.452,
+                0.604,
+                0.461
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.471,
+                0.232,
+                0.486
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.488,
+                0.932,
+                0.498
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.501,
+                0.101,
+                0.513
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.516,
+                0.932,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.53,
+                0.932,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.545,
+                0.931,
+                0.553
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.557,
+                0.507,
+                0.568
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.578,
+                0.576,
+                0.591
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.595,
+                0.931,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.609,
+                0.929,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.623,
+                0.678,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.638,
+                0.931,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.65,
+                0.458,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.67,
+                0.271,
+                0.683
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.687,
+                0.931,
+                0.697
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.7,
+                0.932,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.714,
+                0.932,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.728,
+                0.309,
+                0.738
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.742,
+                0.931,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.757,
+                0.356,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.77,
+                0.931,
+                0.78
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.784,
+                0.931,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.798,
+                0.452,
+                0.807
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.812,
+                0.931,
+                0.821
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.826,
+                0.932,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.84,
+                0.688,
+                0.85
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.852,
+                0.931,
+                0.862
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.867,
+                0.931,
+                0.877
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.881,
+                0.931,
+                0.89
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.895,
+                0.931,
+                0.905
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.91,
+                0.931,
+                0.919
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.923,
+                0.931,
+                0.933
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.936,
+                0.929,
+                0.945
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.916,
+                0.969,
+                0.934,
+                0.98
+            ],
+            "angle": 0,
+            "content": "13"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.046,
+                0.251,
+                0.063
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.857,
+                0.05,
+                0.934,
+                0.063
+            ],
+            "angle": 0,
+            "content": "FOUNDATION"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.064,
+                0.105,
+                0.325,
+                0.118
+            ],
+            "angle": 0,
+            "content": "MSICPL_Morgan_Stanley_Research_Audit_Report.pdf)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.063,
+                0.119,
+                0.936,
+                0.257
+            ],
+            "angle": 0,
+            "content": "If you do not agree to our Terms of Use and/or if you do not wish to provide your consent to MS processing your personal data or using cookies please do not access our research. MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.258,
+                0.935,
+                0.313
+            ],
+            "angle": 0,
+            "content": "The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.314,
+                0.935,
+                0.383
+            ],
+            "angle": 0,
+            "content": "The \"Important Regulatory Disclosures on Subject Companies\" section in MS lists all companies mentioned where MS owns 1% or more of a class of common equity securities of the companies. For all other companies mentioned in MS, MS may have an investment of less than 1% in securities/instruments or derivatives of securities/instruments of companies and may trade them in ways different from those discussed in MS. Employees of MS not involved in the preparation of MS may have investments in securities/instruments or derivatives of securities/instruments of companies mentioned and may trade them in ways different from those discussed in MS. Derivatives may be issued by MS or associated persons.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.383,
+                0.935,
+                0.438
+            ],
+            "angle": 0,
+            "content": "With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.439,
+                0.934,
+                0.465
+            ],
+            "angle": 0,
+            "content": "MS personnel may participate in company events such as site visits and are generally prohibited from accepting payment by the company of associated expenses unless pre-approved by authorized members of Research management.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.467,
+                0.626,
+                0.479
+            ],
+            "angle": 0,
+            "content": "MS may make investment decisions that are inconsistent with the recommendations or views in this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.48,
+                0.935,
+                0.577
+            ],
+            "angle": 0,
+            "content": "To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited (\"MSTL\"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.578,
+                0.935,
+                0.633
+            ],
+            "angle": 0,
+            "content": "MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.062,
+                0.633,
+                0.936,
+                0.954
+            ],
+            "angle": 0,
+            "content": "MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118); in Australia to \"wholesale clients\" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to \"wholesale clients\" and \"retail clients\" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India (\"SEBI\") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., authorised and regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 149169; in the US by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the \"Order\"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.066,
+                0.968,
+                0.242,
+                0.98
+            ],
+            "angle": 0,
+            "content": "MS"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.108,
+                0.323,
+                0.117
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.121,
+                0.931,
+                0.13
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.135,
+                0.931,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.149,
+                0.931,
+                0.158
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.163,
+                0.931,
+                0.173
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.178,
+                0.931,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.191,
+                0.931,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.205,
+                0.931,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.219,
+                0.931,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.233,
+                0.931,
+                0.242
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.246,
+                0.224,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.26,
+                0.931,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.274,
+                0.932,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.288,
+                0.932,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.302,
+                0.305,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.316,
+                0.932,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.33,
+                0.931,
+                0.34
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.343,
+                0.931,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.358,
+                0.931,
+                0.368
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.371,
+                0.618,
+                0.38
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.385,
+                0.931,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.399,
+                0.932,
+                0.409
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.413,
+                0.932,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.427,
+                0.554,
+                0.437
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.44,
+                0.931,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.455,
+                0.366,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.469,
+                0.622,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.483,
+                0.929,
+                0.49
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.496,
+                0.932,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.51,
+                0.93,
+                0.52
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.524,
+                0.931,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.538,
+                0.931,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.552,
+                0.932,
+                0.562
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.567,
+                0.684,
+                0.575
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.581,
+                0.93,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.594,
+                0.932,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.608,
+                0.932,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.621,
+                0.727,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.635,
+                0.929,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.648,
+                0.931,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.663,
+                0.931,
+                0.673
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.675,
+                0.931,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.69,
+                0.931,
+                0.7
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.705,
+                0.931,
+                0.715
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.718,
+                0.929,
+                0.726
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.732,
+                0.931,
+                0.742
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.747,
+                0.931,
+                0.754
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.76,
+                0.931,
+                0.77
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.773,
+                0.931,
+                0.783
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.789,
+                0.929,
+                0.796
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.801,
+                0.931,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.815,
+                0.931,
+                0.825
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.83,
+                0.931,
+                0.84
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.844,
+                0.929,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.856,
+                0.931,
+                0.866
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.871,
+                0.931,
+                0.881
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.885,
+                0.931,
+                0.895
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.899,
+                0.931,
+                0.909
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.913,
+                0.931,
+                0.923
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.927,
+                0.931,
+                0.937
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.94,
+                0.931,
+                0.95
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.046,
+                0.25,
+                0.063
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.857,
+                0.05,
+                0.934,
+                0.063
+            ],
+            "angle": 0,
+            "content": "FOUNDATION"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.105,
+                0.934,
+                0.132
+            ],
+            "angle": 0,
+            "content": "(Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.133,
+                0.935,
+                0.202
+            ],
+            "angle": 0,
+            "content": "The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.203,
+                0.934,
+                0.23
+            ],
+            "angle": 0,
+            "content": "The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.23,
+                0.934,
+                0.285
+            ],
+            "angle": 0,
+            "content": "As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.286,
+                0.935,
+                0.326
+            ],
+            "angle": 0,
+            "content": "The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.328,
+                0.722,
+                0.34
+            ],
+            "angle": 0,
+            "content": "MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.341,
+                0.877,
+                0.355
+            ],
+            "angle": 0,
+            "content": "Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.355,
+                0.934,
+                0.397
+            ],
+            "angle": 0,
+            "content": "The issuers and/or fixed income products recommended or discussed in certain fixed income research reports may not be continuously followed. Accordingly, investors should regard those fixed income research reports as providing stand-alone analysis and should not expect continuing analysis or additional reports relating to such issuers and/or individual fixed income products. MS may hold, from time to time, material financial and commercial interests regarding the company subject to the Research report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.398,
+                0.934,
+                0.451
+            ],
+            "angle": 0,
+            "content": "Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.117,
+                0.464,
+                0.542,
+                0.48
+            ],
+            "angle": 0,
+            "content": "INDUSTRY COVERAGE: Technology - Software & Services"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.116,
+                0.483,
+                0.882,
+                0.778
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>COMPANY (TICKER)</td><td>RATING (AS OF)</td><td>PRICE* (07/02/2026)</td></tr><tr><td colspan=\"3\">Adam Wood</td></tr><tr><td>Indra (IDR.MC)</td><td>E (01/12/2026)</td><td>€51.70</td></tr><tr><td>SAP SE (SAP.N)</td><td>O (02/20/2026)</td><td>US$162.59</td></tr><tr><td>SAP SE (SAPG.DE)</td><td>O (03/20/2020)</td><td>€141.72</td></tr><tr><td colspan=\"3\">George W Webb</td></tr><tr><td>Amadeus IT Holdings S.A. (AMA.MC)</td><td>O (04/10/2026)</td><td>€51.36</td></tr><tr><td>Capgemini (CAPP.PA)</td><td>E (02/19/2026)</td><td>€91.56</td></tr><tr><td>Dassault Systemes SA (DAST.PA)</td><td>E (03/17/2026)</td><td>€18.67</td></tr><tr><td>Hexagon AB (HEXAb.ST)</td><td></td><td>SKr 81.86</td></tr><tr><td>IONOS Group SE (IOSn.DE)</td><td>E (05/12/2025)</td><td>€28.72</td></tr><tr><td>Nemetschek SE (NEKG.DE)</td><td>E (07/13/2022)</td><td>€55.70</td></tr><tr><td>Netcompany Group A/S (NETCG.CO)</td><td>U (01/12/2026)</td><td>DKr 308.00</td></tr><tr><td>Sage (SGE.L)</td><td>O (12/08/2021)</td><td>839p</td></tr><tr><td colspan=\"3\">Mark Hyatt</td></tr><tr><td>HBX Group International PLC (HBX.MC)</td><td>E (04/17/2026)</td><td>€7.01</td></tr><tr><td>Temenos Group AG (TEMN.S)</td><td>U (12/15/2017)</td><td>SFr 69.85</td></tr><tr><td>Tieto Oyj (TIETO.HE)</td><td>U (01/12/2026)</td><td>€17.65</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.117,
+                0.782,
+                0.525,
+                0.795
+            ],
+            "angle": 0,
+            "content": "Stock Ratings are subject to change. Please see latest research for each company."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.118,
+                0.795,
+                0.316,
+                0.808
+            ],
+            "angle": 0,
+            "content": "* Historical prices are not split adjusted."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.839,
+                0.236,
+                0.855
+            ],
+            "angle": 0,
+            "content": "© 2026 MS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.066,
+                0.969,
+                0.085,
+                0.98
+            ],
+            "angle": 0,
+            "content": "14"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.107,
+                0.931,
+                0.117
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.12,
+                0.513,
+                0.13
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.135,
+                0.93,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.15,
+                0.932,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.163,
+                0.931,
+                0.172
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.177,
+                0.931,
+                0.187
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.191,
+                0.277,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.204,
+                0.931,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.218,
+                0.765,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.232,
+                0.932,
+                0.243
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.246,
+                0.932,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.26,
+                0.932,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.274,
+                0.234,
+                0.282
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.287,
+                0.931,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.303,
+                0.931,
+                0.311
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.316,
+                0.349,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.329,
+                0.718,
+                0.34
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.344,
+                0.872,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.357,
+                0.931,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.371,
+                0.931,
+                0.38
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.385,
+                0.733,
+                0.394
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.4,
+                0.931,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.417,
+                0.932,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.435,
+                0.412,
+                0.448
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.84,
+                0.233,
+                0.855
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]
