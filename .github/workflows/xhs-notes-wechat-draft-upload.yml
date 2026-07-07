@@ -41,6 +41,11 @@ on:
         required: true
         type: boolean
         default: false
+      delete_existing:
+        description: "Delete existing drafts from wechat_drafts/xhs_notes/<date>/wechat_draft_summary.json before upload"
+        required: true
+        type: boolean
+        default: false
       commit_summary:
         description: "Commit generated draft payload summaries back to repo"
         required: true
@@ -115,6 +120,16 @@ jobs:
           MAX_INLINE_IMAGES="${{ github.event.inputs.max_inline_images || '3' }}"
           DRY_RUN="${{ github.event.inputs.dry_run || 'false' }}"
           PUBLISH="${{ github.event.inputs.publish || 'false' }}"
+          DELETE_EXISTING="${{ github.event.inputs.delete_existing || 'false' }}"
+
+          WECHAT_DRAFT_DIR="wechat_drafts/xhs_notes/$RESOLVED_DATE_FOLDER"
+          mkdir -p "$WECHAT_DRAFT_DIR"
+          if [ "$DELETE_EXISTING" = "true" ]; then
+            python scripts/delete_wechat_drafts.py \
+              --summary "$WECHAT_DRAFT_DIR/wechat_draft_summary.json" \
+              --output "$WECHAT_DRAFT_DIR/deleted_drafts_summary.json" \
+              --timeout 120
+          fi
 
           ARGS=()
           if [ "$DRY_RUN" = "true" ]; then
@@ -136,7 +151,7 @@ jobs:
             --max-inline-images "$MAX_INLINE_IMAGES" \
             "${ARGS[@]}" 2>&1 | tee wechat_drafts_progress.log
 
-          echo "WECHAT_DRAFT_DIR=wechat_drafts/xhs_notes/$RESOLVED_DATE_FOLDER" >> "$GITHUB_ENV"
+          echo "WECHAT_DRAFT_DIR=$WECHAT_DRAFT_DIR" >> "$GITHUB_ENV"
 
       - name: Upload WeChat draft artifact
         uses: actions/upload-artifact@v4

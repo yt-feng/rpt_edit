@@ -56,16 +56,14 @@
 5. 正文中间禁止插入 CTA、广告、扫码、社群、知识星球、每日汇编、喂给 AI 等表达；中间只允许出现分析正文、图表占位和 `KC评论`。
 6. 至少一个小节讨论“报告尚未完全回答的关键问题”，但标题也要是洞察句。
 7. 至少一个小节给出读者的观察框架，但不要命名为“对读者的启发”。
-8. 文末自然承接未解问题，只写一段很短的轻 CTA。不要照抄固定话术，不要堆身份名单；语义可以参考但不必全塞：{community_cta}。
+8. 不要写任何 CTA、广告、扫码、社群、知识星球、网站、域名或关注引导；系统会在最结尾统一插入固定信息。
 9. 在免责声明前，单独插入这张图片链接：`![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)`
 10. 结尾只输出英文灰色免责声明：`<p style="color:#999999;font-size:12px;">For informational purposes only. Portions may be generated, translated, summarized, or edited with AI assistance based on source materials and may contain omissions or errors. Please verify independently. This is not investment, legal, tax, accounting, or other professional advice.</p>`
 
-【hook 要求】
-- 不要硬插“加入社群”。
-- hook 应该来自正文自然出现的未解问题，比如：关键假设尚未验证、竞争优势仍需拆解、图表背后的二阶影响没有展开。
-- 文末 CTA 要像“顺着这些未解问题继续读完整报告/继续讨论”，不是广告口吻。
-- CTA 必须每篇重新写，不能固定套话。文末只保留 1-2 句，重点说“完整报告、中文摘要、KC评论和图表合集可以放回当天国际主线里继续看”，不要在正文中段出现。
-- 严禁中段 CTA。正文中间不要出现“如果你从某些关键词搜到这里”“单篇文章只能解决一个切片”“我每天会把……”这类表达。
+【CTA 要求】
+- 不要输出任何 CTA。不要写“加入社群”“扫码”“星球”“完整报告领取”“网站”“域名”“关注”“星标”“更多查看”等表达。
+- 文末也不要写 CTA；系统会在最结尾统一插入固定信息。
+- 正文中间不要出现“如果你从某些关键词搜到这里”“单篇文章只能解决一个切片”“我每天会把……”“这篇可以沿着……”这类表达。
 
 【KC评论要求】
 - `KC评论` 不是复述原文，而是读者友好的解释、提醒或追问。

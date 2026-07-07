@@ -45,10 +45,8 @@ BOTTOM_DISCLAIMER = (
     "AI assistance based on source materials and may contain omissions or errors. Please verify independently. "
     "This is not investment, legal, tax, accounting, or other professional advice."
 )
-DEFAULT_BODY_HOOK = (
-    "更多完整报告、中文摘要、KC评论和图表合集，会放进每日国际信源汇编。"
-    "适合快速扫当天主流叙事，也方便后续追问和横向比较。"
-)
+FINAL_CTA_TEXT = "更新信息参见ΚСⅾеѕk․сοｍ"
+DEFAULT_BODY_HOOK = ""
 DEFAULT_BODY_VISIBLE_CHARS = 1200
 DEFAULT_MIN_INLINE_IMAGES = 3
 DEFAULT_ARTICLES_PER_DRAFT = 8
@@ -70,9 +68,7 @@ WECHAT_UPLOADIMG_MAX_BYTES = 1024 * 1024
 WECHAT_UPLOADIMG_TARGET_BYTES = 930 * 1024
 DEFAULT_TRAILING_IMAGE = "prompts/zsxq_img.jpg"
 # Shown at the very end of every article, after the 星球 QR image.
-DEFAULT_AFTER_IMAGE_NOTE = (
-    "因公众号机制调整，可以关注并星标，更多查看此类内容"
-)
+DEFAULT_AFTER_IMAGE_NOTE = FINAL_CTA_TEXT
 POLLINATIONS_BASE_URL = "https://image.pollinations.ai/prompt/"
 WECHAT_COVER_WIDTH = 1200
 WECHAT_COVER_HEIGHT = 675
@@ -106,7 +102,7 @@ MID_ARTICLE_CTA_RE = re.compile(
     r"(扫码|社群|知识星球|星球|加微信|朋友圈|设为星标|设置星标|每日汇编|每天会把|"
     r"每天我会|国际信源汇编|完整报告与\s*KC评论|完整报告和\s*KC评论|更多国际信源|"
     r"喂给\s*AI|人工快速扫|市场\s*dynamics|图表合集|加入.*讨论|继续拆完整报告|"
-    r"这篇可以沿着|几条线索看|重点不是复述报告)",
+    r"这篇可以沿着|几条线索看|重点不是复述报告|更新信息参见|kcdesk|ΚСⅾеѕk)",
     re.I,
 )
 MID_ARTICLE_CTA_CONTEXT_RE = re.compile(
@@ -440,8 +436,68 @@ def text_is_duplicate_title(text: str, reference_titles: set[str]) -> bool:
     return False
 
 
+def polish_title_focus(text: str) -> str:
+    cleaned = normalize_space(text).strip(" ，,。；;：:、-—")
+    cleaned = re.sub(r"矿业意外财", "矿业变量", cleaned)
+    cleaned = re.sub(r"意外财", "变量", cleaned)
+    cleaned = re.sub(r"财政可持续", "财政纪律", cleaned)
+    cleaned = re.sub(r"安全改善", "安全形势", cleaned)
+    cleaned = re.sub(r"宏观环境多元化", "多元化", cleaned)
+    cleaned = re.sub(r"的前提条件$", "", cleaned)
+    return cleaned.strip(" ，,。；;：:、-—")
+
+
+def title_from_contrast(subject: str, focus: str) -> str:
+    subject = normalize_space(subject).strip(" ，,。；;：:、-—")
+    focus = polish_title_focus(focus)
+    if not focus:
+        return subject
+    if subject and len(subject) <= 16:
+        if subject.endswith(("修复", "改善", "回升", "调整", "变化")):
+            return f"{subject}看{focus}"
+        return f"{subject}要看{focus}"
+    return f"{focus}更关键"
+
+
+def repair_wechat_title_structure(title: str) -> str:
+    cleaned = normalize_space(title).replace(":", "：").strip(" ，,。；;：:、-—")
+    if not cleaned:
+        return ""
+    prefix = ""
+    body = cleaned
+    if "：" in cleaned:
+        head, rest = cleaned.split("：", 1)
+        if len(head) <= 14:
+            prefix = f"{head.strip()}："
+            body = rest.strip()
+
+    body = re.sub(r"\s+", "", body)
+    leading_focus = re.match(r"^(?:而是|但是|但)(?P<focus>[^，,。；;]{2,26})", body)
+    if leading_focus:
+        body = f"{polish_title_focus(leading_focus.group('focus'))}更关键"
+    body = re.sub(r"^(?:而是|但是|但|其中|同时|并且|以及|所以|因为)", "", body)
+    body = re.sub(r"^(?:真正)?(?:关键|重点)(?:不在|不是)[^，,。；;]{1,16}[，,]?(?:而是|是)", "", body)
+
+    contrast = re.match(
+        r"^(?P<subject>[^，,。；;]{0,18}?)[，,]?(?:缺的)?不是(?P<old>[^，,。；;]{1,18})[，,]?(?:而是|是)(?P<focus>[^，,。；;]{2,26})",
+        body,
+    )
+    if contrast:
+        body = title_from_contrast(contrast.group("subject"), contrast.group("focus"))
+    else:
+        leading_focus = re.match(r"^(?:而是)?(?P<focus>[^，,。；;]{2,22})[，,].*", body)
+        if leading_focus and re.search(r"^(?:而是|不是)", body):
+            body = f"{polish_title_focus(leading_focus.group('focus'))}更关键"
+
+    body = polish_title_focus(body)
+    body = re.sub(r"^(?:而是|但是|但|其中|同时|并且|以及|所以|因为)", "", body)
+    body = re.sub(r"(?:而是|不是)$", "", body).strip(" ，,。；;：:、-—")
+    return f"{prefix}{body}".strip("：: -—") if body else cleaned
+
+
 def trim_title_complete(text: str, max_chars: int, min_chars: int = 0) -> str:
     cleaned = normalize_space(text).strip(" ，,。；;：:、-—")
+    cleaned = repair_wechat_title_structure(cleaned)
     if len(cleaned) <= max_chars:
         return cleaned
 
@@ -494,6 +550,7 @@ def fit_wechat_title(title: str, institution_name: str = "") -> str:
     )
     cleaned = remove_generic_title_noise(cleaned.replace("…", ""))
     cleaned = limit_title_colons(cleaned)
+    cleaned = repair_wechat_title_structure(cleaned)
     if len(cleaned) <= WECHAT_TITLE_MAX_CHARS:
         return cleaned.strip("：: -—")
 
@@ -515,6 +572,7 @@ def fit_wechat_title(title: str, institution_name: str = "") -> str:
 
 def content_header_title(raw_title: str, wechat_title: str) -> str:
     raw_clean = remove_redundant_title_aliases(raw_title).replace("…", "")
+    raw_clean = repair_wechat_title_structure(raw_clean)
     body = strip_title_institution_prefix(raw_clean)
     outer_body = strip_title_institution_prefix(wechat_title)
     refs = title_fingerprints(wechat_title, outer_body)
@@ -1260,6 +1318,7 @@ def markdown_to_wechat_html(
     title, _title_stock_changes = sanitize_wechat_stock_language(title)
     title = optimizer_clean_wechat_title(title, "", max_chars=CONTENT_HEADER_TITLE_MAX_CHARS)
     title = trim_title_complete(title.replace("…", ""), CONTENT_HEADER_TITLE_MAX_CHARS, 8)
+    title = repair_wechat_title_structure(title)
     if len(title) < 6:
         title = "公司情况更新"
     duplicate_title_refs = title_fingerprints(title, outer_title)
@@ -1280,7 +1339,7 @@ def markdown_to_wechat_html(
     floating_image_index = 0
     selected_image_urls = [item["url"] for item in body_images if item.get("url")]
     selected_image_set = set(selected_image_urls)
-    body_budget = max(0, max_visible_chars - visible_char_count(hook_text))
+    body_budget = max_visible_chars
     placement_budget = min(body_budget, max(visible_char_count(clean_markdown(markdown)), 1)) if body_budget else 0
     text_used = 0
 
@@ -1442,7 +1501,7 @@ def markdown_to_wechat_html(
         for item in body_images
         if item.get("url") and item["url"] not in rendered_image_urls
     ]
-    tail = [*supplemental_images, hook_html(hook_text), footer_html(disclaimer)]
+    tail = [*supplemental_images, footer_html(disclaimer)]
     if trailing_image_url:
         tail.append(image_html(trailing_image_url, alt="KC Desk"))
     if source_report_name:
@@ -1450,7 +1509,7 @@ def markdown_to_wechat_html(
     # Very end of the article: follow / add-WeChat / star reminder.
     tail.append(after_image_note_html(DEFAULT_AFTER_IMAGE_NOTE))
     content = compose_limited_html(parts, tail, max_chars)
-    total_visible = text_used + visible_char_count(hook_text)
+    total_visible = text_used
     return content, total_visible, len(body_images)
 
 
