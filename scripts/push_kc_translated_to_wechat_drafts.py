@@ -105,12 +105,13 @@ WECHAT_TITLE_CHINA_POLITICAL_RE = re.compile(
 MID_ARTICLE_CTA_RE = re.compile(
     r"(扫码|社群|知识星球|星球|加微信|朋友圈|设为星标|设置星标|每日汇编|每天会把|"
     r"每天我会|国际信源汇编|完整报告与\s*KC评论|完整报告和\s*KC评论|更多国际信源|"
-    r"喂给\s*AI|人工快速扫|市场\s*dynamics|图表合集|加入.*讨论|继续拆完整报告)",
+    r"喂给\s*AI|人工快速扫|市场\s*dynamics|图表合集|加入.*讨论|继续拆完整报告|"
+    r"这篇可以沿着|几条线索看|重点不是复述报告)",
     re.I,
 )
 MID_ARTICLE_CTA_CONTEXT_RE = re.compile(
-    r"(单篇(?:文章|报告)|每天|每日|汇编|完整报告|KC评论|图表合集).{0,24}"
-    r"(AI|汇编|社群|扫码|星球|图表合集|市场主线|横向比较|继续追问)",
+    r"(单篇(?:文章|报告)|每天|每日|汇编|完整报告|KC评论|图表合集|这篇).{0,30}"
+    r"(AI|汇编|社群|扫码|星球|图表合集|市场主线|横向比较|继续追问|几条线索|变量如何互相验证)",
     re.I,
 )
 INSTITUTION_KEY_TO_CN = {
@@ -453,6 +454,9 @@ def trim_title_complete(text: str, max_chars: int, min_chars: int = 0) -> str:
         return candidates[-1]
 
     candidate = cleaned[:max_chars].strip(" ，,。；;：:、-—")
+    next_char = cleaned[max_chars : max_chars + 1]
+    if next_char and re.search(r"[A-Za-z]", next_char):
+        candidate = re.sub(r"[A-Za-z]{1,8}$", "", candidate).strip(" ，,。；;：:、-—")
     candidate = re.sub(r"(?:以及|或者|因为|如果|但是|只是|而是|正在|成为|显示|指出|包括|对于|通过|需要|不是|还是|可以|已经|将|的|和|与|及|在|对|为|从|向|到|但|而)$", "", candidate)
     return candidate.strip(" ，,。；;：:、-—")
 
@@ -560,7 +564,7 @@ def truncate_chars(text: str, max_chars: int) -> str:
     text = normalize_space(text)
     if len(text) <= max_chars:
         return text
-    return text[: max(0, max_chars - 1)].rstrip() + "…"
+    return trim_title_complete(text, max_chars, min(18, max(8, max_chars // 2)))
 
 
 def truncate_utf8_bytes(text: str, max_bytes: int, suffix: str = "…") -> str:
@@ -801,6 +805,12 @@ def digest_from_article_text(
         if key:
             seen.add(key)
     return fit_digest_text(wechat_title or header_title or raw_title)
+
+
+def digest_from_markdown(markdown: str) -> str:
+    raw_title = title_from_markdown(markdown, "")
+    header_title = strip_title_institution_prefix(raw_title)
+    return digest_from_article_text(markdown, raw_title, raw_title, header_title)
 
 
 def clean_markdown(markdown: str) -> str:
@@ -1107,16 +1117,7 @@ def hook_html(text: str) -> str:
 
 
 def keyword_bridge_html(keywords: list[str]) -> str:
-    clean_keywords = [item for item in keywords if item][:6]
-    if len(clean_keywords) < 2:
-        return ""
-    keyword_text = "、".join(html.escape(item) for item in clean_keywords)
-    return (
-        '<p style="margin:0 0 16px;color:#596579;font-size:14px;line-height:1.7;">'
-        f"这篇可以沿着 <strong style=\"color:#2457A7;\">{keyword_text}</strong> 这几条线索看，"
-        "重点不是复述报告，而是看这些变量如何互相验证。"
-        "</p>"
-    )
+    return ""
 
 
 def referenced_markdown_image_keys(markdown: str) -> set[str]:

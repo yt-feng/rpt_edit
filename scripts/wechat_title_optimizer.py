@@ -425,7 +425,26 @@ def truncate_chars(text: str, max_chars: int) -> str:
     text = normalize_space(text)
     if len(text) <= max_chars:
         return text
-    return text[: max(0, max_chars - 1)].rstrip("，,；;：: ") + "…"
+    min_chars = min(18, max(8, max_chars // 2))
+    candidates: list[str] = []
+    for match in re.finditer(r"[，,；;。！？!?]", text):
+        candidate = text[: match.start()].strip("，,；;：: ")
+        if min_chars <= len(candidate) <= max_chars:
+            candidates.append(candidate)
+    if candidates:
+        return candidates[-1]
+
+    cut = text[:max_chars].rstrip("，,；;：: ")
+    next_char = text[max_chars : max_chars + 1]
+    if next_char and re.search(r"[A-Za-z]", next_char):
+        cut = re.sub(r"[A-Za-z]{1,8}$", "", cut).rstrip("，,；;：: ")
+    cut = re.sub(
+        r"(?:以及|或者|因为|如果|但是|只是|而是|正在|成为|显示|指出|包括|对于|通过|"
+        r"需要|不是|还是|可以|已经|将|的|和|与|及|在|对|为|从|向|到|但|而|早期)$",
+        "",
+        cut,
+    )
+    return cut.strip("，,；;：: ")
 
 
 def clean_wechat_title(title: str, institution_name: str = "", max_chars: int = 64) -> str:
