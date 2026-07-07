@@ -177,6 +177,9 @@ const ANALYTICS_DASHBOARD_DAYS = 30;
 const ANALYTICS_DASHBOARD_LIMIT = 160;
 const ANALYTICS_DASHBOARD_R2_READ_BUDGET = 180;
 const ANALYTICS_DASHBOARD_TIMEOUT_MS = 2200;
+const ADMIN_GITHUB_FILES_TIMEOUT_MS = 6500;
+const ADMIN_CATALOG_TIMEOUT_MS = 3500;
+const ADMIN_WECHAT_TIMEOUT_MS = 3500;
 const NEWSFEED_CACHE_PREFIX = "_newsfeed/cache";
 const NEWSFEED_TOPICS_PREFIX = "_newsfeed/topics";
 const NEWSFEED_SETTINGS_PREFIX = "_newsfeed/settings";
@@ -5918,6 +5921,13 @@ async function latestAdminGithubFiles(env) {
   return [...bbg, ...market, ...fallback, ...entertainVideos, ...rpt2vidVideos, ...siteVideos];
 }
 
+async function resolveWithin(promise, timeoutMs, fallbackValue) {
+  return Promise.race([
+    promise,
+    sleep(timeoutMs).then(() => fallbackValue),
+  ]).catch(() => fallbackValue);
+}
+
 function operatorVisibleAdminFiles(files) {
   return (Array.isArray(files) ? files : []).filter((file) => {
     const kind = String(file && file.kind || "");
@@ -5937,10 +5947,10 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
     const [userRows, entitlementRows, allFiles, catalog, searchIndex, wechatSchedule, analyticsResult] = await Promise.all([
       isSuper ? listSiteUsers(env) : Promise.resolve([]),
       isSuper ? listEntitlementRows(env) : Promise.resolve([]),
-      latestAdminGithubFiles(env),
-      loadCatalog(env).catch(() => ({ items: [] })),
-      loadSearchIndex(env).catch(() => ({ items: [] })),
-      isSuper ? buildWechatDraftSchedule(env).catch(() => ({
+      resolveWithin(latestAdminGithubFiles(env), ADMIN_GITHUB_FILES_TIMEOUT_MS, []),
+      resolveWithin(loadCatalog(env), ADMIN_CATALOG_TIMEOUT_MS, { items: [] }),
+      resolveWithin(loadSearchIndex(env), ADMIN_CATALOG_TIMEOUT_MS, { items: [] }),
+      isSuper ? resolveWithin(buildWechatDraftSchedule(env), ADMIN_WECHAT_TIMEOUT_MS, {
         today_folder: bjtTodayFolder(),
         date_folder: "",
         date_label: "",
@@ -5950,16 +5960,15 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
         total_batches: 0,
         total_articles: 0,
         batches: [],
-      })) : Promise.resolve(null),
+      }) : Promise.resolve(null),
       isSuper
-        ? Promise.race([
-          buildAnalyticsDashboard(env),
-          sleep(ANALYTICS_DASHBOARD_TIMEOUT_MS).then(() => {
-            throw new Error("Analytics loading timed out.");
-          }),
-        ])
-          .then((data) => ({ data, error: "" }))
-          .catch((error) => ({ data: null, error: error && error.message || "Analytics unavailable." }))
+        ? resolveWithin(
+          buildAnalyticsDashboard(env)
+            .then((data) => ({ data, error: "" }))
+            .catch((error) => ({ data: null, error: error && error.message || "Analytics unavailable." })),
+          ANALYTICS_DASHBOARD_TIMEOUT_MS,
+          { data: null, error: "Analytics loading timed out." },
+        )
         : Promise.resolve({ data: null, error: "" }),
     ]);
     const analytics = analyticsResult && analyticsResult.data || null;
