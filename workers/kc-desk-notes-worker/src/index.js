@@ -33,7 +33,43 @@ const ACCESS_DURATION_OPTIONS = [
   { value: "24", label: "2年", months: 24 },
   { value: "lifetime", label: "长期", months: 0 },
 ];
-const BOOTSTRAP_ACCESS_GRANTS = {};
+const BOOTSTRAP_ACCESS_GRANTS = {
+  "17372527191@163.com": {
+    access_mode: "all",
+    status: "active",
+    current_period_end: "2027-07-07T05:40:19.920Z",
+    duration_value: "12",
+    note: "Restored full-site access after admin persistence audit.",
+  },
+  "nkj101310@outlook.com": {
+    access_mode: "all",
+    status: "active",
+    current_period_end: "2027-07-07T05:40:19.922Z",
+    duration_value: "12",
+    note: "Restored full-site access after admin persistence audit.",
+  },
+  "ziyang@kcdesk.com": {
+    access_mode: "all",
+    status: "active",
+    current_period_end: "2027-07-07T05:40:19.923Z",
+    duration_value: "12",
+    note: "Restored full-site access after admin persistence audit.",
+  },
+  "kris@kcdesk.com": {
+    access_mode: "all",
+    status: "active",
+    current_period_end: "2027-07-07T05:40:19.923Z",
+    duration_value: "12",
+    note: "Restored full-site access after admin persistence audit.",
+  },
+  "yjia0405@gmail.com": {
+    access_mode: "all",
+    status: "active",
+    current_period_end: "2027-01-07T05:40:19.924Z",
+    duration_value: "6",
+    note: "Restored full-site access after admin persistence audit.",
+  },
+};
 const REPORT_INDUSTRY_RULES = [
   ["Macro / FX / Rates", /\b(macro|fx|foreign exchange|currency|cny|yuan|dollar|usd|rate|rates|yield|fed|ecb|boj|inflation|cpi|pmi|gdp|economy|economic|recession|treasury|bond|nominal|real rate)\b/],
   ["Equity Strategy", /\b(strategy|equity strategy|market strategy|asset allocation|portfolio|index|earnings revision|valuation|eps|target price)\b/],
