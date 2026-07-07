@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 64,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 5,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/27-GS-BUILDING MATERIALS：‘Solutions strategy’， a driver of outperformance， or a way to broaden the portfolio？-260706.pdf",
+          "batch_file": "/tmp/pdf_batch_001_y_9xbvd1/pdfs/0001-27-GS-BUILDING MATERIALS--Solutions strategy-- a driver of outperformance- or a way to broaden the portfolio--260706.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/28-GS-Base Metals Comment： Aluminium： Lowering Our 2027 Price Forecast to $2，700 t on a Faster Mideast Supply Recovery-260706.pdf",
+          "batch_file": "/tmp/pdf_batch_001_y_9xbvd1/pdfs/0002-28-GS-Base Metals Comment- Aluminium- Lowering Our 2027 Price Forecast to -2-700 t on a Faster Mideast Supply Recovery-260706.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/29-GS-China Software： May revenue growth slowed to 8.5% YoY； Agentic AI and customized industry AI to drive client spending-260706.pdf",
+          "batch_file": "/tmp/pdf_batch_001_y_9xbvd1/pdfs/0003-29-GS-China Software- May revenue growth slowed to 8.5- YoY- Agentic AI and customized industry AI to drive client spending-260706.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/30-GS-China Merchants Energy Shipping Co Ltd （601872）： APAC Consumer & Leisure Corp Day： Mgmt expect a better VLCC TCE in 2H26 vs. 1H26-260706.pdf",
+          "batch_file": "/tmp/pdf_batch_001_y_9xbvd1/pdfs/0004-30-GS-China Merchants Energy Shipping Co Ltd -601872-- APAC Consumer - Leisure Corp Day- Mgmt expect a better VLCC TCE in 2H26 vs. 1H26-260706.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/31-GS-GS Asia Mobility Tech Company Call Series： Expect industry beta improvement around September and margin trough in 2Q-260706.pdf",
+          "batch_file": "/tmp/pdf_batch_001_y_9xbvd1/pdfs/0005-31-GS-GS Asia Mobility Tech Company Call Series- Expect industry beta improvement around September and margin trough in 2Q-260706.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
