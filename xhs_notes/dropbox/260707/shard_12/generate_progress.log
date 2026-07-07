@@ -1,0 +1,28 @@
+Found 64 total PDFs; shard 12/40 has 4 PDFs, skips 0 already converted, will process 4 PDFs with batch_size=5.
+Running batch 1: 4 PDFs
+Found 4 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 4 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ojoaxl1g/pdfs/0001-64-Nomura-USD CNY fix model-Projection- 6.7818-260707.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ojoaxl1g/pdfs/0002-65-Nomura-Zhongji InnoLight -300308-We expect secular growth beyond 2027...-260706.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ojoaxl1g/pdfs/0003-66-Nomura-FX Insights-Inflows into US equities in June strongest in more than a year-260706.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ojoaxl1g/pdfs/0004-67-UBS-US Semiconductors SpaceX-s Terafab - Putting Things In Perspective-260707.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=4ab3644b-9023-4ac4-973d-aba373c505ab
+MinerU states: pending, pending, pending, waiting-file
+MinerU states: done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:285: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset b090f05159a29a734f6a334f894739e0c2a77fb23c8e1906e2d68c849177bd77.jpg: score=-100;too_small:434x43
+Skip non-chart visual asset f57735a9a3a8fd6a8b6d01c719dba26bcf3e6c79c6cba8dbd423c6e70639b3de.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.49,contrast
+Skip non-chart visual asset 553e1dbfef3cc24e14050be8018f76cde02582c4df2a20bb62c9f907ce20fc89.jpg: score=0;odd_ratio:7.52,edge:0.46,contrast
+Skip non-chart visual asset dfb6f8a267c8229d55a2e328a4fd83a5f0ec7888192f1a1236c42e2b275f7eb1.jpg: score=-100;too_small:256x501
+Skip non-chart visual asset 5b8f51a5bd0a05855450ac279be9b548cd564f60ff5f5ba564236737cbed520e.jpg: score=-100;too_small:1409x98
+Skip non-chart visual asset b3d900f8c04a8aa687fcf5d3745922f8bea9cb11529dfbc14d34e7dba942a176.jpg: score=-100;too_small:434x70
+Skip non-chart visual asset ed911aa3bf7bb6e7ab6432d6e63ac6cde65c521c9a87f6c1b7ff3b9cd1d15793.jpg: score=-100;too_small:287x506
+Skip non-chart visual asset ebecf2ae258227b2e0950d63f3b002d8b2fd451122e469ebb74852d23cebe6a4.jpg: score=-100;too_small:229x504
+Skip non-chart visual asset 1139fcd0b6c1e533f6fdcdc36c5946ce78c4c46e48abc890efdc86dd3185e6b9.jpg: score=-100;too_small:726x131
+Skip non-chart visual asset e2e48fe5391ef385c63126338009b502d92ab8e125f651c11171fbc005df096c.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.22,contrast
+Skip non-chart visual asset 47275e3089741c46214f4ba15c17ab6b9c9b42115bf09bf0bdeab12bc2698ae7.jpg: score=-100;too_small:1387x92
+Skip non-chart visual asset bb437882dbc5c918ccdc854a2809804ed6a4595319fccc4a615491f1675478de.jpg: score=0;odd_ratio:7.58,edge:0.28,contrast
+Skip non-chart visual asset 88444ed067984b0f9bd9d33a79eef5fff501eb248674d5215af7f64439fe4460.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.51,contrast,large
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260707/shard_12; successful_reports=4; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 4 report directories.

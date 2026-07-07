@@ -1,0 +1,34 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 4,
+    "successful_pdf_count": 4,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_ojoaxl1g/pdfs/0001-64-NOM-USD CNY fix model-Projection- 6.7818-260707.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ojoaxl1g/pdfs/0002-65-NOM-Zhongji InnoLight -300308-We expect secular growth beyond 2027...-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ojoaxl1g/pdfs/0003-66-NOM-FX Insights-Inflows into US equities in June strongest in more than a year-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ojoaxl1g/pdfs/0004-67-UBS-US Semiconductors SpaceX-s Terafab - Putting Things In Perspective-260707.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
