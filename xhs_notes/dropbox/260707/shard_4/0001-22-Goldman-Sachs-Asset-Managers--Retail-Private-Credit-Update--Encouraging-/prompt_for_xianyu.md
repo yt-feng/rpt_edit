@@ -1,0 +1,150 @@
+你是闲鱼资料类商品文案编辑，擅长把一份投研/行业/公司研报改写成适合闲鱼发布的商品说明。
+
+【目标】
+- 基于下面研报解析内容，生成一份可以复制到闲鱼商品详情里的中文文案。
+- 风格参考用户提供的闲鱼对标笔记：标题直给、信息密度高、用途明确、适合人群明确、交付方式清楚。
+- 语言要自然，像真实卖家发布，不要像公众号文章、小红书笔记或 AI 摘要。
+- 不要使用太夸张的营销词，不要承诺收益，不要说“稳赚”“内幕”“必涨”。
+- 可以适度口语化，但不要低俗。
+- 硬性要求：全文不要使用任何 emoji 或符号表情。
+- 硬性要求：全文必须低于 1500 字，宁可少写，也不要超长。
+
+【必须输出结构】
+1. `闲鱼标题：` 一行，控制在 30 字以内，适合商品标题。
+2. `商品描述：` 正文，适合直接粘贴到闲鱼详情页。
+3. `Hashtag：` 一行，给 6-10 个平台可用标签，用 `#` 开头，空格分隔。
+
+【长度硬性要求】
+- 输出总字数必须低于 1500 字，包括标题、商品描述、Hashtag。
+- 商品描述控制在 900-1200 字以内，避免写成长文。
+- 亮点 bullet 每条控制在 30 字以内。
+
+【严禁输出】
+- 不要输出 `建议价格：`。
+- 不要输出 `搜索关键词：`。
+- 不要输出“搜索词”“关键词”“搜索关键词”等栏目。
+- 不要给具体价格区间、成交承诺或价格建议。
+- 不要使用任何 emoji，例如 ✅、🔥、📌、👉、💰、⭐ 等。
+
+【商品描述写法】
+- 第一段：直接说明这是什么报告，页数/语言/主题/公司或行业。如果页数、日期、语言不确定，就不要编。
+- 第二段：说明适合谁，比如投研、券商面试、PE/VC、行业研究、学习参考、写报告等。
+- 第三段：用 3-5 个亮点 bullet，风格参考：
+  - 三大情景框架：DCF、P/ARR、EV/Sales
+  - 关键变量分析
+  - 估值逻辑、假设、终值占比等核心内容覆盖
+  - 适合准备 AI 相关面试、研究 AI 估值的同学
+- 第四段：交付说明，参考：`资料为电子版 PDF，拍下后 24 小时内发网盘链接或邮箱。`
+- 第五段：虚拟商品说明，参考：`电子类资料一经发货不退不换，有问题可以提前咨询。`
+- 可以补一句：`需要其他报告也可以私聊，支持一站式咨询。`
+
+【Hashtag 写法】
+- 只输出平台相对安全、偏学习和资料属性的标签。
+- 推荐从这些里选择：`#学习资料` `#研究笔记` `#学习笔记` `#行业研究` `#研报资料` `#资料整理` `#报告学习` `#案例研究`。
+- 不要输出 `#财经` `#投资` `#股票` `#基金` `#理财` `#暴富` `#内幕` 等敏感标签。
+
+【平台发布合规要求】
+- 不要出现“投资建议”“买入”“卖出”“强烈推荐”“稳赚”“保本”“必涨”“抄底”“上车”“内幕”“翻倍”等金融操作或收益承诺表达。
+- “投资”相关词尽量改成“投研”“研究”“观察”“学习参考”；如果必须保留，也要保持中性。
+- 不要出现“独家”“原版”“内部”“无水印”“全网最低”“最全”“最强”“必看”等高风险或极限词。
+- 不要写“关注”“点赞”“求关注”“评论区留言”等直接互动诱导。
+- 不要承诺资料一定可用于获利、就业、通过面试或获得收益。
+
+【合规与避坑】
+- 默认避免出现具体投行品牌名，比如“GS”“GS”“MS”，统一写作“投行研报”或“投行研报”。
+- 不要承诺研究或交易结果。
+- 不要伪造页数、日期、作者、公司覆盖范围。研报未给出时就不写。
+- 不要输出解释说明，只输出闲鱼文案本身。
+
+【研报解析内容】
+"""
+# Asset Managers: Retail Private Credit Update: Encouraging signs are starting to emerge
+
+Private Credit retail funds' redemption requests accelerated for most in 2Q26, with a weighted average rate of 13.7% of NAV (un-annualized and all managers capping at 5%), up from 12.1% in 1Q26. While clearly still elevated, the pace of acceleration is manageable and broadly inline with expectations with a few encouraging signs including (a) a number of managers reporting a decline in redemptions and (b) outflows concentrated outside the US – a smaller % of the books. Further, liquidity levels have remained healthy, with no notable forced selling across the group. We estimate unfulfilled redemption requests account for 9% of industry NAV, up from roughly 6% in 1Q26, implying it will likely take the industry through the end of the year to work through redemption queues. That said, gross inflows have stabilized for most in June vs. May (and improved in several cases), albeit at a low level of just 7% annualized on a weighted basis (excluding DRIP and about 9% including DRIP). Assuming credit conditions remain stable, we expect net outflows for retail Private Credit funds to peak in 2Q/3Q26. While this is broadly inline with our base case, we think stabilization in flows and a decline in Credit redemption queues should be helpful to the sentiment around Retail Alts Wealth channel and the group's valuation. Moreover, investment performance dispersion continues to widen – some of the better performing funds delivered \~10% net TTM return, while the lower performing ones are in the low-to-mid single digits range. Looking ahead, we expect funds with (1) lower redemption queues and (2) stronger investment performance are best positioned to gain share and turn in more significant inflows over the next 12-18 months. This screen puts TPG's, ARES's, BLK's and BAM's NT-BDC at a relatively stronger positioned to gain share.
+
+## Some of the notables include:
+
+\- Requested Redemptions accelerate q/q: On a weighted average basis, requested redemptions reached approximately 13.7% of beginning-of-period NAV in 2Q26, up from 12.1% in 1Q26. Nearly every major fund in the space saw higher redemption requests q/q, with OWL's two funds being notable exceptions, likely due to the early move in requested outflows at OTIC in December (both funds fulfilled 100% of their 4Q redemption requests, including OTIC's 15%, before both capped at 5% in 1Q).
+
+Geographic splits: We note continued divergence between onshore U.S. investors vs. international investors in non-traded BDCs. BX's BCRED noted that onshore U.S. request volumes were below 1Q levels, with requests
+
+Alexander Blostein, CFA
++1(212)357-9976 |
+alexander.blostein@gs.com
+GS & Co. LLC
+
+Michael Vinci
++1(212)357-8239 |
+michael.vinci@gs.com
+GS & Co. LLC
+
+Anthony Corbin
++1(212)357-7512 |
+anthony.corbin@gs.com
+GS & Co. LLC
+
+Aditya Sharma, CFA
++1(212)934-9869 |
+aditya.x.sharma@gs.com
+GS India SPL
+
+Vaasu Gupta
++1(332)245-7522 |
+vaasu.x.gupta@gs.com
+GS India SPL
+
+decelerating into back half of the 2Q offer period. At APO's ADS, U.S. onshore repurchase requests moderated to \~4.3%, while offshore investor redemptions increased to \~12.5%. Previously, in 1Q26, ASIF noted that its redemption queue was largely a function of non-U.S. family offices. With non-US investor base comprising a smaller portion of the group's NAV (we believe <25% of total NAV), we think we are closer to seeing peaks in total redemptions.
+
+Actual (fulfilled) redemptions on a weighted average basis came in at approximately $4.9\%$ of BoP NAV, essentially at the cap; a handful of funds saw redemption requests below $5\%$ (TPG's TCAP at $2.1\%$ requested, Oaktree's OSCF at $4.5\%$ ), and were able to fully honor all requests without hitting the gate.
+
+☐ The gap between requested and fulfilled redemptions has widened in 2Q26, with funds collectively meeting only \~36% of total requested redemptions (i.e., the 4.9% fulfilled vs. 13.7% requested), compared to roughly 53% fulfillment in 1Q26. We estimate unfulfilled redemption requests account for 9% of industry NAV, up from roughly 6% in 1Q26, implying it will likely take the industry through the end of the year to work through redemption queues.
+
+Gross inflows slide in 2Q, but stabilized in June: On the inflow side, 2Q26 gross flows (including DRIP) declined \~50% sequentially vs. 1Q26. Excluding DRIP, new subscriptions fell roughly 60% q/q. The gross new asset rate has decelerated sharply to a 7% annualized pace as of June 1, down from over 30% a year ago, while net flows turned meaningfully negative — approximately -8% for the quarter and annualizing at -10% on a June run-rate basis. That said, June inflows for most were stable vs. May – an encouraging sign in our view. Looking ahead, we think declines in redemption queues, higher for longer base rates and stable / improving spreads recently could drive some re-engagement with this product category, assuming credit trends remain stable. We expect managers with strong investment performance and smaller/no redemption queues are best positioned to gain share. This screen puts TPG's, ARES's, BLK's and BAM's NT-BDC at a relatively stronger positioned to gain share.
+
+Performance dispersion widening: Outside of the flow headwinds, fund-level performance dispersion is widening, with TTM net returns ranging from $>10\%$ at the high end to roughly $\sim5\%$ at the lower end (for NT BDCs and lower for some of the Alt Credit funds).
+
+## Update on NT BDCs flows and Performance
+
+Exhibit 1: Weighted average redemption requests rose to $14\%$ in 2Q, up from $12\%$ in 1Q, with all funds capping redemptions at $5\%$ Quarterly Redemption Requests vs. Fulfilled
+
+<table><tr><td colspan="9">Quarterly Redemption Requests</td><td colspan="8">as % of BoP NAV</td><td></td></tr><tr><td rowspan="2"></td><td rowspan="2">4Q24</td><td rowspan="2">1Q25</td><td rowspan="2">2Q25</td><td rowspan="2">3Q25</td><td rowspan="2">4Q25</td><td colspan="2">1Q26</td><td>2Q26</td><td>1Q25</td><td rowspan="2">2Q25</td><td rowspan="2">3Q25</td><td rowspan="2">4Q25</td><td colspan="2">1Q26</td><td colspan="2">2Q26</td><td rowspan="2">Latest NAV</td></tr><tr><td>Req&#x27;std</td><td>Fulfilled</td><td>Req&#x27;std</td><td>Fulfilled</td><td>Req&#x27;std</td><td>Fulfilled</td><td>Req&#x27;std</td><td>Fulfilled</td></tr><tr><td>Blackstone Private Credit Fund</td><td>(531)</td><td>(581)</td><td>(1,097)</td><td>(794)</td><td>(2,102)</td><td>(3,760)</td><td>(3,760)</td><td>(4,500)</td><td>(2,250)</td><td>-1.5%</td><td>-2.6%</td><td>-1.8%</td><td>-4.5%</td><td>-7.9%</td><td>-7.9%</td><td>-10.0%</td><td>-5.0%</td></tr><tr><td>Cliffwater Corporate Lending Fund</td><td>(695)</td><td>(595)</td><td>(1,025)</td><td>(918)</td><td>(1,757)</td><td>(4,477)</td><td>(2,332)</td><td>(5,323)</td><td>(1,571)</td><td>-2.4%</td><td>-3.7%</td><td>-3.1%</td><td>-5.6%</td><td>-14.2%</td><td>-7.4%</td><td>-17.0%</td><td>-5.0%</td></tr><tr><td>Blue Owl Credit Income Corp.</td><td>(193)</td><td>(204)</td><td>(464)</td><td>(318)</td><td>(1,010)</td><td>(4,327)</td><td>(964)</td><td>(3,715)</td><td>(988)</td><td>-1.4%</td><td>-2.9%</td><td>-1.8%</td><td>-5.2%</td><td>-21.9%</td><td>-5.0%</td><td>-18.8%</td><td>-5.0%</td></tr><tr><td>Apollo Debt Solutions</td><td>(62)</td><td>(130)</td><td>(207)</td><td>(399)</td><td>(686)</td><td>(1,658)</td><td>(740)</td><td>(2,419)</td><td>(720)</td><td>-1.4%</td><td>-1.8%</td><td>-3.0%</td><td>-4.8%</td><td>-11.2%</td><td>-5.0%</td><td>-16.8%</td><td>-5.0%</td></tr><tr><td>HPS Corporate Lending Fund</td><td>(111)</td><td>(210)</td><td>(187)</td><td>(176)</td><td>(475)</td><td>(1,157)</td><td>(622)</td><td>(1,654)</td><td>(622)</td><td>-2.4%</td><td>-1.9%</td><td>-1.7%</td><td>-4.1%</td><td>-9.3%</td><td>-5.0%</td><td>-13.3%</td><td>-5.0%</td></tr><tr><td>Ares Strategic Income Fund</td><td>(50)</td><td>(30)</td><td>(145)</td><td>(81)</td><td>(595)</td><td>(1,218)</td><td>(525)</td><td>(1,512)</td><td>(525)</td><td>-0.5%</td><td>-2.0%</td><td>-1.0%</td><td>-5.8%</td><td>-11.6%</td><td>-5.0%</td><td>-14.4%</td><td>-5.0%</td></tr><tr><td>Cliffwater Enhanced Lending Fund</td><td>(76)</td><td>(125)</td><td>(270)</td><td>(152)</td><td>(446)</td><td>(571)</td><td>(571)</td><td>(392)</td><td>(392)</td><td>-2.7%</td><td>-5.1%</td><td>-2.6%</td><td>-6.4%</td><td>-7.6%</td><td>-7.6%</td><td>-5.0%</td><td>-5.0%</td></tr><tr><td>Oaktree Strategic Credit Fund</td><td>(21)</td><td>(22)</td><td>(175)</td><td>(61)</td><td>(191)</td><td>(397)</td><td>(317)</td><td>(203)</td><td>(203)</td><td>-0.6%</td><td>-4.6%</td><td>-1.5%</td><td>-4.2%</td><td>-8.5%</td><td>-6.8%</td><td>-4.5%</td><td>-4.5%</td></tr><tr><td>North Haven Private Income Fund</td><td>(56)</td><td>(65)</td><td>(107)</td><td>(108)</td><td>(182)</td><td>(368)</td><td>(168)</td><td>(375)</td><td>(161)</td><td>-2.0%</td><td>-3.1%</td><td>-3.1%</td><td>-5.2%</td><td>-10.9%</td><td>-5.0%</td><td>-11.6%</td><td>-5.0%</td></tr><tr><td>Blue Owl Technology Income Corp.</td><td>(96)</td><td>(99)</td><td>(146)</td><td>(90)</td><td>(527)</td><td>(1,457)</td><td>(169)</td><td>(1,080)</td><td>(142)</td><td>-3.3%</td><td>-4.5%</td><td>-2.7%</td><td>#####</td><td>-40.7%</td><td>-5.0%</td><td>-38.1%</td><td>-5.0%</td></tr><tr><td>AG Twin Brook Capital Income Fund</td><td>(7)</td><td>(23)</td><td>(6)</td><td>(5)</td><td>(21)</td><td>(31)</td><td>(31)</td><td>(53)</td><td>(53)</td><td>-1.5%</td><td>-0.4%</td><td>-0.3%</td><td>-1.0%</td><td>-1.3%</td><td>-1.3%</td><td>-2.1%</td><td>-2.1%</td></tr><tr><td>KKR FS Income Trust</td><td>(1)</td><td>(2)</td><td>(1)</td><td>(11)</td><td>(30)</td><td>(111)</td><td>(111)</td><td></td><td></td><td>-0.1%</td><td>-0.1%</td><td>-0.6%</td><td>-1.3%</td><td>-4.5%</td><td>-4.5%</td><td></td><td>2,594</td></tr><tr><td>Simple Avg.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>-12.5%</td><td>-5.5%</td><td>-12.6%</td><td>-4.3%</td></tr><tr><td>Weighted Avg.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>-12.1%</td><td>-6.4%</td><td>-13.7%</td><td>-4.9%</td></tr></table>
+
+Source: Company data, GS Global Investment Research
+
+Exhibit 2: Following 2Q redemption requests across Evergreen / Retail Private Credit funds, pipeline of unfulfilled requests amounts to 9.3% of industry NAV, up from 6.1% last quarter
+Unfulfilled Redemption Requests % of Latest NAV - 2Q vs 1Q26  
+![](images/ab9f85580baea636ed94fd6783b081f8f46ec04616a1e7d3a4806031d3fa29d1.jpg)  
+1Q unfulfilled requests as % March NAV; 2Q unfulfilled % of May NAV (latest avail.)  
+Source: Company data, GS Global Investment Research
+
+Exhibit 3: On average, gross flows (including DRIP flows) in 2Q26 were down \~50% sequentially vs. 1Q Monthly Gross Inflows (New Subscriptions, plus DRIP flows)
+
+<table><tr><td colspan="14">Monthly Gross Flows (New Subscriptions + DRIP Flows)</td><td rowspan="2">1Q26 Qtr</td><td rowspan="2">2Q26 Qtr</td><td rowspan="2">2Q26 vs. 1Q</td><td rowspan="2">Latest NAV</td></tr><tr><td></td><td>Jun-25</td><td>Jul-25</td><td>Aug-25</td><td>Sep-25</td><td>Oct-25</td><td>Nov-25</td><td>Dec-25</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td><td>Jun-26</td></tr><tr><td>BCRED</td><td>1,115</td><td>1,154</td><td>1,093</td><td>1,314</td><td>1,152</td><td>1,357</td><td>815</td><td>826</td><td>617</td><td>422</td><td>411</td><td>304</td><td>262</td><td>1,864</td><td>977</td><td>-48%</td><td>#####</td></tr><tr><td>CCLFX</td><td>780</td><td>782</td><td>1,239</td><td>802</td><td>779</td><td>1,154</td><td>561</td><td>1,096</td><td>804</td><td>549</td><td>438</td><td>442</td><td>195</td><td>2,449</td><td>1,076</td><td>-56%</td><td>#####</td></tr><tr><td>OCIC</td><td>558</td><td>606</td><td>1,030</td><td>603</td><td>542</td><td>593</td><td>430</td><td>387</td><td>273</td><td>208</td><td>122</td><td>92</td><td>100</td><td>869</td><td>315</td><td>-64%</td><td>#####</td></tr><tr><td>ADS</td><td>548</td><td>346</td><td>659</td><td>570</td><td>448</td><td>339</td><td>476</td><td>339</td><td>195</td><td>193</td><td>96</td><td>91</td><td>138</td><td>728</td><td>325</td><td>-55%</td><td>#####</td></tr><tr><td>HLEND</td><td>457</td><td>403</td><td>461</td><td>323</td><td>407</td><td>504</td><td>313</td><td>221</td><td>419</td><td>190</td><td>188</td><td>73</td><td>152</td><td>830</td><td>413</td><td>-50%</td><td>#####</td></tr><tr><td>ASIF</td><td>234</td><td>153</td><td>1,054</td><td>615</td><td>382</td><td>307</td><td>260</td><td>222</td><td>242</td><td>300</td><td>107</td><td>97</td><td>78</td><td>764</td><td>281</td><td>-63%</td><td>#####</td></tr><tr><td>CELFX</td><td>267</td><td>378</td><td>426</td><td>288</td><td>416</td><td>405</td><td>263</td><td>519</td><td>303</td><td>248</td><td>189</td><td>294</td><td>111</td><td>1,070</td><td>593</td><td>-45%</td><td>8,000</td></tr><tr><td>OSCF</td><td>60</td><td>167</td><td>163</td><td>67</td><td>145</td><td>106</td><td>93</td><td>72</td><td>62</td><td>37</td><td>29</td><td>29</td><td>33</td><td>170</td><td>91</td><td>-47%</td><td>4,566</td></tr><tr><td>NH-PIF</td><td>67</td><td>44</td><td>39</td><td>38</td><td>45</td><td>34</td><td>27</td><td>34</td><td>25</td><td>44</td><td>24</td><td>20</td><td>22</td><td>102</td><td>66</td><td>-36%</td><td>3,260</td></tr><tr><td>OTIC</td><td>64</td><td>37</td><td>73</td><td>84</td><td>74</td><td>55</td><td>37</td><td>31</td><td>59</td><td>40</td><td>17</td><td>13</td><td>16</td><td>130</td><td>46</td><td>-64%</td><td>2,844</td></tr><tr><td>TCAP</td><td>55</td><td>81</td><td>75</td><td>79</td><td>57</td><td>56</td><td>164</td><td>47</td><td>97</td><td>49</td><td>58</td><td>29</td><td>89</td><td>193</td><td>176</td><td>-9%</td><td>2,629</td></tr><tr><td>K-FIT</td><td>101</td><td>120</td><td>112</td><td>181</td><td>124</td><td>74</td><td>66</td><td>107</td><td>95</td><td>52</td><td>23</td><td>16</td><td>90</td><td>254</td><td>129</td><td>-49%</td><td>2,594</td></tr><tr><td colspan="14">Simple Average</td><td></td><td></td><td>-49%</td><td></td></tr></table>
+
+Source: Company data, GS Global Investment Research
+
+Exhibit 4: When excluding DRIP flows, gross inflows in 2Q26 were down \~60% sequentially from 1Q26
+Monthly Gross Inflows, excluding DRIP flows
+
+<table><tr><td colspan="14">Monthly Gross Flows (New Subscriptions excld. DRIP)</td><td rowspan="2">1Q26 Qtr</td><td rowspan="2">2Q26 Qtr</td><td rowspan="2">2Q26 vs. 1Q</td><td rowspan="2">Latest NAV</td></tr><tr><td></td><td>Jun-25</td><td>Jul-25</td><td>Aug-25</td><td>Sep-25</td><td>Oct-25</td><td>Nov-25</td><td>Dec-25</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td><td>Jun-26</td></tr><tr><td>BCRED</td><td>938</td><td>967</td><td>906</td><td>1,128</td><td>969</td><td>1,173</td><td>632</td><td>643</td><td>439</td><td>242</td><td>232</td><td>134</td><td>92</td><td>1,324</td><td>457</td><td>-65%</td><td>#####</td></tr><tr><td>CCLFX</td><td>780</td><td>782</td><td>1,208</td><td>802</td><td>779</td><td>1,119</td><td>561</td><td>1,058</td><td>769</td><td>549</td><td>400</td><td>407</td><td>195</td><td>2,375</td><td>1,002</td><td>-58%</td><td>#####</td></tr><tr><td>OCIC</td><td>497</td><td>540</td><td>964</td><td>537</td><td>476</td><td>527</td><td>364</td><td>321</td><td>207</td><td>142</td><td>56</td><td>26</td><td>34</td><td>671</td><td>117</td><td>-83%</td><td>#####</td></tr><tr><td>ADS</td><td>507</td><td>302</td><td>615</td><td>525</td><td>403</td><td>294</td><td>431</td><td>294</td><td>150</td><td>148</td><td>51</td><td>46</td><td>93</td><td>592</td><td>190</td><td>-68%</td><td>#####</td></tr><tr><td>HLEND</td><td>423</td><td>366</td><td>425</td><td>287</td><td>367</td><td>464</td><td>273</td><td>185</td><td>383</td><td>153</td><td>151</td><td>37</td><td>
+
+[中间内容因长度限制已省略]
+
+ including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.
+
+Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.
+
+This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.
+
+Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\_fcm\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.
+
+Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.
+
+All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.
+
+Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.
+
+## © 2026 GS.
+
+You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.
+"""
