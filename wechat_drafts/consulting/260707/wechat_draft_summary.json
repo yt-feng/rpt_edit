@@ -16,7 +16,7 @@
   "max_content_bytes": 18000,
   "min_inline_images": 3,
   "max_inline_images": 3,
-  "body_hook": "更多完整报告、中文摘要、KC评论和图表合集，会放进每日国际信源汇编。适合快速扫当天主流叙事，也方便后续追问和横向比较。",
+  "body_hook": "",
   "image_upload_delay_seconds": 3.0,
   "article_delay_seconds": 12.0,
   "draft_delay_seconds": 90.0,
@@ -25,12 +25,12 @@
   "drafts": [
     {
       "draft_index": 1,
-      "media_id": "avPwUQVH0p7DPpCFFkit8_sMphAAo9iqn8lozcJPFmAXFoTO44_nME1kQ8vMb-y0",
+      "media_id": "avPwUQVH0p7DPpCFFkit85uFDS8dHmaEsbEf4mzQBf6ja_HRpI3P8B1oLphbYzFa",
       "publish_id": "",
       "published": false,
       "reused_existing": false,
       "article_count": 1,
-      "payload_bytes": 7936,
+      "payload_bytes": 7773,
       "payload": "wechat_drafts/consulting/260707/draft_payload_01.json",
       "titles": [
         "波士顿咨询：多数企业可持续报告仍陷低效流程，AI承诺未兑现"
@@ -46,8 +46,8 @@
         "titles": [
           "æ³¢å£«é¡¿å¨è¯¢ï¼å¤æ°ä¼ä¸å¯æç»­æ¥åä»é·ä½ææµç¨ï¼AIæ¿è¯ºæªå ç°"
         ],
-        "create_time": 1783388937,
-        "update_time": 1783388937
+        "create_time": 1783391604,
+        "update_time": 1783391605
       }
     }
   ],
@@ -60,8 +60,8 @@
       "institution_name": "波士顿咨询",
       "source_report_name": "BCG Sustainability-Reporting-in-Europe-From-Compliance-to-Strate 43e096d4",
       "report_dir": "kc_translated_reports/consulting/260707/01-0001-BCG_Sustainability-Reporting-in-Europe-From-Compliance-to-Strate_43e096d4",
-      "content_chars": 4945,
-      "content_bytes": 7355,
+      "content_chars": 4779,
+      "content_bytes": 7195,
       "visible_text_chars": 1200,
       "inline_image_count": 3,
       "body_image_count": 3,
