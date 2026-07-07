@@ -882,7 +882,28 @@ def repair_digest_structure(text: str) -> str:
     cleaned = re.sub(r"^(.{2,28})要看(.{2,40})$", r"\1的观察重点是\2", cleaned)
     cleaned = re.sub(r"观察重点是观察重点是", "观察重点是", cleaned)
     cleaned = re.sub(r"[，,、]{2,}", "，", cleaned)
+    cleaned = dedupe_digest_clauses(cleaned)
     return cleaned.strip(" ，,。；;：:、-—")
+
+
+def dedupe_digest_clauses(text: str) -> str:
+    clauses = [
+        item.strip(" ，,。；;：:、-—")
+        for item in re.split(r"[，,；;。！？!?]+", normalize_space(text))
+        if item.strip(" ，,。；;：:、-—")
+    ]
+    if len(clauses) <= 1:
+        return normalize_space(text)
+    kept: list[str] = []
+    keys: list[str] = []
+    for clause in clauses:
+        key = title_fingerprint(clause)
+        if key and any(len(key) >= 6 and (key in old or old in key) for old in keys):
+            continue
+        kept.append(clause)
+        if key:
+            keys.append(key)
+    return "，".join(kept)
 
 
 def complete_digest_sentence(text: str) -> str:
