@@ -1,0 +1,75 @@
+ZH_A: 最近有一份关于Datadog的研报特别有意思，它一边上调了公司的长期增长预期，一边却把评级给降了。这听起来是不是有点矛盾？
+
+ZH_B: 确实很矛盾，但恰恰是这份报告最核心的判断。研究员认为，Datadog长期看绝对是AI大赢家，但未来几个季度的增长可能会让市场失望。
+
+ZH_A: 所以这份报告真正想回答的问题是什么？是“现在该不该买”吗？
+
+ZH_B: 不完全是。它更想回答的是：当一家公司的股价已经把未来几年的美好预期都price in了，而短期却面临增长放缓，投资者该怎么看？这才是真正的张力所在。
+
+ZH_A: 那我们一个一个来看。先说长期，为什么研究员对Datadog这么乐观？
+
+ZH_B: 主要有两个原因。第一，Datadog在可观测性领域的布局速度和完整性让研究员印象深刻。第二，AI带来的新收入机会比之前想象的要大。比如所谓的“Born-in-AI”客户，也就是那些天生就建立在AI上的公司，他们的增长比预期更强。
+
+ZH_A: 这意味着什么？这些AI客户能贡献多少收入？
+
+ZH_B: 报告估算，到今年二季度，“Born-in-AI”的收入大约能占到Datadog总收入的15%。而其中最大的两家，研究员推测是OpenAI和Anthropic，它们的增长速度非常快。比如Anthropic，今年二季度的环比增长可能超过125%。
+
+ZH_A: 这个增速确实惊人。但为什么还是降级了？
+
+ZH_B: 问题出在另外85%的收入上，也就是传统的非AI业务。研究员发现，从今年5月开始，云工作负载的增长信号已经停滞了。这背后有几个原因：数据中心容量紧张、企业优先处理网络安全问题，以及一些技术消化周期。
+
+ZH_A: 所以这意味着，非AI业务的增长可能在第三季度见顶，第四季度开始回落？
+
+ZH_B: 没错。报告预测，第四季度总收入增速可能会下降约500个基点，降到29%左右。而市场里有些投资者期待的是30%到40%以上的增长，这个落差就是风险所在。
+
+ZH_A: 那这份报告有没有提到，哪些问题还没有完全展开？
+
+ZH_B: 有，而且很关键。比如，如果Datadog的新产品线，比如Bits AI或者CPU/GPU监控，能让它从AWS那里抢到更多份额，那非AI业务的增长可能会超出预期。另外，研究员也承认，他们使用的第三方网站流量数据可能已经失效了，如果真实情况比数据好，那他们的预测可能就太保守了。
+
+ZH_A: 所以这其实是两个悬念？一个是新产品能否带来超额增长，另一个是数据信号是否准确？
+
+ZH_B: 对。这两个问题在完整报告里都有更详细的讨论，包括具体的模型假设和敏感性分析。我们这里只是点出来，让你知道这份报告还有更深的内容可以挖。
+
+ZH_A: 那最后简单总结一下，对于普通投资者，这份报告到底想说什么？
+
+ZH_B: 一句话：Datadog长期很好，但短期可能有个“增长气穴”。如果你相信长期故事，现在的股价也许合理，但未来几个季度可能会有波动。如果你想了解更多细节，包括完整的财务模型和风险分析，建议去读一下原报告。
+
+ZH_A: 好的，感谢今天的分享。如果想获取这份完整报告，欢迎加入我们的社群，我们会定期分享高质量的深度研报解析。
+
+EN_A: So there's this interesting report on Datadog that raises their long-term growth expectations, but downgrades the stock. Doesn't that sound a bit contradictory?
+
+EN_B: It really does, but that's actually the core tension in the report. The analyst thinks Datadog is a clear long-term AI winner, but the next few quarters might disappoint the market.
+
+EN_A: So what is this report really trying to answer? Is it "should I buy or not"?
+
+EN_B: Not exactly. It's more about this: when a stock already prices in years of bright future, but near-term growth is slowing, what should investors do? That's the real question.
+
+EN_A: Let's break it down. First, the long-term. Why is the analyst so optimistic about Datadog?
+
+EN_B: Two main reasons. First, the speed and completeness of Datadog's vision in observability is really impressive. Second, the AI-driven revenue opportunity is bigger than previously thought. The "Born-in-AI" customers, meaning companies built on AI from day one, are growing faster than expected.
+
+EN_A: What does that mean? How much revenue are these AI customers contributing?
+
+EN_B: The report estimates that by Q2 this year, "Born-in-AI" revenue could be about 15% of Datadog's total. And the two biggest ones, believed to be OpenAI and Anthropic, are growing incredibly fast. For example, Anthropic's quarter-over-quarter growth in Q2 might be over 125%.
+
+EN_A: That's a stunning growth rate. So why the downgrade?
+
+EN_B: The problem is the other 85% of revenue, the traditional non-AI business. The analyst found that since early May, signals for cloud workload growth have flatlined. The reasons include data center capacity constraints, companies prioritizing cybersecurity fixes, and some digestion periods after new tech releases.
+
+EN_A: So this means non-AI growth might peak in Q3 and start declining in Q4?
+
+EN_B: Exactly. The report predicts total revenue growth could drop by about 500 basis points in Q4, down to around 29% year-over-year. But some investors are expecting 30% to 40%+ peak growth. That gap is the risk.
+
+EN_A: Did the report mention any questions that are still open?
+
+EN_B: Yes, and they're important. For example, if Datadog's new products, like Bits AI or CPU/GPU monitoring, help it take more share from AWS, the non-AI business could beat expectations. Also, the analyst admits their third-party web traffic data might be broken. If the real situation is better than the data suggests, their model might be too conservative.
+
+EN_A: So there are two big unknowns: whether new products can drive extra growth, and whether the data signals are accurate?
+
+EN_B: Right. Both of these are explored in more depth in the full report, with detailed model assumptions and sensitivity analysis. We're just highlighting them here to show there's more to dig into.
+
+EN_A: So for a regular investor, what's the one-sentence takeaway from this report?
+
+EN_B: One sentence: Datadog looks great long-term, but there might be a near-term "air pocket" in growth. If you believe the long-term story, the current price might be fair, but the next few quarters could be bumpy. If you want the full picture, including the financial model and risk analysis, you should read the original report.
+
+EN_A: Great, thanks for the breakdown. If you want the full report, join our community. We share deep dives on high-quality research like this regularly.
