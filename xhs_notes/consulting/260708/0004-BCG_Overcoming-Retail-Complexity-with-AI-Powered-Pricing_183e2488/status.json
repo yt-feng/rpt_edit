@@ -1,0 +1,23 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_rjain5_c/pdfs/0004-BCG_Overcoming-Retail-Complexity-with-AI-Powered-Pricing_183e2488.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "波士顿咨询",
+  "cover_short_title": "AI如何帮零售定价多",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "波士顿咨询：AI定价不是选择题，是零售商的生存题",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

@@ -1,0 +1,27 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_rjain5_c/pdfs/0005-BCG_The-Private-Brand-Imperative-for-Grocers_03edb087.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "波士顿咨询",
+  "cover_short_title": "超市自有品牌，正在逆",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x2",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "下行|放缓->节奏变化 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "波士顿咨询：自有品牌不是平替，而是零售商核心竞争力",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

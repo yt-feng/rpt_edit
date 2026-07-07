@@ -1,0 +1,33 @@
+{
+  "source_pdf": "/tmp/pdf_batch_002_0luhgqad/pdfs/0006-McKinsey_PDF-2025-Sustainable-and-inclusive-growth-impact-report_3e4bf175.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "麦肯锡",
+  "cover_short_title": "别再说“百年未有之变",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "麦肯锡：AI匹配工具正改写技能培训与就业市场规则",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

@@ -1,0 +1,3720 @@
+{
+    "pdf_info": [
+        {
+            "preproc_blocks": [
+                {
+                    "type": "chart",
+                    "bbox": [
+                        80,
+                        4967,
+                        1285,
+                        5789
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                80,
+                                4967,
+                                1285,
+                                5789
+                            ],
+                            "type": "chart_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        80,
+                                        4967,
+                                        1285,
+                                        5789
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                80,
+                                                4967,
+                                                1285,
+                                                5789
+                                            ],
+                                            "type": "chart",
+                                            "image_path": "a7b71e687d8d422f8a17307720f69f30934e9bb5fc49b6c94996e4b34c20a61f.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 0
+                        },
+                        {
+                            "bbox": [
+                                430,
+                                7709,
+                                714,
+                                7926
+                            ],
+                            "type": "chart_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        430,
+                                        7709,
+                                        714,
+                                        7926
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                430,
+                                                7709,
+                                                714,
+                                                7926
+                                            ],
+                                            "type": "text",
+                                            "content": "Embed an integrated process: Retailers should meet to discuss strategy with CPG representatives—not just from marketing and sales, but from operations too, with discussions going well beyond pricing and promotions."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 1
+                        },
+                        {
+                            "bbox": [
+                                838,
+                                2153,
+                                1044,
+                                2233
+                            ],
+                            "type": "chart_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        838,
+                                        2153,
+                                        1044,
+                                        2233
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                838,
+                                                2153,
+                                                1044,
+                                                2233
+                                            ],
+                                            "type": "text",
+                                            "content": "SPOILAGE HAS INCREASED ..."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 2
+                        },
+                        {
+                            "bbox": [
+                                970,
+                                1088,
+                                1216,
+                                1257
+                            ],
+                            "type": "chart_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        970,
+                                        1088,
+                                        1216,
+                                        1257
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                970,
+                                                1088,
+                                                1216,
+                                                1257
+                                            ],
+                                            "type": "text",
+                                            "content": "Outbound\nDC operations\nInbound"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 3
+                        },
+                        {
+                            "bbox": [
+                                192,
+                                4604,
+                                325,
+                                4669
+                            ],
+                            "type": "chart_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        192,
+                                        4604,
+                                        325,
+                                        4669
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                192,
+                                                4604,
+                                                325,
+                                                4669
+                                            ],
+                                            "type": "text",
+                                            "content": "Cases filled as a percentage of original order"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 32
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        69,
+                        80,
+                        1045,
+                        233
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                80,
+                                1045,
+                                233
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        80,
+                                        1045,
+                                        233
+                                    ],
+                                    "type": "text",
+                                    "content": "Creating an Integrated Supply Chain in Retail Grocery"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        72,
+                        249,
+                        1051,
+                        411
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                72,
+                                249,
+                                1051,
+                                411
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        72,
+                                        249,
+                                        1051,
+                                        411
+                                    ],
+                                    "type": "text",
+                                    "content": "With the ongoing expansion of online retail, consumers want more convenience and a wider selection of fresh products, which have shorter shelf lives—putting more pressure on the entire supply chain. This pressure is pushing retailers' cost and service metrics in the wrong direction and boosting tension between retailers and their CPG suppliers."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        73,
+                        419,
+                        1033,
+                        499
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                73,
+                                419,
+                                1033,
+                                499
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        73,
+                                        419,
+                                        1033,
+                                        499
+                                    ],
+                                    "type": "text",
+                                    "content": "But what if they dealt with this pressure by looking at the supply chain together and using digital tools to collaborate?"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        1075,
+                        266,
+                        1414,
+                        516
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1075,
+                                266,
+                                1414,
+                                516
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1075,
+                                        266,
+                                        1414,
+                                        516
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1075,
+                                                266,
+                                                1414,
+                                                516
+                                            ],
+                                            "type": "image",
+                                            "image_path": "5eee860b2202519c81f912c1dcdf690afa4d6dbcdcdd6b5c5a34be19b0481e81.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 8
+                        }
+                    ],
+                    "index": 8
+                },
+                {
+                    "bbox": [
+                        506,
+                        604,
+                        1366,
+                        733
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                506,
+                                604,
+                                1366,
+                                733
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        506,
+                                        604,
+                                        1366,
+                                        733
+                                    ],
+                                    "type": "text",
+                                    "content": "A TRUCKING CAPACITY CRUNCH HAS RAISED LOGISTICS COSTS"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        509,
+                        741,
+                        1366,
+                        854
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                509,
+                                741,
+                                1366,
+                                854
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        509,
+                                        741,
+                                        1366,
+                                        854
+                                    ],
+                                    "type": "text",
+                                    "content": "Growing demand for fresher products means trucks often leave the distribution center (DC) with less than a full truckload—even as drivers are harder to hire."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        244,
+                        1314,
+                        365,
+                        1443
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                244,
+                                1314,
+                                365,
+                                1443
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        244,
+                                        1314,
+                                        365,
+                                        1443
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                244,
+                                                1314,
+                                                365,
+                                                1443
+                                            ],
+                                            "type": "image",
+                                            "image_path": "bdc787e759a6afca7a57cf93452a85e8a8a01443b37d04a2c3c797fbcfe754ab.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 11
+                        }
+                    ],
+                    "index": 11
+                },
+                {
+                    "bbox": [
+                        72,
+                        1596,
+                        480,
+                        1661
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                72,
+                                1596,
+                                480,
+                                1661
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        72,
+                                        1596,
+                                        480,
+                                        1661
+                                    ],
+                                    "type": "text",
+                                    "content": "There's room to improve\noutbound freight utilization"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        72,
+                        1733,
+                        260,
+                        1959
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                72,
+                                1733,
+                                260,
+                                1959
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        72,
+                                        1733,
+                                        260,
+                                        1959
+                                    ],
+                                    "type": "text",
+                                    "content": "Truckload utilization is far lower than inbound\n2018 median capacity utilization (by weight)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        434,
+                        1701,
+                        707,
+                        1959
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                434,
+                                1701,
+                                707,
+                                1959
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        434,
+                                        1701,
+                                        707,
+                                        1959
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                434,
+                                                1701,
+                                                707,
+                                                1959
+                                            ],
+                                            "type": "image",
+                                            "image_path": "7dc080d83ff251a0cdd8413e1bb862716377f5431e32a66b19e70722ec818e58.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 14
+                        },
+                        {
+                            "bbox": [
+                                469,
+                                1975,
+                                668,
+                                2024
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        469,
+                                        1975,
+                                        668,
+                                        2024
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                469,
+                                                1975,
+                                                668,
+                                                2024
+                                            ],
+                                            "type": "text",
+                                            "content": "Inbound freight"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 15
+                        }
+                    ],
+                    "index": 14
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        741,
+                        1596,
+                        1009,
+                        1846
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                741,
+                                1596,
+                                1009,
+                                1846
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        741,
+                                        1596,
+                                        1009,
+                                        1846
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                741,
+                                                1596,
+                                                1009,
+                                                1846
+                                            ],
+                                            "type": "image",
+                                            "image_path": "8d31406975b5107e064ba9e5705de045e1673376d5f18521e16e7b4c2700567e.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 16
+                        },
+                        {
+                            "bbox": [
+                                768,
+                                1862,
+                                982,
+                                1911
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        768,
+                                        1862,
+                                        982,
+                                        1911
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                768,
+                                                1862,
+                                                982,
+                                                1911
+                                            ],
+                                            "type": "text",
+                                            "content": "Outbound freight"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 17
+                        }
+                    ],
+                    "index": 16
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        187,
+                        2290,
+                        676,
+                        2475
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                187,
+                                2290,
+                                676,
+                                2475
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        187,
+                                        2290,
+                                        676,
+                                        2475
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                187,
+                                                2290,
+                                                676,
+                                                2475
+                                            ],
+                                            "type": "image",
+                                            "image_path": "e23c4aa4ca3a16c5673c2db48891c81cea4577b3f72ff1ef9d37927a9fe78aca.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 18
+                        }
+                    ],
+                    "index": 18
+                },
+                {
+                    "bbox": [
+                        184,
+                        2491,
+                        614,
+                        2725
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                184,
+                                2491,
+                                614,
+                                2725
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        184,
+                                        2491,
+                                        614,
+                                        2725
+                                    ],
+                                    "type": "text",
+                                    "content": "Fresher products have a shorter shelf life and need to be delivered quickly, but it's not always fast enough. Meanwhile, rush deliveries come with an inevitable rise in shrinkage—that is, breakage and loss."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 19,
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        787,
+                        2257,
+                        1029,
+                        2725
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                787,
+                                2257,
+                                1029,
+                                2725
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        787,
+                                        2257,
+                                        1029,
+                                        2725
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                787,
+                                                2257,
+                                                1029,
+                                                2725
+                                            ],
+                                            "type": "image",
+                                            "image_path": "217078f7c4f389374eb9163ae97488e3601dd12fbef51ccd8641efb06b35b251.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 20
+                        },
+                        {
+                            "bbox": [
+                                1160,
+                                2153,
+                                1373,
+                                2233
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1160,
+                                        2153,
+                                        1373,
+                                        2233
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1160,
+                                                2153,
+                                                1373,
+                                                2233
+                                            ],
+                                            "type": "text",
+                                            "content": "... AND SO HAS SHRINKAGE"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 21
+                        }
+                    ],
+                    "index": 20
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        1113,
+                        2249,
+                        1343,
+                        2733
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1113,
+                                2249,
+                                1343,
+                                2733
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1113,
+                                        2249,
+                                        1343,
+                                        2733
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1113,
+                                                2249,
+                                                1343,
+                                                2733
+                                            ],
+                                            "type": "image",
+                                            "image_path": "1475138362dbb3aaa4a9a123e51fe9491a2608a10e6b0a49a5046ffda8542c87.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 22
+                        }
+                    ],
+                    "index": 22
+                },
+                {
+                    "bbox": [
+                        285,
+                        2870,
+                        1241,
+                        3007
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                285,
+                                2870,
+                                1241,
+                                3007
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        285,
+                                        2870,
+                                        1241,
+                                        3007
+                                    ],
+                                    "type": "text",
+                                    "content": "SERVICE LEVELS ARE FALLING AS IT BECOMES HARDER TO GET"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 23,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        315,
+                        3007,
+                        1236,
+                        3064
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                315,
+                                3007,
+                                1236,
+                                3064
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        315,
+                                        3007,
+                                        1236,
+                                        3064
+                                    ],
+                                    "type": "text",
+                                    "content": "PRODUCTS TO THE SHELF ON TIME"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 24,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        375,
+                        3064,
+                        1239,
+                        3128
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                375,
+                                3064,
+                                1239,
+                                3128
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        375,
+                                        3064,
+                                        1239,
+                                        3128
+                                    ],
+                                    "type": "text",
+                                    "content": "Most grocery retailers are now missing internal store service-level targets, as reflected by on-shelf product availability."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 25,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        3185,
+                        709,
+                        3322
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                3185,
+                                709,
+                                3322
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        3185,
+                                        709,
+                                        3322
+                                    ],
+                                    "type": "text",
+                                    "content": "Majority of retailers missing service levels...\nActual vs. target performance, 2018 (% respondents)\n● Below ● Target ● Above"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 26,
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        606,
+                        3314,
+                        1216,
+                        3612
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                606,
+                                3314,
+                                1216,
+                                3612
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        606,
+                                        3314,
+                                        1216,
+                                        3612
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                606,
+                                                3314,
+                                                1216,
+                                                3612
+                                            ],
+                                            "type": "image",
+                                            "image_path": "8b5fb2d6b88640378322a9ba46aac6d269ba16790798adb68238f2404e559fe7.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 27
+                        }
+                    ],
+                    "index": 27
+                },
+                {
+                    "bbox": [
+                        187,
+                        3741,
+                        1221,
+                        3862
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                187,
+                                3741,
+                                1221,
+                                3862
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        187,
+                                        3741,
+                                        1221,
+                                        3862
+                                    ],
+                                    "type": "text",
+                                    "content": "RETAILERS AND THEIR CPG SUPPLIERS ARE NOW AT ODDS AS A RESULT"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 28,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        184,
+                        3878,
+                        1136,
+                        4023
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                184,
+                                3878,
+                                1136,
+                                4023
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        184,
+                                        3878,
+                                        1136,
+                                        4023
+                                    ],
+                                    "type": "text",
+                                    "content": "On-time delivery rates have fallen, but CPG suppliers say it's not completely their fault: retail order volatility has risen, order lead times have shortened, and order quantities have shrunk. It's increasingly difficult for them to forecast and meet these mounting service demands."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 29,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        187,
+                        4056,
+                        702,
+                        4136
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                187,
+                                4056,
+                                702,
+                                4136
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        187,
+                                        4056,
+                                        702,
+                                        4136
+                                    ],
+                                    "type": "text",
+                                    "content": "SERVICE DECLINES PARTIALLY DRIVEN BY REDUCED CPG SERVICE LEVELS"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 30,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        797,
+                        4056,
+                        1287,
+                        4136
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                797,
+                                4056,
+                                1287,
+                                4136
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        797,
+                                        4056,
+                                        1287,
+                                        4136
+                                    ],
+                                    "type": "text",
+                                    "content": "WHAT IS THE KEY CAUSE OF SERVICE LEVEL DECLINES?"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 31,
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        371,
+                        4201,
+                        527,
+                        4604
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                371,
+                                4201,
+                                527,
+                                4604
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        371,
+                                        4201,
+                                        527,
+                                        4604
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                371,
+                                                4201,
+                                                527,
+                                                4604
+                                            ],
+                                            "type": "image",
+                                            "image_path": "abb5dbbaa3c1837affa5e0801439110202a7e9cbe42b5040b15fc46b8291385e.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 33
+                        },
+                        {
+                            "bbox": [
+                                372,
+                                4612,
+                                515,
+                                4685
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        372,
+                                        4612,
+                                        515,
+                                        4685
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                372,
+                                                4612,
+                                                515,
+                                                4685
+                                            ],
+                                            "type": "text",
+                                            "content": "On-time rate, based on requested arrival date"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 34
+                        }
+                    ],
+                    "index": 33
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        550,
+                        4193,
+                        714,
+                        4612
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                550,
+                                4193,
+                                714,
+                                4612
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        550,
+                                        4193,
+                                        714,
+                                        4612
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                550,
+                                                4193,
+                                                714,
+                                                4612
+                                            ],
+                                            "type": "image",
+                                            "image_path": "eef4735e6d06a3ffaa6f11733f98c5b9c38cd72ba9e376214141ef1fccf133b0.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 35
+                        },
+                        {
+                            "bbox": [
+                                555,
+                                4612,
+                                695,
+                                4685
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        555,
+                                        4612,
+                                        695,
+                                        4685
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                555,
+                                                4612,
+                                                695,
+                                                4685
+                                            ],
+                                            "type": "text",
+                                            "content": "On-time rate, based on scheduled arrival time"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 36
+                        }
+                    ],
+                    "index": 35
+                },
+                {
+                    "bbox": [
+                        802,
+                        4459,
+                        1131,
+                        4612
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                802,
+                                4459,
+                                1131,
+                                4612
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        802,
+                                        4459,
+                                        1131,
+                                        4612
+                                    ],
+                                    "type": "text",
+                                    "content": "44%"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 37,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        1136,
+                        4273,
+                        1363,
+                        4427
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1136,
+                                4273,
+                                1363,
+                                4427
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1136,
+                                        4273,
+                                        1363,
+                                        4427
+                                    ],
+                                    "type": "text",
+                                    "content": "Demand forecasting was the most prominent cause cited by CPG companies"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 38,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        1136,
+                        4475,
+                        1336,
+                        4620
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1136,
+                                4475,
+                                1336,
+                                4620
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1136,
+                                        4475,
+                                        1336,
+                                        4620
+                                    ],
+                                    "type": "text",
+                                    "content": "Manufacturing reliability was the most prominent cause cited by retailers"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 39,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        285,
+                        4854,
+                        1252,
+                        4975
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                285,
+                                4854,
+                                1252,
+                                4975
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        285,
+                                        4854,
+                                        1252,
+                                        4975
+                                    ],
+                                    "type": "text",
+                                    "content": "COLLABORATION UNLOCKS IMPROVEMENTS FOR ALL INVOLVED"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 40,
+                    "level": 2
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        87,
+                        5322,
+                        230,
+                        5475
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                87,
+                                5322,
+                                230,
+                                5475
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        87,
+                                        5322,
+                                        230,
+                                        5475
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                87,
+                                                5322,
+                                                230,
+                                                5475
+                                            ],
+                                            "type": "image",
+                                            "image_path": "5317eb6d4367b9e9e357ffca76821eec4b8afbdb11c48d1ffe479ed0ec988885.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 41
+                        },
+                        {
+                            "bbox": [
+                                92,
+                                5467,
+                                226,
+                                5515
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        92,
+                                        5467,
+                                        226,
+                                        5515
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                92,
+                                                5467,
+                                                226,
+                                                5515
+                                            ],
+                                            "type": "text",
+                                            "content": "CPG plant"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 42
+                        }
+                    ],
+                    "index": 41
+                },
+                {
+                    "bbox": [
+                        168,
+                        5967,
+                        1075,
+                        6096
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                168,
+                                5967,
+                                1075,
+                                6096
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        168,
+                                        5967,
+                                        1075,
+                                        6096
+                                    ],
+                                    "type": "text",
+                                    "content": "DIGITAL TECHNOLOGIES SUPPORT COLLABORATION"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 43,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        168,
+                        6104,
+                        1085,
+                        6217
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                168,
+                                6104,
+                                1085,
+                                6217
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        168,
+                                        6104,
+                                        1085,
+                                        6217
+                                    ],
+                                    "type": "text",
+                                    "content": "Retailers and CPG companies should use digital technologies to share more internal and customer information, thereby improving demand forecasting and product allocation."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 44,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        168,
+                        6265,
+                        825,
+                        6362
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                168,
+                                6265,
+                                825,
+                                6362
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        168,
+                                        6265,
+                                        825,
+                                        6362
+                                    ],
+                                    "type": "text",
+                                    "content": "Most retailers have begun to implement technology that would support collaboration."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 45,
+                    "merge_prev": false
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        168,
+                        6418,
+                        1368,
+                        7201
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                168,
+                                6418,
+                                1368,
+                                7201
+                            ],
+                            "type": "table_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        168,
+                                        6418,
+                                        1368,
+                                        7201
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                168,
+                                                6418,
+                                                1368,
+                                                7201
+                                            ],
+                                            "type": "table",
+                                            "html": "<table><tr><td>DIGITAL TECHNOLOGY</td><td>EXAMPLES OF POTENTIAL COLLABORATION OPPORTUNITIES</td><td>PENETRATION AMONG RETAILERS</td></tr><tr><td>Cloud-based systems</td><td>Real-time visibility across E2E supply chain to manage inventory and purchasing decisions</td><td></td></tr><tr><td>Big data</td><td>Ability to forecast consumer demand and manage supply chain decisions, thereby optimizing costs</td><td></td></tr><tr><td>Robotic process automation</td><td>Enhanced decision making through process automation (e.g., inventory-level alerts, thresholds)</td><td></td></tr><tr><td>Internet of things (IoT)</td><td>Ability to track and trace products in real time, enabling real-time demand management</td><td></td></tr><tr><td>Augmented reality</td><td>Better alignment with CPG companies on planogramming and product design, helping to optimize assortment and maximize sales and margins</td><td></td></tr><tr><td>AI &amp; machine learning</td><td>Higher forecasting accuracy to manage inventory levels (Including holiday seasons), leading to reduced waste and costs</td><td></td></tr><tr><td>Blockchain</td><td>Increased product journey transparency (from CPG facility to retail stores), thereby developing mutual trust</td><td></td></tr></table>",
+                                            "image_path": "8ed7036d574b1f77f5afdf97493af12edb13f573faa9eb3d502e37ebd21ac019.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 46
+                        },
+                        {
+                            "bbox": [
+                                1097,
+                                6394,
+                                1363,
+                                6451
+                            ],
+                            "type": "table_caption",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1097,
+                                        6394,
+                                        1363,
+                                        6451
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1097,
+                                                6394,
+                                                1363,
+                                                6451
+                                            ],
+                                            "type": "text",
+                                            "content": "DEGREE OF (FULLY OPERATIONAL) PENETRATION AMONG RETAILERS"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 47
+                        }
+                    ],
+                    "index": 46
+                },
+                {
+                    "bbox": [
+                        169,
+                        7314,
+                        707,
+                        7378
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                169,
+                                7314,
+                                707,
+                                7378
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        169,
+                                        7314,
+                                        707,
+                                        7378
+                                    ],
+                                    "type": "text",
+                                    "content": "THE WAY FORWARD"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 48,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        169,
+                        7394,
+                        1097,
+                        7475
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                169,
+                                7394,
+                                1097,
+                                7475
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        169,
+                                        7394,
+                                        1097,
+                                        7475
+                                    ],
+                                    "type": "text",
+                                    "content": "To address these issues, retailers and CPG companies should take four steps to digitize and further integrate their supply chains."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 49,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        118,
+                        7709,
+                        396,
+                        7862
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                118,
+                                7709,
+                                396,
+                                7862
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        118,
+                                        7709,
+                                        396,
+                                        7862
+                                    ],
+                                    "type": "text",
+                                    "content": "Agree on incentives and goals: Ensure common KPIs and objectives among retailers and CPG companies to address end-to-end performance."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 50,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        46,
+                        7991,
+                        1396,
+                        8055
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                46,
+                                7991,
+                                1396,
+                                8055
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        46,
+                                        7991,
+                                        1396,
+                                        8055
+                                    ],
+                                    "type": "text",
+                                    "content": "Source: A joint study by the Food Marketing Institute (FMI), Boston Consulting Group (BCG), and Grocery Manufacturers Association (GMA) based on a 2019 survey of food retailers and CPG companies. The full report can be accessed at https://www.fmi.org/forms/store/ProductFormPublic/2019-fmi-supply-chain-benchmarking."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4
+                }
+            ],
+            "page_size": [
+                1440,
+                8064
+            ],
+            "page_idx": 0,
+            "para_blocks": [
+                {
+                    "type": "chart",
+                    "bbox": [
+                        80,
+                        4967,
+                        1285,
+                        5789
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                80,
+                                4967,
+                                1285,
+                                5789
+                            ],
+                            "type": "chart_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        80,
+                                        4967,
+                                        1285,
+                                        5789
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                80,
+                                                4967,
+                                                1285,
+                                                5789
+                                            ],
+                                            "type": "chart",
+                                            "image_path": "a7b71e687d8d422f8a17307720f69f30934e9bb5fc49b6c94996e4b34c20a61f.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 0
+                        },
+                        {
+                            "bbox": [
+                                430,
+                                7709,
+                                714,
+                                7926
+                            ],
+                            "type": "chart_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        430,
+                                        7709,
+                                        714,
+                                        7926
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                430,
+                                                7709,
+                                                714,
+                                                7926
+                                            ],
+                                            "type": "text",
+                                            "content": "Embed an integrated process: Retailers should meet to discuss strategy with CPG representatives—not just from marketing and sales, but from operations too, with discussions going well beyond pricing and promotions."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 1
+                        },
+                        {
+                            "bbox": [
+                                838,
+                                2153,
+                                1044,
+                                2233
+                            ],
+                            "type": "chart_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        838,
+                                        2153,
+                                        1044,
+                                        2233
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                838,
+                                                2153,
+                                                1044,
+                                                2233
+                                            ],
+                                            "type": "text",
+                                            "content": "SPOILAGE HAS INCREASED ..."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 2
+                        },
+                        {
+                            "bbox": [
+                                970,
+                                1088,
+                                1216,
+                                1257
+                            ],
+                            "type": "chart_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        970,
+                                        1088,
+                                        1216,
+                                        1257
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                970,
+                                                1088,
+                                                1216,
+                                                1257
+                                            ],
+                                            "type": "text",
+                                            "content": "Outbound\nDC operations\nInbound"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 3
+                        },
+                        {
+                            "bbox": [
+                                192,
+                                4604,
+                                325,
+                                4669
+                            ],
+                            "type": "chart_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        192,
+                                        4604,
+                                        325,
+                                        4669
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                192,
+                                                4604,
+                                                325,
+                                                4669
+                                            ],
+                                            "type": "text",
+                                            "content": "Cases filled as a percentage of original order"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 32
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        69,
+                        80,
+                        1045,
+                        233
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                80,
+                                1045,
+                                233
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        80,
+                                        1045,
+                                        233
+                                    ],
+                                    "type": "text",
+                                    "content": "Creating an Integrated Supply Chain in Retail Grocery"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        72,
+                        249,
+                        1051,
+                        411
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                72,
+                                249,
+                                1051,
+                                411
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        72,
+                                        249,
+                                        1051,
+                                        411
+                                    ],
+                                    "type": "text",
+                                    "content": "With the ongoing expansion of online retail, consumers want more convenience and a wider selection of fresh products, which have shorter shelf lives—putting more pressure on the entire supply chain. This pressure is pushing retailers' cost and service metrics in the wrong direction and boosting tension between retailers and their CPG suppliers."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        73,
+                        419,
+                        1033,
+                        499
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                73,
+                                419,
+                                1033,
+                                499
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        73,
+                                        419,
+                                        1033,
+                                        499
+                                    ],
+                                    "type": "text",
+                                    "content": "But what if they dealt with this pressure by looking at the supply chain together and using digital tools to collaborate?"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        1075,
+                        266,
+                        1414,
+                        516
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1075,
+                                266,
+                                1414,
+                                516
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1075,
+                                        266,
+                                        1414,
+                                        516
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1075,
+                                                266,
+                                                1414,
+                                                516
+                                            ],
+                                            "type": "image",
+                                            "image_path": "5eee860b2202519c81f912c1dcdf690afa4d6dbcdcdd6b5c5a34be19b0481e81.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 8
+                        }
+                    ],
+                    "index": 8
+                },
+                {
+                    "bbox": [
+                        506,
+                        604,
+                        1366,
+                        733
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                506,
+                                604,
+                                1366,
+                                733
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        506,
+                                        604,
+                                        1366,
+                                        733
+                                    ],
+                                    "type": "text",
+                                    "content": "A TRUCKING CAPACITY CRUNCH HAS RAISED LOGISTICS COSTS"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        509,
+                        741,
+                        1366,
+                        854
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                509,
+                                741,
+                                1366,
+                                854
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        509,
+                                        741,
+                                        1366,
+                                        854
+                                    ],
+                                    "type": "text",
+                                    "content": "Growing demand for fresher products means trucks often leave the distribution center (DC) with less than a full truckload—even as drivers are harder to hire."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        244,
+                        1314,
+                        365,
+                        1443
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                244,
+                                1314,
+                                365,
+                                1443
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        244,
+                                        1314,
+                                        365,
+                                        1443
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                244,
+                                                1314,
+                                                365,
+                                                1443
+                                            ],
+                                            "type": "image",
+                                            "image_path": "bdc787e759a6afca7a57cf93452a85e8a8a01443b37d04a2c3c797fbcfe754ab.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 11
+                        }
+                    ],
+                    "index": 11
+                },
+                {
+                    "bbox": [
+                        72,
+                        1596,
+                        480,
+                        1661
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                72,
+                                1596,
+                                480,
+                                1661
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        72,
+                                        1596,
+                                        480,
+                                        1661
+                                    ],
+                                    "type": "text",
+                                    "content": "There's room to improve\noutbound freight utilization"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        72,
+                        1733,
+                        260,
+                        1959
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                72,
+                                1733,
+                                260,
+                                1959
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        72,
+                                        1733,
+                                        260,
+                                        1959
+                                    ],
+                                    "type": "text",
+                                    "content": "Truckload utilization is far lower than inbound\n2018 median capacity utilization (by weight)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        434,
+                        1701,
+                        707,
+                        1959
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                434,
+                                1701,
+                                707,
+                                1959
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        434,
+                                        1701,
+                                        707,
+                                        1959
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                434,
+                                                1701,
+                                                707,
+                                                1959
+                                            ],
+                                            "type": "image",
+                                            "image_path": "7dc080d83ff251a0cdd8413e1bb862716377f5431e32a66b19e70722ec818e58.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 14
+                        },
+                        {
+                            "bbox": [
+                                469,
+                                1975,
+                                668,
+                                2024
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        469,
+                                        1975,
+                                        668,
+                                        2024
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                469,
+                                                1975,
+                                                668,
+                                                2024
+                                            ],
+                                            "type": "text",
+                                            "content": "Inbound freight"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 15
+                        }
+                    ],
+                    "index": 14
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        741,
+                        1596,
+                        1009,
+                        1846
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                741,
+                                1596,
+                                1009,
+                                1846
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        741,
+                                        1596,
+                                        1009,
+                                        1846
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                741,
+                                                1596,
+                                                1009,
+                                                1846
+                                            ],
+                                            "type": "image",
+                                            "image_path": "8d31406975b5107e064ba9e5705de045e1673376d5f18521e16e7b4c2700567e.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 16
+                        },
+                        {
+                            "bbox": [
+                                768,
+                                1862,
+                                982,
+                                1911
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        768,
+                                        1862,
+                                        982,
+                                        1911
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                768,
+                                                1862,
+                                                982,
+                                                1911
+                                            ],
+                                            "type": "text",
+                                            "content": "Outbound freight"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 17
+                        }
+                    ],
+                    "index": 16
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        187,
+                        2290,
+                        676,
+                        2475
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                187,
+                                2290,
+                                676,
+                                2475
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        187,
+                                        2290,
+                                        676,
+                                        2475
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                187,
+                                                2290,
+                                                676,
+                                                2475
+                                            ],
+                                            "type": "image",
+                                            "image_path": "e23c4aa4ca3a16c5673c2db48891c81cea4577b3f72ff1ef9d37927a9fe78aca.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 18
+                        }
+                    ],
+                    "index": 18
+                },
+                {
+                    "bbox": [
+                        184,
+                        2491,
+                        614,
+                        2725
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                184,
+                                2491,
+                                614,
+                                2725
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        184,
+                                        2491,
+                                        614,
+                                        2725
+                                    ],
+                                    "type": "text",
+                                    "content": "Fresher products have a shorter shelf life and need to be delivered quickly, but it's not always fast enough. Meanwhile, rush deliveries come with an inevitable rise in shrinkage—that is, breakage and loss."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 19,
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        787,
+                        2257,
+                        1029,
+                        2725
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                787,
+                                2257,
+                                1029,
+                                2725
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        787,
+                                        2257,
+                                        1029,
+                                        2725
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                787,
+                                                2257,
+                                                1029,
+                                                2725
+                                            ],
+                                            "type": "image",
+                                            "image_path": "217078f7c4f389374eb9163ae97488e3601dd12fbef51ccd8641efb06b35b251.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 20
+                        },
+                        {
+                            "bbox": [
+                                1160,
+                                2153,
+                                1373,
+                                2233
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1160,
+                                        2153,
+                                        1373,
+                                        2233
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1160,
+                                                2153,
+                                                1373,
+                                                2233
+                                            ],
+                                            "type": "text",
+                                            "content": "... AND SO HAS SHRINKAGE"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 21
+                        }
+                    ],
+                    "index": 20
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        1113,
+                        2249,
+                        1343,
+                        2733
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1113,
+                                2249,
+                                1343,
+                                2733
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1113,
+                                        2249,
+                                        1343,
+                                        2733
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1113,
+                                                2249,
+                                                1343,
+                                                2733
+                                            ],
+                                            "type": "image",
+                                            "image_path": "1475138362dbb3aaa4a9a123e51fe9491a2608a10e6b0a49a5046ffda8542c87.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 22
+                        }
+                    ],
+                    "index": 22
+                },
+                {
+                    "bbox": [
+                        285,
+                        2870,
+                        1241,
+                        3007
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                285,
+                                2870,
+                                1241,
+                                3007
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        285,
+                                        2870,
+                                        1241,
+                                        3007
+                                    ],
+                                    "type": "text",
+                                    "content": "SERVICE LEVELS ARE FALLING AS IT BECOMES HARDER TO GET"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 23,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        315,
+                        3007,
+                        1236,
+                        3064
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                315,
+                                3007,
+                                1236,
+                                3064
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        315,
+                                        3007,
+                                        1236,
+                                        3064
+                                    ],
+                                    "type": "text",
+                                    "content": "PRODUCTS TO THE SHELF ON TIME"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 24,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        375,
+                        3064,
+                        1239,
+                        3128
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                375,
+                                3064,
+                                1239,
+                                3128
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        375,
+                                        3064,
+                                        1239,
+                                        3128
+                                    ],
+                                    "type": "text",
+                                    "content": "Most grocery retailers are now missing internal store service-level targets, as reflected by on-shelf product availability."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 25,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        3185,
+                        709,
+                        3322
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                3185,
+                                709,
+                                3322
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        3185,
+                                        709,
+                                        3322
+                                    ],
+                                    "type": "text",
+                                    "content": "Majority of retailers missing service levels...\nActual vs. target performance, 2018 (% respondents)\n● Below ● Target ● Above"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 26,
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        606,
+                        3314,
+                        1216,
+                        3612
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                606,
+                                3314,
+                                1216,
+                                3612
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        606,
+                                        3314,
+                                        1216,
+                                        3612
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                606,
+                                                3314,
+                                                1216,
+                                                3612
+                                            ],
+                                            "type": "image",
+                                            "image_path": "8b5fb2d6b88640378322a9ba46aac6d269ba16790798adb68238f2404e559fe7.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 27
+                        }
+                    ],
+                    "index": 27
+                },
+                {
+                    "bbox": [
+                        187,
+                        3741,
+                        1221,
+                        3862
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                187,
+                                3741,
+                                1221,
+                                3862
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        187,
+                                        3741,
+                                        1221,
+                                        3862
+                                    ],
+                                    "type": "text",
+                                    "content": "RETAILERS AND THEIR CPG SUPPLIERS ARE NOW AT ODDS AS A RESULT"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 28,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        184,
+                        3878,
+                        1136,
+                        4023
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                184,
+                                3878,
+                                1136,
+                                4023
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        184,
+                                        3878,
+                                        1136,
+                                        4023
+                                    ],
+                                    "type": "text",
+                                    "content": "On-time delivery rates have fallen, but CPG suppliers say it's not completely their fault: retail order volatility has risen, order lead times have shortened, and order quantities have shrunk. It's increasingly difficult for them to forecast and meet these mounting service demands."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 29,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        187,
+                        4056,
+                        702,
+                        4136
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                187,
+                                4056,
+                                702,
+                                4136
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        187,
+                                        4056,
+                                        702,
+                                        4136
+                                    ],
+                                    "type": "text",
+                                    "content": "SERVICE DECLINES PARTIALLY DRIVEN BY REDUCED CPG SERVICE LEVELS"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 30,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        797,
+                        4056,
+                        1287,
+                        4136
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                797,
+                                4056,
+                                1287,
+                                4136
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        797,
+                                        4056,
+                                        1287,
+                                        4136
+                                    ],
+                                    "type": "text",
+                                    "content": "WHAT IS THE KEY CAUSE OF SERVICE LEVEL DECLINES?"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 31,
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        371,
+                        4201,
+                        527,
+                        4604
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                371,
+                                4201,
+                                527,
+                                4604
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        371,
+                                        4201,
+                                        527,
+                                        4604
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                371,
+                                                4201,
+                                                527,
+                                                4604
+                                            ],
+                                            "type": "image",
+                                            "image_path": "abb5dbbaa3c1837affa5e0801439110202a7e9cbe42b5040b15fc46b8291385e.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 33
+                        },
+                        {
+                            "bbox": [
+                                372,
+                                4612,
+                                515,
+                                4685
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        372,
+                                        4612,
+                                        515,
+                                        4685
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                372,
+                                                4612,
+                                                515,
+                                                4685
+                                            ],
+                                            "type": "text",
+                                            "content": "On-time rate, based on requested arrival date"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 34
+                        }
+                    ],
+                    "index": 33
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        550,
+                        4193,
+                        714,
+                        4612
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                550,
+                                4193,
+                                714,
+                                4612
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        550,
+                                        4193,
+                                        714,
+                                        4612
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                550,
+                                                4193,
+                                                714,
+                                                4612
+                                            ],
+                                            "type": "image",
+                                            "image_path": "eef4735e6d06a3ffaa6f11733f98c5b9c38cd72ba9e376214141ef1fccf133b0.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 35
+                        },
+                        {
+                            "bbox": [
+                                555,
+                                4612,
+                                695,
+                                4685
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        555,
+                                        4612,
+                                        695,
+                                        4685
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                555,
+                                                4612,
+                                                695,
+                                                4685
+                                            ],
+                                            "type": "text",
+                                            "content": "On-time rate, based on scheduled arrival time"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 36
+                        }
+                    ],
+                    "index": 35
+                },
+                {
+                    "bbox": [
+                        802,
+                        4459,
+                        1131,
+                        4612
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                802,
+                                4459,
+                                1131,
+                                4612
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        802,
+                                        4459,
+                                        1131,
+                                        4612
+                                    ],
+                                    "type": "text",
+                                    "content": "44%"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 37,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        1136,
+                        4273,
+                        1363,
+                        4427
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1136,
+                                4273,
+                                1363,
+                                4427
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1136,
+                                        4273,
+                                        1363,
+                                        4427
+                                    ],
+                                    "type": "text",
+                                    "content": "Demand forecasting was the most prominent cause cited by CPG companies"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 38,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        1136,
+                        4475,
+                        1336,
+                        4620
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1136,
+                                4475,
+                                1336,
+                                4620
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1136,
+                                        4475,
+                                        1336,
+                                        4620
+                                    ],
+                                    "type": "text",
+                                    "content": "Manufacturing reliability was the most prominent cause cited by retailers"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 39,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        285,
+                        4854,
+                        1252,
+                        4975
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                285,
+                                4854,
+                                1252,
+                                4975
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        285,
+                                        4854,
+                                        1252,
+                                        4975
+                                    ],
+                                    "type": "text",
+                                    "content": "COLLABORATION UNLOCKS IMPROVEMENTS FOR ALL INVOLVED"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 40,
+                    "level": 2
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        87,
+                        5322,
+                        230,
+                        5475
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                87,
+                                5322,
+                                230,
+                                5475
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        87,
+                                        5322,
+                                        230,
+                                        5475
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                87,
+                                                5322,
+                                                230,
+                                                5475
+                                            ],
+                                            "type": "image",
+                                            "image_path": "5317eb6d4367b9e9e357ffca76821eec4b8afbdb11c48d1ffe479ed0ec988885.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 41
+                        },
+                        {
+                            "bbox": [
+                                92,
+                                5467,
+                                226,
+                                5515
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        92,
+                                        5467,
+                                        226,
+                                        5515
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                92,
+                                                5467,
+                                                226,
+                                                5515
+                                            ],
+                                            "type": "text",
+                                            "content": "CPG plant"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 42
+                        }
+                    ],
+                    "index": 41
+                },
+                {
+                    "bbox": [
+                        168,
+                        5967,
+                        1075,
+                        6096
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                168,
+                                5967,
+                                1075,
+                                6096
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        168,
+                                        5967,
+                                        1075,
+                                        6096
+                                    ],
+                                    "type": "text",
+                                    "content": "DIGITAL TECHNOLOGIES SUPPORT COLLABORATION"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 43,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        168,
+                        6104,
+                        1085,
+                        6217
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                168,
+                                6104,
+                                1085,
+                                6217
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        168,
+                                        6104,
+                                        1085,
+                                        6217
+                                    ],
+                                    "type": "text",
+                                    "content": "Retailers and CPG companies should use digital technologies to share more internal and customer information, thereby improving demand forecasting and product allocation."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 44,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        168,
+                        6265,
+                        825,
+                        6362
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                168,
+                                6265,
+                                825,
+                                6362
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        168,
+                                        6265,
+                                        825,
+                                        6362
+                                    ],
+                                    "type": "text",
+                                    "content": "Most retailers have begun to implement technology that would support collaboration."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 45,
+                    "merge_prev": false
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        168,
+                        6418,
+                        1368,
+                        7201
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                168,
+                                6418,
+                                1368,
+                                7201
+                            ],
+                            "type": "table_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        168,
+                                        6418,
+                                        1368,
+                                        7201
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                168,
+                                                6418,
+                                                1368,
+                                                7201
+                                            ],
+                                            "type": "table",
+                                            "html": "<table><tr><td>DIGITAL TECHNOLOGY</td><td>EXAMPLES OF POTENTIAL COLLABORATION OPPORTUNITIES</td><td>PENETRATION AMONG RETAILERS</td></tr><tr><td>Cloud-based systems</td><td>Real-time visibility across E2E supply chain to manage inventory and purchasing decisions</td><td></td></tr><tr><td>Big data</td><td>Ability to forecast consumer demand and manage supply chain decisions, thereby optimizing costs</td><td></td></tr><tr><td>Robotic process automation</td><td>Enhanced decision making through process automation (e.g., inventory-level alerts, thresholds)</td><td></td></tr><tr><td>Internet of things (IoT)</td><td>Ability to track and trace products in real time, enabling real-time demand management</td><td></td></tr><tr><td>Augmented reality</td><td>Better alignment with CPG companies on planogramming and product design, helping to optimize assortment and maximize sales and margins</td><td></td></tr><tr><td>AI &amp; machine learning</td><td>Higher forecasting accuracy to manage inventory levels (Including holiday seasons), leading to reduced waste and costs</td><td></td></tr><tr><td>Blockchain</td><td>Increased product journey transparency (from CPG facility to retail stores), thereby developing mutual trust</td><td></td></tr></table>",
+                                            "image_path": "8ed7036d574b1f77f5afdf97493af12edb13f573faa9eb3d502e37ebd21ac019.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 46
+                        },
+                        {
+                            "bbox": [
+                                1097,
+                                6394,
+                                1363,
+                                6451
+                            ],
+                            "type": "table_caption",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1097,
+                                        6394,
+                                        1363,
+                                        6451
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1097,
+                                                6394,
+                                                1363,
+                                                6451
+                                            ],
+                                            "type": "text",
+                                            "content": "DEGREE OF (FULLY OPERATIONAL) PENETRATION AMONG RETAILERS"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 47
+                        }
+                    ],
+                    "index": 46
+                },
+                {
+                    "bbox": [
+                        169,
+                        7314,
+                        707,
+                        7378
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                169,
+                                7314,
+                                707,
+                                7378
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        169,
+                                        7314,
+                                        707,
+                                        7378
+                                    ],
+                                    "type": "text",
+                                    "content": "THE WAY FORWARD"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 48,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        169,
+                        7394,
+                        1097,
+                        7475
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                169,
+                                7394,
+                                1097,
+                                7475
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        169,
+                                        7394,
+                                        1097,
+                                        7475
+                                    ],
+                                    "type": "text",
+                                    "content": "To address these issues, retailers and CPG companies should take four steps to digitize and further integrate their supply chains."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 49,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        118,
+                        7709,
+                        396,
+                        7862
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                118,
+                                7709,
+                                396,
+                                7862
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        118,
+                                        7709,
+                                        396,
+                                        7862
+                                    ],
+                                    "type": "text",
+                                    "content": "Agree on incentives and goals: Ensure common KPIs and objectives among retailers and CPG companies to address end-to-end performance."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 50,
+                    "merge_prev": false
+                }
+            ]
+        }
+    ],
+    "_backend": "hybrid",
+    "_effort": "medium",
+    "_ocr_enable": true,
+    "_version_name": "3.4.0"
+}

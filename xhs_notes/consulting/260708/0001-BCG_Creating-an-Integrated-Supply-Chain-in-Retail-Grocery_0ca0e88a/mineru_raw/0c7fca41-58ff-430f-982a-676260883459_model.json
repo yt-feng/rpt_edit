@@ -1,0 +1,1442 @@
+[
+    [
+        {
+            "type": "chart",
+            "bbox": [
+                0.056,
+                0.616,
+                0.893,
+                0.718
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.299,
+                0.956,
+                0.496,
+                0.983
+            ],
+            "angle": 0,
+            "content": "Embed an integrated process: Retailers should meet to discuss strategy with CPG representatives—not just from marketing and sales, but from operations too, with discussions going well beyond pricing and promotions."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.582,
+                0.267,
+                0.725,
+                0.277
+            ],
+            "angle": 0,
+            "content": "SPOILAGE HAS INCREASED ..."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.674,
+                0.135,
+                0.845,
+                0.156
+            ],
+            "angle": 0,
+            "content": "Outbound\nDC operations\nInbound"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.032,
+                0.991,
+                0.97,
+                0.999
+            ],
+            "angle": 0,
+            "content": "Source: A joint study by the Food Marketing Institute (FMI), Boston Consulting Group (BCG), and Grocery Manufacturers Association (GMA) based on a 2019 survey of food retailers and CPG companies. The full report can be accessed at https://www.fmi.org/forms/store/ProductFormPublic/2019-fmi-supply-chain-benchmarking."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.048,
+                0.01,
+                0.726,
+                0.029
+            ],
+            "angle": 0,
+            "content": "Creating an Integrated Supply Chain in Retail Grocery"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.05,
+                0.031,
+                0.73,
+                0.051
+            ],
+            "angle": 0,
+            "content": "With the ongoing expansion of online retail, consumers want more convenience and a wider selection of fresh products, which have shorter shelf lives—putting more pressure on the entire supply chain. This pressure is pushing retailers' cost and service metrics in the wrong direction and boosting tension between retailers and their CPG suppliers.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.051,
+                0.052,
+                0.718,
+                0.062
+            ],
+            "angle": 0,
+            "content": "But what if they dealt with this pressure by looking at the supply chain together and using digital tools to collaborate?",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.747,
+                0.033,
+                0.982,
+                0.064
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.352,
+                0.075,
+                0.949,
+                0.091
+            ],
+            "angle": 0,
+            "content": "A TRUCKING CAPACITY CRUNCH HAS RAISED LOGISTICS COSTS"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.354,
+                0.092,
+                0.949,
+                0.106
+            ],
+            "angle": 0,
+            "content": "Growing demand for fresher products means trucks often leave the distribution center (DC) with less than a full truckload—even as drivers are harder to hire.",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.17,
+                0.163,
+                0.254,
+                0.179
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.05,
+                0.198,
+                0.334,
+                0.206
+            ],
+            "angle": 0,
+            "content": "There's room to improve\noutbound freight utilization",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.05,
+                0.215,
+                0.181,
+                0.243
+            ],
+            "angle": 0,
+            "content": "Truckload utilization is far lower than inbound\n2018 median capacity utilization (by weight)",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.302,
+                0.211,
+                0.491,
+                0.243
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.326,
+                0.245,
+                0.464,
+                0.251
+            ],
+            "angle": 0,
+            "content": "Inbound freight"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.515,
+                0.198,
+                0.701,
+                0.229
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.534,
+                0.231,
+                0.682,
+                0.237
+            ],
+            "angle": 0,
+            "content": "Outbound freight"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.13,
+                0.284,
+                0.47,
+                0.307
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.128,
+                0.309,
+                0.427,
+                0.338
+            ],
+            "angle": 0,
+            "content": "Fresher products have a shorter shelf life and need to be delivered quickly, but it's not always fast enough. Meanwhile, rush deliveries come with an inevitable rise in shrinkage—that is, breakage and loss.",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.547,
+                0.28,
+                0.715,
+                0.338
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.806,
+                0.267,
+                0.954,
+                0.277
+            ],
+            "angle": 0,
+            "content": "... AND SO HAS SHRINKAGE"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.773,
+                0.279,
+                0.933,
+                0.339
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.198,
+                0.356,
+                0.862,
+                0.373
+            ],
+            "angle": 0,
+            "content": "SERVICE LEVELS ARE FALLING AS IT BECOMES HARDER TO GET"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.219,
+                0.373,
+                0.859,
+                0.38
+            ],
+            "angle": 0,
+            "content": "PRODUCTS TO THE SHELF ON TIME",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.261,
+                0.38,
+                0.861,
+                0.388
+            ],
+            "angle": 0,
+            "content": "Most grocery retailers are now missing internal store service-level targets, as reflected by on-shelf product availability.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.048,
+                0.395,
+                0.493,
+                0.412
+            ],
+            "angle": 0,
+            "content": "Majority of retailers missing service levels...\nActual vs. target performance, 2018 (% respondents)\n● Below ● Target ● Above",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.421,
+                0.411,
+                0.845,
+                0.448
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.13,
+                0.464,
+                0.848,
+                0.479
+            ],
+            "angle": 0,
+            "content": "RETAILERS AND THEIR CPG SUPPLIERS ARE NOW AT ODDS AS A RESULT"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.128,
+                0.481,
+                0.789,
+                0.499
+            ],
+            "angle": 0,
+            "content": "On-time delivery rates have fallen, but CPG suppliers say it's not completely their fault: retail order volatility has risen, order lead times have shortened, and order quantities have shrunk. It's increasingly difficult for them to forecast and meet these mounting service demands.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.13,
+                0.503,
+                0.488,
+                0.513
+            ],
+            "angle": 0,
+            "content": "SERVICE DECLINES PARTIALLY DRIVEN BY REDUCED CPG SERVICE LEVELS",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.554,
+                0.503,
+                0.894,
+                0.513
+            ],
+            "angle": 0,
+            "content": "WHAT IS THE KEY CAUSE OF SERVICE LEVEL DECLINES?",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.134,
+                0.571,
+                0.226,
+                0.579
+            ],
+            "angle": 0,
+            "content": "Cases filled as a percentage of original order"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.258,
+                0.521,
+                0.366,
+                0.571
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.259,
+                0.572,
+                0.358,
+                0.581
+            ],
+            "angle": 0,
+            "content": "On-time rate, based on requested arrival date"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.382,
+                0.52,
+                0.496,
+                0.572
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.386,
+                0.572,
+                0.483,
+                0.581
+            ],
+            "angle": 0,
+            "content": "On-time rate, based on scheduled arrival time"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.557,
+                0.553,
+                0.786,
+                0.572
+            ],
+            "angle": 0,
+            "content": "44%",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.789,
+                0.53,
+                0.947,
+                0.549
+            ],
+            "angle": 0,
+            "content": "Demand forecasting was the most prominent cause cited by CPG companies",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.789,
+                0.555,
+                0.928,
+                0.573
+            ],
+            "angle": 0,
+            "content": "Manufacturing reliability was the most prominent cause cited by retailers",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.198,
+                0.602,
+                0.87,
+                0.617
+            ],
+            "angle": 0,
+            "content": "COLLABORATION UNLOCKS\nIMPROVEMENTS FOR ALL INVOLVED"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.061,
+                0.66,
+                0.16,
+                0.679
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.064,
+                0.678,
+                0.157,
+                0.684
+            ],
+            "angle": 0,
+            "content": "CPG plant"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.117,
+                0.74,
+                0.747,
+                0.756
+            ],
+            "angle": 0,
+            "content": "DIGITAL TECHNOLOGIES SUPPORT COLLABORATION"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.757,
+                0.754,
+                0.771
+            ],
+            "angle": 0,
+            "content": "Retailers and CPG companies should use digital technologies to share more internal and customer information, thereby improving demand forecasting and product allocation.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.777,
+                0.573,
+                0.789
+            ],
+            "angle": 0,
+            "content": "Most retailers have begun to implement technology that would support collaboration.",
+            "merge_prev": false
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.117,
+                0.796,
+                0.95,
+                0.893
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>DIGITAL TECHNOLOGY</td><td>EXAMPLES OF POTENTIAL COLLABORATION OPPORTUNITIES</td><td>PENETRATION AMONG RETAILERS</td></tr><tr><td>Cloud-based systems</td><td>Real-time visibility across E2E supply chain to manage inventory and purchasing decisions</td><td></td></tr><tr><td>Big data</td><td>Ability to forecast consumer demand and manage supply chain decisions, thereby optimizing costs</td><td></td></tr><tr><td>Robotic process automation</td><td>Enhanced decision making through process automation (e.g., inventory-level alerts, thresholds)</td><td></td></tr><tr><td>Internet of things (IoT)</td><td>Ability to track and trace products in real time, enabling real-time demand management</td><td></td></tr><tr><td>Augmented reality</td><td>Better alignment with CPG companies on planogramming and product design, helping to optimize assortment and maximize sales and margins</td><td></td></tr><tr><td>AI &amp; machine learning</td><td>Higher forecasting accuracy to manage inventory levels (Including holiday seasons), leading to reduced waste and costs</td><td></td></tr><tr><td>Blockchain</td><td>Increased product journey transparency (from CPG facility to retail stores), thereby developing mutual trust</td><td></td></tr></table>"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.762,
+                0.793,
+                0.947,
+                0.8
+            ],
+            "angle": 0,
+            "content": "DEGREE OF (FULLY OPERATIONAL) PENETRATION AMONG RETAILERS"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.118,
+                0.907,
+                0.491,
+                0.915
+            ],
+            "angle": 0,
+            "content": "THE WAY FORWARD"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.118,
+                0.917,
+                0.762,
+                0.927
+            ],
+            "angle": 0,
+            "content": "To address these issues, retailers and CPG companies should take four steps to digitize and further integrate their supply chains.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.956,
+                0.275,
+                0.975
+            ],
+            "angle": 0,
+            "content": "Agree on incentives and goals: Ensure common KPIs and objectives among retailers and CPG companies to address end-to-end performance.",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.009,
+                0.718,
+                0.02
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.018,
+                0.576,
+                0.029
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.05,
+                0.031,
+                0.722,
+                0.036
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.051,
+                0.035,
+                0.718,
+                0.039
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.051,
+                0.04,
+                0.726,
+                0.044
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.05,
+                0.043,
+                0.669,
+                0.047
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.05,
+                0.047,
+                0.333,
+                0.051
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.051,
+                0.053,
+                0.715,
+                0.057
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.057,
+                0.365,
+                0.061
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.357,
+                0.077,
+                0.942,
+                0.082
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.398,
+                0.084,
+                0.942,
+                0.09
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.374,
+                0.093,
+                0.942,
+                0.097
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.36,
+                0.097,
+                0.942,
+                0.101
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.685,
+                0.101,
+                0.941,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.197,
+                0.294,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.054,
+                0.201,
+                0.33,
+                0.205
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.051,
+                0.216,
+                0.141,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.053,
+                0.219,
+                0.146,
+                0.223
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.054,
+                0.223,
+                0.155,
+                0.227
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.053,
+                0.227,
+                0.176,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.053,
+                0.233,
+                0.139,
+                0.236
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.053,
+                0.236,
+                0.176,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.053,
+                0.239,
+                0.128,
+                0.242
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.134,
+                0.31,
+                0.421,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.134,
+                0.314,
+                0.355,
+                0.318
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.134,
+                0.317,
+                0.394,
+                0.321
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.134,
+                0.322,
+                0.419,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.134,
+                0.325,
+                0.395,
+                0.329
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.133,
+                0.329,
+                0.4,
+                0.333
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.134,
+                0.333,
+                0.37,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.205,
+                0.359,
+                0.851,
+                0.363
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.371,
+                0.366,
+                0.851,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.373,
+                0.851,
+                0.379
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.264,
+                0.381,
+                0.854,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.394,
+                0.385,
+                0.854,
+                0.388
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.053,
+                0.397,
+                0.488,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.053,
+                0.403,
+                0.445,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.053,
+                0.409,
+                0.125,
+                0.411
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.408,
+                0.315,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.134,
+                0.466,
+                0.835,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.139,
+                0.473,
+                0.717,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.134,
+                0.482,
+                0.712,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.133,
+                0.485,
+                0.762,
+                0.489
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.134,
+                0.489,
+                0.731,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.134,
+                0.493,
+                0.786,
+                0.497
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.134,
+                0.505,
+                0.48,
+                0.508
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.134,
+                0.509,
+                0.442,
+                0.512
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.56,
+                0.505,
+                0.89,
+                0.508
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.56,
+                0.509,
+                0.715,
+                0.512
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.547,
+                0.552,
+                0.79,
+                0.576
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.792,
+                0.531,
+                0.861,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.792,
+                0.534,
+                0.939,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.792,
+                0.537,
+                0.918,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.79,
+                0.54,
+                0.939,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.792,
+                0.544,
+                0.875,
+                0.547
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.79,
+                0.556,
+                0.907,
+                0.559
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.792,
+                0.559,
+                0.904,
+                0.562
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.792,
+                0.562,
+                0.864,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.79,
+                0.566,
+                0.92,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.794,
+                0.569,
+                0.92,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.363,
+                0.604,
+                0.859,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.205,
+                0.611,
+                0.859,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.122,
+                0.742,
+                0.741,
+                0.747
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.123,
+                0.749,
+                0.44,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.122,
+                0.759,
+                0.749,
+                0.763
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.122,
+                0.763,
+                0.738,
+                0.767
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.122,
+                0.766,
+                0.435,
+                0.77
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.122,
+                0.778,
+                0.515,
+                0.783
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.123,
+                0.783,
+                0.566,
+                0.788
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.909,
+                0.483,
+                0.913
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.123,
+                0.919,
+                0.754,
+                0.921
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.122,
+                0.922,
+                0.634,
+                0.926
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.957,
+                0.253,
+                0.96
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.96,
+                0.234,
+                0.963
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.962,
+                0.258,
+                0.966
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.966,
+                0.272,
+                0.969
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.968,
+                0.226,
+                0.971
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.971,
+                0.171,
+                0.975
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

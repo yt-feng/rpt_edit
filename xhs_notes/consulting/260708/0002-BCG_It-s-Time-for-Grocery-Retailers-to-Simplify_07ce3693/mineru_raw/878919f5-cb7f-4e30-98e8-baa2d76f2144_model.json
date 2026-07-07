@@ -1,0 +1,4482 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.062,
+                0.057,
+                0.217,
+                0.106
+            ],
+            "angle": 0,
+            "content": "BCG"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.067,
+                0.253,
+                0.77,
+                0.335
+            ],
+            "angle": 0,
+            "content": "IT'S TIME FOR GROCERY\nRETAILERS TO SIMPLIFY"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.348,
+                0.861,
+                0.369
+            ],
+            "angle": 0,
+            "content": "By Sandeep Chugani, Aftab Hussain, Travis Jackson, Greg Curreri, Jill Wang, and Peter Tilton",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.217,
+                0.51,
+                0.54,
+                0.651
+            ],
+            "angle": 0,
+            "content": "THE GROCERY INDUSTRY HAS been significantly disrupted by the speed and scale of COVID-19. Since the onset of the pandemic, customers and retailers alike have faced the challenges of empty shelves, social distancing, face masks, rising costs, and overwhelmed supply chains. But times of crisis and uncertainty are often the best times to discover better ways to do business.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.217,
+                0.664,
+                0.538,
+                0.836
+            ],
+            "angle": 0,
+            "content": "Reducing a store's product range to simplify operations and stock the products that are most in demand has been a pivotal measure in helping traditional retailers manage during the height of the crisis. As middle-market grocery retailers emerge from the unprecedented strain of COVID-19 on their businesses, offer simplification will be an essential strategy for improving both the customer experience and operational efficiencies.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.217,
+                0.858,
+                0.532,
+                0.929
+            ],
+            "angle": 0,
+            "content": "A Turning Point for Simplification\nLong before the COVID-19 crisis hit, traditional middle-market chains have been",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.551,
+                0.509,
+                0.872,
+                0.681
+            ],
+            "angle": 0,
+            "content": "struggling with the climbing costs and complexity produced by unprecedented product proliferation. This trend has created larger stores stocked with 80% more SKUs on average than a typical store would have offered 30 years ago. Although customers may appreciate having more choice, they also value the ability to easily and quickly find what they want—an experience that has been lost as more products appear on shelves.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.551,
+                0.695,
+                0.874,
+                0.884
+            ],
+            "angle": 0,
+            "content": "Product proliferation has also become a competitive disadvantage for such retailers. BCG research conducted in 2020 shows that regional US grocery chains carry an average of 50% more SKUs per linear foot of shelf space than their mass and value channel competitors. And they have been losing market share to value-priced wholesale clubs and mass retailers—and even small, no-frills convenience stores, which are more expensive but provide a much faster, easier shopping experience.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.552,
+                0.895,
+                0.874,
+                0.929
+            ],
+            "angle": 0,
+            "content": "Many grocers have resisted offer simplification because they mistakenly believe that",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.255,
+                0.767,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.297,
+                0.765,
+                0.333
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.35,
+                0.857,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.224,
+                0.513,
+                0.25,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.25,
+                0.512,
+                0.534,
+                0.539
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.543,
+                0.512,
+                0.553
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.558,
+                0.505,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.573,
+                0.531,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.588,
+                0.513,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.604,
+                0.528,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.62,
+                0.524,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.636,
+                0.535,
+                0.647
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.667,
+                0.536,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.681,
+                0.527,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.697,
+                0.515,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.713,
+                0.533,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.728,
+                0.518,
+                0.739
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.744,
+                0.52,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.759,
+                0.531,
+                0.77
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.775,
+                0.517,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.791,
+                0.513,
+                0.801
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.806,
+                0.523,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.82,
+                0.285,
+                0.833
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.861,
+                0.412,
+                0.875
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.877,
+                0.359,
+                0.893
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.898,
+                0.525,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.913,
+                0.506,
+                0.925
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.512,
+                0.871,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.527,
+                0.856,
+                0.539
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.543,
+                0.843,
+                0.554
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.559,
+                0.859,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.573,
+                0.866,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.589,
+                0.855,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.604,
+                0.852,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.62,
+                0.859,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.636,
+                0.856,
+                0.647
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.555,
+                0.65,
+                0.859,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.555,
+                0.665,
+                0.615,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.698,
+                0.839,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.712,
+                0.865,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.728,
+                0.866,
+                0.739
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.744,
+                0.868,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.759,
+                0.795,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.775,
+                0.84,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.789,
+                0.852,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.806,
+                0.857,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.821,
+                0.84,
+                0.832
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.837,
+                0.871,
+                0.848
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.852,
+                0.859,
+                0.864
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.867,
+                0.754,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.898,
+                0.87,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.914,
+                0.858,
+                0.925
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.218,
+                0.092,
+                0.537,
+                0.186
+            ],
+            "angle": 0,
+            "content": "removing products from the shelf hurts sales. Our work proves this is not the case. We recently led an offer simplification trial where our client reduced 20% to 25% of SKUs across 30 categories. Sales across the impacted categories increased by 2%.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.218,
+                0.2,
+                0.535,
+                0.356
+            ],
+            "angle": 0,
+            "content": "But the benefits of offer simplification go much further than increasing sales. Simplification can create a virtuous cycle that scales end-to-end (E2E) efficiencies from the warehouse to the grocery cart. Handling fewer products frees up space in warehouses to store products in ways that streamline the supply chain. Relationships with suppliers improve. And customers find the products they want.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.219,
+                0.38,
+                0.423,
+                0.397
+            ],
+            "angle": 0,
+            "content": "The Costs of Variety"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.218,
+                0.401,
+                0.54,
+                0.588
+            ],
+            "angle": 0,
+            "content": "There is a fine line between just enough variety and too much duplication and complexity. On the one hand, variety is key to a successful retail grocery business. Offers that appeal to different customer tastes are important, especially in high-innovation categories such as salty snacks and frozen meals. Variety can also stimulate impulse buying. On the other hand, in most commoditized categories, such as vitamins, frozen vegetables, and canned soup, too much variety overwhelms customers.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.218,
+                0.603,
+                0.537,
+                0.789
+            ],
+            "angle": 0,
+            "content": "Over the years, numerous consumer psychology studies have pointed to a phenomenon known as “decision paralysis,” or “choice overload”—that is, when customers have too many choices, it feels harder to decide what to purchase and diminishes the retail experience. According to a 2020 National Retail Federation customer survey, 63% of respondents said that “convenience” is important to them—and 47% included “making it easy to find options” as part of their definition of convenience.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.218,
+                0.804,
+                0.529,
+                0.866
+            ],
+            "angle": 0,
+            "content": "Looking beyond the customer experience, the costs of product proliferation affect multiple facets of a traditional retailer's operations:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.22,
+                0.881,
+                0.54,
+                0.928
+            ],
+            "angle": 0,
+            "content": "- Stocking. Too many products on the shelf means that grocers have less space for staples that drive sales and for the",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.576,
+                0.093,
+                0.871,
+                0.233
+            ],
+            "angle": 0,
+            "content": "unique products that increase customer loyalty. In addition, undue variety requires complex inventory processes that can increase out-of-stocks of the products customers depend on. Both crowded and empty shelves frustrate shoppers. This is a hazard for traditional retailers because it has the potential to drive their customers to competitors.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.554,
+                0.246,
+                0.871,
+                0.402
+            ],
+            "angle": 0,
+            "content": "- Merchandising. Consumer packaged goods companies provide funding incentives (including new-item slotting fees) to make sure their products are kept on the shelf. But under these arrangements, retailers yield too much control over merchandising decisions to suppliers. Their own teams have less power to craft offers that are of most value to customers.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.554,
+                0.417,
+                0.875,
+                0.572
+            ],
+            "angle": 0,
+            "content": "- Purchasing. Too much variety and too many new products reduce grocers' ability to consolidate their purchasing power to obtain the best costs. This puts them in a difficult spot. They can either compete with value and mass stores on price, but at the expense of margins, or they can maintain margins at the expense of customer transactions and traffic.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.554,
+                0.587,
+                0.871,
+                0.712
+            ],
+            "angle": 0,
+            "content": "- Store Operations. The growing number of SKUs increases the time needed to restock shelves, manage backroom inventory, change price tags, and reorder products—all of which drive up labor costs. The new COVID-19 health, sanitation, and safety measures have added further cost burdens.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.554,
+                0.726,
+                0.876,
+                0.835
+            ],
+            "angle": 0,
+            "content": "- Supply Chain. With more SKUs moving through distribution centers, supply chains are operating at near full capacity. Unpredictable demand surges related to the pandemic will continue to strain supply chains and increase the risk of product shortages.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.553,
+                0.859,
+                0.812,
+                0.878
+            ],
+            "angle": 0,
+            "content": "The Benefits of Simplicity"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.552,
+                0.881,
+                0.874,
+                0.928
+            ],
+            "angle": 0,
+            "content": "The current health crisis underscores the benefits of adopting a strategy of offer simplification. The benefits we have seen",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.068,
+                0.952,
+                0.585,
+                0.966
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP | IT'S TIME FOR GROCERY RETAILERS TO SIMPLIFY"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.918,
+                0.954,
+                0.93,
+                0.964
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.094,
+                0.507,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.109,
+                0.527,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.124,
+                0.535,
+                0.136
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.14,
+                0.51,
+                0.152
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.155,
+                0.528,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.171,
+                0.492,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.202,
+                0.522,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.217,
+                0.531,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.232,
+                0.508,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.249,
+                0.516,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.264,
+                0.51,
+                0.276
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.28,
+                0.498,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.294,
+                0.525,
+                0.307
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.31,
+                0.529,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.326,
+                0.505,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.341,
+                0.428,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.379,
+                0.42,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.402,
+                0.515,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.419,
+                0.535,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.435,
+                0.536,
+                0.445
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.45,
+                0.512,
+                0.461
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.465,
+                0.535,
+                0.476
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.481,
+                0.514,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.496,
+                0.525,
+                0.508
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.512,
+                0.522,
+                0.522
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.527,
+                0.516,
+                0.538
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.543,
+                0.533,
+                0.554
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.558,
+                0.536,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.574,
+                0.447,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.604,
+                0.518,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.224,
+                0.62,
+                0.533,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.634,
+                0.504,
+                0.647
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.649,
+                0.521,
+                0.662
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.666,
+                0.521,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.682,
+                0.532,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.697,
+                0.521,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.713,
+                0.518,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.728,
+                0.521,
+                0.739
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.743,
+                0.533,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.76,
+                0.525,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.775,
+                0.503,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.805,
+                0.526,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.82,
+                0.507,
+                0.833
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.836,
+                0.511,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.853,
+                0.306,
+                0.865
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.883,
+                0.513,
+                0.895
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.898,
+                0.536,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.914,
+                0.519,
+                0.925
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.094,
+                0.868,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.579,
+                0.109,
+                0.823,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.126,
+                0.851,
+                0.136
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.141,
+                0.845,
+                0.151
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.156,
+                0.846,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.171,
+                0.848,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.186,
+                0.865,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.579,
+                0.201,
+                0.862,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.579,
+                0.217,
+                0.866,
+                0.229
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.248,
+                0.85,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.264,
+                0.825,
+                0.276
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.28,
+                0.86,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.295,
+                0.845,
+                0.306
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.31,
+                0.826,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.326,
+                0.861,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.341,
+                0.868,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.356,
+                0.845,
+                0.368
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.372,
+                0.847,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.581,
+                0.388,
+                0.72,
+                0.399
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.559,
+                0.422,
+                0.565,
+                0.426
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.418,
+                0.865,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.434,
+                0.84,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.45,
+                0.858,
+                0.462
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.464,
+                0.84,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.48,
+                0.857,
+                0.494
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.496,
+                0.845,
+                0.508
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.512,
+                0.851,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.527,
+                0.862,
+                0.539
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.543,
+                0.872,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.558,
+                0.66,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.559,
+                0.592,
+                0.564,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.589,
+                0.852,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.604,
+                0.86,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.62,
+                0.849,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.579,
+                0.635,
+                0.818,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.579,
+                0.65,
+                0.868,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.579,
+                0.665,
+                0.861,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.682,
+                0.846,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.582,
+                0.698,
+                0.781,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.559,
+                0.731,
+                0.565,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.728,
+                0.872,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.743,
+                0.839,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.758,
+                0.814,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.774,
+                0.865,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.579,
+                0.79,
+                0.872,
+                0.803
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.806,
+                0.848,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.58,
+                0.82,
+                0.764,
+                0.833
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.858,
+                0.808,
+                0.878
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.883,
+                0.852,
+                0.894
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.898,
+                0.869,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.914,
+                0.831,
+                0.925
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.218,
+                0.092,
+                0.538,
+                0.17
+            ],
+            "angle": 0,
+            "content": "among grocery retailers that were pursuing offer simplification before the pandemic will become even more compelling as they adjust to the changed landscape of a post-COVID-19 world.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.218,
+                0.184,
+                0.538,
+                0.217
+            ],
+            "angle": 0,
+            "content": "Consider the following operational improvements offer simplification can deliver:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.221,
+                0.231,
+                0.537,
+                0.387
+            ],
+            "angle": 0,
+            "content": "- Optimized SKUs That Benefit Stores and Customers. Thoughtfully pruning SKUs allows merchandisers to balance top-selling and unique items in their offer and remove duplications that drive neither sales nor customer loyalty. Fewer products on the shelf makes shopping easier and more pleasant for customers and will reduce out-of-stocks for key products.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.22,
+                0.401,
+                0.534,
+                0.557
+            ],
+            "angle": 0,
+            "content": "- Reduced Costs in the Supply Chain. Simplification reduces carrying costs as less cash is tied up in obsolete inventory. It also opens up warehouse space so similar products can be stored together, reducing load times for trucks delivering to stores. Longer term, capex allocations for network expansion can be deferred or saved as simplification eases capacity constraints.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.22,
+                0.572,
+                0.539,
+                0.713
+            ],
+            "angle": 0,
+            "content": "- Increased Efficiencies in Store Operations. Fewer SKUs and less backroom inventory will reduce the hours store associates spend repricing items and restocking and replenishing shelves. This gives them more time to serve customers and, during the pandemic, to perform COVID-19-related sanitization procedures.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.22,
+                0.727,
+                0.538,
+                0.929
+            ],
+            "angle": 0,
+            "content": "- More Productive Vendor Relationships. Because grocers associate variety with vendor funding, they often believe that they will lose these funding premiums if they take products off the shelf. As we noted earlier, after our work on offer simplification, our client saw a net increase in vendor funding. Using analytics to simplify and concentrate marketing spending on the most popular core items strengthens the partnership between retailers and their suppliers.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.553,
+                0.086,
+                0.839,
+                0.122
+            ],
+            "angle": 0,
+            "content": "The Right Way to Start Offer Simplification"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.553,
+                0.122,
+                0.873,
+                0.248
+            ],
+            "angle": 0,
+            "content": "Whether you have already embarked on a SKU rationalization initiative or are re-thinking how to simplify your offer in light of COVID-19, there are a number of traps that could undercut the initiative. To maximize the effectiveness, we suggest applying three perspectives when starting a simplification initiative.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.552,
+                0.262,
+                0.872,
+                0.372
+            ],
+            "angle": 0,
+            "content": "The Customer. Many grocers frame objectives for process improvements around productivity and cost, rather than putting customer needs first. Every offer simplification needs to begin with an open conversation about the customer experience that is supported by deep analytics.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.552,
+                0.386,
+                0.874,
+                0.511
+            ],
+            "angle": 0,
+            "content": "All merchandisers should be making their category and planogram decisions based on a robust consumer decision tree. A CDT shows the key attributes, and combinations of attributes, that are important to customers when they are deciding what products to purchase. (See the exhibit, a CDT analysis we did for a client.)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.553,
+                0.525,
+                0.873,
+                0.682
+            ],
+            "angle": 0,
+            "content": "Customer data from a CDT, along with other loyalty and preference data, enables retailers to maintain a comprehensive offering, avoiding decisions that end up removing high-loyalty products—or eliminating new items before they can gain traction with customers. Customer loyalty data will also highlight low-volume SKUs that retailers need to keep because they're important to specific customer groups.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.553,
+                0.696,
+                0.869,
+                0.774
+            ],
+            "angle": 0,
+            "content": "Customer data captured from deep analytics and loyalty metrics will form the basis for designing the offer; an offer simplification trial will validate the customer analytics and metrics.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.552,
+                0.788,
+                0.873,
+                0.929
+            ],
+            "angle": 0,
+            "content": "The Offer. Demand-driven assortment strategies are based on learning as much as possible about customer purchasing behaviors as well as comprehensive analysis of costs of buying, distributing, and stocking different products. Retailers make fully informed decisions by assessing their current offering against a CDT analysis and loyalty data by SKU and comparing relative",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.068,
+                0.952,
+                0.585,
+                0.966
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP | IT'S TIME FOR GROCERY RETAILERS TO SIMPLIFY"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.918,
+                0.954,
+                0.93,
+                0.966
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.093,
+                0.537,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.109,
+                0.516,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.123,
+                0.531,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.14,
+                0.528,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.156,
+                0.346,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.186,
+                0.5,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.201,
+                0.534,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.233,
+                0.526,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.248,
+                0.527,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.265,
+                0.524,
+                0.275
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.28,
+                0.511,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.295,
+                0.498,
+                0.307
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.31,
+                0.536,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.245,
+                0.326,
+                0.499,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.342,
+                0.524,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.357,
+                0.531,
+                0.368
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.245,
+                0.372,
+                0.369,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.403,
+                0.52,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.418,
+                0.53,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.245,
+                0.434,
+                0.528,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.45,
+                0.53,
+                0.462
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.245,
+                0.465,
+                0.532,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.481,
+                0.522,
+                0.492
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.496,
+                0.482,
+                0.508
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.245,
+                0.511,
+                0.523,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.527,
+                0.518,
+                0.538
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.542,
+                0.438,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.224,
+                0.407,
+                0.231,
+                0.409
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.574,
+                0.479,
+                0.584
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.588,
+                0.492,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.245,
+                0.604,
+                0.505,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.245,
+                0.62,
+                0.521,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.245,
+                0.636,
+                0.522,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.651,
+                0.518,
+                0.662
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.245,
+                0.666,
+                0.478,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.245,
+                0.682,
+                0.536,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.245,
+                0.697,
+                0.421,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.226,
+                0.732,
+                0.23,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.728,
+                0.511,
+                0.739
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.743,
+                0.534,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.759,
+                0.532,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.775,
+                0.479,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.79,
+                0.524,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.806,
+                0.499,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.82,
+                0.525,
+                0.833
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.837,
+                0.517,
+                0.847
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.852,
+                0.529,
+                0.864
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.868,
+                0.521,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.883,
+                0.499,
+                0.895
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.245,
+                0.898,
+                0.532,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.914,
+                0.317,
+                0.927
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.087,
+                0.834,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.104,
+                0.694,
+                0.12
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.124,
+                0.862,
+                0.136
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.139,
+                0.84,
+                0.152
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.155,
+                0.865,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.171,
+                0.857,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.187,
+                0.866,
+                0.197
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.555,
+                0.2,
+                0.87,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.217,
+                0.869,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.232,
+                0.676,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.264,
+                0.86,
+                0.276
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.28,
+                0.838,
+                0.291
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.294,
+                0.86,
+                0.306
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.31,
+                0.868,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.327,
+                0.868,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.342,
+                0.865,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.357,
+                0.765,
+                0.369
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.387,
+                0.863,
+                0.399
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.403,
+                0.853,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.419,
+                0.87,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.435,
+                0.842,
+                0.445
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.449,
+                0.849,
+                0.462
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.465,
+                0.848,
+                0.476
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.481,
+                0.849,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.497,
+                0.799,
+                0.507
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.526,
+                0.868,
+                0.539
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.543,
+                0.861,
+                0.554
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.558,
+                0.86,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.574,
+                0.808,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.588,
+                0.859,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.604,
+                0.87,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.62,
+                0.868,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.635,
+                0.851,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.651,
+                0.857,
+                0.661
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.666,
+                0.817,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.555,
+                0.697,
+                0.865,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.713,
+                0.857,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.555,
+                0.727,
+                0.862,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.744,
+                0.866,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.555,
+                0.759,
+                0.67,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.789,
+                0.83,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.806,
+                0.868,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.821,
+                0.816,
+                0.833
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.836,
+                0.86,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.851,
+                0.831,
+                0.864
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.868,
+                0.861,
+                0.879
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.883,
+                0.859,
+                0.895
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.898,
+                0.867,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.914,
+                0.868,
+                0.926
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.081,
+                0.095,
+                0.447,
+                0.111
+            ],
+            "angle": 0,
+            "content": "A Canned Soup Category Customer Decision Tree"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.087,
+                0.122,
+                0.859,
+                0.499
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.091,
+                0.516,
+                0.813,
+                0.53
+            ],
+            "angle": 0,
+            "content": "Note: OB = own brand; NB = national brand; index calculated as company total SKUs vs. next highest or vs. average for traditional grocers."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.218,
+                0.555,
+                0.536,
+                0.697
+            ],
+            "angle": 0,
+            "content": "E2E margins. Failing to consider E2E cost implications can lead to the removal of high-margin items. In addition, grocers need to thoughtfully consider the customer experience when making merchandising decisions. If the data suggests cutting nine out of ten SKUs of a brand in a category (which will look odd on the shelf), it makes more sense to remove them all.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.218,
+                0.71,
+                0.539,
+                0.852
+            ],
+            "angle": 0,
+            "content": "Simplification does not mean standardization. Grocers need to work with their merchandise teams to maintain a product lineup that satisfies regional and local customer tastes. Every simplified offer initiative needs to be tested before it is rolled out to all stores. Thorough testing will balance statistically significant insights and practical observations, and include a regional trial.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.218,
+                0.865,
+                0.538,
+                0.928
+            ],
+            "angle": 0,
+            "content": "Suppliers. Relying on suppliers' data alone to make decisions shifts the focus from customers to vendors. With offer simplification, retailers can regain control of mer-",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.553,
+                0.555,
+                0.869,
+                0.619
+            ],
+            "angle": 0,
+            "content": "chandising decisions, including more customer-driven placement of suppliers' products and greater emphasis on the placement of a retailer's private label brands.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.552,
+                0.633,
+                0.864,
+                0.726
+            ],
+            "angle": 0,
+            "content": "We encourage discussing simplification plans with suppliers and sharing performance data from test stores. This will give suppliers insight into what customers are buying and how they can best support an offer.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.553,
+                0.751,
+                0.808,
+                0.785
+            ],
+            "angle": 0,
+            "content": "A Post-COVID-19 Grocery Transformation"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.552,
+                0.788,
+                0.874,
+                0.929
+            ],
+            "angle": 0,
+            "content": "As the world adjusts to the new realities of living with COVID-19, offer simplification should be at the forefront of every retail grocery leader's mind. People's habits, including their grocery shopping routines, have changed almost overnight—and they are unlikely to revert to what they were before the virus struck. Economic burdens caused by the pandemic will only height-",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.068,
+                0.952,
+                0.585,
+                0.966
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP | IT'S TIME FOR GROCERY RETAILERS TO SIMPLIFY"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.918,
+                0.954,
+                0.93,
+                0.966
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.558,
+                0.519,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.574,
+                0.503,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.589,
+                0.499,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.604,
+                0.533,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.62,
+                0.514,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.635,
+                0.524,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.651,
+                0.51,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.224,
+                0.667,
+                0.532,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.682,
+                0.447,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.712,
+                0.523,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.729,
+                0.521,
+                0.739
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.743,
+                0.527,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.759,
+                0.536,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.774,
+                0.537,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.791,
+                0.498,
+                0.801
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.806,
+                0.536,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.821,
+                0.534,
+                0.832
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.836,
+                0.476,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.867,
+                0.533,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.883,
+                0.535,
+                0.894
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.898,
+                0.514,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.914,
+                0.51,
+                0.925
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.557,
+                0.856,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.573,
+                0.868,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.589,
+                0.844,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.604,
+                0.848,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.635,
+                0.84,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.651,
+                0.845,
+                0.662
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.666,
+                0.859,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.682,
+                0.854,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.698,
+                0.856,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.712,
+                0.596,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.555,
+                0.751,
+                0.805,
+                0.768
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.555,
+                0.767,
+                0.71,
+                0.784
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.79,
+                0.853,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.805,
+                0.858,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.82,
+                0.869,
+                0.833
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.837,
+                0.869,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.852,
+                0.866,
+                0.864
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.868,
+                0.868,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.883,
+                0.849,
+                0.895
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.898,
+                0.868,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.914,
+                0.86,
+                0.926
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.218,
+                0.093,
+                0.535,
+                0.201
+            ],
+            "angle": 0,
+            "content": "en customer focus on price and convenience. This will ramp up pressure on grocers already competing with value and mass retailers. At the same time, costs related to regulations around store cleanliness will continue to eat into retailers' narrow margins.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.552,
+                0.092,
+                0.872,
+                0.201
+            ],
+            "angle": 0,
+            "content": "In light of these realities, offer simplification is an especially compelling opportunity to launch a cross-functional and transformational initiative. Indeed, grocers must make improvements across the value chain to compete successfully in a rapidly evolving market.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.219,
+                0.24,
+                0.378,
+                0.254
+            ],
+            "angle": 0,
+            "content": "About the Authors"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.218,
+                0.256,
+                0.872,
+                0.299
+            ],
+            "angle": 0,
+            "content": "Sandeep Chugani is a managing director and senior partner in the Miami office of Boston Consulting Group and the global leader of BCG TURN and Transformation. You may contact him by email at chugani.sandeep@bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.219,
+                0.312,
+                0.871,
+                0.341
+            ],
+            "angle": 0,
+            "content": "Aftab Hussain is a managing director and senior partner in the firm's New Jersey office. You may contact him by email at hussain.aftab@bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.218,
+                0.353,
+                0.856,
+                0.382
+            ],
+            "angle": 0,
+            "content": "Travis Jackson is a managing director and partner in BCG's New Jersey office. You may contact him by email at jackson.travis@bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.218,
+                0.395,
+                0.865,
+                0.424
+            ],
+            "angle": 0,
+            "content": "Greg Curreri is a principal in the firm's Miami office. You may contact him by email at curreri.greg@bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.218,
+                0.437,
+                0.857,
+                0.466
+            ],
+            "angle": 0,
+            "content": "Jill Wang is a project leader in BCG's New Jersey office. You may contact her by email at wang.jill@bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.219,
+                0.479,
+                0.841,
+                0.508
+            ],
+            "angle": 0,
+            "content": "Peter Tilton is a project leader in the firm's New Jersey office. You may contact him by email at tilton. peter@bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.218,
+                0.549,
+                0.873,
+                0.606
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group partners with leaders in business and society to tackle their most important challenges and capture their greatest opportunities. BCG was the pioneer in business strategy when it was founded in 1963. Today, we help clients with total transformation—inspiring complex change, enabling organizations to grow, building competitive advantage, and driving bottom-line impact.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.218,
+                0.618,
+                0.874,
+                0.688
+            ],
+            "angle": 0,
+            "content": "To succeed, organizations must blend digital and human capabilities. Our diverse, global teams bring deep industry and functional expertise and a range of perspectives to spark change. BCG delivers solutions through leading-edge management consulting along with technology and design, corporate and digital ventures—and business purpose. We work in a uniquely collaborative model across the firm and throughout all levels of the client organization, generating results that allow our clients to thrive.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.219,
+                0.7,
+                0.579,
+                0.715
+            ],
+            "angle": 0,
+            "content": "© Boston Consulting Group 2020. All rights reserved. 8/20"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.219,
+                0.729,
+                0.863,
+                0.771
+            ],
+            "angle": 0,
+            "content": "For information or permission to reprint, please contact BCG at permissions@bcg.com. To find the latest BCG content and register to receive e-alerts on this topic or others, please visit bcg.com. Follow Boston Consulting Group on Facebook and Twitter.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.068,
+                0.952,
+                0.585,
+                0.966
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP | IT'S TIME FOR GROCERY RETAILERS TO SIMPLIFY"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.918,
+                0.954,
+                0.93,
+                0.966
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.094,
+                0.506,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.108,
+                0.533,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.124,
+                0.509,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.14,
+                0.528,
+                0.152
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.156,
+                0.523,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.171,
+                0.505,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.187,
+                0.345,
+                0.199
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.094,
+                0.857,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.109,
+                0.869,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.124,
+                0.856,
+                0.136
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.14,
+                0.833,
+                0.152
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.156,
+                0.867,
+                0.168
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.556,
+                0.17,
+                0.861,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.557,
+                0.187,
+                0.68,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.241,
+                0.374,
+                0.254
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.258,
+                0.849,
+                0.269
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.272,
+                0.869,
+                0.283
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.286,
+                0.34,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.314,
+                0.868,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.224,
+                0.327,
+                0.469,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.355,
+                0.851,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.224,
+                0.37,
+                0.425,
+                0.38
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.396,
+                0.862,
+                0.408
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.412,
+                0.254,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.438,
+                0.852,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.221,
+                0.454,
+                0.254,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.224,
+                0.481,
+                0.837,
+                0.492
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.224,
+                0.496,
+                0.32,
+                0.506
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.224,
+                0.552,
+                0.843,
+                0.561
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.565,
+                0.87,
+                0.576
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.578,
+                0.866,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.593,
+                0.736,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.619,
+                0.872,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.634,
+                0.841,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.647,
+                0.846,
+                0.659
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.661,
+                0.866,
+                0.671
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.675,
+                0.761,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.703,
+                0.576,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.222,
+                0.731,
+                0.86,
+                0.742
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.223,
+                0.744,
+                0.848,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.224,
+                0.759,
+                0.485,
+                0.768
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

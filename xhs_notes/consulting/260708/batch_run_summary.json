@@ -1,0 +1,64 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs",
+  "total_pdf_count_before_shard": 6,
+  "pdf_count_before_skip": 6,
+  "pdf_count": 6,
+  "generated_report_count": 6,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 0,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Creating-an-Integrated-Supply-Chain-in-Retail-Grocery_0ca0e88a.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rjain5_c/pdfs/0001-BCG_Creating-an-Integrated-Supply-Chain-in-Retail-Grocery_0ca0e88a.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_It-s-Time-for-Grocery-Retailers-to-Simplify_07ce3693.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rjain5_c/pdfs/0002-BCG_It-s-Time-for-Grocery-Retailers-to-Simplify_07ce3693.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Omnichannel-Alchemy-Turning-Online-Grocery-Sales-to-Gold_c1881513.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rjain5_c/pdfs/0003-BCG_Omnichannel-Alchemy-Turning-Online-Grocery-Sales-to-Gold_c1881513.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Overcoming-Retail-Complexity-with-AI-Powered-Pricing_183e2488.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rjain5_c/pdfs/0004-BCG_Overcoming-Retail-Complexity-with-AI-Powered-Pricing_183e2488.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_The-Private-Brand-Imperative-for-Grocers_03edb087.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rjain5_c/pdfs/0005-BCG_The-Private-Brand-Imperative-for-Grocers_03edb087.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 2,
+      "pdf_count": 1,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/McKinsey_PDF-2025-Sustainable-and-inclusive-growth-impact-report_3e4bf175.pdf",
+          "batch_file": "/tmp/pdf_batch_002_0luhgqad/pdfs/0006-McKinsey_PDF-2025-Sustainable-and-inclusive-growth-impact-report_3e4bf175.pdf",
+          "stable_index": "6"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

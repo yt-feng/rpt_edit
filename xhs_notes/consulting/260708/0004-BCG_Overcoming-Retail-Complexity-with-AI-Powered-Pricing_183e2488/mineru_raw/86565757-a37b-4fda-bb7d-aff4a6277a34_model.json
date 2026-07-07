@@ -1,0 +1,2829 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.057,
+                0.047,
+                0.142,
+                0.077
+            ],
+            "angle": 0,
+            "content": "BCG"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.001,
+                0.0,
+                1.0,
+                0.398
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.052,
+                0.432,
+                0.146,
+                0.45
+            ],
+            "angle": 0,
+            "content": "B2C PRICING",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.479,
+                0.679,
+                0.631
+            ],
+            "angle": 0,
+            "content": "Overcoming Retail\nComplexity with AI-\nPowered Pricing"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.658,
+                0.77,
+                0.677
+            ],
+            "angle": 0,
+            "content": "By Javier Anta Callersten, Sebastian Bak, Robert Xu, Roelant Kalthof, and Scott Bradley",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.702,
+                0.365,
+                0.719
+            ],
+            "angle": 0,
+            "content": "ARTICLE APRIL 16, 2024 8 MIN READ",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.78,
+                0.929,
+                0.899
+            ],
+            "angle": 0,
+            "content": "Retailers are in a new age of pricing, and they need a new set of tools. Persistent cost inflation, lingering supply chain volatility, ongoing shifts in consumer spending, and intensifying price competition have created a level of complexity that is more than retailers can manage using traditional retail price-setting tools and methods. Instead of sticking with traditional rule-based approaches that focus on simplification, retailers are now implementing AI-powered solutions and dynamic pricing models.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.437,
+                0.141,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.474,
+                0.629,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.527,
+                0.683,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.039,
+                0.572,
+                0.564,
+                0.636
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.66,
+                0.765,
+                0.675
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.705,
+                0.361,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.781,
+                0.92,
+                0.798
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.801,
+                0.894,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.82,
+                0.901,
+                0.838
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.841,
+                0.925,
+                0.856
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.861,
+                0.913,
+                0.875
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.881,
+                0.312,
+                0.896
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.948,
+                0.147
+            ],
+            "angle": 0,
+            "content": "These solutions enable retailers to transform the complexity of their markets from an obstacle into a valuable resource. Those that have made this transition have increased gross profit by 5% to 10% while also sustainably increasing revenue and improving customer value perception. (See Exhibit 1.)",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.05,
+                0.184,
+                0.505,
+                0.204
+            ],
+            "angle": 0,
+            "content": "Exhibit 1 - The Impact of Improving Pricing Capabilities"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.049,
+                0.204,
+                0.638,
+                0.456
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.493,
+                0.927,
+                0.555
+            ],
+            "angle": 0,
+            "content": "With AI-powered solutions, retailers can translate their strategic choices into optimal prices for each product and store. They can respond dynamically to both internal and external changes, while maintaining alignment with a clear, customer-centric pricing strategy.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.054,
+                0.602,
+                0.609,
+                0.685
+            ],
+            "angle": 0,
+            "content": "With AI-powered solutions, retailers can respond dynamically to both internal and external changes, while maintaining alignment with a clear, customer-centric pricing strategy.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.788,
+                0.86,
+                0.87
+            ],
+            "angle": 0,
+            "content": "How Retailers Are Implementing\nAI-Powered Pricing"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.069,
+                0.926,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.089,
+                0.935,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.109,
+                0.943,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.128,
+                0.14,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.496,
+                0.926,
+                0.512
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.517,
+                0.916,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.534,
+                0.736,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.604,
+                0.113,
+                0.641
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.605,
+                0.583,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.624,
+                0.606,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.644,
+                0.606,
+                0.662
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.664,
+                0.348,
+                0.683
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.784,
+                0.861,
+                0.832
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.827,
+                0.525,
+                0.871
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.946,
+                0.186
+            ],
+            "angle": 0,
+            "content": "AI-powered price optimization requires holistic problem solving across multiple dimensions. (See Exhibit 2.) Rule-based pricing, meanwhile, tends to focus on only one or two of these dimensions, usually at an aggregated level, because available tools and data do not allow a retailer to embrace complexity. Armed with richer, faster insights into what customers want, retailers can target their investments in ways that can improve volumes, margins, and customer value perception simultaneously.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.05,
+                0.225,
+                0.642,
+                0.243
+            ],
+            "angle": 0,
+            "content": "Exhibit 2 - AI-Powered Engines Embrace the Full Complexity of Retail Pricing"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.052,
+                0.243,
+                0.626,
+                0.51
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.565,
+                0.953,
+                0.627
+            ],
+            "angle": 0,
+            "content": "The dimensions of an AI-powered approach to pricing fall into three categories: strategic, hygienic, and dynamic. AI-powered solutions can iterate through billions of potential scenarios to find the optimal price for each store and item, considering all of these dimensions at once.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.654,
+                0.487,
+                0.69
+            ],
+            "angle": 0,
+            "content": "Strategic Dimensions"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.716,
+                0.92,
+                0.756
+            ],
+            "angle": 0,
+            "content": "This category focuses on the retailer's key objectives for pricing and on establishing how it will position and de-average prices relative to the competition. Here are the defining factors.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.785,
+                0.933,
+                0.904
+            ],
+            "angle": 0,
+            "content": "- Objectives. Retailers need to define a clear ambition for their pricing strategy and translate that into specific commercial and customer objectives. A growing online retailer, for example, may want to maximize revenue first and foremost, while an established player might make gross profit its primary focus. Retailers also need to set overall constraints, such as minimum revenue and margin thresholds based on their broader business plan or minimum volume thresholds based on supplier agreements.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.07,
+                0.941,
+                0.084
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.089,
+                0.941,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.108,
+                0.873,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.129,
+                0.912,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.15,
+                0.863,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.168,
+                0.3,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.567,
+                0.95,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.589,
+                0.932,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.608,
+                0.807,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.654,
+                0.488,
+                0.69
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.718,
+                0.917,
+                0.734
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.738,
+                0.863,
+                0.753
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.786,
+                0.915,
+                0.804
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.808,
+                0.924,
+                0.822
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.826,
+                0.903,
+                0.842
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.847,
+                0.929,
+                0.862
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.866,
+                0.898,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.885,
+                0.46,
+                0.901
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.873,
+                0.207
+            ],
+            "angle": 0,
+            "content": "- Category Roles and Key Value Items (KVIs). Retailers can harness the power of AI to optimize individual price decisions instead of focusing on average prices across their assortment. De-averaging their prices allows them to invest in the categories that drive customers to their stores and in the KVIs that have the strongest influence on value perception. Amidst high inflation in 2022, one large US retailer made targeted price reductions to its KVIs. The move contributed to a 10% improvement in customer value perception, which drove long-term market share.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.221,
+                0.922,
+                0.32
+            ],
+            "angle": 0,
+            "content": "- Omnichannel Pricing. In an era when consumers can quickly compare prices across channels and competitors, retailers need to manage what consumers see and use these opportunities for comparison to their advantage. AI can help identify items that should have the same competitive price online and offline, as well as items for which they can differentiate prices by channel without hurting customer perception.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.334,
+                0.935,
+                0.413
+            ],
+            "angle": 0,
+            "content": "- Price Zones. Advanced geoanalytics gives retailers the ability to determine consumer willingness to pay at the local level. One big retailer used hundreds of metrics to understand customer affluence and competitive intensity at each store. This let them set prices to reflect local market conditions.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.045,
+                0.444,
+                0.482,
+                0.481
+            ],
+            "angle": 0,
+            "content": "Hygienic Dimensions"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.505,
+                0.894,
+                0.566
+            ],
+            "angle": 0,
+            "content": "Retailers can use AI to optimize prices under complex conditions, but its recommendations should be logical to consumers. Price hygiene has three factors that are critical to driving consumer trust and value perception.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.595,
+                0.933,
+                0.674
+            ],
+            "angle": 0,
+            "content": "- Item Relationships. If retailers are using a category architecture such as good-better-best or larger pack sizes with better value per unit, they need to evaluate the price relationships among interdependent products. How prices compare to each other often matters more than the individual prices themselves.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.688,
+                0.932,
+                0.768
+            ],
+            "angle": 0,
+            "content": "- Own Brand Versus National Brand. Retailers also need to optimize the price spread between national-brand products and their own branded items. The optimal price spread will be large enough to nudge consumers toward own-brand products but not so large that it erodes own-brand margins.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.782,
+                0.911,
+                0.842
+            ],
+            "angle": 0,
+            "content": "- Rounding Rules. A retailer should offer clean and consistent prices that take advantage of “magic” price points and avoid crossing thresholds that would negatively influence value perception.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.046,
+                0.872,
+                0.489,
+                0.909
+            ],
+            "angle": 0,
+            "content": "Dynamic Dimensions"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.07,
+                0.854,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.089,
+                0.85,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.109,
+                0.871,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.129,
+                0.843,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.148,
+                0.836,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.168,
+                0.862,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.189,
+                0.514,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.223,
+                0.843,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.243,
+                0.883,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.262,
+                0.917,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.282,
+                0.817,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.301,
+                0.701,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.336,
+                0.858,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.356,
+                0.923,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.375,
+                0.931,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.395,
+                0.292,
+                0.408
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.444,
+                0.482,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.508,
+                0.892,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.528,
+                0.867,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.548,
+                0.396,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.597,
+                0.92,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.617,
+                0.891,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.637,
+                0.929,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.655,
+                0.373,
+                0.671
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.69,
+                0.929,
+                0.705
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.71,
+                0.923,
+                0.726
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.73,
+                0.918,
+                0.746
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.751,
+                0.209,
+                0.764
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.785,
+                0.907,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.805,
+                0.886,
+                0.82
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.825,
+                0.176,
+                0.841
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.873,
+                0.489,
+                0.906
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.925,
+                0.147
+            ],
+            "angle": 0,
+            "content": "Retailers generally play what we refer to as the Uniform Game, in which they share value with consumers by offering uniform prices aimed at striking a balance between volume and margin. With AI-powered solutions, retailers can switch to the Dynamic Game and set prices by taking multiple dimensions into account simultaneously. Here are the key factors of dynamic pricing.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.177,
+                0.932,
+                0.334
+            ],
+            "angle": 0,
+            "content": "- Real-Time Competitive Pricing. Tracking the prices of key competitors ensures an accurate and up-to-date view of the retailer's price position. This enables retailers to translate a desired level of competitiveness into actual price points that are de-averaged based on strategic dimensions. It also allows them to identify additional opportunities. When one grocery chain started to track competitors' prices systematically, it identified some situations where its own prices were 20% to 30% lower. By increasing prices to sit just below those of their main competitor, the retailer improved its margins with almost no impact on unit volume.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.349,
+                0.922,
+                0.489
+            ],
+            "angle": 0,
+            "content": "- Dynamic Forecasting. Most retailers have estimates for price elasticities that allow them to forecast the impact of price changes. However, they typically use static elasticities, which prevents them from taking advantage of seemingly minor changes in customer behavior. Also, they often conflate base price elasticities with promotion elasticities and thus overestimate the impact of base price changes. Retailers can derive more accurate elasticities by using AI to gain insights from their vast transaction and loyalty data, as well from third-party sources such as weather data and competitive intelligence.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.558,
+                0.744,
+                0.64
+            ],
+            "angle": 0,
+            "content": "The Enablers of AI-Powered Pricing"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.665,
+                0.944,
+                0.706
+            ],
+            "angle": 0,
+            "content": "Implementing AI-powered pricing requires an aligned set of choices and an investment in teams, processes, and technology capabilities across the operating model.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.72,
+                0.955,
+                0.839
+            ],
+            "angle": 0,
+            "content": "Teams. Best-in-class retailers typically have a centralized pricing team or center of excellence that spans categories, regions, and channels. This team possesses the necessary strategic insight and data science capabilities to manage AI-powered pricing engines. It usually sits within the merchandising function to ensure alignment with other commercial levers such as promotions, vendor negotiations, and assortment. Sometimes the pricing team sits within marketing, IT, or data science (more common among retailers with highly dynamic pricing, such as online retailers).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.853,
+                0.919,
+                0.914
+            ],
+            "angle": 0,
+            "content": "The best practice is for the pricing team and merchants to set pricing strategy collaboratively, with the pricing team responsible for using AI-powered tools to optimize prices within that strategy and merchants providing final review and approval before execution.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.071,
+                0.905,
+                0.084
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.089,
+                0.921,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.107,
+                0.913,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.129,
+                0.916,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.178,
+                0.921,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.199,
+                0.874,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.217,
+                0.877,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.238,
+                0.878,
+                0.254
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.257,
+                0.93,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.277,
+                0.898,
+                0.293
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.296,
+                0.862,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.317,
+                0.143,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.352,
+                0.919,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.371,
+                0.889,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.391,
+                0.886,
+                0.405
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.41,
+                0.838,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.43,
+                0.834,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.45,
+                0.9,
+                0.464
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.47,
+                0.766,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.557,
+                0.744,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.597,
+                0.224,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.668,
+                0.94,
+                0.683
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.687,
+                0.67,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.721,
+                0.923,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.741,
+                0.949,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.761,
+                0.904,
+                0.776
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.781,
+                0.922,
+                0.795
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.8,
+                0.909,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.818,
+                0.952,
+                0.836
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.855,
+                0.914,
+                0.871
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.876,
+                0.878,
+                0.891
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.895,
+                0.764,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.952,
+                0.206
+            ],
+            "angle": 0,
+            "content": "Processes. AI changes not only the way retailers make decisions but also the quality and range of those decisions. The reset that most retailers do once or twice per year becomes a more strategic review with the ability to run price optimization scenarios based on richer inputs that reflect market dynamics. AI also allows retailers to monitor performance against strategy on a more frequent basis, identify deviations, and implement corrective price changes. This “read and react” process lets them quickly respond to competitor price moves, cost price inflation, or changes in customer behavior.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.255,
+                0.622,
+                0.296
+            ],
+            "angle": 0,
+            "content": "AI changes not only the way retailers make decisions but also the quality and range of those decisions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.369,
+                0.95,
+                0.548
+            ],
+            "angle": 0,
+            "content": "Technology. An AI-powered optimization engine is underpinned by a fully integrated and automated data platform, which brings together strategic data assets such as customer loyalty data, competitor prices, and promotional and markdown plans. This platform enables the retailer to have near real-time updates from a single source of truth. User-friendly tools give decision makers access to the data easily in a standardized way. Custom user interfaces and reports, tailored to specific user profiles, open the “black box” by making reviews and intervention more efficient and by providing full transparency into the rationale behind any price recommendation. When integrated with upstream and downstream systems, the AI solution can also automate updates and price changes.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.619,
+                0.515,
+                0.656
+            ],
+            "angle": 0,
+            "content": "How to Get Started"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.685,
+                0.915,
+                0.724
+            ],
+            "angle": 0,
+            "content": "Retailers at the beginning of their AI adoption journey should answer several key questions to define the scope for a transformation:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.754,
+                0.907,
+                0.794
+            ],
+            "angle": 0,
+            "content": "- Vision. What is your overall ambition for pricing, what is the value you can unlock, and how quickly do you want to achieve that?",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.808,
+                0.892,
+                0.849
+            ],
+            "angle": 0,
+            "content": "- Feasibility. What changes will be required to your current operating model across teams, processes, and technology? What is the corresponding level of investment?",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.863,
+                0.922,
+                0.903
+            ],
+            "angle": 0,
+            "content": "- Build, Buy, or Partner. Is an off-the-shelf tool sufficient, or will you benefit from a customized solution that's optimized for your unique data, processes, and market context? Do you have",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.071,
+                0.95,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.089,
+                0.947,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.109,
+                0.899,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.128,
+                0.906,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.147,
+                0.946,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.168,
+                0.929,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.189,
+                0.223,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.257,
+                0.622,
+                0.275
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.371,
+                0.866,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.391,
+                0.917,
+                0.405
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.41,
+                0.949,
+                0.426
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.43,
+                0.9,
+                0.444
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.45,
+                0.896,
+                0.464
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.469,
+                0.933,
+                0.483
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.488,
+                0.944,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.509,
+                0.902,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.528,
+                0.302,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.618,
+                0.514,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.687,
+                0.913,
+                0.705
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.707,
+                0.399,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.756,
+                0.904,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.776,
+                0.4,
+                0.791
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.81,
+                0.888,
+                0.827
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.831,
+                0.765,
+                0.846
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.865,
+                0.918,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.884,
+                0.912,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.068,
+                0.928,
+                0.108
+            ],
+            "angle": 0,
+            "content": "the right data science, engineering, and pricing expertise to build this capability internally, or do you need a partner to accelerate the journey?",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.136,
+                0.944,
+                0.237
+            ],
+            "angle": 0,
+            "content": "Regardless of a retailer's current position, the increasing complexity and uncertainty of pricing is pushing existing approaches and technologies beyond their limits. Investments in AI capabilities are no longer just an option but a necessity. Retailers that build and successfully embed a cutting-edge, AI-powered pricing solution will realize significant benefits in operating efficiency, customer perception, and financial performance.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.251,
+                0.918,
+                0.289
+            ],
+            "angle": 0,
+            "content": "The authors wish to thank Laurence Heinrichs, Connie Gao, Shamel Merchant, and Shane Mono for their contributions.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.07,
+                0.925,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.09,
+                0.518,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.139,
+                0.94,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.159,
+                0.941,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.179,
+                0.881,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.198,
+                0.922,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.218,
+                0.5,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.253,
+                0.912,
+                0.268
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.274,
+                0.162,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.105,
+                0.247,
+                0.142
+            ],
+            "angle": 0,
+            "content": "Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.187,
+                0.22,
+                0.293
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.36,
+                0.22,
+                0.466
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.069,
+                0.514,
+                0.22,
+                0.621
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.244,
+                0.19,
+                0.368,
+                0.233
+            ],
+            "angle": 0,
+            "content": "Javier Anta\nCallersten"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.245,
+                0.437,
+                0.284
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nLondon",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.289,
+                0.275,
+                0.306
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.246,
+                0.365,
+                0.359,
+                0.386
+            ],
+            "angle": 0,
+            "content": "Robert Xu"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.397,
+                0.448,
+                0.438
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner,\nBCG X\nDubai",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.443,
+                0.275,
+                0.46
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.523,
+                0.396,
+                0.546
+            ],
+            "angle": 0,
+            "content": "Scott Bradley"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.59,
+                0.275,
+                0.606
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.243,
+                0.555,
+                0.376,
+                0.585
+            ],
+            "angle": 0,
+            "content": "Associate Director\nLondon",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.533,
+                0.186,
+                0.683,
+                0.294
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.708,
+                0.195,
+                0.867,
+                0.216
+            ],
+            "angle": 0,
+            "content": "Sebastian Bak"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.534,
+                0.362,
+                0.682,
+                0.466
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.286,
+                0.737,
+                0.301
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.227,
+                0.91,
+                0.281
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner; Marketing, Sales & Pricing Regional Practice Area Lead Los Angeles"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.708,
+                0.37,
+                0.885,
+                0.392
+            ],
+            "angle": 0,
+            "content": "Roelant Kalthof"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.437,
+                0.737,
+                0.453
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.403,
+                0.909,
+                0.432
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner\nSilicon Valley - Bay Area",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.708,
+                0.436,
+                0.727
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.743,
+                0.952,
+                0.864
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.103,
+                0.247,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.244,
+                0.19,
+                0.367,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.212,
+                0.357,
+                0.232
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.247,
+                0.433,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.259,
+                0.301,
+                0.269
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.245,
+                0.271,
+                0.299,
+                0.283
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.366,
+                0.356,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.399,
+                0.443,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.411,
+                0.294,
+                0.422
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.424,
+                0.291,
+                0.437
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.558,
+                0.371,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.572,
+                0.298,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.196,
+                0.864,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.372,
+                0.881,
+                0.389
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.406,
+                0.905,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.418,
+                0.874,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.71,
+                0.432,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.745,
+                0.95,
+                0.76
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.766,
+                0.899,
+                0.78
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.785,
+                0.904,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.805,
+                0.912,
+                0.82
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.825,
+                0.933,
+                0.84
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.844,
+                0.594,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]
