@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_4fjlqecr/pdfs/0001-38-GS-Global Weekly Kickstart-Momentum reversal ahead of Q2 season-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_4fjlqecr/pdfs/0002-39-GS-Hong Kong- PMI increased in June-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_4fjlqecr/pdfs/0003-40-GS-Japan Consumer Products- Singapore investor visit feedback- Focus on Middle East impact- consumption tax cut- and inflation resilience-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_4fjlqecr/pdfs/0004-42-GS-NetEase-9999.HK-A compelling -non-AI- compounder-well-placed into 2H26 with catalysts ahead-260707.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_4fjlqecr/pdfs/0005-43-GS-The Credit Line-Tracking credit-funded AI datacenter builds-260706.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
