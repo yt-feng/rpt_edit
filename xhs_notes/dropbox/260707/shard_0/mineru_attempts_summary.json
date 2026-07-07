@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_us4n9ksi/pdfs/0001-01-Bernstein-Americas Uranium - Nuclear- Which of the 79 SMR -Small Modular Reactor- projects will win--260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_us4n9ksi/pdfs/0002-02-BARC-Online Travel-Guess Who-s Back- Back Again-In 2Q-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_us4n9ksi/pdfs/0003-03-BARC-Forbright- Inc.-FRBT.US-Adding a structurally differentiated mid-cap bank at OW-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_us4n9ksi/pdfs/0004-04-Bernstein-Best of Times- Worst of Times- Lodging - Cruise - if they come- will they build them--260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_us4n9ksi/pdfs/0005-05-Bernstein-Best of Times- Worst of Times- US Retail in a K-shaped economy-260706.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
