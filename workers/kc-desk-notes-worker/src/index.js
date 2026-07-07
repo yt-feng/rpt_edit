@@ -174,8 +174,9 @@ const SEARCH_MIRROR_STALE_MS = 36 * 60 * 60 * 1000;
 const ANALYTICS_PREFIX = "_analytics/events";
 const ANALYTICS_BACKUP_PREFIX = "_analytics_backup/events";
 const ANALYTICS_DASHBOARD_DAYS = 30;
-const ANALYTICS_DASHBOARD_LIMIT = 600;
-const ANALYTICS_DASHBOARD_R2_READ_BUDGET = 650;
+const ANALYTICS_DASHBOARD_LIMIT = 160;
+const ANALYTICS_DASHBOARD_R2_READ_BUDGET = 180;
+const ANALYTICS_DASHBOARD_TIMEOUT_MS = 2200;
 const NEWSFEED_CACHE_PREFIX = "_newsfeed/cache";
 const NEWSFEED_TOPICS_PREFIX = "_newsfeed/topics";
 const NEWSFEED_SETTINGS_PREFIX = "_newsfeed/settings";
@@ -5951,7 +5952,12 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
         batches: [],
       })) : Promise.resolve(null),
       isSuper
-        ? buildAnalyticsDashboard(env)
+        ? Promise.race([
+          buildAnalyticsDashboard(env),
+          sleep(ANALYTICS_DASHBOARD_TIMEOUT_MS).then(() => {
+            throw new Error("Analytics loading timed out.");
+          }),
+        ])
           .then((data) => ({ data, error: "" }))
           .catch((error) => ({ data: null, error: error && error.message || "Analytics unavailable." }))
         : Promise.resolve({ data: null, error: "" }),
