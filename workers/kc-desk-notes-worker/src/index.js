@@ -174,7 +174,8 @@ const SEARCH_MIRROR_STALE_MS = 36 * 60 * 60 * 1000;
 const ANALYTICS_PREFIX = "_analytics/events";
 const ANALYTICS_BACKUP_PREFIX = "_analytics_backup/events";
 const ANALYTICS_DASHBOARD_DAYS = 30;
-const ANALYTICS_DASHBOARD_LIMIT = 1800;
+const ANALYTICS_DASHBOARD_LIMIT = 600;
+const ANALYTICS_DASHBOARD_R2_READ_BUDGET = 650;
 const NEWSFEED_CACHE_PREFIX = "_newsfeed/cache";
 const NEWSFEED_TOPICS_PREFIX = "_newsfeed/topics";
 const NEWSFEED_SETTINGS_PREFIX = "_newsfeed/settings";
@@ -2641,16 +2642,22 @@ async function handleAnalyticsEvent(request, env, ctx = null) {
 async function listAnalyticsEvents(env, days = ANALYTICS_DASHBOARD_DAYS, limit = ANALYTICS_DASHBOARD_LIMIT) {
   if (!env.REPORT_BUCKET || typeof env.REPORT_BUCKET.list !== "function") return [];
   const rowsById = new Map();
+  let readBudget = Math.min(Math.max(1, Number(limit) || ANALYTICS_DASHBOARD_LIMIT), ANALYTICS_DASHBOARD_R2_READ_BUDGET);
   for (const prefixRoot of [ANALYTICS_PREFIX, ANALYTICS_BACKUP_PREFIX]) {
+    if (prefixRoot === ANALYTICS_BACKUP_PREFIX && rowsById.size > 0) break;
     for (const date of analyticsRecentDateKeys(days)) {
       let cursor = undefined;
       do {
+        if (readBudget <= 0 || rowsById.size >= limit) break;
+        const listLimit = Math.min(200, Math.max(1, limit - rowsById.size), Math.max(1, readBudget));
         const listed = await env.REPORT_BUCKET.list({
           prefix: `${prefixRoot}/${date}/`,
-          limit: Math.min(1000, Math.max(1, limit - rowsById.size)),
+          limit: listLimit,
           cursor,
         });
-        const objects = Array.isArray(listed && listed.objects) ? listed.objects : [];
+        const objects = (Array.isArray(listed && listed.objects) ? listed.objects : [])
+          .slice(0, Math.min(readBudget, Math.max(0, limit - rowsById.size)));
+        readBudget -= objects.length;
         const batch = await Promise.all(objects.map(async (object) => {
           try {
             const stored = await env.REPORT_BUCKET.get(object.key);
