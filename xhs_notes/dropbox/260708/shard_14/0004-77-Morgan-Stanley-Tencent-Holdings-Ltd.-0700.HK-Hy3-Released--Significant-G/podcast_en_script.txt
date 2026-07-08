@@ -1,0 +1,35 @@
+EN_A: So, Tencent just released a new version of its Hunyuan model, called Hy3. What’s the big takeaway from this report?
+EN_B: The main takeaway is that this is a significant upgrade in agent capabilities. The report says Hy3 can now handle much more complex productivity tasks.
+EN_A: Productivity tasks? Like what?
+EN_B: Things like software development, financial modeling, front-end design, and even game production. It’s not just a chatbot anymore.
+EN_A: That sounds like a big leap. Is there a benchmark to back that up?
+EN_B: Yes. On the SWE-Bench Pro test, which measures software engineering skills, Hy3 scored 57.9. That’s a huge jump from the preview version’s 46.
+EN_A: 57.9. How does that compare to other models?
+EN_B: It beats DeepSeek V4 Pro at 55.4, but it’s behind Qwen 3.7 Max at 60.6 and GLM 5.2 at 62.1. So it’s strong, but not the absolute leader.
+EN_A: Got it. So what does this mean in practice? Is there a real-world example?
+EN_B: The report highlights an internal tool called WorkBuddy. Its task resolution rate went from 72% to 90%, and the average completion time dropped by 34%.
+EN_A: 90% resolution and 34% faster. That’s a huge efficiency gain. So the model is actually doing useful work.
+EN_B: Exactly. That’s the key point. AI is moving from conversation to execution.
+EN_A: How did Tencent achieve this? Did they make the model much bigger?
+EN_B: Surprisingly, no. The architecture is the same. It’s still a 295 billion parameter MoE model with 21 billion active parameters. The improvement came from better training and optimization.
+EN_A: So it’s not about brute force. What about the pricing? How are they selling this?
+EN_B: The pricing is very aggressive. Input tokens cost 1 RMB per million tokens, output is 4 RMB, and cached input is only 0.25 RMB.
+EN_A: That’s extremely cheap. Are they just trying to win a price war?
+EN_B: The report doesn’t see it that way. It’s a strategic move. Low prices attract developers, which leads to wider adoption, and then Tencent monetizes through its ecosystem.
+EN_A: The ecosystem. That’s the key word. You’re talking about all of Tencent’s products, right?
+EN_B: Yes. The report argues that Hy3’s improvements will benefit everything from Yuanbao to WeChat Reading to WeGame’s AI assistant.
+EN_A: And those products, in turn, generate real-world feedback to improve Hy3. It’s a virtuous cycle.
+EN_B: Exactly. The report calls it a “virtuous cycle of transferable and generalizable improvement.” It’s not just a model; it’s an ecosystem evolving together.
+EN_A: That’s a compelling narrative. But what are the risks? What doesn’t the report fully answer?
+EN_B: Good question. First, it doesn’t give a timeline for how fast this cycle will spin. It’s a great theory, but we need to see it in action.
+EN_A: So it’s a “trust the process” kind of story for now.
+EN_B: Right. Second, the report doesn’t fully detail which business lines will benefit most from AI monetization. Is it advertising? Cloud? Gaming? The answer is likely a mix, but the breakdown is still unclear.
+EN_A: So the report gives a strong overall view, but the specific path to profit is still a bit of a mystery.
+EN_B: Yes. And that’s why reading the full report is valuable. It has more details on the financial model and valuation.
+EN_A: Speaking of which, what’s the report’s view on the stock?
+EN_B: It’s an Overweight rating with a price target of 650 Hong Kong dollars. That implies about 44% upside from the current price.
+EN_A: 44% upside. That’s a very bullish signal, but it hinges on the AI flywheel working.
+EN_B: Exactly. The report also lists risks like gaming regulation, competition, and US-China tensions. All of these could slow down the AI monetization story.
+EN_A: So the bottom line is: Hy3 is more than just a model update. It’s a potential catalyst for a self-reinforcing AI ecosystem at Tencent.
+EN_B: That’s the core thesis. If you want to understand the financial implications and see which products might lead the charge, I’d recommend diving into the full report. There’s a lot we didn’t cover today.
+EN_A: Great. Thanks for the insights. If you want the full report, check out the link in our show notes.

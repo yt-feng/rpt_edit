@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_hs7jr986/pdfs/0001-74-MS-Investor Presentation-S. Korea Telecom Services IT Services and Technology- -Value-up- - AI optionality-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_hs7jr986/pdfs/0002-75-MS-Kingsoft Cloud Holdings-KC.US-Transition to AI Cloud Bearing Fruit- MaaS Brings Further Upside-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_hs7jr986/pdfs/0003-76-MS-Samsung Electronics-005930.KS-2Q26 Prelim- In-Line- but Strong Underlying Earnings-260707.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_hs7jr986/pdfs/0004-77-MS-Tencent Holdings Ltd.-0700.HK-Hy3 Released- Significant Gains in Agent Capabilities and Product Experience-260707.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_hs7jr986/pdfs/0005-78-MS-Tesla Inc-TSLA.US-Robotaxi Launches in Miami- Model YL Debuts in the US-260706.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
