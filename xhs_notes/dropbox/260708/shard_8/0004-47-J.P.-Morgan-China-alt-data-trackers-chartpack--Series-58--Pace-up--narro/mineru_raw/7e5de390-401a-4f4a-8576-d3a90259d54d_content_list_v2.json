@@ -1,0 +1,4388 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "China alt-data trackers chartpack (Series 58)"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                135,
+                89,
+                643,
+                150
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Pace up (narrowly) in exports & special LGB issuance"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                133,
+                157,
+                643,
+                179
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "After the largely stable June manufacturing PMIs, all eyes are on the hard activity data due over the next two weeks to gauge near-term momentum and assess how the economy is positioned heading into 3Q. We have updated our alt-data trackers (vs. our last update) and our key takeaways are below."
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                219,
+                665,
+                282
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Exports: Port tracking shows departing container (+8.5%) and bulk (+10.1%) shipping deadweight tonnage both accelerated in m/m nsa terms in June. Annual growth may have picked up further. In aggregate, departing shipments deadweight tonnage (excluding tankers) rose 17.2% oya in June (vs. 7.7% in May), suggesting volume growth is picking up alongside recent price gains. Oil tanker arrivals remained subdued in June, down over 30%, similar to May."
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                287,
+                665,
+                379
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- CCFI to USEC, USWC rose  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "14.3\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": ",  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "20.6\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", respectively, compared to two weeks ago; CCFI to the Persian Gulf/Red Sea route increased by another  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "8.6\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "."
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                381,
+                665,
+                412
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- China's domestic and int'l flight cancelation rate fell back notably in the second half of June as energy prices started to normalize."
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                416,
+                663,
+                449
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Production: Processed crude oil production contraction may have deepened in June (vs -9.1% oya in May), though petroleum asphalt plants' operating rates began to recover in the second half of the month. Auto IP decline may have widened in June (vs -3.2% oya in May) while steel IP contraction may have narrowed in June (vs -2.8% oya in May). Coke oven plants stabilized in the second half of June."
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                452,
+                665,
+                543
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Fiscal: June government bond issuance reached 1138bn yuan, broadly matching May's 1140bn yuan issuance. Special LGB issuance rebounded strongly, signaling reactive acceleration, but the uncertainty remains around proceeds deployment to projects. Full-year 200bn yuan of funding for equipment upgrades has been fully deployed, per the NDRC. If recent weakness persists, we expect faster fiscal deployment in 3Q."
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                547,
+                665,
+                640
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• Monetary: PBOC net injected 583bn yuan via pledged 7-day OMO and 200bn yuan via MLF in June, while withdrawing 300bn yuan via outright OMO."
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                642,
+                663,
+                674
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- The PBOC also initiated overnight reverse repos at the end of June, in line with Governor Pan's announcement at the Lujiazui forum. But the operation's rate was not disclosed, signaling a near-term focus on 7-day reverse repo. A cut could become more likely in 2H if growth weakness persists and outweighs inflation risks."
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                677,
+                665,
+                753
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Auto sales remained a drag on retail sales. Passenger car retail sales fell 21% oya in June, partially on lower per-car trade-in subsidies and purchase tax exemptions, and higher fuel costs. NEV sales fell a narrower 7%."
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                757,
+                663,
+                803
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Housing: Secondary home sales continued to improve in June, while new home sales contraction widened."
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                807,
+                663,
+                838
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Inflation: With calmer energy conditions under the US-Iran peace deal, gasoline, diesel and LPG prices continued to moderate in the last ten days of June. Petrochemical products prices fell sharply to near pre-conflict levels, despite a continued upturn in sulfuric acid prices. Agricultural food prices fell  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "0.5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " oya in while pork wholesale prices contraction remained elevated."
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                842,
+                665,
+                920
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "See page 11 for analyst certification and important disclosures."
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                932,
+                586,
+                950
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Emerging Markets Asia, Economic and Policy Research"
+                    }
+                ]
+            },
+            "bbox": [
+                689,
+                219,
+                937,
+                247
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Tingting Ge (852) 2800-0143 tingting.ge@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                689,
+                251,
+                834,
+                292
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Jiayi Li  \n(852) 2800-5229  \njiayi.c.li@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                689,
+                294,
+                820,
+                334
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Tongfang Yuan (852) 2800-0085 tongfang.yuan@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                689,
+                336,
+                854,
+                376
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Feng Zhu  \n(852) 2800 1745  \nfeng.zhu@JPM.com  \nJPM Chase Bank, N.A., Hong Kong Branch"
+                    }
+                ]
+            },
+            "bbox": [
+                689,
+                376,
+                946,
+                430
+            ]
+        },
+        {
+            "type": "page_aside_text",
+            "content": {
+                "page_aside_text_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                3,
+                554,
+                96,
+                877
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                2,
+                344,
+                41
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia Pacific Economic Research 06 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                689,
+                5,
+                923,
+                34
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1. Mapping: High-frequency trackers --> official activity"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                68,
+                154,
+                584,
+                172
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Regarding the mapping efforts from high-frequency data to monthly official activity tracking:"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                176,
+                663,
+                194
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Operating rates for petroleum asphalt plants suggest processed crude oil production contraction may have deepened in June, (vs -9.1% oya in May)."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                200,
+                663,
+                230
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Operating rates for tire plants suggest auto IP decline may have widened in June (vs -3.2% oya in May)."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                234,
+                663,
+                265
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Operating rates for steel rebar suggest that steel IP contraction may have narrowed marginally in June (vs -2.8% oya in May)."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                270,
+                665,
+                301
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Housing transactions for 30 major cities fell  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "7.3\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " oya in June (vs  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "-1.4\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " in May)."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                305,
+                638,
+                321
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Port tracking suggests that export volume growth may have picked up in June, as departing shipments deadweight tonnage (excluding tankers) rose 17.2% oya in June (vs. 7.7% in May)."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                325,
+                665,
+                370
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/06bad05033d3fc4923bbe507b72e88f920577a49077176f778a701166ebf3c34.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 1.1: Industrial production - Processed crude oil"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: CEIC, Wind, JPM; 1/ Latest for June 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                394,
+                486,
+                541
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c7e5ba0ad61b8bed805d13510bbb4ac040465a60e41313ca54ce61b65ca7056c.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 1.2: Industrial production - Auto"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: CEIC, Wind, JPM; 1/ Latest for June 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                508,
+                394,
+                903,
+                547
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b3896e1fcada82f0caafb4307e4173a4f82a6eab51a986a2b46adf4887253865.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 1.3: Industrial production - Steel"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: CEIC, Wind, JPM; 1/ Latest for June 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                578,
+                485,
+                729
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f81672825db43435d845763e419364bd863c5849ee76597ba5d534c1b63583cc.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 1.4: China exports"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Elane Shipping, China Customs, JPM; 1/ Latest for June 2026, excl. tankers"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                575,
+                911,
+                723
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2. Trade"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                68,
+                749,
+                148,
+                767
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "China's outbound container costs increased further across major routes, despite the signing of a 60-day US–Iran MoU. By destination, CCFI to USEC, USWC rose 14.3%, 20.6%, respectively, compared to two weeks ago; CCFI to the Persian Gulf/Red Sea route increased by another 13.6%. Baltic Dry Index ticked down further after several weeks of increases since April. US-bound shipping rose 6.9% oya or 15.8%m/m nsa in June (vs 25.9% oya or 1.5%m/m nsa in May)."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                772,
+                665,
+                864
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Container ships usually carry consumer goods, as well as some machinery equipment and electronics. Departing container ships' deadweight tonnage rose 4.6% oya or 8.5% m/m nsa in June. Arriving container ships' deadweight tonnage fell 0.4% oya or up 6.7% m/m nsa."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                870,
+                665,
+                930
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Bulk carriers transport unpackaged bulk cargo for grain, coal, iron ore, steel, etc., in"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                934,
+                663,
+                950
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Tingting Ge (852) 2800-0143 tingting.ge@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                36,
+                212,
+                70
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia Pacific Economic Research\n06 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                341,
+                34,
+                524,
+                59
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                30,
+                926,
+                56
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                950,
+                83,
+                962
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: Baltic Exchange Information Services Limited, JPM their cargo holds. Departing bulk ships' deadweight tonnage rose 20.9% oya (or 10.1% m/m nsa), while arriving bulk ships' deadweight tonnage rose 23.3% oya or 8.0% m/m nsa."
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                456,
+                795,
+                468
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                91,
+                131,
+                665,
+                162
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Oil tanker arrivals remained subdued in June, down over 30%, similar to May."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                166,
+                619,
+                181
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "China's domestic and international flight cancelation rates fell back notably in the second half of June as energy prices started to normalize."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                190,
+                665,
+                221
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "China's soybean imports from the US decreased in May, after an uptick in April. The White House statement said China would purchase at least US\\$17bn of US agricultural products annually from 2026 to 2028."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                228,
+                665,
+                274
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b105fdf10ded929611c6e8469a9ceb8784ea0cf25e7142a2d8f7b17874f11179.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                282,
+                475,
+                468
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/a86288fdf8caca52a87678241e121a3b4e3c6ff5193a328ce8f719e43a35d2e7.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 2.2: BEISL freight index"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                506,
+                296,
+                913,
+                468
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/98f602e5aade709d88b0a1390e36800f71fcab0d16ae7ef5d804bd2374d6daaa.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 2.3: Deadweight tonnage of departing ships - Container Ton mn"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Elane Shipping Statistics, JPM."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                503,
+                473,
+                673
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/bb4e7061775df59602e4a8ea62e3ec901dd42b2a14a7028736ec0df452c17495.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 2.4: Deadweight tonnage of arrived ships - Container Ton mn"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Elane Shipping Statistics, JPM."
+                    }
+                ]
+            },
+            "bbox": [
+                506,
+                501,
+                901,
+                670
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/2533f8b8e98e3802e9f0766695bdcabc1a5b1a89a3de632d29adb8c3a7150dc4.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 2.5: Deadweight tonnage of departing ships - Bulk Ton mn"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Elane Shipping Statistics, JPM."
+                    }
+                ]
+            },
+            "bbox": [
+                83,
+                707,
+                473,
+                870
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/349866ff8e3ab8282eee74185514ac99c2cb7b3bbeeb374a4aa5521978240c2d.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 2.6: Deadweight tonnage of arrived ships - Bulk Ton mn"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Elane Shipping Statistics, JPM."
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                707,
+                903,
+                870
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Tingting Ge (852) 2800-0143 tingting.ge@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                36,
+                212,
+                70
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia Pacific Economic Research\n06 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                343,
+                34,
+                524,
+                58
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                32,
+                926,
+                56
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                916,
+                952,
+                928,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: Elane Shipping Statistics, JPM."
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                314,
+                702,
+                326
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c60f6ec2328bf734f2109af8b7b1a315190657443248af7b801fdc16477c84c5.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 2.7: Deadweight tonnage of arrived ships - Oil Tanker Ton mn"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Elane Shipping Statistics, JPM."
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                154,
+                473,
+                326
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/8dbe1852246ba53f448dbb288b830bd795952c23afa7fcbe290362852f4e7b9d.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 2.8: Deadweight tonnage of departing ships - Oil Tanker Ton mn"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                506,
+                154,
+                901,
+                327
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/a860c3ded4af337281456adb6504ab5b15d4991750af1a9b25ff712e8e70eb4b.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 2.9: China flight execution % of 2019 avg, 7dma"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                360,
+                468,
+                513
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/915d97ae8b3148a3f5a524ce1f18551077fa004b70bde1c04b4a12b88a56e853.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 2.10: China flight cancellation rate % of planned, 7dma"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                509,
+                363,
+                888,
+                513
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/836bdff57c1ec5d8b5af0999a89f8dca1d0f8070e615f973576d55542b97cdc1.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 2.11: China imports of soybeans from world Ton mn"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: CEIC, JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                556,
+                478,
+                708
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/0b5739b0a37ad2a1d58a552c20fccb05a693bead5a789339d02f7ff026128f9f.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 2.12: China imports of soybeans from US"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                506,
+                553,
+                908,
+                700
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3. Sales and production"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                68,
+                723,
+                295,
+                741
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Auto sales: According to CPCA, passenger car retail sales fell 21% oya in June, partially on lower per-car trade-in subsidies and purchase tax exemptions, and higher fuel costs. NEV sales fell a narrower 7%. This suggests that auto sales may have remained a drag on headline retail sales in June."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                754,
+                665,
+                816
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Operating rates of petroleum asphalt plants rebounded in the second half of June, though still much lower than the pre-Middle East conflict levels. Operating rates for steel rebar held steady in June, while semi-steel and all-steel tires declined modestly. Coke oven plants' operation rates stabilized in the second half of June after the modest fall since mid-May."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                820,
+                665,
+                896
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Tingting Ge (852) 2800-0143 tingting.ge@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                36,
+                212,
+                70
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia Pacific Economic Research\n06 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                341,
+                34,
+                524,
+                58
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                32,
+                926,
+                56
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                952,
+                81,
+                962
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/96a83300838855c3142be49871335701e1a150360bf7b5fb6949ceef680b69c0.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 3.1: Weekly auto retail sales Thousand units"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                157,
+                472,
+                312
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/58c62803baf7e6eb4e3eb28bbe0e69402908e582d2964e1e7df476399c567a31.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 3.2: Operating rate for all-steel tire"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                508,
+                148,
+                897,
+                308
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/5710ba5efb888c031c11422ec069039f1e9afc82382d712f42841bbb93450787.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 3.3: Operating rate for semi-steel tire"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                341,
+                455,
+                496
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/d5bd4280b56197638f3aa79837b62720bc08e3dce63735fd6677037d3b10bfcb.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 3.4: Operating rate for petroleum asphalt plants"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                341,
+                908,
+                503
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b3c9c628f5090782071347778d4ca980273c84a2c8964a1b3efbcda18f5fba21.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 3.5: Operating rate for steel rebar at major steel plants"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                531,
+                483,
+                687
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/201b334ac16c2b2f8a5242974f9de19f9c1bd8ab547afcd6223809f0a3c14880.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 3.6: Operating rate for coke oven plants"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                508,
+                534,
+                897,
+                683
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4. Policy: Government bond issuance and liquidity operations"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                68,
+                707,
+                648,
+                725
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "June's government bond issuance reached 1138bn yuan, broadly matching May's 1140bn yuan of issuance. Special LGB issuance rebounded strongly, signaling a reactive acceleration, but the uncertainty remains around proceeds deployment to projects. If recent weakness persists, we expect faster fiscal deployment in 3Q."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                729,
+                665,
+                790
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- CGB issuance nearly halved to 318bn yuan in June from 708bn yuan in May. Ytd issuance reached  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "40.2\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " of the annual issuance target, trailing last year's  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "50.8\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " pace. In terms of further breakdown, special CGB issuance remained solid at 204bn yuan in June (vs. 249bn yuan in May), followed by 80bn yuan in July mtd. According to the NRDC, full-year 200bn yuan funding for equipment upgrades has been fully deployed."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                796,
+                665,
+                887
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Special LGB issuance rose strongly to 572bn yuan in June (vs.161bn yuan in May), exceeding last June's level, signaling a reactive acceleration in utilizing the remaining fiscal resources approved at the March NPC. This has lifted year-to-date issuance to"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                891,
+                665,
+                938
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Tingting Ge (852) 2800-0143 tingting.ge@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                36,
+                212,
+                70
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia Pacific Economic Research\n06 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                341,
+                36,
+                524,
+                58
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                32,
+                926,
+                56
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                916,
+                950,
+                928,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "47.0\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " of the annual target, now catching up with last year's pace."
+                    }
+                ]
+            },
+            "bbox": [
+                91,
+                131,
+                531,
+                147
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- General LGB issuance ticked up to 41bn yuan; refinancing LGB reached 207bn yuan."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                150,
+                663,
+                167
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- PBOC net injected 582.6bn yuan via pledged 7-day OMO and 200bn yuan via MLF in June, while withdrawing 300bn yuan via outright OMO. The PBOC also initiated overnight reverse repos at the end of June, with 300bn yuan on June 29 and 600bn yuan on June 30. This is in line with Governor Pan's announcement at the Lujiazui forum. But the operation's rate was not disclosed, signaling the PBOC's near-term focus on 7-day reverse repo."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                171,
+                665,
+                261
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- The surprisingly soft April activity data and downside risks to 2Q GDP should keep a rate cut on the table. A more hawkish Fed may complicate the backdrop, but China's decision should remain domestically driven given a resilient CNY. A cut could become more likely in 2H if growth headwinds intensify and outweigh inflation risks. As usual, a 10bp move would likely be more of a policy signal than a meaningful easing impulse."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                265,
+                665,
+                343
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/2812d9db03731a9a90f00615d3da0fef8b84d7f173aed555215a1d5752508da3.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 4.1: China CGB net issuance"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, JPM."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                363,
+                482,
+                538
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/6c2b62b568e42da1ee8a6c4812710da1c2f6703e65ffa5384eb99c228e0a50c6.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 4.2: China CGB net issuance progress % of annual issuance (target)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, JPM."
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                379,
+                911,
+                543
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/82a6dff1b89f54993bd31f523e041f1ee17c66f61e46afcfc04c0cc28312c287.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 4.3: China special LGB issuance"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, JPM."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                567,
+                483,
+                745
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/2cac79895365b1212d24e1939be57f9cc97c882875c4b129a5a583c356598e88.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 4.4: China special LGB issuance progress"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, JPM."
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                581,
+                913,
+                747
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Tingting Ge (852) 2800-0143 tingting.ge@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                36,
+                212,
+                70
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia Pacific Economic Research\n06 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                343,
+                34,
+                524,
+                58
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                32,
+                926,
+                56
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                950,
+                81,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Jan 24 Apr 24 Jul 24 Oct 24 Jan 25 Apr 25 Jul 25 Oct 25 Jan 26 Apr 26  \nSource: Wind, JPM."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                290,
+                459,
+                314
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/3b4e1b21d62a1c20d05271d2346b77831789ada42127c2491410bc86295952f0.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 4.5: China special CGB net issuance RMB bn"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                80,
+                160,
+                472,
+                314
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/82d2ad4c4a15420e79bcd117a43e8bde246cf1b06fbf44a1da9ea7105daa6ff6.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 4.6: Local government special refinancing bonds issuance RMB bn"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, JPM."
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                157,
+                903,
+                307
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/10f936c4956c06bb5016002f801dbc00060ea9d9e5a6561763a2db8bd4c7837f.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 4.7: General LGB new issuance"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, JPM."
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                350,
+                482,
+                518
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/84e2d211b5c129fab6712d8f329a15054c05b6925a8c32d6f165547234b7582f.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 4.8: General LGB new issuance progress"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, JPM."
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                362,
+                913,
+                520
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/d8062cdaffdbaf3cc5686885b2b5634a56da2e721dfc2c86553f9a296220cc50.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 4.9: Outstanding major monetary policy instruments"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: PBOC, JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                562,
+                483,
+                714
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/11c9e52d33c7afca9e530403ceda0a00a03e9b6a6af07b7e704b16492fceae01.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 4.10: Outright OMO operation"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: PBOC, JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                506,
+                563,
+                910,
+                723
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "5. Housing"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                68,
+                745,
+                176,
+                765
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Secondary home sales continued to improve in June, albeit at a slower pace, while new home sales contraction widened."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                767,
+                663,
+                800
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- The contraction in 30 major cities' new home sales widened to  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "-7.3\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " oya in June from  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "-1.4\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " in May, after a brief growth of  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "2.8\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " in April. Major cities' secondary home sales rose a solid  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "12.3\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " in June (vs.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "18.0\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " in May)."
+                    }
+                ]
+            },
+            "bbox": [
+                91,
+                809,
+                663,
+                855
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Centraline's sales manager confidence index and the secondary home asking price index both edged down in June."
+                    }
+                ]
+            },
+            "bbox": [
+                93,
+                859,
+                663,
+                890
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Land sales values were below last year's level from mid- to end-June, continuing to weigh on government fund account revenues. The sales premium rate moderated from its recent peak before a brief uptick, likely affected by a few auction cases."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                899,
+                665,
+                945
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Tingting Ge (852) 2800-0143 tingting.ge@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                36,
+                212,
+                70
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia Pacific Economic Research\n06 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                341,
+                34,
+                524,
+                59
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                32,
+                926,
+                56
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                916,
+                950,
+                928,
+                962
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/3b44e6fafe1b0d0d028076953feab22fa10b6fbdf3530e1cdc75d7b9e10bb3d2.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 5.1: Housing transactions by sqm in 30 major cities Thousand sqm, 7dma"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                157,
+                475,
+                310
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/ea204502c919f1053c5e02c4f37af5bd48798654ad5a1ac04e7ab8768258e49c.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 5.2: Major cities' secondary housing transactions Avg unit, 7dma"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                508,
+                160,
+                898,
+                310
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/6f84a26fb5b02407983be2fc35def17adfd688d24987dcd891d729036af735c0.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 5.3: Centraline tier-1 cities' secondary asking price index Index"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, JPM. Note: Simple average for 4 tier-1 cities."
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                354,
+                473,
+                508
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/a59cbd04ffb8ebd8dbe2dc73ef064aa63bc1cccb5ce714af0101f40697fee71f.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 5.4: Centraline sales manager index"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, JPM. Note: Simple average for Shanghai, Shenzhen and Guangzhou."
+                    }
+                ]
+            },
+            "bbox": [
+                508,
+                352,
+                900,
+                509
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/5289a8b32c585f8595e119036f16d4c14dde9bedea709557ed9e35624360d72c.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 5.5: Weekly land sales"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                550,
+                475,
+                708
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f7173ecef30b37bf6ccd4ba5ca25a45ee4f551102a1e1851753756d9f32e83ef.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 5.6: Land sale premium rate"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                549,
+                903,
+                701
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "6. Inflation"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                68,
+                735,
+                173,
+                754
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- With calmer energy conditions under the US-Iran peace deal, gasoline, diesel and LPG prices continued to moderate in the last ten days of June, while LNG prices also fell after an uptick in mid-June. Coal prices were relatively elevated around the recent peak, partially on summer seasonal demand."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                767,
+                665,
+                830
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Most petrochemical products prices fell sharply in the last ten days of June, despite a continued upturn in sulfuric acid prices. Prices of polyethylene, polyethylene, rubber, petro benzene have declined to near pre-conflict levels. Polyester yarn and methanol prices have also eased, though they remain above pre-conflict levels."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                833,
+                665,
+                895
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Agricultural food prices fell  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "0.5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " oya in June (vs  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "-0.9\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " in May), further narrowing the drag on headline CPI. Rice, wheat and corn prices were largely stable."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                898,
+                663,
+                929
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Pork wholesale price deflation remained elevated at -28.3% oya in June (vs -"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                932,
+                663,
+                949
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Tingting Ge (852) 2800-0143 tingting.ge@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                36,
+                212,
+                70
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia Pacific Economic Research\n06 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                341,
+                34,
+                524,
+                59
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                32,
+                926,
+                56
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                950,
+                81,
+                962
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Jan 22 Jul 22 Jan 23 Jul 23 Jan 24 Jul 24 Jan 25 Jul 25 Jan 26 Jul 26 Source: NBS, JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                432,
+                480,
+                461
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Jan 22 Jul 22 Jan 23 Jul 23 Jan 24 Jul 24 Jan 25 Jul 25 Jan 26  \nSource: NBS, JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                616,
+                879,
+                645
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "28.5% oya in May), as overcapacity in the industry prolongs."
+                    }
+                ]
+            },
+            "bbox": [
+                93,
+                131,
+                501,
+                147
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Lithium carbonate prices were volatile over the past month, ending June slightly lower than the month-start, while polysilicon prices were largely unchanged at a subdued level relative to early 2026. Copper prices remained elevated on AI-related demand, while aluminum prices trended lower. Cement prices were relatively steady, while steel rebar prices ticked down."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                150,
+                665,
+                227
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Against the backdrop of lower global oil prices, the NDRC adjusted domestic gasoline and diesel prices down by RMB 950/ton and RMB 915/ton respectively on July 3, marking the largest cut so far this year."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                230,
+                665,
+                277
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b4f5b3af2157eda38aaa5d6fb9c9bfacd1f469e1016531bc081a2e1af914312f.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 6.1: Energy price"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                80,
+                292,
+                480,
+                449
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/65ff039cf635e0cae26488de1dfabd7713ed18066ef88e33a77eed495d5095e8.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 6.2: Petrochemical product price"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Jan 22 Jul 22 Jan 23 Jul 23 Jan 24 Jul 24 Jan 25 Jul 25 Jan 26 Jul 26  \nSource: NBS, JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                501,
+                296,
+                915,
+                441
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/df7cba7740fe25efd65ff1d6958469359880d8ee6f929937f38568fdcd3d1cba.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 6.3: Fertilizer price"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: NBS, JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                490,
+                480,
+                643
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/a5c852bad2727eb372d4bffe0be65272badaed4810f6ef99000d243b88022ea5.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 6.4: Grain and hog price"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                508,
+                482,
+                901,
+                641
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/370fc2baef3a06927d083b225056e3f24ec88d3dc1bba440282874d955963dee.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 6.5: Agricultural food product wholesale price"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                80,
+                685,
+                470,
+                860
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/338edb529e7904015256f8db418daea377c67a8595d4e53e5f98e547e664fad6.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 6.6: Pork wholesales price"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                506,
+                683,
+                898,
+                860
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Tingting Ge (852) 2800-0143 tingting.ge@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                36,
+                212,
+                70
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia Pacific Economic Research\n06 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                343,
+                36,
+                524,
+                58
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                32,
+                926,
+                56
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                916,
+                952,
+                928,
+                962
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/11bdcb8dd178ce7ecf24a7931a0f22ce6344eac4dd359630e067a7985ab886c7.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 6.7: Pork wholesales price vs. NBS data %oya"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: NBS, Wind, JPM. 1/ Latest for May 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                150,
+                475,
+                300
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/199c78d8c478836e26ebd6da45279dd977212946116a54cc1a12167a67de1d08.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 6.8: Commodity futures prices"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                504,
+                154,
+                898,
+                323
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/6c1b04c21c88f6acd007572a8df12a5cf2a4090d48f83a6ddaa3083bcf435d51.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 6.9: Copper price"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                76,
+                341,
+                482,
+                525
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/6f73e04889f1fd02510c6b2bfdbff597af6ced92128457016da0c4c41feb980d.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 6.10: Cement price"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                347,
+                905,
+                517
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c12573a54966776ffcc6f7121d33acb0e3d2d2110d98fcbf6bec2edd0388c5f9.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 6.11: Aluminum price"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                541,
+                475,
+                722
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/4fe740cd3142505bf162fd4ab2491a26cacdc2427db033ff970087bc691193a1.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 6.12: Steel rebar price Thousand yuan/ton"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                504,
+                554,
+                915,
+                709
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/404b9005427be6831f69ac04f381dd7b5b25e0482a0d0c4e4e350bb6e2d9665b.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 6.13: Retail gasoline price vs. Brent oil Index, 2016 = 100"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: CEIC, JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                757,
+                468,
+                907
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/9de92d24d25112725b21df710d00d4f702caa7df5ad75190f0c49f7a42d78f30.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 6.14: Global commodity price vs. China PPI"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Haver, JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                752,
+                903,
+                909
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Tingting Ge (852) 2800-0143 tingting.ge@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                36,
+                212,
+                70
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia Pacific Economic Research\n06 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                341,
+                34,
+                524,
+                58
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                32,
+                926,
+                56
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                71,
+                952,
+                89,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Analysts' Compensation: The research analysts responsible for the preparation of this report receive compensation based upon various factors, including the quality and accuracy of research, client feedback, competitive factors, and overall firm revenues."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                129,
+                919,
+                160
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Other Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                70,
+                163,
+                200,
+                179
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM is a marketing name for investment banking businesses of JPM Chase & Co. and its subsidiaries and affiliates worldwide."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                210,
+                898,
+                225
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "UK MIFID FICC research unbundling exemption: UK clients should refer to UK MIFID Research Unbundling exemption for details of JPM's implementation of the FICC research exemption and guidance on relevant FICC research categorisation."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                230,
+                923,
+                259
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any long form nomenclature for references to China; Hong Kong; Taiwan; and Macau within this research material are Mainland China; Hong Kong SAR (China); Taiwan (China); and Macau SAR (China)."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                264,
+                919,
+                292
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM may, from time to time, write on issuers or securities targeted by economic or financial sanctions imposed or administered by the governmental authorities of the U.S., EU, UK or other relevant jurisdictions (Sanctioned Securities). Nothing in this report is intended to be read or construed as encouraging, facilitating, promoting or otherwise approving investment or dealing in such Sanctioned Securities. Clients should be aware of their own legal and compliance obligations when making investment decisions."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                296,
+                924,
+                352
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any digital or crypto assets discussed in this research report are subject to a rapidly changing regulatory landscape. For relevant regulatory advisories on crypto assets, including bitcoin and ether, please see https://www.JPM.com/disclosures/cryptoasset-disclosure."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                357,
+                893,
+                385
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The author(s) of this research report may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                390,
+                898,
+                419
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Exchange-Traded Funds (ETFs): JPM Securities LLC (“JPMS”) acts as authorized participant for substantially all U.S.-listed ETFs. To the extent that any ETFs are mentioned in this report, JPMS may earn commissions and transaction-based compensation in connection with the distribution of those ETF shares and may earn fees for performing other trade-related services, such as securities lending to short sellers of the ETF shares. JPMS may also perform services for the ETFs themselves, including acting as a broker or dealer to the ETFs. In addition, affiliates of JPMS may perform services for the ETFs, including trust, custodial, administration, lending, index calculation and/or maintenance and other services."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                424,
+                926,
+                504
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Changes to Interbank Offered Rates (IBORs) and other benchmark rates: Certain interest rate benchmarks are, or may in the future become, subject to ongoing international, national and other regulatory guidance, reform and proposals for reform. For more information, please consult: https://www.JPM.com/global/disclosures/interbank_offered_rates"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                509,
+                926,
+                550
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Private Bank Clients: Where you are receiving research as a client of the private banking businesses offered by JPM Chase & Co. and its subsidiaries (“JPM Private Bank”), research is provided to you by JPM Private Bank and not by any other division of JPM, including, but not limited to, the JPM Corporate and Investment Bank and its Global Research division."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                554,
+                928,
+                598
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Legal entity responsible for the production and distribution of research: The legal entity identified below the name of the Reg AC Research Analyst who authored this material is the legal entity responsible for the production of this research. Where multiple Reg AC Research Analysts authored this material with different legal entities identified below their names, these legal entities are jointly responsible for the production of this research. Where more than one legal entity is listed under an analyst's name, the first legal entity is responsible for the production unless stated otherwise. Research Analysts from various JPM affiliates may have contributed to the production of this material but may not be licensed to carry out regulated activities in your jurisdiction (and do not hold themselves out as being able to do so). Unless otherwise stated below in the legal entity disclosures, this material has been distributed by the legal entity responsible for production, or where more than one legal entity is listed under the analyst's name, the first legal entity will be responsible for distribution. If you have any queries, please contact the relevant Research Analyst in your jurisdiction or the entity in your jurisdiction that has distributed this research material."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                602,
+                928,
+                722
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Legal Entities Disclosures and Country-/Region-Specific Disclosures:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                68,
+                726,
+                508,
+                740
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Argentina: JPM Chase Bank N.A Sucursal Buenos Aires is regulated by Banco Central de la República Argentina (\"BCRA\"- Central Bank of Argentina) and Comisión Nacional de Valores (\"CNV\"- Argentinian Securities Commission - ALYC y AN Integral N°51)."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                739,
+                898,
+                767
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Australia: JPM Securities Australia Limited (\"JPMSAL\") (ABN 61 003 245 234/AFS Licence No: 238066) is regulated by the Australian Securities and Investments Commission and is a Market Participant of ASX Limited, a Clearing and Settlement Participant of ASX Clear Pty Limited and a Clearing Participant of ASX Clear (Futures) Pty Limited. This material is issued and distributed in Australia by or on behalf of JPMSAL only to \"wholesale clients\" (as defined in section 761G of the Corporations Act 2001). A list of all financial products covered can be found by visiting https://www.jpmm.com/research/disclosures. JPM seeks to cover companies of relevance to the domestic and international investor base across all Global Industry Classification Standard (GICS) sectors, as well as across a range of market capitalisation sizes. If applicable, in the course of conducting public side due diligence on the subject company(ies), the Research Analyst team may at times perform such diligence through corporate engagements such as site visits, discussions with company representatives, management presentations, etc. Research issued by JPMSAL has been prepared in accordance with JPM Australia's Research Independence Policy which can be found at the following link: JPM Australia - Research Independence Policy."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                772,
+                929,
+                904
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Brazil: Banco JPM S.A. is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsman"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                909,
+                906,
+                923
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Tingting Ge (852) 2800-0143 Tongfang Yuan (852) 2800-0085  \ntingting.ge@JPM.com tongfang.yuan@JPM.com  \nJPM Chase Bank, N.A., Hong Kong Branch  \nJiayi Li (852) 2800-5229 Feng Zhu (852) 2800 1745  \njiayi.c.li@JPM.com feng.zhu@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                23,
+                460,
+                87
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia Pacific Economic Research"
+                    }
+                ]
+            },
+            "bbox": [
+                516,
+                23,
+                710,
+                37
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "06 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                516,
+                49,
+                589,
+                63
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                19,
+                926,
+                43
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                911,
+                952,
+                926,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM: 0800-7700847 / 0800-7700810 (For Hearing Impaired) / ouvidoria.jp.morgan@jpmchase.com."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                129,
+                714,
+                145
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Canada: JPM Securities Canada Inc. is a registered investment dealer, regulated by the Canadian Investment Regulatory Organization and the Ontario Securities Commission and is the participating member on Canadian exchanges. This material is distributed in Canada by or on behalf of JPM Securities Canada Inc."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                150,
+                921,
+                190
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Chile: Inversiones JPM Limitada is an unregulated entity incorporated in Chile."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                196,
+                589,
+                212
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "China: JPM Securities (China) Company Limited has been approved by CSRC to conduct the securities investment consultancy business."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                216,
+                875,
+                243
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Colombia: Banco JPM Colombia S.A. is supervised by the Superintendencia Financiera de Colombia (SFC). Any reference in this material to products or services offered abroad by entities other than the Bank in Colombia is included exclusively for descriptive purposes. Such references do not constitute, and should not be construed as, promotional activity or the provision of financial products or services within Colombian territory, as defined under applicable Colombian regulation."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                251,
+                916,
+                305
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Dubai International Financial Centre (DIFC): JPM Chase Bank, N.A., Dubai Branch is regulated by the Dubai Financial Services Authority (DFSA) and its registered address is Dubai International Financial Centre - The Gate, West Wing, Level 3 and 9 PO Box 506551, Dubai, UAE. This material has been distributed by JPM Chase Bank, N.A., Dubai Branch to persons regarded as professional clients or market counterparties as defined under the DFSA rules."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                310,
+                911,
+                363
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "European Economic Area (EEA): Unless specified to the contrary, research is distributed in the EEA by JPM SE (“JPM SE”), which is authorised as a credit institution by the Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and jointly supervised by the BaFin, the German Central Bank (Deutsche Bundesbank) and the European Central Bank (ECB). JPM SE is a company headquartered in Frankfurt with registered address at TaunusTurm, Taunustor 1, Frankfurt am Main, 60310, Germany. The material has been distributed in the EEA to persons regarded as professional investors (or equivalent) pursuant to Art. 4 para. 1 no. 10 and Annex II of MiFID II and its respective implementation in their home jurisdictions (“EEA professional investors”). This material must not be acted on or relied on by persons who are not EEA professional investors. Any investment or investment activity to which this material relates is only available to EEA relevant persons and will be engaged in only with EEA relevant persons."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                369,
+                923,
+                474
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Hong Kong: JPM Securities (Asia Pacific) Limited (CE number AAJ321) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission in Hong Kong, and JPM Broking (Hong Kong) Limited (CE number AAB027) is regulated by the Securities and Futures Commission in Hong Kong. JPM Chase Bank, N.A., Hong Kong Branch (CE Number AAL996) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission, is organized under the laws of the United States with limited liability. Where the distribution of this material is a regulated activity in Hong Kong, the material is distributed in Hong Kong by or through JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                480,
+                928,
+                561
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "India: JPM India Private Limited (Corporate Identity Number - U67120MH1992FTC068724), having its registered office at JPM Tower, Off. C.S.T. Road, Kalina, Santacruz - East, Mumbai – 400098, is registered with the Securities and Exchange Board of India (SEBI) as a 'Research Analyst' having registration number INH000001873. JPM India Private Limited is also registered with SEBI as a member of the National Stock Exchange of India Limited and the Bombay Stock Exchange Limited (SEBI Registration Number – INZ000239730) and as a Merchant Banker (SEBI Registration Number - MB/INM000002970). Telephone: 91-22-6157 3000, Facsimile: 91-22-6157 3990 and Website: http://www.jpmipl.com. JPM Chase Bank, N.A. - Mumbai Branch is licensed by the Reserve Bank of India (RBI) (Licence No. 53/Licence No. BY.4/94; SEBI - IN/CUS/014/ CDSL : IN-DP-CDSL-444-2008/ IN-DP-NSDL-285-2008/ INBI00000984/ INE231311239) as a Scheduled Commercial Bank in India, which is its primary license allowing it to carry on Banking business in India and other activities, which a Bank branch in India are permitted to undertake. For non-local research material, this material is not distributed in India by JPM India Private Limited. Compliance Officer: Ashutosh Sharma; ashutosh.j.sharma@jpmchase.com; +912261575002. Grievance Officer: Ramprasadh K, jpmipl.research.feedback@JPM.com; +912261573000. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Please visit Terms and Conditions and Most Important Terms and Conditions (MITC). The annual Compliance audit report is available at http://www.jpmipl.com/#research."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                565,
+                928,
+                736
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Indonesia: PT JPM Sekuritas Indonesia is a member of the Indonesia Stock Exchange and is registered and supervised by the Otoritas Jasa Keuangan (OJK)."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                741,
+                910,
+                769
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Korea: JPM Securities (Far East) Limited, Seoul Branch, is a member of the Korea Exchange (KRX). JPM Chase Bank, N.A., Seoul Branch, is licensed as a branch office of foreign bank (JPM Chase Bank, N.A.) in Korea. Both entities are regulated by the Financial Services Commission (FSC) and the Financial Supervisory Service (FSS). For non-macro research material, the material is distributed in Korea by or through JPM Securities (Far East) Limited, Seoul Branch."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                774,
+                924,
+                829
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Japan: JPM Securities Japan Co., Ltd. and JPM Chase Bank, N.A., Tokyo Branch are regulated by the Financial Services Agency in Japan."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                833,
+                923,
+                861
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Malaysia: This material is issued and distributed in Malaysia by JPM Securities (Malaysia) Sdn Bhd (18146-X), which is a Participating Organization of Bursa Malaysia Berhad and holds a Capital Markets Services License issued by the Securities Commission in Malaysia."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                867,
+                916,
+                896
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Mexico: JPM Casa de Bolsa, S.A. de C.V., JPM Grupo Financiero is member of the Mexican Stock Exchange (“Bolsa Mexicana de Valores”) and the Institutional Stock Exchange (“Bolsa Institucional de Valores”), and it is authorized to act as a broker dealer by the"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                900,
+                918,
+                927
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Tingting Ge (852) 2800-0143 Tongfang Yuan (852) 2800-0085  \ntingting.ge@JPM.com tongfang.yuan@JPM.com  \nJPM Chase Bank, N.A., Hong Kong Branch  \nJiayi Li (852) 2800-5229 Feng Zhu (852) 2800 1745  \njiayi.c.li@JPM.com feng.zhu@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                23,
+                460,
+                87
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia Pacific Economic Research China alt-data trackers chartpack (Series 58) 06 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                514,
+                23,
+                714,
+                74
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                19,
+                926,
+                43
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                71,
+                950,
+                89,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "National Banking and Securities Exchange Commission (“Comisión Nacional Bancaria y de Valores”)."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                129,
+                683,
+                145
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "New Zealand: This material is issued and distributed by JPMSAL in New Zealand only to \"wholesale clients\" (as defined in the Financial Markets Conduct Act 2013). JPMSAL is registered as a Financial Service Provider under the Financial Service providers (Registration and Dispute Resolution) Act of 2008."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                150,
+                895,
+                190
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Philippines: JPM Securities Philippines Inc. is a Trading Participant of the Philippine Stock Exchange and a member of the Securities Clearing Corporation of the Philippines and the Securities Investor Protection Fund. It is regulated by the Securities and Exchange Commission."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                196,
+                924,
+                225
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Singapore: This material is issued and distributed in Singapore by or through JPM Securities Singapore Private Limited (JPMSS) [MDDI (P) 057/08/2025 and Co. Reg. No.: 199405335R], which is a member of the Singapore Exchange Securities Trading Limited, and/or JPM Chase Bank, N.A., Singapore branch (JPMCB Singapore), both of which are regulated by the Monetary Authority of Singapore. This material is issued and distributed in Singapore only to accredited investors, expert investors and institutional investors, as defined in Section 4A of the Securities and Futures Act, Cap. 289 (SFA). This material is not intended to be issued or distributed to any retail investors or any other investors that do not fall into the classes of “accredited investors,” “expert investors” or “institutional investors,” as defined under Section 4A of the SFA. Recipients of this material in Singapore are to contact JPMSS or JPMCB Singapore in respect of any matters arising from, or in connection with, the material."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                230,
+                926,
+                336
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "South Africa: JPM Equities South Africa Proprietary Limited and JPM Chase Bank, N.A., Johannesburg Branch are members of the Johannesburg Securities Exchange and are regulated by the Financial Services Conduct Authority (FSCA)."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                341,
+                915,
+                370
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Taiwan: JPM Securities (Taiwan) Limited is a participant of the Taiwan Stock Exchange (company-type) and regulated by the Taiwan Securities and Futures Bureau. Material relating to equity securities is issued and distributed in Taiwan by JPM Securities (Taiwan) Limited, subject to the license scope and the applicable laws and the regulations in Taiwan. To the extent that JPM Securities (Taiwan) Limited produces research materials on securities not listed on the Taiwan Stock Exchange or Taipei Exchange (“Non-Taiwan Listed Securities”), these materials shall not constitute securities recommendations for the purpose of applicable Taiwan regulations, and, for the avoidance of doubt, JPM Securities (Taiwan) Limited does not act as broker for Non-Taiwan Listed Securities. According to Paragraph 2, Article 7-1 of Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers (as amended or supplemented) and/or other applicable laws or regulations, please note that the recipient of this material is not permitted to engage in any activities in connection with the material that may give rise to conflicts of interests, unless otherwise disclosed in the “Important Disclosures” in this material."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                374,
+                926,
+                505
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Thailand: This material is issued and distributed in Thailand by JPM Securities (Thailand) Ltd., which is a member of the Stock Exchange of Thailand and is regulated by the Ministry of Finance and the Securities and Exchange Commission. The registered address is 548 One City Center Building, 50th Floor, Ploenchit Road, Lymphini, Pathum Wan, Bangkok 10330."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                510,
+                928,
+                553
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "UK: Research is produced in the UK by JPM Securities plc (“JPMS plc”) which is a member of the London Stock Exchange and is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority or JPM Markets Limited (“JPMML Ltd”) which is authorised and regulated by the Financial Conduct Authority. Unless specified to the contrary, this material is distributed in the UK by JPMS plc and is directed in the UK only to: (a) persons having professional experience in matters relating to investments falling within article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) (Order) 2005 (“the FPO”); (b) persons outlined in article 49 of the FPO (high net worth companies, unincorporated associations or partnerships, the trustees of high value trusts, etc.); or (c) any persons to whom this communication may otherwise lawfully be made; all such persons being referred to as \"UK relevant persons\". This material must not be acted on or relied on by persons who are not UK relevant persons. Any investment or investment activity to which this material relates is only available to UK relevant persons and will be engaged in only with UK relevant persons. A description of JPM EMEA’s policy for prevention and avoidance of conflicts of interest related to the production of Research can be found at the following link: JPM EMEA - Research Independence Policy."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                557,
+                929,
+                703
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "U.S.: JPM Securities LLC (“JPMS”) is a member of the NYSE, FINRA, SIPC, and the NFA. JPM Chase Bank, N.A. is a member of the FDIC. Material published by non-U.S. affiliates is distributed in the U.S. by JPMS who accepts responsibility for its content."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                707,
+                916,
+                736
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "General: Additional information is available upon request. The information in this material has been obtained from sources believed to be reliable. While all reasonable care has been taken to ensure that the facts stated in this material are accurate and that the forecasts, opinions and expectations contained herein are fair and reasonable, JPM Chase & Co. or its affiliates and/or subsidiaries (collectively JPM) make no representations or warranties whatsoever to the completeness or accuracy of the material provided, except with respect to any disclosures relative to JPM and the Research Analyst's involvement with the issuer that is the subject of the material. Accordingly, no reliance should be placed on the accuracy, fairness or completeness of the information contained in this material. There may be certain discrepancies with data and/or limited content in this material as a result of calculations, adjustments, translations to different languages, and/or local regulatory restrictions, as applicable. These discrepancies should not impact the overall investment analysis, views and/or recommendations of the subject company(ies) that may be discussed in the material. Artificial intelligence tools may have been used in the preparation of this material, including assisting in data analysis, pattern recognition, and content drafting for research material. JPM accepts no liability whatsoever for any loss arising from any use of this material or its contents, and neither JPM nor any of its respective directors, officers or employees, shall be in any way responsible for the contents hereof, apart from the liabilities and responsibilities that may be imposed on them by the relevant regulatory authority in the jurisdiction in question, or the regulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market"
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                741,
+                931,
+                938
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Tingting Ge (852) 2800-0143 Tongfang Yuan (852) 2800-0085  \ntingting.ge@JPM.com tongfang.yuan@JPM.com  \nJPM Chase Bank, N.A., Hong Kong Branch  \nJiayi Li (852) 2800-5229 Feng Zhu (852) 2800 1745  \njiayi.c.li@JPM.com feng.zhu@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                23,
+                460,
+                87
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia Pacific Economic Research"
+                    }
+                ]
+            },
+            "bbox": [
+                516,
+                23,
+                709,
+                37
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "06 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                514,
+                49,
+                589,
+                63
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                19,
+                926,
+                43
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                910,
+                952,
+                928,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Tingting Ge (852) 2800-0143  \ntingting.ge@JPM.com  \nJPM Chase Bank, N.A., Hong Kong Branch  \nJiayi Li (852) 2800-5229  \njiayi.c.li@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                23,
+                285,
+                87
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Tongfang Yuan (852) 2800-0085  \ntongfang.yuan@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                290,
+                23,
+                460,
+                51
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Feng Zhu (852) 2800 1745 feng.zhu@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                290,
+                60,
+                433,
+                87
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia Pacific Economic Research China alt-data trackers chartpack (Series 58) 06 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                514,
+                23,
+                714,
+                74
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                130,
+                929,
+                376
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email"
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                381,
+                926,
+                489
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer"
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                492,
+                923,
+                560
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not constitute investment advice nor an endorsement of any product or project; (4) are provided solely for informational purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All Rights Reserved."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                565,
+                919,
+                643
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "\"Other Disclosures\" last revised July 04, 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                650,
+                349,
+                665
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Copyright 2026 JPM Chase & Co. All rights reserved. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM. It is strictly prohibited to use or share without prior written consent from JPM any research material received from JPM or an authorized third-party (“JPM Data”) in any third-party artificial intelligence (“AI”) systems or models when such JPM Data is accessible by a third-party."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                676,
+                924,
+                730
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                19,
+                926,
+                43
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Completed 06 Jul 2026 11:38 PM HKT"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                735,
+                308,
+                750
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Disseminated 06 Jul 2026 11:38 PM HKT"
+                    }
+                ]
+            },
+            "bbox": [
+                674,
+                735,
+                928,
+                749
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14"
+                    }
+                ]
+            },
+            "bbox": [
+                71,
+                950,
+                89,
+                962
+            ]
+        }
+    ]
+]

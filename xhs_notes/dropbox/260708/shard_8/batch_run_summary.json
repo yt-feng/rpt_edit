@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 82,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 8,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/44-JPM-China Equity Strategy：Takeaways from JPM AI expert call：From foundation models to industrial~scale adoption-260706.pdf",
+          "batch_file": "/tmp/pdf_batch_001_cs_6yhx3/pdfs/0001-44-JPM-China Equity Strategy-Takeaways from JPM AI expert call-From foundation models to industrial-scale adoption-260706.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/45-JPM-China Metals Activity Tracker 3 weeks of copper & aluminium inventory declines signal strengthening China metals consumption-260706.pdf",
+          "batch_file": "/tmp/pdf_batch_001_cs_6yhx3/pdfs/0002-45-JPM-China Metals Activity Tracker 3 weeks of copper - aluminium inventory declines signal strengthening China metals consumption-260706.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/46-JPM-Container Shipping：2026 Mid~Year Demand~Supply update-260707.pdf",
+          "batch_file": "/tmp/pdf_batch_001_cs_6yhx3/pdfs/0003-46-JPM-Container Shipping-2026 Mid-Year Demand-Supply update-260707.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/47-JPM-China alt~data trackers chartpack （Series 58） Pace up （narrowly） in exports & special LGB issuance-260706.pdf",
+          "batch_file": "/tmp/pdf_batch_001_cs_6yhx3/pdfs/0004-47-JPM-China alt-data trackers chartpack -Series 58- Pace up -narrowly- in exports - special LGB issuance-260706.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/48-JPM-China Tanker Shipping：China delays， not derails， the bull case-260703.pdf",
+          "batch_file": "/tmp/pdf_batch_001_cs_6yhx3/pdfs/0005-48-JPM-China Tanker Shipping-China delays- not derails- the bull case-260703.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
