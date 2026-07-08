@@ -1,0 +1,188 @@
+You are a senior financial newsletter editor with a consulting-style strategy lens. You turn research-report material into a long-form English article that is structured, insightful, and suitable for a serious business audience.
+
+Objective:
+- Write an English Markdown article based on the report parsing below.
+- Target length: around 2200 words, plus or minus 15%.
+- Tone: serious, analytical, strategic, and readable.
+- The article should not feel like a summary. It should make an argument.
+- You may extend the report's logic into reasonable second-order implications, but do not invent data, company actions, or quotes.
+- Do not disclose every detail. Leave several meaningful open questions that make readers want the full report.
+
+McKinsey-style writing principles:
+1. Answer first: open with the controlling idea, not background.
+2. Governing thought: every section must support the main answer.
+3. Mutually exclusive, collectively exhaustive logic: avoid overlapping sections.
+4. So what: every section must explain why the point matters.
+5. Synthesis over summary: do not list facts; interpret what the pattern means.
+6. Action titles: section headings must be complete, insight-bearing sentences. Do not use generic headings such as "Key Takeaways", "Market Background", "Core View", or "Reader Implications".
+7. Natural hooks: if you want readers to join the community or read the full report, the hook should emerge from unresolved analytical questions, not from promotional language.
+
+Required Markdown structure:
+- `# Title`: make it a direct argument, not a topic label.
+- Opening: 4-6 short paragraphs that state the main thesis and why now matters.
+- 4-6 `##` sections. Each `##` heading must be an action title: a sentence that tells the reader the insight.
+- One section should identify what the report does not fully answer yet.
+- One section should translate the report into a decision framework for readers.
+- Final section: naturally invite readers to join the community or read the full report using this CTA: Join the community to read the full report and review the original charts.
+- End with: `*For informational purposes only. Portions may be generated, translated, summarized, or edited with AI assistance based on source materials and may contain omissions or errors. Please verify independently. This is not investment, legal, tax, accounting, or other professional advice.*`
+
+Content boundaries:
+- Do not mention specific investment bank names such as GS. Use "a global investment bank report" if needed.
+- Do not use emoji.
+- Do not write like a viral post.
+- Do not output your reasoning process.
+- Do not generate image Markdown; the system will insert original MinerU images afterward.
+
+Report parsing:
+"""
+# JPM
+
+# Hon Hai Precision
+
+2Q26 revenue better than guidance as anticipated; 3Q26 to see continued strong growth
+
+June sales dragged by fading consumer electronics pull-in demand; tight component supply keeps AI revenue growth flattish: Hon Hai reported June sales of NT\$822bn (down 4% MoM but up 52% YoY). The MoM decline was mainly driven by a slowdown in PC and smartphone pull-in demand amid a product transition period. On the other hand, Cloud and Networking delivered flattish growth MoM, constrained by tight component supply for AI rack assembly (e.g., PCB, passive components, etc., in our view).
+
+\- 2Q beat market consensus; 3Q still expected to grow QoQ on continued AI server and iPhone momentum: Overall, 2Q26 revenue (up $18\%$ QoQ and $40\%$ YoY) exceeded BBG consensus expectations for $\sim 12\%$ QoQ growth, though it aligns with our prior view of landing at mid- to high-teens QoQ (see our earlier note), after the company had flagged potential upside in early June. The beat was driven by stronger-than-expected AI server rack shipments, stronger iPhone 17 demand, and continued momentum in MacBook Neo and Air models. We also believe 2Q rack-level shipments likely met management's guidance of high double-digit QoQ growth. Looking ahead to 3Q26, Hon Hai guides for growth on both a QoQ and YoY basis, with AI servers remaining the key driver and iPhone momentum continuing. That said, we expect the PC market to soften in 2H26 after 1H pull-in activity driven by concerns over further memory price hikes.
+
+\- 2026 AI revenue upside should come from better GB300 pricing and any pull-in for Vera Rubin ramp: We expect Hon Hai's AI server revenue to grow $110\%$ in 2026 (implying $\sim 165\%$ YoY growth in AI GPU racks), primarily coming from GB300, and should benefit from recent price increases for GB300 racks (to account for memory and other component cost increases). Hon Hai has also already secured an additional Vera Rubin customer (we believe Google, on top of existing large customers Microsoft and Oracle); beyond this, further upside for Hon Hai's AI revenue could come from an earlier-than-expected Vera Rubin ramp schedule. We now expect Vera Rubin to begin shipping in 3Q and ramp to higher volumes in 4Q, with the industry potentially targeting up to $\sim 10\mathrm{K}$ rack shipments for VR200 NVL72 in 2026.
+
+\- Stock view: Hon Hai shares are up \~5% YTD (underperforming the TWSE by \~56%), reflecting limited margin upside and a lack of a clear price increase narrative. We remain OW, supported by robust AI revenue growth driven by continued expansion across both AI GPU and ASIC programs. While GM pressure is likely to persist for Vera Rubin given the sharp 60-70% increase in rack-level ASPs, we expect OPM to remain at 3%+ over the next 2-3 years, supported by (1) a rising ASIC mix, (2) greater value capture via component insourcing, and (3) continued operating leverage given much higher revenue turns.
+
+## Overweight
+
+2317.TW, 2317 TT
+Price (06 Jul 26):NT\$242.00
+Price Target (Jun-27):NT\$310.00
+
+## Technology and Telecoms
+
+Gokul Hariharan AC (852) 2800-8564 gokul.hariharan@JPM.com JPM Securities (Asia Pacific) Limited/ JPM Broking (Hong Kong) Limited
+
+Jennifer Hsieh  
+(886-2) 2725-9868  
+jennifer.hsieh@JPM.com  
+JPM Securities (Taiwan) Limited
+
+David Chou  
+(886-2) 2725-9618  
+david.chou@JPM.com  
+JPM Securities (Taiwan) Limited
+
+Jason Chen  
+(886-2) 2725-9864  
+jason.bh.chen@JPM.com  
+JPM Securities (Taiwan) Limited
+
+Subham Singhania (91-22) 6157-3801 subham.singhania@JPM.com JPM India Private Limited
+
+See page 3 for analyst certification and important disclosures, including non-US analyst disclosures.
+
+# Investment Thesis, Valuation and Risks
+
+Hon Hai Precision (Overweight; Price Target: NT\$310.00)
+
+## Investment Thesis
+
+We remain OW on Hon Hai, given its robust AI server growth, driven by an increase in both shipments and ASPs. We believe Hon Hai is likely to ship 2x AI racks in FY26 vs. FY25, while ASPs will be further strengthened by incremental Vera Rubin contribution, increased ASIC server contribution (primarily TPUs) and opportunities for increased vertical integration (primarily Liquid cooling). For Vera Rubin, we expect the company to gain close to $50\%$ share in 2027 (keeping ORCL and MSFT, with GOOGL as a new customer). Despite GM pressure persisting for Vera Rubin due to a sharp $60 - 70\%$ increase in rack-level ASPs, we expect the company's OPMs to stay well above its target of $3 + \%$ level.
+
+## Valuation
+
+Our Jun-27 PT of NT\$310 is based on \~14x 12m forward EPS. This multiple is higher than the five-year average multiple due to stronger AI exposure and better iPhone momentum.
+
+## Risks to Rating and Price Target
+
+Key downside risks include a less-than-expected share in AI servers in the Blackwell or Rubin generation and weaker-than-expected iPhone demand.
+
+Analyst Certification: The Research Analyst(s) denoted by an “AC” on the cover of this report certifies (or, where multiple Research Analysts are primarily responsible for this report, the Research Analyst denoted by an “AC” on the cover or within the document individually certifies, with respect to each security or issuer that the Research Analyst covers in this research) that: (1) all of the views expressed in this report accurately reflect the Research Analyst’s personal views about any and all of the subject securities or issuers; and (2) no part of any of the Research Analyst's compensation was, is, or will be directly or indirectly related to the specific recommendations or views expressed by the Research Analyst(s) in this report. For all Korea-based Research Analysts listed on the front cover, if applicable, they also certify, as per KOFIA requirements, that the Research Analyst’s analysis was made in good faith and that the views reflect the Research Analyst’s own opinion, without undue influence or intervention.
+
+All authors named within this report are Research Analysts who produce independent research unless otherwise specified. In Europe, Sector Specialists (Sales and Trading) may be shown on this report as contacts but are not authors of the report or part of the Research Department.
+
+## Important Disclosures
+
+\- Market Maker/ Liquidity Provider: JPM is a market maker and/or liquidity provider in the financial instruments of/related to Hon Hai Precision or related entities.
+
+\- Client: JPM currently has, or had within the past 12 months, the following entity(ies) as clients: Hon Hai Precision or related entities.
+
+\- Client/Investment Banking: JPM currently has, or had within the past 12 months, the following entity(ies) as investment banking clients: Hon Hai Precision or related entities.
+
+\- Client/Non-Investment Banking, Securities-Related: JPM currently has, or had within the past 12 months, the following entity(ies) as clients, and the services provided were non-investment-banking, securities-related: Hon Hai Precision or related entities.
+
+\- Client/Non-Securities-Related: JPM currently has, or had within the past 12 months, the following entity(ies) as clients, and the services provided were non-securities-related: Hon Hai Precision or related entities.
+
+\- Investment Banking Compensation Received: JPM has received in the past 12 months compensation for investment banking services from Hon Hai Precision or related entities.
+
+\- Potential Investment Banking Compensation: JPM expects to receive, or intends to seek, compensation for investment banking services in the next three months from Hon Hai Precision or related entities.
+
+• Non-Investment Banking Compensation Received: JPM has received compensation in the past 12 months for products or services other than investment banking from Hon Hai Precision or related entities.
+
+\- Debt Position: JPM may hold a position in the debt securities of Hon Hai Precision or related entities, if any.
+
+Company-Specific Disclosures: JPM does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. Important disclosures, including price charts and credit opinion history tables (if applicable), are available for compendium reports and all JPM-covered companies, and certain non-covered companies, by visiting https://www.jpmm.com/research/disclosures, calling 1-800-477-0406, or e-mailing research.disclosure.inquiries@JPM.com with your request.
+
+Hon Hai Precision (2317.TW, 2317 TT) Price Chart  
+![](images/dd67cf0f1ebe3515ce509acecd631821f727cbedaa80933bda753e8f4d73cdd7.jpg)  
+Source: Bloomberg Finance L.P. and JPM; price data adjusted for stock splits and dividends. Initiated coverage Sep 02, 2001. All share prices are as of market close on the previous business day.
+
+<table><tr><td>Date</td><td>Rating</td><td>Price (NT$)</td><td>Price Target (NT$)</td></tr><tr><td>15-Aug-23</td><td>OW</td><td>110.00</td><td>120</td></tr><tr><td>15-Mar-24</td><td>OW</td><td>121.00</td><td>140</td></tr><tr><td>27-Mar-24</td><td>OW</td><td>142.00</td><td>170</td></tr><tr><td>15-May-24</td><td>OW</td><td>172.00</td><td>200</td></tr><tr><td>09-Jul-24</td><td>OW</td><td>226.50</td><td>260</td></tr><tr><td>14-Aug-24</td><td>OW</td><td>181.00</td><td>250</td></tr><tr><td>16-Mar-25</td><td>OW</td><td>170.00</td><td>225</td></tr><tr><td>15-May-25</td><td>OW</td><td>163.00</td><td>210</td></tr><tr><td>08-Aug-25</td><td>OW</td><td>194.50</td><td>230</td></tr><tr><td>15-Aug-25</td><td>OW</td><td>199.50</td><td>240</td></tr><tr><td>30-Sep-25</td><td>OW</td><td>219.50</td><td>270</td></tr><tr><td>13-Nov-25</td><td>OW</td><td>251.00</td><td>285</td></tr><tr><td>17-Mar-26</td><td>OW</td><td>216.50</td><td>270</td></tr><tr><td>15-May-26</td><td>OW</td><td>244.50</td><td>310</td></tr></table>
+
+The chart(s) show JPM's continuing coverage of the stocks; the current analysts may or may not have covered it over the entire period. JPM ratings or designations: OW = Overweight, N = Neutral, UW = Underweight, NR = Not Rated
+
+## Explanation of Equity Research Ratings, Designations and Analyst(s) Coverage Universe:
+
+JPM uses the following rating system: Overweight (over the duration of the price target indicated in this report, we expect this stock will outperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); Neutral (over the duration of the price target indicated in this report, we expect this stock will perform in line with the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); and Underweight (over the duration of the price target indicated in this report, we expect this stock will underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe. NR is Not Rated. In this case, JPM has removed the rating and, if applicable, the price target, for this stock because of either a lack of a sufficient fundamental basis or for legal, regulatory or policy reasons. The previous rating and, if applicable, the price target, no longer should be relied upon. An NR designation is not a recommendation or a rating. Some stocks under coverage have a rating but no price target; in these cases, we expect the stock will outperform/perform in line/underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe of the relevant duration of the region. In our Asia (ex-Australia and ex-India) and U.K. small- and mid-cap Equity Research, each stock's expected total return is compared to the expected total return of a benchmark country market index, not to those Research Analysts' coverage universe. If it does not appear in the Important Disclosures section of this report, the certifying Research Analyst's coverage universe can be found on JPM's Research website, https://www.JPMmarkets.com.
+
+Coverage Universe: Hariharan, Gokul : ASE Technology Holding Co Ltd (3711.TW), ASMPT Ltd (0522) (0522.HK), AirTAC (1590.TW), Alchip Technologies (3661.TW), BizLink (3665.TW), Chipbond Technology (6147.TWO), GDS Holdings (GDS), GUC (3443.TW), Hiwin (2049.TW), Hon Hai Precision (2317.TW), MediaTek Inc. (2454.TW), Nien Made (8464.TW), Novatek Microelectronics Corp. (3034.TW), Powerchip Semiconductor Manufacturing Corp. (6770.TWO), SMIC (0981) (0981.HK), Silicon Motion (SIMO), Sinbon (3023.TW), TSMC (2330.TW), Teco Electric & Machinery (1504.TW), UMC (2303.TW), Vanguard International Semiconductor Corp. (5347.TWO), Voltronic Power Technology (6409.TW), Xiaomi (1810) (1810.HK)
+
+JPM Equity Research Ratings Distribution, as of July 04, 2026
+
+<table><tr><td></td><td>Overweight (buy)</td><td>Neutral (hold)</td><td>Underweight (sell)</td></tr><tr><td>JPM Global Equity Research Coverage*</td><td>53%</td><td>36%</td><td>12%</td></tr><tr><td>IB clients**</td><td>83%</td><td>80%</td><td>73%</td></tr><tr><td>JPMS Equity Research Coverage*</td><td>51%</td><td>37%</td><td>12%</td></tr><tr><td>IB clients**</td><td>95%</td><td>92%</td><td>87%</td></tr></table>
+
+\*Please note that the percentages may not add to 100% because of rounding.
+
+\*\*Percentage of subject companies within each of the "buy," "hold" and "sell" categories for which JPM has provided investment banking services within the previous 12 months.
+
+For purposes of FINRA ratings distribution rules only, our Overweight rating falls into a buy rating category; our Neutral rating falls into a hold rating category; and our Underweight rating falls into a sell rating category. Please note that stocks with an NR designation are not included in the table above. This information is current as of the end of the most recent calendar quarter.
+
+Equity Valuation and Risks: For valuation methodology and risks associated with covered companies or price targets for covered companies, please see the most recent company-specific research report at http://www.JPMmarkets.com, contact the primary analyst or your JPM representative, or email research.disclosure.inquiries@JPM.com. For material information about the proprietary models used, please see the Summary of Financials in company-specific research reports and the Company Tearsheets, which are available to download on the company pages of our client website, http://www.JPMmarkets.com. This report also sets out within it the material underlying assumptions used.
+
+## History of Investment Recommendations:
+
+A history of JPM investment recommendations disseminated during the preceding 12 months can be accessed on the Research & Commentary page of http://www.JPMmarkets.com where you can also search by analyst name, sector or financial instrument.
+
+Analysts' Compensation: The research analysts responsible for the preparation of this report receive compensation based upon various factors, including the quality and accuracy of research, client feedback, competitive factors, and overall firm revenues.
+
+Registration of non-US Analysts: Unless otherwise noted, the non-US analysts listed on the front of this report are employees of non-US affiliates of JPM Securities LLC, may not be registered as research analysts under FINRA rules, may not be associated persons of JPM Securities LLC, and may not be subject to FINRA Rule 2241 or 2242 restrictions on communications with covered companies, public appearances, and trading securities held by a research analyst account.
+
+## Other Disclosures
+
+JPM is a marketing name for investment banking businesses of JPM Chase & Co. and its subsidiaries and affiliates worldwide.
+
+UK MIFID FICC research unbundling exemption: UK clients should refer to UK MIFID Research Unbundling exemption for details of JPM's implementation of the FICC research exemption and guidance on relevant FICC research categorisation.
+
+All research material made available to clients are simultaneously available on our client website, JPM Markets, unless specifically permitted by relevant laws. Not all research content is redistributed, e-mailed or made available to third-party aggregators. For all research material available on a particular stock, please contact your sales representative.
+
+Any long form nomenclature for references to China; Hong Kong; Taiwan; and Macau within this research material are Mainland China; Hong Kong SAR (China); Taiwan (China); and Macau SAR (China).
+
+JPM may, from time to time, write on issuers or securities targeted by economic or financial sanctions imposed or administered by the governmental authorities of the U.S., EU, UK or other relevant jurisdictions (Sanctioned Securities). Nothing in this report is intended to be read or construed as encouraging, facilitating, promoting or otherwise approving investment or dealing in such Sanctioned Securities. Clients should be aware of their own legal and compliance obligations when making investment decisions.
+
+Any digital or crypto assets discussed in this research report are subject to a rapidly changing regulatory landscape. For relevant regulatory advisories on crypto assets, including bitcoin and ether, please see https://www.JPM.com/disclosures/cryptoasset-disclosure.
+
+The author(s) of this research report may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so.
+
+Exchange-Traded Funds (ETFs): JPM Securities LLC (“JPMS”) acts as authorized participant for substantially all U.S.-listed ETFs. To the extent that any ETFs are mentioned in this report, JPMS may earn commissions and transaction-based compensation in connection with the distribution of those ETF shares and may earn fees for performing other trade-related services, such as securities lending to short sellers of the ETF shares. JPMS may also perform services for the ETFs themselves, including acting as a broker or dealer to the ETFs. In addition, affiliates of JPMS may perform services for the ETFs, including trust, custodial, administration, lending, index calculation and/or maintenance and other services.
+
+Options and Futures related research: If the information contained herein regards options- or futures-related research, such information is avai
+
+[中间内容因长度限制已省略]
+
+ny loss arising from any use of this material or its contents, and neither JPM nor any of its respective directors, officers or employees, shall be in any way responsible for the contents hereof, apart from the liabilities and responsibilities that may be imposed on them by the relevant regulatory authority in the jurisdiction in question, or the regulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction.
+
+Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email
+
+MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer
+
+Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not constitute investment advice nor an endorsement of any product or project; (4) are provided solely for informational purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All
+
+Completed 06 Jul 2026 07:56 PM HKT
+"""

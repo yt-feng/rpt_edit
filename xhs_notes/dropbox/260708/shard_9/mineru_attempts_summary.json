@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_6s2fi2xj/pdfs/0001-49-JPM-Eli Lilly - Company-LLY.US--2Q26 Earnings Preview - Potential Upside from Mounjaro Intl and Growth in US Obesity Market-260707.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6s2fi2xj/pdfs/0002-50-JPM-Disco-6146.T-Discloses preliminary April-June quarter data for parent sales-Broadly as expected-strength in consumables continues-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6s2fi2xj/pdfs/0003-51-JPM-Global LNG Analyzer-Asia leads- Europe to catch up-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6s2fi2xj/pdfs/0004-52-JPM-Hon Hai Precision-2317.TW-2Q26 revenue better than guidance as anticipated- 3Q26 to see continued strong growth-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6s2fi2xj/pdfs/0005-53-JPM-Global Macro Outlook and Strategy-Global Rates- Commodities- Currencies and Emerging Markets-260706.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
