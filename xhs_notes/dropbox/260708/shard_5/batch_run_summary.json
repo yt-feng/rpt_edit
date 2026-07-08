@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 82,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 5,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/26-GS-China Consumer Staples：Pork： 2Q26 preview： Earnings headwinds； lowering packaged meat in China； elevated costs overseas-260707.pdf",
+          "batch_file": "/tmp/pdf_batch_001_hba14j4u/pdfs/0001-26-GS-China Consumer Staples-Pork- 2Q26 preview- Earnings headwinds- lowering packaged meat in China- elevated costs overseas-260707.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/27-GS-China FX Rates Monitor： Resilient CNY amid Dollar Strength， Low Rates amid Growth Weakness-260708.pdf",
+          "batch_file": "/tmp/pdf_batch_001_hba14j4u/pdfs/0002-27-GS-China FX Rates Monitor- Resilient CNY amid Dollar Strength- Low Rates amid Growth Weakness-260708.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/28-GS-Guangdong Songfa Ceramics Co （603268）2Q26 earnings strong beat， on earlier blocks construction pre phase III， better margin and operational efficiency； Buy-260708.pdf",
+          "batch_file": "/tmp/pdf_batch_001_hba14j4u/pdfs/0003-28-GS-Guangdong Songfa Ceramics Co -603268-2Q26 earnings strong beat- on earlier blocks construction pre phase III- better margin and operational efficiency- Buy-260708.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/29-GS-Global Technology： Accelerating LEO satellite launches； installed base to reach 24k 305k units by 2028E 31E； blue sky at 396k by 2031E-260708.pdf",
+          "batch_file": "/tmp/pdf_batch_001_hba14j4u/pdfs/0004-29-GS-Global Technology- Accelerating LEO satellite launches- installed base to reach 24k 305k units by 2028E 31E- blue sky at 396k by 2031E-260708.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/30-GS-China New Energy Vehicle Weekly Chartbook：2026 Week 27~Weekly NEV orders flat wow， BYD +11% +23% yoy wow on Seal 08-260707.pdf",
+          "batch_file": "/tmp/pdf_batch_001_hba14j4u/pdfs/0005-30-GS-China New Energy Vehicle Weekly Chartbook-2026 Week 27-Weekly NEV orders flat wow- BYD -11- -23- yoy wow on Seal 08-260707.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

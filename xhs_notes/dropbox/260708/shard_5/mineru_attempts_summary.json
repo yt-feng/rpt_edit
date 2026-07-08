@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_hba14j4u/pdfs/0001-26-GS-China Consumer Staples-Pork- 2Q26 preview- Earnings headwinds- lowering packaged meat in China- elevated costs overseas-260707.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_hba14j4u/pdfs/0002-27-GS-China FX Rates Monitor- Resilient CNY amid Dollar Strength- Low Rates amid Growth Weakness-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_hba14j4u/pdfs/0003-28-GS-Guangdong Songfa Ceramics Co -603268-2Q26 earnings strong beat- on earlier blocks construction pre phase III- better margin and operational efficiency- Buy-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_hba14j4u/pdfs/0004-29-GS-Global Technology- Accelerating LEO satellite launches- installed base to reach 24k 305k units by 2028E 31E- blue sky at 396k by 2031E-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_hba14j4u/pdfs/0005-30-GS-China New Energy Vehicle Weekly Chartbook-2026 Week 27-Weekly NEV orders flat wow- BYD -11- -23- yoy wow on Seal 08-260707.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
