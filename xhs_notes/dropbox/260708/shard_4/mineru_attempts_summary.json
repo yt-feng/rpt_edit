@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_mddruk9c/pdfs/0001-21-DB-Horizon Robotics-9660.HK-May autonomous-driving SoC up 35- YoY-front camera chip down 11- YoY-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_mddruk9c/pdfs/0002-22-GS-Americas Technology-Analyzing the Impact of AI on Industry Profit Pools-Part III -Staffing Case Study--260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_mddruk9c/pdfs/0003-23-GS-CHINA CONSUMER STAPLES Jun Check-in - Corp Day Wrap-Improvement MoM-but still soft-Corp Day cites strong momentum on Value Retailers by F-B-260707.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_mddruk9c/pdfs/0004-24-GS-Asia Technology_ Investment strategy for 2H26_ Proposing stock strategies for both risk-on and risk-off markets-260707.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_mddruk9c/pdfs/0005-25-GS-CHINA STAPLES-Value Retailers 1H26 2Q26 Preview- Raise earnings on robust store open pace and resilient SSSG- Reiterate Buy-260708.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

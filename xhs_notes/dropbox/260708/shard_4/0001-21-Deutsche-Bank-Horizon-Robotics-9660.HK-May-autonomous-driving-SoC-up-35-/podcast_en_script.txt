@@ -1,0 +1,24 @@
+EN_A: I came across a report on Horizon Robotics that had some really interesting numbers. In May, its autonomous driving chip shipments grew 35 percent year over year, but its front camera chip shipments dropped 11 percent. What is going on here?
+EN_B: It is actually a perfect example of a structural shift happening in the market. High-end autonomous driving is becoming mainstream, while the older, basic ADAS market is shrinking.
+EN_A: How mainstream are we talking about? And what do you mean by structural shift?
+EN_B: The report makes a smart estimate. It takes the total shipments of autonomous driving SoCs and divides it by the total passenger car sales for the month. That gave them a proxy penetration rate of 51.8 percent in May. Then they adjust that to estimate the actual penetration of Level 2 Plus and Level 3 systems. The result is 47.3 percent.
+EN_A: So nearly half of all new cars sold in China now have some form of high-level autonomy?
+EN_B: Exactly. And that number is up more than 19 percentage points from last year. What this really means is that advanced driving assistance is no longer a luxury feature. It is becoming a standard expectation. Car makers that are slow to adopt this are going to feel the pressure.
+EN_A: So where does Horizon Robotics fit in? 35 percent growth sounds like it is doing better than the market.
+EN_B: It is. The overall market grew only 10 percent. But the interesting story is in the competitive landscape. Nvidia is still number one, but its shipments actually fell 19 percent. Huawei grew 73 percent. Horizon came in fourth, with a 12.1 percent market share, up 2.3 points from last year.
+EN_A: Nvidia down, Huawei and Horizon up. So the domestic substitution story is real?
+EN_B: It is. But here is the twist. In the front camera chip market, which is used for basic ADAS features, Horizon’s shipments fell 11 percent. And the entire market shrank by 31 percent.
+EN_A: That sounds contradictory. How can one business be growing while the other is shrinking?
+EN_B: It is all about the level of intelligence. Front camera chips are used for Level 0 to Level 2 functions, like lane keeping and basic emergency braking. That market is being cannibalized because new cars are skipping straight to Level 2 Plus or Level 3, which require a much more powerful SoC, not just a simple camera chip.
+EN_A: So Horizon is growing in the high end and shrinking in the low end. Is that a strategy or just a byproduct of the market?
+EN_B: It looks like a structural adjustment for now. But the real game changer is their new system, the Horizon Superdrive V2.0. It introduces a completely new architecture.
+EN_A: What kind of architecture?
+EN_B: They moved from a traditional end-to-end modular design to a dual-engine system that combines a world model with reinforcement learning. The world model can predict future traffic conditions, so the car can drive defensively like a professional human driver. The reinforcement learning part lets the system keep improving on its own.
+EN_A: That sounds very technical. What does it mean for a regular car buyer?
+EN_B: The most tangible upgrade is in safety. Before, a car could only recognize objects on a whitelist, meaning it only knew what it was trained to see. Now, with something called an occupancy network, it can detect any irregular or unknown obstacle. That is a huge leap for features like automatic emergency braking and steering.
+EN_A: So does this mean Horizon has a clear technological lead? And should we be more optimistic about the stock?
+EN_B: The architecture is impressive, but the report does not fully answer a few critical questions. For example, what is the cost of this new system? What kind of hardware platform does it require? Can the current Journey 6P chip fully support it?
+EN_A: So those are the real factors that will determine its future market share?
+EN_B: Exactly. The report has a Buy rating and a price target of 9.4 Hong Kong dollars, which is a lot higher than the current price of 4.68. But that view relies heavily on the assumption that this new architecture will convert into real orders. To understand the risks and the full valuation model, you really need to read the complete report.
+EN_A: That makes sense. Well, we will leave it there for today. If you want to see the full report, including the valuation and risk analysis, join our membership community or reach out to your account manager.
+EN_B: Absolutely. Thanks for listening, and we will catch you next time.
