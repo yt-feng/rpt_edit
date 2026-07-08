@@ -1,0 +1,75 @@
+ZH_A: 最近这期AI系列报告里提到一个很有意思的现象，腾讯发布了Hy3正式版，但整个市场的token消耗指数反而走弱了。这到底是怎么回事？
+
+ZH_B: 对，这恰恰是这份报告最值得深挖的地方。表面上看起来是矛盾，但背后其实反映了一个关键趋势：模型变得越便宜、越高效，单位token的“价值”反而在下降。
+
+ZH_A: 所以这意味着，光看token总量可能已经不能准确衡量AI市场的真实热度了？
+
+ZH_B: 没错。报告里专门构建了一个Token Expenditure Index，也就是支出指数。这个指数不是简单看token数量，而是加权了不同模型的使用分布。当大家从贵的高端模型转向便宜的效率模型时，指数就会下降。
+
+ZH_A: 那Hy3的发布就是典型的例子吧？输入输出价格直接砍了一半，从预览版的每百万token两块、八块，降到一块和四块。
+
+ZH_B: 对，Hy3正式版不仅降价，任务成功率从72%提升到90%，幻觉率还降低了15个百分点。这意味着同样的任务，现在花更少的token就能完成。所以企业实际支出的增长速度，可能比token量的增长慢很多。
+
+ZH_A: 但这不也意味着AI应用的门槛在快速降低吗？更便宜、更好用的模型，应该会吸引更多场景吧？
+
+ZH_B: 这就是报告里提到的另一个关键洞察。我们看到像DeepSeek、Kimi、MiniMax这些中国模型，API成本只有美国模型的零头。背后的技术原因，是它们采用了MoE、GQA这些更精细的架构。但报告也指出，成本优势能持续多久，还需要继续验证。
+
+ZH_A: 那除了成本，这份报告还重点分析了哪些变化？
+
+ZH_B: 一个值得关注的信号是，一些公司开始给员工的token消耗设置上限了。报告里引用了媒体消息，说科技和互联网公司正在限制内部使用量。这从侧面说明，AI工具在企业内部的渗透率确实在快速提升，但管理问题也随之而来。
+
+ZH_A: 那报告有没有提到，哪些细分领域是真正在“烧token”的？
+
+ZH_B: 有。报告认为，编程、工作场景、还有中长篇幅内容创作，是未来token消耗增长最明显的领域。另外，像视频生成模型Seedance 2.5即将发布，支持30秒视频和多模态输入，这也会拉动新的需求。
+
+ZH_A: 听起来很有意思。那在监管方面，报告有没有什么新的发现？
+
+ZH_B: 这个值得特别提一下。监管部门在4月份出台了针对AI拟人化服务的管理措施，7月15号正式实施。像豆包和通义千问已经宣布，会在这个日期前停止提供虚拟亲密关系这类功能。这个措施背后的逻辑，是防止用户过度依赖AI，影响真实人际关系。
+
+ZH_A: 所以AI的“情感陪伴”赛道可能要面临比较大的调整？
+
+ZH_B: 对，但这部分影响到底有多大，报告并没有完全展开。比如，这些措施会不会影响其他AI社交类应用，或者会不会影响用户对AI的接受度，都还需要进一步观察。完整报告里应该有更多数据和分析。
+
+ZH_A: 最后再问一个投资者最关心的问题吧。这份报告里提到的这些趋势，对哪些公司是利好？
+
+ZH_B: 报告明确提到了BAT、金山云、AI实验室和Kling这些算力服务商是受益方。因为token消耗的增长，最终会传导到对云计算和算力的需求上。但具体到每家公司的受益程度，包括定价策略和竞争格局的变化，完整报告里还有更多细节。
+
+ZH_A: 好的，那今天的讨论就先到这里。如果想深入了解这些数据和判断，建议直接阅读完整的报告原文。
+
+EN_A: So the latest AI report talks about Tencent releasing the official version of Hy3, but at the same time the token expenditure index is softening. That sounds contradictory.
+
+EN_B: It really is the key puzzle the report tries to solve. On the surface it looks like a contradiction, but underneath it reveals a major shift. Models are getting cheaper and more efficient, so the value per token is actually dropping.
+
+EN_A: So you are saying tracking just the raw token volume is no longer a good measure of market activity?
+
+EN_B: Exactly. That is why the report created a Token Expenditure Index. It weights usage by which models people are actually using. When users shift from expensive premium models to cheaper efficient ones, the index goes down.
+
+EN_A: And the Hy3 launch is a perfect example of that. The price was cut in half compared to the preview version.
+
+EN_B: Right. And it is not just the price. The official version improved task success rate from 72 percent to 90 percent, and reduced hallucination by 15 percentage points. So you can now do the same job with fewer tokens. That means enterprise spending may grow much slower than the raw token count suggests.
+
+EN_A: But doesn't that also mean the barrier to using AI is getting lower? Cheaper and better models should attract more use cases.
+
+EN_B: That is another key insight from the report. We are seeing Chinese models like DeepSeek, Kimi and MiniMax offering API costs that are just a fraction of US models. The technical reason is their refined architecture, like MoE and GQA. But the report also notes that it is still unclear how long this cost advantage will last.
+
+EN_A: What else did the report look at besides cost?
+
+EN_B: One interesting signal is that some companies are now capping token consumption for their employees. The report cites media reports that tech firms are setting internal limits. That tells us AI tools are penetrating fast inside enterprises, but management challenges are emerging.
+
+EN_A: So which areas are actually burning through the most tokens?
+
+EN_B: The report identifies coding, workspace scenarios, and mid to long form content creation as the biggest growth areas. And there is a new video generation model called Seedance 2.5 coming soon, which supports 30 second clips and multi-modal inputs. That will drive further demand.
+
+EN_A: Any regulatory updates in the report?
+
+EN_B: Yes, this is worth highlighting. In April, regulators released new measures targeting AI-powered virtual intimate relationship services. They take effect on July 15. Both Doubao and Qwen have already announced they will stop offering such features before that date. The logic is to prevent users from becoming overly dependent on AI and damaging real human relationships.
+
+EN_A: So the AI companionship space could face a major shakeup.
+
+EN_B: That is the direction, but the report does not fully answer how big the impact will be. For example, will these measures affect other AI social apps? Will they change user behavior toward AI? These questions are explored in more detail in the full report.
+
+EN_A: Last question for investors. Who benefits from all these trends?
+
+EN_B: The report clearly identifies Baidu, Alibaba, Tencent, Kingsoft Cloud, AI labs and Kling as beneficiaries. The logic is that rising token consumption will eventually drive demand for cloud computing and computing power. But how much each company benefits depends on pricing strategies and competitive dynamics, and the full report has more on that.
+
+EN_A: Great. That is all for today. If you want to dig deeper into the data and analysis, we recommend reading the full report.
