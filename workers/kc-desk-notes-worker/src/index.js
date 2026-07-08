@@ -5678,6 +5678,117 @@ function applyBbgVideoAccountBalance(files) {
   }
 }
 
+function adminVideoDecodeText(value) {
+  const raw = String(value || "");
+  try {
+    return decodeURIComponent(raw);
+  } catch (_error) {
+    return raw;
+  }
+}
+
+function adminVideoFileStem(file) {
+  const source = adminVideoDecodeText(file && (file.path || file.name) || "");
+  const fileName = source.split(/[?#]/)[0].split("/").pop() || source;
+  return fileName
+    .normalize("NFKC")
+    .replace(/\.(?:mp4|mov|m4v|webm)$/i, "")
+    .replace(/[_\-\s]*(?:KC桌面|KC偏见)$/i, "")
+    .replace(/^\d{4}-\d{2}-\d{2}[_\-\s]+/, "")
+    .replace(/^\d{6,8}[_\-\s]+/, "")
+    .replace(/^\d{1,3}[_\-.\s:：]+/, "")
+    .trim();
+}
+
+function cleanAdminVideoGroupSegment(value) {
+  return String(value || "")
+    .normalize("NFKC")
+    .replace(/\s+/g, "")
+    .replace(/^(?:分享|访谈|采访|专访|完整版|片段|视频|观点|解读)+/i, "")
+    .replace(/(?:第?\d+[条段集期]|上集|下集|上|下)$/i, "")
+    .replace(/^[\s_\-:：|｜]+|[\s_\-:：|｜]+$/g, "")
+    .trim();
+}
+
+function adminVideoLeadingPersonSegment(stem) {
+  const text = String(stem || "").trim();
+  if (!text) return "";
+  const known = text.match(/^(特朗普|拜登|鲍威尔|拉加德|马斯克|黄仁勋|奥特曼|泽连斯基|普京|黑田东彦|植田和男)/);
+  if (known) return known[1];
+  const englishName = text.match(/^([A-Z][A-Za-z]+(?:[A-Z][a-z]+|[ -][A-Z][a-z]+){1,3})\b/);
+  if (englishName) return englishName[1];
+  const cjkWithRole = text.match(/^([\p{Script=Han}A-Za-z0-9·.\s-]{2,36}?(?:基金经理|分析师|策略师|经济学家|首席|CEO|CFO|创始人|主席|总统|总理|行长|主管))/u);
+  if (cjkWithRole) return cjkWithRole[1];
+  const cjkName = text.match(/^([\p{Script=Han}·]{2,4})(?:称|说|表示|认为|警告|分享|解读|谈|看好|看空)/u);
+  return cjkName ? cjkName[1] : "";
+}
+
+function adminVideoContinuitySegment(file) {
+  const stem = adminVideoFileStem(file);
+  if (!stem) return "";
+  const underscoreParts = stem.split(/[_＿]+/).map(cleanAdminVideoGroupSegment).filter(Boolean);
+  if (underscoreParts.length >= 2) return underscoreParts[0];
+  const pipeParts = stem.split(/[|｜]+/).map(cleanAdminVideoGroupSegment).filter(Boolean);
+  if (pipeParts.length >= 2) return pipeParts[0];
+  const dashParts = stem.split(/\s[-–—]\s/).map(cleanAdminVideoGroupSegment).filter(Boolean);
+  if (dashParts.length >= 2) return dashParts[0];
+  return adminVideoLeadingPersonSegment(stem);
+}
+
+function adminVideoContinuityKey(file) {
+  const account = String(file && file.recommended_account || "");
+  if (account !== "KC桌面" && account !== "KC偏见") return "";
+  const name = String(file && (file.name || file.path || "") || "");
+  const kind = String(file && file.kind || "");
+  const label = String(file && file.label || "");
+  if (!/\.mp4(?:$|\?)/i.test(name) && !/视频|video/i.test(`${kind} ${label}`)) return "";
+  const segment = cleanAdminVideoGroupSegment(adminVideoContinuitySegment(file));
+  const normalized = normalizeBbgGroupText(segment);
+  const genericSegments = new Set(["中国", "美国", "市场", "科技", "行业", "公司", "报告", "新闻", "普通clips", "topvideos"]);
+  if (!normalized || normalized.length < 3 || genericSegments.has(normalized)) return "";
+  const date = String(file && file.date || "").slice(0, 10);
+  return [
+    kind || label || "video",
+    label || "",
+    date,
+    normalized.slice(0, 120),
+  ].join("|");
+}
+
+function applyAdminVideoContinuityMajority(files) {
+  const list = Array.isArray(files) ? files : [];
+  const groups = new Map();
+  for (const file of list) {
+    const key = adminVideoContinuityKey(file);
+    if (!key) continue;
+    const rows = groups.get(key) || [];
+    rows.push(file);
+    groups.set(key, rows);
+  }
+  for (const rows of groups.values()) {
+    if (rows.length < 2) continue;
+    const desktopCount = rows.filter((row) => row.recommended_account === "KC桌面").length;
+    const biasCount = rows.filter((row) => row.recommended_account === "KC偏见").length;
+    if (!desktopCount || !biasCount) continue;
+    const desktopScore = rows.reduce((sum, row) => sum + Number(row.kc_desktop_score || 0), 0);
+    const biasScore = rows.reduce((sum, row) => sum + Number(row.kc_bias_score || 0), 0);
+    const chosen = desktopCount > biasCount
+      ? "KC桌面"
+      : (biasCount > desktopCount ? "KC偏见" : (desktopScore >= biasScore ? "KC桌面" : "KC偏见"));
+    const chosenCount = chosen === "KC桌面" ? desktopCount : biasCount;
+    for (const row of rows) {
+      const previousReason = String(row.account_label_reason || "");
+      row.recommended_account = chosen;
+      row.account_label_confidence = chosenCount === rows.length ? "高" : "中";
+      const prefix = `同一人物连续视频统一为${chosen}（${chosenCount}/${rows.length}）`;
+      row.account_label_reason = previousReason.includes("同一人物连续视频统一")
+        ? previousReason
+        : `${prefix}；${previousReason}`.replace(/；$/, "");
+    }
+  }
+  return list;
+}
+
 function bbgClipTakeLimit(source) {
   if (source === "daily-clips") return 8;
   if (source === "top-videos") return 10;
@@ -5918,7 +6029,7 @@ async function latestAdminGithubFiles(env) {
   const fallback = [];
   if (!market.length) fallback.push(...artifacts.filter((item) => item.kind === "market-views").slice(0, 3));
   if (!siteVideos.length) fallback.push(...artifacts.filter((item) => item.kind === "site-video").slice(0, 3));
-  return [...bbg, ...market, ...fallback, ...entertainVideos, ...rpt2vidVideos, ...siteVideos];
+  return applyAdminVideoContinuityMajority([...bbg, ...market, ...fallback, ...entertainVideos, ...rpt2vidVideos, ...siteVideos]);
 }
 
 async function resolveWithin(promise, timeoutMs, fallbackValue) {
