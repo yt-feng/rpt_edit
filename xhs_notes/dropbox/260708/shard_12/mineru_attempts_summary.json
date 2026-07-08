@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_tcqfwxsg/pdfs/0001-64-MS-China Healthcare-Chart of the Week - China Drug Approvals in 1H26 and 2025-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_tcqfwxsg/pdfs/0002-65-MS-Autos - Shared Mobility-Cheap As Chips - Tactical Upside in a Structural Downturn-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_tcqfwxsg/pdfs/0003-66-MS-China Industrials Mid-year Outlook- Selective Stock Picks amid Strong Capex Outlook-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_tcqfwxsg/pdfs/0004-67-MS-China Property - Asia Pacific-Weekly Database Tracker -27-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_tcqfwxsg/pdfs/0005-68-MS-Global Macro Forum-Payrolls- Policy- and the Yen-260706.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
