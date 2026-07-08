@@ -1,0 +1,35 @@
+{
+  "source_pdf": "/tmp/pdf_batch_002_e0pm16f8/pdfs/0006-McKinsey_PDF-Global-Banking-Annual-Review-2026---McKinsey-Company_936c113d.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "麦肯锡",
+  "cover_short_title": "2025全球银行利润",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "金融->资金 x1",
+    "sanitize_wechat_stock_line",
+    "理财->资金规划 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "麦肯锡：AI时代银行不能只等对手出局，客户正绕过银行完成资金服务",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

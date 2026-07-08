@@ -1,0 +1,19 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_kbchovn0/pdfs/0005-BCG_The-Crucial-Role-of-Physicians-in-Managing-Health-Care-Costs_67d1f0bd.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "波士顿咨询",
+  "cover_short_title": "医生才是控费的关键变",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "((?:中国|国内|内地|大陆|人民币|A股|港股)[^。；;\\n]{0,16})(?:不好|不行|疲弱|乏力|低迷|恶化|危机|衰退|萎缩|收缩|通缩|崩盘|崩溃|暴跌|下行|放缓|压力|拖累|负面|唱衰)->\\1仍在调整 x1",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "波士顿咨询：医生不是成本难题，而是医院控费真正引擎，波士顿咨询",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

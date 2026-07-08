@@ -1,0 +1,1220 @@
+[
+    {
+        "type": "text",
+        "text": "D2D in MENA: Resilience Tool, Connectivity Bridge, or Commercial Add-On?",
+        "text_level": 1,
+        "bbox": [
+            63,
+            121,
+            887,
+            351
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "July 2026",
+        "bbox": [
+            92,
+            374,
+            176,
+            392
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "By Ruediger Schicht, Thibault Werle, Marc Nasr, Hamza Najmi",
+        "bbox": [
+            65,
+            407,
+            526,
+            426
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "BCG",
+        "text_level": 2,
+        "bbox": [
+            67,
+            46,
+            161,
+            76
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Where Strategic Clarity Meets Applied AI",
+        "text_level": 2,
+        "bbox": [
+            65,
+            110,
+            371,
+            124
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We are navigating an era of unprecedented change and disruption—powered by technology, marked by complexity, where change amplifies at scale. To lead, companies need a partner that can bridge the gap between ambition and outcomes. BCG is built for this moment. We bring strategic clarity, rooted in over 60 years of deep domain knowledge, to ensure leaders make the right choices. We combine it with applied AI, shaped and wielded by our practitioners, teaming shoulder-to-shoulder with your teams to deliver transformative impact at scale. The result? Stronger returns, transferred capabilities, and change that sticks. We are BCG.",
+        "bbox": [
+            65,
+            123,
+            477,
+            282
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Table of Contents",
+        "text_level": 2,
+        "bbox": [
+            65,
+            45,
+            485,
+            85
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "04 Direct-to-device (D2D): A resilient, space-based, way to connect",
+        "bbox": [
+            75,
+            129,
+            465,
+            214
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "06 Not \"5G from space\": Key constraints and barriers to scale",
+        "bbox": [
+            78,
+            256,
+            428,
+            342
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "08 Implications for MENA: Connectivity enabler, resilience mechanism, or complementary add-on",
+        "bbox": [
+            77,
+            385,
+            477,
+            500
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "10 Immediate actions for governments and telcos: Thoughtfully integrate and leverage the emerging technology",
+        "bbox": [
+            78,
+            542,
+            465,
+            686
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/f19528fdfd8224d79817fec0119c55f2b02ac854258e493fab9d33f10130f1b2.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            0,
+            1000,
+            401
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Direct-to-device (D2D): A resilient, space-based, way to connect",
+        "text_level": 1,
+        "bbox": [
+            65,
+            444,
+            870,
+            527
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Direct-to-device (D2D) internet systems are on the rise and were a key area of focus at the 2026 Mobile World Congress (MWC). Starlink's keynote, for example, presented Starlink Mobile – a D2D system operated by SpaceX. Such systems promise the elimination of cellular “dead zones” by enabling standard smartphones and IoT devices to connect directly to satellites. While the technology is evolving fast, it still faces hurdles that require diligent consideration.",
+        "bbox": [
+            63,
+            565,
+            480,
+            682
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Each region is subject to different commercial set ups and connectivity objectives, and even within MENA the technology's potential use and uptake vary considerably by country. Local regulators and telcos will play a vital role in shaping the trajectory and reaping the benefits of D2D adoption.",
+        "bbox": [
+            65,
+            695,
+            478,
+            766
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Starlink originally began providing broadband services in 2020 for both consumers and businesses. By March 2026, it had connected 10M broadband customers globally across 150+ countries and territories.",
+        "bbox": [
+            65,
+            778,
+            468,
+            838
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "In simple terms, D2D satellites act as a “cell towers in space,” connecting unmodified smartphones to the internet using mobile spectrum (or adjacent). What makes D2D unique is the ‘ubiquitous coverage’ it can provide around the globe (including poles), eliminating digital divides, and leveling the digital access playing field for all nations. At the same time, D2D technology offers promising resilience, providing connectivity during incidents that terrestrial networks cannot.",
+        "bbox": [
+            512,
+            565,
+            926,
+            681
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The leading D2D providers differ across key technical dimensions, including satellite count, altitude, channel bandwidth, peak download speeds, satellite capacity and access to relevant spectrum, and those differences directly determine what each configuration can serve. Larger, lower-altitude constellations can serve a large number of users with a potentially smaller antenna size, whereas higher-altitude systems will rely on greater channel capacity and antenna size to connect a larger number of users per satellite.",
+        "bbox": [
+            512,
+            695,
+            926,
+            825
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            67,
+            952,
+            243,
+            964
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "D2D IN MENA: RESILIENCE TOOL, CONNECTIVITY BRIDGE, OR COMMERCIAL ADD-ON?",
+        "bbox": [
+            376,
+            951,
+            870,
+            964
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            894,
+            952,
+            912,
+            964
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Though it is still an early-stage technology, Starlink Mobile already claims to support 10M+ active users through its D2D service and aims to reach 26M customers by the end of 2026. The company predicts that its future wave of dedicated D2D satellites will provide levels of speed and coverage that approach those of (very rural) terrestrial networks. Looking ahead, D2D has the potential to become a standard add-on feature offered by premium network packages.",
+        "bbox": [
+            65,
+            52,
+            480,
+            168
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "A wave of recent actions by Starlink highlights the need to move simultaneously on multiple fronts – from technology & spectrum advancements (e.g., acquisition of additional spectrum, patent for bandwidth optimization in D2D, announcement of bigger and better Gen2 D2D satellites) to telecom partnerships (e.g., with T-Mobile in the USA, and operators spanning 10+ EU countries and 14 African countries) and future plans (e.g., as a possible bidder in FCC's spectrum auction) – to bring this vision to fruition. Other major technology players are entering the market, making headlines through different acquisitions. [1,2,3].",
+        "bbox": [
+            512,
+            52,
+            915,
+            212
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/acfdb227d1849c1eeccaf76824611accc85f755496d4a864c0930b336bb2edea.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            275,
+            1000,
+            1000
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/4a02b1c8f4358caaa797790080e0ced3b5ed9227e497c146ecba5a0cd9616dbe.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            0,
+            1000,
+            406
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Not “5G from space”: Key constraints and barriers to scale",
+        "text_level": 1,
+        "bbox": [
+            65,
+            445,
+            823,
+            525
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "However, the industry is learning quickly that D2D is not “5G from space”. It’s a different type of coverage, with physical, economic, and regulatory/competitive constraints.",
+        "bbox": [
+            65,
+            552,
+            472,
+            596
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Physical limitations",
+        "text_level": 2,
+        "bbox": [
+            65,
+            607,
+            236,
+            624
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Indoor coverage and dense urban areas. D2D can only provide outdoor coverage, but 50-90% of global mobile traffic occurs indoors. Additionally, D2D cannot competitively serve dense urban or suburban areas, where its limited capacity must be shared by millions of people. For example, GSMA - assuming a 15,000 satellite constellation and using all MSS spectrum - notes that D2D can serve 2Mbps for 10% of the population in a density of <40 people per sq. km. Compare this to Dubai, which has 700+ people per sq. km.",
+        "bbox": [
+            63,
+            637,
+            480,
+            766
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Economic considerations",
+        "text_level": 2,
+        "bbox": [
+            65,
+            791,
+            280,
+            808
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Satellites are ongoing costs, which are passed to users. Each satellite will last \\~5 years (or less in the lower D2D orbit of \\~340 km), and currently costs \\~USD 2-3M to manufacture and launch. At Starlink's scale, this represents hundreds of millions every year in capital expenses. Translating this cost to users, the current D2D add-on packages globally at c. \\$7-10/month (\\$80-120 annually) position the service as a luxury add-on, and not a mass commodity.",
+        "bbox": [
+            65,
+            822,
+            470,
+            852
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            512,
+            552,
+            910,
+            639
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Spectrum is the gatekeeper. D2D requires either access to IMT $^{1}$ spectrum, typically via a mobile operator partnership (e.g., T-Mobile carved out 10MHz for its Starlink Mobile partnership), or MSS $^{1}$ spectrum rights (like major technology players making significant acquisitions). The necessary spectrum is only available through telco partnerships or high-cost acquisitions.",
+        "bbox": [
+            512,
+            652,
+            919,
+            753
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Handset capabilities impact adoption. While most modern handsets allow for satellite connection (e.g., over 60 modern handsets are supported by the available D2D services currently), universal smartphone compatibility will limit adoption. This is especially true in rural areas where people are more likely to use lower-to-mid range smartphones.",
+        "bbox": [
+            512,
+            766,
+            929,
+            852
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{1}$ IMT = International Mobile Telecommunications (IMT) spectrum refers to radio frequencies identified by the ITU for broadband mobile systems, including 3G, 4G, 5G, and 6G\nMSS = Mobile Satellite Service (MSS) spectrum refers to specific radio frequency bands allocated by ITU for communication between satellites and terrestrial nodes",
+        "bbox": [
+            65,
+            863,
+            900,
+            908
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            67,
+            952,
+            243,
+            964
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "D2D IN MENA: RESILIENCE TOOL, CONNECTIVITY BRIDGE, OR COMMERCIAL ADD-ON?",
+        "bbox": [
+            378,
+            952,
+            870,
+            964
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            895,
+            952,
+            912,
+            964
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Regulatory/competitive landscape",
+        "text_level": 2,
+        "bbox": [
+            65,
+            49,
+            354,
+            68
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Regulatory approvals take time. Regulators globally are still assessing the rapidly evolving technology, and more importantly, the guardrails that will be needed to minimize commercial and sovereign disruptions. In this context, the US Federal Communications Commission (FCC) is paving the way for leadership in D2D connectivity. In April 2026, decisions provided a permanent license for AST SpaceMobile, and reaffirmed existing licensees' exclusive rights to use certain D2D bands.",
+        "bbox": [
+            65,
+            82,
+            477,
+            211
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Strong competition from terrestrial networks. The Global System for Mobile Communications Association's (GSMA) most recent publication $^{2}$ highlights that $96\\%$ global population is already covered by terrestrial mobile, and D2D covers only",
+        "bbox": [
+            65,
+            223,
+            480,
+            282
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "edge cases. BCG analysis indicates that in rural areas, LEO can only provide \\~14% of capacity density vs. current terrestrial mobile networks. T-mobile's CEO has noted that its T-Satellite D2D service is seeing lower usage (1.8M free beta signups, limited paid engagement) than projected since the company's terrestrial network leaves few coverage gaps for consumers, and free satellite messaging services from device manufacturers compress the addressable market. [4]",
+        "bbox": [
+            512,
+            53,
+            927,
+            168
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Despite these challenges, remember that the space sector has been subject to disruptive innovation in the past. The last decade alone has seen the introduction of re-usable rockets, LEO broadband, and direct-to-device internet systems. As such, the constraints, while real, should not be considered ‘permanent’. They may potentially be resolved to a material degree, especially through the efforts of proven innovation champions.",
+        "bbox": [
+            512,
+            181,
+            929,
+            282
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/bdba790850376c1b6798c2a5b34456d52bc101b9cc3d3e29165c648e0aba2623.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            1,
+            348,
+            998,
+            877
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "$^{2}$ GSMA, “The Limits of D2D: Modelling the extent of D2D connectivity”, February 2026, https://www.gsma.com/connectivity-for-good/spectrum/wp-content/uploads/2026/03/The-Limits-of-D2D-v2.pdf, accessed 20 April 2026",
+        "bbox": [
+            65,
+            884,
+            761,
+            908
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            68,
+            952,
+            243,
+            964
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "D2D IN MENA: RESILIENCE TOOL, CONNECTIVITY BRIDGE, OR COMMERCIAL ADD-ON?",
+        "bbox": [
+            376,
+            952,
+            870,
+            964
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "7",
+        "bbox": [
+            877,
+            946,
+            929,
+            967
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/5983af02ebe0f3b1327cfc462354b6d7772bf4600a12122bae7904154317e61c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            0,
+            1000,
+            406
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Implications for MENA: Connectivity enabler, resilience mechanism, or complementary add-on",
+        "text_level": 1,
+        "bbox": [
+            63,
+            444,
+            803,
+            609
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "D2D is not yet commercially available in any MENA country, but momentum is building. Bahrain, for example, has approved D2D, though not yet made it available. By 2030, the number of D2D users across MENA is estimated to reach $\\sim 6\\mathrm{M}^3$ , in a population of $500\\mathrm{M}+$ .",
+        "bbox": [
+            65,
+            651,
+            478,
+            724
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "As the technology gains traction in the region, it is likely to function as either a resilience overlay or a primary mode of connectivity, depending on the country. D2D is predicted to be relevant for a range of use-cases, including:",
+        "bbox": [
+            65,
+            737,
+            470,
+            796
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- B2C remote and border zones: desert ranges, off-road safety, and remote tourism",
+        "bbox": [
+            65,
+            808,
+            440,
+            838
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Tool for resilience: civil security, disaster response",
+        "bbox": [
+            65,
+            851,
+            413,
+            866
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "$^{3}$ \\~100M global D2D users, prorated to MENA",
+        "bbox": [
+            65,
+            894,
+            324,
+            908
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "• B2B IoT: Energy infrastructure, logistics nodes",
+        "bbox": [
+            514,
+            651,
+            836,
+            667
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "However, the relative uptake will significantly vary by country, based on the levels of existing terrestrial coverage, D2D affordability, and population concentration in urban areas. As a result, three archetypes are predicted to emerge (Exhibit 1):",
+        "bbox": [
+            512,
+            680,
+            922,
+            739
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "A) LEVER TO BRIDGE THE CONNECTIVITY GAP\nA few countries with large rural populations and limited terrestrial coverage and affordability may be able to leverage D2D as a lever to bridge the connectivity gap. However, the uptake will depend on service providers reducing costs to improve affordability, finding the right balance between demand (uptake) and supply (price) – as the connectivity gap for consumers is generally high in markets with low ARPUs.",
+        "bbox": [
+            510,
+            750,
+            917,
+            866
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            67,
+            951,
+            243,
+            964
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "D2D IN MENA: RESILIENCE TOOL, CONNECTIVITY BRIDGE, OR COMMERCIAL ADD-ON?",
+        "bbox": [
+            376,
+            951,
+            870,
+            964
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            895,
+            951,
+            912,
+            964
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "B) COMMERCIALLY ATTRACTIVE (NOT NECESSARILY SUFFICIENT) DUE TO SCALE",
+        "text_level": 2,
+        "bbox": [
+            65,
+            51,
+            425,
+            80
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "NECESSARILY SUFFICIENT) DUE TO SCALE\nIn countries with better terrestrial coverage and affordability, but large rural populations, D2D can provide a meaningful alternative on a case-by-case basis (e.g., limited period add-ons, very niche geographies, emergency lines, etc.). But due to the scale of customers and relatively affordable services, D2D is expected to be a commercially attractive business model for operators and local telcos.",
+        "bbox": [
+            65,
+            74,
+            468,
+            181
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "C) COMPLEMENTARY SERVICE BACKUP\nFor the remaining MENA countries – which operate near-universal mobile networks (e.g., very high 5G coverage of the population, with best-in-class speeds in GCC) $^{4}$ – D2D will be a complementary add-on, used for tourism, ubiquitous connectivity, and industrial digitalization.",
+        "bbox": [
+            512,
+            52,
+            924,
+            141
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 1",
+        "text_level": 2,
+        "bbox": [
+            65,
+            203,
+            146,
+            217
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Three MENA D2D uptake archetypes are expected to emerge",
+        "text_level": 1,
+        "bbox": [
+            65,
+            217,
+            826,
+            243
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "MENA network coverage score (GSMA) vs. rural population",
+        "text_level": 2,
+        "bbox": [
+            65,
+            260,
+            734,
+            282
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Comparing mobile connectivity coverage with rural population across MENA countries",
+        "bbox": [
+            65,
+            291,
+            657,
+            307
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e9bd067b341dc8c7445bb333eab52d7bce78ba7d5cb7df382852803e69022ad6.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            68,
+            319,
+            927,
+            587
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "D2D also has the potential to become a key resilience overlay. Its attractiveness in this respect is highlighted by the current geopolitical threats to public infrastructure and connectivity backbones, like sub-sea cables in the Strait of Hormuz. In addition, D2D can create a competitive advantage for telcos by strengthening their service offerings and reducing the need for last-mile infrastructure investments to expand coverage. Together, these benefits make the technology an attractive proposition for adoption - equally, if not more, than its direct economic benefits",
+        "bbox": [
+            65,
+            609,
+            475,
+            682
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            512,
+            609,
+            922,
+            682
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "$^{45}$ out of the Top 10 on Ookla Speed Test index for mobile are GCC countries",
+        "bbox": [
+            65,
+            894,
+            500,
+            909
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            67,
+            951,
+            243,
+            964
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "D2D IN MENA: RESILIENCE TOOL, CONNECTIVITY BRIDGE, OR COMMERCIAL ADD-ON?",
+        "bbox": [
+            376,
+            951,
+            870,
+            964
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            894,
+            951,
+            912,
+            965
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/4e1ad61470472547fbf13795fbb341c9233aca1335389908b771227d08c09272.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            0,
+            1000,
+            406
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Immediate actions for governments and telcos: Thoughtfully integrate and leverage the emerging technology",
+        "text_level": 1,
+        "bbox": [
+            65,
+            444,
+            902,
+            615
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "In summary, while there are constraints, direct-to-device internet systems are growing rapidly in capability, availability, and potential. Given the current geopolitical risks and longer-term opportunities, the question for MENA governments and telcos is twofold: what will an integrated telco/D2D world look like, and how can we make the most of it?",
+        "bbox": [
+            63,
+            651,
+            465,
+            739
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Government leaders are invited to assess and consider accelerating their adoption of direct-to-device internet systems. Rapid action could help to secure resilient connectivity for their residents in the short-term. Governments may enable this",
+        "bbox": [
+            65,
+            751,
+            475,
+            810
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "through the national telecommunications champion partnering with D2D providers, while rapidly transforming policy and regulatory frameworks to accommodate the technology.",
+        "bbox": [
+            512,
+            651,
+            922,
+            696
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Local telecommunications operators can initiate partnership discussions to capture the new opportunities. They are expected to remain firmly in control of customer relationships and orchestrate the service provisioning. This stems from their access to the spectrum required for direct-to-device connectivity (in the short-term, until IMT-adjacent MSS spectrum becomes the global norm).",
+        "bbox": [
+            512,
+            708,
+            929,
+            810
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            67,
+            951,
+            243,
+            964
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "D2D IN MENA: RESILIENCE TOOL, CONNECTIVITY BRIDGE, OR COMMERCIAL ADD-ON?",
+        "bbox": [
+            376,
+            951,
+            870,
+            964
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            892,
+            951,
+            914,
+            964
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "However, D2D (and more broadly, satellite communication) carries far-reaching implications for both governments and telcos. If the technology advances over the long term, it could challenge last-mile segments in the terrestrial backbones. With this in mind, governments may consider short-term regulatory tools to protect their terrestrial infrastructure investments while evaluating their long-term connectivity investments and aspirations. India, for example, employed a duration cap, issuing Starlink a 5 year license. The goal for the end-user is a continuous and seamless fabric of connectivity, merging terrestrial and space-based technologies.",
+        "bbox": [
+            65,
+            52,
+            478,
+            140
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            512,
+            52,
+            929,
+            126
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/7d63cb147280eacefa8696c0a098780d282275062c882f5e0c9beb0fe3fd52b5.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            203,
+            1000,
+            940
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            889,
+            948,
+            910,
+            964
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            68,
+            952,
+            243,
+            965
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "D2D IN MENA: RESILIENCE TOOL, CONNE",
+        "bbox": [
+            378,
+            952,
+            615,
+            964
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "OR COMMERCIAL ADD-ON?",
+        "bbox": [
+            709,
+            951,
+            872,
+            964
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "About the Authors",
+        "text_level": 2,
+        "bbox": [
+            65,
+            46,
+            504,
+            85
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/79e7c65f8ddcffcc94c59462635260e963cf5555b1195ee3bfdd776e1781b098.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Ruediger Schicht\nManaging Director and Senior Partner\nSchicht.Ruediger@bcg.com"
+        ],
+        "content": "",
+        "bbox": [
+            68,
+            105,
+            211,
+            208
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/214250a03fb31b48866f99d9b022b0b6c82238992f0368e986cbbd20264b98cc.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Thibault Werle\nManaging Director and Partner\nWerle.Thibault@bcg.com"
+        ],
+        "content": "",
+        "bbox": [
+            515,
+            105,
+            660,
+            208
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/4d4e3775460cc2e10d754b206ccdc7883053ba903a51431486a5b64ce26261ae.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Marc Nasr\nManaging Director and Partner\nNasr.Marc@bcg.com"
+        ],
+        "content": "",
+        "bbox": [
+            68,
+            318,
+            213,
+            420
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/997658af186ffeda81ca5d2d4b9d149bbcb6c27e3aadc8cfcf1f1f7b3a2c5acc.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Hamza Najmi\nPrincipal\nNajmi.Hamza@bcg.com"
+        ],
+        "content": "",
+        "bbox": [
+            515,
+            318,
+            660,
+            420
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Acknowledgments",
+        "bbox": [
+            65,
+            844,
+            292,
+            868
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "BOSTON CONSULTING GROUP",
+        "bbox": [
+            67,
+            951,
+            243,
+            964
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "D2D IN MENA: RESILIENCE TOOL, CONNECTIVITY BRIDGE, OR COMMERCIAL ADD-ON?",
+        "bbox": [
+            376,
+            951,
+            870,
+            965
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            892,
+            951,
+            914,
+            964
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "BCG",
+        "bbox": [
+            63,
+            43,
+            163,
+            77
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "For information or permission to reprint, please contact BCG at permissions@bcg.com. To find the latest BCG content and register to receive e-alerts on this topic or others, please visit bcg.com. Follow Boston Consulting Group on LinkedIn, Instagram, Facebook, and X.",
+        "bbox": [
+            65,
+            850,
+            478,
+            923
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "© Boston Consulting Group 2026. All rights reserved. X/26",
+        "bbox": [
+            65,
+            936,
+            460,
+            952
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/ce2f6d0591dd4c8308708abcaf98f687d1a9efdf6dd4f89d9e351ad8ea4d4ccb.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            5,
+            1000,
+            994
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "BCG",
+        "bbox": [
+            63,
+            46,
+            184,
+            85
+        ],
+        "page_idx": 13
+    }
+]

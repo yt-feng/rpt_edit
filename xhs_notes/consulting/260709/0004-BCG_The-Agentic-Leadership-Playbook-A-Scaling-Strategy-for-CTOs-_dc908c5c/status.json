@@ -1,0 +1,18 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_kbchovn0/pdfs/0004-BCG_The-Agentic-Leadership-Playbook-A-Scaling-Strategy-for-CTOs-_dc908c5c.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "波士顿咨询",
+  "cover_short_title": "智能体AI落地，别再",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "波士顿咨询：AgenticAI的真正瓶颈不是技术，而是智能层",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

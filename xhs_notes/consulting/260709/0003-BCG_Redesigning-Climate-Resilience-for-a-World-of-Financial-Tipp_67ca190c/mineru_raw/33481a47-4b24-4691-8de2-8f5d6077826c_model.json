@@ -1,0 +1,3506 @@
+[
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.001,
+                1.0,
+                0.396
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.051,
+                0.431,
+                0.325,
+                0.449
+            ],
+            "angle": 0,
+            "content": "CLIMATE CHANGE AND SUSTAINABILITY",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.041,
+                0.478,
+                0.734,
+                0.676
+            ],
+            "angle": 0,
+            "content": "Redesigning Climate\nResilience for a World\nof Financial Tipping\nPoints"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.707,
+                0.727,
+                0.745
+            ],
+            "angle": 0,
+            "content": "By Maurice Berns, Edmond Rhys Jones, Nadine Moore, Lorenzo Fantini, Charmian Caines, Aashay Patil, and Eden Cottee-Jones",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.768,
+                0.353,
+                0.787
+            ],
+            "angle": 0,
+            "content": "ARTICLE JULY 08, 2026 8 MIN READ",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.847,
+                0.958,
+                0.929
+            ],
+            "angle": 0,
+            "content": "Climate-driven losses do not occur in isolation. They cascade through financial systems in ways conventional models miss and risk triggering abrupt shifts at financial tipping points. We’ve now reached a point where the systems designed to manage the impacts of climate events through our financial and social infrastructure—insurance, reinsurance, credit, commodity hedging, municipal",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.969,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.437,
+                0.317,
+                0.445
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.039,
+                0.475,
+                0.692,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.528,
+                0.736,
+                0.578
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.574,
+                0.682,
+                0.635
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.628,
+                0.244,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.71,
+                0.724,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.728,
+                0.413,
+                0.742
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.773,
+                0.348,
+                0.784
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.849,
+                0.927,
+                0.865
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.87,
+                0.939,
+                0.884
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.889,
+                0.951,
+                0.905
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.909,
+                0.947,
+                0.925
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.918,
+                0.147
+            ],
+            "angle": 0,
+            "content": "and sovereign debt—are struggling to keep up with a world of more frequent crises. And these crises are now impacting a broad range of sectors, from agricultural commodities to municipal bonds and sovereign credit markets. Addressing this challenge requires cooperation among businesses, insurers, and policy makers.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.161,
+                0.945,
+                0.281
+            ],
+            "angle": 0,
+            "content": "In response, both the public and private sectors need a new approach to climate resilience. The first generation of climate resilience strategy focused on reducing physical damage. While this work is ongoing, the next stage must build financial resilience that helps economies absorb shocks, manage losses, and keep recovery moving. It also must strengthen societal resilience, so that climate costs do not substantially impact households, local demand, and public finances. In short, new indicators are needed that cover financial and societal stresses, as well as physical.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.294,
+                0.946,
+                0.434
+            ],
+            "angle": 0,
+            "content": "Consider the insurance industry, where global insured losses from natural catastrophes have quadrupled since 2000. In the same timeframe, key mechanisms to syndicate those losses—reinsurance and capital markets—have decreased by nearly two-thirds relative to those losses. But addressing financial tipping points requires resilience strategies that go beyond insurance. Leaders need to identify indicators of systemic risk, strengthen the financial systems that absorb and distribute losses, and ensure that the costs of climate change do not fall most heavily on those least equipped to bear them.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.447,
+                0.944,
+                0.547
+            ],
+            "angle": 0,
+            "content": "There is no single template to meet this challenge. Every community and value chain faces a different mix of physical hazards, financial fragility, and social vulnerability. Strategies need to be co-developed by coalitions of governments, financial institutions, businesses, and capital markets—today, we often see actions being taken piecemeal. So, what are some of the potential actions for each dimension of resilience?",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.617,
+                0.794,
+                0.695
+            ],
+            "angle": 0,
+            "content": "Physical Resilience: Follow the\nFinancial Faultlines"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.724,
+                0.921,
+                0.844
+            ],
+            "angle": 0,
+            "content": "Physical resilience is the capacity of assets, infrastructure, and essential services to withstand climate shocks, recover quickly, and continue functioning after direct physical damage. Investments in physical resilience are typically driven by environmental hazard assessments such as flood probability, wildfire exposure, and potential wind damage. These assessments should certainly continue, but they should be complemented with an analysis of associated financial and societal risk indicators.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.858,
+                0.955,
+                0.917
+            ],
+            "angle": 0,
+            "content": "For example, in the US, five states receive roughly 80% of combined federal and state disaster-mitigation funding. These include the most disaster-prone states in the country, such as Florida, Louisiana, and California. But a second group—Mississippi, North Carolina, Oklahoma, and others",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.915,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.091,
+                0.912,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.892,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.129,
+                0.42,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.163,
+                0.933,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.183,
+                0.915,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.204,
+                0.892,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.222,
+                0.942,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.242,
+                0.938,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.261,
+                0.923,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.298,
+                0.906,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.317,
+                0.903,
+                0.331
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.336,
+                0.932,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.355,
+                0.927,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.375,
+                0.942,
+                0.389
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.395,
+                0.906,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.416,
+                0.371,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.449,
+                0.902,
+                0.464
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.47,
+                0.941,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.49,
+                0.875,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.51,
+                0.939,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.53,
+                0.423,
+                0.542
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.615,
+                0.794,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.657,
+                0.526,
+                0.695
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.726,
+                0.919,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.745,
+                0.848,
+                0.762
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.766,
+                0.913,
+                0.78
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.785,
+                0.891,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.805,
+                0.892,
+                0.82
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.825,
+                0.388,
+                0.84
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.859,
+                0.919,
+                0.875
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.879,
+                0.926,
+                0.895
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.899,
+                0.952,
+                0.915
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.042,
+                0.472,
+                0.724,
+                0.544
+            ],
+            "angle": 0,
+            "content": "Sources: National Oceanic and Atmospheric Administration; Federal Emergency Management Agency; US Department of Agriculture; US Department of Housing and Urban Development; individual state government websites; \"Next to Fall: The Climate Driven Insurance Crisis is Here—and Getting Worse\", Senate Budget Committee; BCG analysis.\n\n\\( ^{3} \\) Includes spending on programs that boost property resilience, with a focus on hazard mitigation against disaster recovery. Excludes funding for areas that have limited bearing on property damages, such as agriculture, energy, transportation, health care, water quality, biodiversity, and others. Log scale used to account for the spread in state resilience expenditure.\n\n\\( ^{2} \\) Refers to the bottom 20% of states by share of homeowner insurance policies not renewed by insurers in a particular year; data for 2023.\n\n\\( ^{3} \\) As per the \"Expected Annual Loss – Building Value\" metric in FEMA's National Risk Index."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.927,
+                0.147
+            ],
+            "angle": 0,
+            "content": "—already show comparably high homeowners’ insurance non-renewal rates despite lower physical hazard scores. (See Exhibit 1.) A major disaster in one of these states could produce financial fallout well beyond what the physical damage alone would suggest, because the local mechanisms for responding to losses are already thin.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.042,
+                0.177,
+                0.619,
+                0.236
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 1 Integrating Financial Stress Indicators Changes Adaptation Spending Priorities"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.044,
+                0.244,
+                0.733,
+                0.466
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.579,
+                0.953,
+                0.679
+            ],
+            "angle": 0,
+            "content": "Because tipping points are most likely to occur in places where physical risk, financial fragility, and social vulnerability overlap, the lesson is to consider and address all three dimensions. Financial indicators—such as rising insurance premiums, homeowner’s insurance non-renewal rates, mortgage delinquency trends, municipal credit deterioration—should sit alongside physical hazard data when prioritizing adaptation investment.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.798,
+                0.787,
+                0.879
+            ],
+            "angle": 0,
+            "content": "Financial Resilience: Redesign the Shock Absorbers"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.88,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.089,
+                0.9,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.108,
+                0.923,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.129,
+                0.549,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.581,
+                0.92,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.602,
+                0.892,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.62,
+                0.923,
+                0.635
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.64,
+                0.947,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.659,
+                0.539,
+                0.675
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.796,
+                0.786,
+                0.841
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.84,
+                0.563,
+                0.879
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.948,
+                0.168
+            ],
+            "angle": 0,
+            "content": "Financial resilience is the capacity of financial systems to absorb climate-driven losses, keep capital flowing, and continue pricing and sharing risk after a shock. Insurance covers roughly 40% of global climate losses—a share that has doubled in two decades. (See Exhibit 2.) In mature markets, it can reach 70%. But behind the primary insurance layer sit reinsurance and capital-market instruments that spread risk globally, and these backstops are not keeping pace.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.198,
+                0.111,
+                0.212
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 2"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.042,
+                0.215,
+                0.697,
+                0.254
+            ],
+            "angle": 0,
+            "content": "Losses from Natural Disasters Are Growing, with Higher Insurance Coverage Than Ever Before"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.043,
+                0.264,
+                0.645,
+                0.279
+            ],
+            "angle": 0,
+            "content": "ANNUAL LOSSES DUE TO NATURAL DISASTERS GLOBALLY\\( ^{1} \\) ($B, 2024 DOLLARS, 5-YEAR MOVING AVERAGE)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.044,
+                0.281,
+                0.728,
+                0.489
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.496,
+                0.521,
+                0.517
+            ],
+            "angle": 0,
+            "content": "Sources: “Natural Catastrophe and Climate Report: 2024”; Gallagher Re; BCG analysis.\n \\( ^{1} \\) Includes natural disasters linked to climate; excludes non-climate natural catastrophes such as earthquakes."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.554,
+                0.935,
+                0.633
+            ],
+            "angle": 0,
+            "content": "In fact, we found reinsurance and capital-market coverage had decreased relative to the rise in insured natural disaster losses by 60% in the last 20 years, meaning insurers are carrying more risk from climate-related losses that in the past had been syndicated more broadly. (See Exhibit 3.)",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.972,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.069,
+                0.91,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.09,
+                0.944,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.904,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.129,
+                0.916,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.147,
+                0.872,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.202,
+                0.107,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.556,
+                0.922,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.574,
+                0.924,
+                0.592
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.594,
+                0.93,
+                0.609
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.613,
+                0.074,
+                0.633
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.183,
+                0.336,
+                0.611,
+                0.349
+            ],
+            "angle": 0,
+            "content": "$xx Reinsurance capital and catastrophe bonds ($B, 2024 dollars, annual average)"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.044,
+                0.081,
+                0.702,
+                0.118
+            ],
+            "angle": 0,
+            "content": "Major Sources of Insurance Capital Have Not Kept Pace with Rising Climate Losses"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.131,
+                0.456,
+                0.155
+            ],
+            "angle": 0,
+            "content": "ANNUAL AVERAGE REINSURANCE CAPITAL \\( ^{1} \\)  AND CATASTROPHE BONDS \\( ^{2} \\)  AS A PROPORTION OF GLOBAL INSURED CLIMATE LOSSES \\( ^{3} \\)",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.045,
+                0.156,
+                0.728,
+                0.349
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.358,
+                0.702,
+                0.42
+            ],
+            "angle": 0,
+            "content": "Sources: “Natural Catastrophe and Climate Report: 2024”; Gallagher Re; Reinsurance Market Reports by Aon; Artemis; BCG analysis.\nNote: Data adjusted for inflation using CPI-U annual average.\n \\( ^{1} \\) Includes only traditional (shareholder equity) reinsurer capital and excludes alternative sources of capital such as insurance-linked securities, sidecars, industry loss warranty, and collateralized reinsurance.\n \\( ^{2} \\) Includes only those catastrophe bonds that were specifically issued for climate- and weather-related perils.\n \\( ^{3} \\) Includes losses due to climate; excludes non-climate natural catastrophes such as earthquakes.\n \\( ^{4} \\) Comparable 2005 reinsurance capital data unavailable, but figures are annual averages in any case."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.454,
+                0.953,
+                0.573
+            ],
+            "angle": 0,
+            "content": "Markets around the world are grappling with similar pressures. Consider, for example, the devastating floods in Pakistan in 2022 or wildfires in California in 2025—very different contexts in terms of economic development and institutional capacity, yet both resulted in credit rating downgrades that raised borrowing costs at precisely the moment of greatest need. The pattern is consistent across both developed and developing economies: rising physical losses overwhelm financial mechanisms designed for a less volatile world.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.587,
+                0.952,
+                0.647
+            ],
+            "angle": 0,
+            "content": "Private insurance alone will not mitigate escalating tail risk at acceptable cost. The question is how governments, capital markets, and businesses should fill the gap—and the answer differs by market. We’ve seen several examples emerge:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.676,
+                0.918,
+                0.737
+            ],
+            "angle": 0,
+            "content": "- Australia’s Cyclone Reinsurance Pool, administered by a government entity with an AUS$10 billion guarantee, has cut reinsurance costs in cyclone-prone regions by 25% and lowered premiums for the highest-risk policyholders by 11%.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.75,
+                0.917,
+                0.85
+            ],
+            "angle": 0,
+            "content": "- In the Caribbean, parametric instruments (where a payout is triggered by an environmental event) have delivered liquidity at speed. After Hurricane Melissa in 2025, the Caribbean Catastrophe Risk Insurance Facility paid out $92 million to Jamaica within 14 days, fast enough to stabilize public services and reduce the country's economic exposure before localized damage could spread.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.083,
+                0.7,
+                0.1
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.102,
+                0.192,
+                0.117
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.134,
+                0.453,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.145,
+                0.377,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.457,
+                0.872,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.476,
+                0.952,
+                0.491
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.494,
+                0.898,
+                0.512
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.516,
+                0.941,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.535,
+                0.927,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.555,
+                0.563,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.588,
+                0.922,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.61,
+                0.946,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.628,
+                0.48,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.679,
+                0.915,
+                0.695
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.699,
+                0.898,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.717,
+                0.545,
+                0.734
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.753,
+                0.913,
+                0.768
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.774,
+                0.878,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.793,
+                0.869,
+                0.807
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.812,
+                0.874,
+                0.827
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.832,
+                0.359,
+                0.847
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.067,
+                0.834,
+                0.184
+            ],
+            "angle": 0,
+            "content": "Societal Resilience: Protect\nAffordability to Prevent Tipping\nPoints"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.213,
+                0.929,
+                0.352
+            ],
+            "angle": 0,
+            "content": "Societal resilience is the capacity of households and communities to absorb climate shocks without turning affordability stresses into wider financial and economic instability. However losses are allocated on paper, they land on households through premiums, taxes, utility bills, or reduced public services. When that burden becomes unaffordable for a significant number of households, the effects compound. Mortgage delinquencies rise, local demand weakens, fiscal capacity shrinks, and investment in future resilience drops—making the next shock harder to absorb.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.366,
+                0.95,
+                0.466
+            ],
+            "angle": 0,
+            "content": "The Federal Reserve Bank of Dallas found that an average homeowner's insurance premium increase between June 2022 and 2023 was associated with nearly 150,000 mortgages becoming delinquent within a year. Our own analysis shows that real insurance premiums in the highest risk US counties increased 11% from 2018–2022, while those in very low to moderate risk counties only experienced an increase of 2% to 4%. (See Exhibit 4.)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.497,
+                0.111,
+                0.513
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 4"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.042,
+                0.514,
+                0.717,
+                0.553
+            ],
+            "angle": 0,
+            "content": "The Most Hazard-Prone US Regions Have Seen Homeowner Insurance Premiums Rise 3–5x More Than Other Regions"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.043,
+                0.561,
+                0.601,
+                0.576
+            ],
+            "angle": 0,
+            "content": "PERCENTAGE INCREASE IN HOMEOWNERS' REAL INSURANCE PREMIUMS FROM 2018 TO \\(2022^{1}\\) (%)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.046,
+                0.574,
+                0.729,
+                0.783
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.043,
+                0.792,
+                0.728,
+                0.839
+            ],
+            "angle": 0,
+            "content": "Sources: “Property insurance and disaster risk: New evidence from mortgage escrow data,” Keys & Mulder, National Bureau of Economic Research, 2025; Federal Emergency Management Agency; American Community Survey, US Census Bureau; BCG analysis.\n\n \\( ^{1} \\) Risk categorization based on FEMA risk categories for counties. Calculation based on cost of property insurance estimated from mortgage escrow payments (not adjusted for inflation) reported to CoreLogic. Excludes counties where data not reported. Data adjusted for inflation using CPI-U annual average, all items, US city average."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.873,
+                0.955,
+                0.934
+            ],
+            "angle": 0,
+            "content": "In some US states, the excess losses from climate-related disasters are syndicated by flat levies across policyholders, which, depending on the distribution of wealth and risk, can result in low-risk and low-income homeowners paying the highest increase for disaster costs, in terms of share-of-",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.065,
+                0.71,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.105,
+                0.835,
+                0.15
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.146,
+                0.201,
+                0.186
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.215,
+                0.893,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.236,
+                0.893,
+                0.25
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.255,
+                0.925,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.274,
+                0.907,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.294,
+                0.915,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.314,
+                0.913,
+                0.329
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.334,
+                0.12,
+                0.35
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.369,
+                0.9,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.389,
+                0.93,
+                0.404
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.407,
+                0.946,
+                0.422
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.428,
+                0.913,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.448,
+                0.58,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.501,
+                0.107,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.875,
+                0.937,
+                0.891
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.896,
+                0.952,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.914,
+                0.931,
+                0.931
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.067,
+                0.887,
+                0.128
+            ],
+            "angle": 0,
+            "content": "wallet expenditure. To illustrate the challenge, an analysis of two hypothetical scenarios in Oregon, where excess losses were distributed by a simulated risk-based or income-based allocation, revealed significant cost burden differences across counties. (See Exhibit 5.)",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.042,
+                0.174,
+                0.668,
+                0.216
+            ],
+            "angle": 0,
+            "content": "Different Disaster Cost Allocation Methods Rebalance the Burden Across Oregon Counties with Varying Risk and Income Profiles"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.123,
+                0.244,
+                0.292,
+                0.273
+            ],
+            "angle": 0,
+            "content": "Risk-based extreme event cost distribution"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.045,
+                0.232,
+                0.73,
+                0.487
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.477,
+                0.244,
+                0.652,
+                0.273
+            ],
+            "angle": 0,
+            "content": "Income-based extreme event cost distribution"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.503,
+                0.722,
+                0.535
+            ],
+            "angle": 0,
+            "content": "Sources: Federal Emergency Management Agency; US Census Bureau; BCG analysis.\n\n \\( ^{1} \\) Percentiles based on deviation in county's FEMA Risk value-based percentile rank within the state vs. state population weighted average percentile of all counties.\n\n \\( ^{2} \\) Percentiles based on deviation of county's average income vs. state's average income."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.569,
+                0.947,
+                0.69
+            ],
+            "angle": 0,
+            "content": "Designing cost allocation methodologies to better balance risk exposure and ability to pay can help break this cycle. And targeted investment in physical resilience for low-income communities reduces their exposure to future shocks, shrinking the pool of households most likely to default when the next event hits. If the cost of climate change falls disproportionately on those who cannot absorb it, the resulting stress—in mortgage markets, in local government finances, in household spending—becomes a transmission mechanism for wider instability.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.041,
+                0.758,
+                0.766,
+                0.839
+            ],
+            "angle": 0,
+            "content": "Who Needs to Act, and What\nThey Can Do"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.865,
+                0.903,
+                0.924
+            ],
+            "angle": 0,
+            "content": "Preventing climate-induced financial tipping points cannot be solved by one single entity or group. The challenge cuts across public and private sectors and all three dimensions of resilience.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.069,
+                0.884,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.089,
+                0.868,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.108,
+                0.853,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.571,
+                0.924,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.591,
+                0.945,
+                0.606
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.611,
+                0.926,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.631,
+                0.895,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.651,
+                0.909,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.67,
+                0.78,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.756,
+                0.768,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.798,
+                0.371,
+                0.838
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.868,
+                0.898,
+                0.884
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.887,
+                0.857,
+                0.903
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.907,
+                0.145,
+                0.922
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.942,
+                0.186
+            ],
+            "angle": 0,
+            "content": "Governments can realign incentives for businesses, insurance, and financial services to address this challenge. They could undertake broader risk assessments, at both national and municipal scale, to develop appropriate resilience strategies. They could also convene and develop multi-stakeholder solutions at a pace commensurate with the speed of climate change. This includes establishing backstop schemes for market-specific catastrophic climate risks—and designing those schemes with societal resilience front-of-mind.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.201,
+                0.944,
+                0.32
+            ],
+            "angle": 0,
+            "content": "Insurers can reconsider the way they work to achieve better outcomes. They could innovate more radically on product and fit-for-purpose solutions, act as a pathfinder when collaborating with governments and regulators, and adjust investment plans with financial tipping points in focus. This includes expanding offerings suited to sharper volatility, developing public-private partnerships at pace, and directing capital towards the most pressing physical adaptation investment opportunities.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.334,
+                0.95,
+                0.474
+            ],
+            "angle": 0,
+            "content": "Businesses in exposed sectors—such as utilities, real estate, logistics, agriculture, and financial services, among others—can look beyond their physical resilience and review their financial and societal resilience. This may involve contributing to public-private risk pools or deploying more financial instruments designed for increased volatility, such as resilience-incentivized loan terms. They could recognize that their dependencies on consumers, suppliers, and their own workforce are vulnerabilities to climate-induced financial tipping points. Arguing that a company was hit by “a perfect storm” is less credible with investors when the risks are increasingly visible.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.487,
+                0.947,
+                0.586
+            ],
+            "angle": 0,
+            "content": "Whether the risk is wildfires in Europe, storm damage in Asia, or floods in Australia, solutions can be found by bringing together the right local stakeholders. We find the problem is not simply more extreme events, but often the interaction of insurer retrenchment, utility liability, a constrained rate-setting regime, and growing numbers of uninsured households. No single reform addresses all these pressures.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.6,
+                0.952,
+                0.701
+            ],
+            "angle": 0,
+            "content": "The response typically demands an integrated architecture: separating catastrophic tail risk from the standard insurance market and creating multi-stakeholder funding structures. This reduces friction costs, particularly litigation, which diverts billions from rebuilding. It also replaces hindsight-based liability with forward-looking, compliance-based accountability. A logic of layering the risk, sharing it broadly, cutting system costs, and aligning incentives holds real promise.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.714,
+                0.95,
+                0.892
+            ],
+            "angle": 0,
+            "content": "While these solutions are anchored in insurance markets, many of the principles translate to other sources of financial tipping points. These include municipal and sovereign bond markets, which play a major role in financing infrastructure to enhance resilience and are impacted when climate risks are not priced in, leading to credit rating downgrades and increased debt servicing and borrowing costs. Another example is agricultural commodity markets, where production losses triggered by climate change are compounded by concentrated supply geographies and thin market liquidity, resulting in sharp, destabilizing volatility as documented in cocoa, coffee, rice, and other staples. In all cases, the impacts flow through to businesses and consumers in the real economy.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.938,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.09,
+                0.928,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.927,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.128,
+                0.924,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.147,
+                0.915,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.168,
+                0.532,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.205,
+                0.94,
+                0.217
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.223,
+                0.907,
+                0.237
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.242,
+                0.929,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.262,
+                0.848,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.283,
+                0.879,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.302,
+                0.289,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.337,
+                0.93,
+                0.349
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.355,
+                0.941,
+                0.369
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.375,
+                0.923,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.395,
+                0.948,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.416,
+                0.932,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.434,
+                0.938,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.454,
+                0.846,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.489,
+                0.939,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.509,
+                0.901,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.529,
+                0.866,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.549,
+                0.943,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.567,
+                0.329,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.602,
+                0.949,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.622,
+                0.923,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.64,
+                0.872,
+                0.657
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.662,
+                0.944,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.682,
+                0.89,
+                0.697
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.717,
+                0.908,
+                0.731
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.735,
+                0.927,
+                0.75
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.756,
+                0.93,
+                0.77
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.774,
+                0.93,
+                0.791
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.795,
+                0.894,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.814,
+                0.913,
+                0.83
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.835,
+                0.917,
+                0.848
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.853,
+                0.945,
+                0.869
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.874,
+                0.176,
+                0.888
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.925,
+                0.186
+            ],
+            "angle": 0,
+            "content": "As climate-induced losses continue to grow in a non-linear fashion, the risk of overwhelming all three dimensions of resilience grows with them. The warning signals are visible in Florida's insurance market, in cocoa trading floors, in municipal bond spreads, and in sovereign credit assessments across economies exposed to climate risks. Leaders who invest now in forward-looking tools, cross-sector coalitions, and new resilience architectures will be in the strongest position when those signals turn into shocks.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.309,
+                0.721,
+                0.468
+            ],
+            "angle": 0,
+            "content": "The BCG Institute is Boston Consulting Group's strategy think tank, dedicated to exploring and developing valuable new insights from business, technology, and science by embracing the powerful technology of ideas. The Institute engages leaders in provocative discussion and experimentation to expand the boundaries of business theory and practice and to translate innovative ideas from within and beyond business. For more ideas and inspiration from the Institute, please visit our website and follow us on LinkedIn and X (formerly Twitter).",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.923,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.089,
+                0.881,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.109,
+                0.902,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.128,
+                0.903,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.148,
+                0.911,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.167,
+                0.466,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.31,
+                0.673,
+                0.326
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.331,
+                0.657,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.351,
+                0.719,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.37,
+                0.681,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.39,
+                0.661,
+                0.404
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.409,
+                0.659,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.43,
+                0.704,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.448,
+                0.623,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.069,
+                0.247,
+                0.107
+            ],
+            "angle": 0,
+            "content": "Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.069,
+                0.15,
+                0.22,
+                0.259
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.315,
+                0.22,
+                0.423
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.071,
+                0.469,
+                0.221,
+                0.575
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.071,
+                0.624,
+                0.22,
+                0.729
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.246,
+                0.154,
+                0.408,
+                0.176
+            ],
+            "angle": 0,
+            "content": "Maurice Berns"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.187,
+                0.436,
+                0.241
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner; Chair, Center for Energy Impact\nLondon"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.245,
+                0.275,
+                0.261
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.246,
+                0.319,
+                0.408,
+                0.342
+            ],
+            "angle": 0,
+            "content": "Nadine Moore"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.351,
+                0.437,
+                0.393
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nChicago",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.397,
+                0.275,
+                0.414
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.244,
+                0.472,
+                0.437,
+                0.495
+            ],
+            "angle": 0,
+            "content": "Charmian Caines"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.505,
+                0.437,
+                0.546
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nLondon",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.551,
+                0.275,
+                0.567
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.245,
+                0.631,
+                0.454,
+                0.653
+            ],
+            "angle": 0,
+            "content": "Eden Cottee-Jones"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.663,
+                0.447,
+                0.695
+            ],
+            "angle": 0,
+            "content": "BCG Institute Senior Director\nLondon Canary Wharf",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.698,
+                0.275,
+                0.714
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.533,
+                0.15,
+                0.683,
+                0.258
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.708,
+                0.16,
+                0.93,
+                0.183
+            ],
+            "angle": 0,
+            "content": "Edmond Rhys Jones"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.708,
+                0.193,
+                0.896,
+                0.234
+            ],
+            "angle": 0,
+            "content": "Partner & Director, Climate Policy & Regulation\nLondon"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.239,
+                0.737,
+                0.255
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.534,
+                0.316,
+                0.682,
+                0.422
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.709,
+                0.319,
+                0.883,
+                0.341
+            ],
+            "angle": 0,
+            "content": "Lorenzo Fantini"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.398,
+                0.737,
+                0.414
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.352,
+                0.9,
+                0.392
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nMilan",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.533,
+                0.47,
+                0.684,
+                0.575
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.477,
+                0.843,
+                0.5
+            ],
+            "angle": 0,
+            "content": "Aashay Patil"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.51,
+                0.815,
+                0.54
+            ],
+            "angle": 0,
+            "content": "Project Leader\nMumbai",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.545,
+                0.737,
+                0.56
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.936,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.067,
+                0.247,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.156,
+                0.405,
+                0.175
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.321,
+                0.403,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.354,
+                0.433,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.365,
+                0.301,
+                0.377
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.245,
+                0.378,
+                0.304,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.474,
+                0.433,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.507,
+                0.433,
+                0.519
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.52,
+                0.301,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.245,
+                0.532,
+                0.299,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.248,
+                0.633,
+                0.451,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.666,
+                0.443,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.681,
+                0.396,
+                0.692
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.711,
+                0.162,
+                0.928,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.711,
+                0.322,
+                0.88,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.354,
+                0.896,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.366,
+                0.763,
+                0.377
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.708,
+                0.378,
+                0.751,
+                0.391
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.513,
+                0.811,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.527,
+                0.767,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.103,
+                0.436,
+                0.121
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.138,
+                0.952,
+                0.258
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "11"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.105,
+                0.433,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.14,
+                0.95,
+                0.155
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.159,
+                0.9,
+                0.176
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.18,
+                0.904,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.199,
+                0.911,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.218,
+                0.933,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.238,
+                0.593,
+                0.255
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

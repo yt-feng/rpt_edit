@@ -1,0 +1,64 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs",
+  "total_pdf_count_before_shard": 6,
+  "pdf_count_before_skip": 6,
+  "pdf_count": 6,
+  "generated_report_count": 6,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 0,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_D2D-in-MENA-Resilience-Tool-Connectivity-Bridge-or-Commercia_a6961063.pdf",
+          "batch_file": "/tmp/pdf_batch_001_kbchovn0/pdfs/0001-BCG_D2D-in-MENA-Resilience-Tool-Connectivity-Bridge-or-Commercia_a6961063.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Luxury-Is-Back-on-Track-With-Healthier-Foundations-And-AI-Is_8747a5b4.pdf",
+          "batch_file": "/tmp/pdf_batch_001_kbchovn0/pdfs/0002-BCG_Luxury-Is-Back-on-Track-With-Healthier-Foundations-And-AI-Is_8747a5b4.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Redesigning-Climate-Resilience-for-a-World-of-Financial-Tipp_67ca190c.pdf",
+          "batch_file": "/tmp/pdf_batch_001_kbchovn0/pdfs/0003-BCG_Redesigning-Climate-Resilience-for-a-World-of-Financial-Tipp_67ca190c.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_The-Agentic-Leadership-Playbook-A-Scaling-Strategy-for-CTOs-_dc908c5c.pdf",
+          "batch_file": "/tmp/pdf_batch_001_kbchovn0/pdfs/0004-BCG_The-Agentic-Leadership-Playbook-A-Scaling-Strategy-for-CTOs-_dc908c5c.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_The-Crucial-Role-of-Physicians-in-Managing-Health-Care-Costs_67d1f0bd.pdf",
+          "batch_file": "/tmp/pdf_batch_001_kbchovn0/pdfs/0005-BCG_The-Crucial-Role-of-Physicians-in-Managing-Health-Care-Costs_67d1f0bd.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 2,
+      "pdf_count": 1,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/McKinsey_PDF-Global-Banking-Annual-Review-2026---McKinsey-Company_936c113d.pdf",
+          "batch_file": "/tmp/pdf_batch_002_e0pm16f8/pdfs/0006-McKinsey_PDF-Global-Banking-Annual-Review-2026---McKinsey-Company_936c113d.pdf",
+          "stable_index": "6"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

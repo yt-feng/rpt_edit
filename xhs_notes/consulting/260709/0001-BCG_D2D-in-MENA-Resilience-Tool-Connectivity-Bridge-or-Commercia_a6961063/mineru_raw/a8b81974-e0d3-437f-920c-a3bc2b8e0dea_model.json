@@ -1,0 +1,4135 @@
+[
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.064,
+                0.122,
+                0.888,
+                0.353
+            ],
+            "angle": 0,
+            "content": "D2D in MENA: Resilience Tool, Connectivity Bridge, or Commercial Add-On?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.094,
+                0.375,
+                0.178,
+                0.393
+            ],
+            "angle": 0,
+            "content": "July 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.409,
+                0.527,
+                0.427
+            ],
+            "angle": 0,
+            "content": "By Ruediger Schicht, Thibault Werle, Marc Nasr, Hamza Najmi",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.061,
+                0.118,
+                0.601,
+                0.179
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.063,
+                0.177,
+                0.622,
+                0.237
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.236,
+                0.886,
+                0.296
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.063,
+                0.294,
+                0.831,
+                0.347
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.374,
+                0.178,
+                0.394
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.41,
+                0.525,
+                0.426
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.068,
+                0.047,
+                0.163,
+                0.077
+            ],
+            "angle": 0,
+            "content": "BCG"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.111,
+                0.373,
+                0.125
+            ],
+            "angle": 0,
+            "content": "Where Strategic Clarity Meets Applied AI"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.124,
+                0.478,
+                0.284
+            ],
+            "angle": 0,
+            "content": "We are navigating an era of unprecedented change and disruption—powered by technology, marked by complexity, where change amplifies at scale. To lead, companies need a partner that can bridge the gap between ambition and outcomes. BCG is built for this moment. We bring strategic clarity, rooted in over 60 years of deep domain knowledge, to ensure leaders make the right choices. We combine it with applied AI, shaped and wielded by our practitioners, teaming shoulder-to-shoulder with your teams to deliver transformative impact at scale. The result? Stronger returns, transferred capabilities, and change that sticks. We are BCG.",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.062,
+                0.044,
+                0.166,
+                0.08
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.111,
+                0.372,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.126,
+                0.442,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.141,
+                0.469,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.154,
+                0.459,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.17,
+                0.447,
+                0.18
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.183,
+                0.467,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.198,
+                0.461,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.212,
+                0.449,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.226,
+                0.454,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.24,
+                0.447,
+                0.253
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.253,
+                0.476,
+                0.267
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.268,
+                0.475,
+                0.281
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.066,
+                0.046,
+                0.486,
+                0.086
+            ],
+            "angle": 0,
+            "content": "Table of Contents"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.077,
+                0.13,
+                0.467,
+                0.215
+            ],
+            "angle": 0,
+            "content": "04 Direct-to-device (D2D): A resilient, space-based, way to connect",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.257,
+                0.429,
+                0.343
+            ],
+            "angle": 0,
+            "content": "06 Not \"5G from space\": Key constraints and barriers to scale",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.386,
+                0.478,
+                0.501
+            ],
+            "angle": 0,
+            "content": "08 Implications for MENA: Connectivity enabler, resilience mechanism, or complementary add-on",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.543,
+                0.467,
+                0.687
+            ],
+            "angle": 0,
+            "content": "10 Immediate actions for governments and telcos: Thoughtfully integrate and leverage the emerging technology",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.045,
+                0.487,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.13,
+                0.119,
+                0.156
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.13,
+                0.448,
+                0.156
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.153,
+                0.159,
+                0.461,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.19,
+                0.349,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.075,
+                0.257,
+                0.121,
+                0.286
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.258,
+                0.427,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.156,
+                0.289,
+                0.41,
+                0.311
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.316,
+                0.363,
+                0.341
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.075,
+                0.385,
+                0.12,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.388,
+                0.452,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.416,
+                0.424,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.445,
+                0.476,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.473,
+                0.456,
+                0.498
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.077,
+                0.544,
+                0.119,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.545,
+                0.437,
+                0.567
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.153,
+                0.574,
+                0.466,
+                0.597
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.155,
+                0.602,
+                0.437,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.631,
+                0.37,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.658,
+                0.426,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                1.0,
+                0.403
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.066,
+                0.445,
+                0.871,
+                0.529
+            ],
+            "angle": 0,
+            "content": "Direct-to-device (D2D): A resilient, space-based, way to connect"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.567,
+                0.482,
+                0.683
+            ],
+            "angle": 0,
+            "content": "Direct-to-device (D2D) internet systems are on the rise and were a key area of focus at the 2026 Mobile World Congress (MWC). Starlink's keynote, for example, presented Starlink Mobile – a D2D system operated by SpaceX. Such systems promise the elimination of cellular “dead zones” by enabling standard smartphones and IoT devices to connect directly to satellites. While the technology is evolving fast, it still faces hurdles that require diligent consideration.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.696,
+                0.479,
+                0.768
+            ],
+            "angle": 0,
+            "content": "Each region is subject to different commercial set ups and connectivity objectives, and even within MENA the technology's potential use and uptake vary considerably by country. Local regulators and telcos will play a vital role in shaping the trajectory and reaping the benefits of D2D adoption.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.78,
+                0.469,
+                0.839
+            ],
+            "angle": 0,
+            "content": "Starlink originally began providing broadband services in 2020 for both consumers and businesses. By March 2026, it had connected 10M broadband customers globally across 150+ countries and territories.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.567,
+                0.927,
+                0.682
+            ],
+            "angle": 0,
+            "content": "In simple terms, D2D satellites act as a “cell towers in space,” connecting unmodified smartphones to the internet using mobile spectrum (or adjacent). What makes D2D unique is the ‘ubiquitous coverage’ it can provide around the globe (including poles), eliminating digital divides, and leveling the digital access playing field for all nations. At the same time, D2D technology offers promising resilience, providing connectivity during incidents that terrestrial networks cannot.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.696,
+                0.927,
+                0.826
+            ],
+            "angle": 0,
+            "content": "The leading D2D providers differ across key technical dimensions, including satellite count, altitude, channel bandwidth, peak download speeds, satellite capacity and access to relevant spectrum, and those differences directly determine what each configuration can serve. Larger, lower-altitude constellations can serve a large number of users with a potentially smaller antenna size, whereas higher-altitude systems will rely on greater channel capacity and antenna size to connect a larger number of users per satellite.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.068,
+                0.953,
+                0.245,
+                0.965
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.378,
+                0.952,
+                0.871,
+                0.965
+            ],
+            "angle": 0,
+            "content": "D2D IN MENA: RESILIENCE TOOL, CONNECTIVITY BRIDGE, OR COMMERCIAL ADD-ON?"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.895,
+                0.953,
+                0.914,
+                0.965
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.445,
+                0.869,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.49,
+                0.735,
+                0.528
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.569,
+                0.481,
+                0.579
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.584,
+                0.467,
+                0.594
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.598,
+                0.461,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.612,
+                0.452,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.625,
+                0.435,
+                0.638
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.64,
+                0.458,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.655,
+                0.461,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.67,
+                0.259,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.698,
+                0.439,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.711,
+                0.475,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.726,
+                0.455,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.741,
+                0.422,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.754,
+                0.401,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.783,
+                0.465,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.797,
+                0.442,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.811,
+                0.409,
+                0.823
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.826,
+                0.264,
+                0.836
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.57,
+                0.908,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.583,
+                0.886,
+                0.594
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.598,
+                0.913,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.612,
+                0.921,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.626,
+                0.923,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.64,
+                0.917,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.655,
+                0.886,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.668,
+                0.791,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.697,
+                0.865,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.711,
+                0.874,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.726,
+                0.888,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.741,
+                0.899,
+                0.751
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.755,
+                0.907,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.769,
+                0.918,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.783,
+                0.897,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.797,
+                0.923,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.811,
+                0.834,
+                0.822
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.053,
+                0.482,
+                0.17
+            ],
+            "angle": 0,
+            "content": "Though it is still an early-stage technology, Starlink Mobile already claims to support 10M+ active users through its D2D service and aims to reach 26M customers by the end of 2026. The company predicts that its future wave of dedicated D2D satellites will provide levels of speed and coverage that approach those of (very rural) terrestrial networks. Looking ahead, D2D has the potential to become a standard add-on feature offered by premium network packages.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.053,
+                0.917,
+                0.214
+            ],
+            "angle": 0,
+            "content": "A wave of recent actions by Starlink highlights the need to move simultaneously on multiple fronts – from technology & spectrum advancements (e.g., acquisition of additional spectrum, patent for bandwidth optimization in D2D, announcement of bigger and better Gen2 D2D satellites) to telecom partnerships (e.g., with T-Mobile in the USA, and operators spanning 10+ EU countries and 14 African countries) and future plans (e.g., as a possible bidder in FCC's spectrum auction) – to bring this vision to fruition. Other major technology players are entering the market, making headlines through different acquisitions. [1,2,3].",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.277,
+                1.0,
+                1.0
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.056,
+                0.464,
+                0.067
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.07,
+                0.477,
+                0.082
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.084,
+                0.444,
+                0.095
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.098,
+                0.48,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.113,
+                0.474,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.127,
+                0.467,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.141,
+                0.47,
+                0.152
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.155,
+                0.383,
+                0.168
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.055,
+                0.907,
+                0.067
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.071,
+                0.909,
+                0.081
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.085,
+                0.901,
+                0.095
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.098,
+                0.874,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.112,
+                0.915,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.127,
+                0.903,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.142,
+                0.869,
+                0.152
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.156,
+                0.891,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.17,
+                0.898,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.185,
+                0.896,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.198,
+                0.894,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                1.0,
+                0.407
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.066,
+                0.446,
+                0.824,
+                0.526
+            ],
+            "angle": 0,
+            "content": "Not “5G from space”: Key constraints and barriers to scale"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.553,
+                0.473,
+                0.597
+            ],
+            "angle": 0,
+            "content": "However, the industry is learning quickly that D2D is not “5G from space”. It’s a different type of coverage, with physical, economic, and regulatory/competitive constraints.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.608,
+                0.237,
+                0.625
+            ],
+            "angle": 0,
+            "content": "Physical limitations"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.638,
+                0.482,
+                0.768
+            ],
+            "angle": 0,
+            "content": "Indoor coverage and dense urban areas. D2D can only provide outdoor coverage, but 50-90% of global mobile traffic occurs indoors. Additionally, D2D cannot competitively serve dense urban or suburban areas, where its limited capacity must be shared by millions of people. For example, GSMA - assuming a 15,000 satellite constellation and using all MSS spectrum - notes that D2D can serve 2Mbps for 10% of the population in a density of <40 people per sq. km. Compare this to Dubai, which has 700+ people per sq. km.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.793,
+                0.281,
+                0.809
+            ],
+            "angle": 0,
+            "content": "Economic considerations"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.824,
+                0.472,
+                0.853
+            ],
+            "angle": 0,
+            "content": "Satellites are ongoing costs, which are passed to users. Each satellite will last ~5 years (or less in the lower D2D orbit",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.553,
+                0.911,
+                0.64
+            ],
+            "angle": 0,
+            "content": "of ~340 km), and currently costs ~USD 2-3M to manufacture and launch. At Starlink's scale, this represents hundreds of millions every year in capital expenses. Translating this cost to users, the current D2D add-on packages globally at c. $7-10/month ($80-120 annually) position the service as a luxury add-on, and not a mass commodity.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.653,
+                0.92,
+                0.754
+            ],
+            "angle": 0,
+            "content": "Spectrum is the gatekeeper. D2D requires either access to IMT \\( ^{1} \\) spectrum, typically via a mobile operator partnership (e.g., T-Mobile carved out 10MHz for its Starlink Mobile partnership), or MSS \\( ^{1} \\) spectrum rights (like major technology players making significant acquisitions). The necessary spectrum is only available through telco partnerships or high-cost acquisitions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.767,
+                0.93,
+                0.853
+            ],
+            "angle": 0,
+            "content": "Handset capabilities impact adoption. While most modern handsets allow for satellite connection (e.g., over 60 modern handsets are supported by the available D2D services currently), universal smartphone compatibility will limit adoption. This is especially true in rural areas where people are more likely to use lower-to-mid range smartphones.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.067,
+                0.864,
+                0.901,
+                0.909
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\) IMT = International Mobile Telecommunications (IMT) spectrum refers to radio frequencies identified by the ITU for broadband mobile systems, including 3G, 4G, 5G, and 6G\nMSS = Mobile Satellite Service (MSS) spectrum refers to specific radio frequency bands allocated by ITU for communication between satellites and terrestrial nodes"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.068,
+                0.953,
+                0.244,
+                0.965
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.379,
+                0.953,
+                0.871,
+                0.965
+            ],
+            "angle": 0,
+            "content": "D2D IN MENA: RESILIENCE TOOL, CONNECTIVITY BRIDGE, OR COMMERCIAL ADD-ON?"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.897,
+                0.953,
+                0.913,
+                0.965
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.442,
+                0.67,
+                0.488
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.49,
+                0.823,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.555,
+                0.427,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.569,
+                0.47,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.584,
+                0.39,
+                0.594
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.609,
+                0.234,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.64,
+                0.452,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.655,
+                0.467,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.669,
+                0.464,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.683,
+                0.446,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.697,
+                0.456,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.711,
+                0.457,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.726,
+                0.452,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.74,
+                0.479,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.754,
+                0.359,
+                0.766
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.794,
+                0.278,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.826,
+                0.47,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.839,
+                0.467,
+                0.85
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.555,
+                0.909,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.569,
+                0.9,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.584,
+                0.906,
+                0.594
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.516,
+                0.597,
+                0.869,
+                0.609
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.611,
+                0.902,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.626,
+                0.796,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.655,
+                0.917,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.669,
+                0.896,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.683,
+                0.876,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.698,
+                0.911,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.712,
+                0.874,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.726,
+                0.879,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.74,
+                0.664,
+                0.751
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.768,
+                0.928,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.783,
+                0.909,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.797,
+                0.868,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.811,
+                0.877,
+                0.822
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.826,
+                0.904,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.839,
+                0.877,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.051,
+                0.356,
+                0.07
+            ],
+            "angle": 0,
+            "content": "Regulatory/competitive landscape"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.083,
+                0.478,
+                0.212
+            ],
+            "angle": 0,
+            "content": "Regulatory approvals take time. Regulators globally are still assessing the rapidly evolving technology, and more importantly, the guardrails that will be needed to minimize commercial and sovereign disruptions. In this context, the US Federal Communications Commission (FCC) is paving the way for leadership in D2D connectivity. In April 2026, decisions provided a permanent license for AST SpaceMobile, and reaffirmed existing licensees' exclusive rights to use certain D2D bands.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.224,
+                0.481,
+                0.284
+            ],
+            "angle": 0,
+            "content": "Strong competition from terrestrial networks. The Global System for Mobile Communications Association's (GSMA) most recent publication\\(^{2}\\) highlights that \\(96\\%\\) global population is already covered by terrestrial mobile, and D2D covers only",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.054,
+                0.929,
+                0.17
+            ],
+            "angle": 0,
+            "content": "edge cases. BCG analysis indicates that in rural areas, LEO can only provide ~14% of capacity density vs. current terrestrial mobile networks. T-mobile's CEO has noted that its T-Satellite D2D service is seeing lower usage (1.8M free beta signups, limited paid engagement) than projected since the company's terrestrial network leaves few coverage gaps for consumers, and free satellite messaging services from device manufacturers compress the addressable market. [4]",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.182,
+                0.93,
+                0.284
+            ],
+            "angle": 0,
+            "content": "Despite these challenges, remember that the space sector has been subject to disruptive innovation in the past. The last decade alone has seen the introduction of re-usable rockets, LEO broadband, and direct-to-device internet systems. As such, the constraints, while real, should not be considered ‘permanent’. They may potentially be resolved to a material degree, especially through the efforts of proven innovation champions.",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.002,
+                0.349,
+                0.999,
+                0.878
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.885,
+                0.763,
+                0.909
+            ],
+            "angle": 0,
+            "content": "\\( ^{2} \\) GSMA, “The Limits of D2D: Modelling the extent of D2D connectivity”, February 2026, https://www.gsma.com/connectivity-for-good/spectrum/wp-content/uploads/2026/03/The-Limits-of-D2D-v2.pdf, accessed 20 April 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.069,
+                0.953,
+                0.244,
+                0.965
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.378,
+                0.953,
+                0.871,
+                0.965
+            ],
+            "angle": 0,
+            "content": "D2D IN MENA: RESILIENCE TOOL, CONNECTIVITY BRIDGE, OR COMMERCIAL ADD-ON?"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.878,
+                0.947,
+                0.93,
+                0.969
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.053,
+                0.353,
+                0.068
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.084,
+                0.457,
+                0.095
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.098,
+                0.435,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.113,
+                0.452,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.127,
+                0.47,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.141,
+                0.473,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.156,
+                0.451,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.17,
+                0.437,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.184,
+                0.456,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.198,
+                0.148,
+                0.209
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.226,
+                0.479,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.241,
+                0.446,
+                0.252
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.256,
+                0.475,
+                0.267
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.271,
+                0.463,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.056,
+                0.927,
+                0.066
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.071,
+                0.901,
+                0.082
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.084,
+                0.919,
+                0.094
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.099,
+                0.9,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.114,
+                0.919,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.127,
+                0.905,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.141,
+                0.838,
+                0.152
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.156,
+                0.862,
+                0.166
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.185,
+                0.909,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.199,
+                0.927,
+                0.209
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.213,
+                0.878,
+                0.223
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.227,
+                0.909,
+                0.237
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.242,
+                0.904,
+                0.253
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.255,
+                0.923,
+                0.267
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.27,
+                0.844,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.885,
+                0.762,
+                0.897
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.897,
+                0.64,
+                0.907
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                1.0,
+                0.407
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.065,
+                0.445,
+                0.804,
+                0.611
+            ],
+            "angle": 0,
+            "content": "Implications for MENA: Connectivity enabler, resilience mechanism, or complementary add-on"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.652,
+                0.479,
+                0.725
+            ],
+            "angle": 0,
+            "content": "D2D is not yet commercially available in any MENA country, but momentum is building. Bahrain, for example, has approved D2D, though not yet made it available. By 2030, the number of D2D users across MENA is estimated to reach \\(\\sim 6\\mathrm{M}^3\\), in a population of \\(500\\mathrm{M}+\\).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.738,
+                0.471,
+                0.797
+            ],
+            "angle": 0,
+            "content": "As the technology gains traction in the region, it is likely to function as either a resilience overlay or a primary mode of connectivity, depending on the country. D2D is predicted to be relevant for a range of use-cases, including:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.809,
+                0.441,
+                0.839
+            ],
+            "angle": 0,
+            "content": "- B2C remote and border zones: desert ranges, off-road safety, and remote tourism",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.852,
+                0.415,
+                0.867
+            ],
+            "angle": 0,
+            "content": "- Tool for resilience: civil security, disaster response",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.895,
+                0.325,
+                0.909
+            ],
+            "angle": 0,
+            "content": "\\( ^{3} \\) ~100M global D2D users, prorated to MENA",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.515,
+                0.652,
+                0.837,
+                0.668
+            ],
+            "angle": 0,
+            "content": "• B2B IoT: Energy infrastructure, logistics nodes",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.681,
+                0.923,
+                0.74
+            ],
+            "angle": 0,
+            "content": "However, the relative uptake will significantly vary by country, based on the levels of existing terrestrial coverage, D2D affordability, and population concentration in urban areas. As a result, three archetypes are predicted to emerge (Exhibit 1):",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.512,
+                0.751,
+                0.918,
+                0.868
+            ],
+            "angle": 0,
+            "content": "A) LEVER TO BRIDGE THE CONNECTIVITY GAP\nA few countries with large rural populations and limited terrestrial coverage and affordability may be able to leverage D2D as a lever to bridge the connectivity gap. However, the uptake will depend on service providers reducing costs to improve affordability, finding the right balance between demand (uptake) and supply (price) – as the connectivity gap for consumers is generally high in markets with low ARPUs.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.068,
+                0.952,
+                0.245,
+                0.965
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.378,
+                0.952,
+                0.871,
+                0.965
+            ],
+            "angle": 0,
+            "content": "D2D IN MENA: RESILIENCE TOOL, CONNECTIVITY BRIDGE, OR COMMERCIAL ADD-ON?"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.896,
+                0.952,
+                0.913,
+                0.965
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.445,
+                0.627,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.488,
+                0.805,
+                0.528
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.528,
+                0.805,
+                0.574
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.573,
+                0.239,
+                0.614
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.655,
+                0.477,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.669,
+                0.447,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.683,
+                0.469,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.697,
+                0.432,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.713,
+                0.206,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.74,
+                0.441,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.753,
+                0.447,
+                0.766
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.769,
+                0.467,
+                0.78
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.783,
+                0.345,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.811,
+                0.437,
+                0.822
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.826,
+                0.263,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.853,
+                0.411,
+                0.865
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.898,
+                0.32,
+                0.908
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.655,
+                0.834,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.682,
+                0.907,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.697,
+                0.871,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.711,
+                0.92,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.726,
+                0.898,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.753,
+                0.903,
+                0.764
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.769,
+                0.871,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.516,
+                0.783,
+                0.903,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.797,
+                0.894,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.811,
+                0.882,
+                0.823
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.826,
+                0.876,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.84,
+                0.914,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.516,
+                0.853,
+                0.904,
+                0.865
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.052,
+                0.426,
+                0.082
+            ],
+            "angle": 0,
+            "content": "B) COMMERCIALLY ATTRACTIVE (NOT NECESSARILY SUFFICIENT) DUE TO SCALE"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.075,
+                0.469,
+                0.183
+            ],
+            "angle": 0,
+            "content": "NECESSARILY SUFFICIENT) DUE TO SCALE\nIn countries with better terrestrial coverage and affordability, but large rural populations, D2D can provide a meaningful alternative on a case-by-case basis (e.g., limited period add-ons, very niche geographies, emergency lines, etc.). But due to the scale of customers and relatively affordable services, D2D is expected to be a commercially attractive business model for operators and local telcos.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.053,
+                0.926,
+                0.142
+            ],
+            "angle": 0,
+            "content": "C) COMPLEMENTARY SERVICE BACKUP\nFor the remaining MENA countries – which operate near-universal mobile networks (e.g., very high 5G coverage of the population, with best-in-class speeds in GCC) \\( ^{4} \\)  – D2D will be a complementary add-on, used for tourism, ubiquitous connectivity, and industrial digitalization.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.204,
+                0.147,
+                0.218
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 1"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.066,
+                0.218,
+                0.827,
+                0.244
+            ],
+            "angle": 0,
+            "content": "Three MENA D2D uptake archetypes are expected to emerge"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.261,
+                0.736,
+                0.283
+            ],
+            "angle": 0,
+            "content": "MENA network coverage score (GSMA) vs. rural population"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.292,
+                0.658,
+                0.308
+            ],
+            "angle": 0,
+            "content": "Comparing mobile connectivity coverage with rural population across MENA countries",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.07,
+                0.321,
+                0.928,
+                0.588
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.61,
+                0.477,
+                0.683
+            ],
+            "angle": 0,
+            "content": "D2D also has the potential to become a key resilience overlay. Its attractiveness in this respect is highlighted by the current geopolitical threats to public infrastructure and connectivity backbones, like sub-sea cables in the Strait of Hormuz. In addition, D2D can create a competitive advantage for telcos",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.61,
+                0.923,
+                0.683
+            ],
+            "angle": 0,
+            "content": "by strengthening their service offerings and reducing the need for last-mile infrastructure investments to expand coverage. Together, these benefits make the technology an attractive proposition for adoption - equally, if not more, than its direct economic benefits",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.895,
+                0.502,
+                0.91
+            ],
+            "angle": 0,
+            "content": "\\( ^{45} \\)  out of the Top 10 on Ookla Speed Test index for mobile are GCC countries",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.068,
+                0.952,
+                0.245,
+                0.965
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.378,
+                0.952,
+                0.871,
+                0.965
+            ],
+            "angle": 0,
+            "content": "D2D IN MENA: RESILIENCE TOOL, CONNECTIVITY BRIDGE, OR COMMERCIAL ADD-ON?"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.895,
+                0.952,
+                0.914,
+                0.966
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.055,
+                0.388,
+                0.068
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.069,
+                0.423,
+                0.083
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.072,
+                0.422,
+                0.081
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.083,
+                0.465,
+                0.096
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.099,
+                0.45,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.113,
+                0.427,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.127,
+                0.432,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.142,
+                0.449,
+                0.152
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.156,
+                0.443,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.17,
+                0.369,
+                0.18
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.056,
+                0.844,
+                0.065
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.071,
+                0.888,
+                0.081
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.085,
+                0.911,
+                0.095
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.099,
+                0.921,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.114,
+                0.861,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.128,
+                0.786,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.206,
+                0.145,
+                0.217
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.219,
+                0.824,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.263,
+                0.732,
+                0.282
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.295,
+                0.653,
+                0.305
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.611,
+                0.472,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.626,
+                0.463,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.64,
+                0.459,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.655,
+                0.444,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.669,
+                0.46,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.612,
+                0.921,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.516,
+                0.625,
+                0.906,
+                0.638
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.64,
+                0.9,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.655,
+                0.911,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.669,
+                0.637,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.898,
+                0.499,
+                0.909
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                1.0,
+                0.407
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.066,
+                0.445,
+                0.904,
+                0.617
+            ],
+            "angle": 0,
+            "content": "Immediate actions for governments and telcos: Thoughtfully integrate and leverage the emerging technology"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.652,
+                0.467,
+                0.74
+            ],
+            "angle": 0,
+            "content": "In summary, while there are constraints, direct-to-device internet systems are growing rapidly in capability, availability, and potential. Given the current geopolitical risks and longer-term opportunities, the question for MENA governments and telcos is twofold: what will an integrated telco/D2D world look like, and how can we make the most of it?",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.752,
+                0.476,
+                0.811
+            ],
+            "angle": 0,
+            "content": "Government leaders are invited to assess and consider accelerating their adoption of direct-to-device internet systems. Rapid action could help to secure resilient connectivity for their residents in the short-term. Governments may enable this",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.652,
+                0.924,
+                0.697
+            ],
+            "angle": 0,
+            "content": "through the national telecommunications champion partnering with D2D providers, while rapidly transforming policy and regulatory frameworks to accommodate the technology.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.709,
+                0.93,
+                0.811
+            ],
+            "angle": 0,
+            "content": "Local telecommunications operators can initiate partnership discussions to capture the new opportunities. They are expected to remain firmly in control of customer relationships and orchestrate the service provisioning. This stems from their access to the spectrum required for direct-to-device connectivity (in the short-term, until IMT-adjacent MSS spectrum becomes the global norm).",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.068,
+                0.952,
+                0.245,
+                0.965
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.378,
+                0.952,
+                0.871,
+                0.965
+            ],
+            "angle": 0,
+            "content": "D2D IN MENA: RESILIENCE TOOL, CONNECTIVITY BRIDGE, OR COMMERCIAL ADD-ON?"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.894,
+                0.952,
+                0.915,
+                0.965
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.445,
+                0.905,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.488,
+                0.866,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.53,
+                0.698,
+                0.574
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.572,
+                0.333,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.655,
+                0.429,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.669,
+                0.457,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.682,
+                0.459,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.697,
+                0.458,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.712,
+                0.461,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.726,
+                0.337,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.754,
+                0.419,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.768,
+                0.472,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.783,
+                0.473,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.797,
+                0.438,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.654,
+                0.921,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.669,
+                0.882,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.683,
+                0.873,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.712,
+                0.901,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.725,
+                0.926,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.741,
+                0.876,
+                0.751
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.755,
+                0.888,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.769,
+                0.926,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.784,
+                0.913,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.797,
+                0.628,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.89,
+                0.949,
+                0.912,
+                0.965
+            ],
+            "angle": 0,
+            "content": "11"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.053,
+                0.479,
+                0.141
+            ],
+            "angle": 0,
+            "content": "However, D2D (and more broadly, satellite communication) carries far-reaching implications for both governments and telcos. If the technology advances over the long term, it could challenge last-mile segments in the terrestrial backbones. With this in mind, governments may consider short-term regulatory tools to protect their terrestrial infrastructure investments while",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.053,
+                0.93,
+                0.127
+            ],
+            "angle": 0,
+            "content": "evaluating their long-term connectivity investments and aspirations. India, for example, employed a duration cap, issuing Starlink a 5 year license. The goal for the end-user is a continuous and seamless fabric of connectivity, merging terrestrial and space-based technologies.",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.204,
+                1.0,
+                0.941
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.069,
+                0.953,
+                0.245,
+                0.966
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.379,
+                0.953,
+                0.616,
+                0.965
+            ],
+            "angle": 0,
+            "content": "D2D IN MENA: RESILIENCE TOOL, CONNE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.71,
+                0.952,
+                0.873,
+                0.965
+            ],
+            "angle": 0,
+            "content": "OR COMMERCIAL ADD-ON?"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.056,
+                0.445,
+                0.067
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.069,
+                0.444,
+                0.082
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.085,
+                0.459,
+                0.096
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.099,
+                0.472,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.112,
+                0.466,
+                0.125
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.127,
+                0.475,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.056,
+                0.874,
+                0.067
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.07,
+                0.927,
+                0.082
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.085,
+                0.863,
+                0.095
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.098,
+                0.876,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.112,
+                0.781,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.047,
+                0.505,
+                0.086
+            ],
+            "angle": 0,
+            "content": "About the Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.106,
+                0.213,
+                0.209
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.067,
+                0.225,
+                0.323,
+                0.269
+            ],
+            "angle": 0,
+            "content": "Ruediger Schicht\nManaging Director and Senior Partner\nSchicht.Ruediger@bcg.com"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.517,
+                0.106,
+                0.661,
+                0.209
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.515,
+                0.225,
+                0.725,
+                0.269
+            ],
+            "angle": 0,
+            "content": "Thibault Werle\nManaging Director and Partner\nWerle.Thibault@bcg.com"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.069,
+                0.319,
+                0.214,
+                0.422
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.068,
+                0.439,
+                0.278,
+                0.483
+            ],
+            "angle": 0,
+            "content": "Marc Nasr\nManaging Director and Partner\nNasr.Marc@bcg.com"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.517,
+                0.319,
+                0.661,
+                0.422
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.515,
+                0.439,
+                0.683,
+                0.483
+            ],
+            "angle": 0,
+            "content": "Hamza Najmi\nPrincipal\nNajmi.Hamza@bcg.com"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.845,
+                0.293,
+                0.869
+            ],
+            "angle": 0,
+            "content": "Acknowledgments",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.068,
+                0.952,
+                0.245,
+                0.965
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.378,
+                0.952,
+                0.871,
+                0.966
+            ],
+            "angle": 0,
+            "content": "D2D IN MENA: RESILIENCE TOOL, CONNECTIVITY BRIDGE, OR COMMERCIAL ADD-ON?"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.894,
+                0.952,
+                0.915,
+                0.965
+            ],
+            "angle": 0,
+            "content": "12"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.047,
+                0.505,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.845,
+                0.29,
+                0.868
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.065,
+                0.045,
+                0.164,
+                0.078
+            ],
+            "angle": 0,
+            "content": "BCG"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.066,
+                0.851,
+                0.48,
+                0.925
+            ],
+            "angle": 0,
+            "content": "For information or permission to reprint, please contact BCG at permissions@bcg.com. To find the latest BCG content and register to receive e-alerts on this topic or others, please visit bcg.com. Follow Boston Consulting Group on LinkedIn, Instagram, Facebook, and X."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.067,
+                0.937,
+                0.462,
+                0.953
+            ],
+            "angle": 0,
+            "content": "© Boston Consulting Group 2026. All rights reserved. X/26"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.065,
+                0.047,
+                0.186,
+                0.086
+            ],
+            "angle": 0,
+            "content": "BCG"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.001,
+                0.007,
+                1.0,
+                0.995
+            ],
+            "angle": 0,
+            "content": null
+        }
+    ]
+]
