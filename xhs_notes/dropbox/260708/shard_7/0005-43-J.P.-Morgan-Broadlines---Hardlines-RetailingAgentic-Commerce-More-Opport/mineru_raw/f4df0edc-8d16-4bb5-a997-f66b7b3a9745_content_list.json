@@ -1,0 +1,1955 @@
+[
+    {
+        "type": "text",
+        "text": "Broadlines & Hardlines Retailing",
+        "text_level": 1,
+        "bbox": [
+            133,
+            108,
+            633,
+            136
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Agentic Commerce - More Opportunity than Risk",
+        "bbox": [
+            133,
+            143,
+            596,
+            166
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Following up on our recently published Episode 14: Retail vs. AMZN in an Agentic World report we published with JPM Internet Analysts Doug Anmuth & Bryan Smilek (see the slides and webinar replay), this note takes a deeper look at the opportunities and risks ahead in the world of AI and agentic commerce. Team Internet believes that AI will ultimately serve as an incremental discovery channel and help expand the e-commerce TAM. From our perspective, we also see agentic as more of an opportunity at this point, albeit with puts/takes by category. Simplistically, LLMs represent a more potent version of “googling” and follow “threats” posed by other customer acquisition venues (e.g., TikTok, Pinterest, and Shopify). Despite high investor anxiety as these platforms emerged, all of these channels simply became another entry point to retailers’ respective categories that companies needed to embrace. As such, we echo the need for our companies to invest to win with the large LLMs, while harnessing their own agents “on platform” (i.e., their own websites/apps) to drive customer acquisition/retention, product discovery, basket building, and conversion. Investments in both areas can optimize proprietary data collection, an important sales and advertising revenue consideration.",
+        "bbox": [
+            132,
+            204,
+            665,
+            457
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Unclear monetization path shifts AI platforms' focus from agentic commerce to digital advertising. While OpenAI initially charged retailers an affiliate fee ( $\\sim 4\\%$ on avg. per JPM Analyst Brenda Duverce) on transactions completed through its Instant Checkout offering, AI platforms don't currently participate in the economics of agentic commerce transactions after this was deprecated and retailers now control checkout. In our view, there currently isn't much visibility as to how AI platforms will monetize agentic commerce transactions, with their focus seemingly narrowing on digital advertising (presumably LLMs clip some of the potential from retail media, but not material at this point).",
+        "bbox": [
+            133,
+            469,
+            665,
+            604
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Notably, unlike the original Amazon threat, retailers are generally being front-footed, including partnering with the likes of Open AI and Google to both shape the direction of agentic commerce and to stay on the front edge of the learning curve (the opposite of what happened in the 2010-15 timeframe when AMZN rose to e-commerce dominance). As noted below, WMT is leading the pack, as it should given its broad product offering and marketplace model, with TGT on solid footing, and W, BBY, HD, LOW, ULTA, and ASO all partnering with Google on UCP (Universal Commerce Protocol - an open-source set of standards that enables retailers to allow AI agents to browse their websites, build carts, and ultimately check out, Figure 2). The two biggest retailer moat-protectors are (1) they have retaken control of the transaction with checkout now facilitated through retailer app integrations on the LLMs (after OpenAI and the retailers shifted away from Instant Checkout where OpenAI controlled the transaction), and (2) retailers still handle fulfillment, keeping true disintermediation at bay. Notably, as an example of how retailers can benefit in an agentic world, BBY mgmt spoke to its depth of knowledge/data for its category to match a search to the best product as a competitive advantage that only increases in an LLM world (e.g., best college student laptop vs. best laptop for mom, gaming, or coding), albeit acknowledging that it (and most retailers, in our view) needs to better enable the data links between its website and the LLMs.",
+        "bbox": [
+            132,
+            616,
+            666,
+            912
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "See page 9 for analyst certification and important disclosures.",
+        "bbox": [
+            133,
+            934,
+            580,
+            953
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Retailing – Broadlines & Hardlines / Leisure",
+        "bbox": [
+            687,
+            204,
+            944,
+            233
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Christopher Horvers, CFA AC",
+        "bbox": [
+            689,
+            234,
+            882,
+            251
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(1-212) 622-1316",
+        "bbox": [
+            689,
+            250,
+            787,
+            263
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "christopher.horvers@JPM.com",
+        "bbox": [
+            689,
+            263,
+            879,
+            277
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Christian Carlino, CFA",
+        "bbox": [
+            689,
+            277,
+            846,
+            292
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(1-212) 622-9145",
+        "bbox": [
+            689,
+            292,
+            787,
+            305
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "christian.carlino@JPM.com",
+        "bbox": [
+            689,
+            304,
+            861,
+            318
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Jolie Wasserman",
+        "bbox": [
+            689,
+            319,
+            810,
+            333
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(1-212) 622-1961",
+        "bbox": [
+            689,
+            333,
+            785,
+            345
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "JPM Securities LLC",
+        "bbox": [
+            689,
+            357,
+            834,
+            369
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "jolie.wasserman@jpmchase.com",
+        "bbox": [
+            689,
+            344,
+            864,
+            358
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "aside_text",
+        "text": "J.D.Morgan",
+        "bbox": [
+            3,
+            564,
+            96,
+            880
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            133,
+            22,
+            344,
+            61
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "North America Equity Research\n07 July 2026",
+        "bbox": [
+            689,
+            26,
+            915,
+            55
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- Fancy “googling”: AI platforms are driving <1% of web traffic across key e-commerce sites. Consumers are primarily using LLMs for product discovery with the long-term risk of delegated automated replenishment of commodities. That said, if/when we cross that bridge, LLMs don’t control the distribution process (a la AMZN//WMT) and many brands are reluctant to go DTC (Figure 1).",
+        "bbox": [
+            66,
+            148,
+            665,
+            224
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Unclear monetization path shifts AI platforms' focus from agentic commerce to digital advertising. While OpenAI initially charged retailers an affiliate fee ( $\\sim 4\\%$ on avg. per JPM Analyst Brenda Duverce) on transactions completed through its Instant Checkout offering, AI platforms don't currently participate in the economics of agentic commerce transactions after this was deprecated and retailers now control checkout. In our view, there currently isn't much visibility as to how the AI platforms will monetize agentic commerce transactions, with their focus seemingly narrowing on digital advertising. In our view, while AI platforms could take share of digital advertising at the margin, they lack the depth/breadth of customer data and attribution capabilities that gave rise to retail media proliferation in the first place.",
+        "bbox": [
+            68,
+            228,
+            665,
+            375
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Risk categories: grocery and brands with DTC fulfillment. Grocery/CPG face higher price discovery (potentially creating retailer margin pressure) while disintermediation risk exists for sought-after brands with an established DTC mechanism (e.g., Apple and Nike). Should these brands lose control of channel management or decide they want to clip the “retail margin” (vs. getting only wholesale profitability), they may disintermediate the retailer, as we saw in the early 2010’s with major electronics brands and Best Buy and on more-than-one occasion with Nike and its retail partners like DKS. On the other hand, retailers in highly emotive categories (e.g., beauty, pet) and where browsing/basket building is important (e.g., home decor) remain in the low-risk bucket.",
+        "bbox": [
+            66,
+            378,
+            665,
+            512
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Retailers need to partner with LLMs. Early engagement with the major LLMs to shape agentic commerce and create data connections, while implementing retailer app integration into the LLMs to support checkout, are important steps to maintaining category leadership, supporting product discovery, and harvesting data. Indeed, the LLMs offer customer acquisition opportunities and, at the very least, retailers need to guard against share loss. Ultimately, large retailers have scale and that enables the opportunity to win. To that end, and learning from how quickly the AMZN threat grew post-GFC, WMT, TGT, W, BBY, HD, LOW, ULTA, and ASO have all partnered with Google on its UCP to enable agentic search/discovery (Figure 2).",
+        "bbox": [
+            68,
+            515,
+            665,
+            648
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- On-platform investment is arguably a bigger opportunity. Proprietary on-platform agents provide consumers with similar search benefits as well as advice (“Sparky, what’s a great Thanksgiving dinner?” and “Magic Apron, how do I replace a toilet?” with the retailer LLM potentially populating the consumer’s cart). WMT (Sparky), TGT, HD (Magic Apron), LOW (MyLow), ULTA (ULTA AI), WSM (Olive), ASO (Scout), and DKS (Coach) are all in-house agents. They also offer cost-efficient ways to solve customer service pain points (“Olive, where is my sofa delivery?”). WMT is generally ahead of the retail pack (as one would expect and is necessary given the breadth of their assortment and marketplace efforts) with TGT and then the rest of retailers we discuss chasing. Ultimately, to optimize success, we believe retailers will need to both engage through/with the major LLMs and also use their own agents on their owned platforms to drive customer acquisition/retention/satisfaction, product discovery, basket building, and proprietary data collection.",
+        "bbox": [
+            66,
+            652,
+            666,
+            845
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Christopher Horvers, CFA AC\n(1-212) 622-1316\nchristopher.horvers@JPM.com",
+        "bbox": [
+            68,
+            55,
+            256,
+            89
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "North America Equity Research\n07 July 2026",
+        "bbox": [
+            341,
+            55,
+            517,
+            78
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            70,
+            952,
+            81,
+            964
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The Agentic Debate: Disintermediation Risk Remains Low",
+        "text_level": 2,
+        "bbox": [
+            341,
+            152,
+            913,
+            204
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "While adoption remains early stages, the current state of agentic commerce reflects consumers primarily using LLMs for product discovery, inspiration, and basket building, with the potential progression to consumers transacting through AI platforms and delegating responsibility for automated replenishment of commoditized products, with discrete opportunities and risks for both these and more considered purchases. The bigger disintermediation risk comes when LLM agents become “smart enough” to handle the entire transaction through checkout, thereby disintermediating the retailer, which gives the LLM access to data and all the goodness that comes along with it (e.g., advertising revenues). That said, even if/when we cross that bridge, the most significant difference is that LLMs don’t control the distribution process, with the likes of WMT and AMZN still having scaled supply chain advantages vs. virtually all of the broader retail set, and many brands/vendors generally reluctant to carry the burden of distributing directly to the consumer.",
+        "bbox": [
+            339,
+            220,
+            924,
+            420
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "At a high level, we see two areas of concern. First, LLMs elevate price discovery, which creates potential downward pressure on price-sensitive categories. This certainly pushes grocery/CPG to the top of the risk bucket, but it also creates opportunities for retailers where the consumer sees private label as a strong substitute (e.g., Kirkland Signature and Amazon Basics). Second, LLMs can potentially disintermediate retailers of sought-after brands in style categories where the vendor has an established direct to consumer mechanism. Apple in consumer electronics is a good example and we point to Nike's history of episodically disintermediating Dick's and other retailers given the desire to capture the full retail margin. Indeed, branded footwear and apparel seem particularly exposed on this front. On the other hand, retailers in highly emotive categories (e.g., beauty, pet) and where browsing/basket building is important (e.g., home furnishings/decor) remain in the low risk bucket.",
+        "bbox": [
+            338,
+            434,
+            919,
+            617
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The Current State of Affairs: Agentic Threat Remains Limited",
+        "text_level": 2,
+        "bbox": [
+            341,
+            631,
+            911,
+            648
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "AI Platforms remain $<1\\%$ of total web traffic across key e-commerce marketplaces and retailer sites (Figure 1), but marketplaces/retailers have experienced stronger engagement, conversion, and AOVs from AI-enabled customers. In our view, customer adoption of AI Platforms for the full shopping experience (bridging from discovery and basket building to checkout) is a function of existing collaborations/partnerships between retailers and AI platforms, with the shift from model-controlled checkout environments (e.g., OpenAI Instant Checkout) to retailer-controlled ones (e.g., app integrations via UCP) a key step in accelerating agentic commerce proliferation as consumers will now have better access to accurate and localized pricing, promotions, loyalty programs, inventory availability, etc. while also protecting retailer/marketplace advertising programs.",
+        "bbox": [
+            339,
+            654,
+            919,
+            823
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Christopher Horvers, CFA AC\n(1-212) 622-1316\nchristopher.horvers@JPM.com",
+        "bbox": [
+            68,
+            55,
+            256,
+            89
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "North America Equity Research\n07 July 2026",
+        "bbox": [
+            341,
+            55,
+            517,
+            78
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            75
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            916,
+            952,
+            928,
+            964
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6da553da1f85380983ad70b40aa43ec90ce094e440e6a7a8ad67931a5fa6814b.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 1: Agentic % Share of Total Web Traffic by Retailer, Oct'25-May'26"
+        ],
+        "chart_footnote": [
+            "Oct-25 Dec-25 Mar-26 Apr-26 May-26",
+            "Source: SimilarWeb and JPM. Note: Months selected based on data availability."
+        ],
+        "bbox": [
+            81,
+            184,
+            919,
+            375
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "A September 2025 NBER study suggests \\~2% of ChatGPT queries are for purchasable products while \\~21% are for seeking information, & JPM Private Company Research analyst Brenda Duverce's recent consumer survey suggested \\~43% of users have made purchasing decisions using AI but only \\~9% are using AI chatbots to complete transactions. Merchants also want to be kept in the customer loop, which we believe will ultimately limit the scale of agentic shopping & checkout over time. That said, we believe shoppers on AI platforms have higher intent vs. other traffic sources, highlighting the importance for retailers to integrate/partner with LLMs. Indeed, we are not surprised that OpenAI has shifted emphasis toward enabling app integrations within ChatGPT vs. Instant Checkout. OpenAI's shift will not impact traffic acquired from AI platforms, which will continue to serve as serve as a source of buyer acquisition & conversion.",
+        "bbox": [
+            339,
+            436,
+            926,
+            619
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Invest Early to Stay Ahead of the Curve",
+        "text_level": 2,
+        "bbox": [
+            341,
+            633,
+            710,
+            652
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "What is the internet infrastructure supporting agenetic commerce? Various e-commerce industry participants are collaborating to create an open standard of Internet infrastructure supporting AI-driven transactions. \\~20 retailers & Internet companies are collaborating on Google's UCP council, including AMZN, BBY, HD, LOW, META, MSFT, ETSY, SHOP, TGT, ULTA, WMT, W, and others. Google's Universal Cart enables consumers to add items to their cart across multiple merchants and across services, and it leverages intelligent reasoning to provide personalized shopping assistance. The UCP enables seamless checkout from the Universal Cart. While OpenAI & Stripe have co-developed the Agentic Commerce Protocol (ACP), Team Internet's view is that its scope is more narrowly focused on enabling secure checkout via Stripe vs. broader full-funnel agentic commerce capabilities, though it does offer agentic discovery. Anthropic's MCP enables developers to connect data sources and AI tools, though it is not primarily confined to e-commerce and instead is focused on broader web infrastructure. As noted above, enabling merchant scale and ease of AI integrations will be key to scaling agentic commerce.",
+        "bbox": [
+            339,
+            657,
+            928,
+            886
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Companies that invest ahead of the curve will see a first-mover advantage in terms of customer trust/mindshare, reinforcing the retailer's brand perch as a “shopping destination\" and providing valuable data that is collected from the LLM queries.",
+        "bbox": [
+            339,
+            898,
+            924,
+            931
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Christopher Horvers, CFA AC\n(1-212) 622-1316\nchristopher.horvers@JPM.com",
+        "bbox": [
+            68,
+            55,
+            256,
+            89
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "North America Equity Research\n07 July 2026",
+        "bbox": [
+            341,
+            55,
+            517,
+            78
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            70,
+            952,
+            81,
+            963
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            339,
+            148,
+            911,
+            166
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- Integrating with LLMs via UCP is a critical first step to both gaining share from agentic commerce adoption and maintaining a customer data advantage.",
+        "bbox": [
+            341,
+            174,
+            897,
+            205
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- Retailers that also invest in a robust, proprietary data infrastructure stand to differentiate themselves, including both customer data to understand purchasing behavior (AMZN, COST, ULTA, and others with strong loyalty programs stand out in this regard) as well as accurate inventory/fulfillment systems so that consumers can trust localized/store-level product pricing and availability information. Many retailers have invested in the latter to contend with the e-commerce threat, given solid inventory visibility is required to support omnichannel retail (e.g., can't promise delivery speeds without understanding inventory positioning at a granular level), while the customer data/loyalty opportunity has been growing in recent years to support budding retail media ventures (and this becomes increasingly important in an agentic commerce world to improve personalized demand prediction and relevant basket-building recommendations, etc.).",
+        "bbox": [
+            341,
+            210,
+            928,
+            393
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/cbfe3263ff30d8cb7c64b68111cda52eb29379eb14804248df2b441cf42a9892.jpg",
+        "table_caption": [
+            "Figure 2: Overview of Select Customer-Facing Chatbots & Agentic Commerce Checkout Integrations"
+        ],
+        "table_footnote": [
+            "Note: \\* Coach by DKS is only available in the mobile app, not the website. ULTA Gemini Checkout is currently live with single SKU orders and ramping up multi-SKU with Universal Cart launching soon. \"On-Platform Customer Chatbot\" reflects on-platform AI agent used for shopping, not only customer service inquiries (e.g., \"where is my delivery?\" or AR/VR generative models). Source: Company reports and JPM."
+        ],
+        "table_body": "<table><tr><td></td><td>INTERNAL</td><td colspan=\"4\">EXTERNAL CHANNELS</td></tr><tr><td>Marketplace</td><td>Owned-Platform Customer Chatbot?</td><td>OpenAI: Catalog/App Integration</td><td>OpenAI: Agentic Checkout</td><td>Google: AI Mode &amp; Gemini Checkout</td><td>MSFT Copilot Checkout</td></tr><tr><td>Amazon</td><td>√</td><td>✕</td><td>✕</td><td>✕</td><td>✕</td></tr><tr><td>Walmart</td><td>Sparky</td><td>√</td><td>√</td><td>√</td><td>✕</td></tr><tr><td>TGT</td><td>√</td><td>√</td><td>√</td><td>√</td><td>√</td></tr><tr><td>Shopify</td><td>✕</td><td>√</td><td>√</td><td>√</td><td>√</td></tr><tr><td>eBay</td><td>√</td><td>✕</td><td>✕</td><td>✕</td><td>✕</td></tr><tr><td>Etsy</td><td>✕</td><td>√</td><td>√</td><td>√</td><td>√</td></tr><tr><td>BJ</td><td>✕</td><td>✕</td><td>✕</td><td>✕</td><td>✕</td></tr><tr><td>COST</td><td>✕</td><td>✕</td><td>✕</td><td>✕</td><td>✕</td></tr><tr><td>HD</td><td>Magic Apron</td><td>√</td><td>In-Pilot</td><td>In-Pilot</td><td>✕</td></tr><tr><td>LOW</td><td>Mylow</td><td>√</td><td>WIP</td><td>WIP</td><td>✕</td></tr><tr><td>BBY</td><td>WIP</td><td>√</td><td>WIP</td><td>√ (Checkout WIP)</td><td>WIP</td></tr><tr><td>ULTA</td><td>Ulta AI</td><td>√</td><td>WIP</td><td>√*</td><td>✕</td></tr><tr><td>W</td><td>✕</td><td>√</td><td>WIP</td><td>√</td><td>✕</td></tr><tr><td>WSM</td><td>Olive</td><td>√</td><td>✕</td><td>✕</td><td>✕</td></tr><tr><td>ASO</td><td>√</td><td>√</td><td>√</td><td>√</td><td>✕</td></tr><tr><td>DKS</td><td>Coach*</td><td>√</td><td>✕</td><td>✕</td><td>✕</td></tr></table>",
+        "bbox": [
+            73,
+            417,
+            924,
+            789
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "As indicated in the chart above, on the Team Retail side, WMT is the furthest along in terms of engaging the agentic opportunity, with TGT next and the others fast-following. These companies recognize the importance of leaning in and shaping how agentic commerce develops in their respective categories. Importantly for WSM, nearly 90% of sales is driven by their own branded products, which mitigates much of the risk discussed above.",
+        "bbox": [
+            339,
+            837,
+            924,
+            929
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Christopher Horvers, CFA AC\n(1-212) 622-1316\nchristopher.horvers@JPM.com",
+        "bbox": [
+            68,
+            55,
+            256,
+            89
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "North America Equity Research\n07 July 2026",
+        "bbox": [
+            341,
+            54,
+            517,
+            79
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            915,
+            952,
+            928,
+            964
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "At the category level, we see the most risk in grocery given its low-consideration/commoditized products and recurring purchase nature, with the core value proposition of “agentic” commerce centered around saving consumers time. Indeed, while the early adoption timeline will remain choppy, we see grocery as the ultimate epicenter of agentic commerce disintermediation, with the aforementioned factors (low-consideration/commoditized products, recurring purchases) and high private label mix/lower brand affinity/ease of substitution allowing customers to eventually trust agentic models to purchase/replenish groceries on a recurring basis. Thus, true agentic commerce adoption could accelerate the pace of online grocery adoption. Moreover, whether in categories with high (Diet Pepsi vs. Diet Coke) or low brand affinity, should LLM agents control the transaction and only pass over fulfillment, retailers could lose high margin advertising revenue streams.",
+        "bbox": [
+            339,
+            148,
+            924,
+            334
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- The shopping experience is just as important to the purchase decision as the product category, and company-specific initiatives will play a significant role in whether or not consumers ultimately engage with agentic commerce. For example, if customers have to be redirected to company websites to input payment or loyalty information (more than once), or if product pricing and availability/delivery speed differs between the external agentic interface and the retailer's website, consumers are less likely to engage beyond simple information gathering/product discovery. Similarly, retailers will have to balance how to leverage their control over a transaction with the ability to utilize AI for more personalized “basket building” product recommendations to drive high-margin advertising/marketplace revenues vs. disenfranchising consumers looking for automated replenishment of commodities that don’t want to be upsold.",
+        "bbox": [
+            341,
+            340,
+            924,
+            523
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Private Label remains a shield to price competition/share. In the early 2000s, retailers used private label as a less expensive, but “similar” quality product to its national-brand equivalent, offering consumers a way to save money and for retailers to generate margin benefits. Over the past 15 years, retailers have increasingly moved up the price continuum into the “better” (direct quality compare to mainline national brands) and even best buckets.",
+        "bbox": [
+            341,
+            527,
+            924,
+            619
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e5af96b12786d5726c9b0df7629e1a0c18aab4d7b293d8583efda1bc382f1c86.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 3: Private Label Penetration"
+        ],
+        "chart_footnote": [
+            "Note: ULTA's penetration excludes exclusive brands  \nSource: Company reports and JPM estimates"
+        ],
+        "bbox": [
+            344,
+            646,
+            923,
+            873
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Christopher Horvers, CFA AC\n(1-212) 622-1316\nchristopher.horvers@JPM.com",
+        "bbox": [
+            68,
+            55,
+            256,
+            89
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "North America Equity Research\n07 July 2026",
+        "bbox": [
+            341,
+            54,
+            517,
+            78
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            75
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            70,
+            952,
+            81,
+            964
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "On the gen merch side, higher involvement purchases remain relatively low risk with branded single item products potentially seeing accelerated e-commerce adoption as well. We’ve always viewed the risk of e-commerce disintermediation in terms of how urgent a transaction is (e.g., break-fix items like car batteries are low), how ubiquitous product availability is, how perishable an item is (more=less risk), and whether the purchase is a high or low involvement (e.g., part of a broader project, decorative/fashion in nature in the case of home furnishings and parts of apparel/footwear, beauty are all high involvement purchases). We think these lenses still broadly apply and, despite the myth, people do enjoy shopping for high involvement purchases. Also, see the joy of the treasure hunt driving COST and off-price market share gains.",
+        "bbox": [
+            339,
+            148,
+            913,
+            318
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- Product cycles matter. Specialty retail generally wins during periods of innovation and share threats rise during commoditization. The poster children of encroachment had significant product issues that opened the door for AMZN. For books/packaged media/office, consumption went digital. For electronics, it was the crescendo of a once-in-a-generation product cycle that rapidly turned negative as replacement periods lengthened and product proliferation turned to convergence on smart phones.",
+        "bbox": [
+            339,
+            325,
+            926,
+            419
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Brands behavior remains a critical lens, especially for single item purchases where the vendor has an established DTC platform: the Nike example. Looking back, when the likes of Samsung and Nike acted irrationally and lost control of product allocations, retailers were disintermediated (BBY post-GFC and DKS in 2017). Looking ahead, to the extent that Nike, for example, sees agentic as a means to gain market share (and capture retailer margins) and also has a feasible direct-to-consumer distribution model, that could disintermediate retailers. On the other hand, Samsung or Whirlpool are unlikely to integrate a direct-to-consumer supply chain (i.e., UPS isn't sending a TV or washing machine but can send a pair of sneakers).",
+        "bbox": [
+            339,
+            426,
+            921,
+            566
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Advertising/Retail Media Risk Fades as Retailers Still Control the Transaction",
+        "text_level": 2,
+        "bbox": [
+            339,
+            579,
+            913,
+            614
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "During the initial iteration of agentic commerce (e.g., OpenAI Instant Checkout) when it appeared that AI platforms would control the transaction, investors were concerned this would cannibalize the budding high-margin retail media and marketplace revenue streams as brands shifted ad dollars to the AI platforms. However, given data fidelity, retailer pushback, and other issues that drove the shift away from Open AI's Instant Checkout model, the retailers/merchants have maintained control of the transaction, and can therefore continue to drive advertising revenue by leveraging proprietary customer data alongside insights generated by the AI platform to surface personalized, context-aware advertisements. This shift alleviates the advertising bear case, with the bull case opportunity over time that more robust customer data leads to higher ad conversion rates, and thus, advertising commissions for retailers/merchants, though it will take time for the retailers/merchants to dial-in the optimal mix & volume of ads, and for customers to start transacting through AI platforms vs. simple information gathering.",
+        "bbox": [
+            338,
+            619,
+            929,
+            819
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Team Retail: Agentic Commerce an Opportunity with LLM and Owned Platform Engagement Critical",
+        "text_level": 2,
+        "bbox": [
+            339,
+            832,
+            919,
+            869
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The points made above are very relevant, with early engagement with the major third-party LLMs (e.g., ChatGPT, Gemini, etc.) to shape agentic commerce and create data connections, while implementing retailer app integration into the LLMs to support checkout are all important steps to maintain category leadership and support product discovery, basket building, and to harvest the data from product searches made on the LLM. Indeed, as indicated above, the major LLMs can be a good source of customer acquisition and, at the very least, need to be defended against as a potential source of customer loss. Ultimately, large retailers have scale and that offers the opportunity to win given the ability to invest. To that end, WMT, TGT, W, BBY, HD, LOW, ULTA, and ASO have all partnered with Google on its UCP (Universal Commerce Protocol) to enable agentic search/discovery on Google's Gemini LLM, while all of our retailers that have their own chatbot/LLM effort have app/catalog integration with OpenAI/ChatGPT, with most not yet offering agentic checkout on either Open AI or Google. Lastly, fulfillment remains a core skillset and an important asset in categories where the brands/vendors don't have a scaled DTC business, with threats around established DTC brands in clothing and footwear (e.g., NKE) and enhancing price discovery making for a more competitive grocery backdrop.",
+        "bbox": [
+            339,
+            875,
+            923,
+            936
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Christopher Horvers, CFA AC\n(1-212) 622-1316\nchristopher.horvers@JPM.com",
+        "bbox": [
+            68,
+            55,
+            256,
+            89
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "North America Equity Research\n07 July 2026",
+        "bbox": [
+            341,
+            54,
+            517,
+            79
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            916,
+            952,
+            926,
+            963
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            339,
+            148,
+            928,
+            349
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "In addition, proprietary on-platform agents provide consumers with similar search benefits as well as advice (“Sparky, what’s a great Thanksgiving dinner?” and “Magic Apron, how do I replace a toilet?” with the LLM potentially populating the consumer’s cart). WMT (Sparky), TGT, HD (Magic Apron), LOW (MyLow), ULTA (ULTA AI), WSM (Olive), ASO (Scout), and DKS (Coach) are all in-house agents (DKS app only). They also provide cost-efficient ways to solve customer service pain points (“Olive, where is my sofa delivery?”), thus improving customer satisfaction.",
+        "bbox": [
+            339,
+            361,
+            928,
+            470
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Sparky leading the charge with TGT next. From Figure 2 above, and based on our experience, WMT's Sparky is the most advanced on-platform and in the third-party LLMs, with TGT next but its on-platform agent(s) at varying stages of beta. TGT has built an app experience within ChatGPT and Google Gemini to enable agentic search of its website, basket building, and ultimately check out. WMT launched Sparky in June 2025 and it has been trained on a long history of customer data, and it currently acts as an in-app assistant for product search/discovery and basket building (also available through third-party LLMs), with WMT citing half of app users engaging with Sparky and basket size $35\\%$ higher. More recently, after pivoting away from OpenAI's Instant Checkout feature following low conversion/sales, WMT created a Sparky experience within ChatGPT that acts as an embedded shopping assistant to help build the basket and facilitate checkout.",
+        "bbox": [
+            339,
+            482,
+            923,
+            666
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Ultimately, to optimize success, we believe retailers will need to both engage through/with the LLMs and also use their own agents on their owned platforms to drive customer acquisition/retention/satisfaction, product discovery, basket building, and proprietary data collection.",
+        "bbox": [
+            339,
+            679,
+            911,
+            742
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Christopher Horvers, CFA AC\n(1-212) 622-1316\nchristopher.horvers@JPM.com",
+        "bbox": [
+            68,
+            55,
+            256,
+            89
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "North America Equity Research\n07 July 2026",
+        "bbox": [
+            341,
+            55,
+            517,
+            78
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            70,
+            952,
+            81,
+            964
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Companies Discussed in This Report (all prices in this report as of market close on 06 July 2026, unless otherwise indicated) Academy Sports and Outdoors(ASO/\\$46.88/N), Amazon.com(AMZN/\\$244.16/OW), BJ's(BJ/\\$87.53/N), Best Buy(BBY/\\$78.00/N), Costco Wholesale Corporation(COST/\\$950.25/OW), Dick's Sporting Goods(DKS/\\$229.02/OW), Etsy(ETSY/\\$75.06/N), Lowe's Companies, Inc.(LOW/\\$223.78/OW), Meta Platforms Inc(META/\\$600.29/N), Microsoft(MSFT/\\$386.74/OW), Shopify(SHOP/\\$120.14/OW), Target Corporation(TGT/\\$126.10/N), The Home Depot(HD/\\$350.65/OW), Ulta Beauty Inc(ULTA/\\$452.49/OW), Walmart Inc(WMT/\\$110.65/OW), Wayfair(W/\\$93.18/OW), eBay, Inc(EBAY/\\$113.67/N)",
+        "bbox": [
+            66,
+            147,
+            926,
+            229
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Analyst Certification: The Research Analyst(s) denoted by an “AC” on the cover of this report certifies (or, where multiple Research Analysts are primarily responsible for this report, the Research Analyst denoted by an “AC” on the cover or within the document individually certifies, with respect to each security or issuer that the Research Analyst covers in this research) that: (1) all of the views expressed in this report accurately reflect the Research Analyst’s personal views about any and all of the subject securities or issuers; and (2) no part of any of the Research Analyst's compensation was, is, or will be directly or indirectly related to the specific recommendations or views expressed by the Research Analyst(s) in this report. For all Korea-based Research Analysts listed on the front cover, if applicable, they also certify, as per KOFIA requirements, that the Research Analyst’s analysis was made in good faith and that the views reflect the Research Analyst’s own opinion, without undue influence or intervention.",
+        "bbox": [
+            66,
+            253,
+            926,
+            358
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "All authors named within this report are Research Analysts who produce independent research unless otherwise specified. In Europe, Sector Specialists (Sales and Trading) may be shown on this report as contacts but are not authors of the report or part of the Research Department.",
+        "bbox": [
+            66,
+            363,
+            901,
+            391
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Important Disclosures",
+        "text_level": 2,
+        "bbox": [
+            68,
+            396,
+            230,
+            412
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Company-Specific Disclosures: JPM does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. Important disclosures, including price charts and credit opinion history tables (if applicable), are available for compendium reports and all JPM-covered companies, and certain non-covered companies, by visiting https://www.jpmm.com/research/disclosures, calling 1-800-477-0406, or e-mailing research.disclosure.inquiries@JPM.com with your request.",
+        "bbox": [
+            66,
+            422,
+            926,
+            500
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Explanation of Equity Research Ratings, Designations and Analyst(s) Coverage Universe:",
+        "text_level": 2,
+        "bbox": [
+            68,
+            506,
+            637,
+            518
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "JPM uses the following rating system: Overweight (over the duration of the price target indicated in this report, we expect this stock will outperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); Neutral (over the duration of the price target indicated in this report, we expect this stock will perform in line with the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); and Underweight (over the duration of the price target indicated in this report, we expect this stock will underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe. NR is Not Rated. In this case, JPM has removed the rating and, if applicable, the price target, for this stock because of either a lack of a sufficient fundamental basis or for legal, regulatory or policy reasons. The previous rating and, if applicable, the price target, no longer should be relied upon. An NR designation is not a recommendation or a rating. Some stocks under coverage have a rating but no price target; in these cases, we expect the stock will outperform/perform in line/underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe of the relevant duration of the region. In our Asia (ex-Australia and ex-India) and U.K. small- and mid-cap Equity Research, each stock's expected total return is compared to the expected total return of a benchmark country market index, not to those Research Analysts' coverage universe. If it does not appear in the Important Disclosures section of this report, the certifying Research Analyst's coverage universe can be found on JPM's Research website, https://www.JPMmarkets.com.",
+        "bbox": [
+            66,
+            517,
+            926,
+            685
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Coverage Universe: Horvers, Christopher : Academy Sports and Outdoors (ASO), Advance Auto Parts, Inc. (AAP), AutoZone, Inc. (AZO), BJ's (BJ), Best Buy (BBY), Bob's Discount Furniture (BOBS), Costco Wholesale Corporation (COST), Dick's Sporting Goods (DKS), Floor & Decor (FND), Genuine Parts Company (GPC), Hasbro (HAS), Lowe's Companies, Inc. (LOW), Mattel (MAT), O'Reilly Automotive (ORLY), RH (RH), Target Corporation (TGT), The Home Depot (HD), Tractor Supply (TSCO), Ulta Beauty Inc (ULTA), Walmart Inc (WMT), Wayfair (W), Williams-Sonoma, Inc. (WSM)",
+        "bbox": [
+            66,
+            689,
+            919,
+            756
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "JPM Equity Research Ratings Distribution, as of July 04, 2026",
+        "text_level": 2,
+        "bbox": [
+            68,
+            768,
+            514,
+            782
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/0fa9802db55399a13d4842a27f6a745e79328af3dcea92079a4a094d8a64afb8.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "\\*Please note that the percentages may not add to 100% because of rounding."
+        ],
+        "table_body": "<table><tr><td></td><td>Overweight (buy)</td><td>Neutral (hold)</td><td>Underweight (sell)</td></tr><tr><td>JPM Global Equity Research Coverage*</td><td>53%</td><td>36%</td><td>12%</td></tr><tr><td>IB clients**</td><td>83%</td><td>80%</td><td>73%</td></tr><tr><td>JPMS Equity Research Coverage*</td><td>51%</td><td>37%</td><td>12%</td></tr><tr><td>IB clients**</td><td>95%</td><td>92%</td><td>87%</td></tr></table>",
+        "bbox": [
+            68,
+            782,
+            924,
+            859
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Percentage of subject companies within each of the \"buy,\" \"hold\" and \"sell\" categories for which JPM has provided investment banking services within the previous 12 months.",
+        "bbox": [
+            66,
+            878,
+            866,
+            902
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "For purposes of FINRA ratings distribution rules only, our Overweight rating falls into a buy rating category; our Neutral rating falls into a hold rating category; and our Underweight rating falls into a sell rating category. Please note that stocks with an NR designation are not included in the table above. This information is current as of the end of the most recent calendar quarter.",
+        "bbox": [
+            66,
+            901,
+            918,
+            928
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Christopher Horvers, CFA AC\n(1-212) 622-1316\nchristopher.horvers@JPM.com",
+        "bbox": [
+            68,
+            55,
+            256,
+            89
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "North America Equity Research\n07 July 2026",
+        "bbox": [
+            341,
+            55,
+            517,
+            79
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            75
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            916,
+            952,
+            928,
+            963
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            68,
+            146,
+            779,
+            161
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Equity Valuation and Risks: For valuation methodology and risks associated with covered companies or price targets for covered companies, please see the most recent company-specific research report at http://www.JPMmarkets.com, contact the primary analyst or your JPM representative, or email research.disclosure.inquiries@JPM.com. For material information about the proprietary models used, please see the Summary of Financials in company-specific research reports and the Company Tearsheets, which are available to download on the company pages of our client website, http://www.JPMmarkets.com. This report also sets out within it the material underlying assumptions used.",
+        "bbox": [
+            66,
+            176,
+            913,
+            253
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "History of Investment Recommendations:",
+        "text_level": 2,
+        "bbox": [
+            68,
+            260,
+            336,
+            273
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "A history of JPM investment recommendations disseminated during the preceding 12 months can be accessed on the Research & Commentary page of http://www.JPMmarkets.com where you can also search by analyst name, sector or financial instrument.",
+        "bbox": [
+            68,
+            272,
+            877,
+            300
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Analysts' Compensation: The research analysts responsible for the preparation of this report receive compensation based upon various factors, including the quality and accuracy of research, client feedback, competitive factors, and overall firm revenues.",
+        "bbox": [
+            68,
+            304,
+            918,
+            334
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Other Disclosures",
+        "text_level": 2,
+        "bbox": [
+            68,
+            338,
+            200,
+            353
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "JPM is a marketing name for investment banking businesses of JPM Chase & Co. and its subsidiaries and affiliates worldwide.",
+        "bbox": [
+            66,
+            383,
+            897,
+            398
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "UK MIFID FICC research unbundling exemption: UK clients should refer to UK MIFID Research Unbundling exemption for details of JPM's implementation of the FICC research exemption and guidance on relevant FICC research categorisation.",
+        "bbox": [
+            68,
+            404,
+            921,
+            431
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "All research material made available to clients are simultaneously available on our client website, JPM Markets, unless specifically permitted by relevant laws. Not all research content is redistributed, e-mailed or made available to third-party aggregators. For all research material available on a particular stock, please contact your sales representative.",
+        "bbox": [
+            66,
+            436,
+            890,
+            477
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Any long form nomenclature for references to China; Hong Kong; Taiwan; and Macau within this research material are Mainland China; Hong Kong SAR (China); Taiwan (China); and Macau SAR (China).",
+        "bbox": [
+            68,
+            483,
+            918,
+            510
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "JPM may, from time to time, write on issuers or securities targeted by economic or financial sanctions imposed or administered by the governmental authorities of the U.S., EU, UK or other relevant jurisdictions (Sanctioned Securities). Nothing in this report is intended to be read or construed as encouraging, facilitating, promoting or otherwise approving investment or dealing in such Sanctioned Securities. Clients should be aware of their own legal and compliance obligations when making investment decisions.",
+        "bbox": [
+            66,
+            515,
+            924,
+            569
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Any digital or crypto assets discussed in this research report are subject to a rapidly changing regulatory landscape. For relevant regulatory advisories on crypto assets, including bitcoin and ether, please see https://www.JPM.com/disclosures/cryptoasset-disclosure.",
+        "bbox": [
+            68,
+            574,
+            893,
+            601
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The author(s) of this research report may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so.",
+        "bbox": [
+            68,
+            606,
+            897,
+            633
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Exchange-Traded Funds (ETFs): JPM Securities LLC (“JPMS”) acts as authorized participant for substantially all U.S.-listed ETFs. To the extent that any ETFs are mentioned in this report, JPMS may earn commissions and transaction-based compensation in connection with the distribution of those ETF shares and may earn fees for performing other trade-related services, such as securities lending to short sellers of the ETF shares. JPMS may also perform services for the ETFs themselves, including acting as a broker or dealer to the ETFs. In addition, affiliates of JPMS may perform services for the ETFs, including trust, custodial, administration, lending, index calculation and/or maintenance and other services.",
+        "bbox": [
+            66,
+            638,
+            926,
+            717
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Options and Futures related research: If the information contained herein regards options- or futures-related research, such information is available only to persons who have received the proper options or futures risk disclosure documents. Please contact your JPM Representative or visit https://www.theocc.com/components/docs/riskstoc.pdf for a copy of the Option Clearing Corporation's Characteristics and Risks of Standardized Options or",
+        "bbox": [
+            66,
+            722,
+            913,
+            773
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "https://www.finra.org/sites/default/files/2020-08/Security\\_Futures\\_Risk\\_Disclosure\\_Statement\\_2020.pdf for a copy of the Security Futures Risk Disclosure Statement.",
+        "bbox": [
+            68,
+            773,
+            900,
+            800
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Changes to Interbank Offered Rates (IBORs) and other benchmark rates: Certain interest rate benchmarks are, or may in the future become, subject to ongoing international, national and other regulatory guidance, reform and proposals for reform. For more information, please consult: https://www.JPM.com/global/disclosures/interbank\\_offered\\_rates",
+        "bbox": [
+            66,
+            806,
+            924,
+            845
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Private Bank Clients: Where you are receiving research as a client of the private banking businesses offered by JPM Chase & Co. and its subsidiaries (“JPM Private Bank”), research is provided to you by JPM Private Bank and not by any other division of JPM, including, but not limited to, the JPM Corporate and Investment Bank and its Global Research division.",
+        "bbox": [
+            66,
+            851,
+            926,
+            892
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Legal entity responsible for the production and distribution of research: The legal entity identified below the name of the Reg AC Research Analyst who authored this material is the legal entity responsible for the production of this research. Where multiple Reg AC Research Analysts authored this material with different legal entities identified below their names, these legal entities are jointly responsible for the production of",
+        "bbox": [
+            66,
+            897,
+            926,
+            936
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Christopher Horvers, CFA AC\n(1-212) 622-1316\nchristopher.horvers@JPM.com",
+        "bbox": [
+            68,
+            55,
+            256,
+            89
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "North America Equity Research\n07 July 2026",
+        "bbox": [
+            341,
+            55,
+            517,
+            79
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            71,
+            952,
+            88,
+            964
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "this research. Where more than one legal entity is listed under an analyst's name, the first legal entity is responsible for the production unless stated otherwise. Research Analysts from various JPM affiliates may have contributed to the production of this material but may not be licensed to carry out regulated activities in your jurisdiction (and do not hold themselves out as being able to do so). Unless otherwise stated below in the legal entity disclosures, this material has been distributed by the legal entity responsible for production, or where more than one legal entity is listed under the analyst's name, the first legal entity will be responsible for distribution. If you have any queries, please contact the relevant Research Analyst in your jurisdiction or the entity in your jurisdiction that has distributed this research material.",
+        "bbox": [
+            66,
+            147,
+            928,
+            226
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Legal Entities Disclosures and Country-/Region-Specific Disclosures:",
+        "text_level": 2,
+        "bbox": [
+            68,
+            231,
+            508,
+            244
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Argentina: JPM Chase Bank N.A Sucursal Buenos Aires is regulated by Banco Central de la República Argentina (“BCRA”- Central Bank of Argentina) and Comisión Nacional de Valores (“CNV”- Argentinian Securities Commission - ALYC y AN Integral N°51).",
+        "bbox": [
+            68,
+            244,
+            897,
+            271
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Australia: JPM Securities Australia Limited (“JPMSAL”) (ABN 61 003 245 234/AFS Licence No: 238066) is regulated by the Australian Securities and Investments Commission and is a Market Participant of ASX Limited, a Clearing and Settlement Participant of ASX Clear Pty Limited and a Clearing Participant of ASX Clear (Futures) Pty Limited. This material is issued and distributed in Australia by or on behalf of JPMSAL only to \"wholesale clients\" (as defined in section 761G of the Corporations Act 2001). A list of all financial products covered can be found by visiting https://www.jpmm.com/research/disclosures. JPM seeks to cover companies of relevance to the domestic and international investor base across all Global Industry Classification Standard (GICS) sectors, as well as across a range of market capitalisation sizes. If applicable, in the course of conducting public side due diligence on the subject company(ies), the Research Analyst team may at times perform such diligence through corporate engagements such as site visits, discussions with company representatives, management presentations, etc. Research issued by JPMSAL has been prepared in accordance with JPM Australia’s Research Independence Policy which can be found at the following link: JPM Australia - Research Independence Policy.",
+        "bbox": [
+            66,
+            276,
+            928,
+            405
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Brazil: Banco JPM S.A. is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsman JPM: 0800-7700847 / 0800-7700810 (For Hearing Impaired) / ouvidoria.jp.morgan@jpmchase.com.",
+        "bbox": [
+            66,
+            409,
+            905,
+            439
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Canada: JPM Securities Canada Inc. is a registered investment dealer, regulated by the Canadian Investment Regulatory Organization and the Ontario Securities Commission and is the participating member on Canadian exchanges. This material is distributed in Canada by or on behalf of JPM Securities Canada Inc.",
+        "bbox": [
+            66,
+            443,
+            921,
+            483
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Chile: Inversiones JPM Limitada is an unregulated entity incorporated in Chile.",
+        "bbox": [
+            68,
+            489,
+            589,
+            503
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "China: JPM Securities (China) Company Limited has been approved by CSRC to conduct the securities investment consultancy business.",
+        "bbox": [
+            66,
+            508,
+            874,
+            535
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Colombia: Banco JPM Colombia S.A. is supervised by the Superintendencia Financiera de Colombia (SFC). Any reference in this material to products or services offered abroad by entities other than the Bank in Colombia is included exclusively for descriptive purposes. Such references do not constitute, and should not be construed as, promotional activity or the provision of financial products or services within Colombian territory, as defined under applicable Colombian regulation.",
+        "bbox": [
+            66,
+            541,
+            916,
+            595
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Dubai International Financial Centre (DIFC): JPM Chase Bank, N.A., Dubai Branch is regulated by the Dubai Financial Services Authority (DFSA) and its registered address is Dubai International Financial Centre - The Gate, West Wing, Level 3 and 9 PO Box 506551, Dubai, UAE. This material has been distributed by JPM Chase Bank, N.A., Dubai Branch to persons regarded as professional clients or market counterparties as defined under the DFSA rules.",
+        "bbox": [
+            66,
+            599,
+            911,
+            652
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "European Economic Area (EEA): Unless specified to the contrary, research is distributed in the EEA by JPM SE (“JPM SE”), which is authorised as a credit institution by the Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and jointly supervised by the BaFin, the German Central Bank (Deutsche Bundesbank) and the European Central Bank (ECB). JPM SE is a company headquartered in Frankfurt with registered address at TaunusTurm, Taunustor 1, Frankfurt am Main, 60310, Germany. The material has been distributed in the EEA to persons regarded as professional investors (or equivalent) pursuant to Art. 4 para. 1 no. 10 and Annex II of MiFID II and its respective implementation in their home jurisdictions (“EEA professional investors”). This material must not be acted on or relied on by persons who are not EEA professional investors. Any investment or investment activity to which this material relates is only available to EEA relevant persons and will be engaged in only with EEA relevant persons.",
+        "bbox": [
+            66,
+            657,
+            924,
+            762
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Hong Kong: JPM Securities (Asia Pacific) Limited (CE number AAJ321) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission in Hong Kong, and JPM Broking (Hong Kong) Limited (CE number AAB027) is regulated by the Securities and Futures Commission in Hong Kong. JPM Chase Bank, N.A., Hong Kong Branch (CE Number AAL996) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission, is organized under the laws of the United States with limited liability. Where the distribution of this material is a regulated activity in Hong Kong, the material is distributed in Hong Kong by or through JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited.",
+        "bbox": [
+            66,
+            766,
+            928,
+            845
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "India: JPM India Private Limited (Corporate Identity Number - U67120MH1992FTC068724), having its registered office at JPM Tower, Off. C.S.T. Road, Kalina, Santacruz - East, Mumbai – 400098, is registered with the Securities and Exchange Board of India (SEBI) as a 'Research Analyst' having registration number INH000001873. JPM India Private Limited is also registered with SEBI as a member of the National Stock Exchange of India Limited and the Bombay Stock Exchange Limited (SEBI Registration Number – INZ000239730) and as a Merchant Banker (SEBI Registration Number - MB/INM000002970). Telephone: 91-22-6157 3000, Facsimile: 91-22-6157 3990 and Website: http://www.jpmipl.com. JPM Chase Bank, N.A. - Mumbai Branch is licensed by the Reserve Bank of India (RBI) (Licence No. 53/",
+        "bbox": [
+            66,
+            849,
+            926,
+            928
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Christopher Horvers, CFA AC\n(1-212) 622-1316\nchristopher.horvers@JPM.com",
+        "bbox": [
+            68,
+            55,
+            256,
+            89
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "North America Equity Research\n07 July 2026",
+        "bbox": [
+            341,
+            54,
+            517,
+            79
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            911,
+            952,
+            926,
+            964
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Licence No. BY.4/94; SEBI - IN/CUS/014/ CDSL : IN-DP-CDSL-444-2008/ IN-DP-NSDL-285-2008/ INBI00000984/ INE231311239) as a Scheduled Commercial Bank in India, which is its primary license allowing it to carry on Banking business in India and other activities, which a Bank branch in India are permitted to undertake. For non-local research material, this material is not distributed in India by JPM India Private Limited. Compliance Officer: Ashutosh Sharma; ashutosh.j.sharma@jpmchase.com; +912261575002. Grievance Officer: Ramprasadh K, jpmipl.research.feedback@JPM.com; +912261573000. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Please visit Terms and Conditions and Most Important Terms and Conditions (MITC). The annual Compliance audit report is available at http://www.jpmipl.com/#research.",
+        "bbox": [
+            66,
+            147,
+            926,
+            239
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Indonesia: PT JPM Sekuritas Indonesia is a member of the Indonesia Stock Exchange and is registered and supervised by the Otoritas Jasa Keuangan (OJK).",
+        "bbox": [
+            66,
+            243,
+            910,
+            271
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Korea: JPM Securities (Far East) Limited, Seoul Branch, is a member of the Korea Exchange (KRX). JPM Chase Bank, N.A., Seoul Branch, is licensed as a branch office of foreign bank (JPM Chase Bank, N.A.) in Korea. Both entities are regulated by the Financial Services Commission (FSC) and the Financial Supervisory Service (FSS). For non-macro research material, the material is distributed in Korea by or through JPM Securities (Far East) Limited, Seoul Branch.",
+        "bbox": [
+            66,
+            276,
+            924,
+            329
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Japan: JPM Securities Japan Co., Ltd. and JPM Chase Bank, N.A., Tokyo Branch are regulated by the Financial Services Agency in Japan.",
+        "bbox": [
+            66,
+            334,
+            924,
+            362
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Malaysia: This material is issued and distributed in Malaysia by JPM Securities (Malaysia) Sdn Bhd (18146-X), which is a Participating Organization of Bursa Malaysia Berhad and holds a Capital Markets Services License issued by the Securities Commission in Malaysia.",
+        "bbox": [
+            66,
+            367,
+            916,
+            393
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Mexico: JPM Casa de Bolsa, S.A. de C.V., JPM Grupo Financiero is member of the Mexican Stock Exchange (“Bolsa Mexicana de Valores”) and the Institutional Stock Exchange (“Bolsa Institucional de Valores”), and it is authorized to act as a broker dealer by the National Banking and Securities Exchange Commission (“Comisión Nacional Bancaria y de Valores”).",
+        "bbox": [
+            66,
+            398,
+            918,
+            440
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "New Zealand: This material is issued and distributed by JPMSAL in New Zealand only to \"wholesale clients\" (as defined in the Financial Markets Conduct Act 2013). JPMSAL is registered as a Financial Service Provider under the Financial Service providers (Registration and Dispute Resolution) Act of 2008.",
+        "bbox": [
+            66,
+            445,
+            893,
+            484
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Philippines: JPM Securities Philippines Inc. is a Trading Participant of the Philippine Stock Exchange and a member of the Securities Clearing Corporation of the Philippines and the Securities Investor Protection Fund. It is regulated by the Securities and Exchange Commission.",
+        "bbox": [
+            66,
+            491,
+            924,
+            518
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Singapore: This material is issued and distributed in Singapore by or through JPM Securities Singapore Private Limited (JPMSS) [MDDI (P) 057/08/2025 and Co. Reg. No.: 199405335R], which is a member of the Singapore Exchange Securities Trading Limited, and/or JPM Chase Bank, N.A., Singapore branch (JPMCB Singapore), both of which are regulated by the Monetary Authority of Singapore. This material is issued and distributed in Singapore only to accredited investors, expert investors and institutional investors, as defined in Section 4A of the Securities and Futures Act, Cap. 289 (SFA). This material is not intended to be issued or distributed to any retail investors or any other investors that do not fall into the classes of “accredited investors,” “expert investors” or “institutional investors,” as defined under Section 4A of the SFA. Recipients of this material in Singapore are to contact JPMSS or JPMCB Singapore in respect of any matters arising from, or in connection with, the material.",
+        "bbox": [
+            66,
+            523,
+            926,
+            627
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "South Africa: JPM Equities South Africa Proprietary Limited and JPM Chase Bank, N.A., Johannesburg Branch are members of the Johannesburg Securities Exchange and are regulated by the Financial Services Conduct Authority (FSCA).",
+        "bbox": [
+            66,
+            632,
+            915,
+            660
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Taiwan: JPM Securities (Taiwan) Limited is a participant of the Taiwan Stock Exchange (company-type) and regulated by the Taiwan Securities and Futures Bureau. Material relating to equity securities is issued and distributed in Taiwan by JPM Securities (Taiwan) Limited, subject to the license scope and the applicable laws and the regulations in Taiwan. To the extent that JPM Securities (Taiwan) Limited produces research materials on securities not listed on the Taiwan Stock Exchange or Taipei Exchange (“Non-Taiwan Listed Securities”), these materials shall not constitute securities recommendations for the purpose of applicable Taiwan regulations, and, for the avoidance of doubt, JPM Securities (Taiwan) Limited does not act as broker for Non-Taiwan Listed Securities. According to Paragraph 2, Article 7-1 of Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers (as amended or supplemented) and/or other applicable laws or regulations, please note that the recipient of this material is not permitted to engage in any activities in connection with the material that may give rise to conflicts of interests, unless otherwise disclosed in the “Important Disclosures” in this material.",
+        "bbox": [
+            66,
+            664,
+            926,
+            794
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Thailand: This material is issued and distributed in Thailand by JPM Securities (Thailand) Ltd., which is a member of the Stock Exchange of Thailand and is regulated by the Ministry of Finance and the Securities and Exchange Commission. The registered address is 548 One City Center Building, 50th Floor, Ploenchit Road, Lymphini, Pathum Wan, Bangkok 10330.",
+        "bbox": [
+            66,
+            797,
+            928,
+            839
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "UK: Research is produced in the UK by JPM Securities plc (“JPMS plc”) which is a member of the London Stock Exchange and is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority or JPM Markets Limited (“JPMML Ltd”) which is authorised and regulated by the Financial Conduct Authority. Unless specified to the contrary, this material is distributed in the UK by JPMS plc and is directed in the UK only to: (a) persons having professional experience in matters relating to investments falling within article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) (Order) 2005 (“the FPO”); (b) persons outlined in article 49 of the FPO (high net worth companies, unincorporated associations or partnerships, the trustees of high value trusts, etc.); or (c) any persons to whom this communication may otherwise lawfully be made; all such persons being referred to as",
+        "bbox": [
+            66,
+            844,
+            929,
+            936
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Christopher Horvers, CFA AC\n(1-212) 622-1316\nchristopher.horvers@JPM.com",
+        "bbox": [
+            68,
+            55,
+            256,
+            89
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "North America Equity Research\n07 July 2026",
+        "bbox": [
+            341,
+            54,
+            517,
+            79
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            71,
+            952,
+            88,
+            964
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\"UK relevant persons\". This material must not be acted on or relied on by persons who are not UK relevant persons. Any investment or investment activity to which this material relates is only available to UK relevant persons and will be engaged in only with UK relevant persons. A description of JPM EMEA's policy for prevention and avoidance of conflicts of interest related to the production of Research can be found at the following link: JPM EMEA - Research Independence Policy.",
+        "bbox": [
+            66,
+            147,
+            924,
+            200
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "U.S.: JPM Securities LLC (“JPMS”) is a member of the NYSE, FINRA, SIPC, and the NFA. JPM Chase Bank, N.A. is a member of the FDIC. Material published by non-U.S. affiliates is distributed in the U.S. by JPMS who accepts responsibility for its content.",
+        "bbox": [
+            66,
+            205,
+            915,
+            234
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "General: Additional information is available upon request. The information in this material has been obtained from sources believed to be reliable. While all reasonable care has been taken to ensure that the facts stated in this material are accurate and that the forecasts, opinions and expectations contained herein are fair and reasonable, JPM Chase & Co. or its affiliates and/or subsidiaries (collectively JPM) make no representations or warranties whatsoever to the completeness or accuracy of the material provided, except with respect to any disclosures relative to JPM and the Research Analyst's involvement with the issuer that is the subject of the material. Accordingly, no reliance should be placed on the accuracy, fairness or completeness of the information contained in this material. There may be certain discrepancies with data and/or limited content in this material as a result of calculations, adjustments, translations to different languages, and/or local regulatory restrictions, as applicable. These discrepancies should not impact the overall investment analysis, views and/or recommendations of the subject company(ies) that may be discussed in the material. Artificial intelligence tools may have been used in the preparation of this material, including assisting in data analysis, pattern recognition, and content drafting for research material. JPM accepts no liability whatsoever for any loss arising from any use of this material or its contents, and neither JPM nor any of its respective directors, officers or employees, shall be in any way responsible for the contents hereof, apart from the liabilities and responsibilities that may be imposed on them by the relevant regulatory authority in the jurisdiction in question, or the regulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction.",
+        "bbox": [
+            66,
+            239,
+            929,
+            671
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email",
+        "bbox": [
+            66,
+            674,
+            924,
+            779
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer",
+        "bbox": [
+            66,
+            784,
+            923,
+            849
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not constitute investment advice nor an endorsement of any product or project; (4) are provided solely for informational purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All Rights Reserved.",
+        "bbox": [
+            66,
+            854,
+            919,
+            931
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Christopher Horvers, CFA AC\n(1-212) 622-1316\nchristopher.horvers@JPM.com",
+        "bbox": [
+            68,
+            55,
+            256,
+            89
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "North America Equity Research\n07 July 2026",
+        "bbox": [
+            341,
+            54,
+            517,
+            79
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            910,
+            952,
+            928,
+            964
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\"Other Disclosures\" last revised July 04, 2026.",
+        "bbox": [
+            68,
+            147,
+            349,
+            162
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Copyright 2026 JPM Chase & Co. All rights reserved. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM. It is strictly prohibited to use or share without prior written consent from JPM any research material received from JPM or an authorized third-party (“JPM Data”) in any third-party artificial intelligence (“AI”) systems or models when such JPM Data is accessible by a third-party.",
+        "bbox": [
+            66,
+            172,
+            924,
+            227
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Completed 06 Jul 2026 07:05 PM EDT",
+        "bbox": [
+            68,
+            229,
+            308,
+            244
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Disseminated 07 Jul 2026 12:15 AM EDT",
+        "bbox": [
+            671,
+            229,
+            928,
+            244
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Christopher Horvers, CFA AC\n(1-212) 622-1316\nchristopher.horvers@JPM.com",
+        "bbox": [
+            68,
+            55,
+            256,
+            89
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "North America Equity Research\n07 July 2026",
+        "bbox": [
+            341,
+            54,
+            517,
+            79
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            71,
+            952,
+            88,
+            964
+        ],
+        "page_idx": 13
+    }
+]
