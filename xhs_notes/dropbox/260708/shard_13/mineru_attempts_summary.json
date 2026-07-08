@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_6052bqyc/pdfs/0001-69-MS-Global EV Tracker- Europe Leads BEV Growth as China Turns a Corner and US Hybrids Gain-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6052bqyc/pdfs/0002-70-MS-Horizon Robotics-9660.HK-Game on - not game over-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6052bqyc/pdfs/0003-71-MS-Greater China Semiconductors-PC Semis- Divergent gross margin trends-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6052bqyc/pdfs/0004-72-MS-Greater China Technology Hardware ABF Substrates Pricing Upcycle Is Accelerating-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6052bqyc/pdfs/0005-73-MS-Laopu Gold-6181.HK-1H26 Preview- Weak 2Q-260706.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

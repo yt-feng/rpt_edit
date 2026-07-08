@@ -1,0 +1,810 @@
+July 6, 2026 09:00 PM GMT
+
+Greater China Semiconductors | Asia Pacific
+
+# PC Semis: Divergent gross margin trends
+
+FOMP (fear of missing procurement) will likely drive stable shipments for PC semis into 3Q, yet profitability may vary.
+
+## Key Takeaways
+
+We expect PC semi shipments to sustain into 3Q, likely due to FOMP.
+
+\- With cost hikes (mainly from OSAT), supply chain management and customer mix will derive a divergent margin outlook.
+
+\- Overall we maintain our view that new growth drivers are needed, but adjust PT/earnings based on our demand outlook for 2H.
+
+3Q demand outlook better than feared? We believe 3Q demand outlook for most PC semis could be stable – PC semi customers could maintain a flattish Q/Q procurement target, with key components (e.g. CPU) showing further sequential growth. Major driver could be FOMP, driven by overall mature foundry and OSAT tightness (limited supply/cost hikes). Some customers may consider low inventory risks if there's pent-up demand into 2027, suggesting increasing inventory digestion risks, especially when Windows activation day is approaching 200+.
+
+Margin could show divergent trend: We expect all PC semis to try to pass through foundry/OSAT cost hikes to customers in 3Q. However, impact to gross margin could be different than during Covid, as overall tightness is not driven by PCs, but indirectly from servers. We believe design house scale, supply chain divergence and customer portfolios will derive differing margin outlooks; large IC design houses' strong supply chain management and comprehensive product mix (e.g. Novatek, Realtek) to maintain or even increase gross margin. Conversely, some small design houses may not see margin increase (e.g. Parade/Elan).
+
+New growth drivers major rating factors: Prefer small design houses, mainly on emerging new growth drivers. Elan to benefit from non-PCs (mainly drones), with potential mid-high single digit revenue contribution in 2027. Parade likely to show high 2027 growth thanks to chipset ramp up. Conversely, we await new growth drivers from Novatek on cloud ASIC, which likely will take a longer time. We believe Realtek will ramp up 100G DSP in 2026, but 400G will be in 2028.
+
+Maintain OW on Parade/Elan, Realtek EW and Novatek UW: Revise up Elan earnings ests mainly due to margin improvement and new revenue opportunities from non PC businesses – it is likely to gain some share in touch pads post Synaptics acquisition announcement. Valuation is 17x 2026e P/E, undemanding vs IC design peers at \~30x. Trim Parade PT/earnings ests on lower GM assumption for major client Apple and its sales (higher Apple end-product pricing). Revise up Realtek's earnings ests/PT thanks to sustained 3Q outlook (both revenue and GM).
+
+MS TAIWAN LIMITED+
+
+Charlie Chan
+Equity Analyst
+Charlie.Chan@morganstanley.com +886 2 2730-1725
+
+Ethan Jia
+Research Associate
+Ethan.Jia@morganstanley.com +852 3963-2287
+
+Asia Summer School 2026
+
+![](images/2f97bf3e6eb2183277eccccd4da414d023e133571410b9b8d198fee5d8b5bd9d.jpg)
+
+<table><tr><td colspan="3">GREATER CHINA TECHNOLOGY SEMICONDUCTORS</td></tr><tr><td>Asia Pacific Industry View</td><td colspan="2">Attractive</td></tr><tr><td colspan="3">WHAT&#x27;S CHANGED</td></tr><tr><td>Elan Microelectronics Corp (2458.TW)</td><td>From</td><td>To</td></tr><tr><td>Price Target</td><td>NT$180.00</td><td>NT$250.00</td></tr><tr><td>Parade Technologies Ltd (4966.TWO)</td><td>From</td><td>To</td></tr><tr><td>Price Target</td><td>NT$1,000.00</td><td>NT$818.00</td></tr><tr><td>Realtek Semiconductor (2379.TW)</td><td>From</td><td>To</td></tr><tr><td>Price Target</td><td>NT$570.00</td><td>NT$717.00</td></tr></table>
+
+With this note, coverage of Elan Microelectronics (2458.TW) is transferred to Daniel Yen.
+
+MS does and seeks to do business with companies covered in MS. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of MS. Investors should consider MS as only a single factor in making their investment decision.
+
+## For analyst certification and other important disclosures, refer to the Disclosure Section, located at the end of this report.
+
++= Analysts employed by non-U.S. affiliates are not registered with FINRA, may not be associated persons of the member and may not be subject to FINRA restrictions on communications with a subject company, public appearances and trading securities held by a research analyst account.
+
+## Parade: Earnings Estimate Revisions
+
+We cut our EPS estimates by 14%/14% for 2027/28: We factor in the lower GM assumption from its major client (Apple) and lower Apple sales (due to higher Apple end product pricing).
+
+Exhibit 1: Parade: Summary of estimate revisions
+
+<table><tr><td>NT$ mn</td><td>Current 2026E</td><td>Previous 2026E</td><td>Diff.</td><td>Current 2027E</td><td>Previous 2027E</td><td>Diff.</td><td>Current 2028E</td><td>Previous 2028E</td><td>Diff.</td></tr><tr><td>Net sales</td><td>15,865</td><td>15,865</td><td>0%</td><td>18,478</td><td>20,041</td><td>-8%</td><td>20,064</td><td>21,808</td><td>-8%</td></tr><tr><td>COGS</td><td>9,215</td><td>9,205</td><td></td><td>10,597</td><td>11,458</td><td></td><td>11,400</td><td>12,344</td><td></td></tr><tr><td>Gross profit</td><td>6,650</td><td>6,660</td><td>0%</td><td>7,881</td><td>8,583</td><td>-8%</td><td>8,665</td><td>9,464</td><td>-8%</td></tr><tr><td>Operating expenses</td><td>4,259</td><td>4,259</td><td></td><td>4,406</td><td>4,480</td><td></td><td>4,572</td><td>4,654</td><td></td></tr><tr><td>Operating profit</td><td>2,390</td><td>2,401</td><td>0%</td><td>3,475</td><td>4,103</td><td>-15%</td><td>4,092</td><td>4,810</td><td>-15%</td></tr><tr><td>Non-op. income (exp.)</td><td>216</td><td>216</td><td></td><td>230</td><td>230</td><td></td><td>230</td><td>230</td><td></td></tr><tr><td>Pretax Income</td><td>2,606</td><td>2,617</td><td>0%</td><td>3,705</td><td>4,333</td><td>-14%</td><td>4,322</td><td>5,040</td><td>-14%</td></tr><tr><td>Taxes</td><td>235</td><td>236</td><td></td><td>333</td><td>390</td><td></td><td>389</td><td>454</td><td></td></tr><tr><td>Net income</td><td>2,371</td><td>2,381</td><td>0%</td><td>3,371</td><td>3,943</td><td>-14%</td><td>3,933</td><td>4,586</td><td>-14%</td></tr><tr><td>Reported Diluted EPS</td><td>30.34</td><td>30.47</td><td>0%</td><td>43.14</td><td>50.45</td><td>-14%</td><td>50.33</td><td>58.69</td><td>-14%</td></tr><tr><td colspan="10">Margins</td></tr><tr><td>Gross margin</td><td>41.9%</td><td>42.0%</td><td>0 ppt</td><td>42.7%</td><td>42.8%</td><td>0 ppt</td><td>43.2%</td><td>43.4%</td><td>0 ppt</td></tr><tr><td>Operating margin</td><td>15.1%</td><td>15.1%</td><td>0 ppt</td><td>18.8%</td><td>20.5%</td><td>-2 ppt</td><td>20.4%</td><td>22.1%</td><td>-2 ppt</td></tr><tr><td>Pretax margin</td><td>16.4%</td><td>16.5%</td><td>0 ppt</td><td>20.0%</td><td>21.6%</td><td>-2 ppt</td><td>21.5%</td><td>23.1%</td><td>-2 ppt</td></tr><tr><td>Net margin</td><td>14.9%</td><td>15.0%</td><td>0 ppt</td><td>18.2%</td><td>19.7%</td><td>-1 ppt</td><td>19.6%</td><td>21.0%</td><td>-1 ppt</td></tr></table>
+
+Source: MS (E) estimates
+
+Exhibit 2: Quarterly earnings summary
+
+<table><tr><td>NT$ in million</td><td>1Q25</td><td>2Q25</td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td>2Q26E</td><td>3Q26E</td><td>4Q26E</td><td>1Q27E</td><td>2Q27E</td><td>3Q27E</td><td>4Q27E</td><td>1Q28E</td><td>2Q28E</td><td>3Q28E</td><td>4Q28E</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td>Total Revenues</td><td>4,152</td><td>4,114</td><td>4,377</td><td>3,888</td><td>3,990</td><td>4,049</td><td>4,038</td><td>3,788</td><td>3,933</td><td>4,506</td><td>5,109</td><td>4,931</td><td>4,727</td><td>4,900</td><td>5,463</td><td>4,974</td><td>16,531</td><td>15,865</td><td>18,478</td><td>20,064</td></tr><tr><td>Sequential Change</td><td>0.8%</td><td>-0.9%</td><td>6.4%</td><td>-11.2%</td><td>2.6%</td><td>1.5%</td><td>-0.3%</td><td>-6.2%</td><td>3.8%</td><td>14.6%</td><td>13.4%</td><td>-3.5%</td><td>-4.1%</td><td>3.7%</td><td>11.5%</td><td>-9.0%</td><td></td><td></td><td></td><td></td></tr><tr><td>Change vs Year Ago</td><td>8.8%</td><td>5.2%</td><td>-0.5%</td><td>-5.6%</td><td>-3.9%</td><td>-1.6%</td><td>-7.7%</td><td>-2.6%</td><td>-1.4%</td><td>11.3%</td><td>26.5%</td><td>30.2%</td><td>20.2%</td><td>8.8%</td><td>6.9%</td><td>0.9%</td><td>1.8%</td><td>-4.0%</td><td>16.5%</td><td>8.6%</td></tr><tr><td>Cost of Sales</td><td>2,385</td><td>2,341</td><td>2,517</td><td>2,254</td><td>2,382</td><td>2,326</td><td>2,320</td><td>2,187</td><td>2,257</td><td>2,583</td><td>2,926</td><td>2,831</td><td>2,694</td><td>2,776</td><td>3,097</td><td>2,832</td><td>9,496</td><td>9,215</td><td>10,597</td><td>11,400</td></tr><tr><td>Percent of Revenues</td><td>57%</td><td>57%</td><td>57%</td><td>58%</td><td>60%</td><td>57%</td><td>57%</td><td>58%</td><td>57%</td><td>57%</td><td>57%</td><td>57%</td><td>57%</td><td>57%</td><td>57%</td><td>57%</td><td>57%</td><td>58%</td><td>57%</td><td>57%</td></tr><tr><td>Gross Margin</td><td>1,767</td><td>1,774</td><td>1,860</td><td>1,634</td><td>1,608</td><td>1,723</td><td>1,718</td><td>1,601</td><td>1,676</td><td>1,922</td><td>2,183</td><td>2,100</td><td>2,033</td><td>2,124</td><td>2,366</td><td>2,142</td><td>7,035</td><td>6,650</td><td>7,881</td><td>8,665</td></tr><tr><td>Percent of Revenues</td><td>42.6%</td><td>43.1%</td><td>42.5%</td><td>42.0%</td><td>40.3%</td><td>42.5%</td><td>42.5%</td><td>42.3%</td><td>42.6%</td><td>42.7%</td><td>42.7%</td><td>42.6%</td><td>43.0%</td><td>43.3%</td><td>43.3%</td><td>43.1%</td><td>42.6%</td><td>41.9%</td><td>42.7%</td><td>43.2%</td></tr><tr><td>Incremental Margin</td><td>91%</td><td>NM</td><td>33%</td><td>NM</td><td>-26%</td><td>194%</td><td>NM</td><td>NM</td><td>52%</td><td>43%</td><td>43%</td><td>NM</td><td>NM</td><td>52%</td><td>43%</td><td>NM</td><td>46%</td><td>NM</td><td>47%</td><td>49%</td></tr><tr><td>Total Opex</td><td>1,110</td><td>1,065</td><td>1,048</td><td>1,103</td><td>1,068</td><td>1,055</td><td>1,074</td><td>1,063</td><td>1,069</td><td>1,096</td><td>1,125</td><td>1,116</td><td>1,126</td><td>1,135</td><td>1,161</td><td>1,150</td><td>4,326</td><td>4,259</td><td>4,406</td><td>4,572</td></tr><tr><td>Percent of Revenues</td><td>26.7%</td><td>25.9%</td><td>23.9%</td><td>28.4%</td><td>26.8%</td><td>26.1%</td><td>26.6%</td><td>28.1%</td><td>27.2%</td><td>24.3%</td><td>22.0%</td><td>22.6%</td><td>23.8%</td><td>23.2%</td><td>21.3%</td><td>23.1%</td><td>26.2%</td><td>26.8%</td><td>23.8%</td><td>22.8%</td></tr><tr><td>R&amp;D</td><td>744</td><td>723</td><td>700</td><td>742</td><td>728</td><td>728</td><td>748</td><td>748</td><td>748</td><td>748</td><td>748</td><td>748</td><td>768</td><td>768</td><td>768</td><td>780</td><td>2,910</td><td>2,953</td><td>2,993</td><td>3,084</td></tr><tr><td>Percent of Revenues</td><td>17.9%</td><td>17.6%</td><td>16.0%</td><td>19.1%</td><td>18.3%</td><td>18.0%</td><td>18.5%</td><td>19.8%</td><td>19.0%</td><td>16.6%</td><td>14.6%</td><td>15.2%</td><td>16.2%</td><td>15.7%</td><td>14.1%</td><td>15.7%</td><td>17.6%</td><td>18.6%</td><td>16.2%</td><td>15.4%</td></tr><tr><td>General &amp; administrative</td><td>156</td><td>143</td><td>134</td><td>136</td><td>136</td><td>136</td><td>136</td><td>136</td><td>136</td><td>136</td><td>136</td><td>136</td><td>136</td><td>136</td><td>136</td><td>136</td><td>569</td><td>545</td><td>545</td><td>545</td></tr><tr><td>Percent of Revenues</td><td>3.7%</td><td>3.5%</td><td>3.1%</td><td>3.5%</td><td>3.4%</td><td>3.4%</td><td>3.4%</td><td>3.6%</td><td>3.5%</td><td>3.0%</td><td>2.7%</td><td>2.8%</td><td>2.9%</td><td>2.8%</td><td>2.5%</td><td>2.7%</td><td>3.4%</td><td>3.4%</td><td>3.0%</td><td>2.7%</td></tr><tr><td>Selling &amp; marketing</td><td>210</td><td>199</td><td>213</td><td>225</td><td>203</td><td>190</td><td>190</td><td>178</td><td>185</td><td>212</td><td>240</td><td>232</td><td>222</td><td>230</td><td>257</td><td>234</td><td>847</td><td>762</td><td>868</td><td>943</td></tr><tr><td>Percent of Revenues</td><td>5.1%</td><td>4.8%</td><td>4.9%</td><td>5.8%</td><td>5.1%</td><td>4.7%</td><td>4.7%</td><td>4.7%</td><td>4.7%</td><td>4.7%</td><td>4.7%</td><td>4.7%</td><td>4.7%</td><td>4.7%</td><td>4.7%</td><td>4.7%</td><td>5.1%</td><td>4.8%</td><td>4.7%</td><td>4.7%</td></tr><tr><td>Operating Income</td><td>657</td><td>709</td><td>812</td><td>531</td><td>540</td><td>668</td><td>644</td><td>539</td><td>607</td><td>826</td><td>1,058</td><td>984</td><td>907</td><td>989</td><td>1,205</td><td>992</td><td>2,709</td><td>2,390</td><td>3,475</td><td>4,092</td></tr><tr><td>Percent of Revenues</td><td>15.8%</td><td>17.2%</td><td>18.6%</td><td>13.7%</td><td>13.5%</td><td>16.5%</td><td>15.9%</td><td>14.2%</td><td>15.4%</td><td>18.3%</td><td>20.7%</td><td>20.0%</td><td>19.2%</td><td>20.2%</td><td>22.1%</td><td>19.9%</td><td>16.4%</td><td>15.1%</td><td>18.8%</td><td>20.4%</td></tr><tr><td>Change vs Year Ago</td><td>25.7%</td><td>38.7%</td><td>7.8%</td><td>-20.1%</td><td>-17.9%</td><td>-5.7%</td><td>-20.8%</td><td>1.5%</td><td>12.4%</td><td>23.7%</td><td>64.4%</td><td>82.6%</td><td>49.4%</td><td>19.7%</td><td>13.9%</td><td>0.8%</td><td>10%</td><td>-12%</td><td>45%</td><td>18%</td></tr><tr><td>Total Non-operating Income(Loss)</td><td>71</td><td>69</td><td>69</td><td>65</td><td>42</td><td>59</td><td>58</td><td>57</td><td>57</td><td>57</td><td>57</td><td>57</td><td>57</td><td>57</td><td>57</td><td>57</td><td>273</td><td>216</td><td>230</td><td>230</td></tr><tr><td>Profit Before Taxes</td><td>728</td><td>777</td><td>881</td><td>596</td><td>582</td><td>727</td><td>702</td><td>596</td><td>664</td><td>883</td><td>1,116</td><td>1,041</td><td>964</td><td>1,046</td><td>1,262</td><td>1,049</td><td>2,982</td><td>2,606</td><td>3,705</td><td>4,322</td></tr><tr><td>Percent of Revenues</td><td>18%</td><td>19%</td><td>20%</td><td>15%</td><td>15%</td><td>18%</td><td>17%</td><td>16%</td><td>17%</td><td>20%</td><td>22%</td><td>21%</td><td>20%</td><td>21%</td><td>23%</td><td>21%</td><td>18%</td><td>16%</td><td>20%</td><td>22%</td></tr><tr><td>Taxes</td><td>64</td><td>75</td><td>66</td><td>51</td><td>53</td><td>65</td><td>63</td><td>54</td><td>60</td><td>80</td><td>100</td><td>94</td><td>87</td><td>94</td><td>114</td><td>94</td><td>256</td><td>235</td><td>333</td><td>389</td></tr><tr><td>Tax Rate</td><td>8.8%</td><td>9.6%</td><td>7.4%</td><td>8.6%</td><td>9.1%</td><td>9.0%</td><td>9.0%</td><td>9.0%</td><td>9.0%</td><td>9.0%</td><td>9.0%</td><td>9.0%</td><td>9.0%</td><td>9.0%</td><td>9.0%</td><td>9.0%</td><td>8.6%</td><td>9.0%</td><td>9.0%</td><td>9.0%</td></tr><tr><td>Net Income, Cont Ops</td><td>664</td><td>702</td><td>816</td><td>544</td><td>529</td><td>661</td><td>638</td><td>542</td><td>605</td><td>804</td><td>1,015</td><td>947</td><td>877</td><td>952</td><td>1,149</td><td>955</td><td>2,727</td><td>2,371</td><td>3,371</td><td>3,933</td></tr><tr><td>Percent of Revenues</td><td>16%</td><td>17%</td><td>19%</td><td>14%</td><td>13%</td><td>16%</td><td>16%</td><td>14%</td><td>15%</td><td>18%</td><td>20%</td><td>19%</td><td>19%</td><td>19%</td><td>21%</td><td>19%</td><td>16%</td><td>15%</td><td>18%</td><td>20%</td></tr><tr><td>Reported Income (TW GAAP)</td><td>664</td><td>702</td><td>816</td><td>544</td><td>529</td><td>661</td><td>638</td><td>542</td><td>605</td><td>804</td><td>1,015</td><td>947</td><td>877</td><td>952</td><td>1,149</td><td>955</td><td>2,727</td><td>2,371</td><td>3,371</td><td>3,933</td></tr><tr><td>Percent of Revenues Change vs Year Ago</td><td>16% 0%</td><td>17% 0%</td><td>19% 0%</td><td>14% 0%</td><td>13% 0%</td><td>16% 0%</td><td>16% 0%</td><td>14% 0%</td><td>15% 0%</td><td>18% 0%</td><td>20% 0%</td><td>19% 0%</td><td>19% 0%</td><td>19% 0%</td><td>21% 0%</td><td>19% 0%</td><td>16% 5%</td><td>15% -13%</td><td>18% 42%</td><td>20% 17%</td></tr><tr><td>Reported EPS (NT$, TW GAAF Change vs Year Ago)</td><td>8.38 16%</td><td>8.95 25%</td><td>10.45 9%</td><td>6.89 -20%</td><td>6.77 -19%</td><td>8.46 -5%</td><td>8.17 -22%</td><td>6.94 1%</td><td>7.74 14%</td><td>10.29 22%</td><td>12.99 59%</td><td>12.12 75%</td><td>11.23 45%</td><td>12.18 18%</td><td>14.70 13%</td><td>12.22 1%</td><td>34.67 7%</td><td>30.34 -12%</td><td>43.14 42%</td><td>50.33 17%</td></tr></table>
+
+Source: MS (E) estimates
+
+## Parade: Valuation Methodology
+
+We cut our price target from NT\$1,000 to NT\$818: Our price target is our base case scenario value, which we continue to derive from a residual income model. Our bull and bear case scenario values are cut from NT\$1,600 to NT\$948, and from NT\$520 to NT\$418, respectively.
+
+We reduce our intermediate growth rate from 11.9% to 11.4% to reflect updated outlook from its major customer. Other key assumptions are unchanged:
+
+\- 9.8% cost of equity (beta 1.3, risk-free rate 2% and risk premium 6%)
+
+\- Payout ratio of $50\%$
+
+• Terminal growth rate of 4.0%
+
+Exhibit 3: Parade: Residual income model
+
+<table><tr><td>NT$million</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2030E</td><td>2031E</td><td>2032E</td><td>2033E</td><td>2034E</td><td>2035E</td><td>2036E</td><td>2037E</td></tr><tr><td>Total Equity</td><td>23,110</td><td>25,304</td><td>27,564</td><td>29,974</td><td>32,659</td><td>35,650</td><td>38,983</td><td>42,696</td><td>46,832</td><td>51,441</td><td>56,575</td><td>62,295</td></tr><tr><td>Net Profit</td><td>2,371</td><td>3,371</td><td>3,933</td><td>4,382</td><td>4,882</td><td>5,439</td><td>6,059</td><td>6,751</td><td>7,521</td><td>8,379</td><td>9,335</td><td>10,400</td></tr><tr><td>ROAE</td><td>10.5%</td><td>13.9%</td><td>14.9%</td><td>15.2%</td><td>15.6%</td><td>15.9%</td><td>16.2%</td><td>16.5%</td><td>16.8%</td><td>17.1%</td><td>17.3%</td><td>17.5%</td></tr><tr><td>Residual Income</td><td>158</td><td>958</td><td>1,290</td><td>1,503</td><td>1,741</td><td>2,007</td><td>2,302</td><td>2,631</td><td>2,998</td><td>3,406</td><td>3,861</td><td>4,367</td></tr><tr><td>Spread</td><td>0.7%</td><td>4.1%</td><td>5.1%</td><td>5.5%</td><td>5.8%</td><td>6.1%</td><td>6.5%</td><td>6.8%</td><td>7.0%</td><td>7.3%</td><td>7.5%</td><td>7.7%</td></tr><tr><td>Ending Equity Capital</td><td>23,110</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>PV of Forecast Period</td><td>12,632</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>PV of Continuing Value</td><td>28,153</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Equity Value</td><td>63,895</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>No. of Shares</td><td>78</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Projected Price</td><td>818</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+Source: MS (E) estimates
+
+## Parade: Relative Valuation
+
+Parade stock is trading at 22x our new 2026 EPS estimate, which we consider attractive vs. the historical average of 19.6x since 2012, as we view the chipset business as a meaningful new growth driver.
+
+![](images/67dd98f1862b3b580fc21111d72b9526fa3d28c7cd034580eabf263bf9e98221.jpg)
+
+## Risk Reward – Parade Technologies Ltd (4966.TWO)
+
+Share gain in chipset business; OW
+
+## PRICE TARGET NT\$818.00
+
+Base case, residual income model. Key assumptions: cost of equity (beta 1.3, risk-free rate 2%, risk premium 6%) of 9.8%, medium-term growth rate of 11.4%, and terminal growth rate of 4.0%.
+
+Consensus Price Target Distribution
+
+Source: Refinitiv, MS
+
+![](images/cdf85949dcbc99f3f14e7e51e7e5b6de8e7b50496e8e75e1436698ad06201fe5.jpg)
+
+## RISK REWARD CHART
+
+![](images/b40a8dbd283d52026dbc6c132a3136f45c81a3af4d75fef229a16c832f1244bb.jpg)  
+Key: — Historical Stock Performance ● Current Stock Price ◆ Price Target  
+Source: Refinitiv, MS
+
+## OVERWEIGHT THESIS
+
+\- Our OW rating reflects potential share gains in the ASIC-like business and better than feared 2H26 demand on NB (especially on Apple). We believe Parade could take some share in the chipset market, due mainly to better performance on power consumption.
+
+■ The PC market is likely to face strong headwinds amid a shortage of memory chips, which would be more apparent in 2H26. Parade now has 90% revenue exposure to PCs.
+
+\- For DisplayPort, low-end panel price competition should get worse before it gets better; the company is leveraging a high-end strategy to differentiate its products.
+- For high-speed interface, Parade seeks to expand beyond the NB market to the data center and automotive markets.
+
+![](images/7b9015684ecb2bf17999bbf772a514453b1e4b6937d76cabc1595d020fa515d7.jpg)
+
+## Risk Reward Themes
+
+Secular Growth: Positive
+Technology Diffusion: Positive
+View descriptions of Risk Rewards Themes here
+
+## BULL CASE
+
+## 31x 2026e P/E
+
+## NT\$948.00
+
+We expect: 1) significant share gain in the chipset market; 2) T-Con sales to grow 20%% Y/Y in 2026; 3) high-speed interface to rise 30% in 2026; 4) overall gross margin of 50%+ in 2026-27; 5) Apple fails to make its in-house T-Con..
+
+## BASE CASE
+
+## 27x 2026e P/E
+
+## NT\$818.00
+
+We expect: 1) moderate share gain in the chipset market; 2) T-Con sales to drop 13% Y/Y in 2026; 3) high-speed interface to rise 7% in 2026; 4) overall gross margin of 42-43% in 2026-27; 5) Apple in-house T-Con event unlikely to occur in the next three years.
+
+## BEAR CASE
+
+NT\$418.00
+
+## 14x 2026e P/E
+
+We expect: 1) no share gain in the chipset market; 2) T-Con sales to drop 20% Y/Y in 2026; 3) high-speed interface to drop 10% in 2026; 4) overall gross margin of \~40% in 2026-27; 5) Apple in-house T-Con event occurs.
+
+0-10% North America
+
+40-50% Mainland China
+
+## Risk Reward – Parade Technologies Ltd (4966.TWO)
+
+## KEY EARNINGS INPUTS
+
+<table><tr><td>Drivers</td><td>Dec 2025</td><td>Dec 2026e</td><td>Dec 2027e</td><td>Dec 2028e</td></tr><tr><td>T-Con revenue (NT$, mn)</td><td>6,396</td><td>5,539</td><td>5,792</td><td>5,440</td></tr><tr><td>High speed interface revenue (NT$, mn)</td><td>7,662</td><td>8,176</td><td>9,266</td><td>10,657</td></tr><tr><td>Driver IC revenue (NT$, mn)</td><td>1,980</td><td>1,290</td><td>1,066</td><td>949</td></tr><tr><td>Touch IC revenue (NT$, mn)</td><td>546</td><td>860</td><td>817</td><td>731</td></tr></table>
+
+## INVESTMENT DRIVERS
+
+• eDP Tcon shipments and spec upgrades
+
+• Apple MacBook, iPad, and iMac shipments
+
+• HDMI jitter cleaning shipments
+
+• USB and PCI-e repeater shipments
+
+• USB-C DP/HDMI shipments
+
+## GLOBAL REVENUE EXPOSURE
+
+0-10% Europe ex UK
+
+![](images/1490d7bb9e53480757974ca79a419100b1ea7c28a83cc619844b23375122b211.jpg)  
+0-10% Japan  
+Source: MS Estimate View explanation of regional hierarchies here
+
+## RISKS TO PT/RATING
+
+## RISKS TO UPSIDE
+
+\- Faster-than-expected Apple product shipments and spec upgrades
+
+\- Faster-than-expected launch of next-gen server platform
+
+\- Easing of US tariffs
+
+## RISKS TO DOWNSIDE
+
+\- Slower-than-expected Apple product shipments and spec upgrades
+
+\- Intensifying competition in high-speed interface area for converters, switches, and redrivers/retimers
+
+\- Slower-than-expected launch of next-gen server platform
+
+## OWNERSHIP POSITIONING
+
+<table><tr><td>Inst. Owners, % Active</td><td>75.3%</td></tr></table>
+
+Source: Refinitiv, MS
+
+MS ESTIMATES VS. CONSENSUS  
+FY Dec 2026e  
+![](images/fedcd4fd08fde611f3be5ec6d1cd8f45635c42d781790afcce42cc5bc30bac2f.jpg)  
+◆ Mean ◆ MS Estimates
+Source: Refinitiv, MS
+
+## Parade: Financial Summary
+
+Exhibit 5: Parade: Financial Summary  
+Income Statement
+
+<table><tr><td>NT$mn (Years End Dec )</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td>Net sales</td><td>16,531</td><td>15,865</td><td>18,478</td><td>20,064</td></tr><tr><td>COGS</td><td>(9,496)</td><td>(9,215)</td><td>(10,597)</td><td>(11,400)</td></tr><tr><td>Gross profit</td><td>7,035</td><td>6,650</td><td>7,881</td><td>8,665</td></tr><tr><td>Operating expenses</td><td>(4,326)</td><td>(4,259)</td><td>(4,406)</td><td>(4,572)</td></tr><tr><td>Operating income</td><td>2,709</td><td>2,390</td><td>3,475</td><td>4,092</td></tr><tr><td>Non-operating income</td><td>273</td><td>216</td><td>230</td><td>230</td></tr><tr><td>Pre-tax income</td><td>2,982</td><td>2,606</td><td>3,705</td><td>4,322</td></tr><tr><td>Income tax</td><td>256</td><td>235</td><td>333</td><td>389</td></tr><tr><td>Reported net Income</td><td>2,727</td><td>2,371</td><td>3,371</td><td>3,933</td></tr><tr><td>Adj.wtd.avg.shrs(m)</td><td>80</td><td>78</td><td>78</td><td>78</td></tr><tr><td>Reported EPS (NT$)</td><td>34.67</td><td>30.34</td><td>43.14</td><td>50.33</td></tr></table>
+
+Cash Flow Statement
+
+<table><tr><td>NT$mn (Years End Dec )</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td>Cashflow from Operations</td><td>3,419</td><td>2,843</td><td>3,062</td><td>3,890</td></tr><tr><td>Net profits</td><td>2,727</td><td>2,371</td><td>3,371</td><td>3,933</td></tr><tr><td>Depreciation</td><td>315</td><td>322</td><td>328</td><td>335</td></tr><tr><td>Working Capital Change</td><td>99</td><td>150</td><td>(637)</td><td>(377)</td></tr><tr><td>Other adjustments</td><td>279</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Cashflow from Investing</td><td>(308)</td><td>(332)</td><td>(338)</td><td>(345)</td></tr><tr><td>Capex</td><td>(139)</td><td>(332)</td><td>(338)</td><td>(345)</td></tr><tr><td>Change of LT Investment</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Change of ST Investment</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Other adjustments</td><td>(169)</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Cashflow from financing</td><td>(2,468)</td><td>(1,340)</td><td>(1,177)</td><td>(1,674)</td></tr><tr><td>Increase in L/T debt</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Increase in S/T debt</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Cash Dividend Paid</td><td>(1,295)</td><td>(1,340)</td><td>(1,177)</td><td>(1,674)</td></tr><tr><td>Dir&amp; Emp Bonus Paid</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Issuance of stock</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Other adjustments</td><td>(1,174)</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Exchange rate adjustment</td><td>(275)</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Net change in cash</td><td>368</td><td>1,171</td><td>1,546</td><td>1,872</td></tr></table>
+
+Balance Sheet
+
+<table><tr><td>NT$mn (Years End Dec )</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td>Cash</td><td>10,900</td><td>12,071</td><td>13,617</td><td>15,489</td></tr><tr><td>Mkt Securities</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>ARINR</td><td>1,858</td><td>1,642</td><td>1,913</td><td>2,077</td></tr><tr><td>Inventory</td><td>3,622</td><td>3,690</td><td>4,243</td><td>4,565</td></tr><tr><td>Other</td><td>589</td><td>589</td><td>589</td><td>589</td></tr><tr><td>Current Assets</td><td>16,969</td><td>17,992</td><td>20,363</td><td>22,720</td></tr><tr><td>Long-term investments</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Fixed assets</td><td>298</td><td>308</td><td>318</td><td>328</td></tr><tr><td>Deferred assets</td><td>326</td><td>326</td><td>326</td><td>326</td></tr><tr><td>Other assets</td><td>8,363</td><td>8,363</td><td>8,363</td><td>8,363</td></tr><tr><td>Total Assets</td><td>25,956</td><td>26,989</td><td>29,370</td><td>31,737</td></tr><tr><td>S/T borrowings</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>AP/NP</td><td>1,240</td><td>1,243</td><td>1,429</td><td>1,537</td></tr><tr><td>Other ST liabilities</td><td>2,381</td><td>2,381</td><td>2,381</td><td>2,381</td></tr><tr><td>LT debt</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Other LT liabilities</td><td>255</td><td>255</td><td>255</td><td>255</td></tr><tr><td>Common shares</td><td>801</td><td>801</td><td>801</td><td>801</td></tr><tr><td>Total Liabilities</td><td>3,877</td><td>3,879</td><td>4,065</td><td>4,174</td></tr><tr><td>Additional capital</td><td>4,421</td><td>4,421</td><td>4,421</td><td>4,421</td></tr><tr><td>Retained earning</td><td>16,846</td><td>17,877</td><td>20,071</td><td>22,330</td></tr><tr><td>Other shareholders&#x27; equity</td><td>12</td><td>12</td><td>12</td><td>12</td></tr><tr><td>Total Equity</td><td>22,080</td><td>23,110</td><td>25,304</td><td>27,564</td></tr><tr><td>Total Liab. &amp; Shrhldr&#x27;s Equity</td><td>25,956</td><td>26,989</td><td>29,370</td><td>31,737</td></tr></table>
+
+E = MS Estimates
+
+Source: MS, Company Data
+
+Financial Ratios
+
+<table><tr><td></td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td colspan="5">Growth(%)</td></tr><tr><td>Turnover</td><td>1.8</td><td>-4.0</td><td>16.5</td><td>8.6</td></tr><tr><td>Operating profits</td><td>10.5</td><td>-11.8</td><td>45.4</td><td>17.8</td></tr><tr><td>EPS</td><td>6.5</td><td>-12.5</td><td>42.2</td><td>16.7</td></tr><tr><td colspan="5">Margins (%)</td></tr><tr><td>Gross Margin</td><td>42.6</td><td>41.9</td><td>42.7</td><td>43.2</td></tr><tr><td>Operating Margin</td><td>16.4</td><td>15.1</td><td>18.8</td><td>20.4</td></tr><tr><td>Pretax Margin</td><td>18.0</td><td>16.4</td><td>20.0</td><td>21.5</td></tr><tr><td>Net Margin</td><td>16.5</td><td>14.9</td><td>18.2</td><td>19.6</td></tr><tr><td colspan="5">Return (%)</td></tr><tr><td>ROAE</td><td>12.3</td><td>10.5</td><td>13.9</td><td>14.9</td></tr><tr><td>ROAA</td><td>10.5</td><td>9.0</td><td>12.0</td><td>12.9</td></tr><tr><td colspan="5">Gearing (%)</td></tr><tr><td>Net Debt/Equity</td><td>(49.4)</td><td>(52.2)</td><td>(53.8)</td><td>(56.2)</td></tr><tr><td>Liabilities/Equity</td><td>17.6</td><td>16.8</td><td>16.1</td><td>15.1</td></tr><tr><td colspan="5">Ratios (X)</td></tr><tr><td>Current ratio</td><td>4.7</td><td>5.0</td><td>5.3</td><td>5.8</td></tr><tr><td>Quick ratio</td><td>3.5</td><td>3.8</td><td>4.1</td><td>4.5</td></tr><tr><td colspan="5">Others</td></tr><tr><td>AR/NR Turnover (days)</td><td>38</td><td>38</td><td>38</td><td>38</td></tr><tr><td>Inventory Turnover (days)</td><td>146</td><td>146</td><td>146</td><td>146</td></tr><tr><td>AP Turnover (days)</td><td>49</td><td>49</td><td>49</td><td>49</td></tr><tr><td>Cash Conversion (days)</td><td>135</td><td>135</td><td>135</td><td>135</td></tr></table>
+
+# Elan Micro: Earnings estimate revisions
+
+We increase our EPS estimates by 10%/18%/19% for 2026/27/28: We believe Elan will be benefiting from the non PC business (mainly the drone market), with potential mid to high single digit revenue contribution in 2027. We also see better GM from better product mix, and more sustained supply chain shortage.
+
+Exhibit 6: Elan: Estimate revisions
+
+<table><tr><td>(NT$ mn)</td><td>New &#x27;26e</td><td>Old &#x27;26e</td><td>Diff.</td><td>New &#x27;27e</td><td>Old &#x27;27e</td><td>Diff.</td><td>New &#x27;28e</td><td>Old &#x27;28e</td><td>Diff.</td></tr><tr><td>Net sales</td><td>13,886</td><td>13,615</td><td>2%</td><td>15,901</td><td>15,055</td><td>6%</td><td>16,713</td><td>15,450</td><td>8%</td></tr><tr><td>COGS</td><td>7,051</td><td>7,150</td><td></td><td>7,999</td><td>7,937</td><td></td><td>8,696</td><td>8,265</td><td></td></tr><tr><td>Gross profit</td><td>6,836</td><td>6,466</td><td>6%</td><td>7,902</td><td>7,118</td><td>11%</td><td>8,017</td><td>7,185</td><td>12%</td></tr><tr><td>Operating expenses</td><td>3,300</td><td>3,282</td><td></td><td>3,572</td><td>3,518</td><td></td><td>3,622</td><td>3,562</td><td></td></tr><tr><td>Operating profit</td><td>3,535</td><td>3,183</td><td>11%</td><td>4,330</td><td>3,600</td><td>20%</td><td>4,395</td><td>3,623</td><td>21%</td></tr><tr><td>Non-op. income (exp.)</td><td>254</td><td>254</td><td></td><td>187</td><td>187</td><td></td><td>176</td><td>176</td><td></td></tr><tr><td>Pretax income</td><td>3,789</td><td>3,437</td><td>10%</td><td>4,517</td><td>3,787</td><td>19%</td><td>4,571</td><td>3,799</td><td>20%</td></tr><tr><td>Taxes</td><td>901</td><td>813</td><td></td><td>1,129</td><td>947</td><td></td><td>1,143</td><td>950</td><td></td></tr><tr><td>Net income</td><td>3,004</td><td>2,740</td><td>10%</td><td>3,528</td><td>2,980</td><td>18%</td><td>3,568</td><td>2,989</td><td>19%</td></tr><tr><td>Reported EPS</td><td>10.49</td><td>9.57</td><td>10%</td><td>12.32</td><td>10.41</td><td>18%</td><td>12.46</td><td>10.44</td><td>19%</td></tr><tr><td colspan="10">Margins</td></tr><tr><td>Gross margin</td><td>49.2%</td><td>47.5%</td><td>1.7%</td><td>49.7%</td><td>47.3%</td><td>2.4%</td><td>48.0%</td><td>46.5%</td><td>1.5%</td></tr><tr><td>Operating margin</td><td>25.5%</td><td>23.4%</td><td>2.1%</td><td>27.2%</td><td>23.9%</td><td>3.3%</td><td>26.3%</td><td>23.4%</td><td>2.8%</td></tr><tr><td>Pretax margin</td><td>27.3%</td><td>25.2%</td><td>2.0%</td><td>28.4%</td><td>25.2%</td><td>3.3%</td><td>27.3%</td><td>24.6%</td><td>2.8%</td></tr><tr><td>Net margin</td><td>21.6%</td><td>20.1%</td><td>1.5%</td><td>22.2%</td><td>19.8%</td><td>2.4%</td><td>21.3%</td><td>19.3%</td><td>2.0%</td></tr><tr><td>Opex %</td><td>23.8%</td><td>24.1%</td><td>-0.3%</td><td>22.5%</td><td>23.4%</td><td>-0.9%</td><td>21.7%</td><td>23.1%</td><td>-1.4%</td></tr></table>
+
+Source: Company data, MS (e) estimates.
+
+Exhibit 7: Elan: Quarterly financial statement
+
+<table><tr><td>(NT$ mn)</td><td>1Q25</td><td>2Q25</td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td>2Q26e</td><td>3Q26e</td><td>4Q26e</td><td>1Q27e</td><td>2Q27e</td><td>3Q27e</td><td>4Q27e</td><td>1Q28e</td><td>2Q28e</td><td>3Q28e</td><td>4Q28e</td><td>2025</td><td>2026e</td><td>2027e</td><td>2028e</td></tr><tr><td>Total Revenues</td><td>3,119</td><td>3,032</td><td>3,316</td><td>2,860</td><td>3,225</td><td>3,349</td><td>3,606</td><td>3,707</td><td>3,593</td><td>3,900</td><td>4,234</td><td>4,174</td><td>3,813</td><td>4,085</td><td>4,417</td><td>4,398</td><td>12,326</td><td>13,886</td><td>15,901</td><td>16,713</td></tr><tr><td>Sequential Change</td><td>2.7%</td><td>-2.8%</td><td>9.4%</td><td>-13.8%</td><td>12.6%</td><td>3.8%</td><td>7.7%</td><td>2.8%</td><td>-3.1%</td><td>8.5%</td><td>8.6%</td><td>-1.4%</td><td>-8.6%</td><td>7.1%</td><td>8.1%</td><td>-0.4%</td><td></td><td></td><td></td><td></td></tr><tr><td>Change vs Year Ago</td><td>0.4%</td><td>-3.8%</td><td>-2.5%</td><td>-5.8%</td><td>3.4%</td><td>10.5%</td><td>8.7%</td><td>29.6%</td><td>11.4%</td><td>16.5%</td><td>17.4%</td><td>12.6%</td><td>6.1%</td><td>4.7%</td><td>4.3%</td><td>5.4%</td><td>-2.9%</td><td>12.7%</td><td>14.5%</td><td>5.1%</td></tr><tr><td>Cost of Sales</td><td>1,555</td><td>1,575</td><td>1,750</td><td>1,450</td><td>1,688</td><td>1,686</td><td>1,810</td><td>1,866</td><td>1,809</td><td>1,963</td><td>2,130</td><td>2,097</td><td>1,914</td><td>2,047</td><td>2,210</td><td>2,195</td><td>6,330</td><td>7,051</td><td>7,999</td><td>8,696</td></tr><tr><td>Percent of Revenues</td><td>50%</td><td>52%</td><td>53%</td><td>51%</td><td>52%</td><td>50%</td><td>50%</td><td>50%</td><td>50%</td><td>50%</td><td>50%</td><td>50%</td><td>50%</td><td>50%</td><td>50%</td><td>50%</td><td>51%</td><td>51%</td><td>50%</td><td>52%</td></tr><tr><td>Gross Profit</td><td>1,564</td><td>1,457</td><td>1,566</td><td>1,410</td><td>1,537</td><td>1,663</td><td>1,795</td><td>1,841</td><td>1,784</td><td>1,937</td><td>2,104</td><td>2,077</td><td>1,899</td><td>2,037</td><td>2,207</td><td>2,203</td><td>5,996</td><td>6,836</td><td>7,902</td><td>8,017</td></tr><tr><td>Percent of Revenues</td><td>50.1%</td><td>48.0%</td><td>47.2%</td><td>49.3%</td><td>47.6%</td><td>49.7%</td><td>49.8%</td><td>49.7%</td><td>49.7%</td><td>49.7%</td><td>49.7%</td><td>49.8%</td><td>49.8%</td><td>49.9%</td><td>50.0%</td><td>50.1%</td><td>48.6%</td><td>49.2%</td><td>49.7%</td><td>48.0%</td></tr><tr><td>Incremental Margin</td><td>67%</td><td>NM</td><td>38%</td><td>NM</td><td>35%</td><td>102%</td><td>51%</td><td>45%</td><td>NM</td><td>50%</td><td>50%</td><td>NM</td><td>NM</td><td>51%</td><td>51%</td><td>NM</td><td>NM</td><td>54%</td><td>53%</td><td>14%</td></tr><tr><td>Total Opex</td><td>778</td><td>712</td><td>774</td><td>748</td><td>758</td><td>803</td><td>869</td><td>871</td><td>806</td><td>871</td><td>952</td><td>943</td><td>856</td><td>919</td><td>1,000</td><td>993</td><td>3,014</td><td>3,300</td><td>3,572</td><td>3,622</td></tr><tr><td>Percent of Revenues</td><td>25.0%</td><td>23.5%</td><td>23.3%</td><td>26.2%</td><td>23.5%</td><td>24.0%</td><td>24.1%</td><td>23.5%</td><td>22.4%</td><td>22.3%</td><td>22.5%</td><td>22.6%</td><td>22.4%</td><td>22.5%</td><td>22.6%</td><td>22.6%</td><td>24.4%</td><td>23.8%</td><td>22.5%</td><td>21.7%</td></tr><tr><td>Operating Income</td><td>785</td><td>744</td><td>792</td><td>661</td><td>779</td><td>861</td><td>926</td><td>970</td><td>979</td><td>1,066</td><td>1,151</td><td>1,134</td><td>1,043</td><td>1,119</td><td>1,208</td><td>1,210</td><td>2,982</td><td>3,535</td><td>4,330</td><td>4,395</td></tr><tr><td>Percent of Revenues</td><td>25.2%</td><td>24.5%</td><td>23.9%</td><td>23.1%</td><td>24.1%</td><td>25.7%</td><td>25.7%</td><td>26.2%</td><td>27.2%</td><td>27.3%</td><td>27.2%</td><td>27.2%</td><td>27.4%</td><td>27.4%</td><td>27.3%</td><td>27.5%</td><td>24.2%</td><td>25.5%</td><td>27.2%</td><td>26.3%</td></tr><tr><td>Total Non-operating Income (Loss)</td><td>(66)</td><td>(324)</td><td>151</td><td>106</td><td>61</td><td>64</td><td>64</td><td>64</td><td>47</td><td>47</td><td>47</td><td>47</td><td>36</td><td>36</td><td>36</td><td>36</td><td>(132)</td><td>254</td><td>187</td><td>176</td></tr><tr><td>Profit Before Taxes</td><td>719</td><td>420</td><td>943</td><td>768</td><td>840</td><td>925</td><td>990</td><td>1,034</td><td>1,025</td><td>1,113</td><td>1,198</td><td>1,181</td><td>1,079</td><td>1,154</td><td>1,243</td><td>1,246</td><td>2,850</td><td>3,789</td><td>4,517</td><td>4,571</td></tr><tr><td>Percent of Revenues</td><td>23%</td><td>14%</td><td>28%</td><td>27%</td><td>26%</td><td>28%</td><td>27%</td><td>28%</td><td>29%</td><td>29%</td><td>28%</td><td>28%</td><td>28%</td><td>28%</td><td>28%</td><td>28%</td><td>23%</td><td>27%</td><td>28%</td><td>27%</td></tr><tr><td>Taxes</td><td>204</td><td>110</td><td>173</td><td>55</td><td>164</td><td>231</td><td>248</td><td>259</td><td>256</td><td>278</td><td>300</td><td>295</td><td>270</td><td>289</td><td>311</td><td>312</td><td>543</td><td>901</td><td>1,129</td><td>1,143</td></tr><tr><td>Tax Rate</td><td>28.4%</td><td>26.2%</td><td>18.3%</td><td>7.2%</td><td>19.5%</td><td>25.0%</td><td>25.0%</td><td>25.0%</td><td>25.0%</td><td>25.0%</td><td>25.0%</td><td>25.0%</td><td>25.0%</td><td>25.0%</td><td>25.0%</td><td>25.0%</td><td>19.0%</td><td>23.8%</td><td>25.0%</td><td>25.0%</td></tr><tr><td>Reported Income (TW GAAP)</td><td>548</td><td>354</td><td>804</td><td>736</td><td>705</td><td>723</td><td>772</td><td>805</td><td>804</td><td>869</td><td>934</td><td>921</td><td>844</td><td>901</td><td>968</td><td>970</td><td>2,442</td><td>3,004</td><td>3,528</td><td>3,568</td></tr><tr><td>Percent of Revenues</td><td>17.6%</td><td>11.7%</td><td>24.3%</td><td>25.7%</td><td>21.9%</td><td>21.6%</td><td>21.4%</td><td>21.7%</td><td>22.4%</td><td>22.3%</td><td>22.0%</td><td>22.1%</td><td>22.1%</td><td>22.1%</td><td>21.9%</td><td>22.0%</td><td>19.8%</td><td>21.6%</td><td>22.2%</td><td>21.3%</td></tr><tr><td>Change vs Year Ago</td><td>-20%</td><td>-52%</td><td>13%</td><td>22%</td><td>29%</td><td>104%</td><td>-4%</td><td>9%</td><td>14%</td><td>20%</td><td>21%</td><td>14%</td><td>5%</td><td>4%</td><td>4%</td><td>5%</td><td>-11%</td><td>23%</td><td>17%</td><td>1%</td></tr><tr><td>Reported EPS (NT$, TW GAAP)</td><td>1.92</td><td>1.24</td><td>2.81</td><td>2.57</td><td>2.46</td><td>2.52</td><td>2.70</td><td>2.81</td><td>2.81</td><td>3.04</td><td>3.26</td><td>3.22</td><td>2.95</td><td>3.15</td><td>3.38</td><td>3.39</td><td>8.53</td><td>10.49</td><td>12.32</td><td>12.46</td></tr><tr><td>Change vs Year Ago</td><td>-20%</td><td>-52%</td><td>13%</td><td>22%</td><td>29%</td><td>104%</td><td>-4%</td><td>9%</td><td>14%</td><td>20%</td><td>21%</td><td>14%</td><td>5%</td><td>4%</td><td>4%</td><td>5%</td><td>-11%</td><td>23%</td><td>17%</td><td>1%</td></tr></table>
+
+Source: Company data, MS (e) estimates
+
+## Valuation Methodology
+
+We raise our price target to NT\$250: This factors in our earnings estimates revisions for 2026-27. Our price target is our base-case scenario value, which we continue to derive from our residual income model. We raise our intermediate growth rate estimate from 8.0% to 10.0% due to a better outlook for the company's drone business. We continue to assume a cost of equity of 9.6%, a payout ratio of 80%, and a terminal growth rate of 4.5%.
+
+We also raise our bull case scenario value to NT\$366 from NT\$263 and our bear case to NT\$131 from NT\$95.
+
+Exhibit 8: Elan: Residual income
+
+<table><tr><td>(NT$ mn)</td><td>2026e</td><td>2027e</td><td>2028e</td><td>2029e</td><td>2030e</td><td>2031e</td><td>2032e</td><td>2033e</td><td>2034e</td><td>2035e</td><td>2036e</td><td>2037e</td></tr><tr><td>Total Equity</td><td>11,822</td><td>13,335</td><td>14,537</td><td>15,636</td><td>16,845</td><td>18,175</td><td>19,637</td><td>21,246</td><td>23,016</td><td>24,963</td><td>27,104</td><td>29,460</td></tr><tr><td>Net Profit</td><td>3,004</td><td>3,528</td><td>3,568</td><td>3,925</td><td>4,317</td><td>4,749</td><td>5,224</td><td>5,746</td><td>6,321</td><td>6,953</td><td>7,648</td><td>8,413</td></tr><tr><td>ROAE</td><td>27.0%</td><td>28.0%</td><td>25.6%</td><td>26.0%</td><td>26.6%</td><td>27.1%</td><td>27.6%</td><td>28.1%</td><td>28.6%</td><td>29.0%</td><td>29.4%</td><td>29.7%</td></tr><tr><td>Residual Income</td><td>1,816</td><td>2,181</td><td>2,134</td><td>2,386</td><td>2,655</td><td>2,951</td><td>3,277</td><td>3,635</td><td>4,028</td><td>4,461</td><td>4,937</td><td>5,461</td></tr><tr><td>Spread</td><td>17.4%</td><td>18.4%</td><td>16.0%</td><td>16.4%</td><td>17.0%</td><td>17.5%</td><td>18.0%</td><td>18.5%</td><td>19.0%</td><td>19.4%</td><td>19.8%</td><td>20.1%</td></tr><tr><td>Ending Equity Capital</td><td>11,822</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>PV of Forecast Period</td><td>18,953</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>PV of Continuing Value</td><td>40,819</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Equity Value</td><td>71,594</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>No. of Shares</td><td>286</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Projected Price</td><td>250</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+Source: Company data, MS (e) estimates
+
+Exhibit 9: Elan Microelectronics: P/E band  
+![](images/c88b889feff60e0716ac14ec20fd406a25c0c09ef4c0be8ea000c83bc79cfa1b.jpg)  
+Source: Company data, TEJ, MS estimates
+
+## Risk Reward – Elan Microelectronics Corp (2458.TW)
+
+Content share gainer, plus non-PC business starting to bear fruit; OW
+
+## PRICE TARGET NT\$250.00
+
+Residual income. We assume a cost of equity of 9.6%, an intermediate growth rate of 10.0%, payout ratio of 80% and terminal growth rate of 4.5%.
+
+Consensus Price Target Distribution
+
+Source: Refinitiv, MS
+
+![](images/bf51751db94d0c85e62bf365d4ebcaaf3b3ae631a496d85324de1df8072098ac.jpg)
+
+## RISK REWARD CHART
+
+![](images/51897ad9046f07fb8318d599d474841979a817df9e979f30f24a70b7e4a44627.jpg)  
+Key: — Historical Stock Performance ● Current Stock Price ◆ Price Target  
+Source: Refinitiv, MS
+
+## OVERWEIGHT THESIS
+
+\- Elan Microelectronics is a global leader in notebook-related ICs, capturing $50\%+$ share of touchpad, point-sticks and other peripheral ICs.
+- We expect haptic touchpad penetration to increase as the Windows 11 operating system allows users to customize the feel of their touchpads.
+- Non-PC business such as drones, ADAS and AI glasses has started shipments and growth is expected to be robust over the next three years.
+
+![](images/67d506c0e2378f5f0942c950f3416a55c9d756a5520de78bd0ad9142c5fc48a1.jpg)
+
+## Risk Reward Themes
+
+<table><tr><td>New Data Era:</td><td>Positive</td></tr><tr><td>Self-help:</td><td>Positive</td></tr><tr><td colspan="2">View descriptions of Risk Rewards Themes here</td></tr></table>
+
+## BULL CASE
+
+NT\$366.00
+
+## 30x 2027e EPS
+
+We expect AI PC to bring more content upgrades: 1) Elan Micro revenue CAGR of 15% (2025-28e); 2) non-PC contribution rises to 25% in 2027; 3) gross margin goes to 52% on average in 2026-28 vs. 49% in 2025.
+
+## BASE CASE
+
+## 20x 2027e EPS
+
+We expect the haptics touchpad and non-PC business to add growth: 1) Elan Micro revenue CAGR of 11% (2025-28); 2) non-PC contribution rises to 15% in 2027; 3) gross margin to be around 48-49% in 2026-28e.
+
+## NT\$250.00 BEAR CASE
+
+## NT\$131.00
+
+## 11x 2027e EPS
+
+We expect the notebook replacement cycle to stay at around four years over the next three years: 1) Elan Micro revenue CAGR (2025-28e) to be zero; 2) non-PC contribution stays at 10% in 2027; 3) gross margin falls to 40% on average in 2026-28e vs. 49% in 2025.
+
+![](images/c821e8241890885a67ab50d474e39418bb1892cf2ede3d4f6209c5244a99506e.jpg)  
+◆ Mean ◆ MS Estimates  
+Source: Refinitiv, MS
+
+## Risk Reward – Elan Microelectronics Corp (2458.TW)
+
+## KEY EARNINGS INPUTS
+
+<table><tr><td>Drivers</td><td>Dec 2025</td><td>Dec 2026e</td><td>Dec 2027e</td><td>Dec 2028e</td></tr><tr><td>Touchpad shipment growth (%)</td><td>(2)</td><td>(8)</td><td>10</td><td>(4)</td></tr><tr><td>Touchpad ASP growth (%)</td><td>1</td><td>8</td><td>8</td><td>4</td></tr><tr><td>Gross margin (%)</td><td>48.6</td><td>49.2</td><td>49.7</td><td>49.9</td></tr></table>
+
+## INVESTMENT DRIVERS
+
+• Global notebook shipment growth
+
+\- Touchpad, controller IC and fingerprint market share in notebooks
+
+\- Notebook peripheral IC content growth
+
+## GLOBAL REVENUE EXPOSURE
+
+![](images/aafdfa85f7207c1a366a20413413775f488a0dcc4c60ded341375d78517d390e.jpg)  
+0-10% Europe ex UK  
+0-10% North America
+
+10-20% Mainland China
+
+\- 70-80% APAC, ex Japan, Mainland China and India
+
+Source: MS Estimate View explanation of regional hierarchies here
+
+## RISKS TO PT/RATING
+
+## RISKS TO UPSIDE
+
+\- Notebook shipments stronger than expected.
+
+\- AI PCs help content growth in notebook peripheral ICs.
+
+\- e-book controller IC ramps up faster then expected.
+
+## RISKS TO DOWNSIDE
+
+\- Notebook replacement cycle extents, shipments lower than expected.
+
+\- No spec upgrade in notebook peripheral ICs in AI PC era.
+
+\- No progress in e-book controller IC.
+
+## OWNERSHIP POSITIONING
+
+<table><tr><td>Inst. Owners, % Active</td><td>71.6%</td></tr></table>
+
+FY Dec 2026e
+
+Source: Refinitiv, MS
+
+## MS ESTIMATES VS. CONSENSUS
+
+## Elan: Financial Summary
+
+Exhibit 10: Elan Micro: Financial Summary  
+Income Statement
+
+<table><tr><td>NT$mn (Years End Dec )</td><td>2025</td><td>2026e</td><td>2027e</td><td>2028e</td></tr><tr><td>Net sales</td><td>12,326</td><td>13,886</td><td>15,901</td><td>16,713</td></tr><tr><td>COGS</td><td>(6,330)</td><td>(7,051)</td><td>(7,939)</td><td>(8,696)</td></tr><tr><td>Gross profit</td><td>5,996</td><td>6,836</td><td>7,902</td><td>8,017</td></tr><tr><td>Operating expenses</td><td>(3,014)</td><td>(3,300)</td><td>(3,572)</td><td>(3,622)</td></tr><tr><td>Operating income</td><td>2,982</td><td>3,535</td><td>4,330</td><td>4,395</td></tr><tr><td>Non-operating income</td><td>(132)</td><td>254</td><td>187</td><td>176</td></tr><tr><td>Pre-tax income</td><td>2,850</td><td>3,789</td><td>4,517</td><td>4,571</td></tr><tr><td>Income tax</td><td>543</td><td>901</td><td>1,129</td><td>1,143</td></tr><tr><td>Net Income, Cont Ops</td><td>2,307</td><td>2,888</td><td>3,388</td><td>3,428</td></tr><tr><td>Minority Interest</td><td>135</td><td>117</td><td>140</td><td>140</td></tr><tr><td>Reported net Income</td><td>2,442</td><td>3,004</td><td>3,528</td><td>3,568</td></tr><tr><td>Adj. wtd. avg. shrs (million)</td><td>286</td><td>286</td><td>286</td><td>286</td></tr><tr><td>Reported EPS (NT$)</td><td>8.53</td><td>10.49</td><td>12.32</td><td>12.46</td></tr><tr><td>Model are Diluted EPS (NT$)</td><td>8.46</td><td>10.46</td><td>12.32</td><td>12.46</td></tr></table>
+
+Balance Sheet
+
+Cash Flow Statement
+
+<table><tr><td>NT$mn (Years End Dec )</td><td>2025</td><td>2026e</td><td>2027e</td><td>2028e</td></tr><tr><td>Cashflow from Operations</td><td>2,650</td><td>2,866</td><td>3,383</td><td>3,574</td></tr><tr><td>Net profits</td><td>2,442</td><td>3,004</td><td>3,528</td><td>3,568</td></tr><tr><td>Depreciation</td><td>147</td><td>151</td><td>156</td><td>161</td></tr><tr><td>Working Capital Change</td><td>102</td><td>(290)</td><td>(301)</td><td>(154)</td></tr><tr><td>Other adjustments</td><td>(41)</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Cashflow from Investing</td><td>(2,253)</td><td>(591)</td><td>(640)</td><td>(693)</td></tr><tr><td>Capex</td><td>(1,709)</td><td>(591)</td><td>(640)</td><td>(693)</td></tr><tr><td>Change of LT Investment</td><td>(35)</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Change of ST Investment</td><td>(27)</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Other adjustments</td><td>(461)</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Cashflow from financing</td><td>(1,269)</td><td>(1,638)</td><td>(2,015)</td><td>(2,366)</td></tr><tr><td>Increase in L/T debt</td><td>500</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Increase in S/T debt</td><td>70</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Cash Dividend Paid</td><td>(1,835)</td><td>(1,638)</td><td>(2,015)</td><td>(2,366)</td></tr><tr><td>Dir&amp; Emp Bonus Paid</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Issuance of stock</td><td>16</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Other adjustments</td><td>(20)</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Exchange rate adjustment</td><td>(1)</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Net change in cash</td><td>-873</td><td>637</td><td>728</td><td>516</td></tr></table>
+
+<table><tr><td>NT$mn (Years End Dec )</td><td>2025</td><td>2026e</td><td>2027e</td><td>2028e</td></tr><tr><td>Cash</td><td>2,400</td><td>3,037</td><td>3,765</td><td>4,281</td></tr><tr><td>Mkt Securities</td><td>380</td><td>380</td><td>380</td><td>380</td></tr><tr><td>AR/NR</td><td>1,236</td><td>1,388</td><td>1,530</td><td>1,671</td></tr><tr><td>Inventory</td><td>1,583</td><td>1,854</td><td>2,103</td><td>2,287</td></tr><tr><td>Other</td><td>2,411</td><td>2,411</td><td>2,411</td><td>2,411</td></tr><tr><td>Current Assets</td><td>8,010</td><td>9,070</td><td>10,249</td><td>11,030</td></tr><tr><td>Long-term investments</td><td>1,901</td><td>1,901</td><td>1,901</td><td>1,901</td></tr><tr><td>Fixed assets</td><td>4,398</td><td>4,837</td><td>5,321</td><td>5,853</td></tr><tr><td>Deferred assets</td><td>53</td><td>53</td><td>53</td><td>53</td></tr><tr><td>Other assets</td><td>1,210</td><td>1,210</td><td>1,210</td><td>1,210</td></tr><tr><td>Total Assets</td><td>15,572</td><td>17,072</td><td>18,735</td><td>20,047</td></tr><tr><td>S/T borrowings</td><td>200</td><td>200</td><td>200</td><td>200</td></tr><tr><td>AP/NP</td><td>982</td><td>1,115</td><td>1,265</td><td>1,376</td></tr><tr><td>Other ST liabilities</td><td>1,976</td><td>1,976</td><td>1,976</td><td>1,976</td></tr><tr><td>LT debt</td><td>963</td><td>963</td><td>963</td><td>963</td></tr><tr><td>Other LT liabilities</td><td>990</td><td>990</td><td>990</td><td>990</td></tr><tr><td>Common shares</td><td>3,039</td><td>3,039</td><td>3,039</td><td>3,039</td></tr><tr><td>Total Liabilities</td><td>5,116</td><td>5,250</td><td>5,400</td><td>5,510</td></tr><tr><td>Additional capital</td><td>3,467</td><td>3,467</td><td>3,467</td><td>3,467</td></tr><tr><td>Retained earning</td><td>3,877</td><td>5,244</td><td>6,757</td><td>7,959</td></tr><tr><td>Other shareholders&#x27; equity</td><td>72</td><td>72</td><td>72</td><td>72</td></tr><tr><td>Total Equity</td><td>10,456</td><td>11,822</td><td>13,335</td><td>14,537</td></tr><tr><td>Total Liab. &amp; Shrhldr&#x27;s Equity</td><td>15,572</td><td>17,072</td><td>18,735</td><td>20,047</td></tr></table>
+
+c = MS Estimates
+
+Source: MS, Company Data
+
+Financial Ratios
+
+<table><tr><td></td><td>2025</td><td>2026e</td><td>2027e</td><td>2028e</td></tr><tr><td colspan="5">Growth(%)</td></tr><tr><td>Turnover</td><td>-2.9</td><td>12.7</td><td>14.5</td><td>5.1</td></tr><tr><td>Operating profits</td><td>-2.7</td><td>18.5</td><td>22.5</td><td>1.5</td></tr><tr><td>Pretax profits</td><td>-12.9</td><td>32.9</td><td>19.2</td><td>1.2</td></tr><tr><td>Net profits</td><td>-10.7</td><td>23.0</td><td>17.4</td><td>1.1</td></tr><tr><td>EPS</td><td>-10.9</td><td>23.7</td><td>17.8</td><td>1.1</td></tr><tr><td colspan="5">Margins (%)</td></tr><tr><td>Gross Margin</td><td>48.6</td><td>49.2</td><td>49.7</td><td>48.0</td></tr><tr><td>Operating Margin</td><td>24.2</td><td>25.5</td><td>27.2</td><td>26.3</td></tr><tr><td>Pretax Margin</td><td>23.1</td><td>27.3</td><td>28.4</td><td>27.3</td></tr><tr><td>Net Profit</td><td>19.8</td><td>21.6</td><td>22.2</td><td>21.3</td></tr><tr><td colspan="5">Return (%)</td></tr><tr><td>ROAE</td><td>23.9</td><td>27.0</td><td>28.0</td><td>25.6</td></tr><tr><td>ROAA</td><td>16.0</td><td>18.4</td><td>19.7</td><td>18.4</td></tr><tr><td colspan="5">Gearing (%)</td></tr><tr><td>Net Debt/Equity</td><td>(21.0)</td><td>(24.0)</td><td>(26.7)</td><td>(28.1)</td></tr><tr><td>Liabilities/Equity</td><td>48.9</td><td>44.4</td><td>40.5</td><td>37.9</td></tr><tr><td colspan="5">Ratios (X)</td></tr><tr><td>Current ratio</td><td>2.5</td><td>2.8</td><td>3.0</td><td>3.1</td></tr><tr><td>Quick ratio</td><td>1.2</td><td>1.3</td><td>1.6</td><td>1.7</td></tr><tr><td colspan="5">Others</td></tr><tr><td>ARINR Turnover (days)</td><td>36</td><td>36</td><td>36</td><td>36</td></tr><tr><td>Inventory Turnover (days)</td><td>96</td><td>96</td><td>96</td><td>96</td></tr><tr><td>AP Turnover (days)</td><td>58</td><td>58</td><td>58</td><td>58</td></tr><tr><td>Cash Conversion (days)</td><td>75</td><td>75</td><td>75</td><td>75</td></tr></table>
+
+## Realtek: Earnings Estimate Revisions
+
+We adjust 2026/27/28 EPS by +21%/+31%/+26%, respectively: We revise up our earnings/PT thanks to the sustained 3Q outlooks (both revenue and GM). For 3Q, we believe the PC semis customers could maintain a flattish Q/Q procurement target, with key components (e.g. CPU) showing further sequential growth. We think the major driver could be the FOMP (fear of missing procurement), which is driven by the overall mature foundry and OSAT tightness (limited supply and cost hikes). We also think some customers may consider the low inventory risks if there's pent-up demand into 2027.
+
+Exhibit 11: Realtek: Estimate revisions
+
+<table><tr><td>(NT$ mn)</td><td>New &#x27;26e</td><td>Old &#x27;26e</td><td>Diff.</td><td>New &#x27;27e</td><td>Old &#x27;27e</td><td>Diff.</td><td>New &#x27;28e</td><td>Old &#x27;28e</td><td>Diff.</td></tr><tr><td>Net sales</td><td>156,709</td><td>146,001</td><td>7%</td><td>160,658</td><td>148,697</td><td>8%</td><td>162,724</td><td>154,506</td><td>5%</td></tr><tr><td>COGS</td><td>79,554</td><td>74,330</td><td></td><td>82,304</td><td>77,243</td><td></td><td>83,198</td><td>80,714</td><td></td></tr><tr><td>Gross profit</td><td>77,155</td><td>71,671</td><td>8%</td><td>78,354</td><td>71,454</td><td>10%</td><td>79,526</td><td>73,793</td><td>8%</td></tr><tr><td>Operating expenses</td><td>54,021</td><td>52,964</td><td></td><td>54,415</td><td>53,518</td><td></td><td>54,684</td><td>54,355</td><td></td></tr><tr><td>Operating profit</td><td>23,134</td><td>18,706</td><td>24%</td><td>23,939</td><td>17,936</td><td>33%</td><td>24,841</td><td>19,438</td><td>28%</td></tr><tr><td>Non-op. income (exp.)</td><td>2,517</td><td>2,517</td><td></td><td>1,731</td><td>1,731</td><td></td><td>1,143</td><td>1,143</td><td></td></tr><tr><td>Pretax income</td><td>25,650</td><td>21,223</td><td>21%</td><td>25,669</td><td>19,667</td><td>31%</td><td>25,984</td><td>20,580</td><td>26%</td></tr><tr><td>Taxes</td><td>3,749</td><td>3,084</td><td></td><td>3,850</td><td>2,950</td><td></td><td>3,898</td><td>3,087</td><td></td></tr><tr><td>Net income</td><td>21,902</td><td>18,139</td><td>21%</td><td>21,819</td><td>16,717</td><td>31%</td><td>22,086</td><td>17,493</td><td>26%</td></tr><tr><td>Reported EPS</td><td>42.71</td><td>35.37</td><td>21%</td><td>42.54</td><td>32.60</td><td>31%</td><td>43.06</td><td>34.11</td><td>26%</td></tr><tr><td colspan="10">Margins</td></tr><tr><td>Gross margin</td><td>49.2%</td><td>49.1%</td><td>0.1%</td><td>48.8%</td><td>48.1%</td><td>0.7%</td><td>48.9%</td><td>47.8%</td><td>1.1%</td></tr><tr><td>Operating margin</td><td>14.8%</td><td>12.8%</td><td>1.9%</td><td>14.9%</td><td>12.1%</td><td>2.8%</td><td>15.3%</td><td>12.6%</td><td>2.7%</td></tr><tr><td>Pretax margin</td><td>16.4%</td><td>14.5%</td><td>1.8%</td><td>16.0%</td><td>13.2%</td><td>2.8%</td><td>16.0%</td><td>13.3%</td><td>2.6%</td></tr><tr><td>Net margin</td><td>14.0%</td><td>12.4%</td><td>1.6%</td><td>13.6%</td><td>11.2%</td><td>2.3%</td><td>13.6%</td><td>11.3%</td><td>2.3%</td></tr><tr><td>Opex %</td><td>34.5%</td><td>36.3%</td><td>-1.8%</td><td>33.9%</td><td>36.0%</td><td>-2.1%</td><td>33.6%</td><td>35.2%</td><td>-1.6%</td></tr></table>
+
+Source: Company data, MS (e) estimates
+
+Exhibit 12: Realtek: Quarterly financial statements
+
+<table><tr><td>(NT$ mn)</td><td>1Q26</td><td>2Q26e</td><td>3Q26e</td><td>4Q26e</td><td>1Q27e</td><td>2Q27e</td><td>3Q27e</td><td>4Q27e</td><td>1Q28e</td><td>2Q28e</td><td>3Q28e</td><td>4Q28e</td><td>2025</td><td>2026e</td><td>2027e</td><td>2028e</td></tr><tr><td>Total Revenues</td><td>36,423</td><td>38,311</td><td>40,921</td><td>41,055</td><td>37,964</td><td>41,285</td><td>43,856</td><td>37,554</td><td>37,381</td><td>40,374</td><td>43,129</td><td>41,839</td><td>122,706</td><td>156,709</td><td>160,658</td><td>162,724</td></tr><tr><td>Sequential Change</td><td>38.6%</td><td>5.2%</td><td>6.8%</td><td>0.3%</td><td>-7.5%</td><td>8.7%</td><td>6.2%</td><td>-14.4%</td><td>-0.5%</td><td>8.0%</td><td>6.8%</td><td>-3.0%</td><td></td><td></td><td></td><td></td></tr><tr><td>Change vs Year Ago</td><td>4.0%</td><td>20.0%</td><td>38.8%</td><td>56.2%</td><td>4.2%</td><td>7.8%</td><td>7.2%</td><td>-8.5%</td><td>-1.5%</td><td>-2.2%</td><td>-1.7%</td><td>11.4%</td><td>8.2%</td><td>27.7%</td><td>2.5%</td><td>1.3%</td></tr><tr><td>Cost of Sales</td><td>18,336</td><td>19,374</td><td>20,804</td><td>21,041</td><td>19,484</td><td>21,182</td><td>22,519</td><td>19,119</td><td>19,212</td><td>20,717</td><td>21,992</td><td>21,277</td><td>61,333</td><td>79,554</td><td>82,304</td><td>83,198</td></tr><tr><td>Percent of Revenues</td><td>50%</td><td>51%</td><td>51%</td><td>51%</td><td>51%</td><td>51%</td><td>51%</td><td>51%</td><td>51%</td><td>51%</td><td>51%</td><td>51%</td><td>50%</td><td>51%</td><td>51%</td><td>51%</td></tr><tr><td>Gross Profit</td><td>18,087</td><td>18,937</td><td>20,117</td><td>20,014</td><td>18,480</td><td>20,102</td><td>21,337</td><td>18,435</td><td>18,170</td><td>19,657</td><td>21,136</td><td>20,562</td><td>61,374</td><td>77,155</td><td>78,354</td><td>79,526</td></tr><tr><td>Percent of Revenues</td><td>49.7%</td><td>49.4%</td><td>49.2%</td><td>48.8%</td><td>48.7%</td><td>48.7%</td><td>48.7%</td><td>49.1%</td><td>48.6%</td><td>48.7%</td><td>49.0%</td><td>49.1%</td><td>50.0%</td><td>49.2%</td><td>48.8%</td><td>48.9%</td></tr><tr><td>Incremental Margin</td><td>54%</td><td>45%</td><td>45%</td><td>-77%</td><td>NM</td><td>49%</td><td>48%</td><td>NM</td><td>NM</td><td>50%</td><td>54%</td><td>NM</td><td>45%</td><td>46%</td><td>30%</td><td>57%</td></tr><tr><td>Total Opex</td><td>13,755</td><td>13,836</td><td>13,683</td><td>12,747</td><td>13,764</td><td>14,179</td><td>14,026</td><td>12,446</td><td>13,706</td><td>14,108</td><td>13,975</td><td>12,895</td><td>47,014</td><td>54,021</td><td>54,415</td><td>54,684</td></tr><tr><td>Percent of Revenues</td><td>37.8%</td><td>36.1%</td><td>33.4%</td><td>31.0%</td><td>36.3%</td><td>34.3%</td><td>32.0%</td><td>33.1%</td><td>36.7%</td><td>34.9%</td><td>32.4%</td><td>30.8%</td><td>38.3%</td><td>34.5%</td><td>33.9%</td><td>33.6%</td></tr><tr><td>Operating Income</td><td>4,332</td><td>5,101</td><td>6,434</td><td>7,267</td><td>4,715</td><td>5,923</td><td>7,312</td><td>5,989</td><td>4,464</td><td>5,549</td><td>7,162</td><td>7,667</td><td>14,360</td><td>23,134</td><td>23,939</td><td>24,841</td></tr><tr><td>Percent of Revenues</td><td>11.9%</td><td>13.3%</td><td>15.7%</td><td>17.7%</td><td>12.4%</td><td>14.3%</td><td>16.7%</td><td>15.9%</td><td>11.9%</td><td>13.7%</td><td>16.6%</td><td>18.3%</td><td>11.7%</td><td>14.8%</td><td>14.9%</td><td>15.3%</td></tr><tr><td>Total Non-operating Income (Loss)</td><td>646</td><td>646</td><td>646</td><td>580</td><td>433</td><td>433</td><td>433</td><td>433</td><td>286</td><td>286</td><td>286</td><td>286</td><td>2,901</td><td>2,517</td><td>1,731</td><td>1,143</td></tr><tr><td>Profit Before Taxes</td><td>4,977</td><td>5,746</td><td>7,080</td><td>7,847</td><td>5,148</td><td>6,356</td><td>7,744</td><td>6,421</td><td>4,749</td><td>5,834</td><td>7,448</td><td>7,953</td><td>17,261</td><td>25,650</td><td>25,669</td><td>25,984</td></tr><tr><td>Percent of Revenues</td><td>14%</td><td>15%</td><td>17%</td><td>19%</td><td>14%</td><td>15%</td><td>18%</td><td>17%</td><td>13%</td><td>14%</td><td>17%</td><td>19%</td><td>14%</td><td>16%</td><td>16%</td><td>16%</td></tr><tr><td>Taxes</td><td>648</td><td>862</td><td>1,062</td><td>1,177</td><td>772</td><td>953</td><td>1,162</td><td>963</td><td>712</td><td>875</td><td>1,117</td><td>1,193</td><td>2,507</td><td>3,749</td><td>3,850</td><td>3,898</td></tr><tr><td>Tax Rate</td><td>13.0%</td><td>15.0%</td><td>15.0%</td><td>15.0%</td><td>15.0%</td><td>15.0%</td><td>15.0%</td><td>15.0%</td><td>15.0%</td><td>15.0%</td><td>15.0%</td><td>15.0%</td><td>14.5%</td><td>14.6%</td><td>15.0%</td><td>15.0%</td></tr><tr><td>Reported Income (TW GAAP)</td><td>4,330</td><td>4,884</td><td>6,018</td><td>6,670</td><td>4,376</td><td>5,402</td><td>6,583</td><td>5,458</td><td>4,037</td><td>4,959</td><td>6,330</td><td>6,760</td><td>14,753</td><td>21,902</td><td>21,819</td><td>22,086</td></tr><tr><td>Percent of Revenues</td><td>11.9%</td><td>12.7%</td><td>14.7%</td><td>16.2%</td><td>11.5%</td><td>13.1%</td><td>15.0%</td><td>14.5%</td><td>10.8%</td><td>12.3%</td><td>14.7%</td><td>16.2%</td><td>12.0%</td><td>14.0%</td><td>13.6%</td><td>13.6%</td></tr><tr><td>Change vs Year Ago</td><td>-9%</td><td>25%</td><td>76%</td><td>151%</td><td>1%</td><td>11%</td><td>9%</td><td>-18%</td><td>-8%</td><td>-8%</td><td>-4%</td><td>24%</td><td>-4%</td><td>48%</td><td>0%</td><td>1%</td></tr><tr><td>Reported EPS (NT$, TW GAAP)</td><td>8.44</td><td>9.52</td><td>11.73</td><td>13.01</td><td>8.53</td><td>10.53</td><td>12.84</td><td>10.64</td><td>7.87</td><td>9.67</td><td>12.34</td><td>13.18</td><td>28.77</td><td>42.71</td><td>42.54</td><td>43.06</td></tr><tr><td>Change vs Year Ago</td><td>-9%</td><td>25%</td><td>76%</td><td>151%</td><td>1%</td><td>11%</td><td>9%</td><td>-18%</td><td>-8%</td><td>-8%</td><td>-4%</td><td>24%</td><td>-4%</td><td>48%</td><td>0%</td><td>1%</td></tr></table>
+
+Source: Company data, MS (e) estimates
+
+## Realtek: Valuation Methodology
+
+We raise our price target from NT\$570 to NT\$717: We factor in changes to our earnings estimates for 2025-27 while we keep other RI parameters unchanged. We keep our cost of equity at 9.6%, intermediate growth rate of 7.3%, payout ratio of 79% and terminal growth rate of 4.5%. Our bull case is raised to NT\$1,117 from NT\$840, and bear case is raised to NT\$517 from NT\$350.
+
+Exhibit 13: Realtek: RI model
+
+<table><tr><td>(NT$ mn)</td><td>2026e</td><td>2027e</td><td>2028e</td><td>2029e</td><td>2030e</td><td>2031e</td><td>2032e</td><td>2033e</td><td>2034e</td><td>2035e</td><td>2036e</td></tr><tr><td>Total Equity</td><td>62,054</td><td>65,970</td><td>70,221</td><td>77,025</td><td>84,323</td><td>92,150</td><td>100,546</td><td>109,551</td><td>119,210</td><td>129,571</td><td>140,683</td></tr><tr><td>Net Profit</td><td>21,902</td><td>21,819</td><td>22,086</td><td>23,690</td><td>25,410</td><td>27,255</td><td>29,233</td><td>31,356</td><td>33,632</td><td>36,074</td><td>38,693</td></tr><tr><td>ROAE</td><td>38.3%</td><td>34.1%</td><td>32.4%</td><td>32.2%</td><td>31.5%</td><td>30.9%</td><td>30.3%</td><td>29.8%</td><td>29.4%</td><td>29.0%</td><td>28.6%</td></tr><tr><td>Residual Income</td><td>15,006</td><td>15,198</td><td>15,068</td><td>15,859</td><td>16,871</td><td>17,956</td><td>19,119</td><td>20,366</td><td>21,702</td><td>23,135</td><td>24,671</td></tr><tr><td>Spread</td><td>28.7%</td><td>24.5%</td><td>22.8%</td><td>22.6%</td><td>21.9%</td><td>21.3%</td><td>20.7%</td><td>20.3%</td><td>19.8%</td><td>19.4%</td><td>19.0%</td></tr><tr><td>Ending Equity Capital</td><td>62,054</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>PV of Forecast Period</td><td>103,847</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>PV of Continuing Value</td><td>201,685</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Equity Value</td><td>367,587</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>No. of Shares</td><td>513</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Projected Price</td><td>717</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+Source: Company data, MS (e) estimates
+
+Exhibit 14: Realtek: Historical P/E  
+![](images/61e3f0051035ba301f37be477feb2428b830d16b05764bc700f35ab8bff13eb1.jpg)  
+Source: Factset, MS estimates
+
+## Risk Reward – Realtek Semiconductor (2379.TW)
+
+Demand and margin facing pressure; EW
+
+## PRICE TARGET NT\$717.00
+
+Base case, residual income model. We assume a cost of equity of 9.6%, an intermediate growth rate of 7.3%, payout ratio of 79%, and terminal growth rate of 4.5%.
+
+Consensus Price Target Distribution
+
+Source: Refinitiv, MS
+
+NT\$525.00
+
+![](images/e538259957e6dfc0804a71d8da52de3e483e437a43c870fa771f5c8b919499ab.jpg)
+
+## RISK REWARD CHART
+
+![](images/1770ab16977be28a95855271c7daaee844277250a0557c9d0be9c5d6f2f25b50.jpg)  
+Key: — Historical Stock Performance ● Current Stock Price ◆ Price Target  
+Source: Refinitiv, MS
+
+## EQUAL-WEIGHT THESIS
+
+■ Strong 1Q26 shipments may be a result of pre-stocking; momentum in 2H could be weaker or below seasonality. Gross margin is under pressure from component price hikes.
+
+We believe Realtek could benefit from China's semi localization for auto Ethernet. There are no suitable local players, and Realtek has penetrated EU and US brands since 2018.
+
+\- AI glasses are another secular growth driver; Realtek's AI glasses solution could drive down BOM cost 70-80% vs. the current solution from US peer Qualcomm.
+- We view the current 2026e P/E as fair relative to our implied target P/E of 17x.
+
+![](images/7b7fdd26526fa4b1437665d69f45091881cafe1e6a10bb0eb04f88fd49edaa61.jpg)  
+Source: Refinitiv, MS
+
+## Risk Reward Themes
+
+Electric Vehicles: Positive
+View descriptions of Risk Rewards Themes here
+
+## BULL CASE
+
+## 26x 2026e EPS
+
+NT\$1,117.00
+
+PC and consumer tech orders become stronger, switch/Bluetooth demand recovery comes earlier and is stronger, and higher costs and competition fade away: 1) Wi-Fi to show 30% Y/Y increase in 2026; 2) Ethernet +40% Y/Y in 2026; 3) switches to increase 40% Y/Y; 4) audio Codec +15% Y/Y; 5) gross margin goes to 52% in 2026, as margin erosion from pricing pressure is minimal.
+
+## BASE CASE
+
+## 17x 2026e EPS
+
+## NT\$717.00
+
+For 2026, we expect a modest PC decline owing to component price hikes and a GM decline from cost pass-through without markups: 1) Wi-Fi to show 19% Y/Y increase in 2026; 2) Ethernet +30% Y/Y in 2026; 3) switches to increase 27% Y/Y; 4) audio Codec +6% Y/Y; 5) gross margin declines to 49% in 2026, vs 50% in 2025.
+
+## BEAR CASE
+
+## NT\$517.00
+
+## 12x 2026e EPS
+
+PC and consumer tech orders become weaker, switch/Bluetooth demand recovery comes later and weaker; margin erosion from pricing pressure, higher costs and pricing competition becomes more severe: 1) Wi-Fi -17% Y/Y in 2026; 2) Ethernet -10% Y/Y in 2026; 3) switches flat Y/Y; 4) audio Codec -30% Y/Y; 5) gross margin declines to 48% in 2026, as margin erosion from pricing pressure intensifies.
+
+FY Dec 2026e
+
+## Risk Reward – Realtek Semiconductor (2379.TW)
+
+## KEY EARNINGS INPUTS
+
+<table><tr><td>Drivers</td><td>Dec 2025</td><td>Dec 2026e</td><td>Dec 2027e</td><td>Dec 2028e</td></tr><tr><td>1. Wifi Sales (%) (%)</td><td>29.3</td><td>27.4</td><td>22.5</td><td>19.3</td></tr><tr><td>2. Ethernet Sales (%) (%)</td><td>5.8</td><td>5.9</td><td>5.7</td><td>5.8</td></tr><tr><td>3. Switch Sales (%) (%)</td><td>18.1</td><td>18.0</td><td>16.2</td><td>14.8</td></tr><tr><td>4. Bluetooth Sales (%) (%)</td><td>6.1</td><td>5.6</td><td>4.3</td><td>3.5</td></tr><tr><td>5. TV SoC (%) (%)</td><td>12.9</td><td>12.9</td><td>19.1</td><td>19.3</td></tr></table>
+
+## INVESTMENT DRIVERS
+
+• Diversifying its exposure to PCs
+
+• Eased Wi-Fi margin pressure
+
+• Continued growth in IoT business
+
+\- New growth driver from auto Ethernet
+
+## GLOBAL REVENUE EXPOSURE
+
+![](images/5c5e7b249c8fbe3c745cccacb8d8f0f9bb6f07f3f7d1905684abe6c0d2e8c3cc.jpg)  
+Source: MS Estimate View explanation of regional hierarchies here
+
+## MS ALPHA MODELS
+
+Source: Refinitiv, FactSet, MS; 1 is the highest favored Quintile and 5 is the least favored Quintile
+
+## RISKS TO PT/RATING
+
+## RISKS TO UPSIDE
+
+• Stronger-than-expected Wi-Fi growth
+
+\- Faster-than-expected new product growth
+
+\- Faster-than-expected adoption for auto Ethernet
+
+\- Fading PC semi inventory corrections
+
+## RISKS TO DOWNSIDE
+
+\- Weaker-than-expected Wi-Fi growth
+
+\- Slower-than-expected new product growth
+
+\- Slower-than-expected margin recovery given ongoing pricing competition
+
+• Further TV SoC project losses in China
+
+\- Slower-than-expected adoption for auto Ethernet
+
+## OWNERSHIP POSITIONING
+
+<table><tr><td>Inst. Owners, % Active</td><td>74.7%</td></tr></table>
+
+Source: Refinitiv, MS
+
+MS ESTIMATES VS. CONSENSUS  
+![](images/2ead497d093f7f40d9828e3355f9645d3b81ee48d36d2f86b5fb567828d776c9.jpg)  
+Mean MS Estimates Source: Refinitiv, MS
+
+## Realtek: Financial Summary
+
+<table><tr><td colspan="5">Income Statement</td></tr><tr><td>NT$mn (Years End Dec )</td><td>2025</td><td>2026e</td><td>2027e</td><td>2028e</td></tr><tr><td>Net sales</td><td>122,706</td><td>156,709</td><td>160,658</td><td>162,724</td></tr><tr><td>COGS</td><td>(61,333)</td><td>(79,554)</td><td>(82,304)</td><td>(83,198)</td></tr><tr><td>Gross profit</td><td>61,374</td><td>77,155</td><td>78,354</td><td>79,526</td></tr><tr><td>Operating expenses</td><td>(47,014)</td><td>(54,021)</td><td>(54,415)</td><td>(54,684)</td></tr><tr><td>Operating income</td><td>14,360</td><td>23,134</td><td>23,939</td><td>24,841</td></tr><tr><td>Non-operating income</td><td>2,901</td><td>2,517</td><td>1,731</td><td>1,143</td></tr><tr><td>Pre-tax income</td><td>17,261</td><td>25,650</td><td>25,669</td><td>25,984</td></tr><tr><td>Income tax</td><td>1,476</td><td>2,165</td><td>2,041</td><td>2,066</td></tr><tr><td>Net Income bf. emp. bonus</td><td>18,737</td><td>27,815</td><td>27,710</td><td>28,050</td></tr><tr><td>Employee bonus expense</td><td>3,983</td><td>5,913</td><td>5,891</td><td>5,963</td></tr><tr><td>Reported net Income</td><td>14,753</td><td>21,902</td><td>21,819</td><td>22,086</td></tr><tr><td>Adj. wtd. avg. shrs (million)</td><td>513</td><td>513</td><td>513</td><td>513</td></tr><tr><td>Reported EPS (NT$)</td><td>28.77</td><td>42.71</td><td>42.54</td><td>43.06</td></tr><tr><td>Modelware Diluted EPS (NT$)</td><td>28.77</td><td>42.71</td><td>42.54</td><td>43.06</td></tr></table>
+
+Balance Sheet
+
+Cash Flow Statement
+
+<table><tr><td>NT$mn (Years End Dec )</td><td>2025</td><td>2026e</td><td>2027e</td><td>2028e</td></tr><tr><td>Cashflow from Operations</td><td>23,015</td><td>19,571</td><td>22,703</td><td>23,427</td></tr><tr><td>Net profits</td><td>14,753</td><td>21,902</td><td>21,819</td><td>22,086</td></tr><tr><td>Depreciation</td><td>1,536</td><td>1,582</td><td>1,629</td><td>1,678</td></tr><tr><td>Working Capital Change</td><td>(3,410)</td><td>(3,913)</td><td>(745)</td><td>(338)</td></tr><tr><td>Other adjustments</td><td>10,136</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Cashflow from Investing</td><td>(16,380)</td><td>(2,643)</td><td>(2,796)</td><td>(2,962)</td></tr><tr><td>Capex</td><td>(2,089)</td><td>(2,643)</td><td>(2,796)</td><td>(2,962)</td></tr><tr><td>Change of LT Investment</td><td>(11,917)</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Change of ST Investment</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Other adjustments</td><td>(2,374)</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Cashflow from financing</td><td>(7,616)</td><td>(12,060)</td><td>(17,903)</td><td>(17,835)</td></tr><tr><td>Increase in L/T debt</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Increase in S/T debt</td><td>5,590</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Cash Dividend Paid</td><td>(13,078)</td><td>(12,060)</td><td>(17,903)</td><td>(17,835)</td></tr><tr><td>Dir&amp; Emp Bonus Paid</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Issuance of stock</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Other adjustments</td><td>(128)</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Exchange rate adjustment</td><td>(766)</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Net change in cash</td><td>-1,747</td><td>4,869</td><td>2,004</td><td>2,630</td></tr></table>
+
+<table><tr><td>NT$mn (Years End Dec )</td><td>2025</td><td>2026e</td><td>2027e</td><td>2028e</td></tr><tr><td>Cash</td><td>13,066</td><td>17,935</td><td>19,939</td><td>22,569</td></tr><tr><td>Mkt Securities</td><td>48,310</td><td>48,310</td><td>48,310</td><td>48,310</td></tr><tr><td>AR/NR</td><td>15,011</td><td>19,129</td><td>19,611</td><td>19,864</td></tr><tr><td>Inventory</td><td>19,561</td><td>21,445</td><td>22,187</td><td>22,428</td></tr><tr><td>Other</td><td>1,409</td><td>1,409</td><td>1,409</td><td>1,409</td></tr><tr><td>Current Assets</td><td>97,357</td><td>108,229</td><td>111,456</td><td>114,579</td></tr><tr><td>Long-term investments</td><td>14,175</td><td>14,175</td><td>14,175</td><td>14,175</td></tr><tr><td>Fixed assets</td><td>10,605</td><td>11,665</td><td>12,832</td><td>14,115</td></tr><tr><td>Deferred assets</td><td>506</td><td>506</td><td>506</td><td>506</td></tr><tr><td>Other assets</td><td>7,260</td><td>7,260</td><td>7,260</td><td>7,260</td></tr><tr><td>Total Assets</td><td>129,903</td><td>141,835</td><td>146,229</td><td>150,636</td></tr><tr><td>S/T borrowings</td><td>10,090</td><td>10,090</td><td>10,090</td><td>10,090</td></tr><tr><td>AP/NP</td><td>11,738</td><td>13,828</td><td>14,306</td><td>14,461</td></tr><tr><td>Other ST liabilities</td><td>52,928</td><td>52,928</td><td>52,928</td><td>52,928</td></tr><tr><td>LT debt</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Other LT liabilities</td><td>2,935</td><td>2,935</td><td>2,935</td><td>2,935</td></tr><tr><td>Common shares</td><td>5,155</td><td>5,155</td><td>5,155</td><td>5,155</td></tr><tr><td>Total Liabilities</td><td>77,691</td><td>79,781</td><td>80,259</td><td>80,415</td></tr><tr><td>Additional capital</td><td>10,506</td><td>10,506</td><td>10,506</td><td>10,506</td></tr><tr><td>Retained earning</td><td>33,733</td><td>43,575</td><td>47,491</td><td>51,742</td></tr><tr><td>Other shareholders&#x27; equity</td><td>2,818</td><td>2,818</td><td>2,818</td><td>2,818</td></tr><tr><td>Total Equity</td><td>52,212</td><td>62,054</td><td>65,970</td><td>70,221</td></tr><tr><td>Total Liab. &amp; Shrhldr&#x27;s Equity</td><td>129,903</td><td>141,835</td><td>146,229</td><td>150,636</td></tr></table>
+
+e = MS Estimates
+
+Source: MS, Company Data
+
+Financial Ratios
+
+<table><tr><td></td><td>2025</td><td>2026e</td><td>2027e</td><td>2028e</td></tr><tr><td colspan="5">Growth(%)</td></tr><tr><td>Turnover</td><td>8.2</td><td>27.7</td><td>2.5</td><td>1.3</td></tr><tr><td>Operating profits</td><td>6.4</td><td>61.1</td><td>3.5</td><td>3.8</td></tr><tr><td>Pretax profits</td><td>5.6</td><td>48.6</td><td>0.1</td><td>1.2</td></tr><tr><td>Net profits</td><td>-3.5</td><td>48.5</td><td>-0.4</td><td>1.2</td></tr><tr><td>EPS</td><td>-3.5</td><td>48.5</td><td>-0.4</td><td>1.2</td></tr><tr><td colspan="5">Margins (%)</td></tr><tr><td>Gross Margin</td><td>50.0</td><td>49.2</td><td>48.8</td><td>48.9</td></tr><tr><td>Operating Margin</td><td>11.7</td><td>14.8</td><td>14.9</td><td>15.3</td></tr><tr><td>Pretax Margin</td><td>14.1</td><td>16.4</td><td>16.0</td><td>16.0</td></tr><tr><td>Net Profit</td><td>12.0</td><td>14.0</td><td>13.6</td><td>13.6</td></tr><tr><td colspan="5">Return (%)</td></tr><tr><td>ROAE</td><td>28.1</td><td>38.3</td><td>34.1</td><td>32.4</td></tr><tr><td>ROAA</td><td>12.1</td><td>16.1</td><td>15.1</td><td>14.9</td></tr><tr><td colspan="5">Gearing (%)</td></tr><tr><td>Net Debt/Equity</td><td>(5.7)</td><td>(12.6)</td><td>(14.9)</td><td>(17.8)</td></tr><tr><td>Liabilities/Equity</td><td>148.8</td><td>128.6</td><td>121.7</td><td>114.5</td></tr><tr><td colspan="5">Ratios (X)</td></tr><tr><td>Current ratio</td><td>1.3</td><td>1.4</td><td>1.4</td><td>1.5</td></tr><tr><td>Quick ratio</td><td>0.4</td><td>0.5</td><td>0.5</td><td>0.5</td></tr><tr><td colspan="5">Others</td></tr><tr><td>AR/NR Turnover (days)</td><td>45</td><td>45</td><td>45</td><td>45</td></tr><tr><td>Inventory Turnover (days)</td><td>98</td><td>98</td><td>98</td><td>98</td></tr><tr><td>AP Turnover (days)</td><td>63</td><td>63</td><td>63</td><td>63</td></tr><tr><td>Cash Conversion (days)</td><td>80</td><td>80</td><td>80</td><td>80</td></tr></table>
+
+## Valuation Methodology and Risks
+
+## Novatek (3034.TW)
+
+Base case, residual income model. Key assumptions: cost of equity constant at 9.8% (2.0% risk-free rate, 6% risk premium, 1.3 beta), payout ratio of 80%, medium-term growth rate of 6.1% and terminal growth rate assumption of 3.4%.
+
+## Risks to Upside
+
+■ Faster-than-expected 8K/4K TV growth.
+
+■ Better-than-expected smartphone sell-through.
+
+■ Better-than-expected sell-through of foldable products.
+
+## Risks to Downside
+
+■ Intensified price competition in TDDI, driving Novatek's gross margin below its corporate average.
+
+■ Slower-than-expected 8K/4K TV growth.
+
+■ Slower sell-through of foldable products.
+
+## Risk Reward Reference links
+
+1. View explanation of Options Probabilities methodology -
+
+Options\_Probabilities\_Exhibit\_Link.pdf
+
+2. View descriptions of Risk Rewards Themes - RR\_Themes\_Exhibit\_Link.pdf
+
+3. View explanation of regional hierarchies - GEG\_Exhibit\_Link.pdf
+
+4. View explanation of Theme/Exposure methodology -
+
+ESG\_Sustainable\_Solutions\_External\_Link.pdf
+
+5. View explanation of HERS methodology - ESG\_HERS\_External\_Link.pdf
+
+## Disclosure Section
+
+The information and opinions in MS were prepared or are disseminated by MS Asia Limited (which accepts the responsibility for its contents) and/or MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS), and/or MS Taiwan Limited and/or MS & Co International plc, Seoul Branch, and/or MS Australia Limited (A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents), and/or MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents), and/or MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India ("SEBI") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com which accepts the responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS, and their affiliates (collectively, "MS"). MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts.
+
+For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA.
+
+For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA.
+
+## Analyst Certification
+
+The following analysts hereby certify that their views about the companies and their securities discussed in this report are accurately expressed and that they have not received and will not receive direct or indirect compensation in exchange for expressing specific recommendations or views in this report: Charlie Chan; Daisy Dai, CFA; Daniel Yen, CFA.
+
+## Global Research Conflict Management Policy
+
+MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br
+
+## Important Regulatory Disclosures on Subject Companies
+
+As of May 29, 2026, MS beneficially owned 1% or more of a class of common equity securities of the following companies covered in MS: ACM Research Inc, Advanced Micro-Fabrication Equipment Inc, Advanced Wireless Semiconductor Co, Alchip Technologies Ltd, AllRing Tech Co., AP Memory Technology Corp, ASE Technology Holding Co. Ltd., ASMPT Ltd, Aspeed Technology, Cambricon Technology Corporation, Dosilicon Co Ltd, FOCI Fiber Optic Communications Inc, GigaDevice Semiconductor Beijing Inc, Global Unichip Corp, GlobalWafers Co Ltd, Gudeng Precision, Hon Precision, Hua Hong Semiconductor Ltd, King Yuan Electronics Co Ltd, Macronix International Co Ltd, MediaTek, Montage Technology Co Ltd, Nanya Technology Corp., NAURA Technology Group Co Ltd, Nuvoton Technology Corporation, Parade Technologies Ltd, Phison Electronics Corp, Realtek Semiconductor, Shanghai Fudan Microelectronics, Silergy Corp., Silicon Motion, TSMC, UMC, Vanguard International Semiconductor, WIN Semiconductors Corp, Winbond Electronics Corp, WinWay Technology Co Ltd, WPG Holdings, WT Microelectronics Co. Ltd..
+
+Within the last 12 months, MS managed or co-managed a public offering (or 144A offering) of securities of Alchip Technologies Ltd, Montage Technology Co Ltd, Powerchip Semiconductor Manufacturing Co.
+
+Within the last 12 months, MS has received compensation for investment banking services from ASMPT Ltd, Montage Technology Co Ltd, Powerchip Semiconductor Manufacturing Co.
+
+In the next 3 months, MS expects to receive or intends to seek compensation for investment banking services from Advanced Micro-Fabrication Equipment Inc, Alchip Technologies Ltd, AP Memory Technology Corp, ASE Technology Holding Co. Ltd., ASMedia Technology Inc, ASMPT Ltd, Aspeed Technology, Espressif Systems, GigaDevice Semiconductor Beijing Inc, GlobalWafers Co Ltd, Gudeng Precision, Himax Technologies Inc, Hua Hong Semiconductor Ltd, Iluvatar CoreX Semiconductor Co., Ltd., Innoscience, King Yuan Electronics Co Ltd, Macronix International Co Ltd, MediaTek, MetaX Integrated Circuits, Montage Technology Co Ltd, Novatek, Phison Electronics Corp, Powerchip Semiconductor Manufacturing Co, Realtek Semiconductor, SG Micro Corp., Shenzhen Longsys Electronics Co Ltd, Silergy Corp., Silicon Motion, TSMC, UMC, Vanguard International Semiconductor, Winbond Electronics Corp, WinWay Technology Co Ltd, WPG Holdings, WT Microelectronics Co. Ltd..
+
+Within the last 12 months, MS has received compensation for products and services other than investment banking services from ASE Technology Holding Co. Ltd., King Yuan Electronics Co Ltd, MediaTek, Nanya Technology Corp., Novatek, Nuvoton Technology Corporation, Realtek Semiconductor, Silicon Motion, SMIC, TSMC, UMC, Universal Scientific Ind. (Shanghai), Winbond Electronics Corp, WT Microelectronics Co. Ltd..
+
+Within the last 12 months, MS has provided or is providing investment banking services to, or has an investment banking client relationship with, the following company: Advanced Micro-Fabrication Equipment Inc, Alchip Technologies Ltd, AP Memory Technology Corp, ASE Technology Holding Co. Ltd., ASMedia Technology Inc, ASMPT Ltd, Aspeed Technology, Espressif Systems, GigaDevice Semiconductor Beijing Inc, GlobalWafers Co Ltd, Gudeng Precision, Himax Technologies Inc, Hua Hong Semiconductor Ltd, Iluvatar CoreX Semiconductor Co., Ltd., Innoscience, King Yuan Electronics Co Ltd, Macronix International Co Ltd, MediaTek, MetaX Integrated Circuits, Montage Technology Co Ltd, Novatek, Phison Electronics Corp, Powerchip Semiconductor Manufacturing Co, Realtek Semiconductor, SG Micro Corp., Shenzhen Longsys Electronics Co Ltd, Silergy Corp., Silicon Motion, TSMC, UMC, Vanguard International Semiconductor, Winbond Electronics Corp, WinWay Technology Co Ltd, WPG Holdings, WT Microelectronics Co. Ltd..
+
+Within the last 12 months, MS has either provided or is providing non-investment banking, securities-related services to and/or in the past has entered into an agreement to provide services or has a client relationship with the following company: ASE Technology Holding Co. Ltd., King Yuan Electronics Co Ltd, MediaTek, Montage Technology Co Ltd, Nanya Technology Corp., Novatek, Nuvoton Technology Corporation, Realtek Semiconductor, Silicon Motion, SMIC, TSMC, UMC, Universal Scientific Ind. (Shanghai), Winbond Electronics Corp, WT Microelectronics Co. Ltd..
+
+MS & Co. LLC makes a market in the securities of ACM Research Inc, Himax Technologies Inc, Silicon Motion.
+
+The equity research analysts or strategists principally responsible for the preparation of MS have received compensation based upon various factors, including quality of research, investor client feedback, stock picking, competitive factors, firm revenues and overall investment banking revenues. Equity Research analysts' or strategists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+MS and its affiliates do business that relates to companies/instruments covered in MS, including market making, providing liquidity, fund management, commercial banking, extension of credit, investment services and investment banking. MS sells to and buys from customers the securities/instruments of companies covered in MS on a principal basis. MS may have a position in the debt of the Company or instruments discussed in this report. MS trades or may trade as principal in the debt securities (or in related derivatives) that are the subject of the debt research report.
+
+Certain disclosures listed above are also for compliance with applicable regulations in non-US jurisdictions.
+
+## STOCK RATINGS
+
+MS uses a relative rating system using terms such as Overweight, Equal-weight, Not-Rated or Underweight (see definitions below). MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold and sell. Investors should carefully read the definitions of all ratings used in MS. In addition, since MS contains more complete information concerning the analyst's views, investors should carefully read MS, in its entirety, and not infer the contents from the rating alone. In any case, ratings (or research) should not be used or relied upon as investment advice. An investor's decision to buy or sell a stock should depend on individual circumstances (such as the investor's existing holdings) and other considerations.
+
+## Global Stock Ratings Distribution
+
+## (as of June 30, 2026)
+
+The Stock Ratings described below apply to MS's Fundamental Equity Research and do not apply to Debt Research produced by the Firm.
+
+For disclosure purposes only (in accordance with FINRA requirements), we include the category headings of Buy, Hold, and Sell alongside our ratings of Overweight, Equal-weight, Not-Rated and Underweight. MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold, and sell but represent recommended relative weightings (see definitions below). To satisfy regulatory requirements, we correspond Overweight, our most positive stock rating, with a buy recommendation; we correspond Equal-weight and Not-Rated to hold and Underweight to sell recommendations, respectively.
+
+<table><tr><td></td><td colspan="2">Coverage Universe</td><td colspan="3">Investment Banking Clients (IBC)</td><td colspan="2">Other Material Investment ServicesClients (MISC)</td></tr><tr><td>Stock RatingCategory</td><td>Count</td><td>% of Total</td><td>Count</td><td>% of Total IBC</td><td>% of RatingCategory</td><td>Count</td><td>% of Total OtherMISC</td></tr><tr><td>Overweight/Buy</td><td>1544</td><td>42%</td><td>453</td><td>49%</td><td>29%</td><td>757</td><td>44%</td></tr><tr><td>Equal-weight/Hold</td><td>1577</td><td>43%</td><td>390</td><td>42%</td><td>25%</td><td>769</td><td>44%</td></tr><tr><td>Not-Rated/Hold</td><td>3</td><td>0%</td><td>1</td><td>0%</td><td>33%</td><td>1</td><td>0%</td></tr><tr><td>Underweight/Sell</td><td>544</td><td>15%</td><td>89</td><td>10%</td><td>16%</td><td>204</td><td>12%</td></tr><tr><td>Total</td><td>3,668</td><td></td><td>933</td><td></td><td></td><td>1731</td><td></td></tr></table>
+
+Data include common stock and ADRs currently assigned ratings. Investment Banking Clients are companies from whom MS received investment banking compensation in the last 12 months. Due to rounding off of decimals, the percentages provided in the "% of total" column may not add up to exactly 100 percent.
+
+## Analyst Stock Ratings
+
+Overweight (O). The stock's total return is expected to exceed the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Equal-weight (E). The stock's total return is expected to be in line with the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Not-Rated (NR). Currently the analyst does not have adequate conviction about the stock's total return relative to the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Underweight (U). The stock's total return is expected to be below the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Unless otherwise specified, the time frame for price targets included in MS is 12 to 18 months.
+
+## Analyst Industry Views
+
+Attractive (A): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be attractive vs. the relevant broad market benchmark, as indicated below.
+
+In-Line (I): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be in line with the relevant broad market benchmark, as indicated below. Cautious (C): The analyst views the performance of his or her industry coverage universe over the next 12-18 months with caution vs. the relevant broad market benchmark, as indicated below. Benchmarks for each region are as follows: North America - S&P 500; Latin America - relevant MSCI country index or MSCI Latin America Index; Europe - MSCI Europe; Japan - TOPIX; Asia - relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.
+
+## Stock Price, Price Target and Rating History (See Rating Definitions)
+
+Source: MS Date Format : MM/DD/YY Price Target = No Price Target Assigned (NA)
+
+Elan Microelectronics Corp (2458.TW) - As of 07/04/26 GMT in TWD Industry : Greater China Technology Semiconductors  
+![](images/187cef2382d9e6a543c3c505814015447ae8d60558e91b6a9d5ccf7f6afc4ec8.jpg)  
+Stock Rating History: 4/29/24 : 0/A; 7/21/24 : 0/I; 4/8/25 : E/I; 7/14/25 : E/A; 10/3/25 : 0/A  
+Price Target History: 4/29/24 : 200; 8/12/24 : 180; 3/2/25 : 190; 4/8/25 : 126; 8/7/25 : 120; 10/3/25 : 150; 11/10/25 : 145; 3/11/26 : 160; 6/9/26 : 180  
+Stock Price (Not Covered by Current Analyst) — Stock Price (Covered by Current Analyst)  
+Stock and Industry Ratings (abbreviations below) appear as ♦ Stock Rating/Industry View  
+Stock Ratings: Overweight (O) Equal-weight (E) Underweight (U) Not-Rated (NR) No Rating Available (NA)  
+Industry View: Attractive (A) In-line (I) Cautious (C) No Rating (NR)  
+Effective January 13, 2014, the stocks covered by MS Asia Pacific will be rated relative to the analyst's industry (or industry team's) coverage.  
+Effective January 13, 2014, the industry view benchmarks for MS Asia Pacific are as follows: relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.
+
+Novatek (3034.TW) - As of 07/04/26 GMT in TWD Industry : Greater China Technology Semiconductors  
+![](images/3d1fe24c9e4da6e568fcb22fdc43c563146205c030febbf0e8a636810bec9e25.jpg)  
+Stock Rating History: 7/1/21 : U/I; 10/12/21 : U/C; 10/4/22 : U/A; 2/22/23 : E/I; 7/7/23 : E/A; 2/5/24 : U/A; 3/18/24 : O/A; 7/21/24 : O/I; 7/14/25 : O/A; 11/10/25 : E/A; 2/4/26 : U/A  
+Price Target History: 5/20/21 : 414; 10/21/21 : 313; 5/4/22 : 272; 6/21/22 : 262; 7/12/22 : 174; 8/5/22 : 161; 2/22/23 : 390;
+5/9/23 : 414; 8/6/23 : 399; 9/11/23 : 430; 2/5/24 : 414; 3/18/24 : 666; 11/6/24 : 580; 2/3/25 : 630; 2/13/25 : 640; 5/7/25 : 610;
+7/1/25 : 600; 8/6/25 : 550; 11/10/25 : 380; 2/4/26 : 323; 5/6/26 : 414  
+Stock Price (Not Covered by Current Analyst) — Stock Price (Covered by Current Analyst)  
+Stock and Industry Ratings (abbreviations below) appear as ♦ Stock Rating/Industry View  
+Stock Ratings: Overweight (O) Equal-weight (E) Underweight (U) Not-Rated (NR) No Rating Available (NA)  
+Industry View: Attractive (A) In-line (I) Cautious (C) No Rating (NR)  
+Effective January 13, 2014, the stocks covered by MS Asia Pacific will be rated relative to the analyst's industry (or industry team's) coverage.  
+Effective January 13, 2014, the industry view benchmarks for MS Asia Pacific are as follows: relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.
+
+Parade Technologies Ltd (4966.TWO) - As of 07/04/26 GMT in TWD Industry : Greater China Technology Semiconductors  
+![](images/9520a9f2c13f5fdced60bfa3f56b2035642932d6ec39ef1be7d91357fd445367.jpg)  
+Stock Rating History: 7/1/21 : 0/I; 10/12/21 : 0/C; 7/12/22 : E/C; 10/4/22 : 0/A; 2/22/23 : 0/I; 7/7/23 : 0/A; 7/21/23 : E/A; 1/23/24 : 0/A; 6/4/24 : U/A; 7/21/24 : U/I; 7/14/25 : U/A; 9/10/25 : E/A; 10/3/25 : 0/A; 1/30/26 : E/A; 5/27/26 : 0/A  
+1/23/24 : 1280; 4/23/24 : 999; 6/4/24 : 666; 4/8/25 : 445; 4/24/25 : 440; 8/8/25 : 450; 9/10/25 : 747; 10/3/25 : 888; 11/10/25 : 780;
+1/30/26 : 570; 2/11/26 : 530; 5/27/26 : 1000  
+Source: MS Date Format: MM/DD/YY Price Target No Price Target Assigned (NA)
+Stock Price (Not Covered by Current Analyst) Stock Price (Covered by Current Analyst)
+Stock and Industry Ratings (abbreviations below) appear as ♦ Stock Rating/Industry View
+Stock Ratings: Overweight (O) Equal-weight (E) Underweight (U) Not-Rated (NR) No Rating Available (NA)
+Industry View: Attractive (A) In-line (I) Cautious (C) No Rating (NR)  
+Effective January 13, 2014, the stocks covered by MS Asia Pacific will be rated relative to the analyst's industry (or industry team's) coverage.  
+Effective January 13, 2014, the industry view benchmarks for MS Asia Pacific are as follows: relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.
+
+Realtek Semiconductor (2379.TW) - As of 07/04/26 GMT in TWD Industry : Greater China Technology Semiconductors  
+![](images/f59dbb846f94c8ac78354f385cd62fb135df2f9585ed68c9b21284dc4d72a477.jpg)  
+Stock Rating History: 7/1/21 : 0/I; 10/12/21 : 0/C; 2/24/22 : E/C; 10/4/22 : E/A; 12/13/22 : U/A; 2/22/23 : 0/I; 7/7/23 : 0/A; 7/21/24 : 0/I; 9/15/24 : U/I; 6/19/25 : 0/I; 7/14/25 : 0/A; 1/30/26 : E/A
+
+Price Target History: 5/20/21 : 606; 7/26/21 : 666; 10/12/21 : 566; 2/24/22 : 505; 4/22/22 : 450; 7/12/22 : 333; 7/28/22 : 350; 9/13/22 : 313; 10/28/22 : 244; 12/13/22 : 239; 2/22/23 : 450; 5/30/23 : 433; 7/21/23 : 490; 10/23/23 : 470; 1/23/24 : 520; 2/1/24 : 540; 2/23/24 : 616; 3/11/24 : 707; 9/15/24 : 420; 1/14/25 : 425; 2/18/25 : 475; 6/19/25 : 650; 11/10/25 : 580; 1/30/26 : 550; 4/30/26 : 570
+
+Source: MS Date Format : MM/DD/YY Price Target No Price Target Assigned (NA)
+
+Stock Price (Not Covered by Current Analyst) — Stock Price (Covered by Current Analyst)
+
+Stock and Industry Ratings (abbreviations below) appear as ♦ Stock Rating/Industry View
+
+Industry View: Attractive (A) In-line (I) Cautious (C) No Rating (NR)
+
+Effective January 13, 2014, the stocks covered by MS Asia Pacific will be rated relative to the analyst's industry (or industry team's) coverage.
+
+Effective January 13, 2014, the industry view benchmarks for MS Asia Pacific are as follows: relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.
+
+## Important Disclosures for MS Smith Barney LLC Customers
+
+Important disclosures regarding any material conflict of interest that can reasonably be expected to have influenced MS Smith Barney LLC's choice of a third-party research provider or the subject company of a third-party research report, are available on the MS Wealth Management disclosure website at www.morganstanley.com/online/researchdisclosures. For MS specific disclosures, you may refer to https://www.morganstanley.com/eqr/disclosures/webapp/generalresearch.
+
+Each MS report is reviewed and approved on behalf of MS Smith Barney LLC. This review and approval is conducted by the same person who reviews the research report on behalf of MS. This could create a conflict of interest.
+
+## Other Important Disclosures
+
+MS policy is to update research reports as and when the Research Analyst and Research Management deem appropriate, based on developments with the issuer, the sector, or the market that may have a material impact on the research views or opinions stated therein. In addition, certain Research publications are intended to be updated on a regular periodic basis (weekly/monthly/quarterly/annual) and will ordinarily be updated with that frequency, unless the Research Analyst and Research Management determine that a different publication schedule is appropriate based on current conditions.
+
+MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act.
+
+MS produces an equity research product called a "Tactical Idea." Views contained in a "Tactical Idea" on a particular stock may be contrary to the recommendations or views expressed in research on the same stock. This may be the result of differing time horizons, methodologies, market events, or other factors. For all research available on a particular stock, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.
+
+MS is provided to our clients through our proprietary research portal on Matrix and also distributed electronically by MS to clients. Certain, but not all, MS products are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience. For access to all available MS, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.
+
+Any access and/or use of MS is subject to MS's Terms of Use (http://www.morganstanley.com/terms.html). By accessing and/or using MS, you are indicating that you have read and agree to be bound by our Terms of Use (http://www.morganstanley.com/terms.html). In addition you consent to MS processing your personal data and using cookies in accordance with our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\_pledge.html), including for the purposes of setting your preferences and to collect readership data so that we can deliver better and more personalized service and products to you. To find out more information about how MS processes personal data, how we use cookies and how to reject cookies see our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\_pledge.html). Please use the provided link to review the Terms and Conditions and Most Important Terms and Conditions for MS India Company Private Limited (https://www.morganstanley.com/assets/pdfs/about-us-global-offices/india/Terms\_and\_conditions.pdf) and the following link to review the audit report (https://ny.matrix.ms.com/eqr/research/webapp/researchdocs/MSICPL\_Morgan\_Stanley\_Research\_Audit\_Report.pdf).
+
+If you do not agree to our Terms of Use and/or if you do not wish to provide your consent to MS processing your personal data or using cookies please do not access our research.
+
+MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments.
+
+The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+The "Important Regulatory Disclosures on Subject Companies" section in MS lists all companies mentioned where MS owns 1% or more of a class of common equity securities of the companies. For all other companies mentioned in MS, MS may have an investment of less than 1% in securities/instruments or derivatives of securities/instruments of companies and may trade them in ways different from those discussed in MS. Employees of MS not involved in the preparation of MS may have investments in securities/instruments or derivatives of securities/instruments of companies mentioned and may trade them in ways different from those discussed in MS. Derivatives may be issued by MS or associated persons.
+
+With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel.
+
+MS personnel may participate in company events such as site visits and are generally prohibited from accepting payment by the company of associated expenses unless pre-approved by authorized members of Research management.
+
+MS may make investment decisions that are inconsistent with the recommendations or views in this report.
+
+To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited ("MSTL"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments.
+
+Certain information in MS was sourced by employees of the Shanghai Representative Office of MS Asia Limited for the use of MS Asia Limited. MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only.
+
+MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118); in Australia to "wholesale clients" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to "wholesale clients" and "retail clients" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India ("SEBI") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., authorised and regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 149169; in the US by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the "Order"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital
+
+Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only.
+
+MS Hong Kong Securities Limited is the liquidity provider/market maker for securities of ASMPT Ltd, Hua Hong Semiconductor Ltd, Montage Technology Co Ltd listed on the Stock Exchange of Hong Kong Limited. An updated list can be found on HKEx website: http://www.hkex.com.hk.
+
+The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative.
+
+The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA.
+
+As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations.
+
+The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P.
+
+MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS.
+
+Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework.
+
+The issuers and/or fixed income products recommended or discussed in certain fixed income research reports may not be continuously followed. Accordingly, investors should regard those fixed income research reports as providing stand-alone analysis and should not expect continuing analysis or additional reports relating to such issuers and/or individual fixed income products. MS may hold, from time to time, material financial and commercial interests regarding the company subject to the Research report.
+
+Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing.
+
+INDUSTRY COVERAGE: Greater China Technology Semiconductors
+
+<table><tr><td>COMPANY (TICKER)</td><td>RATING (AS OF)</td><td>PRICE* (07/03/2026)</td></tr><tr><td colspan="3">Charlie Chan</td></tr><tr><td>ACM Research Inc (ACMR.O)</td><td>O (03/07/2023)</td><td>US$97.77</td></tr><tr><td>Advanced Micro-Fabrication Equipment Inc (688012.SS)</td><td>O (11/06/2023)</td><td>Rmb413.69</td></tr><tr><td>Advanced Wireless Semiconductor Co (8086.TWO)</td><td>U (07/14/2025)</td><td>NT$144.00</td></tr><tr><td>Alchip Technologies Ltd (3661.TW)</td><td>O (05/14/2021)</td><td>NT$4,650.00</td></tr><tr><td>ASE Technology Holding Co. Ltd. (3711.TW)</td><td>O (09/15/2024)</td><td>NT$682.00</td></tr><tr><td>Cambricon Technology Corporation (688256.SS)</td><td>O (04/27/2026)</td><td>Rmb1,353.00</td></tr><tr><td>Global Unichip Corp (3443.TW)</td><td>O (06/24/2026)</td><td>NT$5,040.00</td></tr><tr><td>GlobalWafers Co Ltd (6488.TWO)</td><td>E (05/19/2026)</td><td>NT$1,255.00</td></tr><tr><td>Gudeng Precision (3680.TWO)</td><td>O (11/25/2025)</td><td>NT$539.00</td></tr><tr><td>Hua Hong Semiconductor Ltd (1347.HK)</td><td>E (03/12/2026)</td><td>HK$178.00</td></tr><tr><td>Iluvatar CoreX Semiconductor Co., Ltd. (9903.HK)</td><td>O (04/27/2026)</td><td>HK$641.00</td></tr><tr><td>King Yuan Electronics Co Ltd (2449.TW)</td><td>O (03/03/2023)</td><td>NT$335.00</td></tr><tr><td>Maxscend Microelectronics Co Ltd (300782.SZ)</td><td>U (01/11/2021)</td><td>Rmb98.39</td></tr><tr><td>MediaTek (2454.TW)</td><td>O (11/28/2025)</td><td>NT$4,195.00</td></tr><tr><td>MetaX Integrated Circuits (688802.SS)</td><td>E (04/27/2026)</td><td>Rmb738.38</td></tr><tr><td>Nanya Technology Corp. (2408.TW)</td><td>O (05/28/2026)</td><td>NT$409.50</td></tr><tr><td>NAURA Technology Group Co Ltd (002371.SZ)</td><td>O (11/06/2023)</td><td>Rmb816.00</td></tr><tr><td>OmniVision Integrated Circuits Group Inc (603501.SS)</td><td>E (11/17/2025)</td><td>Rmb102.30</td></tr><tr><td>Phison Electronics Corp (8299.TWO)</td><td>E (02/25/2026)</td><td>NT$2,295.00</td></tr><tr><td>SG Micro Corp. (300661.SZ)</td><td>E (11/03/2025)</td><td>Rmb139.60</td></tr><tr><td>Silergy Corp. (6415.TW)</td><td>U (05/19/2026)</td><td>NT$605.00</td></tr><tr><td>SMIC (0981.HK)</td><td>O (10/21/2025)</td><td>HK$77.60</td></tr><tr><td>TSMC (2330.TW)</td><td>O (02/07/2022)</td><td>NT$2,445.00</td></tr><tr><td>UMC (2303.TW)</td><td>O (05/19/2026)</td><td>NT$170.50</td></tr><tr><td>Vanguard International Semiconductor (5347.TWO)</td><td>E (01/14/2026)</td><td>NT$193.50</td></tr><tr><td>WIN Semiconductors Corp (3105.TWO)</td><td>U (07/14/2025)</td><td>NT$411.00</td></tr><tr><td colspan="3">Daisy Dai, CFA</td></tr><tr><td>ASMPT Ltd (0522.HK)</td><td>O (07/24/2025)</td><td>HK$204.80</td></tr><tr><td>China Resources Microelectronics Limited (688396.SS)</td><td>U (03/02/2026)</td><td>Rmb83.60</td></tr><tr><td>Elan Microelectronics Corp (2458.TW)</td><td>O (10/03/2025)</td><td>NT$184.00</td></tr><tr><td>Empyrean Technology Co Ltd (301269.SZ)</td><td>E (01/17/2025)</td><td>Rmb102.77</td></tr><tr><td>Hangzhou Silan Microelectronics Co. Ltd. (600460.SS)</td><td>U (08/25/2025)</td><td>Rmb47.25</td></tr><tr><td>Hygon Information Technology Co., Ltd. (688041.SS)</td><td>O (07/03/2026)</td><td>Rmb325.40</td></tr><tr><td>Innoscience (2577.HK)</td><td>E (10/13/2025)</td><td>HK$60.65</td></tr><tr><td>JCET Group Co Ltd (600584.SS)</td><td>E (01/16/2026)</td><td>Rmb90.88</td></tr><tr><td>Shanghai Fudan Microelectronics (1385.HK)</td><td>O (03/07/2025)</td><td>HK$30.92</td></tr><tr><td>SICC Co Ltd (688234.SS)</td><td>O (03/20/2026)</td><td>Rmb145.60</td></tr><tr><td>StarPower Semiconductor Ltd (603290.SS)</td><td>E (05/14/2026)</td><td>Rmb129.35</td></tr><tr><td>Unigroup Guoxin Microelectronics Co Ltd (002049.SZ)</td><td>U (01/10/2023)</td><td>Rmb81.76</td></tr><tr><td>Universal Scientific Ind. (Shanghai) (601231.SS)</td><td>O (11/05/2025)</td><td>Rmb30.59</td></tr><tr><td>Yangjie Technology (300373.SZ)</td><td>O (06/10/2022)</td><td>Rmb129.46</td></tr><tr><td colspan="3">Daniel Yen, CFA</td></tr><tr><td>AP Memory Technology Corp (6531.TW)</td><td>O (07/11/2025)</td><td>NT$987.00</td></tr><tr><td>ASMedia Technology Inc (5269.TW)</td><td>U (10/03/2025)</td><td>NT$1,530.00</td></tr><tr><td>Aspeed Technology (5274.TWO)</td><td>O (06/09/2025)</td><td>NT$17,265.00</td></tr><tr><td>Egis Technology Inc (6462.TWO)</td><td>E (01/28/2026)</td><td>NT$117.50</td></tr><tr><td>Espressif Systems (688018.SS)</td><td>O (05/15/2023)</td><td>Rmb120.11</td></tr><tr><td>GigaDevice Semiconductor Beijing Inc (603986.SS)</td><td>O (05/15/2025)</td><td>Rmb677.77</td></tr><tr><td>Macronix International Co Ltd (2337.TW)</td><td>O (09/18/2025)</td><td>NT$142.50</td></tr><tr><td>Montage Technology Co Ltd (6809.HK)</td><td>O (03/18/2026)</td><td>HK$382.60</td></tr><tr><td>Montage Technology Co Ltd (688008.SS)</td><td>O (03/18/2026)</td><td>Rmb266.80</td></tr><tr><td>Novatek (3034.TW)</td><td>U (02/04/2026)</td><td>NT$538.00</td></tr><tr><td>Nuvoton Technology Corporation (4919.TW)</td><td>U (11/10/2025)</td><td>NT$176.50</td></tr><tr><td>Parade Technologies Ltd (4966.TWO)</td><td>O (05/27/2026)</td><td>NT$654.00</td></tr><tr><td>Powerchip Semiconductor Manufacturing Co (6770.TW)</td><td>O (10/27/2025)</td><td>NT$73.40</td></tr><tr><td>Realtek Semiconductor (2379.TW)</td><td>E (01/30/2026)</td><td>NT$783.00</td></tr><tr><td>Shenzhen Goodix Technology Co Ltd (603160.SS)</td><td>U (07/14/2025)</td><td>Rmb59.03</td></tr><tr><td>Winbond Electronics Corp (2344.TW)</td><td>O (05/28/2026)</td><td>NT$184.50</td></tr><tr><td>WPG Holdings (3702.TW)</td><td>O (03/16/2026)</td><td>NT$110.00</td></tr><tr><td>WT Microelectronics Co. Ltd. (3036.TW)</td><td>O (01/27/2026)</td><td>NT$221.50</td></tr><tr><td colspan="3">Duan Liu</td></tr><tr><td>Dosilicon Co Ltd (688110.SS)</td><td>U (09/06/2024)</td><td>Rmb178.80</td></tr><tr><td>Shenzhen Longsys Electronics Co Ltd (301308.SZ)</td><td>E (02/25/2026)</td><td>Rmb618.02</td></tr><tr><td colspan="3">Tiffany Yeh</td></tr><tr><td>AllRing Tech Co. (6187.TWO)</td><td>O (09/23/2025)</td><td>NT$1,030.00</td></tr><tr><td>FOCI Fiber Optic Communications Inc (3363.TWO)</td><td>O (01/15/2025)</td><td>NT$581.00</td></tr><tr><td>Himax Technologies Inc (HIMX.O)</td><td>E (02/04/2026)</td><td>US$13.15</td></tr><tr><td>Hon Precision (7769.TW)</td><td>O (04/17/2026)</td><td>NT$6,865.00</td></tr><tr><td>MPI Corporation (6223.TWO)</td><td>O (04/17/2026)</td><td>NT$7,380.00</td></tr><tr><td>Silicon Motion (SIMO.O)</td><td>O (05/06/2024)</td><td>US$300.71</td></tr><tr><td>WinWay Technology Co Ltd (6515.TW)</td><td>O (04/17/2026)</td><td>NT$9,900.00</td></tr></table>
+
+Stock Ratings are subject to change. Please see latest research for each company.  
+\* Historical prices are not split adjusted.
+
+## © 2026 MS
