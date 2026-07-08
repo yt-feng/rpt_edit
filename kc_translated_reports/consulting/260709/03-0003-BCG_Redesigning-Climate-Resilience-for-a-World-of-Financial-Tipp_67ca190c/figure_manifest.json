@@ -1,0 +1,30 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/consulting/260709/0003-BCG_Redesigning-Climate-Resilience-for-a-World-of-Financial-Tipp_67ca190c/mineru_raw/images/2bfd09da97b347232e56da697c51787a7b28bab8dcd192ab99323e5d56322be0.jpg",
+    "path": "kc_translated_reports/consulting/260709/03-0003-BCG_Redesigning-Climate-Resilience-for-a-World-of-Financial-Tipp_67ca190c/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.18,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/consulting/260709/0003-BCG_Redesigning-Climate-Resilience-for-a-World-of-Financial-Tipp_67ca190c/mineru_raw/images/775035d75945e7a1024d27f19229c4adc9a8e792cdd6495b073c3226c3a21825.jpg",
+    "path": "kc_translated_reports/consulting/260709/03-0003-BCG_Redesigning-Climate-Resilience-for-a-World-of-Financial-Tipp_67ca190c/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=9;chart_context,chart_ratio,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/consulting/260709/0003-BCG_Redesigning-Climate-Resilience-for-a-World-of-Financial-Tipp_67ca190c/mineru_raw/images/f86532355db80b342ce4bf8e62e60609a7029beae0c7f4547c8f5542c57fe1ae.jpg",
+    "path": "kc_translated_reports/consulting/260709/03-0003-BCG_Redesigning-Climate-Resilience-for-a-World-of-Financial-Tipp_67ca190c/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.13,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_004]]",
+    "source_path": "xhs_notes/consulting/260709/0003-BCG_Redesigning-Climate-Resilience-for-a-World-of-Financial-Tipp_67ca190c/mineru_raw/images/65096784efdc1a19c0b63cb02857856e6a8a6c124b5440c4463d8339b4e05b3c.jpg",
+    "path": "kc_translated_reports/consulting/260709/03-0003-BCG_Redesigning-Climate-Resilience-for-a-World-of-Financial-Tipp_67ca190c/assets/fig_004.jpg",
+    "relative_path": "fig_004.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.12,contrast,large"
+  }
+]
