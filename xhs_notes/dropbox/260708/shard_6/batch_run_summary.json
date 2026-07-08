@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 82,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 6,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/31-GS-Japan： BOP： May Inbound Spending Down YoY for Second Month； Foreign Investors Large Net Sellers of Japan Equities and Bonds in June-260708.pdf",
+          "batch_file": "/tmp/pdf_batch_001_9luq0931/pdfs/0001-31-GS-Japan- BOP- May Inbound Spending Down YoY for Second Month- Foreign Investors Large Net Sellers of Japan Equities and Bonds in June-260708.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/33-GS-InnoScience (2577.HK)_ 800 VDC to drive GaN in AI data centers; initiate at Buy with TP at HK$114-260707.pdf",
+          "batch_file": "/tmp/pdf_batch_001_9luq0931/pdfs/0002-33-GS-InnoScience (2577.HK)_ 800 VDC to drive GaN in AI data centers- initiate at Buy with TP at HK-114-260707.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/35-GS-LG Energy Solution （373220.KS）： Core 2Q OP margins miss； focus likely on ESS margins outlook on the analyst call； Buy-260708.pdf",
+          "batch_file": "/tmp/pdf_batch_001_9luq0931/pdfs/0003-35-GS-LG Energy Solution -373220.KS-- Core 2Q OP margins miss- focus likely on ESS margins outlook on the analyst call- Buy-260708.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/36-GS-Japan： May Wages： Basic Wage Growth Maintains Upward Trend Consistent With Shunto Wage Hikes； Real Wages Positive for Fifth-260707.pdf",
+          "batch_file": "/tmp/pdf_batch_001_9luq0931/pdfs/0004-36-GS-Japan- May Wages- Basic Wage Growth Maintains Upward Trend Consistent With Shunto Wage Hikes- Real Wages Positive for Fifth-260707.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/37-GS-US Autos & Industrial Tech：2Q26 EPS preview： We expect generally better guidance from industrial tech companies， and in line outlooks in autos-260707.pdf",
+          "batch_file": "/tmp/pdf_batch_001_9luq0931/pdfs/0005-37-GS-US Autos - Industrial Tech-2Q26 EPS preview- We expect generally better guidance from industrial tech companies- and in line outlooks in autos-260707.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
