@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001__vtk2cop/pdfs/0001-54-JPM-Hong Kong Residential Property Chartbook-All the charts you need-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__vtk2cop/pdfs/0002-55-JPM-Korea Power Equipment 2Q26 Results Preview- LS may beat on 2Q new orders- Hyosung may miss on earnings on ME impact-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__vtk2cop/pdfs/0003-56-JPM-Soitec-SOIT.PA- Deeper Mobile trough likely to offset any SiPho upside- Stay Neutral-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__vtk2cop/pdfs/0004-57-JPM-Robotaxi Industry-Key Highlights and Takeaways from Recent Videos- Podcasts and News Developments-260706.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001__vtk2cop/pdfs/0005-58-JPM-Technology -Consumer Electronics Industrial Electronics Precisions-260707.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
