@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_rdml1xfk/pdfs/0001-01-BARC-U.S. Digital Advertising-Consumer AI Starting to Take Shape-2Q Preview-260707.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rdml1xfk/pdfs/0002-02-Bernstein-Americas Energy - Transition Power and Energy Transition- Watt To Expect over 2Q 2026 earnings-260707.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rdml1xfk/pdfs/0003-03-Bernstein-European Technology Software-Software IT services sector- Further recovery- less euphoria-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rdml1xfk/pdfs/0004-04-Bernstein-Global Semiconductors-Global Semis- Progress of Foundry Decoupling up to 2025-260707.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rdml1xfk/pdfs/0005-05-Bernstein-Global Semiconductors - Hardware-China Smartphone Tracker -May--Historical high ASP and inventory level-260708.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

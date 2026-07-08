@@ -1,0 +1,612 @@
+# Global Semiconductors & Hardware
+
+# China Smartphone Tracker (May): Historical high ASP and inventory level
+
+![](images/e91bfcd6ad0c96cae0dbfe61c3633edd96c455e5ee1f7eee76a2859c8046b2f1.jpg)
+
+![](images/fa0d9fc6df528308d11807712ea0b69648e6aa5faefe12e553136665e3aa76c6.jpg)
+
+![](images/bda012cea2efebfaefad08836b306878eea1a0b0a573447ddb0f04dcd7cbeea9.jpg)
+
+![](images/7c70392bdc68c974a5a94f10cbaf29ee577582aa2dc0cb655e69a96bc8b9e6b5.jpg)
+
+![](images/6fece15f26283104e8fcc11f74f04dfce77fcc1ed7cc91d7dc0572b1a13e7609.jpg)
+
+![](images/64b836a1908f345c4fbdbe7188ec2232c9a915394ba4c5ef6bba1cfd883d4eff.jpg)
+
+Mark Li
++852 2123 2645
+mark.li@bernsteinsg.com
+
+Stacy A. Rasgon, Ph.D.
++1 213 559 5917
+stacy.rasgon@bernsteinsg.com
+
+Mark C. Newman
++1 212 845 7822
+mark.newman@bernsteinsg.com
+
+Alex Wang, CFA
++852 2123 2613
+alex.wang@bernsteinsg.com
+
+Eunice Lee, CFA
++852 2123 2606
+eunice.lee@bernsteinsg.com
+
+Aleksander Peterc
++33 1 57 29 45 25
+aleksander.peterc@bernsteinsg.com
+
+Please download our smartphone monthly tracker data from here.
+
+High memory costs pressured all segments. In May, China smartphone sell-through picked up 5% MoM but dropped 20% YoY to 17.3M units, making 5M26 cumulative shipment fall by 9% YoY. High memory price weighed on all segments with low-, mid-, and high-end segment dropping 38%, 17%, and 5% YoY, respectively. The contribution from entry-level models in the overall shipment mix fell to a record low in May.
+
+Historical high ASP ... May ASP rose 24% YoY, a clear acceleration from the mid-teens % seen in 4M26, and was materially higher than prior-year levels. We attribute this to both an upgrade in shipment mix during the “618 Shopping Festival” and memory costs resulting in reduced low-end contribution & also like-for-like price hikes. We remain cautious on demand, as higher handset prices could suppress volumes and ultimately limit further ASP upside.
+
+... and inventory level. After adjusting for possible obsolescence, we still find Android brands have recorded notably higher sell-in than sell-through for two consecutive months. Their inventory level reached a historical high of 3.9 months. Smartphone OEMs found themselves caught in a dilemma of high-inventory and thin (or even negative) margin, and that may explain the less aggressive discounts in this year's "618" festival.
+
+Apple turned more aggressive on pricing by cutting the iPhone 17 Pro by RMB1,000 during the "618" campaign and bringing its price below RMB 7,000 for the first time. This drove a 6ppt unit share gain from Huawei sequentially. Huawei had benefited from the new Pura 80 launch cycle, but early feedback has been lukewarm. We see higher processor costs from SMIC's "N+3" node and elevated memory prices, limit Huawei's ability to compete in a price war.
+
+We rate MediaTek Outperform (report, model). We currently forecast the ASIC revenue to be US\$2B,15B and 22B in 2026–2028, respectively, but see an upside risk to it, especially in 2028. Smartphone revenue should drop, but TPU revenue should be more than enough to offset that. Outperform.
+
+We rate Apple Outperform as strength continues and share gains play out (see Apple Deep Dive and recent APPLE TRACKER). For suppliers in smartphone value chain, Luxshare and Largan should be more resilient than Sunny Optical this year, supported by stronger Apple exposure (vs. Android) and ongoing progress in AI-related products.
+
+Xiaomi's (OP) shipments declined by -29% YoY on a high base, with market share falling to 14.5%, down from 14.6% in April 2026 and 16.1% in May 2025. In 5M26, shipments of high-end models (RMB 4k+) declined by -14% YoY. Meanwhile, mid-range (RMB 2–4k) and low-end (<RMB 2k) segments saw declines of -16% and -31% YoY, respectively, reflecting a product transition phase amid rising memory prices and competition pressures.
+
+## BERNSTEIN TICKER TABLE
+
+<table><tr><td rowspan="2">Ticker</td><td rowspan="2">Rating</td><td rowspan="2">Cur</td><td colspan="3">7 Jul 2026</td><td rowspan="2">TTMRel.</td><td colspan="4">Reported EPS</td><td colspan="3">Reported P/E (x)</td></tr><tr><td>Closing Price</td><td>Price Target</td><td>Target Perf.</td><td>Cur</td><td>2025A</td><td>2026E</td><td>2027E</td><td>2025A</td><td>2026E</td><td>2027E</td></tr><tr><td>2454.TT (MediaTek)</td><td>O</td><td>TWD</td><td>4,030.00</td><td>4,380.00</td><td>182.0%</td><td>TWD</td><td>66.17</td><td>69.52</td><td>170.50</td><td>60.9</td><td>58.0</td><td>23.6</td><td></td></tr><tr><td>3034.TT (Novatek)</td><td>M</td><td>TWD</td><td>531.00</td><td>370.00</td><td>(35.9)%</td><td>TWD</td><td>26.87</td><td>24.21</td><td>25.10</td><td>19.8</td><td>21.9</td><td>21.2</td><td></td></tr><tr><td>QCOM (Qualcomm )</td><td>M</td><td>USD</td><td>182.97</td><td>235.00</td><td>(4.7)%</td><td>USD</td><td>12.03</td><td>10.64</td><td>10.16</td><td>15.2</td><td>17.2</td><td>18.0</td><td></td></tr><tr><td>SOI.FP (Soitec)</td><td>O</td><td>EUR</td><td>98.16</td><td>180.00</td><td>90.9%</td><td>EUR</td><td>(6.17)</td><td>0.28</td><td>2.49</td><td>(15.9)</td><td>356.1</td><td>39.4</td><td></td></tr><tr><td>002475.CH ( Luxshare )</td><td>O</td><td>CNY</td><td>63.28</td><td>86.00</td><td>43.7%</td><td>CNY</td><td>2.26</td><td>2.66</td><td>3.45</td><td>28.0</td><td>23.8</td><td>18.3</td><td></td></tr><tr><td>3008.TT (Largan)</td><td>O</td><td>TWD</td><td>3,890.00</td><td>5,150.00</td><td>44.8%</td><td>TWD</td><td>158.08</td><td>187.55</td><td>208.38</td><td>24.6</td><td>20.7</td><td>18.7</td><td></td></tr><tr><td>1810.HK (Xiaomi)</td><td>O</td><td>HKD</td><td>23.10</td><td>43.00</td><td>(81.1)%</td><td>CNY</td><td>1.62</td><td>1.02</td><td>1.77</td><td>12.3</td><td>19.6</td><td>11.3</td><td></td></tr><tr><td>AAPL (Apple )</td><td>O</td><td>USD</td><td>310.66</td><td>350.00</td><td>27.5%</td><td>USD</td><td>7.46</td><td>8.87</td><td>10.65</td><td>41.6</td><td>35.0</td><td>29.2</td><td></td></tr><tr><td>2382.HK (Sunny Optical)</td><td>O</td><td>HKD</td><td>55.65</td><td>94.00</td><td>(57.1)%</td><td>CNY</td><td>4.25</td><td>3.44</td><td>4.52</td><td>11.4</td><td>14.0</td><td>10.7</td><td></td></tr><tr><td>ASIAX</td><td></td><td></td><td>1,945.70</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>SPX</td><td></td><td></td><td>7,503.85</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>EDME</td><td></td><td></td><td>1,606.65</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+O - Outperform, M - Market-Perform, U - Underperform, NR - Not Rated, CS - Coverage Suspended
+
+QCOM, SOI.FP, AAPL estimate is Adjusted EPS; QCOM, SOI.FP, AAPL valuation is Adjusted P/E (x); SOI.FP base year is 2026;
+
+Source: Bloomberg, Bernstein estimates and analysis.
+
+## INVESTMENT IMPLICATIONS
+
+MediaTek (OP, PT NT\$4,380.00): We rate MediaTek Outperform with PT NT\$4,380.00.
+
+Novatek (MP, PT NT\$370.00): We rate Novatek Market-Perform with PT NT\$370.00.
+
+Apple (OP, PT\$350): We rate AAPL Outperform with PT \$350.00.
+
+QCOM (MP, \$235): Memory headwinds appear likely to pressure smartphone builds and numbers still appear high though the datacenter narrative sounds promising.
+
+Luxshare (OP, PT RMB 86.00): We rate Luxshare Outperform with a RMB86.00 price target.
+
+Sunny Optical (OP, PT HK\$94.00): We rate Sunny Optical Outperform with a HK\$94.00 price target.
+
+Largan (MP, PT NT\$ 5,150.00): We rate Largan Outperform with a NT\$5,150.00 price target.
+
+Soitec (Outperform, PT €180.00). We rate Soitec Outperform with a PT of €180.00. RF-SOI (60% of revenue) remains under pressure from foundry de-stocking; Soitec's core narrative is shifting to Photonics-SOI as the next primary source of growth.
+
+Xiaomi (Outperform, PT HK\$43): We rate Xiaomi Outperform with price target for 1810.HK at HK\$43.00.
+
+## DETAILS
+
+This tracker is mainly based on the smartphone sell-through data that CINNO reports for the China market. We also compare that with the sell-in data published by CATR to help investors get a view on handset inventory. Additionally, we summarize the shares of mobile SoC suppliers & the use of display panel technologies. Please find the details of our methodology in this and this report.
+
+## In May, high memory costs weighed on all segments.
+
+\- In May, China smartphone sell-through improved 5% MoM but dropped 20% YoY to 17.3M units (Exhibit 1), making 5M26 cumulative shipment fall by 9% YoY.
+
+\- We’d like to assess the impact of rising memory costs, but the anticipation of handset price increase & the resulting pull-forward purchases may make it difficult to isolate the effect of memory costs precisely. Fortunately, a closer look across price tiers reveals consistent and worsening pressure of high memory costs on smartphone market. Should we define low-tier segment as smartphones priced below RMB 2,000 (below c. US\$290), mid-tier as RMB 2,000-5,000 (c. US\$290-725) and high-tier as above RMB 5,000 (above c. US\$725), we find a clear divergence across these segments. The low-end segment continues to lag, with shipments declining 38% YoY in May—significantly underperforming the overall market. The mid-tier segment also weakened, posting a 17% YoY decline, likely reflecting the impact of handset price increases implemented in late March. In comparison, the high-end segment remains relatively resilient, with shipments down only 4.5% YoY (Exhibit 2). As a result, the contribution from low-end segment in overall shipment mix fell to a record low in May (Exhibit 3).
+
+\- Premium OEMs like Huawei and Apple appeared less-affected by the memory cost pressure (Exhibit 4, Exhibit 5). In contrast, other OEMs saw their combined shipment decline 32% YoY in May & their aggregated market share fall 9.5pts YoY (Exhibit 6 - Exhibit 7).
+
+\- We now forecast China smartphone market to 15% decline YoY this year (Smartphone and 5G Model). Sell-through data YTD also revealed the memory impact on handset shipment, but some foundries and component suppliers on the other hand have reported better-than-feared results thus far. We wonder if pulled-in inventory buildup may explain the divergence and delay the impact on foundries & upstream suppliers to 2H26 and 1H27 and will monitor the trend closely.
+
+EXHIBIT 1: China smartphone sell-through shipment in May was up 5% MoM but down 20% YoY.
+
+Smartphone Shipment & YoY Growth  
+![](images/d0e0302ad4d34b8e5cd186b4933cef71d919504cb0402362701b1f8cae2a1c52.jpg)  
+Source: CINNO and Bernstein analysis
+
+EXHIBIT 2: Low-tier smartphone shipment declined by 38% YoY in May, followed by mid-tier segment (-17% YoY). High-tier was down only 4.5%.  
+China Smartphone Sell-through by Price Band  
+![](images/d039145d6525c867c5dc846401b1e0aedc48cfb29562803b8306827423999471.jpg)  
+Source: CINNO and Bernstein analysis
+
+EXHIBIT 3: The contribution from low-end segment in the overall sales mix hit a record low in May.  
+China Smartphone Sell-through by Price Band  
+![](images/2812caa581c51bcddf77653e6ce46ded0d25851ccf56e2523b706825cf220c09.jpg)  
+Source: CINNO and Bernstein analysis
+
+EXHIBIT 4: For Huawei the fall of low-end segment mix strated before memory price hike.  
+Huawei Smartphone Sell-through by Price Band  
+![](images/454f47f395219bf83b857babaaf2fe23c14c587fde1c09c19ebafe8f7d22c5dd.jpg)  
+Source: CINNO and Bernstein analysis
+
+EXHIBIT 5: Apple has no exposure to low-end market, and thus best positioned among all brands.  
+Apple Smartphone Sell-through by Price Band  
+![](images/f0d5cc5e02ce800db2a574f4ed2d172ba1f5fe97bec88bcb11921e0405404941.jpg)  
+Source: CINNO and Bernstein analysis
+
+EXHIBIT 6: Other OEMs together shipped 32% less smartphones in May 2026 vs. May 2025 ...
+
+Non-Apple/Huawei Shipment in China & YoY Growth  
+![](images/24c11d73f6d0857a52a2f89700560cf9bb6365b753743bfbc3d2007f241f15b2.jpg)  
+Source: CINNO and Bernstein analysis
+
+EXHIBIT 7: ...and they collectively lost 9.5pts unit share YoY, mostly burdened by the drop of low-end segment shipment.  
+Non-Apple/Huawei Market Share in China  
+![](images/752bd04d86bcc5b39b20e5052fac9b7a750a2d07621f4008878e532114c0b6d9.jpg)  
+Source: CINNO and Bernstein analysis
+
+EXHIBIT 8: Except Huawei, all OEMs improved their sell-through MoM in May, but only modestly and with the total volume staying notably below the usual level.  
+![](images/6d6a1de5cc2fce97eb8069eb13f6a2a820ee2b380d327579d91dc5098e2e5f74.jpg)  
+Source: CINNO and Bernstein analysis
+
+## Apple turned more aggressive during the "618" and gained 6pts unit share sequentially.
+
+\- Huawei's adoption of homegrown SoCs from late 2023 helped it regain share in higher-end segments, and other Chinese OEMs also moved upward and chipped away shares from the low-side of Apple's portfolio. With the size of flagship segment barely growing, Apple earlier lost share mainly to Huawei and to a lesser extent to other OEMs (Exhibit 9 - Exhibit 11).
+
+\- Apple then has responded with more flexible pricing. At the iPhone 17 launch in September 2025, Apple priced the devices below RMB 6,000 & made them eligible for subsidies. The prices of the iPhone 16 series were also adjusted accordingly. Apple also expanded the use of seasonal promotions across various distribution channels. On May 15, 2026, it cut the price of iPhone 17 Pro by RMB1,000 as part of its “618” promotion campaign. Together with the national subsidies, the price of iPhone 17 Pro has come to below RMB 7,000 for the first time. As a result, Apple’s unit share increased by 6pts sequentially in May (Exhibit 16).
+
+\- As for Huawei, its shipment of RMB 6K-and-higher models grew 60% MoM and 33% YoY in May, mainly driven by its newly launched Pura 90 series. The Pro and Pro Max variants feature the Kirin 9030—the same SoC powering the Mate 80 Pro Max, and manufactured on SMIC's non-EUV "N+3" node. Consequently, the combined shipments of these models serve as a key barometer for both SMIC's "N+3" supply health and consumer demand for the chipset (Exhibit 13 - Exhibit 14). Early market feedback for the Pura 90 series has been lukewarm. In addition, elevated chip and memory costs leave Huawei with limited room to wage a price war. In contrast, Apple retains a clear upper hand, leveraging its structural pricing dominance to go on the offensive. This is probably not a surprise as a teardown report shows that SMIC "N+3" is similar to TSMC N6 & about 6 years behind the top-notch mobile SoCs in the market now. Most importantly this also means that China lacking EUV puts Huawei's handset business in a structural disadvantage vs. Apple or other handset OEMs whose smartphones are powered by superior chips made with EUV.
+
+EXHIBIT 9: Apple focuses on flagship segment but the size of this segment hardly expanded.
+
+China Flagship Smartphones (>=RMB6,000) Shipment by OEM
+
+![](images/6e11a33c3613c9d682e1d59ea50d5221305ac55fbe87be89bf62b8b95a723885.jpg)  
+Source: CINNO and Bernstein analysis  
+EXHIBIT 10: In comparison, sub-flagship segment has been growing gradually.  
+China Sub-Flagship Smartphones (RMB4,000 - 5,999) Shipment by OEM
+
+![](images/18fd3fcb79ad70549dc84c2f44f34dcc5d9740a3cb61876e71cd79cf620a6681.jpg)  
+Source: CINNO and Bernstein analysis
+
+EXHIBIT 11: Apple is challenged by Huawei in the flagship segment & earlier also by other Chinese OEMs in the sub-flagship segment.
+
+Smartphone Shipment in China by Brand
+
+![](images/34b33c9f904f9554bd0676e773f06649e08a017d5535af2de3e70881c68e05dd.jpg)  
+Source: CINNO and Bernstein analysis
+
+EXHIBIT 12: In mid-May, iPhone offered historical discounts to iPhone 17 Pro, driving its unit share up by 6% MoM and 4% YoY.
+
+Apple & Huawei Market Share in China  
+![](images/a7604b7da7d0fc628f11c9b7ae2360990b104d24f950c4798e2d90bd6b3f2401.jpg)  
+Source: CINNO and Bernstein analysis  
+EXHIBIT 14: ...but its premium segment shipment grew 60% MoM and 33% YoY mainly thanks to the launch of Pura 90 series.
+
+EXHIBIT 13: Huawei's shipment dropped $10\%$ sequentially in May...  
+![](images/87565ab14e2fa519fdb6af713fa50cdc36df8da5be0bc4c20a676db0c9532da2.jpg)
+
+![](images/a3bed675745225abc3e592eddf1d22b45d8066ae1b003d8353c31edc638fd6f2.jpg)
+
+EXHIBIT 15: Huawei's shipment increased by $9\%$ YoY in May...  
+![](images/1b901a1117511eef5ed5cc311dd1008e8260464cf9fdaf95ebbaf83630291738.jpg)  
+Source: CINNO and Bernstein analysis
+
+EXHIBIT 16: ... while Apple's shipment declined by $3\%$ YoY.
+
+![](images/abd81dc0ff09bc554ced3c30c649af3aa8ca8e7a2c0775a4fc1f9a814b318b48.jpg)  
+Source: CINNO and Bernstein analysis
+
+Android brands have recorded notably higher sell-in than sell-through for two consecutive months, driving their inventory level to a historical high.
+
+\- History shows that obsolescence may make sell-in above sell-through by around 5% and our analysis makes an adjustment to reflect that (more details here). With this adjustment, Exhibit 17 shows that May sell-in was notably higher than sell-through, particularly for Android brands (Exhibit 18). According to CINNO research, channel inventory level has climbed to a historical high of 3.9 months. This divergence between sell-in and sell-through likely reflects softer demand following the price increases starting in late March. High inventory may pressure OEMs' cash flows and may incentivize additional discounting ahead of the "618 Shopping Festival." On the other and, thin margins as a result of high memory costs limited their ability to do so. Overall, we find the Android camp offered less aggressive discounts during this year's "618" vs. prior years.
+
+\- On the other hand, iPhone managed a balanced sell-through and sell-in and thus had a healthy inventory level exiting May (Exhibit 19).
+
+EXHIBIT 17: Adjusting the sell-in data from CATR for possible obsolescence, we find sell-in remained notably higher than sell-through in May...  
+Smartphone Sell-in (CATR) vs. Sell-through (CINNO) in China  
+![](images/0b707a98dfda3e6d322603bdb4c4e05be779b041a1857fbeecff00104a18d2bb.jpg)  
+Source: CINNO, CATR, and Bernstein analysis
+
+EXHIBIT 18: ...especially for non-Apple brands likely due to their recent price adjustments.  
+Non-iPhone Sell-in (CATR) vs. Sell-through (CINNO) in China  
+![](images/ae5da690b10abf019c5069f21c577d7b66d2afa3b148dbf25c3a1f941cdcfc82.jpg)  
+Source: CINNO, CATR, and Bernstein analysis
+
+EXHIBIT 19: iPhone sell-through caught up with sell-in in May and its inventory level stayed healthy.  
+iPhone Sell-in (CATR) vs. Sell-through (CINNO) in China  
+![](images/b3793a289aa78895a4b0e93437eb234dc28f322fc47933f874fadf9de92fb10f.jpg)  
+Source: CINNO, CATR, and Bernstein analysis
+
+## Smartphone ASP jumped by 24% YoY and 13% MoM, but we worry about demand destruction as a result of higher ASP.
+
+\- With 5G nearly fully adopted (Exhibit 20), many see smartphone market ex-growth and are hoping that Edge AI will create a replacement cycle, or stimulate a mix improvement and/or a semiconductor content increase per phone. Qualcomm and MediaTek both highlighted agentic AI as a key value driver in recent earnings calls. Qualcomm expects agentic AI to start impacting the premium segment in fiscal year 2027, potentially triggering a new upgrade cycle. MediaTek did not specify a timeline but emphasized that its next-generation 2nm flagship SoC will have meaningfully stronger AI capabilities. We hence monitor the mix of flagship (≥ US\$850 (RMB 6,000)) & sub-flagship (US\$560-850 (RMB 4,000-5,999)) segments, as well as the overall smartphone ASP, to gauge the momentum of Edge AI. Additionally, high memory cost is prompting OEMs to cut low-priced models and raise prices elsewhere. Both will affect ASP, and we monitor handset prices to get a feel on that too.
+
+\- In early 2024 we were encouraged by the notably higher smartphone ASP in China vs. the same period in 2023. The trend became less visible in late 2024 & early 2025, but regained momentum since March 2025 likely as subsidies motivated consumers to trade up. In May 2026, ASP rose 24% YoY, a clear acceleration from the mid-teens % increase seen in 4M26 (Exhibit 21), and was materially higher than prior-year levels. We attribute this to both an upgrade in sales mix during the “618 Shopping Festival” and elevated memory costs resulting in lower entry-level mix and also like-for-like price increases. Looking ahead, we expect ASPs to normalize sequentially following the “618” period, but remain elevated on a YoY basis. On the other hand, we remain cautious on potential demand destruction, as higher retail prices weigh on volumes and may ultimately limit further ASP upside.
+
+\- Zooming into non-Apple/Huawei OEMs, we find their sub-flagship shipment still represented 17% of their total shipment, but the absolute volume was down 35% YoY in May (Exhibit 22, Exhibit 23). Flagship non-Apple/Huawei sales volume was down 39% YoY and its market share was also slightly lower vs. one year ago (Exhibit 24, Exhibit 25). As Apple and Huawei both turned more aggressive in flagship/sub-flagship segment during this “618 Shopping Festival”, it’s increasingly challenging for other OEMs to get sufficient revenue from flagship & sub-flagship segments to offset the loss in lower-end segments.
+
+EXHIBIT 20: 5G penetration has reached almost 100% in new smartphone sales in China.
+
+Smartphone Shipment & 5G Penetration  
+![](images/06d65e655fdabcd68062d4c1542095c6d4d161d577d3eda52a83bc6584e7ce3f.jpg)  
+Source: CINNO and Bernstein analysis
+
+EXHIBIT 21: Smartphone ASP jumped by 24% YoY and 13% MoM.  
+Smartphone Blended ASP in China (RMB)  
+![](images/8bcdc65c7327cda674e3e3efcee56dfc14a20df07b9232e365deafb047bfc0a8.jpg)  
+Source: CINNO and Bernstein analysis
+
+EXHIBIT 22: Non-Apple/Huawei sub-flagship shipment was down 35% YoY in May.  
+![](images/b53450381cbd892e034401512f6a32ab0f3848994486e80004b970cbcd98cf06.jpg)  
+Source: CINNO and Bernstein analysis
+
+EXHIBIT 23: Sub-flagship segment took up 17% of non-Apple/Huawei shipment, slightly down YoY.  
+![](images/e0519717b5909931d425fc64e93a0ffe5b7140df5bf721066de06d314c9212c2.jpg)  
+Source: CINNO and Bernstein analysis
+
+EXHIBIT 24: Non-Apple/Huawei flagship shipment was down 39% YoY.  
+Shipment of Non-Apple/Huawei Flagship Smartphones ( $\geq$ RMB6,000) in  
+![](images/10fe18333f49180f90cfdf2c95c5c0a0dc68e33e16b073f18acce7c6bbf089a2.jpg)  
+Source: CINNO and Bernstein analysis
+
+EXHIBIT 25: Flagship segment accounted for c. 5% of total non-Apple/Huawei shipment, slightly lower YoY.
+
+Flagship (≥ RMB6,000) as % of China's non-Apple/Huawei Smartphone Shipment  
+![](images/39bd3767f634354edf1d0bc8c69d978bd84e0ed7013eed7ebf0dbf80623cbee7.jpg)  
+Source: CINNO and Bernstein analysis  
+EXHIBIT 26: The share of Xiaomi's shipments priced above RMB 4k increased MoM to 19%, though modestly below the 22% in May 2025; Shipments in the RMB 2k-4k range reached 37%, vs. 28% in Apr 2026 and 33% in May 2025.  
+Xiaomi Smartphone Shipment in China Breakdown by Price Band (in RMB)
+
+![](images/617e38a5cda286e5ad74136992fd5313129c9e659f35b27071b4bd43d5b10703.jpg)  
+Source: CINNO and Bernstein analysis  
+EXHIBIT 27: In May 2026, Xiaomi's market share declined to $14.5\%$ from $14.6\%$ in Apr 2026 and $16.1\%$ in May 2025.  
+Xiaomi Market Share in China
+
+![](images/7d357c0e85ce5117153b89ecf5322b68a5114f20053be6c6f49f024471c0f489.jpg)  
+Source: CIINNO and Bernstein analysis
+
+## EXHIBIT 28: Xiaomi's yoy growth fell -29% YoY.
+
+Xiaomi: China smartphone shipment & growth  
+![](images/356440e0495cc52d0d9f7b47d5640213060b043c82ed0a8ab21748955bb408be.jpg)  
+Source: CINNO and Bernstein analysis
+
+Qualcomm and MediaTek both lost unit shares sequentially mainly because of the weak sales performance of non-Apple/Huawei OEMs.
+
+\- In May, unit share of Qualcomm and MediaTek decreased by 2.4pts and 0.2pts MoM, respectively, primarily as non-Apple/Huawei OEMs lost shares. On a YoY basis, Qualcomm and MediaTek lost 8.9pts and 0.5pts unit share, respectively, likely to HiSilicon (+6.7% YoY) and Apple (+4.0% YoY) (Exhibit 29 - Exhibit 30). MediaTek's shipment mix continued to improve slightly in May after plateauing for 2-3 quarters (Exhibit 31). The company expects further growth of its flagship SoC business driven by customers' oversea expansion as OEMs like OPPO and Xiaomi try to sell more high-end phones outside China (more details in our Tech Tour notes). For example, Xiaomi's 17T - flagship specially targeting oversea markets was launched on 28 May & MediaTek benefits as its sole SoC supplier (i.e. Dimensity 8500 for Standard variant & Dimensity 9500 for Pro variant). Initial feedback was generally positive, but it remains to be seen whether overseas markets can provide a sustained uplift to MediaTek's sales mix. Overall, we're cautious on MediaTek's smartphone business considering the pressure from high memory price & its higher exposure to mid- to low-end segments.
+
+\- Finally, the latest data shows UNISOC's share remained well below $1\%$ (Exhibit 32), implying the mobile SoC market in China remains a duopoly. Because China has the motivation to use the chips from Chinese suppliers, UNISOC's share staying so low in China attests that the company is not competitive in 5G.
+
+EXHIBIT 29: In May, unit share of Qualcomm and MediaTek decreased by 2.4pts and 0.2pts MoM, respectively...  
+![](images/549def6bc8659eeb4da923d3c13a31388ba2f59c3ddcce4aba5dc40ddc968121.jpg)  
+Source: CINNO and Bernstein analysis
+
+EXHIBIT 30: ...primarily due to weaker share among non-Apple/Huawei OEMs.  
+China Smartphone Shipment by Brand  
+![](images/a12cf55d482a15e7f469eec09d6dadc1a09b713ff92a3e94ab980439b5c09d39.jpg)  
+Source: CINNO and Bernstein analysis
+
+EXHIBIT 31: MediaTek's shipment mix continued to improve after plateauing for a while.  
+MediaTek SoC Shipment Breakdown by Price Band (in RMB)  
+![](images/f11bb09644c5e4d63a73785d12a3bff00c7dc77ba8b9bce0f5beb3dc0620cef9.jpg)  
+Source: CINNO and Bernstein analysis
+
+EXHIBIT 32: UNISOC's share remained very small in China, indicating UNISOC is not competitive in 5G.  
+UNISOC's Unit Share in China  
+![](images/6a25eb3741b5238a315af0166597b2d870a6fb0194ae223694b2b705742191ac.jpg)  
+Source: CINNO and Bernstein analysis
+
+OLED helps Novatek fend off the Chinese rivals, but the adoption has hit a ceiling. Foldable panel remained too small to move the needle.
+
+\- After OLED panel penetration surpassed 80% of the smartphones shipped in China in late 2023, further penetration has been very gradual (Exhibit 33). In fact the penetration has been hovering around 90% for months. We believe that OLED is now a mainstream feature and penetration has come to a ceiling with very limited headroom left (Exhibit 34, Exhibit 35).
+
+The growth of OLED panel and the supporting DDIC is thus bound to slow. Novatek has been a key beneficiary of the rising OLED adoption but plateauing OLED penetration may allow Chinese rivals to catch up. Going forward, Novatek will need to count on share gains especially at Apple & Samsung & the integration of touch function to OLED DDIC to sustain growth & its competitiveness vs. Chinese rivals.
+
+\- Finally, foldable panel adoption remained below $5\%$ in May (Exhibit 36). We don't expect a meaningful pick-up in the penetration until late 2026 when iPhone Foldable is expected to debut.
+
+EXHIBIT 33: The OLED penetration stood at c. 90% in May.
+
+China Smartphone Shipment Breakdown by Display Technology
+
+![](images/268f537b18c18ef1ba82544e66ba9f57b8eac0803f9c04919b679975af6f1324.jpg)  
+Source: CINNO and Bernstein analysis  
+EXHIBIT 34: OLED penetration in non-Apple/Huawei smartphones remained at high-80s%.
+
+![](images/a459a83b66a5a28649382c88a0dc0e729919a5b34437672304927024e19ff825.jpg)  
+Source: CINNO and Bernstein analysis
+
+EXHIBIT 35: All OEMs shipped less OLED YoY in May except for Huawei.  
+OLED Smartphone Shipment in China by OEM  
+![](images/bb094d9059c4525b65005ebdadc132d32143111f617fdbe9cdee7f7a3995b76c.jpg)  
+Source: CINNO and Bernstein analysis
+
+EXHIBIT 36: The adoption rate of foldable panel remained below 5% in May.  
+Foldable as % of China Smartphone Shipment  
+![](images/a34560ef9b40bfe78001da0d470bbbc9eb609446604f85226374014edc6d6b24.jpg)  
+Source: CINNO and Bernstein analysis
+
+## I. REQUIRED DISCLOSURES
+
+References to "Bernstein" or the "Firm" in these disclosures relate to the following entities: Bernstein Institutional Services LLC (April 1, 2024 onwards), Bernstein & Co., LLC (pre April 1, 2024), Bernstein Autonomous LLP, BSG France S.A. (April 1, 2024 onwards), Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited, Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社) and analysts employed by SG Africa Technologies & Services to produce Bernstein under a Global Services Agreement in place between Bernstein and SG.
+
+Bernstein is part of a joint venture between SG (SG) and AllianceBernstein, L.P. (AB). Unless specifically noted otherwise, for purposes of these disclosures, references to Bernstein's “affiliates” relate to both SG and AB and their respective affiliates.
+
+## VALUATION METHODOLOGY
+
+This research publication covers six or more companies. For valuation methodology and other company disclosures: Please visit: https://bernstein-autonomous.bluematrix.com/sellside/Disclosures.action.
+
+Or, you can also write to the Director of Compliance, Bernstein Institutional Services LLC, 245 Park Avenue, New York, NY 10167.
+
+## RISKS
+
+This research publication covers six or more companies. For risks and other company disclosures:
+
+Please visit: https://bernstein-autonomous.bluematrix.com/sellside/Disclosures.action.
+
+Or, you can also write to the Director of Compliance, Bernstein Institutional Services LLC, 245 Park Avenue, New York, NY 10167.
+
+RATINGS DEFINITIONS, BENCHMARKS AND DISTRIBUTION
+
+## EQUITY RATINGS DEFINITIONS
+
+## Bernstein brand
+
+The Bernstein brand rates stocks based on forecasts of relative performance for the next 12 months versus the S&P 500 for stocks listed on the U.S. and Canadian exchanges, versus the Bloomberg Europe Developed Markets Large and Mid Cap Price Return Index EUR (EDME) for stocks listed on the European exchanges and emerging markets exchanges outside of the Asia Pacific region, versus the Bloomberg Japan Large and Mid Cap Price Return Index USD (JPL) for stocks listed on the Japanese exchanges, and versus the Bloomberg Asia ex-Japan Large and Mid Cap Price Return Index (ASIAX) for stocks listed on the Asian (ex-Japan) exchanges -unless otherwise specified.
+
+The Bernstein brand has three categories of ratings:
+
+\- Outperform: Stock will outpace the market index by more than 15 pp
+
+• Market-Perform: Stock will perform in line with the market index to within +/-15 pp
+
+• Underperform: Stock will trail the performance of the market index by more than 15 pp
+
+Coverage Suspended: Coverage of a company under the Bernstein brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.
+
+Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.
+
+Not Covered (NC) denotes companies that are not under coverage.
+
+Bernstein brand stock ratings are based on a 12-month time horizon.
+
+Autonomous brand – common stocks
+
+The Autonomous brand rates common stocks as indicated below. As our benchmarks we use the Bloomberg Europe 500 Banks And Financial Services Index (BEBANKS) and Bloomberg Europe Dev Mkt Financials Large and Mid Cap Price Ret Index EUR (EDMFI) index for developed European banks and Payments, the Bloomberg Europe 500 Insurance Index (BEINSUR) for European insurers, the S&P 500 and S&P Financials for US banks and Payments coverage, S5LIFE for US Insurance, the S&P Insurance Select Industry (SPSIINS) for US Non-Life Insurers coverage, and the Bloomberg Emerging Markets Financials Large, Mid and Small Cap Price Return Index (EMLSF) for emerging market banks and insurers and Payments. Ratings are stated relative to the sector (not the market).
+
+The Autonomous brand has three categories of common stock ratings:
+
+\- Outperform (OP): Stock will outpace the relevant index by more than 10 pp
+
+\- Neutral (N): Stock will perform in line with the market index to within +/-10 pp
+
+\- Underperform (UP): Stock will trail the performance of the relevant index by more than 10 pp
+
+Coverage Suspended: Coverage of a company under the Autonomous research brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.
+
+Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.
+
+Those denoted as ‘Feature’ (e.g., Feature Outperform FOP, Feature Under Outperform FUP) are our core ideas.
+
+Not Covered (NC) denotes companies that are not under coverage.
+
+Autonomous brand common stock ratings are based on a 12-month time horizon.
+
+## Autonomous brand – preferred stocks
+
+The Autonomous brand has three categories of preferred stock ratings:
+
+\- Outperform (OP): The total return of the preferred instrument is expected to outperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.
+
+\- Neutral (N): The total return of the preferred instrument is expected to perform in line with preferred securities of other issuers operating in similar sectors or rating categories over the next six months.
+
+\- Underperform (UP): The total return of the preferred instrument is expected to underperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.
+
+Autonomous preferred stock ratings are based on a 6-month time horizon.
+
+## AUTONOMOUS CREDIT RESEARCH
+
+Where this report contains investment recommendations for credit instruments, as defined in article 3(1)(35) of the Market Abuse Regulation, the information below is presented to comply with its disclosure requirements.
+
+The report may also include reference(s) to published opinions by other Autonomous or Bernstein analysts covering the equity securities of the issuer(s) referenced herein. Please note an investment recommendation for credit instruments published by the author(s) of this report may differ from the published view of the analyst covering equity securities for the issuer(s) contained in this report and vice versa.
+
+## CREDIT RATINGS DEFINITIONS
+
+The Autonomous brand has three categories of credit ratings:
+
+\- Credit Outperform (C-OP): The total return of the Reference Credit Instrument is expected to outperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.
+
+\- Credit Neutral (C-N): The total return of the Reference Credit Instrument is expected to perform in line with the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.
+
+\- Credit Underperform (C-UP): The total return of the Reference Credit Instrument is expected to underperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.
+
+Autonomous credit ratings are based on a 6-month time horizon.
+
+A list of all investment recommendations produced by the author(s) of this report alongside credit ratings history are available upon request.
+
+It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e. the private side) within the Firm, and into other areas, units, groups or affiliates (i.e. public side) of the Firm
+
+DISTRIBUTION OF EQUITY RATINGS/INVESTMENT BANKING SERVICES
+
+<table><tr><td>Equity Rating</td><td>Market Abuse Regulation (MAR) and FINRA Rating Category</td><td>Global Rating Distribution</td><td>Investment Banking Relationships*</td></tr><tr><td>Outperform</td><td>BUY</td><td>51.2%</td><td>15.3%</td></tr><tr><td>Market-Perform (Bernstein Brand) Neutral (Autonomous Brand)</td><td>HOLD</td><td>35.8%</td><td>16.2%</td></tr><tr><td>Underperform</td><td>SELL</td><td>13.1%</td><td>13.6%</td></tr></table>
+
+\* These figures represent the percentage of companies within each equity rating category for which affiliates of Bernstein have provided investment banking services within the previous 12 months.
+As of June 30, 2026. All figures are updated quarterly.
+
+Prior to April 1, 2024, Bernstein & Co., LLC. issued the ratings and price target information in the graph(s) below for the following companies: Qualcomm Inc and Apple Inc.
+
+## PRICE CHARTS/ RATINGS AND PRICE TARGET HISTORY
+
+This research publication covers six or more companies. For price chart and other company disclosures, please visit https://bernstein-autonomous.bluematrix.com/sellside/Disclosures.action or you can write to the Director of Compliance, Bernstein Institutional Services LLC, 245 Park Avenue, New York, NY 10167.
+
+## CONFLICTS OF INTEREST
+
+All statements in this report attributable to Gartner represent Bernstein's interpretation of data, research opinion or viewpoints published as part of a syndicated subscription service by Gartner, Inc., and have not been reviewed by Gartner. Each Gartner publication speaks as of its original publication date (and not as of the date of this report). The opinions expressed in Gartner publications are not representations of fact, and are subject to change without notice.
+
+Stacy A. Rasgon maintains long positions in various crypto currencies.
+
+SG and/or its affiliates beneficially own 1% or more of a class of common equity securities of the following company: SOITEC.
+
+Bernstein and/or affiliates have received compensation for investment banking services in the past twelve months from SOITEC.
+
+Bernstein and/or affiliates have received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: SOITEC and Apple Inc.
+
+Bernstein has received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Apple Inc.
+
+Bernstein and/or affiliates expect to receive or intend to seek compensation for investment banking services in the next three months from SOITEC.
+
+Certain affiliates of Bernstein act as market maker or liquidity provider in the equities securities of: Qualcomm Inc, SOITEC and Apple Inc.
+
+Bernstein and/or affiliates had an investment banking client relationship during the past twelve months with SOITEC.
+
+## OTHER MATTERS
+
+The legal entity(ies) employing the analyst(s) listed in this report, and their location, can be determined by the country code of their phone number, as follows:
+
++1 Bernstein Institutional Services LLC; New York, New York, USA
+
++44 Bernstein Autonomous LLP; London UK
+
++212 SG Africa Technologies & Services; Casablanca, Morocco
+
++33 BSG France S.A.; Paris, France
+
++34 BSG France S.A.; Madrid, Spain
+
++41 Bernstein Autonomous LLP; Geneva, Switzerland
+
++49 BSG France S.A.; Frankfurt, Germany
+
++91 Bernstein (India) Private Limited; Mumbai, India
+
++852 Bernstein (Hong Kong) Limited 盛博香港有限公司; Hong Kong, China
+
++65 Bernstein (Singapore) Private Limited; Singapore
+
++81 Bernstein Japan KK; Tokyo, Japan
+
+Where this report has been prepared by research analyst(s) employed by a non-US affiliate, such analyst(s), is/are (unless otherwise expressly noted below) not registered as associated persons of Bernstein Institutional Services LLC or any other SEC-registered broker-dealer and are not licensed or qualified as research analysts with FINRA. Accordingly, such analyst(s) may not be subject to FINRA's restrictions regarding (among other things) communications by research analysts with a subject company, interactions between research analysts and investment banking personnel, participation by research analysts in solicitation and marketing activities relating to investment banking transactions, public appearances by research analysts, and trading securities held by a research analyst account.
+
+Where this report has been prepared by research analyst(s) employed by SG Africa Technologies & Services (part of the SG group of companies), it has been prepared on behalf of a Bernstein company under a Global Services Agreement in place between Bernstein and SG.
+
+## CERTIFICATION
+
+Each research analyst listed in this report, who is primarily responsible for the preparation of the content of this report, certifies that all of the views expressed in this publication accurately reflect that analyst's personal views about any and all of the subject securities or issuers and that no part of that analyst's compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views in this publication.
+
+## II. ADDITIONAL GLOBAL CONFLICT DISCLOSURES
+
+It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e., the private side) within the Firm, and into other areas, units, groups or affiliates (i.e., public side) of the Firm.
+
+## III. OTHER IMPORTANT INFORMATION AND DISCLOSURES
+
+Separate branding is maintained for “Bernstein” and “Autonomous” research products.
+
+\- Bernstein produces a number of different types of research products including, among others, fundamental analysis and quantitative analysis under both the “Autonomous” and “Bernstein” brands. Recommendations contained within one type of research product may differ from recommendations contained within other types of research products, whether as a result of differing time horizons, methodologies or otherwise. Furthermore, views or recommendations within a research product issued under one brand may differ from views or recommendations under the same type of research product issued under the other brand. The Research Ratings System for the two brands and other information related to those Rating Systems are included in the previous section.
+
+\- Autonomous operates as a separate business unit within the following entities: Bernstein Institutional Services LLC, Bernstein Autonomous LLP, Bernstein (Hong Kong) Limited 盛博香港有限公司 and Bernstein (India) Private Limited. For information relating to “Autonomous” branded products (including certain Sales materials) please visit: www.autonomous.com. For information relating to Bernstein branded products please visit: www.bernsteinresearch.com.
+
+Analysts are compensated based on aggregate contributions to the research franchise as measured by account penetration, productivity and proactivity of investment ideas. No analysts are compensated based on performance in, or contributions to, generating investment banking revenues.
+
+This report has been produced by an independent analyst as defined in Article 3 (1)(34)(i) of EU 596/2014 Market Abuse Regulation (“MAR”) and the same article of MAR as it forms part of United Kingdom domestic law by virtue of the European Union (Withdrawal) Act 2018.
+
+To our readers in the United States: Bernstein Institutional Services LLC, a broker-dealer registered with the U.S. Securities and Exchange Commission (“SEC”) and a member of the U.S. Financial Industry Regulatory Authority, Inc. (“FINRA”) is distributing this publication in the United States and accepts responsibility for its contents. Where this material contains an analysis of debt product(s), such material is intended only for institutional investors and is not subject to the US independence and disclosure standards applicable to debt research prepared for retail investors.
+
+Bernstein Institutional Services LLC may act as principal for its own account or as agent for another person (including an affiliate) in sales or purchases of any security which is a subject of this report. This report does not purport to meet the objectives or needs of any specific individuals, entities or accounts.
+
+To our readers in Canada: If this publication pertains to a Canadian domiciled company, it is being distributed in Canada by Bernstein (Canada) Limited, which is licensed and regulated by the Canadian Investment Regulatory Organization. If the publication pertains to a non-Canadian domiciled company, it is being distributed by Bernstein Institutional Services LLC, which is licensed and regulated by both the SEC and FINRA, into Canada under the International Dealers Exemption.
+
+This document may not be passed onto any person in Canada unless that person qualifies as "permitted client" as defined in Section 1.1 of NI 31-103.
+
+To our readers in Brazil: This report has been prepared by Bernstein Institutional Services LLC, and Banco BTG Pactual S.A. ("BTG") is responsible for the distribution of this report in Brazil.
+
+To readers in the United Kingdom: This publication has been issued or approved for issue in the United Kingdom by Bernstein Autonomous LLP, authorised and regulated by the Financial Conduct Authority and located at 60 London Wall, London EC2M 5SH, +44 (0)20-7170-5000. Registered in England & Wales No OC343985.
+
+This document is for distribution only to persons who (i) have professional experience in matters relating to investments falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the “Financial Promotion Order”), (ii) are persons falling within Article 49(2)(a) to (d) (“high net worth companies, unincorporated associations, etc.”) of the Financial Promotion Order, (iii) are outside the United Kingdom, or (iv) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the FSMA) in connection with the issue or sale of any securities may otherwise lawfully be communicated or caused to be communicated (all such persons together being referred to as “relevant persons”). This document is directed only at relevant persons and must not be acted on or relied on by persons who are not relevant persons. Any investment or investment activity to which this document relates is available only to relevant persons and will be engaged in only with relevant persons.
+
+To our readers in the member states of the EEA: This publication is being distributed by BSG France SA, which is authorised and regulated by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and Autorité des Marchés Financiers (AMF).
+
+To our readers in Hong Kong: This publication is being distributed in Hong Kong by Bernstein (Hong Kong) Limited 盛博香港有限公司, which is licensed and regulated by the Hong Kong Securities and Futures Commission (Central Entity No. AXC846) to carry out Type 4 (Advising on Securities) regulated activities and subject to the licensing conditions mentioned in the SFC Public Register (https://www.sfc.hk/publicregWeb/corp/AXC846/details)). This publication is solely for professional investors, as defined in the Securities and Futures Ordinance (Cap. 571). The purpose of this report is solely to provide an analysis of the issuers referred to in this report and is not intended for any purpose contrary to the laws of Hong Kong.
+
+To our readers in Singapore: This publication is being distributed in Singapore by Bernstein (Singapore) Private Limited, only to accredited investors or institutional investors, as defined in the Securities and Futures Act 2001 of Singapore ("SFA"). Recipients in Singapore should contact Bernstein (Singapore) Private Limited in respect of matters arising from, or in connection with, this publication. Bernstein (Singapore) Private Limited is regulated by the Monetary Authority of Singapore and licensed under the SFA as a capital markets services licence holder for dealing in capital markets products that are securities and collective investment schemes and an exempt financial adviser for advising on, issuing and promulgating analyses and reports on securities. Bernstein (Singapore) Private Limited is registered in Singapore with Company Registration No. 20213710W and located at 8 Marina Boulevard, #12-01, Marina Bay Financial Centre, Singapore 018981, +65-6326-7000.
+
+To our readers in the People's Republic of China: The securities referred to in this document are not being offered or sold and may not be offered or sold, directly or indirectly, in the People's Republic of China (for such purposes, not including the Hong Kong and Macau Special Administrative Regions or Taiwan, the "PRC") in contravention of any applicable laws of the PRC.
+
+This document does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC to any person to whom it is unlawful to make the offer or solicitation in the PRC.
+
+We do not represent that this document may be lawfully distributed, or that any securities may be lawfully offered, in compliance with any applicable registration or other requirements in the PRC, or pursuant to an exemption available thereunder, or assume any responsibility for facilitating any such distribution or offering. In particular, no action has been taken by us which would permit a public offering of any securities or distribution of this document in the PRC. Accordingly, the securities are not being offered or sold within the PRC by means of this document or any other document. Neither this document nor any advertisement or other offering material may be distributed or published in the PRC, except under circumstances that will result in compliance with any applicable laws and regulations.
+
+To our readers in Japan: This publication is being distributed in Japan by Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社), which is registered in Japan as a Financial Instruments Business Operator with the Kanto Local Finance Bureau (registration number: The Director-General of Kanto Local Finance Bureau (FIBO) No.3387) and regulated by the Financial Services Agency. It is also a member of Investment Management Association of Japan. This publication is solely for qualified institutional investors in Japan only, as defined in Article 2, paragraph (3), items (i) of the Financial Instruments and Exchange Act.
+
+For the institutional client readers in Japan who have been granted access to the Bernstein website by Daiwa Group Inc. ("Daiwa"), your access to this document should not be construed as meaning that Bernstein is providing you with investment advice for any purposes. Whilst Bernstein has prepared this document, your relationship is, and will remain with, Daiwa, and Bernstein has neither any contractual relationship with you nor any obligations towards you.
+
+To our readers in Australia: Bernstein (Hong Kong) Limited 盛博香港有限公司 is responsible for distributing research in Australia. It is regulated by the Securities and Exchange Commission under U.S. laws, by the Financial Conduct Authority under U.K. laws, which differs from Australian laws. Bernstein (Hong Kong) Limited 盛博香港有限公司 is exempt from the requirement to hold an Australian financial services license under the Corporations Act 2001 in respect of the provision of the following financial services to wholesale clients:
+
+• providing financial product advice;
+
+• dealing in a financial product;
+
+\- making a market for a financial product; and
+
+• providing a custodial or depository service.
+
+To our readers in India: This publication is being distributed in India by Bernstein (India) Private Limited (SCB India) which is licensed and regulated by Securities and Exchange Board of India ("SEBI") as a research analyst entity under the SEBI (Research Analyst) Regulations, 2014, having registration no. INH000006378 and as a stock broker having registration no. INZ000213537. SCB India is currently engaged in the business of providing research and stock broking services. Please refer to www.bernsteinresearch.in for more information.
+
+\- SCB India is a Private limited company incorporated under the Companies Act, 2013, on April 12, 2017 bearing corporate identification number U65999MH2017FTC293762, and registered office at Level 3A, 4th Floor, First International Financial
+
+Centre, Plot Nos C-54 and C-55, G Block, Near CBI Office, Bandra Kurla Complex, Bandra (East), Mumbai 400098, Maharashtra, India (Phone No: +91-22-68421401).
+
+\- For details of Associates (i.e., affiliates/group companies) of SCB India, kindly email MUM-BERNSTEIN-InCompliance@bernsteinsg.com.
+
+• SCB India does not have any disciplinary history as on the date of this report.
+
+\- Except as noted above, SCB India and/or its Associates (i.e., affiliates/group companies), the Research Analysts authoring this report, and their relatives
+
+• do not have any financial interest in the subject company
+
+• do not have actual/beneficial ownership of one percent or more in securities of the subject company;
+
+\- is not engaged in any investment banking activities for Indian companies, as such;
+
+• have not managed or co-managed a public offering in the past twelve months for any Indian companies;
+
+\- have not received any compensation for investment banking services or merchant banking services from the subject company in the past 12 months;
+
+• have not received compensation for brokerage services from the subject company in the past twelve months;
+
+\- have not received any compensation or other benefits from the subject company or third party related to the specific recommendations or views in this report; and
+
+\- do not currently, but may in the future, act as a market maker in the financial instruments of the companies covered in the report.
+
+\- do not have any conflict of interest in the subject company as of the date of this report.
+
+\- Except as noted above, the subject company has not been a client of SCB India during twelve months preceding the date of distribution of this research report. Neither SCB India nor its Associates (i.e., affiliates/group companies) have received compensation for products or services other than investment banking, merchant banking or brokerage services from the subject company in the past twelve months.
+
+\- The principal research analyst(s) who prepared this report, members of the analysts' team, and members of their households are not an officer, director, employee or advisory board member of the companies covered in the report.
+
+\- Our Compliance officer / Grievance officer is Ms. Rupal Talati, who can be reached at +91-22-68421451, or MUM-BERNSTEIN-InCompliance@bernsteinsg.com / Scbin-investorgrievance@bernsteinsg.com
+
+\- The Research investor charter and Terms & Conditions of SCB India are available on its website and may be accessed at Bernstein (India) Private Limited (https://bernsteinresearch.in/) for your reference.
+
+\- Disclaimer: Registration granted by SEBI, and certification from NISM, is in no way a guarantee of performance of the intermediary or provide any assurance of returns to investors. Investments in securities market are subject to market risks. Read all the related documents carefully before investing.
+
+To our readers in Switzerland: This document is provided in Switzerland by or through Bernstein Autonomous LLP, and is provided only to qualified investors as defined in article 10 of the Swiss Collective Investment Scheme Act (“CISA”) and related provisions of the Collective Investment Scheme Ordinance and in strict compliance with applicable Swiss law and regulations. The products mentioned in this document may not be suitable for all types of investors. This document is based on the Directives on the Independence of Financial Research issued by the Swiss Bankers Association (SBA) in January 2008.
+
+To our readers in the Middle East: Bernstein Autonomous LLP, DIFC branch has its principal office at Gate Village 06, DIFC, Dubai, UAE. Bernstein Autonomous LLP, DIFC branch is regulated by the Dubai Financial Services Authority (DFSA) with the registration number CL10040 and is provisioned for Arranging Deals in Investments and Advising on Financial Products. All communications and services are directed at Professional Clients and Market Counterparties only (as defined in the DFSA rulebook). Persons other than Professional Clients and Market Counterparties, such as Retail Clients, are not the intended recipients of our communications or services.
+
+## LEGAL
+
+All research publications are disseminated to our clients through posting on the firm's password protected websites, bernsteinresearch.com and autonomous.com. Certain, but not all, research publications are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience.
+
+This publication has been published and distributed in accordance with the Firm's policy for management of conflicts of interest in investment research, a copy of which is available from Bernstein Institutional Services LLC, Director of Compliance, 245 Park Avenue, New York, NY 10167. Additional disclosures and information regarding Bernstein's business are available on our website www.bernsteinresearch.com.
+
+The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. This publication is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of, or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or which would subject any of the entities referenced herein or any of their subsidiaries or affiliates to any registration or licensing requirement within such jurisdiction. This publication is based upon public sources we believe to be reliable, but no representation is made by us that the publication is accurate or complete. We do not undertake to advise you of any change in the reported information or in the opinions herein. This publication was prepared and issued by entity referred to herein for distribution to eligible counterparties or professional clients. This publication is not an offer to buy or sell any security, and it does not constitute investment, legal or tax advice. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with their professional advisors in light of their specific circumstances. The value of investments may fluctuate, and investments that are denominated in foreign currencies may fluctuate in value as a result of exposure to exchange rate movements. Information about past performance of an investment is not necessarily a guide to, indicator of, or assurance of, future performance.
+
+This report is directed to and intended only for our clients who are “eligible counterparties”, “professional clients”, “institutional investors” and/or “professional investors” as defined by the aforementioned regulators, and must not be redistributed to retail clients as defined by the aforementioned regulators. Retail clients who receive this report should note that the services of the entities noted herein are not available to them and should not rely on the material herein to make an investment decision. The result of such act will not hold the entities noted herein liable for any loss thus incurred as the entities noted herein are not registered/authorised/licensed to deal with retail clients and will not enter into any contractual agreement/arrangement with retail clients. This report is provided subject to the terms and conditions of any agreement that the clients may have entered into with the entities noted herein. All research reports are disseminated on a simultaneous basis to eligible clients through electronic publication to our client portal.
+
+The information in this report was prepared by Bernstein solely for the internal business use of our clients. Clients may store, display, analyze, reformat and print the information in this report for this limited use only. Clients may not copy, alter, create derivative works, resell, reverse engineer, commercially exploit, share or distribute any part of the information contained herein for any purpose without Bernstein's express written consent. These restrictions include extracting data or using the content to develop indices or other products. Further, you may not use this report, or any portion of this report, to train or finetune any third-party machine learning or artificial intelligence system, or as a prompt or input into any such system. You also may not, without Bernstein's express written consent, do any of the foregoing in connection with your own internal machine learning or artificial intelligence system.
+
+Bernstein may use artificial intelligence tools in the preparation of its materials. Any such materials are reviewed by Bernstein's research analysts prior to publication.
+
+This report has been prepared for information purposes only and is based on current public information that we consider reliable, but the entities noted herein do not warrant or represent (express or implied) as to the sources of information or data contained herein are accurate, complete, not misleading or as to its fitness for the purpose intended even though the entities noted herein rely on reputable or trustworthy data providers, it should not be relied upon as such. Opinions expressed are the author(s)' current opinions as of the date appearing on the material only and we do not undertake to advise you of any change in the reported information or in the opinions herein.
+
+Any references to SG herein are purely factual, based upon publicly available information, and included for comparative purposes only. They do not constitute an opinion or recommendation with respect to the securities of SG.
+
+This publication was prepared and issued by the entity referred to herein for distribution to eligible counterparties or professional clients. The information in this report is intended for general circulation and does not constitute an offer to buy or sell any security, investment, legal or tax advice nor a personal recommendation, as defined by any of the aforementioned regulators. It does not take into account the particular investment objectives, financial situations, or needs of individual investors. The report has not been reviewed by any of the aforementioned regulators and does not represent any official recommendation from the aforementioned regulators. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with advice sought from a financial adviser regarding the suitability of the investment product, taking into account the specific investment objectives, financial situation or particular needs of any recipient of the recommendation, before the recipient makes a commitment to purchase the investment product.
+
+The analysis contained herein is based on numerous assumptions. Different assumptions could result in materially different results. The information in this report does not constitute, or form part of, any offer to sell or issue, or any offer to purchase or subscribe for shares, or to induce engagement in any other investment activity. The value of any securities or financial instruments mentioned in this report may fluctuate subject to market conditions. Information about past performance of an investment is not necessarily a guide to, indicative of, or assurance of future performance. Estimates of future performance mentioned by the research analyst in this report are based on assumptions that may not be realized due to unforeseen factors like market volatility/fluctuation. In relation to securities or financial instruments denominated in a foreign currency other than the clients' home currency, movements in exchange rates will have an effect on the value, either favorable or unfavorable. Before acting on any recommendations in this report, recipients should consider the appropriateness of investing in the subject securities or financial instruments mentioned in this report and, if necessary, seek independent professional advice.
+
+The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject the entities noted herein to any regulation or licensing requirement within such jurisdiction.
+
+Source: Bloomberg Index Services Limited. BLOOMBERG® is a trademark and service mark of Bloomberg Finance L.P. and its affiliates (collectively “Bloomberg”). Bloomberg or Bloomberg’s licensors own all proprietary rights in the Bloomberg Indices. Neither Bloomberg nor Bloomberg’s licensors approves or endorses this material, or guarantees the accuracy or completeness of any information herein, or makes any warranty, express or implied, as to the results to be obtained therefrom and, to the maximum extent allowed by law, neither shall have any liability or responsibility for injury or damages arising in connection therewith.
+
+No part of this material may be reproduced, distributed or transmitted or otherwise made available without prior consent of the entities noted herein. Copyright Bernstein Institutional Services LLC Bernstein Autonomous LLP, BSG France S.A., Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited and Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社). All rights reserved. The trademarks and service marks contained herein are the property of their respective owners. Any unauthorized use or disclosure is strictly prohibited. The entities noted herein may pursue legal action if the unauthorized use results in any defamation and/or reputational risk to the entities noted herein and research published under the Bernstein and Autonomous brands.
