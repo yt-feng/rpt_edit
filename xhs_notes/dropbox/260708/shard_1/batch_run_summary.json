@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 82,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 1,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/06-Bernstein-Global Memory：MEMORY TRACKER （Jun）： Further price rise in June， but with the pace of the rise moderating into 3QCY26-260708.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ossr0hkg/pdfs/0001-06-Bernstein-Global Memory-MEMORY TRACKER -Jun-- Further price rise in June- but with the pace of the rise moderating into 3QCY26-260708.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/07-Bernstein-Tencent Two dots make a line Quick thoughts on hy3-260707.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ossr0hkg/pdfs/0002-07-Bernstein-Tencent Two dots make a line Quick thoughts on hy3-260707.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/08-Bernstein-Netflix Inc（NFLX.US）NFLX Q2： More than a quarter ~ key debates heading into the print-260708.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ossr0hkg/pdfs/0003-08-Bernstein-Netflix Inc-NFLX.US-NFLX Q2- More than a quarter - key debates heading into the print-260708.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/09-Bernstein-Global Technology APPLE TRACKER （May）： iPhone share gains continue， but unit growth slows to 2% YoY and modestly below FQ3 expectations-260708.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ossr0hkg/pdfs/0004-09-Bernstein-Global Technology APPLE TRACKER -May-- iPhone share gains continue- but unit growth slows to 2- YoY and modestly below FQ3 expectations-260708.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/10-CITI-China Automation and Machinery：Positive Industry Data Points of AI PCB Equipment and Construction Machinery-260706.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ossr0hkg/pdfs/0005-10-CITI-China Automation and Machinery-Positive Industry Data Points of AI PCB Equipment and Construction Machinery-260706.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

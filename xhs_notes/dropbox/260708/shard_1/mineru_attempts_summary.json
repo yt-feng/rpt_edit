@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_ossr0hkg/pdfs/0001-06-Bernstein-Global Memory-MEMORY TRACKER -Jun-- Further price rise in June- but with the pace of the rise moderating into 3QCY26-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ossr0hkg/pdfs/0002-07-Bernstein-Tencent Two dots make a line Quick thoughts on hy3-260707.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ossr0hkg/pdfs/0003-08-Bernstein-Netflix Inc-NFLX.US-NFLX Q2- More than a quarter - key debates heading into the print-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ossr0hkg/pdfs/0004-09-Bernstein-Global Technology APPLE TRACKER -May-- iPhone share gains continue- but unit growth slows to 2- YoY and modestly below FQ3 expectations-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ossr0hkg/pdfs/0005-10-CITI-China Automation and Machinery-Positive Industry Data Points of AI PCB Equipment and Construction Machinery-260706.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
