@@ -3009,6 +3009,12 @@
       });
     }
 
+    const initialQuery = new URLSearchParams(window.location.search).get("q");
+    if (initialQuery && input) {
+      input.value = initialQuery.slice(0, 200);
+      scheduleExternalSearch();
+    }
+
     loadJson("data/search_index.json")
       .then((searchIndex) => {
         const searchItems = Array.isArray(searchIndex.items) ? searchIndex.items : [];

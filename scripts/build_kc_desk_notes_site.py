@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+from html import escape as html_escape
 import json
 import os
 import re
@@ -12,6 +13,7 @@ import shutil
 import unicodedata
 from pathlib import Path
 from typing import Any
+from urllib.parse import quote
 
 
 PUBLIC_ITEM_KEYS = [
@@ -70,6 +72,9 @@ BANK_ALIASES = [
     "nom",
 ]
 
+SITE_BASE_URL = "https://kcdesk.com"
+SITEMAP_REPORT_CHUNK_SIZE = 5000
+
 
 def load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -116,6 +121,10 @@ def strip_extension(value: str) -> str:
 
 def strip_trailing_date(value: str) -> str:
     return re.sub(r"[-_\s~]+(?:20)?\d{6,8}$", "", value).strip()
+
+
+def compact_space(value: str) -> str:
+    return re.sub(r"\s+", " ", str(value or "")).strip()
 
 
 def strip_leading_bank_alias(value: str) -> str:
@@ -600,6 +609,384 @@ def public_password_rules(rules: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def date_folder_to_iso(value: str) -> str:
+    text = str(value or "").strip()
+    if re.fullmatch(r"\d{6}", text):
+        return f"20{text[:2]}-{text[2:4]}-{text[4:6]}"
+    if re.fullmatch(r"20\d{6}", text):
+        return f"{text[:4]}-{text[4:6]}-{text[6:8]}"
+    if re.fullmatch(r"20\d{2}-\d{2}-\d{2}", text):
+        return text
+    return ""
+
+
+def bjt_timestamp_to_date(value: str) -> str:
+    match = re.search(r"(20\d{2})-(\d{2})-(\d{2})", str(value or ""))
+    return f"{match.group(1)}-{match.group(2)}-{match.group(3)}" if match else ""
+
+
+def item_lastmod(item: dict[str, Any], fallback: str = "") -> str:
+    return (
+        bjt_timestamp_to_date(str(item.get("last_seen_at_bjt") or ""))
+        or bjt_timestamp_to_date(str(item.get("server_modified") or ""))
+        or date_folder_to_iso(str(item.get("date_folder") or ""))
+        or fallback
+    )
+
+
+def xml_escape(value: str) -> str:
+    return html_escape(str(value or ""), quote=True)
+
+
+def url_join(base_url: str, path: str) -> str:
+    base = base_url.rstrip("/") or SITE_BASE_URL
+    clean = "/" + str(path or "").lstrip("/")
+    return f"{base}{clean}"
+
+
+def report_seo_path(report_id: str) -> str:
+    return f"reports/{quote(str(report_id), safe='')}.html"
+
+
+def item_display_title(item: dict[str, Any]) -> str:
+    return compact_space(str(item.get("title_zh") or item.get("title") or item.get("filename") or "研究报告"))
+
+
+def item_source_title(item: dict[str, Any]) -> str:
+    title = compact_space(str(item.get("title") or item.get("filename") or ""))
+    return strip_extension(title)
+
+
+def item_institution(item: dict[str, Any]) -> str:
+    bank_code = compact_space(str(item.get("bank_code") or ""))
+    bank_name = compact_space(str(item.get("bank_name") or ""))
+    if bank_code and bank_name and normalize_search_text(bank_code) != normalize_search_text(bank_name):
+        return f"{bank_code} · {bank_name}"
+    return bank_name or bank_code or "研究机构"
+
+
+def item_industry(item: dict[str, Any]) -> str:
+    return compact_space(str(item.get("industry") or item.get("sector") or item.get("category") or "综合研究"))
+
+
+def item_page_label(item: dict[str, Any]) -> str:
+    page_count = item.get("page_count")
+    try:
+        count = int(page_count)
+    except (TypeError, ValueError):
+        return "页数待识别"
+    return f"{count}页"
+
+
+def item_availability_label(item: dict[str, Any]) -> str:
+    if item.get("available") and not item.get("pdf_archived"):
+        return "PDF可用"
+    return "文字索引可检索，原文请联系 MacroGate"
+
+
+def item_meta_description(item: dict[str, Any]) -> str:
+    parts = [
+        item_display_title(item),
+        f"机构：{item_institution(item)}",
+        f"行业：{item_industry(item)}",
+        f"日期：{date_folder_to_iso(str(item.get('date_folder') or '')) or str(item.get('date_folder') or '')}",
+        item_page_label(item),
+        item_availability_label(item),
+    ]
+    return "。".join(part for part in parts if part)[:280]
+
+
+def write_text(path: Path, text: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(text, encoding="utf-8")
+
+
+def render_json_ld(data: dict[str, Any]) -> str:
+    return json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+
+
+def report_keywords(item: dict[str, Any]) -> str:
+    values = [
+        item_institution(item),
+        item_industry(item),
+        str(item.get("bank_code") or ""),
+        str(item.get("bank_name") or ""),
+        str(item.get("title_zh") or ""),
+        str(item.get("title") or ""),
+        "金融研报",
+        "宏观策略",
+        "行业研究",
+        "公司研究",
+    ]
+    seen: set[str] = set()
+    keywords: list[str] = []
+    for value in values:
+        clean = compact_space(value)
+        key = normalize_search_text(clean)
+        if clean and key and key not in seen:
+            keywords.append(clean)
+            seen.add(key)
+    return ", ".join(keywords[:12])
+
+
+def render_report_seo_page(item: dict[str, Any], base_url: str, generated_date: str) -> str:
+    report_id = str(item.get("id") or "")
+    title = item_display_title(item)
+    source_title = item_source_title(item)
+    canonical = url_join(base_url, report_seo_path(report_id))
+    detail_href = f"../report.html?id={quote(report_id, safe='')}"
+    search_href = f"../?q={quote(title[:80])}"
+    description = item_meta_description(item)
+    date_iso = date_folder_to_iso(str(item.get("date_folder") or ""))
+    lastmod = item_lastmod(item, generated_date)
+    institution = item_institution(item)
+    industry = item_industry(item)
+    json_ld = {
+        "@context": "https://schema.org",
+        "@type": "Report",
+        "name": title,
+        "headline": title,
+        "alternateName": source_title,
+        "description": description,
+        "url": canonical,
+        "datePublished": date_iso or lastmod,
+        "dateModified": lastmod,
+        "inLanguage": ["zh-CN", "en"],
+        "publisher": {
+            "@type": "Organization",
+            "name": "KC Desk Notes",
+            "url": url_join(base_url, "/"),
+        },
+        "about": [industry, institution],
+        "isAccessibleForFree": False,
+    }
+    if source_title and source_title != title:
+        source_block = f"""
+          <h2>英文标题</h2>
+          <p>{html_escape(source_title)}</p>"""
+    else:
+        source_block = ""
+    return f"""<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{html_escape(title)} | KC Desk Notes</title>
+    <meta name="description" content="{html_escape(description)}">
+    <meta name="keywords" content="{html_escape(report_keywords(item))}">
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+    <link rel="canonical" href="{html_escape(canonical)}">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="KC Desk Notes">
+    <meta property="og:title" content="{html_escape(title)}">
+    <meta property="og:description" content="{html_escape(description)}">
+    <meta property="og:url" content="{html_escape(canonical)}">
+    <link rel="stylesheet" href="../assets/styles.css">
+    <script type="application/ld+json">{render_json_ld(json_ld)}</script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="back-link" href="../index.html">返回首页</a>
+      <a class="brand compact" href="../index.html" aria-label="KC Desk Notes home">
+        <img src="../assets/kc-mark.svg" alt="" width="30" height="30">
+        <span>KC Desk Notes</span>
+      </a>
+    </header>
+    <main class="shell legal-shell">
+      <article class="legal-panel">
+        <h1>{html_escape(title)}</h1>
+        <p class="subtle">{html_escape(description)}</p>
+        <h2>报告信息</h2>
+        <p>机构：{html_escape(institution)}</p>
+        <p>行业：{html_escape(industry)}</p>
+        <p>日期：{html_escape(date_iso or str(item.get("date_folder") or ""))}</p>
+        <p>页数：{html_escape(item_page_label(item))}</p>
+        <p>状态：{html_escape(item_availability_label(item))}</p>{source_block}
+        <p>
+          <a class="primary-link" href="{html_escape(detail_href)}">打开报告详情</a>
+          <a class="secondary-button" href="{html_escape(search_href)}">检索相关报告</a>
+        </p>
+      </article>
+    </main>
+    <footer class="legal-footer">
+      <a href="../reports/index.html">报告索引</a>
+      <a href="../terms.html">Terms of Service</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <span>Contact: MacroGate</span>
+    </footer>
+  </body>
+</html>
+"""
+
+
+def render_reports_index(catalog: dict[str, Any], base_url: str, generated_date: str) -> str:
+    items = [item for item in catalog.get("items", []) if item.get("id")]
+    rows = []
+    for item in sorted(items, key=lambda row: (sort_date_value(str(row.get("date_folder") or "")), normalize_search_text(item_display_title(row))), reverse=True):
+        href = f"{quote(str(item.get('id')), safe='')}.html"
+        date_iso = date_folder_to_iso(str(item.get("date_folder") or ""))
+        rows.append(
+            "<li>"
+            f"<a href=\"{html_escape(href)}\">{html_escape(item_display_title(item))}</a>"
+            f"<span>{html_escape(item_institution(item))} · {html_escape(date_iso or str(item.get('date_folder') or ''))} · {html_escape(item_industry(item))}</span>"
+            "</li>"
+        )
+    description = "KC Desk Notes 中文金融研报索引，覆盖宏观策略、行业分析、公司研究、财报、招股书和国际智库报告线索。"
+    json_ld = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "KC Desk Notes 报告索引",
+        "description": description,
+        "url": url_join(base_url, "reports/"),
+        "dateModified": generated_date,
+        "inLanguage": "zh-CN",
+    }
+    return f"""<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>金融研报索引 | KC Desk Notes</title>
+    <meta name="description" content="{html_escape(description)}">
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+    <link rel="canonical" href="{html_escape(url_join(base_url, 'reports/'))}">
+    <link rel="stylesheet" href="../assets/styles.css">
+    <script type="application/ld+json">{render_json_ld(json_ld)}</script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="back-link" href="../index.html">返回首页</a>
+      <a class="brand compact" href="../index.html" aria-label="KC Desk Notes home">
+        <img src="../assets/kc-mark.svg" alt="" width="30" height="30">
+        <span>KC Desk Notes</span>
+      </a>
+    </header>
+    <main class="shell legal-shell">
+      <section class="legal-panel">
+        <h1>金融研报索引</h1>
+        <p class="subtle">{html_escape(description)}</p>
+        <p class="subtle">已更新：{html_escape(generated_date)} · 共 {len(items)} 篇</p>
+        <ul class="seo-report-index">
+          {"".join(rows)}
+        </ul>
+      </section>
+    </main>
+    <footer class="legal-footer">
+      <a href="../index.html">首页检索</a>
+      <a href="../terms.html">Terms of Service</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <span>Contact: MacroGate</span>
+    </footer>
+  </body>
+</html>
+"""
+
+
+def sitemap_url(loc: str, lastmod: str = "", priority: str = "") -> str:
+    pieces = ["  <url>", f"    <loc>{xml_escape(loc)}</loc>"]
+    if lastmod:
+        pieces.append(f"    <lastmod>{xml_escape(lastmod)}</lastmod>")
+    if priority:
+        pieces.append(f"    <priority>{xml_escape(priority)}</priority>")
+    pieces.append("  </url>")
+    return "\n".join(pieces)
+
+
+def write_urlset(path: Path, rows: list[str]) -> None:
+    write_text(
+        path,
+        "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+        "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n"
+        + "\n".join(rows)
+        + "\n</urlset>\n",
+    )
+
+
+def build_seo_outputs(output: Path, catalog: dict[str, Any], base_url: str = SITE_BASE_URL) -> None:
+    base_url = base_url.rstrip("/") or SITE_BASE_URL
+    generated_date = bjt_timestamp_to_date(str(catalog.get("updated_at_bjt") or "")) or ""
+    reports_dir = output / "reports"
+    reports_dir.mkdir(parents=True, exist_ok=True)
+    report_items = [item for item in catalog.get("items", []) if item.get("id")]
+
+    for item in report_items:
+        write_text(reports_dir / f"{quote(str(item.get('id')), safe='')}.html", render_report_seo_page(item, base_url, generated_date))
+    write_text(reports_dir / "index.html", render_reports_index(catalog, base_url, generated_date))
+
+    page_rows = [
+        sitemap_url(url_join(base_url, "/"), generated_date, "1.0"),
+        sitemap_url(url_join(base_url, "reports/"), generated_date, "0.9"),
+        sitemap_url(url_join(base_url, "newsfeed.html"), generated_date, "0.5"),
+        sitemap_url(url_join(base_url, "terms.html"), generated_date, "0.2"),
+        sitemap_url(url_join(base_url, "privacy.html"), generated_date, "0.2"),
+    ]
+    write_urlset(output / "sitemap-pages.xml", page_rows)
+
+    sitemap_names = ["sitemap-pages.xml"]
+    for index in range(0, len(report_items), SITEMAP_REPORT_CHUNK_SIZE):
+        chunk = report_items[index:index + SITEMAP_REPORT_CHUNK_SIZE]
+        sitemap_name = f"sitemap-reports-{index // SITEMAP_REPORT_CHUNK_SIZE + 1}.xml"
+        sitemap_names.append(sitemap_name)
+        rows = [
+            sitemap_url(
+                url_join(base_url, report_seo_path(str(item.get("id")))),
+                item_lastmod(item, generated_date),
+                "0.8" if item.get("available") else "0.6",
+            )
+            for item in chunk
+        ]
+        write_urlset(output / sitemap_name, rows)
+
+    sitemap_index_rows = []
+    for name in sitemap_names:
+        sitemap_index_rows.append(
+            "  <sitemap>\n"
+            f"    <loc>{xml_escape(url_join(base_url, name))}</loc>\n"
+            f"    <lastmod>{xml_escape(generated_date)}</lastmod>\n"
+            "  </sitemap>"
+        )
+    write_text(
+        output / "sitemap.xml",
+        "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+        "<sitemapindex xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n"
+        + "\n".join(sitemap_index_rows)
+        + "\n</sitemapindex>\n",
+    )
+
+    write_text(
+        output / "robots.txt",
+        "\n".join([
+            "User-agent: *",
+            "Allow: /",
+            "Allow: /data/catalog.json",
+            "Disallow: /data/",
+            "Disallow: /delivery.html",
+            f"Sitemap: {url_join(base_url, 'sitemap.xml')}",
+            "",
+        ]),
+    )
+    write_text(
+        output / "llms.txt",
+        "\n".join([
+            "# KC Desk Notes",
+            "",
+            "KC Desk Notes 是中文金融研究报告检索与索引站点，覆盖宏观策略、行业分析、公司研究、财报、招股书、国际智库和市场观点。",
+            "",
+            "## Primary URLs",
+            f"- Home/Search: {url_join(base_url, '/')}",
+            f"- Report index: {url_join(base_url, 'reports/')}",
+            f"- Sitemap index: {url_join(base_url, 'sitemap.xml')}",
+            f"- Public catalog JSON: {url_join(base_url, 'data/catalog.json')}",
+            "",
+            "## Content Notes",
+            "- Preferred language for summaries: zh-CN.",
+            "- Report pages expose titles, translated titles, institution, industry, date, page count, and availability status.",
+            "- PDF download access may require an approved account. For source files or unavailable PDFs, contact WeChat MacroGate.",
+            "",
+        ]),
+    )
+
+
 def copy_site(src: Path, output: Path) -> None:
     if output.exists():
         shutil.rmtree(output)
@@ -621,11 +1008,13 @@ def version_assets(output: Path) -> None:
             versions[rel] = hashlib.sha1(path.read_bytes()).hexdigest()[:8]
     if not versions:
         return
-    for html_path in output.glob("*.html"):
+    for html_path in output.rglob("*.html"):
         text = html_path.read_text(encoding="utf-8")
         for rel, digest in versions.items():
-            pattern = re.compile(rf'(["\']){re.escape(rel)}(?:\?v=[^"\']*)?\1')
-            text = pattern.sub(lambda match: f"{match.group(1)}{rel}?v={digest}{match.group(1)}", text)
+            for prefix in ("", "../"):
+                href = f"{prefix}{rel}"
+                pattern = re.compile(rf'(["\']){re.escape(href)}(?:\?v=[^"\']*)?\1')
+                text = pattern.sub(lambda match, href=href: f"{match.group(1)}{href}?v={digest}{match.group(1)}", text)
         html_path.write_text(text, encoding="utf-8")
 
 
@@ -685,6 +1074,7 @@ def main() -> int:
     write_json(output_dir / "data" / "config.json", {"worker_base_url": args.worker_base_url.rstrip("/")})
     write_json(archive_catalog_path, archive_catalog)
     write_json(search_index_path, search_index)
+    build_seo_outputs(output_dir, catalog, SITE_BASE_URL)
     version_assets(output_dir)
     print(
         f"Built {output_dir} with {catalog['item_count']} catalog items "

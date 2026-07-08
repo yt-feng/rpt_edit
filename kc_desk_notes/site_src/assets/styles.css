@@ -807,6 +807,13 @@ button.primary:disabled {
   outline: none;
 }
 
+a.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
 .related-section {
   padding-top: 4px;
   border-top: 1px solid var(--line);
@@ -1707,6 +1714,42 @@ button.primary:disabled {
 .legal-panel p {
   color: #334155;
   line-height: 1.7;
+}
+
+.seo-report-index {
+  display: grid;
+  gap: 10px;
+  max-height: 70vh;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  list-style: none;
+}
+
+.seo-report-index li {
+  display: grid;
+  gap: 4px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.seo-report-index a {
+  color: var(--ink);
+  font-weight: 850;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.seo-report-index a:hover,
+.seo-report-index a:focus {
+  color: var(--accent-strong);
+  text-decoration: underline;
+}
+
+.seo-report-index span {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .newsfeed-page {
