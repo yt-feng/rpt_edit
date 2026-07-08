@@ -1,0 +1,25 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_003_f3algqfp/pdfs/0011-WTO_Rules-Negotiating-Group-Chair-reports-on-fisheries-subsidies_3ddc2f27.pdf",
+    "mineru_state": "failed",
+    "mineru_error": "number of pages exceeds limit (200 pages), please split the file and try again",
+    "error": "MinerU did not finish successfully after 2 attempt(s)."
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_003_f3algqfp/pdfs/0012-WTO_WTO-panel-issues-report-regarding-EU-duties-on-imports-of-fa_20646e37.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "世界贸易组织",
+    "cover_short_title": "欧盟对印尼脂肪酸反倾",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_stock_language_sanitized": [
+      "sanitize_wechat_stock_line"
+    ],
+    "wechat_title": "世界贸易组织：世界贸易组织裁决，欧盟对印尼反倾销案汇率计算违规",
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

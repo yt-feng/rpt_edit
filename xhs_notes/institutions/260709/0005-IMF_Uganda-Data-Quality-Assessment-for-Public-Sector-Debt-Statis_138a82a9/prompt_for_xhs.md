@@ -1,0 +1,126 @@
+你是资深小红书内容策划 + 投研翻译官，擅长把英文/中文研报改写成高互动、可收藏、可转发的中文小红书笔记。
+
+【目标】
+- 把下面的研报解析内容，改写成一篇中文小红书笔记。
+- 风格：投研博主风：信息密度高，但像给朋友讲逻辑
+- 长度：不超过 1000 字，信息密度高但不要写长文。
+- emoji 密度：中
+
+【必须输出的结构】
+1. 第一行：标题，20 字以内，不要像论文标题，也不要用夸张极限词。
+2. 第二行：封面短标题，10 字以内，适合放在图中间。
+3. 第三行：封面副标题，10-18 字，短句。
+4. 正文分段清晰，每段不超过 3 行，可以用编号、小标题或加粗。
+5. 正文要自然呈现观点，但不要暴露写作框架或思考过程。
+6. 末尾可以保留 2-4 个相关标签，只允许从这些标签里选择：`#学习笔记`、`#研究笔记`、`#学习研究`、`#研报解读`。
+
+【严禁输出】
+- 不要出现这些栏目名或类似栏目名：`一句话结论`、`我最想提醒的一点`、`配图建议`、`免责声明`、`非投资建议`、`仅做学习交流`、`仅作学习交流`。
+- 不要在正文最后追加配图建议，不要告诉我第 2/3/4 张图怎么配文。
+- 不要输出任何包含“投资”的免责声明，也不要输出“非投资建议”这种表述。
+- 不要输出财经敏感标签：`#投资学习`、`#财经`、`#金融`、`#股票`、`#基金`、`#理财`。
+- 不要输出无关标签：`#小红书笔记`、`#笔记分享`、`#干货分享`。
+- 不要写“关注”“点赞”“求关注”“评论区见”“评论区留言”等直接互动诱导；可以写“欢迎一起讨论”“可以继续交流”。
+
+【平台发布合规要求】
+- 不要写“爆款”“震惊”“必看”“必读”“最强”“最全”“唯一”“全网首发”等极限词或夸张词。
+- 不要写“投资建议”“买入”“卖出”“强烈推荐”“稳赚”“保本”“必涨”“抄底”“上车”“内幕”“翻倍”等金融操作或收益承诺表达。
+- “投资”相关词尽量改成“投研”“研究”“观察”“学习参考”；如果必须保留，也要放在中性语境里。
+- 不要承诺收益，不要引导交易，不要暗示确定性结果。
+
+【内容要求】
+- 只能基于研报原文和解析结果推导，不要编造数据、公司动作、引用。
+- 可以把专业表达翻成人话，但不能扭曲意思。
+- 遇到不确定或缺失信息：用“研报未给出”或“这里是推测”明确标注。
+- 默认避免出现具体投行品牌名，比如“高盛”“Goldman Sachs”，统一写作“某外资投行研报”。
+- 不要解释你的思考过程，不要输出多余说明。
+
+【推荐写法】
+- 开头直接给一个自然判断，不要加“结论：”标签。
+- 中间用 1/2/3 拆逻辑，但小标题要像正常内容标题，不要像写作模板。
+- 结尾可以留下一个自然讨论问题，但不要引导关注、点赞或评论。
+- 最后一行输出 2-4 个标签，优先：`#学习笔记 #研究笔记 #学习研究 #研报解读`。
+
+【研报解析内容】
+"""
+# HIGH-LEVEL SUMMARY TECHNICAL ASSISTANCE REPORT
+
+UGANDA
+
+Data Quality Assessment for Public Sector Debt Statistics (November 26–December 2, 2025)
+
+July 2026
+
+Prepared By
+
+Andrew Kitili (Mission Chief) and Foyzunnesa Khatun
+
+PARTNERS:
+
+JAPANGOV THE GOVERNMENT OF JAPAN
+
+# High-Level Summary Technical Assistance Report Statistics Department
+
+## Uganda – Data Quality Assessment for Public Sector Debt Statistics
+
+Prepared by Andrew Kitili and Foyzunnesa Khatun
+
+The High-Level Summary Technical Assistance Report series provides high-level summaries of the assistance provided to IMF capacity development recipients, describing the high-level objectives, findings, and recommendations.
+
+ABSTRACT: In November–December 2025, an assessment was undertaken of the data quality of the public sector debt statistics (PSDS) of Uganda against the IMF's Data Quality Assessment Framework (DQAF) for PSDS. The mission was undertaken as part of a project to strengthen the quality of public sector debt in select African countries, funded by the Government of Japan. The mission reviewed the PSDS compilation and dissemination practices against each element of the DQAF and presented a series of recommendations to improve the quality and transparency of the PSDS of Uganda.
+
+JEL Classification Numbers H63, H81, H83 (consult https://www.aeaweb.org/econlit/jelCodes.php)
+Keywords: Data Quality Assessment Framework (DQAF), Debt Reporting, Debt Transparency, JSA, Public Debt, Public Sector Debt Statistics (PSDS), Uganda
+
+## Background
+
+1. Uganda is presently assessed as having a moderate risk of debt distress. Based on the Debt Sustainability Analysis (DSA) conducted as part of the 2025 Post-Financing Assessment, projections indicate that both external debt burden and public debt indicators remain beneath established thresholds and benchmarks under the baseline scenario, except for a one-off minor breach of external debt-service revenue ratio in FY25/26-FY26/27. Nonetheless, staff evaluations emphasize that increased reliance on non-concessional borrowing, including domestic borrowing, may elevate the risk of debt distress. Furthermore, Uganda's DSA does not incorporate obligations related to extra-budgetary entities or non-guaranteed debt incurred by state-owned enterprises (SOEs), factors which could influence the overall assessment of debt distress risk. Implementing a comprehensive framework to capture and report all components of public debt—including other accounts payables and, central bank advances, as well as contingent liabilities, would enhance Uganda's debt transparency, facilitate alignment of public debt statistics with international standards, and improve the accuracy of future DSAs.
+
+2. Against this background, the main objective of the mission was to use the IMF's standardized Data Quality Assessment Framework (DQAF) to identify areas of improvement in public sector debt statistics (PSDS) compilation and dissemination processes and recommend priority actions to help Uganda enhance public debt data transparency. Discussions with various stakeholders as well as review of data received and published indicate that Uganda's public debt statistics are broadly accurate and timely, but improvements are needed to enhance operational efficiency and compilation processes, as well as to broaden the scope of public sector debt reporting. The main findings and conclusions of the mission are summarized below in the order of the DQAF's dimensions.
+
+## Summary of Findings
+
+1. Prerequisites of Quality: This category in the DQAF assesses the conditions that have an impact on data quality within the main agencies in charge of producing PSDS in Uganda. The assessment focused on the legal and institutional environment, resources, and quality awareness.
+
+(a) Legal Environment: Uganda's legal framework for debt management and reporting is well set out in Articles 159 and 160(2) of the Constitution of Uganda and Section 42(1) of the Public Financial Management Act, 2015 (PFMA 2015). The PFMA 2015 assigns the responsibility for managing public debt, guarantees, and other government financial liabilities to the Minister responsible for Finance. However, there is no legislation in place that delineates specific responsibilities for the operational aspects of debt management, as is typically found in countries with independent debt management offices. Although, explicit legal provisions assigning the mandate for the collection, processing, and dissemination of public debt statistics are absent, Uganda's strong institutional frameworks ensure these functions are conducted effectively.
+
+(b) Institutional Environment: Uganda has established robust institutional frameworks for debt management and reporting. MoFPED and BOU share responsibility for the compilation, processing, and dissemination of PSDS. At the MoFPED, the Debt and Cash Policy Directorate (DDCP) lead in the compilation and reporting of PSDS. Data sharing and coordination between MoFPED and BOU are generally effective, facilitated by memoranda of understanding which enable regular data exchange. Evaluating the adequacy of resources allocated for debt management and reporting is a complex task, given that responsibilities are distributed across several departments. Nonetheless, it is essential to
+
+consider increasing staff capacity, in the form of resources and training, within the DPI, MEPD and TSD to meet evolving requirements in debt monitoring. Additionally, upgrading the DMFAS system to version 7 should be prioritized, as this will expand debt coverage to include overdrafts and new instruments such as SDR allocations, currency and deposit holdings, domestic arrears, and trade credits—currently omitted from DMFAS 6. The upgrade will further support integration and data interfacing with systems like IFMIS, thereby enhancing the efficiency of information exchange. Data confidentiality is strictly maintained, and information is utilized exclusively for statistical purposes. While Uganda's debt management and reporting systems are generally efficient, there is potential to further enhance their effectiveness by addressing issues related to record duplication, particularly the concurrent maintenance of debt records in two similar databases—in the MoFPED and BOU. To enhance operational efficiency, it is advisable to centralize, through legislation, all debt management and reporting duties within a unified department, thereby establishing a comprehensive debt management office with clearly defined front, middle, and back-office roles.
+
+2. Assurances of Integrity: This dimension evaluates the mechanisms that ensure strict adherence to objectivity in collecting, compiling, and disseminating public debt data to uphold user confidence. It focuses on three core elements instrumental to integrity in public debt statistics: professionalism, transparency, and ethical standards. In Uganda, there is substantial evidence that the MoFPED, BOU, and UBOS exhibit a high degree of professionalism, maintain transparent practices, and uphold rigorous ethical
+
+standards among their staff. Transparency is reinforced by legislative requirements obliging the Minister to publish reports on public debt management, guarantees, and other government financial liabilities "through appropriate channels." The DDCP adheres to the core principles of official statistics and ensures the objectivity of its data before it is formally released by the Secretary to the Treasury. Consequently, only a few senior officials from MoFPED and BOU access public debt statistics ahead of publication, while all other government offices and employees receive the information post-publication. Users felt DDCP did not seem to routinely inform users ahead of changes in methodology or data sources, and some users have raised concerns about publication delays. Recruitment and advancement within the civil service are predominantly merit-based, with candidates subjected to multiple interviews before appointments. Promotion processes for lower-grade employees are managed by the Public Service Commission through examinations and competitive interviews. Staff professionalism is further cultivated through active participation in seminars and training programs. The selection of source data, methodologies, and statistical techniques is guided by specific measurement objectives and data requirements. Comprehensive ethical standards and guidelines are clearly defined for personnel across all relevant institutions.
+
+3. Methodological Soundness: This dimension assesses the extent to which the PSDS of Uganda comply with international statistical methodologies to foster cross country comparability and facilitate analytical value. Uganda's PSDS reporting has several important strengths, including comprehensive coverage of budgetary central government (BCG) loans and debt securities and the separate disclosure of contingent liabilities. The MoFPED regularly produces two main debt reports: the Report on Debt, Grants, Guarantees and Other Financial Liabilities, and the Annual and Quarterly Debt Statistical Bulletins (hereafter Debt Bulletins). The MoF also publishes its annual Contingent Liabilities Report. These publications largely follow international statistical standards and offer detailed information. However, the distinction between external and domestic debt is currently based on currency, not creditor residency. The primary debt measure only captures BCG obligations, while liabilities of extrabudgetary units (EBUs), local governments (LGs), and state-owned enterprises (SOEs) are published separately in the Debt Bulletins. Liabilities such as payables, overdrafts, or finance leases are frequently found in the financial statements of non-BCG units, resulting in significant gaps in comprehensive PSDS reporting. Non-guaranteed liabilities of EBUs, LGs, and SOEs are reported as implicit contingent liabilities of the BCG, rather than being included in the broader public sector debt.
+
+4. To improve transparency and align with international definitions, Uganda should include the actual liabilities of non-BCG units in the PSDS. Furthermore, both external and domestic debt should be reported based on creditor residency as well as currency. A further reporting issue involves Special Drawing Rights (SDRs). After the August 2021 SDR allocation, Uganda converted part of its SDRs into local currency. The PSDS currently lists this as external debt to the IMF, but it should be recorded as domestic debt between MoFPED and the Bank of Uganda. Uganda's debt reporting presently excludes key liability categories such as pension obligations, arrears, payables, overdrafts, PPP-related liabilities, and finance leases. As of June 2024, domestic arrears, including overdrafts with the Bank of Uganda, amounted to UGX 14.6 trillion. To ensure compliance with international standards and provide a full picture of government debt, verified domestic arrears should be included in the PSDS. IMF technical assistance has advised that overdrafts should be classified as loan liabilities in line with GFSM 2014, but this has yet to be implemented. The use of promissory notes, or other similar arrangements, for public asset investment also creates government liabilities that should be recognized as debt when issued. The MoFPED is strongly encouraged to review all such arrangements, including those used in pre-financing, and ensure they are accurately reported in the PSDS for transparency and oversight.
+
+5. Accuracy and Reliability: This dimension assesses the extent to which the PSDS of Uganda accurately reflect the reality of public sector liabilities. Reliable, timely and comprehensive government securities data are sourced from the Central Securities Depository (CSD), which is managed by the BOU. Loan data are sourced from DMFAS, to which both MoFPED and BOU have access. PSDS data are verified for accuracy and reliability through rigorous checks by suppliers and validation teams. Currently, PSDS compilers rely on manual quality assurance and institutional knowledge, leading to potential inconsistencies and errors. There are limited standardized and automated procedures, resulting in observed discrepancies between statistical outputs and source data. Furthermore, there is no systematic revision process to assess and correct past data inaccuracies. Strengthening PSDS compilation with standardized, documented, and automated procedures, implementing regular revision studies, and publishing reconciliation tables are recommended to enhance data quality, consistency, and transparency. Key data on liabilities beyond the BCG are available from financial statements of extrabudgetary units, local governments, and SOEs. With adjustments, these can broaden PSDS sectoral coverage, per GFSM 2014 and PSDSG 2013. Instrument coverage can be expanded using data sources such as audited pension liabilities, PPP/lease debts, overdrafts, and arrears, are reported annually, while government advances with BOU are available monthly. Verified domestic arrears appear in multiple annual reports, but figures often differ between documents. Authorities should harmonize their reporting and clarify any discrepancies to ensure transparency and reliability.
+
+6. Serviceability: This dimension assesses the extent to which Uganda's PSDS are disseminated with an appropriate periodicity and timeliness, are consistent with other publications, and follow a revision policy. PSDS are published quarterly and annually in a timely manner and generally meet international standards. However, users have expressed the need for even more timely data releases. While PSDS largely aligns with other macroeconomic statistics, notable inconsistencies persist due to differences in revision practices, exchange rates, and valuation methods used by institutions such as the BOU and MoFPED. Discrepancies are evident between the Debt Bulletin and MOPED's Performance of the Economy, as well as between MFS and PSDS data. A significant challenge is the absence of a
+
+standardized approach for revising debt figures and notifying users of changes. Typically, revisions are limited to recent periods, leaving earlier data unchanged and leading to comparability issues when other statistics are updated. To improve transparency, reliability, and user confidence, the mission recommends routinely reviewing and reconciling debt stocks and flows, as well as across publications and statistical domains, clearly explaining to users the sources of any differences. Implementing comprehensive revision policies for PSDS is crucial. This should include publishing and implementing a formal revisions policy, either integrated with the existing draft GFS policy or as a standalone document, outlining procedures for updating preliminary figures, correcting errors, and addressing methodological changes. Revisions should be clearly identified and explained to promote transparency.
+
+7. Accessibility: This dimension assesses the extent to which the PSDS of Uganda are presented clearly and impartially, in a format that facilitates use of the data and enhances understanding of the data. PSDS are presented in a way that facilitates proper interpretation and meaningful comparison. MoFPED is commended for its consistent publication of quarterly and annual debt bulletins, which feature insightful commentary supported by relevant data, graphs, charts, and tables, supporting user understanding PSDS. Opportunities exist to further improve usability, particularly by adopting the standardized core tables for presenting public debt statistics as outlined in the PSDSG 2013 and providing time-series data in easily accessible formats. The lack of comprehensive, accessible time-series data in PSDS reports limits meaningful analysis and comparison, as information is restricted to recent periods and available only in PDF format. Publishing regularly updated and user-friendly time-series data is crucial for tracking long-term trends and ensuring accurate forecasts. The National Summary Data Page (NSDP) provides comprehensive metadata detailing concepts, scope, classifications, recording methods, data sources, and statistical techniques although it is infrequently updated. Any deviations from international standards, guidelines, or best practices are transparently disclosed. User feedback indicates that the metadata is clear and accessible. However, the metadata included in the Debt Bulletins is less comprehensive than that provided to the IMF and World Bank. Integrating more detailed metadata into PSDS publications would enhance appropriate data use. Currently, MoFPED does not maintain a pre-announced schedule for the release of fiscal statistics or public sector debt data. Furthermore, no press statements are issued upon the publication of these reports or when new information is posted on the MoFPED website.
+
+## Priority Recommendations
+
+\- Establish regulations to consolidate and formalize the existing institutional responsibilities related to public debt management and reporting. In the medium-term, enhance operational efficiency by consolidating all debt management and reporting responsibilities within a single department, ensuring the establishment of well-defined front, middle, and back-office roles. This may require integrating the DMFAS team into the back-office function of such department.
+
+\- Expand the instrument coverage of PSDS, focusing initially on the inclusion of domestic arrears/payables and the overdraft with BOU, prior to expanding to other instruments.
+
+\- Conduct a comprehensive review of the use of promissory notes and similar arrangements, including those used in pre-financing contexts. Liabilities identified should be reported in PSDS.
+
+• Harmonize the reporting of domestic arrears across all government documents to ensure consistent disclosure and ensure that any differences are explained.
+
+\- Develop and implement standardized, documented, and automated procedures for compiling and quality assuring PSDS to minimize compilation errors. Additionally, implement regular reviews to enhance these processes.
+
+• Enhance the consistency and reliability of PSDS by establishing strong revision policies and practices. Additionally, make a revisions policy publicly available to inform users about how updates or corrections will be reported.
+
+## Summary Ratings of the PSDS DQAF\*
+
+<table><tr><td>Dimensions/Elements</td><td>Rating</td><td>Dimensions/Elements</td><td>Rating</td></tr><tr><td colspan="2">0. Prerequisites of quality</td><td colspan="2">3. Accuracy and reliability</td></tr><tr><td>0.1 Legal and institutional environment</td><td>LO</td><td>3.1 Source data</td><td>LO</td></tr><tr><td>0.2 Resources</td><td>LNO</td><td>3.2 Assessment of source data</td><td>LO</td></tr><tr><td>0.3 Relevance</td><td>LO</td><td>3.3 Statistical techniques</td><td>LNO</td></tr><tr><td>0.4 Other quality management</td><td>O</td><td>3.4 Assessment and Validation of Statistical Outputs</td><td>LO</td></tr><tr><td colspan="2">1. Assurances of integrity</td><td>3.5 Revision studies</td><td>NO</td></tr><tr><td>1.1 Professionalism</td><td>O</td><td colspan="2">4. Serviceability</td></tr><tr><td>1.2 Transparency</td><td>LO</td><td>4.1 Periodicity and timeliness</td><td>LO</td></tr><tr><td>1.3 Ethical standards</td><td>O</td><td>4.2 Consistency</td><td>LNO</td></tr><tr><td colspan="2">2. Methodological soundness</td><td>4.3 Revision policy and practice</td><td>LNO</td></tr><tr><td>2.1 Concepts and definitions</td><td>LO</td><td colspan="2">5. Accessibility</td></tr><tr><td>2.2 Scope</td><td>LNO</td><td>5.1 Data accessibility</td><td>LO</td></tr><tr><td>2.3 Classification / sectorization</td><td>LO</td><td>5.2 Metadata accessibility</td><td>LO</td></tr><tr><td>2.4 Time of debt recording, valuation, and consolidation</td><td>LO</td><td>5.3 Assistance to users</td><td>LNO</td></tr><tr><td colspan="4">Key: O = Practice Observed; LO = Practice Largely Observed; LNO = Practice Largely Not Observed; NO = Practice Not Observed</td></tr></table>
+
+\* DQAF August 2024 Public Sector Debt Statistics https://dsbb.imf.org/content/pdfs/dqrs\_psds.pdf
+"""

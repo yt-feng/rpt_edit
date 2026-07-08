@@ -1,0 +1,3219 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.144,
+                0.122,
+                0.266,
+                0.218
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.141,
+                0.234,
+                0.744,
+                0.348
+            ],
+            "angle": 0,
+            "content": "HIGH-LEVEL SUMMARY\nTECHNICAL ASSISTANCE\nREPORT"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.15,
+                0.435,
+                0.363,
+                0.469
+            ],
+            "angle": 0,
+            "content": "UGANDA",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.148,
+                0.474,
+                0.852,
+                0.535
+            ],
+            "angle": 0,
+            "content": "Data Quality Assessment for Public Sector Debt Statistics (November 26–December 2, 2025)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.148,
+                0.549,
+                0.278,
+                0.573
+            ],
+            "angle": 0,
+            "content": "July 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.149,
+                0.611,
+                0.278,
+                0.631
+            ],
+            "angle": 0,
+            "content": "Prepared By",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.148,
+                0.632,
+                0.582,
+                0.653
+            ],
+            "angle": 0,
+            "content": "Andrew Kitili (Mission Chief) and Foyzunnesa Khatun",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.156,
+                0.739,
+                0.278,
+                0.757
+            ],
+            "angle": 0,
+            "content": "PARTNERS:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.245,
+                0.77,
+                0.666,
+                0.805
+            ],
+            "angle": 0,
+            "content": "JAPANGOV THE GOVERNMENT OF JAPAN",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.144,
+                0.234,
+                0.694,
+                0.266
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.276,
+                0.74,
+                0.305
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.143,
+                0.315,
+                0.339,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.147,
+                0.434,
+                0.365,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.476,
+                0.849,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.505,
+                0.797,
+                0.533
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.144,
+                0.546,
+                0.279,
+                0.576
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.608,
+                0.279,
+                0.634
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.634,
+                0.579,
+                0.65
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.154,
+                0.737,
+                0.279,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.242,
+                0.769,
+                0.67,
+                0.804
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.115,
+                0.13,
+                0.222,
+                0.145
+            ],
+            "angle": 0,
+            "content": "DISCLAIMER"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.113,
+                0.16,
+                0.884,
+                0.246
+            ],
+            "angle": 0,
+            "content": "The contents of this document constitute a high-level summary of technical advice provided by the staff of the International Monetary Fund (IMF) to the authorities of a member country or international agency (the \"CD recipient\") in response to their request for capacity development. Unless the CD recipient specifically objects within 30 business days of its transmittal, the IMF will publish this high-level summary on IMF.org (see Staff Operational Guidance on the Dissemination of Capacity Development Information)."
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.135,
+                0.359,
+                0.388,
+                0.375
+            ],
+            "angle": 0,
+            "content": "2026 International Monetary Fund"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.783,
+                0.359,
+                0.866,
+                0.374
+            ],
+            "angle": 0,
+            "content": "HLS/26/36"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.301,
+                0.416,
+                0.698,
+                0.455
+            ],
+            "angle": 0,
+            "content": "High-Level Summary Technical Assistance Report\nStatistics Department"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.233,
+                0.497,
+                0.765,
+                0.515
+            ],
+            "angle": 0,
+            "content": "Uganda – Data Quality Assessment for Public Sector Debt Statistics"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.314,
+                0.525,
+                0.685,
+                0.542
+            ],
+            "angle": 0,
+            "content": "Prepared by Andrew Kitili and Foyzunnesa Khatun",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.582,
+                0.86,
+                0.634
+            ],
+            "angle": 0,
+            "content": "The High-Level Summary Technical Assistance Report series provides high-level summaries of the assistance provided to IMF capacity development recipients, describing the high-level objectives, findings, and recommendations.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.645,
+                0.885,
+                0.75
+            ],
+            "angle": 0,
+            "content": "ABSTRACT: In November–December 2025, an assessment was undertaken of the data quality of the public sector debt statistics (PSDS) of Uganda against the IMF's Data Quality Assessment Framework (DQAF) for PSDS. The mission was undertaken as part of a project to strengthen the quality of public sector debt in select African countries, funded by the Government of Japan. The mission reviewed the PSDS compilation and dissemination practices against each element of the DQAF and presented a series of recommendations to improve the quality and transparency of the PSDS of Uganda.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.121,
+                0.778,
+                0.814,
+                0.83
+            ],
+            "angle": 0,
+            "content": "JEL Classification Numbers H63, H81, H83 (consult https://www.aeaweb.org/econlit/jelCodes.php)\nKeywords: Data Quality Assessment Framework (DQAF), Debt Reporting, Debt Transparency, JSA, Public Debt, Public Sector Debt Statistics (PSDS), Uganda",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.419,
+                0.696,
+                0.432
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.421,
+                0.441,
+                0.579,
+                0.454
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.236,
+                0.5,
+                0.763,
+                0.512
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.317,
+                0.528,
+                0.682,
+                0.541
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.583,
+                0.858,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.601,
+                0.815,
+                0.613
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.619,
+                0.458,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.645,
+                0.854,
+                0.659
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.664,
+                0.856,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.681,
+                0.849,
+                0.695
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.7,
+                0.852,
+                0.711
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.716,
+                0.882,
+                0.73
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.734,
+                0.735,
+                0.747
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.124,
+                0.778,
+                0.802,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.125,
+                0.799,
+                0.812,
+                0.813
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.124,
+                0.814,
+                0.529,
+                0.828
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.114,
+                0.092,
+                0.274,
+                0.115
+            ],
+            "angle": 0,
+            "content": "Background"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.129,
+                0.881,
+                0.338
+            ],
+            "angle": 0,
+            "content": "1. Uganda is presently assessed as having a moderate risk of debt distress. Based on the Debt Sustainability Analysis (DSA) conducted as part of the 2025 Post-Financing Assessment, projections indicate that both external debt burden and public debt indicators remain beneath established thresholds and benchmarks under the baseline scenario, except for a one-off minor breach of external debt-service revenue ratio in FY25/26-FY26/27. Nonetheless, staff evaluations emphasize that increased reliance on non-concessional borrowing, including domestic borrowing, may elevate the risk of debt distress. Furthermore, Uganda's DSA does not incorporate obligations related to extra-budgetary entities or non-guaranteed debt incurred by state-owned enterprises (SOEs), factors which could influence the overall assessment of debt distress risk. Implementing a comprehensive framework to capture and report all components of public debt—including other accounts payables and, central bank advances, as well as contingent liabilities, would enhance Uganda's debt transparency, facilitate alignment of public debt statistics with international standards, and improve the accuracy of future DSAs.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.348,
+                0.884,
+                0.505
+            ],
+            "angle": 0,
+            "content": "2. Against this background, the main objective of the mission was to use the IMF's standardized Data Quality Assessment Framework (DQAF) to identify areas of improvement in public sector debt statistics (PSDS) compilation and dissemination processes and recommend priority actions to help Uganda enhance public debt data transparency. Discussions with various stakeholders as well as review of data received and published indicate that Uganda's public debt statistics are broadly accurate and timely, but improvements are needed to enhance operational efficiency and compilation processes, as well as to broaden the scope of public sector debt reporting. The main findings and conclusions of the mission are summarized below in the order of the DQAF's dimensions.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.113,
+                0.518,
+                0.39,
+                0.541
+            ],
+            "angle": 0,
+            "content": "Summary of Findings"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.555,
+                0.837,
+                0.607
+            ],
+            "angle": 0,
+            "content": "1. Prerequisites of Quality: This category in the DQAF assesses the conditions that have an impact on data quality within the main agencies in charge of producing PSDS in Uganda. The assessment focused on the legal and institutional environment, resources, and quality awareness.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.618,
+                0.873,
+                0.776
+            ],
+            "angle": 0,
+            "content": "(a) Legal Environment: Uganda's legal framework for debt management and reporting is well set out in Articles 159 and 160(2) of the Constitution of Uganda and Section 42(1) of the Public Financial Management Act, 2015 (PFMA 2015). The PFMA 2015 assigns the responsibility for managing public debt, guarantees, and other government financial liabilities to the Minister responsible for Finance. However, there is no legislation in place that delineates specific responsibilities for the operational aspects of debt management, as is typically found in countries with independent debt management offices. Although, explicit legal provisions assigning the mandate for the collection, processing, and dissemination of public debt statistics are absent, Uganda's strong institutional frameworks ensure these functions are conducted effectively.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.786,
+                0.87,
+                0.91
+            ],
+            "angle": 0,
+            "content": "(b) Institutional Environment: Uganda has established robust institutional frameworks for debt management and reporting. MoFPED and BOU share responsibility for the compilation, processing, and dissemination of PSDS. At the MoFPED, the Debt and Cash Policy Directorate (DDCP) lead in the compilation and reporting of PSDS. Data sharing and coordination between MoFPED and BOU are generally effective, facilitated by memoranda of understanding which enable regular data exchange. Evaluating the adequacy of resources allocated for debt management and reporting is a complex task, given that responsibilities are distributed across several departments. Nonetheless, it is essential to",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.115,
+                0.957,
+                0.446,
+                0.973
+            ],
+            "angle": 0,
+            "content": "IMF | High-Level Summary Report – Uganda"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.602,
+                0.957,
+                0.862,
+                0.972
+            ],
+            "angle": 0,
+            "content": "Data Quality Assessment for PSDS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.869,
+                0.958,
+                0.884,
+                0.97
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.093,
+                0.272,
+                0.115
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.129,
+                0.133,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.13,
+                0.847,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.147,
+                0.799,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.164,
+                0.875,
+                0.177
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.181,
+                0.855,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.2,
+                0.876,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.216,
+                0.835,
+                0.229
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.233,
+                0.874,
+                0.248
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.252,
+                0.858,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.269,
+                0.878,
+                0.282
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.288,
+                0.877,
+                0.299
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.304,
+                0.834,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.322,
+                0.694,
+                0.333
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.349,
+                0.132,
+                0.362
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.35,
+                0.799,
+                0.362
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.366,
+                0.848,
+                0.379
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.384,
+                0.854,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.401,
+                0.854,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.419,
+                0.814,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.437,
+                0.81,
+                0.449
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.454,
+                0.878,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.471,
+                0.805,
+                0.483
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.489,
+                0.205,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.518,
+                0.388,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.555,
+                0.836,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.574,
+                0.792,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.592,
+                0.824,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.619,
+                0.141,
+                0.634
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.62,
+                0.859,
+                0.633
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.637,
+                0.845,
+                0.65
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.655,
+                0.85,
+                0.668
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.672,
+                0.825,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.689,
+                0.824,
+                0.702
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.708,
+                0.831,
+                0.719
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.725,
+                0.831,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.743,
+                0.87,
+                0.754
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.759,
+                0.372,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.786,
+                0.142,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.788,
+                0.844,
+                0.799
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.805,
+                0.868,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.824,
+                0.827,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.84,
+                0.833,
+                0.853
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.856,
+                0.838,
+                0.871
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.875,
+                0.855,
+                0.888
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.892,
+                0.835,
+                0.905
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.091,
+                0.885,
+                0.317
+            ],
+            "angle": 0,
+            "content": "consider increasing staff capacity, in the form of resources and training, within the DPI, MEPD and TSD to meet evolving requirements in debt monitoring. Additionally, upgrading the DMFAS system to version 7 should be prioritized, as this will expand debt coverage to include overdrafts and new instruments such as SDR allocations, currency and deposit holdings, domestic arrears, and trade credits—currently omitted from DMFAS 6. The upgrade will further support integration and data interfacing with systems like IFMIS, thereby enhancing the efficiency of information exchange. Data confidentiality is strictly maintained, and information is utilized exclusively for statistical purposes. While Uganda's debt management and reporting systems are generally efficient, there is potential to further enhance their effectiveness by addressing issues related to record duplication, particularly the concurrent maintenance of debt records in two similar databases—in the MoFPED and BOU. To enhance operational efficiency, it is advisable to centralize, through legislation, all debt management and reporting duties within a unified department, thereby establishing a comprehensive debt management office with clearly defined front, middle, and back-office roles.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.33,
+                0.877,
+                0.434
+            ],
+            "angle": 0,
+            "content": "2. Assurances of Integrity: This dimension evaluates the mechanisms that ensure strict adherence to objectivity in collecting, compiling, and disseminating public debt data to uphold user confidence. It focuses on three core elements instrumental to integrity in public debt statistics: professionalism, transparency, and ethical standards. In Uganda, there is substantial evidence that the MoFPED, BOU, and UBOS exhibit a high degree of professionalism, maintain transparent practices, and uphold rigorous ethical",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.445,
+                0.885,
+                0.707
+            ],
+            "angle": 0,
+            "content": "standards among their staff. Transparency is reinforced by legislative requirements obliging the Minister to publish reports on public debt management, guarantees, and other government financial liabilities \"through appropriate channels.\" The DDCP adheres to the core principles of official statistics and ensures the objectivity of its data before it is formally released by the Secretary to the Treasury. Consequently, only a few senior officials from MoFPED and BOU access public debt statistics ahead of publication, while all other government offices and employees receive the information post-publication. Users felt DDCP did not seem to routinely inform users ahead of changes in methodology or data sources, and some users have raised concerns about publication delays. Recruitment and advancement within the civil service are predominantly merit-based, with candidates subjected to multiple interviews before appointments. Promotion processes for lower-grade employees are managed by the Public Service Commission through examinations and competitive interviews. Staff professionalism is further cultivated through active participation in seminars and training programs. The selection of source data, methodologies, and statistical techniques is guided by specific measurement objectives and data requirements. Comprehensive ethical standards and guidelines are clearly defined for personnel across all relevant institutions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.718,
+                0.881,
+                0.911
+            ],
+            "angle": 0,
+            "content": "3. Methodological Soundness: This dimension assesses the extent to which the PSDS of Uganda comply with international statistical methodologies to foster cross country comparability and facilitate analytical value. Uganda's PSDS reporting has several important strengths, including comprehensive coverage of budgetary central government (BCG) loans and debt securities and the separate disclosure of contingent liabilities. The MoFPED regularly produces two main debt reports: the Report on Debt, Grants, Guarantees and Other Financial Liabilities, and the Annual and Quarterly Debt Statistical Bulletins (hereafter Debt Bulletins). The MoF also publishes its annual Contingent Liabilities Report. These publications largely follow international statistical standards and offer detailed information. However, the distinction between external and domestic debt is currently based on currency, not creditor residency. The primary debt measure only captures BCG obligations, while liabilities of extrabudgetary units (EBUs), local governments (LGs), and state-owned enterprises (SOEs) are published separately in",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.115,
+                0.957,
+                0.446,
+                0.973
+            ],
+            "angle": 0,
+            "content": "IMF | High-Level Summary Report – Uganda"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.602,
+                0.957,
+                0.862,
+                0.972
+            ],
+            "angle": 0,
+            "content": "Data Quality Assessment for PSDS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.87,
+                0.958,
+                0.883,
+                0.97
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.092,
+                0.883,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.109,
+                0.862,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.126,
+                0.882,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.143,
+                0.861,
+                0.157
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.161,
+                0.874,
+                0.175
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.18,
+                0.866,
+                0.191
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.196,
+                0.881,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.213,
+                0.846,
+                0.227
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.233,
+                0.877,
+                0.244
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.248,
+                0.849,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.266,
+                0.825,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.284,
+                0.869,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.3,
+                0.159,
+                0.315
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.33,
+                0.133,
+                0.343
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.331,
+                0.801,
+                0.343
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.348,
+                0.826,
+                0.361
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.366,
+                0.793,
+                0.377
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.384,
+                0.856,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.401,
+                0.872,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.418,
+                0.283,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.447,
+                0.866,
+                0.459
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.464,
+                0.839,
+                0.476
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.48,
+                0.881,
+                0.494
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.498,
+                0.852,
+                0.512
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.516,
+                0.881,
+                0.528
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.533,
+                0.879,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.552,
+                0.855,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.569,
+                0.874,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.586,
+                0.819,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.603,
+                0.879,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.621,
+                0.819,
+                0.633
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.639,
+                0.823,
+                0.65
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.656,
+                0.772,
+                0.668
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.673,
+                0.845,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.69,
+                0.198,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.718,
+                0.135,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.72,
+                0.878,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.738,
+                0.841,
+                0.749
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.754,
+                0.845,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.772,
+                0.867,
+                0.785
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.79,
+                0.836,
+                0.801
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.807,
+                0.816,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.825,
+                0.834,
+                0.836
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.842,
+                0.814,
+                0.854
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.858,
+                0.872,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.877,
+                0.856,
+                0.889
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.894,
+                0.869,
+                0.906
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.091,
+                0.865,
+                0.16
+            ],
+            "angle": 0,
+            "content": "the Debt Bulletins. Liabilities such as payables, overdrafts, or finance leases are frequently found in the financial statements of non-BCG units, resulting in significant gaps in comprehensive PSDS reporting. Non-guaranteed liabilities of EBUs, LGs, and SOEs are reported as implicit contingent liabilities of the BCG, rather than being included in the broader public sector debt.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.172,
+                0.875,
+                0.435
+            ],
+            "angle": 0,
+            "content": "4. To improve transparency and align with international definitions, Uganda should include the actual liabilities of non-BCG units in the PSDS. Furthermore, both external and domestic debt should be reported based on creditor residency as well as currency. A further reporting issue involves Special Drawing Rights (SDRs). After the August 2021 SDR allocation, Uganda converted part of its SDRs into local currency. The PSDS currently lists this as external debt to the IMF, but it should be recorded as domestic debt between MoFPED and the Bank of Uganda. Uganda's debt reporting presently excludes key liability categories such as pension obligations, arrears, payables, overdrafts, PPP-related liabilities, and finance leases. As of June 2024, domestic arrears, including overdrafts with the Bank of Uganda, amounted to UGX 14.6 trillion. To ensure compliance with international standards and provide a full picture of government debt, verified domestic arrears should be included in the PSDS. IMF technical assistance has advised that overdrafts should be classified as loan liabilities in line with GFSM 2014, but this has yet to be implemented. The use of promissory notes, or other similar arrangements, for public asset investment also creates government liabilities that should be recognized as debt when issued. The MoFPED is strongly encouraged to review all such arrangements, including those used in pre-financing, and ensure they are accurately reported in the PSDS for transparency and oversight.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.445,
+                0.882,
+                0.76
+            ],
+            "angle": 0,
+            "content": "5. Accuracy and Reliability: This dimension assesses the extent to which the PSDS of Uganda accurately reflect the reality of public sector liabilities. Reliable, timely and comprehensive government securities data are sourced from the Central Securities Depository (CSD), which is managed by the BOU. Loan data are sourced from DMFAS, to which both MoFPED and BOU have access. PSDS data are verified for accuracy and reliability through rigorous checks by suppliers and validation teams. Currently, PSDS compilers rely on manual quality assurance and institutional knowledge, leading to potential inconsistencies and errors. There are limited standardized and automated procedures, resulting in observed discrepancies between statistical outputs and source data. Furthermore, there is no systematic revision process to assess and correct past data inaccuracies. Strengthening PSDS compilation with standardized, documented, and automated procedures, implementing regular revision studies, and publishing reconciliation tables are recommended to enhance data quality, consistency, and transparency. Key data on liabilities beyond the BCG are available from financial statements of extrabudgetary units, local governments, and SOEs. With adjustments, these can broaden PSDS sectoral coverage, per GFSM 2014 and PSDSG 2013. Instrument coverage can be expanded using data sources such as audited pension liabilities, PPP/lease debts, overdrafts, and arrears, are reported annually, while government advances with BOU are available monthly. Verified domestic arrears appear in multiple annual reports, but figures often differ between documents. Authorities should harmonize their reporting and clarify any discrepancies to ensure transparency and reliability.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.771,
+                0.881,
+                0.911
+            ],
+            "angle": 0,
+            "content": "6. Serviceability: This dimension assesses the extent to which Uganda's PSDS are disseminated with an appropriate periodicity and timeliness, are consistent with other publications, and follow a revision policy. PSDS are published quarterly and annually in a timely manner and generally meet international standards. However, users have expressed the need for even more timely data releases. While PSDS largely aligns with other macroeconomic statistics, notable inconsistencies persist due to differences in revision practices, exchange rates, and valuation methods used by institutions such as the BOU and MoFPED. Discrepancies are evident between the Debt Bulletin and MOPED's Performance of the Economy, as well as between MFS and PSDS data. A significant challenge is the absence of a",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.115,
+                0.957,
+                0.446,
+                0.973
+            ],
+            "angle": 0,
+            "content": "IMF | High-Level Summary Report – Uganda"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.602,
+                0.957,
+                0.862,
+                0.972
+            ],
+            "angle": 0,
+            "content": "Data Quality Assessment for PSDS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.87,
+                0.958,
+                0.884,
+                0.97
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.093,
+                0.861,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.11,
+                0.85,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.128,
+                0.85,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.143,
+                0.593,
+                0.158
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.172,
+                0.134,
+                0.186
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.174,
+                0.836,
+                0.186
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.191,
+                0.865,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.209,
+                0.831,
+                0.22
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.225,
+                0.858,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.242,
+                0.845,
+                0.255
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.26,
+                0.861,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.278,
+                0.865,
+                0.291
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.296,
+                0.849,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.314,
+                0.835,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.33,
+                0.841,
+                0.343
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.347,
+                0.872,
+                0.36
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.365,
+                0.854,
+                0.378
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.384,
+                0.872,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.4,
+                0.865,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.419,
+                0.729,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.445,
+                0.134,
+                0.46
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.447,
+                0.854,
+                0.459
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.465,
+                0.856,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.483,
+                0.876,
+                0.494
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.5,
+                0.841,
+                0.511
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.516,
+                0.868,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.534,
+                0.827,
+                0.547
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.551,
+                0.826,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.57,
+                0.873,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.587,
+                0.843,
+                0.599
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.604,
+                0.832,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.622,
+                0.781,
+                0.633
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.64,
+                0.803,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.655,
+                0.881,
+                0.669
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.673,
+                0.874,
+                0.687
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.691,
+                0.873,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.709,
+                0.834,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.725,
+                0.865,
+                0.739
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.742,
+                0.602,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.771,
+                0.135,
+                0.785
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.772,
+                0.868,
+                0.785
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.79,
+                0.878,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.807,
+                0.857,
+                0.82
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.825,
+                0.854,
+                0.836
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.842,
+                0.858,
+                0.855
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.86,
+                0.843,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.878,
+                0.823,
+                0.889
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.895,
+                0.803,
+                0.907
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.091,
+                0.883,
+                0.248
+            ],
+            "angle": 0,
+            "content": "standardized approach for revising debt figures and notifying users of changes. Typically, revisions are limited to recent periods, leaving earlier data unchanged and leading to comparability issues when other statistics are updated. To improve transparency, reliability, and user confidence, the mission recommends routinely reviewing and reconciling debt stocks and flows, as well as across publications and statistical domains, clearly explaining to users the sources of any differences. Implementing comprehensive revision policies for PSDS is crucial. This should include publishing and implementing a formal revisions policy, either integrated with the existing draft GFS policy or as a standalone document, outlining procedures for updating preliminary figures, correcting errors, and addressing methodological changes. Revisions should be clearly identified and explained to promote transparency.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.26,
+                0.881,
+                0.591
+            ],
+            "angle": 0,
+            "content": "7. Accessibility: This dimension assesses the extent to which the PSDS of Uganda are presented clearly and impartially, in a format that facilitates use of the data and enhances understanding of the data. PSDS are presented in a way that facilitates proper interpretation and meaningful comparison. MoFPED is commended for its consistent publication of quarterly and annual debt bulletins, which feature insightful commentary supported by relevant data, graphs, charts, and tables, supporting user understanding PSDS. Opportunities exist to further improve usability, particularly by adopting the standardized core tables for presenting public debt statistics as outlined in the PSDSG 2013 and providing time-series data in easily accessible formats. The lack of comprehensive, accessible time-series data in PSDS reports limits meaningful analysis and comparison, as information is restricted to recent periods and available only in PDF format. Publishing regularly updated and user-friendly time-series data is crucial for tracking long-term trends and ensuring accurate forecasts. The National Summary Data Page (NSDP) provides comprehensive metadata detailing concepts, scope, classifications, recording methods, data sources, and statistical techniques although it is infrequently updated. Any deviations from international standards, guidelines, or best practices are transparently disclosed. User feedback indicates that the metadata is clear and accessible. However, the metadata included in the Debt Bulletins is less comprehensive than that provided to the IMF and World Bank. Integrating more detailed metadata into PSDS publications would enhance appropriate data use. Currently, MoFPED does not maintain a pre-announced schedule for the release of fiscal statistics or public sector debt data. Furthermore, no press statements are issued upon the publication of these reports or when new information is posted on the MoFPED website.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.113,
+                0.602,
+                0.329,
+                0.618
+            ],
+            "angle": 0,
+            "content": "Priority Recommendations"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.635,
+                0.884,
+                0.721
+            ],
+            "angle": 0,
+            "content": "- Establish regulations to consolidate and formalize the existing institutional responsibilities related to public debt management and reporting. In the medium-term, enhance operational efficiency by consolidating all debt management and reporting responsibilities within a single department, ensuring the establishment of well-defined front, middle, and back-office roles. This may require integrating the DMFAS team into the back-office function of such department.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.733,
+                0.812,
+                0.768
+            ],
+            "angle": 0,
+            "content": "- Expand the instrument coverage of PSDS, focusing initially on the inclusion of domestic arrears/payables and the overdraft with BOU, prior to expanding to other instruments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.78,
+                0.867,
+                0.815
+            ],
+            "angle": 0,
+            "content": "- Conduct a comprehensive review of the use of promissory notes and similar arrangements, including those used in pre-financing contexts. Liabilities identified should be reported in PSDS.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.827,
+                0.822,
+                0.861
+            ],
+            "angle": 0,
+            "content": "• Harmonize the reporting of domestic arrears across all government documents to ensure consistent disclosure and ensure that any differences are explained.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.115,
+                0.957,
+                0.446,
+                0.973
+            ],
+            "angle": 0,
+            "content": "IMF | High-Level Summary Report – Uganda"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.602,
+                0.957,
+                0.862,
+                0.972
+            ],
+            "angle": 0,
+            "content": "Data Quality Assessment for PSDS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.87,
+                0.958,
+                0.884,
+                0.97
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.092,
+                0.859,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.11,
+                0.868,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.126,
+                0.881,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.145,
+                0.856,
+                0.157
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.162,
+                0.821,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.178,
+                0.868,
+                0.193
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.196,
+                0.815,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.214,
+                0.861,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.231,
+                0.678,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.259,
+                0.135,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.26,
+                0.872,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.279,
+                0.877,
+                0.29
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.296,
+                0.869,
+                0.307
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.314,
+                0.876,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.33,
+                0.833,
+                0.344
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.347,
+                0.843,
+                0.361
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.365,
+                0.871,
+                0.378
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.384,
+                0.848,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.4,
+                0.851,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.417,
+                0.869,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.436,
+                0.859,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.454,
+                0.849,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.47,
+                0.874,
+                0.482
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.488,
+                0.851,
+                0.499
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.505,
+                0.86,
+                0.516
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.523,
+                0.844,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.54,
+                0.864,
+                0.551
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.557,
+                0.872,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.575,
+                0.818,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.605,
+                0.325,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.641,
+                0.125,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.637,
+                0.875,
+                0.649
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.653,
+                0.88,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.67,
+                0.84,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.688,
+                0.866,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.706,
+                0.734,
+                0.718
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.739,
+                0.124,
+                0.745
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.735,
+                0.809,
+                0.748
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.753,
+                0.792,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.787,
+                0.123,
+                0.79
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.782,
+                0.834,
+                0.795
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.799,
+                0.864,
+                0.812
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.834,
+                0.124,
+                0.838
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.83,
+                0.818,
+                0.842
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.848,
+                0.667,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.091,
+                0.881,
+                0.143
+            ],
+            "angle": 0,
+            "content": "- Develop and implement standardized, documented, and automated procedures for compiling and quality assuring PSDS to minimize compilation errors. Additionally, implement regular reviews to enhance these processes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.156,
+                0.843,
+                0.207
+            ],
+            "angle": 0,
+            "content": "• Enhance the consistency and reliability of PSDS by establishing strong revision policies and practices. Additionally, make a revisions policy publicly available to inform users about how updates or corrections will be reported.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.148,
+                0.957,
+                0.447,
+                0.973
+            ],
+            "angle": 0,
+            "content": "| High-Level Summary Report – Uganda"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.602,
+                0.957,
+                0.862,
+                0.972
+            ],
+            "angle": 0,
+            "content": "Data Quality Assessment for PSDS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.869,
+                0.958,
+                0.884,
+                0.97
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.097,
+                0.125,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.094,
+                0.879,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.11,
+                0.872,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.129,
+                0.366,
+                0.141
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.161,
+                0.124,
+                0.168
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.157,
+                0.839,
+                0.17
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.175,
+                0.834,
+                0.187
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.193,
+                0.457,
+                0.205
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.259,
+                0.119,
+                0.739,
+                0.143
+            ],
+            "angle": 0,
+            "content": "Summary Ratings of the PSDS DQAF*"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.069,
+                0.152,
+                0.919,
+                0.716
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Dimensions/Elements</td><td>Rating</td><td>Dimensions/Elements</td><td>Rating</td></tr><tr><td colspan=\"2\">0. Prerequisites of quality</td><td colspan=\"2\">3. Accuracy and reliability</td></tr><tr><td>0.1 Legal and institutional environment</td><td>LO</td><td>3.1 Source data</td><td>LO</td></tr><tr><td>0.2 Resources</td><td>LNO</td><td>3.2 Assessment of source data</td><td>LO</td></tr><tr><td>0.3 Relevance</td><td>LO</td><td>3.3 Statistical techniques</td><td>LNO</td></tr><tr><td>0.4 Other quality management</td><td>O</td><td>3.4 Assessment and Validation of Statistical Outputs</td><td>LO</td></tr><tr><td colspan=\"2\">1. Assurances of integrity</td><td>3.5 Revision studies</td><td>NO</td></tr><tr><td>1.1 Professionalism</td><td>O</td><td colspan=\"2\">4. Serviceability</td></tr><tr><td>1.2 Transparency</td><td>LO</td><td>4.1 Periodicity and timeliness</td><td>LO</td></tr><tr><td>1.3 Ethical standards</td><td>O</td><td>4.2 Consistency</td><td>LNO</td></tr><tr><td colspan=\"2\">2. Methodological soundness</td><td>4.3 Revision policy and practice</td><td>LNO</td></tr><tr><td>2.1 Concepts and definitions</td><td>LO</td><td colspan=\"2\">5. Accessibility</td></tr><tr><td>2.2 Scope</td><td>LNO</td><td>5.1 Data accessibility</td><td>LO</td></tr><tr><td>2.3 Classification / sectorization</td><td>LO</td><td>5.2 Metadata accessibility</td><td>LO</td></tr><tr><td>2.4 Time of debt recording, valuation, and consolidation</td><td>LO</td><td>5.3 Assistance to users</td><td>LNO</td></tr><tr><td colspan=\"4\">Key: O = Practice Observed; LO = Practice Largely Observed; LNO = Practice Largely Not Observed; NO = Practice Not Observed</td></tr></table>"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.718,
+                0.398,
+                0.746
+            ],
+            "angle": 0,
+            "content": "* DQAF August 2024 Public Sector Debt Statistics https://dsbb.imf.org/content/pdfs/dqrs_psds.pdf",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.116,
+                0.957,
+                0.446,
+                0.973
+            ],
+            "angle": 0,
+            "content": "IMF | High-Level Summary Report – Uganda"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.602,
+                0.957,
+                0.862,
+                0.972
+            ],
+            "angle": 0,
+            "content": "Data Quality Assessment for PSDS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.87,
+                0.958,
+                0.884,
+                0.97
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.26,
+                0.121,
+                0.738,
+                0.141
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.72,
+                0.396,
+                0.731
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.733,
+                0.379,
+                0.744
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

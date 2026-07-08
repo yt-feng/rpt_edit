@@ -1,0 +1,36 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_7g_jjsak/pdfs/0005-IMF_Uganda-Data-Quality-Assessment-for-Public-Sector-Debt-Statis_138a82a9.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "IMF",
+  "cover_short_title": "乌干达债务数据，值得",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "风险->不确定性 x2",
+    "衰退|萎缩|收缩->调整 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "证券->标的 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "理财->资金规划 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "IMF：IMF评估乌干达债务数据，统计口径之外的真实负债被低估",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

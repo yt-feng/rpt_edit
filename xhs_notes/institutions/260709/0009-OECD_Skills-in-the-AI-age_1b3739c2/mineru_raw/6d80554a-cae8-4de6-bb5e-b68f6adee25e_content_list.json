@@ -1,0 +1,3735 @@
+[
+    {
+        "type": "text",
+        "text": "OECD Artificial Intelligence Papers",
+        "bbox": [
+            52,
+            187,
+            369,
+            210
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Skills in the AI age",
+        "text_level": 1,
+        "bbox": [
+            52,
+            225,
+            484,
+            269
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "No. 60",
+        "bbox": [
+            52,
+            291,
+            122,
+            311
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/84358694a8ef1151ac44c1560a1a7f5b5e6f3d0b4187cb6d022d81f9b89160fa.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            434,
+            1000,
+            998
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "OECD",
+        "bbox": [
+            52,
+            36,
+            258,
+            74
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "OECD Artificial Intelligence Papers",
+        "bbox": [
+            324,
+            108,
+            673,
+            131
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Skills in the AI age",
+        "bbox": [
+            336,
+            224,
+            660,
+            259
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "OECD",
+        "bbox": [
+            386,
+            822,
+            611,
+            866
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Disclaimers",
+        "text_level": 2,
+        "bbox": [
+            115,
+            156,
+            337,
+            187
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "This paper was approved and declassified by the Digital Policy Committee (DPC) on 27 March 2026.",
+        "bbox": [
+            104,
+            244,
+            746,
+            259
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "This document, as well as any data and map included herein, are without prejudice to the status of or sovereignty over any territory, to the delimitation of international frontiers and boundaries and to the name of any territory, city or area.",
+        "bbox": [
+            102,
+            288,
+            890,
+            319
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The statistical data for Israel are supplied by and under the responsibility of the relevant Israeli authorities. The use of such data by the OECD is without prejudice to the status of the Golan Heights, East Jerusalem and Israeli settlements in the West Bank under the terms of international law.",
+        "bbox": [
+            102,
+            350,
+            892,
+            395
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Photo credits: © Viktoriia Hnatiuk/Shutterstock.",
+        "bbox": [
+            104,
+            422,
+            413,
+            436
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "© OECD 2026",
+        "bbox": [
+            104,
+            463,
+            203,
+            476
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/323c53d075ea723b0b03ef34bcec329ba67f51f68a3c85c86c4f1550c19b2c4d.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            105,
+            529,
+            173,
+            546
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Attribution 4.0 International (CC BY 4.0)",
+        "text_level": 2,
+        "bbox": [
+            178,
+            533,
+            495,
+            551
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "This work is made available under the Creative Commons Attribution 4.0 International licence. By using this work, you accept to be bound by the terms of this licence (https://creativecommons.org/licenses/by/4.0/).",
+        "bbox": [
+            102,
+            558,
+            892,
+            589
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Attribution – you must cite the work.",
+        "bbox": [
+            104,
+            596,
+            344,
+            611
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Translations – you must cite the original work, identify changes to the original and add the following text: In the event of any discrepancy between the original work and the translation, only the text of the original work should be considered valid.",
+        "bbox": [
+            104,
+            620,
+            892,
+            650
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Adaptations – you must cite the original work and add the following text: This is an adaptation of an original work by the OECD. The opinions expressed and arguments employed in this adaptation should not be reported as representing the official views of the OECD or of its Member countries.",
+        "bbox": [
+            102,
+            657,
+            892,
+            703
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Third-party material – the licence does not apply to third-party material in the work. If using such material, you are responsible for obtaining permission from the third party and for any claims of infringement.",
+        "bbox": [
+            102,
+            711,
+            892,
+            741
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "You must not use the OECD logo, visual identity or cover image without express permission or suggest the OECD endorses your use of the work.",
+        "bbox": [
+            102,
+            749,
+            890,
+            778
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Any dispute arising under this licence shall be settled by arbitration in accordance with the Permanent Court of Arbitration (PCA) Arbitration Rules 2012. The seat of arbitration shall be Paris (France). The number of arbitrators shall be one.",
+        "bbox": [
+            102,
+            787,
+            890,
+            818
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "2 |",
+        "bbox": [
+            105,
+            74,
+            129,
+            90
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            655,
+            916,
+            892,
+            928
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "As general-purpose technologies like the steam engine and electricity once revolutionised society, artificial intelligence (AI) is likewise doing so today. By enhancing productivity, stimulating economic growth and creating new job opportunities, AI could significantly enhance human work and the labour market. However, AI also presents challenges such as job displacements if the transition to using it is not properly managed. The effects of AI on employment differ across sectors, regions and cities, as well as across skill levels. Adapting to this shift requires developing new skills that align with evolving labour market demands. Policymakers play an essential role in ensuring workers are equipped to thrive in an AI-driven economy. This paper examines how AI is transforming labour markets, shifting skill requirements and the policy responses needed to harness AI's transformative potential while mitigating its social and economic risks.",
+        "bbox": [
+            206,
+            425,
+            894,
+            675
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "| 3",
+        "bbox": [
+            867,
+            73,
+            892,
+            90
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Abstract",
+        "bbox": [
+            127,
+            152,
+            295,
+            186
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            105,
+            915,
+            342,
+            928
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Acknowledgements",
+        "text_level": 2,
+        "bbox": [
+            105,
+            140,
+            475,
+            174
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The ongoing digital transformation of the economy and society holds many promises to spur innovation, generate efficiencies and improve services, and in doing so boost growth. Digital technologies empower people by increasing access to information and enabling new forms of social engagement. Yet such benefits come with other challenges as digital transformation changes the nature and structure of organisations, markets and communities, and raises concerns about equity and inclusion. Realising the opportunities and addressing the challenges is not automatic and may require policy action to make digital transformation boost growth and improve well-being.",
+        "bbox": [
+            102,
+            225,
+            892,
+            336
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The OECD-Korea Digital Society Initiative (DSI), under the auspices of the OECD Digital Policy Committee (DPC) and supported by Korea, aims to help advance the DPC's work on the societal aspects of digital transformation, including its implications for human rights, by integrating relevant expertise from across the DPC and its data infrastructures. The DSI provides insights into the impacts of digital transformation and digital technology development on society, and a venue for countries to discuss, exchange and explore policy case studies on related issues. The DSI focuses on three priority areas: digital inclusion and divides; safety; and trust. These themes were chosen as key areas to advance individual and societal well-being in today's highly digital societies.",
+        "bbox": [
+            102,
+            341,
+            892,
+            466
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "This paper represents an output of the DSI. It contributes to a better understanding of key trends in the digital transformation of societies across OECD Member countries and partner economies and it identifies innovative policy practices to maximise the opportunities of digital technologies for people and society and to minimise the related risks.",
+        "bbox": [
+            102,
+            472,
+            892,
+            533
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "This paper was written by Elif Köksal-Oudot under the guidance of Molly Lesher and the direction of Audrey Plonk and Jerry Sheehan. Statistical expertise from Giorgia Bergamo and Bénédicte Rispal is gratefully acknowledged. The paper benefited from feedback from Stijn Broecke, Andrew Paterson, Glenda Quintini, Angelica Salvi Del Pero and Lea Samek. Mark Foss, Andreia Furtado and Alice Weber provided editorial and communication support.",
+        "bbox": [
+            102,
+            541,
+            892,
+            619
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "4 |",
+        "bbox": [
+            105,
+            74,
+            127,
+            90
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            655,
+            916,
+            892,
+            928
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Table of contents",
+        "text_level": 2,
+        "bbox": [
+            105,
+            111,
+            521,
+            154
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Disclaimers 2   \nAbstract 3   \nAcknowledgements 4   \nReader's guide 7 Acronyms 7 Abbreviations 8   \nExecutive summary 9 Main findings 9   \n1 Introduction 11   \n2 AI has a transformative impact on businesses, work and digital societies 12 Firm-level AI adoption has widespread implications for society 12 AI is transforming jobs and labour markets 14 Jobs with greatest exposure to AI are not necessarily those with a high risk of automation 14   \n3 Individuals need a wide range of skills to thrive in digital societies 18 A mix of foundational, ICT and complementary skills are needed to thrive in digital environments 18 AI skills are in high demand, but workers with AI skills are still a small part of the overall workforce 19 Bridging skills gaps is an important societal imperative 20   \n4 The role of policies to shape skills for the AI age 22 Investing in the quality, equity and labour market relevance of education and training systems 22 Training ICT professionals through both formal education and lifelong learning 23 Encouraging employer-led training 24 Promoting AI literacy 26 Providing tailored support for displaced workers 27 Ensuring the right mix of skills for all 28   \n5 Conclusion 29   \nReferences 30   \nNotes 34",
+        "bbox": [
+            102,
+            229,
+            875,
+            864
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            873,
+            74,
+            892,
+            90
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            105,
+            915,
+            342,
+            928
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "6",
+        "text_level": 2,
+        "bbox": [
+            105,
+            74,
+            124,
+            89
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "FIGURES",
+        "text_level": 2,
+        "bbox": [
+            105,
+            105,
+            184,
+            123
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Figure 1. Adoption of AI technologies in businesses has been increasing 13  \nFigure 2. High-skill, white collar occupations are among those with the highest exposure to AI 15  \nFigure 3. The occupations most at risk of automation are different than those most exposed to AI 16  \nFigure 4. Economies are competing for AI talent 19  \nFigure 5. In some countries, almost a third of job vacancies are highly exposed to AI 20",
+        "bbox": [
+            105,
+            128,
+            873,
+            197
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "BOXES",
+        "text_level": 2,
+        "bbox": [
+            105,
+            208,
+            169,
+            223
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Box 1. Korea's \"Artificial Intelligence & Digital (AID) 30+\" project 24  \nBox 2. Germany's funding of continuing vocational training and training (CVET) for employees 25  \nBox 3. Estonia's national \"AI Leap\" initiative 27  \nBox 4. Canada's \"AI4Good Lab\" programme 28",
+        "bbox": [
+            104,
+            229,
+            873,
+            284
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            655,
+            916,
+            890,
+            928
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Reader's guide",
+        "text_level": 2,
+        "bbox": [
+            121,
+            156,
+            400,
+            191
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Acronyms",
+        "text_level": 2,
+        "bbox": [
+            105,
+            263,
+            208,
+            279
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/b93fc8ad628121a12b917b2c689f51faa39cfaaa81333df4347f6732e3f71a4c.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>AI</td><td>Artificial intelligence</td></tr><tr><td>AID</td><td>Artificial Intelligence and Digital (Korea)</td></tr><tr><td>AZAV</td><td>Accreditation and Approval Ordinance for Employment Promotion (Germany)</td></tr><tr><td>CPF</td><td>Individual Learning Account (France)</td></tr><tr><td>CPIA</td><td>Provincial Centres for Adult Education (Italy)</td></tr><tr><td>CVET</td><td>Continuing vocational education and training (Germany)</td></tr><tr><td>EU</td><td>European Union</td></tr><tr><td>ICT</td><td>Information and communication technologies</td></tr><tr><td>ISCO</td><td>International standard classification of occupations</td></tr><tr><td>SMEs</td><td>Small and medium-sized enterprises</td></tr><tr><td>GenAI</td><td>Generative artificial intelligence</td></tr><tr><td>MOOCs</td><td>Massive open online courses</td></tr><tr><td>OECD</td><td>Organisation for Economic Co-operation and Development</td></tr><tr><td>PIAAC</td><td>Programme for the International Assessment of Adult Competencies (OECD)</td></tr><tr><td>PISA</td><td>Programme for International Student Assessment (OECD)</td></tr><tr><td>VET</td><td>Vocational education and training</td></tr></table>",
+        "bbox": [
+            107,
+            291,
+            800,
+            527
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "| 7",
+        "bbox": [
+            867,
+            73,
+            892,
+            90
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            105,
+            916,
+            342,
+            928
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Abbreviations",
+        "text_level": 2,
+        "bbox": [
+            105,
+            109,
+            245,
+            126
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/a47622607d271dfb60c8caee89261f53327c0d5d4219c9e2dc27251639fe9ef4.jpg",
+        "table_caption": [
+            "This report uses ISO codes for countries and economies in figures."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>ARG</td><td>Argentina</td></tr><tr><td>AUS</td><td>Australia</td></tr><tr><td>AUT</td><td>Austria</td></tr><tr><td>BEL</td><td>Belgium</td></tr><tr><td>BGR</td><td>Bulgaria</td></tr><tr><td>BRA</td><td>Brazil</td></tr><tr><td>CAN</td><td>Canada</td></tr><tr><td>CHE</td><td>Switzerland</td></tr><tr><td>CHL</td><td>Chile</td></tr><tr><td>CRI</td><td>Costa Rica</td></tr><tr><td>CZE</td><td>Czechia</td></tr><tr><td>DEU</td><td>Germany</td></tr><tr><td>DNK</td><td>Denmark</td></tr><tr><td>ESP</td><td>Spain</td></tr><tr><td>EST</td><td>Estonia</td></tr><tr><td>FIN</td><td>Finland</td></tr><tr><td>FRA</td><td>France</td></tr><tr><td>GBR</td><td>United Kingdom</td></tr><tr><td>GRC</td><td>Greece</td></tr><tr><td>HKG</td><td>Hong Kong (China)</td></tr><tr><td>HRV</td><td>Croatia</td></tr><tr><td>HUN</td><td>Hungary</td></tr><tr><td>IDN</td><td>Indonesia</td></tr><tr><td>IND</td><td>India</td></tr><tr><td>IRL</td><td>Ireland</td></tr><tr><td>ISL</td><td>Iceland</td></tr><tr><td>ISR</td><td>Israel</td></tr><tr><td>ITA</td><td>Italy</td></tr><tr><td>JPN</td><td>Japan</td></tr><tr><td>KOR</td><td>Korea</td></tr><tr><td>LTU</td><td>Lithuania</td></tr><tr><td>LUX</td><td>Luxembourg</td></tr><tr><td>LVA</td><td>Latvia</td></tr><tr><td>MEX</td><td>Mexico</td></tr><tr><td>NLD</td><td>Netherlands</td></tr><tr><td>NOR</td><td>Norway</td></tr><tr><td>NZL</td><td>New Zealand</td></tr><tr><td>POL</td><td>Poland</td></tr><tr><td>PRT</td><td>Portugal</td></tr><tr><td>ROU</td><td>Romania</td></tr><tr><td>SAU</td><td>Saudi Arabia</td></tr><tr><td>SGP</td><td>Singapore</td></tr><tr><td>SVK</td><td>Slovak Republic</td></tr><tr><td>SVN</td><td>Slovenia</td></tr><tr><td>SWE</td><td>Sweden</td></tr><tr><td>TUR</td><td>Republic of Türkiye</td></tr><tr><td>URY</td><td>Uruguay</td></tr><tr><td>USA</td><td>United States</td></tr><tr><td>ZAF</td><td>South Africa</td></tr></table>",
+        "bbox": [
+            105,
+            161,
+            800,
+            877
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            105,
+            74,
+            122,
+            87
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            655,
+            916,
+            892,
+            928
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Executive summary",
+        "text_level": 1,
+        "bbox": [
+            121,
+            156,
+            485,
+            191
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Artificial intelligence (AI) is emerging as a transformative general-purpose technology, reshaping economies and societies in ways comparable to past industrial revolutions. By enhancing productivity, improving decision making and enabling innovation, AI holds significant potential to boost economic growth and improve working conditions. At the same time, its diffusion raises concerns about labour market disruptions, widening inequalities and uneven access to opportunities. In this context, ensuring that individuals and economies are equipped with the right skills is critical to harness AI's benefits while managing its risks.",
+        "bbox": [
+            102,
+            250,
+            892,
+            359
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "AI adoption by firms has accelerated rapidly in recent years, driven in part by the emergence of generative AI tools. Businesses increasingly use AI technologies to automate routine tasks, optimise resource allocation and improve the quality of goods and services. These developments can raise productivity and create more engaging and higher-value work for employees. However, adoption remains uneven across firms, sectors and countries. Larger firms and younger, more innovative enterprises tend to lead in AI uptake, while small and medium-sized enterprises face barriers related to cost, infrastructure and skills shortages. Without targeted policy interventions, these disparities risk reinforcing existing productivity gaps and limiting the diffusion of AI benefits across the economy.",
+        "bbox": [
+            102,
+            365,
+            892,
+            489
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "This paper first sheds light on the transformative impacts of AI on businesses, work and digital societies. It then outlines the skills needed to prosper in the AI age. Finally, it discusses the role of policies to help ensure that workers have the right mix of skills today and in the future.",
+        "bbox": [
+            102,
+            495,
+            892,
+            543
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Main findings",
+        "text_level": 2,
+        "bbox": [
+            104,
+            568,
+            240,
+            586
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "AI adoption is accelerating, with differences across firms",
+        "text_level": 2,
+        "bbox": [
+            104,
+            601,
+            566,
+            617
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "\\- AI uptake is rising rapidly, increasing from around 7% to 20% of firms between 2021 and 2025 in OECD countries, driven in part by the diffusion of generative AI tools.",
+        "bbox": [
+            131,
+            623,
+            892,
+            653
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "\\- Larger firms and start-ups are more likely to adopt AI due to greater financial resources and innovation capacity, respectively.",
+        "bbox": [
+            132,
+            658,
+            892,
+            689
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "\\- Small and medium-sized enterprises (SMEs) face persistent barriers to AI uptake, including costs, lack of infrastructure and shortages of skilled workers.",
+        "bbox": [
+            132,
+            692,
+            890,
+            722
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "\\- Skills shortages are a key constraint on AI diffusion, ranked among the top barriers to adoption by firms.",
+        "bbox": [
+            132,
+            727,
+            892,
+            757
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "AI is transforming jobs, but not necessarily destroying them",
+        "text_level": 2,
+        "bbox": [
+            104,
+            765,
+            591,
+            781
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "\\- AI affects labour markets through three main channels: i) automation of existing tasks, ii) creation of new tasks and occupations and iii) improving productivity. These effects coexist, and the net impact on employment depends on their relative balance.",
+        "bbox": [
+            131,
+            787,
+            892,
+            834
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "\\- Evidence suggests AI often complements rather than substitutes human labour, contributing to productivity gains and job creation.",
+        "bbox": [
+            132,
+            837,
+            890,
+            868
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "• However, job displacement remains a risk, particularly for workers in routine and repetitive roles.",
+        "bbox": [
+            132,
+            872,
+            880,
+            887
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "| 9",
+        "bbox": [
+            868,
+            74,
+            892,
+            90
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            105,
+            915,
+            342,
+            928
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Exposure to AI differs from risk of automation",
+        "text_level": 2,
+        "bbox": [
+            104,
+            108,
+            478,
+            123
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- High-skill occupations are the most exposed to AI, including managers, professionals and engineers. However, these occupations are less likely to be automated, as they rely on non-routine cognitive and social skills.",
+        "bbox": [
+            132,
+            130,
+            892,
+            177
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- In contrast, low- and middle-skill jobs face higher automation risks, particularly in sectors involving routine manual or cognitive tasks.",
+        "bbox": [
+            132,
+            180,
+            892,
+            210
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- In 2022-2024, around one-quarter of workers were already exposed to generative AI, and this share is expected to grow significantly.",
+        "bbox": [
+            132,
+            215,
+            892,
+            244
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Individuals need a wide range of skills to thrive in digital societies",
+        "text_level": 2,
+        "bbox": [
+            104,
+            253,
+            638,
+            268
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- Foundational skills (literacy, numeracy, scientific knowledge) enable all people to participate in a digital economy and society.",
+        "bbox": [
+            132,
+            275,
+            892,
+            306
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- Information and communication technologies (ICT) skills (basic to advanced technical competencies) help workers meet evolving job requirements and thrive in the digital age. Advanced AI skills (e.g. machine learning, data science) are in high demand, but workers with such skills remain rare (around 1% of the workforce).",
+        "bbox": [
+            132,
+            310,
+            892,
+            372
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- Complementary skills such as critical thinking, creativity, and collaboration enable high-performance work practices and a strong ability to continue learning. They become increasingly important as they enable effective interaction with AI systems and adaptation to changing tasks.",
+        "bbox": [
+            132,
+            375,
+            892,
+            422
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Governments can help shape skills for the AI age",
+        "text_level": 2,
+        "bbox": [
+            104,
+            429,
+            504,
+            444
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "To make the most of benefits from AI technologies while mitigating the risks, governments must put into action agile policies that work in tandem as follows:",
+        "bbox": [
+            102,
+            451,
+            890,
+            482
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- Strengthen education and training systems by improving quality, equity and labour market relevance of education and integrating AI literacy, digital skills and critical thinking across curricula;",
+        "bbox": [
+            132,
+            486,
+            892,
+            517
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- Expand lifelong learning opportunities by promoting continuous upskilling and reskilling across the life course by developing flexible, modular and online training pathways and strengthening recognition of prior learning systems;",
+        "bbox": [
+            132,
+            520,
+            892,
+            565
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- Develop the ICT and AI talent pipeline by expanding formal education programmes in AI and digital fields, providing short, targeted reskilling programmes for adults and aligning training provision with evolving labour market needs;",
+        "bbox": [
+            132,
+            570,
+            892,
+            615
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- Promote AI literacy for all by equipping workers with basic skills to use, understand and critically assess AI and broadening access to AI learning beyond specialists;",
+        "bbox": [
+            132,
+            620,
+            892,
+            651
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- Encourage employer-led training by supporting firms through financial incentives, subsidies and co-financing schemes, fostering partnerships between employers and education providers and aligning workplace training with technological change; and",
+        "bbox": [
+            132,
+            653,
+            892,
+            701
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- Strengthen policy co-ordination and partnerships by fostering collaboration between governments, industry and education systems and using labour market data and skills forecasting to guide policy.",
+        "bbox": [
+            132,
+            703,
+            892,
+            751
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            107,
+            74,
+            132,
+            89
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            655,
+            916,
+            892,
+            928
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "1 Introduction",
+        "text_level": 2,
+        "bbox": [
+            129,
+            124,
+            438,
+            195
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Artificial intelligence (AI) $^{1}$ is reshaping economies and societies, much like transformative technologies such as the steam engine and electricity did in earlier generations. As a general-purpose technology, AI has the potential to boost productivity, drive economic growth, create new jobs and enhance the work of people (Calvino, Haerle and Liu, 2025 $^{[1]}$ ). At the same time, AI raises the risk of job displacement and widening existing disparities if the transition to using it is not managed effectively (OECD, 2023 $^{[2]}$ ).",
+        "bbox": [
+            102,
+            241,
+            892,
+            322
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The impact of AI on jobs varies across sectors, occupations and skills. Some workers benefit from AI's ability to automate routine tasks (e.g. reducing the time to accomplish tasks with the same or even higher quality), allowing them to focus on higher-value tasks that cannot yet be automated. In other cases, AI may replace jobs entirely, particularly those involving a high degree of predictable and repetitive tasks. Importantly, the widespread availability of generative AI (GenAI) tools may considerably alter the way in which workers undertake different tasks. Having the skills to adapt to changing tasks and jobs is a crucial element of being able to thrive in the world of work in the AI age. With the right skills, workers stand to benefit from emerging job opportunities created by AI, provided the risks are addressed in tandem.",
+        "bbox": [
+            102,
+            326,
+            894,
+            453
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "In such a heavily data-driven world, the pace of technological change is fast and often disruptive. In this context, policymakers have a responsibility to help equip workers with the skills needed to thrive in their jobs and in society more broadly. This paper first sheds light on the transformative impact of AI on businesses, work and digital societies. It then outlines the skills needed to prosper in the AI age. Finally, it discusses the role of policies to help ensure that workers have the right mix of skills today and in the future.",
+        "bbox": [
+            102,
+            457,
+            894,
+            537
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "| 11",
+        "bbox": [
+            855,
+            74,
+            890,
+            90
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            105,
+            915,
+            342,
+            928
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "2 AI has a transformative impact on businesses, work and digital societies",
+        "text_level": 1,
+        "bbox": [
+            119,
+            115,
+            823,
+            261
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "AI adoption by firms can help reduce costs and boost productivity, supporting increased competitiveness. However, it also has far-reaching societal implications for individuals as consumers and workers.",
+        "bbox": [
+            102,
+            294,
+            890,
+            328
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Firm-level AI adoption has widespread implications for society",
+        "text_level": 2,
+        "bbox": [
+            102,
+            353,
+            710,
+            370
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "AI adoption by firms can transform the approach to operational efficiency, decision-making processes and consumer engagement. AI technologies, including machine learning, natural language processing, computer vision and predictive analytics, enable businesses to automate routine tasks, optimise resource allocation and enhance productivity (Brynjolfsson, 2017[3]; Calvino and Fontanelli, 2023[4]; Filippucci et al., 2024[5]). For example, AI-powered predictive maintenance is transforming the manufacturing industry by reducing downtime, lowering maintenance costs and enhancing operational efficiency (Lalwani, 2025[6]).",
+        "bbox": [
+            102,
+            386,
+            892,
+            481
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "AI can also help companies improve product or service quality (OECD, 2023[2]), enabling workers to benefit simultaneously through improved job quality and satisfaction. Indeed, AI could reduce or eliminate dangerous or tedious tasks, and create more complex and interesting ones instead. It can boost worker engagement, giving them greater autonomy and even improving their mental health. Some workers may also benefit from higher wages if there is a higher demand for specific skills on the job market. Additionally, AI has proven to be instrumental in enhancing workplace wellness and ergonomics (Fiegler-Rudol et al., 2025[7]). AI technologies can automate physically demanding and repetitive tasks, reducing the risk of burnout and improving employee well-being (García-Madurga et al., 2024[8]).",
+        "bbox": [
+            102,
+            486,
+            894,
+            612
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Recent evidence also shows that GenAI tools could significantly enhance productivity, both at individual and organisational levels, with relevant aggregate implications (Calvino, Reijerink and Samek, 2025[9]).",
+        "bbox": [
+            102,
+            615,
+            892,
+            649
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "In OECD Member countries with available data, businesses have significantly increased their uptake of AI in recent years. As measured in ICT usage surveys, use of AI in these businesses grew from around 7% to 20% between 2021 and 2025 (Figure 1). This increase is likely driven by the adoption of “general-purpose” GenAI tools, such as ChatGPT and Copilot, which were made available as of 2022.",
+        "bbox": [
+            102,
+            653,
+            894,
+            718
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            105,
+            74,
+            134,
+            90
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            653,
+            915,
+            892,
+            928
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/24ff8d63d9b978b2edf4bf42f943ed6f42f90ca86b2020d325bc9e0a1bffd0c3.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 1. Adoption of AI technologies in businesses has been increasing",
+            "Adoption rates of AI by enterprises with ten employees or more, in the business sector (excluding financial services), 2025 (or most recent)"
+        ],
+        "chart_footnote": [
+            "Note: For Brazil, data refer to 2021 and 2024. For Canada, Japan and Switzerland, data refer to 2021 and 2023. For Korea, data refer to 2021 and 2024 with a change in the questionnaire structure in 2022.",
+            "Source: OECD (2026[10]), ICT Access and Usage (dataset), https://oe.cd/dx/ict-access-usage."
+        ],
+        "bbox": [
+            127,
+            181,
+            863,
+            406
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "AI uptake in firms differs considerably by age, sector and size. Younger firms, including start-ups, have a strong tendency to use AI. Indeed, start-ups are often at the forefront of radical innovations, especially during the emergence of new technological paradigms such as AI. As a result, the propensity of young firms to adopt AI often surpasses that of older firms (Calvino and Fontanelli, 2023[4]).",
+        "bbox": [
+            102,
+            483,
+            892,
+            546
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "A recent OECD taxonomy also reveals significant heterogeneity across sectors with respect to AI human capital, AI innovation, and exposure to and use of AI (Calvino and Fontanelli, 2023[4]). Sectors such as information technology (IT) services score high along all the dimensions considered. Others, such as pharmaceuticals, exhibit considerably more heterogeneity (high AI human capital but low AI innovation).",
+        "bbox": [
+            102,
+            552,
+            892,
+            615
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Without targeted and effective support to develop the skills needed to work with AI, workers and businesses will not be able to seize its benefits, while disparities in job opportunities, job quality, wages and productivity may widen. With respect to size breakdowns, larger firms with greater financial and technical resources appear more likely to adopt AI (Calvino and Fontanelli, 2023[4]). SMEs often report barriers related to cost, expertise and infrastructure among the reasons for not adopting AI technologies. Lack of skills is the second most common barrier to adoption of AI reported by firms in finance and manufacturing (after costs) in the OECD AI surveys of employers and workers (OECD, 2023[2]). Similarly, half of SMEs not using GenAI tools report lack of skills as a barrier (OECD, 2025[11]). Other major deterrents include concerns about legal and regulatory issues (e.g. concerns about ineffective protection and enforcement of copyright and other intellectual property), data privacy, and manipulated and deliberately misleading content online (Bianchini and Lasheras Sancho, 2025[12]).",
+        "bbox": [
+            102,
+            621,
+            894,
+            793
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "| 13",
+        "bbox": [
+            858,
+            74,
+            892,
+            90
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            105,
+            915,
+            342,
+            928
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "AI is transforming jobs and labour markets",
+        "text_level": 2,
+        "bbox": [
+            102,
+            108,
+            522,
+            127
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "AI is increasingly recognised as a transformative force in labour markets, driving significant shifts in job creation, skills demand and overall workforce dynamics. While concerns about job displacement persist, research suggests that AI also creates numerous opportunities for employment growth and economic resilience. One study, for example, argues that AI technologies can lead to net job gains by complementing human labour rather than substituting it, thereby creating new tasks and industries (OECD, 2023[2]).",
+        "bbox": [
+            100,
+            141,
+            892,
+            219
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Building on research by Lane and Saint-Martin (2021[13]) within the OECD's Artificial Intelligence in Work, Innovation, Productivity and Skills (AI-WIPS) programme, OECD (2023[2]) identifies different types of impacts of AI on employment. In one scenario, AI affects labour demand by automating certain tasks, complementing humans in completing existing tasks but also creating new ones. When AI automates tasks previously done by humans, it may replace human labour. In parallel, AI may create new tasks that require human labour, leading workers to undertake alternative tasks compared to previous ones. Finally, AI may complement workers, uniformly improving human productivity in all assigned tasks. In this scenario, AI neither replaces workers in the completion of tasks nor creates new tasks; it allows workers to perform the same tasks more efficiently. The three channels are not mutually exclusive, and all may be present at the same time.",
+        "bbox": [
+            102,
+            225,
+            894,
+            381
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The implications for labour demand depend on which effects dominate. The creation of new tasks should lead to increases in labour demand. In particular, the creation of new tasks results in a reinstatement effect that creates new jobs and leads to more employment (OECD, 2023[2]). These jobs can come from anywhere, but literature usually links them to the operation of the new technologies themselves (Acemoglu and Restrepo, 2018[14]; Autor et al., 2022[15]).",
+        "bbox": [
+            102,
+            387,
+            894,
+            466
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "These new jobs likely require skills to develop, train or maintain AI systems. However, they also include new jobs for the larger set of workers who will only interact with AI applications. The automation channel, or the replacement of tasks previously performed by human labour, is ambiguous with respect to whether it increases or decreases demand for labour. It results in a displacement effect, when labour demand decreases as AI replaces human labour (OECD, 2023[2]).",
+        "bbox": [
+            102,
+            470,
+            892,
+            551
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Finally, in addition to the displacement effect, the automation channel can give rise to a productivity effect. This can result in increases in labour demand for tasks or jobs not automated by AI, such as packers and forklift operators. The productivity effect neither arises (directly) from the automation of tasks, nor the ability to perform tasks more efficiently. Rather, it stems from the induced demand for tasks or jobs generated from the cost savings of automation. Whether the productivity effect dominates the displacement effect, and therefore whether automation increases or decreases labour demand, is the core question facing the future of labour and AI (OECD, 2023[2]).",
+        "bbox": [
+            102,
+            555,
+            894,
+            665
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Jobs with greatest exposure to AI are not necessarily those with a high risk of automation",
+        "text_level": 2,
+        "bbox": [
+            102,
+            690,
+            860,
+            726
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Using data from labour force surveys, Lane (2024[16]) shows that on average across OECD Member countries, “IT professionals”, “Business professionals”, “Managers”, “Chief executives” and “Science and engineering professionals” are the occupations most exposed to AI (Figure 2). $^{2}$ This follows intuitively from the technological advances in which AI has made the most progress (OECD, 2023[2]). In contrast, “Cleaners, helpers”, “Agriculture, forestry and fishery workers”, “Food preparation assistants”, “Labourers”, “Refuse workers and other elementary workers” are the least exposed to AI. Therefore, high-skill, white collar occupations are the ones most exposed to recent progress in AI.",
+        "bbox": [
+            100,
+            741,
+            894,
+            852
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            105,
+            74,
+            134,
+            89
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            653,
+            915,
+            892,
+            928
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3e7fff69c074fce473f1e98cfdf4c1a8d2244e17fe55f3745b71812403275217.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 2. High-skill, white collar occupations are among those with the highest exposure to AI Average exposure to AI across countries by occupation, 2022"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            169,
+            160,
+            870,
+            357
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b6701b75063c4e6a6618acb8def78874e70d19100916f0392f5994fdbddba8dd.jpg",
+        "content": "",
+        "chart_caption": [
+            "B. Occupations least exposed to AI",
+            "Note: The x-axis measures the relative exposure to AI scaled such that the minimum is zero and the maximum is one.\nSource: Lane (2024 $^{[16]}$ ), Who will be the workers most affected by AI?: A closer look at the impact of AI on women, low-skilled workers and other groups, https://doi.org/10.1787/14dc6f89-en."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            156,
+            376,
+            878,
+            557
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Recent advances in AI may complement rather than replace human labour. The verification of displacement and reinstatement scenarios requires putting findings in parallel with occupations that are subject to automation. Most AI exposure indicators that are used to estimate the effect of AI on employment measure progress in the capabilities of AI as they relate to abilities needed in occupations. However, progress in AI capabilities is not equivalent to the probability of automation (OECD, 2023[2]). Recent progress in AI may complement human labour rather than automate it. More importantly, AI is just one of the many advanced ICT technologies that can lead to automation of tasks previously done by human labour.",
+        "bbox": [
+            100,
+            625,
+            894,
+            750
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Aggregate changes in employment will ultimately depend on all sources of automation. The predicted effect of AI on certain groups may differ unless all sources of automation are carefully considered. Recent evidence shows that, in some cases, the creation of new employment opportunities has more than offset job displacements. However, this dynamic has unfolded unevenly across regions within OECD Member countries. Moreover, the new jobs have not necessarily benefited displaced workers (OECD, 2024[17]).",
+        "bbox": [
+            100,
+            756,
+            894,
+            835
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "In an OECD study to reflect advancements in automation technologies, Lassébie and Quintini (2022[18]) re-evaluates how various occupations are exposed to automation. This assessment, which draws on a unique survey measuring the automatability of around 100 distinct skills and abilities, was developed and completed with input from experts across multiple AI research domains. The survey considers both AI and also other automation technologies (such as robotics) that are increasingly integrated with AI, allowing these technologies to complement one another. The study concludes that high-skilled occupations face the lowest overall risk of automation, $^{3}$ although the full impact of the widespread availability of GenAI tools is not entirely captured given the period covered.",
+        "bbox": [
+            102,
+            840,
+            894,
+            888
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            863,
+            74,
+            892,
+            90
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            104,
+            915,
+            342,
+            929
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            102,
+            108,
+            892,
+            187
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "While AI has made some high-skill job requirements more susceptible to automation, many critical skills in these roles remain difficult to automate. As a result, despite greater exposure to recent AI advancements, high-skill jobs generally continue to be among the least vulnerable. In contrast, low- and middle-skill roles, particularly in “Construction and Extraction”, “Farming, Fishing and forestry”, and to a lesser extent, “Production” and “Transportation and Material Moving”, are more likely to be at high risk of automation. In general, the least at-risk jobs are those in “Community and Social Service”, as well as in “Management” (Figure 3). Overall, jobs requiring non-routine cognitive, social and creative skills are less susceptible to automation, while routine and low-skilled jobs are at higher risk (OECD, 2023[2]).",
+        "bbox": [
+            100,
+            192,
+            894,
+            319
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Figure 3. The occupations most at risk of automation are different than those most exposed to AI",
+        "bbox": [
+            112,
+            336,
+            884,
+            355
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Occupations most and least at risk of automation, including AI and other automation technologies, 2021",
+        "bbox": [
+            147,
+            363,
+            848,
+            381
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "chart",
+        "img_path": "images/cab8e52095aae71cd2677be5b98c1ce0c7776ae8ab3c9bcf6e6e84650467a0f8.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            142,
+            393,
+            845,
+            604
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e41fcd3d6e39dc3d6f30cf98f2ef0038d802c973c89859f98c86e7d574949239.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Note: The scale is 0-5 for all occupations.",
+            "Source: OECD (2023[2]), OECD Employment Outlook 2023: Artificial Intelligence and the Labour Market, https://doi.org/10.1787/08785bba-en."
+        ],
+        "bbox": [
+            149,
+            620,
+            845,
+            821
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            105,
+            74,
+            134,
+            89
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            653,
+            915,
+            892,
+            928
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "More specifically, recent OECD evidence also shows that exposure to GenAI tools varies widely across occupations, reflecting differences in how much job tasks can be accelerated by current and emerging AI technologies. Occupations involving cognitive, non-routine tasks – such as programming, translating, interpreting and other highly skilled professional work – tend to exhibit higher exposure. In these occupations, GenAI could perform a significant share of tasks at least twice as fast today or in the near future. By contrast, roles reliant on physical or manual tasks, such as cleaning or equipment operation, show minimal exposure. Overall, about a quarter of workers across the OECD were exposed to GenAI (defined as at least 20% of their tasks being amenable to AI assistance) in 2022-2024. This share is projected to grow substantially as GenAI tools become more integrated into workplace software and systems (OECD, 2024[17]).",
+        "bbox": [
+            102,
+            108,
+            894,
+            263
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "| 17",
+        "bbox": [
+            860,
+            74,
+            892,
+            89
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            105,
+            916,
+            342,
+            928
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "image",
+        "img_path": "images/e47eef21f59b86375befd6dcb329a7b5794ccfb253101b62d1404da8c7e696e1.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            126,
+            118,
+            178,
+            185
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Individuals need a wide range of skills to thrive in digital societies",
+        "text_level": 1,
+        "bbox": [
+            203,
+            148,
+            815,
+            227
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "A solid mix of foundational, ICT and complementary skills help empower individuals to navigate an increasingly digital world, participate in the global economy and compete in job markets.",
+        "bbox": [
+            102,
+            278,
+            892,
+            311
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "A mix of foundational, ICT and complementary skills are needed to thrive in digital environments",
+        "text_level": 2,
+        "bbox": [
+            102,
+            336,
+            833,
+            373
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "In such an AI and data-driven digital landscape, individuals need a wide range of skills to thrive. These skills can be considered as follows: i) foundational skills that enable all people to participate in a digital economy and society; ii) some basic and more advanced ICT skills that help workers meet evolving job requirements and fully participate in the digital age; iii) complementary skills such as teamwork, autonomy, problem solving, creative thinking, communication, collaboration and emotional intelligence that enable high-performance work practices and a strong ability to continue learning (OECD, 2024[19]).",
+        "bbox": [
+            102,
+            387,
+            894,
+            483
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Foundational skills such as in science, numeracy and reading are essential for everyday activities (OECD, 2019[20]; OECD, 2024[21]). Evidence from the OECD Survey of Adult Skills (PIAAC) shows that high levels of proficiency in literacy and numeracy are associated with better proficiency in problem solving in digital environments. Low levels of proficiency in literacy, and particularly in numeracy, may be significant barriers to using ICT applications to manage information effectively (OECD, 2013[22]).",
+        "bbox": [
+            102,
+            487,
+            892,
+            567
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "In addition to foundational skills, individuals need a range of ICT skills that allow them to learn, work and undertake daily activities. Basic ICT skills comprise a minimum level of computer skills, communication and information search skills, and proficiency in using productivity software such as operational and information navigation. Such skills enable access to information, facilitate communication, support civic participation, and enhance employability and well-being (Burns and Gottschalk, 2019[23]); (OECD, 2022[24]).",
+        "bbox": [
+            102,
+            571,
+            892,
+            651
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "More advanced ICT skills (e.g. software programming, AI skills) strengthen the ability to cope with change (e.g. in work organisation) and keep learning (e.g. new programming languages). They also promote creativity and innovation and offer numerous career opportunities. “AI skills” refer to the abilities and knowledge required to develop or undertake an advanced use of AI systems. Some key AI skills include programming, understanding and implementing machine-learning algorithms; data mining and data processing; deep learning; natural language processing; and understanding computer vision concepts, such as image processing and object detection.",
+        "bbox": [
+            102,
+            656,
+            894,
+            766
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "When combined with a minimum level of ICT skills, complementary skills can significantly enhance an individual's effectiveness and productivity in digital environments. These are valuable assets across sectors and increasingly sought in today's technology-driven world that enables high-performance work practices in the digital age (Samek, Squicciarini and Cammeraat, 2021[25]; Borgonovi et al., 2023[26]). The OECD Skills for 2030 project identifies two types of complementary skills: “meta-cognitive skills” include critical thinking, creative thinking, learning-to-learn and self-regulation, while “social and emotional skills” include empathy, self-efficacy, responsibility and collaboration (OECD, 2019[27]).",
+        "bbox": [
+            102,
+            772,
+            894,
+            882
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            105,
+            74,
+            134,
+            90
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            653,
+            915,
+            892,
+            928
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "AI skills are in high demand, but workers with AI skills are still a small part of the overall workforce",
+        "text_level": 2,
+        "bbox": [
+            102,
+            108,
+            885,
+            143
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Despite increased AI adoption by firms, workers with AI skills represent a small share of the overall workforce (about 1%). While workers with AI skills are relatively rare, their share in the workforce has almost tripled from less than a decade ago (Green and Lamby, 2023[28]). Countries are competing for this small pool of highly skilled AI workers (OECD, 2024[29]). Based on live data from the OECD's AI Policy Observatory, Figure 4 shows that countries such as Luxembourg, Switzerland, Ireland and Germany attracted more AI talent $^{4}$ than they lost in 2024. In contrast, other economies (e.g. Israel, India and Hungary) saw a net outflow of AI talent from their borders.",
+        "bbox": [
+            102,
+            160,
+            894,
+            269
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "The net outflow of AI talent might indicate an AI “brain drain”, where highly specialised workers move to another country for improved employment opportunities. India is noteworthy for its considerable AI talent growth rate in recent years. This rate is ahead of the United States, United Kingdom and Canada, as measured by the year-over-year change in LinkedIn members declaring to have AI skills (OECD, 2024[29]). AI engineers and AI consultants ranked first and second, respectively, among the fastest growing jobs in the United States between 2022 and 2024 (LinkedIn News, 2025[30]).",
+        "bbox": [
+            102,
+            275,
+            892,
+            370
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Figure 4. Economies are competing for AI talent",
+        "text_level": 2,
+        "bbox": [
+            305,
+            388,
+            690,
+            406
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/fb13e8060484a2b73c37e4c3e4468209ea1389b96cef142815fd29d9b0271088.jpg",
+        "content": "",
+        "chart_caption": [
+            "Between-country AI skills migration, 2019 and 2024"
+        ],
+        "chart_footnote": [
+            "Source: OECD (2025[31]), \"Live data: AI Jobs and Skills\", OECD AI Policy Observatory, https://oecd.ai."
+        ],
+        "bbox": [
+            114,
+            443,
+            875,
+            678
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Using Lightcast data for ten OECD Member countries, Green (2024[32]) reveals that, on average, one-third of job vacancies in 2021-2022 were in occupations with high exposure to $\\mathrm{Al}^5$ (Figure 5). This finding underscores the growing pervasiveness of AI-related technologies across a broad spectrum of tasks. While this affects traditionally technology-intensive sectors, it also increasingly touches sectors such as finance, healthcare, marketing and administrative services. As shown in the previous section, high AI exposure does not necessarily imply imminent automation. Rather, it reflects the likelihood that AI tools could significantly augment or transform the nature of these jobs.",
+        "bbox": [
+            102,
+            726,
+            894,
+            835
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            865,
+            74,
+            892,
+            89
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            105,
+            915,
+            342,
+            928
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/16ad0ddc105150be1b01dad576af224eab2e2ccb852ad5f71e36c13f2c2e575d.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 5. In some countries, almost a third of job vacancies are highly exposed to AI Job vacancies with high exposure to AI as a percentage of all vacancies, 2021-2022"
+        ],
+        "chart_footnote": [
+            "Note: Vacancies with high exposure to artificial intelligence have an occupational artificial exposure measure one standard deviation greater than the mean according to Felten, Raj and Seamans (2021 $^{[33]}$ ).",
+            "Source: Green (2024[32]), Artificial intelligence and the changing demand for skills in the labour market, https://doi.org/10.1787/88684e36-en."
+        ],
+        "bbox": [
+            112,
+            166,
+            887,
+            401
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "The most demanded skills in occupations with high AI exposure are management, business processes and complementary skills. Management and business processes contain skills such as project management, budgeting and accounting, administration, clerical tasks and customer support. On average across countries included in the sample, 72% of vacancies in high AI-exposure occupations demand at least one management skill and 67% demand at least one business processes skill. Social, emotional and digital skills are also highly demanded with over half of vacancies in high-exposure occupations demanding at least one skill from these skill groups. High-exposure occupations comprise a third of all vacancies considered in the sample (Green, 2024 $^{[32]}$ ).",
+        "bbox": [
+            102,
+            476,
+            892,
+            601
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "In parallel, growing use of algorithmic management tools in the workplace is increasing the need for certain skills, such as those related to general management and analysis (e.g. ability to use or interpret data) (Milanez, Lemmens and Ruggiu, 2025[34]). Similarly, SMEs indicate that GenAI has made data analysis and interpretation skills more important, along with other skills (OECD, 2025[11]).",
+        "bbox": [
+            102,
+            606,
+            892,
+            670
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Bridging skills gaps is an important societal imperative",
+        "text_level": 2,
+        "bbox": [
+            104,
+            695,
+            640,
+            713
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "As firms increasingly adopt AI technologies, one emerging issue is the widening skills gap, particularly as the demand for high-skilled workers intensifies. AI adoption often brings with it a shift in task composition. It automates routine and repetitive activities, while amplifying the need for advanced analytical, technical and cognitive skills. This dynamic creates a structural challenge in the labour market: individuals with lower levels of education and limited digital competencies face significantly higher risks of job displacement or stagnant career progression (Lane, 2024[16]). Many of these workers are concentrated in sectors such as manufacturing, retail and administrative support, where automation is expected to have the greatest impact.",
+        "bbox": [
+            102,
+            727,
+            894,
+            852
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "For Acemoglu and Restrepo (2018[14]), the widening skills gap contributes to a growing polarisation of the labour market. In this environment, middle- and low-skill jobs progressively shrink, while high-skill, highwage roles (often in technology, finance or professional services) expand. This results in a hollowing-out effect, leaving a gap between high-paying knowledge jobs and low-wage service work, with fewer opportunities for mobility in between. Without targeted interventions, this polarisation may deepen social and economic divides, especially affecting younger workers; older adults with outdated skillsets; and historically disadvantaged groups.",
+        "bbox": [
+            102,
+            857,
+            894,
+            890
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "20",
+        "bbox": [
+            105,
+            74,
+            132,
+            89
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            653,
+            915,
+            892,
+            928
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            102,
+            108,
+            894,
+            186
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Persistent skills gaps in AI contribute both to overall disparities in adoption and productivity, and to differences across sexes and regions. As in the case of broader ICT specialist occupations, women remain underrepresented in AI-related research, accounting for only 25% of AI researchers. Similarly, women make up just 11% of sole-authored publications (Caira, Russo and Aranda, 2023[35]), and employment in AI-intensive sectors (OECD, 2023[2]). At the same time, AI development and adoption are geographically concentrated in urban and technology hubs, where access to infrastructure, investment and skilled talent is stronger. In contrast, rural areas often lack these resources, making them less likely to benefit from the productivity and innovation gains of AI (OECD, 2024[17]).",
+        "bbox": [
+            102,
+            192,
+            894,
+            319
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_number",
+        "text": "21",
+        "bbox": [
+            863,
+            74,
+            890,
+            89
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            105,
+            916,
+            342,
+            928
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "4 The role of policies to shape skills for the AI age",
+        "text_level": 1,
+        "bbox": [
+            127,
+            120,
+            842,
+            224
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "To make the most of benefits from AI technologies while mitigating the risks, governments must put into action agile policies that work in tandem (OECD, 2024[36]).",
+        "bbox": [
+            102,
+            277,
+            892,
+            309
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Investing in the quality, equity and labour market relevance of education and training systems",
+        "bbox": [
+            102,
+            335,
+            847,
+            372
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "As AI transforms industries and job requirements, investing in the quality of education and training systems is critical to ensure learners acquire both foundational and advanced digital competencies. Many governments allocate funding programmes that focus on in-demand skills and technologies. These programmes support vocational training, apprenticeships and on-the-job training opportunities and provide the relevant training to teachers. For example, Latvia's “Future Skills for Future Society” initiative advances the goals of Education 4.0 by fostering digital competence, innovation and lifelong learning. This ensures that education and training systems remain agile and aligned with the evolving demands of an AI-driven economy. Likewise, “Education 4.0. CARNET Strategy” in Croatia emphasises integration of digital technologies, AI literacy and teacher upskilling to create an inclusive, future-ready education system that bridges learning with labour market needs.",
+        "bbox": [
+            102,
+            386,
+            894,
+            542
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "In 2023, Spain launched a Microcredentials Plan funded by the European Union (EU) Recovery and Resilience Facility to support adult reskilling and upskilling for learners aged 25-64. Public funding covers 70% of course costs, while learners or employers pay the remaining 30%, encouraging training relevant to the labour market. While not limited to digital skills, this model has led to a strong presence of AI-related microcredentials in the 2025-2026 offerings.",
+        "bbox": [
+            102,
+            546,
+            894,
+            627
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "High-quality curricula should integrate AI literacy (see below), critical thinking, data analysis and problem solving across all levels of education. Finland's National AI Strategy promotes AI education from primary schools to universities, ensuring students understand AI's ethical and practical implications. Similarly, the European Commission's Digital Education Action Plan (2021-2027) calls for upgrading teacher training and digital infrastructure to maintain educational excellence in the face of technological disruption. Launched in 2025, France's Osez l'IA plan aims to build digital and AI capabilities across firms via an Académie de l'IA platform. It offers training and tutorials for executives, employees and entrepreneurs, helping potential founders gain the skills needed to start and scale AI-based ventures.",
+        "bbox": [
+            102,
+            632,
+            894,
+            758
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Many countries are also investing in real-time labour market data and sophisticated skills forecasting models to better predict future workforce needs. Australia is working with data analytics companies to analyse real-time trends in job advertisements. This initiative aims to identify skills that have grown in demand in recent years by matching information from job advertisements to detailed occupational profiles within the Australian Skills Classification. Such analyses provide granular insights into evolving skill requirements across different sectors.",
+        "bbox": [
+            100,
+            762,
+            894,
+            857
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_number",
+        "text": "22",
+        "bbox": [
+            105,
+            74,
+            132,
+            89
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            653,
+            915,
+            892,
+            928
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Training ICT professionals through both formal education and lifelong learning",
+        "text_level": 2,
+        "bbox": [
+            104,
+            108,
+            867,
+            127
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Training programmes to develop high-skilled ICT professionals sometimes entail the creation of new bachelor, master or doctoral programmes. Poland, as part of the “Academy for Innovative Applications of Digital Technology (AI Tech)” initiative, has co-ordinated a collaboration between leading companies in the technology sector and Polish universities to jointly create AI-related master programmes. Five universities have launched new second cycle programmes and specialisations in AI, cybersecurity and machine learning in 2021, with funding from the EU (OECD, 2024[37]).",
+        "bbox": [
+            102,
+            141,
+            894,
+            236
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Some countries have developed short, non-formal training programmes aimed at upskilling or reskilling employed or unemployed adults to cope with changes brought about by the AI transition. In 2020, the United Kingdom Department for Education launched “Skills Bootcamps”, which offer short sector-specific skills training to both employed and unemployed adults in different areas, including digital and AI. For instance, a Skills Bootcamp on Data/AI helps learners develop the technical and employability skills to secure an entry role as a data technician or analyst. Course curricula are created and delivered in collaboration with employers. The courses last up to 16 weeks and are free for the participant. Upon successful completion of a Skills Bootcamp, participants are offered a job interview with a potential employer, helping workers make the transition from training to work (OECD, 2024[37]).",
+        "bbox": [
+            102,
+            241,
+            894,
+            382
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "To support workers most at risk of displacement due to AI and automation, governments also need to expand lifelong learning and upskilling programmes. Despite growing consensus on the importance of lifelong learning for economic resilience and individual opportunity, participation in adult education is stagnating or even declining in many countries (OECD, 2025[38]).",
+        "bbox": [
+            102,
+            387,
+            894,
+            451
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Yet, many countries continue to introduce or expand innovative programmes. Singapore's “SkillsFuture initiative” for example provides financial credits to individuals for continuous training and offers AI-specific learning pathways co-designed with employers. Likewise, Denmark has created tripartite training councils that bring together employers, unions and government to shape reskilling efforts in response to technological change, including in manufacturing and logistics.",
+        "bbox": [
+            102,
+            456,
+            894,
+            535
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "In Finland, the widely recognised “Elements of AI” online course, developed in partnership with the University of Helsinki, is freely available to all citizens. It has been translated into multiple languages, fostering digital inclusion and lifelong learning at scale. Korea’s “Artificial Intelligence & Digital (AID) 30+” project strengthens lifelong learning opportunities in digital and AI-related fields for adults in the prime working-age population (Box 1).",
+        "bbox": [
+            102,
+            539,
+            894,
+            620
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "page_number",
+        "text": "23",
+        "bbox": [
+            865,
+            74,
+            892,
+            89
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            105,
+            915,
+            342,
+            928
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Box 1. Korea's \"Artificial Intelligence & Digital (AID) 30+\" project",
+        "text_level": 2,
+        "bbox": [
+            240,
+            130,
+            757,
+            149
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Rapid digitalisation and the diffusion of AI technologies have intensified the need for mid-career upskilling in Korea. In this respect, the Artificial Intelligence & Digital (AID) 30+ project was launched in October 2024 to strengthen lifelong learning opportunities in digital and AI-related fields for adults in the prime working-age population.",
+        "bbox": [
+            112,
+            156,
+            882,
+            223
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "The project aims to create accessible, affordable and credit-bearing pathways for adults to acquire advanced digital competencies and provides several policy instruments:",
+        "bbox": [
+            114,
+            231,
+            880,
+            263
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "\\- A Career Leap Voucher (up to KRW 350 000 per year) for approximately 10 000 adults aged 30 and older to enrol in AI and digital skills courses.",
+        "bbox": [
+            144,
+            268,
+            880,
+            298
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "\\- Designation of 100 “AID Leading Universities”, including general, junior and cyber universities, to offer modular, flexible and blended learning programmes.",
+        "bbox": [
+            144,
+            300,
+            880,
+            330
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "\\- Integration with the Credit Bank System, enabling adult learners to accumulate recognised academic credit towards formal qualifications.",
+        "bbox": [
+            144,
+            337,
+            880,
+            368
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "\\- Targeted support for AID Intensive Camps and Digital Transformation Junior Colleges, designed to facilitate short-term, career-relevant reskilling.",
+        "bbox": [
+            144,
+            373,
+            880,
+            404
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "\\- An online learning infrastructure to deliver massive open online courses (MOOCs) and other open digital courses under a unified national platform.",
+        "bbox": [
+            144,
+            411,
+            880,
+            441
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "These measures are complemented by local-level initiatives (e.g. in Busan and Siheung), which deliver AI literacy and digital mentoring through municipal lifelong learning centres.",
+        "bbox": [
+            114,
+            445,
+            880,
+            480
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Source: Ministry of Education (2024[39]), Helping adults aged 30 and over strengthen their digital capabilities! The AID 30+ Project, https://blog.naver.com/moeblog/223700218605.",
+        "bbox": [
+            114,
+            486,
+            880,
+            516
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Expanding flexible learning options (e.g. online, part-time) is key to broadening accessibility and inclusivity of AI training, increasing the attractiveness of training and encouraging wider participation among underrepresented groups (OECD, 2023[40]). Modular training programmes can enable adults to learn in their own time and shape their own learning path. Switzerland is a front-runner for modular training opportunities where such programmes are available throughout the adult learning sector. Adults can take part in individual modules or combine different modules to form a full training programme (OECD, 2019[41]).",
+        "bbox": [
+            102,
+            552,
+            892,
+            648
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "The validation or recognition of prior learning can also benefit individuals, employers and the economy as a whole. It makes all knowledge visible, including the diverse learning that takes place outside of formal education and training. It also allows for a better match between jobs and workers' skills (OECD, 2023[42]).",
+        "bbox": [
+            102,
+            653,
+            892,
+            701
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Encouraging employer-led training",
+        "text_level": 2,
+        "bbox": [
+            104,
+            726,
+            445,
+            745
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Encouraging employer-led training is another key strategy to encourage lifelong learning. The rationale for supporting employer-based training is twofold. First, while firms benefit from a more skilled workforce, they may underinvest due to concerns about employee turnover or uncertain returns to training. Second, employer-supported training remains the dominant form of adult learning, and financial incentives can help shape firm behaviour to promote upskilling (OECD, 2025[38]). Public financial incentives (such as training leave, individual learning, accounts and targeted subsidies to employers) are instruments that may reduce barriers to participation, particularly for those on low incomes or doing non-standard work (OECD, 2025[38]). It is equally important that employers help shape public-led training.",
+        "bbox": [
+            102,
+            758,
+            894,
+            885
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "page_number",
+        "text": "24",
+        "bbox": [
+            105,
+            74,
+            134,
+            89
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            653,
+            915,
+            892,
+            928
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "With respect to engaging employers in training, Germany provides a valuable model. Through its “Qualification Opportunities Act” (Qualifizierungschancengesetz), Germany subsidises wages and provides support for training costs to employers investing in the upskilling of workers at risk of redundancy due to digital transformation. The funding system for promoting continuing vocational education and training (CVET) – regulated in Book III of the Social Code – provides the Federal Employment Agency (Bundesagentur für Arbeit) with tools for employees and employers. Support options include covering continuing education costs (e.g. for training courses, accommodation and childcare, and travelling expenses) or providing wage subsidies for employers. The promotion is open to sectors or topics beyond digital technologies (Box 2).",
+        "bbox": [
+            102,
+            108,
+            894,
+            249
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Box 2. Germany's funding of continuing vocational training and training (CVET) for employees",
+        "text_level": 2,
+        "bbox": [
+            122,
+            288,
+            873,
+            307
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "The funding of CVET was significantly extended by amendments introduced with the Qualification Opportunities Act (Qualifizierungschancengesetz) in 2019 and the Work of Tomorrow Act (Arbeit-vonmorgen-Gesetz) in 2020. In 2024, the Act to Strengthen the Promotion of Vocational Training and Skills (Gesetz zur Stärkung der Aus- und Weiterbildungsförderung) introduced further improvements to the general framework and conditions of support.",
+        "bbox": [
+            114,
+            316,
+            882,
+            395
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "The “basic support” for all employers and employees includes subsidies for both training courses and wages for lost working hours due to continuing education and training. The amount of the subsidies depends on the company size. For small firms, it generally covers all training costs and 75% of wage costs. Both the course and the course provider must be approved for funding under the German Ordinance Regulating Accreditation and Approval within the Employment Promotion Programme (Akkreditierungs- und Zulassungsverordnung Arbeitsförderung – AZAV). Furthermore, the course must be at least 120 hours long.",
+        "bbox": [
+            114,
+            400,
+            882,
+            511
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Moreover, low-skilled workers are legally entitled to catch up on vocational qualifications. Support is provided for catching up on a lower secondary school certificate or a comparable school-leaving certificate if conditions are met and successful participation can be expected. In these cases, the Federal Employment Agency covers all training and up to 100% of wage costs regardless of the company size.",
+        "bbox": [
+            114,
+            514,
+            882,
+            595
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "The Skills Act introduced the skills development benefit (Qualifizierungsgeld), which supports companies and their staff affected by transformation. It aims to ensure that employees can remain in the same company through skills training tailored to their needs. The course provider must be approved for funding under AZAV and the course must be at least 120 hours long. In addition, 20% of employees must be affected by structural change; a company agreement (or a company-related collective agreement) must be in place; and employees must have long-term employment prospects in the company. The employer covers training expenses and residual costs. The skills development benefit replaces between 60% and 67% of the net wage; employers can top up the benefit.",
+        "bbox": [
+            114,
+            600,
+            882,
+            726
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Source: Federal Ministry of Labour and Social Affairs (2019[43]), Qualifizierungschancengesetz, https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/qualifizierungschancengesetz.html; Federal Ministry of Labour and Social Affairs (2020[44]), Arbeit-von-morgen-Gesetz, https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/arbeit-von-morgen-gesetz; Federal Ministry of Labour and Social Affairs (2024[45]), Gesetz zur Stärkung der Aus- und Weiterbildungsförderung, https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/weiterbildungsgesetz.html.",
+        "bbox": [
+            115,
+            728,
+            882,
+            797
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "page_number",
+        "text": "25",
+        "bbox": [
+            865,
+            74,
+            892,
+            89
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            105,
+            916,
+            342,
+            928
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Austria and the Netherlands have adopted similar co-financing initiatives to incentivise in-company training in AI and digital technologies. Likewise, France's “Individual Learning Account” (Compte Personnel de Formation, CPF), provides individuals with personal learning accounts funded by the state. This allows workers (including those in non-standard or low-income employment) to accumulate training credits and access subsidised upskilling opportunities throughout their careers.",
+        "bbox": [
+            100,
+            108,
+            894,
+            187
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "Promoting AI literacy",
+        "text_level": 2,
+        "bbox": [
+            104,
+            212,
+            315,
+            230
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "AI literacy can be defined as a set of competences that enables individuals to critically evaluate AI technologies; communicate and collaborate effectively with AI; and use AI as a tool online, at home and in the workplace (Long and Magerko, 2020[46]).",
+        "bbox": [
+            102,
+            244,
+            892,
+            292
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "Most workers will only need literacy to help them use and interact with AI systems effectively. Thus, offering training programmes that promote literacy are equally important as those focused on advanced AI skills. AI literacy training aims to equip workers with a general understanding of AI, enabling them to communicate and collaborate effectively with AI technologies. It can involve training on AI ethics, fostering awareness of potential risks and harms, and equipping individuals to critically evaluate AI technologies as they use them.",
+        "bbox": [
+            102,
+            297,
+            894,
+            376
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "While many countries have introduced training incentives with the recent rise of AI adoption, training often lacks a direct focus on AI and AI literacy. A survey of 21 OECD Member countries shows 14 have invested in AI-specific publicly funded training programmes. Of these, nine focus on developing AI professionals, while seven aim to build AI literacy among the general public (OECD, 2024[37]).",
+        "bbox": [
+            102,
+            382,
+            892,
+            445
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "To promote international comparability in this area, the OECD and the European Commission are developing an AI literacy framework that outlines the knowledge, skills and attitudes that will adequately prepare students in primary and secondary education. The initiative will also provide the foundation for the first assessment of AI literacy in the 2029 Programme for International Student Assessment (PISA). Furthermore, it will support EU goals to promote quality and inclusive digital education and skills (Schleicher, 2025[47]).",
+        "bbox": [
+            102,
+            451,
+            894,
+            545
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "Countries rely heavily on financial incentives to promote development of AI skills, underusing other policy tools that could support a more inclusive transition. Alternative tools such as career guidance initiatives, public-private collaborations and train-the-trainer programmes reach a wider and more diverse audience than financial incentives to develop AI skills (OECD, 2024[37]). Evidence from selected countries also suggests training supply may be insufficient to meet demand, especially for AI literacy.",
+        "bbox": [
+            102,
+            551,
+            894,
+            630
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "Adapting the content of training supply to deliver AI skill needs calls for linking financial support measures (such as subsidies and grants) more directly to general AI literacy and AI competencies, with particular attention to those most vulnerable to transition risks. Non-financial incentives should also be strengthened through, for example, support for career guidance, public-private collaborations and train-the-trainer programmes. Collaboration between governments, educational institutions, and industry will help co-design curricula and training courses that are well aligned with current and future workplace needs. Expanding flexible (e.g. online, part-time) and modular learning options will help make training more attractive, and broaden the accessibility and inclusivity of AI training.",
+        "bbox": [
+            102,
+            636,
+            894,
+            760
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "To build AI competencies across the workforce, early and continuous investment in education and skills development is critical. This begins with integrating digital and AI literacy into general education from a young age and extends through vocational education and training (VET) systems that are closely aligned with evolving labour market demands. For instance, Estonia's “AI Leap” initiative incorporates AI-focused curricula into both general secondary and vocational education, preparing students with foundational skills in AI tools, ethics and critical thinking (Box 3).",
+        "bbox": [
+            100,
+            766,
+            894,
+            860
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "page_number",
+        "text": "26",
+        "bbox": [
+            105,
+            74,
+            132,
+            89
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            655,
+            915,
+            892,
+            928
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "Box 3. Estonia's national \"AI Leap\" initiative",
+        "text_level": 2,
+        "bbox": [
+            319,
+            130,
+            677,
+            149
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Estonia launched the AI Leap initiative in 2025 as a national programme to equip students and vocational learners with foundational knowledge and practical skills in AI. The initiative is a public-private collaboration between the Estonian government and major AI companies, including OpenAI, Anthropic and local technology firms.",
+        "bbox": [
+            114,
+            159,
+            882,
+            223
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "The first phase targets more than 20 000 high school students and 3 000 teachers, providing access to AI education that emphasises both tool use and critical thinking. A second phase, starting in 2026, extends AI training to 38 000 VET students and 2 000 VET instructors, aligning vocational curricula with emerging labour market demands.",
+        "bbox": [
+            114,
+            228,
+            882,
+            292
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "To promote inclusivity and digital equity, the Estonian government is providing free laptops to students from low-income households and ensuring access to AI resources in rural areas. The programme also includes teacher training, online platforms and curriculum development that integrate AI ethics, problem solving and interdisciplinary applications.",
+        "bbox": [
+            114,
+            297,
+            882,
+            362
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "With an initial investment of EUR 3.2 million, rising to EUR 6 million in the second year, AI Leap responds to different education and employment policy objectives. These include strengthening VET systems, supporting lifelong learning, encouraging employer engagement and fostering diversity in digital skills development.",
+        "bbox": [
+            112,
+            366,
+            882,
+            430
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Source: e-Estonia (2025[48]), Estonia's groundbreaking national initiative: AI Leap programme to bring AI tools to all schools, https://e-estonia.com/estonia-announces-a-groundbreaking-national-initiative-ai-leap-programme-to-bring-ai-tools-to-all-schools.",
+        "bbox": [
+            114,
+            432,
+            882,
+            462
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Providing tailored support for displaced workers",
+        "text_level": 2,
+        "bbox": [
+            104,
+            520,
+            576,
+            538
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Technological advancements, such as AI and automation, lead to shifts in the labour market and may displace workers. Targeted support for these workers, including retraining programmes and reemployment assistance, can help mitigate long-term economic losses. This can also help prevent vulnerable groups and regions from being left behind amid technological changes (OECD, 2024[17]).",
+        "bbox": [
+            102,
+            552,
+            892,
+            615
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Belgium supports displaced steelworkers in Liège through tailored upskilling and reskilling. With EUR 2.65 million in funding (including support from the European Globalisation Adjustment Fund), the programme provided displaced steelworkers with a range of targeted active labour market measures. These range from short skill upgrades to full retraining pathways and a transfer of experience that enabled veteran workers to become technical instructors.",
+        "bbox": [
+            102,
+            621,
+            892,
+            700
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Finland's “Bridge Programme” was designed to support workers displaced by Nokia's restructuring. It combined financial incentives, mentorship and access to entrepreneurial networks to encourage early career transitions and self-employment for affected workers.",
+        "bbox": [
+            102,
+            705,
+            894,
+            753
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Unemployment insurance systems in OECD Member countries show emerging patterns. These include the integration of income support with active labour market services, variations in benefit generosity and duration, and the role of insurance programmes in smoothing income losses during labour market transitions. OECD (2025[49]) underscores the importance of designing unemployment insurance that provides financial stability and also interfaces effectively with re-employment services.",
+        "bbox": [
+            102,
+            759,
+            894,
+            838
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "page_number",
+        "text": "27",
+        "bbox": [
+            862,
+            74,
+            890,
+            89
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            105,
+            915,
+            342,
+            928
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Ensuring the right mix of skills for all",
+        "text_level": 2,
+        "bbox": [
+            104,
+            108,
+            468,
+            126
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "Despite policy efforts to widen access to adult learning, participation remains highly unequal. OECD (2025[38]) shows that older workers, migrants and those with lower formal qualifications are significantly less likely to participate in training than other groups. These disparities reflect both structural barriers such as cost, time constraints and accessibility, and lower perceived benefits of training among these groups. In addition, individuals who have had negative experiences of formal education may lack confidence in their ability to learn, while others may struggle to find training opportunities that meet their specific needs.",
+        "bbox": [
+            102,
+            141,
+            892,
+            236
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "Addressing these inequalities requires more than targeted initiatives. In many cases, adult learning systems as a whole fail to meet the needs of disadvantaged groups. If systems remain overly complex, inflexible or employer-dependent, even well-designed outreach and targeted financial incentives will have limited impact. Ensuring access requires rethinking adult education systems, including simplifying learning pathways; embedding more flexible, learner-centred approaches; and enabling adults to train for skills in demand (OECD, 2025[38]).",
+        "bbox": [
+            102,
+            241,
+            892,
+            335
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "In Italy, “Provincial Centres for Adult Education (CPIA)” support low-skilled adults and migrants whose qualifications are not recognised. Their programmes include literacy and Italian language courses, lower secondary education and pathways leading to upper secondary diplomas. Learners can have their competences assessed and validated, reducing the number of hours they need to complete their studies.",
+        "bbox": [
+            102,
+            341,
+            892,
+            404
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "In Canada, the “AI4Good Lab” programme offers AI training and mentorship for women and disadvantaged groups, addressing both the skills and representation gaps in emerging technology roles (Box 4).",
+        "bbox": [
+            102,
+            409,
+            892,
+            442
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "Box 4. Canada's \"AI4Good Lab\" programme",
+        "text_level": 2,
+        "bbox": [
+            319,
+            487,
+            675,
+            505
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "Launched in 2017, the AI4Good Lab is a Canadian non-profit initiative to increase diversity and inclusion in AI through education, mentorship and applied research. Initially founded by Alberta Machine Intelligence Institute, Element AI and Mila (Québec AI Institute), the Lab provides intensive training programmes that equip participants with foundational technical and ethical AI skills.",
+        "bbox": [
+            112,
+            513,
+            882,
+            579
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "The Lab operates 12-week programmes in major Canadian cities, combining hands-on machine-learning instruction, ethics and policy seminars, and team-based capstone projects addressing social and environmental challenges. Participants are from diverse disciplinary and professional backgrounds, and many continue into AI-related graduate studies or roles in technology firms, public institutions or social enterprises.",
+        "bbox": [
+            112,
+            586,
+            882,
+            667
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "To date, the AI4Good Lab has trained over 500 alumni across Montréal, Toronto, Edmonton and Vancouver and has developed partnerships with leading universities, technology companies and public agencies. Its curriculum emphasises responsible AI development, including fairness, accountability, transparency and the societal impacts of algorithmic systems.",
+        "bbox": [
+            112,
+            675,
+            882,
+            741
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "The initiative contributes to Canada's broader Pan-Canadian Artificial Intelligence Strategy, helping to strengthen human capital and diversify the AI workforce.",
+        "bbox": [
+            114,
+            747,
+            880,
+            781
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "Source: AI4Good Lab (2024[50]), About the Lab, https://www.ai4goodlab.com.",
+        "bbox": [
+            115,
+            789,
+            544,
+            804
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "Similarly, Australia's “Women in STEM Ambassador Programme” works with schools, universities and industry to dismantle barriers to equity through inclusive hiring practices, mentoring networks and awareness campaigns.",
+        "bbox": [
+            102,
+            841,
+            892,
+            890
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "page_number",
+        "text": "28",
+        "bbox": [
+            105,
+            74,
+            132,
+            89
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            655,
+            915,
+            892,
+            928
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "5 Conclusion",
+        "text_level": 2,
+        "bbox": [
+            122,
+            117,
+            416,
+            186
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "AI is quickly changing business, work and society on a large scale. The use of algorithms and automation in different sectors of the economy redefines how individuals and companies produce, create value and connect. In parallel, the accelerated diffusion of AI creates both opportunities for wider prosperity and social challenges that need to be addressed. Therefore, understanding how AI is affecting economic systems and their social foundations that sustain them appears as an imperative to ensure that technological progress strengthens these foundations instead of fracturing them.",
+        "bbox": [
+            102,
+            233,
+            894,
+            328
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Amid an evolving environment, this paper shows that skills development is both an economic and a societal imperative essential to promoting social engagement, civic participation and mutual trust in an age of uncertainty. Individuals need a combination of foundational skills, ICT proficiency and different complementary skills (such as critical thinking and creativity) to prosper in the AI age. In this respect, lifelong learning and the willingness to be adaptable become the glue that ties innovation to social resilience. To make these capabilities widespread, education systems and employers must prioritise both upskilling and reskilling as a shared responsibility on a continuous basis.",
+        "bbox": [
+            102,
+            332,
+            894,
+            444
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "At the same time, policy also plays a decisive role in steering digital transformation towards growth and well-being (OECD, 2019[20]). Governments and public institutions should be agile, anticipating change by creating frameworks that promote the relevance of skills to labour market needs, supporting upskilling and reskilling programmes, and offering relevant training opportunities for all. By aligning skills strategies with forward-looking policies, societies can shape a future where technology amplifies human capabilities. The challenge ahead is to keep pace with AI while guiding its development towards prosperity, resilience and human-centred innovation.",
+        "bbox": [
+            102,
+            448,
+            894,
+            558
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "page_number",
+        "text": "29",
+        "bbox": [
+            862,
+            74,
+            892,
+            90
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            105,
+            915,
+            342,
+            928
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "References",
+        "text_level": 2,
+        "bbox": [
+            107,
+            112,
+            376,
+            152
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Acemoglu, D. and P. Restrepo (2018), “The race between Man and machine: Implications of technology for growth, factor shares, and employment”, American Economic Review, Vol. 108/6, pp. 1488-1542, https://doi.org/10.1257/aer.20160696.",
+        "bbox": [
+            114,
+            294,
+            892,
+            342
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "AI4Good Lab (2024), “About the Lab”, https://www.ai4goodlab.com (accessed on 8 April 2026). [50]",
+        "bbox": [
+            114,
+            350,
+            892,
+            369
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Autor, D. et al. (2022), New Frontiers: The Origins and Content of New Work, 1940–2018, [15] National Bureau of Economic Research, Cambridge, MA, http://www.nber.org/papers/w30389.",
+        "bbox": [
+            114,
+            376,
+            892,
+            424
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Bianchini, M. and M. Lasheras Sancho (2025), “SME digitalisation for competitiveness: The 2025 OECD D4SME Survey”, OECD SME and Entrepreneurship Papers, No. 68, OECD Publishing, Paris, https://doi.org/10.1787/197e3077-en.",
+        "bbox": [
+            115,
+            432,
+            892,
+            482
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Borgonovi, F. et al. (2023), “Emerging trends in AI skill demand across 14 OECD countries”, [26] OECD Artificial Intelligence Papers, No. 2, OECD Publishing, Paris, https://doi.org/10.1787/7c691b9a-en.",
+        "bbox": [
+            115,
+            489,
+            892,
+            538
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Brynjolfsson, E. (2017), Machine, Platform, Crowd: Harnessing Our Digital Future, W.W. Norton & Company. [3]",
+        "bbox": [
+            115,
+            548,
+            892,
+            580
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Burns, T. and F. Gottschalk (eds.) (2019), Educating 21st Century Children: Emotional Well-being in the Digital Age, Educational Research and Innovation, OECD Publishing, Paris, https://doi.org/10.1787/b7f33425-en. [23]",
+        "bbox": [
+            115,
+            589,
+            892,
+            637
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Caira, C., L. Russo and L. Aranda (2023), “Artificially inequitable? AI and closing the gender gap”, https://oecd.ai/en/wonk/closing-the-gender-gap (accessed on 10 April 2026). [35]",
+        "bbox": [
+            115,
+            645,
+            892,
+            680
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Calvino, F. and L. Fontanelli (2023), “A portrait of AI adopters across countries: Firm characteristics, assets’ complementarities and productivity”, OECD Science, Technology and Industry Working Papers, No. 2023/02, OECD Publishing, Paris, https://doi.org/10.1787/0fb79bb9-en.",
+        "bbox": [
+            115,
+            687,
+            892,
+            751
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Calvino, F., D. Haerle and S. Liu (2025), “Is generative AI a General Purpose Technology?: Implications for productivity and policy”, OECD Artificial Intelligence Papers, No. 40, OECD Publishing, Paris, https://doi.org/10.1787/704e2d12-en.",
+        "bbox": [
+            114,
+            760,
+            892,
+            808
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Calvino, F., J. Reijerink and L. Samek (2025), “The effects of generative AI on productivity, innovation and entrepreneurship”, OECD Artificial Intelligence Papers, No. 39, OECD Publishing, Paris, https://doi.org/10.1787/b21df222-en.",
+        "bbox": [
+            115,
+            818,
+            791,
+            866
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "page_number",
+        "text": "30",
+        "bbox": [
+            105,
+            74,
+            132,
+            89
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            655,
+            915,
+            892,
+            928
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "e-Estonia (2025), “Estonia’s groundbreaking national initiative: AI Leap programme to bring AI tools to all schools”, e-Estonia, https://e-estonia.com/estonia-announces-a-groundbreaking-national-initiative-ai-leap-programme-to-bring-ai-tools-to-all-schools (accessed on 26 February 2026).",
+        "bbox": [
+            115,
+            111,
+            821,
+            173
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Federal Ministry of Labour and Social Affairs (2024), Gesetz zur Stärkung der Aus- und Weiterbildungsförderung, [Act to Strengthen the Promotion of Vocational Training and Skills], Germany, https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/weiterbildungsgesetz.html.",
+        "bbox": [
+            115,
+            183,
+            831,
+            244
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Federal Ministry of Labour and Social Affairs (2020), Arbeit-von-morgen-Gesetz, [Work of Tomorrow Act], Germany, https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/arbeit-von-morgen-gesetz.",
+        "bbox": [
+            115,
+            256,
+            786,
+            302
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Federal Ministry of Labour and Social Affairs (2019), Qualifizierungschancengesetz, [Qualification Opportunities Act], Germany, https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/qualifizierungschancengesetz.html.",
+        "bbox": [
+            115,
+            313,
+            818,
+            359
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Felten, E., M. Raj and R. Seamans (2021), “Occupational, industry, and geographic exposure to artificial intelligence: A novel dataset and its potential uses”, Strategic Management Journal, Vol. 42/12, pp. 2195-2217, https://doi.org/10.1002/smj.3286.",
+        "bbox": [
+            115,
+            369,
+            833,
+            417
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Fiegler-Rudol, J. et al. (2025), “Exploring human–AI dynamics in enhancing workplace health and safety: A narrative review”, International Journal of Environmental Research and Public Health, Vol. 22/199, https://doi.org/10.3390/ijerph22020199.",
+        "bbox": [
+            117,
+            426,
+            884,
+            474
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Filippucci, F. et al. (2024), “The impact of Artificial Intelligence on productivity, distribution and growth: Key mechanisms, initial evidence and policy challenges”, OECD Artificial Intelligence Papers, No. 15, OECD Publishing, Paris, https://doi.org/10.1787/8d900037-en.",
+        "bbox": [
+            115,
+            483,
+            890,
+            531
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "García-Madurga, M. et al. (2024), “The role of artificial intelligence in improving workplace well-being: A systematic review”, Businesses, Vol. 4/3, pp. 389-410, https://doi.org/10.3390/businesses4030024.",
+        "bbox": [
+            115,
+            539,
+            892,
+            588
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Green, A. (2024), “Artificial intelligence and the changing demand for skills in the labour market”, [32] OECD Artificial Intelligence Papers, No. 14, OECD Publishing, Paris, https://doi.org/10.1787/88684e36-en.",
+        "bbox": [
+            115,
+            596,
+            892,
+            644
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Green, A. and L. Lamby (2023), “The supply, demand and characteristics of the AI workforce across OECD countries”, OECD Social, Employment and Migration Working Papers, No. 287, OECD Publishing, Paris, https://doi.org/10.1787/bb17314a-en.",
+        "bbox": [
+            115,
+            653,
+            892,
+            702
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Lalwani, M. (2025), “The impact of AI-powered predictive maintenance on manufacturing efficiency”, LinkedIn pulse, https://www.linkedin.com/pulse/impact-ai-powered-predictive-maintenance-efficiency-mahesh-lalwani-e6e6f (accessed on 15 April 2025).",
+        "bbox": [
+            115,
+            712,
+            803,
+            759
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Lane, M. (2024), “Who will be the workers most affected by AI?: A closer look at the impact of AI on women, low-skilled workers and other groups”, OECD Artificial Intelligence Papers, No. 26, OECD Publishing, Paris, https://doi.org/10.1787/14dc6f89-en.",
+        "bbox": [
+            115,
+            768,
+            890,
+            816
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Lane, M. and A. Saint-Martin (2021), “The impact of Artificial Intelligence on the labour market: What do we know so far?”, OECD Social, Employment and Migration Working Papers, No. 256, OECD Publishing, Paris, https://doi.org/10.1787/7c895724-en.",
+        "bbox": [
+            115,
+            826,
+            784,
+            872
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "page_number",
+        "text": "31",
+        "bbox": [
+            865,
+            74,
+            890,
+            89
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            105,
+            915,
+            342,
+            928
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Lassébie, J. and G. Quintini (2022), “What skills and abilities can automation technologies replicate and what does it mean for workers?: New evidence”, OECD Social, Employment and Migration Working Papers, No. 282, OECD Publishing, Paris, https://doi.org/10.1787/646aad77-en.",
+        "bbox": [
+            114,
+            111,
+            811,
+            172
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "ref_text",
+        "text": "LinkedIn News (2025), “LinkedIn jobs on the rise 2025: The 25 fastest-growing jobs in the U.S.”, https://www.linkedin.com/pulse/linkedin-jobs-rise-2025-25-fastest-growing-us-linkedin-news-gryie (accessed on 7 April 2026).",
+        "bbox": [
+            115,
+            183,
+            831,
+            230
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "ref_text",
+        "text": "Long, D. and B. Magerko (2020), “What is AI literacy? Competencies and design considerations”, Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems, pp. 1-16, https://doi.org/10.1145/3313831.3376727.",
+        "bbox": [
+            115,
+            241,
+            823,
+            287
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "ref_text",
+        "text": "Milanez, A., A. Lemmens and C. Ruggiu (2025), “Algorithmic management in the workplace: New evidence from an OECD employer survey”, OECD Artificial Intelligence Papers, No. 31, OECD Publishing, Paris, https://doi.org/10.1787/287c13c4-en.",
+        "bbox": [
+            115,
+            297,
+            796,
+            344
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "ref_text",
+        "text": "Ministry of Education (2024), “Helping adults aged 30 and over strengthen their digital capabilities! The AID 30+ Project”, https://blog.naver.com/moeblog/223700218605 (accessed on 14 October 2025).",
+        "bbox": [
+            115,
+            354,
+            890,
+            400
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2026), ICT Access and Usage, (datasets), https://oe.cd/dx/ict-access-usage (accessed on 15 June 2026). [10]",
+        "bbox": [
+            115,
+            410,
+            892,
+            442
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2025), Generative AI and the SME Workforce: New Survey Evidence, OECD Publishing, [11] Paris, https://doi.org/10.1787/2d08b99d-en.",
+        "bbox": [
+            115,
+            451,
+            892,
+            483
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2025), “Live data: AI jobs and skills”, OECD AI Policy Platform, https://oecd.ai (accessed on 16 June 2025). [31]",
+        "bbox": [
+            115,
+            494,
+            892,
+            525
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2025), “Place-based policies for displaced workers: Lessons from past economic disruptions”, OECD Local Economic and Employment Development (LEED) Papers, No. 2025/04, OECD Publishing, Paris, https://doi.org/10.1787/69b86784-en.",
+        "bbox": [
+            115,
+            536,
+            779,
+            583
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2025), Trends in Adult Learning: New Data from the 2023 Survey of Adult Skills, Getting Skills Right, OECD Publishing, Paris, https://doi.org/10.1787/ec0624a6-en. [38]",
+        "bbox": [
+            115,
+            592,
+            892,
+            624
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2024), Do Adults Have the Skills They Need to Thrive in a Changing World?: Survey of Adult Skills 2023, OECD Skills Studies, OECD Publishing, Paris, https://doi.org/10.1787/b263dc5d-en. [21]",
+        "bbox": [
+            115,
+            633,
+            892,
+            681
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2024), “Explanatory memorandum on the updated OECD definition of an AI system”, [51] OECD Artificial Intelligence Papers, No. 8, OECD Publishing, Paris, https://doi.org/10.1787/623da898-en.",
+        "bbox": [
+            117,
+            690,
+            890,
+            737
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2024), “Fostering an inclusive digital transformation as AI spreads among firms”, OECD Policy Briefs, No. 8, OECD Publishing, Paris, https://doi.org/10.1787/5876200c-en.",
+        "bbox": [
+            115,
+            747,
+            890,
+            780
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2024), Job Creation and Local Economic Development 2024: The Geography of Generative AI, OECD Publishing, Paris, https://doi.org/10.1787/83325127-en. [17]",
+        "bbox": [
+            115,
+            790,
+            890,
+            822
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2024), OECD Digital Economy Outlook 2024 (Volume 1): Embracing the Technology Frontier, OECD Publishing, Paris, https://doi.org/10.1787/a1689dc5-en. [29]",
+        "bbox": [
+            115,
+            831,
+            892,
+            862
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "page_number",
+        "text": "32",
+        "bbox": [
+            105,
+            74,
+            132,
+            89
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            655,
+            916,
+            892,
+            928
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2024), OECD Digital Economy Outlook 2024 (Volume 2): Strengthening Connectivity, Innovation and Trust, OECD Publishing, Paris, https://doi.org/10.1787/3adf705b-en.",
+        "bbox": [
+            114,
+            110,
+            815,
+            143
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2024), Training Supply for the Green and AI Transitions: Equipping Workers with the Right Skills, Getting Skills Right, OECD Publishing, Paris, https://doi.org/10.1787/7600d16den.",
+        "bbox": [
+            115,
+            151,
+            831,
+            199
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2023), “Flexible adult learning provision: What it is, why it matters, and how to make it work”, OECD, Paris, https://www.oecd.org/content/dam/oecd/en/topics/policy-sub-issues/adult-learning/booklet-flexibility-2023.pdf.",
+        "bbox": [
+            115,
+            208,
+            892,
+            256
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2023), OECD Employment Outlook 2023: Artificial Intelligence and the Labour Market, OECD Publishing, Paris, https://doi.org/10.1787/08785bba-en.",
+        "bbox": [
+            115,
+            266,
+            825,
+            298
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2023), “Recognition of prior learning: A practical guide for policy makers”, OECD, Paris, [42] https://www.oecd.org/content/dam/oecd/en/topics/policy-sub-issues/adult-learning/booklet-rpl-2023.pdf.",
+        "bbox": [
+            115,
+            307,
+            890,
+            355
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2022), “The broader social outcomes of education: Educating for thriving individuals and societies”, in Value for Money in School Education: Smart Investments, Quality Outcomes, Equal Opportunities, OECD Publishing, Paris, https://doi.org/10.1787/20abef3a-en. [24]",
+        "bbox": [
+            115,
+            363,
+            892,
+            412
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2019), “Conceptual learning framework: Skills for 2030”, Future of Education and Skills 2030, https://www.oecd.org/en/about/projects/future-of-education-and-skills-2030.html (accessed on 8 April 2026).",
+        "bbox": [
+            115,
+            420,
+            892,
+            470
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2019), “Getting skills right: Engaging low-skilled adults in learning”, OECD Publishing, Paris, https://doi.org/10.1787/25206125. [41]",
+        "bbox": [
+            115,
+            478,
+            892,
+            511
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2019), Going Digital: Shaping Policies, Improving Lives, OECD Publishing, Paris, [20] https://doi.org/10.1787/9789264312012-en.",
+        "bbox": [
+            115,
+            520,
+            892,
+            552
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2013), OECD Skills Outlook 2013: First Results from the Survey of Adult Skills, OECD Publishing, Paris, https://doi.org/10.1787/9789264204256-en. [22]",
+        "bbox": [
+            115,
+            561,
+            892,
+            593
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "ref_text",
+        "text": "Samek, L., M. Squicciarini and E. Cammeraat (2021), “The human capital behind AI: Jobs and skills demand from online job postings”, OECD Science, Technology and Industry Policy Papers, No. 120, OECD Publishing, Paris, https://doi.org/10.1787/2e278150-en.",
+        "bbox": [
+            115,
+            602,
+            890,
+            651
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "ref_text",
+        "text": "Schleicher, A. (2025), “New AI literacy framework to equip youth in an age of AI”, https://oecdedutoday.com/new-ai-literacy-framework-to-equip-youth-in-an-age-of-ai (accessed on 12 October 2025).",
+        "bbox": [
+            115,
+            659,
+            763,
+            707
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "page_number",
+        "text": "33",
+        "bbox": [
+            865,
+            74,
+            892,
+            89
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            105,
+            916,
+            342,
+            928
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "$^{3}$ The risk of automation measure is computed by occupation as the average rating for each skill or ability used in the occupation across all expert responses weighted by the skills or abilities' importance in the occupation as rated by the O\\*NET database. Occupations are SOC-2 digit (2018).",
+        "bbox": [
+            100,
+            506,
+            892,
+            555
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "$^{4}$ LinkedIn categorises AI skills into two mutually exclusive groups: “AI engineering” and “AI literacy” skills. AI talent refers to “AI engineering” skills. LinkedIn members are considered having an AI talent if they have explicitly added at least two AI engineering skills to their profile and/or they are (or they have been) employed in an AI job.",
+        "bbox": [
+            100,
+            558,
+            894,
+            625
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "$^{5}$ The AI exposure measure developed by (Felten, Raj and Seamans, 2021 $^{[33]}$ ) assesses the extent to which an occupation is likely to be affected by artificial intelligence based on the tasks it involves, rather than on whether AI is currently used in that occupation. The measure links information on AI capabilities with detailed descriptions of occupational tasks from the O\\*NET database. Occupations receive a higher exposure score when a larger share of their tasks overlaps with capabilities that current AI systems can perform or support, such as processing text, analysing information, or recognising patterns. Importantly, a high AI exposure score does not imply that workers in these occupations are being replaced by AI or that they require specialised AI skills. Instead, it indicates that AI has greater potential to transform or augment the way work is performed within those occupations.",
+        "bbox": [
+            100,
+            636,
+            894,
+            780
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "page_number",
+        "text": "34",
+        "bbox": [
+            105,
+            74,
+            134,
+            90
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "header",
+        "text": "Notes",
+        "bbox": [
+            105,
+            112,
+            248,
+            152
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{1}$ The OECD defines an AI system as a machine-based system that, for explicit or implicit objectives, infers, from the input it receives, how to generate outputs such as predictions, content, recommendations or decisions that can influence physical or virtual environments. Different AI systems vary in their levels of autonomy and adaptiveness after deployment (OECD, 2024 $^{[51]}$ ).",
+        "bbox": [
+            102,
+            290,
+            894,
+            356
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "page_footnote",
+        "text": "2 Estimates of occupational exposure to AI are derived from cross-country averages taken over the 22 countries included in Lane (2024[16]). The analysis extends the exposure measure of Felten, Raj and Seamans (2021[33]) by linking it to the OECD Survey of Adult Skills (PIAAC). This step allows the indicator to vary at country-occupation level (i.e. every ISCO 2-digit-level occupation in all 22 countries has a different AI exposure level). Matching the indicator to European Union Labour Force Survey (EU-LFS), the US Current Population Survey (US-CPS), and the United Kingdom Labour Force Survey (UK-LFS) Labour Force Survey data permits analysis of the relationship with the socio-demographic profile of different occupations.",
+        "bbox": [
+            100,
+            366,
+            894,
+            495
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "footer",
+        "text": "SKILLS IN THE AI AGE © OECD 2026",
+        "bbox": [
+            653,
+            915,
+            892,
+            928
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "Skills in the AI age",
+        "text_level": 2,
+        "bbox": [
+            52,
+            71,
+            379,
+            103
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "No. 60",
+        "text_level": 2,
+        "bbox": [
+            52,
+            117,
+            114,
+            134
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "As general-purpose technologies like the steam engine and electricity once revolutionised society, artificial intelligence (AI) is likewise doing so today. By enhancing productivity, stimulating economic growth and creating new job opportunities, AI could significantly enhance human work and the labour market. However, AI also presents challenges such as job displacements if the transition to using it is not properly managed. The effects of AI on employment differ across sectors, regions and cities, as well as across skill levels. Adapting to this shift requires developing new skills that align with evolving labour market demands. Policymakers play an essential role in ensuring workers are equipped to thrive in an AI-driven economy. This paper examines how AI is transforming labour markets, shifting skill requirements and the policy responses needed to harness AI's transformative potential while mitigating its social and economic risks.",
+        "bbox": [
+            50,
+            151,
+            946,
+            287
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "header",
+        "text": "OECD Artificial Intelligence Papers",
+        "bbox": [
+            53,
+            36,
+            346,
+            55
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            105,
+            898,
+            159,
+            936
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "footer",
+        "text": "Ministry of Science and ICT",
+        "bbox": [
+            58,
+            941,
+            208,
+            952
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "footer",
+        "text": "NIA\nNATIONAL INFORMATION\nSOCIETY AGENCY",
+        "bbox": [
+            230,
+            916,
+            329,
+            953
+        ],
+        "page_idx": 35
+    }
+]
