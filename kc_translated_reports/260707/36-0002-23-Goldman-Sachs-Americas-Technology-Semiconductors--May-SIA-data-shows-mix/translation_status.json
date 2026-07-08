@@ -1,0 +1,18 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260707/shard_4/0002-23-Goldman-Sachs-Americas-Technology-Semiconductors--May-SIA-data-shows-mix",
+  "title": "高盛：高盛最新追踪，半导体周期不是全面反弹，而是结构性选品窗口",
+  "source_title": "GS：GS最新追踪，半导体周期不是全面反弹，而是结构性选品窗口",
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_36.pdf",
+  "figure_count": 8,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "股票|个股->公司 x1",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}

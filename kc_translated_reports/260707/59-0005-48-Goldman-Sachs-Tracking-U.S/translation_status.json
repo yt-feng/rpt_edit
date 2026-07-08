@@ -1,0 +1,32 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260707/shard_8/0005-48-Goldman-Sachs-Tracking-U.S.Supply-Chain-Congestion-GS-Supply-Chain-Conge",
+  "title": "高盛：中国至美国西海岸运价周涨8%，高盛分析关税影响供应链",
+  "source_title": "GS：运价同比涨82%背后，GS分析美国供应链新常态与政策变量",
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_59.pdf",
+  "figure_count": 16,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "衰退|萎缩|收缩->调整 x3",
+    "下行|放缓->节奏变化 x2",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "恶化->出现变化 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}
