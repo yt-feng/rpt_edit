@@ -1,0 +1,2760 @@
+[
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Soitec"
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                65,
+                124,
+                89
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "F1Q preview: Photonics upside priced in;"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                37,
+                104,
+                604,
+                133
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Lower PO"
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                135,
+                179,
+                157
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Reiterate Rating: NEUTRAL | PO: 138.00 EUR | Price: 118.40 EUR"
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                162,
+                439,
+                178
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Photonics growing but expectations are elevated; Neutral"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                37,
+                199,
+                614,
+                218
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Soitec reports F1Q revenue on July 28  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{th}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " . We believe there is downside risk to css estimates for both Mobile, given the weak smartphone market, and Edge AI, given the high implied Photonics-SOI growth. However, we expect the overall business to recover from its FY26 earnings trough. We raise FY27-29E Edge AI but lower Mobile and Auto/Industrial ests, lowering EBITDA. Reit. Neutral with lower €138 PO (was €193) on updated SOTP valuation."
+                    }
+                ]
+            },
+            "bbox": [
+                35,
+                218,
+                620,
+                310
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Street is projecting Photonics-SOI growing above industry"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                35,
+                315,
+                625,
+                334
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We view Soitec's Photonics-related upside as priced in, with Edge and Cloud AI (of which Photonics-SOI was 42% in FY26) forecasted to grow by css at 28%/34%/43% in FY27/28/29E. This would imply Photonics revenue growth significantly higher than the 50% CAGR for FY26-29E that we model, which is based on Photonics-SOI total die area CAGR forecasts. For context, our global team projects 40%+ total optical revenue growth CAGR in data centers. Given various uncertainties including amount of NPO/CPO content growth, we lack conviction in further Photonics revenue revisions."
+                    }
+                ]
+            },
+            "bbox": [
+                35,
+                334,
+                627,
+                441
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Uncertainties remain on Photonics growth assumptions"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                35,
+                449,
+                594,
+                468
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "With questions on various Photonics-SOI content assumptions hard to answer, it is difficult to project its revenue growth CAGR. Yields, transceiver speeds, changing optical engine requirements PIC sizes, NPO/CPO ramp timelines and associated content growth all present various headwinds and tailwinds to Photonics-SOI growth. We believe the implied css Photonics-SOI growth rate already prices in growth acceleration from NPO/CPO which we view to still be uncertain given the different moving parts. Finally, GlobalWafers' planned ramp in Photonics/RF-SOI has not been derisked, introducing questions on Soitec's market share position going forward."
+                    }
+                ]
+            },
+            "bbox": [
+                35,
+                468,
+                622,
+                592
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Mobile recovering but at slow pace on phone price hikes"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                37,
+                598,
+                602,
+                617
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Mobile was more than half of FY26 revenue, and given announced price hikes by smartphone-makers, we believe there is downside to css FY27E decline of 6% in Mobile revenue (we model 11% decline). RF-SOI revenue continues to be significantly impacted by elevated customer inventories, sitting at ~2mm wafers with a slowing pace of digestion due to the weak end-market. We model 19%/27% growth in Mobile in FY28/29E, reflecting gradual customer inventory digestion."
+                    }
+                ]
+            },
+            "bbox": [
+                35,
+                617,
+                622,
+                709
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/356e93723a297d7149ff981ff480933285de81f6ad092e3632d2434ee0ae5be5.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "* For full definitions of IQmethod  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{SM}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " measures, see page 7."
+                    }
+                ],
+                "html": "<table><tr><td>Estimates (Mar) (EUR)</td><td>2025A</td><td>2026A</td><td>2027E</td><td>2028E</td><td>2029E</td></tr><tr><td>EPS (Adjusted Diluted)</td><td>2.54</td><td>(6.17)</td><td>(0.17)</td><td>1.78</td><td>3.82</td></tr><tr><td>EPS Change (YoY)</td><td>-46.3%</td><td>-343.1%</td><td>97.3%</td><td>NM</td><td>114.8%</td></tr><tr><td>Consensus EPS (Visible Alpha)</td><td></td><td></td><td>(0.14)</td><td>2.00</td><td>4.62</td></tr><tr><td>Valuation (Mar)</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>P/E</td><td>46.7x</td><td>NM</td><td>NM</td><td>66.6x</td><td>31.0x</td></tr><tr><td>EV / EBITDA*</td><td>14.1x</td><td>27.9x</td><td>26.0x</td><td>17.0x</td><td>12.5x</td></tr><tr><td>Free Cash Flow Yield*</td><td>0.05%</td><td>1.75%</td><td>1.80%</td><td>4.06%</td><td>2.43%</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                42,
+                712,
+                620,
+                820
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": ">> Employed by a non-US affiliate of BofAS and is not registered/qualified as a research analyst under the FINRA rules."
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                849,
+                578,
+                875
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Refer to \"Other Important Disclosures\" for information on certain BofA entities that take responsibility for the information herein in particular jurisdictions."
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                873,
+                591,
+                897
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "BofA does and seeks to do business with issuers covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision."
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                896,
+                566,
+                941
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Refer to important disclosures on page 8 to 10. Analyst Certification on page 6. Price Objective Basis/Risk on page 6. 1299"
+                    }
+                ]
+            },
+            "bbox": [
+                35,
+                941,
+                570,
+                965
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "07 July 2026"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                702,
+                199,
+                787,
+                214
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Equity"
+                    }
+                ]
+            },
+            "bbox": [
+                704,
+                219,
+                753,
+                236
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Key Changes"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                712,
+                257,
+                794,
+                272
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/e06ad2ef3e0714fe30d8b0fc66feb883ca8f53818baf01fe8069a76bc1554e81.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>(EUR)</td><td>Previous</td><td>Current</td></tr><tr><td>Price Obj.</td><td>193.00</td><td>138.00</td></tr><tr><td>2027E Rev (m)</td><td>624.5</td><td>604.1</td></tr><tr><td>2028E Rev (m)</td><td>780.6</td><td>741.9</td></tr><tr><td>2029E Rev (m)</td><td>1,033.1</td><td>955.6</td></tr><tr><td>2027E EPS</td><td>0.31</td><td>-0.17</td></tr><tr><td>2028E EPS</td><td>2.26</td><td>1.78</td></tr><tr><td>2029E EPS</td><td>4.88</td><td>3.82</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                710,
+                276,
+                950,
+                398
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Oliver Wong >>"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                704,
+                414,
+                792,
+                426
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Research Analyst\nMLI (UK)\n+44 20 7995 9014\noliver.wong2@bofa.com"
+                    }
+                ]
+            },
+            "bbox": [
+                702,
+                425,
+                828,
+                465
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Didier Scemama >>"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                704,
+                469,
+                813,
+                479
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Research Analyst\nMLI (UK)\n+44 20 7995 6751\ndidier.scemama@bofa.com"
+                    }
+                ]
+            },
+            "bbox": [
+                704,
+                478,
+                841,
+                518
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Amelia Banks >>\nResearch Analyst\nMLI (UK)\n+44 20 7995 3554\namelia.banks@bofa.com"
+                    }
+                ]
+            },
+            "bbox": [
+                702,
+                523,
+                828,
+                574
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Stock Data"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                702,
+                609,
+                772,
+                625
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/2804b25f942f89ff6dea590cccbaa70091f16606bfbf688116f94822c8cb200c.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Price</td><td>118.40 EUR</td></tr><tr><td>Price Objective</td><td>138.00 EUR</td></tr><tr><td>Date Established</td><td>07-Jul-2026</td></tr><tr><td>Investment Opinion</td><td>C-2-9</td></tr><tr><td>52-Week Range</td><td>22.62 EUR-200.50 EUR</td></tr><tr><td>Mrkt Val / Shares Out (mn)</td><td>4,224 EUR / 35.7</td></tr><tr><td>Average Daily Value (mn)</td><td>64.76 USD</td></tr><tr><td>Free Float</td><td>69.5%</td></tr><tr><td>BofA Ticker / Exchange</td><td>SLOIF / ENP</td></tr><tr><td>Bloomberg / Reuters</td><td>SOI FP / SOIT.PA</td></tr><tr><td>ROE (2027E)</td><td>-0.4%</td></tr><tr><td>Net Dbt to Eqty (Mar2026A)</td><td>4.4%</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                702,
+                633,
+                957,
+                815
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AI: Artificial intelligence"
+                    }
+                ]
+            },
+            "bbox": [
+                702,
+                835,
+                867,
+                852
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "CPO: Co-packaged optics"
+                    }
+                ]
+            },
+            "bbox": [
+                702,
+                852,
+                877,
+                867
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "NPO: Near packaged optics"
+                    }
+                ]
+            },
+            "bbox": [
+                702,
+                867,
+                890,
+                883
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "PIC: Photonic integrated circuit"
+                    }
+                ]
+            },
+            "bbox": [
+                704,
+                883,
+                915,
+                898
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "RF: Radio frequency"
+                    }
+                ]
+            },
+            "bbox": [
+                704,
+                897,
+                843,
+                912
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "SOI: Silicon on insulator"
+                    }
+                ]
+            },
+            "bbox": [
+                704,
+                912,
+                867,
+                928
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "SOTP: Sum of the parts"
+                    }
+                ]
+            },
+            "bbox": [
+                704,
+                928,
+                867,
+                943
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "css: consensus"
+                    }
+                ]
+            },
+            "bbox": [
+                704,
+                944,
+                808,
+                958
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Accessible version"
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                5,
+                130,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "BofA GLOBAL RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                20,
+                281,
+                37
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "BofA"
+                    }
+                ]
+            },
+            "bbox": [
+                684,
+                15,
+                903,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": []
+            },
+            "bbox": [
+                910,
+                7,
+                968,
+                35
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "12990967"
+                    }
+                ]
+            },
+            "bbox": [
+                545,
+                954,
+                596,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/a68848110ab6fd5528144808f5b43dcc4e36af027a8c05703f33a7b471961092.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td colspan=\"3\">Stock Data</td></tr><tr><td colspan=\"2\">Price to Book Value</td><td>3.1x</td></tr><tr><td colspan=\"3\">Half-yearly Earnings Estimates</td></tr><tr><td></td><td>2026</td><td>2027</td></tr><tr><td>H1</td><td>OA</td><td>-0.36E</td></tr><tr><td>H2</td><td>OA</td><td>0.20E</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                666,
+                560,
+                955,
+                727
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "iQprofile  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{SM}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " Soitec"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                37,
+                59,
+                250,
+                85
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/5e6cb904d7062f9a546de0a936cd2042d823d7a149aae73227509703b6d63e65.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "* For full definitions of iQmethod "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{SM}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " measures, see page 7."
+                    }
+                ],
+                "html": "<table><tr><td>Key Income Statement Data (Mar)</td><td>2025A</td><td>2026A</td><td>2027E</td><td>2028E</td><td>2029E</td></tr><tr><td colspan=\"6\">(EUR Millions)</td></tr><tr><td>Sales</td><td>891</td><td>592</td><td>604</td><td>742</td><td>956</td></tr><tr><td>EBITDA Adjusted</td><td>298</td><td>151</td><td>162</td><td>248</td><td>337</td></tr><tr><td>Depreciation &amp; Amortization</td><td>(140)</td><td>(138)</td><td>(140)</td><td>(146)</td><td>(155)</td></tr><tr><td>EBIT Adjusted</td><td>158</td><td>13.0</td><td>22.0</td><td>102</td><td>182</td></tr><tr><td>Net Interest &amp; Other Income</td><td>(9.00)</td><td>(30.0)</td><td>(8.97)</td><td>(6.62)</td><td>(0.87)</td></tr><tr><td>Tax Expense / Benefit</td><td>(19.0)</td><td>(61.0)</td><td>1.05</td><td>(11.2)</td><td>(24.2)</td></tr><tr><td>Net Income (Adjusted)</td><td>91.0</td><td>(220)</td><td>(5.95)</td><td>63.7</td><td>137</td></tr><tr><td>Average Fully Diluted Shares Outstanding</td><td>35.9</td><td>35.7</td><td>35.8</td><td>35.9</td><td>36.0</td></tr><tr><td colspan=\"6\">Key Cash Flow Statement Data</td></tr><tr><td>Net Income (Reported)</td><td>92.0</td><td>(222)</td><td>(5.95)</td><td>63.7</td><td>137</td></tr><tr><td>Depreciation &amp; Amortization</td><td>140</td><td>138</td><td>140</td><td>146</td><td>155</td></tr><tr><td>Change in Working Capital</td><td>(100)</td><td>50.0</td><td>39.0</td><td>38.3</td><td>(120)</td></tr><tr><td>Deferred Taxation Charge</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Other CFO</td><td>69.0</td><td>236</td><td>27.9</td><td>37.9</td><td>45.1</td></tr><tr><td>Cash Flow from Operations</td><td>201</td><td>202</td><td>201</td><td>286</td><td>218</td></tr><tr><td>Capital Expenditure</td><td>(199)</td><td>(128)</td><td>(125)</td><td>(115)</td><td>(115)</td></tr><tr><td>(Acquisition) / Disposal of Investments</td><td>4.00</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Other CFI</td><td>19.0</td><td>14.0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Cash Flow from Investing</td><td>(176)</td><td>(114)</td><td>(125)</td><td>(115)</td><td>(115)</td></tr><tr><td>Share Issue / (Repurchase)</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Cost of Dividends Paid</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr><tr><td>Increase (decrease) debt</td><td>34.0</td><td>(161)</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Other CFF</td><td>(84.0)</td><td>(43.0)</td><td>(8.97)</td><td>(6.62)</td><td>(0.87)</td></tr><tr><td>Cash Flow from Financing</td><td>(50.0)</td><td>(204)</td><td>(8.97)</td><td>(6.62)</td><td>(0.87)</td></tr><tr><td>Total Cash Flow (CFO + CFI + CFF)</td><td>(25.0)</td><td>(116)</td><td>67.0</td><td>165</td><td>102</td></tr><tr><td>FX and other changes to cash</td><td>5.00</td><td>(10.0)</td><td>(0.01)</td><td>(0.32)</td><td>0</td></tr><tr><td>Change in Cash</td><td>(20.0)</td><td>(126)</td><td>67.0</td><td>164</td><td>102</td></tr><tr><td>Change in Net Debt</td><td>54.0</td><td>(35.0)</td><td>(67.0)</td><td>(164)</td><td>(102)</td></tr><tr><td>Net Debt</td><td>93.0</td><td>58.0</td><td>(8.98)</td><td>(173)</td><td>(275)</td></tr><tr><td colspan=\"6\">Key Balance Sheet Data</td></tr><tr><td>Property, Plant &amp; Equipment</td><td>1,003</td><td>893</td><td>853</td><td>797</td><td>732</td></tr><tr><td>Goodwill</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr><tr><td>Other Intangibles</td><td>130</td><td>94.0</td><td>119</td><td>144</td><td>169</td></tr><tr><td>Other Non-Current Assets</td><td>162</td><td>68.0</td><td>68.0</td><td>68.0</td><td>68.0</td></tr><tr><td>Trade Receivables</td><td>463</td><td>280</td><td>234</td><td>244</td><td>314</td></tr><tr><td>Cash &amp; Equivalents</td><td>688</td><td>562</td><td>629</td><td>793</td><td>895</td></tr><tr><td>Other Current Assets</td><td>362</td><td>383</td><td>434</td><td>397</td><td>448</td></tr><tr><td>Total Assets</td><td>2,808</td><td>2,280</td><td>2,336</td><td>2,443</td><td>2,626</td></tr><tr><td>Long-Term Debt</td><td>375</td><td>517</td><td>517</td><td>517</td><td>517</td></tr><tr><td>Other Non-Current Liabilities</td><td>94.0</td><td>122</td><td>122</td><td>122</td><td>122</td></tr><tr><td>Short-Term Debt</td><td>406</td><td>103</td><td>103</td><td>103</td><td>103</td></tr><tr><td>Other Current Liabilities</td><td>338</td><td>213</td><td>255</td><td>279</td><td>304</td></tr><tr><td>Total Liabilities</td><td>1,213</td><td>955</td><td>997</td><td>1,021</td><td>1,046</td></tr><tr><td>Total Equity</td><td>1,594</td><td>1,327</td><td>1,341</td><td>1,425</td><td>1,582</td></tr><tr><td>Total Equity &amp; Liabilities</td><td>2,807</td><td>2,282</td><td>2,338</td><td>2,445</td><td>2,628</td></tr><tr><td colspan=\"6\">Business Performance*</td></tr><tr><td>Return On Capital Employed</td><td>6.12%</td><td>1.03%</td><td>1.71%</td><td>4.95%</td><td>7.97%</td></tr><tr><td>Return On Equity</td><td>5.89%</td><td>-15.1%</td><td>-0.45%</td><td>4.61%</td><td>9.14%</td></tr><tr><td>Operating Margin</td><td>13.5%</td><td>-22.1%</td><td>0.33%</td><td>11.0%</td><td>17.0%</td></tr><tr><td>Free Cash Flow (MM)</td><td>2.00</td><td>74.0</td><td>76.0</td><td>171</td><td>103</td></tr><tr><td colspan=\"6\">Quality of Earnings*</td></tr><tr><td>Cash Realization Ratio</td><td>2.21x</td><td>NM</td><td>NM</td><td>4.49x</td><td>1.58x</td></tr><tr><td>Asset Replacement Ratio</td><td>1.42x</td><td>0.93x</td><td>0.89x</td><td>0.79x</td><td>0.74x</td></tr><tr><td>Tax Rate</td><td>17.1%</td><td>NM</td><td>15.0%</td><td>15.0%</td><td>15.0%</td></tr><tr><td>Net Debt/Equity</td><td>5.83%</td><td>4.37%</td><td>-0.67%</td><td>-12.2%</td><td>-17.4%</td></tr><tr><td>Interest Cover</td><td>5.64x</td><td>0.30x</td><td>0.77x</td><td>3.55x</td><td>6.37x</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                37,
+                89,
+                627,
+                861
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Company Sector Semiconductors"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                679,
+                95,
+                803,
+                128
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Company Description"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                666,
+                157,
+                803,
+                172
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Soitec designs and manufactures semiconductor substrates, predominantly based on silicon on insulator (SOI) technologies. Soitec has recently been diversifying into technologies such as POI, SiC and GaN. Soitec's products are key enablers and beneficiaries of many fast growing trends such as 5G communications, vehicle electrification, silicon photonics, 3D sensing and increasing demand for low power/cost processing power. Soitec is listed on Euronext Paris and is headquartered in Bernin, France."
+                    }
+                ]
+            },
+            "bbox": [
+                666,
+                174,
+                954,
+                325
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Investment Rationale"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                666,
+                349,
+                803,
+                364
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Soitec is a leader in silicon on insulator (SOI) substrates. Recently, Soitec has moved into new areas, such as gallium nitride (GaN) & piezoelectric on insulator (POI), with silicon carbide (SiC) in development. Soitec's products are key enablers & beneficiaries of many fast-growing trends, such as optical connectivity and 5G communications. However, we still lack visibility on when customer inventory digestion will end and tariff overhang on consumer (PC/Smartphone) demand may clear."
+                    }
+                ]
+            },
+            "bbox": [
+                665,
+                366,
+                955,
+                503
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "BofA GLOBAL RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                23,
+                163,
+                34
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                953,
+                50,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Soitec | 07 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                91,
+                952,
+                210,
+                965
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": []
+            },
+            "bbox": [
+                911,
+                946,
+                954,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Bottom-up forecast"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                40,
+                59,
+                313,
+                80
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 1: We project 23%/29% revenue growth in FY28/29E driven by Photonics-SOI growth and RF-SOI recovery"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                85,
+                622,
+                114
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Soitec bottom-up revenue build, FY26-29E"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                114,
+                285,
+                128
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/dd9a3a578db7c28fce1f9e9983932b0ae437d20d63db660e18c05ea328a549ff.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: BofA Global Research estimates"
+                    },
+                    {
+                        "type": "text",
+                        "content": "BofA GLOBAL RESEARCH"
+                    }
+                ],
+                "html": "<table><tr><td>EUR mm</td><td>FY26E</td><td>FY27E</td><td>FY28E</td><td>FY29E</td></tr><tr><td>Mobile Comm.</td><td>309</td><td>276</td><td>327</td><td>415</td></tr><tr><td>RF-SOI</td><td>169</td><td>119</td><td>149</td><td>214</td></tr><tr><td>FD-SOI</td><td>39</td><td>43</td><td>48</td><td>52</td></tr><tr><td>POI</td><td>101</td><td>114</td><td>130</td><td>149</td></tr><tr><td>Auto &amp; Ind.</td><td>69</td><td>69</td><td>78</td><td>89</td></tr><tr><td>Power-SOI</td><td>59</td><td>59</td><td>65</td><td>71</td></tr><tr><td>FD-SOI</td><td>6</td><td>6</td><td>6</td><td>7</td></tr><tr><td>SmartSiC</td><td>5</td><td>5</td><td>8</td><td>11</td></tr><tr><td>Edge &amp; Cloud AI</td><td>214</td><td>259</td><td>337</td><td>451</td></tr><tr><td>Photonics-SOI</td><td>90</td><td>135</td><td>202</td><td>304</td></tr><tr><td>FD-SOI</td><td>100</td><td>110</td><td>121</td><td>133</td></tr><tr><td>PD-SOI</td><td>14</td><td>14</td><td>14</td><td>14</td></tr><tr><td>Other</td><td>10</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Total</td><td>592</td><td>605</td><td>743</td><td>955</td></tr><tr><td>Total yoy %</td><td>-34%</td><td>2%</td><td>23%</td><td>29%</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                53,
+                133,
+                625,
+                339
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                953,
+                954,
+                964
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "BofA GLOBAL RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                32,
+                161,
+                42
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": []
+            },
+            "bbox": [
+                39,
+                946,
+                81,
+                965
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Soitec | 07 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                799,
+                952,
+                918,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Changes to estimates"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                37,
+                58,
+                339,
+                80
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 2: We lower our FY27-29E topline ests by 3-8%, resulting in 9-14% decrease in EBITDA Soitec Changes to estimates, FY27-29E"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                84,
+                604,
+                114
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/c993d2e4e060b9ddb2adc2172496c11b93164898d757d95f09506944e2906c29.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td colspan=\"10\">EUR millions except per share data</td></tr><tr><td rowspan=\"2\"></td><td colspan=\"3\">FY27E</td><td colspan=\"3\">FY28E</td><td colspan=\"3\">FY29E</td></tr><tr><td>Old</td><td>New</td><td>% chg</td><td>Old</td><td>New</td><td>% chg</td><td>Old</td><td>New</td><td>% chg</td></tr><tr><td>Sales</td><td>624.5</td><td>604.1</td><td>-3.3%</td><td>780.6</td><td>741.9</td><td>-5.0%</td><td>1,033.1</td><td>955.6</td><td>-7.5%</td></tr><tr><td>YoY growth (%)</td><td>5.5%</td><td>2.0%</td><td>-344 bps</td><td>25.0%</td><td>22.8%</td><td>-220 bps</td><td>32.3%</td><td>28.8%</td><td>-354 bps</td></tr><tr><td>LfL growth (%) (at Constant Scope &amp; FX)</td><td>5.5%</td><td>2.0%</td><td>-344 bps</td><td>25.0%</td><td>22.8%</td><td>-220 bps</td><td>32.3%</td><td>28.8%</td><td>-354 bps</td></tr><tr><td>FX effect</td><td>0.0%</td><td>0.0%</td><td>-</td><td>0.0%</td><td>0.0%</td><td>-</td><td>0.0%</td><td>0.0%</td><td>-</td></tr><tr><td>Gross profit</td><td>143.9</td><td>119.8</td><td>-16.8%</td><td>234.2</td><td>207.7</td><td>-11.3%</td><td>361.6</td><td>305.8</td><td>-15.4%</td></tr><tr><td>margin (%)</td><td>23.0%</td><td>19.8%</td><td>-322 bps</td><td>30.0%</td><td>28.0%</td><td>-200 bps</td><td>35.0%</td><td>32.0%</td><td>-300 bps</td></tr><tr><td>EBITDA (Continuing operations)</td><td>188.1</td><td>162.0</td><td>-13.9%</td><td>274.9</td><td>248.0</td><td>-9.8%</td><td>389.2</td><td>337.0</td><td>-13.4%</td></tr><tr><td>margin (%)</td><td>30.1%</td><td>26.8%</td><td>-332 bps</td><td>35.2%</td><td>33.4%</td><td>-178 bps</td><td>37.7%</td><td>35.3%</td><td>-240 bps</td></tr><tr><td>Operating income (EBIT)</td><td>22.1</td><td>2.0</td><td>-91.1%</td><td>101.5</td><td>81.6</td><td>-19.6%</td><td>206.6</td><td>162.4</td><td>-21.4%</td></tr><tr><td>margin (%)</td><td>3.5%</td><td>0.3%</td><td>-322 bps</td><td>13.0%</td><td>11.0%</td><td>-200 bps</td><td>20.0%</td><td>17.0%</td><td>-300 bps</td></tr><tr><td>Net Profit (Group)</td><td>11.2</td><td>-5.9</td><td>-153.2%</td><td>81.0</td><td>63.7</td><td>-21.3%</td><td>175.5</td><td>137.3</td><td>-21.8%</td></tr><tr><td>Net Margin (%)</td><td>2%</td><td>-1.0%</td><td></td><td>10%</td><td>9%</td><td></td><td>17%</td><td>14%</td><td></td></tr><tr><td>Basic EPS (calculated)</td><td>0.31</td><td>-0.17</td><td>-153.2%</td><td>2.27</td><td>1.79</td><td>-21.3%</td><td>4.92</td><td>3.85</td><td>-21.8%</td></tr><tr><td>Diluted EPS (calculated)</td><td>0.31</td><td>-0.17</td><td>-153.2%</td><td>2.26</td><td>1.78</td><td>-21.3%</td><td>4.88</td><td>3.82</td><td>-21.8%</td></tr><tr><td>Operating Exp.</td><td>-121.8</td><td>-117.8</td><td>-3.3%</td><td>-132.7</td><td>-126.1</td><td>-5.0%</td><td>-155.0</td><td>-143.3</td><td>-7.5%</td></tr><tr><td>Net Debt (Cash)</td><td>-22.0</td><td>-9.0</td><td>-59.2%</td><td>-195.3</td><td>-173.3</td><td>-11.3%</td><td>-318.4</td><td>-275.0</td><td>-13.6%</td></tr><tr><td>Capex</td><td>125.0</td><td>125.0</td><td>0.0%</td><td>125.0</td><td>115.0</td><td>-8.0%</td><td>125.0</td><td>115.0</td><td>-8.0%</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                53,
+                118,
+                955,
+                464
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/204ba477b60a60c5241d6d0beeaccbad64bff9cc8be76a3b14fbbaed0cc66a18.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: BofA Global Research estimates"
+                    },
+                    {
+                        "type": "text",
+                        "content": "BofA GLOBAL RESEARCH"
+                    }
+                ],
+                "html": "<table><tr><td colspan=\"10\">SEGMENTS:</td></tr><tr><td>Mobile Communications</td><td>291.6</td><td>275.8</td><td>-5.4%</td><td>389.2</td><td>326.9</td><td>-16.0%</td><td>567.1</td><td>415.1</td><td>-26.8%</td></tr><tr><td>YoY growth (%)</td><td>-5.6%</td><td>-10.7%</td><td>-508 bps</td><td>33.5%</td><td>18.5%</td><td>-1500 bps</td><td>45.7%</td><td>27.0%</td><td>-1870 bps</td></tr><tr><td>Automotive &amp; Industrial</td><td>80.4</td><td>69.2</td><td>-13.9%</td><td>90.8</td><td>78.2</td><td>-13.9%</td><td>104.4</td><td>89.2</td><td>-14.6%</td></tr><tr><td>YoY growth (%)</td><td>14.8%</td><td>-1.1%</td><td>-1591 bps</td><td>13.0%</td><td>13.0%</td><td>-</td><td>15.0%</td><td>14.0%</td><td>-100 bps</td></tr><tr><td>Edge &amp; Cloud AI</td><td>252.6</td><td>259.0</td><td>2.6%</td><td>300.6</td><td>336.8</td><td>12.0%</td><td>361.6</td><td>451.3</td><td>24.8%</td></tr><tr><td>YoY growth (%)</td><td>18.0%</td><td>21.0%</td><td>303 bps</td><td>19.0%</td><td>30.0%</td><td>1100 bps</td><td>20.3%</td><td>34.0%</td><td>1370 bps</td></tr><tr><td>Total Revenue</td><td>624.5</td><td>604.1</td><td>-3.3%</td><td>780.6</td><td>741.9</td><td>-5.0%</td><td>1,033.1</td><td>955.6</td><td>-7.5%</td></tr><tr><td>YoY growth (%)</td><td>5.5%</td><td>2.0%</td><td>-344 bps</td><td>25.0%</td><td>22.8%</td><td>-220 bps</td><td>32.3%</td><td>28.8%</td><td>-354 bps</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                53,
+                476,
+                955,
+                643
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "BofA GLOBAL RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                32,
+                161,
+                42
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                953,
+                50,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Soitec | 07 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                83,
+                952,
+                200,
+                965
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": []
+            },
+            "bbox": [
+                911,
+                946,
+                954,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "SOTP valuation"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                37,
+                56,
+                254,
+                79
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We lower our FY29E EBITDA multiple for Photonics from 45x to 25x given the recent derating in optical stocks and given uncertainty on Soitec's growth assumptions including in NPO/CPO. We apply a 10x FY29E EBITDA multiple to Soitec's other segments, contemplating peers and Soitec's strong market position in RF-SOI."
+                    }
+                ]
+            },
+            "bbox": [
+                35,
+                83,
+                601,
+                145
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/4cd2912bbb9bdd856f2d90454e5235cf723d9f2da650ab5779dc4d0b7a420695.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 3: Photonics-SOI has the highest multiple and majority of EV in our SOTP Soitec SOTP valuation"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: BofA Global Research estimates"
+                    },
+                    {
+                        "type": "text",
+                        "content": "BofA GLOBAL RESEARCH"
+                    }
+                ],
+                "html": "<table><tr><td>EUR mm</td><td>FY29E EBITDA</td><td>EV/EBITDA</td><td>EV</td><td>Per share</td></tr><tr><td>Mobile</td><td>146.4</td><td>10.0</td><td>1464.2</td><td>€ 41.0</td></tr><tr><td>Auto</td><td>31.5</td><td>10.0</td><td>314.6</td><td>€ 8.8</td></tr><tr><td>Edge AI ex-Photonics</td><td>51.9</td><td>10.0</td><td>518.9</td><td>€ 14.5</td></tr><tr><td>Photonics-SOI</td><td>107.3</td><td>25.0</td><td>2681.7</td><td>€ 75.2</td></tr><tr><td>Total</td><td>337.0</td><td>14.8</td><td>4979.4</td><td>€ 139.6</td></tr><tr><td></td><td></td><td>Net debt</td><td>58.0</td><td>€ 1.6</td></tr><tr><td></td><td></td><td>Market cap</td><td>4921.4</td><td></td></tr><tr><td></td><td></td><td>Share count (mm)</td><td>35.7</td><td></td></tr><tr><td></td><td></td><td>PO</td><td>€ 138.0</td><td></td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                55,
+                186,
+                625,
+                330
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "BofA GLOBAL RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                32,
+                163,
+                42
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                953,
+                954,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": []
+            },
+            "bbox": [
+                39,
+                946,
+                81,
+                965
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Soitec | 07 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                799,
+                952,
+                918,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Price objective basis & risk"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                37,
+                64,
+                315,
+                83
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Soitec (SLOIF)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                37,
+                90,
+                148,
+                104
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our €138 PO is based on SOTP valuation due to the diverging growth profile of Photonics relative to Soitec's other segments. We apply a 25x FY29E EBITDA multiple for Photonics and 10x for the Mobile/Auto/Edge AI ex-Photonics segments based on the multiples of the peer companies of each segment with similar growth expectations."
+                    }
+                ]
+            },
+            "bbox": [
+                35,
+                106,
+                622,
+                169
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Upside risks are 1) revenue growth coming in faster than we currently expect driven by faster adoption of Soitec's products and a stronger cyclical upturn in demand and 2) higher operational leverage leading to upside to our EBITDA margin forecasts"
+                    }
+                ]
+            },
+            "bbox": [
+                35,
+                181,
+                614,
+                229
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Downside risks are 1) slower adoption of Soitec's technologies than we expect, 2) valuation multiple compression in the event of rising interest rates, 3) weaker-than-expected smartphone demand, 4) disruption at Soitec or customers' production facilities, 5) cyclical weakening of demand trends and 6) development of new unforeseen technologies which may take share from Soitec's technologies."
+                    }
+                ]
+            },
+            "bbox": [
+                35,
+                242,
+                627,
+                321
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst Certification"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                37,
+                335,
+                248,
+                354
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "I, Oliver Wong, hereby certify that the views expressed in this research report accurately reflect my personal views about the subject securities and issuers. I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or view expressed in this research report."
+                    }
+                ]
+            },
+            "bbox": [
+                35,
+                359,
+                622,
+                421
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/a8952d1c911aa1ac54bd9d5ae8ac0516248bda61efd94a06631670a500ee445f.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "EMEA - Technology Hardware Coverage Cluster"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Investment rating</td><td>Company</td><td>BofA Ticker</td><td>Bloomberg symbol</td><td>Analyst</td></tr><tr><td colspan=\"5\">BUY</td></tr><tr><td></td><td>Aixtron</td><td>AIXXF</td><td>AIXA GR</td><td>Oliver Wong</td></tr><tr><td></td><td>ASM International N.V</td><td>ASMXF</td><td>ASM NA</td><td>Didier Scemama</td></tr><tr><td></td><td>ASML Holding N.V.</td><td>ASMLF</td><td>ASML NA</td><td>Didier Scemama</td></tr><tr><td></td><td>ASML Holding N.V.</td><td>ASML</td><td>ASML US</td><td>Didier Scemama</td></tr><tr><td></td><td>BE Semiconductor Industries N.V</td><td>BESVF</td><td>BESI NA</td><td>Didier Scemama</td></tr><tr><td></td><td>Infineon Technologies AG</td><td>IFNNF</td><td>IFX GY</td><td>Didier Scemama</td></tr><tr><td></td><td>Infineon Technologies AG</td><td>IFNNY</td><td>IFNNY US</td><td>Didier Scemama</td></tr><tr><td></td><td>Nokia</td><td>NOKBF</td><td>NOKIA FH</td><td>Oliver Wong</td></tr><tr><td></td><td>Nokia</td><td>NOK</td><td>NOK US</td><td>Oliver Wong</td></tr><tr><td></td><td>Nordic Semiconductor</td><td>NDCVF</td><td>NOD NO</td><td>Oliver Wong</td></tr><tr><td></td><td>STMicroelectronics NV</td><td>STMEF</td><td>STMPA FP</td><td>Didier Scemama</td></tr><tr><td></td><td>STMicroelectronics NV</td><td>STM</td><td>STM US</td><td>Didier Scemama</td></tr><tr><td></td><td>Technoprobe S.p.A.</td><td>XMDDF</td><td>TPRO IM</td><td>Oliver Wong</td></tr><tr><td></td><td>VAT Group AG</td><td>VTTGF</td><td>VACN SW</td><td>Oliver Wong</td></tr><tr><td colspan=\"5\">NEUTRAL</td></tr><tr><td></td><td>Soitec</td><td>SLOIF</td><td>SOI FP</td><td>Oliver Wong</td></tr><tr><td colspan=\"5\">UNDERPERFORM</td></tr><tr><td></td><td>ams Osram AG</td><td>AUKUF</td><td>AMS SW</td><td>Didier Scemama</td></tr><tr><td></td><td>Comet Holding AG</td><td>XCHHF</td><td>COTN SW</td><td>Oliver Wong</td></tr><tr><td></td><td>Ericsson</td><td>ERIXF</td><td>ERICB SS</td><td>Oliver Wong</td></tr><tr><td></td><td>Ericsson</td><td>ERIC</td><td>ERIC US</td><td>Oliver Wong</td></tr><tr><td></td><td>Inficon Holding AG</td><td>IFCND</td><td>IFCN SW</td><td>Oliver Wong</td></tr><tr><td></td><td>Logitech International S.A.</td><td>XLGKF</td><td>LOGN SW</td><td>Didier Scemama</td></tr><tr><td></td><td>Logitech International S.A.</td><td>LOGI</td><td>LOGI US</td><td>Didier Scemama</td></tr><tr><td></td><td>Melexis</td><td>MLXSF</td><td>MELE BB</td><td>Amelia Banks</td></tr><tr><td></td><td>Mycronic AB</td><td>MICLF</td><td>MYCR SS</td><td>Oliver Wong</td></tr><tr><td></td><td>Siltronic AG</td><td>SSLLF</td><td>WAF GR</td><td>Didier Scemama</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                37,
+                460,
+                955,
+                878
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "BofA GLOBAL RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                32,
+                163,
+                42
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                953,
+                50,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Soitec | 07 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                952,
+                202,
+                965
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": []
+            },
+            "bbox": [
+                911,
+                946,
+                954,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/1d268ccfbd01ff3c488279400fcf9fc20ca32ab0044a28a9ac5ed18f78ba33fe.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "equation_inline",
+                        "content": "iQ_{method}^{SM}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  Measures Definitions"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Business Performance</td><td>Numerator</td><td>Denominator</td></tr><tr><td>Return On Capital Employed</td><td>NOPAT = (EBIT + Interest Income) × (1 - Tax Rate) + Goodwill Amortization</td><td>Total Assets – Current Liabilities + ST Debt + Accumulated Goodwill Amortization</td></tr><tr><td>Return On Equity</td><td>Net Income</td><td>Shareholders’ Equity</td></tr><tr><td>Operating Margin</td><td>Operating Profit</td><td>Sales</td></tr><tr><td>Earnings Growth</td><td>Expected 5 Year CAGR From Latest Actual</td><td>N/A</td></tr><tr><td>Free Cash Flow</td><td>Cash Flow From Operations – Total Capex</td><td>N/A</td></tr><tr><td>Quality of Earnings</td><td>Numerator</td><td>Denominator</td></tr><tr><td>Cash Realization Ratio</td><td>Cash Flow From Operations</td><td>Net Income</td></tr><tr><td>Asset Replacement Ratio</td><td>Capex</td><td>Depreciation</td></tr><tr><td>Tax Rate</td><td>Tax Charge</td><td>Pre-Tax Income</td></tr><tr><td>Net Debt-To-Equity Ratio</td><td>Net Debt = Total Debt – Cash &amp; Equivalents</td><td>Total Equity</td></tr><tr><td>Interest Cover</td><td>EBIT</td><td>Interest Expense</td></tr><tr><td>Valuation Toolkit</td><td>Numerator</td><td>Denominator</td></tr><tr><td>Price / Earnings Ratio</td><td>Current Share Price</td><td>Diluted Earnings Per Share (Basis As Specified)</td></tr><tr><td>Price / Book Value</td><td>Current Share Price</td><td>Shareholders’ Equity / Current Basic Shares</td></tr><tr><td>Dividend Yield</td><td>Annualised Declared Cash Dividend</td><td>Current Share Price</td></tr><tr><td>Free Cash Flow Yield</td><td>Cash Flow From Operations – Total Capex</td><td>Market Cap = Current Share Price × Current Basic Shares</td></tr><tr><td>Enterprise Value / Sales</td><td>EV = Current Share Price × Current Shares + Minority Equity + Net Debt + Other LT Liabilities</td><td>Sales</td></tr><tr><td>EV / EBITDA</td><td>Enterprise Value</td><td>Basic EBIT + Depreciation + Amortization</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                35,
+                95,
+                913,
+                380
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "iQmethod  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{SM}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " is the set of BofA Global Research standard measures that serve to maintain global consistency under three broad headings: Business Performance, Quality of Earnings, and validations. The key features of iQmethod are: A consistently structured, detailed, and transparent methodology. Guidelines to maximize the effectiveness of the comparative valuation process, and to identify some common pitfalls.\n\niQdatabase  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{®}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " is our real-time global research database that is sourced directly from our equity analysts' earnings models and includes forecasted as well as historical data for income statements, balance sheets, and cash flow statements for companies covered by BofA Global Research.\n\niQprofile  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{SM}"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", iQmethod  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{SM}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " are service marks of BofA Corporation. iQdatabase  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{®}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " is a registered service mark of BofA Corporation."
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                382,
+                937,
+                443
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "BofA GLOBAL RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                32,
+                163,
+                42
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": []
+            },
+            "bbox": [
+                39,
+                946,
+                81,
+                965
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Soitec | 07 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                799,
+                952,
+                918,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                953,
+                954,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/d2b31bc3e00169bafbb4b18ed2a507dede50e6345ebd1cb0f37b06056010003c.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Investment rating</td><td>Total return expectation (within 12-month period of date of initial rating)</td><td>Ratings dispersion guidelines for coverage cluster $^{R2}$ </td></tr><tr><td>Buy</td><td>≥ 10%</td><td>≤ 70%</td></tr><tr><td>Neutral</td><td>≥ 0%</td><td>≤ 30%</td></tr><tr><td>Underperform</td><td>N/A</td><td>≥ 20%</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                40,
+                670,
+                937,
+                738
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                40,
+                59,
+                202,
+                80
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Important Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                40,
+                84,
+                263,
+                103
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/88fcd1e08ba30cb40866b07fdbb6d34593bce96c127f3dbae8014d195052a04c.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Soitec (SLOIF) Price Chart"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "B: Buy, N: Neutral, U: Underperform, PO: Price Objective, NA: No longer valid, NR: No Rating"
+                    }
+                ]
+            },
+            "bbox": [
+                71,
+                131,
+                924,
+                324
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Investment Opinion System is contained at the end of the report under the heading \"Fundamental Equity Opinion Key\". Dark grey shading indicates the security is restricted with the opinion suspended. Medium grey shading indicates the security is under review with the opinion withdrawn. Light grey shading indicates the security is not covered. Chart is current as of a date no more than one trading day prior to the date of the report."
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                340,
+                952,
+                376
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Equity Investment Rating Distribution: Technology Group (as of 30 Jun 2026)"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                388,
+                437,
+                402
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/d85b1380523b616e998907522f55f8dd92fc4c01c79592a6480180d6b31e9da8.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Coverage Universe</td><td>Count</td><td>Percent</td><td>Inv. Banking RelationshipsR1</td><td>Count</td><td>Percent</td></tr><tr><td>Buy</td><td>243</td><td>60.60%</td><td>Buy</td><td>123</td><td>50.62%</td></tr><tr><td>Hold</td><td>87</td><td>21.70%</td><td>Hold</td><td>45</td><td>51.72%</td></tr><tr><td>Sell</td><td>71</td><td>17.71%</td><td>Sell</td><td>21</td><td>29.58%</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                40,
+                407,
+                954,
+                460
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Equity Investment Rating Distribution: Global Group (as of 30 Jun 2026)"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                463,
+                413,
+                476
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/d0140f0da433921a882ca3c75579dd1e0e22242b790884564dee22b8301b78f0.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{R1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  Issuers that were investment banking clients of BofA or one of its affiliates within the past 12 months. For purposes of this Investment Rating Distribution, the coverage universe includes only stocks. A stock rated Neutral is included as a Hold, and a stock rated Underperform is included as a Sell."
+                    }
+                ],
+                "html": "<table><tr><td>Coverage Universe</td><td>Count</td><td>Percent</td><td>Inv. Banking RelationshipsR1</td><td>Count</td><td>Percent</td></tr><tr><td>Buy</td><td>1987</td><td>56.11%</td><td>Buy</td><td>1190</td><td>59.89%</td></tr><tr><td>Hold</td><td>797</td><td>22.51%</td><td>Hold</td><td>496</td><td>62.23%</td></tr><tr><td>Sell</td><td>757</td><td>21.38%</td><td>Sell</td><td>391</td><td>51.65%</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                40,
+                479,
+                954,
+                534
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "FUNDAMENTAL EQUITY OPINION KEY: Opinions include a Volatility Risk Rating, an Investment Rating and an Income Rating. VOLATILITY RISK RATINGS, indicators of potential price fluctuation, are: A - Low, B - Medium and C - High. INVESTMENT RATINGS reflect the analyst's assessment of both a stock's absolute total return potential as well as its attractiveness for investment relative to other stocks within its Coverage Cluster (defined below). Our investment ratings are: 1 - Buy stocks are expected to have a total return of at least 10% and are the most attractive stocks in the coverage cluster; 2 - Neutral stocks are expected to remain flat or increase in value and are less attractive than Buy rated stocks and 3 - Underperform stocks are the least attractive stocks in a coverage cluster. An investment rating of 6 (No Rating) indicates that a stock is no longer trading on the basis of fundamentals. Analysts assign investment ratings considering, among other things, the 0-12 month total return expectation for a stock and the firm's guidelines for ratings dispersions (shown in the table below). The current price objective for a stock should be referenced to better understand the total return expectation at any given time. The price objective reflects the analyst's view of the potential price appreciation (depreciation)."
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                564,
+                950,
+                669
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{R2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " Ratings dispersions may vary from time to time where BofA Global Research believes it better reflects the investment prospects of stocks in a Coverage Cluster. INCOME RATINGS, indicators of potential cash dividends, are: 7 - same/higher (dividend considered to be secure), 8 - same/lower (dividend not considered to be secure) and 9 - pays no cash dividend. Coverage Cluster is comprised of stocks covered by a single analyst or two or more analysts sharing a common industry, sector, region or other classification(s). A stock's coverage cluster is included in the most recent BofA Global Research report referencing the stock."
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                739,
+                939,
+                795
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Price Charts for the securities referenced in this research report are available on the Price Charts website, or call 1-800-MERRILL to have them mailed."
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                804,
+                751,
+                816
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the US, retail sales and/or distribution of this report may be made only in states where these securities are exempt from registration or have been qualified for sale: Soitec. BofAS together with its affiliates beneficially owns one percent or more of the common stock of this issuer. If this report was issued on or after the 9th day of the month, it reflects the ownership position on the last day of the previous month. Reports issued before the 9th day of a month reflect the ownership position at the end of the second month preceding the date of the report: Soitec."
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                814,
+                942,
+                861
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "BofA Global Research personnel (including the analyst(s) responsible for this report) receive compensation based upon, among other factors, the overall profitability of BofA Corporation, including profits derived from investment banking. The analyst(s) responsible for this report may also receive compensation based upon, among other factors, the overall profitability of the Bank's sales and trading businesses relating to the class of securities or financial instruments for which such analyst is responsible."
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                861,
+                911,
+                898
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "BofA GLOBAL RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                32,
+                165,
+                42
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                953,
+                53,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Soitec | 07 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                952,
+                204,
+                965
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": []
+            },
+            "bbox": [
+                913,
+                946,
+                955,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Other Important Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                40,
+                77,
+                326,
+                94
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "From time to time research analysts conduct site visits of covered issuers. BofA Global Research policies prohibit research analysts from accepting payment or reimbursement for travel expenses from the issuer for such visits."
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                99,
+                913,
+                122
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Prices are indicative and for information purposes only. Except as otherwise stated in the report, for any recommendation in relation to an equity security, the price referenced is the publicly traded price of the security as of close of business on the day prior to the date of the report or, if the report is published during intraday trading, the price referenced is indicative of the traded price as of the date and time of the report and in relation to a debt security (including equity preferred and CDS), prices are indicative as of the date and time of the report and are from various sources including BofA trading desks."
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                122,
+                947,
+                167
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The date and time of completion of the production of any recommendation in this report shall be the date and time of dissemination of this report as recorded in the report timestamp."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                167,
+                916,
+                179
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Recipients who are not institutional investors or market professionals should seek the advice of their independent financial advisor before considering information in this report in connection with any investment decision, or for a necessary explanation of its contents."
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                189,
+                946,
+                210
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Officers of BofAS or one or more of its affiliates (other than research analysts) may have a financial interest in securities of the issuer(s) or in related investments."
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                212,
+                808,
+                224
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Refer to BofA Global Research policies relating to conflicts of interest."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                223,
+                372,
+                234
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "\"BofA\" includes BofA, Inc. (\"BofAS\") and its affiliates. Investors should contact their BofA representative or Merrill Global Wealth Management financial advisor if they have questions concerning this report or concerning the appropriateness of any investment idea described herein for such investor. \"BofA\" is a global brand for BofA Global Research."
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                234,
+                946,
+                268
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Information relating to Non-US affiliates of BofA and Distribution of Affiliate Research Reports:"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                268,
+                573,
+                280
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "BofAS and/or BofA, Pierce, Fenner & Smith Incorporated (\"MLPF&S\") may in the future distribute, information of the following non-US affiliates in the US (short name: legal name, regulator): BofA (South Africa): BofA South Africa (Pty) Ltd., regulated by the Financial Sector Conduct Authority; MLI (UK): BofA International, regulated by the Financial Conduct Authority (FCA) and the Prudential Regulation Authority (PRA); BofASE (France): BofA Europe SA is authorized by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and regulated by the ACPR and the Autorité des Marchés Financiers (AMF). BofA Europe SA (\"BofASE\") with registered address at 51, rue La Boétie, 75008 Paris is registered under no 842 602 690 RCS Paris. In accordance with the provisions of French Code Monétaire et Financier (Monetary and Financial Code), BofASE is an établissement de crédit et d'investissement (credit and investment institution) that is authorised and supervised by the European Central Bank and the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and regulated by the ACPR and the Autorité des Marchés Financiers. BofASE's share capital can be found at www.bofaml.com/BofASDisclaimer; BofA Europe (Milan): BofA Europe Designated Activity Company, Milan Branch, regulated by the Bank of Italy, the European Central Bank (ECB) and the Central Bank of Ireland (CBI); BofA Europe (Frankfurt): BofA Europe Designated Activity Company, Frankfurt Branch regulated by BaFin, the ECB and the CBI; BofA Europe (Zurich): BofA Europe Designated Activity Company, Zurich Branch, regulated by the Swiss Financial Market Supervisory Authority FINMA, the ECB and CBI; BofA Europe (Madrid): BofA Europe Designated Activity Company, Sucursal en España, regulated by the Bank of Spain, the ECB and the CBI; BofA (Australia): BofA Equities (Australia) Limited, regulated by the Australian Securities and Investments Commission; BofA (Hong Kong): BofA (Asia Pacific) Limited, regulated by the Hong Kong Securities and Futures Commission (HKSFC); BofA (Singapore): BofA (Singapore) Pte Ltd, regulated by the Monetary Authority of Singapore (MAS); BofA (Canada): BofA Canada Inc, regulated by the Canadian Investment Regulatory Organization; BofA (Mexico): BofA Mexico, SA de CV, Casa de Bolsa, regulated by the Comisión Nacional Bancaria y de Valores; BofAS Japan: BofA Japan Co., Ltd., regulated by the Financial Services Agency; BofA (Seoul): BofA International, LLC Seoul Branch, regulated by the Financial Supervisory Service; BofA (Taiwan): BofA (Taiwan) Ltd., regulated by the Securities and Futures Bureau; BofAS India: BofA India Limited, regulated by the Securities and Exchange Board of India (SEBI); BofA (Israel): BofA Israel Limited, regulated by Israel Securities Authority; BofA (DIFC): BofA International (DIFC Branch), regulated by the Dubai Financial Services Authority (DFSA); BofA (Brazil): BofA S.A. Corretora de Títulos e Valores Mobiliários, regulated by Comissão de Valores Mobiliários; BofA KSA Company: BofA Kingdom of Saudi Arabia Company, regulated by the Capital Market Authority. This information: has been approved for publication and is distributed in the United Kingdom (UK) to professional clients and eligible counterparties (as each is defined in the rules of the FCA and the PRA) by MLI (UK), which is authorized by the PRA and regulated by the FCA and the PRA - details about the extent of our regulation by the FCA and PRA are available from us on request; has been approved for publication and is distributed in the European Economic Area (EEA) by BofASE (France), which is authorized by the ACPR and regulated by the ACPR and the AMF; has been considered and distributed in Japan by BofAS Japan, a registered securities dealer under the Financial Instruments and Exchange Act in Japan, or its permitted affiliates; is issued and distributed in Hong Kong by BofA (Hong Kong) which is regulated by HKSFC; is issued and distributed in Taiwan by BofA (Taiwan); is issued and distributed in India by BofAS India; and is issued and distributed in Singapore to institutional investors and/or accredited investors (each as defined under the Financial Advisers Regulations) by BofA (Singapore) (Company Registration No 198602883D). BofA (Singapore) is regulated by MAS. BofA Equities (Australia) Limited (ABN 65 006 276 795), AFS License 235132 (MLEA) distributes this information in Australia only to 'Wholesale' clients as defined by s.761G of the Corporations Act 2001. With the exception of BofA N.A., Australia Branch, neither MLEA nor any of its affiliates involved in preparing this information is an Authorised Deposit-Taking Institution under the Banking Act 1959 nor regulated by the Australian Prudential Regulation Authority. No approval is required for publication or distribution of this information in Brazil and its local distribution is by BofA (Brazil) in accordance with applicable regulations. BofA (DIFC) is authorized and regulated by the DFSA. Information prepared and issued by BofA (DIFC) is done so in accordance with the requirements of the DFSA conduct of business rules. BofA Europe (Frankfurt) distributes this information in Germany and is regulated by BaFin, the ECB and the CBI. BofA entities, including BofA Europe and BofASE (France), may outsource/delegate the marketing and/or provision of certain research services or aspects of research services to other branches or members of the BofA group. You may be contacted by a different BofA entity acting for and on behalf of your service provider where permitted by applicable law. This does not change your service provider. Please refer to the Electronic Communications Disclaimers for further information."
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                279,
+                957,
+                655
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This information has been prepared and issued by BofAS and/or one or more of its non-US affiliates. The author(s) of this information may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so. BofAS and/or MLPF&S is the distributor of this information in the US and accepts full responsibility for information distributed to BofAS and/or MLPF&S clients in the US by its non-US affiliates. Any US person receiving this information and wishing to effect any transaction in any security discussed herein should do so through BofAS and/or MLPF&S and not such foreign affiliates. Hong Kong recipients of this information should contact BofA (Asia Pacific) Limited in respect of any matters relating to dealing in securities or provision of specific advice on securities or any other matters arising from, or in connection with, this information. Singapore recipients of this information should contact BofA (Singapore) Pte Ltd in respect of any matters arising from, or in connection with, this information. For clients that are not accredited investors, expert investors or institutional investors BofA (Singapore) Pte Ltd accepts full responsibility for the contents of this information distributed to such clients in Singapore."
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                654,
+                957,
+                734
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "General Investment Related Disclosures:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                40,
+                734,
+                248,
+                746
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Taiwan Readers: Neither the information nor any opinion expressed herein constitutes an offer or a solicitation of an offer to transact in any securities or other financial instrument. No part of this report may be used or reproduced or quoted in any manner whatsoever in Taiwan by the press or any other person without the express written consent of BofA. This document provides general information only, and has been prepared for, and is intended for general distribution to, BofA clients. Neither the information nor any opinion expressed constitutes an offer or an invitation to make an offer, to buy or sell any securities or other financial instrument or any derivative related to such securities or instruments (e.g., options, futures, warrants, and contracts for differences). This document is not intended to provide personal investment advice and it does not take into account the specific investment objectives, financial situation and the particular needs of, and is not directed to, any specific person(s). This document and its content do not constitute, and should not be considered to constitute, investment advice for purposes of ERISA, the US tax code, the Investment Advisers Act or otherwise. Investors should seek financial advice regarding the appropriateness of investing in financial instruments and implementing investment strategies discussed or recommended in this document and should understand that statements regarding future prospects may not be realized. Any decision to purchase or subscribe for securities in any offering must be based solely on existing public information on such security or the information in the prospectus or other offering document issued in connection with such offering, and not on this document."
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                751,
+                941,
+                859
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Securities and other financial instruments referred to herein, or recommended, offered or sold by BofA, are not insured by the Federal Deposit Insurance Corporation and are not deposits or other obligations of any insured depository institution (including, BofA, N.A.). Investments in general and, derivatives, in particular, involve numerous risks, including, among others, market risk, counterparty default risk and liquidity risk. No security, financial instrument or derivative is suitable for all investors. Digital assets are extremely speculative, volatile and are largely unregulated. In some cases, securities and other financial instruments may be difficult to value or sell and reliable information about the value or risks related to the security or financial instrument may be difficult to obtain. Investors should note that income from such securities and other financial instruments, if any, may fluctuate and that price or value of such"
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                859,
+                947,
+                917
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "BofA GLOBAL RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                32,
+                165,
+                42
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                944,
+                953,
+                957,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": []
+            },
+            "bbox": [
+                40,
+                946,
+                84,
+                965
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Soitec | 07 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                800,
+                953,
+                919,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "securities and instruments may rise or fall and, in some cases, investors may lose their entire principal investment. Past performance is not necessarily a guide to future performance. Levels and basis for taxation may change."
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                60,
+                955,
+                83
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This report may contain a short-term trading idea or recommendation, which highlights a specific near-term catalyst or event impacting the issuer or the market that is anticipated to have a short-term price impact on the equity securities of the issuer. Short-term trading ideas and recommendations are different from and do not affect a stock's fundamental equity rating, which reflects both a longer term total return expectation and attractiveness for investment relative to other stocks within its Coverage Cluster. Short-term trading ideas and recommendations may be more or less positive than a stock's fundamental equity rating."
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                83,
+                944,
+                128
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "BofA is aware that the implementation of the ideas expressed in this report may depend upon an investor's ability to \"short\" securities or other financial instruments and that such action may be limited by regulations prohibiting or restricting \"shortselling\" in many jurisdictions. Investors are urged to seek advice regarding the applicability of such regulations prior to executing any short idea contained in this report."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                128,
+                941,
+                162
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Foreign currency rates of exchange may adversely affect the value, price or income of any security or financial instrument mentioned herein. Investors in such securities and instruments, including ADRs, effectively assume currency risk."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                162,
+                923,
+                185
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "BofAS or one of its affiliates is a regular issuer of traded financial instruments linked to securities that may have been recommended in this report. BofAS or one of its affiliates may, at any time, hold a trading position (long or short) in the securities and financial instruments discussed in this report."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                185,
+                955,
+                208
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "BofA, through business units other than BofA Global Research, may have issued and may in the future issue trading ideas or recommendations that are inconsistent with, and reach different conclusions from, the information presented herein. Such ideas or recommendations may reflect different time frames, assumptions, views and analytical methods of the persons who prepared them, and BofA is under no obligation to ensure that such other trading ideas or recommendations are brought to the attention of any recipient of this information. In the event that the recipient received this information pursuant to a contract between the recipient and BofAS for the provision of research services for a separate fee, and in connection therewith BofAS may be deemed to be acting as an investment adviser, such status relates, if at all, solely to the person with whom BofAS has contracted directly and does not extend beyond the delivery of this report (unless otherwise agreed specifically in writing by BofAS). If such recipient uses the services of BofAS in connection with the sale or purchase of a security referred to herein, BofAS may act as principal for its own account or as agent for another person. BofAS is and continues to act solely as a broker-dealer in connection with the execution of any transactions, including transactions in any securities referred to herein."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                208,
+                949,
+                299
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Copyright and General Information:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                40,
+                299,
+                222,
+                310
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Copyright 2026 BofA Corporation. All rights reserved. iQdatabase® is a registered service mark of BofA Corporation. This information is prepared for the use of BofA clients and may not be redistributed, retransmitted or disclosed, in whole or in part, or in any form or manner, without the express written consent of BofA. This document and its content is provided solely for informational purposes and cannot be used for training or developing artificial intelligence (AI) models or as an input in any AI application (collectively, an AI tool). Any attempt to utilize this document or any of its content in connection with an AI tool without explicit written permission from BofA Global Research is strictly prohibited. BofA Global Research utilizes AI, including machine learning and other technologies, to enhance the services we provide to our clients. These technologies assist our analysts in various aspects of their work, including but not limited to data analysis, content extraction, content creation, data aggregation and summarization and identifying relevant information from diverse sources. All AI-driven processes are subject to review by BofA Global Research employees. BofA Global Research information is distributed simultaneously to internal and client websites and other portals by BofA and is not publicly-available material. Any unauthorized use or disclosure is prohibited. Receipt and review of this information constitutes your agreement not to redistribute, retransmit, or disclose to others the contents, opinions, conclusion, or information contained herein (including any investment recommendations, estimates or price targets) without first obtaining express permission from an authorized officer of BofA."
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                310,
+                955,
+                424
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Materials prepared by BofA Global Research personnel are based on public information. Facts and views presented in this material have not been reviewed by, and may not reflect information known to, professionals in other business areas of BofA, including investment banking personnel. BofA has established information barriers between BofA Global Research and certain business groups. As a result, BofA does not disclose certain client relationships with, or compensation received from, such issuers. To the extent this material discusses any legal proceeding or issues, it has not been prepared as nor is it intended to express any legal conclusion, opinion or advice. Investors should consult their own legal advisers as to issues of law relating to the subject matter of this material. BofA Global Research personnel's knowledge of legal proceedings in which any BofA entity and/or its directors, officers and employees may be plaintiffs, defendants, co-defendants or co-plaintiffs with or involving issuers mentioned in this material is based on public information. Facts and views presented in this material that relate to any such proceedings have not been reviewed by, discussed with, and may not reflect information known to, professionals in other business areas of BofA in connection with the legal proceedings or matters relevant to such proceedings."
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                424,
+                949,
+                515
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This information has been prepared independently of any issuer of securities mentioned herein and not in connection with any proposed offering of securities or as agent of any issuer of any securities. None of BofAS any of its affiliates or their research analysts has any authority whatsoever to make any representation or warranty on behalf of the issuer(s). BofA Global Research policy prohibits research personnel from disclosing a recommendation, investment rating, or investment thesis for review by an issuer prior to the publication of a research report containing such rating, recommendation or investment thesis."
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                513,
+                944,
+                560
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any information relating to sustainability in this material is limited as discussed herein and is not intended to provide a comprehensive view on any sustainability claim with respect to any issuer or security."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                560,
+                929,
+                583
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any information relating to the tax status of financial instruments discussed herein is not intended to provide tax advice or to be used by anyone to provide tax advice. Investors are urged to seek tax advice based on their particular circumstances from an independent tax professional."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                583,
+                939,
+                604
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The information herein (other than disclosure information relating to BofA and its affiliates) was obtained from various sources and we do not guarantee its accuracy. This"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                606,
+                901,
+                619
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "information may contain links to third-party websites. BofA is not responsible for the content of any third-party website or any linked content contained in a third-party website. Content contained on such third-party websites is not part of this information and is not incorporated by reference. The inclusion of a link does not imply any endorsement by or any affiliation with BofA. Access to any third-party website is at your own risk, and you should always review the terms and privacy policies at third-party websites before submitting any personal information to them. BofA is not responsible for such terms and privacy policies and expressly disclaims any liability for them."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                619,
+                949,
+                662
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All opinions, projections and estimates constitute the judgment of the author as of the date of publication and are subject to change without notice. Prices also are subject to change without notice. BofA is under no obligation to update this information and BofA ability to publish information on the subject issuer(s) in the future is subject to applicable quiet periods. You should therefore assume that BofA will not update any fact, circumstance or opinion contained herein."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                662,
+                942,
+                696
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Subject to the quiet period applicable under laws of the various jurisdictions in which we distribute research reports and other legal and BofA policy-related restrictions on the publication of research reports, fundamental equity reports are produced on a regular basis as necessary to keep the investment recommendation current."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                696,
+                918,
+                720
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Certain outstanding reports or investment opinions relating to securities, financial instruments and/or issuers may no longer be current. Always refer to the most recent research report relating to an issuer prior to making an investment decision."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                720,
+                919,
+                742
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In some cases, an issuer may be classified as Restricted or may be Under Review or Extended Review. In each case, investors should consider any investment opinion relating to such issuer (or its security and/or financial instruments) to be suspended or withdrawn and should not rely on the analyses and investment opinion(s) pertaining to such issuer (or its securities and/or financial instruments) nor should the analyses or opinion(s) be considered a solicitation of any kind. Sales persons and financial advisors affiliated with BofAS or any of its affiliates may not solicit purchases of securities or financial instruments that are Restricted or Under Review and may only solicit securities under Extended Review in accordance with firm policies."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                742,
+                944,
+                787
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "BofA GLOBAL RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                32,
+                163,
+                42
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                953,
+                60,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Soitec | 07 July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                953,
+                204,
+                965
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": []
+            },
+            "bbox": [
+                913,
+                946,
+                955,
+                965
+            ]
+        }
+    ]
+]

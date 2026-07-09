@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_g65vxasp/pdfs/0001-11-BofA-Soitec-SOIT.PA-F1Q preview- Photonics upside priced in- Lower PO-260707.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_g65vxasp/pdfs/0002-12-BofA-Healthcare-China -H A--Robust deal activity and continued R-D progress driving healthcare re-rating-260707.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_g65vxasp/pdfs/0003-13-CITI-BOE Technology -000725- Downgrade to Neutral as Glass Substrate Expectations Likely Priced In-260707.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_g65vxasp/pdfs/0004-14-CITI-China Auto Manufacturers-Weekly Orders - BYD Gains Back Market Share-260707.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_g65vxasp/pdfs/0005-15-BofA-Space Exploration Technologies Corp.-SPCX.US-Paving the superhighway to the stars- Initiate at Buy- PO of -235-260707.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

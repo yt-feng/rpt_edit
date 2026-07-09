@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 86,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 2,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/11-BofA-Soitec（SOIT.PA）F1Q preview： Photonics upside priced in； Lower PO-260707.pdf",
+          "batch_file": "/tmp/pdf_batch_001_g65vxasp/pdfs/0001-11-BofA-Soitec-SOIT.PA-F1Q preview- Photonics upside priced in- Lower PO-260707.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/12-BofA-Healthcare~China （H A）：Robust deal activity and continued R&D progress driving healthcare re~rating-260707.pdf",
+          "batch_file": "/tmp/pdf_batch_001_g65vxasp/pdfs/0002-12-BofA-Healthcare-China -H A--Robust deal activity and continued R-D progress driving healthcare re-rating-260707.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/13-CITI-BOE Technology （000725） Downgrade to Neutral as Glass Substrate Expectations Likely Priced In-260707.pdf",
+          "batch_file": "/tmp/pdf_batch_001_g65vxasp/pdfs/0003-13-CITI-BOE Technology -000725- Downgrade to Neutral as Glass Substrate Expectations Likely Priced In-260707.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/14-CITI-China Auto Manufacturers：Weekly Orders – BYD Gains Back Market Share-260707.pdf",
+          "batch_file": "/tmp/pdf_batch_001_g65vxasp/pdfs/0004-14-CITI-China Auto Manufacturers-Weekly Orders - BYD Gains Back Market Share-260707.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/15-BofA-Space Exploration Technologies Corp.（SPCX.US）Paving the superhighway to the stars； Initiate at Buy， PO of $235-260707.pdf",
+          "batch_file": "/tmp/pdf_batch_001_g65vxasp/pdfs/0005-15-BofA-Space Exploration Technologies Corp.-SPCX.US-Paving the superhighway to the stars- Initiate at Buy- PO of -235-260707.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
