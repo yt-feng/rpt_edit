@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_penwjt5x/pdfs/0001-57-JPM-J-T Express-H-1519.HK-Initiate at OW- Share price reflects excessive pessimism- but growth and margin inflection in sight-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_penwjt5x/pdfs/0002-58-JPM-L-Oréal-OREP.PA-Gucci Licensing Agreement with Kering to come into effect a year ahead of schedule-260709.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_penwjt5x/pdfs/0003-59-JPM-Korea Autos-2Q preview- HMC softer- Kia in-line- cost inflation elevated- divergence led by volumes-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_penwjt5x/pdfs/0004-60-JPM-Pfizer Inc.-PFE.US--Anticipating Upside to Guidance As We Move Through the Year Although Pipeline Remains the Focus-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_penwjt5x/pdfs/0005-61-JPM-Property Data Monitor-Mainland China- Secondary listings in tier-1 cities further dropped- HK- high-frequency data softened-260707.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
