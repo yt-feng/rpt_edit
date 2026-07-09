@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_t89ztaxx/pdfs/0001-42-GS-ServiceNow Inc. -NOW.US- 2Q26 Preview- Stock re-rating hinges on improving growth algorithm with AI contribution-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_t89ztaxx/pdfs/0002-43-GS-Victory Giant -300476.SZ-- Thailand Tech Tour- Capacity diversification continues- mix upgrade towards AI PCB- Buy -on CL--260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_t89ztaxx/pdfs/0003-44-GS-USA-GS Economic Indicators Update-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_t89ztaxx/pdfs/0004-45-GS-Walt Disney Co. -DIS.US-Orlando airport arrivals in May decrease 2- yoy-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_t89ztaxx/pdfs/0005-46-JPM-CMS Company Ltd-H-6099.HK-2Q26 profits up 160-198- y y- a beat- but does this matter--260708.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
