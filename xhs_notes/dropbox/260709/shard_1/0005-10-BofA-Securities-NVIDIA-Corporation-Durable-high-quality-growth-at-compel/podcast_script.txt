@@ -1,0 +1,71 @@
+ZH_A: 今天我们要聊一份关于英伟达的最新研报，这份报告有个非常大胆的结论——它说英伟达的股价现在被低估了，而且是7年来的最低估值水平。你觉得这个判断靠谱吗？
+
+ZH_B: 确实很引人注目。报告的核心观点是，英伟达目前18倍的前瞻市盈率，已经是2019年以来的最低点。但这家公司在AI领域的护城河，实际上比市场想象的还要深。所以报告认为，市场可能隐含了对英伟达2027到2028年每股收益30%到35%的折价，而这个折价是不合理的。
+
+ZH_A: 30%到35%的折价？那可不是小数目。市场到底在担心什么？
+
+ZH_B: 报告总结了四个主要担忧。第一，高带宽内存成本上升会挤压毛利率。第二，来自定制芯片的竞争，比如谷歌的TPU、亚马逊的Trainium。第三，机构持仓过于集中。第四，公司把大量现金用于战略投资，而不是回购或分红。
+
+ZH_A: 那这份报告是怎么反驳这些担忧的？我们先说毛利率压力。内存成本确实在涨，英伟达能扛得住吗？
+
+ZH_B: 报告认为，市场高估了内存成本的影响，同时低估了英伟达的定价能力。从Blackwell到Rubin架构，每台机架的内存成本大约增加20到30万美元，但整台机架的售价可能从300到400万美元涨到600到700万美元。因为升级的不只是内存，还有CPU、网络和软件。所以毛利率仍然能维持在75%左右。
+
+ZH_A: 也就是说，英伟达可以通过整体系统升级来转移成本压力。那定制芯片的威胁呢？很多人觉得ASIC会抢走英伟达的份额。
+
+ZH_B: 报告给出了一个很有力的数据。自从2015年谷歌推出TPU以来，英伟达的GPU收入增长了大约700倍。而且，英伟达卖给云厂商的收入增速是115%，几乎是云资本开支增速的两倍。这说明英伟达在云厂商那里的钱包份额是在增加的，而不是减少。
+
+ZH_A: 700倍？这个数字确实很震撼。那长期来看，英伟达能守住多少份额？
+
+ZH_B: 报告预期英伟达能维持AI资本开支65%到70%以上的份额。剩下的30%到35%由定制芯片和其他厂商分享。但这里有一个关键点，报告没有完全展开——定制芯片的生态是否会加速成熟。如果云厂商的自研芯片性能提升更快，英伟达的份额会不会被侵蚀？这需要继续观察。
+
+ZH_A: 所以这部分悬念留给了完整报告。那第三个担忧，持仓集中。英伟达是标普500里权重最大的股票，78%的主动管理基金都持有它。这是不是意味着风险？
+
+ZH_B: 报告承认这是一个拖累因素，但只要市场能吸收新的科技股发行，这个压力会慢慢缓解。而且，报告认为即将发布的财报会成为正面催化剂，可能会让市场重新认识英伟达的护城河。
+
+ZH_A: 最后一个担忧，现金使用效率。英伟达有650亿美元的战略投资，这算不算浪费？
+
+ZH_B: 报告估算，这些投资只消耗了不到35%的自由现金流。所以英伟达仍然有大量余力进行分红和回购。实际上，报告预测2027年每股分红将达到0.76美元，股息率接近0.4%。
+
+ZH_A: 那综合来看，这份报告的核心结论是什么？
+
+ZH_B: 简单说就是，英伟达现在是一个罕见的、兼具高质量成长和低估值的机会。它的产品、定价和供应链优势被市场低估了。但报告也留下了两个悬念：第一，定制芯片的长期竞争格局会如何演变？第二，如果AI资本开支增速放缓，英伟达的增长还能持续吗？这些在完整报告里有更深入的分析。
+
+ZH_A: 听起来，这份报告确实值得仔细读一读。如果你想获取完整版研报和更多深度分析，欢迎加入我们的财经社群，第一时间获取最新内容。
+
+ZH_B: 没错，我们下期再聊。
+
+EN_A: So today we are diving into a fresh research report on Nvidia. And the headline is pretty bold — it says the stock is undervalued, trading at its lowest valuation in seven years. Do you think that argument holds up?
+
+EN_B: It is definitely a strong call. The report points out that Nvidia is currently trading at 18 times forward earnings, which is the lowest since 2019. But the firm believes the market is pricing in an unjustified 30 to 35 percent headwind to earnings estimates for 2027 and 2028. And they strongly disagree with that discount.
+
+EN_A: A 30 to 35 percent discount? That is huge. What is the market worried about?
+
+EN_B: The report identifies four main concerns. First, rising memory costs could squeeze gross margins. Second, competition from custom chips like Google TPU and Amazon Trainium. Third, crowded ownership among active funds. And fourth, the company spending heavily on strategic investments instead of buybacks or dividends.
+
+EN_A: So how does the report push back on these? Let us start with the margin pressure. Memory costs are going up. Can Nvidia really protect its margins?
+
+EN_B: The report argues that investors overstate the impact of memory costs while underestimating Nvidia's pricing power. From Blackwell to Rubin, memory cost per rack might go up by about 200 to 300 thousand dollars. But the rack price could jump from 3 to 4 million dollars to 6 to 7 million. That is because the upgrade includes a better CPU, faster networking, and software improvements. So gross margins should stay around 75 percent.
+
+EN_A: So Nvidia can pass on the cost through a full system upgrade. What about the custom chip threat? A lot of people think ASICs will take market share.
+
+EN_B: The report gives a striking number. Since Google launched its TPU in 2015, Nvidia's GPU revenue has grown roughly 700 times. And its sales to hyperscalers grew 115 percent year over year, almost double the growth in cloud capex. That suggests Nvidia is actually gaining wallet share, not losing it.
+
+EN_A: 700 times? That is incredible. So what is the long-term outlook for market share?
+
+EN_B: The report expects Nvidia to maintain a 65 to 70 percent plus share of AI capex. The remaining 30 to 35 percent will be split among custom chips and other vendors like AMD. But here is one thing the report does not fully answer — whether custom chips will mature faster and start eating into that share. That is something to watch.
+
+EN_A: So that is a cliffhanger for the full report. Now the third concern — crowded ownership. Nvidia is the largest stock in the S&P 500, and 78 percent of active funds own it. Is that a risk?
+
+EN_B: The report admits it is a headwind, but it says the pressure should ease as the market absorbs new tech stock offerings. And it expects the upcoming earnings call to be a positive catalyst that reminds investors of Nvidia's moats.
+
+EN_A: And the last concern — cash use. Nvidia has about 65 billion dollars in strategic investments. Is that inefficient?
+
+EN_B: The report estimates those investments consume less than 35 percent of free cash flow. So there is still plenty of room for dividends and buybacks. In fact, the report forecasts a dividend of 76 cents per share by 2027, with a yield close to 0.4 percent.
+
+EN_A: So what is the big takeaway from this report?
+
+EN_B: The core message is that Nvidia offers a rare combination of durable high-quality growth and a compelling valuation. Its product, pricing, and supply chain advantages are being underestimated. But the report leaves two open questions. First, how will the competitive landscape with custom chips evolve? Second, what happens if AI capex growth slows down? Those are explored in more depth in the full report.
+
+EN_A: Sounds like a report worth reading. If you want the full analysis and more insights, join our community to get access to the complete research.
+
+EN_B: That is it for today. See you next time.

@@ -1,0 +1,282 @@
+# India Financials: Metrics that matter
+
+![](images/3ebae32c73bf523e613df56f9f4e8bfc1dac63767ca086d704a6f5c3196e414d.jpg)
+
+Pranav Gundlapalle
+
++91 226 842 1407
+
+pranav.gundlapalle@bernsteinsg.com
+
+![](images/0c063c1336426154501106d1ec77637c153a8fccd97f15b8761d06bcdaf85fb6.jpg)
+
+Ishan Mittal
+
++91 226 842 1442
+
+ishan.mittal@bernsteinsg.com
+
+![](images/c1b6cde6b8937542e56658c23a376c489d11ab084483efff876ac0b29ed2d320.jpg)
+
+Anirudh Gupta
+
++91 226 842 1456
+
+anirudh.gupta@bernsteinsg.com
+
+India's banking sector enters the 1QFY27 earnings season with macro-level discussions still influencing sentiment, even as operating fundamentals remain steady. Recent trends suggest growth, margins and asset quality are holding up better than anticipated, shifting the focus toward company-specific execution and the sustainability of earnings momentum. In this report, we highlight the key sector discussions and stock-specific metrics that we believe matter for the long-term thesis and the relative stock performance over the coming quarters.
+
+Macro risks easing at the margin: India's economy remains resilient, with 7.7% real GDP growth in FY26, inflation remaining in line with RBI's 4% target, and fiscal trends in line with historical norms. While trade deficits, FII outflows and geopolitical uncertainty created near-term conditions, RBI measures and the recent West Asia ceasefire have improved the external outlook, with a >100bps decline in CD rates helping ease funding costs.
+
+Banking fundamentals remain resilient despite macro uncertainty: System credit growth remains strong at ~18% YoY, supported by broad-based momentum across industrial, services and secured retail lending. Margin and asset-quality concerns also appear contained, with improving funding conditions, widening loan–deposit spreads and benign credit trends supporting profitability.
+
+## Metrics that matter:
+
+-At a sector level, margin pressures remain a key monitorable, but widening loan-deposit spreads and rising sector LDRs suggest limited downside risk to bank margins despite recent macro volatility.
+
+\- Additionally, the PSB–PVB performance gap remains a key sector discussion, especially as private banks regain earnings momentum while the key drivers of PSB performance—surplus liquidity and ultra-low credit costs—begin to moderate. We continue to expect a gradual convergence in growth and profitability between PSBs and PVBs over the coming quarters.
+
+Stock-specific metrics: At a stock level, investor attention will remain sharply skewed toward bank-specific priorities: HDFC Bank's ability to translate healthy loan and deposit growth into NII growth while navigating recent leadership changes, ICICI Bank's sustainability of improving loan growth and RoA as credit costs normalize, Axis Bank's margin trajectory and credit-cost sustainability following its sharp re-rating, and Kotak's ability to defend margins amid slower growth and ongoing management transition.
+
+For SBI, the sustainability of strong growth momentum and headline RoA will be key, while continued improvement in credit costs and thus RoA remains the primary monitorable for IndusInd. For Bajaj Finance, the focus will be on further moderation in credit costs and progress in newer lending segments, while receivables growth and mix remain the key drivers for SBI Cards.
+
+For Paytm, net payment margins and momentum in financial services revenue will be critical for the profitability narrative, while for AHFCs, continued improvement in disbursement growth and asset quality will remain the key indicators to watch.
+
+## BERNSTEIN TICKER TABLE
+
+<table><tr><td rowspan="2">Ticker</td><td rowspan="2">Rating</td><td colspan="3">6 Jul 2026</td><td rowspan="2">TTMRel.</td><td colspan="4">Reported EPS</td><td colspan="3">Reported P/E (x)</td></tr><tr><td>Cur</td><td>Closing Price</td><td>Price Target</td><td>Cur</td><td>2026A</td><td>2027E</td><td>2028E</td><td>2026A</td><td>2027E</td><td>2028E</td></tr><tr><td>HDFCB.IN (HDFC Bank)</td><td>O</td><td>INR</td><td>829.85</td><td>1,150.00</td><td>(54.7)%</td><td>INR</td><td>48.51</td><td>54.51</td><td>63.27</td><td>2.3</td><td>2.0</td><td>1.8</td></tr><tr><td>ICICIBC.IN (ICICI Bank)</td><td>M</td><td>INR</td><td>1,426.90</td><td>1,550.00</td><td>(39.7)%</td><td>INR</td><td>69.20</td><td>77.81</td><td>89.17</td><td>2.8</td><td>2.5</td><td>2.2</td></tr><tr><td>AXSB.IN (Axis Bank)</td><td>O</td><td>INR</td><td>1,339.60</td><td>1,600.00</td><td>(24.2)%</td><td>INR</td><td>78.61</td><td>98.88</td><td>117.90</td><td>1.9</td><td>1.7</td><td>1.5</td></tr><tr><td>KMB.IN (Kotak)</td><td>M</td><td>INR</td><td>381.30</td><td>500.00</td><td>(49.7)%</td><td>INR</td><td>14.08</td><td>16.33</td><td>19.13</td><td>2.1</td><td>1.9</td><td>1.7</td></tr><tr><td>SBIN.IN (SBI)</td><td>M</td><td>INR</td><td>1,037.70</td><td>1,300.00</td><td>(9.3)%</td><td>INR</td><td>87.59</td><td>91.92</td><td>101.79</td><td>1.6</td><td>1.4</td><td>1.3</td></tr><tr><td>IIB.IN (IndusInd)</td><td>O</td><td>INR</td><td>1,009.80</td><td>1,000.00</td><td>(17.6)%</td><td>INR</td><td>11.98</td><td>46.83</td><td>67.10</td><td>1.2</td><td>1.1</td><td>1.1</td></tr><tr><td>SBICARD.IN (SBI Cards)</td><td>U</td><td>INR</td><td>603.50</td><td>610.00</td><td>(72.3)%</td><td>INR</td><td>22.77</td><td>26.52</td><td>33.08</td><td>26.5</td><td>22.8</td><td>18.2</td></tr><tr><td>BAF.IN (Bajaj Finance)</td><td>U</td><td>INR</td><td>1,029.10</td><td>840.00</td><td>(26.6)%</td><td>INR</td><td>30.60</td><td>39.78</td><td>47.83</td><td>33.6</td><td>25.9</td><td>21.5</td></tr><tr><td>PAYTM.IN (PayTM)</td><td>O</td><td>INR</td><td>1,218.20</td><td>1,500.00</td><td>(3.7)%</td><td>INR</td><td>8.66</td><td>24.32</td><td>42.50</td><td>140.7</td><td>50.1</td><td>28.7</td></tr><tr><td>AADHARHF.IN (Aadhar)</td><td>O</td><td>INR</td><td>556.50</td><td>610.00</td><td>(19.1)%</td><td>INR</td><td>24.76</td><td>30.12</td><td>36.67</td><td>22.5</td><td>18.5</td><td>15.2</td></tr><tr><td>AAVAS.IN (Aavas )</td><td>M</td><td>INR</td><td>1,514.00</td><td>1,440.00</td><td>(58.5)%</td><td>INR</td><td>82.14</td><td>95.66</td><td>111.72</td><td>18.4</td><td>15.8</td><td>13.6</td></tr><tr><td>APTUS.IN (Aptus)</td><td>O</td><td>INR</td><td>285.50</td><td>340.00</td><td>(50.8)%</td><td>INR</td><td>18.84</td><td>20.70</td><td>26.03</td><td>15.2</td><td>13.8</td><td>11.0</td></tr><tr><td>HOMEFIRS.IN (Home First)</td><td>O</td><td>INR</td><td>1,191.10</td><td>1,450.00</td><td>(53.0)%</td><td>INR</td><td>51.59</td><td>66.18</td><td>79.46</td><td>23.1</td><td>18.0</td><td>15.0</td></tr><tr><td>PNBHOUSI.IN (PNB Housing Finance)</td><td>M</td><td>INR</td><td>1,089.80</td><td>960.00</td><td>(37.0)%</td><td>INR</td><td>87.80</td><td>87.55</td><td>101.14</td><td>12.4</td><td>12.4</td><td>10.8</td></tr><tr><td>ASIAX</td><td></td><td></td><td>1,979.72</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+O - Outperform, M - Market-Perform, U - Underperform, NR - Not Rated, CS - Coverage Suspended
+
+HDFCB.IN, ICICIBC.IN, AXSB.IN, KMB.IN, SBIN.IN, IIB.IN valuation is P/B (x);
+
+Source: Bloomberg, Bernstein estimates and analysis.
+
+## INVESTMENT IMPLICATIONS
+
+We rate HDFC Bank, Axis Bank and IIB as Outperform; ICICI Bank, SBI and KMB as Market-Perform. Among non-banks, we rate Paytm as Outperform; Bajaj Finance and SBI Cards as Underperform. Within AHFCs, we rate Aadhar, Homefirst and Aptus as Outperform, Aavas and PNBHF as Market-Perform.
+
+## Links to other recent reports:
+
+6 Jul 2026 - India Financials: Can ICICI follow Axis?
+
+4 Jul 2026 - Quick Take: HDFCB 1Q27- The balancing act continues
+
+24 Jun 2026 - India Financials: Is a banking license worth it?
+
+17 Jun 2026 - India Financials: How retail underwriting works - Key takeaways from our webinar
+
+17 Jun 2026 - India Payments: MDR on UPI — Déjà vu, but this time closer?
+
+10 Jun 2026 - India Financials: PVBs vs. PSBs (4/n) – Beginning of the End of Outperformance
+
+10 Jun 2026 - RBI's FCNR Push: Implications for Banks, Bonds and the INR
+
+8 Jun 2026 - India Financials: Do PVBs have an underwriting edge in retail lending?
+
+4 Jun 2026 - India Financials: Where are the margins headed? (1/n)
+
+2 Jun 2026 - Kotak: Takeaways from management interaction
+
+26 May 2026 - India Financials: AHFCs- The tide begins to turn
+
+## DETAILS
+
+## THE MACRO BACKDROP
+
+\- India's economy maintained a healthy growth trajectory in FY26, with real GDP expanding by 7.7%, reflecting continued resilience in economic activity. However, a sharp moderation in inflation during the year led to a significant decline in nominal growth, which slowed to 8.9% (Exhibit 1).
+
+\- Inflation has since begun to trend higher, driven primarily by a rebound in food prices, with both headline and core inflation converging towards the RBI's 4% target. Although inflation expectations rose sharply following the West Asia conflict, the recent ceasefire is expected to ease concerns and support a moderation in inflation expectations going forward (Exhibit 2, Exhibit 3).
+
+\- On the external front, India's merchandise trade deficit has remained elevated at ~$28 Bn in recent months, although a services trade surplus of ~$18 Bn has helped offset part of the resulting current account pressures. While sustained FII outflows have continued to weigh on the INR, RBI's recently announced measures (link) are expected to drive meaningful dollar inflows, thereby easing balance of payments (BoP) pressures and improving the external sector outlook for FY27 (Exhibit 4-Exhibit 6).
+
+\- On the fiscal front, government expenditure and tax collections have remained broadly in line with historical trends in the early part of the year (Exhibit 7, Exhibit 8).
+
+\- However, incremental demand for government securities from banks moderated in FY26, as reflected in their declining share of the outstanding G-sec stock. In our view, this partly reflects the relaxation of LCR requirements, which has reduced the need for banks to hold high-quality liquid assets (Exhibit 9).
+
+\- As a result, RBI emerged as the marginal buyer through large-scale open market operations (OMOs), driving its share of outstanding government securities to a multi-year high of 18% (Exhibit 10).
+
+\- Amid an increasingly challenging macro environment, the recent ceasefire announcement triggered a relief rally across domestic fixed-income markets, with the 12-month CD rate declining by >100bps from the peak levels reached during the height of the West Asia conflict. The sharp correction has helped ease funding costs and improve liquidity conditions across the banking system (Exhibit 11).
+
+EXHIBIT 1: India's economy maintained a healthy growth trajectory in FY26, with real GDP expanding by 7.7%, reflecting continued resilience in economic activity
+
+![](images/245ca7f3a836d0db141d9ecf62ec1359174090b065bf417896f6c21518063294.jpg)  
+Source: HAVER, Bernstein analysis
+
+EXHIBIT 2: Inflation has begun to trend higher, with both headline and core inflation converging at ~4%  
+![](images/5a14db84f1586c2eecd787bcc1ec91f2b1e2c2f126e799aeba0903b519642480.jpg)  
+Source: HAVER, Bernstein analysis  
+EXHIBIT 3: Although inflation expectations rose sharply following the West Asia conflict, the recent ceasefire is expected to ease concerns and support a moderation in inflation expectations  
+India - Inflation expectations
+(%)
+
+![](images/525357f145eb85a690f764cd73064b82508aaeb5576d4dad9f655dd477eafc20.jpg)  
+Source: RBI, Bernstein analysis
+
+EXHIBIT 4: India's merchandise trade deficit has remained elevated at ~$28 Bn in recent months...
+
+Trade deficit
+($ Bn)
+
+![](images/284142453392f1155dd5c3c50cc4798f4e713f97a3b5118349f8cf757b06aca6.jpg)  
+Source: HAVER, Bernstein analysis  
+EXHIBIT 5: ...although a services trade surplus of ~$18 Bn has helped offset part of the resulting current account pressures  
+Services Surplus
+($ Bn)
+
+![](images/d0bd3cf4d0af621310c6f022631e7ac5cc78766c5ecb3ba4650b8f627572135b.jpg)  
+EXHIBIT 6: Sustained FII outflows have continued to weigh on the INR  
+Source: HAVER, Bernstein analysis  
+Fll outflow/inflow- Equity
+($ Bn)
+
+![](images/0aeaf65cdd11e980fcfb99e8638ce8ff89bdadbf39142ca45ec749d591bed51f.jpg)  
+Source: NSDL, HAVER, Bernstein analysis  
+EXHIBIT 7: Government expenditure has remained broadly in line with historical trends in the early part of the year...
+
+Government spending timeline as % of total spending  
+![](images/01e4e281460d1fa3d90079abf0a438b50232b92616d12fb29676e8ca77397e44.jpg)  
+Source: HAVER, Bernstein analysis
+
+EXHIBIT 8: ...and a similar trend for tax collections  
+Net tax revenue as % of total net tax revenue collected  
+![](images/9627a59f7119f5f7b07affaa47de464c6ae23d55149f2bf25fdaea469644d98b.jpg)  
+Source: HAVER, Bernstein analysis
+
+EXHIBIT 9: Incremental demand for government securities from banks moderated in FY26, as reflected in their declining share of the outstanding G-sec stock  
+Ownership pattern of G-sec (% of total)  
+![](images/93687c029bb48592a06ee3117ae7488f52a1bc9394c98a0dfe3bd6d29d7bab98.jpg)  
+■ SCBs ■ Insurance ■ RBI ■ Pension funds ■ Others  
+Source: HAVER, Bernstein analysis  
+RBI ownership of G-sec (% of total outstanding)
+
+EXHIBIT 10: As a result, RBI emerged as the marginal buyer through large-scale open market operations (OMOs), driving its share of outstanding government securities to a multi-year high of 18%
+
+![](images/865ddfc86d6d72642bf3ebab95daa36a08d0b6b7faeafcc86a9a448e9f7702e3.jpg)  
+Source: HAVER, Bernstein analysis
+
+EXHIBIT 11: The recent ceasefire announcement triggered a relief rally across domestic fixed-income markets, with the 12-month CD rate declining by >100bps from the peak levels reached during the height of the West Asia conflict  
+![](images/bca6a1a114c2fcefda5b6568355683923957a4f7b975230802fc43be7be75cba.jpg)  
+Source: Bloomberg, Bernstein analysis
+
+## BANKING SECTOR
+
+\- Credit growth in the Indian banking system remained resilient despite heightened geopolitical uncertainty, with aggregate bank credit expanding by ~18% YoY (as of the fortnight ended 15 June 2026). The strength in system-wide credit growth has also been reflected in the provisional business updates released by banks, with most lenders reporting healthy credit growth during the quarter (Exhibit 12, Exhibit 13).
+
+\- The recovery in system credit growth has been broad-based across segments, with the strongest momentum visible in industrial and services lending (Exhibit 14).
+
+\- Within industrial credit, MSME lending continues to exhibit robust growth of over 20% YoY, while large corporate lending has also shown signs of improvement, with growth rising to ~14% YoY as of May'26.
+
+\- In the services segment, lending to NBFCs remains a key driver of growth, with bank credit to NBFCs expanding by more than 30% YoY in May'26.
+
+\- Personal loan growth has also improved modestly, led primarily by secured products such as housing and auto loans. In contrast, unsecured segments continue to remain weak, with credit card debt growing at less than 2% YoY and spending growth moderating to 11% in May'26, despite a marginal pickup in card additions. Overall, consumer sentiment remains subdued amid a challenging macro backdrop, as reflected in consumer confidence indicators, even as UPI transaction values continue to grow at >25% YoY (Exhibit 15-Exhibit 18).
+
+\- On margins, term deposit rates moderated during Apr–May'26 after witnessing a sharp increase in March, while fresh loan yields saw a marginal uptick. Although CD issuance rebounded following a softer May, we do not see any material margin risk arising from the higher issuance, particularly given the recent decline in CD (>100 bps) and the relatively low share of CDs in overall deposits. Additionally, the widening gap between loan yields and deposit rates is expected to provide a cushion against any potential pressure from CD funding costs (Exhibit 19-Exhibit 23).
+
+\- Asset quality trends are expected to remain largely benign in the current quarter, broadly in line with the trends witnessed during the last few quarters (Exhibit 24).
+
+\- Despite improving growth momentum and a stable margin outlook, the recent challenges in the macro environment have resulted in the banking sector continuing to trade at a discount to the broader NIFTY index (Exhibit 25).
+
+EXHIBIT 12: Credit growth in the Indian banking system remained resilient, with aggregate bank credit expanding by ~18% YoY
+
+Credit and deposit growth (% YoY, All SCBs)
+
+![](images/c08b897258f2a5f889b91fbb57713415c33eb94cb00d7187f3b2f0f86934dadc.jpg)  
+Source: RBI, Bernstein analysis  
+EXHIBIT 13: The strength in system-wide credit growth has also been reflected in the provisional business updates released by banks  
+Loan growth (1Q27, % YoY)
+
+![](images/8f22940edf43cb3f657ff96a49eed03232ff696dd0b6f3335ae9c1b9d44fb467.jpg)  
+Source: Company reports, Bernstein analysis
+
+EXHIBIT 14: The recovery in system credit growth has been broad-based across segments, with the strongest momentum visible in industrial and services lending
+
+<table><tr><td>Banking credit growth (% YoY)</td><td>May-25</td><td>Jun-25</td><td>Jul-25</td><td>Aug-25</td><td>Sep-25</td><td>Oct-25</td><td>Nov-25</td><td>Dec-25</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td></tr><tr><td>Agri</td><td>7.5%</td><td>6.8%</td><td>7.3%</td><td>7.6%</td><td>9.0%</td><td>8.9%</td><td>8.7%</td><td>12.1%</td><td>11.4%</td><td>12.3%</td><td>15.6%</td><td>13.7%</td><td>14.9%</td></tr><tr><td>Industry</td><td>5.3%</td><td>6.3%</td><td>6.5%</td><td>7.0%</td><td>7.8%</td><td>10.0%</td><td>9.6%</td><td>12.8%</td><td>12.1%</td><td>13.5%</td><td>15.0%</td><td>15.1%</td><td>17.5%</td></tr><tr><td>ow: Micro and small</td><td>13.7%</td><td>19.2%</td><td>20.9%</td><td>20.8%</td><td>22.0%</td><td>25.9%</td><td>24.6%</td><td>30.4%</td><td>31.2%</td><td>30.4%</td><td>32.7%</td><td>30.1%</td><td>26.2%</td></tr><tr><td>ow: Medium</td><td>16.9%</td><td>13.2%</td><td>15.0%</td><td>13.3%</td><td>14.5%</td><td>17.6%</td><td>15.7%</td><td>20.4%</td><td>22.3%</td><td>21.0%</td><td>21.8%</td><td>19.9%</td><td>21.2%</td></tr><tr><td>ow: Large</td><td>1.5%</td><td>2.0%</td><td>1.6%</td><td>2.4%</td><td>3.0%</td><td>4.6%</td><td>4.6%</td><td>6.9%</td><td>5.5%</td><td>7.8%</td><td>9.1%</td><td>10.0%</td><td>14.4%</td></tr><tr><td>Services</td><td>8.4%</td><td>8.8%</td><td>10.2%</td><td>10.3%</td><td>9.8%</td><td>13.0%</td><td>11.7%</td><td>15.4%</td><td>15.5%</td><td>16.3%</td><td>19.0%</td><td>18.6%</td><td>20.4%</td></tr><tr><td>ow: Trade</td><td>10.4%</td><td>10.7%</td><td>12.8%</td><td>12.3%</td><td>11.7%</td><td>13.8%</td><td>14.2%</td><td>17.5%</td><td>16.1%</td><td>14.4%</td><td>16.2%</td><td>13.4%</td><td>17.3%</td></tr><tr><td>ow: To NBFCs</td><td>1.0%</td><td>3.1%</td><td>3.0%</td><td>3.7%</td><td>3.9%</td><td>10.9%</td><td>9.5%</td><td>15.1%</td><td>17.8%</td><td>20.9%</td><td>26.6%</td><td>27.7%</td><td>33.7%</td></tr><tr><td>Personal</td><td>11.1%</td><td>11.7%</td><td>11.9%</td><td>11.9%</td><td>11.8%</td><td>14.0%</td><td>12.8%</td><td>14.6%</td><td>14.9%</td><td>15.2%</td><td>16.2%</td><td>16.0%</td><td>15.4%</td></tr><tr><td>ow: Housing</td><td>9.0%</td><td>9.6%</td><td>9.6%</td><td>9.7%</td><td>10.1%</td><td>11.0%</td><td>9.9%</td><td>11.1%</td><td>11.1%</td><td>11.0%</td><td>11.5%</td><td>11.4%</td><td>10.9%</td></tr><tr><td>ow: Credit card</td><td>8.5%</td><td>7.2%</td><td>5.6%</td><td>4.4%</td><td>3.7%</td><td>7.7%</td><td>2.4%</td><td>1.0%</td><td>1.5%</td><td>1.7%</td><td>3.6%</td><td>3.8%</td><td>1.3%</td></tr><tr><td>ow: Vehicle loans</td><td>8.7%</td><td>9.2%</td><td>8.9%</td><td>8.7%</td><td>7.3%</td><td>12.5%</td><td>12.4%</td><td>16.7%</td><td>17.1%</td><td>17.1%</td><td>18.6%</td><td>18.0%</td><td>17.3%</td></tr><tr><td>ow: Unsecured</td><td>7.4%</td><td>7.1%</td><td>7.3%</td><td>7.1%</td><td>6.8%</td><td>9.6%</td><td>7.8%</td><td>9.8%</td><td>9.9%</td><td>10.4%</td><td>11.4%</td><td>11.3%</td><td>10.7%</td></tr></table>
+
+Source: HAVER, Bernstein analysis  
+Credit card spends (TTM, % YoY)
+
+EXHIBIT 15: Credit card debt and spending continue to remain weak...
+
+![](images/94284e3861edc8a1079c037f3748ff8e50de4435dcaa443fc8a9c68ffac296fc.jpg)  
+Source: HAVER, Bernstein analysis
+
+EXHIBIT 16: ...despite a marginal pickup in card additions  
+Credit card additions
+(TTM, Mn)  
+![](images/1139497f29b3482430bcf5b25833206db7ea589b3828caaee0b1fb8bbfad6f78.jpg)  
+Source: HAVER, Bernstein analysis
+
+EXHIBIT 17: Consumer sentiment remains subdued amid a challenging macro backdrop...
+
+RBI Urban consumer confidence indices
+
+![](images/5a0accedb0c402bda7b9bc584a8c2200fd078690abc477bfb69429d718439ae2.jpg)  
+■ Current situation index ■ Future expectations index  
+Source: RBI, Bernstein analysis  
+EXHIBIT 18: ...even as UPI transaction values continue to grow at >25% YoY  
+UPI P2M spends (TTM, % YoY)
+
+![](images/235f0682743b025e58af4de38d0848e0f9ac0dc972574c0a6a4fbf203a71957a.jpg)  
+Source: HAVER, NPCI, Bernstein analysis  
+EXHIBIT 19: Fresh TD rates moderated during Apr–May'26 after witnessing a sharp increase in March, while fresh loan yields saw a marginal uptick  
+Fresh lending and deposit rate (All SCBs, %)
+
+![](images/a4f39cf93bdcb326bf52d87d2e893c8ac9f7531575179d038959ed5c23fe5043.jpg)  
+Source: RBI, Bernstein analysis  
+EXHIBIT 20: Outstanding TD rates and loan yields have flattened over the last few months  
+Outstanding lending and deposit rate (All SCBs, %)
+
+![](images/63c4a21aa76e7652adc8f429d49e7703036dc630a76e93b4ef586138d26a76dd.jpg)  
+Source: RBI, Bernstein analysis
+
+EXHIBIT 22: ...we do not see any material margin risk arising from the higher issuance, particularly given the relatively low share of CDs in overall deposits  
+EXHIBIT 21: Although CD issuance rebounded in June following a softer May...  
+CD Issuances (% YoY)  
+![](images/1488dab34c6fdc5b8486e796df2c42c2322f1306cddcd4ba8975f1efc7905b99.jpg)  
+Source: CCIL, Bernstein analysis  
+(INR Tn, as % of deposits (RHS))
+
+CD Issuances
+
+![](images/e22066417e836895a282ada03b4ffbf17be56596c967ed9ff811920b5b618e98.jpg)  
+Source: RBI, CCIL, Bernstein analysis
+
+EXHIBIT 23: Additionally, the widening gap between loan yields and deposit rates is expected to provide a cushion against any potential pressure from CD funding costs
+
+All SCBs- Spread of loan yields over TD rates (%)  
+![](images/716f890d2b87a96053bad2d8d52aa53b281b29dde2489b3ce6dd98dd50b648a7.jpg)  
+Source: RBI, Bernstein analysis
+
+EXHIBIT 24: Asset quality trends are expected to remain largely benign in the current quarter, broadly in line with the trends witnessed during the last few quarters
+
+## Credit cost
+
+(Provision expense as % of loans in bps, PSBs+PVBs)
+
+![](images/c9eab2164d326f150537cdf56c02a276f3ab2f2ecbea13a816cd615093c11ca9.jpg)  
+Source: Company reports, Bloomberg, Bernstein analysis
+
+(Long term average after removing banking stress and COVID period)
+
+EXHIBIT 25: Despite improving growth momentum and a stable margin outlook, the recent challenges in the macro environment have resulted in the banking sector continuing to trade at a discount to the broader NIFTY index
+
+## Ratio of bank NIFTY PE to NIFTY PE
+
+![](images/ab4c218ae9cab6494965c80f4be62c6960cf6f39277fda91ab0309e52df2b390.jpg)  
+Source: Bloomberg, Bernstein analysis
+
+EXHIBIT 26: The banking sector has continued to demonstrate relative resilience, with Bank NIFTY down 3% YTD versus a 7% decline in the broader NIFTY index
+
+Stock price change -CYTD
+(%)  
+![](images/2d8bffdcf4142dd8c2dc4494f9c9e6fe92f10db10aa0076664bbc7e0edae6792.jpg)  
+Source: Bloomberg, Bernstein analysis
+
+## METRICS THAT MATTER
+
+## SECTOR CONTROVERSIES
+
+During the upcoming quarterly results season, we expect the focus at a sector level to remain on the following trends:
+
+\- Margin implications of macro developments: While sector credit growth has remained resilient despite elevated uncertainty, the impact of recent macro developments on bank margins remains an important area to watch. That said, the widening spread between loan yields and
