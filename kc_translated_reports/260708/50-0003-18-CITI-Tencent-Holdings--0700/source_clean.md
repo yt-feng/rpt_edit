@@ -1,0 +1,111 @@
+# Tencent Holdings (0700.HK)
+## Quick Thoughts On Latest Ramp Momentum of WorkBuddy
+## CITI'S TAKE
+
+As noted by several news reports dated July 6th citing latest data by Analysys, Tencent's WorkBuddy cross-platform MAU has reached 20mn with DAU surpassing 13mn, implying DAU/MAU ratio of $65 - 75\%$ , which we view as a high DAU/MAU ratio, especially considering the product was launched only a few months ago, indicating strong user stickiness and strong daily engagement. Indeed, during the 1Q26 earnings call, management commented WorkBuddy has an $80\%$ retention rate and has attracted a high paying willingness from its power users. While WorkBuddy is one of many important AI agent products, its success highlights the strength of Tencent's ecosystem, the synergy between its various productivity environments and more importantly, the user trust in Tencent's products and security, in our view. We maintain our Buy rating on Tencent and our Target Price of HK\$763.
+
+What's new? On July 6, several news reports including ChooseAI and Gelonghui reported that per latest data tracked by Analysys, Tencent WorkBuddy's cross-platform MAU have reached 20mn, while DAU exceeded 13mn, suggesting the DAU/MAU ratio is between $65\%$ and $75\%$ . The report also highlighted that based on earlier report published by Analysys in May, Tencent's WorkBuddy's PC monthly visits reached 8.85mn (up $72.2\%$ month-over-month), as of May, 2.6x higher than the 2nd-place competitor. During earlier beta in March, Analysys' report suggested that the month-over-month growth rate was $831\%$ , with active user scale 3-4x higher than the 2nd-ranked product in the industry.
+
+Comment during 1Q26 earnings call – Tencent management commented during the1Q26 earnings call that it believes Tencent already leads in agentic AI deployment, measured by DAU for WorkBuddy vs competing products in China. In terms of adoption metrics, management saw strong traction at early stage with CodeBuddy and WorkBuddy showing strong organic growth and high retention (60%+/80%+ retention rate among active users and paying users). Early adopters show high time spent and frequent interaction with AI agents, which creates a virtuous feedback loop for Tencent. During a Citi hosted Investor Webinar, management also noted that with higher paying willingness of WorkBuddy by high-power users, mgmt expects AI products to become a key revs generator for Tencent Cloud and expect token-related revs to become increasingly substantial in 2026 riding on the ramp of WorkBuddy and CodeBuddy adoption. Specifically, with WorkBuddy leading in agentic AI deployment, measured by DAU, mgmt believes high-power users of the product will result in higher paying ratio than typical consumer subscription service like music, video or even gaming, leading to high-quality token-based revenues for the the company.
+
+QM call also suggested robust traffic of WorkBuddy – During our recent call with Questmobile, the expert also observed a robust traffic ramp on PC AIGC tools such as WorkBuddy given higher productivity demand under the agentic AI era, suggesting continued traffic transition from traditional gateways like search engine and social
+
+
+media further shifting to native AI applications given an accelerating consumer AI adoption in China.
+
+## Tencent Holdings
+
+## Valuation
+
+Our target price of HK\$763 is based on a SOTP approach, which implies 23.0x 2026E and \~21.7x 2027E P/E. Our SOTP is based on the following: 1) Online games – We apply a 12x P/E to our 2027 estimated games net profit of Rmb134bn and yield a valuation of HK\$194 per share, or 25% of our target price; 2) Online advertising – We apply a 20x P/E to our 2027 estimated ads profit of Rmb84bn which yields a valuation of HK\$202 per share, or 26% of our target price; 3) Social network – While we attribute the non-gaming revs (community platform revs) as overall social network revs, given the WeChat, QQ, and other Tencent apps, we apply a 25x P/E to the estimated profit of Rmb62bn and yield a valuation of HK\$187 per share, or 24% of our target price; 4) Fintech – We apply a 15x P/E to our estimated profit of Rmb49bn and yield a valuation of HK\$88 per share, or 12% of our target price; 5) Cloud/business services – We apply a 5x P/S (average of China peers) to our 2027 estimated Business services revs of Rmb70bn, which yields a valuation of HK\$42 per share, or 6% of our target price; 6) Investment portfolio – We apply a 30% discount to the equity stake in the publicly listed investment portfolio which implies HK\$51/share.
+
+## Risks
+
+Downside risks that could prevent the Tencent shares from reaching our target price include: i) a faster-than-expected revenue slowdown in core PC games; ii) unsuccessful launches of new mobile games; iii) a decline of Honor of Kings ranking and momentum; iv) a further slowdown in China's economy, which might negatively affect advertising demand; and v) a change in the regulatory environment.
+
+
+## Appendix A-1
+
+
+## IMPORTANT DISCLOSURES
+
+## Tencent Holdings (0700.HK)
+
+
+[[KC_IMAGE_001]]
+
+
+\*Indicates Change
+
+
+Rating/target price changes above reflect Eastern Time
+
+## Tencent Holdings (0700.HK)
+
+Short-Term View/Catalyst Watch Research
+
+
+[[KC_IMAGE_002]]
+
+
+CW - Catalyst Watch, STV - Short-Term View
+
+
+Rating/target price changes above reflect Eastern Time
+
+
+## Guide to Citi Fundamental Research Investment Ratings:
+
+Citi stock recommendations include an investment rating and an optional risk rating to highlight high risk stocks. Risk rating takes into account both price volatility and fundamental criteria. Stocks will either have no risk rating or a High risk rating assigned.
+
+Investment Ratings: Citi investment ratings are Buy, Neutral and Sell. Our ratings are a function of analyst expectations of expected total return ("ETR") and risk. ETR is the sum of the forecast price appreciation (or depreciation) plus the dividend yield for a stock within the next 12 months. The target price is based on a 12 month time horizon. The Investment rating definitions are: Buy (1) ETR of $15\%$ or more or $25\%$ or more for High risk stocks; and Sell (3) for negative ETR. Any covered stock not assigned a Buy or a Sell is a Neutral (2). For stocks rated Neutral (2), if an analyst believes that there are insufficient valuation drivers and/or investment catalysts to derive a positive or negative investment view, they may elect with the approval of Citi management not to assign a target price and, thus, not derive an ETR. Citi may suspend its rating and target price and assign "Rating Suspended" status for regulatory and/or internal policy reasons. Citi may also suspend its rating and target price and assign "Under Review" status for other exceptional circumstances (e.g. lack of information critical to the analyst's thesis, trading suspension) affecting the company and/or trading in the company's
+
+securities. In both such situations, the rating and target price will show as “—” and “-” respectively in the rating history price chart. Prior to 11 April 2022 Citi assigned “Under Review” status to both situations and prior to 11 Nov 2020 only in exceptional circumstances. As soon as practically possible, the analyst will publish a note re-establishing a rating and investment thesis. Investment ratings are determined by the ranges described above at the time of initiation of coverage, a change in investment and/or risk rating, or a change in target price (subject to limited management discretion). At times, the expected total returns may fall outside of these ranges because of market price movements and/or other short-term volatility or trading patterns. Such interim deviations will be permitted but will become subject to review by Research Management. Your decision to buy or sell a security should be based upon your personal investment objectives and should be made only after evaluating the stock's expected performance and risk.
+
+## Catalyst Watch/Short Term Views ("STV") Ratings Disclosure:
+
+Catalyst Watch and STV Upside/Downside calls: Citi may also include a Catalyst Watch or STV Upside or Downside call to indicate the analyst expects the share price to rise (fall) in absolute terms over a specified period of 30 or 90 days in reaction to one or more specific near-term catalysts or events impacting the company or the market. A Catalyst Watch will be published when Analyst confidence is high that an impact to share price will occur; it will be a STV when confidence level is moderate. A Catalyst Watch or STV Upside/Downside call will automatically expire at the end of the specified 30/90 day period. The Catalyst Watch will also be automatically removed if share price performance (calculated at market close) exceeds $15\%$ against the direction of the call (unless over-ridden by the analyst). The analyst may also remove a Catalyst Watch or STV call prior to the end of the specified period in a published research note. A Catalyst Watch/STV Upside or Downside call may be different from and does not affect a stock's fundamental equity rating, which reflects a longer-term total absolute return expectation. For purposes of FINRA ratings-distribution-disclosure rules, a Catalyst Watch/STV Upside call corresponds to a buy recommendation and a Catalyst Watch/STV Downside call corresponds to a sell recommendation. Any stock not assigned to a Catalyst Watch Upside, Catalyst Watch Downside, STV Upside, or STV Downside call is considered Catalyst Watch/STV No View. For purposes of FINRA ratings distribution-disclosure rules, we correspond Catalyst Watch/STV No View to Hold in our ratings distribution table for our Catalyst Watch/STV Upside/Downside rating system. However, we reiterate that we do not consider No View to be a recommendation. For all Catalyst Watch/STV Upside/Downside calls, risk exists that the catalyst(s) and associated share-price movement will not materialize as expected.
+
+
+Citi Global Markets Asia Limited
+
+
+## OTHER DISCLOSURES
+
+Any price(s) of instruments mentioned in recommendations are as of the prior day's market close on the primary market for the instrument, unless otherwise stated.
+
+The completion and first dissemination of any recommendations made within this research report are as of the Eastern date-time displayed at the top of the Product. If the Product references views of other analysts then please refer to the price chart or rating history table for the date/time of completion and first dissemination with respect to that view.
+
+Regulations in various jurisdictions require that where a recommendation differs from any of the author's previous recommendations concerning the same financial instrument or issuer that has been published during the preceding 12-month period that the change(s) and the date of that previous recommendation are indicated. For fundamental coverage please refer to the price chart or rating change history within this disclosure appendix or the issuer disclosure summary at https://www.citivelocity.com/cvr/eppublic/citi\_research\_disclosures.
+
+Citi has implemented policies for identifying, considering and managing potential conflicts of interest arising as a result of publication or distribution of investment research. A description of these policies can be found at https://www.citivelocity.com/cvr/eppublic/citi\_research\_disclosures.
+
+The proportion of all Citi recommendations that were the equivalent to "Buy", "Hold", "Sell" at the end of each quarter over the prior 12 months (with the % of these that had received investment firm services from Citi in the prior 12 months shown in brackets) is as follows; Q1 2026 Buy 33%(63%), Hold 44% (52%), Sell 23% (46%), RV 0.5% (89%): Q4 2025 Buy 33% (63%), Hold 44% (50%), Sell 23% (46%), RV 0.4% (91%); Q3 2025 Buy 33% (61%), Hold 44% (52%), Sell 23% (50%), RV 0.4% (80%); Q2 2025 Buy 33%(63%), Hold 44% (51%), Sell 23% (49%), RV 0.4% (86%). For the purposes of disclosing
+
+recommendations other than for equity (whose definitions can be found in the corresponding disclosure sections), "Buy" means a positive directional trade idea; "Sell" means a negative directional trade idea; and "Relative Value" means any trade idea which does not have a clear direction to the investment strategy.
+
+European regulations require a 5 year price history when past performance of a security is referenced. CitiVelocity's Charting Tool (https://www.citivelocity.com/cv2/#go/CHARTING\_3\_Equities) provides the facility to create customisable price charts including a five year option. This tool can be found in the Data & Analytics section under any of the asset class menus in CitiVelocity (https://www.citivelocity.com/). For further information contact CitiVelocity support (https://www.citivelocity.com/cv2/go/CLIENT\_SUPPORT). The course for all referenced prices unless otherwise stated is
+
+(https://www.citivelocity.com/cv2/go/CLIENT\_SUPPORT). The source for all referenced prices, unless otherwise stated, is
+
+DataCentral, which sources price information from LSEG Data & Analytics. Past performance is not a guarantee or reliable indicator of future results. Forecasts are not a guarantee or reliable indicator of future performance.
+
+Investors should always consider the investment objectives, risks, and charges and expenses of an ETF carefully before investing. The applicable prospectus and key investor information document (as applicable) for an ETF should contain this and other information about such ETF. It is important to read carefully any such prospectus before investing. Clients may obtain prospectuses and key investor information documents for ETFs from the applicable distributor or authorized participant, the exchange upon which an ETF is listed and/or from the applicable website of the applicable ETF issuer. The value of the investments and any accruing income may fall or rise. Any past performance, prediction or forecast is not indicative of future or likely performance. Any information on ETFs contained herein is provided strictly for illustrative purposes and should not be deemed an offer to sell or a solicitation of an offer to purchase units of any ETF either explicitly or implicitly. The opinions expressed are those of the authors and do not necessarily reflect the views of ETF issuers, any of their agents or their affiliates. Citi Global Markets India Private Limited and/or its affiliates may have, from time to time, actual or beneficial ownership of $1\%$ or more in the debt securities of the subject issuer.
+
+Please be advised that pursuant to Executive Order 13959 as amended (the “Order”), U.S. persons are prohibited from investing in securities of any company determined by the United States Government to be the subject of the Order. This research is not intended to be used or relied upon in any way that could result in a violation of the Order. Investors are encouraged to rely upon their own legal counsel for advice on compliance with the Order and other economic sanctions programs administered and enforced by the Office of Foreign Assets Control of the U.S. Treasury Department.
+
+This communication is directed at persons who are "Eligible Clients" as such term is defined in the Israeli Regulation of Investment Advice, Investment Marketing and Investment Portfolio Management law, 1995 (the "Advisory Law"). Within Israel, this communication is not intended for retail clients and Citi will not make such products or transactions available to retail clients or to non-Eligible Clients. The presenter is not licensed as investment advisor or investment marketer by the Israeli Securities Authority ("ISA") and this communication does not constitute investment or marketing advice. The information contained herein may relate to matters that are not regulated by the ISA. Any securities which are the subject of this communication may not be offered or sold to any Israeli person except pursuant to a security offering exemption according to the Israeli Securities Law, 1968 and the public offering rules provided thereunder.
+
+Citi broadly and simultaneously disseminates its research content to the Firm's institutional and retail clients via the Firm's proprietary electronic distribution platforms (e.g., Citi Velocity and various Global Wealth platforms). As a convenience, certain, but not all, research content may be distributed through third party aggregators. Clients may receive published research reports by email, on a discretionary basis, and only after such research content has been broadly disseminated. Certain research is made available only to institutional investors to satisfy regulatory requirements. The level and types of services provided by Citi analysts to clients may vary depending on various factors such as the client's individual preferences as to the frequency and manner of receiving communications from analysts, the client's risk profile and investment focus and perspective (e.g. market-wide, sector specific, long term, short-term etc.), the size and scope of the overall client relationship with the Firm and legal and regulatory constraints.
+
+Pursuant to Comissão de Valores Mobiliários Resolução 20 and ASIC Regulatory Guide 264, Citi is required to disclose whether a Citi related company or business has a commercial relationship with the subject company. Considering that Citi operates multiple businesses in more than 100 countries around the world, it is likely that Citi has a commercial relationship with the subject company.
+
+
+recommendations that could impact the price of a security contrary to the recommendations in the alternative research product, provided that each is consistent with the rating system for each respective product.
+
+Investing in non-U.S. securities, including ADRs, may entail certain risks. The securities of non-U.S. issuers may not be registered with, nor be subject to the reporting requirements of the U.S. Securities and Exchange Commission. There may be limited information available on foreign securities. Foreign companies are generally not subject to uniform audit and reporting standards, practices and requirements comparable to those in the U.S. Securities of some foreign companies may be less liquid and their prices more volatile than securities of comparable U.S. companies. In addition, exchange rate movements may have an adverse effect on the value of an investment in a foreign stock and its corresponding dividend payment for U.S. investors. Net dividends to ADR investors are estimated, using withholding tax rates conventions, deemed accurate, but investors are urged to consult their tax advisor for exact dividend computations. Investors who have received the Product from the Firm may be prohibited in certain states or other jurisdictions from purchasing securities mentioned in the Product from the Firm. Please ask your Financial Consultant for additional details. Citi Global Markets Inc. takes responsibility for the Product in the United States. Any orders by US investors resulting from the information contained in the Product may be placed only through Citi Global Markets Inc.
+
+The Citi legal entity that takes responsibility for the production of the Product is the legal entity which the first named author is employed by.
+
+
+This Product is available in Chile through Banchile Corredores de Bolsa S.A., an indirect subsidiary of Citi Inc., which is regulated by the Comisión Para El Mercado Financiero. Enrique Foster Sur, 20, piso 6, Las Condes, Santiago, Chile.

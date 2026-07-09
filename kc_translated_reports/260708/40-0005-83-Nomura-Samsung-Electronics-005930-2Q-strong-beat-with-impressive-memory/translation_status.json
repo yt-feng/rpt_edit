@@ -1,0 +1,32 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260708/shard_15/0005-83-Nomura-Samsung-Electronics-005930-2Q-strong-beat-with-impressive-memory-",
+  "title": "野村：存储短缺或持续至2029年，三星估值为何被低估",
+  "source_title": "NOM：存储短缺或持续至2029年，三星估值为何被关注",
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_40.pdf",
+  "figure_count": 1,
+  "institution_name": "野村",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "疲弱|乏力|低迷->仍在调整 x1",
+    "sanitize_wechat_stock_line",
+    "下行|放缓->节奏变化 x1",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x2",
+    "sanitize_wechat_stock_line"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260708/shard_12/0001-64-Morgan-Stanley-China-Healthcare-Chart-of-the-Week---China-Drug-Approvals",
+  "title": "摩根士丹利：2025年中国药品审批创新高，本土药企成主力军",
+  "source_title": "MS：中国医药审批量变到质变，本土企业63个新药超越跨国药企",
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_21.pdf",
+  "figure_count": 2,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "sanitize_wechat_stock_line",
+    "A股|港股->相关市场 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x2",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}

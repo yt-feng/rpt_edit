@@ -1,0 +1,31 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260708/shard_14/0005-78-Morgan-Stanley-Tesla-Inc-TSLA.US-Robotaxi-Launches-in-Miami--Model-YL-De",
+  "title": "摩根士丹利：特斯拉Robotaxi迈阿密上线，安全数据才是真正变量",
+  "source_title": "MS：特斯拉Robotaxi迈阿密落地，安全数据才是真正变量",
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_35.pdf",
+  "figure_count": 7,
+  "institution_name": "摩根士丹利",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "投资者->读者 x2",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}
