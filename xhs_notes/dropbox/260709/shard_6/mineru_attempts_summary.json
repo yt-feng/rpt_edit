@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_8u7d1xls/pdfs/0001-32-GS-Costco Wholesale -COST.US-June sales slightly behind expectations-traffic decelerated-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8u7d1xls/pdfs/0002-33-GS-Greater China Display-Jun LCD TV panel price MoM increase- New AI TV- gaming monitor- E-paper display launched-260709.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8u7d1xls/pdfs/0003-34-GS-L-Oreal -OREP.PA- Gucci Beauty- L-Oréal-s next billionaire brand--260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8u7d1xls/pdfs/0004-35-GS-Kakao Corp. -035720.KS- 2Q26E preview- Core Platform resilient- AI launch catalyst remains intact- Buy-260709.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8u7d1xls/pdfs/0005-36-GS-Johnson - Johnson -JNJ.US-KOL Survey Bullish on Icotyde Potential and Positioning in Psoriasis-260708.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
