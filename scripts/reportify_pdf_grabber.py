@@ -40,11 +40,18 @@ import os
 import re
 import sys
 import time
+from html import unescape
+from io import BytesIO
 from pathlib import Path
 from typing import Optional
 from urllib.parse import urlparse
 
 from playwright.sync_api import sync_playwright, Response, Download, TimeoutError as PlaywrightTimeoutError
+
+try:
+    from PIL import Image
+except Exception:  # pragma: no cover - dependency is installed in the workflow
+    Image = None
 
 
 # ------------------------------
@@ -127,6 +134,69 @@ def sanitize_filename(name: str) -> str:
     name = re.sub(r'[\\/:*?"<>|]+', '_', name)
     name = re.sub(r'\s+', ' ', name).strip()
     return name or "downloaded_report.pdf"
+
+
+def normalize_candidate_url(url: str) -> str:
+    """
+    Normalize URLs copied out of HTML/Next.js data.
+
+    Report pages often contain signed PDF URLs inside JSON where separators are
+    escaped as ``\u0026``. If we use the raw string, the request is truncated or
+    signed query parameters are lost.
+    """
+    text = unescape(str(url or "")).strip()
+    replacements = {
+        r"\u0026": "&",
+        r"\u003d": "=",
+        r"\u003D": "=",
+        r"\u003f": "?",
+        r"\u003F": "?",
+        r"\u002F": "/",
+        r"\/": "/",
+    }
+    for old, new in replacements.items():
+        text = text.replace(old, new)
+    return text.rstrip("\\")
+
+
+def candidate_score(url: str, kind: str = "pdf") -> int:
+    """
+    Rank candidate resources so real report assets beat static frontend files.
+    """
+    normalized = normalize_candidate_url(url)
+    low = normalized.lower()
+    if not low.startswith(("http://", "https://")):
+        return -1000
+    blocked = [
+        "rumt-zh.com",
+        "/collect",
+        "/speed",
+        "rateconfig",
+        "/_next/static/",
+        "/fe-static/",
+        "/static/media/",
+        "/logo/",
+        "/avatar/",
+    ]
+    if any(part in low for part in blocked):
+        return -1000
+
+    score = 0
+    if "s.reportify.cn/" in low:
+        score += 80
+    if "x-amz-signature" in low or "x-amz-credential" in low:
+        score += 40
+    if ".pdf" in low:
+        score += 100
+    if "url_pdf" in low or "download" in low:
+        score += 25
+    if "preview" in low:
+        score += 35 if kind == "preview" else -10
+    if kind == "pdf" and not (".pdf" in low or "pdf" in low or "download" in low):
+        score -= 60
+    if kind == "preview" and not re.search(r"\.(?:jpe?g|png|webp)(?:[?#]|$)", low):
+        score -= 80
+    return score
 
 
 def parse_cookie_header(header: str) -> list[tuple[str, str]]:
@@ -341,24 +411,41 @@ class ReportifyPDFGrabber:
             r"""
             () => {
               const html = document.documentElement.outerHTML || '';
+              const normalize = (value) => String(value || '')
+                .replace(/\\u0026/g, '&')
+                .replace(/\\u003[dD]/g, '=')
+                .replace(/\\u003[fF]/g, '?')
+                .replace(/\\u002F/g, '/')
+                .replace(/\\\//g, '/');
 
-              const urlPattern = /https?:[^"'\\\s>]+/g;
-              const htmlUrls = [...new Set((html.match(urlPattern) || []))];
+              const urlPattern = /https?:[^"'\s<>]+/g;
+              const htmlUrls = [...new Set((html.match(urlPattern) || []))].map(normalize);
 
               const resourceUrls = performance
                 .getEntriesByType('resource')
                 .map(r => r.name)
+                .map(normalize)
                 .filter(Boolean);
 
-              const embedUrls = Array.from(document.querySelectorAll('iframe, embed, object'))
-                .map(el => el.src || el.data || '')
+              const embedUrls = Array.from(document.querySelectorAll('iframe, embed, object, a, img, source'))
+                .flatMap(el => [
+                  el.src || '',
+                  el.data || '',
+                  el.href || '',
+                  el.currentSrc || '',
+                  el.getAttribute('src') || '',
+                  el.getAttribute('href') || '',
+                  el.getAttribute('data') || '',
+                  el.getAttribute('data-src') || '',
+                ])
+                .map(normalize)
                 .filter(Boolean);
 
               const all = [...new Set([...htmlUrls, ...resourceUrls, ...embedUrls])];
 
               const candidates = all.filter(u => {
                 const s = String(u).toLowerCase();
-                return s.includes('.pdf') || s.includes('pdf') || s.includes('preview') || s.includes('download') || s.includes('report');
+                return s.includes('.pdf') || s.includes('pdf') || s.includes('download');
               });
 
               return { candidates };
@@ -366,24 +453,65 @@ class ReportifyPDFGrabber:
             """
         )
 
-        candidates = result.get("candidates", [])
-        for url in candidates:
-            low = url.lower()
-            if any(blocked in low for blocked in ["rumt-zh.com", "/collect", "/speed", "rateconfig"]):
-                continue
-            if ".pdf" in low or "application/pdf" in low or "download" in low:
-                log(f"发现候选资源：{url}")
-                return url
-
+        candidates = sorted(
+            (normalize_candidate_url(url) for url in result.get("candidates", [])),
+            key=lambda url: candidate_score(url, "pdf"),
+            reverse=True,
+        )
+        candidates = [url for url in candidates if candidate_score(url, "pdf") > 0]
         if candidates:
-            filtered = [
-                url for url in candidates
-                if not any(blocked in url.lower() for blocked in ["rumt-zh.com", "/collect", "/speed", "rateconfig"])
-            ]
-            if filtered:
-                log(f"发现候选资源（首个）：{filtered[0]}")
-                return filtered[0]
+            log(f"发现候选 PDF 资源：{candidates[0]}")
+            return candidates[0]
 
+        return None
+
+    def probe_preview_image_from_dom(self) -> Optional[str]:
+        """
+        Return the best report preview image URL for image-to-PDF fallback.
+        """
+        log("从 DOM / performance entries 中补捞预览图片线索...")
+        result = self.page.evaluate(
+            r"""
+            () => {
+              const html = document.documentElement.outerHTML || '';
+              const normalize = (value) => String(value || '')
+                .replace(/\\u0026/g, '&')
+                .replace(/\\u003[dD]/g, '=')
+                .replace(/\\u003[fF]/g, '?')
+                .replace(/\\u002F/g, '/')
+                .replace(/\\\//g, '/');
+              const urlPattern = /https?:[^"'\s<>]+/g;
+              const htmlUrls = [...new Set((html.match(urlPattern) || []))].map(normalize);
+              const resourceUrls = performance
+                .getEntriesByType('resource')
+                .map(r => r.name)
+                .map(normalize)
+                .filter(Boolean);
+              const imageUrls = Array.from(document.querySelectorAll('img, source'))
+                .flatMap(el => [
+                  el.src || '',
+                  el.currentSrc || '',
+                  el.srcset || '',
+                  el.getAttribute('src') || '',
+                  el.getAttribute('data-src') || '',
+                  el.getAttribute('srcset') || '',
+                ])
+                .flatMap(value => String(value || '').split(',').map(part => part.trim().split(/\s+/)[0]))
+                .map(normalize)
+                .filter(Boolean);
+              return { candidates: [...new Set([...htmlUrls, ...resourceUrls, ...imageUrls])] };
+            }
+            """
+        )
+        candidates = sorted(
+            (normalize_candidate_url(url) for url in result.get("candidates", [])),
+            key=lambda url: candidate_score(url, "preview"),
+            reverse=True,
+        )
+        candidates = [url for url in candidates if candidate_score(url, "preview") > 0]
+        if candidates:
+            log(f"发现候选预览图片：{candidates[0]}")
+            return candidates[0]
         return None
 
     def try_fetch_candidate_url(self, context, candidate_url: str) -> bool:
@@ -399,6 +527,7 @@ class ReportifyPDFGrabber:
             False -> 没抓到
         """
         try:
+            candidate_url = normalize_candidate_url(candidate_url)
             log(f"尝试直接请求候选资源：{candidate_url}")
             resp = context.request.get(candidate_url, timeout=30000)
             if not resp.ok:
@@ -420,6 +549,34 @@ class ReportifyPDFGrabber:
         except Exception as exc:
             warn(f"请求候选资源时失败：{exc}")
             return False
+
+    def try_preview_image_pdf(self, context, preview_url: str) -> bool:
+        """
+        Convert the report preview image to a single-page PDF fallback.
+        """
+        if Image is None:
+            warn("Pillow 未安装，无法把预览图片转成 PDF。")
+            return False
+        try:
+            preview_url = normalize_candidate_url(preview_url)
+            log(f"尝试下载预览图片作为 PDF 兜底：{preview_url}")
+            resp = context.request.get(preview_url, timeout=30000)
+            if not resp.ok:
+                warn(f"预览图片请求失败，状态码：{resp.status}")
+                return False
+            data = resp.body()
+            image = Image.open(BytesIO(data))
+            if image.mode in ("RGBA", "LA", "P"):
+                image = image.convert("RGB")
+            self.output_path.parent.mkdir(parents=True, exist_ok=True)
+            image.save(self.output_path, "PDF", resolution=150.0)
+            saved = self.output_path.read_bytes()
+            if is_pdf_bytes(saved):
+                log(f"已把预览图片保存为 PDF 兜底文件：{self.output_path}")
+                return True
+        except Exception as exc:
+            warn(f"预览图片 PDF 兜底失败：{exc}")
+        return False
 
     def save_result(self) -> Path:
         """
@@ -548,11 +705,16 @@ def main() -> int:
                     if candidate_url:
                         grabber.try_fetch_candidate_url(context=context, candidate_url=candidate_url)
 
-            printed = False
+            fallback_saved = False
             if grabber.captured_pdf_bytes is None and grabber.captured_download is None:
-                printed = grabber.try_print_page_pdf()
+                preview_url = grabber.probe_preview_image_from_dom()
+                if preview_url:
+                    fallback_saved = grabber.try_preview_image_pdf(context=context, preview_url=preview_url)
 
-            saved = output_path if printed else grabber.save_result()
+            if not fallback_saved and grabber.captured_pdf_bytes is None and grabber.captured_download is None:
+                fallback_saved = grabber.try_print_page_pdf()
+
+            saved = output_path if fallback_saved else grabber.save_result()
 
             # 最后再做一次非常轻量的文件头校验
             data = saved.read_bytes()

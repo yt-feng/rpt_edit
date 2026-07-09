@@ -6874,6 +6874,29 @@ async function externalPutStatus(env, id, status, message = "") {
   }
 }
 
+function externalStatusAgeMs(stored) {
+  const updated = Date.parse(String(stored && stored.updated_at || ""));
+  if (!Number.isFinite(updated)) return Number.POSITIVE_INFINITY;
+  return Date.now() - updated;
+}
+
+function externalStatusIsActive(stored) {
+  const status = String(stored && stored.status || "");
+  return ["queued", "running"].includes(status) && externalStatusAgeMs(stored) < 30 * 60 * 1000;
+}
+
+function externalStatusIsRecentFailure(stored) {
+  return String(stored && stored.status || "") === "failed" && externalStatusAgeMs(stored) < 10 * 60 * 1000;
+}
+
+function externalPendingResponse(request, env, stored = null) {
+  return jsonResponse(request, env, 202, {
+    status: stored && stored.status ? String(stored.status) : "pending",
+    wait_seconds: 480,
+    updated_at: stored && stored.updated_at ? String(stored.updated_at) : "",
+  });
+}
+
 function externalIsoDate(publishAt) {
   const ms = Number(publishAt || 0);
   if (!ms) return "";
@@ -6897,6 +6920,45 @@ function slimExternalItem(item) {
     file_type: String(item.file_type || "").trim(),
     summary: summary.length > 220 ? `${summary.slice(0, 220)}…` : summary,
   };
+}
+
+function slimExternalDetailItem(main, id) {
+  const item = slimExternalItem({
+    ...main,
+    report_id: id || main.report_id || main.id,
+  });
+  item.source = "external";
+  item.size_bytes = Number(main.size_bytes || main.file_size || main.file_size_bytes || 0) || 0;
+  item.page_count = Number(main.document_total_page || main.page_count || main.pages || 0) || 0;
+  return item;
+}
+
+async function externalDetailItem(id) {
+  try {
+    const resp = await fetchWithTimeout(`${EXTERNAL_API}/reports/${id}`, { headers: externalHeaders() });
+    if (!resp.ok) return null;
+    const data = await resp.json();
+    const main = data && data.main && typeof data.main === "object" ? data.main : {};
+    return {
+      item: slimExternalDetailItem(main, id),
+      pdf_url: String(main.url_pdf || "").trim(),
+    };
+  } catch (_error) {
+    return null;
+  }
+}
+
+async function handleExternalItem(request, env) {
+  const url = new URL(request.url);
+  const id = String(url.searchParams.get("id") || "").trim();
+  if (!isExternalId(id)) {
+    return jsonResponse(request, env, 400, { error: "Invalid report id." });
+  }
+  const detail = await externalDetailItem(id);
+  if (!detail || !detail.item || !detail.item.id) {
+    return jsonResponse(request, env, 404, { error: "Report not found." });
+  }
+  return jsonResponse(request, env, 200, { item: detail.item });
 }
 
 async function handleExternalSearch(request, env) {
@@ -6940,15 +7002,12 @@ async function handleExternalSearch(request, env) {
 // Fetch the upstream detail and, if the report is directly readable, return its
 // presigned PDF url. Returns "" when the PDF is gated (needs a browser grab).
 async function externalDirectPdfUrl(id) {
-  try {
-    const resp = await fetchWithTimeout(`${EXTERNAL_API}/reports/${id}`, { headers: externalHeaders() });
-    if (!resp.ok) return { url: "", title: "" };
-    const data = await resp.json();
-    const main = data.main || {};
-    return { url: String(main.url_pdf || "").trim(), title: String(main.title || main.title_cn || "").trim() };
-  } catch (_error) {
-    return { url: "", title: "" };
-  }
+  const detail = await externalDetailItem(id);
+  const item = detail && detail.item ? detail.item : {};
+  return {
+    url: detail ? String(detail.pdf_url || "").trim() : "",
+    title: String(item.title || item.title_cn || "").trim(),
+  };
 }
 
 function bytesToBinaryString(bytes) {
@@ -7084,6 +7143,17 @@ async function handleExternalPdf(request, env) {
   }
 
   // 3) Gated and not yet mirrored - request preparation and let the page poll.
+  const stored = await externalStoredStatus(env, id);
+  if (externalStatusIsActive(stored)) {
+    return externalPendingResponse(request, env, stored);
+  }
+  if (externalStatusIsRecentFailure(stored)) {
+    return jsonResponse(request, env, 503, {
+      error: `报告刚刚准备失败，请稍后重试或联系 WeChat: ${CONTACT_WECHAT}。`,
+      updated_at: String(stored.updated_at || ""),
+    });
+  }
+
   await externalPutStatus(env, id, "queued");
   const dispatched = await triggerExternalGrab(env, id);
   if (!dispatched) {
@@ -7092,10 +7162,7 @@ async function handleExternalPdf(request, env) {
       error: `文件准备服务暂时不可用，请联系 WeChat: ${CONTACT_WECHAT}。`,
     });
   }
-  return jsonResponse(request, env, 202, {
-    status: "pending",
-    wait_seconds: 480,
-  });
+  return externalPendingResponse(request, env, { status: "queued", updated_at: new Date().toISOString() });
 }
 
 async function handleExternalStatus(request, env) {
@@ -7933,6 +8000,10 @@ export default {
 
     if (pathname === "/external/status" && request.method === "GET") {
       return handleExternalStatus(request, env);
+    }
+
+    if (pathname === "/external/item" && request.method === "GET") {
+      return handleExternalItem(request, env);
     }
 
     if (pathname === "/report-a/search" && request.method === "GET") {

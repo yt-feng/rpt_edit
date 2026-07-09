@@ -8,6 +8,7 @@
   const DOWNLOAD_PASSWORD_KEY = "kcdesk_download_password";
   const AUTH_SESSION_KEY = "kcdesk_auth_session";
   const VISITOR_ID_KEY = "kcdesk_visitor_id";
+  const DOC_ITEM_CACHE_KEY = "kcdesk_doc_item_cache";
   const AUTHORITY_SOURCE = "authority";
   const REPORT_A_SOURCE = "report-a";
   const THINKTANK_SOURCE = "thinktank";
@@ -2291,6 +2292,64 @@
     return meta;
   }
 
+  function docItemCacheKey(item) {
+    return `${String(item && item.source || EXTERNAL_SOURCE)}:${String(item && item.id || "")}`;
+  }
+
+  function readDocItemCache() {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(DOC_ITEM_CACHE_KEY) || "{}");
+      return parsed && typeof parsed === "object" ? parsed : {};
+    } catch (_error) {
+      return {};
+    }
+  }
+
+  function writeDocItemCache(cache) {
+    try {
+      localStorage.setItem(DOC_ITEM_CACHE_KEY, JSON.stringify(cache));
+    } catch (_error) {
+      // The detail page can still fetch by id from the Worker.
+    }
+  }
+
+  function rememberDocItem(item) {
+    if (!item || !item.id) return;
+    const cache = readDocItemCache();
+    cache[docItemCacheKey(item)] = {
+      saved_at: Date.now(),
+      item: {
+        id: item.id,
+        source: item.source || EXTERNAL_SOURCE,
+        title: item.title || "",
+        title_cn: item.title_cn || "",
+        institution: item.institution || "",
+        date: item.date || "",
+        file_type: item.file_type || "",
+        kind: item.kind || "",
+        page_count: item.page_count || "",
+        size_bytes: item.size_bytes || 0,
+        report_type: item.report_type || "",
+        language: item.language || "",
+        category: item.category || "",
+        author: item.author || "",
+        rating: item.rating || "",
+      },
+    };
+    const entries = Object.entries(cache)
+      .filter(([, value]) => Date.now() - Number(value && value.saved_at || 0) < 7 * 24 * 60 * 60 * 1000)
+      .sort((a, b) => Number(b[1].saved_at || 0) - Number(a[1].saved_at || 0))
+      .slice(0, 80);
+    writeDocItemCache(Object.fromEntries(entries));
+  }
+
+  function cachedDocItem(item) {
+    if (!item || !item.id) return null;
+    const cached = readDocItemCache()[docItemCacheKey(item)];
+    if (!cached || Date.now() - Number(cached.saved_at || 0) > 7 * 24 * 60 * 60 * 1000) return null;
+    return cached.item && typeof cached.item === "object" ? cached.item : null;
+  }
+
   function authorityKindLabel(kind) {
     return kind === "foreign-rt" ? "实时外文" : "普通外文";
   }
@@ -2312,6 +2371,7 @@
   function externalRow(item) {
     const meta = externalMeta(item);
     const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
+    rememberDocItem({ ...item, source: EXTERNAL_SOURCE });
     const url = externalPageUrl(item, "");
     return `
       <a class="related-row external-row" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(item.id)}">
@@ -2346,7 +2406,9 @@
   function thinkTankRow(item) {
     const meta = thinkTankMeta(item);
     const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
-    const url = externalPageUrl({ ...item, source: THINKTANK_SOURCE }, "");
+    const docItem = { ...item, source: THINKTANK_SOURCE };
+    rememberDocItem(docItem);
+    const url = externalPageUrl(docItem, "");
     return `
       <a class="related-row thinktank-row" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(item.id)}">
         <span class="related-title">
@@ -2373,7 +2435,9 @@
 
   function reportARow(item) {
     const meta = reportAMeta(item);
-    const url = externalPageUrl({ ...item, source: REPORT_A_SOURCE }, "");
+    const docItem = { ...item, source: REPORT_A_SOURCE };
+    rememberDocItem(docItem);
+    const url = externalPageUrl(docItem, "");
     return `
       <a class="related-row report-a-row" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(item.id)}">
         <span class="related-title">
@@ -2386,7 +2450,9 @@
 
   function authorityRow(item) {
     const meta = authorityMeta(item);
-    const url = externalPageUrl({ ...item, source: AUTHORITY_SOURCE }, "");
+    const docItem = { ...item, source: AUTHORITY_SOURCE };
+    rememberDocItem(docItem);
+    const url = externalPageUrl(docItem, "");
     return `
       <a class="related-row authority-row" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(item.id)}">
         <span class="related-title">
@@ -2967,7 +3033,10 @@
         const row = event.target.closest(".thinktank-row");
         if (!row) return;
         const item = thinkTankItems.get(String(row.dataset.id || ""));
-        if (item) trackEvent(workerUrl, "report_open", analyticsReportPayload(item, THINKTANK_SOURCE));
+        if (item) {
+          rememberDocItem({ ...item, source: THINKTANK_SOURCE });
+          trackEvent(workerUrl, "report_open", analyticsReportPayload(item, THINKTANK_SOURCE));
+        }
         if (isNativeNewTabLink(row)) return;
         event.preventDefault();
         event.stopPropagation();
@@ -2978,7 +3047,10 @@
       const row = event.target.closest(".external-row");
       if (!row) return;
       const item = externalItems.get(String(row.dataset.id));
-      if (item) trackEvent(workerUrl, "report_open", analyticsReportPayload(item, EXTERNAL_SOURCE));
+      if (item) {
+        rememberDocItem({ ...item, source: EXTERNAL_SOURCE });
+        trackEvent(workerUrl, "report_open", analyticsReportPayload(item, EXTERNAL_SOURCE));
+      }
       if (isNativeNewTabLink(row)) return;
       event.preventDefault();
       event.stopPropagation();
@@ -2989,7 +3061,10 @@
         const row = event.target.closest(".report-a-row");
         if (!row) return;
         const item = reportAItems.get(String(row.dataset.id || ""));
-        if (item) trackEvent(workerUrl, "report_open", analyticsReportPayload(item, REPORT_A_SOURCE));
+        if (item) {
+          rememberDocItem({ ...item, source: REPORT_A_SOURCE });
+          trackEvent(workerUrl, "report_open", analyticsReportPayload(item, REPORT_A_SOURCE));
+        }
         if (isNativeNewTabLink(row)) return;
         event.preventDefault();
         event.stopPropagation();
@@ -3001,7 +3076,10 @@
         const row = event.target.closest(".authority-row");
         if (!row) return;
         const item = authorityItems.get(String(row.dataset.id));
-        if (item) trackEvent(workerUrl, "report_open", analyticsReportPayload(item, AUTHORITY_SOURCE));
+        if (item) {
+          rememberDocItem({ ...item, source: AUTHORITY_SOURCE });
+          trackEvent(workerUrl, "report_open", analyticsReportPayload(item, AUTHORITY_SOURCE));
+        }
         if (isNativeNewTabLink(row)) return;
         event.preventDefault();
         event.stopPropagation();
@@ -3456,22 +3534,7 @@
   function externalPageUrl(item, password, options = {}) {
     const url = new URL("doc.html", window.location.href);
     url.searchParams.set("id", item.id);
-    if (item.source) url.searchParams.set("source", item.source);
     if (password) url.searchParams.set("password", password);
-    if (item.source === THINKTANK_SOURCE) return url.toString();
-    if (item.title) url.searchParams.set("title", item.title);
-    if (item.title_cn) url.searchParams.set("title_cn", item.title_cn);
-    if (item.institution) url.searchParams.set("institution", item.institution);
-    if (item.date) url.searchParams.set("date", item.date);
-    if (item.file_type) url.searchParams.set("file_type", item.file_type);
-    if (item.kind) url.searchParams.set("kind", item.kind);
-    if (item.page_count) url.searchParams.set("page_count", item.page_count);
-    if (item.size_bytes) url.searchParams.set("size_bytes", item.size_bytes);
-    if (item.report_type) url.searchParams.set("report_type", item.report_type);
-    if (item.language) url.searchParams.set("language", item.language);
-    if (item.category) url.searchParams.set("category", item.category);
-    if (item.author) url.searchParams.set("author", item.author);
-    if (item.rating) url.searchParams.set("rating", item.rating);
     return url.toString();
   }
 
@@ -3785,14 +3848,20 @@
   }
 
   function externalItemFromParams(params) {
+    const id = String(params.get("id") || "").trim();
     const rawSource = params.get("source");
+    const inferredSource = /^foreign(?:-rt)?:/.test(id)
+      ? AUTHORITY_SOURCE
+      : (/^report-a:/.test(id)
+        ? REPORT_A_SOURCE
+        : (/^thinktank:/.test(id) ? THINKTANK_SOURCE : EXTERNAL_SOURCE));
     const source = rawSource === AUTHORITY_SOURCE
       ? AUTHORITY_SOURCE
       : (rawSource === REPORT_A_SOURCE
         ? REPORT_A_SOURCE
-        : (rawSource === THINKTANK_SOURCE ? THINKTANK_SOURCE : EXTERNAL_SOURCE));
+        : (rawSource === THINKTANK_SOURCE ? THINKTANK_SOURCE : inferredSource));
     return {
-      id: String(params.get("id") || "").trim(),
+      id,
       source,
       title: params.get("title") || "Report",
       title_cn: params.get("title_cn") || "",
@@ -3947,21 +4016,25 @@
     }
   }
 
-  async function fetchThinkTankDetailItem(workerUrl, item) {
-    if (!workerUrl || !isThinkTankItem(item) || !validDocId(item)) return item;
+  async function fetchDocDetailItem(workerUrl, item) {
+    const cached = cachedDocItem(item);
+    let merged = cached ? { ...item, ...cached, source: item.source } : item;
+    if (!workerUrl || !validDocId(merged)) return merged;
+    let endpoint = "";
+    if (isThinkTankItem(merged)) endpoint = "thinktank/item";
+    else if (merged.source === EXTERNAL_SOURCE) endpoint = "external/item";
+    if (!endpoint) return merged;
     try {
-      const response = await fetch(`${workerUrl}/thinktank/item?id=${encodeURIComponent(item.id)}`, {
+      const response = await fetch(`${workerUrl}/${endpoint}?id=${encodeURIComponent(merged.id)}`, {
         cache: "no-store",
       });
       const data = await response.json().catch(() => ({}));
-      if (!response.ok || !data.item || !data.item.id) return item;
-      return {
-        ...item,
-        ...data.item,
-        source: THINKTANK_SOURCE,
-      };
+      if (!response.ok || !data.item || !data.item.id) return merged;
+      merged = { ...merged, ...data.item, source: merged.source };
+      rememberDocItem(merged);
+      return merged;
     } catch (_error) {
-      return item;
+      return merged;
     }
   }
 
@@ -3988,12 +4061,10 @@
     initAccountGate(workerUrl);
     initAdminGate(workerUrl);
     initNewsfeedNav();
-    item = await fetchThinkTankDetailItem(workerUrl, item);
-    if (isThinkTankItem(item)) {
-      const shortUrl = externalPageUrl(item, params.get("password") || "");
-      if (shortUrl.length < window.location.href.length) {
-        window.history.replaceState({}, "", shortUrl);
-      }
+    item = await fetchDocDetailItem(workerUrl, item);
+    const shortUrl = externalPageUrl(item, params.get("password") || "");
+    if (shortUrl.length < window.location.href.length) {
+      window.history.replaceState({}, "", shortUrl);
     }
     trackEvent(workerUrl, "page_view", {
       page: "doc",
@@ -4004,27 +4075,27 @@
     document.title = `${item.title || "Report"} | KC Desk Notes`;
     const detailFields = isAuthorityItem(item)
       ? `
-        ${field("Source", docSourceLabel(item))}
+        ${field("板块", docSourceLabel(item))}
         ${field("Category", authorityKindLabel(item.kind))}
         ${field("Institution", item.institution || "-")}
         ${field("Date", item.date || "-")}
         ${field("Pages", item.page_count ? `${item.page_count}页` : "-")}
       `
       : (isReportAItem(item) ? `
-        ${field("Source", docSourceLabel(item))}
+        ${field("板块", docSourceLabel(item))}
         ${field("Institution", item.institution || "-")}
         ${field("Date", item.date || "-")}
         ${field("Category", item.category || "-")}
         ${field("Author", item.author || "-")}
         ${field("Pages", item.page_count ? `${item.page_count}页` : "-")}
       ` : (isThinkTankItem(item) ? `
-        ${field("Source", docSourceLabel(item))}
+        ${field("板块", docSourceLabel(item))}
         ${field("Institution", item.institution || "-")}
         ${field("Date", item.date || "-")}
         ${field("Pages", item.page_count ? `${item.page_count}页` : "-")}
         ${field("PDF", formatSize(item.size_bytes) || "Available")}
       ` : `
-        ${field("Source", docSourceLabel(item))}
+        ${field("板块", docSourceLabel(item))}
         ${field("Institution", item.institution || "-")}
         ${field("Date", item.date || "-")}
         ${field("Type", item.file_type || "-")}
