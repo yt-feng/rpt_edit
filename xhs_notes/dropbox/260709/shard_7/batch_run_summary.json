@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 86,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 7,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/37-GS-Oil Tracker：Negative Supply News From Gulf and Russia-260708.pdf",
+          "batch_file": "/tmp/pdf_batch_001_gbqyab0r/pdfs/0001-37-GS-Oil Tracker-Negative Supply News From Gulf and Russia-260708.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/38-GS-Microsoft Corp. （MSFT.US）Four Key Themes into 4QFY EPS-260708.pdf",
+          "batch_file": "/tmp/pdf_batch_001_gbqyab0r/pdfs/0002-38-GS-Microsoft Corp. -MSFT.US-Four Key Themes into 4QFY EPS-260708.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/39-GS-Outdoor Advertising：Solid mid~single digit 2026 growth outlook； recent M&A activity newsflow； 1H 2Q26 JCDecaux Stroeer previews-260708.pdf",
+          "batch_file": "/tmp/pdf_batch_001_gbqyab0r/pdfs/0003-39-GS-Outdoor Advertising-Solid mid-single digit 2026 growth outlook- recent M-A activity newsflow- 1H 2Q26 JCDecaux Stroeer previews-260708.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/40-GS-USA： FOMC Minutes Note Participants Would Support Unchanged or Lower Rates if Inflation Dissipates -Soon” but Higher Rates if Inflation-260708.pdf",
+          "batch_file": "/tmp/pdf_batch_001_gbqyab0r/pdfs/0004-40-GS-USA- FOMC Minutes Note Participants Would Support Unchanged or Lower Rates if Inflation Dissipates -Soon- but Higher Rates if Inflation-260708.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/41-GS-Siemens Healthineers AG （SHLG.DE） Broadly inline for Q3 26 but continue to see FY27 downside risk from China Dx； Neutral-260708.pdf",
+          "batch_file": "/tmp/pdf_batch_001_gbqyab0r/pdfs/0005-41-GS-Siemens Healthineers AG -SHLG.DE- Broadly inline for Q3 26 but continue to see FY27 downside risk from China Dx- Neutral-260708.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

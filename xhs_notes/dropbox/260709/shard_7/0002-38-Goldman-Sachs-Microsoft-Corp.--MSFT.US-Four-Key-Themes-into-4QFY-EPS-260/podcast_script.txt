@@ -1,0 +1,53 @@
+ZH_A: 微软下周二就要发财报了，最近股价却跌了5%，市场到底在担心什么？
+ZH_B: 好问题。市场主要担心三件事：资本开支太高、对英伟达依赖太深、还有Copilot到底能不能赚钱。
+ZH_A: 资本开支高不是好事吗？说明微软在大力投资AI啊。
+ZH_B: 问题是，资本开支在往上调，但云业务Azure的增长却没同步跟上。比如谷歌刚宣布800亿美金融资，全砸资本开支，而微软这边，资本开支预期一直在上调，但Azure增速只在小幅提升。
+ZH_A: 所以市场觉得投入产出比不够好？
+ZH_B: 对。而且微软还面临一个结构性问题：它从英伟达采购芯片的比例比其他云厂商都高，因为它要支持OpenAI的训练需求，而OpenAI一直更偏英伟达的生态。同时微软自研芯片Maia又还不够成熟，这就让它在成本和供应上更被动。
+ZH_A: 那这份报告怎么看？研究员觉得现在是机会还是风险？
+ZH_B: 报告认为风险回报比是偏正面的。因为市场预期已经压得很低了，而基本面前景其实在改善。
+ZH_A: 具体改善在哪里？
+ZH_B: 最核心的是Azure。虽然供应依然偏紧，但Azure增速已经连续两个季度在加速。报告预计4季度Azure增速在40%到41%，比公司指引的39%到40%还要高一点。
+ZH_A: 40%已经很不错了。那下季度指引呢？
+ZH_B: 报告预计下季度指引也是40%到41%，而市场普遍预期是41%。所以微软有可能会超预期，但差距不会太大。
+ZH_A: 那资本开支呢？报告是不是也上调了预测？
+ZH_B: 是的。报告把FY28到FY30的资本开支上调了大约10%。现在预计FY28资本开支将达到3190亿美金，比市场预期的2520亿高出不少。
+ZH_A: 3190亿？那自由现金流不就承压了吗？
+ZH_B: 确实。FY28的自由现金流预计只有168亿，远低于今年的716亿。但报告认为这是战略选择：微软在赌AI基础设施的长期回报。
+ZH_A: 那Copilot呢？这是不是市场最不确定的部分？
+ZH_B: 没错。Copilot的采用在加速，但货币化还需要时间。报告提到几个正面信号：付费座位数已经超过2000万，AI相关ARR达到37亿，同比增长123%。
+ZH_A: 但市场还是担心，像Claude Cowork这类新工具会冲击Office 365的地位。
+ZH_B: 对，这是第三个主要担忧。报告认为，要打消这种担忧，需要看到更多Copilot座位变现的数据，以及用户反馈和参与度的改善。
+ZH_A: 那自研芯片Maia呢？这个是不是也让人担心？
+ZH_B: 是。Maia 200用的是HBM3内存，而英伟达下一代Vera Rubin会用HBM4。内存带宽对AI性能很关键，所以微软在芯片上确实有差距。
+ZH_A: 那报告有没有说微软怎么补这个短板？
+ZH_B: 报告提到几个方向：一是加大跟AMD的合作，作为第二供应商；二是Maia 300可能有大幅改进；三是微软不一定非要造最好的芯片，而是围绕自己的独特工作负载，优化软硬件和基础设施。
+ZH_A: 这倒是很务实的思路。那总结一下，报告觉得微软股价要涨，关键看哪几个变量？
+ZH_B: 三个。第一，新的AI算力供应上线，让Azure能持续超预期；第二，自研芯片和内存采购策略有更多进展；第三，Copilot的座位变现和用户反馈持续改善。
+ZH_A: 这三个里面，你觉得哪个最可能在这次财报里看到信号？
+ZH_B: 最可能的是第一个。Azure增速和指引是这次财报最直接的看点。至于Maia和Copilot的深度数据，报告里还有很多细节没有展开，完整版会讲得更清楚。
+ZH_A: 听起来这份报告的信息量很大。如果听众想获取完整报告，该怎么做？
+ZH_B: 可以加入我们的财经社群，我们会定期分享这类深度研报的完整版本。你可以在节目简介里找到入口。
+ZH_A: 好的，感谢你的解读。我们下期再见。
+
+EN_A: Microsoft reports earnings next Tuesday. The stock is down 5 percent since last quarter. What is the market actually worried about?
+EN_B: Great question. There are three main overhangs. First, capex keeps going up but Azure growth is only improving modestly. Second, Microsoft is more dependent on Nvidia than its peers. Third, there is growing concern that Copilot might not monetize as well as expected.
+EN_A: So the market is worried about spending too much for too little return?
+EN_B: Exactly. And the spending numbers are huge. The report just raised its capex estimates for fiscal 2028 through 2030 by about 10 percent. It now expects 319 billion dollars in capex for fiscal 2028 alone. That is way above the street estimate of 252 billion.
+EN_A: That is a massive number. What about Azure? That is the core growth driver.
+EN_B: Azure is actually the bright spot. The report expects 40 to 41 percent constant currency growth for the June quarter. That would be a second consecutive quarter of acceleration. And guidance for the September quarter is also expected to be in that same range.
+EN_A: So Azure is doing well. But the market is still punishing the stock. Why?
+EN_B: Because the bear case on silicon is well understood. Maia, Microsoft's custom chip, is behind competitors. And Microsoft buys a bigger percentage of its chips from Nvidia than other hyperscalers do. That makes it more exposed to rising memory prices and supply constraints.
+EN_A: Is the report worried about that?
+EN_B: Not overly. It acknowledges the gap but focuses on what Microsoft can do. For example, ramping up with AMD as a second source. And the next generation Maia 300 could be a big step forward based on lessons learned from Maia 100 and 200.
+EN_A: What about Copilot? That seems like the biggest unknown.
+EN_B: It is. The report sees positive data points. Paid seats are now over 20 million. AI annual recurring revenue hit 37 million dollars, up 123 percent year over year. But monetization at scale will take time.
+EN_A: And there is also the threat from new AI tools like Claude Cowork, right?
+EN_B: Right. That is the third overhang. The report says the stock needs more evidence of Copilot seat monetization and better user engagement to overcome that concern.
+EN_A: So what is the bottom line? Does the report think the stock is a buy here?
+EN_B: It sees risk reward as favorable. But it also says the stock needs three things to outperform. First, new supply coming online so Azure can keep beating. Second, more progress on internal silicon and memory strategy. Third, better Copilot monetization and user feedback.
+EN_A: Which of those three is most likely to show up in this earnings report?
+EN_B: Definitely the first one. Azure growth and guidance are the key things to watch. The report has a lot more detail on the other two, but that is in the full version.
+EN_A: Where can our listeners find the full report?
+EN_B: You can join our finance community. We share full research reports there regularly. The link is in the show notes.
+EN_A: Great. Thanks for the insights. See you next time.

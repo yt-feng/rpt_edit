@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_gbqyab0r/pdfs/0001-37-GS-Oil Tracker-Negative Supply News From Gulf and Russia-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_gbqyab0r/pdfs/0002-38-GS-Microsoft Corp. -MSFT.US-Four Key Themes into 4QFY EPS-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_gbqyab0r/pdfs/0003-39-GS-Outdoor Advertising-Solid mid-single digit 2026 growth outlook- recent M-A activity newsflow- 1H 2Q26 JCDecaux Stroeer previews-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_gbqyab0r/pdfs/0004-40-GS-USA- FOMC Minutes Note Participants Would Support Unchanged or Lower Rates if Inflation Dissipates -Soon- but Higher Rates if Inflation-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_gbqyab0r/pdfs/0005-41-GS-Siemens Healthineers AG -SHLG.DE- Broadly inline for Q3 26 but continue to see FY27 downside risk from China Dx- Neutral-260708.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
