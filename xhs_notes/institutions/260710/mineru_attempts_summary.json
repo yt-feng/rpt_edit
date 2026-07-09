@@ -1,0 +1,34 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 4,
+    "successful_pdf_count": 4,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_qsjq7jvs/pdfs/0001-BIS_Assessing-the-effects-of-recent-provisioning-rules-on-consum_8a1f5ae8.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_qsjq7jvs/pdfs/0002-Bruegel_Competing-for-inputs-how-the-European-Union-can-improve-crit_d87213d7.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_qsjq7jvs/pdfs/0003-IMF_C-te-d-Ivoire-Sixth-Review-Under-the-Extended-Arrangement-Un_0ae7eeae.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_qsjq7jvs/pdfs/0004-IMF_Gold-in-Central-Bank-Reserves-Strategic-Considerations-Marke_98aa5f97.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

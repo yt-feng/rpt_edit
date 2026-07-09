@@ -1,0 +1,46 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs",
+  "total_pdf_count_before_shard": 4,
+  "pdf_count_before_skip": 4,
+  "pdf_count": 4,
+  "generated_report_count": 4,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 0,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 4,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/BIS_Assessing-the-effects-of-recent-provisioning-rules-on-consum_8a1f5ae8.pdf",
+          "batch_file": "/tmp/pdf_batch_001_qsjq7jvs/pdfs/0001-BIS_Assessing-the-effects-of-recent-provisioning-rules-on-consum_8a1f5ae8.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/Bruegel_Competing-for-inputs-how-the-European-Union-can-improve-crit_d87213d7.pdf",
+          "batch_file": "/tmp/pdf_batch_001_qsjq7jvs/pdfs/0002-Bruegel_Competing-for-inputs-how-the-European-Union-can-improve-crit_d87213d7.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_C-te-d-Ivoire-Sixth-Review-Under-the-Extended-Arrangement-Un_0ae7eeae.pdf",
+          "batch_file": "/tmp/pdf_batch_001_qsjq7jvs/pdfs/0003-IMF_C-te-d-Ivoire-Sixth-Review-Under-the-Extended-Arrangement-Un_0ae7eeae.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Gold-in-Central-Bank-Reserves-Strategic-Considerations-Marke_98aa5f97.pdf",
+          "batch_file": "/tmp/pdf_batch_001_qsjq7jvs/pdfs/0004-IMF_Gold-in-Central-Bank-Reserves-Strategic-Considerations-Marke_98aa5f97.pdf",
+          "stable_index": "4"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
