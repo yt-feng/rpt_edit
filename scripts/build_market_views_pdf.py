@@ -37,6 +37,7 @@ EXHIBIT_RE = re.compile(r"\b(?:Exhibit|EXHIBIT|Exh\.?|Figure|FIGURE)\s*[-#:：]?
 EXHIBIT_TITLE_RE = re.compile(r"((?:Exhibit|EXHIBIT|Exh\.?|Figure|FIGURE)\s*[-#:：]?\s*\d+\s*[:：-]\s*[^\n。]{8,220}|图表\s*[-#:：]?\s*\d+\s*[:：-]\s*[^\n。]{8,220})", re.I)
 IMAGE_RE = re.compile(r"!\[[^\]]*\]\(([^\)]+)\)")
 DATE_DIR_RE = re.compile(r"^\d{6,8}$")
+REPORT_MARKER_FILES = ("source_mineru.md", "wechat_article.md", "note.md")
 EMAIL_RE = re.compile(r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}", re.I)
 PHONE_RE = re.compile(r"(?:\+?\d[\d\s().-]{7,}\d)")
 HTML_TAG_RE = re.compile(r"<[^>]+>")
@@ -113,16 +114,13 @@ def latest_date_name(roots: list[Path]) -> str:
 
 
 def find_report_dirs(date_dir: Path) -> list[Path]:
+    if not date_dir.exists():
+        return []
     report_dirs: list[Path] = []
-    for shard in sorted(date_dir.glob("shard_*")):
-        if not shard.is_dir():
-            continue
-        for item in sorted(shard.iterdir()):
-            if item.is_dir() and (item / "source_mineru.md").exists():
-                report_dirs.append(item)
-    for item in sorted(date_dir.iterdir()):
-        if item.is_dir() and (item / "source_mineru.md").exists():
-            report_dirs.append(item)
+    for marker in REPORT_MARKER_FILES:
+        for path in sorted(date_dir.rglob(marker)):
+            if path.is_file():
+                report_dirs.append(path.parent)
     seen = set()
     unique = []
     for p in report_dirs:
@@ -131,6 +129,45 @@ def find_report_dirs(date_dir: Path) -> list[Path]:
             seen.add(key)
             unique.append(p)
     return unique
+
+
+def latest_existing_date_dir(root: Path) -> Path | None:
+    if not root.exists():
+        return None
+    candidates = [p for p in root.iterdir() if p.is_dir() and DATE_DIR_RE.match(p.name)]
+    if not candidates:
+        return None
+    return max(candidates, key=lambda p: int(p.name))
+
+
+def shard_dirs(date_dir: Path) -> list[Path]:
+    if not date_dir.exists():
+        return []
+    return [p for p in sorted(date_dir.glob("shard_*")) if p.is_dir()]
+
+
+def report_date_from_path(report_dir: Path) -> str:
+    for part in reversed(report_dir.parts):
+        if DATE_DIR_RE.match(part):
+            return part
+    return ""
+
+
+def source_date_dirs(root: Path, extra_roots: list[Path], date_folder: str) -> tuple[str, list[Path]]:
+    roots = [root, *extra_roots]
+    if date_folder != "latest":
+        report_date = date_folder
+        return report_date, [source_root / report_date for source_root in roots]
+
+    report_date = latest_date_name(roots)
+    date_dirs: list[Path] = []
+    for source_root in roots:
+        latest_dir = latest_existing_date_dir(source_root)
+        if latest_dir is None:
+            log(f"Source root has no date folders, skipping: {source_root}")
+            continue
+        date_dirs.append(latest_dir)
+    return report_date, date_dirs
 
 
 def report_title(report_dir: Path) -> str:
@@ -418,8 +455,11 @@ def convert_webp_if_needed(src: Path, target: Path) -> Path:
 
 
 def copy_figures(figures: list[dict[str, Any]], figures_dir: Path, max_figures: int) -> list[dict[str, Any]]:
+    if figures_dir.exists():
+        shutil.rmtree(figures_dir)
     figures_dir.mkdir(parents=True, exist_ok=True)
-    selected = figures if max_figures <= 0 else figures[:max_figures]
+    source_figures = [fig for fig in figures if fig.get("figure_type") != "external_card"]
+    selected = source_figures if max_figures <= 0 else source_figures[:max_figures]
     copied: list[dict[str, Any]] = []
     for idx, fig in enumerate(selected, 1):
         src = Path(fig["source_path"])
@@ -555,11 +595,9 @@ EXTERNAL_CATEGORY_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
 
 def figure_ids_for_report(figures: list[dict[str, Any]], report_id: str, limit: int = 1) -> list[str]:
     ids: list[str] = []
-    preferred = sorted(
-        [f for f in figures if str(f.get("report_id")) == report_id],
-        key=lambda f: 0 if f.get("figure_type") == "external_card" else 1,
-    )
-    for fig in preferred:
+    for fig in figures:
+        if str(fig.get("report_id")) != report_id or fig.get("figure_type") == "external_card":
+            continue
         fid = str(fig.get("figure_id") or "")
         if fid and fid not in ids:
             ids.append(fid)
@@ -1016,8 +1054,8 @@ def main() -> int:
     parser.add_argument("--max-figures", type=int, default=0, help="0 means no limit")
     parser.add_argument("--max-selected-figures", type=int, default=0, help="0 means no limit")
     parser.add_argument("--max-figures-per-report", type=int, default=0, help="0 means no limit")
-    parser.add_argument("--max-external-visuals-per-report", type=int, default=1,
-                        help="Visual summary cards to add for institution/consulting reports when available.")
+    parser.add_argument("--max-external-visuals-per-report", type=int, default=0,
+                        help="Deprecated; Market Views uses source exhibits only, not generated visual cards.")
     parser.add_argument("--max-external-roundup-items", type=int, default=24,
                         help="Maximum institution/consulting items to expand in the external roundup.")
     parser.add_argument("--compile", default="false")
@@ -1025,39 +1063,31 @@ def main() -> int:
 
     root = Path(args.dropbox_output_root)
     extra_roots = [Path(r.strip()) for r in (args.extra_roots or "").split(",") if r.strip()]
-    if args.date_folder == "latest":
-        report_date = latest_date_name([root, *extra_roots])
-        date_dir = root / report_date
-    else:
-        report_date = args.date_folder
-        date_dir = root / report_date
+    report_date, date_dirs = source_date_dirs(root, extra_roots, args.date_folder)
     out_dir = Path(args.output_root) / report_date
     figures_dir = out_dir / "figures"
     out_dir.mkdir(parents=True, exist_ok=True)
 
     report_dirs: list[Path] = []
-    if date_dir.exists():
-        report_dirs.extend(find_report_dirs(date_dir))
-        log(f"Using {len(report_dirs)} report directories from {date_dir}")
-    else:
-        log(f"Primary Dropbox date folder not found, continuing with extra roots only: {date_dir}")
-
-    # Merge additional output roots (e.g. xhs_notes/institutions and xhs_notes/consulting)
-    # for the resolved report date. The resolved "latest" date is the latest date present
-    # in any source root, so institution/consulting-only days can still produce a PDF.
-    for extra in extra_roots:
-        extra_date_dir = extra / report_date
-        if extra_date_dir.exists():
-            extra_dirs = find_report_dirs(extra_date_dir)
-            log(f"Merging {len(extra_dirs)} report directories from {extra_date_dir}")
-            report_dirs.extend(extra_dirs)
-        else:
-            log(f"Extra root date folder not found, skipping: {extra_date_dir}")
+    for source_dir in date_dirs:
+        if not source_dir.exists():
+            log(f"Source date folder not found, skipping: {source_dir}")
+            continue
+        source_dirs = find_report_dirs(source_dir)
+        if source_dir.parent == root and shard_dirs(source_dir) and not source_dirs:
+            raise RuntimeError(
+                f"Primary Dropbox folder has shard directories but no report folders: {source_dir}. "
+                "Refusing to generate Market Views without bank research inputs."
+            )
+        log(f"Using {len(source_dirs)} report directories from {source_dir}")
+        report_dirs.extend(source_dirs)
     if args.max_reports > 0:
         report_dirs = report_dirs[: args.max_reports]
     if not report_dirs:
-        raise RuntimeError(f"No report outputs found under {date_dir}")
-    log(f"Found {len(report_dirs)} report directories (incl. extra roots)")
+        roots_text = ", ".join(str(path) for path in date_dirs)
+        raise RuntimeError(f"No report outputs found under source date folders: {roots_text}")
+    log(f"MARKET_VIEWS_DATE_FOLDER={report_date}")
+    log(f"Found {len(report_dirs)} report directories (incl. all source roots)")
 
     reports: list[dict[str, Any]] = []
     raw_figures: list[dict[str, Any]] = []
@@ -1074,6 +1104,7 @@ def main() -> int:
             "source_group": source_group,
             "source_label": source_group_label(source_group),
             "institution_name": institution_name,
+            "source_date_folder": report_date_from_path(report_dir),
             "digest": digest["digest"],
             "extract": report_extract(report_dir, args.per_report_extract_chars),
         })
@@ -1082,20 +1113,6 @@ def main() -> int:
             fig["source_group"] = source_group
             fig["source_label"] = source_group_label(source_group)
             fig["institution_name"] = institution_name
-        if source_group in EXTERNAL_SOURCE_GROUPS:
-            cards = extract_external_visual_cards(
-                report_dir,
-                rid,
-                digest["title"],
-                institution_name,
-                status,
-                args.max_external_visuals_per_report,
-            )
-            for fig in cards:
-                fig["source_group"] = source_group
-                fig["source_label"] = source_group_label(source_group)
-                fig["institution_name"] = institution_name
-            figs.extend(cards)
         raw_figures.extend(figs)
         log(f"Collected {rid}: {digest['title']} | source={source_group_label(source_group)} {institution_name or ''} | figure_candidates={len(figs)}")
 

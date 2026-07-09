@@ -112,10 +112,24 @@ def image_flowable(path: Path, max_width: float, max_height: float) -> Image | N
         ratio = min(max_width / img.imageWidth, max_height / img.imageHeight, 1.0)
         img.drawWidth = img.imageWidth * ratio
         img.drawHeight = img.imageHeight * ratio
+        img.hAlign = "CENTER"
         return img
     except Exception as exc:
         log(f"Skip image {path}: {exc}")
         return None
+
+
+def repo_asset_path(summary_dir: Path, relative_path: str) -> Path:
+    candidates = [
+        Path(relative_path),
+        summary_dir / relative_path,
+        summary_dir.parent / relative_path,
+        summary_dir.parent.parent / relative_path,
+    ]
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    return candidates[0]
 
 
 def iter_figure_ids(section: dict[str, Any]) -> list[str]:
@@ -200,9 +214,8 @@ def combined_categories(report_id: str, main_map: dict[str, list[str]], ext_map:
 def figure_ids_for_report(figures: dict[str, dict[str, Any]], report_id: str, limit: int = 1) -> list[str]:
     matching = [
         fig for fig in figures.values()
-        if str(fig.get("report_id") or "") == report_id
+        if str(fig.get("report_id") or "") == report_id and fig.get("figure_type") != "external_card"
     ]
-    matching.sort(key=lambda fig: 0 if fig.get("figure_type") == "external_card" else 1)
     ids: list[str] = []
     for fig in matching:
         fid = str(fig.get("figure_id") or "")
@@ -414,7 +427,11 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
     font = register_cjk_font()
     summary = load_json(summary_dir / "market_views_structured.json")
     reports = {item["id"]: item for item in load_json(summary_dir / "report_inputs.json")}
-    figures = {item["figure_id"]: item for item in load_json(summary_dir / "figure_candidates.json")}
+    figures = {
+        item["figure_id"]: item
+        for item in load_json(summary_dir / "figure_candidates.json")
+        if item.get("figure_type") != "external_card"
+    }
     grouped_roundups = source_roundups(summary, reports, figures)
     coverage_map = source_roundup_map(grouped_roundups)
 
@@ -432,6 +449,7 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
     styles.add(ParagraphStyle(name="KCTag", fontName=font, fontSize=7.8, leading=10.5, textColor=colors.HexColor("#667085"), spaceAfter=2))
     styles.add(ParagraphStyle(name="KCCaption", fontName=font, fontSize=8.2, leading=11, textColor=colors.HexColor("#555555"), alignment=TA_CENTER, spaceAfter=8))
     styles.add(ParagraphStyle(name="KCDisclaimer", fontName=font, fontSize=6.8, leading=9.2, textColor=colors.HexColor("#777777"), alignment=TA_LEFT, spaceAfter=5))
+    styles.add(ParagraphStyle(name="KCCTA", fontName=font, fontSize=16, leading=22, alignment=TA_CENTER, textColor=colors.HexColor("#111827"), spaceAfter=12))
     styles.add(ParagraphStyle(name="KCTocLevel0", fontName=font, fontSize=10, leading=14, leftIndent=0, firstLineIndent=0, spaceBefore=4))
     styles.add(ParagraphStyle(name="KCTocLevel1", fontName=font, fontSize=8.5, leading=11.5, leftIndent=16, firstLineIndent=0, textColor=colors.HexColor("#666666")))
 
@@ -550,6 +568,12 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
         ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
     ]))
     story.append(table)
+
+    story.append(PageBreak())
+    story.append(Paragraph("更多详情报告kcdesk.com", styles["KCCTA"]))
+    cta_image = image_flowable(repo_asset_path(summary_dir, "prompts/zsxq_img.jpg"), max_width=9.5 * cm, max_height=11.0 * cm)
+    if cta_image:
+        story.append(cta_image)
 
     story.append(PageBreak())
     story.append(Paragraph("Disclaimer", styles["KCH1"]))

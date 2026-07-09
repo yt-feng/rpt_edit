@@ -113,8 +113,9 @@ jobs:
             --max-figures 0 \
             --max-selected-figures 0 \
             --max-figures-per-report 0 \
+            --max-external-visuals-per-report 0 \
             --compile "$COMPILE_LATEX" 2>&1 | tee market_views_build_progress.log
-          RESOLVED_DATE_FOLDER="$(find market_view_summaries -maxdepth 1 -type d -regex '.*/[0-9]+' -printf '%f\n' | sort -n | tail -1)"
+          RESOLVED_DATE_FOLDER="$(grep -Eo 'MARKET_VIEWS_DATE_FOLDER=[0-9]+' market_views_build_progress.log | tail -1 | cut -d= -f2)"
           if [ -z "$RESOLVED_DATE_FOLDER" ]; then
             echo "Could not resolve generated market_view_summaries date folder." >&2
             exit 1
