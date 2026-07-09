@@ -1,0 +1,120 @@
+你是闲鱼资料类商品文案编辑，擅长把一份投研/行业/公司研报改写成适合闲鱼发布的商品说明。
+
+【目标】
+- 基于下面研报解析内容，生成一份可以复制到闲鱼商品详情里的中文文案。
+- 风格参考用户提供的闲鱼对标笔记：标题直给、信息密度高、用途明确、适合人群明确、交付方式清楚。
+- 语言要自然，像真实卖家发布，不要像公众号文章、小红书笔记或 AI 摘要。
+- 不要使用太夸张的营销词，不要承诺收益，不要说“稳赚”“内幕”“必涨”。
+- 可以适度口语化，但不要低俗。
+- 硬性要求：全文不要使用任何 emoji 或符号表情。
+- 硬性要求：全文必须低于 1500 字，宁可少写，也不要超长。
+
+【必须输出结构】
+1. `闲鱼标题：` 一行，控制在 30 字以内，适合商品标题。
+2. `商品描述：` 正文，适合直接粘贴到闲鱼详情页。
+3. `Hashtag：` 一行，给 6-10 个平台可用标签，用 `#` 开头，空格分隔。
+
+【长度硬性要求】
+- 输出总字数必须低于 1500 字，包括标题、商品描述、Hashtag。
+- 商品描述控制在 900-1200 字以内，避免写成长文。
+- 亮点 bullet 每条控制在 30 字以内。
+
+【严禁输出】
+- 不要输出 `建议价格：`。
+- 不要输出 `搜索关键词：`。
+- 不要输出“搜索词”“关键词”“搜索关键词”等栏目。
+- 不要给具体价格区间、成交承诺或价格建议。
+- 不要使用任何 emoji，例如 ✅、🔥、📌、👉、💰、⭐ 等。
+
+【商品描述写法】
+- 第一段：直接说明这是什么报告，页数/语言/主题/公司或行业。如果页数、日期、语言不确定，就不要编。
+- 第二段：说明适合谁，比如投研、券商面试、PE/VC、行业研究、学习参考、写报告等。
+- 第三段：用 3-5 个亮点 bullet，风格参考：
+  - 三大情景框架：DCF、P/ARR、EV/Sales
+  - 关键变量分析
+  - 估值逻辑、假设、终值占比等核心内容覆盖
+  - 适合准备 AI 相关面试、研究 AI 估值的同学
+- 第四段：交付说明，参考：`资料为电子版 PDF，拍下后 24 小时内发网盘链接或邮箱。`
+- 第五段：虚拟商品说明，参考：`电子类资料一经发货不退不换，有问题可以提前咨询。`
+- 可以补一句：`需要其他报告也可以私聊，支持一站式咨询。`
+
+【Hashtag 写法】
+- 只输出平台相对安全、偏学习和资料属性的标签。
+- 推荐从这些里选择：`#学习资料` `#研究笔记` `#学习笔记` `#行业研究` `#研报资料` `#资料整理` `#报告学习` `#案例研究`。
+- 不要输出 `#财经` `#投资` `#股票` `#基金` `#理财` `#暴富` `#内幕` 等敏感标签。
+
+【平台发布合规要求】
+- 不要出现“投资建议”“买入”“卖出”“强烈推荐”“稳赚”“保本”“必涨”“抄底”“上车”“内幕”“翻倍”等金融操作或收益承诺表达。
+- “投资”相关词尽量改成“投研”“研究”“观察”“学习参考”；如果必须保留，也要保持中性。
+- 不要出现“独家”“原版”“内部”“无水印”“全网最低”“最全”“最强”“必看”等高风险或极限词。
+- 不要写“关注”“点赞”“求关注”“评论区留言”等直接互动诱导。
+- 不要承诺资料一定可用于获利、就业、通过面试或获得收益。
+
+【合规与避坑】
+- 默认避免出现具体投行品牌名，比如“GS”“GS”“MS”，统一写作“投行研报”或“投行研报”。
+- 不要承诺研究或交易结果。
+- 不要伪造页数、日期、作者、公司覆盖范围。研报未给出时就不写。
+- 不要输出解释说明，只输出闲鱼文案本身。
+
+【研报解析内容】
+"""
+# JPM
+
+# Electronic Components: Earnings Outlook (Apr-Jun)
+
+## Estimate solid earnings overall; difficult to tell how share prices will react
+
+We estimate solid earnings momentum in the April-June 2026 quarter especially for AI server, industrial machinery, and automotive applications, and also expect yen depreciation versus the dollar to boost earnings. However, passive component makers and other AI server-related stocks' share prices rose sharply from April, so we think weak short-term earnings could lead to prices falling for stocks with share prices far too high relative to earnings.
+
+\- Sector outlook: Most of the companies in our electronic component coverage assumed USD/JPY of 150-155 for FY2026, but the actual level in April-June was 159-160, which should boost earnings. In addition to this weak yen tailwind, we also estimate strong recovery momentum particularly in AI server, industrial machinery, and automotive applications, and in overall terms, we think April-June quarter operating profit is likely to be in line with or beat guidance. However, the share prices of passive component makers and other AI server-related stocks may have appreciated too rapidly relative to short-term earnings, so if earnings fall slightly short of guidance or merely disappoint the market, we think share prices could fall sharply, and we believe short-term share price volatility could increase for names with low profitability levels.
+
+\- Passive component stocks: Some overseas investors still have high expectations for short-term MLCC price hikes due to tight supply/demand conditions, but we see few prospects for price hikes in July-September and recommend buying on weakness if share prices fall. We forecast an MLCC shortage from FY2027, and we think prices will start to rise when customers become aware of the shortage with negotiations over 2027 supplies in October-December. Regarding 1Q (April-June) FY2026 operating profit, we currently cautiously forecast ¥86.5 billion at Murata Manufacturing, but we think ¥90 billion or higher could be possible given the effects of yen depreciation and strong market conditions so we are waiting for the actual result. Meanwhile, we forecast 1Q operating profit at Taiyo Yuden of ¥5.0 billion, but are concerned profit could undershoot depending on when the strikes at MLCC production facilities in South Korea end. The stock market's short-term stance toward Taiyo Yuden is one of severe caution due to the 4Q FY2025 earnings undershoot and overall execution risk, but we expect its share price to react strongly depending on 1Q FY2026 results. Further, we forecast 1Q operating profit at TDK of ¥67.4 billion. We think it will be a positive surprise if operating profit is much higher than ¥70 billion.
+
+\- Guidance overshoots and undershoots: Looking at other stocks, we expect 1Q progress toward guidance overshoots at sector companies including Hirose Electric, MinebeaMitsumi, and Rohm. We do not currently expect any sector stocks to greatly undershoot guidance. We expect 1Q results to beat guidance due to strong demand for industrial machinery applications at Hirose Electric, precision technologies segment buoyancy at MinebeaMitsumi, and a general recovery in market conditions plus tight supply/demand for discrete semiconductors at Rohm.
+
+Japan Equity Research
+
+Technology - Electronic Components
+
+Akinori Kanemoto AC
+
+(81-3) 6736 8628
+
+akinori.kanemoto@JPM.com
+
+Ikki Shibata
+
+(81-3) 6736 8641
+
+ikki.shibata@JPM.com
+
+JPM Securities Japan Co., Ltd.
+
+Figure 1: Share price performance of major electronic components companies
+
+<table><tr><td>Ticker</td><td>Company</td><td>Price(JPY)</td></tr><tr><td>6981</td><td>Murata Mfg.</td><td>11,080</td></tr><tr><td>6976</td><td>Taiyo Yuden</td><td>20,560</td></tr><tr><td>6762</td><td>TDK</td><td>3,699</td></tr><tr><td>6971</td><td>Kyocera</td><td>3,916</td></tr><tr><td>6963</td><td>Rohm</td><td>5,950</td></tr><tr><td>6996</td><td>Nichicon</td><td>4,435</td></tr><tr><td>6997</td><td>Nippon Chemi-con</td><td>5,570</td></tr><tr><td>6594</td><td>Nidec</td><td>2,787</td></tr><tr><td>6479</td><td>MinebeaMitsumi</td><td>4,848</td></tr><tr><td>4062</td><td>Ibiden</td><td>23,345</td></tr><tr><td>6806</td><td>Hirose Elec</td><td>29,265</td></tr><tr><td>6807</td><td>JAE</td><td>2,372</td></tr><tr><td>6770</td><td>AlpsAlpine</td><td>2,126</td></tr><tr><td>5334</td><td>Niterra</td><td>10,990</td></tr><tr><td>6727</td><td>Wacom</td><td>787</td></tr><tr><td>7915</td><td>NISSHA</td><td>1,362</td></tr><tr><td colspan="3">Simple Average</td></tr><tr><td></td><td>SOX</td><td>12,626</td></tr><tr><td></td><td>NK225</td><td>69,744</td></tr><tr><td></td><td>TOPIX</td><td>4,065</td></tr></table>
+
+Source: Bloomberg Finance L.P., JPM
+
+<table><tr><td colspan="6">Performance</td></tr><tr><td>-1W</td><td>-1M</td><td>-3M</td><td>-6M</td><td>-9M</td><td>-12M</td></tr><tr><td>3.2%</td><td>14.3%</td><td>191.0%</td><td>232.5%</td><td>280.5%</td><td>420.1%</td></tr><tr><td>10.5%</td><td>29.7%</td><td>352.0%</td><td>468.7%</td><td>480.5%</td><td>699.1%</td></tr><tr><td>3.0%</td><td>-10.0%</td><td>83.1%</td><td>64.8%</td><td>61.2%</td><td>128.5%</td></tr><tr><td>11.6%</td><td>5.3%</td><td>56.8%</td><td>73.5%</td><td>93.9%</td><td>133.9%</td></tr><tr><td>11.5%</td><td>12.9%</td><td>64.8%</td><td>157.0%</td><td>151.3%</td><td>218.4%</td></tr><tr><td>4.7%</td><td>1.4%</td><td>140.1%</td><td>172.1%</td><td>211.2%</td><td>265.0%</td></tr><tr><td>-0.4%</td><td>11.8%</td><td>274.6%</td><td>274.6%</td><td>259.1%</td><td>371.6%</td></tr><tr><td>6.8%</td><td>0.5%</td><td>27.6%</td><td>32.1%</td><td>6.2%</td><td>4.8%</td></tr><tr><td>1.6%</td><td>-2.9%</td><td>86.1%</td><td>52.0%</td><td>66.8%</td><td>123.4%</td></tr><tr><td>-1.5%</td><td>24.4%</td><td>172.9%</td><td>232.9%</td><td>381.3%</td><td>634.5%</td></tr><tr><td>0.5%</td><td>2.2%</td><td>40.7%</td><td>65.8%</td><td>53.5%</td><td>72.5%</td></tr><tr><td>2.8%</td><td>-3.2%</td><td>1.0%</td><td>-7.0%</td><td>-8.2%</td><td>-4.4%</td></tr><tr><td>5.0%</td><td>-0.4%</td><td>-2.9%</td><td>5.9%</td><td>12.7%</td><td>41.9%</td></tr><tr><td>2.6%</td><td>8.2%</td><td>46.3%</td><td>57.6%</td><td>86.0%</td><td>129.2%</td></tr><tr><td>3.0%</td><td>-13.4%</td><td>1.0%</td><td>-2.2%</td><td>-8.1%</td><td>16.8%</td></tr><tr><td>-2.2%</td><td>-11.0%</td><td>9.8%</td><td>5.6%</td><td>-4.9%</td><td>1.8%</td></tr><tr><td>3.9%</td><td>4.4%</td><td>96.6%</td><td>117.9%</td><td>132.7%</td><td>203.6%</td></tr><tr><td>-7.9%</td><td>3.3%</td><td>59.5%</td><td>65.0%</td><td>86.4%</td><td>123.6%</td></tr><tr><td>0.4%</td><td>4.7%</td><td>30.6%</td><td>32.8%</td><td>45.5%</td><td>75.2%</td></tr><tr><td>2.1%</td><td>2.9%</td><td>11.5%</td><td>14.9%</td><td>26.0%</td><td>43.7%</td></tr></table>
+
+<table><tr><td colspan="6">Performance Ranking</td></tr><tr><td>-1W</td><td>-1M</td><td>-3M</td><td>-6M</td><td>-9M</td><td>-12M</td></tr><tr><td>7</td><td>3</td><td>3</td><td>4</td><td>3</td><td>3</td></tr><tr><td>3</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>9</td><td>14</td><td>7</td><td>9</td><td>10</td><td>9</td></tr><tr><td>1</td><td>7</td><td>9</td><td>7</td><td>7</td><td>7</td></tr><tr><td>2</td><td>4</td><td>8</td><td>6</td><td>6</td><td>6</td></tr><tr><td>6</td><td>9</td><td>5</td><td>5</td><td>5</td><td>5</td></tr><tr><td>14</td><td>5</td><td>2</td><td>2</td><td>4</td><td>4</td></tr><tr><td>4</td><td>10</td><td>12</td><td>12</td><td>13</td><td>14</td></tr><tr><td>12</td><td>12</td><td>6</td><td>11</td><td>9</td><td>10</td></tr><tr><td>15</td><td>2</td><td>4</td><td>3</td><td>2</td><td>2</td></tr><tr><td>13</td><td>8</td><td>11</td><td>8</td><td>11</td><td>11</td></tr><tr><td>10</td><td>13</td><td>15</td><td>16</td><td>16</td><td>16</td></tr><tr><td>5</td><td>11</td><td>16</td><td>13</td><td>12</td><td>12</td></tr><tr><td>11</td><td>6</td><td>10</td><td>10</td><td>8</td><td>8</td></tr><tr><td>8</td><td>16</td><td>14</td><td>15</td><td>15</td><td>13</td></tr><tr><td>16</td><td>15</td><td>13</td><td>14</td><td>14</td><td>15</td></tr></table>
+
+Note: Stock prices as of July 3. The darker the red, the higher the ranking of stock price performance; the darker blue, the lower the ranking of stock price performance.
+
+<table><tr><td colspan="4">CY2025</td><td colspan="4">CY2026</td><td>CY26</td><td>CY26</td></tr><tr><td>1Q</td><td>2Q</td><td>3Q</td><td>4Q</td><td>1Q</td><td>2QE</td><td>3QE</td><td>4QE</td><td>2Q</td><td>3Q</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td>JPM</td><td>JPM</td><td>JPM</td><td>BBG</td><td>BBG</td></tr><tr><td>411,863</td><td>416,154</td><td>486,624</td><td>467,454</td><td>460,624</td><td>465,206</td><td>499,452</td><td>518,712</td><td>470,546</td><td>523,662</td></tr><tr><td>86,714</td><td>84,810</td><td>92,814</td><td>88,515</td><td>89,202</td><td>92,139</td><td>96,027</td><td>101,214</td><td>93,360</td><td>101,285</td></tr><tr><td>534,262</td><td>535,753</td><td>647,610</td><td>675,203</td><td>646,254</td><td>646,082</td><td>696,340</td><td>708,545</td><td>636,533</td><td>702,121</td></tr><tr><td>522,399</td><td>478,038</td><td>513,347</td><td>530,611</td><td>548,207</td><td>-</td><td>-</td><td>-</td><td>471,805</td><td>495,950</td></tr><tr><td>103,824</td><td>116,205</td><td>128,023</td><td>125,287</td><td>111,633</td><td>132,143</td><td>143,397</td><td>143,856</td><td>127,169</td><td>134,114</td></tr><tr><td>43,006</td><td>39,601</td><td>41,131</td><td>43,522</td><td>45,470</td><td>-</td><td>-</td><td>-</td><td>44,482</td><td>46,735</td></tr><tr><td>31,858</td><td>30,885</td><td>33,361</td><td>35,898</td><td>36,677</td><td>-</td><td>-</td><td>-</td><td>35,984</td><td>40,794</td></tr><tr><td>661,849</td><td>638,026</td><td>664,277</td><td>676,869</td><td>689,319</td><td>-</td><td>-</td><td>-</td><td>669,283</td><td>675,663</td></tr><tr><td>374,823</td><td>366,925</td><td>411,389</td><td>453,921</td><td>432,152</td><td>415,518</td><td>438,663</td><td>435,473</td><td>413,724</td><td>441,779</td></tr><tr><td>99,099</td><td>97,464</td><td>98,021</td><td>103,136</td><td>117,580</td><td>-</td><td>-</td><td>-</td><td>117,335</td><td>124,069</td></tr><tr><td>44,998</td><td>48,972</td><td>53,053</td><td>54,524</td><td>54,715</td><td>57,837</td><td>61,479</td><td>62,281</td><td>55,151</td><td>58,603</td></tr><tr><td>55,191</td><td>51,605</td><td>58,836</td><td>56,346</td><td>61,085</td><td>58,524</td><td>60,918</td><td>60,284</td><td>57,697</td><td>61,534</td></tr><tr><td>249,791</td><td>238,920</td><td>266,791</td><td>255,478</td><td>258,270</td><td>233,968</td><td>278,763</td><td>280,700</td><td>236,981</td><td>271,926</td></tr><tr><td>167,320</td><td>169,927</td><td>181,244</td><td>174,884</td><td>205,152</td><td>-</td><td>-</td><td>-</td><td>191,002</td><td>196,658</td></tr><tr><td>28,163</td><td>24,505</td><td>26,889</td><td>30,244</td><td>28,357</td><td>25,947</td><td>28,117</td><td>30,442</td><td>26,424</td><td>27,909</td></tr><tr><td>47,442</td><td>49,607</td><td>48,221</td><td>49,627</td><td>45,790</td><td>50,060</td><td>52,135</td><td>53,676</td><td>48,053</td><td>50,945</td></tr><tr><td>3,462,356</td><td>3,385,232</td><td>3,753,017</td><td>3,820,113</td><td>3,795,655</td><td>3,718,163</td><td>3,967,577</td><td>4,010,992</td><td>3,695,527</td><td>3,953,745</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>-6.3%</td><td>6.6%</td><td>15.4%</td><td>1.2%</td><td>2.8%</td><td>13.0%</td><td>20.0%</td><td>6.6%</td><td>13.1%</td><td>7.6%</td></tr><tr><td>0.4%</td><td>4.9%</td><td>14.4%</td><td>2.1%</td><td>2.7%</td><td>6.3%</td><td>13.2%</td><td>9.1%</td><td>10.1%</td><td>9.1%</td></tr><tr><td>-4.5%</td><td>10.5%</td><td>24.8%</td><td>18.3%</td><td>11.2%</td><td>20.9%</td><td>30.0%</td><td>9.4%</td><td>18.8%</td><td>8.4%</td></tr><tr><td>3.0%</td><td>-6.6%</td><td>2.9%</td><td>6.2%</td><td>11.1%</td><td>-</td><td>-</td><td>-</td><td>-1.3%</td><td>-3.4%</td></tr><tr><td>-10.3%</td><td>3.2%</td><td>8.2%</td><td>10.1%</td><td>-0.9%</td><td>27.3%</td><td>23.4%</td><td>12.4%</td><td>9.4%</td><td>4.8%</td></tr><tr><td>-6.9%</td><td>-7.7%</td><td>0.0%</td><td>0.4%</td><td>-5.7%</td><td>-</td><td>-</td><td>-</td><td>12.3%</td><td>13.6%</td></tr><tr><td>-10.7%</td><td>-11.0%</td><td>13.9%</td><td>17.2%</td><td>18.6%</td><td>-</td><td>-</td><td>-</td><td>16.5%</td><td>22.3%</td></tr><tr><td>12.6%</td><td>6.0%</td><td>2.5%</td><td>4.8%</td><td>5.7%</td><td>-</td><td>-</td><td>-</td><td>4.9%</td><td>1.7%</td></tr><tr><td>-1.7%</td><td>5.2%</td><td>15.7%</td><td>7.4%</td><td>16.9%</td><td>10.9%</td><td>19.6%</td><td>5.9%</td><td>12.8%</td><td>7.4%</td></tr><tr><td>7.1%</td><td>7.9%</td><td>11.1%</td><td>10.5%</td><td>32.5%</td><td>-</td><td>-</td><td>-</td><td>20.4%</td><td>26.6%</td></tr><tr><td>6.5%</td><td>21.4%</td><td>18.2%</td><td>9.8%</td><td>9.6%</td><td>28.5%</td><td>25.5%</td><td>17.4%</td><td>12.6%</td><td>10.5%</td></tr><tr><td>-4.9%</td><td>-5.2%</td><td>5.9%</td><td>-2.7%</td><td>15.3%</td><td>6.0%</td><td>18.0%</td><td>2.5%</td><td>11.8%</td><td>4.6%</td></tr><tr><td>-4.1%</td><td>4.5%</td><td>14.2%</td><td>-0.5%</td><td>3.2%</td><td>-6.3%</td><td>16.7%</td><td>5.2%</td><td>-0.8%</td><td>1.9%</td></tr><tr><td>8.1%</td><td>7.1%</td><td>9.5%</td><td>9.9%</td><td>27.4%</td><td>-</td><td>-</td><td>-</td><td>12.4%</td><td>8.5%</td></tr><tr><td>-16.1%</td><td>-17.3%</td><td>-7.8%</td><td>7.5%</td><td>-6.1%</td><td>-7.9%</td><td>14.7%</td><td>13.2%</td><td>7.8%</td><td>3.8%</td></tr><tr><td>8.2%</td><td>6.2%</td><td>-8.9%</td><td>1.8%</td><td>-3.0%</td><td>5.5%</td><td>5.1%</td><td>11.3%</td><td>-3.1%</td><td>5.6%</td></tr><tr><td>0.6%</td><td>4.0%</td><td>11.2%</td><td>6.9%</td><td>8.3%</td><td>7.4%</td><td>17.2%</td><td>6.9%</td><td>9.2%</td><td>5.3%</td></tr></table>
+
+Figure 2: Earnings forecasts
+
+<table><tr><td rowspan="2" colspan="2"></td><td>FY24</td><td>FY25</td><td>FY26E</td><td>FY27E</td><td>FY28E</td><td>FY26E</td><td>FY26E</td><td>FY27E</td><td>FY28E</td></tr><tr><td></td><td></td><td>JPM</td><td>JPM</td><td>JPM</td><td>CoE</td><td>BBG</td><td>BBG</td><td>BBG</td></tr><tr><td colspan="11">Sales (JPY mn)</td></tr><tr><td>6981</td><td>Murata Mfg.</td><td>1,743,352</td><td>1,830,856</td><td>1,993,576</td><td>2,351,582</td><td>2,773,708</td><td>1,960,000</td><td>2,022,921</td><td>2,354,564</td><td>2,791,724</td></tr><tr><td>6976</td><td>Taiyo Yuden</td><td>341,438</td><td>355,341</td><td>385,915</td><td>431,134</td><td>481,394</td><td>384,000</td><td>396,130</td><td>450,110</td><td>518,025</td></tr><tr><td>6762</td><td>TDK</td><td>2,204,806</td><td>2,504,820</td><td>2,733,034</td><td>2,965,231</td><td>3,203,314</td><td>2,580,000</td><td>2,689,294</td><td>2,881,164</td><td>3,112,588</td></tr><tr><td>6971</td><td>Kyocera</td><td>2,014,454</td><td>2,070,203</td><td>-</td><td>-</td><td>-</td><td>1,940,000</td><td>1,999,450</td><td>2,076,579</td><td>2,223,833</td></tr><tr><td>6963</td><td>Rohm</td><td>448,466</td><td>481,148</td><td>557,075</td><td>613,407</td><td>669,781</td><td>510,000</td><td>516,154</td><td>545,375</td><td>590,525</td></tr><tr><td>6996</td><td>Nichicon</td><td>175,751</td><td>169,724</td><td>-</td><td>-</td><td>-</td><td>185,000</td><td>192,235</td><td>208,654</td><td>222,000</td></tr><tr><td>6997</td><td>Nippon Chemi-con</td><td>122,684</td><td>136,821</td><td>-</td><td>-</td><td>-</td><td>160,000</td><td>154,612</td><td>165,727</td><td>171,000</td></tr><tr><td>6594</td><td>Nidec</td><td>2,607,813</td><td>2,668,491</td><td>-</td><td>-</td><td>-</td><td>2,600,000</td><td>2,633,504</td><td>2,717,725</td><td>2,835,453</td></tr><tr><td>6479</td><td>MinebeaMitsumi</td><td>1,522,703</td><td>1,664,387</td><td>1,700,880</td><td>1,789,017</td><td>1,870,228</td><td>1,690,000</td><td>1,700,748</td><td>1,783,618</td><td>1,859,189</td></tr><tr><td>4062</td><td>Ibiden</td><td>369,436</td
+
+[中间内容因长度限制已省略]
+
+ulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction.
+
+Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email
+
+MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer
+
+Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not
+"""
