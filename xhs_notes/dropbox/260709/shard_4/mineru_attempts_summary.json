@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_0cfo3alw/pdfs/0001-21-CITI-Taiwan Electronic Components - Equipment-Riding the AIDC BBU Growth Cycle-Initiate Dynapack at Buy-260707.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_0cfo3alw/pdfs/0002-22-DB-China Solar Sector-Lingering at the bottom- solar glass nearing a cyclical turning point-260707.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_0cfo3alw/pdfs/0003-23-DB-China NEV demand leading indicator -weekly new orders--July 1st week-260707.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_0cfo3alw/pdfs/0004-24-DB-Estun Automation-2Q26E preview- Potential humanoid acquisition- Initiate H shares at Hold-260707.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_0cfo3alw/pdfs/0005-25-DB-VNET Group-VNET.US-Transformation generates value-add - Initiate at BUY-260707.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
