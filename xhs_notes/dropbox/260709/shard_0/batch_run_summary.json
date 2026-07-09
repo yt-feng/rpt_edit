@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 86,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/01-Bernstein-China & Japan Semiconductors Memory Interface Chip Primer： Riding on the agentic AI boom-260709.pdf",
+          "batch_file": "/tmp/pdf_batch_001_9swrmzaf/pdfs/0001-01-Bernstein-China - Japan Semiconductors Memory Interface Chip Primer- Riding on the agentic AI boom-260709.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/02-Bernstein-European Utilities & Clean Energy： 2Q26 power production ~ lower hydro production across the board except in Sweden-260708.pdf",
+          "batch_file": "/tmp/pdf_batch_001_9swrmzaf/pdfs/0002-02-Bernstein-European Utilities - Clean Energy- 2Q26 power production - lower hydro production across the board except in Sweden-260708.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/03-Bernstein-Exxon Mobil Corp（XOM.US）Americas Oil： Ignore the facts in front of you...the crack~implied oil price is -$90 bbl-260708.pdf",
+          "batch_file": "/tmp/pdf_batch_001_9swrmzaf/pdfs/0003-03-Bernstein-Exxon Mobil Corp-XOM.US-Americas Oil- Ignore the facts in front of you...the crack-implied oil price is --90 bbl-260708.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/04-Bernstein-Global Luxury Goods： The Handbag Price & Mix Barometer ~ Diverging LFL price and product changes in 2Q26-260707.pdf",
+          "batch_file": "/tmp/pdf_batch_001_9swrmzaf/pdfs/0004-04-Bernstein-Global Luxury Goods- The Handbag Price - Mix Barometer - Diverging LFL price and product changes in 2Q26-260707.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/05-Bernstein-Global Aerospace & Defense European Defense： Into Q2'26 ~ Long Leonardo， Thales， Rheinmetall-260708.pdf",
+          "batch_file": "/tmp/pdf_batch_001_9swrmzaf/pdfs/0005-05-Bernstein-Global Aerospace - Defense European Defense- Into Q2-26 - Long Leonardo- Thales- Rheinmetall-260708.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

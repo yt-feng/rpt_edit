@@ -1,0 +1,355 @@
+你是麦肯锡/研究导读风格的微信公众号文章主笔，擅长用金字塔原理把报告内容转化为“有主张、有层次、有洞察、但仍保留完整报告阅读欲望”的长文。
+
+【目标】
+- 基于下面的研报解析内容，写一篇微信公众号文章 Markdown。
+- 风格：稳重、专业、克制、有洞察，像咨询公司合伙人写给专业读者/产业决策者的报告导读。
+- 长度：约 1200 字，整体以短导读为主，通常控制在 900-1200 个中文字符。
+- 不要使用 emoji。
+- 可以基于报告内容做适度发散，但必须是从原文逻辑推出的判断，不要编造数据、公司动作或引用。
+- 不要把研报所有正文内容讲完，只讲最关键的判断、图表和未解问题，让读者有动力去看原文。
+- 文章必须像人工编辑润色过的报告导读：句长有变化，段落有呼吸感，不要整齐排比，不要反复使用“这意味着/真正重要的是/换句话说/从这个角度看”等模板转折。
+
+【金字塔原理写作原则】
+1. 结论先行：文章开头先回答“这份报告最值得看的判断是什么”，而不是介绍背景。
+2. 统领思想：全文只能服务一个主判断，避免变成摘要合集。
+3. 纵向回答：每一层都要回答上一层提出的“为什么”或“所以呢”。
+4. 横向 MECE：每个一级小节必须彼此独立、共同支撑主判断，避免重叠。
+5. Synthesis over summary：不要复述报告段落，要提炼“这些事实合在一起意味着什么”。
+6. So what：每个小节末尾必须落到对行业、公司、竞争格局、市场定价或读者观察框架的含义。
+7. Action title：所有 `##` 小标题必须是“直接讲述洞察的完整句子”，不能是目录标签。
+
+【标题与小标题硬性要求】
+- `# 标题` 必须短、锐利、可转发，优先 20-35 个中文字符，最长不超过 35 个中文字符。
+- `# 标题` 必须直接表达一个判断或悬念，例如“黄金缺的不是央行，是ETF”。
+- `# 标题` 要兼顾微信搜一搜：尽量包含一个高意图关键词，例如行业/公司/政策/AI/房地产/半导体/光伏/消费/美联储/利率/通胀/机器人/比特币等。
+- `# 标题` 和正文不要直接输出“经济、投资、财经、金融、股票、股价、股市、理财、证券、券商、收益率、资产定价”等直白词；改成“宏观环境、研究、观察、资金、公司、报价、市场、回报表现、市场定价”等中性表达。
+- 涉及中国、国内、内地、大陆、人民币、A股、港股时，必须使用中性客观表达；不要写“不好、不行、疲弱、低迷、恶化、危机、衰退、崩盘、放缓、压力、拖累、唱衰”等负面判断。
+- `# 标题` 必须包含一个传播钩子，但只能用报告中真实出现或可由报告标题明确推出的信息：
+  1. 机构 big name：GS、MS、JPM、UBS、Citi、美联储等。
+  2. 中国读者熟悉的人名 big name：洪灏、邢自强、辜朝明；国际公众人物：特朗普、马斯克、鲍威尔等。
+  3. 反常识或意外差：例如市场普遍悲观时，报告给出“触底”“修复”“再加速”等相反信号。
+- 已识别机构名：`Bernstein`。如果识别机构名为空，请从研报标题/正文中识别机构并使用中文名，例如GS、MS、HSBC、JPM、UBS、Citi、美国银行、BARC、DB、NOM。
+- 标题里不要同时写中文机构名和英文缩写，禁止“JPM：JPM：……”“GS：GS：……”这类重复；写“JPM：……”或“GS：……”即可。
+- 标题禁止出现 GS、JPM、JEF、NOM、BARC、MS、DB、Citi、Ticker、文件编号；如果原文只有英文机构名，请翻译为中文机构名。
+- 标题冒号后不要重复机构或来源类型，禁止“联合国贸发会议：联合国贸发报告，……”“麦肯锡：麦肯锡报告称，……”这类写法；冒号后直接写判断或变量。
+- 标题只能保留一层信息，不要把多个长分句全部塞进标题；如果原始标题有三段以上信息，只取最有传播性的主判断，其余放在正文第一段自然展开。
+- 如果报告是单一公司/个股报告，标题和正文只能写公司情况、行业变化、业务进展、竞争格局和报告里的事实；禁止出现目标价、评级、买入、卖出、增持、减持、推荐、荐股、Buy、Sell、Overweight、Underweight、Outperform、Underperform、PT、TP、PO 等任何卖方操作口径。
+- 标题可以用问句或对比句，但不要标题党到超出原报告证据。避免“震惊”“爆了”“彻底反转”“一夜变天”等廉价词。
+- 标题不要晦涩抽象。少用“结构性分化”“二阶影响”“再定价框架”这类泛化词；如果必须使用，要落到一个具体对象。
+- 机构名只要求出现在 `# 标题` 中，正文可以克制提及，不要为了重复机构名牺牲可读性。
+- 禁止使用以下机械标题：
+  - 一、核心判断
+  - 二、真正重要的是结构性变量
+  - 三、报告没有说透
+  - 四、对读者的启发
+  - 关键变化
+  - 观察提示
+  - 总结
+- 所有 `##` 标题都要像麦肯锡报告里的 action title：读完标题就知道这一节结论。
+- 小标题可以带序号，但序号后必须是一句洞察，例如：`## 1. 这轮变化真正考验的是企业能否把规模转化为议价权`。
+
+【建议结构，但不要机械照抄标题】
+1. `# 标题`：机构中文名或报告中的 big name + 一句主判断，20-35 个中文字符。
+2. 开头 2-3 段：直接给出主判断、为什么现在重要、报告提供了什么新信号；自然带出 4-6 个长尾关键词，覆盖国家/行业/公司/政策/数据/技术词，但不要写成关键词堆砌。
+3. 3-4 个 `##` 小节：每个小节标题都是洞察句，不是栏目名。
+4. 在正文中穿插 1-2 个 `> **KC评论：** ...` 引用块，每个 1-2 句，用更平白的话解释“这张图/这个判断对读者意味着什么”，不要夹带任何推广话术。
+5. 正文中间禁止插入 CTA、广告、扫码、社群、知识星球、每日汇编、喂给 AI 等表达；中间只允许出现分析正文、图表占位和 `KC评论`。
+6. 至少一个小节讨论“报告尚未完全回答的关键问题”，但标题也要是洞察句。
+7. 至少一个小节给出读者的观察框架，但不要命名为“对读者的启发”。
+8. 不要写任何 CTA、广告、扫码、社群、知识星球、网站、域名或关注引导；系统会在最结尾统一插入固定信息。
+9. 在免责声明前，单独插入这张图片链接：`![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)`
+10. 结尾只输出英文灰色免责声明：`<p style="color:#999999;font-size:12px;">For informational purposes only. Portions may be generated, translated, summarized, or edited with AI assistance based on source materials and may contain omissions or errors. Please verify independently. This is not investment, legal, tax, accounting, or other professional advice.</p>`
+
+【CTA 要求】
+- 不要输出任何 CTA。不要写“加入社群”“扫码”“星球”“完整报告领取”“网站”“域名”“关注”“星标”“更多查看”等表达。
+- 文末也不要写 CTA；系统会在最结尾统一插入固定信息。
+- 正文中间不要出现“如果你从某些关键词搜到这里”“单篇文章只能解决一个切片”“我每天会把……”“这篇可以沿着……”这类表达。
+
+【KC评论要求】
+- `KC评论` 不是复述原文，而是读者友好的解释、提醒或追问。
+- 每条 `KC评论` 先说白话结论，再点出完整报告里值得继续看的图表、假设或细分拆解。
+- 语气可以有判断力，但不要编造报告没有的数据或结论。
+- `KC评论` 里禁止夹带 CTA，不要写扫码、社群、知识星球、每日汇编、喂给 AI、市场主线、完整报告领取等表达；它只能做解释、提醒或追问。
+
+【人工编辑感要求】
+- 段落不要像 AI 摘要清单。每段只推进一个意思，必要时用短句收住。
+- 不要展开成完整长文。每个小节只保留最有信息量的一段，细节留给原文和图表。
+- 避免连续使用同一种句式开头，避免连续三段都是“报告指出/这意味着/真正重要的是”。
+- 不要机械重复标题、机构名或同一句判断。标题已经写过的内容，正文第一段要换一种说法展开。
+- 保留一点自然语气，但不要口水化；像一个认真读过报告的人在做导读。
+
+【图片要求】
+- 不要主动生成 MinerU 图片 markdown；系统会在文章生成后自动插入 MinerU 原始图片。
+- 但文末免责声明前必须保留知识星球图片：`![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)`。
+
+【内容边界】
+- 只能基于研报原文和解析结果推导，不要编造数据、公司动作、引用。
+- 遇到不确定内容，要用“这里仍需验证”“报告没有完全展开”等表达。
+- 避免“震惊”“爆款”“一文看懂”等浮夸表达。
+- 单公司报告不能写成交易提示；不要输出目标价、评级、买入、卖出、增持、减持、推荐、荐股、Buy、Sell、Overweight、Underweight、Outperform、Underperform、PT、TP、PO，也不要保留这些英文/中文卖方评级词。
+- 不要出现小红书话题标签。
+- 不要出现 emoji。
+- 不要隐藏报告机构名；标题必须出现机构中文名。正文如需概括来源，可写“这份Bernstein研报”或“该机构报告”，但不要编造机构观点以外的信息。
+- 不要解释你的思考过程，不要输出多余说明。
+
+【研报解析内容】
+"""
+Americas Energy & Transition
+Exxon Mobil Corp
+
+Rating
+
+Outperform
+
+Price Target
+
+XOM
+
+182.00 USD
+
+![](images/a85b3aa44903b26c6f37e9703a66cecf23fe90ec701a09f5916ad4dfddc5244e.jpg)
+
+Bob Brackett, Ph.D.
++1 917 344 8422
+bob.brackett@bernsteinsg.com
+
+![](images/624753c0d260693c3405572e8573213c54d44d9026939236fbe44726d2a44769.jpg)
+
+Minnie Xu
++1 917 344 8574
+minnie.xu@bernsteinsg.com
+
+![](images/89bf1ba8050efc780af58f775e3753b542ed0944093e8cc02e81583402438763.jpg)
+
+Raphael Lee
++1 917 344 8355
+raphael.lee@bernsteinsg.com
+
+# Americas Oil: Ignore the facts in front of you...the crack-implied oil price is >\$90/bbl
+
+Oil is useless for the most part. As a product, it has little utility in its raw state. However, oil is not worthless. It has a price which today sits below \$70/bbl (up perhaps 20% from the start of the year). When oil is refined into useful products, it drives the global economy. The two largest uses for global transport are gasoline and diesel purchased by consumers. Those prices are up >50% from the start of the year.
+
+We have never witnessed a greater disconnect between today's oil “input” price and the refined products “output” price (Exhibit 1). We use the crack spread to describe that difference. Traditionally a 3-2-1 crack spread based on Nymex contracts - the normalized per-barrel difference between the revenue from 2 barrels of gasoline and a barrel of diesel subtracting the input cost of crude (WTI).
+
+We show that average crack spreads are “predictable” (Exhibit 2). For decades, the typical crack spread was 20% of oil price. In the last decade plus, the typical crack spread has been 33% of oil price.
+
+Given the predictability, we can back-solve for oil price using just gasoline and diesel prices. The model fits well (Exhibit 3).
+
+<table><tr><td>Close Date</td><td></td><td></td><td colspan="2">6 Jul 2026</td></tr><tr><td>XOM Close Price (USD)</td><td></td><td></td><td colspan="2">136.44</td></tr><tr><td>Price Target (USD)</td><td></td><td></td><td colspan="2">182.00</td></tr><tr><td>Upside/(Downside)</td><td></td><td></td><td colspan="2">33%</td></tr><tr><td>52-Week Range</td><td></td><td></td><td colspan="2">176.41/105.53</td></tr><tr><td>SPX</td><td></td><td></td><td colspan="2">7,503.85</td></tr><tr><td>FYE</td><td></td><td></td><td colspan="2">Dec</td></tr><tr><td>Div Yield</td><td></td><td></td><td colspan="2">2.9%</td></tr><tr><td>Market Cap (USD) (M)</td><td></td><td></td><td colspan="2">579,188</td></tr><tr><td>EV (USD) (M)</td><td></td><td></td><td colspan="2">625,029</td></tr><tr><td>Performance</td><td>YTD</td><td>1M</td><td>6M</td><td>12M</td></tr><tr><td>Absolute (%)</td><td>16.1</td><td>(6.8)</td><td>17.9</td><td>25.8</td></tr><tr><td>SPX (%)</td><td>9.6</td><td>1.6</td><td>8.4</td><td>20.4</td></tr><tr><td>Relative (%)</td><td>6.5</td><td>(8.4)</td><td>9.5</td><td>5.3</td></tr><tr><td colspan="5">Source: Bloomberg, Bernstein estimates and analysis.</td></tr></table>
+
+Price Performance, 1YR
+
+We zoom in to show the post 2020 era (Exhibit 4). The Russia-Ukraine war disrupted transport and supply chains, increasing crack spreads (and thus refiner's profitability) and thus the error term (misfit) of the model rose. Today's result (Exhibit 5) is at a record disconnect - spot prices trading below \$70/bbl while crack-implied price is \$20+/bbl higher at \$90+/bbl.
+
+<table><tr><td>Adjusted EPS</td><td>F25A</td><td>F26E</td><td>F27E</td></tr><tr><td>XOM (USD)</td><td>7.37</td><td>16.37</td><td>14.49</td></tr></table>
+
+<table><tr><td>Financials</td><td>F25A</td><td>F26E</td><td>F27E</td><td>CAGR</td></tr><tr><td>EBITDA (M)</td><td>63,948</td><td>108,033</td><td>96,410</td><td>22.8%</td></tr><tr><td>CFO (M)</td><td>51,970</td><td>78,969</td><td>94,585</td><td>34.9%</td></tr><tr><td>CapEx (M)</td><td>28,358</td><td>27,330</td><td>28,461</td><td>0.2%</td></tr><tr><td>FCF (M)</td><td>26,043</td><td>59,045</td><td>73,530</td><td>68.0%</td></tr></table>
+
+<table><tr><td>Valuation Metrics</td><td>F25A</td><td>F26E</td><td>F27E</td></tr><tr><td>Adjusted P/E (x)</td><td>18.5</td><td>8.3</td><td>9.4</td></tr><tr><td>EV/EBITDA (x)</td><td>9.8</td><td>5.8</td><td>6.5</td></tr><tr><td>EV/FCF (x)</td><td>24.0</td><td>10.6</td><td>8.5</td></tr></table>
+
+While disrupted supply chains can explain part of today's disconnect, the more important distortion is the release of government strategic reserves distorting commercial inventories (Exhibit 6) plus perhaps some ability of the Trump administration to verbally and visibly talk down prices.
+
+Some implications. (1) We continue to be comfortable in a mid-cycle price of oil of \$75/bbl Brent (\$72/bbl WTI). (2) \$90/bbl implied oil price should not be sufficient to destroy demand and thus can continue. (3) the Strait is barely re-opened and may not stay open so risks are to upside. (4) refiners (and integrateds with refining businesses) will generate significant excess returns from the disconnect between oil and crack-implied oil. (5) crack spreads (refining margins) can remain elevated for years after supply shocks (e.g., Russia-Ukraine). (6) The ability of governments to physically (i.e., SPR releases) or verbally (i.e., communications) push down crude oil price need not be permanent. (7) The desire for governments to eventually rebuild strategic inventories can likely generate an SPR put somewhere in the \$60s/bbl (near where we are now). The scale of the rebuild could measure in hundreds of thousands of barrels per year (a significant percentage of expected demand growth) and could last for years.
+
+![](images/5c6ab704ff9e4ce660d508e198d46db71178e547bbf9ca82c09b927f0712811a.jpg)
+
+Despite a historically poor time for entry (mid year) and despite a reasonably balanced market in the outyears, we still believe now is a good time for integrated oil exposure (XOM our top choice) and even E&P exposure (DVN and FANG have the most upside in our coverage).
+
+## Investment Implications
+
+We think integrateds will benefit from this disconnect from cracks and oil price with a preference for XOM. For E&Ps, we prefer FANG and DVN.
+
+## DETAILS
+
+We remind investors that oil price and crack spreads vary over time (WTI futures only started trading in March of 1983 and other products later). Today's crack spreads remain near record levels while oil prices have pulled back remarkably.
+
+A 3-2-1 crack spread based on Nymex contracts - the normalized per-barrel difference between the revenue from 2 barrels of gasoline and a barrel of diesel subtracting the input cost of crude (WTI).
+
+## EXHIBIT 1: Oil price and crack spreads over time
+
+![](images/c66443da1f120e8bd88a3a6a039e56b70d9fe3222b714030f5b1b649bbb67303.jpg)
+
+## Source: Bloomberg; Bernstein analysis
+
+Of course the value of the dollar changes over time. We could apply a CPI deflator to move the data from nominal to real, or alternatively lets consider ratios.
+
+We show ratios below. If we arbitrarily pick the start of 2012 as a 'break', we find that the average crack spread before was $20\%$ and the average after was $33\%$ . Why 2012? It was around the time when supply fears began to be mitigated by shale growth. It was around the time of the Arab Spring. It was around the time of sustained \$100/bbl oil. It also makes the end of the bottom of crack spreads. In any case, moving the specific choice around doesn't change the fact that crack spreads have been roughly a third of oil price over the last decade or so.
+
+EXHIBIT 2: Pre-shale crack spreads were a fifth (20%) and post-shale crack spreads are a third (33%)  
+![](images/e3ada689695394827571388f1a4b0bc9260c967fdfbe47b9581bd3874e3ca38b.jpg)
+
+Source: Bloomberg; Bernstein analysis
+
+If crack spreads are defined as:
+
+$$
+\text { Crack } = (2 \times \text { Gas } + 1 \times \text { Diesel } - 3 \times \text { Oil }) / 3
+$$
+
+then we can (Crack / Oil) = a third, we can show easily:
+
+$$
+\mathrm{Oil} = (2 \times \text { Gas } + 1 \times \text { Diesel }) / 4
+$$
+
+We can plot that formula against actual oil price. Note the fit is poor (under-predicts price) prior to 2012 but quite accurate afterwards.
+
+EXHIBIT 3: Back-solving for oil price from gasoline and diesel yields good fit  
+![](images/2989987040d4f23ce9169d28ed2096ebfdfeff8e955e0fc23b31f31ff06fbd09.jpg)  
+Source: Bloomberg; Bernstein analysis
+
+EXHIBIT 4: Post Covid-era...crack-implied oil price during Russia-Ukraine war was elevated \~10%...today's elevation is massive.  
+![](images/729ca9e204722a4d609ee4606edbcdaeaae76a5a57d064bbacdd12ef9d58eeee.jpg)  
+Source: Bloomberg; Bernstein analysis
+
+EXHIBIT 5: Zooming in...crack-implied price today is >\$90/bbl  
+![](images/d5d47244701c18228647889a9a6ab9e73191d8fd270b23f48cb5319392593834.jpg)  
+Source: Bloomberg; Bernstein analysis
+
+EXHIBIT 6: Oil prices embed commercial (OECD in this case) inventories and seemingly ignore strategic (government) inventories such as SPRs  
+![](images/50950746d11e11f5ba8e637252918293195d83e2ffa46c914b426925d521bddf.jpg)  
+Source: IEA; EIA; Bloomberg; Bernstein analysis
+
+## BERNSTEIN TICKER TABLE
+
+<table><tr><td rowspan="2">Ticker</td><td colspan="4">6 Jul 2026</td><td rowspan="2">TTMRel.</td><td colspan="4">Adjusted EPS</td><td colspan="3">Adjusted P/E (x)</td></tr><tr><td>Rating</td><td>Cur</td><td>Closing Price</td><td>Price Target</td><td>Cur</td><td>2025A</td><td>2026E</td><td>2027E</td><td>2025A</td><td>2026E</td><td>2027E</td></tr><tr><td>XOM (ExxonMobil)</td><td>O</td><td>USD</td><td>136.44</td><td>182.00</td><td>5.3%</td><td>USD</td><td>7.37</td><td>16.37</td><td>14.49</td><td>18.5</td><td>8.3</td><td>9.4</td></tr><tr><td>CVX (Chevron)</td><td>M</td><td>USD</td><td>168.10</td><td>204.00</td><td>(4.0)%</td><td>USD</td><td>8.43</td><td>16.58</td><td>13.26</td><td>19.9</td><td>10.1</td><td>12.7</td></tr><tr><td>COP (ConocoPhillips)</td><td>O</td><td>USD</td><td>103.58</td><td>121.00</td><td>(5.2)%</td><td>USD</td><td>6.18</td><td>13.89</td><td>10.88</td><td>16.8</td><td>7.5</td><td>9.5</td></tr><tr><td>DVN (Devon Energy)</td><td>O</td><td>USD</td><td>40.36</td><td>59.00</td><td>7.9%</td><td>USD</td><td>4.17</td><td>10.06</td><td>8.43</td><td>9.7</td><td>4.0</td><td>4.8</td></tr><tr><td>FANG (Diamondback)</td><td>O</td><td>USD</td><td>173.73</td><td>241.00</td><td>8.4%</td><td>USD</td><td>4.57</td><td>32.21</td><td>27.22</td><td>38.0</td><td>5.4</td><td>6.4</td></tr><tr><td>APA (APA)</td><td>M</td><td>USD</td><td>32.46</td><td>40.00</td><td>51.2%</td><td>USD</td><td>2.83</td><td>7.20</td><td>6.42</td><td>11.5</td><td>4.5</td><td>5.1</td></tr><tr><td>SPX</td><td></td><td></td><td>7,503.85</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+O - Outperform, M - Market-Perform, U - Underperform, NR - Not Rated, CS - Coverage Suspended  
+Source: Bloomberg, Bernstein estimates and analysis.
+
+## I. REQUIRED DISCLOSURES
+
+References to "Bernstein" or the "Firm" in these disclosures relate to the following entities: Bernstein Institutional Services LLC (April 1, 2024 onwards), Bernstein & Co., LLC (pre April 1, 2024), Bernstein Autonomous LLP, BSG France S.A. (April 1, 2024 onwards), Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited, Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社) and analysts employed by SG Africa Technologies & Services to produce Bernstein under a Global Services Agreement in place between Bernstein and SG.
+
+Bernstein is part of a joint venture between SG (SG) and AllianceBernstein, L.P. (AB). Unless specifically noted otherwise, for purposes of these disclosures, references to Bernstein's “affiliates” relate to both SG and AB and their respective affiliates.
+
+## VALUATION METHODOLOGY
+
+## Exxon Mobil Corp
+
+We rate XOM Outperform. We reach our target price of \$182/sh by applying an 7.0x multiple to 2027E EBITDA of \$96B and incorporating additional FCF to shareholders.
+
+## Chevron Corp
+
+We rate CVX Market-Perform. We reach our target price of \$204/sh by applying a 6.5x multiple to 2027E EBITDA of \$59B and incorporating additional FCF to shareholders.
+
+## ConocoPhillips
+
+We arrive at target price of \$121/sh by applying a 4.5x multiple to 2027E EBITDA of \$32B and incorporating additional FCF to shareholders.
+
+## Devon Energy Corp
+
+We reach our target price of \$59/sh by applying a 3x EV multiple to 2027E EBITDA of \$10.6B and incorporating dividends to reflect total shareholder return.
+
+## Diamondback Energy, Inc.
+
+We arrive at our target price of \$241/sh by applying a 4.5x multiple to 2027E adjusted EBITDA of \$15B and incorporating additional FCF to shareholders.
+
+## APA Corp
+
+We reach our target price of \$40/sh by applying a 2.5x EV multiple to 2027E EBITDA of \$5.6B and incorporating dividends to reflect total shareholder return.
+
+## RISKS
+
+## Exxon Mobil Corp
+
+We rate XOM Outperform. Key downside risks to our price target include (a) market conditions yielding lower commodity prices than forecast, (b) failure to execute on critical growth initiatives (e.g. Stabroek, Permian, downstream/petrochemicals expansions), (c) lower refining margins than forecast, and (d) a prolonged polymer downcycle.
+
+## Chevron Corp
+
+We rate CVX Market-Perform. Key downside risks to our price target include (a) market conditions yielding lower commodity prices than forecast, (b) failure to execute on critical growth initiatives (e.g. Permian, DJ, GoM, Tengiz), and (c) lower refining margins than
+
+forecast.
+
+## ConocoPhillips
+
+We rate COP Outperform. Key risks to our price target include (a) poor portfolio management, (b) lower commodity prices and (c) operational disruptions at COP's key facilities.
+
+## Devon Energy Corp
+
+We rate DVN Outperform. Key downside risks to our price target include (a) lower commodity prices and differentials (especially Permian and NGLs) and (b) a poorly priced (or timed) acquisition or sale.
+
+## Diamondback Energy, Inc.
+
+Key downside risks include (a) lower than expected commodity prices and differentials (e.g. Midland, Waha, NGLs), (b) the inability to meet stated cost synergy and production volume targets related to the pending acquisition of Endeavor Energy Resources, and (c) a poorly priced (or timed) acquisition or sale.
+
+## APA Corp
+
+We rate APA Market-Perform. Key downside risks to our price target include (a) balance sheet risks in a low commodity environment, (b) execution mis-steps in Suriname, and (c) lower commodity prices. Key upside risks include (a) strong execution in Suriname and (b) higher commodity prices.
+
+## RATINGS DEFINITIONS, BENCHMARKS AND DISTRIBUTION
+
+## EQUITY RATINGS DEFINITIONS
+
+## Bernstein brand
+
+The Bernstein brand rates stocks based on forecasts of relative performance for the next 12 months versus the S&P 500 for stocks listed on the U.S. and Canadian exchanges, versus the Bloomberg Europe Developed Markets Large and Mid Cap Price Return Index EUR (EDME) for stocks listed on the European exchanges and emerging markets exchanges outside of the Asia Pacific region, versus the Bloomberg Japan Large and Mid Cap Price Return Index USD (JPL) for stocks listed on the Japanese exchanges, and versus the Bloomberg Asia ex-Japan Large and Mid Cap Price Return Index (ASIAX) for stocks listed on the Asian (ex-Japan) exchanges -unless otherwise specified.
+
+The Bernstein brand has three categories of ratings:
+
+\- Outperform: Stock will outpace the market index by more than 15 pp
+
+• Market-Perform: Stock will perform in line with the market index to within +/-15 pp
+
+• Underperform: Stock will trail the performance of the market index by more than 15 pp
+
+Coverage Suspended: Coverage of a company under the Bernstein brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.
+
+Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.
+
+Not Covered (NC) denotes companies that are not under coverage.
+
+Bernstein brand stock ratings are based on a 12-month time horizon.
+
+## Autonomous brand – common stocks
+
+The Autonomous brand rates common stocks as indicated below. As our benchmarks we use the Bloomberg Europe 500 Banks And Financial Services Index (BEBANKS) and Bloomberg Europe Dev Mkt Financials Large and Mid Cap Price Ret Index EUR (EDMFI) index for developed European banks and Payments, the Bloomberg Europe 500 Insurance Index (BEINSUR) for European insurers, the S&P 500 and S&P Financials for US banks and Payments coverage, S5LIFE for US Insurance, the S&P Insurance
+
+Select Industry (SPSIINS) for US Non-Life Insurers coverage, and the Bloomberg Emerging Markets Financials Large, Mid and Small Cap Price Return Index (EMLSF) for emerging market banks and insurers and Payments. Ratings are stated relative to the sector (not the market).
+
+The Autonomous brand has three categories of common stock ratings:
+
+\- Outperform (OP): Stock will outpace the relevant index by more than 10 pp
+
+\- Neutral (N): Stock will perform in line with the market index to within +/-10 pp
+
+• Underperform (UP): Stock will trail the performance of the relevant index by more than 10 pp
+
+Coverage Suspended: Coverage of a company under the Autonomous research brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.
+
+Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.
+
+Those denoted as ‘Feature’ (e.g., Feature Outperform FOP, Feature Under Outperform FUP) are our core ideas.
+
+Not Covered (NC) denotes companies that are not under coverage.
+
+Autonomous brand common stock ratings are based on a 12-month time horizon.
+
+## Autonomous brand – preferred stocks
+
+The Autonomous brand has three categories of preferred stock ratings:
+
+\- Outperform (OP): The total return of the preferred instrument is expected to outperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.
+
+\- Neutral (N): The total return of the preferred instrument is expected to perform in line with preferred securities of other issuers operating in similar sectors or rating categories o
+
+[中间内容因长度限制已省略]
+
+ence system.
+
+Bernstein may use artificial intelligence tools in the preparation of its materials. Any such materials are reviewed by Bernstein's research analysts prior to publication.
+
+This report has been prepared for information purposes only and is based on current public information that we consider reliable, but the entities noted herein do not warrant or represent (express or implied) as to the sources of information or data contained herein are accurate, complete, not misleading or as to its fitness for the purpose intended even though the entities noted herein rely on reputable or trustworthy data providers, it should not be relied upon as such. Opinions expressed are the author(s)' current opinions as of the date appearing on the material only and we do not undertake to advise you of any change in the reported information or in the opinions herein.
+
+Any references to SG herein are purely factual, based upon publicly available information, and included for comparative purposes only. They do not constitute an opinion or recommendation with respect to the securities of SG.
+
+This publication was prepared and issued by the entity referred to herein for distribution to eligible counterparties or professional clients. The information in this report is intended for general circulation and does not constitute an offer to buy or sell any security, investment, legal or tax advice nor a personal recommendation, as defined by any of the aforementioned regulators. It does not take into account the particular investment objectives, financial situations, or needs of individual investors. The report has not been reviewed by any of the aforementioned regulators and does not represent any official recommendation from the aforementioned regulators. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with advice sought from a financial adviser regarding the suitability of the investment product, taking into account the specific investment objectives, financial situation or particular needs of any recipient of the recommendation, before the recipient makes a commitment to purchase the investment product.
+
+The analysis contained herein is based on numerous assumptions. Different assumptions could result in materially different results. The information in this report does not constitute, or form part of, any offer to sell or issue, or any offer to purchase or subscribe for shares, or to induce engagement in any other investment activity. The value of any securities or financial instruments mentioned in this report may fluctuate subject to market conditions. Information about past performance of an investment is not necessarily a guide to, indicative of, or assurance of future performance. Estimates of future performance mentioned by the research analyst in this report are based on assumptions that may not be realized due to unforeseen factors like market volatility/fluctuation. In relation to securities or financial instruments denominated in a foreign currency other than the clients' home currency, movements in exchange rates will have an effect on the value, either favorable or unfavorable. Before acting on any recommendations in this report, recipients should consider the appropriateness of investing in the subject securities or financial instruments mentioned in this report and, if necessary, seek independent professional advice.
+
+The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject the entities noted herein to any regulation or licensing requirement within such jurisdiction.
+
+Source: Bloomberg Index Services Limited. BLOOMBERG® is a trademark and service mark of Bloomberg Finance L.P. and its affiliates (collectively “Bloomberg”). Bloomberg or Bloomberg’s licensors own all proprietary rights in the Bloomberg Indices. Neither Bloomberg nor Bloomberg’s licensors approves or endorses this material, or guarantees the accuracy or completeness of any information herein, or makes any warranty, express or implied, as to the results to be obtained therefrom and, to the maximum extent allowed by law, neither shall have any liability or responsibility for injury or damages arising in connection therewith.
+
+No part of this material may be reproduced, distributed or transmitted or otherwise made available without prior consent of the entities noted herein. Copyright Bernstein Institutional Services LLC Bernstein Autonomous LLP, BSG France S.A., Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited and Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社). All rights reserved. The trademarks and service marks contained herein are the property of their respective owners. Any unauthorized use or disclosure is strictly prohibited. The entities noted herein may pursue legal action if the unauthorized use results in any defamation and/or reputational risk to the entities noted herein and research published under the Bernstein and Autonomous brands.
+"""
