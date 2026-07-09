@@ -1,0 +1,37 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/consulting/260710/0002-BCG_Consumer-Spending-Is-Up-But-That-Signal-No-Longer-Means-What_a7761189/mineru_raw/images/9a7189b6bc1bb47df30792431625a11442a9f2f84a3a3b8178afb473f07ab530.jpg",
+    "path": "kc_translated_reports/consulting/260710/02-0002-BCG_Consumer-Spending-Is-Up-But-That-Signal-No-Longer-Means-What_a7761189/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.19,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/consulting/260710/0002-BCG_Consumer-Spending-Is-Up-But-That-Signal-No-Longer-Means-What_a7761189/mineru_raw/images/293d83052b9e7c4701dc81aae2d67e573d3c8407cf71f543277ee90ce963775d.jpg",
+    "path": "kc_translated_reports/consulting/260710/02-0002-BCG_Consumer-Spending-Is-Up-But-That-Signal-No-Longer-Means-What_a7761189/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.24,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/consulting/260710/0002-BCG_Consumer-Spending-Is-Up-But-That-Signal-No-Longer-Means-What_a7761189/mineru_raw/images/2f2f9e796d62af26ea32279861e6791cd0ec947fc79b573f69840f7c5fcf174f.jpg",
+    "path": "kc_translated_reports/consulting/260710/02-0002-BCG_Consumer-Spending-Is-Up-But-That-Signal-No-Longer-Means-What_a7761189/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.17,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_004]]",
+    "source_path": "xhs_notes/consulting/260710/0002-BCG_Consumer-Spending-Is-Up-But-That-Signal-No-Longer-Means-What_a7761189/mineru_raw/images/76e47e6062e7dccd8e7e0fe432d8128c264e46d855ff5b315ad68255fd20cd7b.jpg",
+    "path": "kc_translated_reports/consulting/260710/02-0002-BCG_Consumer-Spending-Is-Up-But-That-Signal-No-Longer-Means-What_a7761189/assets/fig_004.jpg",
+    "relative_path": "fig_004.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.10,large"
+  },
+  {
+    "token": "[[KC_IMAGE_005]]",
+    "source_path": "xhs_notes/consulting/260710/0002-BCG_Consumer-Spending-Is-Up-But-That-Signal-No-Longer-Means-What_a7761189/mineru_raw/images/fd12657677801db9331379e99a1952319a8a82b9647d61f584998569712a63d5.jpg",
+    "path": "kc_translated_reports/consulting/260710/02-0002-BCG_Consumer-Spending-Is-Up-But-That-Signal-No-Longer-Means-What_a7761189/assets/fig_005.jpg",
+    "relative_path": "fig_005.jpg",
+    "chart_filter": "score=9;chart_context,edge:0.19,contrast"
+  }
+]
