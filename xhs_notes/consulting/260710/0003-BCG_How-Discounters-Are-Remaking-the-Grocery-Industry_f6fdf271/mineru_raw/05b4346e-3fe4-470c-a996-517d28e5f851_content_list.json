@@ -1,0 +1,2398 @@
+[
+    {
+        "type": "text",
+        "text": "THE BOSTON CONSULTING GROUP",
+        "bbox": [
+            99,
+            94,
+            369,
+            115
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "How Discounters Are Remaking the Grocery Industry",
+        "text_level": 2,
+        "bbox": [
+            97,
+            261,
+            937,
+            361
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "BCG",
+        "bbox": [
+            48,
+            35,
+            200,
+            86
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "stouffer",
+        "bbox": [
+            900,
+            942,
+            1000,
+            991
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The Boston Consulting Group (BCG) is a global management consulting firm and the world's leading advisor on business strategy. We partner with clients from the private, public, and not-for-profit sectors in all regions to identify their highest-value opportunities, address their most critical challenges, and transform their enterprises. Our customized approach combines deep insight into the dynamics of companies and markets with close collaboration at all levels of the client organization. This ensures that our clients achieve sustainable competitive advantage, build more capable organizations, and secure lasting results. Founded in 1963, BCG is a private company with 85 offices in 48 countries. For more information, please visit bcg.com.",
+        "bbox": [
+            262,
+            399,
+            626,
+            650
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "THE BOSTON CONSULTING GROUP",
+        "bbox": [
+            142,
+            133,
+            416,
+            154
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "How Discounters Are Remaking the Grocery Industry",
+        "text_level": 1,
+        "bbox": [
+            144,
+            371,
+            737,
+            513
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "BCG",
+        "bbox": [
+            94,
+            74,
+            245,
+            126
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "Rune Jacobsen, Gavin Parker, Thomas Jensen, Jeroen Magnus, Holger Gottstein, Markus Hepp, and Bill Urda",
+        "bbox": [
+            144,
+            848,
+            862,
+            884
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "April 2017",
+        "bbox": [
+            147,
+            905,
+            233,
+            924
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "AT A GLANCE",
+        "text_level": 2,
+        "bbox": [
+            90,
+            228,
+            260,
+            250
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Discount grocers used to focus primarily on low prices. Now, however, they are building larger stores and selling a wider range of goods, including a broader assortment of fresh products. As a result, discount grocers are poised to take more than half of the total grocery market share in many regions.",
+        "bbox": [
+            287,
+            281,
+            895,
+            345
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "MOST ESTABLISHED PLAYERS WILL NEED TO TRANSFORM THEMSELVES",
+        "text_level": 2,
+        "bbox": [
+            289,
+            358,
+            831,
+            372
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "In markets where discounters are already a large and growing presence, established grocers must improve their pricing, product assortment, and overall store experience, potentially through a transformation program that reinvents the brand.",
+        "bbox": [
+            287,
+            374,
+            899,
+            423
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "AMBITIOUS GROCERS CAN LAUNCH THEIR OWN DISCOUNT BRAND",
+        "text_level": 2,
+        "bbox": [
+            289,
+            436,
+            800,
+            449
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "In markets where discounters are just getting established, grocers can launch their own discount brand, clearly separated from the core business. But in addition to significant investment, this approach will require a new mindset and culture.",
+        "bbox": [
+            287,
+            451,
+            895,
+            499
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "DISCOUNTERS MUST AVOID THE RISKS OF OVEREXPANSION",
+        "text_level": 2,
+        "bbox": [
+            290,
+            513,
+            744,
+            527
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Discounters must refrain from rushing into new markets and introducing complexity into their winningly simple business models. They will need to thoroughly understand the markets in which they plan to expand and continue to execute well.",
+        "bbox": [
+            287,
+            529,
+            900,
+            576
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            292,
+            933,
+            304,
+            944
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "HOW DISCOUNTERS ARE REMAKING THE GROCERY INDUSTRY",
+        "bbox": [
+            537,
+            931,
+            902,
+            945
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "A DECADE AGO, DISCOUNT GROCERS had a limited impact in most markets. These players, which primarily offered cheaper prices for a narrower range of products, typically took 10% to 20% of market share around the edges. Today, discounters are evolving from stripped-down, no-frills stores to become a genuine alternative for many consumers—and a major factor in the grocery industry. As a result, they may soon claim up to half of the total share in many markets.",
+        "bbox": [
+            92,
+            281,
+            702,
+            375
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Discounters are opening bigger stores with innovative features, expanding their assortment of fresh and organic products, and selling private-label products that beat out established brands in taste tests—all at much lower prices. Not coincidentally, discounters in many markets are also scoring higher than established companies on customer advocacy, as measured by BCG’s proprietary Brand Advocacy Index (BAI). Their customer base has grown beyond low-income shoppers to include savvy, high-income consumers, who are increasingly asking a fundamental question: “Why should I pay more?”",
+        "bbox": [
+            92,
+            389,
+            705,
+            514
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The dramatic growth of discounters will have profound consequences for the overall grocery industry. Given that discounters are here to stay in many markets, mainstream players need to address the challenge head on by fundamentally transforming themselves to improve their prices, product assortment, and store experience. Some may also opt to launch a discount brand of their own. And discounters must avoid the risks of overexpansion by being judicious about the markets they move into and by ensuring that they can still achieve a structural advantage over current players in those markets.",
+        "bbox": [
+            92,
+            527,
+            702,
+            653
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The Rise of Discounters",
+        "text_level": 2,
+        "bbox": [
+            95,
+            676,
+            332,
+            693
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Discounters first began to gain traction in the 1990s, particularly in Germany with the Aldi and Lidl brands. The winning formula at the time was to offer low prices on a targeted assortment of mostly private-label products. Stores were cramped and had a low-budget feel, but customers felt they were getting better value—a key differentiator that was sufficient to increase traffic. As a result, discounters managed to disrupt the grocery retail market in multiple countries.",
+        "bbox": [
+            92,
+            698,
+            705,
+            793
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "In that initial phase, discount grocers typically performed well during periods when consumer spending was down. These shops were countercyclical, like dollar stores; they benefited from budget-conscious shoppers during recessions. Mainstream retailers, therefore, could afford to ignore the discount grocers and still retain 80% to 90% of the total market.",
+        "bbox": [
+            92,
+            806,
+            702,
+            885
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "aside_text",
+        "text": "Savvy, high-income customers are increasingly asking, \"Why should I pay more?\"",
+        "bbox": [
+            727,
+            542,
+            884,
+            620
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "THE BOSTON CONSULTING GROUP",
+        "bbox": [
+            95,
+            931,
+            299,
+            945
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            694,
+            933,
+            705,
+            945
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Today, however, that's no longer true. Discounters grew at a rapid clip from 2000 to 2015, gaining significant market share in many Western countries, including Denmark, Poland, and Turkey. (See Exhibit 1.) That growth shows no signs of slowing, even as household incomes have risen. Worldwide, discounters are projected to increase their number of store locations by $4.4\\%$ a year through 2020, compared with just $2.9\\%$ for mainstream supermarkets and $1.6\\%$ for superstores and hyper-markets. Some regions will see an even faster expansion, including Eastern Europe (more than $30\\%$ ) and Latin America (approximately $8\\%$ ).",
+        "bbox": [
+            287,
+            126,
+            895,
+            252
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "There is a demographic aspect to that growth: millennials prefer discounters over mainstream grocers in most markets. In large developed markets (including the US, Europe, Australia, Canada, and Japan), this population comprises 275 million people, more than any other demographic segment, and their aggregate spending power rivals that of all other segments combined. Millennials tend to be very pragmatic, opting to buy most of what they need in a convenient location, without the hassle and burden of an overwhelming number of choices. Moreover, they inherently distrust some mainstream brands and are willing to try unconventional options—particularly given the right in-store experience.",
+        "bbox": [
+            287,
+            263,
+            902,
+            406
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Yet the biggest factor in discounters' success over the past decade is that these companies have evolved and redefined their approach to offer higher-quality products, a broader assortment, and an improved shopping experience.",
+        "bbox": [
+            289,
+            418,
+            897,
+            468
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Higher Quality. Discounters have always focused on private-label products at lower prices, but they are increasingly beating out branded products in head-to-head tests. Aldi Süd and Lidl Stiftung were pioneers in this area: their house brand products have won in both blind taste tests and independent quality reviews in Germany since the 1990s. Both companies have further customized their products to meet local taste preferences. More recently, the private-label",
+        "bbox": [
+            290,
+            480,
+            892,
+            576
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/7077768edb5b24af4279bc0f9bdb07c589ca4f9aa8fdf569b67046fd2781b177.jpg",
+        "image_caption": [
+            "EXHIBIT 1 | Discounters Are Growing Quickly in Many Western Markets"
+        ],
+        "image_footnote": [
+            "Sources: Planet Retail; BCG analysis."
+        ],
+        "content": "",
+        "bbox": [
+            100,
+            618,
+            873,
+            848
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            292,
+            934,
+            304,
+            944
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "HOW DISCOUNTERS ARE REMAKING THE GROCERY INDUSTRY",
+        "bbox": [
+            539,
+            931,
+            902,
+            944
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "ketchup from a leading discounter in the UK beat a global brand in a taste test conducted by the Guardian. The two versions have identical ingredients and very similar packaging, yet the private-label version costs roughly two-thirds less than the established brand.",
+        "bbox": [
+            117,
+            126,
+            707,
+            189
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "In addition to taking the lead in price and quality in dry goods, discounters have become more innovative and are now succeeding not only in categories that consumer packaged goods companies have long considered to be “safe”—such as baby food, breakfast cereals, pet food, and personal care—but also in categories for which branding and marketing are paramount, such as beauty products. Discounters are raising their quality standards in some areas, such as packaging and design, as well.",
+        "bbox": [
+            115,
+            203,
+            704,
+            313
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- Broader Assortment of Products. Discounters have also begun opening larger stores, with an average increase in size of 16%, over the past ten years. They typically use the additional space to sell a broader assortment of products. In addition, because discounters focus so intently on understanding what customers want, they can meet a wider range of needs, even though their stores are still smaller than those of traditional grocers and carry fewer products. As store sizes increase, discounters typically add fresh-food categories, such as produce and baked goods that are prepared onsite. Other additions include organic and gluten-free options and luxury products, such as lobster and quail. Many now have a large refrigerated section with prepared foods, dips, and soups as well.",
+        "bbox": [
+            95,
+            327,
+            705,
+            484
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Convenience is another recurring theme. In the Netherlands, the variety of fresh, ready-to-heat meals in aluminum trays that Lidl offers far exceeds similar options from some of its rivals. Discounters also limit the availability of new products for a short time, creating an aura of exclusiveness about them and encouraging customers to buy quickly so they don't miss out.",
+        "bbox": [
+            115,
+            496,
+            697,
+            577
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- Improved Shopping Experience. Many discounters now offer extended opening hours, faster checkout service, and an upgrade of the look and feel of the stores, such as wider aisles, improved lighting, and digital signs. Lidl, for example, is investing roughly \\$3 billion to upgrade its stores in Germany over the next five years, and \\$1.5 billion on its stores in the UK over the next three years. Some chains are even testing innovative store features. At a new Lidl store in Belgium, for instance, shoppers can charge their electric cars and bikes for free; the capability is powered by nearly 1,000 solar panels on the store's roof.",
+        "bbox": [
+            95,
+            589,
+            707,
+            716
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "One thing that hasn't changed, however, is the price advantage. Discounters' prices are typically $15\\%$ lower than the private-label offerings from established grocers, and up to $200\\%$ lower than branded products at traditional grocers. As discounters have increased the size of their stores and added new features and products, they've focused on higher-margin offerings. As a result, they've managed to keep their operational costs down while boosting store productivity, which has pushed their margins higher. (For a case study, see the sidebar.)",
+        "bbox": [
+            92,
+            729,
+            697,
+            840
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "In fact, that price advantage is becoming more transparent to shoppers. Unlike in the past, the broader assortment of products now available at discounters means",
+        "bbox": [
+            92,
+            852,
+            687,
+            885
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "aside_text",
+        "text": "Discounters have managed to keep operational costs down while boosting store productivity, which has pushed their margins higher.",
+        "bbox": [
+            727,
+            619,
+            895,
+            729
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "THE BOSTON CONSULTING GROUP",
+        "bbox": [
+            95,
+            931,
+            299,
+            945
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            694,
+            933,
+            705,
+            945
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "HOW ONE DISCOUNTER KEEPS COSTS DOWN AND MARGINS UP",
+        "text_level": 1,
+        "bbox": [
+            315,
+            136,
+            875,
+            174
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "To understand the success of discounters, consider one discount chain that operates in many developed markets and has been expanding rapidly. The company has a highly efficient and profitable operating model and lower costs, particularly in labor. Its gross margins are approximately 8 percentage points lower than those of supermarkets, yet its margins for earnings before interest and taxes are higher—about $5\\%$ , beating the average supermarket chain by about $2\\%$ . Here's how the company has gained an edge:",
+        "bbox": [
+            312,
+            187,
+            586,
+            423
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Rather than relying on suppliers to develop products, the company uses strict internal processes. For example, it designs packaging so that employees can read barcodes, stock products more efficiently, and make better use of shelf space.",
+        "bbox": [
+            315,
+            434,
+            588,
+            560
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- To reduce the cost of goods sold, it negotiates net-net buying prices with suppliers. Under that ar-",
+        "bbox": [
+            315,
+            574,
+            588,
+            620
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "rangement, the chain agrees not to charge suppliers for such things as bonuses, rebates, and funding. In return, suppliers cover other costs on their side, including packaging and logistics.",
+        "bbox": [
+            626,
+            188,
+            873,
+            282
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- The company pays above-market wages to attract employees, and it develops them through well-defined career paths, rigorous training, and extremely high standards. That leads to lower attrition rates, a result that reduces the cost of replacing departed employees—and ultimately boosts margins.",
+        "bbox": [
+            603,
+            297,
+            865,
+            452
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Although the company pays employees more than its competitors, it keeps labor costs down through a supply chain that is built to minimize in-store logistics and to maximize the efficiency of store workers. For instance, store labor schedules are carefully aligned with delivery schedules.",
+        "bbox": [
+            603,
+            467,
+            873,
+            607
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "that the prices for items purchased during a typical shopping trip at a discounter are easily comparable with the prices for items purchased at a traditional grocer: shoppers can literally compare apples with apples. When consumers can buy essentially the same products at a discounter and easily see how much they saved, the challenge for established grocers gets even bigger.",
+        "bbox": [
+            289,
+            651,
+            899,
+            731
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Huge Shifts in Market Share",
+        "text_level": 2,
+        "bbox": [
+            290,
+            754,
+            568,
+            771
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "For established mainstream grocers in many markets, the growth of discounters has led to a pronounced drop in market share. Consider Ireland, for example. From 2000, when the first discount stores were launched, to 2015, discounters grew dramatically and took one-fourth of the market share from established players in the country. Some chains, such as Lidl, use Ireland as a test market for store innovations before exporting them to other locations; the country has become a talent incubator for Lidl as well.",
+        "bbox": [
+            289,
+            775,
+            902,
+            885
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            290,
+            933,
+            304,
+            944
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "HOW DISCOUNTERS ARE REMAKING THE GROCERY INDUSTRY",
+        "bbox": [
+            539,
+            931,
+            902,
+            945
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The story in the UK is similar. Over the past ten years, discounters there have dramatically expanded their assortment of products, improved the store experience, and grown their profit margins. Mainstream grocers, on the other hand, have watched their margins shrink from more than 5% to less than 3%, with a corresponding drop in shareholder value.",
+        "bbox": [
+            92,
+            126,
+            687,
+            204
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "But discounters can disrupt grocers even without taking significant market share from them. Because their product assortment is targeted to essential customer needs, discounters can sell a much greater volume of individual items and dominate a category. For example, a discounter in one market with just 18% share has 12 types of pasta available—compared with more than 100 offered by the established grocer in that market—yet it sells more than three times as much pasta in core product lines as the established grocer. This allows for a much more efficient supply chain arrangement with the manufacturer—including larger production sizes and full truck loads, for example—and thus lower product prices for the discounter.",
+        "bbox": [
+            92,
+            219,
+            707,
+            360
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Notably, discounters are not only winning over customers but also converting them into loyal brand ambassadors. Overall, discounters have a higher BAI than established grocers in most of the markets in which BCG tracks that metric. In part, this increased advocacy is because discounters today focus not only on value—the most important factor in BAI for the grocery industry—but also on such key areas as product assortment, store hours, fresh goods, and the overall shopping experience.",
+        "bbox": [
+            92,
+            372,
+            705,
+            468
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "To better understand the dynamics of discounters and how much they will challenge established grocers, we identified three distinct phases of development with different levels of activity and success among discounters: nascent, expanding, and mature. (See Exhibit 2.)",
+        "bbox": [
+            92,
+            482,
+            697,
+            545
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Nascent. In these markets, discounters have yet to establish a serious presence; they typically have market shares of less than 15%. And some of these markets—including in the US, Sweden, and Australia—are still essentially white spaces. They present an opportunity for discounters to disrupt the market, and some are already taking steps to do so. For example, Lidl is planning to open 20 stores in the US in mid-2017 and another 80 during the subsequent 12 months. Those stores will be significantly larger than Lidl’s European locations, with elements such as cold beer and free bakery samples. In addition, Aldi, which operates in some US states, will revamp 1,300 of its stores and open another 650 by 2018, for a total of more than 2,000.",
+        "bbox": [
+            95,
+            558,
+            705,
+            716
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Expanding. In expanding markets, such as those in Belgium and Poland, discounters have established a foothold and begun to take significant market share: approximately 10% to 40%. They have strong operating models in place, with high sales productivity per square foot, and they are continuing to grow by replicating that model through newly opened locations. Lidl plans to open 200 locations in Poland, along with 100 in Romania.",
+        "bbox": [
+            95,
+            729,
+            700,
+            822
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Mature. In mature markets—such as those in Norway, Germany, and Denmark—discounters have taken more than 35% of market share. Established grocers in this type of market can still react, but they can no longer get ahead of the threat.",
+        "bbox": [
+            95,
+            837,
+            705,
+            885
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "aside_text",
+        "text": "Discounters can disrupt grocers even without taking significant market share from them.",
+        "bbox": [
+            727,
+            620,
+            900,
+            698
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "THE BOSTON CONSULTING GROUP",
+        "bbox": [
+            95,
+            931,
+            299,
+            945
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            694,
+            933,
+            705,
+            945
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7bea6ab085089f7e1c72116bf2397a59155b3a66fd308aa539a6bc2140040c6d.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 2 | Discounter Markets Fall into Three Phases of Maturity"
+        ],
+        "chart_footnote": [
+            "Sources: Planet Retail; BCG analysis."
+        ],
+        "bbox": [
+            100,
+            148,
+            894,
+            426
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "In response to the industry's changing dynamics, some established grocers may decide to do nothing. In nascent markets, for example, doing nothing may be the best option. Yet most grocers will need to take action. On the basis of our analysis, we see two strategic options that mainstream grocers can take to respond to the changing dynamics in the industry: revamp the operating model and costs or create a spinoff discount brand.",
+        "bbox": [
+            287,
+            465,
+            899,
+            560
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Revamp the Operating Model and Costs",
+        "text_level": 2,
+        "bbox": [
+            289,
+            584,
+            685,
+            603
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The first strategic action is to fundamentally improve the company's operating model and to reduce costs in such a way that management can justify the remaining price differential with discounters to its customers and shareholders. This response—which is less a suggestion and more of an imperative for many established grocers—requires more than a few incremental tweaks here and there. Instead, companies need a major transformation in multiple areas.",
+        "bbox": [
+            287,
+            605,
+            899,
+            700
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Reduce the price gap with discounters, especially for price-sensitive products. Mainstream grocers will never completely eliminate the price gap with discounters—and they don’t need to. They just need to be competitive in the areas that are most important to customers.",
+        "bbox": [
+            289,
+            714,
+            894,
+            776
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "For example, consumers are often very price sensitive about commodity-type products, such as canned goods, paper products, and cleaning supplies, which are not highly differentiated. In these areas, grocers need to be more aggressive about price reductions. Conversely, in some fresh-product categories—such as the deli counter, butcher, or seafood counter—consumers are far less price sensitive (with some exceptions) and more willing to pay for service. In these areas, grocers can capitalize on their advantages: more customers, higher volume, bigger stores, and more developed supply chains. To take advantage of this split, grocers need deep customer insights to understand which departments and products really matter to their customers, where they can win, and how they should target their investments and improvements.",
+        "bbox": [
+            287,
+            791,
+            900,
+            885
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            290,
+            933,
+            304,
+            944
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "HOW DISCOUNTERS ARE REMAKING THE GROCERY INDUSTRY",
+        "bbox": [
+            539,
+            931,
+            902,
+            945
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            92,
+            126,
+            707,
+            204
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Scale back operating costs. Improving prices also requires decreasing operating costs and the cost of goods sold. Options include reducing the total loss of unsellable food that gets thrown away, using labor more efficiently, changing the assortment to reduce supply chain complexity and cost, negotiating pricing and other terms with suppliers, and introducing private-label products. For a typical mainstream grocer, cutting prices by 5% requires a reduction of either 7.5% (roughly) in the cost of goods sold or 20% in operating costs.",
+        "bbox": [
+            92,
+            219,
+            692,
+            329
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "For example, in Portugal, grocery chain Pingo Doce streamlined its internal processes in a number of areas to increase efficiency and reduce costs. The chain, which has about 400 locations, simplified its product assortment (including private-label goods), reducing the number of options from seven or eight in any given category to three or four, and then required a clear business case before it would consider raising that number again. It also consolidated purchasing volumes into larger orders with fewer suppliers in order to gain scale, and it improved its logistics processes. As a result, the company increased its average sales volume per product by 600%, generating scale and improving the efficiency of its logistics. It also decreased inventory levels by two-thirds, while reducing out-of-stock items.",
+        "bbox": [
+            92,
+            342,
+            707,
+            500
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Similarly, mainstream grocers in France have managed to fight off the challenge from discounters over the past decade. They aggressively reduced prices on many national brand products to match the level of discounters. They introduced value-based, private-label goods—again matching the prices at large discounters—and removed from store shelves many of their so-called price-fighter products, which shoppers regarded as low quality, replacing them with higher-quality products and brands at lower prices.",
+        "bbox": [
+            92,
+            511,
+            704,
+            622
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Redefine the customer value proposition. Once companies have done everything they can to trim operating costs and reduce the pricing gap, they need to determine the right value proposition to justify the remaining difference. (Our analysis shows that the prices of even the best-performing grocers will still be 5% higher, on average, than those of a discounter.) Customers do not want the cheapest products; they want high-quality products that meet their needs, a clean store environment, helpful staff, and prices that seem to represent fair value. However, different customers define those criteria in different ways, so grocers need to understand their target customers and how they want to shop. Those insights, in turn, have ramifications for store design, product categories, and other forms of customer engagement with the brand.",
+        "bbox": [
+            92,
+            636,
+            702,
+            807
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "For example, some grocers may target food lovers, who want the highest-quality products; a wide variety of fresh meat, produce, and seafood; and high levels of customer service. These customers are prepared to pay a premium for the right experience. Other grocers, however, may target urban shoppers who need small stores",
+        "bbox": [
+            92,
+            822,
+            705,
+            885
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "aside_text",
+        "text": "Grocers need to understand their target customers and how they want to shop.",
+        "bbox": [
+            727,
+            574,
+            899,
+            651
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "THE BOSTON CONSULTING GROUP",
+        "bbox": [
+            95,
+            931,
+            299,
+            945
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            694,
+            933,
+            705,
+            945
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "that offer a basic assortment of products and that are within walking distance of their home or office. These shoppers make frequent, fast trips, and they will pay a reasonable price difference for convenience. Still other grocers may target families, who tend to fill their shopping carts with enough food and nonfood items to last the week. These shoppers want low prices, regular sales and promotions, and a large store with a wide selection of products.",
+        "bbox": [
+            287,
+            126,
+            894,
+            220
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Once a company understands its target customers, it can revise its product categories to better meet their needs. That revision, in turn, will influence the assortment of products sold, the pricing and promotion strategies, and the overall customer experience.",
+        "bbox": [
+            289,
+            234,
+            895,
+            297
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Private-label products are also a critical means of reshaping the customer value proposition, particularly in dry goods. Some customers will always want name brands, and grocers will always need to stock them. However, grocers can develop private-label products that are as good as branded items and offer them at prices that are competitive with those of discounters. Doing so requires detailed customer insights and strong innovation processes, and companies that can capture this information and synthesize it in ways that lead to compelling new products can outperform established consumer packaged goods players. For example, 80% of the products sold at Trader Joe's are private-label goods. In Spain, the Mercadona chain's own brands now represent 55% of the company's sales and 15% of all grocery sales in the country. Mercadona even has a successful cosmetics line, Deliplus, which is larger than L'Oréal in Spain, dispelling the conventional wisdom that customers won't buy private-label cosmetics.",
+        "bbox": [
+            287,
+            311,
+            899,
+            514
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "For both branded and private-label products, our experience shows that revising categories to better meet customer needs can lead to a material increase in sales.",
+        "bbox": [
+            289,
+            527,
+            882,
+            560
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Innovate to improve the customer experience. Grocers need to innovate in order to create a better experience for their customers, both in stores and online. For example, unlike discounters, most grocers have invested heavily to develop loyalty programs, and they run frequent promotions across their broad assortment of products. Viewed from one perspective, such factors could be a disadvantage; they make the store experience complex and add operational costs.",
+        "bbox": [
+            287,
+            574,
+            895,
+            670
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "But established grocers can turn those factors into an advantage by applying the underlying technology to connect more directly with consumers and create personalized offers. Some 80% of smartphone owners, for instance, want to be able to get product information on their phones while they're at the store, and more than 40% look for deals on products while shopping. A retail chain in South Korea has capitalized on these trends by developing a mobile in-store navigation app that guides customers to on-sale items and sends instant coupons to their phones. Similarly, French grocer Carrefour is testing an app that guides shoppers to their preferred promotional items in stores. (It uses the phone's camera and is accurate to 1 meter, versus 3 to 5 meters for mobile GPS systems.)",
+        "bbox": [
+            287,
+            682,
+            902,
+            840
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Along the same lines, many mainstream grocers—both national and international chains—have already made major investments in IT as part of their higher overall operating costs. They can use technology to improve the digital commerce process for customers or to more effectively link the online and in-store experiences.",
+        "bbox": [
+            289,
+            852,
+            892,
+            885
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "aside_text",
+        "text": "Revising categories to better meet customer needs can lead to a material increase in sales.",
+        "bbox": [
+            95,
+            356,
+            268,
+            434
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            292,
+            933,
+            310,
+            944
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "HOW DISCOUNTERS ARE REMAKING THE GROCERY INDUSTRY",
+        "bbox": [
+            539,
+            931,
+            902,
+            945
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            92,
+            126,
+            692,
+            158
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "A final example is staffing levels. Despite the efforts of discount grocers to increase the sizes of their stores, traditional grocery venues are still much larger. As a result, they invariably have more employees per store than the discounters do. Trying to reduce costs by eliminating some of those employees will only demoralize the remaining staff and degrade the experience that customers receive. Instead, companies should invest in training initiatives so they can offer outstanding service.",
+        "bbox": [
+            92,
+            172,
+            700,
+            267
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "For example, Wegmans Food Markets deliberately fosters a “family feeling” among both staff and customers by creating stores with the look and feel of open-air markets. Customers can shop for groceries, get a coffee at the Buzz Coffee Shop, and order a healthy snack at the organic salad bar. The company’s engaged workforce delivers excellent customer service, and Wegmans has made Fortune’s 100 Best Companies to Work For list every year since 1998. Despite all these initiatives, Wegmans’ prices are still competitive on key items, and the company has cultivated a base of devoted brand advocates. As a result, the chain has grown at a rate of 7% a year over the past five years.",
+        "bbox": [
+            92,
+            281,
+            702,
+            422
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Create a Spinoff Discount Brand",
+        "text_level": 2,
+        "bbox": [
+            95,
+            444,
+            415,
+            463
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The second strategic option for an established grocer is to launch or acquire a spinoff discount brand to supplement the grocer's established brand. This is particularly attractive in markets where discounters haven't yet established a major presence and where the growth in food prices—and grocery margins—is still high. The US, Sweden, and Canada are examples of such markets.",
+        "bbox": [
+            92,
+            465,
+            702,
+            546
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Some grocery chains have already taken this path. For instance, in Canada, Loblaw launched its “No Frills” discount brand in 1978. Today, the chain comprises 250 franchised stores that feature Loblaw’s private-label brands, including everyday basic items under its “no name” brand and higher-quality goods under its “President’s Choice” brand. The chain offers a narrow assortment and limited service, leading to highly competitive prices.",
+        "bbox": [
+            92,
+            558,
+            707,
+            653
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "That said, the overall track record of grocers attempting to launch a discount brand is mixed at best, with more failures than successes. Accordingly, management teams will need to thoroughly consider several factors, including the following:",
+        "bbox": [
+            92,
+            667,
+            705,
+            716
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Draw clear lines to separate the spinoff brand from the core business. The separation applies to such key aspects as management, financials, procurement, and marketing. Moreover, the new brand needs sufficient leeway to develop its own culture, ways of working, and processes. The experience of the companies that have done this successfully suggests that one aspect that should not be independent is purchasing. Instead, the spinoff brand should be able to capitalize on scale efficiencies by purchasing products through the core business.",
+        "bbox": [
+            95,
+            729,
+            702,
+            840
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Be willing to invest heavily at the beginning. The amount of cash needed to launch a new brand can be significant, especially given the imperative to",
+        "bbox": [
+            95,
+            852,
+            695,
+            885
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "aside_text",
+        "text": "A spinoff discount brand is particularly attractive in markets where discounters haven't yet established a presence.",
+        "bbox": [
+            727,
+            604,
+            895,
+            698
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "THE BOSTON CONSULTING GROUP",
+        "bbox": [
+            95,
+            931,
+            299,
+            945
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            687,
+            933,
+            705,
+            944
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Discounters should maximize their efforts in the markets where they currently operate before expanding into new ones.",
+        "bbox": [
+            92,
+            232,
+            270,
+            327
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "establish the brand quickly and to do so in the face of strong marketing efforts from competitors. In an industry with razor-thin margins, management must have the fortitude to make such a big bet and to forgo cash that might otherwise have been used to strengthen the core business.",
+        "bbox": [
+            312,
+            126,
+            900,
+            189
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Strategic Priorities for Discounters",
+        "text_level": 2,
+        "bbox": [
+            289,
+            211,
+            628,
+            231
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Most discount grocers have a heritage of simplicity and superb execution. Nevertheless, and despite the promising environment for discount grocers right now, companies must avoid pursuing growth opportunities that pull them away from their main areas of expertise and competitive advantage, as many have done in the past.",
+        "bbox": [
+            287,
+            234,
+            884,
+            313
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "For example, larger stores with enhanced features require greater capital investments. And a broader assortment of products means that supply chains and supplier relationships become more complex—especially when some of those products are either prepared foods and produce or organic goods. For example, in Australia, Aldi shifted from buying fresh produce on the spot market, where it could get the lowest prices, to a more centralized model involving longer-term contracts with suppliers. That has meant paying higher prices at times in order to lock in a predictable supply of produce that meets the company's quality standards.",
+        "bbox": [
+            287,
+            327,
+            900,
+            453
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The economics of store labor change as well. It takes far longer for a store associate to sort and stack fresh fruits and vegetables by hand—while minimizing losses—than to put cans on shelves. (Smart discounters get around this by developing innovative cartons and crates with attractive designs that display produce without requiring it to be stacked by hand.) Similarly, offering prepared foods requires hiring employees with specialized skills.",
+        "bbox": [
+            287,
+            465,
+            897,
+            561
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Overall, there is a risk that discounters will deviate from their successful business model—built on a small assortment of products, high volume, and lean, cost-efficient execution—and try to compete in ways that favor established grocers. (Already, a few discounters have undergone management changes due to these kinds of growing pains.) To avoid this fate, discount management teams should make sure that they are maximizing their efforts in the markets where they currently operate before expanding into new ones—particularly in large countries, such as the US and Australia, which require sprawling distribution networks. They also need to carefully analyze which markets make the most sense to enter, how many stores they should open in those markets, and what the distribution infrastructure should look like. Above all, they need to avoid sacrificing their highly efficient operating model in pursuit of a more attractive customer experience.",
+        "bbox": [
+            287,
+            574,
+            900,
+            762
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "DISCOUNTERS IN MANY markets have triggered a major disruption for the grocery industry over the past decade—a disruption that will continue. By evolving the way they operate—and becoming more innovative in how they develop new products to meet customers' needs—they are taking greater market share from established grocers. But they need to avoid overexpanding and introducing too much complexity into their simple operating models, which have worked so well. Incumbent players need to decide on the right strategic response—transforming their operations or launching a discount brand of their own.",
+        "bbox": [
+            287,
+            791,
+            902,
+            885
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            292,
+            933,
+            310,
+            944
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "HOW DISCOUNTERS ARE REMAKING THE GROCERY INDUSTRY",
+        "bbox": [
+            539,
+            931,
+            902,
+            945
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            94,
+            126,
+            697,
+            158
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Both groups, however, face similar challenges: to identify the needs of their target customers, offer them a unique experience, and strike the right balance between complexity and efficiency. Customers can be extremely loyal to their favorite grocery chain. Companies that understand the underlying factors of that loyalty will position themselves to win.",
+        "bbox": [
+            92,
+            172,
+            689,
+            251
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "THE BOSTON CONSULTING GROUP",
+        "bbox": [
+            95,
+            931,
+            299,
+            944
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            687,
+            933,
+            705,
+            945
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "About the Authors",
+        "text_level": 2,
+        "bbox": [
+            290,
+            118,
+            448,
+            133
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Rune Jacobsen is a senior partner and managing director in the Oslo office of The Boston Consulting Group. He is the global leader of the firm's consumer retail sector. He is an expert with BCG TURN, which helps clients deliver rapid, visible performance improvements in the short term while strengthening their organizations and positioning them to win in the future. You may contact him by email at jacobsen.rune@bcg.com.",
+        "bbox": [
+            289,
+            136,
+            900,
+            206
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Gavin Parker is a partner and managing director in the firm's Melbourne office. He leads BCG's global work in retail transformation and reinvention, and he specializes in helping large national and international grocery chains transform themselves to improve performance. You may contact him by email at parker.gavin@bcg.com.",
+        "bbox": [
+            289,
+            219,
+            890,
+            275
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Thomas Jensen is a partner and managing director in BCG's Stockholm office. He leads the firm's Consumer practice in the Nordic countries, and he is a core member of the firm's Marketing, Sales, & Pricing practice. He has significant experience in helping retailers manage their product categories to improve the customer experience while also increasing operational efficiency. You may contact him by email at jensen.thomas@bcg.com.",
+        "bbox": [
+            289,
+            287,
+            900,
+            358
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Jeroen Magnus is a principal in the firm's Brussels office. You may contact him by email at magnus.jeroen@bcg.com.",
+        "bbox": [
+            289,
+            370,
+            857,
+            399
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Holger Gottstein is a senior partner and managing director in BCG's Melbourne office. He leads the firm's Consumer practice in Australia and New Zealand. He has significant experience helping global retail companies launch business transformations, improve supply-chain performance, develop new store concepts, and implement e-commerce strategies. You may contact him by email at gottstein.holger@bcg.com.",
+        "bbox": [
+            289,
+            411,
+            899,
+            482
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Markus Hepp is a partner and managing director in the firm's Cologne office. He is a member of the global leadership team of BCG's Consumer practice, and he leads the firm's retail work in Europe. He focuses on helping retail clients develop new store concepts, manage categories, and improve pricing and store operations. You may contact him by email at hepp.markus@bcg.com.",
+        "bbox": [
+            289,
+            495,
+            892,
+            552
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Bill Urda is a senior knowledge expert in BCG's Washington, DC, office and a member of the firm's Consumer practice, specializing in the grocery sector. You may contact him by email at urda.bill@bcg.com.",
+        "bbox": [
+            289,
+            563,
+            865,
+            605
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Acknowledgments",
+        "text_level": 2,
+        "bbox": [
+            290,
+            619,
+            448,
+            634
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "The authors thank Jan Fockedey, Jonathan Sharp, and Frédéric Tiberghien for their support on this report. In addition, they thank Dalton Philips (a former CEO of Wm Morrisons Supermarkets) and Tor Helge Gundersen (the chief marketing officer of Coop Norge) for their expertise and insight.",
+        "bbox": [
+            289,
+            636,
+            895,
+            679
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "The authors acknowledge Jeff Garigliano and Kelli Gould for their contributions to the development and writing of this report, and Katherine Andrews, Gary Callahan, Lilith Fondulas, Kim Friedman, Abby Garland, and Sara Strassenreiter for its editing, design, and production.",
+        "bbox": [
+            289,
+            691,
+            900,
+            734
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "For Further Contact",
+        "text_level": 2,
+        "bbox": [
+            290,
+            747,
+            457,
+            760
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "If you would like to discuss this report, please contact one of the authors.",
+        "bbox": [
+            290,
+            763,
+            741,
+            778
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            292,
+            933,
+            310,
+            944
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "HOW DISCOUNTERS ARE REMAKING THE GROCERY INDUSTRY",
+        "bbox": [
+            539,
+            931,
+            902,
+            945
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "To find the latest BCG content and register to receive e-alerts on this topic or others, please visit bcgperspectives.com.",
+        "bbox": [
+            67,
+            882,
+            803,
+            895
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "Follow bcg.perspectives on Facebook and Twitter.",
+        "bbox": [
+            68,
+            908,
+            379,
+            921
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "© The Boston Consulting Group, Inc. 2017. All rights reserved.\n4/17",
+        "bbox": [
+            67,
+            934,
+            453,
+            959
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "BCG",
+        "text_level": 2,
+        "bbox": [
+            416,
+            473,
+            576,
+            527
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "THE BOSTON CONSULTING GROUP",
+        "text_level": 2,
+        "bbox": [
+            470,
+            537,
+            757,
+            558
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Bogotá",
+        "bbox": [
+            196,
+            812,
+            247,
+            826
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Berlin",
+        "bbox": [
+            196,
+            796,
+            243,
+            811
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Abu Dhabi",
+        "bbox": [
+            194,
+            677,
+            272,
+            693
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Boston",
+        "bbox": [
+            196,
+            828,
+            245,
+            840
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Amsterdam",
+        "bbox": [
+            196,
+            693,
+            278,
+            707
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Athens",
+        "bbox": [
+            196,
+            708,
+            248,
+            722
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Beijing",
+        "bbox": [
+            196,
+            783,
+            248,
+            795
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Chicago",
+        "bbox": [
+            329,
+            677,
+            388,
+            693
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Cologne",
+        "bbox": [
+            329,
+            693,
+            388,
+            707
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Atlanta",
+        "bbox": [
+            196,
+            723,
+            250,
+            737
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Brussels",
+        "bbox": [
+            196,
+            842,
+            255,
+            855
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Copenhagen",
+        "bbox": [
+            329,
+            708,
+            416,
+            723
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Barcelona",
+        "bbox": [
+            196,
+            768,
+            267,
+            781
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Auckland",
+        "bbox": [
+            196,
+            738,
+            263,
+            752
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Geneva",
+        "bbox": [
+            329,
+            812,
+            384,
+            826
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Buenos Aires",
+        "bbox": [
+            196,
+            872,
+            285,
+            885
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Frankfurt",
+        "bbox": [
+            329,
+            796,
+            400,
+            811
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Kiev",
+        "bbox": [
+            463,
+            677,
+            499,
+            693
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Bangkok",
+        "bbox": [
+            196,
+            753,
+            258,
+            765
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Dallas",
+        "bbox": [
+            329,
+            723,
+            376,
+            737
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Kuala Lumpur",
+        "bbox": [
+            463,
+            693,
+            561,
+            708
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Düsseldorf",
+        "bbox": [
+            329,
+            781,
+            405,
+            795
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Budapest",
+        "bbox": [
+            196,
+            857,
+            262,
+            869
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Munich",
+        "bbox": [
+            596,
+            677,
+            650,
+            693
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Hamburg",
+        "bbox": [
+            329,
+            828,
+            398,
+            841
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Dubai",
+        "bbox": [
+            329,
+            768,
+            376,
+            781
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Denver",
+        "bbox": [
+            329,
+            738,
+            381,
+            752
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Nagoya",
+        "bbox": [
+            596,
+            693,
+            650,
+            707
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Lagos",
+        "bbox": [
+            463,
+            708,
+            505,
+            722
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Detroit",
+        "bbox": [
+            329,
+            753,
+            381,
+            765
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Helsinki",
+        "bbox": [
+            329,
+            842,
+            389,
+            855
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Madrid",
+        "bbox": [
+            463,
+            796,
+            517,
+            811
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Ho Chi Minh City",
+        "bbox": [
+            329,
+            856,
+            445,
+            871
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Lima",
+        "bbox": [
+            463,
+            723,
+            502,
+            736
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Calgary",
+        "bbox": [
+            196,
+            885,
+            253,
+            900
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "New Delhi",
+        "bbox": [
+            596,
+            708,
+            670,
+            722
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Luanda",
+        "bbox": [
+            463,
+            783,
+            517,
+            796
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Melbourne",
+        "bbox": [
+            463,
+            812,
+            539,
+            826
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Lisbon",
+        "bbox": [
+            463,
+            738,
+            512,
+            752
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Hong Kong",
+        "bbox": [
+            329,
+            872,
+            406,
+            885
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Mexico City",
+        "bbox": [
+            463,
+            827,
+            544,
+            841
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "New Jersey",
+        "bbox": [
+            596,
+            723,
+            673,
+            737
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "London",
+        "bbox": [
+            463,
+            753,
+            517,
+            765
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Los Angeles",
+        "bbox": [
+            463,
+            768,
+            546,
+            781
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Houston",
+        "bbox": [
+            329,
+            887,
+            391,
+            900
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "New York",
+        "bbox": [
+            596,
+            738,
+            665,
+            750
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Miami",
+        "bbox": [
+            463,
+            842,
+            510,
+            856
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Perth",
+        "bbox": [
+            596,
+            781,
+            636,
+            796
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Milan",
+        "bbox": [
+            463,
+            856,
+            507,
+            869
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Philadelphia",
+        "bbox": [
+            596,
+            796,
+            682,
+            812
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Prague",
+        "bbox": [
+            596,
+            812,
+            648,
+            826
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Oslo",
+        "bbox": [
+            596,
+            753,
+            631,
+            765
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Paris",
+        "bbox": [
+            596,
+            768,
+            636,
+            781
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Minneapolis",
+        "bbox": [
+            463,
+            871,
+            547,
+            885
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Rio de Janeiro",
+        "bbox": [
+            596,
+            827,
+            692,
+            841
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Riyadh",
+        "bbox": [
+            596,
+            842,
+            648,
+            856
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Rome",
+        "bbox": [
+            596,
+            857,
+            640,
+            869
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Canberra",
+        "bbox": [
+            196,
+            902,
+            263,
+            915
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "San Francisco",
+        "bbox": [
+            596,
+            871,
+            692,
+            885
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Santiago",
+        "bbox": [
+            596,
+            887,
+            658,
+            900
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Monterrey",
+        "bbox": [
+            463,
+            887,
+            536,
+            900
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "São Paulo",
+        "bbox": [
+            596,
+            900,
+            665,
+            915
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Montréal",
+        "bbox": [
+            463,
+            900,
+            527,
+            915
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Istanbul",
+        "bbox": [
+            329,
+            900,
+            389,
+            915
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Shanghai\nSingapore\nStockholm\nStuttgart\nSydney\nTaipei\nTel Aviv\nTokyo\nToronto\nVienna\nWarsaw\nWashington\nZurich",
+        "bbox": [
+            727,
+            677,
+            813,
+            872
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Casablanca",
+        "bbox": [
+            196,
+            916,
+            275,
+            930
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Jakarta",
+        "bbox": [
+            329,
+            916,
+            383,
+            930
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Chennai",
+        "bbox": [
+            196,
+            931,
+            257,
+            945
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Seattle",
+        "bbox": [
+            596,
+            916,
+            647,
+            930
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Johannesburg",
+        "bbox": [
+            329,
+            931,
+            425,
+            946
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Moscow",
+        "bbox": [
+            463,
+            916,
+            521,
+            930
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Mumbai",
+        "bbox": [
+            463,
+            931,
+            522,
+            945
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Seoul",
+        "bbox": [
+            596,
+            931,
+            638,
+            945
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "bcg.com",
+        "bbox": [
+            729,
+            931,
+            786,
+            946
+        ],
+        "page_idx": 17
+    }
+]

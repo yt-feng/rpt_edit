@@ -1,0 +1,19 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 1,
+    "successful_pdf_count": 1,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_002_42_letet/pdfs/0006-McKinsey_PDF-McKinsey-Global-Institute-2025-in-charts_cf0831cb.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

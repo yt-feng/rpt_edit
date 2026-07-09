@@ -1,0 +1,64 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs",
+  "total_pdf_count_before_shard": 6,
+  "pdf_count_before_skip": 6,
+  "pdf_count": 6,
+  "generated_report_count": 6,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 0,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_AI-Talk-Is-Cheap.-Value-Creation-Is-Rare_45a884c8.pdf",
+          "batch_file": "/tmp/pdf_batch_001_q1zbl824/pdfs/0001-BCG_AI-Talk-Is-Cheap.-Value-Creation-Is-Rare_45a884c8.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Consumer-Spending-Is-Up-But-That-Signal-No-Longer-Means-What_a7761189.pdf",
+          "batch_file": "/tmp/pdf_batch_001_q1zbl824/pdfs/0002-BCG_Consumer-Spending-Is-Up-But-That-Signal-No-Longer-Means-What_a7761189.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_How-Discounters-Are-Remaking-the-Grocery-Industry_f6fdf271.pdf",
+          "batch_file": "/tmp/pdf_batch_001_q1zbl824/pdfs/0003-BCG_How-Discounters-Are-Remaking-the-Grocery-Industry_f6fdf271.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_To-Reset-Operations-Grocers-Should-Start-with-the-Customer_a418e576.pdf",
+          "batch_file": "/tmp/pdf_batch_001_q1zbl824/pdfs/0004-BCG_To-Reset-Operations-Grocers-Should-Start-with-the-Customer_a418e576.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Why-Grocers-Need-to-Start-Operating-Like-Consumer-Brands_9c2d6180.pdf",
+          "batch_file": "/tmp/pdf_batch_001_q1zbl824/pdfs/0005-BCG_Why-Grocers-Need-to-Start-Operating-Like-Consumer-Brands_9c2d6180.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 2,
+      "pdf_count": 1,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/McKinsey_PDF-McKinsey-Global-Institute-2025-in-charts_cf0831cb.pdf",
+          "batch_file": "/tmp/pdf_batch_002_42_letet/pdfs/0006-McKinsey_PDF-McKinsey-Global-Institute-2025-in-charts_cf0831cb.pdf",
+          "stable_index": "6"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

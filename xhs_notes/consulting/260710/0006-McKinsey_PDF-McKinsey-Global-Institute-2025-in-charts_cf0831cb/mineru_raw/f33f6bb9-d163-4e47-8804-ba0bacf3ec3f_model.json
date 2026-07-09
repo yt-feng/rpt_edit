@@ -1,0 +1,5860 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.04,
+                0.052,
+                0.327,
+                0.149
+            ],
+            "angle": 0,
+            "content": "McKinsey\nGlobal Institute"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.04,
+                0.241,
+                0.401,
+                0.432
+            ],
+            "angle": 0,
+            "content": "McKinsey Global\nInstitute: 2025\nin charts"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.449,
+                0.396,
+                0.507
+            ],
+            "angle": 0,
+            "content": "Here are some of the McKinsey Global Institute's favorite data visualizations from 2025.",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.452,
+                0.002,
+                1.0,
+                0.999
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.043,
+                0.945,
+                0.129,
+                0.965
+            ],
+            "angle": 0,
+            "content": "December 2025"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.238,
+                0.405,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.039,
+                0.308,
+                0.345,
+                0.368
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.375,
+                0.231,
+                0.434
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.452,
+                0.393,
+                0.476
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.481,
+                0.316,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.039,
+                0.059,
+                0.653,
+                0.521
+            ],
+            "angle": 0,
+            "content": "In 2025, we are no longer on the cusp of a new era, but truly in it. This year, MGI's fact-based insights helped make sense of the latest business and economic signals. We found that just a few “Standout” firms can move the productivity needle for entire economies. We also put forward new reasons to accelerate national productivity now, so that countries can grow their way to balance-sheet health and drive prosperity. We explored ways in which the private sector could help lift more people above an “empowerment line” to meet essential needs and otherwise advance beyond ESG checklists. As trade policy shifts and other geopolitical developments packed some surprises, we updated our analysis of the geometry of global trade and looked to foreign direct investment (FDI) as a window to what may come next. We also introduced a “rearrangement ratio” to better understand potential knock-on effects of US–China trade tensions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.039,
+                0.535,
+                0.64,
+                0.832
+            ],
+            "angle": 0,
+            "content": "To understand the demographics and other defining hallmarks of our new era, we delved into the consequences of falling fertility and increasing longevity. We took stock of where the energy transition stands and tallied the costs and benefits of meeting climate adaptation challenges. We also explored labor market dynamics through the lens of work-experience trajectories and emerging skills partnerships with robots and agents in the age of AI. The following data visualizations, grouped into our five core research themes, encapsulate some of our key findings over the past year.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.756,
+                0.956,
+                0.92,
+                0.971
+            ],
+            "angle": 0,
+            "content": "McKinsey Global Institute: 2025 in charts"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.948,
+                0.956,
+                0.958,
+                0.971
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.039,
+                0.055,
+                0.605,
+                0.091
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.039,
+                0.09,
+                0.632,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.122,
+                0.634,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.154,
+                0.644,
+                0.186
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.188,
+                0.632,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.219,
+                0.63,
+                0.252
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.255,
+                0.653,
+                0.285
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.285,
+                0.633,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.318,
+                0.645,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.351,
+                0.606,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.385,
+                0.623,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.415,
+                0.627,
+                0.449
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.449,
+                0.607,
+                0.482
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.481,
+                0.528,
+                0.514
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.535,
+                0.606,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.568,
+                0.628,
+                0.597
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.599,
+                0.619,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.632,
+                0.562,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.666,
+                0.6,
+                0.695
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.697,
+                0.637,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.73,
+                0.62,
+                0.762
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.764,
+                0.592,
+                0.793
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.796,
+                0.533,
+                0.828
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.04,
+                0.056,
+                0.459,
+                0.256
+            ],
+            "angle": 0,
+            "content": "Productivity & Prosperity"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.259,
+                0.365,
+                0.285
+            ],
+            "angle": 0,
+            "content": "Creating and harnessing the world's assets",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.288,
+                0.181,
+                0.313
+            ],
+            "angle": 0,
+            "content": "most productively",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.755,
+                0.956,
+                0.919,
+                0.971
+            ],
+            "angle": 0,
+            "content": "McKinsey Global Institute: 2025 in charts"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.948,
+                0.956,
+                0.957,
+                0.969
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.03,
+                0.042,
+                0.462,
+                0.168
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.144,
+                0.471,
+                0.269
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.257,
+                0.365,
+                0.285
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.288,
+                0.18,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.058,
+                0.25,
+                0.078
+            ],
+            "angle": 0,
+            "content": "Single firms can move the productivity"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.078,
+                0.287,
+                0.399
+            ],
+            "angle": 0,
+            "content": "needle for entire economies—the “power of one.” In fact, fewer than 100 of the 8,300 large firms in our study sample account for 63 percent of productivity growth observed in the three countries analyzed. Dubbed “Standouts,” these companies generated the majority of productivity growth in powerful bursts rather than in a smooth trickle of gradual change, and through bold strategic moves, top-line growth, and portfolio shifts more than efficiency gains. This is a more concentrated, dynamic, and sporadic pattern than existing literature tends to highlight, with progress on productivity being defined by a few firms moving a mile rather than many firms moving an inch.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.375,
+                0.054,
+                0.865,
+                0.082
+            ],
+            "angle": 0,
+            "content": "A few 'Standout' firms shape the majority of productivity growth."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.375,
+                0.102,
+                0.661,
+                0.124
+            ],
+            "angle": 0,
+            "content": "Share of national sample's productivity growth, %",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.426,
+                0.136,
+                0.932,
+                0.479
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.375,
+                0.494,
+                0.775,
+                0.51
+            ],
+            "angle": 0,
+            "content": "Source: The power of one: How standout firms grow national productivity, McKinsey Global Institute, May 2025"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.375,
+                0.535,
+                0.459,
+                0.552
+            ],
+            "angle": 0,
+            "content": "McKinsey & Company",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.756,
+                0.956,
+                0.919,
+                0.971
+            ],
+            "angle": 0,
+            "content": "McKinsey Global Institute: 2025 in charts"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.949,
+                0.956,
+                0.957,
+                0.969
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.058,
+                0.25,
+                0.078
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.082,
+                0.27,
+                0.096
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.101,
+                0.276,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.124,
+                0.285,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.145,
+                0.264,
+                0.161
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.166,
+                0.25,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.188,
+                0.26,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.209,
+                0.269,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.23,
+                0.276,
+                0.244
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.252,
+                0.275,
+                0.266
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.272,
+                0.277,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.294,
+                0.252,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.315,
+                0.273,
+                0.329
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.337,
+                0.283,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.358,
+                0.282,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.379,
+                0.18,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.055,
+                0.863,
+                0.079
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.103,
+                0.659,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.537,
+                0.457,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.058,
+                0.288,
+                0.356
+            ],
+            "angle": 0,
+            "content": "Entering 2025, the world's wealth reached its highest level ever. Yet much of its growth came from asset price increases, funded by a proliferation of debt, rather than new saving and investment. Borrowing a page from corporate finance, we constructed a “global balance sheet” of the world's assets and liabilities as a new lens into the economy. Households gained $400 trillion in wealth between 2000 and 2024, but only about $100 trillion was cumulative net investment to build new wealth, while three-quarters of the gains were from assets' appreciation on paper and general inflation, not fully backed by economic growth.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.375,
+                0.054,
+                0.913,
+                0.082
+            ],
+            "angle": 0,
+            "content": "One-third of global household wealth growth since 2000 was on paper."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.375,
+                0.103,
+                0.803,
+                0.126
+            ],
+            "angle": 0,
+            "content": "Decomposition of growth in global household net worth, 2000–24, $ trillion",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.374,
+                0.137,
+                0.856,
+                0.616
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.375,
+                0.629,
+                0.763,
+                0.646
+            ],
+            "angle": 0,
+            "content": "Source: Out of balance: What's next for growth, wealth, and debt?, McKinsey Global Institute, October 2025"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.375,
+                0.671,
+                0.46,
+                0.688
+            ],
+            "angle": 0,
+            "content": "McKinsey & Company",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.756,
+                0.956,
+                0.919,
+                0.971
+            ],
+            "angle": 0,
+            "content": "McKinsey Global Institute: 2025 in charts"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.949,
+                0.956,
+                0.957,
+                0.97
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.059,
+                0.269,
+                0.075
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.082,
+                0.268,
+                0.096
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.102,
+                0.27,
+                0.116
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.125,
+                0.284,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.145,
+                0.271,
+                0.161
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.167,
+                0.251,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.188,
+                0.272,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.209,
+                0.278,
+                0.223
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.228,
+                0.284,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.251,
+                0.257,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.272,
+                0.249,
+                0.286
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.294,
+                0.27,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.315,
+                0.282,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.336,
+                0.211,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.055,
+                0.91,
+                0.081
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.105,
+                0.8,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.673,
+                0.457,
+                0.688
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.374,
+                0.291,
+                0.47,
+                0.357
+            ],
+            "angle": 0,
+            "content": "Number of mandatory ESG regulations globally"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.048,
+                0.275,
+                0.303
+            ],
+            "angle": 0,
+            "content": "After a decade of expansion, ESG as a framework to measure a company's societal impact is undergoing a rethink. At the median, large companies today manage 100 environmental, social, and governance (ESG) KPIs. The rapid proliferation of ESG metrics and ongoing disagreements about prioritization—both within companies and in public discourse—have made knowing where business and societal goals do and don't align difficult. We analyzed a representative set of 18 environmental and societal issues to see where companies can apply their capabilities and innovate to make a real difference.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.374,
+                0.046,
+                0.853,
+                0.069
+            ],
+            "angle": 0,
+            "content": "Attention to ESG has increased significantly in the past decade.",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.373,
+                0.082,
+                0.839,
+                0.88
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.374,
+                0.889,
+                0.722,
+                0.903
+            ],
+            "angle": 0,
+            "content": "Source: Beyond ESG: From checklists to capabilities, McKinsey Global Institute, September 2025"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.375,
+                0.924,
+                0.459,
+                0.938
+            ],
+            "angle": 0,
+            "content": "McKinsey & Company",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.756,
+                0.962,
+                0.92,
+                0.976
+            ],
+            "angle": 0,
+            "content": "McKinsey Global Institute: 2025 in charts"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.949,
+                0.963,
+                0.958,
+                0.975
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.049,
+                0.235,
+                0.064
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.068,
+                0.242,
+                0.082
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.086,
+                0.269,
+                0.099
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.104,
+                0.262,
+                0.119
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.122,
+                0.258,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.142,
+                0.252,
+                0.154
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.16,
+                0.257,
+                0.172
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.178,
+                0.263,
+                0.19
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.196,
+                0.27,
+                0.208
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.214,
+                0.272,
+                0.226
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.231,
+                0.266,
+                0.243
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.249,
+                0.26,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.268,
+                0.269,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.287,
+                0.237,
+                0.299
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.046,
+                0.851,
+                0.066
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.925,
+                0.456,
+                0.937
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.058,
+                0.285,
+                0.356
+            ],
+            "angle": 0,
+            "content": "If Indonesia is to meet an ambition of becoming a high-income economy by 2045, productivity growth would need to be the primary driver of its 5.4 percent annual GDP growth. The contribution from population and labor force participation factors would be lower in the years ahead, likely accounting for about 0.5 percentage points of GDP growth—less than one-third of what it has been since 2000 at 1.8 percent. The balance would need to come from productivity growth, which would have to increase 1.6 times from the 3.1 percent CAGR that Indonesia achieved between 2000 and 2023 to 4.9 percent.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.374,
+                0.055,
+                0.929,
+                0.108
+            ],
+            "angle": 0,
+            "content": "The year in which Indonesia reaches high-income status depends on how fast it can accelerate growth, especially productivity growth.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.375,
+                0.131,
+                0.882,
+                0.153
+            ],
+            "angle": 0,
+            "content": "Year reaching high-income status based on benchmarks' annualized GDP growth rate, %"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.377,
+                0.162,
+                0.952,
+                0.49
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.375,
+                0.511,
+                0.735,
+                0.532
+            ],
+            "angle": 0,
+            "content": "Implied real GDP growth rate decomposition, percentage points"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.377,
+                0.54,
+                0.868,
+                0.781
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.378,
+                0.796,
+                0.777,
+                0.814
+            ],
+            "angle": 0,
+            "content": "Source: The enterprising archipelago: Propelling Indonesia's productivity, McKinsey Global Institute, April 2025"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.376,
+                0.839,
+                0.461,
+                0.856
+            ],
+            "angle": 0,
+            "content": "McKinsey & Company",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.756,
+                0.956,
+                0.919,
+                0.971
+            ],
+            "angle": 0,
+            "content": "McKinsey Global Institute: 2025 in charts"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.949,
+                0.956,
+                0.957,
+                0.97
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.06,
+                0.24,
+                0.074
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.081,
+                0.277,
+                0.097
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.103,
+                0.249,
+                0.117
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.124,
+                0.263,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.145,
+                0.271,
+                0.161
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.167,
+                0.281,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.188,
+                0.273,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.208,
+                0.262,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.228,
+                0.273,
+                0.244
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.251,
+                0.281,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.272,
+                0.274,
+                0.287
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.294,
+                0.269,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.315,
+                0.263,
+                0.329
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.335,
+                0.147,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.379,
+                0.056,
+                0.926,
+                0.078
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.081,
+                0.831,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.378,
+                0.841,
+                0.458,
+                0.854
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.054,
+                0.45,
+                0.239
+            ],
+            "angle": 0,
+            "content": "Global\nConnections"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.259,
+                0.4,
+                0.314
+            ],
+            "angle": 0,
+            "content": "Exploring how flows of goods, people, and ideas shape economies",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.755,
+                0.956,
+                0.919,
+                0.971
+            ],
+            "angle": 0,
+            "content": "McKinsey Global Institute: 2025 in charts"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.948,
+                0.956,
+                0.957,
+                0.969
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.044,
+                0.266,
+                0.146
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.15,
+                0.455,
+                0.248
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.259,
+                0.399,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.287,
+                0.178,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.058,
+                0.249,
+                0.077
+            ],
+            "angle": 0,
+            "content": "Trade reconfiguration continues along"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.079,
+                0.288,
+                0.484
+            ],
+            "angle": 0,
+            "content": "geopolitical lines. The most significant ongoing shift in trade patterns is a fall in the average geopolitical distance of trade: It declined by about 7 percent between 2017 and 2024, a period that witnessed ongoing trade tensions between the United States and China as well as Russia's invasion of Ukraine. Economies at each end of the geopolitical spectrum have been trading less with one another: China, Germany, and the United States have experienced sharp reductions in the geopolitical distance of trade. By contrast, the average geographic distance of trade has been climbing very slowly, but steadily by about 10 kilometers each year over the past decade. This appeared to continue through 2024. Global import concentration—that is, the breadth of trading relationships an economy relies on for each of the goods it imports—also remained stable.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.376,
+                0.055,
+                0.743,
+                0.081
+            ],
+            "angle": 0,
+            "content": "Trade is traveling shorter geopolitical distances."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.376,
+                0.104,
+                0.645,
+                0.126
+            ],
+            "angle": 0,
+            "content": "Evolution of goods trade indicators, 2000–24E"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.375,
+                0.136,
+                0.553,
+                0.19
+            ],
+            "angle": 0,
+            "content": "Geographic distance traveled by trade, thousand km, value-weighted average"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.374,
+                0.197,
+                0.572,
+                0.476
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.375,
+                0.531,
+                0.46,
+                0.548
+            ],
+            "angle": 0,
+            "content": "McKinsey & Company",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.578,
+                0.136,
+                0.747,
+                0.188
+            ],
+            "angle": 0,
+            "content": "Geopolitical distance traveled by trade, value-weighted average, 0–10 scale"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.575,
+                0.192,
+                0.773,
+                0.477
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.376,
+                0.489,
+                0.769,
+                0.508
+            ],
+            "angle": 0,
+            "content": "Source: Geopolitics and the geometry of global trade: 2025 update, McKinsey Global Institute, January 2025"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.779,
+                0.136,
+                0.954,
+                0.173
+            ],
+            "angle": 0,
+            "content": "Import concentration, Herfindahl-Hirschman Index"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.777,
+                0.197,
+                0.96,
+                0.476
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.756,
+                0.956,
+                0.919,
+                0.971
+            ],
+            "angle": 0,
+            "content": "McKinsey Global Institute: 2025 in charts"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.949,
+                0.956,
+                0.957,
+                0.969
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.057,
+                0.248,
+                0.078
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.079,
+                0.286,
+                0.098
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.101,
+                0.261,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.124,
+                0.261,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.146,
+                0.259,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.166,
+                0.272,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.188,
+                0.281,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.209,
+                0.283,
+                0.223
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.229,
+                0.26,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.251,
+                0.276,
+                0.267
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.271,
+                0.275,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.294,
+                0.279,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.315,
+                0.285,
+                0.331
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.336,
+                0.284,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.358,
+                0.276,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.378,
+                0.26,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.399,
+                0.278,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.42,
+                0.265,
+                0.437
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.442,
+                0.276,
+                0.458
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.464,
+                0.129,
+                0.479
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.378,
+                0.056,
+                0.74,
+                0.079
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.379,
+                0.107,
+                0.643,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.533,
+                0.457,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.058,
+                0.284,
+                0.098
+            ],
+            "angle": 0,
+            "content": "Recent patterns of foreign direct investment (FDI) announcements signal a new"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.099,
+                0.285,
+                0.505
+            ],
+            "angle": 0,
+            "content": "shake-up. FDI promises to shape advanced manufacturing—including semiconductors, electric vehicles, and batteries—alongside communications and software (mostly AI infrastructure), and the resources that power them. Since 2022, three-quarters of cross-border announcements have gone to these types of future-shaping industries as well as energy and mining projects—up from about half pre-2020. If successful, FDI projects announced since 2022 could more than quadruple current battery manufacturing capacity outside China, nearly double the global data center capacity that powers AI, and draw the United States into the circle of top leading-edge semiconductor-producing nations. These patterns show how trade corridors are shifting, country competitiveness is evolving, and new business ecosystems are emerging worldwide.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.374,
+                0.054,
+                0.905,
+                0.081
+            ],
+            "angle": 0,
+            "content": "FDI in semiconductors reconfigured sharply toward the United States."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.374,
+                0.103,
+                0.785,
+                0.125
+            ],
+            "angle": 0,
+            "content": "Semiconductors: Top 25 corridors by announced greenfield FDI, $ billion",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.372,
+                0.178,
+                0.952,
+                0.864
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.375,
+                0.872,
+                0.911,
+                0.888
+            ],
+            "angle": 0,
+            "content": "Source: The FDI shake-up: How foreign direct investment today may shape industry and trade tomorrow, McKinsey Global Institute, September 2025"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.375,
+                0.912,
+                0.46,
+                0.928
+            ],
+            "angle": 0,
+            "content": "McKinsey & Company",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.756,
+                0.955,
+                0.92,
+                0.971
+            ],
+            "angle": 0,
+            "content": "McKinsey Global Institute: 2025 in charts"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.945,
+                0.956,
+                0.957,
+                0.97
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.058,
+                0.283,
+                0.077
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.08,
+                0.226,
+                0.097
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.102,
+                0.264,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.124,
+                0.26,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.144,
+                0.256,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.166,
+                0.247,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.186,
+                0.269,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.208,
+                0.26,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.231,
+                0.259,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.251,
+                0.265,
+                0.267
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.273,
+                0.261,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.293,
+                0.25,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.315,
+                0.243,
+                0.329
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.336,
+                0.25,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.358,
+                0.283,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.379,
+                0.272,
+                0.393
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.399,
+                0.277,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.421,
+                0.279,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.442,
+                0.277,
+                0.458
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.464,
+                0.27,
+                0.479
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.485,
+                0.279,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.056,
+                0.902,
+                0.078
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.378,
+                0.106,
+                0.782,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.914,
+                0.457,
+                0.928
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.375,
+                0.137,
+                0.461,
+                0.167
+            ],
+            "angle": 0,
+            "content": "2022–25"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.375,
+                0.182,
+                0.956,
+                0.926
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.756,
+                0.956,
+                0.92,
+                0.971
+            ],
+            "angle": 0,
+            "content": "McKinsey Global Institute: 2025 in charts"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.947,
+                0.957,
+                0.958,
+                0.97
+            ],
+            "angle": 0,
+            "content": "11"
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.374,
+                0.046,
+                0.943,
+                0.09
+            ],
+            "angle": 0,
+            "content": "Ease of rearrangement varies across products. Cotton T-shirts? Fairly easy. Fireworks? Impossible."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.049,
+                0.286,
+                0.393
+            ],
+            "angle": 0,
+            "content": "Amid pressure on US–China trade, firms may look to rearrange sourcing to alternative suppliers. We introduced a “rearrangement ratio” to quantify how hard the change might be. Thirty-five percent of US imports from China have a ratio less than 0.1, signifying a global available export market ten times larger than current US imports from China. Think T-shirts or logic chips. For higher ratios, rearrangement becomes harder, and for the 5 percent of trade with a ratio greater than 1.0—for example, rare earth magnets—US imports from China exceed available global exports. Consumer goods are harder to rearrange than business inputs. Sixty-one percent of business input imports have a rearrangement ratio less than 0.1, versus 16 percent of consumer goods. Major products like laptops, smartphones, and toys are harder to rearrange.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.373,
+                0.11,
+                0.842,
+                0.129
+            ],
+            "angle": 0,
+            "content": "Rearrangement ratio for products imported by the US from China, by sector, 2023",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.374,
+                0.138,
+                0.7,
+                0.157
+            ],
+            "angle": 0,
+            "content": "Circle size = Value of imports from China ◇ Sector's average ratio",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.372,
+                0.156,
+                0.96,
+                0.879
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.374,
+                0.889,
+                0.659,
+                0.903
+            ],
+            "angle": 0,
+            "content": "Source: The great trade rearrangement, McKinsey Global Institute, June 2025"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.374,
+                0.924,
+                0.459,
+                0.938
+            ],
+            "angle": 0,
+            "content": "McKinsey & Company",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.756,
+                0.962,
+                0.92,
+                0.976
+            ],
+            "angle": 0,
+            "content": "McKinsey Global Institute: 2025 in charts"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.946,
+                0.963,
+                0.957,
+                0.975
+            ],
+            "angle": 0,
+            "content": "12"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.048,
+                0.942,
+                0.068
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.068,
+                0.55,
+                0.09
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.05,
+                0.259,
+                0.064
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.069,
+                0.282,
+                0.081
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.086,
+                0.264,
+                0.1
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.105,
+                0.266,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.124,
+                0.284,
+                0.136
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.141,
+                0.261,
+                0.154
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.159,
+                0.266,
+                0.171
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.177,
+                0.27,
+                0.189
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.196,
+                0.279,
+                0.208
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.214,
+                0.276,
+                0.225
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.232,
+                0.274,
+                0.244
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.249,
+                0.28,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.268,
+                0.254,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.287,
+                0.269,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.304,
+                0.263,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.323,
+                0.281,
+                0.334
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.34,
+                0.276,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.357,
+                0.275,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.374,
+                0.111,
+                0.391
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.113,
+                0.839,
+                0.126
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.378,
+                0.139,
+                0.696,
+                0.155
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.926,
+                0.456,
+                0.938
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "index",
+            "bbox": [
+                0.003,
+                0.008,
+                1.0,
+                1.0
+            ],
+            "angle": 0,
+            "content": "Technology & Markets of the Future\nDiscussing the next big arenas of value and competition\nMcKinsey Global Institute: 2025 in charts 13"
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.373,
+                0.054,
+                0.953,
+                0.105
+            ],
+            "angle": 0,
+            "content": "People, agents, and robots could all play significant roles in the workforce of the future."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.058,
+                0.289,
+                0.506
+            ],
+            "angle": 0,
+            "content": "Work in the future will be a partnership between people, agents, and robots—all powered by AI. With the capabilities of existing technologies, AI-powered agents could perform tasks that occupy 44 percent of US work hours today, and robots 13 percent. At the same time, more than 70 percent of human skills can be applied in both automatable and non-automatable work. This means most human skills will remain relevant, but how and where they are used will change. For example, in a building-supply store, workers may spend less time locating materials, managing inventory, and handling routine logistics—and more time interacting with customers and interpreting AI-driven recommendations. Our research finds that by 2030, about $2.9 trillion of economic value could be unlocked in the United States—if organizations prepare their people and redesign workflows, rather than individual tasks, around people, agents, and robots working together.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.373,
+                0.129,
+                0.831,
+                0.151
+            ],
+            "angle": 0,
+            "content": "Distribution of work hours in the US, by technical automation potential, 2024, %",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.373,
+                0.161,
+                0.906,
+                0.612
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.374,
+                0.631,
+                0.767,
+                0.648
+            ],
+            "angle": 0,
+            "content": "Source: Agents, robots, and us: Skill partnerships in the age of AI, McKinsey Global Institute, November 2025"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.374,
+                0.675,
+                0.46,
+                0.691
+            ],
+            "angle": 0,
+            "content": "McKinsey & Company",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.756,
+                0.955,
+                0.92,
+                0.971
+            ],
+            "angle": 0,
+            "content": "McKinsey Global Institute: 2025 in charts"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.945,
+                0.956,
+                0.957,
+                0.97
+            ],
+            "angle": 0,
+            "content": "14"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.055,
+                0.951,
+                0.078
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.082,
+                0.457,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.059,
+                0.249,
+                0.076
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.081,
+                0.258,
+                0.097
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.102,
+                0.28,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.125,
+                0.285,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.146,
+                0.277,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.166,
+                0.25,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.188,
+                0.255,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.209,
+                0.267,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.231,
+                0.261,
+                0.244
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.251,
+                0.267,
+                0.266
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.273,
+                0.26,
+                0.287
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.295,
+                0.275,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.314,
+                0.263,
+                0.331
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.337,
+                0.273,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.357,
+                0.26,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.379,
+                0.281,
+                0.393
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.399,
+                0.265,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.421,
+                0.282,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.443,
+                0.285,
+                0.457
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.464,
+                0.277,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.485,
+                0.27,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.133,
+                0.827,
+                0.148
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.676,
+                0.457,
+                0.691
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.058,
+                0.288,
+                0.336
+            ],
+            "angle": 0,
+            "content": "The industrial landscape has shifted dramatically over the past 20 years. Just look at the top ten most valuable companies in 2005 and 2025. Only one company appears on both lists. And the rest of the 2025 leaders are worth about ten times more than the 2005 leaders they replaced. What has caused this radical reshuffling? And why are today's winners winning on a whole new scale? The short answer points to the high-growth industries we call “arenas,” which are characterized by a particularly intense race to win, with outsize rewards but also a high risk of displacement.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.374,
+                0.054,
+                0.93,
+                0.106
+            ],
+            "angle": 0,
+            "content": "The past 20 years have seen a radical reshuffling in the ranking of the top ten companies."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.375,
+                0.129,
+                0.611,
+                0.153
+            ],
+            "angle": 0,
+            "content": "Company ranking by market cap, $ billion"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.801,
+                0.129,
+                0.958,
+                0.151
+            ],
+            "angle": 0,
+            "content": "- Arenas of today ○ New entries"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.375,
+                0.161,
+                0.864,
+                0.595
+            ],
+            "angle": 0,
+            "content": "<table><tr><td colspan=\"3\">Ranking, 2005</td><td colspan=\"3\">Ranking, 2025</td></tr><tr><td>1</td><td>General Electric</td><td>370</td><td>1</td><td>Nvidia</td><td>5,027</td></tr><tr><td>2</td><td>ExxonMobil</td><td>350</td><td>2</td><td>Apple</td><td>3,976</td></tr><tr><td>3</td><td>Microsoft</td><td>278</td><td>3</td><td>Microsoft</td><td>3,843</td></tr><tr><td>4</td><td>Citi</td><td>246</td><td>4</td><td>Alphabet</td><td>3,426</td></tr><tr><td>5</td><td>BP</td><td>229</td><td>5</td><td>Amazon</td><td>2,715</td></tr><tr><td>6</td><td>Shell</td><td>211</td><td>6</td><td>Broadcom</td><td>1,712</td></tr><tr><td>7</td><td>Walmart</td><td>195</td><td>7</td><td>Aramco</td><td>1,650</td></tr><tr><td>8</td><td>Bank of America</td><td>185</td><td>8</td><td>Meta</td><td>1,607</td></tr><tr><td>9</td><td>Johnson &amp; Johnson</td><td>179</td><td>9</td><td>Tesla</td><td>1,558</td></tr><tr><td>10</td><td>HSBC</td><td>177</td><td>10</td><td>TSMC</td><td>1,267</td></tr><tr><td colspan=\"2\">Total market cap, $ billion</td><td>2,420</td><td colspan=\"2\"></td><td>26,780</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.375,
+                0.62,
+                0.773,
+                0.638
+            ],
+            "angle": 0,
+            "content": "Source: Capturing the next big arenas of competition in ten charts, McKinsey Global Institute, November 2025"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.375,
+                0.662,
+                0.46,
+                0.679
+            ],
+            "angle": 0,
+            "content": "McKinsey & Company"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.756,
+                0.955,
+                0.92,
+                0.971
+            ],
+            "angle": 0,
+            "content": "McKinsey Global Institute: 2025 in charts"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.946,
+                0.956,
+                0.957,
+                0.97
+            ],
+            "angle": 0,
+            "content": "15"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.059,
+                0.236,
+                0.075
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.081,
+                0.257,
+                0.096
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.102,
+                0.275,
+                0.116
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.123,
+                0.265,
+                0.141
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.144,
+                0.273,
+                0.161
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.167,
+                0.275,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.188,
+                0.264,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.209,
+                0.285,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.229,
+                0.247,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.251,
+                0.263,
+                0.266
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.272,
+                0.271,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.294,
+                0.262,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.315,
+                0.265,
+                0.329
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.055,
+                0.927,
+                0.08
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.082,
+                0.493,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.04,
+                0.056,
+                0.459,
+                0.239
+            ],
+            "angle": 0,
+            "content": "Resources of\nthe World"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.259,
+                0.44,
+                0.285
+            ],
+            "angle": 0,
+            "content": "Building, powering, and feeding the world sustainably",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.756,
+                0.956,
+                0.919,
+                0.971
+            ],
+            "angle": 0,
+            "content": "McKinsey Global Institute: 2025 in charts"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.946,
+                0.956,
+                0.957,
+                0.969
+            ],
+            "angle": 0,
+            "content": "16"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.038,
+                0.051,
+                0.462,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.036,
+                0.149,
+                0.372,
+                0.242
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.257,
+                0.44,
+                0.285
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.058,
+                0.286,
+                0.399
+            ],
+            "angle": 0,
+            "content": "The physical transformation needed for the energy transition is advancing, but at about half the pace required to meet global commitments. On average, about 13.5 percent of low-emissions technologies needed to meet Paris-aligned 2050 targets across the seven domains we study had been deployed by the end of 2024. This is about three percentage points of progress in two years. During this time, deployment advanced in three of the seven parts of the energy system we analyzed—namely, low-emissions power, mobility (electrifying transportation), and raw materials (critical mineral supplies). Progress is mostly stuck in carbon capture, hydrogen fuels, and in heavy industry.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.375,
+                0.055,
+                0.83,
+                0.082
+            ],
+            "angle": 0,
+            "content": "The energy transition is advancing at half the required pace."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.375,
+                0.101,
+                0.915,
+                0.142
+            ],
+            "angle": 0,
+            "content": "Deployment of low-emissions technologies, 2022 and 2024 actual and 2024 at cruising speed, % of total deployment to meet 2050 targets",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.376,
+                0.153,
+                0.958,
+                0.642
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.375,
+                0.7,
+                0.46,
+                0.716
+            ],
+            "angle": 0,
+            "content": "McKinsey & Company",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.375,
+                0.659,
+                0.911,
+                0.676
+            ],
+            "angle": 0,
+            "content": "Source: The hard stuff 2025: Taking stock of progress on the physical challenges of the energy transition, McKinsey Global Institute, November 2025"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.756,
+                0.956,
+                0.919,
+                0.971
+            ],
+            "angle": 0,
+            "content": "McKinsey Global Institute: 2025 in charts"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.946,
+                0.956,
+                0.957,
+                0.97
+            ],
+            "angle": 0,
+            "content": "17"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.059,
+                0.254,
+                0.075
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.081,
+                0.26,
+                0.096
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.102,
+                0.272,
+                0.117
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.125,
+                0.282,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.145,
+                0.278,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.166,
+                0.268,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.188,
+                0.265,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.208,
+                0.262,
+                0.225
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.231,
+                0.258,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.251,
+                0.254,
+                0.266
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.272,
+                0.282,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.294,
+                0.235,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.315,
+                0.275,
+                0.329
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.337,
+                0.264,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.358,
+                0.277,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.379,
+                0.121,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.379,
+                0.057,
+                0.828,
+                0.079
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.102,
+                0.913,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.121,
+                0.615,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.702,
+                0.457,
+                0.715
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.058,
+                0.283,
+                0.462
+            ],
+            "angle": 0,
+            "content": "Advancing adaptation is a good buy, but achieving protection at 2°C would require more than six times today's spending—and that spending is not guaranteed. The world currently spends $190 billion annually to defend its denizens against extreme weather at the standards established in developed economies. As the world warms, on current emissions trajectories reaching 2°C above preindustrial levels by about 2050, exposure to drought and heat will increase the most. Maintaining today's level of protection at 2°C would require 2.5 times current spending, while achieving developed-economy standards would cost about $1.2 trillion annually, most of which would go to air conditioning and irrigation. Many such proven measures to adapt exist, and at 2°C, their benefits outweigh their costs by seven-to-one.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.374,
+                0.055,
+                0.926,
+                0.109
+            ],
+            "angle": 0,
+            "content": "Air conditioning and irrigation systems account for more than half of the adaptation spending to protect at  \\( 2^{\\circ} \\) C to developed-economy standards."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.375,
+                0.13,
+                0.904,
+                0.17
+            ],
+            "angle": 0,
+            "content": "Distribution of annual average operating and amortized capital costs to adapt to 2°C hazards to developed-economy standards, 2020–50, %",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.374,
+                0.18,
+                0.96,
+                0.761
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.375,
+                0.779,
+                0.82,
+                0.797
+            ],
+            "angle": 0,
+            "content": "Source: Advancing adaptation: Mapping costs from cooling to coastal defenses, McKinsey Global Institute, December 2025."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.375,
+                0.823,
+                0.46,
+                0.84
+            ],
+            "angle": 0,
+            "content": "McKinsey & Company",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.756,
+                0.955,
+                0.92,
+                0.971
+            ],
+            "angle": 0,
+            "content": "McKinsey Global Institute: 2025 in charts"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.946,
+                0.956,
+                0.957,
+                0.97
+            ],
+            "angle": 0,
+            "content": "18"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.059,
+                0.255,
+                0.075
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.081,
+                0.264,
+                0.096
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.103,
+                0.271,
+                0.117
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.124,
+                0.258,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.145,
+                0.282,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.165,
+                0.262,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.188,
+                0.281,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.209,
+                0.25,
+                0.223
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.229,
+                0.269,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.252,
+                0.256,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.271,
+                0.263,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.294,
+                0.276,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.314,
+                0.26,
+                0.331
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.336,
+                0.259,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.358,
+                0.28,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.378,
+                0.278,
+                0.394
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.4,
+                0.261,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.42,
+                0.267,
+                0.437
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.441,
+                0.084,
+                0.46
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.379,
+                0.057,
+                0.921,
+                0.078
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.378,
+                0.084,
+                0.925,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.131,
+                0.901,
+                0.148
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.151,
+                0.645,
+                0.166
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.378,
+                0.825,
+                0.457,
+                0.838
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "index",
+            "bbox": [
+                0.002,
+                0.0,
+                1.0,
+                1.0
+            ],
+            "angle": 0,
+            "content": "Human Potential\nMaximizing and achieving the potential of human talent\nMcKinsey Global Institute: 2025 in charts 19"
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.375,
+                0.102,
+                0.662,
+                0.124
+            ],
+            "angle": 0,
+            "content": "Population aged 15–64 years, % of total population"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.375,
+                0.054,
+                0.728,
+                0.082
+            ],
+            "angle": 0,
+            "content": "Working-age populations peak in three waves."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.058,
+                0.287,
+                0.697
+            ],
+            "angle": 0,
+            "content": "Falling fertility rates are propelling major economies toward population collapse in this century. Maintaining past economic progress, let alone increasing it, will require measures to address the impact of demographic headwinds. The working age population has already peaked in developed economies and Greater China, the first wave. Emerging economies in the second wave have a bit more time, but they need to “get rich” before they “get old”. The working age population share is beginning to peak in Emerging Asia, India, Latin America and the Caribbean, and the Middle East and North Africa. Sub-Saharan Africa, where the average fertility rate is still 4.4 (even if also falling), is alone in the third wave, which will peak well into the second half of the century. While many countries are trying to increase their birth rates, none has been very successful so far—and a baby born today won’t join the workforce for roughly two decades. Three levers are available to keep economic growth on course and public finances sustainable: more employment, faster productivity growth, and effective migration. The magnitude of improvement required for each individual lever is large, so they will need to be deployed in combination. Each country can opt for a different “menu” of combinations, depending on its characteristics, opportunities, and challenges.",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.374,
+                0.13,
+                0.956,
+                0.496
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.375,
+                0.547,
+                0.46,
+                0.565
+            ],
+            "angle": 0,
+            "content": "McKinsey & Company"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.374,
+                0.505,
+                0.889,
+                0.525
+            ],
+            "angle": 0,
+            "content": "Source: Dependency and depopulation? Confronting the consequences of a new demographic reality, McKinsey Global Institute, January 2025"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.756,
+                0.956,
+                0.92,
+                0.971
+            ],
+            "angle": 0,
+            "content": "McKinsey Global Institute: 2025 in charts"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.956,
+                0.957,
+                0.97
+            ],
+            "angle": 0,
+            "content": "20"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.056,
+                0.726,
+                0.079
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.056,
+                0.262,
+                0.077
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.08,
+                0.285,
+                0.097
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.1,
+                0.276,
+                0.119
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.121,
+                0.275,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.144,
+                0.282,
+                0.161
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.165,
+                0.283,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.186,
+                0.282,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.207,
+                0.273,
+                0.225
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.228,
+                0.26,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.248,
+                0.259,
+                0.268
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.271,
+                0.265,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.292,
+                0.263,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.313,
+                0.255,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.334,
+                0.277,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.356,
+                0.261,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.377,
+                0.26,
+                0.394
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.396,
+                0.278,
+                0.417
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.419,
+                0.283,
+                0.438
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.441,
+                0.267,
+                0.458
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.461,
+                0.265,
+                0.479
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.483,
+                0.282,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.504,
+                0.278,
+                0.522
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.525,
+                0.278,
+                0.542
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.547,
+                0.268,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.569,
+                0.262,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.59,
+                0.273,
+                0.606
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.611,
+                0.267,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.632,
+                0.277,
+                0.649
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.653,
+                0.282,
+                0.671
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.674,
+                0.125,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.058,
+                0.287,
+                0.442
+            ],
+            "angle": 0,
+            "content": "Diverging work experience patterns drive a “work-experience pay gap” that makes up nearly 80 percent of the total gender pay gap, equal to 27 cents on the dollar among US professional workers. Over a 30-year career, the gender pay gap averages out to approximately half a million dollars in lost earnings per woman. To arrive at this conclusion, we analyzed how men and women go about accumulating work experience—switching jobs, returning after breaks, climbing the corporate ladder, making lateral moves, downshifting, and more—and how they realize the value of human capital differently (in terms of pay). While individual stories vary widely, the big picture indicates that diverging occupational paths and shortfalls in accumulated work experience drove most of the pay gap.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.374,
+                0.054,
+                0.942,
+                0.108
+            ],
+            "angle": 0,
+            "content": "About 80 percent of the gender pay gap can be attributed to differences in work experience—both career pathways and time spent out of work.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.375,
+                0.127,
+                0.947,
+                0.15
+            ],
+            "angle": 0,
+            "content": "Decomposition of average pay gap between men and women at year 10 of a career, percentage points",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.453,
+                0.161,
+                0.879,
+                0.626
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.375,
+                0.686,
+                0.46,
+                0.704
+            ],
+            "angle": 0,
+            "content": "McKinsey & Company",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.375,
+                0.645,
+                0.825,
+                0.664
+            ],
+            "angle": 0,
+            "content": "Source: Tough trade-offs: How time and career choices shape the gender pay gap, McKinsey Global Institute, February 2025"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.756,
+                0.955,
+                0.92,
+                0.971
+            ],
+            "angle": 0,
+            "content": "McKinsey Global Institute: 2025 in charts"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.945,
+                0.956,
+                0.957,
+                0.97
+            ],
+            "angle": 0,
+            "content": "21"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.06,
+                0.262,
+                0.075
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.079,
+                0.275,
+                0.098
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.101,
+                0.259,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.124,
+                0.257,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.145,
+                0.249,
+                0.161
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.166,
+                0.258,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.188,
+                0.249,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.209,
+                0.285,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.23,
+                0.261,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.251,
+                0.282,
+                0.267
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.272,
+                0.272,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.294,
+                0.26,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.315,
+                0.264,
+                0.329
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.336,
+                0.285,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.357,
+                0.264,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.379,
+                0.26,
+                0.394
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.399,
+                0.277,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.419,
+                0.177,
+                0.439
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.378,
+                0.055,
+                0.938,
+                0.079
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.378,
+                0.082,
+                0.888,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.128,
+                0.945,
+                0.149
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.688,
+                0.457,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.058,
+                0.286,
+                0.421
+            ],
+            "angle": 0,
+            "content": "The “empowerment line” measures progress toward a world where everyone’s essential needs are met. This metric is based on an estimate of the cost of a basket of essential goods and services—including housing, healthcare, food, and transportation—for a frugal yet decent quality of life. Even in economies at similar GDP levels, the share of people living below their respective empowerment lines varies widely, because costs and income opportunities vary. Empowerment may be out of reach for context-specific reasons. Those reasons include, for example, the affordability of housing or food, or the availability of stable jobs with sufficient wages. The private sector is pivotal to achieving empowerment and has a wide array of options.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.373,
+                0.054,
+                0.943,
+                0.106
+            ],
+            "angle": 0,
+            "content": "At the country level, the elements contributing to the degree of variation in empowerment share look very different."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.375,
+                0.129,
+                0.878,
+                0.151
+            ],
+            "angle": 0,
+            "content": "Importance of 9 income and affordability elements influencing economic empowerment"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.373,
+                0.162,
+                0.948,
+                0.849
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.374,
+                0.859,
+                0.868,
+                0.877
+            ],
+            "angle": 0,
+            "content": "Source: Economic empowerment made-to-measure: How companies can benefit more people, McKinsey Global Institute, January 2025"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.375,
+                0.902,
+                0.46,
+                0.919
+            ],
+            "angle": 0,
+            "content": "McKinsey & Company",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.756,
+                0.955,
+                0.92,
+                0.971
+            ],
+            "angle": 0,
+            "content": "McKinsey Global Institute: 2025 in charts"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.956,
+                0.957,
+                0.97
+            ],
+            "angle": 0,
+            "content": "22"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.059,
+                0.282,
+                0.076
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.08,
+                0.268,
+                0.096
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.102,
+                0.255,
+                0.117
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.124,
+                0.26,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.146,
+                0.242,
+                0.161
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.166,
+                0.249,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.188,
+                0.245,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.209,
+                0.255,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.229,
+                0.233,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.252,
+                0.257,
+                0.266
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.271,
+                0.229,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.293,
+                0.28,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.315,
+                0.263,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.335,
+                0.267,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.357,
+                0.272,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.379,
+                0.282,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.4,
+                0.276,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.379,
+                0.055,
+                0.939,
+                0.076
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.378,
+                0.081,
+                0.678,
+                0.102
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.378,
+                0.904,
+                0.457,
+                0.919
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.115,
+                0.093,
+                0.274,
+                0.413
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.366,
+                0.098,
+                0.948,
+                0.364
+            ],
+            "angle": 0,
+            "content": "Can you imagine even the poorest country in the world achieving the prosperity and quality of life of today's Switzerland—by 2100? MGI's new book, A Century of Plenty: A Story of Progress for Generations to Come, stress tests this vision. Its conclusion: we can have enough energy, food, metals, and minerals. We can innovate quickly enough. And we can do this while protecting our planet. By 2100, everyone could have the life of the top few percent of humanity today. But that requires a new, optimistic narrative, along with a belief in growth and the determination to build a better future for generations to come.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.367,
+                0.381,
+                0.826,
+                0.41
+            ],
+            "angle": 0,
+            "content": "The book will be available on January 13, 2026, on Amazon.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.755,
+                0.956,
+                0.92,
+                0.971
+            ],
+            "angle": 0,
+            "content": "McKinsey Global Institute: 2025 in charts"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.956,
+                0.957,
+                0.97
+            ],
+            "angle": 0,
+            "content": "23"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.37,
+                0.099,
+                0.924,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.369,
+                0.128,
+                0.919,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.37,
+                0.161,
+                0.902,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.37,
+                0.185,
+                0.933,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.369,
+                0.216,
+                0.925,
+                0.242
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.37,
+                0.248,
+                0.944,
+                0.271
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.37,
+                0.277,
+                0.929,
+                0.3
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.37,
+                0.306,
+                0.908,
+                0.329
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.371,
+                0.337,
+                0.66,
+                0.358
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.371,
+                0.384,
+                0.823,
+                0.407
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.058,
+                0.174,
+                0.077
+            ],
+            "angle": 0,
+            "content": "McKinsey Global Institute",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.079,
+                0.13,
+                0.098
+            ],
+            "angle": 0,
+            "content": "December 2025",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.1,
+                0.219,
+                0.12
+            ],
+            "angle": 0,
+            "content": "Copyright © McKinsey & Company",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.122,
+                0.257,
+                0.142
+            ],
+            "angle": 0,
+            "content": "Designed by the McKinsey Global Institute",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.153,
+                0.14,
+                0.172
+            ],
+            "angle": 0,
+            "content": "mckinsey.com/mgi",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.182,
+                0.149,
+                0.202
+            ],
+            "angle": 0,
+            "content": "X @McKinsey_MGI",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.045,
+                0.204,
+                0.195,
+                0.224
+            ],
+            "angle": 0,
+            "content": "@McKinseyGlobalInstitute",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.225,
+                0.195,
+                0.245
+            ],
+            "angle": 0,
+            "content": "in @McKinseyGlobalInstitute",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.256,
+                0.243,
+                0.274
+            ],
+            "angle": 0,
+            "content": "Subscribe to MGI's LinkedIn newsletter,",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.277,
+                0.257,
+                0.297
+            ],
+            "angle": 0,
+            "content": "Forward Thinking: mck.co/forwardthinking",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.058,
+                0.173,
+                0.076
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.079,
+                0.13,
+                0.098
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.099,
+                0.219,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.122,
+                0.256,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.154,
+                0.14,
+                0.172
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.181,
+                0.149,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.204,
+                0.195,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.225,
+                0.195,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.257,
+                0.242,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.275,
+                0.257,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

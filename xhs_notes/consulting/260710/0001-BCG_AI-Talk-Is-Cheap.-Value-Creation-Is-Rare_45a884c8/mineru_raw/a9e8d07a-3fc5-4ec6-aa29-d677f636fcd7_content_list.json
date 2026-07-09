@@ -1,0 +1,1591 @@
+[
+    {
+        "type": "image",
+        "img_path": "images/f4a2f1e443e380771aeb1fdf889a40c9ed17fa10dc1f2c16addd71b34ed481ba.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            0,
+            1000,
+            399
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "ARTIFICIAL INTELLIGENCE",
+        "bbox": [
+            50,
+            430,
+            230,
+            449
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "AI Talk Is Cheap. Value Creation Is Rare.",
+        "text_level": 1,
+        "bbox": [
+            40,
+            476,
+            779,
+            576
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "By Ulrich Pidun, Adam Job, Tania Wang, Matthew Molloy, Michael Grebe, Marc Roman Franke, and Viacheslav Romanov",
+        "bbox": [
+            40,
+            606,
+            762,
+            645
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "ARTICLE JULY 09, 2026 12 MIN READ",
+        "bbox": [
+            40,
+            668,
+            361,
+            686
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "AI talk dominates corporate communications. In a recent BCG analysis of 4,800 quarterly earnings calls, it was the most-mentioned topic by CEOs globally. But which companies are translating that talk into measurable performance—and how?",
+        "bbox": [
+            38,
+            747,
+            890,
+            808
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Most evidence on AI adoption today comes from these communications or from self-reported surveys. Both have limitations: corporate communications reflect what company leaders think investors want to hear, and surveys reflect what companies say about themselves. To cut through the noise, we developed an outside-in measure of AI adoption and applied it to more than 600 US public companies. Our findings push back on three threads of the public conversation around AI:",
+        "bbox": [
+            38,
+            821,
+            949,
+            922
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            967,
+            250,
+            984
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_number",
+        "text": "1",
+        "bbox": [
+            941,
+            970,
+            954,
+            983
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- The public narrative is that AI adoption is widespread and that companies are seeing real benefits from it. An $FT$ analysis of S&P 500 filings found 75% of companies mentioned AI on earnings calls in the past year, with 87% of those mentions wholly positive. In contrast, we find that only 6% of firms in our sample qualify as real adoption leaders. But this select group is capturing meaningful value from AI, with industry-adjusted total shareholder returns (TSR) over the past three years running 9 percentage points above median.",
+        "bbox": [
+            40,
+            67,
+            932,
+            186
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Many analysts argue AI value is a hype story driven by investor exuberance rather than fundamentals. But among the leading 6%, return outperformance is driven entirely by fundamentals—revenue growth and margin expansion—not by higher price-to-earnings (P/E) multiples.",
+        "bbox": [
+            40,
+            200,
+            885,
+            279
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Public discourse frames AI as a tool for increasing efficiency and reducing headcounts. The recent wave of layoff announcements referencing AI reinforces this narrative. However, among the leading 6%, the dominant path to value generation is growth, not efficiency—and these firms are increasing headcount at a 3 percentage points higher compound annual growth rate (CAGR) than the median firm in our sample (between 2022–2025).",
+        "bbox": [
+            40,
+            293,
+            922,
+            393
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "What's more, by studying AI adoption leaders, we've traced their journey—identifying the strategies that enabled these companies to translate AI into competitive advantage.",
+        "bbox": [
+            40,
+            420,
+            870,
+            464
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Identifying the AI Adoption Leaders",
+        "text_level": 1,
+        "bbox": [
+            42,
+            583,
+            728,
+            661
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Our AI adoption score is built around three pillars:",
+        "bbox": [
+            40,
+            690,
+            513,
+            709
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- AI tech—the off-the-shelf tools a company is using and its underlying tech stack enabling the development of bespoke solutions.",
+        "bbox": [
+            40,
+            740,
+            930,
+            781
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- AI talent—the share of employees in AI-specific roles, building solutions, and the prevalence of AI-related skills across the workforce.",
+        "bbox": [
+            40,
+            795,
+            929,
+            834
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- AI deployment—the breadth of functions where use cases exist and the depth of these on a spectrum from exploratory pilots to enterprise-wide production.",
+        "bbox": [
+            40,
+            848,
+            922,
+            890
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            249,
+            984
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            942,
+            970,
+            954,
+            983
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "- How We Measure AI Adoption",
+        "text_level": 2,
+        "bbox": [
+            63,
+            137,
+            553,
+            164
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Our AI adoption score is grounded in the resource-based view of the firm, which treats AI capability as a higher-order construct combining technological, human, and intangible organizational resources. $^{1}$ The three pillars of our score—AI tech, AI talent, and AI deployment—map directly onto these three categories of resources.",
+        "bbox": [
+            77,
+            202,
+            838,
+            305
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Six equal-weighted indicators sit beneath the three pillars:",
+        "bbox": [
+            79,
+            324,
+            624,
+            344
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- AI tech captures both the off-the-shelf AI tools a company uses and the underlying infrastructure that supports them. Two indicators: the strength and number of AI vendors in the company’s ecosystem, and the share of the firm’s tech stack composed of products that enable AI development. This pillar represents the technological-resource dimension of AI capability.",
+        "bbox": [
+            79,
+            375,
+            811,
+            474
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- AI talent captures both specialists and broader workforce fluency. Two indicators: the share of employees in AI-specific roles, and the prevalence of AI-related skills across the broader workforce. The human-capital dimension has been linked to firm growth and productivity in prior work. $^{2}$",
+        "bbox": [
+            79,
+            488,
+            816,
+            571
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- AI deployment captures both how widely and how maturely AI is being used—the intangible-resource dimension that determines whether technology and talent are actually translated into organizational use. Two indicators: the breadth of functions in which AI use cases have been documented, and the depth of those use cases on a six-step spectrum from discussion-only through pilot and early deployment to enterprise-wide production. This dimension follows prior research measuring AI usage as a combination of breadth and depth and linking it to innovation and growth outcomes, as well as work emphasizing that scaling AI from pilot to production is a critical determinant of whether AI investments yield value. $^{3}$",
+        "bbox": [
+            79,
+            586,
+            819,
+            788
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Talent indicators are based on labor-market data from Revelio Labs (derived from LinkedIn resumes). Tech indicators draw on IT-installment data from HG Insights. Deployment indicators are derived from natural-language analysis of annual 10-K filings and quarterly earnings calls.",
+        "bbox": [
+            77,
+            835,
+            841,
+            917
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "For each pillar, companies in our sample are stack-ranked and assigned a normalized score from 0 to 100. (See “How We Measure AI Adoption.”)",
+        "bbox": [
+            42,
+            67,
+            939,
+            107
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            249,
+            984
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            942,
+            970,
+            954,
+            983
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "For each indicator, companies in our sample are stack-ranked and assigned a normalized score from 0 to 100. The three pillar scores are then averaged with equal weight to produce the overall AI adoption score. The measure is applied to more than 600 US public companies with a market capitalization above \\$5 billion.",
+        "bbox": [
+            77,
+            87,
+            829,
+            184
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "TSR findings in this article are reported on an industry-adjusted basis—each company is compared against the median in its own industry.",
+        "bbox": [
+            77,
+            205,
+            792,
+            244
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The methodology was developed in collaboration with Cindy Laura Stahl, a researcher at the University of St. Gallen.",
+        "bbox": [
+            77,
+            263,
+            774,
+            303
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The scores across pillars are averaged to arrive at an overall metric. Applying our measure to a sample of publicly listed US companies, we classify companies as falling into one of four tiers on AI adoption: nascent, emerging, active, and leading. (See Exhibit 1.)",
+        "bbox": [
+            40,
+            432,
+            944,
+            494
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 1",
+        "text_level": 2,
+        "bbox": [
+            43,
+            524,
+            109,
+            539
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The Value of AI Adoption Is Concentrated in the Top 6%",
+        "bbox": [
+            40,
+            542,
+            595,
+            561
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/1f6dda1db98b8e88a284163abb7097d9e5745079f5353c5af07479b216a6d9ac.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: S&P Capital IQ; BCG Institute analysis. $^{1}$ TSR for December 2022–December 2025, relative to industry median in sample."
+        ],
+        "bbox": [
+            42,
+            567,
+            718,
+            815
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Only 6% of companies are AI leaders, but they are seeing real value. Industry-adjusted TSR over the past three years runs at +9.3% for the leading tier vs. sample median. This is a clear premium over the laggards (-1.7%). The even more striking finding is the gap between leaders and the active tier sitting just below them: active firms see essentially no premium (+0.6%), meaning the value accrues only at the very top, and not progressively along the adoption curve. In other words, the impact of AI adoption on value creation emerges in a step change fashion, not linearly.",
+        "bbox": [
+            40,
+            879,
+            944,
+            920
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            970,
+            249,
+            984
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            40,
+            67,
+            954,
+            147
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The AI adoption leaders in our sample are concentrated in the tech sector, but breakout performers exist across industries. More importantly, the TSR lift cannot be dismissed as a “shovel-seller” effect: the numbers we find are industry-adjusted, meaning that leaders outperform the median company in their own industry. Technology leaders are compared to the technology median, not to the broader market.",
+        "bbox": [
+            40,
+            160,
+            929,
+            261
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "One might worry that the TSR advantage of AI leaders is driven by market enthusiasm—investors bidding up AI-associated stocks based on future expectations rather than real business results. To address this, we decomposed the TSR outperformance of leaders (compared to laggards, the bottom two tiers of our sample) into its components. (See Exhibit 2.) This analysis shows that the outperformance is driven almost entirely by fundamentals: revenue growth and margin expansion (+10 percentage points and +6 percentage points respectively, both industry-adjusted). Meanwhile, P/E multiple expansion—the channel through which “AI hype” would show up—contributes essentially nothing.",
+        "bbox": [
+            40,
+            274,
+            954,
+            434
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 2",
+        "text_level": 2,
+        "bbox": [
+            42,
+            464,
+            109,
+            479
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "AI Leaders' Returns Driven by Fundamentals, Not Hype",
+        "bbox": [
+            42,
+            481,
+            592,
+            501
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/5b9e63d31ac6444ae316d2ca9bf9a8d20e63272a8387d10aeb7722bf142a122e.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Sources: S&P Capital IQ; BCG Institute analysis. $^{1}$ TSR for Dec 2022–Dec 2025; difference in median TSR of leaders vs. laggards. $^{2}$ Including residual effects (-2pp)."
+        ],
+        "content": "",
+        "bbox": [
+            43,
+            519,
+            725,
+            713
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The conclusion here is that the market is rewarding real business performance, not narratives about AI's future impact. Notably, these effects also hold when we compare TSR of leading companies against active companies.",
+        "bbox": [
+            40,
+            787,
+            915,
+            848
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "An additional driver worth noting is that leaders show a negative TSR contribution (-5 percentage points) from cash effects (consistent with equity issuances and/or reduced dividends). Thus, the leaders are not extracting cash—they are using it to fund AI investments.",
+        "bbox": [
+            40,
+            862,
+            939,
+            922
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            249,
+            984
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "AI Leaders Are Seeing a Productivity Dividend",
+        "bbox": [
+            40,
+            212,
+            500,
+            234
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The productivity engine behind the value. Underlying this fundamental performance is a productivity advantage: revenue per employee is growing 4 percentage points faster at AI leaders than at laggards, on an industry-adjusted basis. (See Exhibit 3.) This gap emerged with the release of foundation models in late 2022, which made AI broadly useful across functions. It widened in subsequent years and remains sizable today.",
+        "bbox": [
+            40,
+            67,
+            947,
+            166
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 3",
+        "text_level": 2,
+        "bbox": [
+            43,
+            196,
+            109,
+            211
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Annual productivity growth $(\\%)^{1}$",
+        "bbox": [
+            43,
+            241,
+            232,
+            256
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/8b694872e2a0fd62c62911500f166455a459c380266336a121a81f2b20c37873.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: S&P Capital IQ; BCG Institute analysis. $^{1}$ Productivity is measured as revenue per employee (based on headcount)."
+        ],
+        "bbox": [
+            43,
+            246,
+            723,
+            453
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The fact that this productivity advantage is concentrated in 6% of the sample helps reconcile a broader puzzle: some economists have noted that AI has not shown up in aggregate productivity data. This is consistent with our findings: averaging leaders together with the 94% of companies that have not reached comparable adoption levels washes out the real, sizable effects happening within a small group.",
+        "bbox": [
+            40,
+            520,
+            954,
+            621
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "For CEOs, this raises an obvious question: How are these leaders deploying this productivity to create higher value than peers?",
+        "bbox": [
+            40,
+            634,
+            920,
+            675
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "What AI Leaders Do: Save, Scale, Innovate",
+        "text_level": 1,
+        "bbox": [
+            40,
+            745,
+            858,
+            822
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "We observe three distinct ways in which AI leaders create value, differentiated by whether they use AI to improve margins, accelerate growth, or both. (See Exhibit 4.)",
+        "bbox": [
+            40,
+            852,
+            922,
+            892
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            249,
+            984
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            942,
+            970,
+            954,
+            983
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/19ad285380f80e68f0d8b5c03d6b3e950aab3929eeca9d2edc50538fb0c5697b.jpg",
+        "content": "",
+        "chart_caption": [
+            "Most Leaders Use AI to Do More, Not Less"
+        ],
+        "chart_footnote": [
+            "Sources: S&P Capital IQ; BCG Institute analysis. $^{1}$ Headcount CAGR for 2022–2025, relative to industry median in sample. $^{2}$ Relative to industry median in sample."
+        ],
+        "bbox": [
+            43,
+            126,
+            725,
+            370
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Do the same with less. The most intuitive path is to use AI to streamline operations, automate back-office processes, and expand margins at the functional level. For example, IBM, an AI leader in our sample, has automated its HR support function with an AI agent called AskHR, which now handles over 94% of employee requests and contributed to a 40% reduction in HR operating costs over four years.",
+        "bbox": [
+            40,
+            445,
+            949,
+            545
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "This is the path many executives instinctively associate with AI, and the one that dominates the public narrative around automation and job displacement. Yet among leaders, it is the least common path—only 10% follow it. This is because a focus on efficiency is an entry point. It enables quick wins, building organizational experience with AI, and proving the case for further investment, but not an end state. Doing the same things faster is unlikely to yield durable competitive advantage when the underlying technology is widely available, and leaders recognize this.",
+        "bbox": [
+            40,
+            558,
+            949,
+            697
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Expand what each employee can deliver. The second path is using AI to create scale. This is where the largest share of leaders, 59%, concentrate their efforts—and it is the best approach for converting AI’s productivity gains into competitive advantage. By making each unit of work more productive, leaders can serve more customers, accelerate throughput, enter adjacent markets, or reach segments that were previously uneconomic to serve—unlocking both margin expansion and revenue growth simultaneously.",
+        "bbox": [
+            40,
+            712,
+            952,
+            831
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "For example, Salesforce, an AI leader in our sample, reports that service agents using AI spend 20% less time on routine cases, freeing roughly four hours per week for higher-value issues, which is projected to boost upsell revenue by 15%.",
+        "bbox": [
+            40,
+            846,
+            942,
+            906
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            970,
+            249,
+            984
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The common thread among leaders is that productivity gains are reinvested into the business rather than translated into cost cuts. This is consistent with BCG research on AI's labor market impact, which finds that the main effect of AI on work is augmentation—making people more productive—rather than substitution. When productivity rises in roles where demand can expand, companies tend to grow output rather than shrink headcount. Consistent with this, AI leaders in our sample are growing headcount 3 percentage points faster on average than laggards.",
+        "bbox": [
+            40,
+            67,
+            954,
+            187
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Build new products, services, and business models. The most ambitious path, taken by 21% of leaders, is using AI to innovate. These firms are creating offerings that would not have been possible or economically viable without AI. The strategic posture is different from the efficiency path: it requires a willingness to invest in new business models, accept a temporary margin trade-off, and bet on revenue streams that do not yet exist.",
+        "bbox": [
+            40,
+            200,
+            952,
+            300
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "We see multiple leading companies in our sample pursuing an innovation strategy. For example, Meta has built AI marketing tools that generate creative assets tailored both to the product being advertised and to the user being advertised to. Moody's is leveraging its proprietary data on credit ratings, financial data, and risk models to build new analytical offerings for customers.",
+        "bbox": [
+            40,
+            313,
+            954,
+            393
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Becoming an AI Leader",
+        "text_level": 2,
+        "bbox": [
+            42,
+            464,
+            629,
+            504
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Save, scale, and innovate describe what leaders do with AI once they’ve reached the top. But how do they get there in the first place? To trace the journey, we examined how the three pillars of our score—AI tech, AI talent, and AI deployment—evolve through the adoption tiers. Across the 600+ companies in our sample, a recognizable pattern emerges, with three key transitions that separate the starting point from the leader tier. (See Exhibit 5.)",
+        "bbox": [
+            40,
+            530,
+            947,
+            631
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            45,
+            970,
+            249,
+            983
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 5 The Journey to AI Leadership",
+        "text_level": 2,
+        "bbox": [
+            42,
+            64,
+            336,
+            101
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Median score per pillar across firms in each adoption tier (0–100 scale)",
+        "bbox": [
+            43,
+            108,
+            380,
+            131
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7240edc2ca656cc9a8267dd008976cba53f7e925220578181a263e499ecffcc2.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: BCG Institute analysis."
+        ],
+        "bbox": [
+            45,
+            124,
+            725,
+            375
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Starting Point. Most companies begin their AI adoption journey by acquiring off-the-shelf AI tools and running experiments in a small number of functions, typically focused on efficiency use cases for which off-the-shelf tools are readily available.",
+        "bbox": [
+            40,
+            436,
+            944,
+            497
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Transition 1: Expanding the Toolkit. Progressing from this starting point involves expanding scope: moving beyond a narrow set of general-purpose tools toward a broader, more specialized AI ecosystem, and making the tools accessible to a wider set of functions and use cases. In this phase, organizations are still buying tools, not building their own. It remains an important learning phase—companies experiment to discover what works and what their scalable AI stack will need to look like—and some get stuck running an ever-expanding set of disconnected pilots.",
+        "bbox": [
+            40,
+            511,
+            946,
+            632
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Transition 2: Going Broad and Deep on Deployment. The next step is to go deeper, converting pilots into production-grade deployments starting in a few functions, building reusable platforms and playbooks there, then scaling breadth as the marginal cost of each new deployment falls. Across this transition, the share of companies that are simultaneously broad (use cases covering eight or more functions) and deep (at-scale deployment) in their AI deployment grows from roughly 12% of the cohort to over 50%. Walmart, started by going deep in demand forecasting, then used it as a foundation that fed downstream applications across the supply chain—inventory management, warehouse robotics, store operations, and last-mile delivery.",
+        "bbox": [
+            40,
+            644,
+            944,
+            804
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Transition 3: Crossing the Talent Gap. Mastering the first two transitions means a firm has built operational and technical foundations, but our data shows this is not yet enough to capture AI's productivity and value benefits. One more transition remains, and it is the one that matters most: the talent gap. Across the three pillars, tech and deployment scores barely change between the active and leading tiers. Meanwhile, the talent score nearly triples.",
+        "bbox": [
+            40,
+            816,
+            949,
+            917
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            249,
+            984
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "But “talent” should not be read narrowly as “hire AI developers.” What leaders do is broader. For one, they invest in talent breadth: AI fluency across the organization, going beyond core AI specialists. At leaders, 13% of employees have AI-related skills, compared to 1% at laggards. Consistent with this, BCG research finds that leading companies upskill a significantly larger share of their workforce in AI skills than laggards. The goal is for teams across the organization to be able to identify where AI changes the economics of their business or function and co-design solutions, rather than waiting for a central team to deliver them. When AI fluency is distributed, the organization develops a richer pipeline of use cases than any central team could generate alone.",
+        "bbox": [
+            40,
+            67,
+            946,
+            244
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Moreover, leaders invest in talent depth: AI-specific positions reach 3.5% of the workforce at leaders, versus 0.1% at laggards. These dedicated specialists scale solutions identified or prototyped across the business into proprietary, enterprise-grade capabilities.",
+        "bbox": [
+            40,
+            259,
+            900,
+            319
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Crucially, this talent transformation does not happen organically. It requires deliberate organizational change: rethinking workflows end-to-end rather than bolting AI onto existing processes, establishing joint ownership between business and IT, and shifting the center's role from building all AI solutions to curating, governing, and amplifying the best ones.",
+        "bbox": [
+            40,
+            332,
+            922,
+            414
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "This is consistent with what BCG has long observed about successful AI transformation, often summarized as the 10-20-70 rule: roughly 10% of the effort is technology, 20% is algorithms and data, and 70% is people, processes, and organizational change.",
+        "bbox": [
+            40,
+            426,
+            922,
+            488
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The reason talent is decisive at this stage is that tools have commoditized; every company can buy the same AI products from the same vendors. What cannot be bought is the organizational capability to deploy them into the specific economics of a business.",
+        "bbox": [
+            40,
+            501,
+            925,
+            562
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Walking the Walk on AI Adoption",
+        "text_level": 2,
+        "bbox": [
+            40,
+            631,
+            636,
+            713
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "AI is inescapable in corporate communications and public conversation, and for good reason. Our analysis reveals that companies that talk about AI are rewarded with higher P/E multiples at every level of real adoption. For example, laggards discussing the technology in earnings conference calls see a 1 percentage point lift in P/E multiple contribution to TSR vs. peers that stay quiet. Investors clearly want to see firms engaging with the technology, and signal that engagement back through valuation.",
+        "bbox": [
+            38,
+            738,
+            952,
+            859
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Yet the real benefits of AI we observe—the return premium, the improvement in fundamental performance, the productivity benefits—come not from talking the talk, but from walking the walk. Of course, adoption alone is not replacement for a good strategy. This is evidenced by the fact that a small minority of leaders (10%) in our study are failing to translate AI into fundamental performance gains: they are experiencing declining margins and growth. But a closer look reveals that these companies are held back by fundamental business model challenges that AI cannot overcome, such as core offerings being commoditized, or legacy business models displaced by digitally native disruptors. These cases offer a cautionary note: AI amplifies a strong strategy; it does not substitute for one.",
+        "bbox": [
+            38,
+            871,
+            927,
+            932
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            249,
+            984
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            934,
+            970,
+            954,
+            983
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            40,
+            67,
+            952,
+            185
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "When this strong foundation exists, our data shows that senior leaders need to build the talent base to create proprietary capabilities around AI, the organizational architecture to deploy it across the business, and the ambition to use the resulting productivity gains for competitive advantage rather than cost cuts. This is what separates the 6%.",
+        "bbox": [
+            40,
+            200,
+            925,
+            280
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The BCG Institute is Boston Consulting Group's strategy think tank, dedicated to exploring and developing valuable new insights from business, technology, and science by embracing the powerful technology of ideas. The Institute engages leaders in provocative discussion and experimentation to expand the boundaries of business theory and practice and to translate innovative ideas from within and beyond business. For more ideas and inspiration from the Institute, please visit our website and follow us on LinkedIn and X (formerly Twitter).",
+        "bbox": [
+            40,
+            401,
+            720,
+            561
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            970,
+            249,
+            983
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            934,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Authors",
+        "text_level": 2,
+        "bbox": [
+            42,
+            67,
+            245,
+            105
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/2a85416273e268428074a21f9c025022d2f6b09288bf5bd04d6196f4c27f290a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            69,
+            149,
+            220,
+            256
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/01ca905b2b10304dcf927e725aeceebd26bcef280493dbba571f69a908e7b128.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            69,
+            303,
+            220,
+            409
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/f48c8d8725e875069920e47a4a2e57cbb34926cc7f6dcd1952014bb09ebc3d84.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            69,
+            456,
+            218,
+            564
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/9975c1464b174e3a49b0ac9c5295648f052038158c091e5a7688ba85a678be9a.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Partner & Director; BCG Institute Insight Leader\nFrankfurt"
+        ],
+        "content": "",
+        "bbox": [
+            69,
+            630,
+            218,
+            737
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Ulrich Pidun",
+        "text_level": 2,
+        "bbox": [
+            245,
+            152,
+            383,
+            175
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/246bcdb887cbbb7fa755bf97df628ee9e129daf18b10b8872c3d4af2f417d95e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            245,
+            231,
+            274,
+            248
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Tania Wang",
+        "text_level": 2,
+        "bbox": [
+            244,
+            306,
+            380,
+            329
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Lead Forward Deployed AI Scientist\nLos Angeles",
+        "bbox": [
+            242,
+            338,
+            427,
+            381
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/6c9054675ecfd3feaf3eaedba1c5739079e3c5805adf92fa4ab2371c2f004312.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            245,
+            385,
+            274,
+            401
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Michael Grebe",
+        "text_level": 2,
+        "bbox": [
+            245,
+            470,
+            407,
+            492
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Managing Director & Senior Partner\nMunich",
+        "bbox": [
+            242,
+            502,
+            436,
+            544
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/3932fec0331667932ebaa6c4b2017685ff1f5ffebe0141d88f17748104337fc9.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            245,
+            549,
+            274,
+            565
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Viacheslav Romanov",
+        "text_level": 2,
+        "bbox": [
+            242,
+            633,
+            363,
+            677
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Partner & Associate Director,\nPIPE Tech Capital\nBoston",
+        "bbox": [
+            242,
+            688,
+            442,
+            728
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/9e8b474191f8e9381c2f6c910157db334e598ca3ae52968dfacd38a69a7c2c30.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            533,
+            457,
+            681,
+            563
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/f1e47c6064410ba4a738e8d173eefe22d20aa6bb4442d487bdcc2e2ed81f39e5.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            245,
+            734,
+            274,
+            751
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/b6be86c682afb562fb588b31223b4049273a51a9c47a716292e383d37837925f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            533,
+            151,
+            681,
+            256
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/2eea7ddebb1574d68a4716d2580d20d10d0c51ea3ff245dfaa1d79ef165c7748.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            531,
+            304,
+            681,
+            409
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Adam Job",
+        "text_level": 2,
+        "bbox": [
+            705,
+            159,
+            816,
+            183
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Senior Director, BCG Institute\nFrankfurt",
+        "bbox": [
+            705,
+            192,
+            907,
+            221
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/2b0210c763902d874db832f9800d8965f198e3358267120029b91d744e792e34.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            708,
+            225,
+            735,
+            242
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Matthew Molloy",
+        "text_level": 2,
+        "bbox": [
+            707,
+            313,
+            888,
+            335
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Project Leader\nNew York",
+        "bbox": [
+            707,
+            346,
+            814,
+            374
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/0832db801a69dcf16599b5f946257752177d82b9f1311b7092b4ea0c707b6bf9.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            708,
+            380,
+            735,
+            395
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Marc Roman Franke",
+        "text_level": 2,
+        "bbox": [
+            707,
+            460,
+            851,
+            504
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Partner & Associate Director, AI and digital transformation\nBerlin",
+        "bbox": [
+            705,
+            514,
+            922,
+            554
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/eb1791a2c3524d707c1f77b332fe65509702a58a320fc45f0b755e9ed5ae38c8.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            708,
+            558,
+            735,
+            576
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            45,
+            970,
+            249,
+            983
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            934,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "ABOUT BOSTON CONSULTING GROUP",
+        "text_level": 2,
+        "bbox": [
+            42,
+            102,
+            434,
+            120
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+        "bbox": [
+            40,
+            137,
+            951,
+            256
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_footnote",
+        "text": "1 Patrick Mikalef et al., “Artificial Intelligence Capability: Conceptualization, Measurement Calibration, and Empirical Study on Its Impact on Organizational Creativity and Firm Performance,” Information, volume 58, issue 3, 2021; Serge-Lopez Wamba- & Taguimdje et al., “Influence of Artificial Management Intelligence (AI) on Firm Performance: The Business Value of AI-Based Transformation Projects,” Business, volume 26, Journal issue 7, 2020.",
+        "bbox": [
+            42,
+            341,
+            954,
+            416
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_footnote",
+        "text": "2 Tania Babina et al., \"Artificial Intelligence, Firm Growth, and Product Innovation,\" Journal of Financial Economics, volume 151, 2024.",
+        "bbox": [
+            40,
+            423,
+            920,
+            439
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_footnote",
+        "text": "3 Christian Rammer et al., Research, volume 51, issue 7, 2022; Journal of , volume 211, 2023; Naomi Haefner Technological, “Artificial Intelligence and Policy Dirk Czarnitzki et al., Economic et al., “Implementing and Scaling Forecasting volume Industrial Innovation: “Artificial Intelligence Behavior & Artificial Intelligence: A Review, and Social 197, Evidence from German Firm-Level and Firm-Level OrganizationFramework, and Research Agenda,” Change 2023. Productivity,”",
+        "bbox": [
+            40,
+            444,
+            954,
+            521
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            970,
+            249,
+            983
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            934,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 12
+    }
+]

@@ -1,0 +1,4723 @@
+[
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.001,
+                1.0,
+                0.4
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.051,
+                0.431,
+                0.232,
+                0.45
+            ],
+            "angle": 0,
+            "content": "ARTIFICIAL INTELLIGENCE",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.478,
+                0.781,
+                0.577
+            ],
+            "angle": 0,
+            "content": "AI Talk Is Cheap. Value\nCreation Is Rare."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.607,
+                0.763,
+                0.646
+            ],
+            "angle": 0,
+            "content": "By Ulrich Pidun, Adam Job, Tania Wang, Matthew Molloy, Michael Grebe, Marc Roman Franke, and Viacheslav Romanov",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.669,
+                0.362,
+                0.687
+            ],
+            "angle": 0,
+            "content": "ARTICLE JULY 09, 2026 12 MIN READ",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.748,
+                0.891,
+                0.809
+            ],
+            "angle": 0,
+            "content": "AI talk dominates corporate communications. In a recent BCG analysis of 4,800 quarterly earnings calls, it was the most-mentioned topic by CEOs globally. But which companies are translating that talk into measurable performance—and how?",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.822,
+                0.951,
+                0.923
+            ],
+            "angle": 0,
+            "content": "Most evidence on AI adoption today comes from these communications or from self-reported surveys. Both have limitations: corporate communications reflect what company leaders think investors want to hear, and surveys reflect what companies say about themselves. To cut through the noise, we developed an outside-in measure of AI adoption and applied it to more than 600 US public companies. Our findings push back on three threads of the public conversation around AI:",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.969,
+                0.251,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.942,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.436,
+                0.226,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.475,
+                0.784,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.53,
+                0.567,
+                0.577
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.61,
+                0.76,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.628,
+                0.319,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.673,
+                0.358,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.751,
+                0.871,
+                0.766
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.77,
+                0.887,
+                0.785
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.79,
+                0.625,
+                0.805
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.825,
+                0.906,
+                0.84
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.844,
+                0.917,
+                0.859
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.864,
+                0.939,
+                0.879
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.885,
+                0.944,
+                0.897
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.904,
+                0.941,
+                0.919
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.933,
+                0.187
+            ],
+            "angle": 0,
+            "content": "- The public narrative is that AI adoption is widespread and that companies are seeing real benefits from it. An \\(FT\\) analysis of S&P 500 filings found 75% of companies mentioned AI on earnings calls in the past year, with 87% of those mentions wholly positive. In contrast, we find that only 6% of firms in our sample qualify as real adoption leaders. But this select group is capturing meaningful value from AI, with industry-adjusted total shareholder returns (TSR) over the past three years running 9 percentage points above median.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.201,
+                0.887,
+                0.28
+            ],
+            "angle": 0,
+            "content": "- Many analysts argue AI value is a hype story driven by investor exuberance rather than fundamentals. But among the leading 6%, return outperformance is driven entirely by fundamentals—revenue growth and margin expansion—not by higher price-to-earnings (P/E) multiples.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.294,
+                0.923,
+                0.394
+            ],
+            "angle": 0,
+            "content": "- Public discourse frames AI as a tool for increasing efficiency and reducing headcounts. The recent wave of layoff announcements referencing AI reinforces this narrative. However, among the leading 6%, the dominant path to value generation is growth, not efficiency—and these firms are increasing headcount at a 3 percentage points higher compound annual growth rate (CAGR) than the median firm in our sample (between 2022–2025).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.422,
+                0.871,
+                0.465
+            ],
+            "angle": 0,
+            "content": "What's more, by studying AI adoption leaders, we've traced their journey—identifying the strategies that enabled these companies to translate AI into competitive advantage.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.043,
+                0.584,
+                0.729,
+                0.662
+            ],
+            "angle": 0,
+            "content": "Identifying the AI Adoption\nLeaders"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.691,
+                0.515,
+                0.711
+            ],
+            "angle": 0,
+            "content": "Our AI adoption score is built around three pillars:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.741,
+                0.932,
+                0.782
+            ],
+            "angle": 0,
+            "content": "- AI tech—the off-the-shelf tools a company is using and its underlying tech stack enabling the development of bespoke solutions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.796,
+                0.93,
+                0.835
+            ],
+            "angle": 0,
+            "content": "- AI talent—the share of employees in AI-specific roles, building solutions, and the prevalence of AI-related skills across the workforce.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.85,
+                0.923,
+                0.891
+            ],
+            "angle": 0,
+            "content": "- AI deployment—the breadth of functions where use cases exist and the depth of these on a spectrum from exploratory pilots to enterprise-wide production.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.068,
+                0.897,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.09,
+                0.909,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.109,
+                0.898,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.127,
+                0.929,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.147,
+                0.917,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.168,
+                0.71,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.204,
+                0.875,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.223,
+                0.858,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.242,
+                0.882,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.263,
+                0.212,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.296,
+                0.902,
+                0.311
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.316,
+                0.872,
+                0.331
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.336,
+                0.918,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.355,
+                0.868,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.375,
+                0.79,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.425,
+                0.866,
+                0.441
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.445,
+                0.83,
+                0.461
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.582,
+                0.73,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.625,
+                0.244,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.693,
+                0.512,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.743,
+                0.929,
+                0.759
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.763,
+                0.397,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.796,
+                0.929,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.818,
+                0.437,
+                0.832
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.853,
+                0.92,
+                0.868
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.873,
+                0.658,
+                0.888
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.043,
+                0.068,
+                0.941,
+                0.108
+            ],
+            "angle": 0,
+            "content": "For each pillar, companies in our sample are stack-ranked and assigned a normalized score from 0 to 100. (See “How We Measure AI Adoption.”)"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.139,
+                0.554,
+                0.165
+            ],
+            "angle": 0,
+            "content": "- How We Measure AI Adoption"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.203,
+                0.84,
+                0.306
+            ],
+            "angle": 0,
+            "content": "Our AI adoption score is grounded in the resource-based view of the firm, which treats AI capability as a higher-order construct combining technological, human, and intangible organizational resources. \\( ^{1} \\)  The three pillars of our score—AI tech, AI talent, and AI deployment—map directly onto these three categories of resources.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.325,
+                0.626,
+                0.345
+            ],
+            "angle": 0,
+            "content": "Six equal-weighted indicators sit beneath the three pillars:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.376,
+                0.813,
+                0.475
+            ],
+            "angle": 0,
+            "content": "- AI tech captures both the off-the-shelf AI tools a company uses and the underlying infrastructure that supports them. Two indicators: the strength and number of AI vendors in the company’s ecosystem, and the share of the firm’s tech stack composed of products that enable AI development. This pillar represents the technological-resource dimension of AI capability.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.489,
+                0.817,
+                0.572
+            ],
+            "angle": 0,
+            "content": "- AI talent captures both specialists and broader workforce fluency. Two indicators: the share of employees in AI-specific roles, and the prevalence of AI-related skills across the broader workforce. The human-capital dimension has been linked to firm growth and productivity in prior work.\\( ^{2} \\)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.587,
+                0.82,
+                0.789
+            ],
+            "angle": 0,
+            "content": "- AI deployment captures both how widely and how maturely AI is being used—the intangible-resource dimension that determines whether technology and talent are actually translated into organizational use. Two indicators: the breadth of functions in which AI use cases have been documented, and the depth of those use cases on a six-step spectrum from discussion-only through pilot and early deployment to enterprise-wide production. This dimension follows prior research measuring AI usage as a combination of breadth and depth and linking it to innovation and growth outcomes, as well as work emphasizing that scaling AI from pilot to production is a critical determinant of whether AI investments yield value.\\( ^{3} \\)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.837,
+                0.843,
+                0.918
+            ],
+            "angle": 0,
+            "content": "Talent indicators are based on labor-market data from Revelio Labs (derived from LinkedIn resumes). Tech indicators draw on IT-installment data from HG Insights. Deployment indicators are derived from natural-language analysis of annual 10-K filings and quarterly earnings calls.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.138,
+                0.551,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.205,
+                0.812,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.224,
+                0.825,
+                0.24
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.246,
+                0.837,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.267,
+                0.777,
+                0.285
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.289,
+                0.183,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.327,
+                0.623,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.376,
+                0.764,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.397,
+                0.784,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.417,
+                0.808,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.436,
+                0.781,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.104,
+                0.455,
+                0.764,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.491,
+                0.757,
+                0.506
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.51,
+                0.813,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.53,
+                0.811,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.103,
+                0.552,
+                0.685,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.589,
+                0.805,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.609,
+                0.786,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.629,
+                0.817,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.648,
+                0.796,
+                0.662
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.667,
+                0.747,
+                0.683
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.687,
+                0.759,
+                0.702
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.705,
+                0.786,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.726,
+                0.812,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.104,
+                0.745,
+                0.769,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.103,
+                0.768,
+                0.594,
+                0.785
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.838,
+                0.835,
+                0.853
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.859,
+                0.834,
+                0.874
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.879,
+                0.84,
+                0.894
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.899,
+                0.41,
+                0.915
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.088,
+                0.831,
+                0.185
+            ],
+            "angle": 0,
+            "content": "For each indicator, companies in our sample are stack-ranked and assigned a normalized score from 0 to 100. The three pillar scores are then averaged with equal weight to produce the overall AI adoption score. The measure is applied to more than 600 US public companies with a market capitalization above $5 billion.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.206,
+                0.794,
+                0.246
+            ],
+            "angle": 0,
+            "content": "TSR findings in this article are reported on an industry-adjusted basis—each company is compared against the median in its own industry.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.264,
+                0.776,
+                0.304
+            ],
+            "angle": 0,
+            "content": "The methodology was developed in collaboration with Cindy Laura Stahl, a researcher at the University of St. Gallen.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.434,
+                0.945,
+                0.495
+            ],
+            "angle": 0,
+            "content": "The scores across pillars are averaged to arrive at an overall metric. Applying our measure to a sample of publicly listed US companies, we classify companies as falling into one of four tiers on AI adoption: nascent, emerging, active, and leading. (See Exhibit 1.)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.525,
+                0.11,
+                0.54
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 1"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.543,
+                0.597,
+                0.562
+            ],
+            "angle": 0,
+            "content": "The Value of AI Adoption Is Concentrated in the Top 6%",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.043,
+                0.568,
+                0.719,
+                0.816
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.828,
+                0.398,
+                0.848
+            ],
+            "angle": 0,
+            "content": "Sources: S&P Capital IQ; BCG Institute analysis.\n \\( ^{1} \\) TSR for December 2022–December 2025, relative to industry median in sample."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.881,
+                0.946,
+                0.921
+            ],
+            "angle": 0,
+            "content": "Only 6% of companies are AI leaders, but they are seeing real value. Industry-adjusted TSR over the past three years runs at +9.3% for the leading tier vs. sample median. This is a clear premium",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.09,
+                0.796,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.108,
+                0.805,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.129,
+                0.826,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.147,
+                0.776,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.166,
+                0.152,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.209,
+                0.79,
+                0.223
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.227,
+                0.65,
+                0.243
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.267,
+                0.771,
+                0.281
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.286,
+                0.466,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.435,
+                0.925,
+                0.453
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.457,
+                0.942,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.477,
+                0.662,
+                0.492
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.529,
+                0.108,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.544,
+                0.593,
+                0.561
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.883,
+                0.935,
+                0.898
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.903,
+                0.942,
+                0.917
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.956,
+                0.148
+            ],
+            "angle": 0,
+            "content": "over the laggards (-1.7%). The even more striking finding is the gap between leaders and the active tier sitting just below them: active firms see essentially no premium (+0.6%), meaning the value accrues only at the very top, and not progressively along the adoption curve. In other words, the impact of AI adoption on value creation emerges in a step change fashion, not linearly.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.161,
+                0.93,
+                0.262
+            ],
+            "angle": 0,
+            "content": "The AI adoption leaders in our sample are concentrated in the tech sector, but breakout performers exist across industries. More importantly, the TSR lift cannot be dismissed as a “shovel-seller” effect: the numbers we find are industry-adjusted, meaning that leaders outperform the median company in their own industry. Technology leaders are compared to the technology median, not to the broader market.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.275,
+                0.956,
+                0.435
+            ],
+            "angle": 0,
+            "content": "One might worry that the TSR advantage of AI leaders is driven by market enthusiasm—investors bidding up AI-associated stocks based on future expectations rather than real business results. To address this, we decomposed the TSR outperformance of leaders (compared to laggards, the bottom two tiers of our sample) into its components. (See Exhibit 2.) This analysis shows that the outperformance is driven almost entirely by fundamentals: revenue growth and margin expansion (+10 percentage points and +6 percentage points respectively, both industry-adjusted). Meanwhile, P/E multiple expansion—the channel through which “AI hype” would show up—contributes essentially nothing.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.465,
+                0.111,
+                0.48
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 2"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.482,
+                0.594,
+                0.502
+            ],
+            "angle": 0,
+            "content": "AI Leaders' Returns Driven by Fundamentals, Not Hype",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.045,
+                0.52,
+                0.727,
+                0.714
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.726,
+                0.39,
+                0.755
+            ],
+            "angle": 0,
+            "content": "Sources: S&P Capital IQ; BCG Institute analysis.\n \\( ^{1} \\) TSR for Dec 2022–Dec 2025; difference in median TSR of leaders vs. laggards.\n \\( ^{2} \\) Including residual effects (-2pp)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.788,
+                0.917,
+                0.849
+            ],
+            "angle": 0,
+            "content": "The conclusion here is that the market is rewarding real business performance, not narratives about AI's future impact. Notably, these effects also hold when we compare TSR of leading companies against active companies.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.863,
+                0.941,
+                0.923
+            ],
+            "angle": 0,
+            "content": "An additional driver worth noting is that leaders show a negative TSR contribution (-5 percentage points) from cash effects (consistent with equity issuances and/or reduced dividends). Thus, the leaders are not extracting cash—they are using it to fund AI investments.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.071,
+                0.892,
+                0.084
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.089,
+                0.93,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.11,
+                0.95,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.129,
+                0.883,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.164,
+                0.859,
+                0.177
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.183,
+                0.884,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.202,
+                0.845,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.223,
+                0.924,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.242,
+                0.477,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.277,
+                0.944,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.296,
+                0.931,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.316,
+                0.92,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.336,
+                0.944,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.356,
+                0.953,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.376,
+                0.851,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.394,
+                0.897,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.414,
+                0.341,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.468,
+                0.108,
+                0.479
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.483,
+                0.591,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.789,
+                0.915,
+                0.806
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.809,
+                0.88,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.83,
+                0.396,
+                0.846
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.864,
+                0.94,
+                0.882
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.885,
+                0.926,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.905,
+                0.726,
+                0.92
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.042,
+                0.214,
+                0.501,
+                0.235
+            ],
+            "angle": 0,
+            "content": "AI Leaders Are Seeing a Productivity Dividend"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.949,
+                0.167
+            ],
+            "angle": 0,
+            "content": "The productivity engine behind the value. Underlying this fundamental performance is a productivity advantage: revenue per employee is growing 4 percentage points faster at AI leaders than at laggards, on an industry-adjusted basis. (See Exhibit 3.) This gap emerged with the release of foundation models in late 2022, which made AI broadly useful across functions. It widened in subsequent years and remains sizable today.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.197,
+                0.111,
+                0.212
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 3"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.242,
+                0.233,
+                0.257
+            ],
+            "angle": 0,
+            "content": "Annual productivity growth \\((\\%)^{1}\\)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.044,
+                0.247,
+                0.725,
+                0.454
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.467,
+                0.371,
+                0.489
+            ],
+            "angle": 0,
+            "content": "Sources: S&P Capital IQ; BCG Institute analysis.  \n\\( ^{1} \\) Productivity is measured as revenue per employee (based on headcount)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.521,
+                0.955,
+                0.622
+            ],
+            "angle": 0,
+            "content": "The fact that this productivity advantage is concentrated in 6% of the sample helps reconcile a broader puzzle: some economists have noted that AI has not shown up in aggregate productivity data. This is consistent with our findings: averaging leaders together with the 94% of companies that have not reached comparable adoption levels washes out the real, sizable effects happening within a small group.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.635,
+                0.922,
+                0.676
+            ],
+            "angle": 0,
+            "content": "For CEOs, this raises an obvious question: How are these leaders deploying this productivity to create higher value than peers?",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.746,
+                0.859,
+                0.823
+            ],
+            "angle": 0,
+            "content": "What AI Leaders Do: Save, Scale, Innovate"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.853,
+                0.923,
+                0.894
+            ],
+            "angle": 0,
+            "content": "We observe three distinct ways in which AI leaders create value, differentiated by whether they use AI to improve margins, accelerate growth, or both. (See Exhibit 4.)",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.874,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.09,
+                0.946,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.944,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.128,
+                0.921,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.148,
+                0.463,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.201,
+                0.109,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.524,
+                0.923,
+                0.539
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.543,
+                0.934,
+                0.559
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.562,
+                0.924,
+                0.579
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.583,
+                0.95,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.602,
+                0.239,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.636,
+                0.92,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.658,
+                0.338,
+                0.673
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.745,
+                0.855,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.788,
+                0.264,
+                0.823
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.855,
+                0.92,
+                0.871
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.875,
+                0.683,
+                0.89
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.044,
+                0.082,
+                0.459,
+                0.1
+            ],
+            "angle": 0,
+            "content": "Most Leaders Use AI to Do More, Not Less"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.045,
+                0.127,
+                0.727,
+                0.371
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.379,
+                0.361,
+                0.409
+            ],
+            "angle": 0,
+            "content": "Sources: S&P Capital IQ; BCG Institute analysis.\n \\( ^{1} \\) Headcount CAGR for 2022–2025, relative to industry median in sample.\n \\( ^{2} \\) Relative to industry median in sample."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.447,
+                0.951,
+                0.546
+            ],
+            "angle": 0,
+            "content": "Do the same with less. The most intuitive path is to use AI to streamline operations, automate back-office processes, and expand margins at the functional level. For example, IBM, an AI leader in our sample, has automated its HR support function with an AI agent called AskHR, which now handles over 94% of employee requests and contributed to a 40% reduction in HR operating costs over four years.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.56,
+                0.951,
+                0.699
+            ],
+            "angle": 0,
+            "content": "This is the path many executives instinctively associate with AI, and the one that dominates the public narrative around automation and job displacement. Yet among leaders, it is the least common path—only 10% follow it. This is because a focus on efficiency is an entry point. It enables quick wins, building organizational experience with AI, and proving the case for further investment, but not an end state. Doing the same things faster is unlikely to yield durable competitive advantage when the underlying technology is widely available, and leaders recognize this.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.713,
+                0.953,
+                0.832
+            ],
+            "angle": 0,
+            "content": "Expand what each employee can deliver. The second path is using AI to create scale. This is where the largest share of leaders, 59%, concentrate their efforts—and it is the best approach for converting AI’s productivity gains into competitive advantage. By making each unit of work more productive, leaders can serve more customers, accelerate throughput, enter adjacent markets, or reach segments that were previously uneconomic to serve—unlocking both margin expansion and revenue growth simultaneously.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.847,
+                0.944,
+                0.907
+            ],
+            "angle": 0,
+            "content": "For example, Salesforce, an AI leader in our sample, reports that service agents using AI spend 20% less time on routine cases, freeing roughly four hours per week for higher-value issues, which is projected to boost upsell revenue by 15%.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.449,
+                0.921,
+                0.464
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.468,
+                0.947,
+                0.483
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.489,
+                0.935,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.507,
+                0.903,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.53,
+                0.244,
+                0.542
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.562,
+                0.927,
+                0.577
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.582,
+                0.894,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.602,
+                0.887,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.623,
+                0.921,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.642,
+                0.878,
+                0.656
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.662,
+                0.945,
+                0.676
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.679,
+                0.089,
+                0.697
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.716,
+                0.953,
+                0.73
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.735,
+                0.887,
+                0.75
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.755,
+                0.933,
+                0.77
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.775,
+                0.943,
+                0.79
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.795,
+                0.918,
+                0.809
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.814,
+                0.381,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.848,
+                0.922,
+                0.865
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.87,
+                0.938,
+                0.883
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.888,
+                0.457,
+                0.903
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.955,
+                0.188
+            ],
+            "angle": 0,
+            "content": "The common thread among leaders is that productivity gains are reinvested into the business rather than translated into cost cuts. This is consistent with BCG research on AI's labor market impact, which finds that the main effect of AI on work is augmentation—making people more productive—rather than substitution. When productivity rises in roles where demand can expand, companies tend to grow output rather than shrink headcount. Consistent with this, AI leaders in our sample are growing headcount 3 percentage points faster on average than laggards.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.201,
+                0.953,
+                0.301
+            ],
+            "angle": 0,
+            "content": "Build new products, services, and business models. The most ambitious path, taken by 21% of leaders, is using AI to innovate. These firms are creating offerings that would not have been possible or economically viable without AI. The strategic posture is different from the efficiency path: it requires a willingness to invest in new business models, accept a temporary margin trade-off, and bet on revenue streams that do not yet exist.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.314,
+                0.956,
+                0.394
+            ],
+            "angle": 0,
+            "content": "We see multiple leading companies in our sample pursuing an innovation strategy. For example, Meta has built AI marketing tools that generate creative assets tailored both to the product being advertised and to the user being advertised to. Moody's is leveraging its proprietary data on credit ratings, financial data, and risk models to build new analytical offerings for customers.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.465,
+                0.63,
+                0.505
+            ],
+            "angle": 0,
+            "content": "Becoming an AI Leader"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.531,
+                0.949,
+                0.632
+            ],
+            "angle": 0,
+            "content": "Save, scale, and innovate describe what leaders do with AI once they’ve reached the top. But how do they get there in the first place? To trace the journey, we examined how the three pillars of our score—AI tech, AI talent, and AI deployment—evolve through the adoption tiers. Across the 600+ companies in our sample, a recognizable pattern emerges, with three key transitions that separate the starting point from the leader tier. (See Exhibit 5.)",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.07,
+                0.91,
+                0.084
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.089,
+                0.924,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.108,
+                0.907,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.129,
+                0.952,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.148,
+                0.929,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.168,
+                0.861,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.204,
+                0.924,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.223,
+                0.887,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.243,
+                0.924,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.263,
+                0.949,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.281,
+                0.537,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.317,
+                0.94,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.336,
+                0.952,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.355,
+                0.95,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.376,
+                0.842,
+                0.389
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.463,
+                0.629,
+                0.507
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.534,
+                0.941,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.554,
+                0.936,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.574,
+                0.947,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.594,
+                0.876,
+                0.609
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.614,
+                0.625,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.065,
+                0.338,
+                0.102
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 5 The Journey to AI Leadership"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.109,
+                0.381,
+                0.133
+            ],
+            "angle": 0,
+            "content": "Median score per pillar across firms in each adoption tier (0–100 scale)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.047,
+                0.126,
+                0.726,
+                0.376
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.045,
+                0.392,
+                0.186,
+                0.405
+            ],
+            "angle": 0,
+            "content": "Source: BCG Institute analysis."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.437,
+                0.946,
+                0.498
+            ],
+            "angle": 0,
+            "content": "Starting Point. Most companies begin their AI adoption journey by acquiring off-the-shelf AI tools and running experiments in a small number of functions, typically focused on efficiency use cases for which off-the-shelf tools are readily available.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.512,
+                0.947,
+                0.633
+            ],
+            "angle": 0,
+            "content": "Transition 1: Expanding the Toolkit. Progressing from this starting point involves expanding scope: moving beyond a narrow set of general-purpose tools toward a broader, more specialized AI ecosystem, and making the tools accessible to a wider set of functions and use cases. In this phase, organizations are still buying tools, not building their own. It remains an important learning phase—companies experiment to discover what works and what their scalable AI stack will need to look like—and some get stuck running an ever-expanding set of disconnected pilots.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.645,
+                0.946,
+                0.806
+            ],
+            "angle": 0,
+            "content": "Transition 2: Going Broad and Deep on Deployment. The next step is to go deeper, converting pilots into production-grade deployments starting in a few functions, building reusable platforms and playbooks there, then scaling breadth as the marginal cost of each new deployment falls. Across this transition, the share of companies that are simultaneously broad (use cases covering eight or more functions) and deep (at-scale deployment) in their AI deployment grows from roughly 12% of the cohort to over 50%. Walmart, started by going deep in demand forecasting, then used it as a foundation that fed downstream applications across the supply chain—inventory management, warehouse robotics, store operations, and last-mile delivery.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.818,
+                0.951,
+                0.918
+            ],
+            "angle": 0,
+            "content": "Transition 3: Crossing the Talent Gap. Mastering the first two transitions means a firm has built operational and technical foundations, but our data shows this is not yet enough to capture AI's productivity and value benefits. One more transition remains, and it is the one that matters most: the talent gap. Across the three pillars, tech and deployment scores barely change between the active and leading tiers. Meanwhile, the talent score nearly triples.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.067,
+                0.107,
+                0.077
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.083,
+                0.332,
+                0.1
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.439,
+                0.943,
+                0.457
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.46,
+                0.895,
+                0.476
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.48,
+                0.552,
+                0.495
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.514,
+                0.901,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.535,
+                0.932,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.555,
+                0.924,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.575,
+                0.877,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.594,
+                0.94,
+                0.609
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.613,
+                0.945,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.647,
+                0.921,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.667,
+                0.941,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.688,
+                0.913,
+                0.702
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.706,
+                0.94,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.727,
+                0.889,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.747,
+                0.91,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.766,
+                0.87,
+                0.781
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.785,
+                0.83,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.82,
+                0.939,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.84,
+                0.929,
+                0.855
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.86,
+                0.949,
+                0.875
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.88,
+                0.93,
+                0.895
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.898,
+                0.665,
+                0.915
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.947,
+                0.245
+            ],
+            "angle": 0,
+            "content": "But “talent” should not be read narrowly as “hire AI developers.” What leaders do is broader. For one, they invest in talent breadth: AI fluency across the organization, going beyond core AI specialists. At leaders, 13% of employees have AI-related skills, compared to 1% at laggards. Consistent with this, BCG research finds that leading companies upskill a significantly larger share of their workforce in AI skills than laggards. The goal is for teams across the organization to be able to identify where AI changes the economics of their business or function and co-design solutions, rather than waiting for a central team to deliver them. When AI fluency is distributed, the organization develops a richer pipeline of use cases than any central team could generate alone.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.26,
+                0.901,
+                0.32
+            ],
+            "angle": 0,
+            "content": "Moreover, leaders invest in talent depth: AI-specific positions reach 3.5% of the workforce at leaders, versus 0.1% at laggards. These dedicated specialists scale solutions identified or prototyped across the business into proprietary, enterprise-grade capabilities.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.333,
+                0.924,
+                0.415
+            ],
+            "angle": 0,
+            "content": "Crucially, this talent transformation does not happen organically. It requires deliberate organizational change: rethinking workflows end-to-end rather than bolting AI onto existing processes, establishing joint ownership between business and IT, and shifting the center's role from building all AI solutions to curating, governing, and amplifying the best ones.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.428,
+                0.924,
+                0.489
+            ],
+            "angle": 0,
+            "content": "This is consistent with what BCG has long observed about successful AI transformation, often summarized as the 10-20-70 rule: roughly 10% of the effort is technology, 20% is algorithms and data, and 70% is people, processes, and organizational change.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.502,
+                0.927,
+                0.563
+            ],
+            "angle": 0,
+            "content": "The reason talent is decisive at this stage is that tools have commoditized; every company can buy the same AI products from the same vendors. What cannot be bought is the organizational capability to deploy them into the specific economics of a business.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.041,
+                0.632,
+                0.638,
+                0.714
+            ],
+            "angle": 0,
+            "content": "Walking the Walk on AI\nAdoption"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.739,
+                0.953,
+                0.86
+            ],
+            "angle": 0,
+            "content": "AI is inescapable in corporate communications and public conversation, and for good reason. Our analysis reveals that companies that talk about AI are rewarded with higher P/E multiples at every level of real adoption. For example, laggards discussing the technology in earnings conference calls see a 1 percentage point lift in P/E multiple contribution to TSR vs. peers that stay quiet. Investors clearly want to see firms engaging with the technology, and signal that engagement back through valuation.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.872,
+                0.929,
+                0.933
+            ],
+            "angle": 0,
+            "content": "Yet the real benefits of AI we observe—the return premium, the improvement in fundamental performance, the productivity benefits—come not from talking the talk, but from walking the walk. Of course, adoption alone is not replacement for a good strategy. This is evidenced by the",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.07,
+                0.933,
+                0.084
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.089,
+                0.881,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.109,
+                0.898,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.128,
+                0.903,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.147,
+                0.943,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.167,
+                0.921,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.188,
+                0.924,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.209,
+                0.918,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.227,
+                0.109,
+                0.244
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.262,
+                0.897,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.282,
+                0.869,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.301,
+                0.771,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.336,
+                0.851,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.356,
+                0.869,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.376,
+                0.92,
+                0.391
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.395,
+                0.8,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.43,
+                0.91,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.45,
+                0.92,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.47,
+                0.63,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.504,
+                0.918,
+                0.52
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.523,
+                0.924,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.544,
+                0.675,
+                0.559
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.629,
+                0.641,
+                0.676
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.673,
+                0.283,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.741,
+                0.949,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.761,
+                0.901,
+                0.776
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.779,
+                0.863,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.801,
+                0.924,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.82,
+                0.886,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.84,
+                0.387,
+                0.856
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.875,
+                0.913,
+                0.89
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.896,
+                0.906,
+                0.909
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.914,
+                0.923,
+                0.929
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.954,
+                0.186
+            ],
+            "angle": 0,
+            "content": "fact that a small minority of leaders (10%) in our study are failing to translate AI into fundamental performance gains: they are experiencing declining margins and growth. But a closer look reveals that these companies are held back by fundamental business model challenges that AI cannot overcome, such as core offerings being commoditized, or legacy business models displaced by digitally native disruptors. These cases offer a cautionary note: AI amplifies a strong strategy; it does not substitute for one.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.201,
+                0.926,
+                0.281
+            ],
+            "angle": 0,
+            "content": "When this strong foundation exists, our data shows that senior leaders need to build the talent base to create proprietary capabilities around AI, the organizational architecture to deploy it across the business, and the ambition to use the resulting productivity gains for competitive advantage rather than cost cuts. This is what separates the 6%.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.402,
+                0.722,
+                0.562
+            ],
+            "angle": 0,
+            "content": "The BCG Institute is Boston Consulting Group's strategy think tank, dedicated to exploring and developing valuable new insights from business, technology, and science by embracing the powerful technology of ideas. The Institute engages leaders in provocative discussion and experimentation to expand the boundaries of business theory and practice and to translate innovative ideas from within and beyond business. For more ideas and inspiration from the Institute, please visit our website and follow us on LinkedIn and X (formerly Twitter).",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "11"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.07,
+                0.952,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.09,
+                0.944,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.108,
+                0.928,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.129,
+                0.913,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.147,
+                0.923,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.168,
+                0.303,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.203,
+                0.923,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.223,
+                0.904,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.242,
+                0.897,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.263,
+                0.629,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.404,
+                0.673,
+                0.419
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.424,
+                0.656,
+                0.439
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.444,
+                0.719,
+                0.459
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.464,
+                0.682,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.484,
+                0.662,
+                0.498
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.503,
+                0.658,
+                0.517
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.524,
+                0.705,
+                0.538
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.543,
+                0.623,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.068,
+                0.247,
+                0.107
+            ],
+            "angle": 0,
+            "content": "Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.15,
+                0.221,
+                0.258
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.304,
+                0.221,
+                0.41
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.457,
+                0.22,
+                0.565
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.631,
+                0.22,
+                0.738
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.246,
+                0.153,
+                0.384,
+                0.176
+            ],
+            "angle": 0,
+            "content": "Ulrich Pidun"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.187,
+                0.412,
+                0.229
+            ],
+            "angle": 0,
+            "content": "Partner & Director; BCG Institute Insight Leader\nFrankfurt"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.233,
+                0.275,
+                0.249
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.245,
+                0.307,
+                0.381,
+                0.33
+            ],
+            "angle": 0,
+            "content": "Tania Wang"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.34,
+                0.428,
+                0.382
+            ],
+            "angle": 0,
+            "content": "Lead Forward Deployed AI Scientist\nLos Angeles",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.386,
+                0.275,
+                0.402
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.246,
+                0.471,
+                0.408,
+                0.493
+            ],
+            "angle": 0,
+            "content": "Michael Grebe"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.504,
+                0.437,
+                0.545
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nMunich",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.55,
+                0.275,
+                0.566
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.244,
+                0.634,
+                0.364,
+                0.678
+            ],
+            "angle": 0,
+            "content": "Viacheslav\nRomanov"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.689,
+                0.444,
+                0.73
+            ],
+            "angle": 0,
+            "content": "Partner & Associate Director,\nPIPE Tech Capital\nBoston",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.534,
+                0.458,
+                0.682,
+                0.564
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.735,
+                0.275,
+                0.752
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.534,
+                0.152,
+                0.682,
+                0.258
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.533,
+                0.305,
+                0.683,
+                0.41
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.707,
+                0.16,
+                0.818,
+                0.184
+            ],
+            "angle": 0,
+            "content": "Adam Job"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.193,
+                0.909,
+                0.222
+            ],
+            "angle": 0,
+            "content": "Senior Director, BCG Institute\nFrankfurt",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.227,
+                0.737,
+                0.243
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.708,
+                0.314,
+                0.889,
+                0.336
+            ],
+            "angle": 0,
+            "content": "Matthew Molloy"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.708,
+                0.347,
+                0.815,
+                0.375
+            ],
+            "angle": 0,
+            "content": "Project Leader\nNew York",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.381,
+                0.737,
+                0.397
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.708,
+                0.461,
+                0.852,
+                0.505
+            ],
+            "angle": 0,
+            "content": "Marc Roman\nFranke"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.515,
+                0.924,
+                0.555
+            ],
+            "angle": 0,
+            "content": "Partner & Associate Director, AI and digital transformation\nBerlin",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.56,
+                0.737,
+                0.577
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "12"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.067,
+                0.247,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.155,
+                0.382,
+                0.175
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.308,
+                0.379,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.342,
+                0.425,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.355,
+                0.306,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.369,
+                0.328,
+                0.38
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.473,
+                0.405,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.506,
+                0.433,
+                0.518
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.519,
+                0.301,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.531,
+                0.299,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.245,
+                0.635,
+                0.359,
+                0.654
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.658,
+                0.353,
+                0.676
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.691,
+                0.44,
+                0.702
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.703,
+                0.368,
+                0.715
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.717,
+                0.294,
+                0.728
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.707,
+                0.16,
+                0.817,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.196,
+                0.905,
+                0.207
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.209,
+                0.774,
+                0.22
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.314,
+                0.886,
+                0.335
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.349,
+                0.811,
+                0.361
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.363,
+                0.773,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.463,
+                0.849,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.708,
+                0.482,
+                0.788,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.518,
+                0.921,
+                0.528
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.53,
+                0.886,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.709,
+                0.542,
+                0.752,
+                0.553
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.103,
+                0.436,
+                0.121
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.138,
+                0.952,
+                0.258
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.043,
+                0.342,
+                0.956,
+                0.417
+            ],
+            "angle": 0,
+            "content": "1 Patrick Mikalef et al., “Artificial Intelligence Capability: Conceptualization, Measurement Calibration, and Empirical Study on Its Impact on Organizational Creativity and Firm Performance,” Information, volume 58, issue 3, 2021; Serge-Lopez Wamba- & Taguimdje et al., “Influence of Artificial Management Intelligence (AI) on Firm Performance: The Business Value of AI-Based Transformation Projects,” Business, volume 26, Journal issue 7, 2020."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.042,
+                0.424,
+                0.922,
+                0.441
+            ],
+            "angle": 0,
+            "content": "2 Tania Babina et al., \"Artificial Intelligence, Firm Growth, and Product Innovation,\" Journal of Financial Economics, volume 151, 2024."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.042,
+                0.445,
+                0.955,
+                0.522
+            ],
+            "angle": 0,
+            "content": "3 Christian Rammer et al., Research, volume 51, issue 7, 2022; Journal of , volume 211, 2023; Naomi Haefner Technological, “Artificial Intelligence and Policy Dirk Czarnitzki et al., Economic et al., “Implementing and Scaling Forecasting volume Industrial Innovation: “Artificial Intelligence Behavior & Artificial Intelligence: A Review, and Social 197, Evidence from German Firm-Level and Firm-Level OrganizationFramework, and Research Agenda,” Change 2023. Productivity,”"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.956,
+                0.983
+            ],
+            "angle": 0,
+            "content": "13"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.105,
+                0.433,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.14,
+                0.95,
+                0.155
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.159,
+                0.9,
+                0.176
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.18,
+                0.904,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.199,
+                0.911,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.218,
+                0.933,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.238,
+                0.593,
+                0.255
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]
