@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_rz61a95i/pdfs/0001-47-JPM-Bayer-BAYGn.DE-2Q-26 Preview- Expect a solid Quarter- with Guidance reiteration to underpin latest Vara Consensus-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rz61a95i/pdfs/0002-48-JPM-China Artificial Intelligence Open-weight commercialization playbook-winner takes more- Raise Zhipu to HK-2-000 -OW-- cut MiniMax to HK-300 -Neutral--260707.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rz61a95i/pdfs/0003-49-JPM-China- More support for CNH and 2H CNY drivers-Falling FX reserves signal a narrower trade surplus-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rz61a95i/pdfs/0004-50-JPM-China SMid Insurance-Marine Insurance- Onshore risk repatriation creates medium-term upside for China Re and China Taiping-260707.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rz61a95i/pdfs/0005-51-JPM-China monthly data outlook Production resilient- demand awaits fiscal execution-260707.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
