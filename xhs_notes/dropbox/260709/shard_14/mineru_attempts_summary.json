@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_42qfq5mp/pdfs/0001-72-JPM-Retail Radar Jul 8 - Split-the-Dip as Momentum Cools-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_42qfq5mp/pdfs/0002-73-MS-Asia-Pacific Technology AI Supply Chain Further Updates on 2027 CoWoS Allocation and ASIC Dynamics-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_42qfq5mp/pdfs/0003-74-MS-Electronic Components Apr-Jun Q Earnings Outlook- Sustainability of Strong Earnings the Key Consideration-260707.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_42qfq5mp/pdfs/0004-75-MS-China Autos - Shared Mobility- China EV Weekly Orders - Slow Summer- Selective Sparks-260707.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_42qfq5mp/pdfs/0005-76-MS-Tech Bytes-Space Technology - Orbital Computing-260707.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

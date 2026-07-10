@@ -1,0 +1,20 @@
+EN_A: So I just read this research report on the AI chip supply chain, and it has some pretty interesting numbers on CoWoS allocation for 2027. Can you break it down for us?
+EN_B: Sure. The big picture here is that the report is forecasting a major shift in who gets the advanced packaging capacity. Nvidia's share is still the largest, but it drops from 62% to 45%. Meanwhile, AMD and custom ASIC chips are taking up more space.
+EN_A: So this means the market is moving away from a single dominant player?
+EN_B: Exactly. That's the core question the report is trying to answer. It's not just about the numbers. It's about a structural change. Take AMD for example. Its MI400 series will come in two versions. One is the standard MI455. The other is a half-size chip customized for Meta, called the MI450.
+EN_A: Wait, customized for Meta? That sounds like a big deal.
+EN_B: It is. The MI450 has half the compute dies and half the memory. This means big cloud companies are no longer just buying off-the-shelf GPUs. They are designing their own chips. That changes the entire competitive landscape.
+EN_A: So what does that mean for the traditional packaging companies?
+EN_B: The report points out that AMD's CoWoS capacity is moving away from TSMC to other players like ASE and Amkor. They are getting more orders. This is a trend worth watching because CoWoS used to be almost exclusively TSMC's game.
+EN_A: What about Google's TPU progress? Did the report find anything new there?
+EN_B: Yes, one interesting point. Google's Sunfish chip production is being pushed back, mostly concentrated in the fourth quarter. But the key thing is that total orders are not being cut. This tells us demand is still strong, it's just a timing issue.
+EN_A: So it's not a demand slowdown, just a shift in timing?
+EN_B: Right. Another insight is about Nvidia's Blackwell chips. There was market concern about inventory buildup. But the report clarifies that it's actually a normal supply chain buffer, and it will be fully consumed by 2026. That's very different from what many people thought.
+EN_A: What's the logic behind that? Why did the market get it wrong?
+EN_B: Because people were only looking at chip shipments. But the report introduces a new framework. It compares chip shipments to server rack shipments. There is a conversion ratio between chips and racks. If you only look at chips, you get the wrong picture. The report explains this framework in detail.
+EN_A: That sounds like a useful framework. So what questions does the report leave unanswered?
+EN_B: A few. For example, AMD has a history of cutting its CoWoS orders. So there is execution risk around that 240k target for 2027. Also, Meta has two different ASIC teams. The progress of one of them is still unclear.
+EN_A: So the big picture is clear, but the details are still uncertain?
+EN_B: Exactly. That's why it's worth reading the full report. It gives you a great macro framework, but you need to keep tracking each player's execution. For example, Meta's Apollo chip won't go into mass production until 2028. There are many milestones to watch between now and then.
+EN_A: Alright, today we covered the key changes in the AI chip supply chain, including AMD's customization strategy, Google's timing shift, and a new analytical framework. If you want more details, go check out the full report.
+EN_B: Yes, there is more detail on capacity allocation and revenue forecasts for different players. It's worth a deep dive.

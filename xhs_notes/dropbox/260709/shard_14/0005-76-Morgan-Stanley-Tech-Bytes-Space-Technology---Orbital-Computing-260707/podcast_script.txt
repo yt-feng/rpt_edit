@@ -1,0 +1,59 @@
+ZH_A: 今天我们要聊一个听起来像科幻电影的概念——把数据中心发射到太空去。这真的可能吗？这份报告到底想回答什么问题？
+ZH_B: 它想回答一个很实际的问题：当AI数据中心的电力、土地和水资源在地球上越来越难搞的时候，我们能不能把一部分计算能力搬到轨道上去？
+ZH_A: 所以不是要把整个数据中心扔到天上，对吧？
+ZH_B: 对，不是漂浮的巨型数据中心。报告里说的很清楚，是装在卫星上的计算“机架”，用太阳能供电，靠散热板在太空中降温。
+ZH_A: 那为什么要这么做？在地球上建数据中心已经很成熟了，为什么还要去太空折腾？
+ZH_B: 因为成本结构变了。现在建一个1GW的AI数据中心，几乎一半的钱花在基础设施上，而不是计算设备本身。如果发射成本继续下降，轨道平台有可能用太阳能系统替代很大一部分地面基础设施。
+ZH_A: 这意味着什么？成本能降到和地面一样吗？
+ZH_B: 报告给出了一个具体的时间线：到2030年，轨道计算每瓦的资本支出大约是60美元，到2035年会降到15美元，到2040年可能降到9美元。如果按五年使用寿命算，2031年的成本已经接近现在地面AI芯片的水平。
+ZH_A: 那这个轨道计算到底长什么样？是像科幻片里那种巨大的空间站吗？
+ZH_B: 不是。报告描述得很具体：就是一些机架，装在太阳同步轨道上，背后连着散热板，机架之间用激光在真空中连接。这跟现代卫星用的技术差不多。
+ZH_A: 听起来技术门槛很高。现在有人在做这件事吗？
+ZH_B: 有。SpaceX的Starmind项目是最明确的蓝图，还有Starcloud和NVIDIA在探索太空AI硬件。中国也有动作，Adaspace在2025年5月发射了“三体计算星座”的前12颗卫星，计划最终达到2800颗。
+ZH_A: 那这份报告里最关键的洞察是什么？
+ZH_B: 第一个洞察是：短期来看，轨道计算不会取代地面数据中心。更现实的场景是“轨道边缘AI”——卫星在轨道上处理图像和传感器数据，只把有用的结果传回地球。
+ZH_A: 所以不是要把所有AI计算都搬到太空，而是先做一部分边缘计算？
+ZH_B: 对。第二个洞察是：轨道计算不是解决地面瓶颈，而是用新的工程挑战替换旧的。比如散热问题从水冷变成了太空辐射散热，维修问题从换风扇变成了几乎无法修复。
+ZH_A: 那对投资者来说，机会在哪里？
+ZH_B: 报告列了一个很长的供应链。关键价值集中在三个领域：光学和射频通信、电源和散热系统、以及抗辐射半导体芯片。在欧洲，报告特别看好STMicro和Infineon。
+ZH_A: STMicro具体在做什么？
+ZH_B: STMicro最近办了一个低轨道活动，详细讲了他们的技术定位。他们预计未来三年累计销售额超过30亿美元，分为三个市场：宽带、直接到手机、以及轨道数据中心。最大的收入来源是用户终端。
+ZH_A: 那Infineon呢？
+ZH_B: Infineon在抗辐射电源管理芯片上很有优势。报告认为，这些芯片是轨道计算的基础——没有抗辐射能力，芯片在太空中很快就会被辐射损坏。
+ZH_A: 听起来很有前景，但这份报告有没有提到哪些问题还没搞清楚？
+ZH_B: 有，而且很重要。比如，轨道计算到底能不能实现真正的规模化？报告里提到了几个关键挑战：辐射对芯片的影响、激光通信带宽是否足够、轨道碎片风险、以及AI硬件更新周期太短——地面每两年换一代，太空里很难换。
+ZH_A: 那这些挑战有没有被完全解答？
+ZH_B: 没有。报告只是提出了问题，但没有给出确定的答案。比如，抗辐射芯片的成本会不会太高？激光通信的带宽能不能支撑AI级别的分布式计算？这些都是需要继续验证的。
+ZH_A: 所以如果你想了解更详细的投资逻辑，或者想知道哪些公司可能最先受益，最好的方式是什么？
+ZH_B: 去读完整报告。那里有更详细的供应链分析、成本模型，还有每个公司的具体定位。我们刚才聊的只是冰山一角。
+ZH_A: 好的，那今天就聊到这里。如果你对轨道计算这个主题感兴趣，欢迎加入我们的社群，或者直接获取完整报告。我们下次再聊。
+
+EN_A: So today we are talking about something that sounds like science fiction — putting data centers in space. But is this real? What is this report actually trying to answer?
+EN_B: It is trying to answer a very practical question: as AI data centers run into power, land, water and permitting constraints on Earth, can we move some of that compute capacity into orbit?
+EN_A: So not the entire data center floating in space, right?
+EN_B: Exactly. The report is very specific. It is not a giant floating data center. It is racks of servers mounted on satellites, with solar arrays for power and a radiator behind them that is always in the shade for cooling.
+EN_A: Why would anyone do that? Data centers on Earth are already pretty mature.
+EN_B: Because the cost structure is shifting. Right now, building a one gigawatt AI data center, almost half the money goes into infrastructure, not the compute itself. If launch costs keep dropping, orbital platforms could replace a big chunk of that ground infrastructure with solar-powered systems in space.
+EN_A: So what does that mean in numbers? Can it really compete with Earth-based costs?
+EN_B: The report gives a timeline. By 2030, the capital cost per watt for orbital compute is modeled at about sixty dollars. By 2035, it drops to fifteen dollars. By 2040, it could be as low as nine dollars. And if you look at a five-year useful life, the 2031 estimate is already close to what we pay for ground-based AI hardware today.
+EN_A: So what does an orbital compute setup actually look like?
+EN_B: The report describes it very clearly. It is racks in a sun-synchronous orbit. They are connected by lasers traveling through vacuum. That laser link technology is already widely used in modern satellites.
+EN_A: Sounds like a huge technical challenge. Is anyone actually doing this?
+EN_B: Yes. SpaceX has a project called Starmind, which is the clearest public blueprint. There is also Starcloud and NVIDIA exploring compute hardware and space-native AI workloads. And China is moving too. Adaspace launched the first twelve satellites of its Three-Body Computing Constellation in May 2025, with a plan for 2800 satellites in total.
+EN_A: So what are the key insights in this report?
+EN_B: First insight: in the near term, orbital compute is not going to replace ground-based hyperscale data centers. The more realistic use case is orbital edge AI. Satellites process imagery, sensor data and inference workloads in orbit, and only send useful results back to Earth.
+EN_A: So it is not about moving all AI to space. It is about doing some edge computing up there first.
+EN_B: Exactly. Second insight: orbital compute does not solve infrastructure constraints. It replaces terrestrial bottlenecks with new engineering challenges. Instead of water cooling, you have radiative cooling in a vacuum. Instead of swapping out a fan, you have hardware that is almost impossible to repair.
+EN_A: So for investors, where is the opportunity?
+EN_B: The report maps out a long supply chain. The key value is concentrated in three areas: optical and RF communications, power and thermal systems, and radiation-tolerant semiconductor chips. In Europe, the report specifically highlights STMicroelectronics and Infineon.
+EN_A: What is STMicro doing specifically?
+EN_B: STMicro recently held a low Earth orbit event where they detailed their technology positioning. They are guiding to well above three billion dollars in cumulative sales over the next three years. They split the LEO opportunity into three buckets: broadband, direct-to-cell, and orbital data centers. The biggest revenue driver is user terminals.
+EN_A: And Infineon?
+EN_B: Infineon is strong in radiation-hardened power management chips. The report argues these are foundational for orbital compute. Without radiation tolerance, chips get damaged by space radiation very quickly.
+EN_A: This all sounds promising. But are there open questions the report does not fully answer?
+EN_B: Yes, and they are important. For example, can orbital compute really scale? The report lists key challenges: radiation effects on chips, whether laser communication bandwidth is enough for AI-scale distributed computing, orbital debris risk, and the fact that AI hardware refreshes every two years on Earth but is very hard to replace in space.
+EN_A: So the report does not have a final answer on those?
+EN_B: No. It raises the questions but does not fully resolve them. For instance, will radiation-hardened chips be too expensive? Can laser links handle the bandwidth needed? Those are still open points that need further verification.
+EN_A: So if someone wants the full investment thesis and the detailed company analysis, what should they do?
+EN_B: Read the full report. It has a much deeper supply chain breakdown, cost models, and specific positioning for each company. What we covered today is just the surface.
+EN_A: Great. That is all for today. If you are interested in the orbital compute theme, feel free to join our community or access the full report. We will talk next time.
