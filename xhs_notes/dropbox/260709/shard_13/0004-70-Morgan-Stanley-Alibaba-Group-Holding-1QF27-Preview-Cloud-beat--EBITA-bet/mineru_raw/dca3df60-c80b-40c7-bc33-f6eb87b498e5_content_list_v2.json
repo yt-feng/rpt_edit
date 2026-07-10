@@ -1,0 +1,4351 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Alibaba Group Holding | Asia Pacific"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                28,
+                73,
+                417,
+                99
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1QF27 Preview: Cloud beat, EBITA better than feared"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                28,
+                109,
+                495,
+                182
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/10a8b86fafadd315e6b44780ac0f0cef412677f432c29589184303d306b40b3a.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td colspan=\"3\">WHAT&#x27;S CHANGED</td></tr><tr><td>Alibaba Group Holding (BABA.N)</td><td>From</td><td>To</td></tr><tr><td>Price Target</td><td>US$190.00</td><td>US$180.00</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                30,
+                196,
+                580,
+                248
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Cloud acceleration to beat market expectations at +45%, while margin expansion to remain intact. China Ecom EBITA better than feared, thanks to QC loss narrowing quicker than expected and e-com ex-QC EBITA. Top Pick."
+                    }
+                ]
+            },
+            "bbox": [
+                25,
+                261,
+                573,
+                346
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Key Takeaways"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                33,
+                362,
+                171,
+                382
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Total group rev +9%, adj EBITA Rmb26bn (-33%)."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                386,
+                371,
+                404
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Cloud +45% YoY (vs 40% external in 4Q), EBITA margin to expand to 11% (vs 9% in 4Q)."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                408,
+                573,
+                445
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "CMR +1-2% YoY on a LFL basis (vs 7-8% in 4Q). E-com EBITA (ex QC) -3-4% YoY. QC losses narrow to Rmb10bn (vs MSe Rmb18bn in 4Q)."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                451,
+                570,
+                487
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "China E-com EBITA + AIDC largely flat YoY. All Others loss narrow to Rmb16.5bn (vs Rmb21bn loss in 4Q)."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                492,
+                575,
+                527
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Cloud growth accelerates to 45% YoY: Alicloud growth momentum to sustain, driven mainly by MAAS contribution, with previous Jun quarter target of Rmb10bn ARR achieved earlier than expected and AI-related revenue continuing to grow at triple digits. Cloud margin expansion intact at 11%, driven by price hikes starting in April and increasing MAAS rev mix; on track to deliver long-term target of 20%. T-head will also be included in the cloud segment from this quarter, but we expect limited impact due to serving external customers via Alicloud. We expect cloud growth to continue to accelerate in upcoming quarters."
+                    }
+                ]
+            },
+            "bbox": [
+                25,
+                543,
+                572,
+                690
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "CMR in line, +1-2% (LFL basis), but -7% under the new accounting standard: CMR grows in line with the industry (NBS Apr+May +1.4%). We estimate core EBITA (ex-QC) -3-4% YoY, gap vs LFL CMR narrows on cost efficiency gains. QC loss narrowing is better than expected, est. -Rmb10bn loss (vs Rmb18bn in 4Q), with UE improved driven by increasing AOV. We estimate total China e-com EBITA -2% YoY."
+                    }
+                ]
+            },
+            "bbox": [
+                25,
+                697,
+                580,
+                789
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All Others losses narrow to Rmb16.5bn, removing some one-off CNY promotion expenses. We expect expenses related to Qwen model training to continue to be sizable alongside the token surge. We expect more disclosure on All Others losses breakdown going forward. We estimate All Others losses at Rmb72bn in F27."
+                    }
+                ]
+            },
+            "bbox": [
+                25,
+                796,
+                570,
+                870
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Reiterate OW (top pick); Trim PT to US$180: We raised our revenue estimates by 2-3% in F27-28 on higher cloud contribution, but slightly offset by lower e-comm. EBITA estimates largely unchanged. With the recent price correction, valuation is attractive at 13x F28 PE. Our DCF-derived PT implies 23x F28 P/E."
+                    }
+                ]
+            },
+            "bbox": [
+                25,
+                878,
+                572,
+                950
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/c4aed34cefbc00b7b01e8eec05eb7d9829e9a5ed2e31d92157997fdf2bde096f.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td colspan=\"2\">MS ASIA LIMITED+</td></tr><tr><td colspan=\"2\">Gary Yu</td></tr><tr><td colspan=\"2\">Equity Analyst</td></tr><tr><td>Gary.Yu@morganstanley.com</td><td>+852 2848-6918</td></tr><tr><td colspan=\"2\">Joanne Lau</td></tr><tr><td colspan=\"2\">Research Associate</td></tr><tr><td>Joanne.CY.Lau@morganstanley.com</td><td>+852 3963-1592</td></tr><tr><td colspan=\"2\">Eddy Wang, CFA</td></tr><tr><td colspan=\"2\">Equity Analyst</td></tr><tr><td>Eddy.Wang@morganstanley.com</td><td>+852 2239-7339</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                607,
+                73,
+                930,
+                210
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/2a91db529271407aca7ede9f888cd6f092f82249505b2bdf9c7ed6d102b7791f.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                612,
+                218,
+                928,
+                279
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Alibaba Group Holding (BABA.N, BABA UN) Top Pick"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                612,
+                292,
+                852,
+                320
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "China Internet and Other Services | China"
+                    }
+                ]
+            },
+            "bbox": [
+                609,
+                324,
+                835,
+                338
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/fdcc5860ae63906d73abbbafb7a26959a61f6ca905ec8a68f1186a3f814bdcb1.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Stock Rating</td><td>Overweight</td></tr><tr><td>Industry View</td><td>Attractive</td></tr><tr><td>Price target</td><td>US$180.00</td></tr><tr><td>Up/downside to price target (%)</td><td>83</td></tr><tr><td>Shr price, close (Jul 7, 2026)</td><td>US$98.14</td></tr><tr><td>52-Week Range</td><td>US$192.67-92.87</td></tr><tr><td>Sh out, dil, curr (mn)</td><td>2,475</td></tr><tr><td>Mkt cap, curr (mn)</td><td>US$242,909</td></tr><tr><td>EV, curr (mn)</td><td>US$148,840</td></tr><tr><td>Avg daily trading value (mn)</td><td>US$290</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                609,
+                346,
+                930,
+                465
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/2298bc1606bfdc77b44de559d414dad87fc9ad84a705e6ad7ffa09354bb5b298.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Fiscal Year Ending</td><td>03/26</td><td>03/27e</td><td>03/28e</td><td>03/29e</td></tr><tr><td>EPS (Rmb)**</td><td>44.00</td><td>30.27</td><td>45.34</td><td>63.20</td></tr><tr><td>Prior EPS (Rmb)**</td><td>-</td><td>30.4</td><td>46.3</td><td>64.3</td></tr><tr><td>Revenue, net (Rmb bn)</td><td>1,024</td><td>1,125</td><td>1,239</td><td>1,367</td></tr><tr><td>Net income (Rmb bn)**</td><td>106</td><td>75</td><td>112</td><td>157</td></tr><tr><td>P/E**</td><td>19.7</td><td>22.0</td><td>14.7</td><td>10.5</td></tr><tr><td>EV/EBITDA</td><td>16.1</td><td>7.2</td><td>4.6</td><td>3.2</td></tr><tr><td>EV/revenue*</td><td>1.9</td><td>1.4</td><td>1.3</td><td>1.1</td></tr><tr><td>P/BV</td><td>2.0</td><td>1.5</td><td>1.3</td><td>1.2</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                607,
+                469,
+                930,
+                582
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Unless otherwise noted, all metrics are based on MS ModelWare framework\n** = Based on consensus methodology\n* = GAAP or approximated based on GAAP\ne = MS estimates"
+                    }
+                ]
+            },
+            "bbox": [
+                607,
+                589,
+                916,
+                639
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS does and seeks to do business with companies covered in MS. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of MS. Investors should consider MS as only a single factor in making their investment decision."
+                    }
+                ]
+            },
+            "bbox": [
+                607,
+                760,
+                928,
+                844
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For analyst certification and other important disclosures, refer to the Disclosure Section, located at the end of this report."
+                    }
+                ]
+            },
+            "bbox": [
+                607,
+                844,
+                915,
+                882
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+= Analysts employed by non-U.S. affiliates are not registered with FINRA, may not be associated persons of the member and may not be subject to FINRA restrictions on communications with a subject company, public appearances and trading securities held by a research analyst account."
+                    }
+                ]
+            },
+            "bbox": [
+                607,
+                882,
+                928,
+                945
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                25,
+                21,
+                339,
+                49
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                879,
+                25,
+                930,
+                46
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/56928dd6ef55bca50647aa1e1393347879c7f4d8852a0357dd9cf6e286832800.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Preview to earnings"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Focus KPI</td><td>Focus KPI Surprise</td><td>Likely impact to consensus EPS*</td></tr><tr><td colspan=\"3\">Alibaba Group Holding BABA.N</td></tr><tr><td>Cloud revenue growth</td><td>↑ Likely upside surprise</td><td>— Largely unchanged</td></tr><tr><td colspan=\"3\">• Cloud +45% YoY (vs 40% external in 4Q), EBITA margin to expand to 11% (vs 9% in 4Q).</td></tr><tr><td colspan=\"3\">*Likely impact to consensus EPS is for the next 12 monthsSource: Company data, MS</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                27,
+                95,
+                619,
+                210
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                23,
+                220,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                899,
+                25,
+                930,
+                38
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                30,
+                967,
+                40,
+                976
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/24b9811c89d138e106bb0177c021e536aab0864c8926ed96786e713bf53289f7.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 1: Summary of 1QF27 forecasts"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company data, VisibleAlpha consensus, MS (E) estimates."
+                    }
+                ],
+                "html": "<table><tr><td>Alibaba GroupYE MarRMB mn</td><td>Jun-251Q26Actual</td><td>Mar-264Q26Actual</td><td>Jun-261Q27eMse</td><td>YoY%</td><td>1Q27Consensus</td><td>Diff%</td></tr><tr><td>Revenue</td><td>247,652</td><td>243,380</td><td>269,045</td><td>8.6%</td><td>268,956</td><td>0.0%</td></tr><tr><td>Income from operations</td><td>34,988</td><td>(848)</td><td>22,281</td><td>-36.3%</td><td>19,974</td><td>11.6%</td></tr><tr><td>Adjusted EBITA</td><td>38,844</td><td>5,102</td><td>26,099</td><td>-32.8%</td><td>25,974</td><td>0.5%</td></tr><tr><td>Non-GAAP net profit</td><td>33,510</td><td>86</td><td>24,148</td><td>-27.9%</td><td>23,945</td><td>0.8%</td></tr><tr><td>Adj. EBITA margin</td><td>15.7%</td><td>2.1%</td><td>9.7%</td><td>-6.0 ppts</td><td>9.7%</td><td>0.0 ppts</td></tr><tr><td>Non-GAAP net profit margin</td><td>13.5%</td><td>0.0%</td><td>9.0%</td><td>-4.6 ppts</td><td>8.9%</td><td>0.1 ppts</td></tr><tr><td>By Segment</td><td>1Q26</td><td>4Q26</td><td>1Q27e</td><td>YoY</td><td>1Q27</td><td>Diff</td></tr><tr><td>Revenue</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Alibaba China E-commerce Group</td><td>140,072</td><td>122,220</td><td>141,692</td><td>1.2%</td><td>145,719</td><td>-2.8%</td></tr><tr><td>Customer management (CMR)</td><td>89,252</td><td>73,024</td><td>83,004</td><td>-7.0%</td><td>88,565</td><td>-6.3%</td></tr><tr><td>Quick commerce</td><td>14,784</td><td>19,988</td><td>21,437</td><td>45.0%</td><td>20,810</td><td>3.0%</td></tr><tr><td>Alibaba International Digital Commerce Group</td><td>34,741</td><td>35,429</td><td>36,478</td><td>5.0%</td><td>36,770</td><td>-0.8%</td></tr><tr><td>Cloud Intelligence Group</td><td>33,398</td><td>41,626</td><td>48,427</td><td>45.0%</td><td>47,004</td><td>3.0%</td></tr><tr><td>All others</td><td>58,599</td><td>65,459</td><td>60,357</td><td>3.0%</td><td>61,836</td><td>-2.4%</td></tr><tr><td>Unallocated</td><td>519</td><td>641</td><td>545</td><td>5.0%</td><td>567</td><td>-3.9%</td></tr><tr><td>Inter-segment elimination</td><td>(19,677)</td><td>(21,995)</td><td>(18,454)</td><td>-6.2%</td><td>(23,401)</td><td>-21.1%</td></tr><tr><td>Consolidated revenue</td><td>247,652</td><td>243,380</td><td>269,045</td><td>8.6%</td><td>268,956</td><td>0.0%</td></tr><tr><td>Adjusted EBITA</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Alibaba China E-commerce Group</td><td>38,389</td><td>24,010</td><td>37,549</td><td>-2.2%</td><td>33,900</td><td>10.8%</td></tr><tr><td>Alibaba International Digital Commerce Group</td><td>(59)</td><td>(138)</td><td>800</td><td></td><td>240</td><td></td></tr><tr><td>Cloud Intelligence Group</td><td>2,954</td><td>3,796</td><td>5,327</td><td>80.3%</td><td>4,908</td><td>8.5%</td></tr><tr><td>All others</td><td>(1,415)</td><td>(21,160)</td><td>(16,500)</td><td></td><td>(14,922)</td><td>10.6%</td></tr><tr><td>Unallocated</td><td>(419)</td><td>(788)</td><td>(440)</td><td>5.0%</td><td>(973)</td><td></td></tr><tr><td>Inter-segment elimination</td><td>(606)</td><td>(618)</td><td>(636)</td><td>5.0%</td><td>(625)</td><td></td></tr><tr><td>Consolidated adjusted EBITA</td><td>38,844</td><td>5,102</td><td>26,099</td><td>-32.8%</td><td>25,974</td><td>0.5%</td></tr><tr><td>Adjusted EBITA margin</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Alibaba China E-commerce Group</td><td>27.4%</td><td>19.6%</td><td>26.5%</td><td>-0.9 ppts</td><td>23.3%</td><td>3.2 ppts</td></tr><tr><td>Alibaba International Digital Commerce Group</td><td>-0.2%</td><td>-0.4%</td><td>2.2%</td><td>2.4 ppts</td><td>0.7%</td><td>1.5 ppts</td></tr><tr><td>Cloud Intelligence Group</td><td>8.8%</td><td>9.1%</td><td>11.0%</td><td>2.2 ppts</td><td>10.4%</td><td>0.6 ppts</td></tr><tr><td>All others</td><td>-2.4%</td><td>-32.3%</td><td>-27.3%</td><td>-24.9 ppts</td><td>-24.1%</td><td>-3.2 ppts</td></tr><tr><td>Consolidated adjusted EBITA margin</td><td>15.7%</td><td>2.1%</td><td>9.7%</td><td>-6.0 ppts</td><td>9.7%</td><td>0.0 ppts</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                337,
+                157,
+                930,
+                482
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1QF27 Earnings Forecasts"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                27,
+                91,
+                410,
+                122
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                21,
+                222,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                898,
+                25,
+                930,
+                38
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                966,
+                213,
+                978
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                918,
+                966,
+                930,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Estimate Changes"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                30,
+                91,
+                298,
+                122
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/48c7a0e056a70f27106ed3e6baca390644e3961a129ab5be9de15d1d84d100a1.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 2: Estimate changes"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: MS estimates."
+                    }
+                ],
+                "html": "<table><tr><td rowspan=\"2\">Years Ending December 31Rmb mn</td><td colspan=\"3\">New</td><td colspan=\"3\">Old</td><td colspan=\"3\">Change</td></tr><tr><td>2027E</td><td>2028E</td><td>2029E</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2027E</td><td>2028E</td><td>2029E</td></tr><tr><td>Revenue</td><td>1,124,656</td><td>1,239,461</td><td>1,366,835</td><td>1,099,618</td><td>1,203,947</td><td>1,313,645</td><td>2.3%</td><td>2.9%</td><td>4.0%</td></tr><tr><td>Net income attributable to Alibaba Group Holding</td><td>75,018</td><td>112,322</td><td>156,539</td><td>75,389</td><td>114,756</td><td>159,299</td><td>-0.5%</td><td>-2.1%</td><td>-1.7%</td></tr><tr><td>Adjusted EBITA</td><td>95,184</td><td>142,744</td><td>197,398</td><td>95,007</td><td>145,054</td><td>199,812</td><td>0.2%</td><td>-1.6%</td><td>-1.2%</td></tr><tr><td>Adjusted EBITDA</td><td>154,006</td><td>230,628</td><td>307,550</td><td>153,275</td><td>231,696</td><td>308,555</td><td>0.5%</td><td>-0.5%</td><td>-0.3%</td></tr><tr><td>Adjusted Net Profit</td><td>89,038</td><td>126,823</td><td>171,460</td><td>88,893</td><td>128,712</td><td>173,574</td><td>0.2%</td><td>-1.5%</td><td>-1.2%</td></tr><tr><td>Adjusted NP to Ordinary shareholders</td><td>89,412</td><td>126,828</td><td>171,411</td><td>89,267</td><td>128,718</td><td>173,523</td><td>0.2%</td><td>-1.5%</td><td>-1.2%</td></tr><tr><td>GAAP EPS for consensus (Rmb)</td><td>30.27</td><td>45.34</td><td>63.20</td><td>30.42</td><td>46.32</td><td>64.32</td><td>-0.5%</td><td>-2.1%</td><td>-1.7%</td></tr><tr><td>Non-GAAP Diluted EPS (Rmb)</td><td>36.08</td><td>51.20</td><td>69.21</td><td>36.02</td><td>51.96</td><td>70.07</td><td>0.2%</td><td>-1.5%</td><td>-1.2%</td></tr><tr><td>yoy %</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Revenue</td><td>9.9%</td><td>10.2%</td><td>10.3%</td><td>7.4%</td><td>9.5%</td><td>9.1%</td><td>2.4 ppts</td><td>0.7 ppts</td><td>1.2 ppts</td></tr><tr><td>Adjusted EBITA</td><td>-0.6%</td><td>11.0%</td><td>16.7%</td><td>-2.4%</td><td>11.3%</td><td>16.1%</td><td>1.7 ppts</td><td>-0.3 ppts</td><td>0.6 ppts</td></tr><tr><td>Adjusted NP to Ordinary shareholders</td><td>38.5%</td><td>41.8%</td><td>35.2%</td><td>38.3%</td><td>44.2%</td><td>34.8%</td><td>0.2 ppts</td><td>-2.3 ppts</td><td>0.3 ppts</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                30,
+                157,
+                928,
+                353
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                23,
+                220,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                899,
+                25,
+                930,
+                38
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                30,
+                967,
+                40,
+                976
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Valuation Methodology"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                28,
+                91,
+                383,
+                122
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "We trim our DCF-derived PT to US$180 (was US$190)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                337,
+                139,
+                696,
+                156
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "DCF is our primary valuation methodology. We think this is a prudent approach to capture the company's long-term earnings and overall cash flow outlook. Our key DCF assumptions – WACC of 10% and terminal growth rate of 3% – are unchanged."
+                    }
+                ]
+            },
+            "bbox": [
+                337,
+                166,
+                928,
+                219
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/6fe7dae5616d8fefc5a2764f7985e7250c5b5752e051b8868ae1d8ad72181c15.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 3: DCF matrix – unlevered free cash flow"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company data, MS (E) estimates."
+                    }
+                ],
+                "html": "<table><tr><td rowspan=\"2\">Years Ending March 31Rmb mn</td><td rowspan=\"2\">2024</td><td rowspan=\"2\">2025</td><td rowspan=\"2\">2026EScenario</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2030E</td><td>2031E</td><td>2032E</td><td>2033E</td><td>2034E</td><td>2035E</td><td>2036E</td></tr><tr><td>0</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan=\"14\">DCF</td></tr><tr><td>Adjusted EBITA (non-GAAP; incl. SBC)</td><td>146,482</td><td>159,095</td><td>65,236</td><td>81,585</td><td>128,525</td><td>182,321</td><td>225,876</td><td>267,118</td><td>289,223</td><td>311,198</td><td>334,585</td><td>359,571</td><td>386,332</td></tr><tr><td>D&amp;A</td><td>22,912</td><td>36,123</td><td>42,039</td><td>65,474</td><td>94,586</td><td>116,945</td><td>135,676</td><td>151,307</td><td>167,635</td><td>176,818</td><td>184,415</td><td>190,742</td><td>196,042</td></tr><tr><td>Capex</td><td>(32,929)</td><td>(85,972)</td><td>(126,937)</td><td>(163,075)</td><td>(185,919)</td><td>(191,357)</td><td>(195,720)</td><td>(213,790)</td><td>(198,091)</td><td>(199,980)</td><td>(201,736)</td><td>(203,353)</td><td>(204,807)</td></tr><tr><td>Taxes</td><td>(23,680)</td><td>(31,306)</td><td>(22,804)</td><td>(14,685)</td><td>(23,134)</td><td>(32,818)</td><td>(40,658)</td><td>(48,081)</td><td>(52,060)</td><td>(56,016)</td><td>(60,225)</td><td>(64,723)</td><td>(69,540)</td></tr><tr><td>Licensed copyrights</td><td>(9,054)</td><td>(5,912)</td><td>(6,403)</td><td>(6,595)</td><td>(6,760)</td><td>(6,895)</td><td>(6,999)</td><td>(7,069)</td><td>(7,139)</td><td>(7,211)</td><td>(7,283)</td><td>(7,356)</td><td>(7,429)</td></tr><tr><td>Non-controlling interests</td><td>8,409</td><td>3,494</td><td>3,777</td><td>259</td><td>(110)</td><td>(168)</td><td>(221)</td><td>(268)</td><td>(317)</td><td>(369)</td><td>(423)</td><td>(480)</td><td>(540)</td></tr><tr><td>Working capital</td><td>(4,695)</td><td>(18,076)</td><td>(16,144)</td><td>(26,902)</td><td>(33,852)</td><td>(32,087)</td><td>(24,233)</td><td>(11,105)</td><td>(19,889)</td><td>(13,079)</td><td>(14,110)</td><td>(15,265)</td><td>(16,560)</td></tr><tr><td>Unlevered FCF (FCFF)</td><td>107,445</td><td>57,446</td><td>(61,236)</td><td>(63,939)</td><td>(26,665)</td><td>35,942</td><td>93,722</td><td>138,112</td><td>179,362</td><td>211,362</td><td>235,223</td><td>259,136</td><td>283,499</td></tr><tr><td>% YoY</td><td>-11.3%</td><td>-46.5%</td><td>-206.6%</td><td>4.4%</td><td>-58.3%</td><td>-234.8%</td><td>160.8%</td><td>47.4%</td><td>29.9%</td><td>17.8%</td><td>11.3%</td><td>10.2%</td><td>9.4%</td></tr><tr><td>% of revenue</td><td>11.4%</td><td>5.8%</td><td>-6.0%</td><td>-5.7%</td><td>-2.2%</td><td>2.6%</td><td>6.3%</td><td>8.1%</td><td>10.9%</td><td>12.2%</td><td>12.8%</td><td>13.4%</td><td>13.8%</td></tr><tr><td>WACC</td><td></td><td></td><td></td><td>10.0%</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>TGR</td><td></td><td></td><td></td><td>3.0%</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                28,
+                245,
+                928,
+                382
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                23,
+                220,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                898,
+                25,
+                930,
+                38
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                30,
+                966,
+                213,
+                979
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                918,
+                966,
+                930,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Financial Summary"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                30,
+                91,
+                312,
+                122
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 4: Financial summary"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                28,
+                139,
+                241,
+                155
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/ba31d7095ea425aa3db10d7ace4b6a99d8c00bdff8844be12c84e8bd5d003ff3.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "INCOME STATEMENT"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Years Ending December 31Rmb mn</td><td>2024</td><td>2025</td><td>2026</td><td>2027E</td><td>2028E</td><td>2029E</td></tr><tr><td>Total revenue</td><td>941,168</td><td>996,347</td><td>1,023,670</td><td>1,124,656</td><td>1,239,461</td><td>1,366,835</td></tr><tr><td>Cost of revenue</td><td>586,323</td><td>598,285</td><td>616,136</td><td>719,735</td><td>790,048</td><td>842,175</td></tr><tr><td>Gross profit</td><td>354,845</td><td>398,062</td><td>407,534</td><td>404,921</td><td>449,413</td><td>524,660</td></tr><tr><td>S&amp;M expenses</td><td>115,141</td><td>144,021</td><td>245,023</td><td>212,821</td><td>197,226</td><td>203,719</td></tr><tr><td>R&amp;D expenses</td><td>52,256</td><td>57,151</td><td>66,533</td><td>74,981</td><td>84,761</td><td>95,928</td></tr><tr><td>G&amp;A expenses</td><td>40,966</td><td>38,556</td><td>32,590</td><td>35,534</td><td>38,900</td><td>42,692</td></tr><tr><td>Total Operating expenses</td><td>241,495</td><td>257,918</td><td>359,232</td><td>325,011</td><td>322,060</td><td>343,043</td></tr><tr><td>Income/(loss) from operations (GA</td><td>191,668</td><td>202,325</td><td>113,483</td><td>154,006</td><td>230,628</td><td>307,550</td></tr><tr><td>Adjusted EBITA</td><td>165,028</td><td>173,065</td><td>76,416</td><td>95,184</td><td>142,744</td><td>197,398</td></tr><tr><td>Adjusted EBITDA</td><td>191,668</td><td>202,325</td><td>113,483</td><td>154,006</td><td>230,628</td><td>307,550</td></tr><tr><td>Non-operating items</td><td>(11,754)</td><td>14,550</td><td>79,237</td><td>9,369</td><td>7,210</td><td>6,248</td></tr><tr><td>Profit before tax</td><td>101,596</td><td>155,455</td><td>129,387</td><td>89,280</td><td>134,562</td><td>187,865</td></tr><tr><td>Net Profit (GAAP)</td><td>79,741</td><td>129,470</td><td>105,904</td><td>75,018</td><td>112,322</td><td>156,539</td></tr><tr><td>Net Profit (non-GAAP)</td><td>158,587</td><td>158,005</td><td>64,539</td><td>89,412</td><td>126,828</td><td>171,411</td></tr><tr><td>GAAP EPS for consensus (Rmb)</td><td>31.24</td><td>53.59</td><td>44.00</td><td>30.27</td><td>45.34</td><td>63.20</td></tr><tr><td>Diluted EPS (Rmb)</td><td>62.23</td><td>65.41</td><td>26.80</td><td>36.08</td><td>51.20</td><td>69.21</td></tr><tr><td>Diluted EPS (US$)</td><td>8.76</td><td>9.16</td><td>3.78</td><td>5.28</td><td>7.57</td><td>10.25</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                30,
+                173,
+                473,
+                404
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "KPI & FINANCIAL RATIOS"
+                    }
+                ]
+            },
+            "bbox": [
+                32,
+                410,
+                142,
+                420
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/a3b221ca99578e2afbe242dbc6a4c58b6f24d2d3eae556e02bbe8a6112811809.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Years Ending December 31</td><td>2024</td><td>2025</td><td>2026</td><td>2027E</td><td>2028E</td><td>2029E</td></tr><tr><td>China GMV (Rmb bn)</td><td>7,626</td><td>7,984</td><td>8,160</td><td>8,241</td><td>8,489</td><td>8,913</td></tr><tr><td>% Growth</td><td>4.5%</td><td>4.7%</td><td>2.2%</td><td>1.0%</td><td>3.0%</td><td>5.0%</td></tr><tr><td>Customer Management Revenue (R</td><td>304,009</td><td>326,769</td><td>343,867</td><td>337,894</td><td>352,274.9</td><td>374,345.2</td></tr><tr><td>% Growth</td><td>4.3%</td><td>7.5%</td><td>5.2%</td><td>-1.7%</td><td>4.3%</td><td>6.3%</td></tr><tr><td>Monetization rate</td><td>3.99%</td><td>4.09%</td><td>4.21%</td><td>4.10%</td><td>4.15%</td><td>4.20%</td></tr><tr><td>Net Cash (Rmb mn)</td><td>366,429</td><td>260,828</td><td>199,134</td><td>171,648</td><td>203,806</td><td>286,397</td></tr><tr><td>Dividend yield</td><td>1.8%</td><td>2.1%</td><td>1.0%</td><td>1.2%</td><td>1.4%</td><td>1.9%</td></tr><tr><td>FCF yield</td><td>9.5%</td><td>4.5%</td><td>-2.8%</td><td>-2.4%</td><td>-0.2%</td><td>3.6%</td></tr><tr><td>P/B</td><td>149.9%</td><td>153.2%</td><td>147.7%</td><td>139.0%</td><td>127.5%</td><td>114.4%</td></tr><tr><td>ROE (non-GAAP)</td><td>14.3%</td><td>14.5%</td><td>5.9%</td><td>7.8%</td><td>10.2%</td><td>12.5%</td></tr><tr><td>ROIC</td><td>10.9%</td><td>10.8%</td><td>3.7%</td><td>5.5%</td><td>7.8%</td><td>9.9%</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                30,
+                426,
+                473,
+                554
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "BALANCE SHEET"
+                    }
+                ]
+            },
+            "bbox": [
+                488,
+                157,
+                567,
+                166
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/d5adb730bfbfeed4457ca1b7c8e9ec9567b2cd85a1fa235bc3afa862efe0f22d.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Years Ending December 31Rmb mn</td><td>2024</td><td>2025</td><td>2026</td><td>2027E</td><td>2028E</td></tr><tr><td>Cash and cash equivalents</td><td>248,125</td><td>145,487</td><td>131,530</td><td>69,836</td><td>42,350</td></tr><tr><td>Restricted cash and escow receivables</td><td>38,299</td><td>43,781</td><td>42,038</td><td>42,038</td><td>42,038</td></tr><tr><td>Short-term investments</td><td>262,955</td><td>228,826</td><td>155,310</td><td>155,310</td><td>155,310</td></tr><tr><td>Equity securities and other investments</td><td>59,949</td><td>53,780</td><td>30,054</td><td>30,054</td><td>30,054</td></tr><tr><td>Prepayments, receivables and other assets</td><td>143,536</td><td>202,175</td><td>251,837</td><td>290,515</td><td>332,978</td></tr><tr><td>Current assets</td><td>752,864</td><td>674,049</td><td>610,769</td><td>587,753</td><td>602,730</td></tr><tr><td>PP&amp;E</td><td>185,161</td><td>203,348</td><td>282,699</td><td>385,714</td><td>483,452</td></tr><tr><td>Intangible assets</td><td>26,950</td><td>20,911</td><td>16,983</td><td>15,251</td><td>14,137</td></tr><tr><td>Goodwill</td><td>259,679</td><td>255,501</td><td>247,378</td><td>247,378</td><td>247,378</td></tr><tr><td>Equity securities and other investments</td><td>220,942</td><td>356,818</td><td>449,942</td><td>449,942</td><td>449,942</td></tr><tr><td>Investments in equity method investees</td><td>203,131</td><td>210,169</td><td>206,803</td><td>210,108</td><td>213,968</td></tr><tr><td>Prepayments, receivables and other assets</td><td>116,102</td><td>83,431</td><td>94,996</td><td>105,606</td><td>116,683</td></tr><tr><td>Non-current assets</td><td>1,011,965</td><td>1,130,178</td><td>1,298,801</td><td>1,413,998</td><td>1,525,560</td></tr><tr><td>Total assets</td><td>1,764,829</td><td>1,804,227</td><td>1,909,570</td><td>2,001,752</td><td>2,128,289</td></tr><tr><td>Short-term debts</td><td>29,001</td><td>22,562</td><td>28,224</td><td>28,224</td><td>28,224</td></tr><tr><td rowspan=\"2\">Accrued expenses, accounts payables and other current liabilities</td><td>297,883</td><td>332,537</td><td>359,893</td><td>370,850</td><td>379,271</td></tr><tr><td>94,623</td><td>80,247</td><td>88,281</td><td>95,941</td><td>104,650</td></tr><tr><td>Current liabilities</td><td>421,507</td><td>435,346</td><td>476,398</td><td>495,016</td><td>512,145</td></tr><tr><td>Long-term debts</td><td>141,775</td><td>208,141</td><td>231,772</td><td>231,772</td><td>231,772</td></tr><tr><td>Other liabilities</td><td>88,948</td><td>70,634</td><td>75,130</td><td>77,660</td><td>79,921</td></tr><tr><td>Non-current liabilities</td><td>230,723</td><td>278,775</td><td>306,902</td><td>309,432</td><td>311,693</td></tr><tr><td>Total liabilities</td><td>652,230</td><td>714,121</td><td>783,300</td><td>804,448</td><td>823,838</td></tr><tr><td>Non-controlling interests</td><td>115,327</td><td>68,535</td><td>57,539</td><td>56,514</td><td>55,796</td></tr><tr><td>Additional paid-in capital</td><td>397,999</td><td>381,379</td><td>385,086</td><td>385,086</td><td>385,086</td></tr><tr><td>Accumulated other comprehensive income/(lo</td><td>3,598</td><td>3,393</td><td>(13,070)</td><td>528</td><td>14,748</td></tr><tr><td>Retained earnings</td><td>597,897</td><td>645,478</td><td>708,382</td><td>766,077</td><td>858,895</td></tr><tr><td>Total shareholders&#x27; equity</td><td>986,544</td><td>1,009,858</td><td>1,060,886</td><td>1,132,179</td><td>1,239,217</td></tr><tr><td>Total equity</td><td>1,101,871</td><td>1,078,393</td><td>1,118,425</td><td>1,188,693</td><td>1,295,012</td></tr><tr><td>Total liabilities, mezzanine equity and equi</td><td>1,764,829</td><td>1,804,227</td><td>1,909,570</td><td>2,001,752</td><td>2,128,289</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                487,
+                173,
+                928,
+                505
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "CASH FLOW STATEMENT"
+                    }
+                ]
+            },
+            "bbox": [
+                488,
+                509,
+                599,
+                521
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/95fd131e89d2c46f42afee3fa9d5a77a7a9aa7a96a3e5c31cc72188a75651b45.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Years Ending December 31Rmb mn</td><td>2024</td><td>2025</td><td>2026</td><td>2027E</td><td>2028E</td></tr><tr><td>Net income</td><td>71,332</td><td>125,976</td><td>102,127</td><td>74,759</td><td>112,432</td></tr><tr><td>Depreciation (PP&amp;E) and operating lease (lan</td><td>26,640</td><td>29,260</td><td>37,067</td><td>58,822</td><td>87,884</td></tr><tr><td>Amortization (intangible assets and licensed d</td><td>17,864</td><td>13,199</td><td>10,051</td><td>8,327</td><td>7,875</td></tr><tr><td>Other non-cash adjustments</td><td>80,506</td><td>19,062</td><td>(50,485)</td><td>10,294</td><td>10,360</td></tr><tr><td>Changes in working capital</td><td>(13,749)</td><td>(23,988)</td><td>(22,547)</td><td>(33,497)</td><td>(40,612)</td></tr><tr><td>Operating cash flow</td><td>182,593</td><td>163,509</td><td>76,213</td><td>118,705</td><td>177,938</td></tr><tr><td>Acquisition of PP&amp;E and land use rights</td><td>(32,087)</td><td>(85,972)</td><td>(126,063)</td><td>(163,075)</td><td>(185,919)</td></tr><tr><td>Investing cash flow</td><td>(21,824)</td><td>(185,415)</td><td>(67,336)</td><td>(163,075)</td><td>(185,919)</td></tr><tr><td>Issuance/repurchase of ordinary shares</td><td>(87,902)</td><td>(86,652)</td><td>(17,968)</td><td>-</td><td>-</td></tr><tr><td>Dividends paid</td><td>(17,946)</td><td>(29,077)</td><td>(33,732)</td><td>(17,323)</td><td>(19,505)</td></tr><tr><td>Financing cash flow</td><td>(108,244)</td><td>(76,215)</td><td>(20,573)</td><td>(17,323)</td><td>(19,505)</td></tr><tr><td>Net change in cash</td><td>56,914</td><td>(97,156)</td><td>(15,700)</td><td>(61,694)</td><td>(27,486)</td></tr><tr><td>Beginning cash balance</td><td>229,510</td><td>286,424</td><td>189,268</td><td>173,568</td><td>111,874</td></tr><tr><td>Ending cash balance</td><td>286,424</td><td>189,268</td><td>173,568</td><td>111,874</td><td>84,388</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                487,
+                526,
+                928,
+                703
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                23,
+                220,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                899,
+                25,
+                930,
+                38
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company data, MS (E) estimates."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                708,
+                293,
+                721
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                30,
+                967,
+                40,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1756269b4e8769c91f60883179e8bca4d55de59a70e6abbd8d1e2edae4052d77.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                276,
+                232,
+                595,
+                287
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/840c37132cf29a223933d1a8c87ca2536945fe0541604e8401696547b223bd93.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td rowspan=\"3\">Consensus Price Target Distribution</td><td rowspan=\"3\">US$92.01</td><td>US$188.04</td><td>US$256.90</td></tr><tr><td colspan=\"2\">MS PT</td></tr><tr><td>Mean</td><td>MS Estimates</td></tr><tr><td colspan=\"4\">Source: Refinitiv, MS</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                25,
+                235,
+                595,
+                285
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Risk Reward – Alibaba Group Holding (BABA.N) Top Pick"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                28,
+                109,
+                534,
+                131
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Core business reacceleration and cloud growth driven by GenAI adoption; OW"
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                144,
+                621,
+                163
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "PRICE TARGET US$180.00"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                28,
+                183,
+                235,
+                199
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Base case, discounted cash flow model. Key assumptions include a 10% WACC and 3% terminal growth rate, in line with our Chinese Internet coverage range."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                203,
+                551,
+                232
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "RISK REWARD CHART AND OPTIONS IMPLIED PROBABILITIES (12M)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                28,
+                306,
+                504,
+                324
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c78f43b0d794bf0451c30d7f2cc3df020f9747f41f20c2da74bb10670671bbce.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Key: — Historical Stock Performance ● Current Stock Price ◆ Price Target"
+                    }
+                ]
+            },
+            "bbox": [
+                35,
+                338,
+                589,
+                540
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: Refinitiv, MS, MS Institutional Equities Division. The probabilities of our Bull, Base, and Bear case scenarios playing out were estimated with implied volatility data from the options market as of 7 Jul 2026. All figures are approximate risk-neutral probabilities of the stock reaching beyond the scenario price in either three-months' or one-years' time. View explanation of Options Probabilities methodology here"
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                561,
+                597,
+                608
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "OVERWEIGHT THESIS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                612,
+                179,
+                769,
+                196
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ We expect Alibaba, having the largest cloud infrastructure in China, to win share in the current evolutionary AI cycle in China.\n■ We see fundamental business reacceleration with improvement in monetization."
+                    }
+                ]
+            },
+            "bbox": [
+                611,
+                200,
+                884,
+                275
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- The online regulatory environment appears to be easing; we view Alibaba as a key beneficiary as a China proxy.\n- The potential spinoff of the proprietary chip business, T-Head, could unlock value.\n- Our price target implies a target F28e non-GAAP P/E of 23x.\n- Strong cash flow-generating capabilities, including market capitalization and leverage ■ Strong cash flow-generating capabilities, dividends, and continued share buybacks could provide downside support."
+                    }
+                ]
+            },
+            "bbox": [
+                611,
+                276,
+                887,
+                377
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                611,
+                360,
+                874,
+                401
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/6c318268f844f23c2c49c03a2385cbc0ebf33af99d652429651689d92807d7fa.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Refinitiv, MS"
+                    }
+                ]
+            },
+            "bbox": [
+                611,
+                430,
+                884,
+                491
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Risk Reward Themes"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                612,
+                529,
+                723,
+                544
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Secular Growth: Positive\nSelf-help: Positive"
+                    }
+                ]
+            },
+            "bbox": [
+                612,
+                545,
+                796,
+                570
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Technology Diffusion: Positive"
+                    }
+                ]
+            },
+            "bbox": [
+                612,
+                570,
+                797,
+                584
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "View descriptions of Risk Rewards Themes here"
+                    }
+                ]
+            },
+            "bbox": [
+                612,
+                584,
+                840,
+                598
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "BULL CASE"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                28,
+                626,
+                113,
+                642
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "US$270.00"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                207,
+                624,
+                302,
+                642
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "29x bull case non-GAAP F2028e EPS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                28,
+                646,
+                261,
+                662
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Total revenue CAGR of 12% over F26-31e"
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                664,
+                281,
+                680
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Total adjusted EBITA CAGR of 39% over F26-31e"
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                685,
+                276,
+                712
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "20% discount on net cash"
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                719,
+                191,
+                734
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "BASE CASE"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                320,
+                626,
+                405,
+                642
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "US$180.00"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                500,
+                624,
+                595,
+                642
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "23x base case non-GAAP F2028e EPS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                320,
+                646,
+                556,
+                662
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Total revenue CAGR of 10% over F26-31e"
+                    }
+                ]
+            },
+            "bbox": [
+                320,
+                664,
+                573,
+                680
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Total adjusted EBITA CAGR of 30% over F26-31e"
+                    }
+                ]
+            },
+            "bbox": [
+                319,
+                685,
+                572,
+                712
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "30% discount on net cash"
+                    }
+                ]
+            },
+            "bbox": [
+                320,
+                719,
+                483,
+                734
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "BEAR CASE"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                612,
+                626,
+                697,
+                642
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "US$90.00"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                797,
+                624,
+                887,
+                642
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "20x bear case non-GAAP F2028e EPS"
+                    }
+                ]
+            },
+            "bbox": [
+                612,
+                646,
+                850,
+                662
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Total revenue CAGR of 9% over F26-31e"
+                    }
+                ]
+            },
+            "bbox": [
+                611,
+                664,
+                860,
+                680
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Total adjusted EBITA CAGR of 15% over F26-31e"
+                    }
+                ]
+            },
+            "bbox": [
+                611,
+                685,
+                884,
+                712
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "50% discount on net cash"
+                    }
+                ]
+            },
+            "bbox": [
+                611,
+                719,
+                775,
+                734
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                21,
+                220,
+                41
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                898,
+                25,
+                930,
+                38
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                965,
+                213,
+                979
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                918,
+                966,
+                930,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/7517e9b366ba3cb7a01d5e7e49764d4b8df7847cd9747618a00c37b4d576d275.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>EBITDA (Rmb, mn)</td><td>143,713Note: There are not sufficient brokers supplying consensus data for this metric</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                599,
+                355,
+                859,
+                394
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Risk Reward – Alibaba Group Holding (BABA.N)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                28,
+                104,
+                468,
+                124
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "KEY EARNINGS INPUTS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                28,
+                138,
+                193,
+                153
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/4ce6e1ddbedd043c5e32f6e39c802ed3667b4ac0060af71cc363738e0b70fc39.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Drivers</td><td>2026</td><td>2027e</td><td>2028e</td><td>2029e</td></tr><tr><td>China retail marketplaces GMV (Rmb, mn)</td><td>8,160</td><td>8,241</td><td>8,489</td><td>8,913</td></tr><tr><td>Take rate (%)</td><td>4.2</td><td>4.1</td><td>4.2</td><td>4.2</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                30,
+                157,
+                441,
+                225
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "INVESTMENT DRIVERS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                30,
+                241,
+                191,
+                256
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• Revenue growth, especially in core e-commerce in China"
+                    }
+                ]
+            },
+            "bbox": [
+                30,
+                261,
+                300,
+                285
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Monetization rate (i.e., Alibaba's Chinese retail marketplace revenue/GMV)"
+                    }
+                ]
+            },
+            "bbox": [
+                30,
+                285,
+                293,
+                309
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• Non-GAAP EBITA margins"
+                    }
+                ]
+            },
+            "bbox": [
+                30,
+                309,
+                186,
+                320
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "GLOBAL REVENUE EXPOSURE"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                30,
+                336,
+                244,
+                351
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/21212b45ec673605eae03f3a82479183f851e8c7bdf18ee70a67ae8b54137efd.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                30,
+                386,
+                103,
+                445
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e8fcf7231a7b50370e9b8e86b9be6f9503023f9fe972d97d8ce98bd4f47cd0be.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: MS Estimate View explanation of regional hierarchies here"
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                355,
+                283,
+                474
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "RISKS TO PT/RATING"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                317,
+                241,
+                468,
+                257
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "RISKS TO UPSIDE"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                317,
+                260,
+                412,
+                274
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Better core e-commerce monetization, driving earnings growth upside"
+                    }
+                ]
+            },
+            "bbox": [
+                317,
+                276,
+                580,
+                301
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Faster enterprise digitalization, re-accelerating cloud revenue growth"
+                    }
+                ]
+            },
+            "bbox": [
+                317,
+                301,
+                580,
+                324
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• Stronger AI demand to drive cloud revenue"
+                    }
+                ]
+            },
+            "bbox": [
+                317,
+                324,
+                565,
+                337
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "RISKS TO DOWNSIDE"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                317,
+                341,
+                429,
+                354
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- More intense competition"
+                    }
+                ]
+            },
+            "bbox": [
+                317,
+                357,
+                473,
+                369
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• Higher-than-expected reinvestment costs"
+                    }
+                ]
+            },
+            "bbox": [
+                317,
+                369,
+                555,
+                380
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Weaker consumption amid a slower post-Covid recovery"
+                    }
+                ]
+            },
+            "bbox": [
+                317,
+                381,
+                585,
+                404
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Slower pace of enterprise digitalization pace"
+                    }
+                ]
+            },
+            "bbox": [
+                317,
+                404,
+                572,
+                417
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Regulation - additional scrutiny of Internet platforms"
+                    }
+                ]
+            },
+            "bbox": [
+                317,
+                417,
+                563,
+                441
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "OWNERSHIP POSITIONING"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                317,
+                452,
+                507,
+                468
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/9a3a03b20391359f6bf590c2f1ee5042d4efaa3fa80fd029d87f55e2a5b0d8dd.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Inst. Owners, % Active</td><td>80.3%</td><td></td></tr><tr><td>HF Sector Long/Short Ratio</td><td>1.7x</td><td></td></tr><tr><td>HF Sector Net Exposure</td><td>11.1%</td><td></td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                317,
+                474,
+                582,
+                525
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Refinitiv; MSPB Content. Includes certain hedge fund exposures held with MSPB. Information may be inconsistent with or may not reflect broader market trends. Long/Short Ratio = Long Exposure / Short exposure. Sector % of Total Net Exposure = (For a particular sector: Long Exposure - Short Exposure) / (Across all sectors: Long Exposure – Short Exposure)."
+                    }
+                ]
+            },
+            "bbox": [
+                315,
+                530,
+                573,
+                606
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "MS ESTIMATES VS. CONSENSUS FY Mar 2027e"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                597,
+                241,
+                828,
+                274
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Sales / Revenue 1,124,656.3\nNote: There are not sufficient brokers supplying consensus data for this metric"
+                    }
+                ]
+            },
+            "bbox": [
+                599,
+                288,
+                859,
+                328
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/ea565ddc4fcf92e1355ea2fbe4bd7adcea4df2280f29c9e73c9b88a719eee901.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td rowspan=\"2\">Net income (Rmb, mn)</td><td>75,018</td></tr><tr><td>Note: There are not sufficient brokers supplying consensus data for this metric</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                597,
+                420,
+                860,
+                461
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "EPS (Rmb) 30.3 Note: There are not sufficient brokers supplying consensus data for this metric"
+                    }
+                ]
+            },
+            "bbox": [
+                597,
+                485,
+                867,
+                529
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "◆ Mean ◆ MS Estimates\nSource: Refinitiv, MS"
+                    }
+                ]
+            },
+            "bbox": [
+                599,
+                545,
+                877,
+                571
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                23,
+                220,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                899,
+                25,
+                930,
+                38
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                30,
+                966,
+                40,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Risk Reward Reference links"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                27,
+                91,
+                446,
+                120
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. View explanation of Options Probabilities methodology -"
+                    }
+                ]
+            },
+            "bbox": [
+                337,
+                166,
+                726,
+                184
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Options_Probabilities_Exhibit_Link.pdf"
+                    }
+                ]
+            },
+            "bbox": [
+                337,
+                184,
+                597,
+                201
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2. View descriptions of Risk Rewards Themes - RR_Themes_Exhibit_Link.pdf"
+                    }
+                ]
+            },
+            "bbox": [
+                337,
+                210,
+                835,
+                228
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "3. View explanation of regional hierarchies - GEG_Exhibit_Link.pdf"
+                    }
+                ]
+            },
+            "bbox": [
+                337,
+                238,
+                772,
+                254
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "4. View explanation of Theme/Exposure methodology -"
+                    }
+                ]
+            },
+            "bbox": [
+                337,
+                266,
+                702,
+                283
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ESG_Sustainable_Solutions_External_Link.pdf"
+                    }
+                ]
+            },
+            "bbox": [
+                337,
+                284,
+                646,
+                301
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "5. View explanation of HERS methodology - ESG_HERS_External_Link.pdf"
+                    }
+                ]
+            },
+            "bbox": [
+                337,
+                311,
+                823,
+                328
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                23,
+                220,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                898,
+                25,
+                930,
+                38
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                966,
+                213,
+                978
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                918,
+                967,
+                928,
+                976
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosure Section"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                28,
+                76,
+                256,
+                95
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The information and opinions in MS were prepared or are disseminated by MS Asia Limited (which accepts the responsibility for its contents) and/or MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS), and/or MS Taiwan Limited and/or MS & Co International plc, Seoul Branch, and/or MS Australia Limited (A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents), and/or MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents), and/or MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India (\"SEBI\") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com which accepts the responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS, and their affiliates (collectively, \"MS\"). MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts."
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                98,
+                932,
+                280
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA."
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                282,
+                930,
+                324
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                324,
+                930,
+                368
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst Certification"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                28,
+                373,
+                186,
+                390
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The following analysts hereby certify that their views about the companies and their securities discussed in this report are accurately expressed and that they have not received and will not receive direct or indirect compensation in exchange for expressing specific recommendations or views in this report: Eddy Wang, CFA; Gary Yu."
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                391,
+                930,
+                419
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Research Conflict Management Policy"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                28,
+                439,
+                363,
+                456
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br"
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                457,
+                930,
+                485
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Important Regulatory Disclosures on Subject Companies"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                28,
+                492,
+                449,
+                507
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As of June 30, 2026, MS beneficially owned 1% or more of a class of common equity securities of the following companies covered in MS: Alibaba Group Holding, Baidu Inc, Bilibili Inc, Full Truck Alliance Co. Ltd, HUYA Inc, IQIYI Inc, JD.com, Inc., JOYY Inc., Kanzhun Ltd, Kuaishou Technology, Meituan, PDD Holdings Inc, Trip.com Group Ltd. Within the last 12 months, MS managed or co-managed a public offering (or 144A offering) of securities of Alibaba Group Holding, Kanzhun Ltd, Tencent Holdings Ltd.."
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                509,
+                928,
+                552
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Within the last 12 months, MS has received compensation for investment banking services from Alibaba Group Holding, Bilibili Inc, Meituan, Tencent Holdings Ltd.."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                551,
+                876,
+                565
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the next 3 months, MS expects to receive or intends to seek compensation for investment banking services from Alibaba Group Holding, Autohome Inc, Baidu Inc, Bilibili Inc, Full Truck Alliance Co. Ltd, IQIYI Inc, JD.com, Inc., JOYY Inc., Kanzhun Ltd, KE Holdings Inc, Kuaishou Technology, Meituan, NetEase, Inc, PDD Holdings Inc, Tencent Holdings Ltd., Tongcheng Travel Holdings, Trip.com Group Ltd, Vipshop Holdings Ltd, Weibo Corp."
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                566,
+                930,
+                606
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Within the last 12 months, MS has received compensation for products and services other than investment banking services from Alibaba Group Holding, Baidu Inc, Bilibili Inc, Full Truck Alliance Co. Ltd, HUYA Inc, JOYY Inc., Kanzhun Ltd, KE Holdings Inc, Meituan, NetEase, Inc, Tencent Holdings Ltd., Tongcheng Travel Holdings, Trip.com Group Ltd, Vipshop Holdings Ltd, Weibo Corp."
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                606,
+                930,
+                649
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Within the last 12 months, MS has provided or is providing investment banking services to, or has an investment banking client relationship with, the following company: Alibaba Group Holding, Autohome Inc, Baidu Inc, Bilibili Inc, Full Truck Alliance Co. Ltd, IQIYI Inc, JD.com, Inc., JOYY Inc., Kanzhun Ltd, KE Holdings Inc, Kuaishou Technology, Meituan, NetEase, Inc, PDD Holdings Inc, Tencent Holdings Ltd., Tongcheng Travel Holdings, Trip.com Group Ltd, Vipshop Holdings Ltd, Weibo Corp."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                650,
+                930,
+                692
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Within the last 12 months, MS has either provided or is providing non-investment banking, securities-related services to and/or in the past has entered into an agreement to provide services or has a client relationship with the following company: Alibaba Group Holding, Baidu Inc, Bilibili Inc, Full Truck Alliance Co. Ltd, HUYA Inc, IQIYI Inc, JOYY Inc., Kanzhun Ltd, KE Holdings Inc, Meituan, NetEase, Inc, Tencent Holdings Ltd., Tongcheng Travel Holdings, Trip.com Group Ltd, Vipshop Holdings Ltd, Weibo Corp."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                694,
+                930,
+                734
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS & Co. LLC makes a market in the securities of Autohome Inc, IQIYI Inc, JOYY Inc., NetEase, Inc, Weibo Corp."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                736,
+                619,
+                749
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The equity research analysts or strategists principally responsible for the preparation of MS have received compensation based upon various factors, including quality of research, investor client feedback, stock picking, competitive factors, firm revenues and overall investment banking revenues. Equity Research analysts' or strategists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                750,
+                930,
+                791
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS and its affiliates do business that relates to companies/instruments covered in MS, including market making, providing liquidity, fund management, commercial banking, extension of credit, investment services and investment banking. MS sells to and buys from customers the securities/instruments of companies covered in MS on a principal basis. MS may have a position in the debt of the Company or instruments discussed in this report. MS trades or may trade as principal in the debt securities (or in related derivatives) that are the subject of the debt research report."
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                793,
+                930,
+                849
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Certain disclosures listed above are also for compliance with applicable regulations in non-US jurisdictions."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                849,
+                544,
+                862
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "STOCK RATINGS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                28,
+                871,
+                157,
+                884
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS uses a relative rating system using terms such as Overweight, Equal-weight, Not-Rated or Underweight (see definitions below). MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold and sell. Investors should carefully read the definitions of all ratings used in MS. In addition, since MS contains more complete information concerning the analyst's views, investors should carefully read MS, in its entirety, and not infer the contents from the rating alone. In any case, ratings (or research) should not be used or relied upon as investment advice. An investor's decision to buy or sell a stock should depend on individual circumstances (such as the investor's existing holdings) and other considerations."
+                    }
+                ]
+            },
+            "bbox": [
+                25,
+                887,
+                932,
+                944
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                23,
+                220,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                899,
+                25,
+                930,
+                38
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                30,
+                967,
+                47,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                28,
+                84,
+                662,
+                98
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Stock Ratings Distribution"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                28,
+                104,
+                280,
+                120
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "(as of June 30, 2026)"
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                121,
+                137,
+                134
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Stock Ratings described below apply to MS's Fundamental Equity Research and do not apply to Debt Research produced by the Firm."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                134,
+                757,
+                148
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For disclosure purposes only (in accordance with FINRA requirements), we include the category headings of Buy, Hold, and Sell alongside our ratings of Overweight, Equal-weight, Not-Rated and Underweight. MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold, and sell but represent recommended relative weightings (see definitions below). To satisfy regulatory requirements, we correspond Overweight, our most positive stock rating, with a buy recommendation; we correspond Equal-weight and Not-Rated to hold and Underweight to sell recommendations, respectively."
+                    }
+                ]
+            },
+            "bbox": [
+                25,
+                148,
+                930,
+                206
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/8b8960359bdd48fcbc94686fca74ca530003fdbd899a2dbb55e481c52adac335.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Data include common stock and ADRs currently assigned ratings. Investment Banking Clients are companies from whom MS received investment banking compensation in the last 12 months. Due to rounding off of decimals, the percentages provided in the \"% of total\" column may not add up to exactly 100 percent."
+                    }
+                ],
+                "html": "<table><tr><td></td><td colspan=\"2\">Coverage Universe</td><td colspan=\"3\">Investment Banking Clients (IBC)</td><td colspan=\"2\">Other Material Investment ServicesClients (MISC)</td></tr><tr><td>Stock RatingCategory</td><td>Count</td><td>% of Total</td><td>Count</td><td>% of Total IBC</td><td>% of RatingCategory</td><td>Count</td><td>% of Total OtherMISC</td></tr><tr><td>Overweight/Buy</td><td>1544</td><td>42%</td><td>453</td><td>49%</td><td>29%</td><td>757</td><td>44%</td></tr><tr><td>Equal-weight/Hold</td><td>1577</td><td>43%</td><td>390</td><td>42%</td><td>25%</td><td>769</td><td>44%</td></tr><tr><td>Not-Rated/Hold</td><td>3</td><td>0%</td><td>1</td><td>0%</td><td>33%</td><td>1</td><td>0%</td></tr><tr><td>Underweight/Sell</td><td>544</td><td>15%</td><td>89</td><td>10%</td><td>16%</td><td>204</td><td>12%</td></tr><tr><td>Total</td><td>3,668</td><td></td><td>933</td><td></td><td></td><td>1731</td><td></td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                79,
+                225,
+                870,
+                375
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst Stock Ratings"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                28,
+                413,
+                196,
+                430
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Overweight (O). The stock's total return is expected to exceed the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                430,
+                930,
+                457
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Equal-weight (E). The stock's total return is expected to be in line with the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                459,
+                930,
+                486
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Not-Rated (NR). Currently the analyst does not have adequate conviction about the stock's total return relative to the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                487,
+                930,
+                514
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Underweight (U). The stock's total return is expected to be below the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                516,
+                930,
+                543
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Unless otherwise specified, the time frame for price targets included in MS is 12 to 18 months."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                544,
+                590,
+                558
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst Industry Views"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                28,
+                566,
+                205,
+                580
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Attractive (A): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be attractive vs. the relevant broad market benchmark, as indicated below."
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                582,
+                930,
+                609
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In-Line (I): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be in line with the relevant broad market benchmark, as indicated below. Cautious (C): The analyst views the performance of his or her industry coverage universe over the next 12-18 months with caution vs. the relevant broad market benchmark, as indicated below. Benchmarks for each region are as follows: North America - S&P 500; Latin America - relevant MSCI country index or MSCI Latin America Index; Europe - MSCI Europe; Japan - TOPIX; Asia - relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                610,
+                930,
+                668
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Stock Price, Price Target and Rating History (See Rating Definitions)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                28,
+                673,
+                531,
+                690
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                23,
+                220,
+                40
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                899,
+                25,
+                930,
+                38
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                911,
+                967,
+                928,
+                978
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                30,
+                966,
+                213,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/888a789fe57ead472f492b91d13fd86f47601974914a400e66786c66b7d8066f.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Alibaba Group Holding (BABA.N) - As of 07/08/26 GMT in USD"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Industry : China Internet and Other Services"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Stock Rating History: 7/1/21 : 0/A; 9/20/21 : 0/I; 12/1/23 : E/I; 2/24/25 : 0/A"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                40,
+                104,
+                904,
+                316
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Price Target History: 4/9/21 : 300; 7/6/21 : 270; 9/20/21 : 220; 11/19/21 : 180; 1/8/22 : 165; 2/25/22 : 145; 3/21/22 : 140;"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                338,
+                848,
+                350
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "9/29/22 : 110; 10/28/22 : 90; 11/18/22 : 100; 1/9/23 : 150; 11/17/23 : 110; 12/1/23 : 90; 1/8/24 : 85; 8/16/24 : 90; 10/9/24 : 115;"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                349,
+                889,
+                360
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "11/18/24 : 105; 1/9/25 : 100; 2/24/25 : 180; 7/9/25 : 150; 9/1/25 : 165; 9/29/25 : 200; 1/8/26 : 180; 5/14/26 : 190"
+                    }
+                ]
+            },
+            "bbox": [
+                39,
+                359,
+                789,
+                371
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: MS Date Format : MM/DD/YY Price Target = No Price Target Assigned (NA)"
+                    }
+                ]
+            },
+            "bbox": [
+                91,
+                373,
+                862,
+                384
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Stock Price (Not Covered by Current Analyst) — Stock Price (Covered by Current Analyst)"
+                    }
+                ]
+            },
+            "bbox": [
+                91,
+                384,
+                660,
+                395
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Stock and Industry Ratings (abbreviations below) appear as ♦ Stock Rating/Industry View"
+                    }
+                ]
+            },
+            "bbox": [
+                91,
+                395,
+                643,
+                406
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Stock Ratings: Overweight (O) Equal-weight (E) Underweight (U) Not-Rated (NR) No Rating Available (NA)"
+                    }
+                ]
+            },
+            "bbox": [
+                91,
+                406,
+                747,
+                417
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Industry View: Attractive (A) In-line (I) Cautious (C) No Rating (NR)"
+                    }
+                ]
+            },
+            "bbox": [
+                91,
+                417,
+                580,
+                428
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Effective January 13, 2014, the stocks covered by MS Asia Pacific will be rated relative to the analyst's industry (or industry team's) coverage."
+                    }
+                ]
+            },
+            "bbox": [
+                44,
+                428,
+                862,
+                448
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Effective January 13, 2014, the industry view benchmarks for MS Asia Pacific are as follows: relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index."
+                    }
+                ]
+            },
+            "bbox": [
+                44,
+                450,
+                862,
+                472
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Important Disclosures for MS Smith Barney LLC Customers"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                28,
+                517,
+                563,
+                532
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Important disclosures regarding any material conflict of interest that can reasonably be expected to have influenced MS Smith Barney LLC's choice of a third-party research provider or the subject company of a third-party research report, are available on the MS Wealth Management disclosure website at www.morganstanley.com/online/researchdisclosures. For MS specific disclosures, you may refer to https://www.morganstanley.com/eqr/disclosures/webapp/generalresearch."
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                532,
+                930,
+                574
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Each MS report is reviewed and approved on behalf of MS Smith Barney LLC. This review and approval is conducted by the same person who reviews the research report on behalf of MS. This could create a conflict of interest."
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                575,
+                930,
+                602
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Other Important Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                28,
+                611,
+                246,
+                626
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS policy is to update research reports as and when the Research Analyst and Research Management deem appropriate, based on developments with the issuer, the sector, or the market that may have a material impact on the research views or opinions stated therein. In addition, certain Research publications are intended to be updated on a regular periodic basis (weekly/monthly/quarterly/annual) and will ordinarily be updated with that frequency, unless the Research Analyst and Research Management determine that a different publication schedule is appropriate based on current conditions."
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                627,
+                930,
+                681
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                684,
+                930,
+                711
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS produces an equity research product called a \"Tactical Idea.\" Views contained in a \"Tactical Idea\" on a particular stock may be contrary to the recommendations or views expressed in research on the same stock. This may be the result of differing time horizons, methodologies, market events, or other factors. For all research available on a particular stock, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix."
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                712,
+                930,
+                754
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS is provided to our clients through our proprietary research portal on Matrix and also distributed electronically by MS to clients. Certain, but not all, MS products are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience. For access to all available MS, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix."
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                755,
+                930,
+                796
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any access and/or use of MS is subject to MS's Terms of Use (http://www.morganstanley.com/terms.html). By accessing and/or using MS, you are indicating that you have read and agree to be bound by our Terms of Use (http://www.morganstanley.com/terms.html). In addition you consent to MS processing your personal data and using cookies in accordance with our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy_pledge.html), including for the purposes of setting your preferences and to collect readership data so that we can deliver better and more personalized service and products to you. To find out more information about how MS processes personal data, how we use cookies and how to reject cookies see our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy_pledge.html). Please use the provided link to review the Terms and Conditions and Most Important Terms and Conditions for MS India Company Private Limited (https://www.morganstanley.com/assets/pdfs/about-us-global-offices/india/Terms_and_conditions.pdf) and the following link to review the audit report (https://ny.matrix.ms.com/eqr/research/webapp/researchdocs/MSICPL_Morgan_Stanley_Research_Audit_Report.pdf)."
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                796,
+                932,
+                910
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "If you do not agree to our Terms of Use and/or if you do not wish to provide your consent to MS processing your personal data or using cookies please do not access our research. MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments."
+                    }
+                ]
+            },
+            "bbox": [
+                25,
+                910,
+                930,
+                939
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                23,
+                220,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                899,
+                25,
+                930,
+                38
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                30,
+                967,
+                47,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                25,
+                84,
+                932,
+                196
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks."
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                197,
+                930,
+                253
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The \"Important Regulatory Disclosures on Subject Companies\" section in MS lists all companies mentioned where MS owns 1% or more of a class of common equity securities of the companies. For all other companies mentioned in MS, MS may have an investment of less than 1% in securities/instruments or derivatives of securities/instruments of companies and may trade them in ways different from those discussed in MS. Employees of MS not involved in the preparation of MS may have investments in securities/instruments or derivatives of securities/instruments of companies mentioned and may trade them in ways different from those discussed in MS. Derivatives may be issued by MS or associated persons."
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                254,
+                930,
+                324
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel."
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                324,
+                930,
+                381
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS personnel may participate in company events such as site visits and are generally prohibited from accepting payment by the company of associated expenses unless pre-approved by authorized members of Research management."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                382,
+                930,
+                408
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS may make investment decisions that are inconsistent with the recommendations or views in this report."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                411,
+                611,
+                423
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited (\"MSTL\"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments."
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                425,
+                930,
+                523
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Certain information in MS was sourced by employees of the Shanghai Representative Office of MS Asia Limited for the use of MS Asia Limited. MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only."
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                523,
+                930,
+                593
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118); in Australia to \"wholesale clients\" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to \"wholesale clients\" and \"retail clients\" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India (\"SEBI\") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., authorised and regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 149169; in the US by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the \"Order\"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only."
+                    }
+                ]
+            },
+            "bbox": [
+                25,
+                595,
+                933,
+                952
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                23,
+                220,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                899,
+                25,
+                930,
+                38
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                966,
+                213,
+                978
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                911,
+                967,
+                930,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS Hong Kong Securities Limited is the liquidity provider/market maker for securities of Alibaba Group Holding, Baidu Inc, Bilibili Inc, JD.com, Inc., Kuaishou Technology, Meituan, NetEase, Inc, Tencent Holdings Ltd., Trip.com Group Ltd listed on the Stock Exchange of Hong Kong Limited. An updated list can be found on HKEx website: http://www.hkex.com.hk."
+                    }
+                ]
+            },
+            "bbox": [
+                25,
+                84,
+                930,
+                111
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative."
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                112,
+                930,
+                182
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                182,
+                930,
+                210
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                212,
+                930,
+                267
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                267,
+                930,
+                310
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                311,
+                709,
+                324
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework."
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                324,
+                870,
+                338
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The issuers and/or fixed income products recommended or discussed in certain fixed income research reports may not be continuously followed. Accordingly, investors should regard those fixed income research reports as providing stand-alone analysis and should not expect continuing analysis or additional reports relating to such issuers and/or individual fixed income products. MS may hold, from time to time, material financial and commercial interests regarding the company subject to the Research report."
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                338,
+                930,
+                382
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing."
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                382,
+                930,
+                435
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/9659d112e5ffcb8c76e0df2279cb25f82c23d2f6f3a41980b2ae979578aff0b1.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "INDUSTRY COVERAGE: China Internet and Other Services"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Stock Ratings are subject to change. Please see latest research for each company."
+                    },
+                    {
+                        "type": "text",
+                        "content": "* Historical prices are not split adjusted."
+                    }
+                ],
+                "html": "<table><tr><td>COMPANY (TICKER)</td><td>RATING (AS OF)</td><td>PRICE* (07/07/2026)</td></tr><tr><td colspan=\"3\">Eddy Wang, CFA</td></tr><tr><td>Autohome Inc (ATHM.N)</td><td>E (02/09/2023)</td><td>US$18.67</td></tr><tr><td>Full Truck Alliance Co. Ltd (YMM.N)</td><td>O (07/05/2023)</td><td>US$8.35</td></tr><tr><td>JD.com, Inc. (JD.O)</td><td>U (11/10/2025)</td><td>US$26.49</td></tr><tr><td>Kanzhun Ltd (BZ.O)</td><td>O (08/04/2021)</td><td>US$14.02</td></tr><tr><td>KE Holdings Inc (BEKE.N)</td><td>O (03/16/2022)</td><td>US$14.86</td></tr><tr><td>PDD Holdings Inc (PDD.O)</td><td>O (03/02/2023)</td><td>US$82.53</td></tr><tr><td>Vipshop Holdings Ltd (VIPS.N)</td><td>E (02/24/2022)</td><td>US$13.54</td></tr><tr><td colspan=\"3\">Gary Yu</td></tr><tr><td>Alibaba Group Holding (BABA.N)</td><td>O (02/24/2025)</td><td>US$98.14</td></tr><tr><td>Baidu Inc (BIDU.O)</td><td>E (05/17/2024)</td><td>US$112.09</td></tr><tr><td>Meituan (3690.HK)</td><td>O (08/29/2024)</td><td>HK$80.90</td></tr><tr><td>Tencent Holdings Ltd. (0700.HK)</td><td>O (03/19/2020)</td><td>HK$478.80</td></tr><tr><td colspan=\"3\">Rebecca Xu</td></tr><tr><td>HUYA Inc (HUYA.N)</td><td>E (05/16/2024)</td><td>US$2.35</td></tr><tr><td>IQIYI Inc (IQ.O)</td><td>E (01/19/2023)</td><td>US$1.00</td></tr><tr><td>JOYY Inc. (JOYY.O)</td><td>E (06/02/2022)</td><td>US$69.60</td></tr><tr><td>Weibo Corp (WB.O)</td><td>U (05/17/2024)</td><td>US$7.47</td></tr><tr><td colspan=\"3\">Yang Liu</td></tr><tr><td>Bilibili Inc (BILI.O)</td><td>O (04/13/2026)</td><td>US$17.60</td></tr><tr><td>Kuaishou Technology (1024.HK)</td><td>O (05/26/2026)</td><td>HK$43.98</td></tr><tr><td>NetEase, Inc (NTES.O)</td><td>O (01/08/2025)</td><td>US$130.82</td></tr><tr><td>Tongcheng Travel Holdings (0780.HK)</td><td>O (01/04/2019)</td><td>HK$13.01</td></tr><tr><td>Trip.com Group Ltd (TCOM.O)</td><td>O (05/17/2021)</td><td>US$40.81</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                81,
+                470,
+                877,
+                884
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                23,
+                220,
+                40
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                899,
+                25,
+                930,
+                38
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14"
+                    }
+                ]
+            },
+            "bbox": [
+                30,
+                966,
+                47,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 MS"
+                    }
+                ]
+            },
+            "bbox": [
+                28,
+                80,
+                207,
+                99
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                23,
+                220,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                898,
+                25,
+                930,
+                38
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                30,
+                966,
+                213,
+                978
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "15"
+                    }
+                ]
+            },
+            "bbox": [
+                911,
+                966,
+                930,
+                978
+            ]
+        }
+    ]
+]
