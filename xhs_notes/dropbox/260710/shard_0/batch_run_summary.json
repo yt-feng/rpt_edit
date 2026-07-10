@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 59,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/01-Bernstein-Memory New Memory LTAs part 2 - Case studies from Microchip and other Semiconductor LTAs - What's different this time-260709.pdf",
+          "batch_file": "/tmp/pdf_batch_001_eqfvg1kx/pdfs/0001-01-Bernstein-Memory New Memory LTAs part 2 - Case studies from Microchip and other Semiconductor LTAs - What-s different this time-260709.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/02-Bernstein-CoreWeave， Inc.（CRWV.US）2Q26 Preview： A holding pattern-260709.pdf",
+          "batch_file": "/tmp/pdf_batch_001_eqfvg1kx/pdfs/0002-02-Bernstein-CoreWeave- Inc.-CRWV.US-2Q26 Preview- A holding pattern-260709.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/03-BARC-U.S. Equity Strategy The Midterm Elections Playbook-260708.pdf",
+          "batch_file": "/tmp/pdf_batch_001_eqfvg1kx/pdfs/0003-03-BARC-U.S. Equity Strategy The Midterm Elections Playbook-260708.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/04-Bernstein-US Business Services US Waste： A primer on the Renewable Energy segment-260708.pdf",
+          "batch_file": "/tmp/pdf_batch_001_eqfvg1kx/pdfs/0004-04-Bernstein-US Business Services US Waste- A primer on the Renewable Energy segment-260708.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/05-Bernstein-Weekend Consumer Blast： Japan， the revenue management dream-260710.pdf",
+          "batch_file": "/tmp/pdf_batch_001_eqfvg1kx/pdfs/0005-05-Bernstein-Weekend Consumer Blast- Japan- the revenue management dream-260710.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
