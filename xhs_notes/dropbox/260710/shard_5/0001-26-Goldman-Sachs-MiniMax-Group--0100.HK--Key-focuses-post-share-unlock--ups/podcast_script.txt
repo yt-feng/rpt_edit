@@ -1,0 +1,109 @@
+ZH_A: 最近MiniMax的股价表现有点意思，锁定期刚过，市场却在纠结。这份报告到底在说什么？
+
+ZH_B: 核心判断其实很直接：他们认为MiniMax的风险回报比是明显偏上的。目标价860港元，而当时股价只有297港元，潜在涨幅接近190%。
+
+ZH_A: 将近两倍的空间？这背后最大的驱动力是什么？
+
+ZH_B: 报告的逻辑是，MiniMax在成本效率上有显著优势。他们的M3模型，总参数量只有0.4万亿，但性能却能和DeepSeek V4 Pro的1.6万亿参数模型相媲美。
+
+ZH_A: 所以是“小模型，大效果”？
+
+ZH_B: 对。更关键的是，他们还能保持相似的毛利率，因为训练和推理架构的升级带来了超过两倍的成本节约。这让他们在定价上非常有竞争力。
+
+ZH_A: 那这怎么体现在收入上呢？
+
+ZH_B: 报告提到，他们的年化经常性收入，也就是ARR，增长非常迅猛。从去年底的1亿美元，到今年2月的1.5亿，再到4月翻倍，5月底已经达到了4亿美元。
+
+ZH_A: 增长速度确实惊人。但市场好像更担心锁定期结束后的抛压？
+
+ZH_B: 这确实是近期股价承压的主要原因。7月9号锁定期到期，大约43%的Pre-IPO股份解禁，投资者担心供应量太大。
+
+ZH_A: 那报告怎么看这个问题？
+
+ZH_B: 他们认为这个利空已经基本被消化了。锁定期结束，反而是一个“利空出尽”的信号。接下来，市场的焦点会重新回到基本面。
+
+ZH_A: 回到基本面，那接下来最值得关注的催化剂是什么？
+
+ZH_B: 有两个关键节点。第一个是他们的H3视频生成模型，预计未来一两周内就会发布。第二个是M3模型的下一次升级，可能在7月底或8月，重点提升编码能力。
+
+ZH_A: 视频模型这个赛道现在很热。Kling AI最近融资30亿美元，估值都到180亿了。
+
+ZH_B: 这正是报告强调的估值对比机会。MiniMax目前市值只有120亿美元，但它不仅有M3文本模型、即将发布的H3视频模型，还有音乐、音频等多模态能力。
+
+ZH_A: 所以他们认为市场低估了MiniMax的完整价值？
+
+ZH_B: 是的。而且到8月份，MiniMax有望被纳入港股通，这会带来新的内地资金流入。
+
+ZH_A: 听起来逻辑很顺，但这里面有没有报告没有完全展开的风险？
+
+ZH_B: 当然有。比如，报告提到了MiniMax计划在A股上市，但这会如何影响现有股东的权益，报告没有深入分析。
+
+ZH_A: 这是一个很关键的点。还有吗？
+
+ZH_B: 另一个是竞争格局。报告认为DeepSeek和智谱在基础模型上更强，字节跳动在多模态上领先。MiniMax虽然成本优势突出，但如何把这种优势转化为持续的定价权，还需要观察。
+
+ZH_A: 也就是说，成本优势是起点，但不是终点。
+
+ZH_B: 完全正确。这也是为什么报告把H3和M3的升级看作关键变量。如果这些新产品能在定价上实现突破，MiniMax的整体竞争地位才会真正提升。
+
+ZH_A: 明白了。那对于想深入了解的听众，你有什么建议？
+
+ZH_B: 如果想看完整的估值模型、催化剂时间表，以及和竞争对手的详细对比分析，可以去我们社群的文档库下载这份报告的全文。
+
+ZH_A: 好的，感谢你的精彩解读。我们下期再见。
+
+EN_A: So MiniMax just passed its lock-up expiration, and the stock has been under some pressure. What is the main call from this report?
+
+EN_B: The report is actually very bullish. They have a buy rating with a target price of 860 Hong Kong dollars, which implies almost 190 percent upside from where the stock was trading.
+
+EN_A: That is a huge gap. What is driving that conviction?
+
+EN_B: It comes down to cost efficiency. Their M3 model, with only 0.4 trillion parameters, can match the performance of DeepSeek V4 Pro, which has 1.6 trillion parameters.
+
+EN_A: So they are doing more with less.
+
+EN_B: Exactly. And they achieved this while keeping gross margins healthy, because their architecture upgrades cut training and inference costs by more than half.
+
+EN_A: That must translate into strong revenue growth.
+
+EN_B: It does. The report highlights their annualized recurring revenue, or ARR, which went from 100 million dollars at the end of last year to 400 million by late May.
+
+EN_A: That is impressive speed. But the market seems more focused on the lock-up expiration.
+
+EN_B: That has been the overhang. Around 43 percent of pre-IPO shares became tradable on July 9th, and investors were worried about the supply.
+
+EN_A: How does the report address that concern?
+
+EN_B: They argue that the worst is already priced in. With the lock-up behind us, the market can now refocus on the fundamentals.
+
+EN_A: So what are the next catalysts on the horizon?
+
+EN_B: Two big ones. First, the H3 video generation model is expected to launch in the next week or two. Second, the next M3 update, which will focus on improving coding abilities, is likely in late July or August.
+
+EN_A: Video generation is a hot space. Kling AI just raised 3 billion dollars at an 18 billion valuation.
+
+EN_B: That is exactly the comparison the report makes. MiniMax has a market cap of only 12 billion dollars, but it owns not just the M3 text model, but also the upcoming H3 video model, plus music and audio capabilities.
+
+EN_A: So they think the market is missing the full picture.
+
+EN_B: Yes. And by August, MiniMax could be included in the Southbound Stock Connect program, which would open the door to mainland Chinese investors.
+
+EN_A: The logic sounds compelling. But are there any gaps in the report?
+
+EN_B: There are a couple. For example, the report mentions MiniMax plans to list on the A-share market, but it does not fully explore how that might affect existing shareholders.
+
+EN_A: That is a big unknown.
+
+EN_B: It is. Another one is the competitive landscape. The report acknowledges that DeepSeek and Zhipu are stronger in foundation models, and ByteDance leads in multi-modal. MiniMax has a cost advantage, but turning that into sustainable pricing power is still an open question.
+
+EN_A: So cost efficiency is the entry ticket, not the finish line.
+
+EN_B: Exactly. That is why the upcoming product launches are so critical. If they can command higher prices with H3 and the next M3, the whole valuation thesis gets stronger.
+
+EN_A: For listeners who want to dig deeper, what should they do?
+
+EN_B: The full report includes detailed valuation models, a catalyst timeline, and a head-to-head comparison with competitors. You can find it in our community document library.
+
+EN_A: Great. Thanks for breaking it down.
+
+EN_B: My pleasure. Talk to you next time.
