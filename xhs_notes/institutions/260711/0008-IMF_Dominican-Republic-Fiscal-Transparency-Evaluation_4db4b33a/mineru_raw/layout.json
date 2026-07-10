@@ -1,0 +1,2397 @@
+{
+    "pdf_info": [
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        86,
+                        190,
+                        456,
+                        281
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                190,
+                                456,
+                                281
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        190,
+                                        456,
+                                        281
+                                    ],
+                                    "type": "text",
+                                    "content": "HIGH-LEVEL SUMMARY\nTECHNICAL ASSISTANCE\nREPORT"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        330,
+                        443,
+                        360
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                330,
+                                443,
+                                360
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        330,
+                                        443,
+                                        360
+                                    ],
+                                    "type": "text",
+                                    "content": "DOMINICAN REPUBLIC"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        365,
+                        399,
+                        391
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                365,
+                                399,
+                                391
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        365,
+                                        399,
+                                        391
+                                    ],
+                                    "type": "text",
+                                    "content": "Fiscal Transparency Evaluation"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        406,
+                        175,
+                        427
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                406,
+                                175,
+                                427
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        406,
+                                        175,
+                                        427
+                                    ],
+                                    "type": "text",
+                                    "content": "May 2026"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        462,
+                        165,
+                        479
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                462,
+                                165,
+                                479
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        462,
+                                        165,
+                                        479
+                                    ],
+                                    "type": "text",
+                                    "content": "Prepared By"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        479,
+                        583,
+                        495
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                479,
+                                583,
+                                495
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        479,
+                                        583,
+                                        495
+                                    ],
+                                    "type": "text",
+                                    "content": "Ramon Hurtado, Daniel Borges, Yovana de Lózar, Fernando Ferraz, Isabel Rial, Alessandro Scipioni"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        579,
+                        225,
+                        594
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                579,
+                                225,
+                                594
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        579,
+                                        225,
+                                        594
+                                    ],
+                                    "type": "text",
+                                    "content": "Authoring Department"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        595,
+                        261,
+                        611
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                595,
+                                261,
+                                611
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        595,
+                                        261,
+                                        611
+                                    ],
+                                    "type": "text",
+                                    "content": "Fiscal Affairs Department (FAD)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        88,
+                        93,
+                        164,
+                        170
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                93,
+                                164,
+                                170
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        93,
+                                        164,
+                                        170
+                                    ],
+                                    "type": "text",
+                                    "content": "INTERNATIONAL MONETARY FUND"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                }
+            ],
+            "page_size": [
+                612,
+                792
+            ],
+            "page_idx": 0,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        86,
+                        190,
+                        456,
+                        281
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                190,
+                                456,
+                                281
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        190,
+                                        456,
+                                        281
+                                    ],
+                                    "type": "text",
+                                    "content": "HIGH-LEVEL SUMMARY\nTECHNICAL ASSISTANCE\nREPORT"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        330,
+                        443,
+                        360
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                330,
+                                443,
+                                360
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        330,
+                                        443,
+                                        360
+                                    ],
+                                    "type": "text",
+                                    "content": "DOMINICAN REPUBLIC"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        365,
+                        399,
+                        391
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                365,
+                                399,
+                                391
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        365,
+                                        399,
+                                        391
+                                    ],
+                                    "type": "text",
+                                    "content": "Fiscal Transparency Evaluation"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        406,
+                        175,
+                        427
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                406,
+                                175,
+                                427
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        406,
+                                        175,
+                                        427
+                                    ],
+                                    "type": "text",
+                                    "content": "May 2026"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        462,
+                        165,
+                        479
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                462,
+                                165,
+                                479
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        462,
+                                        165,
+                                        479
+                                    ],
+                                    "type": "text",
+                                    "content": "Prepared By"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        479,
+                        583,
+                        495
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                479,
+                                583,
+                                495
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        479,
+                                        583,
+                                        495
+                                    ],
+                                    "type": "text",
+                                    "content": "Ramon Hurtado, Daniel Borges, Yovana de Lózar, Fernando Ferraz, Isabel Rial, Alessandro Scipioni"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        579,
+                        225,
+                        594
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                579,
+                                225,
+                                594
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        579,
+                                        225,
+                                        594
+                                    ],
+                                    "type": "text",
+                                    "content": "Authoring Department"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        595,
+                        261,
+                        611
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                595,
+                                261,
+                                611
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        595,
+                                        261,
+                                        611
+                                    ],
+                                    "type": "text",
+                                    "content": "Fiscal Affairs Department (FAD)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        184,
+                        96,
+                        427,
+                        125
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                184,
+                                96,
+                                427,
+                                125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        184,
+                                        96,
+                                        427,
+                                        125
+                                    ],
+                                    "type": "text",
+                                    "content": "High-Level Summary Technical Assistance Report Fiscal Affairs Department"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        175,
+                        140,
+                        435,
+                        168
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                175,
+                                140,
+                                435,
+                                168
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        175,
+                                        140,
+                                        435,
+                                        168
+                                    ],
+                                    "type": "text",
+                                    "content": "Dominican Republic – Fiscal Transparency Evaluation Prepared by Ramon Hurtado"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        183,
+                        511,
+                        227
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                183,
+                                511,
+                                227
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        183,
+                                        511,
+                                        227
+                                    ],
+                                    "type": "text",
+                                    "content": "The High-Level Summary Technical Assistance Report series provides high-level summaries of the assistance provided to IMF capacity development recipients, describing the high-level objectives, findings, and recommendations."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        241,
+                        540,
+                        385
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                241,
+                                540,
+                                385
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        241,
+                                        540,
+                                        385
+                                    ],
+                                    "type": "text",
+                                    "content": "ABSTRACT: This technical assistance report evaluates the fiscal transparency practices of the Dominican Republic (DR) against the International Monetary Fund's (IMF) Fiscal Transparency Code. The assessment covers three pillars: fiscal reporting, fiscal forecasting and budgeting, and fiscal risk analysis and management. The DR demonstrates strengths in fiscal reporting and budget processes but faces challenges in comprehensive coverage, particularly regarding public trusts and long-term fiscal risks. Key recommendations focus on improving the inclusion of extrabudgetary entities in fiscal reports, enhancing macro-fiscal projections and monitoring under the new Fiscal Responsibility Law, and strengthening the analysis and disclosure of fiscal risks, especially those related to public enterprises and long-term contracts. Implementing these recommendations would enhance fiscal policy credibility, transparency, and risk management."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        74,
+                        403,
+                        323,
+                        418
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                74,
+                                403,
+                                323,
+                                418
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        403,
+                                        323,
+                                        418
+                                    ],
+                                    "type": "text",
+                                    "content": "JEL Classification Numbers [H60; H61; H68; H83; E62]"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        74,
+                        419,
+                        466,
+                        434
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                74,
+                                419,
+                                466,
+                                434
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        419,
+                                        466,
+                                        434
+                                    ],
+                                    "type": "text",
+                                    "content": "Keywords: Fiscal transparency evaluation, fiscal reporting, fiscal forecasting, budgeting,"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        75,
+                        435,
+                        168,
+                        449
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                75,
+                                435,
+                                168,
+                                449
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        75,
+                                        435,
+                                        168,
+                                        449
+                                    ],
+                                    "type": "text",
+                                    "content": "Dominican Republic"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        546,
+                        539,
+                        618
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                546,
+                                539,
+                                618
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        546,
+                                        539,
+                                        618
+                                    ],
+                                    "type": "text",
+                                    "content": "The contents of this document constitute a high-level summary of technical advice provided by the staff of the International Monetary Fund (IMF) to the authorities of a member country or international agency (the \"CD recipient\") in response to their request for capacity development. Unless the CD recipient specifically objects within 30 business days of its transmittal, the IMF will publish this high-level summary on IMF.org (see Staff Operational Guidance on the Dissemination of Capacity Development Information)."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        69,
+                        71,
+                        291,
+                        84
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                71,
+                                291,
+                                84
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        71,
+                                        291,
+                                        84
+                                    ],
+                                    "type": "text",
+                                    "content": "©2026 International Monetary Fund [HLS/26/037]"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        197,
+                        644,
+                        412,
+                        715
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                197,
+                                644,
+                                412,
+                                715
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        197,
+                                        644,
+                                        412,
+                                        715
+                                    ],
+                                    "type": "text",
+                                    "content": "International Monetary Fund, IMF Publications\nP.O. Box 92780, Washington, DC 20090, U.S.A.\nT. +(1) 202.623.7430 • F. +(1) 202.623.7201\npublications@IMF.org\nIMF.org/pubs"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9
+                }
+            ],
+            "page_size": [
+                612,
+                792
+            ],
+            "page_idx": 1,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        184,
+                        96,
+                        427,
+                        125
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                184,
+                                96,
+                                427,
+                                125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        184,
+                                        96,
+                                        427,
+                                        125
+                                    ],
+                                    "type": "text",
+                                    "content": "High-Level Summary Technical Assistance Report Fiscal Affairs Department"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        175,
+                        140,
+                        435,
+                        168
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                175,
+                                140,
+                                435,
+                                168
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        175,
+                                        140,
+                                        435,
+                                        168
+                                    ],
+                                    "type": "text",
+                                    "content": "Dominican Republic – Fiscal Transparency Evaluation Prepared by Ramon Hurtado"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        183,
+                        511,
+                        227
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                183,
+                                511,
+                                227
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        183,
+                                        511,
+                                        227
+                                    ],
+                                    "type": "text",
+                                    "content": "The High-Level Summary Technical Assistance Report series provides high-level summaries of the assistance provided to IMF capacity development recipients, describing the high-level objectives, findings, and recommendations."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        241,
+                        540,
+                        385
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                241,
+                                540,
+                                385
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        241,
+                                        540,
+                                        385
+                                    ],
+                                    "type": "text",
+                                    "content": "ABSTRACT: This technical assistance report evaluates the fiscal transparency practices of the Dominican Republic (DR) against the International Monetary Fund's (IMF) Fiscal Transparency Code. The assessment covers three pillars: fiscal reporting, fiscal forecasting and budgeting, and fiscal risk analysis and management. The DR demonstrates strengths in fiscal reporting and budget processes but faces challenges in comprehensive coverage, particularly regarding public trusts and long-term fiscal risks. Key recommendations focus on improving the inclusion of extrabudgetary entities in fiscal reports, enhancing macro-fiscal projections and monitoring under the new Fiscal Responsibility Law, and strengthening the analysis and disclosure of fiscal risks, especially those related to public enterprises and long-term contracts. Implementing these recommendations would enhance fiscal policy credibility, transparency, and risk management."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        74,
+                        403,
+                        323,
+                        418
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                74,
+                                403,
+                                323,
+                                418
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        403,
+                                        323,
+                                        418
+                                    ],
+                                    "type": "text",
+                                    "content": "JEL Classification Numbers [H60; H61; H68; H83; E62]"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        74,
+                        419,
+                        466,
+                        434
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                74,
+                                419,
+                                466,
+                                434
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        419,
+                                        466,
+                                        434
+                                    ],
+                                    "type": "text",
+                                    "content": "Keywords: Fiscal transparency evaluation, fiscal reporting, fiscal forecasting, budgeting,"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        75,
+                        435,
+                        168,
+                        449
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                75,
+                                435,
+                                168,
+                                449
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        75,
+                                        435,
+                                        168,
+                                        449
+                                    ],
+                                    "type": "text",
+                                    "content": "Dominican Republic"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        546,
+                        539,
+                        618
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                546,
+                                539,
+                                618
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        546,
+                                        539,
+                                        618
+                                    ],
+                                    "type": "text",
+                                    "content": "The contents of this document constitute a high-level summary of technical advice provided by the staff of the International Monetary Fund (IMF) to the authorities of a member country or international agency (the \"CD recipient\") in response to their request for capacity development. Unless the CD recipient specifically objects within 30 business days of its transmittal, the IMF will publish this high-level summary on IMF.org (see Staff Operational Guidance on the Dissemination of Capacity Development Information)."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        69,
+                        73,
+                        179,
+                        94
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                73,
+                                179,
+                                94
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        73,
+                                        179,
+                                        94
+                                    ],
+                                    "type": "text",
+                                    "content": "Background"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        105,
+                        539,
+                        236
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                105,
+                                539,
+                                236
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        105,
+                                        539,
+                                        236
+                                    ],
+                                    "type": "text",
+                                    "content": "In response to a request from the Ministry of Finance of the Dominican Republic, the IMF's Fiscal Affairs Department conducted a fiscal transparency evaluation (FTE) in February 2025. The FTE assessed the country's fiscal transparency practices based on the first three pillars of the IMF Fiscal Transparency Code: fiscal reporting, fiscal forecasting and budgeting, and fiscal risk analysis and management. This technical assistance aimed to provide a comprehensive diagnostic of the Dominican Republic's fiscal transparency framework, identified areas of strength and weaknesses, and offered actionable recommendations to improve fiscal transparency. This work complements ongoing Fund surveillance and capacity development projects by providing a foundation for improved fiscal policy formulation, execution, and monitoring, particularly in light of the recently enacted Fiscal Responsibility Law."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        249,
+                        259,
+                        269
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                249,
+                                259,
+                                269
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        249,
+                                        259,
+                                        269
+                                    ],
+                                    "type": "text",
+                                    "content": "Summary of Findings"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        281,
+                        536,
+                        367
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                281,
+                                536,
+                                367
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        281,
+                                        536,
+                                        367
+                                    ],
+                                    "type": "text",
+                                    "content": "Fiscal reports are generally timely, frequent, and of good quality, with broad institutional coverage that includes the general government and social security institutions. However, significant gaps remain, especially regarding the coverage of extrabudgetary entities, such as public trusts, whose assets, liabilities, and operations are not fully captured in fiscal reports or the budget documentation. The evaluation also highlighted limited coverage of debt instruments, such as accounts payable and actuarial pension liabilities."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        379,
+                        538,
+                        466
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                379,
+                                538,
+                                466
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        379,
+                                        538,
+                                        466
+                                    ],
+                                    "type": "text",
+                                    "content": "Dominican Republic benefits from a clear legal framework and an orderly budget process with public participation mechanisms. The recently approved Fiscal Responsibility Law sets explicit fiscal targets and expenditure growth limits, marking a significant step forward. Nonetheless, the implementation of the fiscal rule is nascent, with no periodic monitoring reports or independent evaluation of fiscal projections. Macroeconomic forecasts underpinning the budget are trend-based and lack detailed disclosure of underlying assumptions or subcomponents, limiting their analytical value and credibility."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        477,
+                        535,
+                        621
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                477,
+                                535,
+                                621
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        477,
+                                        535,
+                                        621
+                                    ],
+                                    "type": "text",
+                                    "content": "Fiscal risk analysis and management present the most challenges. While the government publishes an annual Fiscal Risk Report that identifies key macroeconomic and specific fiscal risks, the analysis is largely qualitative and incomplete. There is no long-term fiscal sustainability analysis extending beyond the medium term, and pension liabilities managed by various public entities are not consolidated or fully disclosed. Risks related to long-term power purchase agreements (PPAs) in the electricity sector are not monitored or reported, despite their significant fiscal implications. The financial performance and risks of public enterprises, especially in the energy sector, are insufficiently analyzed, and no comprehensive reporting on subnational government finances exists. Among institutional mechanisms, budget contingencies for general risks are limited, with no dedicated reserve, although specific provisions for calamities exist but are often underutilized."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        635,
+                        345,
+                        654
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                635,
+                                345,
+                                654
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        635,
+                                        345,
+                                        654
+                                    ],
+                                    "type": "text",
+                                    "content": "Summary of Recommendations"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        667,
+                        541,
+                        695
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                667,
+                                541,
+                                695
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        667,
+                                        541,
+                                        695
+                                    ],
+                                    "type": "text",
+                                    "content": "To enhance fiscal transparency and governance, the report emphasizes several priority areas for capacity improvement:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        70,
+                        757,
+                        93,
+                        769
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                70,
+                                757,
+                                93,
+                                769
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        70,
+                                        757,
+                                        93,
+                                        769
+                                    ],
+                                    "type": "text",
+                                    "content": "IMF"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8
+                },
+                {
+                    "bbox": [
+                        301,
+                        757,
+                        527,
+                        770
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                301,
+                                757,
+                                527,
+                                770
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        301,
+                                        757,
+                                        527,
+                                        770
+                                    ],
+                                    "type": "text",
+                                    "content": "High-Level Summary Technical Assistance Report"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9
+                },
+                {
+                    "bbox": [
+                        531,
+                        758,
+                        541,
+                        769
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                531,
+                                758,
+                                541,
+                                769
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        531,
+                                        758,
+                                        541,
+                                        769
+                                    ],
+                                    "type": "text",
+                                    "content": "3"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10
+                }
+            ],
+            "page_size": [
+                612,
+                792
+            ],
+            "page_idx": 2,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        69,
+                        73,
+                        179,
+                        94
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                73,
+                                179,
+                                94
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        73,
+                                        179,
+                                        94
+                                    ],
+                                    "type": "text",
+                                    "content": "Background"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        105,
+                        539,
+                        236
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                105,
+                                539,
+                                236
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        105,
+                                        539,
+                                        236
+                                    ],
+                                    "type": "text",
+                                    "content": "In response to a request from the Ministry of Finance of the Dominican Republic, the IMF's Fiscal Affairs Department conducted a fiscal transparency evaluation (FTE) in February 2025. The FTE assessed the country's fiscal transparency practices based on the first three pillars of the IMF Fiscal Transparency Code: fiscal reporting, fiscal forecasting and budgeting, and fiscal risk analysis and management. This technical assistance aimed to provide a comprehensive diagnostic of the Dominican Republic's fiscal transparency framework, identified areas of strength and weaknesses, and offered actionable recommendations to improve fiscal transparency. This work complements ongoing Fund surveillance and capacity development projects by providing a foundation for improved fiscal policy formulation, execution, and monitoring, particularly in light of the recently enacted Fiscal Responsibility Law."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        249,
+                        259,
+                        269
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                249,
+                                259,
+                                269
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        249,
+                                        259,
+                                        269
+                                    ],
+                                    "type": "text",
+                                    "content": "Summary of Findings"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        281,
+                        536,
+                        367
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                281,
+                                536,
+                                367
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        281,
+                                        536,
+                                        367
+                                    ],
+                                    "type": "text",
+                                    "content": "Fiscal reports are generally timely, frequent, and of good quality, with broad institutional coverage that includes the general government and social security institutions. However, significant gaps remain, especially regarding the coverage of extrabudgetary entities, such as public trusts, whose assets, liabilities, and operations are not fully captured in fiscal reports or the budget documentation. The evaluation also highlighted limited coverage of debt instruments, such as accounts payable and actuarial pension liabilities."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        379,
+                        538,
+                        466
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                379,
+                                538,
+                                466
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        379,
+                                        538,
+                                        466
+                                    ],
+                                    "type": "text",
+                                    "content": "Dominican Republic benefits from a clear legal framework and an orderly budget process with public participation mechanisms. The recently approved Fiscal Responsibility Law sets explicit fiscal targets and expenditure growth limits, marking a significant step forward. Nonetheless, the implementation of the fiscal rule is nascent, with no periodic monitoring reports or independent evaluation of fiscal projections. Macroeconomic forecasts underpinning the budget are trend-based and lack detailed disclosure of underlying assumptions or subcomponents, limiting their analytical value and credibility."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        477,
+                        535,
+                        621
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                477,
+                                535,
+                                621
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        477,
+                                        535,
+                                        621
+                                    ],
+                                    "type": "text",
+                                    "content": "Fiscal risk analysis and management present the most challenges. While the government publishes an annual Fiscal Risk Report that identifies key macroeconomic and specific fiscal risks, the analysis is largely qualitative and incomplete. There is no long-term fiscal sustainability analysis extending beyond the medium term, and pension liabilities managed by various public entities are not consolidated or fully disclosed. Risks related to long-term power purchase agreements (PPAs) in the electricity sector are not monitored or reported, despite their significant fiscal implications. The financial performance and risks of public enterprises, especially in the energy sector, are insufficiently analyzed, and no comprehensive reporting on subnational government finances exists. Among institutional mechanisms, budget contingencies for general risks are limited, with no dedicated reserve, although specific provisions for calamities exist but are often underutilized."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        635,
+                        345,
+                        654
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                635,
+                                345,
+                                654
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        635,
+                                        345,
+                                        654
+                                    ],
+                                    "type": "text",
+                                    "content": "Summary of Recommendations"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        667,
+                        541,
+                        695
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                667,
+                                541,
+                                695
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        667,
+                                        541,
+                                        695
+                                    ],
+                                    "type": "text",
+                                    "content": "To enhance fiscal transparency and governance, the report emphasizes several priority areas for capacity improvement:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        69,
+                        71,
+                        539,
+                        128
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                71,
+                                539,
+                                128
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        71,
+                                        539,
+                                        128
+                                    ],
+                                    "type": "text",
+                                    "content": "Information on public trusts should be systematically integrated into fiscal reporting and budget documentation to ensure full institutional coverage of reports completeness of fiscal data. This includes establishing mechanisms for data collection, monitoring, and disclosure of trusts' financial operations, assets, and liabilities."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        140,
+                        522,
+                        228
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                140,
+                                522,
+                                228
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        140,
+                                        522,
+                                        228
+                                    ],
+                                    "type": "text",
+                                    "content": "The analysis and disclosure of macroeconomic and fiscal projections should be deepened by expanding the medium-term fiscal framework to include detailed assumptions and subcomponents, extending the projection horizon, and incorporating independent evaluations. This is crucial for the effective implementation and monitoring of the new Fiscal Responsibility Law, which introduces an explicit fiscal debt target to be reached by 2035 and annual primary expenditure ceilings to guide spending until the debt target is reached (with a debt-stabilizing primary balance thereafter)."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        239,
+                        530,
+                        325
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                239,
+                                530,
+                                325
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        239,
+                                        530,
+                                        325
+                                    ],
+                                    "type": "text",
+                                    "content": "- Fiscal risk analysis should be strengthened by incorporating long-term sustainability assessments covering at least a decade, consolidating actuarial pension liabilities across all public schemes, and enhancing quantitative analysis of contingent liabilities, including those from public enterprises and local governments. The Ministry of Finance should also develop methodologies to estimate, manage, and disclose fiscal risks related to long-term power purchase agreements, which currently escape formal monitoring."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        338,
+                        535,
+                        395
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                338,
+                                535,
+                                395
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        338,
+                                        535,
+                                        395
+                                    ],
+                                    "type": "text",
+                                    "content": "- To improve fiscal resilience and cash flow management, a contingency reserve should be established within the budget, sized on the basis of historical risk assessments and governed by transparent rules. Additionally, asset and liability management practices should be expanded to include financial assets and subsidiary loans, with enhanced reporting and risk assessment."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        407,
+                        522,
+                        477
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                407,
+                                522,
+                                477
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        407,
+                                        522,
+                                        477
+                                    ],
+                                    "type": "text",
+                                    "content": "- The Ministry of Finance should strengthen fiscal coordination by compiling and publishing detailed reports on the financial performance of subnational governments and state-owned enterprises, including key financial indicators and risks. Creating a specialized unit to monitor public enterprises would support this effort and improve oversight of quasi-fiscal activities, particularly in the electricity sector."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        491,
+                        523,
+                        533
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                491,
+                                523,
+                                533
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        491,
+                                        523,
+                                        533
+                                    ],
+                                    "type": "text",
+                                    "content": "Implementing these recommendations will significantly improve the Dominican Republic's fiscal transparency, enabling better-informed policy decisions, enhanced fiscal discipline, and greater public accountability."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        70,
+                        757,
+                        93,
+                        769
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                70,
+                                757,
+                                93,
+                                769
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        70,
+                                        757,
+                                        93,
+                                        769
+                                    ],
+                                    "type": "text",
+                                    "content": "IMF"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6
+                },
+                {
+                    "bbox": [
+                        301,
+                        757,
+                        527,
+                        770
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                301,
+                                757,
+                                527,
+                                770
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        301,
+                                        757,
+                                        527,
+                                        770
+                                    ],
+                                    "type": "text",
+                                    "content": "High-Level Summary Technical Assistance Report"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7
+                },
+                {
+                    "bbox": [
+                        531,
+                        758,
+                        540,
+                        769
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                531,
+                                758,
+                                540,
+                                769
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        531,
+                                        758,
+                                        540,
+                                        769
+                                    ],
+                                    "type": "text",
+                                    "content": "4"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8
+                }
+            ],
+            "page_size": [
+                612,
+                792
+            ],
+            "page_idx": 3,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        69,
+                        71,
+                        539,
+                        128
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                71,
+                                539,
+                                128
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        71,
+                                        539,
+                                        128
+                                    ],
+                                    "type": "text",
+                                    "content": "Information on public trusts should be systematically integrated into fiscal reporting and budget documentation to ensure full institutional coverage of reports completeness of fiscal data. This includes establishing mechanisms for data collection, monitoring, and disclosure of trusts' financial operations, assets, and liabilities."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        140,
+                        522,
+                        228
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                140,
+                                522,
+                                228
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        140,
+                                        522,
+                                        228
+                                    ],
+                                    "type": "text",
+                                    "content": "The analysis and disclosure of macroeconomic and fiscal projections should be deepened by expanding the medium-term fiscal framework to include detailed assumptions and subcomponents, extending the projection horizon, and incorporating independent evaluations. This is crucial for the effective implementation and monitoring of the new Fiscal Responsibility Law, which introduces an explicit fiscal debt target to be reached by 2035 and annual primary expenditure ceilings to guide spending until the debt target is reached (with a debt-stabilizing primary balance thereafter)."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        239,
+                        530,
+                        325
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                239,
+                                530,
+                                325
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        239,
+                                        530,
+                                        325
+                                    ],
+                                    "type": "text",
+                                    "content": "- Fiscal risk analysis should be strengthened by incorporating long-term sustainability assessments covering at least a decade, consolidating actuarial pension liabilities across all public schemes, and enhancing quantitative analysis of contingent liabilities, including those from public enterprises and local governments. The Ministry of Finance should also develop methodologies to estimate, manage, and disclose fiscal risks related to long-term power purchase agreements, which currently escape formal monitoring."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        338,
+                        535,
+                        395
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                338,
+                                535,
+                                395
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        338,
+                                        535,
+                                        395
+                                    ],
+                                    "type": "text",
+                                    "content": "- To improve fiscal resilience and cash flow management, a contingency reserve should be established within the budget, sized on the basis of historical risk assessments and governed by transparent rules. Additionally, asset and liability management practices should be expanded to include financial assets and subsidiary loans, with enhanced reporting and risk assessment."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        407,
+                        522,
+                        477
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                407,
+                                522,
+                                477
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        407,
+                                        522,
+                                        477
+                                    ],
+                                    "type": "text",
+                                    "content": "- The Ministry of Finance should strengthen fiscal coordination by compiling and publishing detailed reports on the financial performance of subnational governments and state-owned enterprises, including key financial indicators and risks. Creating a specialized unit to monitor public enterprises would support this effort and improve oversight of quasi-fiscal activities, particularly in the electricity sector."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        491,
+                        523,
+                        533
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                491,
+                                523,
+                                533
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        491,
+                                        523,
+                                        533
+                                    ],
+                                    "type": "text",
+                                    "content": "Implementing these recommendations will significantly improve the Dominican Republic's fiscal transparency, enabling better-informed policy decisions, enhanced fiscal discipline, and greater public accountability."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                }
+            ]
+        }
+    ],
+    "_backend": "hybrid",
+    "_effort": "medium",
+    "_ocr_enable": true,
+    "_version_name": "3.4.0"
+}

@@ -1,0 +1,2534 @@
+{
+    "pdf_info": [
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        86,
+                        188,
+                        457,
+                        283
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                188,
+                                457,
+                                283
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        188,
+                                        457,
+                                        283
+                                    ],
+                                    "type": "text",
+                                    "content": "HIGH-LEVEL SUMMARY\nTECHNICAL ASSISTANCE\nREPORT"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        303,
+                        169,
+                        332
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                303,
+                                169,
+                                332
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        303,
+                                        169,
+                                        332
+                                    ],
+                                    "type": "text",
+                                    "content": "IRAQ"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        84,
+                        338,
+                        536,
+                        392
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                84,
+                                338,
+                                536,
+                                392
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        84,
+                                        338,
+                                        536,
+                                        392
+                                    ],
+                                    "type": "text",
+                                    "content": "Macro frameworks technical assistance to the Central bank of Iraq"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        435,
+                        176,
+                        456
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                435,
+                                176,
+                                456
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        435,
+                                        176,
+                                        456
+                                    ],
+                                    "type": "text",
+                                    "content": "July 2026"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        491,
+                        166,
+                        508
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                491,
+                                166,
+                                508
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        491,
+                                        166,
+                                        508
+                                    ],
+                                    "type": "text",
+                                    "content": "Prepared By"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        508,
+                        388,
+                        525
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                508,
+                                388,
+                                525
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        508,
+                                        388,
+                                        525
+                                    ],
+                                    "type": "text",
+                                    "content": "Yurii Sholomytskyi, Mumtaz Hussain, Stephanie Medina Cas"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        578,
+                        158,
+                        594
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                578,
+                                158,
+                                594
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        578,
+                                        158,
+                                        594
+                                    ],
+                                    "type": "text",
+                                    "content": "PARTNERS"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        596,
+                        413,
+                        613
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                596,
+                                413,
+                                613
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        596,
+                                        413,
+                                        613
+                                    ],
+                                    "type": "text",
+                                    "content": "Middle East Regional Technical Assistance Center (METAC)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        88,
+                        93,
+                        164,
+                        170
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                93,
+                                164,
+                                170
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        93,
+                                        164,
+                                        170
+                                    ],
+                                    "type": "text",
+                                    "content": "INTERNATIONAL MONETARY FUND"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                }
+            ],
+            "page_size": [
+                612,
+                792
+            ],
+            "page_idx": 0,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        86,
+                        188,
+                        457,
+                        283
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                188,
+                                457,
+                                283
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        188,
+                                        457,
+                                        283
+                                    ],
+                                    "type": "text",
+                                    "content": "HIGH-LEVEL SUMMARY\nTECHNICAL ASSISTANCE\nREPORT"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        303,
+                        169,
+                        332
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                303,
+                                169,
+                                332
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        303,
+                                        169,
+                                        332
+                                    ],
+                                    "type": "text",
+                                    "content": "IRAQ"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        84,
+                        338,
+                        536,
+                        392
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                84,
+                                338,
+                                536,
+                                392
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        84,
+                                        338,
+                                        536,
+                                        392
+                                    ],
+                                    "type": "text",
+                                    "content": "Macro frameworks technical assistance to the Central bank of Iraq"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        435,
+                        176,
+                        456
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                435,
+                                176,
+                                456
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        435,
+                                        176,
+                                        456
+                                    ],
+                                    "type": "text",
+                                    "content": "July 2026"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        491,
+                        166,
+                        508
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                491,
+                                166,
+                                508
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        491,
+                                        166,
+                                        508
+                                    ],
+                                    "type": "text",
+                                    "content": "Prepared By"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        508,
+                        388,
+                        525
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                508,
+                                388,
+                                525
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        508,
+                                        388,
+                                        525
+                                    ],
+                                    "type": "text",
+                                    "content": "Yurii Sholomytskyi, Mumtaz Hussain, Stephanie Medina Cas"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        578,
+                        158,
+                        594
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                578,
+                                158,
+                                594
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        578,
+                                        158,
+                                        594
+                                    ],
+                                    "type": "text",
+                                    "content": "PARTNERS"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        85,
+                        596,
+                        413,
+                        613
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                596,
+                                413,
+                                613
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        596,
+                                        413,
+                                        613
+                                    ],
+                                    "type": "text",
+                                    "content": "Middle East Regional Technical Assistance Center (METAC)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        184,
+                        97,
+                        427,
+                        125
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                184,
+                                97,
+                                427,
+                                125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        184,
+                                        97,
+                                        427,
+                                        125
+                                    ],
+                                    "type": "text",
+                                    "content": "High-Level Summary Technical Assistance Report Institute for Capacity Development"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        102,
+                        140,
+                        509,
+                        169
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                102,
+                                140,
+                                509,
+                                169
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        102,
+                                        140,
+                                        509,
+                                        169
+                                    ],
+                                    "type": "text",
+                                    "content": "Macro frameworks technical assistance to the Central bank of Iraq: TA project report\nPrepared by Yurii Sholomytskyi, Mumtaz Hussain, Stephanie Medina Cas"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        183,
+                        526,
+                        226
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                183,
+                                526,
+                                226
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        183,
+                                        526,
+                                        226
+                                    ],
+                                    "type": "text",
+                                    "content": "The High-Level Summary Technical Assistance Report series provides high-level summaries of the assistance provided to IMF capacity development recipients, describing the high-level objectives, findings, and recommendations."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        241,
+                        542,
+                        357
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                241,
+                                542,
+                                357
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        241,
+                                        542,
+                                        357
+                                    ],
+                                    "type": "text",
+                                    "content": "ABSTRACT: The document outlines the development and implementation of a macroeconomic projection tool at the Central Bank of Iraq (CBI), emphasizing collaboration and the growth of the CBI team. In a complex economic landscape, effective policymaking relies on robust forecasting and analysis. With support from the International Monetary Fund's Capacity Development (ICD) team, CBI initiated a project to enhance these capabilities. The project followed established ICD practices, involving scoping missions, training, and ongoing collaboration. A key outcome was the Macroeconomic Foundations Tool (MFT), an Excel-based forecasting tool tailored to address Iraq's oil dependency and customize fiscal and monetary policies with nowcasting capabilities."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        74,
+                        401,
+                        294,
+                        415
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                74,
+                                401,
+                                294,
+                                415
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        401,
+                                        294,
+                                        415
+                                    ],
+                                    "type": "text",
+                                    "content": "JEL Classification Numbers: E60, E62, E17, E10"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        74,
+                        423,
+                        523,
+                        453
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                74,
+                                423,
+                                523,
+                                453
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        423,
+                                        523,
+                                        453
+                                    ],
+                                    "type": "text",
+                                    "content": "Keywords: Macroeconomic Framework, Financial Programming and Policies, Forecasting and Policy Analysis, Macroeconomic Foundations Tool"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        529,
+                        539,
+                        601
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                529,
+                                539,
+                                601
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        529,
+                                        539,
+                                        601
+                                    ],
+                                    "type": "text",
+                                    "content": "The contents of this document constitute a high-level summary of technical advice provided by the staff of the International Monetary Fund (IMF) to the authorities of a member country or international agency (the \"CD recipient\") in response to their request for capacity development. Unless the CD recipient specifically objects within 30 business days of its transmittal, the IMF will publish this high-level summary on IMF.org (see Staff Operational Guidance on the Dissemination of Capacity Development Information)."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        196,
+                        627,
+                        412,
+                        700
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                196,
+                                627,
+                                412,
+                                700
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        196,
+                                        627,
+                                        412,
+                                        700
+                                    ],
+                                    "type": "text",
+                                    "content": "International Monetary Fund, IMF Publications\nP.O. Box 92780, Washington, DC 20090, U.S.A.\nT. +(1) 202.623.7430 • F. +(1) 202.623.7201\npublications@IMF.org\nIMF.org/pubs"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        69,
+                        71,
+                        230,
+                        84
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                71,
+                                230,
+                                84
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        71,
+                                        230,
+                                        84
+                                    ],
+                                    "type": "text",
+                                    "content": "©2026 International Monetary Fund"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        487,
+                        71,
+                        537,
+                        83
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                487,
+                                71,
+                                537,
+                                83
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        487,
+                                        71,
+                                        537,
+                                        83
+                                    ],
+                                    "type": "text",
+                                    "content": "HLS/26/38"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1
+                }
+            ],
+            "page_size": [
+                612,
+                792
+            ],
+            "page_idx": 1,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        184,
+                        97,
+                        427,
+                        125
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                184,
+                                97,
+                                427,
+                                125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        184,
+                                        97,
+                                        427,
+                                        125
+                                    ],
+                                    "type": "text",
+                                    "content": "High-Level Summary Technical Assistance Report Institute for Capacity Development"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        102,
+                        140,
+                        509,
+                        169
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                102,
+                                140,
+                                509,
+                                169
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        102,
+                                        140,
+                                        509,
+                                        169
+                                    ],
+                                    "type": "text",
+                                    "content": "Macro frameworks technical assistance to the Central bank of Iraq: TA project report\nPrepared by Yurii Sholomytskyi, Mumtaz Hussain, Stephanie Medina Cas"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        183,
+                        526,
+                        226
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                183,
+                                526,
+                                226
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        183,
+                                        526,
+                                        226
+                                    ],
+                                    "type": "text",
+                                    "content": "The High-Level Summary Technical Assistance Report series provides high-level summaries of the assistance provided to IMF capacity development recipients, describing the high-level objectives, findings, and recommendations."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        241,
+                        542,
+                        357
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                241,
+                                542,
+                                357
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        241,
+                                        542,
+                                        357
+                                    ],
+                                    "type": "text",
+                                    "content": "ABSTRACT: The document outlines the development and implementation of a macroeconomic projection tool at the Central Bank of Iraq (CBI), emphasizing collaboration and the growth of the CBI team. In a complex economic landscape, effective policymaking relies on robust forecasting and analysis. With support from the International Monetary Fund's Capacity Development (ICD) team, CBI initiated a project to enhance these capabilities. The project followed established ICD practices, involving scoping missions, training, and ongoing collaboration. A key outcome was the Macroeconomic Foundations Tool (MFT), an Excel-based forecasting tool tailored to address Iraq's oil dependency and customize fiscal and monetary policies with nowcasting capabilities."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        74,
+                        401,
+                        294,
+                        415
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                74,
+                                401,
+                                294,
+                                415
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        401,
+                                        294,
+                                        415
+                                    ],
+                                    "type": "text",
+                                    "content": "JEL Classification Numbers: E60, E62, E17, E10"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        74,
+                        423,
+                        523,
+                        453
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                74,
+                                423,
+                                523,
+                                453
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        423,
+                                        523,
+                                        453
+                                    ],
+                                    "type": "text",
+                                    "content": "Keywords: Macroeconomic Framework, Financial Programming and Policies, Forecasting and Policy Analysis, Macroeconomic Foundations Tool"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        529,
+                        539,
+                        601
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                529,
+                                539,
+                                601
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        529,
+                                        539,
+                                        601
+                                    ],
+                                    "type": "text",
+                                    "content": "The contents of this document constitute a high-level summary of technical advice provided by the staff of the International Monetary Fund (IMF) to the authorities of a member country or international agency (the \"CD recipient\") in response to their request for capacity development. Unless the CD recipient specifically objects within 30 business days of its transmittal, the IMF will publish this high-level summary on IMF.org (see Staff Operational Guidance on the Dissemination of Capacity Development Information)."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        196,
+                        627,
+                        412,
+                        700
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                196,
+                                627,
+                                412,
+                                700
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        196,
+                                        627,
+                                        412,
+                                        700
+                                    ],
+                                    "type": "text",
+                                    "content": "International Monetary Fund, IMF Publications\nP.O. Box 92780, Washington, DC 20090, U.S.A.\nT. +(1) 202.623.7430 • F. +(1) 202.623.7201\npublications@IMF.org\nIMF.org/pubs"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        69,
+                        73,
+                        179,
+                        93
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                73,
+                                179,
+                                93
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        73,
+                                        179,
+                                        93
+                                    ],
+                                    "type": "text",
+                                    "content": "Background"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        106,
+                        542,
+                        206
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                106,
+                                542,
+                                206
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        106,
+                                        542,
+                                        206
+                                    ],
+                                    "type": "text",
+                                    "content": "Iraq's economy has been grappling with substantial challenges, primarily due to its heavy reliance on oil revenues, which exposes it to price volatility and constrains the growth of the private sector. The state's predominant role in the economy, coupled with inadequate infrastructure and other issues, further impedes private sector development. Acknowledging the urgent need for prudent macroeconomic policies, the Central Bank of Iraq (CBI), in collaboration with the International Monetary Fund's Institute for Capacity Development (ICD) staff, has embarked on the development of a new tool aimed at enhancing its macroeconomic forecasting and policy analysis capabilities."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        217,
+                        526,
+                        304
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                217,
+                                526,
+                                304
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        217,
+                                        526,
+                                        304
+                                    ],
+                                    "type": "text",
+                                    "content": "In 2022, the scoping mission was conducted by ICD to evaluate the needs of the CBI, focusing on the competencies of relevant personnel and the current data frameworks in place. This mission uncovered significant limitations in the CBI's forecasting methodologies, which often had difficulties with capturing the intricate interrelations among various macroeconomic variables. As a result, the mission recommended the establishment of a comprehensive macroeconomic framework, opting for the Macroeconomic Foundations Tool (MFT) as a solution to bolster the CBI's policy analysis capacities."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        316,
+                        539,
+                        403
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                316,
+                                539,
+                                403
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        316,
+                                        539,
+                                        403
+                                    ],
+                                    "type": "text",
+                                    "content": "The MFT is designed to be both simple and customizable, facilitating the gradual development of analytical skills within the CBI. The initiative includes targeted training sessions for CBI staff, emphasizing financial programming and effective utilization of the MFT to enhance forecasting and policy analysis. By implementing this robust analytical framework, the CBI aims to gain deeper insights into the effects of macroeconomic shocks, thereby strengthening its dialogues with international partners, including the International Monetary Fund, on critical policy measures."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        443,
+                        258,
+                        463
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                443,
+                                258,
+                                463
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        443,
+                                        258,
+                                        463
+                                    ],
+                                    "type": "text",
+                                    "content": "Summary of Findings"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        475,
+                        539,
+                        677
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                475,
+                                539,
+                                677
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        475,
+                                        539,
+                                        677
+                                    ],
+                                    "type": "text",
+                                    "content": "The Central Bank of Iraq (CBI) possesses full capabilities to effectively utilize the customized Macroeconomic Foundations Tool (MFT), which has been specifically tailored to address the unique dynamics of the Iraqi economy. Recognizing the critical role of oil in Iraq's economic framework, the MFT incorporates an oil sector module. Furthermore, the MFT has been enhanced to illustrate the interconnections between the oil sector and the real, external, and fiscal sectors, bolstering the CBI's understanding of these linkages. This comprehensive framework includes a detailed analysis of state budget revenues directly tied to oil revenues, which subsequently influences government spending, investments, GDP, and disposable income. Additionally, the monetary sector of the MFT has been customized to evaluate the effects of government spending on various monetary variables and to incorporate foreign exchange reserve management, ensuring that the CBI can stabilize the local currency and control inflation. With a calibration strategy reflecting recent economic transformations, the MFT is equipped to simulate various scenarios, including oil shocks, and includes a short-term forecasting module that integrates high-frequency data, significantly enhancing its predictive capabilities for policymakers."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        689,
+                        536,
+                        716
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                689,
+                                536,
+                                716
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        689,
+                                        536,
+                                        716
+                                    ],
+                                    "type": "text",
+                                    "content": "Data-related challenges present opportunities for future development. The lack of reliable and comprehensive source data for GDP by expenditure, particularly in fixed prices, poses a challenge to the"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        70,
+                        757,
+                        93,
+                        769
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                70,
+                                757,
+                                93,
+                                769
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        70,
+                                        757,
+                                        93,
+                                        769
+                                    ],
+                                    "type": "text",
+                                    "content": "IMF"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7
+                },
+                {
+                    "bbox": [
+                        301,
+                        757,
+                        527,
+                        770
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                301,
+                                757,
+                                527,
+                                770
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        301,
+                                        757,
+                                        527,
+                                        770
+                                    ],
+                                    "type": "text",
+                                    "content": "High-Level Summary Technical Assistance Report"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8
+                },
+                {
+                    "bbox": [
+                        532,
+                        758,
+                        541,
+                        769
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                532,
+                                758,
+                                541,
+                                769
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        532,
+                                        758,
+                                        541,
+                                        769
+                                    ],
+                                    "type": "text",
+                                    "content": "3"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9
+                }
+            ],
+            "page_size": [
+                612,
+                792
+            ],
+            "page_idx": 2,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        69,
+                        73,
+                        179,
+                        93
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                73,
+                                179,
+                                93
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        73,
+                                        179,
+                                        93
+                                    ],
+                                    "type": "text",
+                                    "content": "Background"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        106,
+                        542,
+                        206
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                106,
+                                542,
+                                206
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        106,
+                                        542,
+                                        206
+                                    ],
+                                    "type": "text",
+                                    "content": "Iraq's economy has been grappling with substantial challenges, primarily due to its heavy reliance on oil revenues, which exposes it to price volatility and constrains the growth of the private sector. The state's predominant role in the economy, coupled with inadequate infrastructure and other issues, further impedes private sector development. Acknowledging the urgent need for prudent macroeconomic policies, the Central Bank of Iraq (CBI), in collaboration with the International Monetary Fund's Institute for Capacity Development (ICD) staff, has embarked on the development of a new tool aimed at enhancing its macroeconomic forecasting and policy analysis capabilities."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        217,
+                        526,
+                        304
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                217,
+                                526,
+                                304
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        217,
+                                        526,
+                                        304
+                                    ],
+                                    "type": "text",
+                                    "content": "In 2022, the scoping mission was conducted by ICD to evaluate the needs of the CBI, focusing on the competencies of relevant personnel and the current data frameworks in place. This mission uncovered significant limitations in the CBI's forecasting methodologies, which often had difficulties with capturing the intricate interrelations among various macroeconomic variables. As a result, the mission recommended the establishment of a comprehensive macroeconomic framework, opting for the Macroeconomic Foundations Tool (MFT) as a solution to bolster the CBI's policy analysis capacities."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        316,
+                        539,
+                        403
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                316,
+                                539,
+                                403
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        316,
+                                        539,
+                                        403
+                                    ],
+                                    "type": "text",
+                                    "content": "The MFT is designed to be both simple and customizable, facilitating the gradual development of analytical skills within the CBI. The initiative includes targeted training sessions for CBI staff, emphasizing financial programming and effective utilization of the MFT to enhance forecasting and policy analysis. By implementing this robust analytical framework, the CBI aims to gain deeper insights into the effects of macroeconomic shocks, thereby strengthening its dialogues with international partners, including the International Monetary Fund, on critical policy measures."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        443,
+                        258,
+                        463
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                443,
+                                258,
+                                463
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        443,
+                                        258,
+                                        463
+                                    ],
+                                    "type": "text",
+                                    "content": "Summary of Findings"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        475,
+                        539,
+                        677
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                475,
+                                539,
+                                677
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        475,
+                                        539,
+                                        677
+                                    ],
+                                    "type": "text",
+                                    "content": "The Central Bank of Iraq (CBI) possesses full capabilities to effectively utilize the customized Macroeconomic Foundations Tool (MFT), which has been specifically tailored to address the unique dynamics of the Iraqi economy. Recognizing the critical role of oil in Iraq's economic framework, the MFT incorporates an oil sector module. Furthermore, the MFT has been enhanced to illustrate the interconnections between the oil sector and the real, external, and fiscal sectors, bolstering the CBI's understanding of these linkages. This comprehensive framework includes a detailed analysis of state budget revenues directly tied to oil revenues, which subsequently influences government spending, investments, GDP, and disposable income. Additionally, the monetary sector of the MFT has been customized to evaluate the effects of government spending on various monetary variables and to incorporate foreign exchange reserve management, ensuring that the CBI can stabilize the local currency and control inflation. With a calibration strategy reflecting recent economic transformations, the MFT is equipped to simulate various scenarios, including oil shocks, and includes a short-term forecasting module that integrates high-frequency data, significantly enhancing its predictive capabilities for policymakers."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        689,
+                        536,
+                        716
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                689,
+                                536,
+                                716
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        689,
+                                        536,
+                                        716
+                                    ],
+                                    "type": "text",
+                                    "content": "Data-related challenges present opportunities for future development. The lack of reliable and comprehensive source data for GDP by expenditure, particularly in fixed prices, poses a challenge to the"
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                68,
+                                71,
+                                539,
+                                100
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        71,
+                                        539,
+                                        100
+                                    ],
+                                    "type": "text",
+                                    "content": "quality of national accounts. This data is crucial for economic models to increase accuracy of the analysis of the relationships between expenditure components of national accounts and the rest of the economy.",
+                                    "cross_page": true
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        68,
+                        71,
+                        539,
+                        100
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                71,
+                                539,
+                                100
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        71,
+                                        539,
+                                        100
+                                    ],
+                                    "type": "text",
+                                    "content": "quality of national accounts. This data is crucial for economic models to increase accuracy of the analysis of the relationships between expenditure components of national accounts and the rest of the economy."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        112,
+                        538,
+                        184
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                112,
+                                538,
+                                184
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        112,
+                                        538,
+                                        184
+                                    ],
+                                    "type": "text",
+                                    "content": "The CBI team has made significant progress in the adoption of the tool, but team turnover remains a noteworthy challenge. In July 2023, the CBI core team experienced a substantial turnover, which had a temporary impact on the technical assistance action plan. However, the newly formed core team has shown remarkable progress in understanding the MFT, especially its forecasting functionalities, enabling them to begin developing alternative scenarios in the upcoming mission."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        232,
+                        345,
+                        251
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                232,
+                                345,
+                                251
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        232,
+                                        345,
+                                        251
+                                    ],
+                                    "type": "text",
+                                    "content": "Summary of Recommendations"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        270,
+                        264,
+                        285
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                270,
+                                264,
+                                285
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        270,
+                                        264,
+                                        285
+                                    ],
+                                    "type": "text",
+                                    "content": "A. Operationalization of the MFT"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        295,
+                        540,
+                        367
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                295,
+                                540,
+                                367
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        295,
+                                        540,
+                                        367
+                                    ],
+                                    "type": "text",
+                                    "content": "Continued utilization of the tool is vital for institutionalizing the MFT. To empower the authorities in their policy decision-making processes, it is important for the core team to consistently engage with the tool for forecasting practices. This engagement should encompass presenting both baseline and shock scenarios to the management of the CBI, as well as revising macroeconomic reports within the CBI to align with the logic and capabilities of the MFT."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        386,
+                        265,
+                        400
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                386,
+                                265,
+                                400
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        386,
+                                        265,
+                                        400
+                                    ],
+                                    "type": "text",
+                                    "content": "B. Statistical data improvements"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        67,
+                        411,
+                        537,
+                        483
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                411,
+                                537,
+                                483
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        411,
+                                        537,
+                                        483
+                                    ],
+                                    "type": "text",
+                                    "content": "Enhancing statistical data quality is a fundamental component of optimizing the MFT's effectiveness. This entails a proactive follow-up with the Central Statistics Organization (CSO) to retrieve the national accounts expenditure components in fixed prices, which are crucial for accurate economic modeling, as well as enhanced collection of information on a quarterly or monthly basis. It is important to cooperate with the METAC which has been delivering statistical TA to improve national accounts and other data."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        501,
+                        354,
+                        516
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                501,
+                                354,
+                                516
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        501,
+                                        354,
+                                        516
+                                    ],
+                                    "type": "text",
+                                    "content": "C. Cooperation with other economic institutions"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        525,
+                        535,
+                        583
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                525,
+                                535,
+                                583
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        525,
+                                        535,
+                                        583
+                                    ],
+                                    "type": "text",
+                                    "content": "To further bolster the effectiveness of the monetary policy, it is essential for the CBI to actively cooperate with other economic institutions, particularly the Ministry of Finance. By incorporating the most current and relevant data from the budget and medium-term plans, the core team can establish solid assumptions to build reflect realistic projections for economic growth, inflation, and other key indicators."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        70,
+                        757,
+                        93,
+                        769
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                70,
+                                757,
+                                93,
+                                769
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        70,
+                                        757,
+                                        93,
+                                        769
+                                    ],
+                                    "type": "text",
+                                    "content": "IMF"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9
+                },
+                {
+                    "bbox": [
+                        301,
+                        757,
+                        527,
+                        770
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                301,
+                                757,
+                                527,
+                                770
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        301,
+                                        757,
+                                        527,
+                                        770
+                                    ],
+                                    "type": "text",
+                                    "content": "High-Level Summary Technical Assistance Report"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10
+                },
+                {
+                    "bbox": [
+                        532,
+                        758,
+                        540,
+                        769
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                532,
+                                758,
+                                540,
+                                769
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        532,
+                                        758,
+                                        540,
+                                        769
+                                    ],
+                                    "type": "text",
+                                    "content": "4"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11
+                }
+            ],
+            "page_size": [
+                612,
+                792
+            ],
+            "page_idx": 3,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        68,
+                        71,
+                        539,
+                        100
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [],
+                    "index": 0,
+                    "merge_prev": false,
+                    "lines_deleted": true
+                },
+                {
+                    "bbox": [
+                        67,
+                        112,
+                        538,
+                        184
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                112,
+                                538,
+                                184
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        112,
+                                        538,
+                                        184
+                                    ],
+                                    "type": "text",
+                                    "content": "The CBI team has made significant progress in the adoption of the tool, but team turnover remains a noteworthy challenge. In July 2023, the CBI core team experienced a substantial turnover, which had a temporary impact on the technical assistance action plan. However, the newly formed core team has shown remarkable progress in understanding the MFT, especially its forecasting functionalities, enabling them to begin developing alternative scenarios in the upcoming mission."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        232,
+                        345,
+                        251
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                232,
+                                345,
+                                251
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        232,
+                                        345,
+                                        251
+                                    ],
+                                    "type": "text",
+                                    "content": "Summary of Recommendations"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        270,
+                        264,
+                        285
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                270,
+                                264,
+                                285
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        270,
+                                        264,
+                                        285
+                                    ],
+                                    "type": "text",
+                                    "content": "A. Operationalization of the MFT"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        295,
+                        540,
+                        367
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                295,
+                                540,
+                                367
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        295,
+                                        540,
+                                        367
+                                    ],
+                                    "type": "text",
+                                    "content": "Continued utilization of the tool is vital for institutionalizing the MFT. To empower the authorities in their policy decision-making processes, it is important for the core team to consistently engage with the tool for forecasting practices. This engagement should encompass presenting both baseline and shock scenarios to the management of the CBI, as well as revising macroeconomic reports within the CBI to align with the logic and capabilities of the MFT."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        386,
+                        265,
+                        400
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                386,
+                                265,
+                                400
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        386,
+                                        265,
+                                        400
+                                    ],
+                                    "type": "text",
+                                    "content": "B. Statistical data improvements"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        67,
+                        411,
+                        537,
+                        483
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                411,
+                                537,
+                                483
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        411,
+                                        537,
+                                        483
+                                    ],
+                                    "type": "text",
+                                    "content": "Enhancing statistical data quality is a fundamental component of optimizing the MFT's effectiveness. This entails a proactive follow-up with the Central Statistics Organization (CSO) to retrieve the national accounts expenditure components in fixed prices, which are crucial for accurate economic modeling, as well as enhanced collection of information on a quarterly or monthly basis. It is important to cooperate with the METAC which has been delivering statistical TA to improve national accounts and other data."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        501,
+                        354,
+                        516
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                501,
+                                354,
+                                516
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        501,
+                                        354,
+                                        516
+                                    ],
+                                    "type": "text",
+                                    "content": "C. Cooperation with other economic institutions"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        525,
+                        535,
+                        583
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                525,
+                                535,
+                                583
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        525,
+                                        535,
+                                        583
+                                    ],
+                                    "type": "text",
+                                    "content": "To further bolster the effectiveness of the monetary policy, it is essential for the CBI to actively cooperate with other economic institutions, particularly the Ministry of Finance. By incorporating the most current and relevant data from the budget and medium-term plans, the core team can establish solid assumptions to build reflect realistic projections for economic growth, inflation, and other key indicators."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                }
+            ]
+        }
+    ],
+    "_backend": "hybrid",
+    "_effort": "medium",
+    "_ocr_enable": true,
+    "_version_name": "3.4.0"
+}

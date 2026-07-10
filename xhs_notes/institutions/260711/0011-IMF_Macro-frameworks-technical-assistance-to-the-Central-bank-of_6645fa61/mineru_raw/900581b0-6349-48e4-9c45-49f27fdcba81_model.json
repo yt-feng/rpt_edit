@@ -1,0 +1,1597 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.145,
+                0.118,
+                0.268,
+                0.215
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.141,
+                0.238,
+                0.747,
+                0.358
+            ],
+            "angle": 0,
+            "content": "HIGH-LEVEL SUMMARY\nTECHNICAL ASSISTANCE\nREPORT",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.141,
+                0.383,
+                0.277,
+                0.42
+            ],
+            "angle": 0,
+            "content": "IRAQ",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.138,
+                0.427,
+                0.877,
+                0.496
+            ],
+            "angle": 0,
+            "content": "Macro frameworks technical assistance to the Central bank of Iraq",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.14,
+                0.55,
+                0.288,
+                0.576
+            ],
+            "angle": 0,
+            "content": "July 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.14,
+                0.621,
+                0.272,
+                0.642
+            ],
+            "angle": 0,
+            "content": "Prepared By",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.139,
+                0.642,
+                0.634,
+                0.664
+            ],
+            "angle": 0,
+            "content": "Yurii Sholomytskyi, Mumtaz Hussain, Stephanie Medina Cas",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.139,
+                0.731,
+                0.259,
+                0.751
+            ],
+            "angle": 0,
+            "content": "PARTNERS",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.139,
+                0.753,
+                0.676,
+                0.775
+            ],
+            "angle": 0,
+            "content": "Middle East Regional Technical Assistance Center (METAC)",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.144,
+                0.242,
+                0.695,
+                0.271
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.282,
+                0.744,
+                0.311
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.322,
+                0.339,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.376,
+                0.285,
+                0.426
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.139,
+                0.427,
+                0.874,
+                0.455
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.142,
+                0.465,
+                0.464,
+                0.492
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.136,
+                0.547,
+                0.291,
+                0.579
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.619,
+                0.273,
+                0.644
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.139,
+                0.643,
+                0.632,
+                0.662
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.73,
+                0.259,
+                0.751
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.752,
+                0.676,
+                0.775
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.114,
+                0.09,
+                0.376,
+                0.107
+            ],
+            "angle": 0,
+            "content": "©2026 International Monetary Fund"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.797,
+                0.09,
+                0.879,
+                0.105
+            ],
+            "angle": 0,
+            "content": "HLS/26/38"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.301,
+                0.123,
+                0.698,
+                0.159
+            ],
+            "angle": 0,
+            "content": "High-Level Summary Technical Assistance Report\nInstitute for Capacity Development"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.167,
+                0.178,
+                0.832,
+                0.214
+            ],
+            "angle": 0,
+            "content": "Macro frameworks technical assistance to the Central bank of Iraq: TA project report\nPrepared by Yurii Sholomytskyi, Mumtaz Hussain, Stephanie Medina Cas",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.232,
+                0.861,
+                0.286
+            ],
+            "angle": 0,
+            "content": "The High-Level Summary Technical Assistance Report series provides high-level summaries of the assistance provided to IMF capacity development recipients, describing the high-level objectives, findings, and recommendations.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.305,
+                0.886,
+                0.451
+            ],
+            "angle": 0,
+            "content": "ABSTRACT: The document outlines the development and implementation of a macroeconomic projection tool at the Central Bank of Iraq (CBI), emphasizing collaboration and the growth of the CBI team. In a complex economic landscape, effective policymaking relies on robust forecasting and analysis. With support from the International Monetary Fund's Capacity Development (ICD) team, CBI initiated a project to enhance these capabilities. The project followed established ICD practices, involving scoping missions, training, and ongoing collaboration. A key outcome was the Macroeconomic Foundations Tool (MFT), an Excel-based forecasting tool tailored to address Iraq's oil dependency and customize fiscal and monetary policies with nowcasting capabilities.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.122,
+                0.507,
+                0.482,
+                0.525
+            ],
+            "angle": 0,
+            "content": "JEL Classification Numbers: E60, E62, E17, E10",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.121,
+                0.535,
+                0.856,
+                0.572
+            ],
+            "angle": 0,
+            "content": "Keywords: Macroeconomic Framework, Financial Programming and Policies, Forecasting and Policy Analysis, Macroeconomic Foundations Tool",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.669,
+                0.882,
+                0.76
+            ],
+            "angle": 0,
+            "content": "The contents of this document constitute a high-level summary of technical advice provided by the staff of the International Monetary Fund (IMF) to the authorities of a member country or international agency (the \"CD recipient\") in response to their request for capacity development. Unless the CD recipient specifically objects within 30 business days of its transmittal, the IMF will publish this high-level summary on IMF.org (see Staff Operational Guidance on the Dissemination of Capacity Development Information).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.321,
+                0.792,
+                0.674,
+                0.884
+            ],
+            "angle": 0,
+            "content": "International Monetary Fund, IMF Publications\nP.O. Box 92780, Washington, DC 20090, U.S.A.\nT. +(1) 202.623.7430 • F. +(1) 202.623.7201\npublications@IMF.org\nIMF.org/pubs",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.125,
+                0.696,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.375,
+                0.144,
+                0.625,
+                0.157
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.169,
+                0.179,
+                0.829,
+                0.193
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.234,
+                0.198,
+                0.765,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.235,
+                0.858,
+                0.247
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.252,
+                0.816,
+                0.266
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.271,
+                0.346,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.305,
+                0.883,
+                0.32
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.324,
+                0.883,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.343,
+                0.882,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.36,
+                0.883,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.377,
+                0.882,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.396,
+                0.882,
+                0.409
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.413,
+                0.881,
+                0.427
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.435,
+                0.381,
+                0.448
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.51,
+                0.478,
+                0.522
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.539,
+                0.852,
+                0.551
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.557,
+                0.442,
+                0.568
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.67,
+                0.88,
+                0.682
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.687,
+                0.876,
+                0.702
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.705,
+                0.876,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.724,
+                0.874,
+                0.739
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.744,
+                0.789,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.332,
+                0.795,
+                0.666,
+                0.809
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.813,
+                0.674,
+                0.827
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.338,
+                0.831,
+                0.659,
+                0.846
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.419,
+                0.85,
+                0.579,
+                0.865
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.451,
+                0.868,
+                0.548,
+                0.881
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.114,
+                0.093,
+                0.293,
+                0.118
+            ],
+            "angle": 0,
+            "content": "Background"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.134,
+                0.886,
+                0.261
+            ],
+            "angle": 0,
+            "content": "Iraq's economy has been grappling with substantial challenges, primarily due to its heavy reliance on oil revenues, which exposes it to price volatility and constrains the growth of the private sector. The state's predominant role in the economy, coupled with inadequate infrastructure and other issues, further impedes private sector development. Acknowledging the urgent need for prudent macroeconomic policies, the Central Bank of Iraq (CBI), in collaboration with the International Monetary Fund's Institute for Capacity Development (ICD) staff, has embarked on the development of a new tool aimed at enhancing its macroeconomic forecasting and policy analysis capabilities.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.275,
+                0.86,
+                0.385
+            ],
+            "angle": 0,
+            "content": "In 2022, the scoping mission was conducted by ICD to evaluate the needs of the CBI, focusing on the competencies of relevant personnel and the current data frameworks in place. This mission uncovered significant limitations in the CBI's forecasting methodologies, which often had difficulties with capturing the intricate interrelations among various macroeconomic variables. As a result, the mission recommended the establishment of a comprehensive macroeconomic framework, opting for the Macroeconomic Foundations Tool (MFT) as a solution to bolster the CBI's policy analysis capacities.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.4,
+                0.881,
+                0.509
+            ],
+            "angle": 0,
+            "content": "The MFT is designed to be both simple and customizable, facilitating the gradual development of analytical skills within the CBI. The initiative includes targeted training sessions for CBI staff, emphasizing financial programming and effective utilization of the MFT to enhance forecasting and policy analysis. By implementing this robust analytical framework, the CBI aims to gain deeper insights into the effects of macroeconomic shocks, thereby strengthening its dialogues with international partners, including the International Monetary Fund, on critical policy measures.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.114,
+                0.56,
+                0.423,
+                0.585
+            ],
+            "angle": 0,
+            "content": "Summary of Findings"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.6,
+                0.881,
+                0.855
+            ],
+            "angle": 0,
+            "content": "The Central Bank of Iraq (CBI) possesses full capabilities to effectively utilize the customized Macroeconomic Foundations Tool (MFT), which has been specifically tailored to address the unique dynamics of the Iraqi economy. Recognizing the critical role of oil in Iraq's economic framework, the MFT incorporates an oil sector module. Furthermore, the MFT has been enhanced to illustrate the interconnections between the oil sector and the real, external, and fiscal sectors, bolstering the CBI's understanding of these linkages. This comprehensive framework includes a detailed analysis of state budget revenues directly tied to oil revenues, which subsequently influences government spending, investments, GDP, and disposable income. Additionally, the monetary sector of the MFT has been customized to evaluate the effects of government spending on various monetary variables and to incorporate foreign exchange reserve management, ensuring that the CBI can stabilize the local currency and control inflation. With a calibration strategy reflecting recent economic transformations, the MFT is equipped to simulate various scenarios, including oil shocks, and includes a short-term forecasting module that integrates high-frequency data, significantly enhancing its predictive capabilities for policymakers.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.87,
+                0.876,
+                0.905
+            ],
+            "angle": 0,
+            "content": "Data-related challenges present opportunities for future development. The lack of reliable and comprehensive source data for GDP by expenditure, particularly in fixed prices, poses a challenge to the",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.115,
+                0.957,
+                0.152,
+                0.971
+            ],
+            "angle": 0,
+            "content": "IMF"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.493,
+                0.957,
+                0.862,
+                0.973
+            ],
+            "angle": 0,
+            "content": "High-Level Summary Technical Assistance Report"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.87,
+                0.958,
+                0.884,
+                0.971
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.092,
+                0.292,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.135,
+                0.866,
+                0.149
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.154,
+                0.862,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.172,
+                0.821,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.19,
+                0.822,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.209,
+                0.882,
+                0.22
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.226,
+                0.864,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.245,
+                0.568,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.278,
+                0.85,
+                0.29
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.296,
+                0.856,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.313,
+                0.855,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.333,
+                0.778,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.35,
+                0.805,
+                0.362
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.367,
+                0.841,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.402,
+                0.816,
+                0.414
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.419,
+                0.878,
+                0.433
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.437,
+                0.871,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.456,
+                0.849,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.473,
+                0.844,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.493,
+                0.525,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.558,
+                0.422,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.601,
+                0.84,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.619,
+                0.858,
+                0.633
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.639,
+                0.872,
+                0.65
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.657,
+                0.785,
+                0.669
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.675,
+                0.843,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.693,
+                0.845,
+                0.705
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.711,
+                0.832,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.73,
+                0.827,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.748,
+                0.817,
+                0.759
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.765,
+                0.877,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.783,
+                0.856,
+                0.796
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.803,
+                0.827,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.821,
+                0.806,
+                0.832
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.838,
+                0.218,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.871,
+                0.834,
+                0.884
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.89,
+                0.871,
+                0.902
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.09,
+                0.881,
+                0.127
+            ],
+            "angle": 0,
+            "content": "quality of national accounts. This data is crucial for economic models to increase accuracy of the analysis of the relationships between expenditure components of national accounts and the rest of the economy.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.142,
+                0.88,
+                0.233
+            ],
+            "angle": 0,
+            "content": "The CBI team has made significant progress in the adoption of the tool, but team turnover remains a noteworthy challenge. In July 2023, the CBI core team experienced a substantial turnover, which had a temporary impact on the technical assistance action plan. However, the newly formed core team has shown remarkable progress in understanding the MFT, especially its forecasting functionalities, enabling them to begin developing alternative scenarios in the upcoming mission.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.113,
+                0.293,
+                0.564,
+                0.318
+            ],
+            "angle": 0,
+            "content": "Summary of Recommendations"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.112,
+                0.342,
+                0.432,
+                0.361
+            ],
+            "angle": 0,
+            "content": "A. Operationalization of the MFT"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.373,
+                0.883,
+                0.464
+            ],
+            "angle": 0,
+            "content": "Continued utilization of the tool is vital for institutionalizing the MFT. To empower the authorities in their policy decision-making processes, it is important for the core team to consistently engage with the tool for forecasting practices. This engagement should encompass presenting both baseline and shock scenarios to the management of the CBI, as well as revising macroeconomic reports within the CBI to align with the logic and capabilities of the MFT.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.113,
+                0.488,
+                0.434,
+                0.506
+            ],
+            "angle": 0,
+            "content": "B. Statistical data improvements"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.519,
+                0.879,
+                0.61
+            ],
+            "angle": 0,
+            "content": "Enhancing statistical data quality is a fundamental component of optimizing the MFT's effectiveness. This entails a proactive follow-up with the Central Statistics Organization (CSO) to retrieve the national accounts expenditure components in fixed prices, which are crucial for accurate economic modeling, as well as enhanced collection of information on a quarterly or monthly basis. It is important to cooperate with the METAC which has been delivering statistical TA to improve national accounts and other data.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.113,
+                0.633,
+                0.579,
+                0.652
+            ],
+            "angle": 0,
+            "content": "C. Cooperation with other economic institutions"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.664,
+                0.875,
+                0.737
+            ],
+            "angle": 0,
+            "content": "To further bolster the effectiveness of the monetary policy, it is essential for the CBI to actively cooperate with other economic institutions, particularly the Ministry of Finance. By incorporating the most current and relevant data from the budget and medium-term plans, the core team can establish solid assumptions to build reflect realistic projections for economic growth, inflation, and other key indicators.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.115,
+                0.957,
+                0.152,
+                0.971
+            ],
+            "angle": 0,
+            "content": "IMF"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.493,
+                0.957,
+                0.862,
+                0.973
+            ],
+            "angle": 0,
+            "content": "High-Level Summary Technical Assistance Report"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.87,
+                0.958,
+                0.883,
+                0.971
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.093,
+                0.877,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.11,
+                0.865,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.143,
+                0.816,
+                0.155
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.162,
+                0.862,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.18,
+                0.862,
+                0.191
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.198,
+                0.876,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.215,
+                0.705,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.294,
+                0.563,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.343,
+                0.428,
+                0.36
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.375,
+                0.861,
+                0.388
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.393,
+                0.876,
+                0.405
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.412,
+                0.878,
+                0.424
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.43,
+                0.874,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.447,
+                0.354,
+                0.46
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.488,
+                0.431,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.521,
+                0.876,
+                0.533
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.54,
+                0.819,
+                0.55
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.556,
+                0.865,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.576,
+                0.851,
+                0.588
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.594,
+                0.851,
+                0.605
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.634,
+                0.575,
+                0.65
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.665,
+                0.872,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.685,
+                0.852,
+                0.697
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.703,
+                0.785,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.72,
+                0.862,
+                0.733
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

@@ -1,0 +1,4591 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.078,
+                0.039,
+                0.831,
+                0.077
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.078,
+                0.199,
+                0.736,
+                0.359
+            ],
+            "angle": 0,
+            "content": "Policy Transmission\nThrough Banking:\nEvidence from Namibia"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.077,
+                0.444,
+                0.209,
+                0.469
+            ],
+            "angle": 0,
+            "content": "Yumeng Gu",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.508,
+                0.224,
+                0.53
+            ],
+            "angle": 0,
+            "content": "SIP/2026/060",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.595,
+                0.52,
+                0.684
+            ],
+            "angle": 0,
+            "content": "IMF Selected Issues Papers are prepared by IMF staff as background documentation for periodic consultations with member countries. It is based on the information available at the time it was completed on May 20, 2026. This paper is also published separately as IMF Country Report No 26/136.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.059,
+                0.822,
+                0.216,
+                0.923
+            ],
+            "angle": 0,
+            "content": "2026 JUL",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.653,
+                0.811,
+                0.799,
+                0.927
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "aside_text",
+            "bbox": [
+                0.92,
+                0.121,
+                0.984,
+                0.88
+            ],
+            "angle": 0,
+            "content": "SELECTED ISSUES PAPER"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.075,
+                0.197,
+                0.659,
+                0.252
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.254,
+                0.592,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.31,
+                0.735,
+                0.356
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.075,
+                0.445,
+                0.209,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.508,
+                0.225,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.595,
+                0.499,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.614,
+                0.518,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.631,
+                0.511,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.647,
+                0.509,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.665,
+                0.467,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.054,
+                0.82,
+                0.219,
+                0.865
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.052,
+                0.865,
+                0.212,
+                0.925
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.118,
+                0.127,
+                0.372,
+                0.143
+            ],
+            "angle": 0,
+            "content": "© 2026 International Monetary Fund"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.768,
+                0.127,
+                0.867,
+                0.141
+            ],
+            "angle": 0,
+            "content": "SIP/2026/060"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.399,
+                0.195,
+                0.601,
+                0.23
+            ],
+            "angle": 0,
+            "content": "IMF Selected Issues Paper\nAfrican Department"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.265,
+                0.246,
+                0.734,
+                0.281
+            ],
+            "angle": 0,
+            "content": "Policy Transmission Through Banking: Evidence from Namibia Prepared by Yumeng Gu"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.351,
+                0.299,
+                0.648,
+                0.333
+            ],
+            "angle": 0,
+            "content": "Authorized for distribution by Xiangming Li\nJuly 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.126,
+                0.368,
+                0.845,
+                0.421
+            ],
+            "angle": 0,
+            "content": "IMF Selected Issues Papers are prepared by IMF staff as background documentation for periodic consultations with member countries. It is based on the information available at the time it was completed on May 20, 2026. This paper is also published separately as IMF Country Report No 26/136.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.453,
+                0.872,
+                0.592
+            ],
+            "angle": 0,
+            "content": "ABSTRACT: This paper estimates the strength of monetary policy transmission to bank lending and deposit rates in Namibia under a pegged exchange rate regime. Using local projections, it quantifies the pass-through of domestic and South African policy rates to aggregate banking interest rates. The results show that the pass-through is primarily driven by the South African Reserve Bank policy rate, while the effects of domestic policy rates are weaker and less persistent. Transmission is also asymmetric: lending rates adjust rapidly and completely, reflecting the prevalence of variable-rate contracts and their linkage to prime rate, while deposit rates respond more slowly and incompletely, consistent with differences in funding structures and pricing behavior across banks.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.609,
+                0.844,
+                0.644
+            ],
+            "angle": 0,
+            "content": "RECOMMENDED CITATION: Gu, Yumeng. 2026. “Policy Transmission Through Banking: Evidence from Namibia.” IMF Selected Issues Paper (SIP/26/060).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.128,
+                0.67,
+                0.327,
+                0.686
+            ],
+            "angle": 0,
+            "content": "JEL Classification Numbers:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.386,
+                0.67,
+                0.562,
+                0.687
+            ],
+            "angle": 0,
+            "content": "E43, E52, E58, G21, F41",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.127,
+                0.713,
+                0.205,
+                0.729
+            ],
+            "angle": 0,
+            "content": "Keywords:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.384,
+                0.704,
+                0.862,
+                0.739
+            ],
+            "angle": 0,
+            "content": "Monetary policy, interest rate pass-through, bank lending rates, bank deposit rates, Namibia, pegged exchange rate regime",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.127,
+                0.754,
+                0.304,
+                0.77
+            ],
+            "angle": 0,
+            "content": "Author's E-Mail Address:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.385,
+                0.755,
+                0.484,
+                0.771
+            ],
+            "angle": 0,
+            "content": "YGu@imf.org",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.401,
+                0.196,
+                0.598,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.431,
+                0.214,
+                0.568,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.267,
+                0.249,
+                0.733,
+                0.263
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.408,
+                0.267,
+                0.591,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.354,
+                0.3,
+                0.645,
+                0.314
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.466,
+                0.318,
+                0.534,
+                0.331
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.37,
+                0.844,
+                0.383
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.131,
+                0.389,
+                0.798,
+                0.399
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.131,
+                0.405,
+                0.84,
+                0.418
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.455,
+                0.86,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.474,
+                0.869,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.489,
+                0.835,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.507,
+                0.859,
+                0.519
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.524,
+                0.868,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.542,
+                0.855,
+                0.554
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.559,
+                0.835,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.577,
+                0.277,
+                0.588
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.61,
+                0.842,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.629,
+                0.469,
+                0.641
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.13,
+                0.673,
+                0.325,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.388,
+                0.672,
+                0.561,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.715,
+                0.205,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.387,
+                0.707,
+                0.861,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.387,
+                0.724,
+                0.758,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.13,
+                0.757,
+                0.302,
+                0.769
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.386,
+                0.756,
+                0.483,
+                0.77
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.195,
+                0.524,
+                0.222
+            ],
+            "angle": 0,
+            "content": "SELECTED ISSUES PAPERS",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.113,
+                0.301,
+                0.834,
+                0.386
+            ],
+            "angle": 0,
+            "content": "Policy Transmission Through\nBanking: Evidence from Namibia"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.425,
+                0.242,
+                0.455
+            ],
+            "angle": 0,
+            "content": "Namibia",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.539,
+                0.384,
+                0.564
+            ],
+            "angle": 0,
+            "content": "Prepared by Yumeng Gu \\( ^{1} \\)",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.112,
+                0.899,
+                0.849,
+                0.927
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\)  The author would like to thank Xiangming Li, Guido Della Valle, Andrea Richter Hume, and Thomas Carter for their insightful comments, Hajime Takizawa for helpful discussion, and authorities of the Bank of Namibia for providing data."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.199,
+                0.518,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.3,
+                0.76,
+                0.341
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.345,
+                0.834,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.425,
+                0.239,
+                0.455
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.541,
+                0.381,
+                0.561
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.116,
+                0.091,
+                0.266,
+                0.109
+            ],
+            "angle": 0,
+            "content": "A. Introduction"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.137,
+                0.882,
+                0.309
+            ],
+            "angle": 0,
+            "content": "1. Understanding interest rate pass-through is important under a pegged exchange rate regime. As a member of the Common Monetary Area (CMA), Namibia maintains a one-to-one peg of the Namibian dollar to the South African rand, which sharply constrains monetary policy autonomy. Under the exchange rate peg, the exchange rate channel is not an independent monetary policy instrument and is instead stabilized through interest rate adjustments. In this setting, the interest rate channel—particularly the pass-through to bank lending and deposit rates—becomes the primary mechanism through which policy rate decisions, whether originating from the South African Reserve Bank (SARB) or the Bank of Namibia (BoN), transmit to the domestic economy. The strength, speed, and symmetry of this transmission, particularly between lending and deposit rates, directly affect borrowing costs, savings incentives, and real economic activity. Yet, empirical evidence on interest rate pass-through in Namibia remains limited.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.325,
+                0.882,
+                0.499
+            ],
+            "angle": 0,
+            "content": "2. This paper examines monetary policy transmission to bank lending and deposit rates in Namibia. It analyzes the pass-through of policy rates to aggregate banking interest rates and the extent to which interest rate dynamics are driven by the SARB policy rate rather than the BoN repo rate. To this end, the paper employs the local projections framework of Jordà (2005), which has the advantage of being robust to misspecification of the data-generating process relative to a VAR, and exploits periods of imperfect co-movement between the BoN and SARB policy rates to examine the roles of domestic and foreign monetary policy. This approach also allows for a flexible characterization of dynamic responses without imposing strong identifying restrictions. The analysis contributes to the literature on monetary transmission in small open economies with pegged exchange rate regimes and offers policy-relevant insights into the effectiveness and the limits of interest rate policy under such arrangements.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.517,
+                0.879,
+                0.655
+            ],
+            "angle": 0,
+            "content": "3. The results show that aggregate interest rate pass-through in Namibia is largely driven by changes in the SARB policy rate, consistent with the constraints imposed by the exchange rate peg. Domestic policy rate innovations have weaker and less persistent effects on bank lending and deposit rates, although deviations between the BoN repo rate and the SARB policy rate still influence domestic interest rate dynamics at the margin. In addition, policy rate transmission is asymmetric across bank rates: pass-through to lending rates is strong and complete, reflecting the prevalence of variable-rate contracts and the close linkage to the prime rate, while pass-through to deposit rates is slower and incomplete, reflecting differences in funding structures and pricing behavior across banks.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.673,
+                0.729,
+                0.692
+            ],
+            "angle": 0,
+            "content": "B. Context: Monetary Policy and Interest Rate Setting in Namibia"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.719,
+                0.884,
+                0.84
+            ],
+            "angle": 0,
+            "content": "4. Under the CMA arrangement, the BoN maintains full convertibility and free capital mobility with CMA member countries, which in practice closely anchors domestic monetary conditions to those prevailing in South Africa. The BoN's policy rate is its seven-day repo rate, at which the BoN lends on a full-allotment basis, i.e., lending the full amount banks demand. The BoN sets the rate with reference to the SARB policy rate while also taking into account domestic economic conditions. This policy rate is the basis for the Prime Lending Rate (PLR), which is currently mandated by the BoN at 3.5 percentage points above the policy rate.\\(^{2}\\) The PLR serves as the benchmark for most bank loans. In an environment of broad-based excess",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.115,
+                0.882,
+                0.829,
+                0.91
+            ],
+            "angle": 0,
+            "content": "\\( ^{2} \\)  The margin of PLR above the policy rate has been gradually reduced by the BoN from 375 basis points (maintained from November 2010) to approximately 350 basis points since September 2025."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.091,
+                0.265,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.137,
+                0.135,
+                0.15
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.137,
+                0.865,
+                0.15
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.155,
+                0.85,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.172,
+                0.876,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.19,
+                0.851,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.206,
+                0.85,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.225,
+                0.824,
+                0.236
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.242,
+                0.858,
+                0.253
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.26,
+                0.866,
+                0.271
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.277,
+                0.874,
+                0.286
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.295,
+                0.574,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.326,
+                0.135,
+                0.34
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.327,
+                0.826,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.345,
+                0.848,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.363,
+                0.879,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.38,
+                0.854,
+                0.391
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.396,
+                0.798,
+                0.408
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.415,
+                0.875,
+                0.426
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.432,
+                0.872,
+                0.444
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.45,
+                0.832,
+                0.461
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.467,
+                0.861,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.485,
+                0.513,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.517,
+                0.136,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.517,
+                0.841,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.535,
+                0.821,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.553,
+                0.859,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.57,
+                0.867,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.587,
+                0.875,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.605,
+                0.872,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.623,
+                0.825,
+                0.634
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.641,
+                0.486,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.675,
+                0.726,
+                0.69
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.72,
+                0.135,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.72,
+                0.844,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.736,
+                0.88,
+                0.75
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.755,
+                0.844,
+                0.766
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.773,
+                0.854,
+                0.784
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.79,
+                0.873,
+                0.801
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.807,
+                0.854,
+                0.819
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.825,
+                0.879,
+                0.836
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.09,
+                0.849,
+                0.125
+            ],
+            "angle": 0,
+            "content": "liquidity, bank demand for liquidity via the seven-day repo window is limited. The BoN's main open market operations are the issuance of seven-, fourteen-, and twenty-one-day BoN bills at variable allotment, with",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.126,
+                0.374,
+                0.333
+            ],
+            "angle": 0,
+            "content": "yields often set above the repo rate and tending to track the SARB's Corporations for Public Deposits (CPDs) rates more closely. This help keep the BoN bills competitive with South African offerings, in which Namibian banks could alternatively invest their excess liquidity, without exchange-rate risk, effectively reducing incentives for capital outflows and supporting the international reserves.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.35,
+                0.365,
+                0.4
+            ],
+            "angle": 0,
+            "content": "5. The close tracking of the BoN's policy rate with that of the SARB has changed in recent"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.402,
+                0.374,
+                0.487
+            ],
+            "angle": 0,
+            "content": "years. Prior to 2021, the BoN repo rate closely tracked the SARB policy rate and was typically set at a modest premium, reflecting the BoN's assessment of domestic",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.471,
+                0.132,
+                0.799,
+                0.16
+            ],
+            "angle": 0,
+            "content": "Figure 1. Repo Rate and SARB Policy Rates (Percent)"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.396,
+                0.161,
+                0.859,
+                0.203
+            ],
+            "angle": 0,
+            "content": "A negative policy rate differential opened in 2022 as the SARB started its monetary tightening cycle and persisted into the easing cycle that followed."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.408,
+                0.206,
+                0.856,
+                0.463
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.397,
+                0.464,
+                0.754,
+                0.477
+            ],
+            "angle": 0,
+            "content": "Sources: Bank of Namibia; and South African Reserve Bank."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.488,
+                0.878,
+                0.61
+            ],
+            "angle": 0,
+            "content": "liquidity conditions and capital flow dynamics (Figure 1). Since early 2022, however, this co-movement has weakened. As the SARB raised its policy rate to combat post-pandemic inflation, the BoN did not fully match the increases, maintaining a more accommodative stance aimed to support the domestic recovery. A negative policy rate differential—the BoN repo rate falling below the SARB rate—currently stands at 25 basis points (as of April 2026), having widened to as much as 100 basis points at the peak. This episode of departure from interest rate parity within the CMA framework provides useful variation for studying the relative importance of domestic versus foreign policy rates in driving bank interest rate dynamics.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.625,
+                0.871,
+                0.8
+            ],
+            "angle": 0,
+            "content": "6. Standard open-economy macroeconomic models predict that the domestic policy rate should align with that of the anchor currency up to a country-specific uncovered interest parity (UIP) premium, under a credible exchange rate peg with high capital mobility. In this framework, observed policy rate differentials do not necessarily indicate monetary policy independence, but may instead reflect movements in the risk premium required by investors. This perspective could help rationalize the positive policy rate gaps observed during 2020–21. By contrast, the persistence of negative policy rate gaps since 2022 is more difficult to reconcile with standard UIP logic. If these negative gaps reflect some degree of monetary operational discretion in policy implementation by the BoN, the macroeconomic trilemma would imply that frictions to capital mobility must be present, as full financial integration would otherwise arbitrage away sustained interest rate differentials.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.816,
+                0.831,
+                0.831
+            ],
+            "angle": 0,
+            "content": "7. Several structural features of Namibia's financial system may give rise to such frictions."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.83,
+                0.885,
+                0.903
+            ],
+            "angle": 0,
+            "content": "Namibia's regulatory framework favors domestic asset holdings through different channels for banks and non-bank financial institutions (NBFIs). Pension funds and long-term insurers are subject to explicit domestic asset requirements, mandating that at least 45 percent of assets be invested in Namibian instruments. While banks face no formal domestic asset requirement, prudential liquidity regulations, collateral eligibility in Bank of",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.092,
+                0.847,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.11,
+                0.839,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.127,
+                0.363,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.144,
+                0.342,
+                0.157
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.162,
+                0.344,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.179,
+                0.372,
+                0.192
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.196,
+                0.361,
+                0.209
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.213,
+                0.342,
+                0.226
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.23,
+                0.361,
+                0.243
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.248,
+                0.362,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.265,
+                0.325,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.283,
+                0.325,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.3,
+                0.311,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.318,
+                0.274,
+                0.329
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.351,
+                0.137,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.351,
+                0.362,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.369,
+                0.362,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.385,
+                0.334,
+                0.399
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.404,
+                0.359,
+                0.418
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.42,
+                0.371,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.438,
+                0.324,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.455,
+                0.333,
+                0.467
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.473,
+                0.332,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.472,
+                0.132,
+                0.797,
+                0.146
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.602,
+                0.146,
+                0.669,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.49,
+                0.851,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.506,
+                0.861,
+                0.517
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.525,
+                0.874,
+                0.536
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.542,
+                0.852,
+                0.553
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.56,
+                0.873,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.576,
+                0.866,
+                0.588
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.594,
+                0.63,
+                0.605
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.626,
+                0.134,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.628,
+                0.869,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.645,
+                0.806,
+                0.657
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.662,
+                0.852,
+                0.674
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.68,
+                0.799,
+                0.692
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.697,
+                0.839,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.713,
+                0.843,
+                0.728
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.732,
+                0.829,
+                0.744
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.75,
+                0.841,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.767,
+                0.851,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.785,
+                0.399,
+                0.795
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.816,
+                0.828,
+                0.831
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.835,
+                0.837,
+                0.846
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.854,
+                0.863,
+                0.864
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.87,
+                0.862,
+                0.881
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.887,
+                0.881,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.09,
+                0.878,
+                0.143
+            ],
+            "angle": 0,
+            "content": "Namibia operations, limits on foreign exposures, and shallow secondary markets effectively anchor bank portfolios domestically. Together, these regulatory and structural features limit asset substitutability with South African instruments and dampen capital mobility under the exchange rate peg.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.159,
+                0.88,
+                0.245
+            ],
+            "angle": 0,
+            "content": "8. Despite the recent policy easing, private sector credit growth has remained subdued following the sharp contraction observed during the COVID-19 pandemic. Both the credit-to-GDP ratio and year-on-year credit growth remain subdued (Figure 2), even as monetary policy has eased since mid-2024. This persistent weakness raises questions about the effectiveness of monetary policy transmission in Namibia, particularly through the bank lending channel.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.263,
+                0.882,
+                0.366
+            ],
+            "angle": 0,
+            "content": "9. Weak credit growth in the post-pandemic period may reflect a range of factors, including structural constraints in the banking and mortgage markets, demand-side weaknesses, or heightened risk aversion among both borrowers and lenders. While some of these issues lie beyond the scope of this study—including structural impediments to housing supply in Namibia—this paper focuses on the monetary dimension of the problem, particularly whether and to what extent changes in the policy rate are transmitted to bank lending and deposit rates.",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.256,
+                0.376,
+                0.709,
+                0.669
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.261,
+                0.656,
+                0.576,
+                0.669
+            ],
+            "angle": 0,
+            "content": "Sources: Bank of Namibia; and IMF staff calculations."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.69,
+                0.874,
+                0.846
+            ],
+            "angle": 0,
+            "content": "10. In Namibia, lending interest rates typically follow a floating-rate convention, whereby lending rates adjust with the BoN repo rate through the PLR. Loans are typically priced off the PLR with an additional margin (maybe positive or negative) to reflect borrower specific credit risk, market conditions, and banks' balance sheet considerations. As a result, when the BoN adjusts its repo rate, the stock of outstanding loans reprices automatically, and average lending rates adjust relatively quickly. By contrast, the transmission to rates on new loans depends on banks' discretionary adjustments to the margin over the PLR. In practice, banks may price the potential losses and gains from the repo rate changes into the margin. Because the aggregate lending rate averages both new and existing loans, it may mask banks' response to the policy signal.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.863,
+                0.873,
+                0.897
+            ],
+            "angle": 0,
+            "content": "11. Deposit rate setting in Namibia is considerably more heterogeneous and is closely linked to banks' individual funding structures and competitive positioning. Namibian banks rely on a combination",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.092,
+                0.836,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.11,
+                0.875,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.126,
+                0.655,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.16,
+                0.134,
+                0.172
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.161,
+                0.867,
+                0.173
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.179,
+                0.876,
+                0.19
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.195,
+                0.869,
+                0.207
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.211,
+                0.853,
+                0.226
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.231,
+                0.353,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.263,
+                0.136,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.263,
+                0.825,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.281,
+                0.845,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.298,
+                0.872,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.317,
+                0.878,
+                0.328
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.334,
+                0.837,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.351,
+                0.296,
+                0.362
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.691,
+                0.151,
+                0.705
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.692,
+                0.864,
+                0.705
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.71,
+                0.822,
+                0.721
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.727,
+                0.859,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.745,
+                0.869,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.76,
+                0.871,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.779,
+                0.856,
+                0.79
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.795,
+                0.835,
+                0.807
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.813,
+                0.835,
+                0.825
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.83,
+                0.166,
+                0.843
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.864,
+                0.855,
+                0.877
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.881,
+                0.87,
+                0.894
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.09,
+                0.849,
+                0.126
+            ],
+            "angle": 0,
+            "content": "of retail deposits and wholesale funding, with the latter largely sourced from non-bank financial institutions (NBFIs), reflecting the sector's large size relative to the banking system.\\(^{3}\\)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.141,
+                0.875,
+                0.333
+            ],
+            "angle": 0,
+            "content": "12. While retail deposit rates are often referenced to the BoN repo rate, banks' adjustments to changes in the BoN repo rate are discretionary, and commercial and corporate deposit rates are more closely tied to market interest rates. These include BoN bill rates and Namibian government securities yields, which drive banks' marginal returns as they represent the immediate risk-free assets in which wholesale deposits can be reinvested at the margin. South African financial market benchmarks, such as the SARB policy rate and short-term Johannesburg interbank rates, are also relevant for banks' funding costs, indirectly through their influence on BoN bill rates and Namibian government securities yields and directly as alternatives for large corporates to place funds at exchange-rate-risk-free returns. Discussions with banks suggest that marginal funding costs are frequently driven by competition for large corporate deposits, which are more price sensitive and more tightly integrated with South African financial market conditions. Therefore, average funding costs of banks reflect both the BoN repo rate and the SARB policy rate (Figure 3).",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.12,
+                0.342,
+                0.848,
+                0.722
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.125,
+                0.734,
+                0.329,
+                0.748
+            ],
+            "angle": 0,
+            "content": "Sources: IMS staff representation."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.755,
+                0.881,
+                0.842
+            ],
+            "angle": 0,
+            "content": "13. Reflecting the different dynamics, the bank interest rate margin, measured as the difference between average lending and deposit rates, has widened since early 2022, coinciding with the opening of a negative policy rate gap (Figure 4). This widening has been driven primarily by a growing gap between deposit rates and the repo rate, while the gap between lending rates and the repo rate has fluctuated within a relatively narrow range of about 3–4 percentage points and shows no clear trend. Prior to 2022, when the",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.115,
+                0.87,
+                0.883,
+                0.91
+            ],
+            "angle": 0,
+            "content": "3 NBFI assets stood at about NAD 552.8 billion at end-2025, or 205.0 percent of GDP, making Namibia one of the most NBFI-deep financial systems in SSA. It is about 2.5 times the size of the banking system, with assets of about NAD 228.0 billion or 84.5 percent of GDP at end-2025."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.091,
+                0.846,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.109,
+                0.619,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.142,
+                0.145,
+                0.155
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.145,
+                0.841,
+                0.154
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.16,
+                0.87,
+                0.172
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.178,
+                0.839,
+                0.19
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.196,
+                0.808,
+                0.207
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.213,
+                0.865,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.23,
+                0.847,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.248,
+                0.861,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.265,
+                0.842,
+                0.276
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.281,
+                0.858,
+                0.294
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.299,
+                0.868,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.317,
+                0.796,
+                0.329
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.755,
+                0.145,
+                0.769
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.756,
+                0.855,
+                0.768
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.772,
+                0.876,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.79,
+                0.869,
+                0.804
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.81,
+                0.868,
+                0.819
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.826,
+                0.842,
+                0.838
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.09,
+                0.873,
+                0.194
+            ],
+            "angle": 0,
+            "content": "Bank of Namibia (BoN) closely tracked the South African Reserve Bank (SARB) policy rate or maintained a positive policy rate gap, such dynamics were less pronounced. It remains unclear whether the opening of the policy rate gap and the associated shift in the relative policy stance can account for the observed widening in the interest rate margins, or whether it reflects broader structural developments, time-varying pass-through across different deposit types, or changes in the composition of bank funding. \\( ^{4} \\)  Identification of factors behind these trends would require analysis using more disaggregated interest rate measures, which are unavailable.",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.269,
+                0.197,
+                0.729,
+                0.517
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.538,
+                0.875,
+                0.642
+            ],
+            "angle": 0,
+            "content": "14. Namibia's mortgage-heavy credit structure, the prevalence of variable-rate lending, and the heterogeneous nature of bank funding suggest that monetary transmission may operate through multiple channels with potentially uneven pass-through across loan and deposit categories. These structural features motivate an empirical investigation that would also require disaggregated rates to explicitly account for differentiated pass-through dynamics across loan types and funding sources, which remains an area for future study.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.66,
+                0.325,
+                0.68
+            ],
+            "angle": 0,
+            "content": "C. Empirical Strategy"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.705,
+                0.879,
+                0.792
+            ],
+            "angle": 0,
+            "content": "15. Data. We use monthly average lending and deposit interest rate series for June 2017–September 2025, provided by the Bank of Namibia. The rates are constructed using lending and deposit rate data reported monthly by the four largest banks in Namibia. Each bank submits average rates across major lending and deposit products, as well as an overall lending and deposit rate based on outstanding balances. Industry-level lending and deposit rates are then computed by weighting each bank's overall rate by its share",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.115,
+                0.833,
+                0.881,
+                0.911
+            ],
+            "angle": 0,
+            "content": "\\( ^{4} \\)  In practice, pass-through to deposit rates differs markedly across funding sources. When lending rates increase, banks may have little need to raise remuneration on retail deposits, resulting in limited pass-through to retail funding costs. By contrast, wholesale and corporate deposit rates tend to adjust more closely in line with market conditions. As a result, average funding costs may rise only modestly if banks rely heavily on retail deposits with sticky rates, even as wholesale funding costs increase. Similar aggregate dynamics could also arise from changes over time in pass-through to wholesale and retail deposits, even with an unchanged funding composition, or from simultaneous changes in both deposit margins and the funding structure."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.093,
+                0.855,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.109,
+                0.866,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.127,
+                0.866,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.143,
+                0.851,
+                0.157
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.16,
+                0.869,
+                0.173
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.179,
+                0.866,
+                0.19
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.539,
+                0.152,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.54,
+                0.851,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.558,
+                0.834,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.574,
+                0.872,
+                0.588
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.591,
+                0.86,
+                0.605
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.61,
+                0.854,
+                0.621
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.626,
+                0.205,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.66,
+                0.321,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.706,
+                0.146,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.706,
+                0.846,
+                0.718
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.724,
+                0.819,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.742,
+                0.875,
+                0.754
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.76,
+                0.806,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.777,
+                0.866,
+                0.788
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.09,
+                0.866,
+                0.142
+            ],
+            "angle": 0,
+            "content": "of total banking assets and averaging over the four banks. While aggregate rates do not distinguish between new and existing contracts, and thus may not fully capture marginal pricing responses, they provide an important benchmark for overall monetary transmission.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.16,
+                0.871,
+                0.211
+            ],
+            "angle": 0,
+            "content": "16. Local projection estimation. We employ the local projections (LP) method developed by Jordà (2005) to estimate interest rate pass-through from policy rates to bank lending and deposit rates. Specifically, for each horizon  \\( h = 0, 1, \\ldots, H \\) , we estimate the following equation:",
+            "merge_prev": false
+        },
+        {
+            "type": "equation",
+            "bbox": [
+                0.284,
+                0.23,
+                0.742,
+                0.246
+            ],
+            "angle": 0,
+            "content": "\\[\ny _ {t + h} - y _ {t - 1} = \\alpha_ {h} + \\beta_ {\\mathrm{h}} S A R B _ {t} + \\gamma_ {\\mathrm{h}} R a t e D i f f e r e n t i a l _ {t} + \\theta_ {\\mathrm{h}} X _ {t} + u _ {t + h},\n\\]"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.265,
+                0.876,
+                0.403
+            ],
+            "angle": 0,
+            "content": "where  \\( y_{t+h} \\)  denotes the lending or deposit interest rate at horizon  \\( t + h \\) .  \\( SARB_{t} \\)  is the policy rate set by the South African Reserve Bank (SARB), and Rate Differential \\( _{t} \\)  captures deviations between the domestic policy rate and the SARB policy rate. This specification allows us to disentangle the influence of the anchor-currency policy rate from domestic policy actions.  \\( X_{t} \\)  is a vector of control variables, which includes two lags of the outcome variables (lending or deposit rates), two lags of both the SARB rates and the policy rate differentials, as well as the same period and two lags of macroeconomic controls (CPI inflation and three-month domestic treasury bill yields). The error term  \\( u_{t+h} \\)  is estimated using a heteroskedasticity and autocorrelation consistent (HAC) covariance estimator (Newey-West) adjusted for small-sample size.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.42,
+                0.838,
+                0.455
+            ],
+            "angle": 0,
+            "content": "Coefficients of interest are  \\( \\beta_{h} \\)  and  \\( \\gamma_{h} \\) , which trace out the impulse response functions of interest rates to changes in the SARB policy rate and to movements in the policy rate differential, respectively.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.472,
+                0.873,
+                0.75
+            ],
+            "angle": 0,
+            "content": "17. Identification. Identification is predicated on the fact the SARB has a well-established inflation-targeting framework, under which policy rate decisions are aimed at anchoring inflation expectations in South Africa, reflecting South Africa's domestic economic fluctuations. As a result, these decisions are largely exogenous to economic conditions in Namibia, albeit both economies may be affected by similar global and regional developments. Empirically disentangling the effects of the domestic policy rate from those of the anchor currency, however, is challenging in pegged exchange rate regimes. Under a standard peg, the domestic policy rate and the anchor-country policy rate move closely together by construction, making conventional identification difficult. This challenge is reflected in the limited empirical literature, and in particular the paucity of studies that decompose the relative influence of domestic versus anchor-country policy rates on bank lending rates in pegged economies. In the case of Namibia, we partly address this issue by exploiting periods of imperfect co-movement between the two policy rates, during which deviations create the policy rate differential. Variation during these episodes allows us to separately identify the response of lending and deposit rates to movements in the anchor-currency rate and to changes in the domestic policy stance. Nevertheless, estimates associated with the policy rate differential should be interpreted with caution, as such episodes are infrequent and may reflect broader macro-financial considerations that are not captured by the model.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.768,
+                0.484,
+                0.786
+            ],
+            "angle": 0,
+            "content": "D. Aggregate Pass-Through Estimates"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.813,
+                0.868,
+                0.901
+            ],
+            "angle": 0,
+            "content": "18. The pass-through from SARB policy rate changes to aggregate lending rates is strong and complete. Figure 5. presents estimates of the aggregate pass-through from SARB policy rate changes to average lending and deposit rates. The solid lines show point estimates of the impulse responses over a 12-month horizon, while the shaded areas indicate 90 percent confidence intervals. The horizontal reference line at unity corresponds to full (one-for-one) pass-through. Changes in the SARB policy rate transmit rapidly",
+            "merge_prev": false
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.233,
+                0.195,
+                0.324,
+                0.209
+            ],
+            "latex": "",
+            "score": 0.9102
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.164,
+                0.267,
+                0.194,
+                0.28
+            ],
+            "latex": "",
+            "score": 0.8898
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.396,
+                0.318,
+                0.413,
+                0.331
+            ],
+            "latex": "",
+            "score": 0.8409
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.359,
+                0.371,
+                0.389,
+                0.384
+            ],
+            "latex": "",
+            "score": 0.889
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.302,
+                0.422,
+                0.321,
+                0.436
+            ],
+            "latex": "",
+            "score": 0.8831
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.353,
+                0.424,
+                0.371,
+                0.436
+            ],
+            "latex": "",
+            "score": 0.8631
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.091,
+                0.864,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.11,
+                0.824,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.127,
+                0.502,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.16,
+                0.839,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.179,
+                0.867,
+                0.191
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.196,
+                0.231,
+                0.208
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.196,
+                0.573,
+                0.208
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.266,
+                0.164,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.195,
+                0.266,
+                0.845,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.282,
+                0.865,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.301,
+                0.873,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.319,
+                0.396,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.414,
+                0.319,
+                0.834,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.335,
+                0.87,
+                0.348
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.353,
+                0.862,
+                0.364
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.371,
+                0.358,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.391,
+                0.371,
+                0.872,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.389,
+                0.63,
+                0.4
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.422,
+                0.302,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.321,
+                0.422,
+                0.352,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.371,
+                0.422,
+                0.835,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.44,
+                0.761,
+                0.452
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.473,
+                0.145,
+                0.486
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.473,
+                0.834,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.491,
+                0.868,
+                0.503
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.507,
+                0.826,
+                0.521
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.526,
+                0.857,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.544,
+                0.836,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.561,
+                0.825,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.578,
+                0.819,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.596,
+                0.811,
+                0.605
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.613,
+                0.838,
+                0.625
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.63,
+                0.866,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.648,
+                0.861,
+                0.657
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.666,
+                0.846,
+                0.675
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.682,
+                0.848,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.7,
+                0.868,
+                0.711
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.718,
+                0.869,
+                0.728
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.735,
+                0.213,
+                0.746
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.77,
+                0.482,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.814,
+                0.148,
+                0.827
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.815,
+                0.845,
+                0.827
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.831,
+                0.842,
+                0.844
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.85,
+                0.837,
+                0.862
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.868,
+                0.861,
+                0.878
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.885,
+                0.862,
+                0.896
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.09,
+                0.885,
+                0.161
+            ],
+            "angle": 0,
+            "content": "and fully to average lending rates: pass-through is essentially complete within one month, indicating a strong and swift adjustment of borrowing costs at the aggregate level. By contrast, innovations in the domestic policy rate differential have noticeably weaker and shorter-lived effects on average lending rates, while movements in the SARB rate exert larger and more persistent influences.",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.096,
+                0.176,
+                0.905,
+                0.711
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.725,
+                0.881,
+                0.831
+            ],
+            "angle": 0,
+            "content": "19. Turning to deposit rates, the estimates suggest incomplete pass-through. Following a change in the SARB policy rate, average deposit rates adjust gradually, reaching about 90 percent pass-through after three months. Pass-through from domestic policy rate differentials is even more muted, with smaller point estimates and shorter persistence. Overall, the aggregate results highlight the dominant role of the anchor-currency policy rate in shaping system-wide deposit interest rates, while domestic policy actions exert a more limited influence at the aggregate level.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.847,
+                0.876,
+                0.901
+            ],
+            "angle": 0,
+            "content": "20. The transmission of policy rates is asymmetric across lending and deposit rates. Pass-through to lending rates is strong and complete, reflecting the established convention of variable-rate loan contracts with lending rates linked to the prime rate. By contrast, pass-through to deposit rates is slower and",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.092,
+                0.863,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.11,
+                0.872,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.127,
+                0.879,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.145,
+                0.522,
+                0.157
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.727,
+                0.147,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.729,
+                0.876,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.746,
+                0.852,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.763,
+                0.843,
+                0.775
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.781,
+                0.795,
+                0.793
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.799,
+                0.869,
+                0.81
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.815,
+                0.441,
+                0.828
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.848,
+                0.873,
+                0.863
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.868,
+                0.855,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.886,
+                0.793,
+                0.897
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.091,
+                0.882,
+                0.177
+            ],
+            "angle": 0,
+            "content": "incomplete.\\(^{5}\\) This asymmetry implies that changes in policy rates affect borrowing costs more rapidly and more fully than deposit remuneration, with implications for bank interest rate margins across the monetary policy cycle. In particular, banks' interest rate margins are compressed during easing cycles, which may dampen the policy signal for easing lending conditions, while the margins are expanded during tightening cycles, dampening the signal for tightening credit conditions.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.195,
+                0.494,
+                0.213
+            ],
+            "angle": 0,
+            "content": "E. Conclusions and Policy Implications"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.24,
+                0.881,
+                0.413
+            ],
+            "angle": 0,
+            "content": "21. The finding that the SARB policy rate plays a dominant role is consistent with evidence from other studies. The analysis above shows that both lending and deposit rates are more responsive to changes in the SARB policy rate than to those in the BoN policy rate. While deviations in the BoN repo rate influence average domestic interest rates through the automatic repricing of variable-rate loans, their effects are comparatively weak and short-lived. Similar conclusions are found in Espinoza and Prasad (2012) and Cevik and Teksoz (2012) for the Gulf Cooperation Council countries (all pegged to the USD), which show that domestic policy rate innovations tend to have weak and short-lived effects on lending rates, while the US Federal Funds rate movements have larger and more persistent effects. The dominance of the SARB policy rate is also consistent with the fact that banks' marginal funding costs are driven by wholesale deposits, priced off South African market rates.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.43,
+                0.873,
+                0.671
+            ],
+            "angle": 0,
+            "content": "22. The analysis highlights the limited scope for independent monetary policy under a pegged exchange rate regime with free capital flows and strong financial ties with the anchor country. A persistent policy rate gap on either side may create scope for arbitrage, as large corporates can shift borrowing or fund placement between Namibia and South Africa. Keeping the policy rate below that of the SARB will have limited effects on stimulating lending, as banks will be reluctant to lower lending rates given the compressed interest rate margin, while lower domestic rates may create incentives for large corporates to move excess funds abroad. Similarly, raising the policy rate above that of the SARB may have limited effectiveness in cooling domestic demand as large corporates can choose to borrow abroad, including from parent companies, and it could attract capital inflows. In this context, carefully calibrating the alignment of the BoN policy rate with the SARB rate could help reduce the bifurcated structure of bank funding and avoid distortions that rate misalignment may introduce. In addition, other structural constraints, including limited housing supply and a scarcity of viable investment opportunities for business lending, may play an important role in shaping credit developments in Namibia. The monetary policy rate, however, is not the right tool to address these issues.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.69,
+                0.881,
+                0.828
+            ],
+            "angle": 0,
+            "content": "23. The asymmetric pass-through across lending and deposit rates is also consistent with findings elsewhere. The passthrough from both SARB policy rate changes and differential BoN policy actions to lending interest rates is stronger and faster than that to deposit interest rates, indicating that policy rates affect borrowing costs and, thus, investment and consumption decisions, but are less effective in altering incentives for saving. The slower passthrough to deposit rates is consistent with findings in the post-COVID euro area (Messer and Niepmann, 2023), with the abundance of banking liquidity, a key feature of Namibia's banking system, indicated as an explanatory factor. Reforms that effectively manage excess liquidity through systematic, predictable, and transparent absorption at rates aligned with the BoN policy rate could help",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.115,
+                0.871,
+                0.862,
+                0.91
+            ],
+            "angle": 0,
+            "content": "\\( ^{5} \\)  This pattern is not unique to Namibia. Low elasticity and stickiness of retail deposit rates, combined with faster pass-through to lending rates—particularly in systems dominated by variable-rate loans—are well-documented features of many banking systems, including the US (Berry et al. 2019) and the EU (Chen et al. 2024)."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.092,
+                0.879,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.109,
+                0.848,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.127,
+                0.874,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.144,
+                0.805,
+                0.156
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.161,
+                0.481,
+                0.173
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.195,
+                0.489,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.24,
+                0.146,
+                0.254
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.242,
+                0.861,
+                0.253
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.259,
+                0.877,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.276,
+                0.858,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.294,
+                0.819,
+                0.305
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.31,
+                0.864,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.328,
+                0.83,
+                0.34
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.346,
+                0.837,
+                0.358
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.362,
+                0.859,
+                0.376
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.381,
+                0.875,
+                0.393
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.397,
+                0.328,
+                0.409
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.43,
+                0.145,
+                0.445
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.431,
+                0.847,
+                0.445
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.448,
+                0.828,
+                0.461
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.467,
+                0.809,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.484,
+                0.844,
+                0.495
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.499,
+                0.856,
+                0.513
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.519,
+                0.87,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.536,
+                0.815,
+                0.547
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.552,
+                0.856,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.57,
+                0.866,
+                0.582
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.588,
+                0.832,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.604,
+                0.842,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.623,
+                0.863,
+                0.634
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.64,
+                0.841,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.656,
+                0.27,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.688,
+                0.146,
+                0.704
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.691,
+                0.816,
+                0.702
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.708,
+                0.877,
+                0.719
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.724,
+                0.85,
+                0.738
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.741,
+                0.838,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.759,
+                0.855,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.776,
+                0.864,
+                0.789
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.794,
+                0.865,
+                0.807
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.811,
+                0.826,
+                0.824
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.09,
+                0.839,
+                0.125
+            ],
+            "angle": 0,
+            "content": "improve monetary transmission, including by strengthening saving incentives and narrowing interest rate margins.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.142,
+                0.879,
+                0.265
+            ],
+            "angle": 0,
+            "content": "24. These findings also underscore the importance of moving beyond aggregate interest rate measures to better understand monetary transmission in practice. Aggregate lending and deposit rates may mask substantial heterogeneity in pricing dynamics across loan types, borrower segments, and funding sources, particularly when a large share of lending is at variable rates and when new lending conditions may differ from the repricing of the existing loan stock. More granular, loan-level data would allow for a clearer distinction between pass-through at origination and pass-through through automatic repricing and help identify which types of loans and deposits are driving the observed aggregate dynamics.",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.092,
+                0.836,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.11,
+                0.179,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.142,
+                0.145,
+                0.155
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.142,
+                0.837,
+                0.156
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.161,
+                0.863,
+                0.172
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.178,
+                0.86,
+                0.19
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.196,
+                0.863,
+                0.207
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.213,
+                0.841,
+                0.225
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.231,
+                0.873,
+                0.242
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.249,
+                0.669,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.443,
+                0.154,
+                0.556,
+                0.173
+            ],
+            "angle": 0,
+            "content": "References"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.115,
+                0.2,
+                0.861,
+                0.235
+            ],
+            "angle": 0,
+            "content": "Berry, Jared, Felicia Ionescu, Robert Kurtzman, and Rebecca Zarutskie. 2019. “Changes in Monetary Policy and Banks' Net Interest Margins: A Comparison across Four Tightening Episodes.” FEDS Notes."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.115,
+                0.242,
+                0.833,
+                0.276
+            ],
+            "angle": 0,
+            "content": "Cevik, Serhan and Katerina Teksoz. 2012. “Lost in Transmission? The Effectiveness of Monetary Policy Transmission Channels in the GCC Countries”. IMF Working Paper No. 12/191."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.115,
+                0.294,
+                0.874,
+                0.328
+            ],
+            "angle": 0,
+            "content": "Chen, Ruo, Vincenzo Guzzo, Fazurin Jamaludin, Adil Mohommad, Ritong Qu, and Yueshu Zhao, 2024. \"Bank Profitability in Europe: Not Here to Stay,\" IMF Working Papers 2024/142."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.115,
+                0.335,
+                0.813,
+                0.37
+            ],
+            "angle": 0,
+            "content": "Espinoza, Raphael A. and Ananthakrishnan Prasad. 2012. “Monetary policy transmission in the GCC countries.” IMF Working Paper No. 12/132."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.115,
+                0.377,
+                0.819,
+                0.412
+            ],
+            "angle": 0,
+            "content": "Jordà, Óscar. 2005. \"Estimation and Inference of Impulse Responses by Local Projections.\" American Economic Review 95 (1): 161–182."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.114,
+                0.42,
+                0.885,
+                0.454
+            ],
+            "angle": 0,
+            "content": "Messer, Todd Messer and Friederike Niepmann. 2023. \"What determines passthrough of policy rates to deposit rates in the euro area?\" FEDS Notes."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.446,
+                0.155,
+                0.553,
+                0.172
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

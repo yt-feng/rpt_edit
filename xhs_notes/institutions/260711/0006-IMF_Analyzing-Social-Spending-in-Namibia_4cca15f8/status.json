@@ -1,0 +1,34 @@
+{
+  "source_pdf": "/tmp/pdf_batch_002_etl3libb/pdfs/0006-IMF_Analyzing-Social-Spending-in-Namibia_4cca15f8.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "IMF",
+  "cover_short_title": "花了很多钱，效果却一",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x3",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "IMF：纳米比亚社会支出不是太少而是用错地方",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

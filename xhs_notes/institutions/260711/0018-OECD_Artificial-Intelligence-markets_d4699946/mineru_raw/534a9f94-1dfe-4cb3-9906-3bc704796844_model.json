@@ -1,0 +1,4013 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.038,
+                0.058,
+                0.196,
+                0.096
+            ],
+            "angle": 0,
+            "content": "OECD\nBETTER POLICIES FOR BETTER LIVES"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.304,
+                0.044,
+                0.733,
+                0.106
+            ],
+            "angle": 0,
+            "content": "Policy Brief"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.123,
+                0.184,
+                0.829,
+                0.264
+            ],
+            "angle": 0,
+            "content": "Artificial Intelligence markets: recent developments and competition issues"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.77,
+                0.299,
+                0.87,
+                0.316
+            ],
+            "angle": 0,
+            "content": "24 June 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.114,
+                0.378,
+                0.294,
+                0.402
+            ],
+            "angle": 0,
+            "content": "Key messages"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.141,
+                0.422,
+                0.881,
+                0.486
+            ],
+            "angle": 0,
+            "content": "- Artificial Intelligence (AI) can deliver large economic and social gains. These gains will be stronger if markets remain open, innovative and contestable across the entire AI value chain. However, recent OECD work shows that the structure of AI markets creates significant risks for competition.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.141,
+                0.489,
+                0.881,
+                0.566
+            ],
+            "angle": 0,
+            "content": "- At the same time, early evidence in some market segments suggests that tech giants face some competition from dynamic, specialised providers. This appears to be the case for foundation models – in particular large language models – where performance has continued to improve, prices have declined, and technological leadership in AI model capabilities has been repeatedly contested.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.141,
+                0.569,
+                0.881,
+                0.678
+            ],
+            "angle": 0,
+            "content": "- Despite these initial signs of market dynamism, broader structural risks to competition in the AI value chain are real, persistent and expected to intensify. These include strong concentration of key inputs (compute, data and skills), first mover advantages and increasing vertical integration. Further rapid improvements in AI capabilities and preferential partnerships with existing leaders in critical segments – especially upstream in the supply of chips and the provision of cloud services – may create definitive advantages for a handful of companies and further concentrate digital markets.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.142,
+                0.681,
+                0.881,
+                0.729
+            ],
+            "angle": 0,
+            "content": "- Policymakers therefore face growing challenges in monitoring fast evolving AI markets, which calls for sustained vigilance and cross-border co-operation to ensure long lasting competitive outcomes.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.105,
+                0.916,
+                0.804,
+                0.929
+            ],
+            "angle": 0,
+            "content": "ARTIFICIAL INTELLIGENCE MARKETS: RECENT DEVELOPMENTS AND COMPETITION ISSUES © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.125,
+                0.184,
+                0.807,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.229,
+                0.826,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.773,
+                0.302,
+                0.867,
+                0.315
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.112,
+                0.378,
+                0.296,
+                0.403
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.425,
+                0.878,
+                0.438
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.44,
+                0.878,
+                0.453
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.455,
+                0.878,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.471,
+                0.267,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.489,
+                0.88,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.505,
+                0.878,
+                0.519
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.52,
+                0.878,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.536,
+                0.878,
+                0.55
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.552,
+                0.335,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.569,
+                0.878,
+                0.584
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.585,
+                0.878,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.601,
+                0.878,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.616,
+                0.878,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.632,
+                0.878,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.647,
+                0.878,
+                0.661
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.663,
+                0.434,
+                0.676
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.171,
+                0.682,
+                0.878,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.171,
+                0.696,
+                0.878,
+                0.712
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.713,
+                0.342,
+                0.727
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.106,
+                0.035,
+                0.129,
+                0.05
+            ],
+            "angle": 0,
+            "content": "2 |"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.104,
+                0.151,
+                0.284,
+                0.169
+            ],
+            "angle": 0,
+            "content": "What's the issue?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.183,
+                0.895,
+                0.293
+            ],
+            "angle": 0,
+            "content": "Competition in AI markets has broad implications for economic growth. Artificial intelligence (AI) is widely expected to raise productivity across the economy (Aghion and Bunel, 2024; Filippucci et al., 2024; Calvino et al., 2025), although estimates vary significantly between more pessimistic and optimistic views (Acemoglu, 2024, and Baily, Brynjolfsson and Korinek, 2023, respectively). Importantly, these expected gains assume broad access to powerful and affordable AI tools, which depends to a large extent on whether AI markets remain innovative and competitive, open to new entrants, and allow users to switch to the best solutions at low cost (OECD, 2024).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.298,
+                0.895,
+                0.44
+            ],
+            "angle": 0,
+            "content": "This Policy Brief draws on previous OECD work on AI markets and competition (OECD, 2024 and 2025b; Calligaris et al., 2026) and incorporates updated evidence on recent developments building on André et al. (2025). Overall, this body of work and the new updates present a mixed picture. While specific segments of AI markets – particularly foundation models – have shown dynamism over the past three years, several structural risks persist along different layers of the AI value chain (Korinek and Vipra, 2025; Hagiu and Wright, 2025, Gambacorta and Shreeti, 2026). AI development and deployment are reshaping business performance, cost structures and strategic advantages, with important implications for market power. In particular, incumbent positions may become entrenched in the long run, especially in structurally concentrated market segments (e.g. hardware, data).",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.104,
+                0.464,
+                0.661,
+                0.483
+            ],
+            "angle": 0,
+            "content": "Why competition in AI markets matters for the economy?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.498,
+                0.895,
+                0.591
+            ],
+            "angle": 0,
+            "content": "Beyond the question of whether AI markets are competitive or concentrated in a static sense, the critical issue is whether they will remain contestable over time. Limited gatekeeping, low switching costs and the absence of exclusionary behaviour are needed to ensure that users benefit in the long run from lower prices, higher quality technologies and wider choice. This brief lays out the current evidence and highlights the key long-term risks in different AI market segments that could limit future gains from this technology.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.597,
+                0.895,
+                0.722
+            ],
+            "angle": 0,
+            "content": "Empirical evidence suggests continuous innovation and declining prices, especially in the AI model development segment. Despite significant entry costs and the presence of a few tech giants in the AI model development segment \\( ^{1} \\) , the performance of Generative AI models has rapidly increased, prices have declined and the number of developers and providers has increased according to novel OECD evidence and recent academic work (André et al., 2025; Demirer et al., 2025; OECD AI Observatory, 2026). The number of AI developers focusing on language models for cognitive tasks (including reasoning and coding) increased from 9 in January 2024 to 47 in April 2026. Over the same period, the number of active text-to-text models rose from 22 to 453.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.102,
+                0.727,
+                0.895,
+                0.838
+            ],
+            "angle": 0,
+            "content": "The concept of the AI Economic Frontier – introduced in André et al. (2025) – captures the highest available model performance for a given price (Figure 1). It represents the performance-price trade-off faced by potential AI users. This frontier has been steadily moving upwards and to the left, indicating the availability of better models at lower prices. Although the market is highly oligopolistic, reflecting high entry costs, leading firms still face high pressure from the continuous emergence of better models. The number of developers that reach the AI Economic Frontier has risen from 2 to 8 over the past three years, including big-tech incumbents and AI-specialised newcomers from the United States and China. While",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.104,
+                0.859,
+                0.894,
+                0.89
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\)  Models that underpin generative AI tools, such as large language model-based chatbots like ChatGPT or Gemini and AI agents like Claude Code or Codex."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.195,
+                0.916,
+                0.894,
+                0.93
+            ],
+            "angle": 0,
+            "content": "ARTIFICIAL INTELLIGENCE MARKETS: RECENT DEVELOPMENTS AND COMPETITION ISSUES © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.151,
+                0.28,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.184,
+                0.891,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.201,
+                0.891,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.216,
+                0.889,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.231,
+                0.891,
+                0.244
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.247,
+                0.891,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.263,
+                0.891,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.279,
+                0.438,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.3,
+                0.891,
+                0.311
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.316,
+                0.891,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.33,
+                0.891,
+                0.344
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.347,
+                0.889,
+                0.358
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.361,
+                0.891,
+                0.375
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.377,
+                0.891,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.392,
+                0.891,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.409,
+                0.889,
+                0.42
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.424,
+                0.504,
+                0.437
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.11,
+                0.466,
+                0.655,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.499,
+                0.891,
+                0.511
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.514,
+                0.891,
+                0.527
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.53,
+                0.889,
+                0.542
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.546,
+                0.889,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.56,
+                0.891,
+                0.573
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.575,
+                0.195,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.599,
+                0.889,
+                0.61
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.614,
+                0.891,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.628,
+                0.889,
+                0.641
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.645,
+                0.889,
+                0.656
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.659,
+                0.889,
+                0.673
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.674,
+                0.889,
+                0.688
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.691,
+                0.892,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.707,
+                0.45,
+                0.718
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.729,
+                0.891,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.745,
+                0.891,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.76,
+                0.891,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.775,
+                0.891,
+                0.788
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.791,
+                0.891,
+                0.803
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.806,
+                0.889,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.822,
+                0.891,
+                0.834
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.873,
+                0.075,
+                0.894,
+                0.09
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.102,
+                0.109,
+                0.895,
+                0.203
+            ],
+            "angle": 0,
+            "content": "data on market shares is difficult to obtain, technological leadership at the economic frontier – as defined by model quality and price – appears highly contested, with frontier presence lasting only a few months. Frequent changes in the composition of the economic frontier affect both incumbents and specialised AI labs, indicating competitive pressures (Demirer et al. 2025). However, geographic concentration is high, as the overwhelming majority of leading models are developed in the United States or China, where AI-related investment is also concentrated.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.103,
+                0.221,
+                0.807,
+                0.24
+            ],
+            "angle": 0,
+            "content": "Figure 1. The AI Economic Frontier: increasing model performance at much lower prices"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.248,
+                0.666,
+                0.266
+            ],
+            "angle": 0,
+            "content": "Evolution of the AI Economic Frontier of AI language models (text-to-text modality)",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.248,
+                0.276,
+                0.759,
+                0.487
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.103,
+                0.499,
+                0.894,
+                0.566
+            ],
+            "angle": 0,
+            "content": "Note: Quality is defined by a normalised weighted index of model performance based on common benchmarks of the industry. Each dot represents the model with the lowest price for a given quality among text-to-text models available each month. Prices are measured on a per-token basis through application programming interface – API – access through the cloud. The solid blue (dashed red) line represents the AI economic frontier in April 2026 (January 2025). For details about the quality index, see https://artificialanalysis.ai/methodology and André et al. (2025)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.564,
+                0.64,
+                0.58
+            ],
+            "angle": 0,
+            "content": "Source: Author's calculations following André et al. (2025) based on data from Artificial Analysis.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.601,
+                0.895,
+                0.679
+            ],
+            "angle": 0,
+            "content": "Dynamism at the frontier of AI development has supported faster adoption and more intensive use, unlocking significant productivity potential among downstream users. The quality-adjusted prices of AI models reflect this trend. The aggregate OECD price index for text-to-text (language) models fell by nearly 80% between January 2024 and April 2026 (Figure 2). Prices have declined sharply in all market segments and across all use cases, including coding and agentic capabilities. \\( ^{2} \\)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.684,
+                0.895,
+                0.765
+            ],
+            "angle": 0,
+            "content": "However, declining prices per token and better performance are necessary but not sufficient conditions for a decline in the effective cost of using AI. AI agents consume substantially more tokens per task and hence increase model usage intensity by orders of magnitude, leading to a potentially rising effective cost of AI use, especially at large scale. Indeed, broad macroeconomic productivity gains likely require high-intensity, systemic adoption \\( ^{3} \\) via integration in core business processes. Such adoption also",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.103,
+                0.796,
+                0.894,
+                0.855
+            ],
+            "angle": 0,
+            "content": "\\( ^{2} \\)  Agentic capabilities refer to AI agents that operate within and across apps and integrations to execute a broad range of knowledge tasks. They can autonomously carry out multi-step tasks in a delegated workspace over extended periods (e.g., reading and writing files, accessing computer and browser functions, and coordinating with subagents). For an in-depth analysis of agentic AI, see OECD (2026)."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.102,
+                0.86,
+                0.894,
+                0.89
+            ],
+            "angle": 0,
+            "content": "\\( ^{3} \\)  Systemic adoption refers to deep integration in production and business processes, going beyond the occasional use of chatbot interfaces by individual workers."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.104,
+                0.916,
+                0.804,
+                0.93
+            ],
+            "angle": 0,
+            "content": "ARTIFICIAL INTELLIGENCE MARKETS: RECENT DEVELOPMENTS AND COMPETITION ISSUES © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.11,
+                0.889,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.127,
+                0.889,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.141,
+                0.891,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.157,
+                0.889,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.172,
+                0.891,
+                0.184
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.189,
+                0.404,
+                0.199
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.223,
+                0.804,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.25,
+                0.661,
+                0.264
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.566,
+                0.637,
+                0.578
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.602,
+                0.891,
+                0.614
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.617,
+                0.892,
+                0.63
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.631,
+                0.891,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.648,
+                0.891,
+                0.661
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.663,
+                0.694,
+                0.676
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.686,
+                0.891,
+                0.697
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.702,
+                0.891,
+                0.713
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.717,
+                0.891,
+                0.73
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.732,
+                0.891,
+                0.746
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.747,
+                0.891,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.106,
+                0.076,
+                0.125,
+                0.09
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.109,
+                0.893,
+                0.142
+            ],
+            "angle": 0,
+            "content": "needs to be enabled by organisational change and complementary investments in intangibles such as data and skills, which may be slow to occur (Calvino et al. 2026; Brynjolfsson, Syverson and Rock, 2021).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.147,
+                0.895,
+                0.226
+            ],
+            "angle": 0,
+            "content": "Moreover, cybersecurity, safety and operational risks could become an increasing barrier to adoption and diffusion across sectors and firms. As AI capabilities continue to increase and AI agents become more deeply integrated into IT systems, these concerns are becoming critical and could slow down adoption. In addition, it could increase switching costs and force product bundling with cybersecurity solutions to the benefit of the more integrated digital companies.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.104,
+                0.244,
+                0.646,
+                0.263
+            ],
+            "angle": 0,
+            "content": "Figure 2. Quality-adjusted prices of AI models have declined rapidly"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.105,
+                0.271,
+                0.466,
+                0.289
+            ],
+            "angle": 0,
+            "content": "Quality-adjusted AI price index (text-to-text modality)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.273,
+                0.3,
+                0.723,
+                0.512
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.105,
+                0.522,
+                0.892,
+                0.549
+            ],
+            "angle": 0,
+            "content": "Note: The index shows the evolution (starting in June 2023) of the quality-adjusted price of using AI models from the cloud. See André et al. (2025) for more details."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.105,
+                0.548,
+                0.591,
+                0.563
+            ],
+            "angle": 0,
+            "content": "Source: Author's calculations following André et al. (2025). Data from Artificial Analysis."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.584,
+                0.895,
+                0.678
+            ],
+            "angle": 0,
+            "content": "Competition risks remain important in several AI market segments. Several inherent characteristics of AI markets carry structural risks for competition with varying intensity in different layers of the value chain. Table 1 highlights the main technological features and market characteristics and the implied key competition risks for each segment, starting from more upstream - hardware, cloud infrastructure and data – followed by model development and applications downstream. Four features appear in several market segments which are in turn discussed below.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.195,
+                0.916,
+                0.893,
+                0.929
+            ],
+            "angle": 0,
+            "content": "ARTIFICIAL INTELLIGENCE MARKETS: RECENT DEVELOPMENTS AND COMPETITION ISSUES © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.11,
+                0.889,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.127,
+                0.854,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.148,
+                0.889,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.163,
+                0.891,
+                0.176
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.18,
+                0.889,
+                0.191
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.194,
+                0.891,
+                0.207
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.209,
+                0.585,
+                0.223
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.244,
+                0.641,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.586,
+                0.889,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.601,
+                0.891,
+                0.613
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.617,
+                0.889,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.633,
+                0.889,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.648,
+                0.889,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.664,
+                0.441,
+                0.674
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.869,
+                0.075,
+                0.894,
+                0.091
+            ],
+            "angle": 0,
+            "content": "| 5"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.106,
+                0.107,
+                0.529,
+                0.125
+            ],
+            "angle": 0,
+            "content": "Table 1. Risks for competition across the value chain"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.164,
+                0.133,
+                0.834,
+                0.477
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Market segment</td><td>Technological features and market characteristics</td><td>Key competition risks</td></tr><tr><td>Hardware(chips &amp; specialised equipment)</td><td>High fixed costs; economies of scale and scope; long development times; inelastic supply curves; high switching costs; learning-by-doing</td><td>High market concentration; barriers to entry for new chip designers and manufacturers; dependency on a small number of suppliers; risk of foreclosure or preferential access for vertically integrated or large incumbents; existing software ecosystems</td></tr><tr><td>Cloud infrastructure(compute &amp; data centres)</td><td>Capital intensity; economies of scale; sunk costs; scope economies with existing cloud services; user switching costs and consumer inertia</td><td>Entrenchment of incumbent cloud providers; leveraging of cloud market power into adjacent AI segments; preferential pricing; product bundling; vertical foreclosure</td></tr><tr><td>Data(training, fine-tuning and proprietary datasets)</td><td>Exclusive data partnerships; data feedback loops; economies of scope with downstream services; bundling and tying</td><td>Data concentration and gatekeeping; foreclosure of rivals through exclusive access to high-quality or proprietary data; reinforcing advantages for incumbents with large user bases; reduced ability for new entrants to train competitive models</td></tr><tr><td>Foundation models(backbones of Generative AI models – language, code, image and video generators)</td><td>Data feedback loops; self-improving AI capabilities; high fixed and sunk costs; scale economies in training and inference; reputational advantages</td><td>Oligopolistic market structures; durable leadership through cumulative learning; preferential or selective access to frontier models; vertical integration with cloud or downstream services reducing contestability</td></tr><tr><td>Downstream applications(consumer &amp; business AI services)</td><td>Network effects; switching costs; user lock-in; exclusive distribution or default positioning; bundling with existing digital ecosystems</td><td>Market tipping in key use cases; foreclosure via exclusive partnerships or default settings; gatekeeping of digital platforms; leveraging of upstream advantages into downstream dominance; reduced choice and higher long-term switching costs for users; product bundling.</td></tr></table>"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.486,
+                0.895,
+                0.642
+            ],
+            "angle": 0,
+            "content": "Concentration of critical inputs and economies of scale and scope are important, including high-end chips (Haramboure et al. 2023), specialised cloud infrastructure (OECD, 2025b), large datasets (often proprietary), robust energy systems (IEA, 2025; OECD, 2025a) and scarce specialised skills (Calvino et al. 2026). Competition can gradually erode due to input bottlenecks or the build-up of gatekeeping positions in these critical segments of the value chain (OECD, 2024; CMA, 2024). This has happened in the past in digital markets such as search engines and social media (OECD, 2022) and could happen again in AI markets if competition is not enforced along the whole AI value chain (Beraja and Buera, 2026). In addition to control over the technology, complementary infrastructure - specialised data centres, electricity generation and robust grid connections and transmission – can also become a key source of market power (IEA, 2025).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.647,
+                0.895,
+                0.757
+            ],
+            "angle": 0,
+            "content": "Indeed, the rapid expansion of Generative AI markets since 2022 has been accompanied by strong concentration in AI capacity within a few countries and firms (Figure 1 Panel A) to the benefit of first movers and vertically integrated actors. Total estimated AI investments in the United States are more than twice that of other OECD countries in 2025 (Figure 3 Panel B). This gap is set to widen further, reflecting large differences in AI investment led by a few global AI giants operating across many jurisdictions (Frost, Rishabh and Shreeti, 2026). The five largest US technology firms spent $400 billion on capital expenditure in 2025 and are forecast to spend $660 billion in 2026 (Wachter and Wachter, 2026).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.762,
+                0.895,
+                0.888
+            ],
+            "angle": 0,
+            "content": "The cloud provision market and the manufacturing of specialised chips (GPUs) are two examples of structurally concentrated markets, where high fixed costs, large economies of scale and scope, first-mover advantage and long development times tend to generate concentration. In 2023, the three major cloud providers account for 74 per cent of global cloud market (Gambacorta and Shreeti, 2026). Another example, more upstream in the value chain, is NVIDIA that accounts for 90 per cent of the GPU market in 2023 (Gambacorta and Shreeti, 2026). Whether market concentration ends up posing competition issues is a question that warrants further analysis, taking into account factors related to the behaviour of market participants.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.105,
+                0.916,
+                0.804,
+                0.93
+            ],
+            "angle": 0,
+            "content": "ARTIFICIAL INTELLIGENCE MARKETS: RECENT DEVELOPMENTS AND COMPETITION ISSUES © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.486,
+                0.891,
+                0.5
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.503,
+                0.891,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.518,
+                0.891,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.533,
+                0.891,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.549,
+                0.891,
+                0.561
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.564,
+                0.889,
+                0.577
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.58,
+                0.891,
+                0.592
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.596,
+                0.891,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.611,
+                0.891,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.626,
+                0.2,
+                0.639
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.648,
+                0.889,
+                0.661
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.664,
+                0.891,
+                0.676
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.68,
+                0.891,
+                0.692
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.695,
+                0.891,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.711,
+                0.891,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.725,
+                0.889,
+                0.738
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.74,
+                0.737,
+                0.754
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.764,
+                0.889,
+                0.776
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.78,
+                0.891,
+                0.791
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.794,
+                0.891,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.811,
+                0.891,
+                0.822
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.826,
+                0.889,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.84,
+                0.891,
+                0.854
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.857,
+                0.891,
+                0.868
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.873,
+                0.2,
+                0.884
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.106,
+                0.076,
+                0.123,
+                0.09
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.103,
+                0.107,
+                0.748,
+                0.127
+            ],
+            "angle": 0,
+            "content": "Figure 3. AI investment and compute capacity are concentrated across countries"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.201,
+                0.14,
+                0.491,
+                0.341
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.504,
+                0.141,
+                0.812,
+                0.341
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.103,
+                0.359,
+                0.895,
+                0.506
+            ],
+            "angle": 0,
+            "content": "Note: Panel A. Data centre capacity is expressed in megawatts (MW), that is the electrical power required to operate data centres. MW is a commonly used proxy for data centre capacity, but it is not a direct measure of compute power, because electricity is also used for cooling and other supporting infrastructure. For comparison, 1 MW of continuous power corresponds to roughly the average annual electricity use of about 800 US homes. The denominator is GDP in constant purchasing power parity. Panel B. AI capacity refers to an economy's ability to develop and deploy advanced AI systems. Investment in AI development capacity refers to the estimated investment and R&D costs required to produce frontier AI models, including compute costs for model training, algorithmic improvements, and post-training costs related to model alignment. Estimates are computed by aggregating firm-level estimates of the cost of training AI models.AI development includes generative AI as well as other types of AI. Investment in AI infrastructure capacity refers to the cost of AI compute infrastructure used for inference and training. It covers investment in data centres, including ICT hardware as well as energy and non-IT investments required to power and operate these facilities. Source: Panel A: Author's calculations based on data from IEA (2025). Panel B: author's preliminary estimates based on data from IEA (2025); OECD.AI (2026), data from Preqin; and Artificial Analysis."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.526,
+                0.894,
+                0.605
+            ],
+            "angle": 0,
+            "content": "Strong open-source development has mitigated some concentration effects by lowering entry costs, putting price pressure on incumbents, reducing dependence on a limited number of providers, improving transparency and fostering cumulative innovation (André et al., 2025; Demirer et al. 2025; OECD, 2025c). However, open source and common standards can also create ecosystem effects and exclusive bundles that compound first-mover advantage and create network effects to the advantage of a few companies.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.61,
+                0.895,
+                0.704
+            ],
+            "angle": 0,
+            "content": "First-mover advantage and positive feedback loops. Such concentration may compound first-mover advantages due to data feedback loops, network effects, consumer lock-in, AI model self-improvements and preferential model access (Hagiu and Wright, 2025; Korinek and Vipra, 2025; The Economist, 2026; Gambacorta and Shreeti, 2026). It may also limit entry, especially where model development and inference require large sunk costs, scarce talent, costly access to frontier compute and strategic operational partnerships.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.102,
+                0.71,
+                0.895,
+                0.851
+            ],
+            "angle": 0,
+            "content": "Vertical integration with gatekeeping of key segments of the value chain also threatens the contestability of AI markets. Many leading digital firms operate across multiple layers of the AI value chain – including model development, cloud provision, and downstream digital services – allowing them to favour their own offerings, bundle AI with existing products, and raise switching costs for users (Frost, Rishabh and Shreeti, 2026). Such strategies can weaken contestability, even as model prices decline. Weak transparency, conflicts of interest and lobbying further distort competition, particularly when dominant international and vertically integrated firms could shape regulations through undue influence (Vitale and Bitetti, 2026). Market power may therefore emerge through the simultaneous control of upstream physical infrastructure and downstream digital platforms and influence on the regulatory environment.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.856,
+                0.895,
+                0.889
+            ],
+            "angle": 0,
+            "content": "The current energy shocks and supply-chain disruptions may reinforce concentration risks, as a small number of vertically integrated firms that own AI infrastructure may be better placed than smaller",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.195,
+                0.916,
+                0.894,
+                0.929
+            ],
+            "angle": 0,
+            "content": "ARTIFICIAL INTELLIGENCE MARKETS: RECENT DEVELOPMENTS AND COMPETITION ISSUES © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.526,
+                0.889,
+                0.539
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.542,
+                0.89,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.558,
+                0.888,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.574,
+                0.889,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.588,
+                0.872,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.611,
+                0.891,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.627,
+                0.891,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.642,
+                0.889,
+                0.654
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.658,
+                0.891,
+                0.67
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.674,
+                0.891,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.69,
+                0.207,
+                0.702
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.711,
+                0.891,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.727,
+                0.889,
+                0.738
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.743,
+                0.891,
+                0.753
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.758,
+                0.891,
+                0.769
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.774,
+                0.891,
+                0.785
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.788,
+                0.892,
+                0.801
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.804,
+                0.891,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.819,
+                0.891,
+                0.832
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.836,
+                0.794,
+                0.847
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.858,
+                0.891,
+                0.87
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.873,
+                0.889,
+                0.885
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.871,
+                0.075,
+                0.893,
+                0.091
+            ],
+            "angle": 0,
+            "content": "| 7"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.109,
+                0.894,
+                0.157
+            ],
+            "angle": 0,
+            "content": "rivals to cope with rising energy costs, supply-chain disruptions and tightening financing conditions. Besides, foreclosure through selective access to the most capable models \\( ^{4} \\) can favour large incumbents in cloud, operating systems, cybersecurity, or services such as finance (The Economist, 2026).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.162,
+                0.895,
+                0.257
+            ],
+            "angle": 0,
+            "content": "Cross-country asymmetries and dependence. AI may widen existing gaps between leading and lagging economies. Where frontier AI exhibits increasing returns to scale, cumulative learning and strong complementarities between development and deployment, early leaders may reinforce their position over time. Language and cultural differences may also hamper or delay adoption in some countries. While the number of languages supported by large language models is steadily growing, many are still unsupported by most models, and performance remains significantly lower than in English (Chaar et al., 2025).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.262,
+                0.895,
+                0.404
+            ],
+            "angle": 0,
+            "content": "Countries with weaker domestic AI ecosystems may still adopt the technology and reap the benefits in terms of higher productivity and more competitive and innovative downstream markets (Chaar et al., 2025; Filippucci et al., 2026). However, they would be able to capture only a limited share of the market rents associated with AI development. Cross-country dependence on foreign AI services may further weaken competition and economic resilience. Economies with limited domestic AI inference or development capacity may become increasingly reliant on imported AI products and services (De Soyres et al., 2026; WTO, 2025). This can increase exposure to pricing power, service disruptions, foreclosure through selective access, export controls and regulatory conflicts, thereby amplifying the consequences of oligopolistic market structures.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.103,
+                0.846,
+                0.894,
+                0.891
+            ],
+            "angle": 0,
+            "content": "\\( ^{4} \\)  Anthropic’s restricted release of its “Mythos” models to a select group of companies for cybersecurity reasons is the latest example of how vertical integration and early partnerships with key incumbents can create implicit switching costs and confer an undue competitive advantage."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.104,
+                0.916,
+                0.804,
+                0.93
+            ],
+            "angle": 0,
+            "content": "ARTIFICIAL INTELLIGENCE MARKETS: RECENT DEVELOPMENTS AND COMPETITION ISSUES © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.11,
+                0.889,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.125,
+                0.888,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.141,
+                0.811,
+                0.154
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.162,
+                0.891,
+                0.177
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.178,
+                0.891,
+                0.192
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.195,
+                0.891,
+                0.207
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.21,
+                0.889,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.226,
+                0.888,
+                0.236
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.241,
+                0.831,
+                0.252
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.263,
+                0.891,
+                0.276
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.277,
+                0.891,
+                0.291
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.293,
+                0.891,
+                0.306
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.31,
+                0.891,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.325,
+                0.891,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.34,
+                0.891,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.356,
+                0.891,
+                0.369
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.372,
+                0.891,
+                0.383
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.388,
+                0.334,
+                0.399
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.107,
+                0.076,
+                0.124,
+                0.09
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.114,
+                0.118,
+                0.449,
+                0.142
+            ],
+            "angle": 0,
+            "content": "What can policymakers do?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.163,
+                0.606,
+                0.18
+            ],
+            "angle": 0,
+            "content": "Policymakers should promote market contestability and innovation",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.143,
+                0.206,
+                0.88,
+                0.253
+            ],
+            "angle": 0,
+            "content": "- Given the rapid pace of innovation and large expected positive benefits from this technology, policymakers should adopt a balanced, proactive and forward-looking approach to monitoring and promoting competition in AI markets (OECD, 2024; André et al., 2025).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.141,
+                0.256,
+                0.881,
+                0.348
+            ],
+            "angle": 0,
+            "content": "- Policymakers can encourage competition and innovation simultaneously, by facilitating access to AI inputs (data, compute, skills), removing investment barriers for SMEs, improving market transparency and encouraging experimentation through regulatory sandboxes. Policymakers also need to monitor market developments in real time, promote system interoperability and scrutinise vertical strategies through acquisitions and partnerships that can lock in users and foreclose rivals.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.141,
+                0.352,
+                0.881,
+                0.43
+            ],
+            "angle": 0,
+            "content": "- While early policy action may hamper innovation, late action risks allowing concentration to become entrenched, making remedial steps difficult to implement. International cooperation and knowledge sharing among authorities, in particular competition authorities, can help build expertise and experience by enhancing transparency. Cross-border cooperation facilitates a coordinated, timely and balanced approach given the global nature of AI markets.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.142,
+                0.433,
+                0.881,
+                0.51
+            ],
+            "angle": 0,
+            "content": "- Competition authorities should also address the risk of regulatory fragmentation by coordinating with other domestic authorities, including energy and digital regulators to ensure that the competition bottlenecks in one market, upstream, such as chips or electricity, and downstream such as digital platforms, do not harm competition in other segments of the value chain.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.105,
+                0.575,
+                0.257,
+                0.591
+            ],
+            "angle": 0,
+            "content": "Explore further"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.605,
+                0.536,
+                0.62
+            ],
+            "angle": 0,
+            "content": "These findings draw on updates from André et al. (2025).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.629,
+                0.859,
+                0.659
+            ],
+            "angle": 0,
+            "content": "André et al. (2025), “Developments in Artificial Intelligence Markets: New Indicators Based on Model Characteristics, Prices and Providers”, OECD Publishing, Paris, https://doi.org/10.1787/9302bf46-en.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.105,
+                0.685,
+                0.221,
+                0.702
+            ],
+            "angle": 0,
+            "content": "References"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.716,
+                0.842,
+                0.745
+            ],
+            "angle": 0,
+            "content": "Acemoglu D. (2025), “The simple macroeconomics of AI”, Economic Policy, Volume 40, Issue 121, January 2025, Pages 13–58, https://doi.org/10.1093/epolic/eiae042."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.753,
+                0.661,
+                0.783
+            ],
+            "angle": 0,
+            "content": "Aghion, P. and S. Bunel (2024), “AI and Growth: Where Do We Stand?”, https://www.frbsf.org/wpcontent/uploads/AI-and-Growth-Aghion-Bunel.pdf."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.792,
+                0.86,
+                0.821
+            ],
+            "angle": 0,
+            "content": "André et al. (2025), “Developments in Artificial Intelligence Markets: New Indicators Based on Model Characteristics, Prices and Providers”, OECD Publishing, Paris, https://doi.org/10.1787/9302bf46-en.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.829,
+                0.874,
+                0.872
+            ],
+            "angle": 0,
+            "content": "Baily, M., E. Brynjolfsson and A. Korinek (2023), Machines of mind: The case for an AI-powered productivity boom. Brookings, https://www.brookings.edu/articles/machines-of-mind-the-case-for-an-ai-powered-productivity-boom/.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.195,
+                0.916,
+                0.893,
+                0.929
+            ],
+            "angle": 0,
+            "content": "ARTIFICIAL INTELLIGENCE MARKETS: RECENT DEVELOPMENTS AND COMPETITION ISSUES © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.113,
+                0.118,
+                0.448,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.164,
+                0.606,
+                0.18
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.17,
+                0.204,
+                0.879,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.222,
+                0.878,
+                0.235
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.236,
+                0.817,
+                0.251
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.255,
+                0.88,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.271,
+                0.878,
+                0.286
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.287,
+                0.878,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.303,
+                0.878,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.317,
+                0.878,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.335,
+                0.423,
+                0.347
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.353,
+                0.878,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.368,
+                0.88,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.383,
+                0.878,
+                0.397
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.4,
+                0.878,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.414,
+                0.874,
+                0.428
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.433,
+                0.878,
+                0.448
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.449,
+                0.878,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.463,
+                0.878,
+                0.479
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.479,
+                0.878,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.496,
+                0.265,
+                0.509
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.575,
+                0.255,
+                0.591
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.606,
+                0.533,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.631,
+                0.853,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.644,
+                0.856,
+                0.657
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.685,
+                0.218,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.792,
+                0.854,
+                0.805
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.806,
+                0.856,
+                0.819
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.832,
+                0.821,
+                0.843
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.844,
+                0.871,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.858,
+                0.32,
+                0.871
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.874,
+                0.075,
+                0.894,
+                0.09
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.106,
+                0.823,
+                0.137
+            ],
+            "angle": 0,
+            "content": "Beraja, M. and F.J. Buera (2026): “The life-cycle of concentrated industries”, National Bureau of Economic Research Working Papers, no 34770."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.145,
+                0.858,
+                0.189
+            ],
+            "angle": 0,
+            "content": "Brynjolfsson, E., D. Rock, and C. Syverson (2021), \"The Productivity J-Curve: How Intangibles Complement General Purpose Technologies.\" American Economic Journal: Macroeconomics 13 (1): 333–72."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.199,
+                0.887,
+                0.23
+            ],
+            "angle": 0,
+            "content": "Calligaris, S. et al. (2026), “Competition in the age of AI: initial evidence from microdata”, OECD Artificial Intelligence Papers, OECD Publishing, Paris, forthcoming."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.238,
+                0.866,
+                0.28
+            ],
+            "angle": 0,
+            "content": "Calvino, F., J. Reijerink and L. Samek (2025), “The effects of generative AI on productivity, innovation and entrepreneurship”, OECD Artificial Intelligence Papers, No. 39, OECD Publishing, Paris, https://doi.org/10.1787/b21df222-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.289,
+                0.815,
+                0.319
+            ],
+            "angle": 0,
+            "content": "Calvino, F. et al. (2025), \"Is generative AI a General Purpose Technology?\", OECD Publishing, Paris, https://doi.org/10.1787/704e2d12-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.327,
+                0.877,
+                0.371
+            ],
+            "angle": 0,
+            "content": "Calvino, F. et al. (2026), “Digital technology diffusion in the age of AI: Cross-country evidence from microdata”, OECD Science, Technology and Industry Working Papers, No. 2026/01, OECD Publishing, Paris, https://doi.org/10.1787/ebc2debe-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.379,
+                0.79,
+                0.422
+            ],
+            "angle": 0,
+            "content": "Chaar, T. et al. (2025), “AI and the global productivity divide: Fuel for the fast or a lift for the laggards?”, OECD Artificial Intelligence Papers, No. 51, OECD Publishing, Paris, https://doi.org/10.1787/c315ea90-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.431,
+                0.86,
+                0.46
+            ],
+            "angle": 0,
+            "content": "Competition and Markets Authority (CMA) (2024), “AI Foundation Models: Technical Update Report”, CMA, London."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.106,
+                0.469,
+                0.88,
+                0.486
+            ],
+            "angle": 0,
+            "content": "Demirer, M. et al. (2025), “The Emerging Market for Intelligence”, Working Paper, OpenRouter & Azure."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.493,
+                0.81,
+                0.525
+            ],
+            "angle": 0,
+            "content": "De Soyres, F., A. Haag, M. Liu and E. Van Leemput (2026), “The global trade effects of the AI infrastructure boom”, February 13, 2026, FEDs notes."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.534,
+                0.891,
+                0.577
+            ],
+            "angle": 0,
+            "content": "Filippucci, F. et al. (2026), “AI meets trade: Global linkages and the cross-country distribution of the gains from AI”, OECD Artificial Intelligence Papers, No. 57, OECD Publishing, Paris, https://doi.org/10.1787/13081644-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.585,
+                0.807,
+                0.618
+            ],
+            "angle": 0,
+            "content": "Filippucci, F. et al. (2025), “Macroeconomic productivity gains from Artificial Intelligence in G7 economies”, OECD Publishing, Paris, https://doi.org/10.1787/a5319ab5-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.626,
+                0.885,
+                0.657
+            ],
+            "angle": 0,
+            "content": "Filippucci, F., P. Gal and M. Schief (2024), “Miracle or Myth? Assessing the macroeconomic productivity gains from Artificial Intelligence”, OECD Artificial Intelligence Papers, No. 29, OECD Publishing, Paris."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.664,
+                0.709,
+                0.681
+            ],
+            "angle": 0,
+            "content": "Gambacorta, L. and V. Shreeti (2026), \"The AI supply chain\", BIS Paper No 154."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.688,
+                0.875,
+                0.719
+            ],
+            "angle": 0,
+            "content": "Hagiu, A. and J. Wright (2025), “Artificial intelligence and competition policy”, International Journal of Industrial Organization, 2025, 103134, ISSN 0167-7187, https://doi.org/10.1016/j.ijindorg.2025.103134."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.726,
+                0.834,
+                0.77
+            ],
+            "angle": 0,
+            "content": "Haramboure, A. et al. (2023), “Vulnerabilities in the semiconductor supply chain”, OECD Science, Technology and Industry Working Papers, No. 2023/05, OECD Publishing, Paris, https://doi.org/10.1787/6bed616f-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.778,
+                0.86,
+                0.808
+            ],
+            "angle": 0,
+            "content": "Hobbs, H. et al. (2026), “Exploring possible AI trajectories through 2030”, OECD Artificial Intelligence Papers, No. 55, OECD Publishing, Paris, https://doi.org/10.1787/cb41117a-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.106,
+                0.816,
+                0.88,
+                0.833
+            ],
+            "angle": 0,
+            "content": "IEA (2025), “Energy and AI”, IEA, Paris, https://www.iea.org/reports/energy-and-ai, Licence: CC BY 4.0."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.841,
+                0.875,
+                0.87
+            ],
+            "angle": 0,
+            "content": "Frost, J., K. Rishabh and V. Shreeti (2026), “Global giants in the AI supply chain”, BIS bulletin, No 122, Bank for International Settlements, Basel, https://www.bis.org/publ/bisbull122.htm."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.105,
+                0.916,
+                0.804,
+                0.93
+            ],
+            "angle": 0,
+            "content": "ARTIFICIAL INTELLIGENCE MARKETS: RECENT DEVELOPMENTS AND COMPETITION ISSUES © OECD 2026"
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.106,
+                0.075,
+                0.135,
+                0.09
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.106,
+                0.863,
+                0.137
+            ],
+            "angle": 0,
+            "content": "Korinek, A. and P. Vipra (2025), “Concentrating Intelligence: Scaling and Market Structure in Artificial Intelligence”, Working Paper, Johns Hopkins University."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.145,
+                0.878,
+                0.174
+            ],
+            "angle": 0,
+            "content": "OECD (2022), “The Evolving Concept of Market Power in the Digital Economy”, OECD Roundtables on Competition Policy Papers, No. 278, OECD Publishing, Paris."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.183,
+                0.7,
+                0.212
+            ],
+            "angle": 0,
+            "content": "OECD (2024), “Artificial Intelligence, Data and Competition”, OECD Publishing, Paris, https://doi.org/10.1787/e7e88884-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.221,
+                0.879,
+                0.264
+            ],
+            "angle": 0,
+            "content": "OECD (2025a), “Diagnostic Toolkit for Reducing Regulatory Barriers to Solar, Wind and Pumped Hydro Storage in the European Union: Empowering Policymakers at National, Regional, and Local Levels”, OECD Publishing, Paris, https://doi.org/10.1787/15f4aed4-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.272,
+                0.748,
+                0.302
+            ],
+            "angle": 0,
+            "content": "OECD (2025b), “Competition in artificial intelligence infrastructure”, OECD Publishing, Paris, https://doi.org/10.1787/623d1874-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.31,
+                0.688,
+                0.34
+            ],
+            "angle": 0,
+            "content": "OECD (2025c), “AI Openness: A Primer for Policymakers”, OECD Publishing, Paris, https://doi.org/10.1787/02f73362-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.348,
+                0.861,
+                0.378
+            ],
+            "angle": 0,
+            "content": "OECD (2025d), “AI adoption by small and medium-sized enterprises: OECD discussion paper for the G7”, OECD Publishing, Paris, https://doi.org/10.1787/426399c1-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.386,
+                0.87,
+                0.416
+            ],
+            "angle": 0,
+            "content": "OECD (2025e), “The effects of generative AI on productivity, innovation and entrepreneurship”, OECD Publishing, Paris, https://doi.org/10.1787/b21df222-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.424,
+                0.867,
+                0.454
+            ],
+            "angle": 0,
+            "content": "OECD (2026), “The agentic AI landscape and its conceptual foundations”, OECD Artificial Intelligence Papers, No. 56, OECD Publishing, Paris, https://doi.org/10.1787/396cf758-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.462,
+                0.755,
+                0.492
+            ],
+            "angle": 0,
+            "content": "OECD AI Observatory (2026), data from AI knowledge on Demand (AIKOD) database, https://oecd.ai/en/aikod, accessed on 15 April 2026."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.5,
+                0.704,
+                0.517
+            ],
+            "angle": 0,
+            "content": "OECD.AI (2026), data from Preqin, www.preqin.com, accessed on 8 April 2026."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.524,
+                0.706,
+                0.542
+            ],
+            "angle": 0,
+            "content": "The Economist (2026), “America wakes up to AI’s dangerous power”, April 16th."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.549,
+                0.883,
+                0.593
+            ],
+            "angle": 0,
+            "content": "Vitale, C. and R. Bitetti (2026), “Regulating lobbying activities to protect competition: New evidence from the OECD PMR indicators”, OECD Economics Department Working Papers, No. 1855, OECD Publishing, Paris, https://doi.org/10.1787/ad88f58a-en."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.105,
+                0.601,
+                0.876,
+                0.643
+            ],
+            "angle": 0,
+            "content": "Wachter, J.A. and J.D. Wachter (2026), “What Investment Data Implies about the AI Transition” (March 19, 2026). Available at SSRN: https://ssrn.com/abstract=6465519 or http://dx.doi.org/10.2139/ssrn.6465519."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.105,
+                0.67,
+                0.189,
+                0.687
+            ],
+            "angle": 0,
+            "content": "Contact"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.702,
+                0.481,
+                0.72
+            ],
+            "angle": 0,
+            "content": "Christophe ANDRE (christophe.andre@oecd.org)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.725,
+                0.417,
+                0.742
+            ],
+            "angle": 0,
+            "content": "Manuel BETIN (manuel.betin@oecd.org)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.747,
+                0.356,
+                0.764
+            ],
+            "angle": 0,
+            "content": "Peter GAL (peter.gal@oecd.org)",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.195,
+                0.916,
+                0.893,
+                0.929
+            ],
+            "angle": 0,
+            "content": "ARTIFICIAL INTELLIGENCE MARKETS: RECENT DEVELOPMENTS AND COMPETITION ISSUES © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.67,
+                0.188,
+                0.689
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.704,
+                0.476,
+                0.718
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.727,
+                0.412,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.749,
+                0.35,
+                0.763
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.858,
+                0.075,
+                0.892,
+                0.091
+            ],
+            "angle": 0,
+            "content": "| 11"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.116,
+                0.894,
+                0.156
+            ],
+            "angle": 0,
+            "content": "This work is issued under the responsibility of the Secretary-General of the OECD, and does not necessarily reflect the official views of OECD Member countries. It draws on previous OECD work on AI markets and competition and incorporates updated evidence on recent developments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.162,
+                0.894,
+                0.19
+            ],
+            "angle": 0,
+            "content": "This document, as well as any data and map included herein, are without prejudice to the status of or sovereignty over any territory, to the delimitation of international frontiers and boundaries and to the name of any territory, city or area.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.195,
+                0.894,
+                0.235
+            ],
+            "angle": 0,
+            "content": "The statistical data for Israel are supplied by and under the responsibility of the relevant Israeli authorities. The use of such data by the OECD is without prejudice to the status of the Golan Heights, East Jerusalem and Israeli settlements in the West Bank under the terms of international law.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.241,
+                0.21,
+                0.254
+            ],
+            "angle": 0,
+            "content": "© OECD 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.106,
+                0.264,
+                0.195,
+                0.287
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.204,
+                0.276,
+                0.495,
+                0.289
+            ],
+            "angle": 0,
+            "content": "Attribution 4.0 International (CC BY 4.0)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.292,
+                0.892,
+                0.32
+            ],
+            "angle": 0,
+            "content": "This work is made available under the Creative Commons Attribution 4.0 International licence. By using this work, you accept to be bound by the terms of this licence (https://creativecommons.org/licenses/by/4.0/).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.323,
+                0.36,
+                0.336
+            ],
+            "angle": 0,
+            "content": "Attribution – you must cite the work.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.339,
+                0.894,
+                0.378
+            ],
+            "angle": 0,
+            "content": "Translations – you must cite the original work, identify changes to the original and add the following text: In the event of any discrepancy between the original work and the translation, only the text of original work should be considered valid.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.381,
+                0.894,
+                0.422
+            ],
+            "angle": 0,
+            "content": "Adaptations – you must cite the original work and add the following text: This is an adaptation of an original work by the OECD. The opinions expressed and arguments employed in this adaptation should not be reported as representing the official views of the OECD or of its Member countries.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.425,
+                0.893,
+                0.452
+            ],
+            "angle": 0,
+            "content": "Third-party material – the licence does not apply to third-party material in the work. If using such material, you are responsible for obtaining permission from the third party and for any claims of infringement.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.454,
+                0.892,
+                0.481
+            ],
+            "angle": 0,
+            "content": "You must not use the OECD logo, visual identity or cover image without express permission or suggest the OECD endorses your use of the work.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.484,
+                0.894,
+                0.523
+            ],
+            "angle": 0,
+            "content": "Any dispute arising under this licence shall be settled by arbitration in accordance with the Permanent Court of Arbitration (PCA) Arbitration Rules 2012. The seat of arbitration shall be Paris (France). The number of arbitrators shall be one.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.106,
+                0.916,
+                0.803,
+                0.929
+            ],
+            "angle": 0,
+            "content": "ARTIFICIAL INTELLIGENCE MARKETS: RECENT DEVELOPMENTS AND COMPETITION ISSUES © OECD 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.118,
+                0.89,
+                0.127
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.13,
+                0.889,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.144,
+                0.485,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.163,
+                0.891,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.176,
+                0.888,
+                0.188
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.198,
+                0.891,
+                0.206
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.209,
+                0.89,
+                0.22
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.223,
+                0.467,
+                0.232
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.243,
+                0.207,
+                0.255
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.207,
+                0.278,
+                0.491,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.293,
+                0.89,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.307,
+                0.736,
+                0.318
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.323,
+                0.357,
+                0.335
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.34,
+                0.891,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.11,
+                0.354,
+                0.889,
+                0.363
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.366,
+                0.222,
+                0.377
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.382,
+                0.891,
+                0.394
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.395,
+                0.89,
+                0.407
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.408,
+                0.491,
+                0.42
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.426,
+                0.889,
+                0.436
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.439,
+                0.716,
+                0.449
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.456,
+                0.889,
+                0.467
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.11,
+                0.469,
+                0.313,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.485,
+                0.891,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.498,
+                0.889,
+                0.509
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.511,
+                0.194,
+                0.522
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

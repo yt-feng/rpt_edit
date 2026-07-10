@@ -1,0 +1,3518 @@
+[
+    {
+        "type": "text",
+        "text": "TECHNICAL",
+        "bbox": [
+            133,
+            349,
+            864,
+            433
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "NOTES & MANUALS",
+        "bbox": [
+            155,
+            493,
+            841,
+            537
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "SNA/BPM Implementation Planning Playbook",
+        "text_level": 1,
+        "bbox": [
+            160,
+            763,
+            843,
+            863
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "IMF Statistics Department",
+        "bbox": [
+            362,
+            872,
+            643,
+            893
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "INTERNATIONAL\nMONETARY FUND",
+        "bbox": [
+            423,
+            78,
+            575,
+            198
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "TNM/2026/08",
+        "bbox": [
+            426,
+            964,
+            570,
+            984
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The image is too blurry to recognize the content.",
+        "bbox": [
+            0,
+            3,
+            996,
+            1000
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "TECHNICAL NOTES AND MANUALS",
+        "bbox": [
+            109,
+            116,
+            620,
+            142
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "SNA/BPM Implementation Planning Playbook",
+        "text_level": 1,
+        "bbox": [
+            112,
+            198,
+            709,
+            284
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "IMF Statistics Department ©2026 International Monetary Fund\nCover Design: IMF Creative Solutions",
+        "bbox": [
+            111,
+            324,
+            385,
+            347
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "The contributors of this technical note are Elka Atanasova, Mher Barseghyan, Francien Berry, Maria Mercedes Collazos, Borys Cotto, Jannick Damgaard, Thomas Elkjaer, Patricia Fauvel, Levan Gogoberishvili, Kristy Howell, Cameron Johnstone, Venkat Josyula, Sebastian Manzi, Margarida Martins, Dragana Ostojic, Renato Perez, Red Pinkney, Patrick Quill, Jennifer Ribarsky, Lisbeth Rivas, Carlos Sanchez Munoz, Rodger Sceviour, Anthony Silungwe, Consuelo Soto-Crovetto, Joseph St Lawrence, Michael Stanger, Erich Strassner, Jim Tebrake, and Richard Wild (all staff from the Statistics Department, IMF).",
+        "bbox": [
+            111,
+            869,
+            885,
+            936
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            362,
+            117,
+            635,
+            152
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "SNA/BPM Implementation Planning Playbook\nIMF Statistics Department\nTNM 2026/08",
+        "bbox": [
+            328,
+            174,
+            669,
+            226
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "DISCLAIMER:",
+        "text_level": 2,
+        "bbox": [
+            444,
+            270,
+            550,
+            286
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Technical Notes and Manuals are aimed at a broad audience interested in technical assistance issues. The views expressed in Technical Notes and Manuals are those of the authors and do not necessarily represent the views of the IMF, its Executive Board, or IMF management.",
+        "bbox": [
+            133,
+            287,
+            862,
+            340
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Abstract:",
+        "text_level": 2,
+        "bbox": [
+            112,
+            366,
+            187,
+            382
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "This technical note provides practical guidance to support countries in planning the implementation of the 2025 System of National Accounts and BPM7. It offers a structured framework and tools to define scope, manage resources, and engage with users and stakeholders.",
+        "bbox": [
+            111,
+            383,
+            882,
+            436
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Recommended Citation:",
+        "text_level": 2,
+        "bbox": [
+            112,
+            454,
+            297,
+            470
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "IMF Statistics Department. 2026. \"SNA/BPM Implementation Planning Playbook.\" IMF Technical Notes and Manuals 2026/08, International Monetary Fund, Washington, DC.",
+        "bbox": [
+            112,
+            470,
+            879,
+            507
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "ISBNs:",
+        "bbox": [
+            112,
+            523,
+            166,
+            539
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "979-8-229-04290-1 (paper)",
+        "bbox": [
+            112,
+            541,
+            313,
+            559
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "979-8-229-04356-4 (ePub)",
+        "bbox": [
+            112,
+            558,
+            310,
+            575
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "979-8-229-04295-6 (web PDF)",
+        "bbox": [
+            112,
+            575,
+            334,
+            594
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Publication orders may be placed online or through the mail: International Monetary Fund, Publication Services\nPO Box 92780\nWashington, DC 20090, USA\nTel: 202-623-7430 | Fax: 202-623-7201\npublications@IMF.org | eLibrary.IMF.org",
+        "bbox": [
+            277,
+            646,
+            720,
+            753
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Contents",
+        "text_level": 2,
+        "bbox": [
+            112,
+            118,
+            264,
+            143
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "I. Overview 1  \nII. Stakeholder and User Engagement 2  \nIII. Defining the Scope of Implementation 7  \nIV. Planning Statistical Infrastructure Investments 10  \nV. Reviewing and Updating Statistical Business Processes 14  \nVI. Establishing the Implementation Timeline 18  \nVII. Communication and Dissemination Planning 20  \nVIII. Resource and Governance Planning for Implementation 27  \nIX. Risk Identification and Assessment for Implementation Planning 31",
+        "bbox": [
+            111,
+            181,
+            885,
+            435
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Tables",
+        "text_level": 2,
+        "bbox": [
+            114,
+            458,
+            166,
+            473
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Table 1. Stakeholder and User Engagement Planning Tool 5  \nTable 2. Additional Resources for Stakeholder and User Engagement Planning 6  \nTable 3. Alignment with SNA/BPM Statistical Standards Assessment Tool 7  \nTable 4. SNA/BPM Implementation Scoping Tool 8  \nTable 5. Additional Resources for Determining the Scope of SNA/BPM Implementation 9  \nTable 6. SNA/BPM Statistical Infrastructure Assessment Tool 11  \nTable 7. SNA/BPM Statistical Infrastructure Investment Planning Tool 12  \nTable 8. Additional Resources for Statistical Infrastructure Investment Planning 13  \nTable 9. Statistical Business Process Planning Tool 16  \nTable 10. Additional Resources for Statistical Business Process Documentation 17  \nTable 11. SNA/BPM Implementation Timeline Planning Tool 19  \nTable 12. SNA/BPM Implementation Communication Planning Tool 21  \nTable 13. SNA/BPM Implementation Dissemination Planning Tool 24  \nTable 14. Additional Resources for Communication and Dissemination Planning 26  \nTable 15. SNA/BPM Implementation Resource and Funding Planning Tool 29  \nTable 16. Additional Resources for Resource and Funding Planning 30  \nTable 17. SNA/BPM Implementation Risk Identification Planning Tool 32  \nTable 18. Additional Resources for Risk-Management Planning 33",
+        "bbox": [
+            124,
+            473,
+            885,
+            791
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "I. Overview",
+        "text_level": 2,
+        "bbox": [
+            112,
+            118,
+            303,
+            143
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The international statistical community, under the auspices of the United Nations Statistical Commission and the International Monetary Fund, released updated versions of the 2025 System of National Accounts (2025 SNA) and the Integrated Balance of Payments and International Investment Position Manual, seventh edition (BPM7) in March 2025. These updates respond to a rapidly evolving global economy marked by increasing digitalization, globalization, a growing interest in well-being and sustainability, and financial innovation. The updates are intended to ensure that official statistics remain relevant, coherent, and responsive to emerging user needs. Implementing these updated standards is a major undertaking for the national statistical system (or NSS, encompassing national statistical offices, central banks, ministries of finance, and other agencies responsible for compiling macroeconomic statistics). It requires coordinated efforts across institutions, investments in data sources and methods, modernization of statistical processes, and effective engagement with data users.",
+        "bbox": [
+            111,
+            175,
+            885,
+            369
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Recognizing these challenges, the SNA/BPM Implementation Planning Playbook has been developed as a practical guide to support countries in planning their implementation efforts. The objective of this playbook is to help SNA/Balance of Payments Manual (BPM) statistical program management teams develop a strategic and tailored SNA/BPM implementation plan that",
+        "bbox": [
+            111,
+            385,
+            885,
+            455
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- responds to the needs of users, including policymakers, researchers, international organizations, and the public;",
+        "bbox": [
+            130,
+            467,
+            883,
+            500
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "• focuses on the most economically relevant and feasible recommendations;",
+        "bbox": [
+            132,
+            502,
+            694,
+            518
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- fits within a reasonable time frame and available resources;",
+        "bbox": [
+            133,
+            520,
+            581,
+            535
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- prioritizes investments in statistical infrastructure, institutional arrangements, and process modernization;",
+        "bbox": [
+            133,
+            537,
+            803,
+            569
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "• supports the development of a robust dissemination and communication strategy;",
+        "bbox": [
+            133,
+            571,
+            750,
+            588
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "• enhances the credibility and use of official statistics; and",
+        "bbox": [
+            133,
+            590,
+            562,
+            604
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "• builds trust and transparency with stakeholders.",
+        "bbox": [
+            133,
+            608,
+            503,
+            623
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Rather than prescribing a one-size-fits-all model, the planning playbook provides a structured framework to develop an SNA/BPM implementation plan that supports countries in engaging stakeholders, defining the scope of work, assessing the alignment of their current program and their ambitions against the new standards, sequencing implementation activities, organizing governance and resources, and managing risks. It also encourages countries to view the implementation process not only as a technical compliance exercise but also as a strategic opportunity to strengthen the overall statistical program, improve data quality and coherence, and increase the value of economic statistics for decision making. Ultimately, the successful implementation of the 2025 SNA and BPM7 will depend on national leadership, inclusive engagement with users, and a sustained commitment to statistical development. This playbook is designed to serve as a guide to support that journey.",
+        "bbox": [
+            109,
+            654,
+            885,
+            829
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "This playbook is accompanied by a series of SNA/BPM implementation planning tools that guide national authorities in developing a coherent and well-documented implementation plan. The tools are intended to help users systematically collect information, assess options, and structure key planning decisions; they are not prescriptive and should be adapted to national circumstances.",
+        "bbox": [
+            111,
+            845,
+            885,
+            916
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "SNA/BPM Implementation Planning Playbook",
+        "bbox": [
+            112,
+            64,
+            393,
+            79
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "1",
+        "bbox": [
+            870,
+            65,
+            883,
+            77
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "II. Stakeholder and User Engagement",
+        "text_level": 2,
+        "bbox": [
+            112,
+            117,
+            712,
+            145
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "A. Principles for Stakeholder and User Engagement",
+        "text_level": 2,
+        "bbox": [
+            111,
+            174,
+            535,
+            190
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Determining the scope of updates when implementing major international statistical standards—such as BPM and SNA—is a critical planning step for any NSS. However, decisions about scope should not be made in isolation. Effective SNA/BPM implementation planning requires that user and stakeholder engagement mechanisms be established before scope decisions are finalized. Early and structured consultation with users—including government ministries, central banks, regulators, research institutions, private sector representatives, international organizations, and civil society—helps ensure that implementation priorities are grounded in current and anticipated data needs, policy relevance, and operational feasibility. Once these engagement mechanisms are in place, statistical program management teams are better positioned to define a realistic and impactful scope of implementation.",
+        "bbox": [
+            109,
+            191,
+            887,
+            349
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Effective user and stakeholder engagement for SNA/BPM implementation planning should be guided by four core principles:",
+        "bbox": [
+            111,
+            366,
+            885,
+            401
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "• Early and continuous engagement",
+        "bbox": [
+            132,
+            414,
+            408,
+            429
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "• Inclusive and differentiated engagement",
+        "bbox": [
+            133,
+            431,
+            450,
+            446
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "• Structured and sustained engagement",
+        "bbox": [
+            133,
+            449,
+            439,
+            464
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Engagement focused on prioritization and trade-offs",
+        "bbox": [
+            132,
+            465,
+            537,
+            482
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Engagement should begin at the earliest stages of the planning process and continue throughout implementation. Early engagement ensures that emerging user needs, anticipated policy demands, and upcoming analytical requirements are reflected in the initial definition of scope. Continuous engagement allows program managers to validate assumptions, test preliminary decisions, and adjust plans as circumstances evolve. This approach reduces the risk of late-stage objections, misalignment with user expectations, or the need for costly revisions once implementation is underway.",
+        "bbox": [
+            109,
+            494,
+            885,
+            599
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Effective engagement requires involving a broad and representative range of stakeholders while recognizing that different groups play different roles in the implementation process. Data providers, primary users, policy users, technical partners, and oversight bodies each have distinct perspectives and information needs. Engagement strategies should therefore be tailored rather than uniform–technical consultations may be appropriate for methodological users, while high-level briefings may be more effective for senior policymakers. Inclusive and differentiated engagement strengthens the relevance, usability, and legitimacy of the resulting statistical outputs.",
+        "bbox": [
+            109,
+            617,
+            885,
+            739
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Engagement should be organized, predictable, and sustained over time, rather than ad hoc or purely reactive. Establishing structured engagement mechanisms—such as standing user groups, technical working groups, scheduled consultations, or formal feedback cycles—supports transparency and accountability on both sides. Regular engagement allows statistical program managers to monitor progress, communicate constraints, and respond to changing circumstances, while also helping users understand sequencing, timelines, and resource limitations associated with SNA/BPM implementation.",
+        "bbox": [
+            111,
+            757,
+            885,
+            863
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "User and stakeholder engagement should explicitly support prioritization decisions. Given resource, capacity, and timing constraints, not all SNA/BPM recommendations can be implemented simultaneously. Engagement processes should therefore be designed to elicit input on which changes deliver the greatest value, which enhancements are time-sensitive, and where trade-offs are acceptable. By grounding prioritization decisions in structured stakeholder input, statistical program management teams can allocate resources more effectively, sequence activities realistically, and build shared ownership of implementation choices.",
+        "bbox": [
+            111,
+            878,
+            885,
+            933
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            112,
+            65,
+            127,
+            77
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Technical Notes and Manuals",
+        "bbox": [
+            700,
+            64,
+            883,
+            79
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            118,
+            885,
+            170
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "B. Good Practices in User and Stakeholder Engagement",
+        "text_level": 2,
+        "bbox": [
+            112,
+            191,
+            566,
+            208
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Understanding current and future user needs is crucial to ensuring that updated outputs remain relevant and effective. To achieve this, users and stakeholders should be engaged early in the project, ideally through the establishment of an SNA/BPM implementation advisory committee or task team. Such a committee provides strategic guidance, aligning revised statistical standards with national priorities, analytical needs, and methodological rigor, while increasing acceptance and feasibility.",
+        "bbox": [
+            111,
+            209,
+            885,
+            297
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "In addition to helping define which recommendations should be implemented, the advisory committee can play several vital roles throughout the process:",
+        "bbox": [
+            111,
+            314,
+            883,
+            349
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Validate user needs: The committee provides a forum for understanding and prioritizing data needs from diverse stakeholders, ensuring that statistical enhancements align with policy and research priorities.",
+        "bbox": [
+            130,
+            361,
+            866,
+            411
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Support stocktaking: It advises on the use of alignment assessment tools, interprets the results, and identifies priority gaps in implementation.",
+        "bbox": [
+            132,
+            412,
+            882,
+            446
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Provide strategic feedback: It serves as a sounding board for methodological choices, classification decisions, or experimental data outputs—acting as a kind of \"beta test\" audience.",
+        "bbox": [
+            132,
+            448,
+            870,
+            482
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Enhance communication and advocacy: It communicates the value of updated statistics to funding bodies, thereby helping to secure political and financial support.",
+        "bbox": [
+            132,
+            484,
+            880,
+            517
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Foster transparency and trust: It maintains stakeholder confidence in the process through inclusive governance and regular updates.",
+        "bbox": [
+            132,
+            518,
+            880,
+            553
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "To be effective, the advisory committee should be guided by clear terms of reference that outline its advisory role, membership criteria, scope of responsibilities, frequency of meetings, and reporting lines. Although the committee provides input, the ultimate responsibility for methodological decisions must remain with the NSS and its technical experts. It is also important to consider committee continuity. The committee should remain active throughout the entire implementation process $^{1}$ –not only at the scoping stage—to provide ongoing guidance, review outputs, and help troubleshoot emerging challenges. This continuity enhances institutional memory, fosters a sense of ownership among stakeholders, and strengthens the overall success of the reform. An inclusive and well-structured advisory committee can transform the implementation of statistical standards from a technical update into a collaborative national initiative, improving both the uptake and utility of the resulting data.",
+        "bbox": [
+            111,
+            582,
+            885,
+            758
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Beyond using the advisory committee to determine the scope of the work, statistical program management is encouraged to use the advisory committee throughout the implementation process. Drawing on the United Nations Economic Commission for Africa Guidelines for Developing an Integrated User Engagement Strategy for National Statistical Systems, this strategy should set out how users will be consulted at each stage, from defining the scope, to reviewing experimental estimates, to assessing the effect of revisions, and how their feedback will be incorporated into decisions. A structured engagement plan helps ensure that user input is not ad hoc but systematically built into the project's governance and communication framework. Some countries may have regular committees to advise on national accounts/external sector statistics. Such committees should be tasked with advising the National Statistical Institute (NSI)/central bank on BPM7/2025 SNA implementation–focusing on methodological changes, possible data sources, and data dissemination issues. For example, in India, the Advisory Committee on National Accounts provides guidance on all matters relating to national accounts–base year revisions, implementation of updated standards, and so on.",
+        "bbox": [
+            111,
+            775,
+            885,
+            880
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "SNA/BPM Implementation Planning Playbook",
+        "bbox": [
+            112,
+            64,
+            393,
+            79
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            870,
+            65,
+            883,
+            78
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_footnote",
+        "text": "1 The committee could remain beyond the implementation to continue innovations and function generally as a discussion forum on matters related to macroeconomic statistics.",
+        "bbox": [
+            112,
+            906,
+            883,
+            936
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            118,
+            885,
+            223
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "If establishing a formal advisory committee is not feasible, the SNA/BPM statistical program management should, at a minimum, compile a comprehensive list of relevant stakeholders and develop a robust engagement plan to ensure their involvement in determining the scope of the project. This plan should detail each stakeholder's name and key organizational contacts; clarify whether they serve as data users, data providers, or both; and articulate their principal needs. In addition, the program should specify how frequently stakeholders should be consulted; the preferred modes of consultation, such as in-person meetings, surveys, or virtual sessions; and the forums best suited for gathering input. Integrating this stakeholder engagement plan into the broader project communication strategy will help foster collaboration, address diverse needs, and enhance transparency at every stage of implementation.",
+        "bbox": [
+            109,
+            239,
+            887,
+            398
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "C. Stakeholder and User Engagement Planning Tool",
+        "text_level": 2,
+        "bbox": [
+            111,
+            419,
+            537,
+            435
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The Stakeholder and User Engagement Planning Tool (Table 1) is designed to help authorities systematically identify and document key users and stakeholders whose involvement is essential to successful implementation. Effective SNA/BPM implementation depends not only on technical preparedness within the statistical organization but also on timely and well-coordinated engagement with data providers, data users, and external technical partners. By using this tool, authorities can ensure that user needs, data dependencies, and coordination requirements are explicitly captured and can be considered when developing the overall implementation plan.",
+        "bbox": [
+            111,
+            436,
+            885,
+            542
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Authorities should use this tool to identify organizations that play a substantive role in SNA/BPM implementation, including providers of source data, primary users of the resulting statistics, and institutions that contribute technical expertise, oversight, or capacity development. For each stakeholder, the emphasis should be on clearly describing the role they play in the implementation process rather than merely listing institutional relationships. This distinction helps differentiate stakeholders whose engagement is operationally critical—such as administrative data providers—from those whose involvement is primarily analytical, policy oriented, or advisory.",
+        "bbox": [
+            109,
+            559,
+            885,
+            665
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The tool also prompts authorities to specify the key topics on which engagement with each stakeholder is required. These may include data-access and data-sharing arrangements, methodological or classification changes, revision policies, dissemination and release schedules, or implications for analytical and policy use. Linking stakeholders to concrete engagement topics helps ensure that consultations are purposeful and directly aligned with the scope and substance of the SNA/BPM changes under consideration, rather than ad hoc or purely informational.",
+        "bbox": [
+            111,
+            681,
+            887,
+            787
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "In addition, authorities are encouraged to indicate when engagement is expected to occur over the course of the implementation. Engagement timing should be aligned with major project phases and milestones, recognizing that some stakeholders may need to be consulted regularly during design and build stages, whereas others may be engaged periodically around key decisions, testing phases, or releases. Documenting engagement timing supports realistic scheduling and helps manage expectations among internal teams and external partners.",
+        "bbox": [
+            111,
+            804,
+            885,
+            893
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Finally, the tool invites authorities to consider the most appropriate engagement approach for each stakeholder, considering the nature of the relationship, the sensitivity or complexity of the issues involved, and available resources. Engagement approaches may range from technical working sessions and structured briefings to senior-level consultations or virtual exchanges. Once completed, this information collection tool provides a structured and transparent foundation for developing the stakeholder and user engagement plan and can be used to inform related planning tools covering communication, resource allocation, timelines, and risk management.",
+        "bbox": [
+            111,
+            909,
+            885,
+            944
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            114,
+            66,
+            127,
+            75
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Technical Notes and Manuals",
+        "bbox": [
+            700,
+            65,
+            883,
+            79
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            118,
+            885,
+            188
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/758fab8c8c8e5277760f07dcdd66fba28d05e50fb11b74cb44b1e4e4bc1c4c7b.jpg",
+        "table_caption": [
+            "Table 1. Stakeholder and User Engagement Planning Tool"
+        ],
+        "table_footnote": [
+            "Note: BPM = Balance of Payments Manual; SNA = System of National Accounts."
+        ],
+        "table_body": "<table><tr><td>Category</td><td>Selections</td></tr><tr><td rowspan=\"4\">Stakeholder Organization</td><td>□ Revenue authority</td></tr><tr><td>□ Ministry of finance</td></tr><tr><td>□ Central bank</td></tr><tr><td>□ Other (specify):____</td></tr><tr><td rowspan=\"6\">Stakeholder Category</td><td>□ Data provider</td></tr><tr><td>□ Primary data user</td></tr><tr><td>□ Policy user</td></tr><tr><td>□ Technical partner</td></tr><tr><td>□ Oversight body</td></tr><tr><td>□ Other (specify):____</td></tr><tr><td>Role in SNA/BPM Implementation</td><td>(Briefly describe the stakeholder's role [for example, provider of administrative tax data, reviewer of revised estimates].)</td></tr><tr><td rowspan=\"7\">Primary Engagement Topics</td><td>□ Data access and sharing</td></tr><tr><td>□ Methodological changes</td></tr><tr><td>□ Classification revisions</td></tr><tr><td>□ Revision policy and backcasting</td></tr><tr><td>□ Dissemination and release calendar</td></tr><tr><td>□ Capacity development</td></tr><tr><td>□ Other (specify):____</td></tr><tr><td rowspan=\"11\">Engagement Phase/Timing</td><td>□ Design</td></tr><tr><td>□ Build</td></tr><tr><td>□ Testing</td></tr><tr><td>□ Prerelease</td></tr><tr><td>□ Release</td></tr><tr><td>□ Postrelease</td></tr><tr><td>Frequency:</td></tr><tr><td>□ Ongoing</td></tr><tr><td>□ Monthly</td></tr><tr><td>□ Quarterly</td></tr><tr><td>□ Ad hoc</td></tr><tr><td rowspan=\"6\">Engagement Approach</td><td>□ Technical working sessions</td></tr><tr><td>□ Bilateral briefings</td></tr><tr><td>□ Senior-level consultations</td></tr><tr><td>□ Written consultations</td></tr><tr><td>□ Webinars/workshops</td></tr><tr><td>□ Other (specify): ____</td></tr><tr><td>Internal Engagement Lead</td><td>Name/unit responsible for managing this relationship</td></tr><tr><td rowspan=\"5\">Key Risks if Not Engaged</td><td>□ Data gaps</td></tr><tr><td>□ Misinterpretation of revisions</td></tr><tr><td>□ Policy misuse</td></tr><tr><td>□ Reputational risk</td></tr><tr><td>□ Low adoption</td></tr><tr><td>Notes/Follow-Up Actions</td><td>Free text</td></tr></table>",
+        "bbox": [
+            114,
+            229,
+            883,
+            940
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "SNA/BPM Implementation Planning Playbook",
+        "bbox": [
+            112,
+            64,
+            393,
+            79
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            870,
+            65,
+            883,
+            78
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "",
+        "table_caption": [
+            ""
+        ],
+        "table_footnote": [
+            ""
+        ],
+        "bbox": [
+            114,
+            141,
+            882,
+            436
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "D. Additional Resources for Stakeholder and User Engagement Planning",
+        "text_level": 2,
+        "bbox": [
+            112,
+            479,
+            700,
+            497
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The resources listed in Table 2 provide authoritative guidance to support the development of a structured and effective stakeholder and user engagement strategy. Together, they help statistical program managers ground engagement activities in internationally recognized principles, strengthen institutional practices, and ensure that engagement is purposeful, inclusive, and aligned with the public good. Consulting these resources can help authorities move beyond ad hoc consultations toward a more systematic and sustainable approach to user engagement.",
+        "bbox": [
+            111,
+            498,
+            885,
+            604
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Table 2. Additional Resources for Stakeholder and User Engagement Planning",
+        "text_level": 2,
+        "bbox": [
+            112,
+            633,
+            717,
+            652
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "table",
+        "img_path": "images/93c20b6a13cfb06f7967f28747cda77dc3a0fbb26dd675029c5df0120c3604f2.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>United Nations. 2014. Fundamental Principles of Official Statistics. https://unstats.un.org/unsd/dnss/gp/FP-New-E.pdf</td></tr><tr><td>United Nations. 2025. Handbook on Management and Organization of National Statistical Systems. https://unstats.un.org/capacity-development/handbook/Handbook_All_2025A_202505.pdf (Chapters 6 and 7)</td></tr><tr><td>United Nations Economic Commission for Africa. 2022. Guidelines for Developing an Integrated User Engagement Strategy for National Statistical Systems. https://www.uneca.org/guidelines-developing-integrated-user-engagement-strategy-national-statistical-systems</td></tr><tr><td>United Nations Statistics Division. 2015. Implementation Guidelines for the Fundamental Principles of Official Statistics. https://unstats.un.org/unsd/dnss/gp/Implementation_Guidelines_FINAL_without_edit.pdf</td></tr><tr><td>World Bank. 2023. Data Operational Toolkit: Mainstreaming Data-Driven Approaches to Inclusive Service Delivery. https://thedocs.worldbank.org/en/doc/93dda4329b3f353b64859ef7a9e58a2d-0050012022/related/Data-Operational-Toolkit-Version-1-0-May-2023.pdf</td></tr></table>",
+        "bbox": [
+            114,
+            660,
+            882,
+            821
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            114,
+            66,
+            127,
+            78
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Technical Notes and Manuals",
+        "bbox": [
+            700,
+            64,
+            883,
+            79
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "III. Defining the Scope of Implementation",
+        "text_level": 1,
+        "bbox": [
+            112,
+            117,
+            777,
+            146
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "A. Assessing the Current State of the Statistical Program",
+        "text_level": 2,
+        "bbox": [
+            111,
+            172,
+            573,
+            189
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The updates must reflect the most economically significant activities and sectors in the country (both now and in the future). This must be balanced against what is achievable with existing or planned resources, and timelines should consider operational capacity and organizational readiness. The scope of updates is defined as the set of recommendations that the statistical organizations want to implement that are not yet implemented. These can be existing (2008 SNA or BPM6) recommendations that are not yet implemented, or new recommendations resulting from the most recent update process. An important step in determining the scope is a stocktaking exercise to determine the program's alignment with the current standard and the implications that the new set of recommendations has on the degree of alignment. To assist in the stocktaking exercise, the international statistical community has developed an Alignment with Statistical Standards Assessment Tool (Table 3) that allows countries to assess the maturity of their alignment with international statistical standards such as the SNA and BPM. This tool enables a national statistical program to assess which recommendations are currently implemented and how well these recommendations have been implemented. The tool also allows national statistical programs to quantify their alignment by providing a series of maturity scores across the following elements of alignment:",
+        "bbox": [
+            109,
+            191,
+            887,
+            439
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Alignment with concepts and definitions",
+        "bbox": [
+            130,
+            448,
+            450,
+            464
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Alignment with accounting rules",
+        "bbox": [
+            132,
+            465,
+            393,
+            481
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Alignment with statistical methods",
+        "bbox": [
+            133,
+            484,
+            408,
+            500
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Alignment with recommended classification systems",
+        "bbox": [
+            132,
+            501,
+            535,
+            517
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Alignment with recommended statistical outputs",
+        "bbox": [
+            132,
+            518,
+            511,
+            534
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "By doing so, countries can better understand how their planned efforts will affect their overall maturity score. For instance, a country with a current maturity score of 80 (out of 100) may identify 10 additional recommendations to address during the update process. These 10 items would be marked as targets. The tool then calculates a target maturity score, which can be compared with the current maturity score. The difference between these scores provides insight into the potential effect of the country's planned investments on alignment with the statistical standards (an important dimension of quality).",
+        "bbox": [
+            109,
+            547,
+            885,
+            654
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "For example, consider the results for the indicator “alignment with the SNA asset boundary.” Here, the maturity score for alignment with the 2025 SNA is 54.5, whereas alignment with the 2008 SNA stands at 100. The lower score for 2025 reflects the fact that many new assets introduced in the 2025 SNA—such as data and renewable energy resources—are not yet estimated. The tool allows the country to assess its alignment with both the 2008 SNA and the 2025 SNA.",
+        "bbox": [
+            109,
+            669,
+            887,
+            757
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "table",
+        "img_path": "images/3daa0b083ea0b071b2d2fc2aa687b13f5635649f0891215cdebd76d40c81789e.jpg",
+        "table_caption": [
+            "Table 3. Alignment with SNA/BPM Statistical Standards Assessment Tool"
+        ],
+        "table_footnote": [
+            "Note: BPM = Balance of Payments Manual; SNA = System of National Accounts."
+        ],
+        "table_body": "<table><tr><td>Indicator</td><td>Current 2025 SNA Maturity Score (0-100)</td><td>Current 2008 SNA Maturity Score (0-100)</td></tr><tr><td>Coverage of the economic territory is consistent with SNA standards.</td><td>94.0</td><td>94.0</td></tr><tr><td>Coverage of institutional units is consistent with SNA standards.</td><td>86.2</td><td>86.2</td></tr><tr><td>Alignment with the SNA production boundary</td><td>91.3</td><td>91.2</td></tr><tr><td>Alignment with the SNA asset boundary</td><td>54.5</td><td>100.0</td></tr></table>",
+        "bbox": [
+            114,
+            797,
+            880,
+            906
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "SNA/BPM Implementation Planning Playbook",
+        "bbox": [
+            112,
+            64,
+            393,
+            79
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            870,
+            65,
+            883,
+            77
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "B. Determining the Scope of SNA/BPM Implementation",
+        "text_level": 2,
+        "bbox": [
+            111,
+            118,
+            566,
+            133
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The alignment with statistical standards assessment tool also serves as an SNA/BPM Implementation Scope Planning Tool (Table 4). This tool serves two closely related purposes. First, it enables authorities to assess their current level of alignment with individual recommendations of the 2025 SNA and the BPM7. Second, and more importantly for implementation planning, it provides a structured and transparent way to identify the proposed scope of the implementation project. For each recommendation, the tool records both the current level of implementation and the target level to be achieved through the update. Recommendations for which the target level differs from the current level represent areas where change is planned and therefore define the substantive scope of the implementation effort.",
+        "bbox": [
+            109,
+            135,
+            887,
+            276
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The recommendations related to the coverage of the economic territory provide a useful illustration of how the tool supports scope definition. Achieving full alignment with the SNA/BPM concepts of economic territory requires implementation of several distinct recommendations. In the example shown, the program manager has indicated that only one of these recommendations is currently implemented. However, the update process is intended to address the remaining recommendations to achieve full alignment. This intention is captured in the “target implementation” column. As a result, the recommendations that are not yet implemented but are targeted for adoption constitute the core of the implementation scope for this conceptual area.",
+        "bbox": [
+            109,
+            292,
+            887,
+            417
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Beyond its role in internal planning, the implementation scope planning tool also functions as an effective communication instrument. By presenting current and target implementation levels in a concise and standardized format, it allows project teams to communicate scope decisions clearly to senior management, data providers, users of statistics, and technical partners. Making scope choices explicit helps manage expectations by clarifying which recommendations will be addressed during the implementation cycle and the level of alignment that is being pursued.",
+        "bbox": [
+            109,
+            433,
+            885,
+            539
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The use of a common scope planning tool across countries supports transparency and international comparability. When authorities apply the same structure, terminology, and implementation-level classifications across indicators, it becomes easier to compare implementation plans, identify similarities and differences in national approaches, and facilitate peer learning. For international organizations and technical partners, the tool provides a consistent basis for reviewing plans, tailoring technical assistance, and monitoring progress across countries. In this way, the scope information collection tool supports both national planning needs and broader international coordination objectives in the implementation of the 2025 SNA and BPM7.",
+        "bbox": [
+            109,
+            556,
+            887,
+            679
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "table",
+        "img_path": "images/de9d72ad6bd249a36930d18d12f50cee9025465bdc487d6efcf059a63e1cbca8.jpg",
+        "table_caption": [
+            "Table 4. SNA/BPM Implementation Scoping Tool"
+        ],
+        "table_footnote": [
+            "Note: BPM = Balance of Payments Manual; SNA = System of National Accounts."
+        ],
+        "table_body": "<table><tr><td>Identifier</td><td>SNA Recommendation</td><td>Current Implementation</td><td>Target Implementation</td><td>In Scope</td></tr><tr><td>3_1_1_1</td><td>Do you fully cover all the activities within your entire domestic economic territory in your national accounts statistics?</td><td>Fully-Over 95 percent of the recommended (activity, transactions, stocks/flows, territory, population, units) is covered/estimated.</td><td>Fully-Over 95 percent of the recommended (activity, transactions, stocks/flows, territory, population, units) is covered/estimated.</td><td>No</td></tr><tr><td>3_1_1_2</td><td>Are activities in territorial enclaves abroad (for example, embassies, military bases) included in your national accounts statistics?</td><td>Not aligned-Less than 50 percent of the recommended (activity, transactions, stocks/flows, territory, population, units) is covered/estimated.</td><td>Fully-Over 95 percent of the recommended (activity, transactions, stocks/flows, territory, population, units) is covered/estimated.</td><td>Yes</td></tr><tr><td>3_1_1_3</td><td>Are activities in free trade zones, bonded warehouses, and offshore factories under customs control included in your national accounts statistics?</td><td>Not aligned–Less than 50 percent of the recommended (activity, transactions, stocks/flows, territory, population, units) is covered/estimated.</td><td>Fully–Over 95 percent of the recommended (activity, transactions, stocks/flows, territory, population, units) is covered/estimated.</td><td>Yes</td></tr><tr><td>3_1_1_4</td><td>Are activities of workers who work abroad (cross-border) or spend part of the year abroad (seasonal), which maintain a center of economic interest in your economy, included in your national accounts statistics?</td><td>Not aligned–Less than 50 percent of the recommended (activity, transactions, stocks/flows, territory, population, units) is covered/estimated.</td><td>Fully–Over 95 percent of the recommended (activity, transactions, stocks/flows, territory, population, units) is covered/estimated.</td><td>Yes</td></tr></table>",
+        "bbox": [
+            114,
+            718,
+            883,
+            902
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            112,
+            65,
+            127,
+            78
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Technical Notes and Manuals",
+        "bbox": [
+            700,
+            64,
+            883,
+            79
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "table",
+        "img_path": "",
+        "table_caption": [
+            ""
+        ],
+        "table_footnote": [
+            ""
+        ],
+        "bbox": [
+            114,
+            145,
+            880,
+            339
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "C. Additional Resources for Determining the Scope of SNA/BPM Implementation",
+        "text_level": 2,
+        "bbox": [
+            112,
+            387,
+            769,
+            402
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The resources listed in Table 5 support the effective scoping of an SNA/BPM implementation workplan by grounding planning decisions in internationally recognized quality and methodological frameworks. They help statistical authorities ensure that implementation scope is defined in a way that is conceptually sound, transparent, and consistent with both statistical standards and data quality expectations.",
+        "bbox": [
+            111,
+            405,
+            885,
+            474
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Table 5. Additional Resources for Determining the Scope of SNA/BPM Implementation",
+        "bbox": [
+            112,
+            505,
+            782,
+            522
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "SNA/BPM Implementation Planning Playbook",
+        "bbox": [
+            112,
+            65,
+            393,
+            79
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            870,
+            65,
+            883,
+            77
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "IV. Planning Statistical Infrastructure Investments",
+        "text_level": 1,
+        "bbox": [
+            112,
+            116,
+            542,
+            175
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "A. Assessing the Current Statistical Infrastructure",
+        "text_level": 2,
+        "bbox": [
+            111,
+            204,
+            517,
+            220
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Before developing new macroeconomic estimates, an NSS often needs to make a significant investment in its statistical infrastructure. This can include enhancing statistical registers, updating economic classification systems, or expanding surveys or administrative data collections.",
+        "bbox": [
+            111,
+            222,
+            885,
+            275
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Often, as a first step, national statistical programs need to identify the source data requirements for the recommendations they intend to implement. This involves assessing all dimensions of the “to be implemented” recommendations, such as timeliness, granularity, concepts, and frequency, against the characteristics of the existing available source data. If the primary data required to produce the macroeconomic estimates are not available, the project team will need to explore different options to collect or develop the necessary data.",
+        "bbox": [
+            111,
+            292,
+            885,
+            381
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Given the cost of surveys, organizations have increasingly adopted an “administrative data or big data first approach.” Although administrative data and big data offer several long-term advantages over survey data, they are not costless. First, negotiations with the data owner to secure ongoing access to the data source can be time-consuming and costly, so planning adequate time for this activity is important. Second, the national statistical program needs to ensure that it has the technical infrastructure in place to access, process, and protect the data. Many organizations have adopted the Five Safes practices regarding data access, which is often a prerequisite enforced by data owners. Adopting and establishing (if not already established) the Five Safes practices can be time-consuming and resource-intensive, so statistical program management will need to plan accordingly. $^{2}$",
+        "bbox": [
+            111,
+            397,
+            885,
+            555
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "The use of big data is increasingly part of modern statistical infrastructure, as reflected in the United Nations Global Working Group on Big Data's Strategic Vision and the United Nations Economic and Social Commission for Asia and the Pacific Using Big Data for Official Statistics: A Guide with Good Practices. Countries should not only explore big data as a supplementary source but also adopt a strategic approach that defines priority use cases, ensures legal and ethical safeguards, and builds internal capacity for big data analytics. This includes early investment in staff training on big data methods and fostering partnerships with data holders—such as telecom operators or e-commerce platforms—under clear governance frameworks.",
+        "bbox": [
+            109,
+            571,
+            885,
+            696
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "It is crucial that any data exchange is preceded by a written memorandum of understanding (MOU) or letter of agreement to formalize the data exchange process. Most importantly, this ensures a steady and consistent flow of data between the organizations. The United Nations Economic Commission for Europe (UNECE) Guide to Sharing Economic Data in Official Statistics highlights the importance of standardizing data-sharing agreements. Beyond formalizing access, MOUs and letters of agreement should clearly define roles, data protection responsibilities, security protocols, and dispute resolution mechanisms.",
+        "bbox": [
+            111,
+            712,
+            887,
+            819
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Including these elements not only facilitates smoother negotiations but also builds long-term trust with data providers.",
+        "bbox": [
+            111,
+            834,
+            883,
+            869
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            114,
+            65,
+            133,
+            78
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "Technical Notes and Manuals",
+        "bbox": [
+            700,
+            64,
+            883,
+            79
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "2 The Five Safes principles are well explained in the following video: https://www.youtube.com/watch?v=Mln9T52mwj0&t=3s.",
+        "bbox": [
+            112,
+            919,
+            882,
+            935
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Once data sources are identified, the quality and fitness for use of these inputs must be systematically assessed. This involves evaluating the accuracy of source data, including checks for consistency, completeness, and coherence across data sets. National statistical programs should apply rigorous statistical methods for estimation, imputation, and valuation, particularly where data are missing or incomplete. As part of this process, national statistical programs should also incorporate modern statistical and data science techniques, such as machine learning or automated classification, where appropriate, to improve processing efficiency and quality.",
+        "bbox": [
+            111,
+            118,
+            885,
+            223
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "For administrative data, countries should apply structured quality assessment frameworks, such as the IMF Data Quality Assessment Framework. This ensures that dimensions such as coverage, timeliness, accuracy, and consistency are systematically evaluated before administrative sources are integrated into compilation processes. Embedding these assessments into the planning phase helps reduce downstream revisions and builds confidence among users.",
+        "bbox": [
+            111,
+            239,
+            885,
+            327
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "To assist national statistical programs in adopting international best practices related to source data, statistical methods, and quality assurance, a Statistical Infrastructure Assessment Tool (Table 6) has been developed that allows statistical organizations to assess their level of maturity with respect to international best practices. The tool allows national statistical programs to quantify the accuracy and reliability of their statistics and statistical practices across six elements of accuracy and reliability:",
+        "bbox": [
+            111,
+            345,
+            885,
+            433
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- Source data are adequate to ensure accuracy and reliability.",
+        "bbox": [
+            130,
+            444,
+            586,
+            460
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "• Accuracy of source data is regularly assessed.",
+        "bbox": [
+            132,
+            462,
+            486,
+            477
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- Rigorous statistical techniques are used for modeling, estimation, imputation, editing, and valuation.",
+        "bbox": [
+            132,
+            479,
+            877,
+            494
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- Rigorous quality assurance practices are employed.",
+        "bbox": [
+            133,
+            497,
+            529,
+            513
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- Revision analysis and reliability monitoring are conducted.",
+        "bbox": [
+            133,
+            513,
+            576,
+            529
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "• Data consistency is systematically assessed and maintained.",
+        "bbox": [
+            132,
+            532,
+            588,
+            547
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "table",
+        "img_path": "images/18ebb5792071aefb90cb17ad8fb6a55568c1447551132b8231eed70c10a63214.jpg",
+        "table_caption": [
+            "Table 6. SNA/BPM Statistical Infrastructure Assessment Tool"
+        ],
+        "table_footnote": [
+            "Note: BPM = Balance of Payments Manual; SNA = System of National Accounts."
+        ],
+        "table_body": "<table><tr><td>Indicator</td><td>Current Maturity Score (0-100)</td><td>Target Maturity Score (0-100)</td><td>Best Practices Implemented</td><td>Total Best Practices</td></tr><tr><td>Statistical registers are adequate</td><td>93.6</td><td>100.0</td><td>20</td><td>21</td></tr></table>",
+        "bbox": [
+            114,
+            601,
+            880,
+            655
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "B. Defining Statistical Infrastructure Investment Priorities",
+        "text_level": 2,
+        "bbox": [
+            112,
+            696,
+            583,
+            712
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "National statistical programs can use the results of the statistical infrastructure assessment to identify practices and capabilities that require strengthening to ensure the accuracy, reliability, and consistency of both existing estimates and the expanded set of estimates arising from the adoption of updated SNA/BPM recommendations. The assessment provides a structured view of the current state of statistical infrastructure across key dimensions, highlighting areas of full alignment as well as areas where gaps remain. An illustrative example of an assessment of accuracy, reliability, and consistency is provided in Table 7.",
+        "bbox": [
+            111,
+            714,
+            885,
+            820
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "The Statistical Infrastructure Investment Planning Tool can be used to identify infrastructure-related gaps to be addressed during the SNA/BPM update cycle. This is done by examining which recommended practices or best practices are not yet fully implemented and where targeted investment is planned. For example, statistical programs are expected to follow a set of best practices to ensure that statistical registers are adequate to support modern compilation requirements. In the illustrative case in Table 7, program managers have identified several practices where current alignment is incomplete and have indicated their intention to address these gaps as part of the update process.",
+        "bbox": [
+            111,
+            837,
+            885,
+            925
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "SNA/BPM Implementation Planning Playbook",
+        "bbox": [
+            112,
+            64,
+            393,
+            79
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            864,
+            65,
+            883,
+            78
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            118,
+            883,
+            152
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "By aggregating infrastructure-related gaps across all relevant indicators, the tool produces a consolidated view of the investment needs associated with SNA/BPM implementation. This consolidated view provides a clear and transparent basis for subsequent investment planning, resource allocation, and sequencing decisions. In addition, documenting current and target states enables assessment of how proposed investments are expected to improve the overall maturity of the statistical infrastructure, thereby strengthening the accuracy, reliability, and consistency of the statistical program over time.",
+        "bbox": [
+            109,
+            170,
+            885,
+            276
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "table",
+        "img_path": "images/30e037e744db12c05d30662b000977213b01e2902fa88b9b704ef78c2fc49424.jpg",
+        "table_caption": [
+            "Table 7. SNA/BPM Statistical Infrastructure Investment Planning Tool",
+            "Note: There are 16 other recommendations related to statistical registers that are not listed here, as this table is just illustrative. BPM = Balance of Payments Manual; SNA = System of National Accounts."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Recommendations and Best Practices</td><td>Current Implementation</td><td>Target Implementation</td></tr><tr><td>Are factoryless goods producers identified in the business register?</td><td>Not aligned–Less than 50 percent of the recommended (activity, transactions, stocks/flows, territory, population, units) is covered/estimated.</td><td>Fully–Over 95 percent of the recommended (activity, transactions, stocks/flows, territory, population, units) is covered/estimated.</td></tr><tr><td>Are special-purpose entities identified in the business register?</td><td>Broadly–Between 80 percent and 89 percent of the recommended (activity, transactions, stocks/ flows, territory, population, units) is covered/estimated.</td><td>Fully–Over 95 percent of the recommended (activity, transactions, stocks/flows, territory, population, units) is covered/estimated.</td></tr></table>",
+        "bbox": [
+            114,
+            315,
+            880,
+            470
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "C. Additional Resources for Defining Statistical Infrastructure Investment Priorities",
+        "text_level": 2,
+        "bbox": [
+            112,
+            532,
+            787,
+            549
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "The adoption of updated international statistical standards, such as the SNA and the BPM, requires NSS to review and, where necessary, strengthen the statistical infrastructure that underpins data collection and compilation. Implementing these standards does not necessarily require the creation of entirely new surveys or systems; rather, it often involves targeted enhancements to existing collection instruments, improved use of administrative data, and more effective coordination across statistical programs. In many instances, new data requirements can be addressed by refining survey questionnaires, expanding coverage of existing enterprise or household surveys, or formalizing data-sharing arrangements with administrative bodies and, where appropriate, private sector data holders. A coordinated approach to data collection is essential, as the same source data frequently support multiple statistical outputs, enabling greater internal consistency and more efficient use of resources.",
+        "bbox": [
+            111,
+            551,
+            885,
+            726
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "The updated SNA and BPM introduce changes that have implications for data requirements across a wide range of domains, including digital economy activities, global value chains, cross-border financial transactions, and new financial instruments. There is increased emphasis on correctly identifying economic ownership, recording services and intermediation margins, and capturing the activities of multinational enterprises and complex institutional arrangements. Addressing these requirements typically calls for more granular and better-integrated data, particularly in areas such as international trade in services, digital and platform-mediated transactions, and financial assets and liabilities. Strengthening the underlying statistical infrastructure to meet these needs is therefore a key enabler of successful SNA/BPM implementation.",
+        "bbox": [
+            111,
+            744,
+            885,
+            883
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "The international community is in the process of developing a series of methodological guides, compilation manuals, and practical implementation notes that support the development of this statistical infrastructure.",
+        "bbox": [
+            111,
+            901,
+            885,
+            936
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            114,
+            65,
+            133,
+            78
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "Technical Notes and Manuals",
+        "bbox": [
+            700,
+            64,
+            883,
+            79
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Rather than prescribing specific data collection instruments, these resources are intended to help program managers understand the nature of the new or enhanced data requirements introduced by the SNA and BPM and to identify appropriate strategies for addressing them within their national context. They offer guidance on data sources, institutional arrangements, and compilation practices that can be adapted and combined as part of a coherent implementation strategy.",
+        "bbox": [
+            111,
+            118,
+            885,
+            205
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Where illustrative examples of data needs or survey questions are referenced in these materials, they should be understood as indicative rather than prescriptive. Program managers remain responsible for designing or revising data collection instruments in line with national circumstances, legal frameworks, respondent burden considerations, and existing statistical capacities. By drawing on a common set of internationally recognized guidance documents, countries can strengthen their statistical infrastructure in a way that supports SNA/BPM implementation while promoting coherence across statistical domains, facilitating peer learning, and avoiding unnecessary duplication of effort.",
+        "bbox": [
+            111,
+            223,
+            885,
+            345
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Table 8 presents a selection of resources that are currently available to assist countries in planning and investing in statistical infrastructure for SNA and BPM implementation. It is important to note that this list represents the present state of guidance materials; over the next several years, the international community will continue to expand and refine this collection. Additional guidance and clarifications addressing new recommendations introduced in the updated SNA and BPM will be developed and released, providing further support for NSS as they modernize their practices and respond to evolving data requirements.",
+        "bbox": [
+            109,
+            363,
+            885,
+            469
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Table 8. Additional Resources for Statistical Infrastructure Investment Planning",
+        "text_level": 2,
+        "bbox": [
+            112,
+            481,
+            720,
+            498
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "ref_text",
+        "text": "Eurostat. 2025. Handbook on Measuring Data in the System of National Accounts. United Nations Economic Commission for Europe. https://unece.org/sites/default/files/2025-09/3\\_5\\_Eurostat%20\\_Data%20handbook%20-%20Massarelli.pdf",
+        "bbox": [
+            117,
+            510,
+            864,
+            549
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "ref_text",
+        "text": "Organisation for Economic Co-operation and Development (OECD). 2025. Measuring Natural Resources in the National Accounts: A Compilation Guide. OECD Publishing. https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/11/measuring-natural-resources-in-the-national-accounts\\_549be590/420c7c2a-en.pdf",
+        "bbox": [
+            119,
+            551,
+            861,
+            590
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "SNA/BPM Implementation Planning Playbook",
+        "bbox": [
+            112,
+            64,
+            393,
+            79
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            864,
+            65,
+            883,
+            78
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "V. Reviewing and Updating Statistical Business Processes",
+        "text_level": 1,
+        "bbox": [
+            111,
+            116,
+            586,
+            175
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "A. Analysis of Existing Statistical Business Processes",
+        "text_level": 2,
+        "bbox": [
+            111,
+            204,
+            542,
+            220
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Implementation of updated international statistical standards—such as the 2025 SNA and the BPM7—provides NSS with an opportunity to modernize its statistical business processes. The primary goal of the implementation project is to align statistical outputs with the new recommendations, but it is also a strategic moment to assess whether existing workflows, coordination mechanisms, and tools are still fit for purpose.",
+        "bbox": [
+            111,
+            222,
+            885,
+            292
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Changes to business processes can be resource-intensive and should be balanced against the overall scope, timeline, and budget of the implementation project. Often, organizations miss the opportunity to embed process improvements because the focus is primarily on technical or methodological alignment. However, overlooking the business process dimension can lead to inefficiencies, redundancies, and reconciliation problems in the future.",
+        "bbox": [
+            111,
+            309,
+            885,
+            397
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "One of the most compelling reasons to consider business process changes is the potential to integrate fragmented processes, especially those that occur across different statistical domains (for example, national accounts and balance of payments) or between different institutions (for example, national statistical offices and central banks). Integration—although more complex and costly in the short term—can deliver significant long-term gains in terms of improved efficiency, reduced duplication of effort, and improved data quality, particularly through enhanced internal consistency.",
+        "bbox": [
+            109,
+            414,
+            887,
+            521
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Implementation of the updated SNA and BPM is also an opportunity to strengthen data integration. UNECE's Guide to Data Integration for Official Statistics and the Data Governance Framework for Statistical Interoperability (DAFI) emphasize that integrating data from multiple sources—surveys, administrative registers, and big data—requires investments in interoperability standards, shared identifiers, and common metadata structures. Countries should consider establishing data integration roadmaps to ensure that new data sources can be linked seamlessly and securely.",
+        "bbox": [
+            111,
+            537,
+            885,
+            643
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Even if major changes to business processes are not feasible within the implementation project, it is essential to review and document the current state of processes (if this documentation does not exist). This includes mapping out workflows, identifying points of duplication or inconsistency, and updating documentation to reflect on the new recommendations being implemented. Such a review also supports transparency, accountability, and knowledge transfer.",
+        "bbox": [
+            111,
+            659,
+            885,
+            748
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Where changes are proposed, statistical program management should not underestimate the importance of a change management strategy. A dedicated change manager or project stream lead should be appointed to ensure staff engagement, training, communication, and adoption of new processes. Without this support, process changes—no matter how technically sound—may fail.",
+        "bbox": [
+            109,
+            765,
+            887,
+            835
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Statistical organizations should consider using the Generic Statistical Business Process Model (GSBPM) as a common reference framework for a structured review of their statistical business processes. This review should focus on how activities across the Design, Build, Collect, Process, Analyze, and Disseminate phases operate in practice and how they will be affected by the adoption of updated SNA/BPM concepts, classifications, and compilation requirements. Establishing a shared process model early helps ensure a common understanding across teams and facilitates coordination across statistical domains.",
+        "bbox": [
+            111,
+            852,
+            885,
+            924
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            114,
+            65,
+            133,
+            77
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "Technical Notes and Manuals",
+        "bbox": [
+            700,
+            64,
+            883,
+            79
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            118,
+            885,
+            152
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "The review should begin with the documentation and validation of existing processes, consistent with the GSBPM Specify Needs, Design, and Build phases. Where process maps already exist, they should be reviewed to confirm that they accurately reflect current workflows, decision points, and data transformations. Where documentation is incomplete or outdated, detailed process maps should be developed to capture end-to-end production processes. Particular attention should be given to identifying manual reconciliation, parallel processing, or duplicated activities within or across domains, especially in the Collect and Process phases. Mapping data flows, dependencies, and handoffs between organizational units supports a clearer understanding of how source data move through the system and where efficiencies, automation, or integration opportunities may exist.",
+        "bbox": [
+            109,
+            170,
+            885,
+            328
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "B. Designing and Documenting Business Process Change Options",
+        "text_level": 2,
+        "bbox": [
+            111,
+            349,
+            648,
+            364
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Based on the process analysis described in the previous section, organizations should begin designing and documenting potential business process changes required to support the implementation of updated SNA/BPM recommendations. This involves reassessing task alignment and ownership across the relevant GSBPM phases and identifying where existing tasks, subprocesses, or workflows may need to be adjusted. Changes may arise from the introduction of new data sources, revised compilation methods, enhanced integration requirements, or expanded analytical outputs—particularly within the Process and Analyze phases. Clearly documenting proposed task changes, responsibilities, and expected outputs provides a structured basis for evaluating feasibility and supports informed decision making before changes are implemented.",
+        "bbox": [
+            111,
+            367,
+            885,
+            508
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Designing business process change options should be closely linked to governance and integration considerations that cut across the GSBPM. Data governance arrangements may need to be reviewed to reflect new data sources, revised classifications, or changes in institutional roles resulting from SNA/BPM implementation. Program managers should also consider opportunities to improve horizontal integration across statistical domains—such as national accounts, government finance statistics, and external sector statistics—by aligning or coordinating activities in the Process, Analyze, and Disseminate phases. Where proposed changes involve multiple organizational units or institutions, potential collaboration mechanisms—such as MOUs, joint working groups, or agreed coordination protocols—should be identified and documented as part of the design process.",
+        "bbox": [
+            109,
+            523,
+            885,
+            666
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Consideration should also be given to the change management implications of proposed business process changes. At this stage, the focus is on identifying potential effects on roles, skills, tools, and workflows, rather than executing change. Documenting these effects supports subsequent planning for training, communication, and capacity development and helps assess whether proposed changes are realistic within existing constraints. Identifying a potential change management focal point at this stage can also support coordination across GSBPM phases and organizational units as implementation planning progresses.",
+        "bbox": [
+            109,
+            681,
+            887,
+            787
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "To support the update of statistical business processes, a Statistical Business Process Planning Tool (Table 9) has been developed. This tool allows program managers to identify updates to the business process definition, the tasks and roles and responsibilities associated with each process, and the infrastructure that supports the operation and governance of the process. The tool outlines how a statistical business process can be documented and analyzed using a GSBPM-aligned approach. The following example is based on the Specify Needs process of the GSBPM and is included for demonstration purposes only. It shows how a process can be described, how tasks and responsibilities can be mapped using a Responsibility,",
+        "bbox": [
+            109,
+            804,
+            887,
+            928
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "SNA/BPM Implementation Planning Playbook",
+        "bbox": [
+            112,
+            64,
+            393,
+            79
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            864,
+            65,
+            883,
+            78
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Accountability, Consult, Inform (RACI) framework, and how supporting statistical and data governance infrastructure can be identified. Authorities should adapt the structure and level of detail to their own processes and institutional context when applying the tool in practice.",
+        "bbox": [
+            111,
+            117,
+            885,
+            170
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "table",
+        "img_path": "images/6a303f03fb28dc02d87d864c877c9ec5ae49084f1dc5eb875d4f91825c2908de.jpg",
+        "table_caption": [
+            "Table 9. Statistical Business Process Planning Tool"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Field</td><td colspan=\"6\">Description</td><td></td></tr><tr><td rowspan=\"8\">GSBPM Phase</td><td colspan=\"6\">Specify needs</td><td></td></tr><tr><td colspan=\"6\">Design</td><td></td></tr><tr><td colspan=\"6\">Build</td><td></td></tr><tr><td colspan=\"6\">Collect</td><td></td></tr><tr><td colspan=\"6\">Process</td><td></td></tr><tr><td colspan=\"6\">Analyze</td><td></td></tr><tr><td colspan=\"6\">Disseminate</td><td></td></tr><tr><td colspan=\"6\">Evaluate</td><td></td></tr><tr><td>Process Name</td><td colspan=\"6\">Identify needs</td><td></td></tr><tr><td>Process Objective</td><td colspan=\"6\">To gather and assess user feedback on statistical products to inform development, revision, and prioritization decisions</td><td></td></tr><tr><td>Process Description</td><td colspan=\"6\">This process involves collecting, reviewing, and synthesizing user feedback on new and existing statistical products through structured monitoring and engagement mechanisms.</td><td></td></tr><tr><td rowspan=\"4\">Trigger/Frequency</td><td colspan=\"6\">Continuous</td><td></td></tr><tr><td colspan=\"6\">Annual</td><td></td></tr><tr><td colspan=\"6\">Ad hoc</td><td></td></tr><tr><td colspan=\"6\">Event driven</td><td></td></tr><tr><td>Key Outputs</td><td colspan=\"6\">User feedback reports, documented requirements, inputs to product development and revision decisions</td><td></td></tr><tr><td>Task ID</td><td>Task Description</td><td>Unit 1</td><td>Unit 2</td><td>Unit 3</td><td>Unit 4</td><td>Unit 5</td><td>Unit 6</td></tr><tr><td>T1</td><td>Collect user feedback through survey</td><td>R</td><td>A</td><td>I</td><td>C</td><td></td><td></td></tr><tr><td>T2</td><td>Analyze feedback trends</td><td>R</td><td>A</td><td></td><td>I</td><td>C</td><td></td></tr><tr><td>T3</td><td>Document findings</td><td>R</td><td>A</td><td>I</td><td></td><td></td><td></td></tr><tr><td>...</td><td>...</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Infrastructure Type</td><td colspan=\"6\">Description</td><td></td></tr><tr><td>Statistical Infrastructure</td><td colspan=\"6\">Countries are encouraged to list the different components of their statistical infrastructure that are required to execute this process (for example, annual survey on user feedback, engagement tracking tools).</td><td></td></tr><tr><td>Data Governance Artifacts</td><td colspan=\"6\">Countries are encouraged to list the different data governance artifacts that govern this process (for example, policy on user engagement, procedures for assessing product relevance, confidentiality protocols).</td><td></td></tr><tr><td>Information Technology/Systems Dependencies</td><td colspan=\"6\">Countries are encouraged to list the different IT and systems dependencies related to this process (for example, survey platform, document management system).</td><td></td></tr><tr><td>Know Constraints or Gaps</td><td colspan=\"6\">Countries are encouraged to list the different constraints and gaps that may affect the effective execution of this process (for example, limited staff capacity, manual tracking).</td><td></td></tr><tr><td colspan=\"7\">Note: GSBPM = Generic Statistical Business Process Model; in the Task ID section, A = accountable; C = consulted; I = informed; R = responsible.</td><td></td></tr></table>",
+        "bbox": [
+            112,
+            209,
+            883,
+            902
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            114,
+            65,
+            133,
+            78
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "Technical Notes and Manuals",
+        "bbox": [
+            700,
+            64,
+            883,
+            79
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "C. Additional Resources to Support Statistical Business Process Documentation",
+        "text_level": 2,
+        "bbox": [
+            112,
+            118,
+            756,
+            133
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "The resources listed in Table 10 provide practical guidance to support NSS in reviewing, modernizing, and integrating their statistical business processes as part of SNA/BPM implementation. The preceding sections outline what program managers should consider when assessing and updating business processes, and these resources focus on how such changes can be designed and implemented in practice. Together, they offer tested approaches, frameworks, and tools that support the review and update of statistical business processes.",
+        "bbox": [
+            111,
+            135,
+            885,
+            239
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "table",
+        "img_path": "images/de1f327aa92bc5b06c04748ecdf03e42f472058d71e4ddd4c593a5ebff8b0ad4.jpg",
+        "table_caption": [
+            "Table 10. Additional Resources for Statistical Business Process Documentation"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>United Nations Economic and Social Commission for Asia and the Pacific (UN ESCAP). 2022. Using Big Data for Official Statistics: A Guide with Good Practices. UN ESCAP. https://repository.unescap.org/bitstream/handle/20.500.12870/5177/ESCAP-2022-RP-Using-Big-Data-Official-Statistics.pdf</td></tr><tr><td>UN Statistics Division. 2014. UN Global Working Group on Big Data for Official Statistics: Strategic Vision. https://unstats.un.org/capacity-development/handbook/html/Handbook/C8/Big_Data.htm</td></tr><tr><td>UN Statistics Division. 2025. Admin Data Collaborative: Strengthening Use of Administrative Data in Official Statistics. https://unstats.un.org/capacity-development/admin-data/</td></tr><tr><td>UN Women/United Nations Statistics Division. 2022. Toolkit for Quality Assessment of Administrative Data for Official Statistics (Eastern &amp; Southern Africa). UN Women and UNSD. https://data.unwomen.org/sites/default/files/documents/Publications/2023/ESA-admin-data-toolkit.pdf</td></tr><tr><td>United Nations Economic Commission for Europe (UNECE)/Conference of European Statisticians Task Force on Data Sharing. 2021. Guide to Sharing Economic Data in Official Statistics. UNECE. https://unece.org/statistics/publications/guide-sharing-economic-data-official-statistics</td></tr><tr><td>United Nations Economic Commission for Europe (UNECE) High-Level Group for the Modernisation of Official Statistics. 2024a. DAFI–Data Governance Framework for Statistical Interoperability. UNECE. https://unece.org/sites/default/files/2024-03/HLG2023%20DAFI%20Final_0.pdf</td></tr><tr><td>United Nations Economic Commission for Europe (UNECE) High-Level Group for the Modernisation of Official Statistics. 2024b. Guide to Data Integration for Official Statistics. UNECE. https://unece.org/sites/default/files/2024-07/HLG-MOS%20Guide%20to%20Data%20Integration%20for%20Official%20Statistics.pdf</td></tr></table>",
+        "bbox": [
+            114,
+            280,
+            880,
+            549
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "header",
+        "text": "SNA/BPM Implementation Planning Playbook",
+        "bbox": [
+            112,
+            64,
+            393,
+            79
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            864,
+            65,
+            883,
+            77
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "VI. Establishing the Implementation Timeline",
+        "text_level": 2,
+        "bbox": [
+            109,
+            117,
+            836,
+            146
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "A. Factors Influencing Implementation Timelines",
+        "text_level": 2,
+        "bbox": [
+            111,
+            172,
+            514,
+            190
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "The Balance of Payments Committee and the United Nations Statistical Commission are targeting the implementation of BPM7 and the 2025 SNA by all countries by 2030. In determining an appropriate timeline for releasing revised macroeconomic statistics, NSS must assess a range of factors that may influence both the feasibility and sequencing of implementation activities. These factors include the timing of major national statistical initiatives, the external policy and political environment, and the overall institutional readiness of the statistical system.",
+        "bbox": [
+            109,
+            191,
+            887,
+            297
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "National statistical initiatives that may affect implementation timing include upcoming population or agricultural censuses, major survey redesigns, updates to international transactions reporting systems, the initiation or renewal of data-sharing and data-access agreements, implementation of updated classification systems, business process changes, and processing system upgrades. In many cases, these initiatives must be sequenced carefully to fully leverage their benefits, ensure efficient use of resources, and avoid placing excessive demands on staff during the transition period.",
+        "bbox": [
+            109,
+            314,
+            887,
+            420
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "The external policy and political environment are another critical consideration when establishing an implementation timeline. Releasing revised statistics during periods of government transition, budget preparation, or major policy rollouts may increase the risk of misinterpretation, reduce user engagement, or heighten political sensitivity. In addition, governments may be considering changes to privacy legislation, statistical laws, regulatory frameworks, or central bank mandates, all of which can influence the legal and operational conditions under which revised statistics are produced and disseminated. These external factors should therefore be taken into account when assessing feasible implementation windows.",
+        "bbox": [
+            109,
+            436,
+            887,
+            561
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Institutional readiness is equally important. Statistical program management must ensure that staff have sufficient capacity and training to apply new methodologies and operate updated systems. Adequate time must also be allowed for user engagement and communication activities, particularly when revisions are expected to affect headline indicators such as GDP, the current account balance, or public debt. Clear communication plans, supported by comprehensive metadata and explanatory materials, are essential to help users understand the rationale for changes and interpret revised data correctly. Major information technology (IT) system upgrades, transitions to new data platforms, or cloud migrations may also influence timing, as revised statistics often require modifications to compilation systems and data processing workflows.",
+        "bbox": [
+            109,
+            577,
+            887,
+            718
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "The following Implementation Timeline Planning Tool (Table 11) is designed to support NSS in systematically identifying factors that may affect the timing of SNA/BPM implementation. The questionnaire captures information on the expected timing of major national statistical initiatives, institutional readiness factors, and external policy or political developments that could influence sequencing and feasibility. Respondents are asked to indicate timing only; no prioritization, sequencing, or scheduling decisions are required at this stage. The completed questionnaire provides essential contextual inputs for subsequent implementation timeline planning, resource planning, and risk management.",
+        "bbox": [
+            109,
+            734,
+            887,
+            859
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            114,
+            65,
+            133,
+            78
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "header",
+        "text": "Technical Notes and Manuals",
+        "bbox": [
+            700,
+            64,
+            883,
+            79
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "table",
+        "img_path": "images/186b3bc35a520098c33ff308c1f9631ca41995f91218a2c0c2b1db408cd6c9d2.jpg",
+        "table_caption": [
+            "Table 11. SNA/BPM Implementation Timeline Planning Tool"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>National STATISTICAL INITIATIVES</td><td>Start Date</td><td>End Date</td></tr><tr><td>Census of population</td><td></td><td></td></tr><tr><td>Census of agriculture</td><td></td><td></td></tr><tr><td>Major household survey redesigns (for example, Household Budget Survey)</td><td></td><td></td></tr><tr><td>Major business survey redesigns</td><td></td><td></td></tr><tr><td>Implementation of updated industrial classification</td><td></td><td></td></tr><tr><td>Implementation of updated product classification</td><td></td><td></td></tr><tr><td>Planned changes to regulatory data access</td><td></td><td></td></tr><tr><td>Planned changes to statistical legislation</td><td></td><td></td></tr><tr><td>Planned data-sharing agreements</td><td></td><td></td></tr><tr><td>Planned data-access agreements</td><td></td><td></td></tr><tr><td>Institutional READINESS and CAPACITY</td><td></td><td></td></tr><tr><td>Planned changes to human resources framework</td><td></td><td></td></tr><tr><td>Retirement of key staff</td><td></td><td></td></tr><tr><td>Major business process redesigns</td><td></td><td></td></tr><tr><td>Core IT system redesign</td><td></td><td></td></tr><tr><td>Major software upgrades</td><td></td><td></td></tr><tr><td>Introduction of new data platforms</td><td></td><td></td></tr><tr><td>External POLICY and POLITICAL ENVIRONMENT</td><td></td><td></td></tr><tr><td>Government transition/elections</td><td></td><td></td></tr><tr><td>Government budget cycle</td><td></td><td></td></tr><tr><td>Changes to privacy or data protection laws</td><td></td><td></td></tr><tr><td>Changes to central bank legislation</td><td></td><td></td></tr><tr><td colspan=\"3\">Note: BPM = Balance of Payments Manual; IT = information technology; SNA = System of National Accounts.</td></tr></table>",
+        "bbox": [
+            114,
+            143,
+            882,
+            569
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "header",
+        "text": "SNA/BPM Implementation Planning Playbook",
+        "bbox": [
+            112,
+            65,
+            393,
+            79
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            864,
+            65,
+            883,
+            77
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "VII. Communication and Dissemination Planning",
+        "text_level": 1,
+        "bbox": [
+            109,
+            116,
+            883,
+            146
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "A. Identifying Communication Needs for SNA/BPM Implementation",
+        "text_level": 2,
+        "bbox": [
+            111,
+            172,
+            666,
+            190
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "A comprehensive communication strategy is essential for ensuring that the implementation of the 2025 SNA and BPM7 is understood and supported by data users, policymakers, and the general public. Ineffective communication can lead to confusion, misinterpretation, or resistance—particularly when the adoption of updated standards results in significant revisions to headline macroeconomic aggregates such as GDP, the current account balance, or public debt.",
+        "bbox": [
+            109,
+            191,
+            887,
+            279
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "The updated SNA, BPM7, and the United Nations Handbook on the Management and Organization of National Statistical Systems all recommend that countries formalize a communication framework for major statistical updates. Such a framework should clearly articulate communication objectives (for example, building trust and managing expectations), identify target audiences, and define the types of communication products and the timing of outreach. Integrating communication considerations into the implementation planning process from the outset helps ensure that messaging is coherent, resources are appropriately allocated, and communication is treated as a core component of implementation rather than an afterthought.",
+        "bbox": [
+            109,
+            296,
+            887,
+            420
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "An effective communication plan begins with the systematic identification of audiences and an understanding of their differing needs and levels of technical expertise. Key institutional users—such as ministries of finance, central banks, and other policymakers—typically require detailed explanations of methodological changes and their implications for policy analysis, forecasting, and economic modeling. In contrast, the public and media audiences benefit from clear, accessible narratives that explain why revisions are necessary, how the updates improve statistical quality, and how they affect citizens' understanding of economic activity.",
+        "bbox": [
+            109,
+            436,
+            887,
+            542
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Statistical offices should prepare clear and consistent messages that explain the rationale for adopting the 2025 SNA and BPM7, outline expected improvements in data quality and coverage, and describe the potential effects on key indicators. A range of communication channels—such as press releases, technical notes, webinars, workshops, and social media—should be considered to ensure that messages reach all relevant audiences. Anticipating sensitive issues in advance allows organizations to address them proactively and maintain public confidence. UNECE guidance emphasizes the importance of sensitivity planning, including the preparation of talking points, media kits, FAQs, and rapid-response materials for potentially controversial topics such as downward revisions to GDP.",
+        "bbox": [
+            109,
+            559,
+            887,
+            700
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "A robust communication plan should extend beyond general announcements by developing targeted communication products that highlight the benefits of the update. These may include infographics illustrating new analytical possibilities (such as improved measures of the digital economy or household income distribution), briefing papers or blogs explaining improvements in data reliability, and FAQs clarifying how revised statistics enhance policy and research use. Although videos, podcasts, and social media content can help reach nontechnical audiences, technical workshops and webinars remain essential for engaging researchers, analysts, and policymakers. Framing the changes consistently as a step toward better information and more informed decision making can help generate understanding and support rather than skepticism.",
+        "bbox": [
+            109,
+            717,
+            887,
+            859
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Effective communication is inherently a two-way process. Both the IMF and the United Nations stress the importance of establishing mechanisms—such as user surveys, live Q&A sessions, consultation workshops,",
+        "bbox": [
+            111,
+            875,
+            885,
+            910
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "page_number",
+        "text": "20",
+        "bbox": [
+            112,
+            65,
+            135,
+            78
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "header",
+        "text": "Technical Notes and Manuals",
+        "bbox": [
+            700,
+            64,
+            883,
+            79
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "(continued)",
+        "bbox": [
+            808,
+            868,
+            883,
+            882
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "and feedback portals—to capture questions, concerns, and reactions from users. These feedback channels not only improve user understanding but also provide valuable insights into how revised data are being interpreted and used, allowing statistical offices to refine both communication products and dissemination practices.",
+        "bbox": [
+            109,
+            118,
+            885,
+            186
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "Transparent communication around revisions is a critical element of the overall communication strategy. Statistical offices should conduct formal revision studies to document how and why estimates have changed relative to previous versions. Publishing these studies—alongside clear tables showing original estimates, revised estimates, and the reasons for change—enhances credibility and allows users to trace the evolution of the data. It is equally important to communicate that earlier estimates were not “incorrect” but rather represented the best information available under the previous standards. The IMF guidance recommends establishing a formal revision communication protocol that explains the timing, rationale, and analytical implications of revisions, helping users adjust models and interpretations while reinforcing trust in official statistics.",
+        "bbox": [
+            109,
+            205,
+            885,
+            362
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "The Implementation Communication Planning Tool (Table 12) is used to systematically gather information required to develop a comprehensive implementation communication plan. The tool captures inputs on key audience groups, communication objectives, information needs, preferred products and channels, timing, responsibilities, and feedback mechanisms. Each completed entry corresponds to a specific audience group and serves as an input to the broader communication planning process. When consolidated, the results provide a structured and transparent foundation for developing, coordinating, and resourcing communication activities throughout the SNA/BPM implementation cycle.",
+        "bbox": [
+            111,
+            380,
+            885,
+            503
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "table",
+        "img_path": "images/7f79544b4b59db9828af0691ad430f1e5f3b7bd2ed1eba9ae42e8b4819e4e9d9.jpg",
+        "table_caption": [
+            "Table 12. SNA/BPM Implementation Communication Planning Tool"
+        ],
+        "table_footnote": [
+            "Notes/Follow-Up Actions",
+            "Note: API = application programming interface; BPM = Balance of Payments Manual; BPM7 = Integrated Balance of Payments and International Investment Position Manual, seventh edition; FAQs = frequently asked questions; Q&A = question and answer; SNA = System of National Accounts."
+        ],
+        "table_body": "<table><tr><td>Field</td><td>Response</td></tr><tr><td rowspan=\"6\">Audience Group</td><td>□ Policymakers</td></tr><tr><td>□ Media/journalists</td></tr><tr><td>□ General public</td></tr><tr><td>□ Researchers/academia</td></tr><tr><td>□ International organizations</td></tr><tr><td>□ Other (specify): _</td></tr><tr><td>Audience Subgroup/Organization (if applicable)</td><td></td></tr><tr><td rowspan=\"7\">Purpose of Communication</td><td>□ Build awareness of SNA/BPM update</td></tr><tr><td>□ Explain methodological changes</td></tr><tr><td>□ Manage expectations around revisions</td></tr><tr><td>□ Support policy interpretation and use</td></tr><tr><td>□ Prepare users for release and back series</td></tr><tr><td>□ Ensure international reporting consistency</td></tr><tr><td>□ Other (specify): _</td></tr><tr><td rowspan=\"7\">Key Information to Be Communicated</td><td>☐ Rationale for adopting 2025 SNA/BPM7</td></tr><tr><td>☐ Expected effect on headline indicators</td></tr><tr><td>☐ Revision policy and backcasting approach</td></tr><tr><td>☐ Release calendar and dissemination formats</td></tr><tr><td>☐ Improvements in data quality and coverage</td></tr><tr><td>☐ Availability of metadata and documentation</td></tr><tr><td>☐ Other (specify): _</td></tr><tr><td rowspan=\"8\">Preferred Communication Products</td><td>☐ Press release</td></tr><tr><td>☐ Policy brief</td></tr><tr><td>☐ Technical note</td></tr><tr><td>☐ FAQs</td></tr><tr><td>☐ Infographics</td></tr><tr><td>☐ Short videos/explainers</td></tr><tr><td>☐ Metadata documentation</td></tr><tr><td>☐ Other (specify): _</td></tr><tr><td rowspan=\"8\">Preferred Delivery Channels</td><td>☐ In-person briefings</td></tr><tr><td>☐ Webinars/workshops</td></tr><tr><td>☐ Press conferences</td></tr><tr><td>☐ Official website</td></tr><tr><td>☐ Social media</td></tr><tr><td>☐ Email distribution lists</td></tr><tr><td>☐ API/data portal announcements</td></tr><tr><td>☐ Other (specify): _</td></tr><tr><td rowspan=\"6\">Communication Phase/Timing</td><td>☐ Design</td></tr><tr><td>☐ Build</td></tr><tr><td>☐ Testing</td></tr><tr><td>☐ Prerelease</td></tr><tr><td>☐ Release</td></tr><tr><td>☐ Postrelease</td></tr><tr><td rowspan=\"6\">Frequency</td><td>☐ One-off</td></tr><tr><td>☐ Ongoing</td></tr><tr><td>☐ Monthly</td></tr><tr><td>☐ Quarterly</td></tr><tr><td>☐ Milestone based</td></tr><tr><td>☐ Ad hoc</td></tr><tr><td>Internal Communication Lead</td><td>Name/unit responsible</td></tr><tr><td rowspan=\"7\">Feedback and Two-Way Engagement Mechanism</td><td>□ Written feedback</td></tr><tr><td>□ Q&amp;A sessions</td></tr><tr><td>□ User surveys</td></tr><tr><td>□ Workshops/consultations</td></tr><tr><td>□ Media follow-ups</td></tr><tr><td>□ Dedicated contact point</td></tr><tr><td>□ Other (specify):____</td></tr><tr><td rowspan=\"7\">Key Risks if Communication Is Insufficient</td><td>□ Misinterpretation of revisions</td></tr><tr><td>□ Loss of trust</td></tr><tr><td>□ Policy misuse</td></tr><tr><td>□ Media controversy</td></tr><tr><td>□ Low data adoption</td></tr><tr><td>□ International reporting issues</td></tr><tr><td>□ Other (specify):____</td></tr></table>",
+        "bbox": [
+            114,
+            541,
+            883,
+            868
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "header",
+        "text": "SNA/BPM Implementation Planning Playbook",
+        "bbox": [
+            112,
+            64,
+            393,
+            80
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "page_number",
+        "text": "21",
+        "bbox": [
+            862,
+            65,
+            883,
+            78
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "table",
+        "img_path": "",
+        "table_caption": [
+            ""
+        ],
+        "table_footnote": [
+            "",
+            ""
+        ],
+        "bbox": [
+            114,
+            141,
+            883,
+            940
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "page_number",
+        "text": "22",
+        "bbox": [
+            112,
+            65,
+            135,
+            77
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "header",
+        "text": "Technical Notes and Manuals",
+        "bbox": [
+            700,
+            64,
+            883,
+            79
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "table",
+        "img_path": "",
+        "table_caption": [
+            ""
+        ],
+        "table_footnote": [
+            "",
+            ""
+        ],
+        "bbox": [
+            114,
+            141,
+            882,
+            488
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "B. Identifying Dissemination Needs for SNA/BPM Implementation",
+        "text_level": 2,
+        "bbox": [
+            112,
+            560,
+            651,
+            575
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "From a dissemination perspective, it is important to align revised and new statistical outputs with international best practices. For example, statistical offices may consider disseminating data through Statistical Data and Metadata Exchange (SDMX)-enabled application programming interfaces and ensuring that all revised series are accompanied by comprehensive metadata and explanatory notes. Publishing experimental or preliminary data series can help familiarize users with methodological changes before full adoption. Making detailed metadata and explanatory materials readily available supports transparency and enables users to correctly interpret revisions. Statistical program management should view the SNA/BPM implementation process as an opportunity to modernize dissemination practices by adopting application programming interfaces, interactive dashboards, and machine-readable metadata. These approaches not only improve accessibility but also allow users—ranging from journalists and researchers to app developers—to integrate updated statistics directly into their systems and analytical workflows.",
+        "bbox": [
+            111,
+            578,
+            885,
+            771
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "Statistical offices are strongly encouraged to avoid a \"big bang\" release in which all revised statistics are disseminated simultaneously. Instead, a phased dissemination approach should be considered, with outputs released incrementally and user engagement occurring at each stage. Revised historical data (the \"back series\") can often be disseminated early, as these typically carry lower policy risk while providing users with valuable opportunities to test revised concepts and methods in their models, systems, and forecasts. Early dissemination also facilitates feedback that can be incorporated before the release of more current or sensitive series. Consistent with guidance in the United Nations Handbook, a staged rollout–beginning with low-risk items such as back series and experimental data sets and progressing toward headline indicators—helps users adapt gradually. Each dissemination stage should be supported by appropriate documentation, metadata updates, and feedback mechanisms.",
+        "bbox": [
+            111,
+            787,
+            885,
+            929
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "header",
+        "text": "SNA/BPM Implementation Planning Playbook",
+        "bbox": [
+            112,
+            64,
+            393,
+            79
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "page_number",
+        "text": "23",
+        "bbox": [
+            862,
+            65,
+            883,
+            78
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            109,
+            117,
+            885,
+            152
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "To support the development of a structured and phased dissemination plan, the Implementation Dissemination Planning Tool (Table 13) can be used to gather key information on dissemination requirements for individual data products. The tool captures inputs on the purpose of dissemination, intended audiences, dissemination stage, preferred formats and channels, supporting materials, responsible units, and mechanisms for user engagement and feedback. Each completed entry corresponds to a specific data product or output and serves as an input to the broader dissemination planning process. When consolidated, these inputs provide a transparent and systematic basis for designing a dissemination approach that is aligned with the implementation timeline, communication strategy, and risk-management considerations.",
+        "bbox": [
+            109,
+            169,
+            887,
+            311
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "table",
+        "img_path": "images/bc7bdbf143224c4ecee8b01748970fb9b271201760148be170b85e77dfb4eed0.jpg",
+        "table_caption": [
+            "Table 13. SNA/BPM Implementation Dissemination Planning Tool"
+        ],
+        "table_footnote": [
+            "Notes/Follow-Up Actions",
+            "Note: API = application programming interface; BOP = balance of payments; BPM = Balance of Payments Manual; FAQs = frequently asked questions; SNA = System of National Accounts."
+        ],
+        "table_body": "<table><tr><td>Field</td><td>Response</td></tr><tr><td>Data Product/Output</td><td>(For example, revised back series, experimental indicators, headline GDP estimates, metadata updates)</td></tr><tr><td>Purpose of Dissemination</td><td>□ Familiarize users with revised concepts□ Support model/system testing□ Communicate methodological change□ Meet reporting obligations□ Other (specify): _</td></tr><tr><td>Dissemination Stage</td><td>□ Early/low risk (for example, back series)□ Pilot/experimental□ Prerelease□ Official release□ Ongoing</td></tr><tr><td>Intended Audience(s)</td><td>□ Policymakers□ Researchers□ Media□ General public□ International organizations□ Other (specify): _</td></tr><tr><td>Preferred Formats</td><td>□ API (SDMX)□ Comma-delimited file (CSV)/Excel□ Dashboards□ PDF reports□ Blogs/summaries□ Other (specify): _</td></tr><tr><td rowspan=\"6\">Release Channels/Methods</td><td>□ Official website</td></tr><tr><td>□ API/data portal</td></tr><tr><td>□ Press event</td></tr><tr><td>□ Webinars</td></tr><tr><td>□ Email notification</td></tr><tr><td>□ Other (specify): _</td></tr><tr><td rowspan=\"6\">Supporting Materials Required</td><td>□ Metadata documentation</td></tr><tr><td>□ Revision tables</td></tr><tr><td>□ FAQs</td></tr><tr><td>□ Methodology papers</td></tr><tr><td>□ User guides</td></tr><tr><td>□ Other (specify): _</td></tr><tr><td>Responsible Unit(s)</td><td>(For example, national accounts, BOP, metadata, communications)</td></tr><tr><td rowspan=\"6\">User Engagement/Feedback Mechanism</td><td>□ Webinars</td></tr><tr><td>□ User surveys</td></tr><tr><td>□ Q&amp;A sessions</td></tr><tr><td>□ Pilot user groups</td></tr><tr><td>□ Help desk/contact point</td></tr><tr><td>□ Other (specify): _</td></tr><tr><td>Indicative Timing/Frequency</td><td>(Year/month or period)</td></tr><tr><td rowspan=\"5\">Key Risks if Not Disseminated Properly</td><td>□ Misinterpretation</td></tr><tr><td>□ Low adoption</td></tr><tr><td>□ Reputational risk</td></tr><tr><td>□ Policy misuse</td></tr><tr><td>□ Reporting noncompliance</td></tr></table>",
+        "bbox": [
+            112,
+            359,
+            883,
+            893
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "page_number",
+        "text": "24",
+        "bbox": [
+            112,
+            65,
+            135,
+            78
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "header",
+        "text": "Technical Notes and Manuals",
+        "bbox": [
+            700,
+            64,
+            883,
+            79
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "table",
+        "img_path": "",
+        "table_caption": [
+            ""
+        ],
+        "table_footnote": [
+            "",
+            ""
+        ],
+        "bbox": [
+            114,
+            141,
+            882,
+            703
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "C. Additional Resources for Implementation Communication and Dissemination Planning",
+        "text_level": 2,
+        "bbox": [
+            112,
+            768,
+            836,
+            785
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "The resources listed in Table 14 provide practical and authoritative guidance to help statistical authorities design, implement, and sustain effective communication and dissemination strategies in support of SNA/BPM implementation. The preceding sections describe the objectives, structure, and content of communication and dissemination plans, and these resources offer concrete methodologies, examples, and best practices that can be adapted to national circumstances. Together, they support a proactive, user-centered approach to managing methodological change, revisions, and the introduction of new statistical products.",
+        "bbox": [
+            111,
+            786,
+            885,
+            893
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "header",
+        "text": "SNA/BPM Implementation Planning Playbook",
+        "bbox": [
+            112,
+            64,
+            393,
+            79
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "page_number",
+        "text": "25",
+        "bbox": [
+            862,
+            65,
+            883,
+            77
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "Table 14. Additional Resources for Communication and Dissemination Planning",
+        "text_level": 2,
+        "bbox": [
+            112,
+            118,
+            725,
+            133
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "International Monetary Fund. 2025. Communicating and Disseminating Macroeconomic Statistics (Chapter 21 of BPM7). https://www.imf.org/-/media/Files/Data/Statistics/BMP7/final-chapters/draft-bpm7-chapter-20-v11-communicating-and-disseminating-macroeconomic-statistics.ashx",
+        "bbox": [
+            117,
+            146,
+            864,
+            186
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "United Nations Economic Commission for Europe (UNECE)/Conference of European Statisticians Task Force on Data Sharing. 2021. Guide to Sharing Economic Data in Official Statistics. UNECE. https://unece.org/statistics/publications/guide-sharing-economic-data-official-statistics",
+        "bbox": [
+            120,
+            188,
+            874,
+            228
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "United Nations Economic Commission for Europe (UNECE) and Eurostat, Conference of European Statisticians. 2004. Making Data Meaningful. Part 3: A Guide to Communicating with the Media (No. ECE/CES/STAT/2004/3). UNECE. https://ec.europa.eu/eurostat/documents/64157/4374310/34-UNECE-making-data-meaningful-Part3-EN.pdf",
+        "bbox": [
+            120,
+            229,
+            849,
+            268
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "United Nations Statistics Division. 2023. Dissemination of Official Statistics (Ch. 10 in Handbook on NSS Management). https://unstats.un.org/capacity-development/handbook/chapters/Ch10\\_Handbook\\_20230417.pdf",
+        "bbox": [
+            117,
+            272,
+            852,
+            299
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "page_number",
+        "text": "26",
+        "bbox": [
+            114,
+            66,
+            133,
+            77
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "header",
+        "text": "Technical Notes and Manuals",
+        "bbox": [
+            700,
+            65,
+            883,
+            78
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "VIII. Resource and Governance Planning for Implementation",
+        "text_level": 1,
+        "bbox": [
+            112,
+            118,
+            602,
+            176
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "A. Identifying Resource and Funding Requirements for Implementation",
+        "text_level": 2,
+        "bbox": [
+            111,
+            204,
+            694,
+            220
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "Implementing the updated SNA and BPM is a resource-intensive undertaking that requires early and systematic identification of financial, human, and institutional resource requirements. Proactively identifying these needs is critical to avoiding delays, managing trade-offs, and maintaining momentum throughout the implementation cycle. To support effective planning, statistical organizations should assess anticipated resource demands, identify potential funding sources, consider human resource and capacity constraints, and clarify the governance arrangements required to manage resources throughout the transition.",
+        "bbox": [
+            111,
+            222,
+            885,
+            328
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "A comprehensive assessment of resource requirements provides the foundation for informed budgeting and funding discussions. Organizations should consider both direct resource needs—such as staff time, IT system enhancements, survey operations, and training—and indirect costs, including the opportunity cost of diverting staff from ongoing production activities. Identifying resource needs over a multiyear horizon and linking them to major implementation phases—such as system redevelopment, data integration, or the introduction of new surveys—helps organizations anticipate periods of peak demand and prepare realistic funding requests. When articulating these needs to decision makers, it is important to highlight not only technical requirements but also the policy, reputational, and operational benefits of aligning with updated international statistical standards.",
+        "bbox": [
+            109,
+            344,
+            887,
+            503
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "Potential funding sources should be identified using a diversified perspective. Although the national budget is typically the most stable source of financing, implementation may also benefit from cost-sharing arrangements among key institutions, such as national statistical offices, central banks, and ministries of finance. Development partners, including bilateral and multilateral organizations, can provide financial or in-kind support—particularly for capacity development, methodological work, and IT modernization. In some cases, public-private partnerships or data-sharing arrangements with private sector entities may also reduce costs or provide access to otherwise unavailable resources. Identifying these options early supports realistic scoping and sequencing decisions.",
+        "bbox": [
+            111,
+            518,
+            885,
+            661
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "An important and sometimes underestimated resource requirement relates to the establishment and maintenance of data-sharing agreements. As highlighted in the UNECE Guide to Sharing Economic Data, such agreements often involve legal review, security assessments, compliance monitoring, and ongoing relationship management. Resource needs associated with these activities—such as legal expertise, stakeholder workshops, and governance oversight—should be explicitly identified to ensure that data-access arrangements remain sustainable and compliant over time.",
+        "bbox": [
+            109,
+            676,
+            885,
+            782
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "Human resources and capacity requirements are central to successful implementation. Statistical organizations should assess whether existing staff skills align with the demands of updated SNA/BPM concepts, including digital data integration, advanced compilation methods, big data use, and enhanced communication with users. Where gaps are identified, short-term measures—such as temporary recruitment or external consultants—may be needed to address immediate requirements, alongside longer-term investments in training and professional development. Identifying these needs in advance supports both implementation success and longer-term institutional strengthening.",
+        "bbox": [
+            109,
+            800,
+            885,
+            924
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "header",
+        "text": "SNA/BPM Implementation Planning Playbook",
+        "bbox": [
+            112,
+            64,
+            393,
+            79
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "page_number",
+        "text": "27",
+        "bbox": [
+            862,
+            65,
+            883,
+            77
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "Clear resource governance arrangements are essential once resource needs have been identified. Governance structures should clarify roles and responsibilities for managing budgets, coordinating funding discussions, monitoring resource use, and reporting progress. Regular review of resource needs and constraints allows organizations to adjust allocations as implementation progresses, particularly if timelines shift or new requirements emerge. Effective governance ensures that identified resources are used efficiently and transparently, supporting sustained implementation of updated standards.",
+        "bbox": [
+            111,
+            118,
+            885,
+            223
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "Finally, resource identification should explicitly account for data integration requirements. As SNA/BPM implementation increasingly relies on multiple data sources, investments in interoperability tools, harmonized identifiers, shared metadata structures, and secure data infrastructure become critical. The UNECE Guide to Data Integration for Official Statistics emphasizes that these capabilities require both dedicated funding and specialized expertise. Recognizing these needs early allows organizations to realistically scope implementation ambitions and avoid underestimating the resources required for integrated statistical production.",
+        "bbox": [
+            109,
+            239,
+            885,
+            345
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "B. Identifying Governance and Organizational Arrangements for Implementation",
+        "text_level": 2,
+        "bbox": [
+            111,
+            366,
+            772,
+            383
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "As part of implementation planning, NSS should identify appropriate governance and organizational arrangements to manage the transition to the updated SNA and BPM. In practice, statistical organizations typically consider a limited set of organizational models, each with different implications for accountability, resource use, and integration with ongoing production. The most common approaches include establishing a dedicated implementation team, assigning implementation responsibilities to existing production teams, or adopting a hybrid arrangement that combines centralized coordination with decentralized execution.",
+        "bbox": [
+            111,
+            385,
+            885,
+            489
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "Under a dedicated implementation team model, a separate group of staff is established with primary responsibility for managing the SNA/BPM update. This team may include staff seconded from other units, as well as external experts or consultants. The principal advantage of this approach is that it allows focused attention on implementation activities without competing production pressures, supporting clear accountability, concentrated expertise, and the ability to pilot new methods or IT solutions before full deployment. However, this model typically entails higher upfront resource requirements and carries a risk of duplicating efforts if production teams are insufficiently involved. Without deliberate knowledge transfer mechanisms, organizations may also face challenges when transitioning updated methods back into routine production. This model is generally most appropriate for large-scale, multiyear reforms, such as comprehensive system overhauls or the introduction of fundamentally new data sources.",
+        "bbox": [
+            109,
+            507,
+            887,
+            683
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "An alternative approach is to integrate implementation responsibilities into existing production teams. In this model, staff responsible for compiling national accounts or balance of payments statistics also undertake the implementation of new standards. This arrangement can enhance continuity and sustainability, as expertise developed during implementation is immediately embedded in regular workflows. It can also be more cost-efficient by avoiding the creation of parallel structures. However, integrating implementation work with ongoing production may stretch staff capacity, create competing priorities, and limit the time available for experimentation or innovation. This approach is often better suited to more incremental updates or narrower implementation scopes that can be absorbed within existing resource constraints.",
+        "bbox": [
+            109,
+            699,
+            885,
+            840
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "Some statistical offices adopt a hybrid governance arrangement, combining a small central coordination function with decentralized technical implementation by production teams. In this model, the central team typically oversees planning, coordination, risk management, and stakeholder engagement, and subject matter units carry out methodological and compilation work. Hybrid arrangements can balance the benefits of focused coordination with strong integration into production processes. The choice among dedicated, integrated, or hybrid arrangements should be guided by factors such as the scale and complexity of the reform, institutional capacity, resource availability, and the extent of change required.",
+        "bbox": [
+            111,
+            857,
+            887,
+            928
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "page_number",
+        "text": "28",
+        "bbox": [
+            114,
+            65,
+            133,
+            78
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "header",
+        "text": "Technical Notes and Manuals",
+        "bbox": [
+            700,
+            64,
+            883,
+            79
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            118,
+            885,
+            171
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "The identification of governance and organizational arrangements should be closely linked to resource and funding considerations. An Implementation Resource and Funding Planning Tool (Table 15) has been developed, which supports the systematic identification of high-level resource requirements and potential funding sources associated with different implementation arrangements. These inputs help inform decisions on governance design, sequencing, and the feasibility of alternative organizational models within the broader SNA/BPM implementation plan.",
+        "bbox": [
+            111,
+            186,
+            885,
+            292
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "table",
+        "img_path": "images/4bdecebc4091d1899be0ba5443e517621dae57552748b65296072aa3133a7065.jpg",
+        "table_caption": [
+            "Table 15. SNA/BPM Implementation Resource and Funding Planning Tool"
+        ],
+        "table_footnote": [
+            "Notes/Follow-Up Actions",
+            "Note: BPM = Balance of Payments Manual; IT = information technology; SNA = System of National Accounts."
+        ],
+        "table_body": "<table><tr><td>Field</td><td>Response</td></tr><tr><td rowspan=\"7\">Resource Category</td><td>□ Human resources</td></tr><tr><td>□ IT and infrastructure</td></tr><tr><td>□ Training and capacity building</td></tr><tr><td>□ Operational costs</td></tr><tr><td>□ Data acquisition/access</td></tr><tr><td>□ External technical assistance</td></tr><tr><td>□ Other (specify): _</td></tr><tr><td>Description of Resource Requirement</td><td>(Briefly describe the resource needed and why it is required for SNA/BPM implementation.)</td></tr><tr><td rowspan=\"6\">Related Implementation Area</td><td>□ Methodology update</td></tr><tr><td>□ Data collection</td></tr><tr><td>□ Compilation systems</td></tr><tr><td>□ Dissemination</td></tr><tr><td>□ Governance/coordination</td></tr><tr><td>□ Other (specify): _</td></tr><tr><td rowspan=\"4\">Estimated Level of Effort/Cost</td><td>□ Low</td></tr><tr><td>□ Medium</td></tr><tr><td>□ High</td></tr><tr><td>□ To be determined (optional quantitative estimate, if available)</td></tr><tr><td colspan=\"2\">Funding Required</td></tr><tr><td rowspan=\"7\">Indicative Funding Source(s)</td><td>□ National budget</td></tr><tr><td>□ Central bank budget</td></tr><tr><td>□ Donor funding</td></tr><tr><td>□ IMF/technical assistance (TA)</td></tr><tr><td>□ Public-private partnership</td></tr><tr><td>□ In-kind support</td></tr><tr><td>□ Other (specify): _</td></tr><tr><td>Lead Institution/Unit</td><td>(Primary unit responsible for managing this resource requirement)</td></tr><tr><td>Partner Institutions (if any)</td><td></td></tr><tr><td>Indicative Timing/Milestone</td><td>(Year/phase of implementation)</td></tr><tr><td>Key Dependencies or Preconditions</td><td>(For example, legal approval, data-sharing agreement, IT prerequisite)</td></tr><tr><td rowspan=\"5\">Key Risks if Not Secured</td><td>□ Implementation delay</td></tr><tr><td>□ Reduced scope</td></tr><tr><td>□ Quality risk</td></tr><tr><td>□ Reputational risk</td></tr><tr><td>□ Sustainability risk</td></tr></table>",
+        "bbox": [
+            114,
+            332,
+            883,
+            941
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "header",
+        "text": "SNA/BPM Implementation Planning Playbook",
+        "bbox": [
+            112,
+            64,
+            393,
+            80
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "page_number",
+        "text": "29",
+        "bbox": [
+            862,
+            64,
+            883,
+            78
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "table",
+        "img_path": "",
+        "table_caption": [
+            ""
+        ],
+        "table_footnote": [
+            "",
+            ""
+        ],
+        "bbox": [
+            114,
+            141,
+            880,
+            339
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "C. Additional Resources for Resource and Funding Planning",
+        "text_level": 2,
+        "bbox": [
+            112,
+            402,
+            599,
+            417
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "The resources listed in Table 16 provide practical guidance to support NSS in planning, mobilizing, and governing the resources required for SNA/BPM implementation. The preceding sections outline the strategic considerations for budgeting, staffing, and organizational arrangements, and these resources offer concrete frameworks and examples that can be used to translate implementation ambitions into credible resource plans and funding proposals. They are particularly valuable for helping program managers articulate the investment needs associated with modernizing data collection, integration, and governance infrastructures.",
+        "bbox": [
+            111,
+            420,
+            885,
+            526
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "table",
+        "img_path": "images/81c742bcf5e7faa0e2c2f6578856afa0ac5d77fc14ab5ece9152b54d6b22d3fd.jpg",
+        "table_caption": [
+            "Table 16. Additional Resources for Resource and Funding Planning"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>United Nations Economic and Social Commission for Asia and the Pacific (UN ESCAP). 2022. Using Big Data for Official Statistics: A Guide with Good Practices. UN ESCAP. https://repository.unescap.org/bitstream/handle/20.500.12870/5177/ESCAP-2022-RP-Using-Big-Data-Official-Statistics.pdf</td></tr><tr><td>United Nations Economic Commission for Europe (UNECE) Task Force on Data Stewardship, Conference of European Statisticians. 2023. Data Stewardship and the Role of National Statistical Offices in the New Data Ecosystem (ECE/CES/STAT/2023/4). UNECE. https://unece.org/sites/default/files/2024-01/Data_stewardship_Publ_PrePrint_2.pdf</td></tr><tr><td>UN Statistics Division. 2014. UN Global Working Group on Big Data for Official Statistics: Strategic Vision. https://unstats.un.org/capacity-development/handbook/html/Handbook/C8/Big_Data.htm</td></tr><tr><td>UN Statistics Division. 2025. Admin Data Collaborative: Strengthening Use of Administrative Data in Official Statistics. https://unstats.un.org/capacity-development/admin-data/</td></tr><tr><td>UN Women/United Nations Statistics Division (UNSD). 2022. Toolkit for Quality Assessment of Administrative Data for Official Statistics (Eastern &amp; Southern Africa). UN Women and UNSD. https://data.unwomen.org/sites/default/files/documents/Publications/2023/ESA-admin-data-toolkit.pdf</td></tr><tr><td>United Nations Economic Commission for Europe (UNECE)/Conference of European Statisticians Task Force on Data Sharing. 2021. Guide to Sharing Economic Data in Official Statistics. UNECE. https://unece.org/statistics/publications/guide-sharing-economic-data-official-statistics</td></tr><tr><td>United Nations Economic Commission for Europe (UNECE) High-Level Group for the Modernisation of Official Statistics. 2024a. DAFI Data Governance Framework for Statistical Interoperability. UNECE. https://unece.org/sites/default/files/2024-03/HLG2023%20DAFI%20Final_0.pdf</td></tr><tr><td>United Nations Economic Commission for Europe (UNECE) High-Level Group for the Modernisation of Official Statistics. 2024b. Guide to Data Integration for Official Statistics. UNECE. https://unece.org/sites/default/files/2024-07/HLG-MOS%20Guide%20to%20Data%20Integration%20for%20Official%20Statistics.pdf</td></tr></table>",
+        "bbox": [
+            114,
+            580,
+            882,
+            892
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "page_number",
+        "text": "30",
+        "bbox": [
+            114,
+            65,
+            135,
+            78
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "header",
+        "text": "Technical Notes and Manuals",
+        "bbox": [
+            700,
+            64,
+            883,
+            79
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "IX. Risk Identification and Assessment for Implementation Planning",
+        "text_level": 1,
+        "bbox": [
+            111,
+            117,
+            727,
+            176
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "A. Identifying and Assessing Implementation Risks",
+        "text_level": 2,
+        "bbox": [
+            111,
+            204,
+            531,
+            220
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "Identifying and assessing risks is a critical component of effective SNA/BPM implementation planning. Implementation projects of this scale are exposed to a wide range of potential challenges that can undermine progress if not recognized early. These risks may include technical issues—such as incomplete source data, delays in IT system development, or challenges in applying new methodologies—as well as organizational risks related to staff turnover, capacity constraints, or weak coordination across institutions. Financial risks are also common, particularly where implementation depends on multiyear budget commitments or external funding.",
+        "bbox": [
+            109,
+            222,
+            885,
+            345
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "The UNECE Guidelines on Risk Management Practices in Statistical Organizations emphasize the importance of establishing a structured approach to risk management early in major statistical initiatives. As part of implementation planning, this begins with systematic risk identification and assessment, which later informs governance arrangements, escalation procedures, and monitoring mechanisms. Treating risk assessment as an integral input to implementation planning—rather than a downstream activity—supports more realistic scoping, sequencing, and resource allocation decisions.",
+        "bbox": [
+            109,
+            362,
+            887,
+            468
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "In addition to operational risks, reputational risks require particular attention during SNA/BPM implementation. Poorly communicated revisions to headline indicators can lead to misunderstanding among policymakers, media, and the public, potentially eroding trust in official statistics. For this reason, risk identification should span technical, organizational, financial, legal, and reputational domains. Conducting a structured risk identification exercise early in the planning process helps ensure that potential threats are visible before they materialize and can be addressed proactively.",
+        "bbox": [
+            109,
+            484,
+            885,
+            590
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "Once risks have been identified, they should be assessed in terms of both their likelihood of occurrence and their potential effect on implementation objectives. Simple qualitative assessments—such as classifying likelihood and effect as low, medium, or high—are often sufficient at the planning stage and help prioritize attention on the most significant risks. Defining risk tolerance and risk appetite is also useful, as it clarifies which types of risks may be acceptable during implementation (for example, minor delays in backcasting) and which are not (such as breaches of confidentiality or loss of data integrity). This shared understanding supports consistent decision making and timely escalation.",
+        "bbox": [
+            109,
+            607,
+            885,
+            731
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "The identification and assessment of risks also provide an opportunity to consider preliminary mitigation options and contingency measures. For example, awareness of potential IT delays may point to the need for phased implementation or parallel systems, and recognition of staffing risks may highlight the importance of cross-training or succession planning. Financial risks may suggest the value of diversifying funding sources or aligning implementation milestones with budget cycles. At this stage, the focus is on identifying plausible responses rather than finalizing detailed mitigation plans.",
+        "bbox": [
+            109,
+            747,
+            885,
+            854
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "Communication plays an important role in risk management. UNECE guidance highlights the value of transparent internal communication with senior management and governance bodies regarding key risks and their potential implications. In some cases, external communication—particularly around reputational risks associated with revisions—may also be appropriate. Clear communication about identified risks and planned responses helps build confidence that implementation is being managed responsibly and that potential issues are being actively monitored.",
+        "bbox": [
+            111,
+            869,
+            887,
+            922
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "header",
+        "text": "SNA/BPM Implementation Planning Playbook",
+        "bbox": [
+            112,
+            64,
+            393,
+            79
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "page_number",
+        "text": "31",
+        "bbox": [
+            864,
+            65,
+            883,
+            78
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            118,
+            885,
+            170
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "Risk identification and assessment should not be treated as a one-off exercise. As implementation progresses, new risks may emerge, and existing risks may change in nature or severity. Statistical program management should therefore revisit and update risk assessments at key milestones, ensuring that evolving risks are captured and reflected in governance, resource, and communication decisions. Integrating implementation-related risks into broader organizational risk and quality management systems supports institutional learning and strengthens resilience beyond the immediate SNA/BPM update.",
+        "bbox": [
+            111,
+            188,
+            885,
+            294
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "The Implementation Risk Identification Planning Tool (Table 17) provides a structured way to document risks associated with implementation. The tool captures information on the nature of each risk, the affected implementation areas, likelihood and effect assessments, responsible units, and indicative monitoring arrangements. Each completed entry corresponds to a specific identified risk and serves as an input to subsequent prioritization, mitigation planning, and ongoing monitoring within the overall implementation governance framework.",
+        "bbox": [
+            111,
+            309,
+            885,
+            416
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "table",
+        "img_path": "images/5fe8ecbb159210dad8212e9cd557fad6d5b7b8cabc71108aa529a471e0a5e7d9.jpg",
+        "table_caption": [
+            "Table 17. SNA/BPM Implementation Risk Identification Planning Tool"
+        ],
+        "table_footnote": [
+            "Note: BPM = Balance of Payments Manual; ID = identification; IT = information technology; SNA = System of National Accounts."
+        ],
+        "table_body": "<table><tr><td>Field</td><td>Response</td></tr><tr><td>Risk ID</td><td>(Optional/assigned later)</td></tr><tr><td>Risk Description</td><td>(Briefly describe the risk event and how it could affect SNA/BPM implementation.)</td></tr><tr><td rowspan=\"8\">Risk Category</td><td>□ Technical</td></tr><tr><td>□ Organizational</td></tr><tr><td>□ Financial</td></tr><tr><td>□ Legal/regulatory</td></tr><tr><td>□ Reputational</td></tr><tr><td>□ Data/confidentiality</td></tr><tr><td>□ External/political</td></tr><tr><td>□ Other (specify):____</td></tr><tr><td rowspan=\"7\">Implementation Area Affected</td><td>□ Methodology</td></tr><tr><td>□ Data collection</td></tr><tr><td>□ IT systems</td></tr><tr><td>□ Dissemination</td></tr><tr><td>□ Communication</td></tr><tr><td>□ Governance</td></tr><tr><td>□ Resources</td></tr><tr><td rowspan=\"3\">Likelihood</td><td>□ Low</td></tr><tr><td>□ Medium</td></tr><tr><td>□ High</td></tr><tr><td rowspan=\"4\">Effect</td><td>□ Low</td></tr><tr><td>□ Medium</td></tr><tr><td>□ High</td></tr><tr><td>□ Very high</td></tr><tr><td rowspan=\"4\">Overall Risk Rating</td><td>□ Low</td></tr><tr><td>□ Moderate</td></tr><tr><td>□ Major</td></tr><tr><td>□ Critical (if applicable, based on likelihood × effect)</td></tr><tr><td>Proposed Mitigation Measures</td><td>(Initial ideas only, not a finalized control plan)</td></tr><tr><td>Responsible Unit/Risk Owner</td><td>Unit or role responsible for monitoring this risk</td></tr><tr><td>Indicative Timing/Trigger</td><td>(For example, during IT migration, prerelease phase, funding cycle)</td></tr><tr><td rowspan=\"4\">Monitoring Frequency</td><td>□ Monthly</td></tr><tr><td>□ Quarterly</td></tr><tr><td>□ Semiannual</td></tr><tr><td>□ Ad hoc</td></tr><tr><td rowspan=\"4\">Current Status</td><td>□ Identified</td></tr><tr><td>□ Under assessment</td></tr><tr><td>□ Mitigation planned</td></tr><tr><td>□ Mitigation in progress</td></tr><tr><td>Review Date</td><td></td></tr><tr><td>Notes/Follow-Up Actions</td><td></td></tr></table>",
+        "bbox": [
+            112,
+            454,
+            882,
+            909
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "page_number",
+        "text": "32",
+        "bbox": [
+            114,
+            65,
+            133,
+            78
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "header",
+        "text": "Technical Notes and Manuals",
+        "bbox": [
+            700,
+            64,
+            883,
+            79
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "table",
+        "img_path": "",
+        "table_caption": [
+            ""
+        ],
+        "table_footnote": [
+            ""
+        ],
+        "bbox": [
+            114,
+            141,
+            883,
+            584
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "B. Additional Resources for Risk-Management Planning",
+        "text_level": 2,
+        "bbox": [
+            112,
+            633,
+            565,
+            650
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "The resources listed in Table 18 provide structured and practical guidance to help NSS establish, implement, and sustain effective risk-management practices in support of SNA/BPM implementation. The preceding section outlines the types of risks commonly encountered during implementation and the key elements of a risk-management process, and these resources offer detailed frameworks, concepts, and examples that can be adapted to the specific context of statistical organizations.",
+        "bbox": [
+            111,
+            651,
+            885,
+            739
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "table",
+        "img_path": "images/0c55365a428a179970252a76e6ca3678ee99fe616126aabec68c09777c478a6a.jpg",
+        "table_caption": [
+            "Table 18. Additional Resources for Risk-Management Planning"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>United Nations Economic Commission for Europe (UNECE)/Conference of European Statisticians Task Force on Risk Management. 2017. Guidelines on Risk Management Practices in Statistical Organizations. UNECE. https://statswiki.unece.org/download/attachments/170787235/UNECE%20DOR%20RM%20Module%201%20Concept%20of%20Risk.pdf</td></tr><tr><td>United Nations. 2025. Handbook on Management and Organization of National Statistical Systems. United Nations. https://unstats.un.org/capacity-development/handbook/Handbook_All_2025A_202505.pdf</td></tr></table>",
+        "bbox": [
+            117,
+            779,
+            877,
+            864
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "header",
+        "text": "SNA/BPM Implementation Planning Playbook",
+        "bbox": [
+            112,
+            64,
+            393,
+            79
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "page_number",
+        "text": "33",
+        "bbox": [
+            864,
+            65,
+            883,
+            78
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "The image is too blurry to recognize the content.",
+        "bbox": [
+            0,
+            3,
+            996,
+            1000
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "chart",
+        "img_path": "images/aff848c1833138ada469d103f82b1dbf20edbffb009f94c4a8c13e35e2e17833.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            0,
+            0,
+            1000,
+            828
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL\nMONETARY FUND",
+        "bbox": [
+            81,
+            766,
+            163,
+            830
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "footer",
+        "text": "PUBLICATIONS",
+        "bbox": [
+            184,
+            787,
+            408,
+            810
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "footer",
+        "text": "SNA/BPM Implementation Planning Playbook",
+        "bbox": [
+            83,
+            864,
+            506,
+            883
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "footer",
+        "text": "TNM/2026/08",
+        "bbox": [
+            84,
+            896,
+            218,
+            912
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "footer",
+        "text": "ISBN 9798229002400\n9798229002400",
+        "bbox": [
+            751,
+            781,
+            915,
+            897
+        ],
+        "page_idx": 41
+    }
+]

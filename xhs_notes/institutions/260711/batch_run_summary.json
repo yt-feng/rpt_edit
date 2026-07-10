@@ -1,0 +1,173 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs",
+  "total_pdf_count_before_shard": 23,
+  "pdf_count_before_skip": 23,
+  "pdf_count": 23,
+  "generated_report_count": 23,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 0,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/ADB_Bond-Connect-and-Recent-China-Inter-Bank-Bond-Market-Develop_870831e9.pdf",
+          "batch_file": "/tmp/pdf_batch_001_mi7qj_jc/pdfs/0001-ADB_Bond-Connect-and-Recent-China-Inter-Bank-Bond-Market-Develop_870831e9.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/ADB_Toward-More-Livable-Cities-in-the-Hindu-Kush-Himalayas-Lesso_4c92419f.pdf",
+          "batch_file": "/tmp/pdf_batch_001_mi7qj_jc/pdfs/0002-ADB_Toward-More-Livable-Cities-in-the-Hindu-Kush-Himalayas-Lesso_4c92419f.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/ADB_Ways-to-Promote-Mediation-in-Investor-to-State-Disputes_a93bf563.pdf",
+          "batch_file": "/tmp/pdf_batch_001_mi7qj_jc/pdfs/0003-ADB_Ways-to-Promote-Mediation-in-Investor-to-State-Disputes_a93bf563.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/Bruegel_The-flaws-in-the-European-Union-s-proposed-Industrial-Accele_ee957116.pdf",
+          "batch_file": "/tmp/pdf_batch_001_mi7qj_jc/pdfs/0004-Bruegel_The-flaws-in-the-European-Union-s-proposed-Industrial-Accele_ee957116.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Aggregate-Gains-from-AI-and-Their-Distribution-Global-Eviden_24e3c641.pdf",
+          "batch_file": "/tmp/pdf_batch_001_mi7qj_jc/pdfs/0005-IMF_Aggregate-Gains-from-AI-and-Their-Distribution-Global-Eviden_24e3c641.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 2,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Analyzing-Social-Spending-in-Namibia_4cca15f8.pdf",
+          "batch_file": "/tmp/pdf_batch_002_etl3libb/pdfs/0006-IMF_Analyzing-Social-Spending-in-Namibia_4cca15f8.pdf",
+          "stable_index": "6"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Competition-and-Productivity-in-Middle-East-and-Central-Asia_74a95671.pdf",
+          "batch_file": "/tmp/pdf_batch_002_etl3libb/pdfs/0007-IMF_Competition-and-Productivity-in-Middle-East-and-Central-Asia_74a95671.pdf",
+          "stable_index": "7"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Dominican-Republic-Fiscal-Transparency-Evaluation_4db4b33a.pdf",
+          "batch_file": "/tmp/pdf_batch_002_etl3libb/pdfs/0008-IMF_Dominican-Republic-Fiscal-Transparency-Evaluation_4db4b33a.pdf",
+          "stable_index": "8"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Iraq-Technical-Assistance-Report-Macro-Frameworks-Technical-_0a27bc2f.pdf",
+          "batch_file": "/tmp/pdf_batch_002_etl3libb/pdfs/0009-IMF_Iraq-Technical-Assistance-Report-Macro-Frameworks-Technical-_0a27bc2f.pdf",
+          "stable_index": "9"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Kingdom-of-Eswatini-Technical-Assistance-Report-Report-on-th_c3cd5bc4.pdf",
+          "batch_file": "/tmp/pdf_batch_002_etl3libb/pdfs/0010-IMF_Kingdom-of-Eswatini-Technical-Assistance-Report-Report-on-th_c3cd5bc4.pdf",
+          "stable_index": "10"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 3,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Macro-frameworks-technical-assistance-to-the-Central-bank-of_6645fa61.pdf",
+          "batch_file": "/tmp/pdf_batch_003_xfd3qq_c/pdfs/0011-IMF_Macro-frameworks-technical-assistance-to-the-Central-bank-of_6645fa61.pdf",
+          "stable_index": "11"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Policy-Transmission-Through-Banking-Evidence-from-Namibia_9c4fb8a5.pdf",
+          "batch_file": "/tmp/pdf_batch_003_xfd3qq_c/pdfs/0012-IMF_Policy-Transmission-Through-Banking-Evidence-from-Namibia_9c4fb8a5.pdf",
+          "stable_index": "12"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Repo-Rate-Dynamics-The-Role-of-Dealers-Hedge-Funds-and-Issua_8937ba09.pdf",
+          "batch_file": "/tmp/pdf_batch_003_xfd3qq_c/pdfs/0013-IMF_Repo-Rate-Dynamics-The-Role-of-Dealers-Hedge-Funds-and-Issua_8937ba09.pdf",
+          "stable_index": "13"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_SNA-BPM-Implementation-Planning-Playbook_90f9aa5d.pdf",
+          "batch_file": "/tmp/pdf_batch_003_xfd3qq_c/pdfs/0014-IMF_SNA-BPM-Implementation-Planning-Playbook_90f9aa5d.pdf",
+          "stable_index": "14"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Stablecoins-and-Fragility-in-Fixed-Exchange-Rate-Regimes_458c0a97.pdf",
+          "batch_file": "/tmp/pdf_batch_003_xfd3qq_c/pdfs/0015-IMF_Stablecoins-and-Fragility-in-Fixed-Exchange-Rate-Regimes_458c0a97.pdf",
+          "stable_index": "15"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 4,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_What-Drives-Crypto-Mining-Evidence-from-Hardware-Imports_c1bf7b0a.pdf",
+          "batch_file": "/tmp/pdf_batch_004_ccr16b8o/pdfs/0016-IMF_What-Drives-Crypto-Mining-Evidence-from-Hardware-Imports_c1bf7b0a.pdf",
+          "stable_index": "16"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_A-National-Skills-Strategy-and-Action-Plan-for-Malta_c68d4a74.pdf",
+          "batch_file": "/tmp/pdf_batch_004_ccr16b8o/pdfs/0017-OECD_A-National-Skills-Strategy-and-Action-Plan-for-Malta_c68d4a74.pdf",
+          "stable_index": "17"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_Artificial-Intelligence-markets_d4699946.pdf",
+          "batch_file": "/tmp/pdf_batch_004_ccr16b8o/pdfs/0018-OECD_Artificial-Intelligence-markets_d4699946.pdf",
+          "stable_index": "18"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_Financing-Water-Security_2ac9c58b.pdf",
+          "batch_file": "/tmp/pdf_batch_004_ccr16b8o/pdfs/0019-OECD_Financing-Water-Security_2ac9c58b.pdf",
+          "stable_index": "19"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_Investor-incentives-for-public-sector-green-social-sustainab_193ca624.pdf",
+          "batch_file": "/tmp/pdf_batch_004_ccr16b8o/pdfs/0020-OECD_Investor-incentives-for-public-sector-green-social-sustainab_193ca624.pdf",
+          "stable_index": "20"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 5,
+      "pdf_count": 3,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_OECD-Anti-Bribery-Convention-Phase-4-Follow-Up-Report-on-T-r_a704fd03.pdf",
+          "batch_file": "/tmp/pdf_batch_005_epoc48yy/pdfs/0021-OECD_OECD-Anti-Bribery-Convention-Phase-4-Follow-Up-Report-on-T-r_a704fd03.pdf",
+          "stable_index": "21"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/OECD_Trends-in-Global-Value-Chains_ba0daea5.pdf",
+          "batch_file": "/tmp/pdf_batch_005_epoc48yy/pdfs/0022-OECD_Trends-in-Global-Value-Chains_ba0daea5.pdf",
+          "stable_index": "22"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WTO_Members-review-MC14-outcomes-discuss-energy-crisis-responses_66cde954.pdf",
+          "batch_file": "/tmp/pdf_batch_005_epoc48yy/pdfs/0023-WTO_Members-review-MC14-outcomes-discuss-energy-crisis-responses_66cde954.pdf",
+          "stable_index": "23"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

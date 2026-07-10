@@ -1,0 +1,30 @@
+{
+  "source_pdf": "/tmp/pdf_batch_005_epoc48yy/pdfs/0021-OECD_OECD-Anti-Bribery-Convention-Phase-4-Follow-Up-Report-on-T-r_a704fd03.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "经合组织",
+  "cover_short_title": "OECD最新报告：土",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x2",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "经合组织：跨国企业在土耳其面临被低估的法律不确定性",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

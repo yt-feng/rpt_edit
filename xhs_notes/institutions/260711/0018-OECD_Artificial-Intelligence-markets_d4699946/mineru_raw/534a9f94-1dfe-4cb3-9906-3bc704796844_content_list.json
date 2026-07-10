@@ -1,0 +1,1483 @@
+[
+    {
+        "type": "text",
+        "text": "Artificial Intelligence markets: recent developments and competition issues",
+        "text_level": 1,
+        "bbox": [
+            122,
+            183,
+            828,
+            263
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "24 June 2026",
+        "bbox": [
+            769,
+            298,
+            868,
+            315
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Key messages",
+        "text_level": 2,
+        "bbox": [
+            112,
+            376,
+            292,
+            401
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- Artificial Intelligence (AI) can deliver large economic and social gains. These gains will be stronger if markets remain open, innovative and contestable across the entire AI value chain. However, recent OECD work shows that the structure of AI markets creates significant risks for competition.",
+        "bbox": [
+            139,
+            420,
+            880,
+            485
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- At the same time, early evidence in some market segments suggests that tech giants face some competition from dynamic, specialised providers. This appears to be the case for foundation models – in particular large language models – where performance has continued to improve, prices have declined, and technological leadership in AI model capabilities has been repeatedly contested.",
+        "bbox": [
+            139,
+            488,
+            880,
+            565
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- Despite these initial signs of market dynamism, broader structural risks to competition in the AI value chain are real, persistent and expected to intensify. These include strong concentration of key inputs (compute, data and skills), first mover advantages and increasing vertical integration. Further rapid improvements in AI capabilities and preferential partnerships with existing leaders in critical segments – especially upstream in the supply of chips and the provision of cloud services – may create definitive advantages for a handful of companies and further concentrate digital markets.",
+        "bbox": [
+            139,
+            568,
+            880,
+            677
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- Policymakers therefore face growing challenges in monitoring fast evolving AI markets, which calls for sustained vigilance and cross-border co-operation to ensure long lasting competitive outcomes.",
+        "bbox": [
+            141,
+            680,
+            880,
+            728
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "OECD\nBETTER POLICIES FOR BETTER LIVES",
+        "bbox": [
+            36,
+            57,
+            194,
+            95
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Policy Brief",
+        "bbox": [
+            302,
+            43,
+            732,
+            105
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "ARTIFICIAL INTELLIGENCE MARKETS: RECENT DEVELOPMENTS AND COMPETITION ISSUES © OECD 2026",
+        "bbox": [
+            104,
+            915,
+            803,
+            928
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "What's the issue?",
+        "text_level": 2,
+        "bbox": [
+            102,
+            149,
+            282,
+            168
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Competition in AI markets has broad implications for economic growth. Artificial intelligence (AI) is widely expected to raise productivity across the economy (Aghion and Bunel, 2024; Filippucci et al., 2024; Calvino et al., 2025), although estimates vary significantly between more pessimistic and optimistic views (Acemoglu, 2024, and Baily, Brynjolfsson and Korinek, 2023, respectively). Importantly, these expected gains assume broad access to powerful and affordable AI tools, which depends to a large extent on whether AI markets remain innovative and competitive, open to new entrants, and allow users to switch to the best solutions at low cost (OECD, 2024).",
+        "bbox": [
+            102,
+            181,
+            894,
+            292
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "This Policy Brief draws on previous OECD work on AI markets and competition (OECD, 2024 and 2025b; Calligaris et al., 2026) and incorporates updated evidence on recent developments building on André et al. (2025). Overall, this body of work and the new updates present a mixed picture. While specific segments of AI markets – particularly foundation models – have shown dynamism over the past three years, several structural risks persist along different layers of the AI value chain (Korinek and Vipra, 2025; Hagiu and Wright, 2025, Gambacorta and Shreeti, 2026). AI development and deployment are reshaping business performance, cost structures and strategic advantages, with important implications for market power. In particular, incumbent positions may become entrenched in the long run, especially in structurally concentrated market segments (e.g. hardware, data).",
+        "bbox": [
+            102,
+            297,
+            894,
+            439
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Why competition in AI markets matters for the economy?",
+        "text_level": 2,
+        "bbox": [
+            102,
+            463,
+            660,
+            482
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Beyond the question of whether AI markets are competitive or concentrated in a static sense, the critical issue is whether they will remain contestable over time. Limited gatekeeping, low switching costs and the absence of exclusionary behaviour are needed to ensure that users benefit in the long run from lower prices, higher quality technologies and wider choice. This brief lays out the current evidence and highlights the key long-term risks in different AI market segments that could limit future gains from this technology.",
+        "bbox": [
+            102,
+            497,
+            894,
+            590
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Empirical evidence suggests continuous innovation and declining prices, especially in the AI model development segment. Despite significant entry costs and the presence of a few tech giants in the AI model development segment $^{1}$ , the performance of Generative AI models has rapidly increased, prices have declined and the number of developers and providers has increased according to novel OECD evidence and recent academic work (André et al., 2025; Demirer et al., 2025; OECD AI Observatory, 2026). The number of AI developers focusing on language models for cognitive tasks (including reasoning and coding) increased from 9 in January 2024 to 47 in April 2026. Over the same period, the number of active text-to-text models rose from 22 to 453.",
+        "bbox": [
+            102,
+            596,
+            894,
+            721
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The concept of the AI Economic Frontier – introduced in André et al. (2025) – captures the highest available model performance for a given price (Figure 1). It represents the performance-price trade-off faced by potential AI users. This frontier has been steadily moving upwards and to the left, indicating the availability of better models at lower prices. Although the market is highly oligopolistic, reflecting high entry costs, leading firms still face high pressure from the continuous emergence of better models. The number of developers that reach the AI Economic Frontier has risen from 2 to 8 over the past three years, including big-tech incumbents and AI-specialised newcomers from the United States and China. While data on market shares is difficult to obtain, technological leadership at the economic frontier – as defined by model quality and price – appears highly contested, with frontier presence lasting only a few months. Frequent changes in the composition of the economic frontier affect both incumbents and specialised AI labs, indicating competitive pressures (Demirer et al. 2025). However, geographic concentration is high, as the overwhelming majority of leading models are developed in the United States or China, where AI-related investment is also concentrated.",
+        "bbox": [
+            100,
+            726,
+            894,
+            837
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2 |",
+        "bbox": [
+            105,
+            34,
+            127,
+            49
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{1}$ Models that underpin generative AI tools, such as large language model-based chatbots like ChatGPT or Gemini and AI agents like Claude Code or Codex.",
+        "bbox": [
+            102,
+            858,
+            892,
+            889
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "ARTIFICIAL INTELLIGENCE MARKETS: RECENT DEVELOPMENTS AND COMPETITION ISSUES © OECD 2026",
+        "bbox": [
+            194,
+            915,
+            892,
+            929
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            100,
+            108,
+            894,
+            202
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Figure 1. The AI Economic Frontier: increasing model performance at much lower prices",
+        "text_level": 2,
+        "bbox": [
+            102,
+            219,
+            806,
+            239
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Evolution of the AI Economic Frontier of AI language models (text-to-text modality)",
+        "bbox": [
+            102,
+            247,
+            665,
+            265
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/54aaf779e38cd4d700e8735a799e7d2128d5eaa06078c3acde431ec0c6ebef2b.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Note: Quality is defined by a normalised weighted index of model performance based on common benchmarks of the industry. Each dot represents the model with the lowest price for a given quality among text-to-text models available each month. Prices are measured on a per-token basis through application programming interface – API – access through the cloud. The solid blue (dashed red) line represents the AI economic frontier in April 2026 (January 2025). For details about the quality index, see https://artificialanalysis.ai/methodology and André et al. (2025)."
+        ],
+        "bbox": [
+            247,
+            275,
+            757,
+            486
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Source: Author's calculations following André et al. (2025) based on data from Artificial Analysis.",
+        "bbox": [
+            104,
+            563,
+            638,
+            579
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Dynamism at the frontier of AI development has supported faster adoption and more intensive use, unlocking significant productivity potential among downstream users. The quality-adjusted prices of AI models reflect this trend. The aggregate OECD price index for text-to-text (language) models fell by nearly 80% between January 2024 and April 2026 (Figure 2). Prices have declined sharply in all market segments and across all use cases, including coding and agentic capabilities. $^{2}$",
+        "bbox": [
+            102,
+            600,
+            894,
+            678
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "However, declining prices per token and better performance are necessary but not sufficient conditions for a decline in the effective cost of using AI. AI agents consume substantially more tokens per task and hence increase model usage intensity by orders of magnitude, leading to a potentially rising effective cost of AI use, especially at large scale. Indeed, broad macroeconomic productivity gains likely require high-intensity, systemic adoption $^{3}$ via integration in core business processes. Such adoption also needs to be enabled by organisational change and complementary investments in intangibles such as data and skills, which may be slow to occur (Calvino et al. 2026; Brynjolfsson, Syverson and Rock, 2021).",
+        "bbox": [
+            102,
+            683,
+            894,
+            764
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            872,
+            74,
+            892,
+            89
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{2}$ Agentic capabilities refer to AI agents that operate within and across apps and integrations to execute a broad range of knowledge tasks. They can autonomously carry out multi-step tasks in a delegated workspace over extended periods (e.g., reading and writing files, accessing computer and browser functions, and coordinating with subagents). For an in-depth analysis of agentic AI, see OECD (2026).",
+        "bbox": [
+            102,
+            795,
+            892,
+            854
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{3}$ Systemic adoption refers to deep integration in production and business processes, going beyond the occasional use of chatbot interfaces by individual workers.",
+        "bbox": [
+            100,
+            859,
+            892,
+            889
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "ARTIFICIAL INTELLIGENCE MARKETS: RECENT DEVELOPMENTS AND COMPETITION ISSUES © OECD 2026",
+        "bbox": [
+            102,
+            915,
+            803,
+            929
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            102,
+            108,
+            892,
+            141
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Moreover, cybersecurity, safety and operational risks could become an increasing barrier to adoption and diffusion across sectors and firms. As AI capabilities continue to increase and AI agents become more deeply integrated into IT systems, these concerns are becoming critical and could slow down adoption. In addition, it could increase switching costs and force product bundling with cybersecurity solutions to the benefit of the more integrated digital companies.",
+        "bbox": [
+            102,
+            146,
+            894,
+            225
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Figure 2. Quality-adjusted prices of AI models have declined rapidly",
+        "text_level": 2,
+        "bbox": [
+            102,
+            243,
+            645,
+            262
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Quality-adjusted AI price index (text-to-text modality)",
+        "bbox": [
+            104,
+            269,
+            465,
+            288
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e59a71d96bb25b4f0f0e8c9555ba8337ede8c74c9c06478403ae740534d8af39.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Note: The index shows the evolution (starting in June 2023) of the quality-adjusted price of using AI models from the cloud. See André et al. (2025) for more details.",
+            "Source: Author's calculations following André et al. (2025). Data from Artificial Analysis."
+        ],
+        "bbox": [
+            272,
+            299,
+            722,
+            511
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Competition risks remain important in several AI market segments. Several inherent characteristics of AI markets carry structural risks for competition with varying intensity in different layers of the value chain. Table 1 highlights the main technological features and market characteristics and the implied key competition risks for each segment, starting from more upstream - hardware, cloud infrastructure and data – followed by model development and applications downstream. Four features appear in several market segments which are in turn discussed below.",
+        "bbox": [
+            102,
+            583,
+            894,
+            677
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            105,
+            74,
+            124,
+            89
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "ARTIFICIAL INTELLIGENCE MARKETS: RECENT DEVELOPMENTS AND COMPETITION ISSUES © OECD 2026",
+        "bbox": [
+            194,
+            915,
+            892,
+            928
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/c1c86cc4622fea91f2f62eb596a6f0eebef06ceb086ee9e612a41b3c6e8540bd.jpg",
+        "table_caption": [
+            "Table 1. Risks for competition across the value chain"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Market segment</td><td>Technological features and market characteristics</td><td>Key competition risks</td></tr><tr><td>Hardware(chips &amp; specialised equipment)</td><td>High fixed costs; economies of scale and scope; long development times; inelastic supply curves; high switching costs; learning-by-doing</td><td>High market concentration; barriers to entry for new chip designers and manufacturers; dependency on a small number of suppliers; risk of foreclosure or preferential access for vertically integrated or large incumbents; existing software ecosystems</td></tr><tr><td>Cloud infrastructure(compute &amp; data centres)</td><td>Capital intensity; economies of scale; sunk costs; scope economies with existing cloud services; user switching costs and consumer inertia</td><td>Entrenchment of incumbent cloud providers; leveraging of cloud market power into adjacent AI segments; preferential pricing; product bundling; vertical foreclosure</td></tr><tr><td>Data(training, fine-tuning and proprietary datasets)</td><td>Exclusive data partnerships; data feedback loops; economies of scope with downstream services; bundling and tying</td><td>Data concentration and gatekeeping; foreclosure of rivals through exclusive access to high-quality or proprietary data; reinforcing advantages for incumbents with large user bases; reduced ability for new entrants to train competitive models</td></tr><tr><td>Foundation models(backbones of Generative AI models – language, code, image and video generators)</td><td>Data feedback loops; self-improving AI capabilities; high fixed and sunk costs; scale economies in training and inference; reputational advantages</td><td>Oligopolistic market structures; durable leadership through cumulative learning; preferential or selective access to frontier models; vertical integration with cloud or downstream services reducing contestability</td></tr><tr><td>Downstream applications(consumer &amp; business AI services)</td><td>Network effects; switching costs; user lock-in; exclusive distribution or default positioning; bundling with existing digital ecosystems</td><td>Market tipping in key use cases; foreclosure via exclusive partnerships or default settings; gatekeeping of digital platforms; leveraging of upstream advantages into downstream dominance; reduced choice and higher long-term switching costs for users; product bundling.</td></tr></table>",
+        "bbox": [
+            163,
+            131,
+            833,
+            476
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Concentration of critical inputs and economies of scale and scope are important, including high-end chips (Haramboure et al. 2023), specialised cloud infrastructure (OECD, 2025b), large datasets (often proprietary), robust energy systems (IEA, 2025; OECD, 2025a) and scarce specialised skills (Calvino et al. 2026). Competition can gradually erode due to input bottlenecks or the build-up of gatekeeping positions in these critical segments of the value chain (OECD, 2024; CMA, 2024). This has happened in the past in digital markets such as search engines and social media (OECD, 2022) and could happen again in AI markets if competition is not enforced along the whole AI value chain (Beraja and Buera, 2026). In addition to control over the technology, complementary infrastructure - specialised data centres, electricity generation and robust grid connections and transmission – can also become a key source of market power (IEA, 2025).",
+        "bbox": [
+            102,
+            485,
+            894,
+            640
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Indeed, the rapid expansion of Generative AI markets since 2022 has been accompanied by strong concentration in AI capacity within a few countries and firms (Figure 1 Panel A) to the benefit of first movers and vertically integrated actors. Total estimated AI investments in the United States are more than twice that of other OECD countries in 2025 (Figure 3 Panel B). This gap is set to widen further, reflecting large differences in AI investment led by a few global AI giants operating across many jurisdictions (Frost, Rishabh and Shreeti, 2026). The five largest US technology firms spent \\$400 billion on capital expenditure in 2025 and are forecast to spend \\$660 billion in 2026 (Wachter and Wachter, 2026).",
+        "bbox": [
+            102,
+            646,
+            894,
+            756
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The cloud provision market and the manufacturing of specialised chips (GPUs) are two examples of structurally concentrated markets, where high fixed costs, large economies of scale and scope, first-mover advantage and long development times tend to generate concentration. In 2023, the three major cloud providers account for 74 per cent of global cloud market (Gambacorta and Shreeti, 2026). Another example, more upstream in the value chain, is NVIDIA that accounts for 90 per cent of the GPU market in 2023 (Gambacorta and Shreeti, 2026). Whether market concentration ends up posing competition issues is a question that warrants further analysis, taking into account factors related to the behaviour of market participants.",
+        "bbox": [
+            102,
+            760,
+            894,
+            887
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "| 5",
+        "bbox": [
+            868,
+            74,
+            892,
+            90
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "ARTIFICIAL INTELLIGENCE MARKETS: RECENT DEVELOPMENTS AND COMPETITION ISSUES © OECD 2026",
+        "bbox": [
+            104,
+            915,
+            803,
+            929
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/8a1efbbd63d11e41660bb6104865e55adddc42740818f34f474f188c06021624.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 3. AI investment and compute capacity are concentrated across countries"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            200,
+            139,
+            490,
+            340
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4603126c695b1e465e8c99f0ae6624a0df3ddfd1a21fd6ffff057a5eb2ba9710.jpg",
+        "content": "",
+        "chart_caption": [
+            "Note: Panel A. Data centre capacity is expressed in megawatts (MW), that is the electrical power required to operate data centres. MW is a commonly used proxy for data centre capacity, but it is not a direct measure of compute power, because electricity is also used for cooling and other supporting infrastructure. For comparison, 1 MW of continuous power corresponds to roughly the average annual electricity use of about 800 US homes. The denominator is GDP in constant purchasing power parity. Panel B. AI capacity refers to an economy's ability to develop and deploy advanced AI systems. Investment in AI development capacity refers to the estimated investment and R&D costs required to produce frontier AI models, including compute costs for model training, algorithmic improvements, and post-training costs related to model alignment. Estimates are computed by aggregating firm-level estimates of the cost of training AI models.AI development includes generative AI as well as other types of AI. Investment in AI infrastructure capacity refers to the cost of AI compute infrastructure used for inference and training. It covers investment in data centres, including ICT hardware as well as energy and non-IT investments required to power and operate these facilities. Source: Panel A: Author's calculations based on data from IEA (2025). Panel B: author's preliminary estimates based on data from IEA (2025); OECD.AI (2026), data from Preqin; and Artificial Analysis."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            502,
+            140,
+            811,
+            340
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Strong open-source development has mitigated some concentration effects by lowering entry costs, putting price pressure on incumbents, reducing dependence on a limited number of providers, improving transparency and fostering cumulative innovation (André et al., 2025; Demirer et al. 2025; OECD, 2025c). However, open source and common standards can also create ecosystem effects and exclusive bundles that compound first-mover advantage and create network effects to the advantage of a few companies.",
+        "bbox": [
+            102,
+            525,
+            892,
+            604
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "First-mover advantage and positive feedback loops. Such concentration may compound first-mover advantages due to data feedback loops, network effects, consumer lock-in, AI model self-improvements and preferential model access (Hagiu and Wright, 2025; Korinek and Vipra, 2025; The Economist, 2026; Gambacorta and Shreeti, 2026). It may also limit entry, especially where model development and inference require large sunk costs, scarce talent, costly access to frontier compute and strategic operational partnerships.",
+        "bbox": [
+            102,
+            609,
+            894,
+            703
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Vertical integration with gatekeeping of key segments of the value chain also threatens the contestability of AI markets. Many leading digital firms operate across multiple layers of the AI value chain – including model development, cloud provision, and downstream digital services – allowing them to favour their own offerings, bundle AI with existing products, and raise switching costs for users (Frost, Rishabh and Shreeti, 2026). Such strategies can weaken contestability, even as model prices decline. Weak transparency, conflicts of interest and lobbying further distort competition, particularly when dominant international and vertically integrated firms could shape regulations through undue influence (Vitale and Bitetti, 2026). Market power may therefore emerge through the simultaneous control of upstream physical infrastructure and downstream digital platforms and influence on the regulatory environment.",
+        "bbox": [
+            100,
+            709,
+            894,
+            850
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The current energy shocks and supply-chain disruptions may reinforce concentration risks, as a small number of vertically integrated firms that own AI infrastructure may be better placed than smaller rivals to cope with rising energy costs, supply-chain disruptions and tightening financing conditions. Besides, foreclosure through selective access to the most capable models $^{4}$ can favour large incumbents in cloud, operating systems, cybersecurity, or services such as finance (The Economist, 2026).",
+        "bbox": [
+            102,
+            854,
+            894,
+            888
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            105,
+            74,
+            122,
+            89
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "ARTIFICIAL INTELLIGENCE MARKETS: RECENT DEVELOPMENTS AND COMPETITION ISSUES © OECD 2026",
+        "bbox": [
+            194,
+            915,
+            892,
+            928
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            102,
+            108,
+            892,
+            156
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Cross-country asymmetries and dependence. AI may widen existing gaps between leading and lagging economies. Where frontier AI exhibits increasing returns to scale, cumulative learning and strong complementarities between development and deployment, early leaders may reinforce their position over time. Language and cultural differences may also hamper or delay adoption in some countries. While the number of languages supported by large language models is steadily growing, many are still unsupported by most models, and performance remains significantly lower than in English (Chaar et al., 2025).",
+        "bbox": [
+            102,
+            161,
+            894,
+            256
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Countries with weaker domestic AI ecosystems may still adopt the technology and reap the benefits in terms of higher productivity and more competitive and innovative downstream markets (Chaar et al., 2025; Filippucci et al., 2026). However, they would be able to capture only a limited share of the market rents associated with AI development. Cross-country dependence on foreign AI services may further weaken competition and economic resilience. Economies with limited domestic AI inference or development capacity may become increasingly reliant on imported AI products and services (De Soyres et al., 2026; WTO, 2025). This can increase exposure to pricing power, service disruptions, foreclosure through selective access, export controls and regulatory conflicts, thereby amplifying the consequences of oligopolistic market structures.",
+        "bbox": [
+            102,
+            261,
+            894,
+            403
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "| 7",
+        "bbox": [
+            870,
+            74,
+            892,
+            90
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{4}$ Anthropic’s restricted release of its “Mythos” models to a select group of companies for cybersecurity reasons is the latest example of how vertical integration and early partnerships with key incumbents can create implicit switching costs and confer an undue competitive advantage.",
+        "bbox": [
+            102,
+            845,
+            892,
+            890
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "ARTIFICIAL INTELLIGENCE MARKETS: RECENT DEVELOPMENTS AND COMPETITION ISSUES © OECD 2026",
+        "bbox": [
+            102,
+            915,
+            803,
+            929
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "What can policymakers do?",
+        "text_level": 2,
+        "bbox": [
+            112,
+            117,
+            448,
+            141
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Policymakers should promote market contestability and innovation",
+        "bbox": [
+            112,
+            162,
+            605,
+            179
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Given the rapid pace of innovation and large expected positive benefits from this technology, policymakers should adopt a balanced, proactive and forward-looking approach to monitoring and promoting competition in AI markets (OECD, 2024; André et al., 2025).",
+        "bbox": [
+            142,
+            205,
+            878,
+            252
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Policymakers can encourage competition and innovation simultaneously, by facilitating access to AI inputs (data, compute, skills), removing investment barriers for SMEs, improving market transparency and encouraging experimentation through regulatory sandboxes. Policymakers also need to monitor market developments in real time, promote system interoperability and scrutinise vertical strategies through acquisitions and partnerships that can lock in users and foreclose rivals.",
+        "bbox": [
+            139,
+            255,
+            880,
+            347
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- While early policy action may hamper innovation, late action risks allowing concentration to become entrenched, making remedial steps difficult to implement. International cooperation and knowledge sharing among authorities, in particular competition authorities, can help build expertise and experience by enhancing transparency. Cross-border cooperation facilitates a coordinated, timely and balanced approach given the global nature of AI markets.",
+        "bbox": [
+            139,
+            351,
+            880,
+            429
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Competition authorities should also address the risk of regulatory fragmentation by coordinating with other domestic authorities, including energy and digital regulators to ensure that the competition bottlenecks in one market, upstream, such as chips or electricity, and downstream such as digital platforms, do not harm competition in other segments of the value chain.",
+        "bbox": [
+            141,
+            432,
+            880,
+            508
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Explore further",
+        "text_level": 2,
+        "bbox": [
+            104,
+            574,
+            255,
+            590
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "These findings draw on updates from André et al. (2025).",
+        "bbox": [
+            104,
+            604,
+            534,
+            619
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "André et al. (2025), “Developments in Artificial Intelligence Markets: New Indicators Based on Model Characteristics, Prices and Providers”, OECD Publishing, Paris, https://doi.org/10.1787/9302bf46-en.",
+        "bbox": [
+            102,
+            627,
+            858,
+            658
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "References",
+        "text_level": 2,
+        "bbox": [
+            104,
+            684,
+            220,
+            701
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "Acemoglu D. (2025), “The simple macroeconomics of AI”, Economic Policy, Volume 40, Issue 121, January 2025, Pages 13–58, https://doi.org/10.1093/epolic/eiae042.",
+        "bbox": [
+            104,
+            715,
+            840,
+            744
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "Aghion, P. and S. Bunel (2024), “AI and Growth: Where Do We Stand?”, https://www.frbsf.org/wpcontent/uploads/AI-and-Growth-Aghion-Bunel.pdf.",
+        "bbox": [
+            104,
+            752,
+            660,
+            782
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "André et al. (2025), “Developments in Artificial Intelligence Markets: New Indicators Based on Model Characteristics, Prices and Providers”, OECD Publishing, Paris, https://doi.org/10.1787/9302bf46-en.",
+        "bbox": [
+            104,
+            791,
+            858,
+            820
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Baily, M., E. Brynjolfsson and A. Korinek (2023), Machines of mind: The case for an AI-powered productivity boom. Brookings, https://www.brookings.edu/articles/machines-of-mind-the-case-for-an-ai-powered-productivity-boom/.",
+        "bbox": [
+            104,
+            828,
+            873,
+            871
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            105,
+            74,
+            122,
+            89
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "ARTIFICIAL INTELLIGENCE MARKETS: RECENT DEVELOPMENTS AND COMPETITION ISSUES © OECD 2026",
+        "bbox": [
+            194,
+            915,
+            892,
+            928
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "ref_text",
+        "text": "Beraja, M. and F.J. Buera (2026): “The life-cycle of concentrated industries”, National Bureau of Economic Research Working Papers, no 34770.",
+        "bbox": [
+            104,
+            105,
+            821,
+            136
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "Brynjolfsson, E., D. Rock, and C. Syverson (2021), \"The Productivity J-Curve: How Intangibles Complement General Purpose Technologies.\" American Economic Journal: Macroeconomics 13 (1): 333–72.",
+        "bbox": [
+            104,
+            143,
+            857,
+            187
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "Calligaris, S. et al. (2026), “Competition in the age of AI: initial evidence from microdata”, OECD Artificial Intelligence Papers, OECD Publishing, Paris, forthcoming.",
+        "bbox": [
+            104,
+            198,
+            885,
+            229
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "Calvino, F., J. Reijerink and L. Samek (2025), “The effects of generative AI on productivity, innovation and entrepreneurship”, OECD Artificial Intelligence Papers, No. 39, OECD Publishing, Paris, https://doi.org/10.1787/b21df222-en.",
+        "bbox": [
+            104,
+            237,
+            865,
+            279
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "Calvino, F. et al. (2025), \"Is generative AI a General Purpose Technology?\", OECD Publishing, Paris, https://doi.org/10.1787/704e2d12-en.",
+        "bbox": [
+            104,
+            288,
+            813,
+            318
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "Calvino, F. et al. (2026), “Digital technology diffusion in the age of AI: Cross-country evidence from microdata”, OECD Science, Technology and Industry Working Papers, No. 2026/01, OECD Publishing, Paris, https://doi.org/10.1787/ebc2debe-en.",
+        "bbox": [
+            104,
+            326,
+            875,
+            370
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "Chaar, T. et al. (2025), “AI and the global productivity divide: Fuel for the fast or a lift for the laggards?”, OECD Artificial Intelligence Papers, No. 51, OECD Publishing, Paris, https://doi.org/10.1787/c315ea90-en.",
+        "bbox": [
+            104,
+            378,
+            789,
+            420
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "Competition and Markets Authority (CMA) (2024), “AI Foundation Models: Technical Update Report”, CMA, London.",
+        "bbox": [
+            104,
+            430,
+            858,
+            458
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "Demirer, M. et al. (2025), “The Emerging Market for Intelligence”, Working Paper, OpenRouter & Azure.",
+        "bbox": [
+            105,
+            468,
+            878,
+            485
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "De Soyres, F., A. Haag, M. Liu and E. Van Leemput (2026), “The global trade effects of the AI infrastructure boom”, February 13, 2026, FEDs notes.",
+        "bbox": [
+            104,
+            492,
+            808,
+            524
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "Filippucci, F. et al. (2026), “AI meets trade: Global linkages and the cross-country distribution of the gains from AI”, OECD Artificial Intelligence Papers, No. 57, OECD Publishing, Paris, https://doi.org/10.1787/13081644-en.",
+        "bbox": [
+            104,
+            533,
+            890,
+            576
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "Filippucci, F. et al. (2025), “Macroeconomic productivity gains from Artificial Intelligence in G7 economies”, OECD Publishing, Paris, https://doi.org/10.1787/a5319ab5-en.",
+        "bbox": [
+            104,
+            583,
+            806,
+            617
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "Filippucci, F., P. Gal and M. Schief (2024), “Miracle or Myth? Assessing the macroeconomic productivity gains from Artificial Intelligence”, OECD Artificial Intelligence Papers, No. 29, OECD Publishing, Paris.",
+        "bbox": [
+            104,
+            625,
+            884,
+            656
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "Gambacorta, L. and V. Shreeti (2026), \"The AI supply chain\", BIS Paper No 154.",
+        "bbox": [
+            104,
+            663,
+            707,
+            680
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "Hagiu, A. and J. Wright (2025), “Artificial intelligence and competition policy”, International Journal of Industrial Organization, 2025, 103134, ISSN 0167-7187, https://doi.org/10.1016/j.ijindorg.2025.103134.",
+        "bbox": [
+            104,
+            687,
+            873,
+            718
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "Haramboure, A. et al. (2023), “Vulnerabilities in the semiconductor supply chain”, OECD Science, Technology and Industry Working Papers, No. 2023/05, OECD Publishing, Paris, https://doi.org/10.1787/6bed616f-en.",
+        "bbox": [
+            104,
+            725,
+            833,
+            769
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "Hobbs, H. et al. (2026), “Exploring possible AI trajectories through 2030”, OECD Artificial Intelligence Papers, No. 55, OECD Publishing, Paris, https://doi.org/10.1787/cb41117a-en.",
+        "bbox": [
+            104,
+            777,
+            858,
+            807
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "IEA (2025), “Energy and AI”, IEA, Paris, https://www.iea.org/reports/energy-and-ai, Licence: CC BY 4.0.",
+        "bbox": [
+            105,
+            815,
+            878,
+            832
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "Frost, J., K. Rishabh and V. Shreeti (2026), “Global giants in the AI supply chain”, BIS bulletin, No 122, Bank for International Settlements, Basel, https://www.bis.org/publ/bisbull122.htm.",
+        "bbox": [
+            104,
+            840,
+            873,
+            869
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            873,
+            74,
+            892,
+            89
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "ARTIFICIAL INTELLIGENCE MARKETS: RECENT DEVELOPMENTS AND COMPETITION ISSUES © OECD 2026",
+        "bbox": [
+            104,
+            915,
+            803,
+            929
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "ref_text",
+        "text": "Korinek, A. and P. Vipra (2025), “Concentrating Intelligence: Scaling and Market Structure in Artificial Intelligence”, Working Paper, Johns Hopkins University.",
+        "bbox": [
+            104,
+            105,
+            862,
+            136
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2022), “The Evolving Concept of Market Power in the Digital Economy”, OECD Roundtables on Competition Policy Papers, No. 278, OECD Publishing, Paris.",
+        "bbox": [
+            104,
+            143,
+            877,
+            173
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2024), “Artificial Intelligence, Data and Competition”, OECD Publishing, Paris, https://doi.org/10.1787/e7e88884-en.",
+        "bbox": [
+            104,
+            181,
+            699,
+            211
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2025a), “Diagnostic Toolkit for Reducing Regulatory Barriers to Solar, Wind and Pumped Hydro Storage in the European Union: Empowering Policymakers at National, Regional, and Local Levels”, OECD Publishing, Paris, https://doi.org/10.1787/15f4aed4-en.",
+        "bbox": [
+            104,
+            219,
+            878,
+            263
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2025b), “Competition in artificial intelligence infrastructure”, OECD Publishing, Paris, https://doi.org/10.1787/623d1874-en.",
+        "bbox": [
+            104,
+            271,
+            747,
+            300
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2025c), “AI Openness: A Primer for Policymakers”, OECD Publishing, Paris, https://doi.org/10.1787/02f73362-en.",
+        "bbox": [
+            104,
+            309,
+            687,
+            338
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2025d), “AI adoption by small and medium-sized enterprises: OECD discussion paper for the G7”, OECD Publishing, Paris, https://doi.org/10.1787/426399c1-en.",
+        "bbox": [
+            104,
+            347,
+            860,
+            376
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2025e), “The effects of generative AI on productivity, innovation and entrepreneurship”, OECD Publishing, Paris, https://doi.org/10.1787/b21df222-en.",
+        "bbox": [
+            104,
+            385,
+            868,
+            414
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD (2026), “The agentic AI landscape and its conceptual foundations”, OECD Artificial Intelligence Papers, No. 56, OECD Publishing, Paris, https://doi.org/10.1787/396cf758-en.",
+        "bbox": [
+            104,
+            423,
+            865,
+            453
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD AI Observatory (2026), data from AI knowledge on Demand (AIKOD) database, https://oecd.ai/en/aikod, accessed on 15 April 2026.",
+        "bbox": [
+            104,
+            461,
+            754,
+            491
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "OECD.AI (2026), data from Preqin, www.preqin.com, accessed on 8 April 2026.",
+        "bbox": [
+            104,
+            499,
+            702,
+            516
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "The Economist (2026), “America wakes up to AI’s dangerous power”, April 16th.",
+        "bbox": [
+            104,
+            523,
+            705,
+            541
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "Vitale, C. and R. Bitetti (2026), “Regulating lobbying activities to protect competition: New evidence from the OECD PMR indicators”, OECD Economics Department Working Papers, No. 1855, OECD Publishing, Paris, https://doi.org/10.1787/ad88f58a-en.",
+        "bbox": [
+            104,
+            548,
+            882,
+            592
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "Wachter, J.A. and J.D. Wachter (2026), “What Investment Data Implies about the AI Transition” (March 19, 2026). Available at SSRN: https://ssrn.com/abstract=6465519 or http://dx.doi.org/10.2139/ssrn.6465519.",
+        "bbox": [
+            104,
+            600,
+            875,
+            642
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Contact",
+        "text_level": 2,
+        "bbox": [
+            104,
+            669,
+            188,
+            686
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Christophe ANDRE (christophe.andre@oecd.org)",
+        "bbox": [
+            104,
+            701,
+            480,
+            719
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Manuel BETIN (manuel.betin@oecd.org)",
+        "bbox": [
+            104,
+            724,
+            416,
+            741
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Peter GAL (peter.gal@oecd.org)",
+        "bbox": [
+            104,
+            746,
+            354,
+            763
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            105,
+            74,
+            134,
+            89
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "ARTIFICIAL INTELLIGENCE MARKETS: RECENT DEVELOPMENTS AND COMPETITION ISSUES © OECD 2026",
+        "bbox": [
+            194,
+            915,
+            892,
+            928
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "This work is issued under the responsibility of the Secretary-General of the OECD, and does not necessarily reflect the official views of OECD Member countries. It draws on previous OECD work on AI markets and competition and incorporates updated evidence on recent developments.",
+        "bbox": [
+            102,
+            115,
+            892,
+            155
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "This document, as well as any data and map included herein, are without prejudice to the status of or sovereignty over any territory, to the delimitation of international frontiers and boundaries and to the name of any territory, city or area.",
+        "bbox": [
+            104,
+            161,
+            892,
+            189
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The statistical data for Israel are supplied by and under the responsibility of the relevant Israeli authorities. The use of such data by the OECD is without prejudice to the status of the Golan Heights, East Jerusalem and Israeli settlements in the West Bank under the terms of international law.",
+        "bbox": [
+            102,
+            193,
+            892,
+            234
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "© OECD 2026",
+        "bbox": [
+            104,
+            240,
+            208,
+            253
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/6ec67cd383b9bd6867305fa46c3035a18060de6a54f1cae1ea2043ec5bed4c7e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            105,
+            263,
+            194,
+            286
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Attribution 4.0 International (CC BY 4.0)",
+        "text_level": 2,
+        "bbox": [
+            203,
+            275,
+            494,
+            288
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "This work is made available under the Creative Commons Attribution 4.0 International licence. By using this work, you accept to be bound by the terms of this licence (https://creativecommons.org/licenses/by/4.0/).",
+        "bbox": [
+            104,
+            291,
+            890,
+            319
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Attribution – you must cite the work.",
+        "bbox": [
+            104,
+            322,
+            359,
+            335
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Translations – you must cite the original work, identify changes to the original and add the following text: In the event of any discrepancy between the original work and the translation, only the text of original work should be considered valid.",
+        "bbox": [
+            104,
+            338,
+            892,
+            376
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Adaptations – you must cite the original work and add the following text: This is an adaptation of an original work by the OECD. The opinions expressed and arguments employed in this adaptation should not be reported as representing the official views of the OECD or of its Member countries.",
+        "bbox": [
+            102,
+            380,
+            892,
+            420
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Third-party material – the licence does not apply to third-party material in the work. If using such material, you are responsible for obtaining permission from the third party and for any claims of infringement.",
+        "bbox": [
+            104,
+            424,
+            892,
+            451
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "You must not use the OECD logo, visual identity or cover image without express permission or suggest the OECD endorses your use of the work.",
+        "bbox": [
+            102,
+            453,
+            890,
+            480
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Any dispute arising under this licence shall be settled by arbitration in accordance with the Permanent Court of Arbitration (PCA) Arbitration Rules 2012. The seat of arbitration shall be Paris (France). The number of arbitrators shall be one.",
+        "bbox": [
+            102,
+            483,
+            892,
+            521
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "| 11",
+        "bbox": [
+            857,
+            74,
+            890,
+            90
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "ARTIFICIAL INTELLIGENCE MARKETS: RECENT DEVELOPMENTS AND COMPETITION ISSUES © OECD 2026",
+        "bbox": [
+            105,
+            915,
+            801,
+            928
+        ],
+        "page_idx": 10
+    }
+]

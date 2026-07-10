@@ -1,0 +1,436 @@
+[
+    {
+        "type": "text",
+        "text": "HIGH-LEVEL SUMMARY\nTECHNICAL ASSISTANCE\nREPORT",
+        "bbox": [
+            140,
+            239,
+            745,
+            354
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "DOMINICAN REPUBLIC",
+        "bbox": [
+            140,
+            416,
+            723,
+            454
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Fiscal Transparency Evaluation",
+        "bbox": [
+            138,
+            460,
+            651,
+            493
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "May 2026",
+        "bbox": [
+            138,
+            512,
+            285,
+            539
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Prepared By",
+        "bbox": [
+            138,
+            583,
+            269,
+            604
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ramon Hurtado, Daniel Borges, Yovana de Lózar, Fernando Ferraz, Isabel Rial, Alessandro Scipioni",
+        "bbox": [
+            138,
+            604,
+            952,
+            625
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Authoring Department",
+        "bbox": [
+            138,
+            731,
+            367,
+            750
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Fiscal Affairs Department (FAD)",
+        "bbox": [
+            138,
+            751,
+            426,
+            771
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            143,
+            117,
+            267,
+            214
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "High-Level Summary Technical Assistance Report Fiscal Affairs Department",
+        "text_level": 1,
+        "bbox": [
+            300,
+            121,
+            697,
+            157
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Dominican Republic – Fiscal Transparency Evaluation Prepared by Ramon Hurtado",
+        "text_level": 2,
+        "bbox": [
+            285,
+            176,
+            710,
+            212
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The High-Level Summary Technical Assistance Report series provides high-level summaries of the assistance provided to IMF capacity development recipients, describing the high-level objectives, findings, and recommendations.",
+        "bbox": [
+            111,
+            231,
+            834,
+            286
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "ABSTRACT: This technical assistance report evaluates the fiscal transparency practices of the Dominican Republic (DR) against the International Monetary Fund's (IMF) Fiscal Transparency Code. The assessment covers three pillars: fiscal reporting, fiscal forecasting and budgeting, and fiscal risk analysis and management. The DR demonstrates strengths in fiscal reporting and budget processes but faces challenges in comprehensive coverage, particularly regarding public trusts and long-term fiscal risks. Key recommendations focus on improving the inclusion of extrabudgetary entities in fiscal reports, enhancing macro-fiscal projections and monitoring under the new Fiscal Responsibility Law, and strengthening the analysis and disclosure of fiscal risks, especially those related to public enterprises and long-term contracts. Implementing these recommendations would enhance fiscal policy credibility, transparency, and risk management.",
+        "bbox": [
+            111,
+            304,
+            882,
+            486
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "JEL Classification Numbers [H60; H61; H68; H83; E62]",
+        "bbox": [
+            120,
+            508,
+            527,
+            527
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Keywords: Fiscal transparency evaluation, fiscal reporting, fiscal forecasting, budgeting,",
+        "bbox": [
+            120,
+            529,
+            761,
+            547
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Dominican Republic",
+        "bbox": [
+            122,
+            549,
+            274,
+            566
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The contents of this document constitute a high-level summary of technical advice provided by the staff of the International Monetary Fund (IMF) to the authorities of a member country or international agency (the \"CD recipient\") in response to their request for capacity development. Unless the CD recipient specifically objects within 30 business days of its transmittal, the IMF will publish this high-level summary on IMF.org (see Staff Operational Guidance on the Dissemination of Capacity Development Information).",
+        "bbox": [
+            111,
+            689,
+            880,
+            780
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "©2026 International Monetary Fund [HLS/26/037]",
+        "bbox": [
+            112,
+            89,
+            475,
+            106
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "International Monetary Fund, IMF Publications\nP.O. Box 92780, Washington, DC 20090, U.S.A.\nT. +(1) 202.623.7430 • F. +(1) 202.623.7201\npublications@IMF.org\nIMF.org/pubs",
+        "bbox": [
+            321,
+            813,
+            673,
+            902
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Background",
+        "text_level": 2,
+        "bbox": [
+            112,
+            92,
+            292,
+            118
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "In response to a request from the Ministry of Finance of the Dominican Republic, the IMF's Fiscal Affairs Department conducted a fiscal transparency evaluation (FTE) in February 2025. The FTE assessed the country's fiscal transparency practices based on the first three pillars of the IMF Fiscal Transparency Code: fiscal reporting, fiscal forecasting and budgeting, and fiscal risk analysis and management. This technical assistance aimed to provide a comprehensive diagnostic of the Dominican Republic's fiscal transparency framework, identified areas of strength and weaknesses, and offered actionable recommendations to improve fiscal transparency. This work complements ongoing Fund surveillance and capacity development projects by providing a foundation for improved fiscal policy formulation, execution, and monitoring, particularly in light of the recently enacted Fiscal Responsibility Law.",
+        "bbox": [
+            111,
+            132,
+            880,
+            297
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Summary of Findings",
+        "text_level": 2,
+        "bbox": [
+            112,
+            314,
+            423,
+            339
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Fiscal reports are generally timely, frequent, and of good quality, with broad institutional coverage that includes the general government and social security institutions. However, significant gaps remain, especially regarding the coverage of extrabudgetary entities, such as public trusts, whose assets, liabilities, and operations are not fully captured in fiscal reports or the budget documentation. The evaluation also highlighted limited coverage of debt instruments, such as accounts payable and actuarial pension liabilities.",
+        "bbox": [
+            111,
+            354,
+            875,
+            463
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Dominican Republic benefits from a clear legal framework and an orderly budget process with public participation mechanisms. The recently approved Fiscal Responsibility Law sets explicit fiscal targets and expenditure growth limits, marking a significant step forward. Nonetheless, the implementation of the fiscal rule is nascent, with no periodic monitoring reports or independent evaluation of fiscal projections. Macroeconomic forecasts underpinning the budget are trend-based and lack detailed disclosure of underlying assumptions or subcomponents, limiting their analytical value and credibility.",
+        "bbox": [
+            111,
+            478,
+            879,
+            588
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Fiscal risk analysis and management present the most challenges. While the government publishes an annual Fiscal Risk Report that identifies key macroeconomic and specific fiscal risks, the analysis is largely qualitative and incomplete. There is no long-term fiscal sustainability analysis extending beyond the medium term, and pension liabilities managed by various public entities are not consolidated or fully disclosed. Risks related to long-term power purchase agreements (PPAs) in the electricity sector are not monitored or reported, despite their significant fiscal implications. The financial performance and risks of public enterprises, especially in the energy sector, are insufficiently analyzed, and no comprehensive reporting on subnational government finances exists. Among institutional mechanisms, budget contingencies for general risks are limited, with no dedicated reserve, although specific provisions for calamities exist but are often underutilized.",
+        "bbox": [
+            109,
+            602,
+            874,
+            784
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Summary of Recommendations",
+        "text_level": 2,
+        "bbox": [
+            112,
+            801,
+            563,
+            825
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "To enhance fiscal transparency and governance, the report emphasizes several priority areas for capacity improvement:",
+        "bbox": [
+            111,
+            842,
+            883,
+            877
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            114,
+            955,
+            151,
+            970
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "High-Level Summary Technical Assistance Report",
+        "bbox": [
+            491,
+            955,
+            861,
+            972
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            867,
+            957,
+            883,
+            970
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Information on public trusts should be systematically integrated into fiscal reporting and budget documentation to ensure full institutional coverage of reports completeness of fiscal data. This includes establishing mechanisms for data collection, monitoring, and disclosure of trusts' financial operations, assets, and liabilities.",
+        "bbox": [
+            112,
+            89,
+            880,
+            161
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The analysis and disclosure of macroeconomic and fiscal projections should be deepened by expanding the medium-term fiscal framework to include detailed assumptions and subcomponents, extending the projection horizon, and incorporating independent evaluations. This is crucial for the effective implementation and monitoring of the new Fiscal Responsibility Law, which introduces an explicit fiscal debt target to be reached by 2035 and annual primary expenditure ceilings to guide spending until the debt target is reached (with a debt-stabilizing primary balance thereafter).",
+        "bbox": [
+            112,
+            176,
+            852,
+            287
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- Fiscal risk analysis should be strengthened by incorporating long-term sustainability assessments covering at least a decade, consolidating actuarial pension liabilities across all public schemes, and enhancing quantitative analysis of contingent liabilities, including those from public enterprises and local governments. The Ministry of Finance should also develop methodologies to estimate, manage, and disclose fiscal risks related to long-term power purchase agreements, which currently escape formal monitoring.",
+        "bbox": [
+            112,
+            301,
+            866,
+            410
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- To improve fiscal resilience and cash flow management, a contingency reserve should be established within the budget, sized on the basis of historical risk assessments and governed by transparent rules. Additionally, asset and liability management practices should be expanded to include financial assets and subsidiary loans, with enhanced reporting and risk assessment.",
+        "bbox": [
+            112,
+            426,
+            874,
+            498
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- The Ministry of Finance should strengthen fiscal coordination by compiling and publishing detailed reports on the financial performance of subnational governments and state-owned enterprises, including key financial indicators and risks. Creating a specialized unit to monitor public enterprises would support this effort and improve oversight of quasi-fiscal activities, particularly in the electricity sector.",
+        "bbox": [
+            112,
+            513,
+            852,
+            602
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Implementing these recommendations will significantly improve the Dominican Republic's fiscal transparency, enabling better-informed policy decisions, enhanced fiscal discipline, and greater public accountability.",
+        "bbox": [
+            111,
+            619,
+            854,
+            672
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            114,
+            955,
+            151,
+            970
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "High-Level Summary Technical Assistance Report",
+        "bbox": [
+            491,
+            955,
+            861,
+            972
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            867,
+            957,
+            882,
+            970
+        ],
+        "page_idx": 3
+    }
+]

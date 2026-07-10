@@ -1,0 +1,2032 @@
+[
+    {
+        "type": "text",
+        "text": "Analyzing Social Spending in Namibia",
+        "text_level": 1,
+        "bbox": [
+            76,
+            199,
+            665,
+            305
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Hannah Brown, Hajime Takizawa and Qianqian Zhang",
+        "bbox": [
+            75,
+            342,
+            638,
+            366
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "SIP/2026/059",
+        "bbox": [
+            76,
+            405,
+            223,
+            428
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "IMF Selected Issues Papers are prepared by IMF staff as background documentation for periodic consultations with member countries. It is based on the information available at the time it was completed on May 20, 2026. This paper is also published separately as IMF Country Report No 26/136.",
+        "bbox": [
+            75,
+            594,
+            519,
+            683
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "2026\nJUL",
+        "bbox": [
+            58,
+            821,
+            215,
+            922
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/160af78a1da814c73c600d30d700cf9e79f7935290ceeee8e8b964fddd3995ca.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            651,
+            810,
+            797,
+            926
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            76,
+            39,
+            830,
+            75
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "aside_text",
+        "text": "SELECTED ISSUES PAPER",
+        "bbox": [
+            919,
+            121,
+            983,
+            880
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "IMF Selected Issues Paper African Department",
+        "text_level": 1,
+        "bbox": [
+            398,
+            194,
+            599,
+            229
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Analyzing Social Spending in Namibia\nPrepared by Hannah Brown, Hajime Takizawa and Qianqian Zhang",
+        "bbox": [
+            251,
+            246,
+            745,
+            281
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Authorized for distribution by Xiangming Li\nJuly 2026",
+        "bbox": [
+            349,
+            297,
+            647,
+            332
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "IMF Selected Issues Papers are prepared by IMF staff as background documentation for periodic consultations with member countries. It is based on the information available at the time it was completed on May 20, 2026. This paper is also published separately as IMF Country Report No 26/136.",
+        "bbox": [
+            125,
+            368,
+            844,
+            420
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "ABSTRACT: This paper analyzes social spending in Namibia across education, health, and social protection. It assesses spending adequacy relative to development needs and examines whether resources are effectively translated into social outcomes. The analysis finds that spending levels compare favorably with peers, but efficiency gaps remain across sectors. In education and health, outcomes lag behind those achieved in some countries with comparable spending levels, while social assistance programs face coverage and targeting challenges. Policies to improve allocative efficiency could strengthen social outcomes while supporting fiscal sustainability.",
+        "bbox": [
+            112,
+            452,
+            883,
+            573
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "RECOMMENDED CITATION: Brown, Hannah, Hajime Takizawa, and Qianqian Zhang. 2026. “Analyzing Social Spending in Namibia.” IMF Selected Issues Paper (SIP/26/059)",
+        "bbox": [
+            112,
+            590,
+            838,
+            625
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "JEL Classification Numbers:",
+        "bbox": [
+            127,
+            651,
+            326,
+            667
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "H51, H52, H53, I14, I24, I38",
+        "bbox": [
+            383,
+            651,
+            583,
+            667
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Keywords:",
+        "bbox": [
+            125,
+            694,
+            205,
+            710
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Social spending, spending efficiency, education, health, social assistance, fiscal sustainability, human capital, Namibia",
+        "bbox": [
+            383,
+            685,
+            815,
+            719
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Author's E-Mail Address:",
+        "bbox": [
+            125,
+            734,
+            303,
+            752
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "hbrown@imf.org, HTAKIZAWA@imf.org, QZhang@imf.org",
+        "bbox": [
+            383,
+            734,
+            803,
+            752
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "© 2026 International Monetary Fund",
+        "bbox": [
+            117,
+            126,
+            370,
+            142
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "SIP/2026/059",
+        "bbox": [
+            767,
+            126,
+            866,
+            140
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Analyzing Social Spending in Namibia",
+        "text_level": 1,
+        "bbox": [
+            112,
+            292,
+            756,
+            375
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Namibia",
+        "bbox": [
+            114,
+            417,
+            243,
+            446
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Prepared by Hannah Brown, Hajime Takizawa and Qianqian Zhang $^{1}$",
+        "bbox": [
+            112,
+            484,
+            813,
+            510
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "SELECTED ISSUES PAPERS",
+        "bbox": [
+            114,
+            186,
+            524,
+            213
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{1}$ The authors would like to thank Xiangming Li for her guidance and insightful comments. They are also grateful to colleagues in the IMF Fiscal Affairs Department for their support and guidance on the analytical tools used in this paper, and to the authorities of the Ministry of Finance and Ministry of Health and Social Services of Namibia for their valuable comments and suggestions.",
+        "bbox": [
+            114,
+            869,
+            883,
+            910
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "A. Introduction",
+        "text_level": 2,
+        "bbox": [
+            114,
+            90,
+            266,
+            108
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "1. Social spending plays a critical role in addressing Namibia's socio-economic challenges, given the country's high inequality, elevated unemployment, and still large development needs. Namibia is a lower-middle-income country characterized by high inequality, with a Gini index of 0.63 in 2022 (World Bank). Namibia has made important progress in expanding access to basic services over recent decades, supported by relatively high public spending on education, health, and social protection compared with peers.",
+        "bbox": [
+            112,
+            136,
+            862,
+            239
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "2. However, outcomes remain uneven across sectors and population groups, partly reflecting structural constraints but also pointing to potential scope for improving allocative efficiency. On education, despite relatively high spending and near-universal access, outcome gaps remain, particularly at the secondary level, and high repetition and dropout rates from school are also a concern. On health, outcomes lag peers, which may reflect gaps in resource allocation, including a fragmented financing system, a bias toward hospital-based and curative care, and an uneven distribution of health workers. Finally, on social assistance, there are still coverage gaps and weak targeting, particularly in large programs such as the old-age grant, limiting their effectiveness in reaching the most vulnerable. While these gaps partly reflect structural constraints, including low population density and geographic dispersion, they also point to scope for efficiency gains through better resource allocation and utilization to achieve stronger and more inclusive social outcomes.",
+        "bbox": [
+            112,
+            256,
+            880,
+            445
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "3. At the same time, the dominance of recurrent social spending amid fiscal pressures raises concerns about the sustainability of current spending patterns. Although consolidation efforts have helped stabilize the fiscal outlook, policy space remains limited, constraining the government's ability to respond to shocks and finance development priorities. The composition of expenditure, characterized by a high share of recurrent spending including wage-related outlays, further reduces flexibility and raises concerns about efficiency and sustainability. In this context, improving the quality and efficiency of public spending has become central to sustaining macroeconomic stability and supporting inclusive growth objectives.",
+        "bbox": [
+            112,
+            464,
+            879,
+            584
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "4. The paper is organized as follows. Section B provides the conceptual framework and situates social spending within the broader fiscal context. Section C assesses the education sector. Section D examines the health sector. Section E analyzes social protection, with particular emphasis on social assistance. Section F concludes with policy implications.",
+        "bbox": [
+            112,
+            601,
+            883,
+            669
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "B. Context, Definitions, and Fiscal Sustainability",
+        "text_level": 2,
+        "bbox": [
+            114,
+            688,
+            576,
+            705
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "5. Social spending is defined broadly to encompass public expenditures that promote inclusive growth, protect households against shocks, and build human capital. It comprises three interrelated pillars: education, health, and social protection (IMF, 2019) (Figure 1). Education spending covers the provision of core education services, with particular emphasis on expanding access to basic education, while health spending finances access to essential health services through primary, secondary, and hospital care providers, with the scope varying by country context and level of development. $^{2}$ Social protection includes both (1) contributory social insurance programs, such as pensions, health insurance, unemployment benefits, and maternity leave, which are typically financed through contributions or payroll taxes; and (2) non-contributory",
+        "bbox": [
+            112,
+            727,
+            880,
+            866
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{2}$ In line with IMF practice and international standards such as the Classification of the Functions of Government (COFOG).",
+        "bbox": [
+            112,
+            893,
+            831,
+            909
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "social assistance, financed from general revenues and aimed at protecting households from poverty through universal or targeted transfers, child benefits, and active labor market policies. Together, these components form a core set of fiscal policy instruments for promoting equity, resilience, and long-term growth.",
+        "bbox": [
+            112,
+            89,
+            864,
+            142
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/66de059caff2390f04aa280e666ecfad80244cf014d0f2235171f0dbc335610f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            183,
+            154,
+            743,
+            412
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "6. The analysis of social spending can be anchored in three interrelated dimensions: fiscal sustainability, spending adequacy, and spending efficiency. First, social spending must be assessed within a credible medium-term fiscal framework to ensure that outlays are consistent with debt sustainability and macroeconomic stability. Second, spending adequacy is evaluated relative to country-specific circumstances, including the level of development, demographic and social needs, and existing coverage gaps, with a focus on whether social spending is sufficient to ensure effective access to basic education, essential health services, and social protection for vulnerable groups. Third, spending efficiency assesses the extent to which allocated resources translate into intended social outcomes, taking into account program design, targeting, implementation capacity, and governance. Strengthening efficiency is a critical lever to enhance social outcomes while preserving fiscal space and supporting inclusive and sustainable growth.",
+        "bbox": [
+            112,
+            422,
+            870,
+            595
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "7. Fiscal sustainability is a foundation for sustained social spending, as durable improvements in social outcomes require that spending be credibly financed without undermining macroeconomic stability. Social spending that outpaces revenue capacity or is financed by persistent deficits and rising debt can become procyclical and ultimately unsustainable, leading to abrupt adjustments that weaken service delivery and social protection when most needed, while crowding out other important development spending, such as infrastructure.",
+        "bbox": [
+            112,
+            609,
+            880,
+            714
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "8. Social spending accounts for a large portion of expenditure in Namibia. It amounted to 56 percent of total non-interest expenditure in FY2024/25. $^{3}$ At the same time, Namibia's expenditure structure is characterized by a high share of current spending, including the compensation of employees and other current social spending, while capital spending of the central government has declined to around 3 percent of GDP (Figure 2). Relative to selected emerging market economies (EMEs), current spending appears elevated while capital spending is comparatively low (Figure 3).",
+        "bbox": [
+            112,
+            732,
+            877,
+            835
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{3}$ It comprises health, education and social protection as reported in “Classification of Expenditure by Functions of Government According to Division and Groups” in the budget document Estimate of Revenue and Expenditure 2026–2027.",
+        "bbox": [
+            114,
+            881,
+            854,
+            909
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "9. Fiscal space in Namibia has shrunk against the backdrop of elevated social and other current spending. The period of elevated spending has coincided with persistent fiscal deficits and rising public debt, reducing fiscal space to respond to shocks (Figure 2). While social spending plays a critical role in supporting inclusive growth and social cohesion, its expansion in a context of limited revenue growth and high expenditure rigidities risks further debt accumulation or crowding out priority investment and countercyclical policy capacity.",
+        "bbox": [
+            112,
+            89,
+            870,
+            193
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "10. It is, therefore, important to assess social spending efficiency to help achieve intended outcomes within tight fiscal constraints. The remainder of the paper examines spending adequacy and efficiency across the three pillars—education, health, and social protection—and draws policy implications.",
+        "bbox": [
+            112,
+            209,
+            854,
+            263
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d724a4083aecd4294464cc964c676d40dcf9203b0e366cd5bdd389ad23f3a9c6.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 2. Fiscal and Expenditure Trends"
+        ],
+        "chart_footnote": [
+            "Sources: IMF Expenditure Assessment Tool"
+        ],
+        "bbox": [
+            130,
+            303,
+            496,
+            500
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0b7918b0fe7ae6c7bc13db0a2465102813249dea596b83c298c291dd2f30ccb3.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: IMF World Economic Outlook; and IMF staff calculations."
+        ],
+        "bbox": [
+            511,
+            301,
+            862,
+            500
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/8bf06454ceeb8f761903e0e50f5cc79f85c8b03669ee678758617d0e6c5a84fa.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 3. Expenditure Classification"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            117,
+            587,
+            483,
+            795
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/735e66fcd61f2b0a6fdf362de1228547f88760aaa7a6a175b2598fe9d956eea3.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            503,
+            589,
+            849,
+            792
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "C. Education",
+        "text_level": 2,
+        "bbox": [
+            114,
+            814,
+            246,
+            832
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "11. Namibia's education system is characterized by near-universal access and high public spending, but there is room to improve learning outcomes and resource allocation. The system comprises pre-primary, primary, and secondary education with academic and technical streams, alongside a growing technical and vocational training and tertiary sector (UNICEF, 2017), and is anchored in the authorities' long-term objective of transitioning to a knowledge-based economy under Vision 2030. Despite these achievements, structural constraints, particularly those stemming from low population density and geographic dispersion, contribute to the high cost of service delivery and complicate equitable access. At the same time, elevated youth unemployment (44.4 percent) and skill mismatches (UNICEF, 2017) highlight potential challenges in school-to-work transitions, suggest scope to better understand how education outcomes connect with labor market opportunities.",
+        "bbox": [
+            112,
+            858,
+            867,
+            910
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            112,
+            89,
+            867,
+            210
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "12. Public spending on education in Namibia has increased over time, with the most expenditures allocated to recurrent items, notably wages (Figure 4). Education currently absorbs roughly one-quarter of total government expenditure. Recurrent spending on personnel and operational costs dominates, potentially at the expense of complementary inputs such as infrastructure, teaching materials, and targeted programs that play an important supporting role in the education system. At the same time, rapid population growth (Figure 5) is increasing demand pressures on the education system. In this context, improving the relevance and alignment of education programs with labor market needs could help strengthen school-to-work transitions and support the absorption of graduates into productive employment. Such improvements would contribute to better translating education spending into human capital gains, supporting growth over the medium term while operating within a constrained fiscal envelope.",
+        "bbox": [
+            112,
+            227,
+            882,
+            401
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/49ffae8f779b2168a6e506fda08af5b81e3512d328fc781637818c578abf7004.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            122,
+            436,
+            483,
+            647
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3170c57f3438d3298c8520478129968fb6a8021e31b71e3537f2306ed24696a0.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 4. Education Expenditure"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            506,
+            439,
+            879,
+            645
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/76a82a2e0b110d4c27410223d106e27bbbc505c34c20deda6c81871a91b27db5.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            272,
+            99,
+            723,
+            357
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/1fd358c36ee9bf5410eea173dcf6c49d729b6db8cdc2250c849814e3cf4ed61b.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 6. Education Expenditure Peer Comparison"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            125,
+            409,
+            488,
+            619
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3510d6479c32178126b45b3014881a50be7f1f430a611ef053cb2ab9b542985b.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            508,
+            407,
+            869,
+            619
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "13. Public spending on education in Namibia is high compared with peers at similar income levels, but the allocation of education resources is tilted toward tertiary education. Education spending exceeds peer countries both as a share of GDP and as a share of total public expenditure (Figure 6). Meanwhile, spending on tertiary education exceeds the emerging market economies (EMEs) average, but spending on primary and secondary education is below, albeit comparable with the sub-Saharan African (SSA) average (Figure 7). Reflecting this, Namibia's teacher–student ratio in primary and secondary education remains below the EME averages, consistent with comparatively lower spending per student at these levels. Beyond demographic pressures and geographic dispersion, this pattern may reflect allocation choices, particularly a relatively high share of spending on tertiary education. While such prioritization can support skills upgrading and long-term growth, it may come at the expense of resources available per student at lower levels of education. This raises questions about allocative choices within education spending, and, in turn, its efficiency, particularly the balance between tertiary and basic education, as well as the balance between recurrent and capital spending as discussed previously. These allocation patterns are reflected in uneven outcomes across education levels, as discussed below.",
+        "bbox": [
+            112,
+            631,
+            882,
+            875
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4c106e0e910dbe302129f1c70a20a1765a3d0e95e21ecd67b84b317fdf5f0b5c.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 7. Expenditure and Teachers per Student"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            124,
+            119,
+            483,
+            325
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/35b87f9171c0cff3b68acf8bd7a765c89c853a586d169ff851253f6254364e5d.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "14. While Namibia compares favorably in primary education enrollment, secondary education lags behind. Primary enrollment rates are significantly higher than those of its peers. This suggests that compared with countries with similar spending per student, at the primary level, access has achieved a level comparable to the best observed among peers. By contrast, secondary school enrollment falls below peers (Figure 8 and 9). This points to the need for targeted examinations of the relationship between inputs and enrollment outcomes in secondary education, and to identify the factors constraining enrollment at the secondary level."
+        ],
+        "bbox": [
+            503,
+            119,
+            872,
+            325
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5e0efeb9fae3da3f560bf7721d769aa8f85779464f488b01465036736253c263.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 8. Expenditure and Education Outcomes",
+            "Government Education Spending and Outcome, Primary, Latest Value Available"
+        ],
+        "chart_footnote": [
+            "Sources: IMF Expenditure Assessment Tool."
+        ],
+        "bbox": [
+            138,
+            532,
+            488,
+            694
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0666d86adc38311d6e5b6fa86e1ef77fd532d0d84c174611f940256146d39f2e.jpg",
+        "content": "",
+        "chart_caption": [
+            "Government Education Spending and Outcome, Secondary, Latest Value Available"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            504,
+            530,
+            857,
+            694
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Figure 9. Teachers and Education Outcomes",
+        "text_level": 2,
+        "bbox": [
+            330,
+            93,
+            666,
+            109
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/932213b9b6dc72bbaba656df5f0f1b0a968799002ac305b203d416cce0690a71.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 10. Education Outcomes and Proficiency"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            124,
+            125,
+            485,
+            314
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6a2d9abca5fd9a9b293dc508fb84d54fbc140d4332f496075dd20fdd677a6a85.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            506,
+            128,
+            870,
+            315
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "15. Other education outcomes point to efficiency gaps in both primary and secondary education (Figure 10). School completion rates remain below the EME average, while repetition rates are above, even exceeding the SSA average. While Namibia compares favorably in reading skills, it falls below the SSA average in math. Taken together, these patterns suggest that although Namibia has achieved broad access supported by substantial fiscal commitment, there is scope for improving outcomes, possibly through better resource allocation.",
+        "bbox": [
+            114,
+            345,
+            862,
+            449
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/da078992e15616a747c977949b73b4fdca28f02829adcd08d124985d3d94c392.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            122,
+            489,
+            478,
+            699
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/84f6fed6511eb4584bd3f60769959200905a06dbffc4ede0ed5235fb267a36c6.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            504,
+            489,
+            864,
+            698
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "16. The education spending efficiency gaps in Namibia have shown limited improvement over the past two decades $^{4}$ (Figure 11). Using a stochastic frontier framework that benchmarks outcomes against",
+        "bbox": [
+            114,
+            89,
+            872,
+            125
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "best-performing countries in terms of enrollment rates, completion rates, years of schooling, literacy rates, pupil–teacher ratios, and harmonized learning outcomes, Namibia’s efficiency gap has edged up slightly over the past two decades and remains high among SACU countries and compared with EMs. This indicates that relative to peers with comparable levels of total public education spending per capita, outcomes still have room to improve, which may reflect—among other factors—a combination of structural constraints and inefficiencies in resource allocation and service delivery.",
+        "bbox": [
+            114,
+            125,
+            421,
+            383
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "D. Health",
+        "text_level": 2,
+        "bbox": [
+            114,
+            398,
+            210,
+            416
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e8439165c540e0c21cd56fcde99fc0b63057e815ad08b2b8330ef71da82a6673.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: IMF Fiscal Monitor 2025; and IMF staff calculations.\n1/ Measured using a stochastic frontier analysis based on a multi-output distance function including variables such as enrollment rates, completion rates, years of schooling, literacy rates, pupil–teacher ratios, and harmonized learning outcomes."
+        ],
+        "bbox": [
+            486,
+            137,
+            826,
+            358
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "17. While Namibia has made progress in health outcomes, it still faces significant challenges in achieving equitable service delivery (Figure 12). Namibia operates a dual health system in which the public",
+        "bbox": [
+            114,
+            443,
+            875,
+            478
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "system serves over 80 percent of the population, including the poorest, whereas the private sector employs a disproportionately large share of the country's health care professionals (UNICEF, 2022). This pattern has been documented across many low- and middle-income countries (Basu et al., 2012). As the public system faces capacity constraints, this segmentation could contribute to unequal access to quality care, suggesting a potential uneven distribution of resources across the health system. Low population density further raises delivery costs and exacerbates",
+        "bbox": [
+            114,
+            479,
+            416,
+            736
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3b4bde0764b487a293d4c3696ce3e08ba5b633596a270114bbce949e3d8d78dc.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 12. Obstacles to Seeking Care When Needed (Share of socioeconomic group)"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            431,
+            501,
+            852,
+            734
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "disparities in access to health services. Despite significant reductions in AIDS-related, child, and maternal mortality, Namibia still faces high burdens of communicable and non-communicable diseases, including HIV and tuberculosis, placing sustained pressure on public health spending amid a constrained fiscal envelope (World Bank, 2019; WHO, 2025).",
+        "bbox": [
+            114,
+            737,
+            862,
+            771
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{4}$ The spending efficiency gap is estimated using a stochastic frontier analysis (SFA) framework that compares observed public spending outcomes with the maximum achievable outcomes given the same level of inputs. For education, the input is public education expenditure per capita (expressed in constant 2021 PPP dollars and typically smoothed using a five-year moving average for persistence effects). The outputs capture both quantity and quality dimensions of education outcomes and include indicators such as primary enrollment rates, completion rates, years of schooling, literacy rates, and measures of education quality (e.g. pupil–teacher ratios or harmonized learning scores). These multiple outcome indicators are incorporated jointly in a multi-output distance function to assess how far observed performance lies from the best-practice frontier. See the IMF Fiscal Monitor 2025 Chapter 1 Online Annex for more details on methodology (IMF Fiscal Monitor 2025).",
+        "bbox": [
+            114,
+            808,
+            880,
+            910
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            114,
+            89,
+            852,
+            125
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "18. Namibia's health expenditure has increased in recent years and is heavily concentrated in current spending. Public health expenditure accounts for about 15 percent of total government spending, or 5.5 percent of GDP in 2023 (Figure 13). However, the composition of spending is skewed toward recurrent outlays, with wage costs—and overtime payments in particular—being a major source of budget overruns, especially in the post-COVID-19 period. This has coincided with limited capital investment and under provision of quality-enhancing inputs, which have represented less than 1 percent of total spending in recent years.",
+        "bbox": [
+            112,
+            140,
+            879,
+            246
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9595c02362e57398a8c1b56e398130d1f54e1785e35004a320c57f1d9808a8fb.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 13. Government Health Expenditure"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            174,
+            286,
+            483,
+            465
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/33b0b416729a2e5137951e64b34c357dda9695902875c6b5a06e584ca0df8bdc.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            511,
+            281,
+            820,
+            462
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "19. Reflecting the relatively large share of public resources devoted to health, Namibia's health spending adequacy compares favorably with many of its peers. At comparable levels of GDP per capita, Namibia ranks among the highest in government health spending, both in per capita terms and as a share of total government expenditure (Figure 14). IMF estimates further suggest that the additional financing required for Namibia to close health-related Sustainable Development Goal (SDG) gaps, approximately 1.4 percent in 2030 as a percent of 2030 GDP, is modest relative to peers at comparable income levels (Figure 14) $^{5}$ .",
+        "bbox": [
+            112,
+            494,
+            875,
+            599
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{5}$ Health-related SDG (SDG 3) spending needs are estimated using a peer-benchmarking framework that maps key health-sector input requirements, such as medical staff density and wage levels relative to GDP per capita, to those observed in high-performing income peers. Target health spending in 2030 is derived by applying these benchmarks, adjusted for projected demographics trends, particularly the share of high-cost populations (children under one and adults aged 60 and above), and GDP. Additional spending needs are measured as the gap between this target and current health spending, expressed as a percent of GDP. Estimates cover total health spending (public and private) and assume constant relative prices and no efficiency gains beyond those embedded in peer benchmarks (Carapella et al, 2023).",
+        "bbox": [
+            114,
+            820,
+            877,
+            911
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Figure 14. Health Spending Peer Comparison, Needs, and Human Capital",
+        "text_level": 2,
+        "bbox": [
+            225,
+            93,
+            771,
+            109
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Government Spending on Health per Capita (2023)",
+        "bbox": [
+            137,
+            118,
+            410,
+            142
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4f663aa7e8fd72c521fa9d777a8744adb8251af3e401810a84c4cb259195f212.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: World Bank WDI and IMF staff calculations.",
+            "Government Spending on Health as a Percentage of Total Government Expenditure"
+        ],
+        "bbox": [
+            127,
+            140,
+            478,
+            313
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/30c0afe58ef0744358e659441ea3ee55229cc5760941457fe907cb90869ed62f.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: World Bank WDI and IMF staff calculations."
+        ],
+        "bbox": [
+            504,
+            125,
+            859,
+            311
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/75259f4ed24fe009d2cbd197af45f43c022098257f7b4b7e1aa6e00d2c105993.jpg",
+        "content": "",
+        "chart_caption": [
+            "Estimated Additional Health SDG Spending Needs in 2030 (Percent of 2030 GDP)"
+        ],
+        "chart_footnote": [
+            "Sources: IMF staff calculations.",
+            "Health System Indicators, Latest Value Available"
+        ],
+        "bbox": [
+            122,
+            367,
+            478,
+            551
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/884b81ab897d6f8f30f14c0fb7ce17753a1ae552e377558662743afe3f7d2e5f.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: IMF Expenditure Assessment Tool."
+        ],
+        "bbox": [
+            508,
+            362,
+            872,
+            532
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "20. Despite the relatively high level of spending, Namibia's health input indicators are below EME averages (Figure 14). While the availability of health workers and hospital beds are higher than SSA averages, they are below EME averages and distributed unevenly, with a large share of health professionals",
+        "text_level": 2,
+        "bbox": [
+            114,
+            571,
+            870,
+            625
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "concentrated in the private sector.",
+        "bbox": [
+            114,
+            625,
+            354,
+            641
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "21. Against this backdrop, health outcomes also lag those of emerging market peers. Both infant mortality and life expectancy indicators are weaker than those of emerging market peers. Healthy life expectancy is below the best observed outcomes for life expectancy at comparable spending levels (Figure 15). It stood at 52.8 years in 2021, below both the SSA and middle-income country averages of 54.9 and 62.4 years, respectively; and had declined from earlier highs, partly reflecting COVID-19",
+        "bbox": [
+            112,
+            657,
+            415,
+            883
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Figure 15. Health Outcome: Life Expectancy (Latest value available, 0 – 5,000 PPP\\$)",
+        "bbox": [
+            488,
+            628,
+            818,
+            657
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f7110774cd7a8b63cb459edb498b504c9e31e29fcd12bbcdf403ab9f0bc86dfa.jpg",
+        "content": "",
+        "chart_caption": [
+            "Sources: IMF Expenditure Assessment Tool; and IMF staff calculations."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            473,
+            665,
+            828,
+            867
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "disruptions, as well as underlying structural challenges that predate the pandemic (WHO, 2024).",
+        "bbox": [
+            114,
+            89,
+            779,
+            107
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "22. The outcomes may be associated with features of Namibia's segmented financing architecture (Box 1). About a quarter of government health spending is used to subsidize the Public Service Medical Aid Scheme (PSEMAS), an insurance scheme for civil servants and their dependents, which covers only 12 percent of the population and allows access to both private and public health care services (UNICEF, 2022). This arrangement constrains effective risk pooling and the redistribution of public resources across the population and is associated with a spending composition that places relatively less emphasis on primary and preventive care. In addition, health spending has become increasingly concentrated in hospitals and clinical and curative care, $^{6}$ accounting for over 70 percent of the MoHSS budget, which are typically more resource-intensive than primary and preventive interventions (UNICEF, 2022; MoHSS, 2025). The authorities have initiated reforms aimed at addressing these structural features and strengthening public services, although implementation risks remain.",
+        "bbox": [
+            112,
+            125,
+            877,
+            314
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Box 1. Health Financing, Fragmentation, and Reform in Namibia",
+        "text_level": 2,
+        "bbox": [
+            259,
+            335,
+            736,
+            352
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Namibia's health system is financed through a mix of public funding, private medical aid schemes, out-of-pocket payments, and donor financing concentrated on HIV/AIDS. The government is the predominant financier, but the financing architecture is segmented. The Public Service Medical Aid Scheme (PSEMAS)—a government-subsidized insurance scheme for civil servants and their dependents—is financed largely through government contributions, accounting for over 75 percent of total funding, with the remainder funded through employee contributions at a flat-rate as a percentage of earnings (UNICEF, 2022). PSEMAS provides access to both private and public health care providers, creating a two-tier system in which civil servants can access private care while most of the population relies on tax-funded public services.",
+        "bbox": [
+            120,
+            357,
+            870,
+            483
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "To address these structural features, the authorities have launched an ambitious reform agenda centered on achieving universal health coverage (UHC). Key milestones include:",
+        "bbox": [
+            122,
+            489,
+            477,
+            547
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- October 2025: Adoption of the UHC Policy and the Ministry of Health and Social Services Strategic Plan for 2025/26–2029/30, targeting expanded access, improved quality, and strengthened governance.",
+        "bbox": [
+            122,
+            551,
+            480,
+            625
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- April 2026: Launch of the Vision April 2026 initiative, which requires civil servants to seek inpatient care in public facilities, with PSEMAS reimbursements reinvested into the public system. Complementary measures include infrastructure upgrades, workforce expansion,",
+        "bbox": [
+            122,
+            628,
+            478,
+            714
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Health Financing by Source",
+        "bbox": [
+            506,
+            496,
+            681,
+            510
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5892e132856dfd4e0c26dbe26ade385fd09222ec6b112db4987e0c4c265e6512.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: WHO Global Health Expenditure Database."
+        ],
+        "bbox": [
+            503,
+            517,
+            849,
+            686
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "improved medical equipment procurement, and electronic billing and IT systems.",
+        "bbox": [
+            151,
+            713,
+            712,
+            729
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "These reforms aim to consolidate risk pooling, reduce financing fragmentation, and strengthen the link between health spending and service delivery. Implementation risks remain, particularly regarding facility readiness, referral systems, and administrative capacity.",
+        "bbox": [
+            122,
+            734,
+            857,
+            777
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Sources: Republic of Namibia, 2025 and 2026; UNICEF, 2022; and IMF staff.",
+        "bbox": [
+            124,
+            782,
+            576,
+            797
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{6}$ “Curative and clinical care” refers to spending under the Ministry of Health and Social Services (MoHSS) Budget Programme 02, covering inpatient and outpatient clinical services, specialized hospital-based care, and the procurement of medicines and medical equipment (MoHSS, 2025).",
+        "bbox": [
+            114,
+            869,
+            870,
+            909
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "23. Health spending efficiency gaps in Namibia have narrowed modestly over time (Figure 16). Using a stochastic frontier analysis $^{7}$ that benchmarks health outcomes against those observed in higher-performing countries, Namibia's estimated efficiency levels have increased slightly over the past two decades and are broadly comparable to those of other SACU members. However, relative to emerging market peers, Namibia's efficiency estimates remain lower, improvements over time have been gradual. The estimated efficiency gap indicates that, at existing spending levels, health outcomes are below those achieved by some peer countries, although the analysis does not identify the underlying drivers of these differences.",
+        "bbox": [
+            112,
+            89,
+            880,
+            210
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "chart",
+        "img_path": "images/34afb9fa0a8a59697b621a1a0ec0d2fc9cdb5ac4fd82796ef1662103f42dab4c.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 16. Health Efficiency Gap"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            119,
+            256,
+            483,
+            469
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2611d2fe3d2f6b12eae4a5d04512cc96e5b0b7aa70b4555e6e91f799eb5a4ce9.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            503,
+            257,
+            864,
+            465
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "24. The analysis indicates that improving resource allocation and service delivery has the potential to improve health outcomes in Namibia. Health spending is comparatively high relative to regional and income group peers, and the additional financing needed to close SDG-related gaps appears modest. Yet Namibia remains well below the efficiency frontier: for comparable levels of expenditure, peer countries achieve significantly better health outcomes, and the efficiency gap has narrowed only modestly over time. As discussed above, this may reflect a combination of systemic allocation choices—including financing fragmentation and a concentration of spending on PSEMAS and curative care—and structural cost factors, such as low population density and geographic dispersion—all of which constrain the system’s ability to translate resources into better outcomes. Other studies have documented weaknesses in budget execution, inter-regional resource allocation, procurement, pharmaceutical management, and hospital productivity (World Bank, 2019). The authorities' universal health coverage reform agenda, including the phased redirection of PSEMAS beneficiaries toward public facilities, aims at addressing these structural distortions.",
+        "bbox": [
+            112,
+            484,
+            883,
+            695
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{7}$ The health spending efficiency gap is estimated using a stochastic frontier analysis (SFA) framework that benchmarks observed outcomes against a best-practice frontier, representing the highest outcomes achieved by comparable countries given the same level of inputs. For health, the primary input is public health expenditure per capita, expressed in constant 2021 PPP dollars and smoothed using a five-year moving average to account for persistence in spending effects. The outputs capture both quantity and outcome dimensions of health system performance and include measures of healthcare capacity (such as physicians per capita) and health outcomes (including life expectancy and infant mortality). These multiple outcome indicators are incorporated jointly through a multi-output distance function, allowing assessment of how far observed performance lies from the efficiency frontier. See the IMF Fiscal Monitor 2025 Chapter 1 Online Annex for more details on methodology. (IMF Fiscal Monitor 2025).",
+        "bbox": [
+            114,
+            795,
+            872,
+            909
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Income Distribution Indicators, Latest Value",
+        "bbox": [
+            165,
+            464,
+            403,
+            478
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "E. Social Protection",
+        "text_level": 2,
+        "bbox": [
+            114,
+            89,
+            312,
+            108
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "25. Namibia allocates a relatively high level of resources to social assistance, covering many types of vulnerabilities. Social assistance spending, at around 3 percent of GDP, exceeds the averages of all comparison groups, reflecting a strong policy commitment to redistribution (Figure 17). Vulnerabilities addressed by social assistance programs include old-age poverty, disability, child vulnerability, extreme poverty and food insecurity, and shock-related distress, including drought (Box 2).",
+        "bbox": [
+            112,
+            135,
+            864,
+            223
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "chart",
+        "img_path": "images/28052f5ff90176d8050603ae3e7646bc47632df056c62bdddd08dde62b038767.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 17. Social Assistance Spending Peer Comparison and Income Distribution"
+        ],
+        "chart_footnote": [
+            "Sources: IMF Expenditure Assessment Tool; and IMF staff calculations."
+        ],
+        "bbox": [
+            137,
+            258,
+            457,
+            431
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2505e38c4f0e96a5fdf92033dfbebbcfdc85d205269f0335f09cdc4c2ac645d1.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: IMF Expenditure Assessment Tool; and IMF staff calculations."
+        ],
+        "bbox": [
+            535,
+            263,
+            846,
+            430
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9428bd18fe1c9e9c233bbef1d0ed908210c0dc150414cd74cf1a0e5f8114d2fe.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: IMF Expenditure Assessment Tool; and IMF staff calculations."
+        ],
+        "bbox": [
+            161,
+            463,
+            480,
+            637
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7fe2e1a6d5acc8262b23b15b56f08023dc04f47241f66b19fc9083b6c0ac430f.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: IMF Social Protection and Labor Toolkit."
+        ],
+        "bbox": [
+            531,
+            460,
+            836,
+            638
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Box 2. Social Assistance Programs in Namibia",
+        "text_level": 2,
+        "bbox": [
+            323,
+            97,
+            674,
+            113
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Namibia's social assistance system covers multiple dimensions of vulnerability. These programs are generally not income- or means-tested. Key programs include:",
+        "bbox": [
+            122,
+            119,
+            864,
+            150
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- Old Age Grant (Social Pension): A non-contributory unconditional cash transfer paid to older persons who have reached the statutory eligibility age. It is intended to address poverty and income insecurity among the elderly.",
+        "bbox": [
+            122,
+            154,
+            864,
+            199
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- Disability Grant: An unconditional cash grant provided to individuals assessed as having a qualifying disability. It aims at addressing reduced earning capacity and the higher living costs associated with disability.",
+        "bbox": [
+            122,
+            204,
+            857,
+            248
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- Child Grants: A basic income support to children facing poverty, family disruption, or lack of parental care.",
+        "bbox": [
+            122,
+            253,
+            854,
+            284
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- Veterans' Grant: A categorical cash transfer provided to recognized veterans of Namibia's liberation struggle, providing income security for war veterans and their dependents.",
+        "bbox": [
+            122,
+            290,
+            852,
+            321
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- Conditional Basic Income Grant (CBIG): A conditional cash transfer, targeting destitute households based on observed deprivation. It aims to alleviate extreme poverty among highly vulnerable households.",
+        "bbox": [
+            122,
+            325,
+            857,
+            369
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- National Drought Relief Program: Provides food assistance, food vouchers, cash support, water access, seeds and livestock support. It is deployed to address acute food insecurity and livelihood losses caused by drought and other climate-related shocks.",
+        "bbox": [
+            122,
+            376,
+            834,
+            420
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Sources: Republic of Namibia, 2021; and UNICEF, 2023.",
+        "bbox": [
+            122,
+            424,
+            460,
+            440
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "26. Evidence suggests that Namibia's social assistance system fares well in reducing poverty, although caution is warranted to draw definitive conclusions given data limitations. $^{8}$ In particular, Namibia's social assistance system is assessed to reduce the simulated poverty gap and headcount to a greater extent than the median EME and mean SSA, controlling for total social assistance spending levels (Figure 18). $^{9}$ This suggests that Namibia's social assistance system translates spending into poverty reduction more effectively than the peer median, conditional on spending levels.",
+        "bbox": [
+            112,
+            449,
+            877,
+            554
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Figure 18. Simulated Impact of Social Assistance Spending",
+        "text_level": 2,
+        "bbox": [
+            274,
+            578,
+            720,
+            595
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Simulated Poverty Gap Reduction by Total Social Assistance Spending, Most Recent Available Year",
+        "bbox": [
+            174,
+            599,
+            398,
+            633
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "chart",
+        "img_path": "images/1f4ff39b25152d9f3183e4de42a6007b0d832c2dd58e9ee71781d77134571bdb.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: IMF Social Protection and Labor Assessment Tool (SPLAT).",
+            "Simulated Impact Variables for All Social Assistance, Most Recent Available Year"
+        ],
+        "bbox": [
+            171,
+            598,
+            480,
+            770
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7f0ad8d24bec12ab7fe9a4cc3a9d063de4634456c05d4ebf1679911d8245a46b.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            566,
+            633,
+            834,
+            777
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{8}$ The analysis in this section is based on Namibia's 2015/16 Household Income and Expenditure Survey, the latest available. Namibia's economy has gone through substantial structural changes since this survey was conducted.",
+        "bbox": [
+            114,
+            829,
+            844,
+            857
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{9}$ Measured by percent change in poverty gap due to social protection programs, where poverty gap is calculated as an average shortfall of the poor's income or consumption from the poverty line. It is calculated as (poverty gap pre-transfer - poverty gap post-transfer) divided by poverty gap pre-transfer. The “simulated” impact means the indicator is measured assuming the absence of the social protection programs (pre-transfer welfare distribution).",
+        "bbox": [
+            114,
+            858,
+            857,
+            910
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "27. Despite relatively high spending, challenges remain with respect to adequacy along the dimension of coverage and benefit distribution. Coverage of social assistance programs remains moderate, with a sizable share of the poor not reached, while the benefit incidence accruing to the poorest 20 percent is below that observed in several EMEs and OECD countries. $^{10}$ A close look at the Old Age Grant, which accounts for a large share of Namibia's social assistance spending, reveals room for improving targeting, with the benefit and beneficiary shares accruing to the poorest being lower and the benefit share accruing to the richest being higher in Namibia than those observed in the median EME and mean SSA (Figure 19). These gaps are particularly salient in light of Namibia's socioeconomic context, characterized by high income inequality, elevated unemployment, and relatively rapid population growth, which amplify demands on social protection systems. Overall, the evidence indicates that while aggregate social assistance spending is not low by regional standards, adequacy challenges persist due to gaps in coverage and weaknesses in targeting. In this context, and amid a constrained fiscal envelope, improving targeting and expanding the effective reach of programs could help ensure that existing resources translate into meaningful protection for vulnerable households without unduly crowding out other policy priorities.",
+        "bbox": [
+            112,
+            89,
+            874,
+            332
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ff1b87c2309f0b6c9d337830baa4f4e4b419025a62a778f38667b2f12cf16f15.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            151,
+            352,
+            846,
+            565
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "F. Conclusions",
+        "text_level": 2,
+        "bbox": [
+            114,
+            584,
+            269,
+            601
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "28. Namibia's social spending is characterized by high aggregate outlays in the context of constrained fiscal space, underscoring the importance of improving spending efficiency. Social spending accounts for a large share of public expenditure and has contributed to important gains in education, health, and social protection. Given that spending levels already compare favorably to peers—both as a share of GDP and of the budget—and amid fiscal deficits and rising debt, improving the efficiency of these services is important for achieving better outcomes while helping address rigidities in current spending that crowd out growth-enhancing investment. This, in turn, would help anchor public spending within a credible medium-term fiscal framework to ensure debt sustainability, and preserve space to respond to shocks and secure priority investments.",
+        "bbox": [
+            112,
+            628,
+            877,
+            784
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "29. Across the three sectors, the analysis points to a common pattern: spending adequacy is generally strong, but differences in how spending translates into outcomes remain. In education, high spending has achieved near-universal access at the primary level, yet outcomes at the secondary level lag.",
+        "bbox": [
+            112,
+            801,
+            864,
+            854
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{10}$ Coverage is measured as a share of a population that receives a social assistance benefit. Benefit incidence is measured as distribution of social assistance benefits by quintile.",
+        "bbox": [
+            114,
+            881,
+            856,
+            909
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "The allocation of education resources across levels and inputs remains uneven, including a tilt toward tertiary education at the expense of basic education, partly reflected in the mixed education outcomes. In health, Namibia compares favorably to its peers in terms of spending levels, but outcomes remain below those achieved by some peer countries at comparable levels of spending. In social assistance, despite high levels of spending, coverage and adequacy remain comparatively limited, with a sizable share of the poor not reached.",
+        "bbox": [
+            112,
+            90,
+            880,
+            176
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "30. Structural factors, including low population density, geographic dispersion, and high inequality, continue to raise service delivery costs and complicate equitable access. In this context, improving outcomes is likely to rely less on increases in spending and more on strengthening allocative efficiency within existing resource constraints. This could involve shifting health spending toward primary and preventive care, strengthening accountability in education including school-level performance monitoring, and enhancing the targeting and coverage of social assistance programs to better reach vulnerable populations.",
+        "bbox": [
+            114,
+            193,
+            872,
+            297
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "31. Looking ahead, improving the efficiency of social spending offers a practical path to",
+        "text_level": 2,
+        "bbox": [
+            114,
+            314,
+            803,
+            329
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "strengthening social outcomes within Namibia's constrained fiscal envelope. Policy efforts should focus on better aligning resource allocation toward interventions with the greatest impact. In education, this includes greater attention to the composition of spending, including the balance between wage-heavy recurrent outlays and quality-enhancing inputs, alongside a closer examination of resource allocation across education levels. Addressing high repetition and dropout rates remains a key area for improvement. In health, building on the authorities' universal health coverage reform agenda, improving allocative efficiency within the existing envelope could help strengthen outcomes. This could include a gradual shift toward capital investment and frontline service delivery, such as infrastructure, equipment, and workforce deployment, as well as greater emphasis on primary and preventive care, supporting more effective and equitable use of health resources. In social assistance, strengthening targeting mechanisms and redirecting resulting savings toward better coverage of the most vulnerable could help enhance the use of public resources.",
+        "bbox": [
+            112,
+            329,
+            877,
+            521
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "References",
+        "text_level": 2,
+        "bbox": [
+            442,
+            137,
+            555,
+            156
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "ref_text",
+        "text": "Basu, S., J. Andrews, S. Kishore, R. Panjabi, and D. Stuckler (2012), “Comparative Performance of Private and Public Healthcare Systems in Low- and Middle-Income Countries: A Systematic Review,” PLoS Medicine, 9(6): e1001244.",
+        "bbox": [
+            114,
+            184,
+            883,
+            234
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "ref_text",
+        "text": "Baum, M. A., Hodge, A., Mineshima, M. A., Badia, M. M. M., & Tapsoba, R. (2017). Can they do it all? Fiscal space in low-income countries. International Monetary Fund.",
+        "bbox": [
+            112,
+            243,
+            864,
+            277
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "ref_text",
+        "text": "International Monetary Fund (IMF). 2019. A Strategy for IMF Engagement on Social Spending. IMF Policy Paper No. 19/016. Washington, DC.",
+        "bbox": [
+            114,
+            285,
+            844,
+            319
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "ref_text",
+        "text": "International Monetary Fund (IMF). 2025. Expenditure Assessment Tool (EAT). Washington, DC.",
+        "bbox": [
+            112,
+            325,
+            782,
+            345
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "ref_text",
+        "text": "International Monetary Fund (IMF). 2025. Fiscal Monitor, October 2025: Spending Smarter: How Efficient and Well-Allocated Public Spending Can Boost Economic Growth. Washington, DC.",
+        "bbox": [
+            114,
+            351,
+            869,
+            386
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "ref_text",
+        "text": "International Monetary Fund (IMF). 2026. World Economic Outlook Database (WEO Live), April 2026. Washington, DC.",
+        "bbox": [
+            112,
+            393,
+            815,
+            429
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "ref_text",
+        "text": "Namibia Statistics Agency (NSA). 2018. Namibia Household Income and Expenditure Survey (NHIES) 2015/2016 Report. Windhoek.",
+        "bbox": [
+            112,
+            436,
+            820,
+            470
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "ref_text",
+        "text": "Piergiorgio M Carapella, Tewodaj Mogues, Julieth C Pico-Mejia, and Mauricio Soto. 2023. \"How to Assess Spending Needs of the Sustainable Development Goals: The Third Edition of the IMF SDG Costing Tool\", IMF How To Notes 2023, 005.",
+        "bbox": [
+            114,
+            478,
+            857,
+            529
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "ref_text",
+        "text": "Republic of Namibia, Ministry of Gender Equality, Poverty Eradication and Social Welfare. 2021. Social Protection Policy 2021–2030. Windhoek.",
+        "bbox": [
+            114,
+            537,
+            826,
+            571
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "ref_text",
+        "text": "Republic of Namibia, Ministry of Health and Social Services. 2026. Vision April 2026: Ministerial Statement to Parliament. Windhoek.",
+        "bbox": [
+            112,
+            579,
+            867,
+            614
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "ref_text",
+        "text": "Republic of Namibia, Ministry of Health and Social Services. 2025. Budget Motivation Statement: Vote 13 – Ministry of Health and Social Services, 2025/26 Financial Year. Presented by Hon. Dr. Esperance Luvindao, MP to the National Assembly. Windhoek.",
+        "bbox": [
+            112,
+            621,
+            782,
+            674
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "ref_text",
+        "text": "Republic of Namibia. Office of the Auditor-General. 2025. Report of the Auditor-General on the Accounts of the Ministry of Education, Arts and Culture for the Financial Year Ended 31 March 2024. Windhoek.",
+        "bbox": [
+            112,
+            681,
+            877,
+            715
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "ref_text",
+        "text": "UNESCO Institute for Statistics (UIS). 2025. UNESCO Institute for Statistics Database. Montreal.",
+        "bbox": [
+            112,
+            722,
+            782,
+            739
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "ref_text",
+        "text": "UNICEF. 2017. Public Expenditure Review of the Education Sector in Namibia. Windhoek.",
+        "bbox": [
+            114,
+            747,
+            738,
+            765
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "ref_text",
+        "text": "UNICEF. 2022. Namibia Health Budget Brief 2022/23. Windhoek.",
+        "bbox": [
+            114,
+            772,
+            566,
+            790
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "ref_text",
+        "text": "UNICEF. 2023. Namibia Budget Brief Social Protection 2023/24. Windhoek. World Bank. 2019. Namibia Health Sector Public Expenditure Review. Washington, DC.",
+        "bbox": [
+            112,
+            797,
+            880,
+            832
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "ref_text",
+        "text": "World Bank. 2025. ASPIRE: The Atlas of Social Protection—Indicators of Resilience and Equity. Washington, DC.",
+        "bbox": [
+            112,
+            839,
+            777,
+            873
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "ref_text",
+        "text": "World Bank. 2025. World Development Indicators. Washington, DC.",
+        "bbox": [
+            112,
+            881,
+            584,
+            898
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "ref_text",
+        "text": "World Health Organization (WHO). 2023. Namibia: Country Disease Outlook – August 2023. Brazzaville: WHO Regional Office for Africa.",
+        "bbox": [
+            114,
+            125,
+            834,
+            159
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "ref_text",
+        "text": "World Health Organization (WHO). 2024. Healthy Life Expectancy (HALE) at Birth. Geneva.",
+        "bbox": [
+            112,
+            167,
+            746,
+            184
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "ref_text",
+        "text": "World Health Organization (WHO). 2025. Global Health Expenditure Database (National Health Accounts). Geneva.",
+        "bbox": [
+            114,
+            191,
+            848,
+            224
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "ref_text",
+        "text": "World Health Organization (WHO). 2025. Namibia Launches MoHSS Strategic Plan and Universal Health Coverage Policy. WHO Regional Office for Africa, Brazzaville.",
+        "bbox": [
+            112,
+            234,
+            841,
+            268
+        ],
+        "page_idx": 20
+    }
+]

@@ -1,0 +1,2640 @@
+OECD Skills Studies
+
+# A National Skills Strategy and Action Plan for Malta
+
+![](images/212cd1e7adc19dc01856494b55de12026df01c874555536c7808311b63e6e1d9.jpg)
+
+# A National Skills Strategy and Action Plan for Malta
+
+This work is issued under the responsibility of the Secretary-General of the OECD, and does not necessarily reflect the official views of OECD Member countries.
+
+This document was produced with the financial assistance of the European Union. The views expressed herein can in no way be taken to reflect the official opinion of the European Union.
+
+This document, as well as any data and map included herein, are without prejudice to the status of or sovereignty over any territory, to the delimitation of international frontiers and boundaries and to the name of any territory, city or area.
+
+Please cite this publication as: OECD (2026), A National Skills Strategy and Action Plan for Malta, OECD Skills Studies, OECD Publishing, Paris, https://doi.org/10.1787/d6cb4804-en.
+
+ISBN 978-92-64-72525-6 (print)
+
+ISBN 978-92-64-97501-9 (PDF)
+
+ISBN 978-92-64-48142-8 (HTML)
+
+OECD Skills Studies
+
+ISSN 2307-8723 (print)
+
+ISSN 2307-8731 (online)
+
+Photo credits: Cover © Balate.Dorin/Shutterstock.com.
+
+Corrigenda to OECD publications may be found at: https://www.oecd.org/en/publications/support/corrigenda.html. © OECD 2026
+
+![](images/def92a7a77fa5638ed7edcc47fc89fa9cd1debf0ddd703c576f4bfb752693204.jpg)
+
+## Attribution 4.0 International (CC BY 4.0)
+
+This work is made available under the Creative Commons Attribution 4.0 International licence. By using this work, you accept to be bound by the terms of this licence (https://creativecommons.org/licenses/by/4.0/).
+
+Attribution – you must cite the work.
+
+Translations – you must cite the original work, identify changes to the original and add the following text: In the event of any discrepancy between the original work and the translation, only the text of the original work should be considered valid.
+
+Adaptations – you must cite the original work and add the following text: This is an adaptation of an original work by the OECD. The opinions expressed and arguments employed in this adaptation should not be reported as representing the official views of the OECD or of its Member countries.
+
+Third-party material – the licence does not apply to third-party material in the work. If using such material, you are responsible for obtaining permission from the third party and for any claims of infringement.
+
+You must not use the OECD logo, visual identity or cover image without express permission or suggest the OECD endorses your use of the work.
+
+Any dispute arising under this licence shall be settled by arbitration in accordance with the Permanent Court of Arbitration (PCA) Arbitration Rules 2012. The seat of arbitration shall be Paris (France). The number of arbitrators shall be one.
+
+## Foreword
+
+Skills are central to Malta's ambition to build a resilient, innovative and inclusive economy, capable of thriving in an increasingly complex and rapidly changing world. Countries that invest in developing relevant skills, promote lifelong learning, and enable individuals to use their skills effectively in work and society are better positioned to achieve sustainable growth, higher productivity and improved well-being.
+
+Malta has made significant progress in strengthening its skills system over the past decade. Educational attainment has increased, early school leaving has declined markedly, and participation in adult learning has reached EU-level targets. At the same time, strong labour market performance, characterised by high employment and robust demand for skills, reflects the country's economic dynamism.
+
+However, important challenges remain. A substantial share of adults continues to have low levels of basic skills, and learning outcomes among young people remain below the OECD average. Skills mismatches persist, while opportunities for upskilling and reskilling are not yet fully utilised. These challenges are further intensified by global megatrends – including digitalisation, the net-zero transition, and demographic change – which are reshaping skills needs and increasing the urgency of effective policy responses.
+
+Against this backdrop, the development of a coherent and forward-looking National Skills Strategy represents a critical step for Malta. By bringing together policies across education, employment, and economic development, such a strategy can provide a shared vision, strengthen co-ordination across stakeholders, and support evidence-based decision making.
+
+This report presents the results of the project “Shaping Malta’s future through a national skills strategy and targeted maritime sector measures” (24MT06), funded by the European Union through the Technical Support Instrument. It is led nationally by the National Skills Council in collaboration with Transport Malta, implemented by the OECD in co-operation with the Reform and Investment Task Force (SG REFORM) of the European Commission and has been developed in accordance with the provisions of the Agreement and the Detailed Project Description (DPD).
+
+The report offers a comprehensive assessment of Malta's skills system and sets out 30 evidence-based recommendations across key priority areas. The recommendations are grounded in robust analysis and extensive stakeholder engagement. They aim to support Malta in developing future-ready skills for the digital and net-zero transitions, improving the alignment between skills supply and demand, and strengthening the inclusiveness and responsiveness of the skills system. The report also includes a detailed implementation plan and a monitoring and evaluation framework.
+
+This report also presents a sectoral skills strategy. Developed in parallel to the National Skills Strategy, a Strategy and Skills Action Plan for Malta's maritime sector demonstrates that the national skills framework can be applied at the sectoral level to generate concrete actions, and offers a potential model for other strategic sectors.
+
+By advancing the skills agenda through this National Skills Strategy, Malta can further enhance its capacity to adapt to change, seize emerging opportunities and ensure that all individuals are equipped with the skills needed to succeed in work and life.
+
+The views expressed herein can in no way be taken to reflect the official opinion of the European Union.
+
+# Acknowledgements
+
+This report is part of a series of country projects within the OECD programme of work on Building Effective National Skills Strategies, and part of the project “Shaping Malta’s future through a national skills strategy and targeted maritime sector measures” (24MT06), funded by the European Union through the Technical Support Instrument.
+
+The OECD is grateful to the Advisory Group for its invaluable guidance and input throughout the project. Members included Ruth Debrincat, Larissa Vella and Kenneth Mallia from the National Skills Council; Mariella Vella and Ylenia Vella from Jobsplus; Alexandra Ellul and Michelle Balzan from Transport Malta; and Sébastien Combeaud and Alexandra Serafim-Soares from the Reform and Investment Task Force (SG REFORM) of the European Commission.
+
+The OECD also thanks the members of the Extended Advisory Group, comprising representatives from key ministries and government organisations, for their feedback on project outputs, as well as the Maritime Sector Working Group for their contributions on sector-specific aspects. Furthermore, the OECD is grateful for the commitment and contributions to project events from Hon. Clifton Grima, Minister for Education, Sport, Youth, Research and Innovation; Mr Matthew Vella, Permanent Secretary at the Ministry for Education, Sport, Youth, Research and Innovation; Mr Bjorn Callus, Permanent Secretary at the Ministry for Transport, Infrastructure and Public Works; Dr Jeffrey Pullicino Orlando, Executive Chairman of the National Skills Council; and Mr Kurt Farrugia, Chief Executive Officer of Transport Malta.
+
+Our warm thanks go to the many government and non-government representatives who generously shared their insights during the workshops, group discussions, bilateral meetings and via written input. These stakeholders represented ministries, government agencies, subnational authorities, education and training institutions, businesses and business associations, unions and community associations, academia, civil society, and other organisations.
+
+While the report draws upon data and analysis from the OECD, Malta's authorities and other published sources, any errors or misinterpretations remain the responsibility of the OECD team. The opinions expressed and arguments employed herein do not necessarily reflect the official views of OECD Member countries.
+
+This report was prepared by the OECD Skills Strategy team in the OECD Centre for Skills.
+
+## Table of contents
+
+Foreword 3   
+Acknowledgements 4   
+Abbreviations and acronyms 8   
+Executive summary 10   
+1 Key insights and recommendations for Malta 12 Skills matter for Malta 13 The proposed Skills Strategy in Malta 14 A sectoral strategy for the maritime sector 17 Priority topics and policy recommendations 17 An Action Plan for Malta's National Skills Strategy 24 References 27 Notes 29   
+2 Policy recommendations and implementation plan for Malta 30 Priority Topic 1: Identifying skills needs through better assessment, forecast and foresight exercises 31 Priority Topic 2: Improving the dissemination of skills information and strengthening career guidance services 39 Priority Topic 3: Empowering educators and school leaders for future-ready education 48 Priority Topic 4: Equipping learners of all ages with skills for the future 60 Priority Topic 5: Encouraging and incentivising adults to participate in learning activities 71 Priority Topic 6: Incentivising employers to stimulate learning in their organisations 78 Priority Topic 7: Making better use of available domestic and foreign talent 86 Priority Topic 8: Strengthening the governance of the skills system 98 References 105 Notes 122   
+3 Monitoring and evaluation framework for Malta 123 Introduction 124 Indicators for measuring implementation progress 124 The process of measuring implementation progress 125 References 127 Annex 3.A. Input, output, outcome and impact measures 128
+
+4 Piloting the policy recommendations in the Maltese maritime sector 136
+Overview and performance 137
+Policy recommendations for the maritime sector 137
+References 142
+
+## FIGURES
+
+Figure 1.1. Overview of key stakeholders in Malta's skills system 14  
+Figure 1.2. Links between the National Skills Strategy and other strategic documents in Malta 16  
+Figure 1.3. Overview priority topics and recommendations 18  
+Figure 1.4. Preliminary implementation timeline for National Skills Strategy recommendations 25  
+Figure 1.5. Preliminary policy owners of National Skills Strategy recommendations 26  
+Figure 2.1. Greatest perceived risks to Malta's economic attractiveness, 2025 31  
+Figure 2.2. Share of adults aged 25 to 64 years who searched for information on learning possibilities, 2022 39  
+Figure 2.3. Share of Maltese teachers and principals who are satisfied with their jobs, 2018 49  
+Figure 2.4. Share of employed population participating in training, 2011-2023 60  
+Figure 2.5. Share of adults aged 25 to 64 years who wanted to participate in education and training but encountered difficulties, 2022 72  
+Figure 2.6. Share of enterprises providing continuing vocational training (CVT) by type of training, 2020 78  
+Figure 2.7. Future employment growth across EU Member States, 2022-2035 87  
+Figure 2.8. Malta's performance in key governance indicators central to skills policy implementation, 2022 99  
+Figure 3.1. Relationship between indicator types 125
+
+## TABLES
+
+Table 2.1. Implementation plan for Recommendation 1
+34
+Table 2.2. Implementation plan for Recommendation 2
+36
+Table 2.3. Implementation plan for Recommendation 3
+38
+Table 2.4. Implementation plan for Recommendation 4
+42
+Table 2.5. Implementation plan for Recommendation 5
+44
+Table 2.6. Implementation plan for Recommendation 6
+46
+Table 2.7. Implementation plan for Recommendation 7
+48
+Table 2.8. Implementation plan for Recommendation 8
+52
+Table 2.9. Implementation plan for Recommendation 9
+54
+Table 2.10. Implementation plan for Recommendation 10
+56
+Table 2.11. Implementation plan for Recommendation 11
+58
+Table 2.12. Implementation plan for Recommendation 12
+60
+Table 2.13. Implementation plan for Recommendation 13
+63
+Table 2.14. Implementation plan for Recommendation 14
+65
+Table 2.15. Implementation plan for Recommendation 15
+67
+Table 2.16. Implementation plan for Recommendation 16
+69
+Table 2.17. Implementation plan for Recommendation 17
+71
+Table 2.18. Implementation plan for Recommendation 18
+74
+Table 2.19. Implementation plan for Recommendation 19
+76
+Table 2.20. Implementation plan for Recommendation 20
+78
+Table 2.21. Implementation plan for Recommendation 21
+81
+Table 2.22. Implementation plan for Recommendation 22
+84
+Table 2.23. Implementation plan for Recommendation 23
+86
+Table 2.24. Implementation plan for Recommendation 24
+89
+Table 2.25. Implementation plan for Recommendation 25
+91
+Table 2.26. Implementation plan for Recommendation 26
+93
+Table 2.27. Implementation plan for Recommendation 27
+95
+Table 2.28. Implementation plan for Recommendation 28
+98
+Table 2.29. Implementation plan for Recommendation 29
+102
+Table 2.30. Implementation plan for Recommendation 30
+104
+
+Annex Table 3.A.1. Indicators for Priority Topic 1: Identifying skills needs through better assessment, forecast and foresight exercises 128
+Annex Table 3.A.2. Indicators for Priority Topic 2: Improving the dissemination of skills information and strengthening career guidance services 129
+Annex Table 3.A.3. Indicators for Priority Topic 3: Empowering educators and school leaders for future-ready education 130
+Annex Table 3.A.4. Indicators for Priority Topic 4: Equipping learners of all ages with skills for the future 130
+Annex Table 3.A.5. Indicators for Priority Topic 5: Encouraging and incentivising adults to participate in learning activities 132
+Annex Table 3.A.6. Indicators for Priority Topic 6: Incentivising employers to stimulate learning in their organisations 133
+Annex Table 3.A.7. Indicators for Priority Topic 7: Making better use of available domestic and foreign talent 134
+Annex Table 3.A.8. Indicators for Priority Topic 8: Strengthening the governance of the skills system 135
+
+## Abbreviations and acronyms
+
+The following are the main abbreviations and acronyms cited in the report.
+
+<table><tr><td>CAA</td><td>Climate Action Authority</td></tr><tr><td>CPD</td><td>Continuous professional development</td></tr><tr><td>DDLTS</td><td>Directorate for Digital Literacy and Transversal Skills</td></tr><tr><td>DIER</td><td>Department for Industrial and Employment Relations</td></tr><tr><td>DLE</td><td>Directorate for Lifelong Learning and Employability</td></tr><tr><td>DPD</td><td>Detailed Project Description</td></tr><tr><td>DPSF</td><td>Directorate for Planning and Strategic Foresight</td></tr><tr><td>DSVP</td><td>Directorate for STEM and VET Programmes</td></tr><tr><td>DQSE</td><td>Directorate for Quality and Standards in Education</td></tr><tr><td>EaSI</td><td>Employment and Social Innovation</td></tr><tr><td>ECTS</td><td>European Credit Transfer and Accumulation System</td></tr><tr><td>ELITe</td><td>Enhancing Learning in Teaching via e-inquiries</td></tr><tr><td>EPD</td><td>Economic Policy Department</td></tr><tr><td>ERDF</td><td>European Regional Development Fund</td></tr><tr><td>ESF+</td><td>European Social Fund Plus</td></tr><tr><td>FHRD</td><td>Foundation for Human Resource Development</td></tr><tr><td>FSWS</td><td>Foundation for Social Welfare Services</td></tr><tr><td>ICT</td><td>Information and Communications Technology</td></tr><tr><td>IfE</td><td>Institute for Education</td></tr><tr><td>ILAs</td><td>Individual learning accounts</td></tr><tr><td>ITS</td><td>Institute of Tourism Studies</td></tr><tr><td>IPS</td><td>Institute for Public Services</td></tr><tr><td>KA2</td><td>Key Action 2</td></tr><tr><td>M&amp;E</td><td>Monitoring and evaluation</td></tr><tr><td>MCAST</td><td>Malta College for Arts, Science and Technology</td></tr><tr><td>MCESD</td><td>Malta Council for Economic and Social Development</td></tr><tr><td>MCTP</td><td>Malta council for the teaching profession</td></tr><tr><td>MDIA</td><td>Malta Digital Innovation Authority</td></tr><tr><td>MEEC</td><td>Ministry for the Environment, Energy and Public Cleanliness</td></tr><tr><td>MEEP</td><td>Ministry for the Economy, Enterprise and Strategic Projects</td></tr><tr><td>MEYR</td><td>Ministry for Education, Youth, Sport, Research and Innovation</td></tr><tr><td>MFHEA</td><td>Malta Further and Higher Education Authority</td></tr><tr><td>MFIN</td><td>Ministry for Finance</td></tr><tr><td>MUT</td><td>Malta Union of Teachers</td></tr><tr><td>MSO</td><td>Malta Skills Observatory</td></tr><tr><td>NCGN</td><td>National Career Guidance Network</td></tr><tr><td>NRRP</td><td>National Recovery and Resilience Plan</td></tr><tr><td>NSC</td><td>National Skills Council</td></tr><tr><td>NSO</td><td>National Statistics Office</td></tr><tr><td>PMED</td><td>Policy Monitoring and Evaluation Directorate</td></tr><tr><td>RPL</td><td>Recognition of Prior Learning</td></tr><tr><td>R&amp;D</td><td>Research and Development</td></tr><tr><td>S3</td><td>Smart Specialisation Strategy</td></tr><tr><td>SAA</td><td>Skills assessment and anticipation</td></tr><tr><td>SAMM</td><td>Structural Annualised Econometric Model for Malta</td></tr><tr><td>SCOPE</td><td>Strategic Skills Forecast</td></tr><tr><td>SMEs</td><td>Small and Medium-sized Enterprises</td></tr><tr><td>TSI</td><td>Technical Support Instrument</td></tr><tr><td>UAE</td><td>United Arab Emirates</td></tr><tr><td>UM</td><td>University of Malta</td></tr><tr><td>VET</td><td>Vocational education and training</td></tr><tr><td>VINFL</td><td>Validation of Informal and Non-Formal Learning</td></tr></table>
+
+# Executive summary
+
+## OECD–Malta collaboration on the National Skills Strategy and Action Plan
+
+Over the past two years, the OECD worked closely with the Government of Malta, particularly the National Skills Council and Transport Malta, to develop a National Skills Strategy and Action Plan with tailored recommendations to strengthen the country's skills system.
+
+The project was funded by the European Union through the Technical Support Instrument and implemented in co-operation with the European Commission. The project combined desk research, data analysis and extensive stakeholder engagement with a wide range of national stakeholders. This collaborative process resulted in policy recommendations that provide strategic directions to improve skills development, use, and governance in Malta.
+
+This report reflects the recommendations developed by the OECD ahead of Malta's national public consultation in April-May 2026. The Maltese authorities are continuing to consult stakeholders and, as a result, are further refining the National Skills Strategy and Action Plan as part of the national adoption process.
+
+In parallel to the National Skills Strategy, a sectoral strategy and action plan were developed for the maritime sector, translating national priorities into concrete, sector-specific actions. This approach could serve as a model for future sectoral skills strategies in Malta. Moreover, the report and its findings offers valuable insights for OECD Member countries on strengthening skills systems through both national and sector-specific approaches.
+
+## Key findings and opportunities for Malta's skills system
+
+Skills are central to Malta's ambition to build a more innovative, sustainable and inclusive economy. As global megatrends – digitalisation, the net-zero transition and demographic change – reshape labour markets, a strong skills system will support productivity, competitiveness and social cohesion.
+
+Malta is well placed to strengthen its approach to skills. Skills policy features prominently in several national strategies, including Malta Vision 2050 and the Smart Specialisation Strategy, which emphasise the need to equip individuals with future-ready skills and to support transitions across education, work and sectors. The strategy also arrives at a time of strong labour demand and an ongoing shift towards more knowledge-intensive, digital and higher-value economic activities – creating an opportunity to better align workforce skills with the needs of growing digital, green and higher-value sector.
+
+By building on this momentum, the National Skills Strategy provides a foundation for a more responsive, forward-looking and integrated skills system aligned with Malta's long-term development goals. It offers a shared framework to align priorities, strengthen collaboration across stakeholders, and translate strategic objectives into concrete actions.
+
+## Priority topics and recommendations
+
+The report sets out 30 recommendations across eight priority areas, forming a comprehensive and actionable policy framework:
+
+1. Identifying skills needs through better assessment, forecasting and foresight: Malta would benefit from a more co-ordinated and forward-looking approach to skills intelligence. Recommendations focus on establishing a Malta Skills Observatory, developing a unified national methodology for skills assessment and anticipation (SAA), and extending analyses to sectoral and firm levels to better capture emerging skills needs.
+
+2. Improving the dissemination of skills information and strengthening career guidance: Building on already strong career guidance services, Malta can further improve access and use of skills information. Recommendations include creating a centralised, user-friendly skills intelligence platform, publishing a regular Employment and Skills Barometer, expanding access to lifelong career guidance services, and strengthening parental engagement in guidance processes.
+
+3. Empowering educators and school leaders for future-ready education: Teachers and school leaders are central to equipping learners with future-ready skills. Recommendations include introducing tools such as individual learning accounts or training vouchers for educators, developing competency frameworks, strengthening leadership training, promoting peer learning, and enhancing the attractiveness of the teaching profession.
+
+4. Equipping learners of all ages with skills for the future: Malta is strengthening the development of digital, green and transversal skills, but further efforts are needed across the life course. Recommendations focus on integrating green skills into curricula, promoting VET pathways, supporting advanced and specialised qualifications, strengthening quality assurance systems, and expanding opportunities for non-formal and informal learning.
+
+5. Encouraging and incentivising adult participation in learning: Despite progress, participation in adult learning remains uneven. Recommendations aim to promote lifelong learning through a comprehensive national campaign, strengthen financial and non-financial incentives – particularly in areas of skills shortage – and expand the recognition of prior learning and validation of non-formal and informal learning.
+
+6. Incentivising employers to stimulate learning in their organisations: Employers are key actors in skills development but face constraints in providing training. Recommendations focus on strengthening workplace learning – particularly for SMEs and micro-enterprises – through practical tools and support, exploring training-related legislation (e.g. training leave), and improving access to training expertise by better matching between enterprises and trainers.
+
+7. Making better use of available domestic and foreign talent: Maximising the use of skills is essential for productivity and competitiveness. Recommendations aim to support firms in adopting productivity-enhancing practices, strengthen management and innovation capabilities, improve validation and certification of skills (including transversal skills), and better understand and address brain drain through targeted analysis and policy responses.
+
+8. Strengthening the governance of the skills system: Effective governance is essential for co-ordination and implementation. Recommendations focus on strengthening co-ordination mechanisms – particularly through thematic committees of the Smart Specialisation Strategy – and establishing robust monitoring and evaluation processes to keep the strategy responsive and effective over time.
+
+For the maritime sector specifically, this report presents an additional five strategic recommendations and ten actions, addressing challenges across all stages of the skills pipeline. Together, they aim to enhance Malta's capacity to systematically monitor, anticipate, and respond to emerging skills needs in the sector.
+
+## From strategy to implementation
+
+This report also sets out a detailed implementation plan for the recommendations, including timelines, roles, indicative costs, and potential funding sources. The plan is structured across three phases and is complemented by a monitoring and evaluation framework. By implementing these recommendations, Malta can strengthen its capacity to respond to emerging challenges, support sustainable economic growth, and ensure that all individuals have the opportunity to develop and use their skills effectively.
+
+## Key insights and recommendations for Malta
+
+This chapter provides an overview of the key insights and recommendations for strengthening Malta's skills system. It describes the context and structure of the National Skills Strategy and introduces the complementary sectoral strategy for Malta's maritime sectors. The chapter also presents an overview of the eight priority topics and 30 recommendations of the National Skills Strategy, as well as a summary of the Action Plan, including the implementation plan and monitoring and evaluation framework. These elements are discussed in greater detail in Chapters 2, 3, and 4.
+
+## Skills matter for Malta
+
+## Turning global megatrends into opportunities for Malta's skills system
+
+Skills are central to Malta's vision of enhancing citizens' quality of life, strengthening the country's economic and social foundations, and building a resilient, ambitious and dynamic future for all (Ministry for the Economy, Enterprise and Strategic Projects (MEEP), 2025[1]). Across the globe, megatrends such as the net-zero transition, digital transformation, and demographic change are reshaping education and work. With a strategic approach to skills, Malta cannot only adapt to these shifts, but also leverage them as opportunities for sustainable growth, thereby contributing to the European Union's Competitiveness Compass and advancing the Union of Skills.
+
+Malta has successfully established core governance structures and policy frameworks to support effective skills development and use throughout the life course. As a result, the country has made significant progress in strengthening learning and enhancing the skills of the population. Over the past decade, the country has significantly reduced the share of early leavers from education and training (ELET), achieving one of the steepest declines in the EU. Enrolment in higher education continues to increase, surpassing the EU average and EU-level targets, and Malta is increasingly being seen as an attractive learning mobility destination in Europe (European Commission, 2024[2]). Participation in adult learning has also risen, aided by incentives and improved recognition of prior learning, and is now at par with EU-level targets (Eurostat, 2025[3]; OECD, 2025[4]).
+
+Malta's labour market also makes intensive use of available skills, underpinned by strong employment outcomes and sustained labour demand. The country records one of the lowest unemployment rates in the European Union (2.7%, compared with an EU average of 6% in Q3 2025), indicating a very tight labour market (Eurostat, 2025[5]). Labour demand is correspondingly high, with a job vacancy rate of 3.3% in Q4 2025 – surpassed only by Belgium and the Netherlands across the EU (Eurostat, 2025[6]). Looking ahead, Malta is also projected to experience the highest employment growth in the EU by 2035 (Cedefop, 2024[7]).
+
+However, despite this strong performance, persistent challenges remain. These challenges begin as early as compulsory education, with Maltese students scoring below the OECD average in mathematics, reading and science in the latest round of the Programme for International Student Assessment (PISA) (OECD, 2023[8]). This comparatively weak performance in skills continues well into adulthood, with $36\%$ of adults in Malta having low levels of skills in comparison to the EU average of $25\%$ in 2021 (OECD, 2025[4]). Moreover, Malta has a smaller share of research and development (R&D) personnel than the EU average, suggesting that there is room to drive demand for higher-level skills and expand opportunities in higher-value sectors (Eurostat, 2024[9]). Without action, these skills gaps risk undermining Malta's productivity, innovation and competitiveness.
+
+## Towards a coherent National Skills Strategy for Malta
+
+In response to skills challenges, Malta has increasingly embedded skills-related objectives into national strategies, including Malta Vision 2050 and the National Recovery and Resilience Plan (NRRP). These strategies highlight reskilling and upskilling as effective policy levers to help Malta successfully adapt to global megatrends such as the digital and net-zero transitions (Ministry for the Economy, Enterprise and Strategic Projects (MEEP), 2025[1]; European Parliament, 2025[10]). In addition, the creation of the National Skills Council in 2023 further reinforced the centrality of skills policy in Malta (National Skills Council, 2025[11]; OECD, 2025[4]).
+
+Building on these efforts, Malta formally launched in 2024 the development of a national skills strategy and a corresponding action plan for its implementation, requesting technical support from the EU. Until then, skills policy had not been addressed within a unified, strategic, and inclusive framework (OECD, 2025[4]).
+
+Such a strategy is essential, given that skills policies are located at the intersection of education, labour market, industrial and other policy domains (OECD, 2019[12]). A coherent skills strategy can provide a clear roadmap for achieving Malta Vision 2050, foster a shared agenda among stakeholders, and mobilise resources for timely reforms (OECD, 2019[12]; OECD, 2024[13]).
+
+## The proposed Skills Strategy in Malta
+
+The project “Developing a skills strategy for Malta and its maritime sector” is funded by the European Union through the Technical Support Instrument (TSI) and implemented by the OECD in co-operation with the European Commission. It is led nationally by the National Skills Council and Transport Malta. This project supported Malta to develop and implement a national skills strategy and corresponding action plan. Multiple government entities and stakeholders have been engaged (see Figure 1.1) to identify skills gaps, formulate policy solutions based on international best practices, and build consensus for reform.
+
+Figure 1.1. Overview of key stakeholders in Malta's skills system  
+![](images/209a4b6f0f3e510bc5aa23c2a6ee64d96ece4788891e74c08948dec983403f54.jpg)  
+Source: Questionnaire filled out by Malta; research and stakeholder consultations by the OECD Centre for Skills.
+
+The project is well-aligned with EU policy priorities, including: the European Skills Agenda (Actions 1, 2, 36 and 12); the European Pillar of Social Rights (Principles 1, 3, 4 and 8); the 2030 Digital Compass 2030; the Council Recommendation on the 2023 Malta National Reform Programme on the provision of skills for the green transition; and EU investments through the European Social Fund+ to support initiatives for green skills (EUR 3 million) and scholarship schemes (EUR 6.75 million). In addition, the project also supports Malta in achieving EU headline targets, including achieving at least $60\%$ of adults participating in yearly training, as well as the European Education Area targets on basic, tertiary and digital skills. Furthermore, the project advances EU recommendations from the European Semester and the European Year of Skills 2023, promoting the acquisition of green skills and improving the labour market relevance of education and training to reduce skills shortages and mismatches (OECD, 2025[4]).
+
+While tailored to Malta's specific context, the report offers valuable insights for OECD Member countries facing similar challenges in adapting skills systems to rapid economic and technological change. Several recommendations – such as strengthening skills intelligence systems, expanding lifelong learning participation, and enhancing workplace learning, particularly for SMEs – are highly relevant across OECD contexts. Moreover, the combination of a national skills strategy with a dedicated sectoral approach, illustrated by the maritime action plan (see next section), provides a practical example of how countries can develop targeted, industry-specific action alongside broader strategic priorities. This model may serve as a useful reference for OECD Members seeking to better align skills policies with the needs of key sectors.
+
+The National Skills Strategy in Malta is also guided by the OECD Skills Strategy framework (see Box 1.1), which has been applied in over 25 economies, including 14 EU Member States. Over the years, the OECD Skills Strategy framework has demonstrated its value as a tool for assessing the performance of skills systems, as well as generating tailored policy recommendations for strengthening skills systems (OECD, 2019[12]).
+
+## Box 1.1. The OECD Skills Strategy framework
+
+OECD Skills Strategy projects provide a strategic and comprehensive approach to assessing countries' skills challenges and opportunities and building more effective skills systems. The OECD collaborates with countries to develop policy responses tailored to each country's specific skills challenges and needs. The foundation of this approach is the OECD Skills Strategy Framework, the components of which are:
+
+\- Developing relevant skills over the life course: To ensure that countries are able to adapt and thrive in a rapidly changing world, all people need access to opportunities to develop and maintain strong proficiency in a broad set of skills. This process is lifelong, starting in childhood and youth and continuing throughout adulthood. It is also “life-wide”, occurring both formally in schools and higher education, and non-formally and informally in the home, community and workplaces.
+
+\- Using skills effectively in work and society: Developing a strong and broad set of skills is just the first step. To ensure that countries and people gain the full economic and social value from investments in developing skills, people also need opportunities, encouragement and incentives to use their skills fully and effectively at work and in society.
+
+\- Strengthening the governance of skills systems: Success in developing and using relevant skills requires strong governance arrangements to promote co-ordination, co-operation and collaboration across the whole of government; engage stakeholders throughout the policy cycle; build integrated information systems; and align and co-ordinate financing arrangements.
+
+Source: OECD (2019[12]), OECD Skills Strategy 2019: Skills to Shape a Better Future, https://dx.doi.org/10.1787/9789264313835-en.
+
+In Malta, the framework was applied to review performance and identify opportunities for improvement. Drawing on OECD and EU data, expert analysis, and stakeholder insights, the National Skills Strategy sets out 30 policy recommendations for strengthening skills development, use, and governance. The recommendations presented in this report were developed by the OECD before Malta's national public consultation. Following the consultation, the Maltese authorities are further refining the National Skills Strategy and Action Plan as part of the national adoption process.
+
+At the start of the project, three overarching objectives were identified through desk-based analysis and subsequently validated with Maltese stakeholders and the Advisory Group. These are general objectives that have informed the analysis and cut across the recommendations:
+
+\- Developing future skills for the digital and net-zero transitions: As Malta advances towards digitalisation and a net-zero economy, new skills are essential to maximise emerging opportunities and meet future workforce demands. To this end, the policy recommendations prioritise skills in areas such as environmental sustainability, digital and AI literacy, transversal skills, entrepreneurship, practical expertise, and research and innovation.
+
+\- Aligning the skills strategy with national priority and goals: The recommendations have been verified for coherence with key Maltese policy documents, notably Malta Vision 2050, the Smart Specialisation Strategy, the National Education Strategy 2024-2030, the National Lifelong Learning Strategy 2023-2030, the National Strategic Action Plan for Further and Higher Education, and the National Employment Policy, among many others (see Figure 1.2). This alignment ensures coherence, avoids duplication, and promotes efficient use of resources.
+
+\- Strengthening the skills of specific learner groups: Providing tailored skills development opportunities for specific groups can help close skills gaps, promote equity, and make Malta's skills system more inclusive. Some examples of groups in Malta that would benefit from targeted skills initiatives are adults with low education levels, learners from migrant backgrounds with low literacy in English and Maltese, and persons with physical or mental disabilities.
+
+Figure 1.2. Links between the National Skills Strategy and other strategic documents in Malta  
+![](images/132eb1ea23714a0e27c95564bcf6cbb716f45fffb81af6966ee0ebf8f655c428.jpg)
+
+## A sectoral strategy for the maritime sector
+
+In parallel to the National Skills Strategy, a strategy and skills Action Plan for Malta's maritime sector was developed. While the national strategy provides the overarching vision, the maritime work translates this into concrete, sector-specific actions for a priority sector, aligned with Malta Vision 2050 and the Smart Specialisation Strategy. Together, these two strands provide a stronger and more coherent basis for policy action.
+
+The strategy and action plan provide clear direction for reducing skills gaps and strengthening skills outcomes in Malta's maritime sector. They comprise five strategic recommendations and ten actions, addressing challenges across all stages of the skills pipeline. More specifically, the recommendations aim to enhance Malta's capacity to systematically monitor, anticipate, and respond to emerging skills needs in the maritime sector. They are based on the main challenges identified through desk research, analysis of international good practices, and input from sector stakeholders, and are further informed by a dedicated skills gap analysis of the maritime sector. The methodology developed could serve as a template for future sectoral skills strategies in Malta.
+
+Chapter 4 provides an overview of the recommendations for the maritime sector, while a more detailed assessment and description can be found in the reports “Results of the analysis for Malta’s maritime sector (Output 4)” (OECD, 2025[14]) and the “Action Plan proposal for reforming Malta’s maritime skills provision (Output 6)” (OECD, 2026[15]).
+
+## Priority topics and policy recommendations
+
+Based on OECD analysis and TSI consultations with stakeholders, the project team identified eight priority topics at the start of the project to reflect Malta's national priorities for skills policy. Across these priority topics, the OECD, the European Commission and the National Skills Council developed 30 evidence-informed policy recommendations (see Figure 1.3) that were revised to consider feedback from Maltese authorities and stakeholders.
+
+A summary of the recommendations is presented below, while Chapter 2 presents detailed descriptions of each recommendation, including context and relevant international practices.
+
+Figure 1.3. Overview priority topics and recommendations  
+![](images/7378ef9541348c7233f85e6fef2bfebc9474fb5b7d7eefb6a1bc960b1fc74269.jpg)
+
+## Priority Topic 1: Identifying skills needs through better assessment, forecast and foresight exercises
+
+Skills assessment and anticipation (SAA) exercises provide essential intelligence on current and future skills needs, enabling policymakers to address mismatches and design targeted interventions contributing to Malta's competitiveness. In Malta, strengthening national SAA capacity is a top priority, as existing initiatives are fragmented and inconsistent, contributing to over-qualification, underutilised human capital, and reduced productivity.
+
+1. Establish the Malta Skills Observatory as a dedicated working group to oversee a coherent approach to skills assessment and anticipation (SAA). It is recommended that Malta establish the Malta Skills Observatory, a dedicated SAA working group that is led by the National Skills Council and includes key government and non-government stakeholders. Tasked to strengthen co-ordination and governance of skills intelligence, the group is expected to meet regularly and deliver tangible outputs to guide evidence-informed policy and education planning.
+
+2. Design a national SAA methodology and strengthen strategic foresight capacity to identify skills needs in line with national policy frameworks. It is recommended that Malta implement a unified national SAA methodology and strengthen strategic foresight in government to anticipate skills needs, improve labour market responsiveness, and guide long-term education and workforce planning in line with Malta Vision 2050 and Malta's Smart Specialisation Strategy.
+
+3. Introduce sectoral and firm-level SAA methodologies to provide more nuanced, localised assessments of skills demand. It is recommended that Malta complement national-level SAA with sectoral and local analyses to capture sectoral and firm-level skills needs, particularly in the Smart Specialisation priority areas and emerging fields linked to the net-zero and digital transitions. Strengthening stakeholder engagement and investing in national registers can improve data quality and efficiency.
+
+## Priority Topic 2: Improving the dissemination of skills information and strengthening career guidance services
+
+Malta provides strong career guidance through schools and adult learning centres, but many adults remain unaware of available services, and skills information is fragmented and underused by guidance professionals. Improving the accessibility, timeliness, and relevance of skills intelligence is essential to help learners and key stakeholders make informed decisions and support workforce development for the digital and net-zero transitions.
+
+4. Launch a dynamic skills intelligence platform to disseminate timely, regularly updated insights on evolving skills needs. It is recommended that Malta consolidate its career guidance and skills information into a single, interactive digital platform, offering labour market data and SAA results alongside user-friendly tools for skills assessment. The platform could offer dynamic, tailored interfaces for both the general public and career guidance professionals. To maximise accessibility, it could be made available in mobile-friendly formats and include multilingual features.
+
+5. Publish the Employment and Skills Barometer in partnership with Jobsplus to provide a more detailed analysis of skills trends in an accessible format. It is recommended that Malta publish the barometer every two years to summarise skills and employment trends, using data collected by the NSO and Jobsplus in addition to employer surveys. The barometer could also include labour market trends derived from national, sectoral and local SAA exercises.
+
+6. Explore the introduction of a universal career guidance service for all individuals to support job mobility and progression. It is recommended that Malta introduce a centralised service that offers free, personalised career guidance support to all individuals regardless of their profile or employment status. Existing providers may play a role in delivering these services according to their target groups (e.g. Jobsplus for jobseekers). It is important for Malta to promote the service as an accessible, lifelong resource available throughout individuals' learning and working lives.
+
+7. Strengthen parents' involvement in career guidance through enhanced school engagement mechanisms. It is recommended that Malta strengthen parental engagement in career guidance by enhancing the ExploreMore platform – including by linking it to the dynamic skills intelligence platform (see Recommendation 5) and real-time labour market insights from SAA exercises (Priority Topic 1). Malta could also expand outreach through multiple familiar channels, as well as integrating career guidance into parent-focused school events throughout the schooling journey.
+
+## Priority Topic 3: Empowering educators and school leaders for future-ready education
+
+Developing future-ready and transversal skills is a central priority in Malta's education system. However, challenges remain, particularly in relation to teacher shortages in certain areas. Addressing these requires building an innovative and resilient educator workforce and strengthening school leadership, supported by structural reforms to teacher salaries, curriculum overload and rigid assessment practices.
+
+8. Assess the feasibility of introducing individual learning accounts (ILAs) and piloting the ILA scheme with education practitioners. It is recommended that Malta pilot ILAs or alternative tools such as training vouchers to promote teachers' autonomy in their training choices and participation. Eligible training offers could prioritise training in skills for innovative pedagogy, digitalisation, and the net-zero transition.
+
+9. Develop competency frameworks for education practitioners to strengthen professional standards and skills development. It is recommended that Malta develop a competency framework that integrates subject expertise and pedagogical skills, structured across progressive levels of complexity. It is important to describe competences in clear, observable, and action-oriented terms, directly linked to everyday school activities such as teaching, learning, and assessment.
+
+10. Strengthen training for school leaders to improve leadership skills and promote a learning culture among school personnel. It is recommended that Malta introduce structured, accessible leadership training programmes for school leaders, solidifying their understanding of their roles in promoting teacher training and introducing them to evidence-informed practices that foster a culture of learning in schools.
+
+11. Establish digital platforms and networks for informal learning among educators to regularly exchange best practices in pedagogy and assessment. It is recommended that Malta enhance existing platforms used by teachers, such as Eskola, to provide virtual spaces for peer mentoring, community discussions, and the exchange of pedagogical practices supporting the acquisition of skills for the digital and net-zero transitions.
+
+12. Implement targeted information campaigns to promote the teaching profession and prevent teacher shortages. It is recommended that Malta complement past and existing awareness raising initiatives by launching an information campaign targeted to non-traditional audiences such as career changers, as well as young parents and their children. The design of the campaign could be enhanced by a study examining barriers to entry into the teaching profession and factors attracting potential applicants.
+
+## Priority Topic 4: Equipping learners of all ages with skills for the future
+
+Malta is increasingly prioritising the development of future-ready skills in compulsory education and is seeking to further reinforce these skills across the life course. Developing a strong foundation for green, digital and transversal skills in childhood, and providing opportunities to develop these skills in adulthood, can help Malta build a future-ready workforce capable of thriving in rapidly changing labour markets.
+
+13. Establish a future-focussed skills museum to foster transversal skills through non-formal and informal learning. It is recommended that Malta establish a future-focussed immersive museum, with an emphasis on developing transversal skills such as creativity, innovation, and critical thinking. This museum could be promoted as a resource that is open to learners of all ages.
+
+14. Integrate green skills across all education and training levels to prepare the workforce for the net-zero transition. It is recommended that Malta conduct a comprehensive mapping of how green skills are currently embedded in educational curricula to identify further opportunities for integration. Malta could also incorporate green skills into educator competency frameworks and training, as well as national education standards.
+
+15. Promote vocational education and training (VET) as a rewarding pathway for acquiring high-value digital and green skills. It is recommended that Malta implement targeted information and awareness-raising initiatives to improve perceptions of VET, working closely with career guidance services. This could include bringing VET role models into schools, providing accessible information on jobs for the digital and net-zero transitions, and promoting participation in skills competitions.
+
+16. Identify priority areas for specialised post-graduate qualifications or awards $^{1}$ to ensure a steady supply of skills for the digital and net-zero transitions. It is recommended that Malta uses the results of SAA exercises from the Malta Skills Observatory to identify priority skilling areas. In developing new qualifications, it is important to promote a co-creation approach between higher education institutions and employers, as well as collaborate with career guidance services to encourage uptake among learners.
+
+17. Conduct an in-depth evaluation of Malta's quality assurance system to streamline processes and strengthen future-readiness. It is recommended that Malta consult regulatory bodies, educational institutions, employers and learners to examine key process issues, as well as identify opportunities to integrate future skills into quality assurance frameworks. The study may produce evidence-informed recommendations on the way forward, complemented by guidance on how to implement the recommendations in practice.
+
+## Priority Topic 5: Encouraging and incentivising adults to participate in learning activities
+
+Encouraging adult learning in Malta is crucial to equip workers with skills for the digital and net-zero transitions, but motivation remains largely driven by external rewards. Many adults may therefore perceive little immediate need to upskill, especially in the context of a tight labour market. Participation is also constrained by logistical barriers, such as time pressures, highlighting the need for flexible, accessible learning pathways, particularly for disadvantaged groups with lower educational attainment.
+
+18. Complement existing awareness-raising initiatives with a comprehensive, integrated national campaign to promote lifelong learning. It is recommended that Malta prepare a comprehensive nationwide campaign to promote lifelong learning, targeting diverse audiences with tailored messaging and multiple communication channels. To ensure inclusivity, the campaign could collaborate with trusted intermediaries and highlight flexible, accessible skilling opportunities that address barriers and emphasise the benefits of continuous upskilling.
+
+19. Strengthen existing incentives for adult learners by increasing benefits and/or easing eligibility criteria for target groups to encourage training in areas of skills shortage. It is recommended that Malta review its range of existing incentives and explore how to increase the value of subsidies, offer more time allowance, and ease eligibility criteria for select sectors and disadvantaged groups. It is important to inform decisions on eligible sectors and target groups by the results of SAA exercises, with particular attention to skills needed for the digital and net-zero transitions.
+
+20. Increase uptake of recognition of prior learning (RPL) and validation of non-formal and informal learning (VINFL), with a particular focus on disadvantaged groups. It is recommended to increase visibility and uptake of Malta's RPL initiatives – especially among disadvantaged adults – and scale up outreach in key sectors. Data collection and assessing outcomes is essential to ensuring these services effectively support access to education, training, and labour market opportunities.
+
+## Priority Topic 6: Incentivising employers to stimulate learning in their organisations
+
+Employers are crucial in addressing Malta's skills challenges by providing relevant, high-quality training that supports both individual career development and firm adaptability to digital and net-zero transitions. However, many Maltese employers, particularly SMEs, face constraints such as limited time, resources, and concerns over employee turnover, resulting in below-average training provision compared with the EU27. Strengthening employer engagement in adult learning is therefore essential to close skills gaps, enhance workforce capabilities, and boost Malta's competitiveness.
+
+21. Assess the feasibility of introducing legislation on training during working hours, training leave, and payback clauses. It is recommended that Malta undertake feasibility studies on introducing legislation mandating training during working hours, prioritising transversal, digital, and green skills. In parallel, it could help to explore a training leave policy with a wage replacement scheme to support employers in shouldering costs. To safeguard employer investments, Malta may also assess the feasibility of introducing payback clauses, defining eligible training and including provisions for insolvency and extra-judicial settlement.
+
+22. Strengthen workplace learning through the provision of practical tools and support tailored to SMEs and micro-enterprises. It is recommended that Malta equip enterprises with practical tools to assess training needs, such as accessible self-assessment instruments tailored to SMEs and micro-enterprises. Malta can also encourage low-cost forms of informal workplace learning, such as job rotation and mentoring, by raising awareness of their benefits and available incentives.
+
+23. Match readily available trainers with enterprises – particularly SMEs – to ensure reliable access to expertise. It is recommended that the NSC collaborate with the Chamber of SMEs to identify enterprises with training needs but that lack the necessary expertise to deliver training. These enterprises could then be matched with available trainers who can provide training during working hours. Malta could also explore establishing partnerships with foreign training providers to increase the supply of additional trainers and introduce international expertise.
+
+## Priority Topic 7: Making better use of available domestic and foreign talent
+
+Developing relevant and advanced skills is essential, but their effective use in work and society is equally important to maximise economic and social returns. For Malta, ensuring full utilisation of both domestic and foreign workforce skills is vital for competitiveness, particularly given the country's high projected employment growth and focus on smart specialisation areas. Opportunities remain to strengthen skills use, including expanding management capabilities, enhancing enterprise capacity for innovation, and increasing retention levels of highly qualified professionals.
+
+24. Provide user-friendly information and targeted support to help firms – particularly SMEs – adopt workplace productivity practices. $^{2}$ It is recommended that Malta provide a comprehensive suite of resources (e.g. diagnostic tools, information sheets) through a centralised online platform. This could be complemented by mentoring and coaching for managers and HR personnel, as well as financial subsidies to engage external experts in organisational management and innovation. Peer learning networks could further reinforce these efforts.
+
+25. Support enterprise leaders and managers to promote strategic foresight and workplace innovation, and stimulate demand for higher-level skills. It is recommended that Malta provide targeted training in innovation management and strategic foresight to encourage enterprise leaders and managers to integrate creativity and entrepreneurship into daily operations. This may be complemented with mentorship and networking opportunities to build capacity in developing growth strategies, emphasising the creation of demand for high-skilled roles aligned with the digital and net-zero transitions.
+
+26. Enhance validation systems to enable the effective use of skills card $^{3}$ systems and examine the feasibility of extending their application and integrating them into existing digital platforms. It is recommended that Malta examine how to improve its validation system to support the effective expansion of the skills cards into other sectors. It is important to co-ordinate with the thematic committees mentioned in Recommendation 29 to define sector-specific skills and standards and determine the validity periods for the skills cards. Malta could also consider integrating the skills cards into existing digital infrastructure, such as BlockCerts via e-ID, to improve cost-efficiency and user familiarity.
+
+27. Develop a certificate recognising transversal skills to strengthen workers' employability and support skills-based hiring practices. It is recommended that Malta explore the development of a process to assess and validate transversal skills that aligns with existing national frameworks. The process should draw on a variety of assessment methods to recognise transversal skills acquired in schools, workplaces, volunteering, and community activities.
+
+28. Conduct a study on the causes, scale and socio-economic impact of brain drain to inform policies for talent retention and attraction. It is recommended that Malta undertake a comprehensive study to assess brain drain, examining both push (factors driving emigration) and pull (factors attracting workers abroad) factors using multiple data sources (e.g. graduate tracer surveys, migration registers, stakeholder consultations). Based on these findings, Malta could consider developing a talent repatriation strategy with incentives such as tax breaks, as well as a diaspora engagement strategy.
+
+## Priority Topic 8: Strengthening the governance of the skills system
+
+Effective implementation of Malta's National Skills Strategy requires co-ordinated engagement across government, industry, and civil society, yet Malta has scope to strengthen strategic capacity, inter-ministerial co-ordination, evidence-informed policymaking, and implementation compared with EU peers.
+
+29. Strengthen skills co-ordination to better align skills supply and demand in the thematic areas of Malta's Smart Specialisation Strategy. It is recommended to consider assigning additional functions to existing thematic committees (sector-specific), set up in relation to the Smart Specialisation Strategy through a clearer and more formalised mandate for skills-related co-ordination. Under this approach, the thematic committees could be formally tasked with addressing both demand- and supply-side dimensions of skills policy within their respective sectors, drawing on evidence from skills assessment and anticipation (SAA) exercises (see Recommendations 2 and 3). This would represent an expansion of their current advisory role, moving beyond strategic discussion to include structured input on skills needs, training provision and workforce development, while remaining aligned with the objectives of the
+
+Smart Specialisation Strategy. Where relevant, new Industry Skills Alliances could be established in other strategic sectors of the Maltese economy where thematic committees do not yet exist, particularly in line with the Malta Vision 2050.
+
+30. Regularly review action plans and strengthen reporting mechanisms to ensure that the strategy remains a living document and supports effective and responsive implementation. It is recommended that Malta adopt shorter, regularly renewed action plans with clear timelines for each policy recommendation, monitored through a designated contact point in the National Skills Council. Minor ad hoc adjustments could be agreed upon with stakeholders to ensure responsiveness to evolving labour market needs, while ensuring timely delivery.
+
+## An Action Plan for Malta's National Skills Strategy
+
+This report also sets out a detailed action plan to implement the 30 recommendations of the National Skills Strategy. It contains both a concrete implementation plan for the recommendations (presented in Chapter 2), and guidelines for establishing a monitoring and evaluation framework for their implementation (Chapter 3).
+
+## An implementation plan
+
+This report presents a concrete implementation plan for the 30 recommendations of the National Skills Strategy. The plan specifies for each recommendation in Chapter 2 the proposed roles, timelines, relative cost, and potential funding sources.
+
+\- Roles (policy owner and partners): To ensure accountability, each recommendation is assigned a “policy owner” responsible for leading implementation, sometimes it is distinguished between a lead and a co-lead. In most cases, this is the entity with the greatest administrative involvement in the recommendation, although exceptions exist. In some cases, the role of the policy owner is to provide external oversight and ensure that implementing entities fulfil their designated responsibilities. The policy owner typically also supports monitoring and evaluation by providing input to the evaluator on implementation progress. The implementation plan also describes the partner entities expected to be actively involved in the implementation of the recommendation.
+
+\- Timeline: The timeline is structured into three phases of implementation for the period 2026-2035. Each subsequent phase spans a larger range of years – Phase 1 (2026-2027), Phase 2 (2028-2030) and Phase 3 (2031-2035) – reflecting that the farther into the future the implementation period, the harder it is to pinpoint specific timelines. The phases also coincide with two distinct EU multiannual financial frameworks – 2021-2027 and 2028-2034. Following each implementation period, an evaluation could be conducted to assess the implementation of the recommendations to date, propose adjustments for their continued implementation, and develop more concrete timelines for the next stage of implementation.
+
+\- Relative costing and administrative complexity: While precise costing of initiatives is constrained by the absence of detailed government data, the OECD has classified each recommendation as low, moderate, or high in terms of two cost dimensions: relative costs (direct costs associated with the implementation of the recommendation, such as the sum of money transferred to employers to subsidise apprenticeships) and administrative complexity (indirect transaction costs such as the costs incurred by government in designing policies, ongoing operation of policies (e.g. reviewing applications to determine eligibility of recipients), and monitoring and evaluating the outcomes of policies). Where possible, international or domestic benchmarks are provided to guide Maltese officials in estimating likely expenditure.
+
+\- Possible funding sources: Potential funding sources, such as specific government budgets, EU funding mechanisms or contributions from other stakeholders such as employers and education and training providers, have been identified for each recommendation, drawing on comparable initiatives abroad, past experience in Malta, and the mandates of relevant national entities.
+
+This implementation plan is grounded in desk research and has been validated through extensive consultation with stakeholders from Malta.
+
+Figure 1.4 presents the timelines for the proposed recommendations over the ten-year implementation period. Each implementation phase should conclude with an evaluation report prepared by either the NSC or MEYR and its Policy Monitoring and Evaluation Directorate (PMED), as outlined in Chapter 3.
+
+Figure 1.4. Preliminary implementation timeline for National Skills Strategy recommendations  
+![](images/5ecb1a67459ce944ec5a10d740cb3e751ec5ffeabc988a0de57c122bb24af7ca.jpg)  
+Although multiple stakeholders are involved in the implementation of every recommendation, each specific action has also been assigned a policy owner who would lead and oversee the implementation. Figure 1.5 provides an overview of these lead policy owners and the recommendations for which they are responsible.
+
+Figure 1.5. Preliminary policy owners of National Skills Strategy recommendations  
+![](images/2838bd1511122f73d31db75a7ef4ee3f81df064900f4956bbf691444e1e55d6b.jpg)  
+A monitoring and evaluation framework
+
+Chapter 3 describes how effective monitoring and evaluation are essential for tracking the implementation of Malta's National Skills Strategy, ensuring resources are used efficiently, and building public trust through accountability (OECD, 2024[16]). A well-designed framework provides reliable, timely information on the uptake of policy measures, supports evidence-based decision making, and facilitates learning to improve future policies (OECD, 2023[17]). Challenges such as limited technical capacity, data quality issues, and a lack of integrated systems can affect the effectiveness of monitoring efforts (OECD, 2020[18]).
+
+## Indicators for measuring implementation progress
+
+The proposed monitoring and evaluation (M&E) framework relies on indicators that capture progress at different stages of implementation. These include input indicators (resources allocated), output indicators (provision and uptake), outcome indicators (effects on participants), and impact indicators (broader societal effects) (OECD, 2021[19]). Early identification of indicators ensures reliable data collection and supports assessment of policy impact over time (OECD, 2020[18]; OECD, 2021[20]).
+
+Tables in Annex 3. A present a proposed set of indicators to measure inputs, outputs, outcomes, and impacts for the 30 recommendations of the National Skills Strategy. The indicators have been selected in line with the descriptions above and could directly inform the government of Malta's monitoring and evaluation of the recommendations.
+
+## The process of measuring implementation progress
+
+Monitoring and evaluation of the National Skills Strategy is a continuous process involving data collection, analyses, dissemination, and policy development. Regarding the collection of data, Malta should rely primarily on existing data systems to track agreed indicators, assigning clear responsibilities to ensure timely and reliable reporting. Where new information is required, lead policy owners should collect it, as they possess the most comprehensive understanding of progress.
+
+Periodic evaluations are recommended at the end of Phase 1 (2026-2027), Phase 2 (2028-2030), and Phase 3 (2031-2035). The interim evaluations (after Phases 1 and 2) would help identify any adjustments required to the actions or timelines for subsequent phases, while the final evaluation at the end of Phase 3 would provide a comprehensive assessment of outcomes and overall effectiveness. Malta already has institutional capacity through the Policy Monitoring and Evaluation Directorate (PMED) within the MEYR, which could conduct mid-term and final evaluations, while the NSC could lead the first-phase review and oversee overall implementation. Alternatively, Malta could consider external reviews, which could enhance credibility, objectivity, and benchmarking capacity.
+
+Effective dissemination and use of findings are essential. Evaluation results should be communicated through tailored reports and stakeholder engagement, and formal feedback loops should ensure that evidence informs future policy design, resource allocation, and programme adjustments. Embedding such mechanisms supports adaptive policymaking, strengthens accountability, and fosters a culture of evidence-based governance, thereby improving the long-term responsiveness and coherence of the skills system.
+
+## References
+
+Cedefop (2024), “Future employment growth”, https://www.cedefop.europa.eu/en/tools/skills-intelligence/trend-focus/future-jobs#1 (accessed on 10 December 2025).
+
+European Commission (2024), Education and Training Monitor 2024: Malta, https://op.europa.eu/webpub/eac/education-and-training-monitor/en/country-reports/malta.html (accessed on 3 December 2025).
+
+European Parliament (2025), “Malta’s National Recovery and Resilience Plan”, https://www.europarl.europa.eu/RegData/etudes/BRIE/2022/729312/EPRS\_BRI(2022)729312\_EN.pdf (accessed on 10 December 2025).
+
+[10]
+
+Eurostat (2025), Job Vacancy Rate statistics, https://ec.europa.eu/eurostat/web/products-euro-indicators/w/3-16122025-bp (accessed on 18 December 2025).
+
+Eurostat (2025), “Participation rate in education and training (last 12 months)”, https://ec.europa.eu/eurostat/databrowser/view/trng\_lfs\_17/default/table?lang=en&category=educ.educ\_part.trng.trng\_lfs\_12m.trng\_lfs\_12m1 (accessed on 3 December 2025).
+
+Eurostat (2025), “Unemployment by sex and age – quarterly data”, https://ec.europa.eu/eurostat/databrowser/view/une\_rt\_q/default/table?lang=en&category=labour.employ.lfsi.une.
+
+Eurostat (2024), “Share of R&D personnel and researchers in total active population and employment by sector of performance and sex”, https://ec.europa.eu/eurostat/databrowser/product/view/rd\_p\_perslf.
+
+ILO (2023), Empowering migrant workers through the National Skills Passport initiative, https://www.ilo.org/resource/news/empowering-migrant-workers-through-national-skills-passport-initiative.
+
+Johnston, R. and G. Hawke (2002), Case studies of organisations with established learning cultures, NCVER.
+
+MFHEA (2024), Referencing Report, https://mfhea.mt/wp-content/uploads/2024/03/RR\_Final-Cover-Front-Back\_compressed.pdf.
+
+Ministry for the Economy, Enterprise and Strategic Projects (MEEP) (2025), Malta Vision 2050 - Public Consultation, https://www.gov.mt/en/publicconsultation/Pages/2025/NL-0012-2025.aspx (accessed on 21 October 2025).
+
+National Skills Council (2025), “About Us | National Skills Council”, https://nscmalta.gov.mt/about-us.
+
+OECD (2026), Shaping Malta's Future Through a National Skills Strategy and Targeted Maritime Sector Measures: Action Plan proposal for reforming Malta's maritime skills provision (Output 6), OECD, Paris, https://www.oecd.org/content/dam/oecd/en/about/programmes/dq-reform/malta/action-plan-proposal-for-reforming-malta-maritime-skills-provision.pdf (accessed on 16 April 2026).
+
+OECD (2025), Shaping Malta's Future Through a National Skills Strategy and Targeted Maritime Sector Measures: Analysis Report (Output 2), OECD, Paris, https://www.oecd.org/content/dam/oecd/en/about/programmes/dg-reform/malta/Analysis-Report.pdf.
+
+OECD (2025), Shaping Malta's Future Through a National Skills Strategy and Targeted Maritime Sector Measures: Results of the analysis for Malta's maritime sector (Output 4), OECD, Paris, https://www.oecd.org/content/dam/oecd/en/about/programmes/dg-reform/malta/results-of-the-analysis-for-malta-maritime-sector.pdf (accessed on 16 April 2026).
+
+OECD (2024), Insights from Skills Strategies in the European Union: Lessons Learnt for Developing and Implementing Effective Skills Policies, OECD Skills Studies, OECD Publishing, Paris, https://doi.org/10.1787/0bf9e78e-en.
+
+OECD (2024), Technical Support for the Development of a National Skills Strategy for the Republic of Bulgaria, OECD Skills Studies, OECD Publishing, Paris, https://doi.org/10.1787/cedb544e-en.
+
+OECD (2023), Passport for Work, OECD, Paris, https://www.oecd.org/en/publications/providing-local-actors-with-case-studies-evidence-and-solutions-places\_eb108047-en/passport-for-work\_65e0aac2-en.html. [25]
+
+OECD (2023), PISA 2022 Results (Volume I): The State of Learning and Equity in Education, PISA, OECD Publishing, Paris, https://doi.org/10.1787/53f23881-en.
+
+OECD (2023), Policy monitoring and evaluation, https://www.oecd.org/en/topics/public-policy-monitoring-and-evaluation.html (accessed on 9 December 2025). [17]
+
+OECD (2021), Applying Evaluation Criteria Thoughtfully, OECD Publishing, Paris, [19] https://doi.org/10.1787/543e84ed-en.
+
+OECD (2021), Incentives for SMEs to Invest in Skills: Lessons from European Good Practices, [20] Getting Skills Right, OECD Publishing, Paris, https://doi.org/10.1787/1eb16dc7-en.
+
+OECD (2021), OECD Skills Strategy Lithuania: Assessment and Recommendations, OECD Skills Studies, OECD Publishing, Paris, https://doi.org/10.1787/14deb088-en. [22]
+
+OECD (2020), Improving Governance with Policy Evaluation: Lessons From Country Experiences, OECD Public Governance Reviews, OECD Publishing, Paris, https://doi.org/10.1787/89b1577d-en. [18]
+
+OECD (2019), OECD Skills Strategy 2019: Skills to Shape a Better Future, OECD Publishing, Paris, https://doi.org/10.1787/9789264313835-en. [12]
+
+## Notes
+
+$^{1}$ In Malta, awards are certifications for programmes with less than the required number of European Credit Transfer and Accumulation System (ECTS) credits to be considered a qualification at a specific MQF level. Awards are equivalent to micro-credentials and are also known as short courses (MFHEA, 2024 $^{[21]}$ ).
+
+$^{2}$ Workplace productivity practices are defined as practices that aim to improve work organisation and job design (e.g. teamwork, autonomy, task discretion, mentoring, job rotation, applying new learning), as well as management practices (e.g. employee participation, incentive pay, training practices, flexibility in working hours) (OECD, 2019 $^{[12]}$ ; OECD, 2021 $^{[22]}$ ; Johnston and Hawke, 2002 $^{[23]}$ ). For a more detailed discussion, please consult Recommendation 24 in Chapter 2.
+
+$^{3}$ Skills cards are tools that capture formal, non-formal, and informal learning outcomes through standardised assessments, promoting a skill-based approach to hiring. They help strengthen skills utilisation by verifying individuals' skills for work in specific industries and linking them to sectors with labour shortages (OECD, 2023[25]; ILO, 2023[24]). For a more detailed discussion, please consult Recommendation 26 in Chapter 2.
+
+## 2 Policy recommendations and implementation plan for Malta
+
+This chapter sets out the 30 policy recommendations of the National Skills Strategy, structured around eight priority topics. The recommendations address key challenges in Malta's skills system and are informed by desktop research, consultations with government and non-government stakeholders, and international good practices. These include lessons from EU Member States as well as selected comparison countries that share similarities with Malta, such as Singapore as a small island state. This chapter also presents the plan for implementation plan, by specifying for each recommendation the proposed roles, timelines, relative cost, and potential funding sources.
+
+## Priority Topic 1: Identifying skills needs through better assessment, forecast and foresight exercises
+
+Skills mismatches and shortages are widespread across European Union (EU) and OECD countries, as labour markets adapt to global megatrends. Addressing these challenges requires reliable and timely intelligence on current and future skills needs. Skills assessment and anticipation (SAA) exercises provide such intelligence through consistent and systematic methodologies (OECD, 2016[1]; Cedefop, 2024[2]). This evidence enables policymakers to identify gaps and design targeted, cost-efficient interventions that reduce skills shortages and boost national competitiveness. SAA is an important foundation for a comprehensive skills strategy and its results are applied in multiple ways: informing learners' learning choices through career guidance (see Priority Topic 2) and awareness raising initiatives (see Priority Topic 5); developing training in priority skilling areas (see Priority Topic 4); accelerating the recruitment of workers with in-demand skills (see Priority Topic 7); and updating occupational standards (see Priority Topic 8) (OECD, 2016[1]).
+
+In Malta, strengthening national capacity for SAA has been consistently identified by stakeholders as a top priority and is a stated objective in several strategic policy documents. Multiple actors already conduct SAA activities, including skills assessment (e.g. the Malta Skills Survey by the National Statistics Office (2023[3]); the ICT Skills Demand and Supply Monitor by the eSkills Malta Foundation (2021[4])) and anticipation (e.g. the skills forecast in the National Employment Policy 2021-2030 by the Ministry for Finance (2021[5])). However, these initiatives lack consistency and continuity over time, and Malta has yet to establish a national SAA methodology to ensure regular, comparable and actionable skills intelligence. Governance arrangements also remain fragmented, with unclear responsibilities and priorities (OECD, 2025[6]).
+
+Collecting and analysing skills intelligence is a complex task for many governments but remains essential given persistent mismatches between supply and demand. Such mismatches can lead to underutilisation of human capital with negative implications for productivity, job satisfaction, and the returns on public and private investment in education and training (Malta National Statistics Office, 2023[3]; OECD, 2025[6]; Cedefop, 2016[7]). In Malta, $60\%$ of foreign direct investors cite skills shortages as the greatest risk to the country's economic attractiveness over the next three years (see Figure 2.1).
+
+Figure 2.1. Greatest perceived risks to Malta's economic attractiveness, 2025  
+![](images/defd7c71a2006b3d50068327bfcc561bae864c1fafa4d72557db99560e9e303a.jpg)  
+Note: Based on survey data from 120 respondents (existing foreign direct investors) between May and July 2025.  
+Source: EY (2025[8]), Future realised: EU Attractiveness Survey Malta, www.ey.com/content/dam/ey-unified-site/ey-com/en-mt/events/2025/malta-attractiveness-report-2025.pdf.
+
+To better identify skills needs through enhanced assessment, forecast and foresight exercises, the TSI project team recommends: 1) establishing the Malta Skills Observatory as a dedicated working group to oversee a coherent approach to skills assessment and anticipation (SAA); 2) designing a national SAA methodology and strengthen strategic foresight capacity to identify skills needs in line with national policy frameworks; and 3) introducing sectoral and firm-level SAA methodologies to provide more nuanced, localised assessments of skills demand.
+
+## Recommendation 1: Establish the Malta Skills Observatory as a dedicated working group to oversee a coherent approach to skills assessment and anticipation (SAA)
+
+It is recommended that Malta establish the Malta Skills Observatory, a dedicated SAA working group that is led by the National Skills Council and includes key government and non-government stakeholders. Tasked to strengthen co-ordination and governance of skills intelligence, the group is expected to meet regularly and deliver tangible outputs to guide evidence-informed policy and education planning.
+
+## Description
+
+Countries across the EU and OECD with well-developed skills intelligence systems tend to share several common features. These include clear governance frameworks with well-defined institutional roles and responsibilities; mechanisms for collaboration at both strategic and operational levels; shared visions and workplans supported by long-term funding; robust legal frameworks that safeguard data and build trust; and a strong focus on the needs of stakeholders and end-users (Barnes et al., 2023[9]; OECD, 2024[10]; OECD, 2020[11]). Skills information is most effectively used in policymaking when supported by strong co-ordination among the actors responsible for designing and implementing interventions (OECD, 2016[1]).
+
+For Malta, the first step towards strengthening SAA capacity is to establish a dedicated working group responsible for developing, implementing and maintaining a national SAA framework, underpinned by stable funding. Similar bodies exist in other OECD and EU countries – for example, Finland's Expertise Foresight Forum (Osaamisen Ennakointifoorumi), which brings together education and labour market stakeholders to analyse future skills needs and identify corresponding education and training opportunities (see Box 2.1).
+
+The SAA working group in Malta could be referred to as the Malta Skills Observatory to distinguish it from the Malta Education Foresight Forum, a project under the Directorate for Planning and Strategic Foresight (MEYR, 2025[12]). Furthermore, the establishment of the Malta Skills Observatory can promote alignment with the governance structure of the EU Union of Skills, which includes a European Skills Intelligence Observatory as a main element (MEYR, 2025[12]; European Commission, 2025[13]).
+
+It is recommended that the members meet regularly – at least quarterly – and report systematically on progress. The Observatory could also function in a dynamic and agile manner by convening urgently to discuss rapidly evolving skills issues as needed. In addition, members could be tasked with delivering tangible outputs that support the management of the SAA system. These could include: a common glossary of skills-related terms to ensure consistency across SAA exercises; periodic progress reports on implementation; systematic processing of data and input into the dynamic skills intelligence platform (see Recommendation 4); and evidence to inform the development of specialised training programmes for in-demand skills (see Recommendation 16). The Malta Skills Observatory could also take an advisory role by using SAA results to provide insights and guidance to policymakers. This could include producing regularly updated lists of training opportunities linked to shortage occupations that could be eligible for additional incentives (see Recommendation 19).
+
+## Box 2.1. Finland: Co-ordinating national skills intelligence through the Expertise Foresight Forum
+
+Finland's Expertise Foresight Forum (Osaamisen ennakointifoorumi, OEF) is a national co-ordination body that brings together expertise from across government, education and the labour market to anticipate future skills needs. Chaired by the Ministry of Education and Culture and the Finnish National Board of Education, the OEF ensures a structured and collaborative approach by uniting experts in education and regional foresight with representatives of employers, employees, entrepreneurs, vocational education providers, higher education institutions and teachers.
+
+The OEF's work focusses on medium- and long-term skills trends, with results disaggregated by educational and occupational field. Findings are published through the education administration's statistical service Vipunen, providing accessible and reliable intelligence for policymakers, educators and employers. Beyond producing data, the OEF develops initiatives and policy proposals that help the education and training system adapt to emerging skills needs.
+
+Source: Finnish National Board of Education (2025[14]), Osaamisen ennakointifoorumi #OEFoorumi, www.oph.fi/fi/palvelut/osaamisen-ennakointifoorumi-oef; Finnish National Board of Education (2024[15]), Members of the Expertise Foresight Forum 2021-2024, www.oph.fi/fi/palvelut/osaamisen-ennakointifoorumin-jasenet-2021-2024; Finnish National Board of Education (2025[16]), Forecast results, www.oph.fi/fi/tietoaineistot-ja-analyysit/ennakointi/ennakointituloksia.
+
+## Plan for implementation
+
+The NSC could take the lead in establishing the Malta Skills Observatory, given its role as the primary government body responsible for steering skills policy. It is recommended that the NSC acts as the MSO's lead authority, with other members of the working group comprising:
+
+\- Ministries: Ministry for Finance (MFIN, Economic Policy Department [EPD]), Ministry for Education, Youth, Sport, Research and Innovation (MEYR, Directorate for Digital Literacy and Transversal Skills, Directorate for Quality and Standards in Education [DQSE], Directorate for Planning and Strategic Foresight [DPSF]).
+
+\- Government agencies: Malta Further and Higher Education Authority (MFHEA), Jobsplus, Malta Enterprise.
+
+\- Social partners: Malta Chamber of Commerce, Enterprise and Industry, Malta Chamber of SMEs, Malta Employers' Association (MEA), and other representatives of the National Career Guidance Network (NCGN). $^{1}$
+
+• Data providers: National Statistics Office (NSO).
+
+The MSO could be established in Phase 1 (2026-2027). This would allow its SAA activities to inform other recommended initiatives, including the identification of priority areas for specialised postgraduate qualifications or awards (see Recommendation 16), as well as efforts to strengthen existing incentives for adult learners to encourage training in areas of skills shortage (Recommendation 19).
+
+The relative costs of establishing the MSO are expected to be low, but administrative complexity is anticipated to be high. This reflects the substantial staff time required to engage all relevant stakeholders and to put in place an effective governance structure. Following the establishment of the MSO, further costs associated with fulfilling its mandate – such as conducting SAA exercises – are expected. These will primarily be administrative, including staff time for organising regular meetings, reporting on progress, processing data and inputs. Funding for establishing the MSO could be provided by the NSC, with partner entities contributing staff time and, where appropriate, additional administrative support.
+
+An overview of the plan for implementation is presented in Table 2.1.
+
+Table 2.1. Implementation plan for Recommendation 1
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>1. Establish the Malta Skills Observatory as a dedicated working group to oversee a coherent approach to SAA</td><td>Policy owner: NSCMembers: MFIN (EPD); MEYR (DQSE; DPSF); MFHEA; Jobsplus; NSO; Malta Enterprise; Malta Chamber of Commerce; Enterprise and Industry; Malta Chamber of SMEs; Malta Employers’ Association (MEA); and other representatives of the National Career Guidance Network (e.g. Malta Career Guidance Association)</td><td>Phase 1 (2026-2027)</td><td>Relative cost: lowAdministrative complexity: high</td><td>NSC budget</td></tr></table>
+
+## Recommendation 2: Design a national SAA methodology and strengthen strategic foresight capacity to identify skills needs in line with national policy frameworks
+
+It is recommended that Malta implement a unified national SAA methodology and strengthen strategic foresight in government to anticipate skills needs, improve labour market responsiveness, and guide long-term education and workforce planning in line with Malta Vision 2050 and Malta's Smart Specialisation Strategy.
+
+## Description
+
+National-level SAA exercises analyse economy-wide trends in skills supply and demand – often using projections and forecasts – to provide strategic intelligence that informs national labour market and education policies. These exercises are a core feature of modern skills systems, providing essential evidence for national policy decisions and long-term planning. Common methodologies include quantitative forecasting models, national surveys and scenario development, which help assess gaps between skills supply and demand across sectors and occupations (Wilson, 2016[17]; Eurostat, 2016[18]).
+
+Malta has applied a variety of national-level SAA approaches, including statistical models, cross-sectoral surveys and cross-occupational studies (see Table 2.1 in the Analysis Report) (OECD, 2025[6]). While this diversity of methods has generated valuable insights, the absence of a unified national methodology makes it difficult to compare results across exercises and track trends over time (OECD, 2025[6]).
+
+To address this gap, it is recommended that Malta adopt a systematic, unified national SAA methodology. This could be part of a broader three-tier framework that also combines sectoral and local-level exercises (see Recommendation 3), which could be based on the framework applied in Flanders (Belgium) – see Box 2.1 in the Analysis Report (OECD, 2025[6]).
+
+The unified national methodology for SAA could align with national policy frameworks, such as Malta Vision 2050, by providing insights into the skills that need to be developed to support these strategic priorities. It is also important for the national methodology to assess both skills demand and supply, capture short- and long-term needs, and be conducted regularly (e.g. every two to three years) to reflect structural changes in the labour market (European Training Foundation, Cedefop and ILO, 2016[19]; TSI consultations of stakeholders, 2025[20]; OECD, 2016[1]). It could also leverage existing models and tools (e.g. the Structural Annualised Econometric Model for Malta [SAMM] model) and align with EU-level frameworks such as DigComp and the European e-Competence Framework (TSI consultations of stakeholders, 2025[20]; Joint Research Centre: EU Science Hub, 2025[21]; European Commission, 2024[22]).
+
+Strengthening Malta's national SAA capacity also requires enhancing the strategic foresight capacity of central government agencies through targeted training and stronger collaboration with institutions possessing relevant expertise (e.g. EU's Competence Centre on Foresight (2025[23]); OECD's Strategic Foresight Unit (2025[24])). Embedding foresight into Malta's SAA system would enable the country to better anticipate the skills implications of global megatrends such as the digital and net-zero transitions, manage labour market risks, improve education system responsiveness, and seize opportunities aligned with Malta Vision 2050 and Malta's Smart Specialisation Strategy (OECD, 2024[25]; OECD, 2025[26]).
+
+Although strategic foresight was not formally applied in this stage of the TSI project, its national relevance for skills and workforce planning in Malta is widely recognised. Malta already has a strong foundation. With OECD support, institutional capacity for strategic foresight has been piloted in the MEYR, focussing on person-centred, futures-oriented initiatives for the education system (see Box 2.2) (OECD, 2025[26]). This pilot could be scaled and replicated across other skills-related policy areas.
+
+## Box 2.2. Malta: Enhancing strategic foresight at MEYR to anticipate future education needs
+
+In Malta, strengthening institutional capacity for strategic foresight and anticipatory governance was identified as a priority in the National Post-Pandemic Strategy 2021. To move from ad hoc exercises in isolated policy areas to a more systemic approach, the OECD implemented its LIMinal project in Malta, Lithuania and Italy to identify areas for improvement.
+
+In Malta, the OECD worked with the MEYR and the Office of the Prime Minister (OPM) to develop Futures Personas – character archetypes representing stakeholders and illustrating how their needs, behaviours, and challenges could evolve in response to future trends. For example, increased migration could reshape the learning environment; envisioning a student Futures Persona allows policymakers to anticipate emerging needs for both students and teachers and integrate them into policy, strategy, and service design.
+
+This scenario-building exercise enabled Maltese policymakers to explore the future of the education system, generating actionable insights at a personal and systemic level. These insights informed the assessment of the National Education Strategy and suggested areas for improvement. While the pilot focussed on education, the methodology has clear potential for application across other policy areas, supporting more proactive, anticipatory governance in Malta.
+
+Source: OECD (2025[26]), Building Anticipatory Capacity with Strategic Foresight in Government: Lessons from Lithuania, Italy and Malta, https://doi.org/10.1787/d7eb0bb6-en.
+
+## Plan for implementation
+
+Following the establishment of the Malta Skills Observatory (Recommendation 1), the NSC, as its lead authority, could oversee the development of a unified national SAA methodology. The elements of the SAA methodology could be elaborated in consultation with and aligned with input from members of the MSO.
+
+Since the unified national methodology for SAA could build on existing data, models, tools and initiatives, it is important to engage with responsible actors. These are the Economic Policy Department (EPD) within the Ministry of Finance, given that they developed models such as the Structural Annualised Econometric Model for Malta (SAMM). The NSO's data expertise will also be essential to inform the national methodology.
+
+The establishment of the MSO (Recommendation 1) must precede the development of a national SAA methodology, as the MSO will provide the framework and foundation for any future SAA exercises. Development could begin once the MSO is operational, likely in the early part of Phase 2 (2028-2030).
+
+The relative costs associated with developing the unified national SAA methodology are expected to be moderate. However, costs will depend on the extent to which existing models can be adapted, whether new models need to be developed, or whether collaborations with external providers are required during implementation. Depending on these decisions, relative costs may be more substantial. Funding could be provided by the NSC as policy owner. Administrative complexity is also anticipated to be high, reflecting the substantial staff time required to ensure the effective functioning of the working group.
+
+An overview of the plan for implementation is presented in Table 2.2.
+
+Table 2.2. Implementation plan for Recommendation 2
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>2. Design a national SAA methodology and strengthen strategic foresight capacity to identify skills needs in line with national policy frameworks</td><td>Policy owner: NSC Partners: MFIN (EPD); NSO</td><td>Phase 2 (2028-2030)</td><td>Relative cost: moderate Administrative complexity: high</td><td>NSC budget</td></tr></table>
+
+## Recommendation 3: Introduce sectoral and firm-level SAA methodologies to provide more nuanced, localised assessments of skills demand
+
+## Description
+
+Complementing national exercises, Malta's SAA system could benefit from incorporating sectoral and local methodologies. While national-level analyses offer an overarching view of labour market trends, sectoral and local approaches provide a more detailed understanding of current and emerging skills needs in specific industries and communities.
+
+Sectoral exercises assess skills supply and demand by sector and are often conducted by or for sectoral bodies (see Recommendation 29). These assessments examine emerging occupations, skills required, and the training system's capacity to meet industry needs. In addition to sectors, assessments can also focus on specific regions, clusters, value chains, or innovation areas (OECD, 2024[27]; European Training Foundation, Cedefop and ILO, 2016[19]).
+
+At the firm level, skills gaps within individual companies can be evaluated through audits, employer and employee consultations, and digital data collection. Such firm-level assessments have multiple benefits for various stakeholders. For policymakers, these firm-level SAA exercises collect information from firms on vacancies and recruitments, helping identify skills that are hard to source in the labour market (OECD, 2016[1]; OECD, 2024[27]). For firms themselves, these assessments can highlight internal skills gaps and inform human resources strategies, such as targeted training, recruitment, or improved workplace practices (see Recommendations 22 and 24) (OECD, 2024[28]).
+
+Integrating sectoral and local analyses in its SAA methodology can enable Malta to generate granular skills intelligence tailored to different target groups (e.g. individuals, firms, sectors) and purposes, including HR policy development, training alignment, and evidence-informed policymaking (OECD, 2016[1]; OECD, 2024[27]). France provides a successful example, combining macroeconomic forecasts with sectoral surveys and qualitative information to reach sector-wide agreement on future training and qualifications (see Box 2.3) (European Training Foundation, Cedefop and ILO, 2016[19]).
+
+In Malta, sectoral and local SAA is particularly important for emerging areas such as green skills and sustainability and should align with policy priorities identified in Malta Vision 2050 and the
+
+Smart Specialisation Strategy. Building on this broader approach, it is recommended that Malta pilot a sectoral methodology for skills forecasting in the maritime industry. The pilot would examine both short- and long-term projections of the skills required across the sector, highlighting critical bottlenecks and workforce mismatches.
+
+Effective implementation of SAA exercises – both at the national level and in the maritime pilot – depends on robust engagement with a broad range of stakeholders (e.g. employees, students, employer representatives, and academic experts) through surveys, focus groups, and workshops. To ensure consistency and data quality, non-governmental stakeholders could be provided with guidance on how to complete SAA questionnaires, for example via clear instructions, easy-to-read communication materials, and short webinars. Disaggregating data by key characteristics (e.g. age, gender, education level) is essential to generate nuanced intelligence and design targeted interventions (TSI consultations of stakeholders, 2025[20]).
+
+Finally, reliable data infrastructure underpins all levels of SAA. While Malta has significant experience with surveys, investing in improved national registers is increasingly important. Comprehensive and continuously updated registers help overcome challenges such as small sample sizes, outdated contact information, and response fatigue among individuals and enterprises (OECD, 2025[6]). Enhancing national registers could enable Malta to conduct SAA exercises more efficiently and cost-effectively, as the registers are comprehensive – containing up-to-date contact information for firms and individuals – and continuously maintained (ILO, 2025[29]).
+
+## Box 2.3. France: Anticipating skills needs at the sectoral level
+
+In France, the government has made regional authorities responsible for implementing vocational education policy, including skills anticipation and matching. Government-funded contracts are awarded to various stakeholders – such as trade unions, research observatories, as well as AFPA, the national agency for adult learning – to conduct research on medium-term skills needs and propose measures to address them.
+
+Studies are carried out at the sectoral level or by occupational group in industrial sectors (e.g. automotive, plastics, chemicals, food, insurance, and computing). Key activities include surveys and qualitative analyses to identify emerging skills needs, producing statistical databases, and mapping occupations. For instance, AFPA analyses changes to jobs and skills, including by conducting systematic on-the-spot observation missions in workplaces, where they analyse tasks of workers. Sector-level insights are combined with macroeconomic forecasts to project skills demand and supply within each sector.
+
+These analyses inform sectoral interventions and enable the Ministry of Labour to identify broader trends shaping skills and qualifications, supporting the development of sectoral training plans in collaboration with social partners.
+
+Source: European Training Foundation, Cedefop and ILO (2016[19]), Guide to anticipating and matching skills and jobs: Working at sectoral level, www.cedefop.europa.eu/files/2217\_en.pdf.
+
+## Plan for implementation
+
+The NSC could take the lead in this initiative given its leading role in the MSO and its responsibility for overseeing the development of a unified national SAA methodology.
+
+To ensure alignment with existing national and sector-specific initiatives, it would be important to co-ordinate closely with relevant partners, including stakeholders representing other key sectors. In particular, the MFIN (EPD) could be engaged as a partner, given its involvement in the national SAA methodology (as described in Recommendation 2). The enhanced thematic committees of the Smart Specialisation Strategy as described in Recommendation 29 could be invited to take the lead in developing SAA methodologies for their respective sectors and would act as partners under this recommendation. These alliances would bring together key sectoral stakeholders, including industry representatives, employer organisations, and academic experts, thereby combining sector-specific knowledge with technical expertise.
+
+As the sectoral skills forecast study is recommended to be piloted in the maritime sector (see Action 5.2 in the Action Plan proposal for reforming Malta's maritime skills provision [Output 6]), the maritime sector and its Maritime thematic committee will be at the forefront of efforts to conduct skills forecast studies. Malta's maritime sector thus serves as a reference point not only for international peers, but also for other sectors (such as the Financial and Aviation sectors) in Malta seeking to strengthen their resilience and future readiness.
+
+The establishment of the MSO (Recommendation 1), as well as the design of a national SAA methodology (Recommendation 2) could precede this recommendation. Implementation may also benefit from experience gained through the maritime sectoral skills forecast, which is scheduled for Phase 2 (2028-2030), after the maritime thematic committee is given its enhanced mandate during Phase 1 (2026-2027). It is, therefore, expected that Phase 2 (2028-2030) will serve as a scoping phase to identify relevant sectors and develop sectoral methodologies, while implementation is likely to occur in Phase 3 (2031-2035).
+
+As with Recommendation 2, the relative costs associated with introducing sectoral and firm-level SAA methodologies are expected to be moderate and administrative complexity is anticipated to be high. This is due to substantial staff time required to ensure that sectoral and local SAA methodologies effectively engage with a broad range of stakeholders through surveys, focus groups, and workshops. Potential investment in enhanced data infrastructure to support SAA exercises, including improvements to the national register, could entail additional costs depending on the scope and extent of the changes required.
+
+Funding could be provided through the NSC budget, supplemented by relevant European funds such as ESF+ (for upskilling and reskilling, European Regional Development Fund [ERDF] (for infrastructure, data systems, digital platforms) and Horizon Europe (for research related to future skills modelling and forecasting). For reference, the “Strategic Skills Forecast” (SCOPE) projects in Flanders – which offer a useful example of sectoral-level skills anticipation and forecasting and form part of a broader skills forecasting framework at different levels, and which could serve as a template for Malta (see Box 2.1 in the Analysis Report (OECD, 2025[6])) – also relied on ESF+ funding.
+
+An overview of the plan for implementation is presented in Table 2.3.
+
+Table 2.3. Implementation plan for Recommendation 3
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>3. Introduce sectoral and local SAA methodologies to provide more nuanced, localised assessments of skills demand</td><td>Policy owner: NSCPartners: Thematic committees (see Recommendation 29); MFIN (EPD)</td><td>Phase 2 (2028-2030): Scoping and development of sectoral methodologiesPhase 3 (2031-2035): Implementation</td><td>Relative cost: moderateAdministrative complexity: high</td><td>NSC budget; ESF+; ERDF; Horizon Europe</td></tr></table>
+
+## Priority Topic 2: Improving the dissemination of skills information and strengthening career guidance services
+
+Malta performs well in disseminating skills information and providing career guidance, with youth accessing services through schools via Personal, Social, and Career Development (PSCD) courses, and adults through Jobsplus centres and MEYR Lifelong Learning Centres (OECD, 2025[6]). However, many adults – particularly from disadvantaged groups – remain disengaged and unaware of available career guidance and skills intelligence. While 39% of adults with a tertiary education in Malta have searched for information on learning possibilities, only 8% of those who have completed less than primary school have done so (see Figure 2.2) (Eurostat, 2022[30]). Moreover, there is room to better integrate SAA results (see Priority Topic 1) with the career guidance system, as the use of SAA information is limited among career guidance professionals. Skills information is fragmented across multiple websites, reducing accessibility for career advisors and the public (OECD, 2025[6]; TSI consultations of stakeholders, 2025[20]).
+
+Figure 2.2. Share of adults aged 25 to 64 years who searched for information on learning possibilities, 2022  
+![](images/a9585c2283048bfdd97ae2ff50fd3820af77588d51e577d8259fc50fb1cd4eed.jpg)  
+Source: Eurostat (2022[30]), Search for information on learning possibilities by type of learning and educational attainment level, https://ec.europa.eu/eurostat/databrowser/view/trng\_aes\_184/default/table?lang=enandcategory=educ.educ\_part.trng.trng\_aes\_12m.trng\_aes\_12m1.
+
+StatLink https://stat.link/jo9e6h
+
+Improving the dissemination of skills intelligence through inclusive career guidance is critical for achieving Malta's objective of strengthening the skills of its workforce. Career guidance enables students and adult learners to make informed decisions about training and employment, helping them navigate an increasingly complex world of education and work in the midst of the digital and net-zero transitions (OECD, 2021[31]). Equally important is ensuring that skills information is accurate, timely, and relevant for key actors involved in delivering guidance services. These actors include career guidance professionals, parents, HR personnel, and policymakers, all of whom play a critical role in shaping learners' understanding of training and employment opportunities (Cedefop, 2024[2]; Barnes et al., 2020[32]).
+
+To better improve the dissemination of skills information and strengthen career guidance services, the TSI project team recommends: 1) launching a dynamic skills intelligence platform to disseminate timely, regularly updated insights on evolving skills needs; 2) publishing the Employment and Skills Barometer in partnership with Jobsplus to provide a more detailed analysis of skills trends in an accessible format; 3) exploring the introduction of a universal career guidance service for all individuals to support job mobility and progression; and 4) strengthening parents' involvement in career guidance through enhanced school engagement mechanisms.
+
+## Recommendation 4: Launch a dynamic skills intelligence platform to disseminate timely, regularly updated insights on evolving skills needs
+
+It is recommended that Malta consolidate its career guidance and skills information into a single, interactive digital platform, offering labour market data and SAA results alongside user-friendly tools for skills assessment. The platform could offer dynamic, tailored interfaces for both the general public and career guidance professionals. To maximise accessibility, it could be made available in mobile-friendly formats and include multilingual features.
+
+## Description
+
+Many OECD and EU countries have consolidated skills information into single online platforms to improve accessibility and usability for diverse end-users. These portals typically provide tools to help users understand their skills profiles, indicators of skills supply and demand, and information on available education and training options. High-quality platforms integrate these features, allowing users to explore occupations or sectors of interest and identify the training needed to acquire the relevant skills (OECD, 2021[31]). To be effective, skills information and assessment tools must be tailored to the needs and expertise levels of different users (Cedefop, 2024[2]).
+
+In Malta, career guidance information is widely available online or on request but is not yet consolidated into a single, user-friendly portal, making access difficult for many users (OECD, 2025[6]). To address this, Malta could develop a dynamic skills information platform with interactive features, using web scraping $^{2}$ to monitor online job vacancies. Data from websites would be automatically extracted and converted into structured information. Stakeholders have expressed wide support for this initiative, as it can help learners navigate a complex, jargon-heavy information landscape and encourage learning and career transitions throughout life (TSI consultations of stakeholders, 2025[20]).
+
+It is important for the dynamic skills intelligence platform to present SAA results (see Priority Topic 1) in clear, accessible language, with two interfaces: a simplified version for the general public and a technical version for career guidance professionals. A useful reference is Australia's BEYOND Digital Careers Platform, which offers tailored interfaces for schools, students, and parents (see Box 2.4) (Beyond, 2025[33]). Making both interfaces dynamic and interactive could allow users to filter by sector, occupation, qualification level, age, labour market profile (e.g. employed, inactive, mid-career), and desired skills. In addition to labour market insights from SAA exercises, the platform could also provide tools to assess learners' current skills levels, identify required qualifications for their desired occupations, and offer personalised links to training pathways and incentives. Maximum accessibility of the platform could be achieved through mobile-friendly formats and availability in Malta's most commonly used languages.
+
+Box 2.4. Australia: Customising career guidance for diverse users through the BEYOND Digital Careers Platform
+
+The BEYOND Digital Careers Platform is a free digital tool designed by education professionals and career development specialists to support informed career and education planning. The platform has three separate interactive and integrated versions:
+
+\- For schools: Designed for career guidance professionals, the school interface includes a student management system with detailed profiles, individual and cohort reports, tools to map current and future learning pathways, lists of preferred courses, and lesson plans to support career education.
+
+\- For students: The student interface allows users to build a profile with documents such as certificates and resumes, explore industries of interest, set career goals, and take interactive tests to identify careers suited to their interests and personality. It also provides personalised information on education and training options, apprenticeships, and entry-level job opportunities, with access to expert support through live webinars.
+
+\- For parents: This interface helps parents guide their children through career exploration, offering step-by-step roadmaps, personalised resources, expert-led webinars, and opportunities to connect with other parents and mentors.
+
+Source: OECD (2024[34]), BEYOND – Online Career Guidance Platform: Case study, www.oecd.org/en/publications/observatory-on-digital-technologies-in-career-guidance-for-youth-odicy\_e098122e-en/beyond-online-careers-guidance-platform\_8af47744-en.html; Beyond (2025[33]), Homepage BEYOND, https://welcome.beyond.edu.au/.
+
+## Plan for implementation
+
+It is recommended that the NSC take the lead, with the NCGN acting as co-lead in developing a dynamic skills information platform. The NCGN is a strategic co-policy owner, given its mandate to strengthen career guidance across all sectors, education, employment, and industry. The platform could serve several end-users, including job seekers of all skill levels, employers, career guidance professionals and policymakers.
+
+The NSC and the NCGN could partner with other stakeholders to ensure that the platform serves its purpose. These stakeholders include Jobsplus, the Malta Chamber of Commerce, Enterprise and Industry, the Malta Chamber of SMEs, Euroguidance Malta and the Wellbeing Services Directorate (MEYR), who could be asked to provide feedback throughout the process of developing the platform.
+
+The platform requires the development of digital infrastructure, and sufficient time should be allocated to secure the resources necessary for effective implementation. In addition, organisations operate within existing commitments, timelines, and deadlines, which may influence the prioritisation of an initiative such as the development of a dynamic skills intelligence platform.
+
+Taking these factors into account, the platform's development and rollout could therefore be scheduled for Phase 2 (2028-2030). Additional data and elements could be incorporated as they become available, such as results from the SAA exercises (Priority Topic 1, Recommendations 2 and 3), which will likely occur during Phase 3 (2031-2035).
+
+Relative costs associated with the platform are expected to be moderate. Costs are expected to arise from website development, the integration of all elements and ongoing platform maintenance. Administrative complexity is also expected to be moderate, as the platform will need to meet the needs of various stakeholders and may require regular evaluation and adaptation. As policy owner, the NSC could provide the main funding.
+
+An overview of the plan for implementation is presented in Table 2.4.
+
+Table 2.4. Implementation plan for Recommendation 4
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>4. Launch a dynamic skills intelligence platform to disseminate timely, regularly updated insights on evolving skills needs</td><td>Policy owner: NSC; NCGNPartners: Jobsplus; Malta Chamber of Commerce, Enterprise and Industry; Malta Chamber of SMEs; Euroguidance Malta; MEYR (Wellbeing Services Directorate)</td><td>Phase 2 (2028-2030): Establishment of the platformPhase 3 (2031-2035): Incorporation of additional elements</td><td>Relative cost and administrative complexity: moderate</td><td>NSC budget</td></tr></table>
+
+Recommendation 5: Publish the Employment and Skills Barometer in partnership with Jobsplus to provide a more detailed analysis of skills trends in an accessible format
+
+It is recommended that Malta publish the barometer every two years to summarise skills and employment trends, using data collected by the NSO and Jobsplus in addition to employer surveys. The barometer could also include labour market trends derived from national, sectoral and local SAA exercises.
+
+## Description
+
+In the early 2000s, one of the principal outputs of Malta's skills intelligence system was the Employment Barometer. Published by the public employment service (then named the Employment and Training Corporation), the barometer aimed to provide short-term (i.e. six months) indicators for potential skills gaps and employers' needs. The findings of the barometer were based on employer survey responses, providing detailed insight into the main occupations sought by employers over the next six months, recruitment challenges faced by employers, and their strategies for addressing them. In addition, the barometer also examined social partners' perceptions of how the labour market is evolving and how employment trends are shaping their operational needs, as well as provided suggestions on how employers could bridge skills gaps through training.
+
+To further reinforce Malta's skills intelligence system, NSC and Jobsplus are planning to relaunch the barometer, renaming it as the Employment and Skills Barometer. The new barometer will summarise skills and employment trends every two years, most likely using data already being collected by the NSO from the general public and occupational data from Jobsplus, rather than drawing solely on employer surveys.
+
+In addition, the Barometer could also consider labour market trends derived from national, sectoral and local SAA exercises (see Recommendations 2 and 3). The Employment and Skills Barometer can offer a more detailed assessment of skills trends, complementing quantitative indicators from the dynamic skills intelligence platform (see Recommendation 4) with qualitative insights into stakeholders' challenges and the strategies they use to address them. In addition, by taking the format of a user-friendly publication, the Employment and Skills Barometer can help make labour market-related trends more accessible and understandable for all.
+
+The reintroduction of the Employment and Skills Barometer also aligns Malta with other high-performing countries that demonstrate good practices in the realm of SAA, such as Singapore and its annual Skills Demand for the Future Economy Report. The report offers a detailed analysis on how various job roles are evolving over time and provides individuals with practical guidance on training pathways (see Box 2.5) (SkillsFuture, 2025[35]).
+
+## Box 2.5. Singapore: Providing an annual publication on local jobs and skills trends to inform career choices
+
+Published annually by SkillsFuture Singapore, the national agency for the promotion of lifelong learning, the Skills Demand for the Future Economy is a report summarising key job and skills trends in the local labour market. The report presents evolving workforce demands, using job posting data to analyse how skills requirements have shifted across occupations over the past five years. It is linked to the Jobs-Skills Portal, which provides datasets, dashboards and algorithms that allow users to further explore jobs and skills insights.
+
+In addition to skills intelligence, the report also examines five key factors individuals should consider when seeking new career opportunities: wages, demand for jobs, the growth of job roles, skills similarity (e.g. to allow user to assess the transferability of their current skills), and historical transitions (i.e. actual movement of workers from one job to another). It provides practical guidance on how adults can access training pathways leading to in-demand jobs, including resources to support skills development such as the Skills Future Series, a curated selection of short, industry-relevant training programmes focussed on in-demand skills in strategic sectors: Digital, Green, Care and Industry 4.0.
+
+Source: SkillsFuture (2025[35]), Skills Demand for the Future Economy Report, https://jobsandskills.skillsfuture.gov.sg/insights/sdfe.
+
+## Plan for implementation
+
+It is recommended that the NSC take the lead and Jobsplus act as co-lead in re-launching the Employment and Skills Barometer. It will complement the skills intelligence platform (see Recommendation 4) by providing a biennial detailed assessment of skills trends with additional qualitative insights. It is recommended that the NSC and Jobsplus both serve as policy owners, given that co-ordination between the two is already ongoing.
+
+The Barometer could be developed in partnership with other stakeholders, including the National Statistics Office and the Malta Council for Economic and Social Development (MCESD), given that it will present information derived from the NSO and employer surveys.
+
+The Employment and Skills Barometer will draw on information from national, sectoral and local SAA exercises (Recommendations 2 and 3), which are scheduled for implementation in Phase 2 (2028-2030). Given that the NSC and Jobsplus have already started co-ordination efforts to publish the Employment and Skills Barometer, its development and publication is expected for Phase 1 (2026-2027). Once more information becomes available from national, sectoral and local SAA exercises (see Recommendations 2 and 3), these could be incorporated in Phase 2 and beyond.
+
+Relative costs associated with the Employment and Skills Barometer are expected to be low, but administrative complexity is anticipated to be moderate. The main costs relate to staff time required for data collection and consolidation, analysis, and the drafting and publication of the report. Funding could be provided by the NSC and Jobsplus.
+
+An overview of the plan for implementation is presented in Table 2.5.
+
+Table 2.5. Implementation plan for Recommendation 5
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>5. Publish the Employment and Skills Barometer in partnership with Jobsplus to provide a more detailed analysis of skills trends in an accessible format</td><td>Policy owner: NSC; Jobsplus Partners: MCESD; NSO</td><td>Phase 1 (2026-2027): Development and Publication</td><td>Relative cost: low Administrative complexity: moderate</td><td>NSC budget; Jobsplus</td></tr></table>
+
+Recommendation 6: Explore the introduction of a universal career guidance service for all individuals to support job mobility and progression
+
+It is recommended that Malta introduce a centralised service that offers free, personalised career guidance support to all individuals regardless of their profile or employment status. Existing providers may play a role in delivering these services according to their target groups (e.g. Jobsplus for jobseekers). It is important for Malta to promote the service as an accessible, lifelong resource available throughout individuals' learning and working lives.
+
+## Description
+
+Career guidance services are crucial for promoting labour market integration and ensuring inclusive access to training and employment (European Commission, 2025[36]). In the context of the net-zero and digital transitions, career guidance can help individuals successfully navigate rapidly changing labour markets by providing information on emerging employment opportunities, flexible skilling pathways, and relevant training options and incentives (European Commission, 2025[36]; Euroguidance, 2022[37]). However, compared to career guidance services for youth, services for adults receive limited policy attention (OECD, 2021[31]).
+
+In Malta, career guidance is available for youth through the compulsory education system. For adults, Jobsplus and the Directorate for Lifelong Learning and Employability (DLE) within the MEYR offer programmes and conduct targeted outreach, especially for disadvantaged groups, in partnership with community social workers and various social partners (OECD, 2025[6]; NSC, 2025[38]). Post-secondary education institutions also organise open days and career fairs that attract adult learners, career changers, and jobseekers (TSI consultations of stakeholders, 2025[20]). Despite these services, only $23\%$ of working-age adults in Malta seek information on learning opportunities, below the EU average of $27\%$ (Eurostat, 2022[30]). At present, career guidance is perceived by many as a service for the youth or for disadvantaged groups, and uptake remains limited among employed adults and professionals (TSI consultations of stakeholders, 2025[20]).
+
+In response to these challenges, the National Strategy for Lifelong Learning 2023-2030 outlines several measures to expand adults' access to career guidance. These include strengthening the DLE's capacity within the MEYR to deliver more services, developing a marketing and outreach plan, establishing an independent adult guidance system, and increasing co-operation with industry representatives (MEYR, 2023[39]).
+
+Malta could build on these efforts by exploring the introduction of a universal career guidance scheme that is free and accessible to all individuals throughout their working lives. It could serve as a central access point for all individuals, regardless of their profile or employment status. A useful example is France's Conseil en évolution professionnelle (CEP) or Career Development Counselling, which offers free, personalised career guidance to all adults, whether they are employed, self-employed, seeking work, or retired. The CEP also supports students seeking employment, as well as early school leavers (see Box 2.6) (Service Public, 2025[40]).
+
+The scheme could be delivered in partnership with existing providers specialising in different target groups (e.g. Jobsplus for jobseekers, the Agency for the Welfare of Asylum Seekers [AWAS] for asylum seekers and refugees in Malta) (NSC, 2025[38]). To maximise uptake, it is important to promote the service as an accessible, lifelong resource for learners and workers alike, emphasising that career guidance is valuable for job mobility and career progression throughout professional life, not only during school-to-work transitions or periods of unemployment. The scheme could also be linked to the pilot individual learning accounts (ILAs), encouraging individuals to seek career guidance before selecting training options (see Recommendation 8).
+
+## Box 2.6. France: Providing universal access to career guidance through the Conseil en évolution professionnelle (CEP) or Career Development Counselling
+
+The Conseil en évolution professionnelle (CEP) or Career Development Counselling scheme was established by social partners in 2013 and formalised under Law No. 2014-288 of 2014 on Vocational Training, Employment and Social Democracy. The CEP provides free, personalised career guidance to help individuals define their professional goals, build a professional project, identify the required skills and qualifications needed, and access funding support.
+
+The CEP is available to employees (both in the public and private sectors), self-employed workers, artisans, persons with disabilities, retirees, students seeking employment and early school leavers. CEP support is delivered by designated institutions according to the individual's profile: regional career guidance operators (under the Avenir Actifs network) for private sector employees and self-employed workers; l'Association pour l'emploi des cadres (APEC) or the Association for the Employment of Managers for managers currently employed or seeking employment; France Travail (the public employment service) for jobseekers; and les Missions locales or local missions for youth.
+
+CEP support can be accessed during individuals' free time, i.e. outside of working hours for those who are employed, although sectoral or company agreements may permit use during working hours. There are no limits on the duration of participation. The CEP is linked to France's Compte Personnel de Formation (CPF) or Personal Training Account (see Box 2.8), in that individuals are encouraged to co-ordinate with CEP services when making informed choices about which training offers to prioritise.
+
+Source: Service Public (2025[40]), Conseil en évolution professionnelle (CEP), www.service-public.gouv.fr/particuliers/vosdroits/F32457; France Compétences (2025[41]), Mon conseil en évolution professionnelle, www.francecompetences.fr/reguler-le-marche/mon-cep/; Mon Compte Formation (2025[42]), Envie de me former, qui peut m'aider?, www.moncompteformation.gouv.fr/espace-public/envie-de-me-former-qui-peut-maider.
+
+## Plan for implementation
+
+It is recommended that the MEYR and its Wellbeing Services Directorate and Directorate for Lifelong Learning and Employability (DLE) take the lead on introducing the universal career guidance service. This would entail strengthening DLE's capacity, as outlined in the National Strategy for Lifelong Learning 2023-2030.
+
+It would be important to involve key partners at an early stage, including all members of the NCGN led by the NSC, as well as the Ministry for Inclusion and the Voluntary Sector, the Agency for the Welfare of Asylum Seekers, the Lino Spiteri Foundation, Agenzija Sapport and other relevant NGOs. Service delivery could be undertaken by existing guidance service providers, such as Jobsplus, for different target groups.
+
+Implementation of this recommendation will require a phased approach, given the number of steps involved in ensuring effective design and adequate coverage. These steps include mapping existing providers and their target groups, identifying gaps in the provision, designing the scheme, and subsequently launching and operationalising the universal career guidance service. The mapping, gap analysis, and design of the scheme could be undertaken in Phase 1 (2026-2027), while operationalisation and introduction of the service are envisaged in Phase 2 (2028-2030).
+
+Relative costs and administrative complexity associated with the service are expected to be moderate, although they will depend on the final design of the scheme, to be determined following the mapping and gap analysis. For example, establishing a new physical guidance centre would entail higher direct and indirect costs. This decision could also be informed by work undertaken on career guidance for young people and adults as part of the National Employment Policy 2021-2030 (Recommendation 12). Funding could be provided by MEYR, as the policy owner, with contributions from guidance providers such as Jobsplus.
+
+An overview of the plan for implementation is presented in Table 2.6.
+
+Table 2.6. Implementation plan for Recommendation 6
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>6. Explore the introduction of a universal career guidance service for all individuals to support job mobility and progression</td><td>Policy owner: MEYR (Directorate for Lifelong Learning and Employability [DLE], Wellbeing Services Directorate)Partners: Jobsplus, NCGN; Agency for the Welfare of Asylum Seekers; Lino Spiteri Foundation; Ministry for Inclusion and the Voluntary Sector; Agenzija Sapport</td><td>Phase 1 (2026-2027) – Phase 2 (2028-2030)</td><td>Relative cost and administrative complexity: moderate</td><td>MEYR; Jobsplus</td></tr></table>
+
+## Recommendation 7: Strengthen parents' involvement in career guidance through enhanced school engagement mechanisms
+
+It is recommended that Malta strengthen parental engagement in career guidance by enhancing the ExploreMore platform – including by linking it to the dynamic skills intelligence platform (see Recommendation 5) and real-time labour market insights from SAA exercises (Priority Topic 1). Malta could also expand outreach through multiple familiar channels, as well as integrating career guidance into parent-focussed school events throughout the schooling journey.
+
+## Description
+
+Parents play a pivotal role in shaping young learners' career choices and aspirations, often serving as their first and most trusted source of guidance – sometimes even outranking teachers, school career counsellors, and public employment services (European Training Foundation and UNICEF, 2024[43]). This underscores the importance of engaging parents as active partners in career guidance and ensuring they have access to up-to-date, evidence-informed insights on labour market trends and training pathways (see Box 2.4). However, many parents still lack a clear understanding of available opportunities, limiting their capacity to support their children in making informed choices (Barnes et al., 2020[32]).
+
+Misconceptions and outdated beliefs persist among parents, which can discourage learners from considering certain career paths. In Malta, for example, entrepreneurship is often viewed as relevant only for business students rather than as a transversal skill applicable across disciplines and ages. Similar challenges arise in the maritime industry, where few students express interest in pursuing maritime careers, even when their parents are employed in the sector (OECD, 2022[44]). These patterns highlighted the need for more parent-oriented approaches to raising awareness, including public awareness campaigns that targets parents as a primary audience (see Chapter 3).
+
+In Malta, the MEYR's ExploreMore portal provides interactive career guidance for parents – in addition to students and teachers. The webpage includes tips for supporting children in middle school and information on various occupations across sectors (OECD, 2025[6]; ExploreMore, 2023[45]; Euroguidance, 2025[46]).
+
+However, opportunities exist to expand existing career guidance initiatives for parents. First, Malta could enhance the ExploreMore platform by linking it to the dynamic skills intelligence platform (see Recommendation 4) and real-time labour market insights from SAA exercises (see Priority Topic 1). This would help to expand up-to-date information on the platform and make it more interactive.
+
+Second, Malta could systematically integrate career guidance support into parent-focussed events throughout the schooling journey. Effective outreach is needed since MEYR initiatives targeting parents are often poorly attended (TSI consultations of stakeholders, 2025[20]). Engagement with parents through multiple familiar channels – including online platforms (e.g. TV, podcasts, videos) such as ExploreMore, and in-person avenues (e.g. schools, workplaces, social services) – has reportedly proven effective in Malta (TSI consultations of stakeholders, 2025[20]) and there is scope to expand these efforts. For example, in Scotland (United Kingdom), career advisers attend parent events during transitions from primary to secondary school and throughout secondary education, providing guidance aligned with learners' evolving educational and career choices (see Box 2.7) (Skills Development Scotland, 2025[47]).
+
+## Box 2.7. Scotland: Providing multi-channel career guidance support for parents throughout the schooling journey
+
+Skills Development Scotland (SDS), the national skills body, provides career guidance across schools, job centres, and online platforms, ensuring parents can support their children in making informed career decisions. Career advisers are consistently present at multiple points in the schooling journey: during the transition from primary to secondary school, when selecting lower secondary school subjects, and at parent evenings throughout senior secondary school. These interactions introduce career management skills, outline available support, and raise awareness of My World of Work, Scotland's comprehensive career guidance platform with a dedicated section for parents. In addition, SDS offers tailored one-to-one sessions for parents and a free telephone helpline (0800 917 8000) to provide personalised advice and guidance.
+
+Source: Skills Development Scotland (2025[48]), Our careers service in schools, www.skillsdevelopmentscotland.co.uk/what-we-do/scotlands-careers-services/our-careers-service-in-schools; Skills Development Scotland (2025[47]), Support for parents and carers, www.skillsdevelopmentscotland.co.uk/what-we-do/scotlands-careers-services/our-careers-service-in-schools/support-for-parents-and-carers.
+
+## Plan for implementation
+
+Both the NSC and MEYR are well placed to lead this effort. In particular, the Directorate for Planning and Strategic Foresight of MEYR could play a central role, given its responsibility for the Family Community School Link Programme. This pilot initiative, launched in 2023, aims to strengthen links between families, schools and the broader community. To ensure coherence with other career guidance initiatives, the
+
+NCGN should also be involved as co-lead. Recommended partners are similar to those in Recommendation 6, including the Agency for the Welfare of Asylum Seekers, the Lino Spiteri Foundation, the Ministry for Inclusion and the Voluntary Sector, and Agenzija Sapport.
+
+This recommendation has two components: First, parental involvement could be strengthened by systematically integrating career guidance support into events aimed at parents, building on existing initiatives. This component could be implemented in Phase 1 (2026-2027). Second, parental engagement could be further reinforced by linking the ExploreMore platform to the dynamic skills intelligence platform (Recommendation 4, Timeline: Phase 1 [2026-2027]) and to real-time labour market insights from SAA exercises (Recommendations 2 and 3, Phase 2 [2028-2030]). While initial work could begin early in Phase 1 (2026-2027), full implementation of this second component is likely to occur in Phase 2 (2028-2030) and may extend into Phase 3 (2031-2035), as it depends on outputs from other recommendations.
+
+Relative costs and administrative complexity are expected to be moderate. Costs related to systematically integrating career guidance support into parent-focussed events would mainly involve campaign expenses and fees for career guidance professionals. Enhancing the ExploreMore platform would entail additional costs related to expanding content and functionalities. Funding for this recommendation could be provided by MEYR.
+
+An overview of the plan for implementation is presented in Table 2.7.
+
+Table 2.7. Implementation plan for Recommendation 7
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>7. Strengthen parents&#x27; involvement in career guidance through enhanced school engagement mechanisms</td><td>Policy owner: NSC; MEYR (Family Community School Link; DPSF); NCGNPartners: Agency for the Welfare of Asylum Seekers, Lino Spiteri Foundation; Ministry for Inclusion and the Voluntary Sector; Agenzija Sapport</td><td>Phase 1 (2026-2027): Integration of career guidance supportPhase 2 (2028-2030) / Phase 3 (2031-2035): Link ExploreMore to Skills Intelligence Platform (Recommendation 4) and SAA exercises (Priority Area 1)</td><td>Relative cost and administrative complexity: moderate</td><td>MEYR</td></tr></table>
+
+## Priority Topic 3: Empowering educators and school leaders for future-ready education
+
+To build a competitive and resilient workforce, Malta is prioritising the development of future-ready and transversal skills among students in compulsory education, including digital literacy, entrepreneurship, socio-emotional skills, and competencies relevant to the digital and net-zero transitions (TSI consultations of stakeholders, 2025[20]). Achieving this goal depends on a stable and skilled educator workforce capable of adopting innovative pedagogical practices and adapting to rapidly changing learning environments (OECD, 2019[49]; OECD, 2025[50]). Effective school leadership is equally critical – highly qualified and visionary leaders foster collaborative learning cultures among students and educators alike, support professional development among education practitioners, and embed continuous learning into the daily functioning of schools (OECD, 2019[51]).
+
+Malta has made sustained efforts to strengthen its educator workforce in recent years, notably through improved salary structures and enhanced support for educators' well-being (MEYR, 2024[52]; European
+
+Commission, 2024[53]). System-level reforms under the National Education Strategy 2024-2030 also aim to address persistent challenges, including high workloads, an overloaded curriculum, and rigid student assessment practices (MEYR, 2024[52]).
+
+However, several challenges remain, with job satisfaction among educators and school leaders remaining below the OECD average (see Figure 2.3) (OECD, 2018[54]). As in many OECD and EU countries, Malta continues to face teacher shortages, particularly in secondary education and STEM subjects – areas vital for developing higher-level skills and enhancing competitiveness in the midst of the digital and net-zero transitions. Negative perceptions linked to the profession further undermine efforts to attract new entrants (Pulis, 2024[55]; OECD, 2025[6]; Fabian Galea, 2020[56]; TSI consultations of stakeholders, 2025[20]).
+
+Figure 2.3. Share of Maltese teachers and principals who are satisfied with their jobs, 2018  
+![](images/7c1232b80427c560cb8316f7a5d50c6f2d31f9e44dce7d00d1a914ec4da1ffe4.jpg)  
+StatLink https://stat.link/nsmao5
+
+To empower educators and school leaders for future-ready education, the TSI project team recommends: 1) assessing the feasibility of introducing individual learning accounts (ILAs) and piloting the ILA scheme with education practitioners; 2) developing competency frameworks for education practitioners to strengthen professional standards and skills development; 3) strengthening training for school leaders to improve leadership skills and promote a learning culture among school personnel; 4) establishing digital platforms and networks for informal learning among educators to regularly exchange best practices in pedagogy and assessment; and 5) implementing targeted information campaigns to promote the teaching profession and address teacher shortages.
+
+## Recommendation 8: Assess the feasibility of introducing individual learning accounts (ILAs) and piloting the ILA scheme with education practitioners
+
+It is recommended that Malta pilot ILAs or alternative tools such as training vouchers to promote teachers' autonomy in their training choices and participation. Eligible training offers could prioritise training in skills for innovative pedagogy, digitalisation, and the net-zero transition.
+
+## Description
+
+Continuous professional development (CPD) is essential for education practitioners to enhance their pedagogical skills and subject knowledge, benefitting student learning while also fostering their own lifelong learning (OECD, 2019[57]). In Malta, a new collective agreement requires educators to complete between 28 and 40 hours of CPD annually, typically delivered during school hours. The MEYR also provides educational resources to support self-directed learning, though such self-study is not formally recognised or linked to career progression (TSI consultations of stakeholders, 2025[20]).
+
+Complementing these initiatives, the introduction of individual learning accounts (ILAs) can build on strong internal motivation to engage in CPD by education practitioners in Malta and respond to their desire for more educator-led and co-created training opportunities (TSI consultations of stakeholders, 2025[20]; Calleja, 2018[58]). ILAs are personal accounts providing a dedicated budget to cover the direct costs of training and are increasingly being adopted across EU countries (European Union, 2022[59]; European Union, 2024[60]). A prime example is France, where the Compte Personnel de Formation or Personal Training Account allows all economically active persons to accumulate training rights and use them to finance their professional projects (France Travail, 2025[61]; Perez and Vourc'h, 2020[62]) (see Box 2.8).
+
+The introduction of ILAs would depend on the results of an ongoing feasibility study led by the National Skills Council, following the 2022 EU Council Recommendation on individual learning accounts (Council of the European Union, 2022[63]). Depending on the study's findings, Malta could pilot ILAs for education practitioners – in particular educators, school leaders, career guidance professionals and other staff involved in students' learning and well-being – before scaling them up nationally. ILAs would complement mandatory CPD requirements and the priorities of the National Education Strategy 2024-2030, providing education practitioners with more autonomous yet structured access to training opportunities. In addition, they could also serve to formally acknowledge practitioners' proactivity and commitment to lifelong learning. In later phases, and in close collaboration with unions and representatives, participation in ILA-supported training could be considered as a criterion for career progression (TSI consultations of stakeholders, 2025[20]).
+
+If ILAs are deemed unsuitable in the current context, Malta could explore alternative instruments such as training vouchers. These instruments differ conceptually: ILAs are owned by individuals and allow training rights to be accumulated over time, whereas vouchers are allocated at the discretion of government agencies and typically provide one-off financial support (OECD, 2025[64]). Notwithstanding these differences, training vouchers would enable Malta to retain an educator-led approach to training and ensure freedom of choice (OECD, 2021[65]; OECD, 2020[66]). A relevant reference is Italy's Teacher Card (Carta del docente), a training voucher scheme which provides educators with EUR 500 annually for participation in formal, non-formal, and informal learning (see Box 2.8).
+
+Eligible training, whether through ILAs or alternative mechanisms, could place emphasis on innovative pedagogical practices, transversal and future-ready skills, entrepreneurship, and skills relevant to the digital and net-zero transitions. Such mechanisms could complement existing incentives in Malta, including the Get Qualified programme, which provides tax credits for eligible professional development.
+
+## Box 2.8. France and Italy: Promoting personalised training approaches through individual learning accounts
+
+## France: Accumulating training rights through the Compte Personnel de Formation
+
+Available for all economically active persons, the Compte Personnel de Formation (CPF) or Personal Training Account is an individualised scheme for financing training and promoting participation in skills development throughout an individual's working life. The account is funded through a compulsory contribution from employers with more than 10 employees, while self-employed workers pay a flat-rate contribution. Since 2018, the CPF is credited with EUR 500 per year for full-time employees (ceiling: EUR 5 000) and EUR 800 per year for low-skilled employees (ceiling: EUR 8 000). The training amounts acquired in CPFs are transferrable across employers and jobs. Multiple training activities are eligible, such as the acquisition of a qualification (diploma, professional certification), support for validation of prior experience, and skills assessments, among others. To support training take-up through the CPF, a free and optional career guidance service was introduced in 2018.
+
+## Italy: Promoting teacher training through a virtual wallet
+
+The Teacher Card (Carta del docente), established under Article 1, paragraph 121 of Law 107 of 13 July 2016, is an initiative of the Ministry of Education, Universities and Research that supports the professional development of tenured full-time and part-time teachers in state schools. Each year, the card provides EUR 500 that teachers may use to enrol in accredited CPD courses (including undergraduate, graduate, post-graduate, specialist or single-cycle programmes), purchase educational materials (such as hardware, software and books), or participate in informal learning activities such as museum visits, exhibitions, cultural events and live performances. The scheme is administered through a dedicated web application (cartadeldocente.istruzione.it), which allows teachers to monitor their expenditure and remaining balance, and is supported by a Ministry-published list of eligible training institutions, retailers and service providers, both physical and online.
+
+Source: Perez and Vourc'h (2020[62]), Individualising training access schemes: France – the Compte Personnel de Formation (Personal Training Account – CPF), https://doi.org/10.1787/301041f1-en; France Travail (2025[61]), Le Compte personnel de formation (CPF) est au service de votre projet de formation, www.francetravail.fr/candidat/en-formation/mes-aides-financieres/le-compte-personnel-de-formation.html; Italian Ministry of Education, Universities and Research (2024[67]), Carta del Docente, www.cartadeldocente.istruzione.it/.
+
+## Plan for implementation
+
+Since the NSC is conducting the feasibility study for ILAs in Malta, it is recommended that the NSC take the policy lead for this recommendation. Given existing CPD provided by MEYR, it would be important to involve MEYR as partner. Moreover, to ensure that the voice of teachers is taken into consideration when designing the ILAs, the Malta Union of Teachers (MUT) could also be involved as partner.
+
+It is recommended that the feasibility study be finalised during Phase 2 (2028-2030). This would help ensure that the design of the pilot ILAs, or an alternative financial incentive identified through the study, for education practitioners, can be developed in a timely manner during the implementation phase.
+
+The relative costs of the feasibility study are anticipated to be low, but administrative complexity is expected to be moderate, largely due to the need for intensive stakeholder engagement and co-ordination, as well as detailed policy and regulatory analysis to determine whether ILAs can be implemented within the existing legal and institutional framework. Funding could be provided by the NSC.
+
+This recommendation focusses on the feasibility study. It is important to note that designing the actual financial instrument for education practitioners would require specifying the budget and funding sources, objectives and target groups, eligible training programmes, governance arrangements, accessibility and user-friendliness, enabling frameworks, and monitoring and evaluation. The pilot could then be followed by a thorough evaluation prior to national scale-up, with the instrument refined through the incorporation of ex post feedback from learners on its perceived practicality.
+
+While not covered by this recommendation, the implementation of the incentive is expected to entail both high costs and administrative complexity. In other countries, the main funding source of ILAs typically derives from either the national budget or EU funds (OECD, 2025[64]), with the latter generally being one-off. In some cases, these funding sources are complemented by employer levies in countries where employers are legally required to contribute to a national or sectoral training fund. In Malta, funding could be based on the national budget. Additional co-financing could be sought through EU programmes such as the European Social Fund Plus and Employment and Social Innovation (EaSI).
+
+An overview of the plan for implementation is presented in Table 2.8.
+
+Table 2.8. Implementation plan for Recommendation 8
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>8. Assess the feasibility of introducing individual learning accounts (ILAs) for education practitioners to strengthen continuous, self-directed professional development</td><td>Policy owner: NSCPartner: MEYR; MUT</td><td>Phase 2 (2028-2030)</td><td>Relative cost: lowAdministrative complexity: moderate</td><td>NSC budget; ESF+; EaSI</td></tr></table>
+
+Recommendation 9: Develop competency frameworks for education practitioners to strengthen professional standards and skills development
+
+It is recommended that Malta develop a competency framework that integrates subject expertise and pedagogical skills, structured across progressive levels of complexity. It is important to describe competences in clear, observable, and action-oriented terms, directly linked to everyday school activities such as teaching, learning, and assessment.
+
+## Description
+
+Efforts to strengthen the skills of education practitioners in Malta would benefit from the development of a competency framework. When well designed, a competency framework delivers advantages at both organisational and individual levels. At the school level, such frameworks help ensure teaching quality by defining the knowledge, skills, attitudes and values required, as well as by establishing standards for their application in classrooms (UNESCO, 2024[68]; OECD, 2023[69]; OECD, 2025[70]). At the individual level, competency frameworks foster lifelong learning by identifying pathways for professional growth, clarifying expected outcomes at each stage, and guiding present and future training choices (UNESCO, 2024[68]; Caena, 2014[71]).
+
+Currently, Malta does not have a competency framework for educators and school leaders, raising concerns among stakeholders about declining levels of professionalism in the sector (TSI consultations of stakeholders, 2025[20]). Introducing such a framework could help strengthen professional standards while supporting more informed training choices among educators (Recommendation 8) and school leaders (Recommendation 10). The Netherlands provides a useful example, where teacher competence frameworks function as professional standards and define core requirements for teachers' work (see Box 2.9) (Caena, 2014[71]).
+
+Malta could benefit from developing competency frameworks for all education practitioners, including educators, school leaders, career guidance professionals, and administrative staff. It could encompass both subject expertise and pedagogical competences, with an emphasis on emerging practices in transversal skills, digital and AI literacy, and green skills. The framework could be progression-oriented, with multiple levels of competence defined by increasing complexity. For example, Singapore's SkillsFuture for Educators (SFEd) initiative describes six competency domains, each structured across four progression levels (see Box 2.9) (Academy of Singapore Teachers, 2025[72]). In Malta, it is important for competences to be articulated in clear, observable, and action-oriented terms, illustrating how education practitioners can apply their skills and knowledge across daily school activities, including teaching, learning and assessment.
+
+## Box 2.9. The Netherlands and Singapore: Supporting pedagogical quality and supporting teachers' professional development through a competency framework
+
+## Netherlands: Using teacher competence frameworks as professional standards
+
+In the Netherlands, teacher competence frameworks function as professional standards that guide schools in developing human resource policies and training programmes, including initial teacher education. These frameworks define core requirements for interpersonal, organisational, pedagogical, and subject-specific competences across three dimensions: working with others, within workplaces, and on their own. Each competence is specified through observable aspects (what must be achieved and how), requirements (professional attitudes, knowledge, and skills), and indicators demonstrating its application in practice.
+
+The frameworks are evaluated every six years, with revisions developed collaboratively with key education stakeholders. In the Netherlands, teacher quality is regarded as a shared responsibility among the government, schools, and teachers. While the government sets the legal framework for competencies and professional development, schools are tasked with supporting, funding, and monitoring training, and teachers are expected to engage in agreed levels of continuous learning.
+
+## Singapore: Incorporating progression levels in competence frameworks to chart training pathways
+
+In 2020, Singapore's Ministry of Education introduced SkillsFuture for Educators (SFEd), a professional development roadmap that supports teachers in strengthening competencies across six domains: 1) assessment literacy, 2) inquiry-based learning, 3) differentiated instruction, 4) support for students with special educational needs, 5) e-pedagogy, and 6) character and citizenship education. Together, these domains emphasise inclusive, adaptive and innovative teaching and assessment practices, the use of digital technologies, and the promotion of student well-being and resilience.
+
+Each domain is structured across four progression levels: emergent (beginning to apply skills), proficient (broadening and deepening knowledge), accomplished (independently adapting practice), and leading (guiding and supporting others). This progression framework enables teachers to benchmark their current practice, identify professional development needs, and chart structured pathways for growth.
+
+Source: Caena (2014[71]), Teacher Competence Frameworks in Europe: Policy-as-discourse and policy-as-practice, https://onlinelibrary.wiley.com/doi/10.1111/ejed.12088; Academy of Singapore Teachers (2025[72]), SkillsFuture for Educators: Overview, https://academyofsingaporeteachers.moe.edu.sg/professional-excellence/skillsfuture-for-educators/overview/; Academy of Singapore Teachers (2023[73]), Infosheet on SkillsFuture for Educators (SFEd), https://academyofsingaporeteachers.moe.edu.sg/files/infosheet-on-SFEd.pdf.
+
+## Plan for implementation
+
+The Directorate for Planning and Strategic Foresight and the Department for Curriculum, Lifelong Learning and Employability could lead the development of the competency frameworks for education practitioners, as responsibility for continuous professional development is anchored within the MEYR.
+
+The development and refinement of the competency framework should be collaborative, ensuring that stakeholders have opportunities to suggest improvements. This participatory approach would help ensure that the framework reflects the realities of the education sector. Relevant stakeholders could include the
+
+NSC, given its role in overseeing skills development, recognition, and validation in Malta; the MUT, to ensure representation of practitioners; the MFHEA, as the body responsible for regulation and quality assurance in further and higher education; the Malta Council for the Teaching Profession (MCTP) due to its mandate to promote professional standards within the teaching profession; the University of Malta (UM) and the Institute for Education (IfE) as they provide teacher education and training, as well as MCAST.
+
+The development of the competency framework is expected to be time-intensive due to the number of stakeholders involved. It will require a high level of strategic alignment, sustained collaboration, and the subsequent development or adjustment of educational programmes and resources. It is recommended that the development begin during Phase 1 (2026-2027), with the competency framework coming into effect only towards the end of the implementation period, in Phase 3 (2031-2035), due to formal approval processes.
+
+Relative costs are expected to be moderate, but administrative complexity is anticipated to be high, reflecting both the breadth of stakeholder involvement needed for the development of the competency frameworks and the complexity of designing a progression-oriented framework with multiple levels of competencies. Funding for the development of the competency framework could be provided by the MEYR, supplemented by EU funds such as the European Social Fund Plus, which for example supports a project on the development of teachers' and school leaders' competences in Slovenia (Government of Slovenia, 2024[74]).
+
+An overview of the plan for implementation is presented in Table 2.9.
+
+Table 2.9. Implementation plan for Recommendation 9
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>9. Develop competency frameworks for education practitioners to strengthen professional standards and skills development</td><td>Policy owner: MEYR (DPSF; Department for Curriculum, Lifelong Learning and Employability)Partners: NSC; MFHEA; MUT; MCTP; UM; IfE; MCAST</td><td>Phase 1 (2026-2027) and Phase 2 (2028-2030): Development of the frameworkPhase 3 (2031-2035)Launch of the framework</td><td>Relative cost: moderate Administrative complexity: high</td><td>MEYR; ESF+</td></tr></table>
+
+Recommendation 10: Strengthen training for school leaders to improve leadership skills and promote a learning culture among school personnel
+
+It is recommended that Malta introduce structured, accessible leadership training programmes for school leaders, solidifying their understanding of their roles in promoting teacher training and introducing them to evidence-informed practices that foster a culture of learning in schools.
+
+## Description
+
+School leaders play a pivotal role in shaping school culture and fostering environments that supports teachers' professional development and collaboration (OECD, 2020[75]; OECD, 2025[76]). By employing effective leadership practices – for example, creating professional development plans, involving teachers in decision making, and establishing structures for peer learning – they can cultivate learning cultures and drive lasting change within their communities (OECD, 2020[75]; Meyer et al., 2023[77]; Boeskens, Nusche and Yurita, 2020[78]; UNESCO, 2024[79]).
+
+In Malta, the 2023 National Quality Standards in Education states that school leaders are expected to support staff professional development by creating learning communities, providing training opportunities, and motivating staff to engage in lifelong learning (MEYR, 2023[80]; UNESCO, 2024[81]). However, in practice, the importance of training school leaders to promote a culture of professional development and learning within schools remains underestimated (TSI consultations of stakeholders, 2025[20]; Bezzina, 2024[82]).
+
+Although the number of training opportunities for Maltese school leaders – including those offered by the MEYR – is increasing, participation remains low due to scheduling conflicts and perceptions of limited relevance (TSI consultations of stakeholders, 2025[20]; Frendo, 2023[83]). Existing training largely emphasises administrative and management skills, with insufficient focus on leadership development. Furthermore, while school leaders are required to hold an advanced degree in educational leadership, this requirement does not extend to assistant leaders (TSI consultations of stakeholders, 2025[20]; Attard, 2020[84]).
+
+To address these gaps, Malta could strengthen school leadership training by developing targeted programmes focussed on leadership skills. Sweden offers a useful model through its National School Leadership Training Programme, which equips principals, deputy principals, and preschool managers with the skills required to drive organisational change, aligning these transformations with national and local objectives (see Box 2.10) (National Agency for Education, 2015[85]). In Malta, it is important for leadership programmes to discuss school leaders' roles in facilitating educators' participation in professional development and introduce them to evidence-informed practices that foster a culture of learning. Such programmes could also be accessible to middle-management leaders and tailored to their responsibilities, ensuring that the responsibility of promoting a growth-oriented culture is distributed across all levels of the school system.
+
+## Box 2.10. Sweden: Supporting school leaders to develop stronger leadership skills through a professional training programme
+
+The National School Leadership Training Programme in Sweden is a mandatory, state-regulated professional development initiative implemented by the National Agency for Education. It targets school leaders, deputy principals, preschool managers, and other personnel in equivalent leadership positions.
+
+Participants dedicate approximately 20% of their working hours to the programme, with university fees fully covered by the State and salaries maintained by their schools during study periods. Conducted over the course of three years, the programme combines residential courses, seminar days, literature studies, and a school-based investigative project. It covers several areas of knowledge, including a dedicated module on school leadership. This module develops participants' understanding of the critical role of leadership in school development, enhances their capacity for self-reflection, and equips them to lead staff and students more effectively, fostering motivation and professional growth.
+
+Upon completion, participants are expected to demonstrate the ability to cultivate a collaborative school environment, where personnel are encouraged to share experiences, improve teaching practices, and support students' learning and development.
+
+Source: National Agency for Education (2015[85]), The National School Leadership Training Programme: Goal Document 2015-2021, www.skolverket.se/download/18.6bfaca41169863e6a65b81a/1553966151968/pdf3469.pdf.
+
+## Plan for implementation
+
+The Directorate for Planning and Strategic Foresight within the MEYR could lead efforts to strengthen training for school leaders, in collaboration with the NSC as co-lead. The MFHEA, the MUT, the UM, IfE, and MCAST could serve as partners. The stakeholders involved are similar to those identified under Recommendation 9.
+
+Strengthening school leaders' competencies and skills would involve the design of a school-leader training programme, followed by its implementation. Development could include a skills needs assessment to identify the skills required at each level of school management, complemented by an assessment of existing strengths and skills gaps among school leaders across different tiers. It is recommended that the development of the programme curriculum take place during early Phase 2 (2028-2030), with implementation later in Phase 2 (2028-2030) and Phase 3 (2031-2035).
+
+Overall relative costs and administrative complexity are expected to be moderate. Administrative complexity is likely to be higher during the development phase, while financial costs would be higher during the implementation phase. Costs would arise from programme delivery, and participants' salaries during participation.
+
+Funding could be drawn from a combination of sources, such as national budgets and participating institutions, which is an approach taken by several countries. For example, in the case of Sweden's National School Leadership Training Programme (Skolverket, 2015[86]), the state pays the universities' costs related to the training programme, while the education provider pays the participant's salary, travel and accommodation while studying. MEYR would be responsible for (partly) funding the training, with supplementary financial resources potentially stemming from EU funds such as the European Social Fund Plus.
+
+An overview of the plan for implementation is presented in Table 2.10.
+
+Table 2.10. Implementation plan for Recommendation 10
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>10. Strengthen training for school leaders to improve leadership skills and promote a learning culture among school personnel</td><td>Policy owner: MEYR (DPSF); NSCPartners: MFHEA; MUT; UM; IfE; MCAST</td><td>Phase 2 (2028-2030): Programme&#x27;s curriculum developmentPhase 2 (2028-2030)- Phase 3 (2031-2035): Implementation</td><td>Relative cost and administrative complexity: moderate</td><td>MEYR; ESF+</td></tr></table>
+
+Recommendation 11: Establish digital platforms and networks for informal learning among educators to regularly exchange best practices in pedagogy and assessment
+
+It is recommended that Malta enhance existing platforms used by teachers, such as Eskola, to provide virtual spaces for peer mentoring, community discussions, and the exchange of pedagogical practices supporting the acquisition of skills for the digital and net-zero transitions.
+
+## Description
+
+Teacher collaboration is a key element of effective school systems, facilitating the exchange of teaching practices and experimentation with innovative pedagogies. Collaboration is particularly valuable in challenging work environments, providing educators with a space to seek advice and co-develop solutions to classroom challenges (OECD, 2020[75]). Across EU and OECD countries, collaboration ranges from informal, voluntary interactions to structured, regular mechanisms, such as collaborative networks within and across schools (OECD, 2020[87]).
+
+Despite its benefits, professional collaboration remains infrequent in many OECD and EU countries, and uptake in Malta is particularly low. Only 13% of educators in Malta report participating in collaborative professional learning at least once a month, compared with the OECD average of 21%, while just 9% engage in team teaching versus 28% across OECD countries (OECD, 2018[54]). In Malta, educators who do collaborate report tangible benefits, including refining lesson plans, sharing good practices, and reducing workload. This demonstrates the value of avenues that facilitate connections and joint work between teachers (Vella and Azzopardi, 2022[88]).
+
+In Malta, digital platforms and in-person networks could expand opportunities for peer learning, complementing formal CPD. The MEYR's Eskola platform, currently a repository of teaching materials, could be a starting point by enhancing its interface to provide virtual spaces for peer mentoring between educators, community discussions, and the exchange of pedagogical practices supporting the acquisition of skills for the digital and net-zero transitions. This could foster educator-driven learning, focussed on practical, day-to-day classroom needs (TSI consultations of stakeholders, 2025[20]). Estonia's Koolielu portal offers a comparable model, providing a virtual community for educators to exchange resources, ideas, and professional opportunities (see Box 2.11) (Koolielu, 2013[89]).
+
+## Box 2.11. Estonia: Creating a virtual community of teachers through the Koolielu platform
+
+The Koolielu platform is a virtual space where teachers, students, and parents can connect and collaborate to diversify teaching and make learning more engaging. It is regularly updated with articles on events in the Estonian education system, and registered users can contribute their own news, including school job postings and upcoming training opportunities. Koolielu also features a Communities section, where users can create subject- or interest-based groups to share information and study materials. Additionally, the platform hosts announcements on eTwinning initiatives, which allow schools across Europe to safely collaborate on projects, exchange ideas online, and enhance teaching skills.
+
+Source: Koolielu (2013[89]), Overview, https://koolielu.ee/help/help; European School Education Platform (2024[90]), About eTwinning, https://school-education.ec.europa.eu/en/etwinning/about.
+
+## Plan for implementation
+
+It is recommended that the Directorate for Digital Literacy and Transversal Skills (DDLTS) within the MEYR lead this initiative. It already has responsibility for overseeing CPD and for the Eskola platform, which could serve as a foundation for networks that support informal learning among educators. The Malta Digital Innovation Authority (MDIA) could serve as co-lead, given its responsibility for fostering and regulating digital innovation, as well as Tech.mt, because of its role in connecting, promoting and supporting the local and international technology ecosystem.
+
+To encourage commitment and engagement, the platform's features could be developed in consultation with relevant stakeholders, including the MUT and the ITS. Features could also be introduced gradually, in successive phases, to support smooth adoption.
+
+As this recommendation builds on the existing Eskola platform, it is considered feasible to implement it during Phase 1 (2 026-2 027). Phase 2 (2 028-2 030) could allow for an evaluation of the enhanced platform to assess whether improvements to the interface are needed to meet the end users' needs.
+
+Relative costs and administrative complexity are expected to be low. Direct costs are likely to be modest, as the platform's fixed costs have already been incurred; additional expenditure would mainly relate to enhancing the existing system. In cases where existing platforms cannot be used, costs are expected to be higher. The comparatively low administrative complexity would arise from the need to co-ordinate platform features and ensure usability. Funding could be provided by the MEYR.
+
+An overview of the plan for implementation is presented in Table 2.11.
+
+Table 2.11. Implementation plan for Recommendation 11
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>11. Establish digital platforms and networks for informal learning among educators to regularly exchange best practices in pedagogy and assessment</td><td>Policy owner: MEYR (DDLTS); MDIA; Tech.mtPartners: MUT; ITS</td><td>Phase 1 (2026-2027): ImplementationPhase 2 (2028-2030): Evaluation</td><td>Relative cost and administrative complexity: low</td><td>MEYR</td></tr></table>
+
+## Recommendation 12: Implement targeted information campaigns to promote the teaching profession and prevent teacher shortages
+
+It is recommended that Malta complement past and existing awareness raising initiatives by launching an information campaign targeted to non-traditional audiences such as career changers, as well as young parents and their children. The design of the campaign could be enhanced by a study examining barriers to entry into the teaching profession and factors attracting potential applicants.
+
+## Description
+
+Teacher shortages are a common challenge across OECD and EU countries, and Malta is no exception. Shortages are particularly acute in STEM subjects – including mathematics, engineering, physics, chemistry, biology, computing, and information technology – as well as in English, due in part to the high workload associated with teaching the subject (TSI consultations of stakeholders, 2025[20]). Persistent public perceptions of the teaching profession remain a key barrier to entry, despite government efforts to improve working conditions, increase salaries and bonuses, expand CPD opportunities, and implement measures supporting educators' well-being (Eurydice, 2024[91]; OECD, 2025[6]; MEYR, 2024[52]).
+
+To address these challenges, the MEYR and teacher training institutions (e.g. University of Malta, Institute for Education) have implemented awareness-raising initiatives, including campaigns, testimonials, career fairs, and outreach to secondary school students (TSI consultations of stakeholders, 2025[20]). Current momentum provides a window of opportunity to further promote the teaching profession and its benefits. Evidence suggests that national campaigns, when designed well and combined with structural improvements (e.g. improvement of teachers' salaries), have great potential to significantly enhance the profession's attractiveness (OECD, 2019[51]; EENE, 2023[92]).
+
+To complement past and existing awareness-raising initiatives, Malta could implement targeted, evidence-informed information campaigns that promote the benefits of the teaching profession (see example from Germany in Box 2.12. The campaign could focus on non-traditional audiences, such as career changers. Part-time pathways for industry professionals already exist, but awareness of these opportunities and associated incentives remains limited (TSI consultations of stakeholders, 2025[20]). In addition, young children and their parents are another key audience, as career perceptions and educational aspirations are shaped early in life (Davenport and Padwick, 2025[93]; Damgaard and Nielsen, 2018[94]; EENE, 2023[92]; Christensen et al., 2022[95]). To ensure a comprehensive approach and maximise reach among target audiences, it would be important to supplement Malta's awareness campaigns for educators with targeted outreach to potential applicants for initial teacher education, including through career guidance services in secondary schools (see Priority Topic 2).
+
+As an initial step, the design of the campaign could benefit from a study examining barriers to entry into the teaching profession and factors attracting potential applicants. While promotional campaigns can be an attractive solution to teacher shortages due to their relatively low cost, evidence suggests that their success largely depends on strategic messaging that highlights the concrete benefits of teaching (e.g. high salaries, high employability) (Ajzenman et al., 2024[96]; EENE, 2023[92]). In Malta, the campaign could highlight accurate and evidence-informed messages on the benefits of teaching, such as a good work – life balance, numerous opportunities for professional growth, and available incentives (e.g. Student Maintenance Grants), while correcting common misconceptions, including perceptions related to remuneration and status. The awareness campaign would be most impactful if accompanied by tangible, foundational improvements in teachers' working conditions and professional development opportunities, as outlined in this skills strategy and related policy documents (e.g. National Education Strategy 2024-2030).
+
+## Box 2.12. Germany: Promoting entry into the teaching profession through a multi-channel campaign
+
+In Germany, the state of Saxony launched a campaign to attract high school graduates – specifically Gen Z youth – into teaching while simultaneously improving the overall reputation of the profession. The campaign is centred on the web portal www.lehrer-werden-in-sachsen.de, which provides comprehensive information on studying to become a teacher and working as a teacher in schools. It is complemented by outreach through Gen Z – oriented platforms such as Instagram, TikTok, Facebook, and LinkedIn, as well as networking events, digital marketing initiatives, and large-scale advertising across Saxony, including cinemas. The campaign also collaborates with influencers from the region to help increase awareness and reach.
+
+Since its launch in 2021, the campaign has reached over 60 million people across more than 30 media outlets, tripled website traffic, and steadily increased its social media following.
+
+Source: Lehrer in Sachsen (2025[97]), Homepage, https://lehrer-werden-in-sachsen.de/; Pioneer Communications GmbH (2024[98]), Saxon State Ministry of Education and Cultural Affairs – Future makers wanted, www.pio-com.de/en/projects/lehrer-in-sachsen.
+
+## Plan for implementation
+
+The NSC could lead this recommendation. Teacher training institutions (e.g. UM and IfE), MEYR and teacher representatives (e.g. MUT) could serve as implementation partners. These organisations should be involved because they are directly responsible for preparing, supporting and representing the teaching workforce, and their participation ensures that promotional efforts accurately reflect training pathways, professional realities and the needs of current and future educators.
+
+This recommendation could be implemented in two consecutive steps. The first phase could examine barriers to entry, factors attracting potential applicants, and identify relevant non-traditional target groups. The second phase could develop information campaigns using multiple channels to maximise reach. Both phases could feasibly be implemented in Phase 1 (2026-2027).
+
+The recommendation is expected to entail high costs and moderate administrative complexity. Costs will largely depend on the final scale of the campaign and the communication formats selected. While costs may vary, they could be lower if the campaign is well targeted and makes use of existing channels. Funding could be provided by the NSC.
+
+An overview of the plan for implementation is presented in Table 2.12.
+
+Table 2.12. Implementation plan for Recommendation 12
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>12. Implement targeted information campaigns to promote the teaching profession and prevent teacher shortages</td><td>Policy owner: NSC Partners: MEYR; MUT; UM; IfE; MCAST</td><td>Phase 1 (2026-2027)</td><td>Relative cost: high Administrative complexity: moderate</td><td>NSC budget</td></tr></table>
+
+## Priority Topic 4: Equipping learners of all ages with skills for the future
+
+Global megatrends such as the digital and net-zero transitions continue to reshape education systems and labour markets at an accelerating pace. In this context of economic, political and social uncertainty, education and training systems are placing increasing emphasis on equipping learners with the skills needed to navigate complexity and adapt to change (OECD, 2019[99]). In Malta, forward-looking strategies such as Malta Vision 2050 signal a strong national commitment to developing proactive measures to anticipating the impacts of these transitions, including through targeted investments in education and skills (Government of Malta, 2025[100]).
+
+While compulsory education in Malta is increasingly prioritising the development of future-ready and transversal skills (see Priority Topic 3), it is equally important that this approach extends across the life course. As the share of Maltese adults participating in training continues to rise steadily (see Figure 2.4) (Cedefop, 2023[101]), there is significant opportunity to further strengthen the country's preparedness by embedding green, digital, AI and transversal skills across post-compulsory education and adult learning provision. Ensuring that opportunities to acquire these skills are available in all learning environments – including schools, workplaces, communities and public spaces – is key to promoting future skills for learners of all ages.
+
+Figure 2.4. Share of employed population participating in training, 2011-2023  
+![](images/49cce9ee7738b623cb64945e4056e8675ee1efd001cb0d12fbf99151452f6686.jpg)  
+Source: Cedefop (2023[101]), Employed population participating in learning, www.cedefop.europa.eu/en/tools/skills-intelligence/employed-population-participating-learning?year=2023andcountry=MT#5.
+
+To equip all learners with skills for the future, the project team recommends: 1) establishing a future-focused museum to foster transversal skills through non-formal and informal learning; 2) integrating green skills across all education and training levels to prepare the workforce for the net-zero transition; 3) promoting vocational education and training (VET) as a rewarding pathway for acquiring high-value digital and green skills; 4) identifying priority areas for specialised post-graduate qualifications or awards to ensure a steady supply of skills for the digital and net-zero transitions; and 5) conducting an in-depth evaluation of Malta's quality assurance system to streamline processes and strengthen future-readiness.
+
+## Recommendation 13: Establish a future-focussed skills museum to foster transversal skills through non-formal and informal learning
+
+It is recommended that Malta establish a future-focussed immersive museum, with an emphasis on developing transversal skills such as creativity, innovation, and critical thinking. This museum could be promoted as a resource that is open to learners of all ages.
+
+## Description
+
+Alongside increasingly essential digital, AI, and green skills, transversal skills such as creativity, critical thinking, problem solving and communication are an indispensable cornerstone of a future-ready workforce. While formal education systems are central to developing these transversal skills (see Priority Topic 3), there is growing recognition of the need for complementary learning environments that foster experiential, hands-on and interdisciplinary learning across the life course. Non-formal and informal learning therefore provide valuable complementary learning experiences, particularly for enriching skills development beyond school. Furthermore, non-formal and informal learning are more flexible, allowing adults with busy work schedules to participate, and can spur motivation due to the absence of a traditional structure and routine (Johnson and Majewska, 2022[102]; McKay et al., 2013[103]).
+
+Across the EU, non-formal and informal learning are increasingly taking place in interactive learning centres. These centres take a wide variety of forms such as museums, libraries, summer camps and community centres, which allow individuals of all ages to access the latest scientific thinking and link local actions to global challenges (UNESCO, 2017[104]). Such centres typically combine interactive exhibitions, hands-on activities and short learning experiences that encourage problem solving, creativity and critical thinking outside formal education settings.
+
+Malta could consider establishing an immersive, future-focussed museum designed to equip learners of all ages with transversal skills. The National Skills Council is already planning to establish such a museum. Inspired by international models such as Germany's Futurium (see Box 2.13), Australia's Museum of Discoveries, Brazil's Museum of Tomorrow, and the UAE's Museum of the Future, this museum is envisioned as a flagship capital project The museum could target a wide range of users, including children and young people, adults in employment, career-changers, educators and families, and offer interactive exhibitions, temporary thematic installations and short workshops focussed on future-oriented topics such as sustainability, digitalisation and innovation.
+
+To maximise reach and impact, it is important to ensure that this immersive future-focussed museum is promoted not only as an educational resource for children and young people, but also as a space for adult learning, highlighting its role in supporting non-formal and informal learning and equipping adults with transversal skills for the future.
+
+## Box 2.13. Germany: Reflecting critically on questions of tomorrow through the Futurium
+
+Futurium, or the “House of the Future,” is a museum and exhibition space in central Berlin that invites visitors of all ages to explore future scenarios and actively engage in shaping them. It features: an exhibition on alternative living scenarios addressing humanity, nature, and technology; an interactive lab for 3D prototyping, hackathons, and workshops; and a forum hosting public dialogues with scientists. Through these diverse events and activities, Futurium functions not only as a museum but also as an interactive learning space that emphasises dialogue, participation and the co-creation of future scenarios. It is designed to foster key future skills, including creative thinking, problem solving and collaboration, while also promoting futures thinking, a method that combines elements of futures studies, storytelling and design thinking.
+
+A federal government initiative supported by private sector and academic partners, the construction of Futurium cost EUR 58 million and was completed in two years. Designed as a nearly zero-energy building, it is among Germany's most sustainable federal facilities. Futurium covers over $5000\mathrm{m}^2$ of fully accessible space, with facilities designed to support visitors with reduced mobility, visual or hearing impairments, and learning difficulties. In 2023, a record number of 760000 people visited the Futurium.
+
+Source: Futurium (2025[105]), About Us, https://futurium.de/en/about-us; PD – Berater der öffentlichen Hand GmbH (2023[106]), Futurium – The House of Futures in Berlin, www.pd-g.de/en/our-customers-and-projects/project/futurium-in-berlin; Visit Berlin (2025[107]), Futuium – a house of futures, www.visitberlin.de/en/futurium-house-futures.
+
+## Plan for implementation
+
+The establishment of a future-focussed museum could be led by the NSC, as it has already begun efforts in this direction. The Maltese Inner Development Goals (IDG) Hub, which is a team of experienced professionals that apply the IDG framework, could support the recommendation as partner.
+
+While development of the museum could start in Phase 1 (2026-2027), its establishment is likely to be feasible later, during Phase 2 (2028-2030) or subsequently in Phase 3 (2031-2035). Comparable projects in other countries, such as Germany's Futurium (2025[105]), have required extended consultation, planning, and construction periods. In the case of Futurium, this process started in 2009 and ended in 2019, and serves as a benchmark.
+
+Both relative costs and administrative complexity are anticipated to be high. Costs include expenses related to location, staffing, and exhibitions. While Germany's Futurium does not charge an entrance fee, the United Arab Emirates' (UAE) Museum of the Future (Museum of the future, 2026[108]) charges entrance fees and therefore generates revenue. Although these projects are likely larger in scale than the museum envisaged by the NSC, they provide useful benchmarks: Germany's Futurium had overall construction costs of EUR 58 million (PD, 2026[109]), and the United Arab Emirates' Museum of the Future cost USD 136 million (The New York Times, 2022[110]).
+
+Funding is advised to follow a public-private partnership model, with firms, foundations and academic partners contributing alongside the NSC. Costs could be shared among various funding sources, and the initiative could potentially benefit from funding from EU sources.
+
+An overview of the plan for implementation is presented in Table 2.13.
+
+Table 2.13. Implementation plan for Recommendation 13
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>13. Establish a future-focussed skills museum to foster transversal skills through non-formal and informal learning</td><td>Policy owner: NSC Partners: IDG hub</td><td>Phase 1 (2026-2027): Development Phase 2 (2028-2030) – Phase 3 (2031-2035): Implementation</td><td>Relative cost and administrative complexity: high Benchmarking: Germany spent approx. EUR 58 million and the United Arab Emirates spent approx. USD 136 million for the construction of the building</td><td>NSC budget; ESF+; ERDF; contributions by firms; foundations and academic partners</td></tr></table>
+
+## Recommendation 14: Integrate green skills across all education and training levels to prepare the workforce for the net-zero transition
+
+It is recommended that Malta conduct a comprehensive mapping of how green skills are currently embedded in educational curricula to identify further opportunities for integration. Malta could also incorporate green skills into educator competency frameworks and training, as well as national education standards.
+
+## Description
+
+The net-zero transition is becoming increasingly urgent, with growing adoption across EU countries – including Malta – bringing significant implications for education systems, workplaces and communities. As the climate crisis intensifies, embedding green skills into day-to-day learning in schools is essential to fostering a generation of climate-informed, environmentally responsible learners (UNICEF, 2024[111]; Salvi del Pero, Wyckoff and Vourc'h, 2022[112]). The development of green skills is also central to preparing the workforce for future careers in industries that are increasingly shifting towards more environmentally sustainable activities. This underlines the importance of ensuring that green skills are included not only in compulsory education, but also in post-compulsory education and in adult learning programmes (OECD, 2023[113]).
+
+In Malta, the integration of green skills into education and training is currently more limited than the integration of other types of future skills, such as digital and AI skills, which are advancing more rapidly due to several initiatives (e.g. Digital Education Strategy 2024-2030, Digital Decade Roadmap 2023-2030) (Cedefop, 2024[114]; Government of Malta, 2024[115]; Government of Malta, 2023[116]). Through the National Education Strategy 2024-2030, Malta already aims to introduce educational technologies for the net-zero transition into the revised National Curriculum Framework, provide accredited primary and secondary school programmes focussing on sustainability and green skills, and increase investments in scholarships for fields relevant to the net-zero transition (MEYR, 2024[52]). However, while these measures in compulsory education represent important progress, they can be further strengthened by further mainstreaming green skills in vocational education and training (see Recommendation 15), in higher and post-graduate education (see Recommendation 16), and in workplace learning (see Priority Topic 6). As a useful reference, France illustrates a whole-of-system approach that integrates green skills not only into primary and secondary school curricula, but also in employment and training policies (see Box 2.14) (Global Environmental Education Partnership, 2025[117]; European Commission, 2024[118]).
+
+As a starting point, Malta could undertake a comprehensive mapping exercise to examine the extent to which green skills are currently embedded across post-secondary levels, higher education, and advanced vocational education (MQF Levels 4 to 7). Such an exercise would help identify gaps and opportunities to further integrate green skills into course content and outcomes, as well as strengthen linkages across all subject areas. Malta could further support these efforts by integrating green skills into competency frameworks and training opportunities for educators and trainers (see Priority Topic 3), as well as embedding them into national educational standards (e.g. National Quality Standards in Education [3-16 years]) (MEYR, 2023[80]).
+
+## Box 2.14. France: Adopting a system-wide approach to green skills in education and training
+
+In 2004, the French Government introduced environmental education for sustainable development (EESD) into the national curriculum for primary and secondary schools. After a one-year experiment was conducted in over 80 French schools, this transversal education was generalised. Teachers received training on curriculum implementation and guidance on suitable tools, content and pedagogical approaches. Regional task forces were created to co-ordinate and monitor implementation, to offer support for teachers and to foster educational initiatives. In addition, France also offers various technical programmes at the secondary level for students to specialise in environment-related fields.
+
+France continues to expand its efforts to integrate green skills across all areas of education and training. In 2024, the General Delegation for Employment and Professional Training (DGEFP) of the Ministry of Labour requested Technical Support Instrument assistance to develop a roadmap for the green transition and adapt the continuous training system to emerging green skills needs. The first phase of the project assessed the preparedness of employment and training schemes under the DGEFP's remit, drawing on international good practices. The second phase involves developing an action plan, a toolkit to support local implementation, a training plan for DGEFP staff and a methodology for greening employment and training policies and following their implementation.
+
+Source: Global Environmental Education Partnership (2025[117]), France, https://thegeep.org/resources/countries/france#:\~:text=France%20has%20demonstrated%20its%20commitment,to%20specialize%20in%20environmental%20fields; European Commission (2024[118]), Implementing in France the green transition roadmap of the general delegation for employment and professional training, https://reform-support.ec.europa.eu/what-we-do/skills-education-and-training/implementing-france-green-transition-roadmap-general-delegation-employment-and-professional-training\_en?prefLang=bg.
+
+## Plan for implementation
+
+This recommendation could be led by the Ministry for the Environment, Energy and Public Cleanliness (MEEC), with the Climate Action Authority (CAA) as co-lead.
+
+In addition to the NSC, the MEYR should be involved as a partner as it oversees national education policies. As the integration of green skills affects curricula across all levels of education and training, relevant directorates within the MEYR responsible for curriculum development in both formal school education and adult learning could be involved, alongside the MFHEA, which oversees curriculum development for VET and tertiary education. UM and MCAST should be involved given that they have existing programmes that develop skills essential for the net-zero transition.
+
+The integration of green skills across all education and training levels is advised to follow these steps: first, mapping the extent to which green skills are currently embedded across curricula; second, identifying gaps and opportunities to integrate green skills; and finally, incorporating programmes into curricula. It is recommended that the mapping be undertaken in Phase 1 (2026-2027), followed by the other steps, which are likely to spill over into Phase 2 (2028-2030).
+
+Relative costs are anticipated to be moderate and will accrue should changes to curricula be introduced. Administrative complexity is also expected to be moderate, arising from the need to consider diverse curricula across different education levels. Funding could be sourced from the MEEC and CAA budgets.
+
+An overview of the plan for implementation is presented in Table 2.14.
+
+Table 2.14. Implementation plan for Recommendation 14
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>14. Integrate green skills across all education and training levels to prepare the workforce for the net-zero transition</td><td>Policy owner: MEEC; CAAPartners: MFHEA; NSC; MEYR; UM; MCAST</td><td>Phase 1 (2026-2027) – Phase 2 (2028-2030)</td><td>Relative cost and administrative complexity: moderate</td><td>MEEC; CAA</td></tr></table>
+
+Recommendation 15: Promote vocational education and training (VET) as a rewarding pathway for acquiring high-value digital and green skills
+
+It is recommended that Malta implement targeted information and awareness-raising initiatives to improve perceptions of VET, working closely with career guidance services. This could include bringing VET role models into schools, providing accessible information on jobs for the digital and net-zero transitions, and promoting participation in skills competitions.
+
+## Description
+
+Vocational education and training (VET) plays a central role in advancing the digital and net-zero transitions. Owing to its close links with the world of work, VET is at the forefront of equipping the workforce with the technical and transversal skills required in environmentally sustainable industries and increasingly digital work processes, including those shaped by the expansion of AI (European Commission, 2024[119]; OECD, 2025[120]).
+
+Recognising the strategic importance of VET, Malta has undertaken reforms to enhance programme quality and deepen industry partnerships. These efforts have contributed to positive labour market outcomes, with employment rates among Maltese VET graduates (89%) now comparable to those of tertiary graduates (91%) (European Commission, 2024[53]; Cedefop, 2017[121]).
+
+Despite these gains, participation in vocational pathways remains limited in Malta. In 2022, only 28% of Maltese upper secondary and post-secondary non-tertiary students (ISCED 3-4) were enrolled in VET programmes – a figure almost half of the EU average of 54% (European Commission, 2024[53]). As in many OECD and EU countries, reputational challenges persist in Malta, with VET often perceived as a second-choice option relative to academic tracks (Malta Chamber of SMEs, 2015[122]; TSI consultations of stakeholders, 2025[20]).
+
+Increasing participation in VET is essential for Malta to supply the specialised skills required in key sectors linked to the digital and net-zero transitions, as outlined in Malta Vision 2050 and the Smart Specialisation Strategy. Ongoing structural improvements to the VET system will provide a foundation for raising the profile of vocational pathways, supported by additional measures in the skills strategy such as strengthening industry partnerships, including collaboration with the thematic committees where appropriate (see Recommendation 29) and strengthening skills recognition mechanisms (see Recommendation 20).
+
+Complementing these structural reforms, targeted information and awareness-raising initiatives can help improve perceptions of VET pathways. In partnership with career guidance services (see Priority Topic 2), Malta could provide learners with information about the relevance of vocational skills to innovation-driven workplaces and the availability of rewarding, high-quality careers in green and digital sectors. For example, in Denmark, VET role models visit lower secondary schools to raise awareness about green occupations and support informed choices at the upper secondary level (OECD, 2025[120]). Austria Fighters4Climate initiative similarly provides accessible online information on green careers and related VET programmes (see Box 2.15). Austria's Talent Centres further complement such efforts by offering structured, hands-on skills assessments and guidance to help learners identify VET pathways aligned with their strengths and interests, while online platforms such as the Netherlands' KiesMBO provide accessible tools for exploring VET options and matching them to individual preferences (see Box 2.15). To complement such initiatives, promoting Maltese participation in skills competitions, such as WorldSkills Europe, could further elevate the visibility of VET by showcasing the achievements of learners and apprentices to the wider public (TSI consultations of stakeholders, 2025[20]; Cedefop, 2025[123]).
+
+## Box 2.15. Austria and the Netherlands: Promoting VET pathways through targeted information and guidance
+
+## Austria: Inspiring and guiding learners towards vocational green careers
+
+In Austria, 81% of Austrian youth report wanting more information about green jobs. To respond to this demand and promote the relevance of green jobs to the energy transition, the Fighters4Climate initiative (#careersforclimate) was launched in 2023 by Oecolution, an independent think tank. The initiative's website (www.fighters4climate.at) presents the 13 key green occupations, many of which are technical and vocational in nature (e.g. installation and building technician, climate/heating technician, solar technician), using short videos, real-life role models and links to relevant education and training programmes. To maximise its reach, the initiative is complemented by nationwide media campaigns and the dissemination of learning materials through schools. In parallel, Austria's Talent Centres provide structured, hands-on guidance to support informed education choices. Through a combination of practical workshops, aptitude assessments and reflective exercises (“talent checks”), these centres help learners identify their strengths, including technical and transversal skills, and match them with suitable education and training pathways. Together, these initiatives combine awareness-raising with personalised guidance, strengthening both the attractiveness and accessibility of vocational education pathways.
+
+## Netherlands: Guiding VET choices through the KiesMBO online platform
+
+In the Netherlands, the KiesMBO platform supports students, parents and teachers in navigating upper secondary VET options. The platform provides accessible information on programmes and career pathways, alongside interactive tools such as interest tests that help learners identify suitable fields based on their preferences, strengths and career aspirations. By combining information with self-assessment tools, KiesMBO facilitates more informed and personalised study choices and strengthens awareness of VET opportunities.
+
+Source: Oecolution (2025[124]), Fighters4Climate Homepage, https://jetzt.oecolution.at/fighters4climate; European Commission (2024[119]), Vocational education and training and the green transition: A compendium of inspiring practices, https://employment-social-affairs.ec.europa.eu/document/download/b4b7c905-1947-4e58-a2b1-cbb7fdfd1253\_en?filename=2024%20Compendium\_V3.pdf; Talent Center (2026[125]), Webpage Talent Center, https://talentcenter.at/en/; KiesMBO (2026[126]), Webpage KiesMBO, https://www.kiesmbo.nl/home.
+
+## Plan for implementation
+
+This recommendation could be led by the NSC, with MCAST and ITS as co-leads, as providers of VET.
+
+The Directorate for STEM and VET Programmes (DSVP) within the MEYR should be involved, given its responsibility for curriculum transformation in STEM and VET education. Since the recommendation also includes information and awareness-raising initiatives for VET, it is important to engage career guidance services, including the NCGN. The MCESD could also be involved as a partner to help ensure that efforts to promote VET as a pathway for high-value digital and green skills are aligned with labour market needs and supported by employers, trade unions, and civil society. Finally, the UM could be a partner, for instance to help promote VET pathways to relevant students.
+
+Given VET's central role in advancing the digital and net-zero transitions and the below-average enrolment in VET programmes at Maltese upper-secondary and post-secondary non-tertiary levels, it could be beneficial to implement this recommendation in Phase 1 (2026-2027).
+
+The recommendation is expected to entail moderate costs and administrative complexity. However, costs will depend strongly on the scope and scale of the planned information and awareness-raising initiatives. Funding could be provided by the NSC, with contributions from employers.
+
+An overview of the plan for implementation is presented in Table 2.15.
+
+Table 2.15. Implementation plan for Recommendation 15
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>15. Promote vocational education and training (VET) as a rewarding pathway for acquiring high-value digital and green skills</td><td>Policy owner: NSC; MCAST; ITS Partners: NCGN; MCESD; MEYR (DSVP), UM</td><td>Phase 1 (2026-2027)</td><td>Relative cost and administrative complexity: moderate</td><td>NSC budget; Employer contributions</td></tr></table>
+
+## Recommendation 16: Identify priority areas for specialised post-graduate qualifications or awards to ensure a steady supply of skills for the digital and net-zero transitions
+
+It is recommended that Malta uses the results of SAA exercises from the Malta Skills Observatory to identify priority skilling areas. In developing new qualifications, it is important to promote a co-creation approach between higher education institutions and employers, as well as collaborate with career guidance services to encourage uptake among learners.
+
+## Description
+
+Malta's competitiveness in the knowledge economy, and its progress in the digital and net-zero transitions depend on an innovative, high-value workforce. Mainstreaming green, digital and AI skills early in education (see Recommendation 14) is essential for building a strong foundation. However, realising new opportunities for innovation and growth will also require specialised expertise. Higher education and post-graduate programmes are central to this effort. They provide advanced technical skills and knowledge, and they offer learning environments that foster innovation, creativity, critical thinking, and problem-solving (Hoidn and Kärkkäinen, 2014[127]; OECD, 2023[128]).
+
+Malta has expanded its range of post-graduate qualifications related to the digital and net-zero transitions. The University of Malta offers several MQF Level 7 programmes supporting the net-zero transition, including an MSc in Sustainable Energy, an MSc in Environmental Management and Sustainability, and a
+
+Master in Education for Sustainable Development, alongside multiple digital-focussed programmes such as an MSc in Digital Health, an MSc in Digital Games, and an MSc in Artificial Intelligence (University of Malta, 2025[129]). The Malta College for Arts, Science and Technology (MCAST) also offers relevant post-graduate vocational qualifications, including an MSc in Information Technology and Systems and an MSc in Environmental Engineering (MCAST, 2025[130]).
+
+In addition to full qualifications, Malta also offers a range of awards – certifications with fewer ECTS credits than required for a qualification (e.g. micro-credentials, short courses) (MFHEA, 2024[131]) – to support the development of green and digital skills. For example, Jobsplus provides awards such as the Award in Green Skills – The Four Challenges Experience and the Award in Green Jobs Motivational Training (Jobsplus, 2025[132]).
+
+Ensuring a steady supply of specialised skills will require a more systematic approach to identifying priority areas for new post-graduate provision. As Malta advances in its digital and net-zero transitions, new industrial activities will emerge and skills demands will evolve. In response, Malta could regularly identify priority areas of skills needs and lead the development of specialised qualifications, both to address current shortages and to anticipate future gaps.
+
+The results of SAA exercises (see Priority Topic 1) are central to identifying these priority areas, with the Malta Skills Observatory playing a key role in generating evidence to inform the development of new post-graduate qualifications and awards. Ireland provides a useful reference point: the Human Capital Initiative expands training provision in priority skills areas, drawing on analysis by the Skills and Labour Market Research Unit and consultation with employers, regional partners and experts (see Box 2.16) (Higher Education Authority, 2025[133]). In Malta, a co-creation approach between higher education institutions and employers can help ensure industry relevance. Engagement with guidance services (see Priority Topic 2) will also be important in promoting the new programmes and encouraging uptake among learners.
+
+## Box 2.16. Ireland: Expanding specialised programmes and aligning investments with priority skills needs through the Human Capital Initiative (HCI)
+
+Ireland's Higher Education Authority leads the Human Capital Initiative (HCI), a five-year project that aims to strengthen higher education's capacity to deliver skills-oriented programmes in areas of priority demand, particularly in high-productivity and high-growth sectors. These priority skills needs are identified by the National Skills Council, using evidence from the Skills and Labour Market Research Unit and consultations with the Regional Skills Fora, the National Training Fund Advisory Group, the Expert Group on Future Skills Needs, and employer representatives. Based on these assessments, the HCI channels over EUR 300 million of targeted investments from the National Training Fund into specialised education programmes.
+
+The HCI operates across three pillars. Pillar I funds full-time graduate conversion courses, offering subsidised places in programmes leading to a higher education diploma (Level 8 of the National Qualifications Framework) or a postgraduate diploma (Level 9). These courses were developed specifically for the HCI and prioritise digital, green and transversal skills, as well as management and leadership skills. Pillar II provides incentives for additional places in full-time undergraduate programmes in priority skills areas, while Pillar III supports innovative projects that foster collaboration between higher education institutions and enterprise partners.
+
+Source: Higher Education Authority (2025[133]), What is the Human Capital Initiative (HCI?), https://hea.ie/skills-engagement/what-is-human-capital-initiative-hci/; Higher Education Authority (2025[134]), Human Capital Initiative, https://hea.ie/skills-engagement/human-capital-initiative-pillars-1-2-and-3/.
+
+## Plan for implementation
+
+This recommendation could be led by the NSC, with Malta Enterprise as co-lead, which would ensure that priority areas for specialised postgraduate qualifications are directly informed by industry demand and investment trends linked to the digital and net-zero transitions.
+
+However, identifying priority areas for skills needs and leading the development of specialised qualifications requires a high level of co-ordination, as the expansion of specialised postgraduate qualifications must take into account the priorities of multiple stakeholders and the skills requirements of various industries, which are dynamic. Key partners therefore include the MEYR, the MFHEA, Jobsplus, MEEC, MDIA, UM, MCAST, the Student Maintenance Grant Board, and the thematic committees (see Recommendation 29).
+
+The results of SAA exercises (see Priority topic 1) are central to identifying these priority areas, with the Malta Skills Observatory playing a key role in generating evidence to inform the development of new post-graduate qualifications and awards. These initiatives are scheduled for implementation in Phase 1 (2026-2027) and Phase 2 (2028-2030). To this end, the identification of priority areas could take place in Phase 2 (2028-2030) once initial results are available. However, the identification of specialised postgraduate qualifications should be treated as a continuous and ongoing process, supported by regular dialogue among stakeholders.
+
+The relative costs of implementing the recommendation are expected to be low, but administrative complexity is anticipated to be moderate, reflecting the significant level of co-ordination required. This includes substantial staff time to ensure effective implementation. Funding could be provided by the NSC, and, potentially, employer contributions.
+
+An overview of the plan for implementation is presented in Table 2.16.
+
+Table 2.16. Implementation plan for Recommendation 16
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>16. Identify priority areas for specialised post-graduate qualifications or awards to ensure a steady supply of skills for the digital and net-zero transitions</td><td>Policy owner: NSC; Malta Enterprise Partners: MEYR; MFHEA; Jobsplus; MEEC; MDIA; Thematic committees (see Recommendation 29); UM; MCAST; Student Maintenance Grant Board</td><td>Phase 2 (2028-2030)</td><td>Relative cost: low Administrative complexity: moderate</td><td>NSC budget; Employer contributions</td></tr></table>
+
+Recommendation 17: Conduct an in-depth evaluation of Malta's quality assurance system to streamline processes and strengthen future-readiness
+
+It is recommended that Malta consult regulatory bodies, educational institutions, employers and learners to examine key process issues, as well as identify opportunities to integrate future skills into quality assurance frameworks. The study may produce evidence-informed recommendations on the way forward, complemented by guidance on how to implement the recommendations in practice.
+
+## Description
+
+Across all levels of education and training, ensuring quality is critical to ensuring that learning offers meet labour market standards and future skill needs. A robust quality assurance system helps guarantee that learners acquire the intended skills outcomes upon training completion, maximising their returns on investment, both in terms of time and money (OECD, 2021[135]). High-quality training provision brings benefits for numerous stakeholders in the skills system: it builds trust in education providers and learning institutions, increases learners' willingness to further invest in training, and enhances employer confidence in the skills of newly trained workers (OECD, 2024[136]).
+
+Malta has strengthened its quality assurance system in recent years through the National Quality Assurance Framework for Further and Higher Education, which complements internal quality mechanisms. In addition, Malta also aligns with European frameworks, such as the European Association for Quality Assurance in Higher Education (ENQA) and the European Quality Assurance in Vocational Education and Training (EQAVET) (Eurydice, 2025[137]; Spiteri, 2016[138]).
+
+Nonetheless, challenges remain, with burdensome administrative processes remaining a key concern among stakeholders. Heavy bureaucratic requirements often deter employers and training providers from designing and accrediting new training offers, which, if unaddressed, can potentially undermine the ability of Malta to rapidly adapt to emerging skills needed for the digital and net-zero transitions. Moreover, inconsistencies exist among evaluators, and overlaps in state-funded training offers reduce efficiency and optimal use of public resources (TSI consultations of stakeholders, 2025[20]).
+
+To address these issues, Malta could benefit from conducting a comprehensive study of its quality assurance system, drawing on international examples such as Lithuania, where a TSI project assessed the coherence, effectiveness, and efficiency of external evaluation processes (see Box 2.17) (OECD, 2025[139]). In Malta, it is important that the study assess all levels of education and involve key stakeholders – including regulatory bodies, educational institutions, employers, and learners – in identifying gaps and improvement opportunities, and in developing recommendations to address resource constraints. The recommendations could explore how to embed green, digital and transversal skills outcomes into evaluation frameworks. Both formal and non-formal learning provision could be assessed, with guidance included to ensure that recommendations are implementable.
+
+## Box 2.17. Lithuania: Identifying concrete opportunities to improve the external quality assurance system through an expert study
+
+Following reforms in higher education and VET, the Ministry of Education, Science and Sports in Lithuania requested the EU's technical support to strengthen the coherence, effectiveness, and efficiency of its external evaluation and quality assurance systems. Funded by the EU through the Technical Support Instrument and implemented by OECD together with the European Commission, Lithuania conducted a project to identify bottlenecks and propose measures to enhance the quality and relevance of teaching and learning.
+
+Drawing on OECD data and stakeholder input, the study highlighted regulatory barriers, financial and human resource shortages, limited use of skills data, and weak co-ordination among training providers. In response, it developed policy recommendations based on international evidence and EU good practices. Targeted recommendations also suggest innovative reforms to support the digital and net-zero transitions, such as embedding digitalisation and climate change in evaluation frameworks for higher education institutions. The OECD team produced a roadmap with clear action points to guide the implementation of these recommendations.
+
+Source: OECD (2025[139]), Ensuring Quality Vocational and Higher Education in Lithuania, https://doi.org/10.1787/7a0131cf-en.
+
+## Plan for implementation
+
+This recommendation could be led by the MFHEA, which oversees the National Quality Assurance Framework for Further and Higher Education. The Directorate for Quality and Standards in Education (DQSE) within the MEYR could serve as co-lead for the implementation. This would help to ensure that the evaluation is grounded in system-level evidence, regulatory insight, and practical knowledge of existing quality assurance processes.
+
+Potential funding could be acquired during Phase 1 (2026-2027). The actual implementation of this recommendation could take place in Phase 2 (2028-2030), given the various challenges associated with the current quality assurance system that may affect Malta's ability to adapt to changing skills needs, as expressed by stakeholders during TSI consultations in 2025.
+
+The relative costs of implementing this recommendation are expected to be low, while administrative complexity is expected to be moderate due to the substantial co-ordination required. This includes substantial staff time to ensure effective implementation.
+
+Funding could come from relevant European funds such as the Technical Support Instrument (TSI), which, for example, funded a comprehensive study of Lithuania's quality assurance system (OECD, 2025[139]).
+
+An overview of the plan for implementation is presented in Table 2.17.
+
+Table 2.17. Implementation plan for Recommendation 17
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>17. Conduct an in-depth evaluation of Malta&#x27;s quality assurance system to streamline processes and strengthen future-readiness</td><td>Policy owner: MFHEA; MEYR (DQSE)</td><td>Phase 2 (2028-2030)</td><td>Relative cost: low Administrative complexity: moderate</td><td>EU Funding, including the Technical Support Instrument (TSI)</td></tr></table>
+
+## Priority Topic 5: Encouraging and incentivising adults to participate in learning activities
+
+Encouraging and incentivising adult learning is essential for equipping workers with the skills needed for the digital and net-zero transitions. Evidence shows that adults are more likely to engage in learning when they understand its benefits and expect positive outcomes (OECD, 2023[140]; OECD, 2025[6]). In Malta, however, adults' motivation to learn is slightly below the EU average and is primarily driven by external rewards such as better employment prospects, higher pay, promotions, or increased status (Borg and Pace, 2022[141]; Cedefop, 2021[142]). While externally-driven motivation can prompt learning, fostering inherent motivation to learn is particularly important in Malta, where many adults perceive little immediate need to upskill or reskill due to a tight labour market with readily available employment opportunities (OECD, 2025[6]).
+
+Logistical barriers, such as time constraints, also limit participation in learning. In Malta, 64% of adults cite busy work schedules as a barrier – well above the EU average of 40% – while 38% report family responsibilities, compared to 26% across the EU (Eurostat, 2024[143]). Although providers have introduced more flexible learning options (e.g. self-paced courses on MEYR's Learning Box (Learning Box, 2025[144])), demand could be further stimulated by creating easier access pathways, particularly for disadvantaged groups such as adults with lower educational attainment, who face greater challenges in accessing education and training and are less motivated (see Figure 2.5) (Eurostat, 2024[143]).
+
+Figure 2.5. Share of adults aged 25 to 64 years who wanted to participate in education and training but encountered difficulties, 2022  
+![](images/7e1b9dd118d276ab1a5395ce396553c10398f0bfe9991dacb8c8e2ce5f94bafc.jpg)  
+Source: Eurostat (2022[145]), Population not participating in education or training by main reason and educational attainment level, https://ec.europa.eu/eurostat/databrowser/view/trng\_aes\_197\_custom\_17749085/default/table.
+
+StatLink https://stat.link/xdls0r
+
+To better encourage and incentivise adults to participate in learning activities, the TSI project team recommends: 1) complementing existing awareness-raising initiatives with a comprehensive, integrated national campaign to promote lifelong learning; 2) strengthening existing incentives for adult learners by allocating more benefits and/or easing eligibility criteria for target groups to encourage training in areas of skills shortage; and 3) increasing uptake of recognition of prior learning (RPL) and validation of non-formal and informal learning (VINFL), with a particular focus on disadvantaged groups.
+
+## Recommendation 18: Complement existing awareness-raising initiatives with a comprehensive, integrated national campaign to promote lifelong learning
+
+It is recommended that Malta prepare a comprehensive nationwide campaign to promote lifelong learning, targeting diverse audiences with tailored messaging and multiple communication channels. To ensure inclusivity, the campaign could collaborate with trusted intermediaries and highlight flexible, accessible skilling opportunities that address barriers and emphasise the benefits of continuous upskilling.
+
+## Description
+
+The National Skills Council in Malta has conducted several campaigns to raise awareness about lifelong learning, emphasising the importance of transversal skills and adapting to digital tools and AI (TSI consultations of stakeholders, 2025[20]).
+
+Building on this momentum, stakeholders are enthusiastic about launching a comprehensive nationwide campaign that highlights the relevance of lifelong learning in the context of the digital and net-zero transitions, available opportunities and incentives, and how diverse audiences can access them. Based on current trends and contexts, the campaign could explore a broad range of communication channels, including traditional media (e.g. television, social media, podcasts) and non-traditional approaches (e.g. stakeholder events, guerrilla marketing $^{3}$ ).
+
+Defining clear target audiences is critical to the campaign's success. For example, the UK's It All Starts with Skills campaign focuses on employers interested in upskilling, young people starting their careers, and career changers aged 24-59, using tailored, action-oriented messaging to reach each group effectively (see Box 2.18) (UK Department for Education, 2025[146]; OECD, 2024[147]). In Malta, the National Skills Council is developing learner personas to better understand target audiences' behaviours, motivations, and circumstances, which can inform the design of the national lifelong learning campaign.
+
+To ensure inclusivity and reach disadvantaged adults, Malta could collaborate with trusted intermediaries such as employers, NGOs, and civil society organisations that already engage with these groups. Core messages could highlight the flexibility and accessibility of Malta's skilling initiatives, address common participation barriers such as time constraints and negative past experiences with formal education, and emphasise the benefits of continuous upskilling in a rapidly evolving labour market.
+
+## Box 2.18. United Kingdom: Tailoring lifelong learning campaign messages to diverse audiences
+
+In 2023, the UK Department for Education launched the It All Starts with Skills campaign to raise awareness of new skilling initiatives among three priority groups: 1) employers seeking to upskill staff or recruit talent; 2) young people aged 14-19 making informed career choices; and 3) career changers aged 24-59 needing new skills to adapt to the labour market.
+
+The campaign's central message emphasises that every individual and business has untapped potential, with skills as the key to unlocking it. Recognising the differing needs and life stages of each audience, the campaign tailors its messaging accordingly: a “punchy and provocative” tone for young people to explore diverse training options; a “supportive and encouraging” tone for career changers to build confidence in pursuing new opportunities; and a “clear and direct” tone for employers, highlighting the business value of training. Promotional materials feature real-life examples of individuals who have benefited from the Department for Education’s initiatives. Communication channels include social media, television, radio, print, billboards, and cinema, ensuring broad visibility and engagement across target groups.
+
+Source: UK Department for Education (2025[148]), “It all starts with skills” campaign introduction and background, www.gov.uk/government/publications/it-all-starts-with-skills-campaign-introduction-and-background/it-all-starts-with-skills-campaign-introduction-and-background; UK Department for Education (2025[146]), It all starts with skills: Campaign guidelines, https://assets.publishing.service.gov.uk/media/6853d2d3679778c74ec15eac/lt\_all\_starts\_with\_skills\_campaign\_guidelines.pdf; OECD (2024[147]), Outline for a communication campaign to raise awareness of the National Skills Strategy for Bulgaria, www.oecd.org/content/dam/oecd/en/about/programmes/dg-reform/bulgaria/Outline-for-a-communication-campaign-to-raise-awareness-of-the-national-skills-strategy-for-Bulgaria.pdf.
+
+## Plan for implementation
+
+This recommendation could be led by the NSC, given its experience in conducting awareness-raising campaigns. Moreover, the campaign could build on current work by the NSC, such as the development of learner personas as part of Recommendation 8 to better understand target audiences' behaviours, motivations and circumstances. To ensure alignment with existing initiatives to promote lifelong learning, the MEYR and its Directorate for Lifelong Learning and Employability would be an important co-lead.
+
+To ensure inclusivity and reach disadvantaged adults, the NSC could also partner with various trusted intermediaries, such as employers (e.g. the Malta Chamber of Commerce, Enterprise and Industry, the Malta Chamber of SMEs, the Malta Employers Association), educational institutions (UM, MCAST, IfE, ITS), Wellbeing Services and the National Literacy Agency within MEYR, NGOs, and civil society organisations (e.g. the Foundation for Social Welfare Services [FSWS], FIDEM, Blue Door Education).
+
+This recommendation is advised to be implemented in Phase 2 (2028-2030) as it builds upon ongoing work by the NSC on developing learner personas (Recommendation 8) which will be conducted during Phase 1 (2026-2027). The implementation of this recommendation is suggested to follow a series of steps: defining the target group, identifying barriers, developing learner personas (already underway by the NSC [Recommendation 8] and launching the campaign across various channels.
+
+The recommendation is expected to entail high costs and moderate administrative complexity. Costs may be relatively high, as ensuring the initiative effectively reaches “hard-to-reach” groups requires additional outreach mechanisms – such as in-person engagement – which can increase resource demands. However, as with other recommended campaigns, for example, those relating to the teaching profession (Recommendation 12), costs will largely depend on the final scale of the campaign and the communication formats selected. While costs may vary, they are likely to remain manageable if the campaign is targeted and relies on existing channels. Funding could be provided by the NSC.
+
+An overview of the plan for implementation is presented in Table 2.18.
+
+Table 2.18. Implementation plan for Recommendation 18
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>18. Complement existing awareness-raising initiatives with a comprehensive, integrated national campaign to promote lifelong learning</td><td>Policy owner: NSC; MEYR (DLE)Partners: Malta Chamber of Commerce, Enterprise and Industry; Malta Chamber of SMEs; Malta Employers Association; UM; MCAST; ITS; IfE; MEYR (Wellbeing Services Directorate); National Literacy Agency (MEYR); NGOs and civil society organisations (e.g. FSWS, FIDEM, Blue Door Education)</td><td>Phase 2(2028-2030)</td><td>Relative cost: highAdministrative complexity: moderate</td><td>NSC budget</td></tr></table>
+
+## Recommendation 19: Strengthen existing incentives for adult learners by increasing benefits and/or easing eligibility criteria for target groups to encourage training in areas of skills shortage
+
+It is recommended that Malta review its range of existing incentives and explore how to increase the value of subsidies, offer more time allowance, and ease eligibility criteria for select sectors and disadvantaged groups. It is important to inform decisions on eligible sectors and target groups by the results of SAA exercises, with particular attention to skills needed for the digital and net-zero transitions.
+
+## Description
+
+Many adults choose to participate in training opportunities because they believe that they can acquire skills that are relevant and valued in the labour market (OECD, 2019[149]). Making informed training choices requires access to accurate and up-to-date information on skills that are in high demand today and those expected to grow in importance in the future (see Priority Topics 1 and 2).
+
+Many OECD countries go further by steering training choices towards shortage areas by varying the level of incentive in areas of critical skills shortages. For example, in Belgium, jobseekers in Wallonia receive a training bonus when enrolling in courses linked to shortage or critical sectors identified by the regional employment office (see Box 2.19) (Forem, 2025[150]). In Malta, a similar approach is already applied in higher education, where Student Maintenance Grants provide larger allowances to students pursuing “High Priority” courses (University of Malta, 2024[151]).
+
+However, the adult learning system does not yet adopt this targeted method. Jobsplus operates several major schemes to incentivise learning, including the MySkills Scheme, the Investing in Skills Scheme, and Bridging the Gap Scheme (JobsPlus, 2025[152]; JobsPlus, 2025[153]; JobsPlus, 2026[154]), as well as tailored schemes for specific groups – e.g. Job Brokerage Scheme for migrant jobseekers (JobsPlus, 2025[155]), VASTE Programme II for persons with disabilities and other disadvantaged or vulnerable groups (JobsPlus, 2025[156]). While these schemes provide substantial support to learners, they are not currently structured to incentivise participation in areas of critical skills shortage.
+
+To strengthen the alignment between skills supply and labour market demand, Malta would benefit from reviewing its incentive framework and carefully exploring options to increase the value of subsidies, offer more time allowances for training (see Recommendation 21), and ease eligibility criteria in specific sectors or for demographic groups, where feasible. In doing so, it will be important to take into account relevant national and EU regulations governing public support for training. In particular, incentives linked to training that is mandatory by law or required for licensing purposes may be subject to restrictions, especially under EU frameworks such as the Investing in Skills scheme. While some adjustments can be made at national level, others may require broader discussions at EU level.
+
+Decisions on what specific sectors or demographic groups should be targeted with incentives, could be informed by the results of SAA exercises (see Recommendations 2 and 3). Particular attention could be paid to skills needed for the digital and net-zero transitions as well as the sectors identified as strategically important in the Smart Specialisation Strategy 2021-2027 and Malta Vision 2050. At the same time, integrating clear and accessible information on these incentives into a nationwide awareness campaign would help ensure that learners understand their relevance to specific skilling areas, further promoting participation in training (see Recommendation 18).
+
+## Box 2.19. Belgium: Encouraging jobseekers to train in areas of critical skills shortage
+
+In Belgium, Incitant+ is a EUR 350 one-time bonus provided to jobseekers registered with the Walloon Office for Training and Employment (Forem) who have successfully completed an accredited training programme in shortage sectors. Individuals will have to attend a minimum of 35 hours of training per week for a duration of at least four weeks, and completion must be evidenced by a training certificate. Shortage sectors are determined by Forem, which annually conducts SAA exercises using statistical analysis of job offers and expert consultations to identify occupations where recruitment is difficult or qualified candidates are lacking. Forem also publishes a list of eligible training centres and courses. In addition to the one-time training bonus, jobseekers can access employment support, including a preparatory module to strengthen job interview skills.
+
+Source: Forem (2025[150]), Incitant+, une prime à la formation, www.leforem.be/citoyens/incitants-financiers-formation/incitant-plus.html; Forem (2025[157]), Difficultés et opportunités de recrutement: Métiers / fonctions critiques et en pénurie en Wallonie, www.leforem.be/content/dam/leforem/fr/documents/chiffres-et-analyses/analyses/analyse-liste2025-fonctions-critiques.pdf.
+
+## Plan for implementation
+
+The implementation of this recommendation could be led by Jobsplus, as the main body responsible for implementing and managing training incentive schemes in Malta, including the Investing in Skills scheme and similar employer-focussed programmes. Jobsplus should co-lead with Malta Enterprise, which may co-administer training incentives or link them to broader enterprise support packages.
+
+Suggested partners for the implementation of this recommendation are the MEYR, the Malta Development Bank, and the Planning and Priorities Co-ordination Division (PPCD) within the Ministry for European Funds and Implementation of the Electoral Programme.
+
+While preparatory work could begin earlier, it is recommended that the review of the existing incentive framework be conducted in Phase 2 (2028-2030). This would allow the review to take into account the results of the ongoing feasibility study on introducing Individual Learning Accounts (Recommendation 8, Phase 1 [2026-2027]), as well as initial results of SAA exercises to identify specific areas of skills shortages (see Priority topic 1, Phase 2 [2028-2030]). The review of the existing incentives framework should take into account all currently available grants, such as the MySkills scheme administered by Jobsplus. Furthermore, any review of easing eligibility criteria should also consider the feasibility of such changes within the parameters of existing financial schemes (e.g. current EU-funded schemes).
+
+Both the relative costs and administrative complexity are expected to be moderate. Reviewing and adapting Malta's incentive framework and securing broad buy-in will require significant staff time. Moreover, an increase in benefits would require additional funding. Funding could come from Jobsplus and Malta Enterprise.
+
+An overview of the plan for implementation is presented in Table 2.19.
+
+Table 2.19. Implementation plan for Recommendation 19
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>19. Strengthen existing incentives for adult learners by increasing benefits and/or easing eligibility criteria for target groups to encourage training in areas of skills shortage</td><td>Policy owner: Jobsplus; Malta Enterprise Partners: MEYR; Malta Development Bank; Ministry for European Funds and Implementation of the Electoral Programme (PPCD)</td><td>Phase 2 (2028-2030)</td><td>Relative cost and administrative complexity: moderate</td><td>Jobsplus; Malta Enterprise</td></tr></table>
+
+## Recommendation 20: Increase uptake of recognition of prior learning (RPL) and validation of non-formal and informal learning (VINFL), with a particular focus on disadvantaged groups
+
+It is recommended to increase visibility and uptake of RPL initiatives – especially among disadvantaged adults – and scale up outreach in key sectors. Data collection and assessing outcomes is essential to ensuring these services effectively support access to education, training, and labour market opportunities.
+
+## Description
+
+Malta has made significant progress in recent years in the recognition of prior learning (RPL) and the validation of informal and non-formal learning (VINFL), supported by policies, regulations, and dedicated governance bodies (OECD, 2025[6]; Eurydice, 2025[158]).
+
+To maximise the impact of these services, it is important to strengthen visibility and uptake, especially among disadvantaged groups. Participation in training remains lower among disadvantaged groups, such as adults with lower levels of educational attainment (Eurostat, 2024[159]), who often have limited experience in formal education and face greater barriers to accessing training opportunities (Meghnagi and Tuccio, 2022[160]; Eurostat, 2022[145]).
+
+To this end, Malta could scale up existing outreach efforts. This is especially relevant in sectors critical to economic development, such as tourism and construction, where adults with low qualifications are common. MFHEA representatives report ongoing collaboration with industry leaders, including employers and sectoral authorities, to promote RPL and VINFL services to disadvantaged groups. A comparable approach in the Netherlands – where government partnerships with the private sector and social partners have increased RPL requests across population groups – demonstrates the potential of such engagement (see Box 2.20) (OECD, 2022[161]).
+
+Central to these efforts is the improved collection and use of data on RPL and VINFL uptake. Data could be disaggregated by age, gender, educational attainment, and skill type to provide nuanced insights into service effectiveness. Beyond uptake, assessing outcomes and impacts is equally important, including the extent to which RPL and VINFL facilitate access to higher education, additional training, and improved labour market prospects for target groups.
+
+## Box 2.20. Netherlands: Leveraging stakeholder partnerships to boost the validation of prior learning uptake
+
+The Netherlands has a long-standing tradition in implementing the validation of prior learning – Erkenning van Verworven Competenties (EVC) in Dutch – which includes RPL and formal accreditation procedures. The development of the EVC system focussed on encouraging participation, with the government collaborating with a broad network of stakeholders to create favourable conditions for implementation and foster a culture supportive of EVC. These partnerships included schools, colleges and universities, as well as social partners such as trade unions and employers, who helped integrate EVC across various contexts such as workplaces, volunteering, job-seeking and reintegration, and education and training. Strong co-operation between the government and social partners continues today, contributing to broader coverage and higher participation in RPL among employees, jobseekers, and adults seeking to return to education or training. This collaboration is reinforced through collective labour agreements, which grant employees the right to EVC and allow the use of sectoral training and development funds for this purpose. In many sectors, social partners are also directly involved in designing EVC procedures.
+
+Source: Cedefop (2016[162]), 2016 Update to the European Inventory on Validation of Non-formal and Informal Learning – Country Report: Netherlands, www.cedefop.europa.eu/files/2016\_validate nl.pdf; OECD (2022[161]), The recognition of prior learning: Validating general competences, www.oecd.org/content/dam/oecd/en/publications/reports/2022/04/the-recognition-of-prior-learning\_f83256d2/2d9fb06a-en.pdf.
+
+## Plan for implementation
+
+This recommendation could be led by the MFHEA and the NSC. The MFHEA could lead the aspects related to RPL, as it is the body responsible for quality assurance, standards, and overall regulation of RPL. The NSC could lead the aspects related to the VINFL. The Directorate for Quality and Standards in Education (DQSE) within the MEYR, as well as the UM, MCAST and IfE could act as partners.
+
+The recommendation comprises several key elements. First, it seeks to enhance the visibility of RPL and VINFL through targeted outreach, particularly in sectors vital to economic development. Second, it aims to increase uptake, with a particular emphasis on disadvantaged groups. Third, it focusses on improving the collection and use of data relating to RPL and VINFL participation. It is recommended that these actions be implemented in Phase 2 (2028-2030).
+
+Relative costs and administrative complexity are expected to be moderate. The recommendation builds on existing RPL and VINFL systems and, therefore, requires only additional outreach, data-improvement activities and co-ordination among existing stakeholders. Expenditure would include outreach activities through appropriate channels, as well as the collection and use of data. Funding could be provided by the NSC or MFHEA.
+
+An overview of the plan for implementation is presented in Table 2.20.
+
+Table 2.20. Implementation plan for Recommendation 20
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>20. Increase uptake of recognition of prior learning (RPL) and validation of non-formal and informal learning (VINFL), with a particular focus on disadvantaged groups</td><td>Policy owner: MFHEA; NSCPartners: MEYR (DQSE); UM; MCAST; IfE</td><td>Phase 2 (2028-2030)</td><td>Relative cost and administrative complexity: moderate</td><td>MFHEA; NSC</td></tr></table>
+
+## Priority Topic 6: Incentivising employers to stimulate learning in their organisations
+
+Employers play a central role in addressing Malta's skills challenges by providing high-quality, relevant training. At the individual and firm level, training is essential to promoting job satisfaction and ensuring that all workers, especially those with low qualifications, have opportunities to upskill for the digital and net-zero transitions. Consequently, this can help enterprises not only fill skills gaps, but also more easily adapt to emerging technologies and workplace processes (OECD, 2025[6]; OECD, 2021[163]). At a broader level, continuous workplace upskilling can support employees to develop higher-level skills, strengthening Malta's competitiveness, especially in smart specialisation areas (Xjenza Malta, 2021[164]).
+
+However, many Maltese employers – especially SMEs – are reluctant to provide training or face constraints such as limited time, capital, and human resources. Concerns over employee turnover are heightened by a tight labour market, where poaching is a common concern among employers (TSI consultations of stakeholders, 2025[20]). Consequently, Maltese enterprises provide less training than the EU27 average across all enterprise sizes and types of training (see Figure 2.6) (Eurostat, 2020[165]). Given the benefits of employer-provided training and the strategic role of employers in driving growth and competitiveness, enhancing their participation in Malta’s adult learning system is a key priority.
+
+Figure 2.6. Share of enterprises providing continuing vocational training (CVT) by type of training, 2020  
+![](images/787567db4d62976f112d3de5ec4bf2fda18e8adcb11f5dc249bbae70301ba463.jpg)  
+Source: Eurostat (2020[165]), Enterprises providing training by type of training and size class – percentage of all enterprises, https://ec.europa.eu/eurostat/databrowser/view/trng\_cvt\_01s\_custom\_18030888/default/table.  
+StatLink https://stat.link/6qpk7m
+
+To incentivise employers to stimulate learning in their organisations, the project team recommends: 1) assessing the feasibility of introducing legislation on training during working hours, training leave, and payback clauses; 2) strengthening workplace learning through the provision of practical tools and support tailored to SMEs and micro-enterprises; and 3) matching readily available trainers with enterprises – particularly SMEs – to ensure reliable access to expertise.
+
+## Recommendation 21: Assess the feasibility of introducing legislation on training during working hours, training leave, and payback clauses
+
+It is recommended that Malta undertake feasibility studies on introducing legislation mandating training during working hours, prioritising transversal, digital, and green skills. In parallel, it could help to explore a training leave policy with a wage replacement scheme to support employers in shouldering costs. To safeguard employer investments, Malta may also assess the feasibility of introducing payback clauses, defining eligible training and including provisions for insolvency and extra-judicial settlement.
+
+## Description
+
+Promoting learning in enterprises requires addressing key barriers to worker participation, notably time constraints. Across OECD and EU countries, lack of time due to work and family responsibilities is among the most frequently cited obstacles (OECD, 2025[166]). In Malta, this barrier is particularly acute: $64\%$ of adults report that busy work schedules prevent them from engaging in training, compared with $40\%$ on average across the EU (OECD, 2025[6]). Malta could introduce several initiatives to address these time constraints.
+
+First, Malta could conduct a feasibility study on introducing legislation on training during working hours. Embedding training within regular working hours – rather than treating it as an additional burden – can help normalise participation, strengthen the culture of lifelong learning, and ensure equitable access to training across enterprises. Many OECD and EU countries address time-related barriers through legislation requiring enterprises to provide a minimum number of training hours, with participation recognised as working time (OECD, 2025[166]; OECD, 2025[6]). Potential legislation in Malta could draw on the example of Portugal, where employees are entitled to a minimum of 35 hours of annual training (Diário da República, 2009[167]) – see Box 2.6 in the Analysis Report (OECD, 2025[6]). This approach ensures that training occurs during regular working hours, rather than evenings or personal time, and can be linked to career progression.
+
+Eligible training could include short courses, targeted skills-based programmes, and non-formal or informal learning opportunities. Priority could also be given to transversal skills, which are increasingly valued in Maltese workplaces (Malta Chamber of Commerce, Enterprise and Industry, 2025[168]), alongside skills supporting the digital and net-zero transitions and sector-specific needs identified in Malta Vision 2050. In addition, the feasibility study could also assess tailored support for SMEs, including financial subsidies and access to a pool of readily available trainers (see Recommendation 23).
+
+Second, Malta could assess the feasibility of introducing a training leave policy, which is currently available only in the public sector and in some private companies at the discretion of the employer. A paid training leave scheme would enable employees to take time away from work to upskill, while government support could help reduce the financial burden on enterprises (OECD, 2025[166]). Luxembourg offers a useful reference point: workers are entitled to up to 20 days of training leave, and enterprises receive financial support through a wage replacement scheme (see Box 2.21) (Cedefop, 2020[169]). In Malta, a feasibility study could explore whether a similar model would be appropriate, potentially supported by legislation and collective agreements to ensure buy-in from both employers and unions. It would also be important to align uptake with enterprise training plans and monitor progress against agreed objectives and key performance indicators.
+
+Although training during working hours and paid leave offer clear benefits for both workers and firms, many Maltese employers remain reluctant to invest in training due to the risk of poaching. The risk of losing trained employees to competitors compounds existing employee retention pressures in a tight labour market (OECD, 2025[6]).
+
+To mitigate this risk and encourage employer investment, Malta could assess the feasibility of introducing payback clauses, which are contractual agreements allowing employers to recover part of their training costs if an employee leaves soon after (OECD, 2017[170]). At present, Maltese employers and employees may agree on training responsibilities and include a payback clause for training costs above EUR 1 000 (Cedefop, 2020[169]). However, the absence of a dedicated legal framework limits enforceability, as poaching firms may choose to cover reimbursement costs, leaving initial employers partially exposed. Moreover, many employers recognise that although payback clauses can protect their investments, obliging employees to remain after training could reduce job satisfaction and productivity (TSI consultations of stakeholders, 2025[20]).
+
+A payback clause policy in Malta would therefore need to be carefully designed, striking a good balance between employers' interest in recouping investments and employees' right to mobility. Legislation could define eligible training (e.g. cost, duration, type) while keeping administrative requirements minimal. It could also include provisions for case in which the training participant is insolvent, as well as mechanisms for extra-judicial settlement (OECD, 2021[171]; TSI consultations of stakeholders, 2025[20]). It would be important to avoid blanket application of the payback clause policy regardless of the employee's reason for departure, and to ensure that penalties are reasonable and proportionate. For example, the Czech Republic (hereafter "Czechia"), limits obligations to five years and reduces reimbursement based on employment duration (see Box 2.21) (Cedefop, 2020[172]). Malta could consider a similar approach, with provisions negotiated with employer associations and trade unions to support fair and effective enforcement.
+
+## Box 2.21. Luxembourg and Czechia: Promoting employee upskilling while safeguarding employer investments in training
+
+## Luxembourg: Helping employers shoulder the cost of a paid training leave policy through a wage replacement scheme
+
+Luxembourg provides a paid training leave scheme under the Law of 24 October 2007, enabling employees and self-employed workers to participate in training, prepare for exams, and complete related tasks. The law sets out eligibility conditions, duration, and a wage replacement mechanism. Eligible groups include private sector workers with at least six months under the same employer, as well as self-employed individuals and liberal professionals registered with the social security system for at least two years. Workers may take training leave equivalent to one-third of course hours, capped at 20 days over two years. During leave, the government compensates wages at the employee's average daily wage, up to four times the minimum wage. Eligible training includes courses offered in Luxembourg and abroad by recognised professional chambers, schools, municipalities, public agencies, and approved private providers.
+
+## Czechia: Protecting employers' training investments through a payback clause
+
+In Czechia, payback clauses can be applied to training leading to formal qualifications (ISCED levels 3-8) and relevant occupational courses, as well as to training costs exceeding CZK 75 000 (EUR 2 970). The employer agrees to fund the training, while the employee commits to remaining employed for an agreed period, although for no more than five years. In the case of premature departure, the employee is required to reimburse the employer for training costs, and the repayable share declines in proportion to the length of employment, as a proportion of the total compelled duration of employment. The clause applies in cases of voluntary resignation within the binding period, dismissal for serious contract breaches, or failure to complete the training. Payback clauses are legally enforceable under Act 262/2006 (Labour Code), allowing disputes to be settled in court.
+
+Source: Cedefop (2020[169]), Paid individual training leave, www.cedefop.europa.eu/en/tools/financing-adult-learning-db/search/paid-individual-training-leave-0; Ministry of National Education, Children and Youth (2024[173]), Congé individual de formation, https://men.public.lu/fr/systeme-educatif/professionnel/conge-individuel-de-formation.html; Cedefop (2020[172]), Payback clause: Czechia, www.cedefop.europa.eu/en/tools/financing-adult-learning-db/search/payback-clause-28.
+
+## Plan for implementation
+
+The assessment of the feasibility of introducing legislation on training could be led by the NSC, given its advisory role in skills policy. The Department for Industrial and Employment Relations (DIER), which is responsible for employment law, labour regulations, and workplace rights, would be essential as a co-lead.
+
+It is also recommended to involve the MEYR, given its responsibility for adult learning policies, the Malta Chamber of Commerce, Enterprise and Industry; the Malta Employers' Association, given its representation of employers and private sector interests, as well as the Malta Chamber of SMEs, which represents SMEs, a group for which the provision of and participation in training is particularly challenging, as partners. Additionally, it would be important to have the MCESD as a partner.
+
+As described above the recommendation combines several feasibility studies, namely: i) introducing legislation on training during working hours; ii) providing tailored support for SMEs, including financial subsidies and access to a pool of readily available trainers; iii) introducing a training leave policy, and iv) introducing payback clauses.
+
+It is recommended that these actions be implemented during Phase 2 (2028-2030), keeping in mind that this recommendation only focusses on conducting feasibility studies and not the actual implementation of introducing or amending legislation. At the same time, the feasibility of introducing individual learning accounts, as set out in Recommendation 8 and planned for Phase 1, should be taken into consideration, as potential overlaps may exist. For example, in some countries, ILAs also permit training during working hours and provide wage replacement.
+
+Conducting the feasibility studies is expected to entail moderate costs. Moreover, administrative complexity is moderate, driven by intensive stakeholder engagement and co-ordination, as well as detailed policy and regulatory analysis to determine whether the proposed measures can be implemented within the existing legal and institutional framework. Funding could be provided by the NSC.
+
+An overview of the plan for implementation is presented in Table 2.21.
+
+Table 2.21. Implementation plan for Recommendation 21
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>21. Assess the feasibility of introducing legislation on training during working hours, training leave, and payback clauses</td><td>Policy owner: NSC; DIERPartners: MEYR; Malta Chamber of Commerce, Enterprise, Industry; Malta Employers&#x27; Association; Malta Chamber of SMEs; MCESD</td><td>Phase 2 (2028-2030)</td><td>Relative cost and administrative complexity: moderate</td><td>NSC</td></tr></table>
+
+Recommendation 22: Strengthen workplace learning through the provision of practical tools and support tailored to SMEs and micro-enterprises
+
+It is recommended that Malta equip enterprises with practical tools to assess training needs, such as accessible self-assessment instruments tailored to SMEs and micro-enterprises. Malta can also encourage low-cost forms of informal workplace learning, such as job rotation and mentoring, by raising awareness of their benefits and available incentives.
+
+## Description
+
+In a rapidly evolving labour market, where skills requirements are constantly shifting, enterprises increasingly need the capacity to support workplace learning, including both structured in-house training and informal learning practices. Workplace learning can not only reduce costs for larger firms and lower transaction costs for smaller firms, but also ensures that learning is directly tailored to business needs, equipping employees with skills that are immediately relevant. Furthermore, workplace learning can strengthen internal cohesion by fostering internal bonds and communication.
+
+Workplace learning, and especially informal learning, is particularly important for SMEs and micro-enterprises. As firms increase in size, they tend to insource training (e.g. creation of in-house training centres or separate training subsidiaries), as they can reduce per-employee costs the more frequently they provide training (Galanaki, Bourantas and Papalexandris, 2008[174]; OECD, 2021[163]). However, for micro-enterprises, which often lack dedicated HR capacity and resources, structured in-house training may be less feasible, making flexible and informal forms of workplace learning particularly important.
+
+In Malta, both employees and employers are showing a growing preference for structured in-house training, which is seen as a sustainable response to skills gaps (Malta Chamber of Commerce, Enterprise and Industry, 2025[168]). Yet many enterprises in Malta remain underprepared: only $23\%$ have a designated training function (EU average: $36\%$ ), $18\%$ a formal training plan (EU average: $24\%$ ), and $21\%$ a dedicated training budget (EU average: $25\%$ ) (Eurostat, 2020[175]). These challenges are especially pronounced among SMEs and micro-enterprises, which may rely more heavily on ad hoc and informal learning practices. Incentives are in place to promote workplace training, including, for example, the Investing in Skills scheme co-financed by $\mathrm{ESF+}$ . However, these tend to focus primarily on external training programmes.
+
+To address this gap, Malta could provide enterprises with practical tools to assess training needs, such as accessible self-assessment instruments tailored particularly to SMEs and simplified further for micro-enterprises to ensure ease of use and low administrative burden. An EU-level feasibility study provides guidance on how such a tool could be tailored to the needs of enterprises, especially SMEs (see Box 2.22) (European Commission, 2022[176]).
+
+Beyond diagnostics, enterprises also require step-by-step guidance to translate assessment results into concrete training plans. Latvia provides a good example: the SME Digital Maturity recommender is an online tool that allows SME managers to assess their digital maturity and provides them with recommendations for upskilling and reskilling (see Box 2.22) (Digital Skills & Jobs Platform, 2024[177]). Another example comes from Italy, where a self-assessment tool helps firms evaluate their current workforce capabilities and identify gaps in skills relative to their strategic objectives. In doing so, Malta would ensure that any new tools and support measures complement, rather than duplicate, existing schemes such as the Skills Development Scheme, which already supports enterprise-based and in-house training.
+
+It is also important for Malta to encourage low-cost and accessible forms of workplace learning, such as informal learning through job rotation and mentoring, which are still not commonly used in Malta (Malta Chamber of Commerce, Enterprise and Industry, 2025[168]). Such approaches are particularly well-suited to micro-enterprises, as they require limited financial investment and can be embedded in day-to-day work processes. Job rotation not only develops problem-solving skills through exposure to unfamiliar tasks in different teams, but also sustains productivity by providing internal replacements when employees are absent. In addition, mentoring enhances workplace integration and enables knowledge transfer from experienced colleagues (OECD, 2021[163]). Malta could promote informal learning by raising awareness of its benefits and available incentives (e.g. the Mature Workers Scheme (JobsPlus, 2025[178]), providing practical guidance on implementation, and offering targeted training for human resource personnel and business owners, particularly in smaller firms.
+
+## Box 2.22. EU, Latvia and Italy: Supporting SMEs to assess skills needs through practical tools
+
+## EU: Designing a self-assessment tool on skills management practices for SMEs
+
+SMEs across the EU face persistent shortages of qualified employees, limiting innovation, while often lacking the capacity to assess and address skills needs. To respond, the European Commission conducted a feasibility study on developing a self-assessment tool for skills management, tailored to SMEs.
+
+The study confirmed the potential value of such a tool, provided it is free of charge (with optional paid features), easily accessible online, and requires minimal time from users. The tool should employ surveys to assess employee satisfaction, organisational culture (e.g. communication, knowledge sharing), and key skills management practices, including recruitment, training, work organisation, and HR strategies. To enhance usability and uptake, the study recommends integrating visual features and prioritising flexibility and user-friendliness. As limited awareness of the importance of skills management remains a barrier among SMEs, the study suggested that co-operation with intermediary organisations, such as one-stop shops, chambers of commerce, and development agencies, can help maximise reach and impact.
+
+## Latvia: Assessing SME's digital maturity through an online tool
+
+In Latvia, the SME Digital Maturity Recommender is an online tool that provides managers in SMEs with a comprehensive assessment of their digital business maturity. The assessment methodology was developed by the Latvian Information and Communications Technology Association (LITKA) and covers 10 business dimensions: 1) digital transformation and competition, 2) financial data management, 3) human resources environment, 4) customer relationship management, 5) resource management, 6) communication and customer relations, 7) digitalisation of processes, and 8) security policy and practices, 9) digitalisation in production, and 10) innovation and growth perspectives.
+
+The tool was designed to be user-friendly. Upon completion of the assessment, the tool generates an assessment of the SME's digital maturity levels, including benchmarking against industry competitors. It also provides tailored recommendations for investments in relevant upskilling and reskilling opportunities, supporting firms in planning workforce development and adapting to digital transformation. In addition, it offers guidance on initiating internal discussions on digitalisation and its strategic importance to the firm. As of 2023, 1 115 businesses have completed the assessment.
+
+## Italy: A self-assessment tool for firm's skill needs
+
+The self-assessment tool developed by the OECD for Italy is a skills-needs questionnaire for firms designed to help companies systematically evaluate their current workforce capabilities and identify gaps in skills relative to their strategic objectives. It prompts firms to reflect on four key areas – company characteristics, the skills profile of employees (present and future), human resources management practices (including training), and medium-term strategic goals – and thereby to map existing skills and unmet needs. The tool is intended to be practical for SMEs, even those without dedicated HR staff, and to encourage more frequent and structured skills analysis that can inform training investment decisions.
+
+Source: European Commission (2022[176]), Feasibility study for a (self-) assessment tool on skills management practices in SMEs, https://op.europa.eu/en/publication-detail/-/publication/9319d22a-3ae8-11ed-9c68-01aa75ed71a1/language-en; Digital Skills and Jobs Platform (2024[177]), Diginno Tool – SME Digital Maturity Recommender, https://digital-skills-jobs.europa.eu/en/inspiration/resources/diginno-tool-sme-digital-maturity-recommender; Digital Skills and Jobs Platform (2023[179]), “Smart Latvia” – Supporting SMEs’ Digital Transformation, https://digital-skills-jobs.europa.eu/en/inspiration/good-practices/smart-latvia-supporting-smes-digital-transformation; OECD (2022[180]), Incentivising Business Investment in Skills: A Self-Assessment Tool for Firms’ Skill Needs, www.oecd.org/content/dam/oecd/it/about/programmes/dg-reform/incentivare-l%27investimento-in-competenze-delle-imprese-italiane/A-self-assessment-tool-for-firms%27-skill-needs-EN.pdf.
+
+## Plan for implementation
+
+Strengthening in-house training could be led by Jobsplus, as the main body responsible for implementing and managing training incentive schemes in Malta, together with the NSC. Partners for the implementation of this recommendation could be the MEYR, the MCESD, the MDIA, and enterprise representatives, such as the Malta Chamber of Commerce, Enterprise and Industry, the Malta Employers' Association, and the Malta Chamber of SMEs.
+
+The recommendation comprises several elements. These include identifying tools to assess training needs and translating assessment results into training plans. It also involves identifying low-cost non-formal and informal workplace learning methods, as well as raising awareness of the benefits of workplace learning and related incentives. It is further recommended to align the identification of training needs assessment tools with Recommendation 3, which focusses on SAA methodologies at the firm level. Implementation is advised during Phase 2 (2028-2030) and Phase 3 (2031-2035).
+
+The relative costs and administrative complexity of this recommendation are expected to be moderate. However, the costs will depend on the design and scope of the tools that will be developed. Funding could be provided by Jobsplus, with additional funding from the EU such as the European Social Fund Plus.
+
+An overview of the plan for implementation is presented in Table 2.22.
+
+Table 2.22. Implementation plan for Recommendation 22
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>22. Strengthen workplace learning through the provision of practical tools and support tailored to SMEs and micro-enterprises</td><td>Policy owner: Jobsplus; NSC Partners: MEYR, Malta Chamber of Commerce, Enterprise, Industry; Malta Employers&#x27; Association; Malta Chamber of SMEs; MCESD; MDIA</td><td>Phase 2 (2028-2030) - Phase 3 (2031-2035)</td><td>Relative cost and administrative complexity: moderate</td><td>Jobsplus; ESF+ (Example from Flanders Competence Checks ([support of SMEs])</td></tr></table>
+
+## Recommendation 23: Match readily available trainers with enterprises – particularly SMEs – to ensure reliable access to expertise
+
+It is recommended that the NSC collaborate with the Chamber of SMEs to identify enterprises with training needs but that lack the necessary expertise to deliver training. These enterprises could then be matched with available trainers who can provide training during working hours. Malta could also explore establishing partnerships with foreign training providers to increase the supply of additional trainers and introduce international expertise.
+
+## Description
+
+While in-house training capacity is a valuable asset for enterprises, firm size strongly influences whether training is delivered internally or outsourced. SMEs often lack the human and financial resources to design and implement their own programmes, making access to affordable, high-quality external training essential. However, many enterprises that outsource training lack formal procedures to select providers, risking lower quality and poor value for money (OECD, 2021[163]). OECD and EU countries also enhance access to training by pooling resources, particularly through training networks. In Ireland, for example, Skillnets support enterprises to assess training needs and provide training when they are unable to create programmes on their own (see Box 2.23) (OECD, 2025[6]; OECD, 2021[163]; ILO, 2017[181]).
+
+While it is important for Malta to support enterprises in building their in-house training capacity (see Recommendation 22), options to outsource remains indispensable, particularly for SMEs: only 6% of small enterprises have staff representatives involved in defining the content of training, versus 11% of medium enterprises and 13% of large enterprises (Thake, 2012[182]; Eurostat, 2020[183]). Outsourcing training is thus a viable option for many employers in Malta, if not a necessity.
+
+To support outsourced training, Malta could identify enterprises with training needs but that lack the necessary expertise to deliver training, and subsequently match them with trainers who can reliably deliver training during working hours. This would be particularly valuable, as many employers report difficulties in securing trainers during regular working hours (TSI consultations of stakeholders, 2025[20]). Co-ordinating a pool of readily available trainers would help to ensure predictable access to external expertise for enterprises and could complement existing financial incentives, such as the Investing in Skills scheme (JobsPlus, 2025[152]), which already helps enterprises offset the cost of external training. Malta could also explore partnerships with foreign training providers proficient in the languages most commonly used in Malta. This would be particularly beneficial in a small labour market such as Malta's, as it would expand supply and introduce international expertise and good practices.
+
+## Box 2.23. Ireland: Providing affordable, high-quality external training to enterprises through Skillnet Business Networks
+
+A frequently cited good practice in enterprise training is Ireland's Skillnet Business Networks, clusters of enterprises that collaborate to identify skills needs and provide upskilling and reskilling opportunities. Today, 70 networks operate across diverse sectors, including aviation, construction, robotics and artificial intelligence, as well as across regions. Skillnets support enterprises by assessing skills needs through research and consultations, helping firms develop in-house training capacity, and directly delivering training programmes where firms cannot do so themselves. They also offer financial support, with training courses generally priced at market rates, though member enterprises may benefit from discounts. Uptake is particularly strong among SMEs, and evaluations indicate high satisfaction with Skillnets' training provision, alongside positive impacts on long-term enterprise performance.
+
+Source: National Enterprise Hub (2025[184]), Skillnet Ireland: Become part of a team of private companies working together to address skill needs, www.neh.gov.ie/business-supports/skillnet-ireland-training-programme; OECD (2025[6]), Shaping Malta's Future Through a National Skills Strategy and Targeted Maritime Sector Measures: Analysis Report (Output 2), www.oecd.org/content/dam/oecd/en/about/programmes/dg-reform/malta/Analysis-Report.pdf; OECD (2021[163]), Training in Enterprises: New Evidence from 100 Case Studies, https://doi.org/10.1787/7d63d210-en; ILO (2017[181]), Upskilling SMEs, www.ilo.org/sites/default/files/wcmsp5/groups/public/%40ed\_emp/%40emp\_ent/documents/publication/wcms\_609267.pdf.
+
+## Plan for implementation
+
+The matching of trainers could be led by the NSC, with the Malta Chamber of SMEs as co-leads alongside the Malta Chamber of Commerce, Enterprise, Industry. However, matching trainers with enterprises will require close collaboration with several key partners, including Malta Enterprise, the Malta Employers' Association, Jobsplus, the MFHEA and the MCESD.
+
+This recommendation comprises two main elements: identifying enterprises with training needs that lack in-house training capacity, and matching them with trainers who can reliably deliver training during working hours. Identifying enterprises with training needs presupposes that enterprises are aware of their skills gaps, which in turn requires an assessment of required and available skills. As enterprises cannot be expected to have the necessary tools in place, Recommendation 22 should be considered to precede this recommendation. Implementation is therefore advised during Phase 2 (2028-2030), in co-ordination with Recommendation 22.
+
+The relative costs and administrative complexity of this recommendation are expected to be low. Funding could be provided by the NSC and employer contributions.
+
+An overview of the plan for implementation is presented in Table 2.23.
+
+Table 2.23. Implementation plan for Recommendation 23
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>23. Match readily available trainers with enterprises – particularly SMEs – to ensure reliable access to expertise</td><td>Policy owner: NSC; Malta Chamber of SMEs; Malta Chamber of Commerce, Enterprise, Industry Partners: Malta Enterprise; Malta Employers’ Association; Jobsplus; MFHEA; MCESD</td><td>Phase 2 (2028-2030)</td><td>Relative cost and administrative complexity: low</td><td>NSC; Employer contribution</td></tr></table>
+
+## Priority Topic 7: Making better use of available domestic and foreign talent
+
+Developing relevant and advanced skills across the life course is essential, but equally important is their effective use in work and society. Maximising skills utilisation allows individuals, enterprises and countries to reap the full economic and social returns on training investments (OECD, 2019[185]).
+
+For Malta, with its small population, ensuring the full and effective use of the skills of its workforce – both domestic and foreign – is critical to ensuring Malta’s competitiveness and excelling in smart specialisation areas (Xjenza Malta, 2021[164]). With the highest projected employment growth in the EU by 2035 (24%), Malta has to ensure that workplaces are equipped with the practices and facilities needed to harness talent effectively (see Figure 2.7) (Cedefop, 2024[186]).
+
+Malta is already performing well: more employees in Malta (96%) are likely to think that they do useful work in comparison to the EU27 average (86%) (Eurostat, 2015[187]). Moreover, 83% of enterprises in Malta have management leaders who often/fairly often provide interesting and stimulating work to motivate and retain employees, versus 67% across the EU27 (Eurofound, 2019[188]).
+
+However, opportunities still remain to further strengthen Malta's use of skills. These include increasing the share of individuals with management skills, as well as improving the in-house capacity of enterprises to develop new products and services (Eurofound, 2019[188]). Moreover, brain drain is a significant concern among stakeholders, as more young, highly qualified professionals seek opportunities abroad (TSI consultations of stakeholders, 2025[20]; Fragile States Index, 2024[189]).
+
+Figure 2.7. Future employment growth across EU Member States, 2022-2035  
+![](images/dd65fd0404984c6e40e60e402c6ef57ca0f1fef4fed7a166b6c5a9d0c433af49.jpg)  
+Source: Cedefop (2024[186]), Cedefop Skills Forecast: Future employment growth, www.cedefop.europa.eu/en/tools/skills-intelligence/trend-focus/future-jobs#1.
+
+StatLink https://stat.link/lmfw2t
+
+To make better use of available and domestic and foreign talent, the TSI project team recommends: 1) providing user-friendly information and targeted support for firms – particularly SMEs – to adopt workplace productivity practices; 2) supporting enterprise leaders and managers to promote strategic foresight and workplace innovation, and stimulate demand for higher-level skills; 3) enhancing validation systems to enable the effective use of skills card systems and examine the feasibility of extending their application and integrating them into existing digital platforms; 4) developing a certificate recognising transversal skills to strengthen workers' employability and support skills-based hiring practices; and 5) conducting a study on the causes, scale and socio-economic impact of brain drain to inform policies for talent retention and attraction.
+
+## Recommendation 24: Provide user-friendly information and targeted support to help firms – particularly SMEs – adopt workplace productivity practices
+
+It is recommended that Malta provide a comprehensive suite of resources (e.g. diagnostic tools, information sheets) through a centralised online platform. This could be complemented by mentoring and coaching for managers and HR personnel, as well as financial subsidies to engage external experts in organisational management and innovation. Peer learning networks could further reinforce these efforts.
+
+Description
+
+Enterprises can fully leverage the skills of domestic and foreign talent through workplace productivity practices (often also referred to as high-performance workplace practices [HPWPs]). These are practices that aim to improve work organisation and job design (e.g. teamwork, autonomy, task discretion, mentoring, job rotation, applying new learning), as well as management practices (e.g. employee participation, incentive pay, training practices, flexibility in working hours) (OECD, 2019[185]; OECD, 2021[190]; Johnston and Hawke, 2002[191]).
+
+The promotion of workplace productivity practices merits policy attention, as having a highly skilled population does not automatically ensure that workers are performing tasks that match their skills, nor that they are using these skills optimally to enhance productivity and competitiveness (OECD, 2019[185]). Governments can support enterprises by raising awareness of the benefits of workplace productivity practices, promoting knowledge sharing and offering managerial skills training (OECD, 2019[185]).
+
+In Malta, practices such as flexible hours and remote work are increasingly adopted and preferred by employees, particularly after the COVID-19 pandemic (Fiorini, 2025[192]; Farrugia and Chan, 2024[193]). However, challenges still remain, notably a lack of knowledge among employers of how to apply them effectively, especially in SMEs with resource constraints (Malta Chamber of Commerce, Enterprise and Industry, 2025[168]; TSI consultations of stakeholders, 2025[20]).
+
+A first step for Malta is to offer accessible, practical guidance through a centralised, user-friendly online platform. To maximise reach and cost-efficiency, the platform could be integrated into existing enterprise-facing websites and promoted in partnership with key stakeholders, including employer organisations and Jobsplus. As with Recommendation 22 on strengthening in-house training, the platform can also provide a comprehensive suite of resources, including diagnostic tools for enterprises to assess current adoption of workplace productivity practices (see Latvia in Box 2.22) and concise information sheets on additional tools. In Malta, tailoring the content of the platform by sector and enterprise size can help ensure relevance and practical utility.
+
+The platform could also offer access to personalised support, particularly for SMEs, which often experience employee shortages despite a strong desire to innovate their workplace practices and implement tools to maximise productivity (Malta Chamber of SMEs, 2024[194]; TSI consultations of stakeholders, 2025[20]). Targeted support is especially important for SMEs, as employee shortages remain their most pressing challenge. Strengthening SMEs' capacity to adopt workplace productivity practices can help align existing skills with organisational needs and maximise the potential of smaller workforces.
+
+Targeted support for SMEs could also include access to mentoring and coaching for managers and HR personnel, as well as financial subsidies to engage external experts for organisational management and innovation projects. Germany provides a useful reference: SMEs can receive assistance from regional consultation centres – including a free initial session – to explore how to innovate company processes and promote employee-oriented practices. Further expert advice is available with subsidies of up to 80% of consulting costs depending on firm size (see Box 2.24) (Die Bundesregierung, 2022[195]; IHK-Projektgesellschaft mbH, 2022[196]).
+
+In Malta, access to external experts and related subsidies could be further reinforced by peer learning networks, enabling knowledge exchange between large and small enterprises. Participation from foreign firms could further enrich these networks by introducing international best practices (TSI consultations of stakeholders, 2025[20]).
+
+## Box 2.24. Germany: Supporting enterprises to increase workplace productivity through targeted incentives
+
+In Germany, the UnternehmensWert: Mensch project supports enterprises in implementing sustainable learning and organisational change processes, with a focus on employee-oriented policies. Funded by the Federal Ministry of Labour and Social Affairs and the European Social Fund, the project targets four main areas: strategic personnel management, equal opportunities and diversity, health, and knowledge and competence development.
+
+SMEs access support through regional consultation centres (Frankfurt, Eberswalde, and Cottbus), starting with a free initial consultation to assess the enterprise's specific needs. Following this session, enterprises can request additional specialist advice, subsidised according to firm size: SMEs with fewer than ten employees receive up to 80% of consulting costs, while those with 10-249 employees receive up to 50%. Consultations could last up to ten days, with a daily cost capped at EUR 1 000. An interim assessment found that approximately 9 000 SMEs participated, and evaluation studies indicate low deadweight losses, i.e. the support effectively reaches enterprises that would not have pursued similar services independently.
+
+Source: Government of Ireland (2025[197]), GrowDigital: A digital toolkit for every business, www.growdigital.gov.ie/; OECD (2021[163]), Training in Enterprises: New Evidence from 100 Case Studies, www.oecd.org/content/dam/oecd/en/publications/reports/2021/10/training-in-enterprises\_49934935/7d63d210-en.pdf; Die Bundesregierung (2022[195]), unternehmensWert: Mensch, www.esf.de/portal/DE/ESF-2014-2020/Foerderprogramme/bmas/unternehmenswert-mensch.html; IHK-Projektgesellschaft mbH (2022[196]), unternehmensWert: Mensch, www.ihk-projekt.de/uwm/.
+
+## Plan for implementation
+
+The provision of user-friendly information and targeted support to help firms adopt workplace productivity practices could be led and developed by MDIA and co-led by Tech.mt to ensure robust digital infrastructure, regulatory compliance, cybersecurity, and the integration of innovative technologies that enhance trust and usability for enterprises.
+
+The platform could be promoted in partnership with key stakeholders. To this end, it would be important to work closely with Jobsplus, the Malta Chamber of Commerce, Enterprise and Industry, the Malta Employers' Association, given their representation of employers and private sector interests, and the Malta Chamber of SMEs, given their representation of SMEs, a group facing particular staff shortages. Additionally, the Malta Council for Economic and Social Development, the National Productivity Board, Malta Enterprise and fondi.eu could serve as partners.
+
+As the platform could be integrated into existing enterprise-facing websites, the first step could be to take stock of these websites and assess which ones may need to be adapted. It is recommended that these actions be implemented during Phase 2 (2028-2030), as the measures are critical to supporting enterprise growth and SME development.
+
+Relative costs and administrative complexity of implementing this recommendation are expected to be moderate, though they may increase depending on how proposed initiatives – such as personalised support, mentoring and coaching – are designed and delivered. For example, these could require the development of new tools to provide tailored guidance and services, and mentoring and coaching initiatives, which would require more significant funding. To limit costs and maximise efficiency, it is recommended to leverage and build upon existing initiatives and digital infrastructure wherever possible. This approach would allow the initiative to benefit from tested systems and avoid unnecessary duplication. Funding for these actions could be provided primarily by MDIA and Tech.mt.
+
+An overview of the plan for implementation is presented in Table 2.24.
+
+Table 2.24. Implementation plan for Recommendation 24
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>24. Provide user-friendly information and targeted support to help firms – particularly SMEs – adopt workplace productivity practices</td><td>Policy owner: MDIA; Tech.mtPartners: Jobsplus; Malta Chamber of Commerce, Enterprise and Industry; Malta Employers&#x27; Association; Malta Chamber of SMEs; MCESD; National Productivity Board; Malta Enterprise; fondi.eu</td><td>Phase 2 (2028-2030)</td><td>Relative cost and administrative complexity: moderate</td><td>MDIA; Tech.mt</td></tr></table>
+
+## Recommendation 25: Support enterprise leaders and managers to promote strategic foresight and workplace innovation, and stimulate demand for higher-level skills
+
+It is recommended that Malta provide targeted training in innovation management and strategic foresight to encourage enterprise leaders and managers to integrate creativity and entrepreneurship into daily operations. This may be complemented with mentorship and networking opportunities to build capacity in developing growth strategies, emphasising the creation of demand for high-skilled roles aligned with the digital and net-zero transitions.
+
+## Description
+
+To be successful in today's knowledge economy, countries need to not only develop higher-level skills in their workforce, but also ensure that there are adequate opportunities to fully utilise and deploy these skills in the labour market. Employers play a central role in driving demand for higher-level skills and enhancing competitiveness by improving work organisation, stimulating innovation in products and processes, and fostering job creation in higher-value sectors (Froy, Giguère and Meghnagi, 2012[198]; OECD, 2017[199]).
+
+Malta Vision 2050 and the Smart Specialisation Strategy 2021-2027 highlight the country's ambition to move into higher-value sectors through targeted investments in research and innovation. Achieving these goals requires not only skilled employees but also employers – more specifically enterprise leaders (e.g. chief executive officers, chief financial officers) and managers – who actively identify growth opportunities, operationalise strategies to mobilise internal talent, and embed workplace productivity practices (see Recommendation 24).
+
+Malta could support enterprise leaders and managers to routinely engage in strategic thinking, including foresight practices (see Recommendation 2), helping them anticipate long-term changes from the digital and net-zero transition and identify opportunities for growth (Schwarz et al., 2023[200]). Complementing existing initiatives to stimulate R&D activities (e.g. DiHubMT, Malta Enterprise's Research and Development Incentive) and in line with recommendations from the National Employment Policy 2021-2023, targeted training in innovation management and strategic foresight can encourage employers to integrate creativity and entrepreneurship into daily operations (DiHubMT, 2025[201]; Malta Enterprise, 2024[202]). Finland's WORK2030 programme offers a useful model, combining research-backed tools, training, and experimentation to enhance organisational and individual creativity (see Box 2.25) (Ministry of Social Affairs and Health, 2023[203]).
+
+For SMEs in Malta, complementing training with mentorship and networking opportunities for managers and leaders can help to further build capacity in developing growth strategies. Support could emphasise creating demand for high-skilled roles aligned with the digital and net-zero transitions. While existing R&D schemes often target sectors such as gaming and tech, extending support to all sectors can help embed innovation and strategic foresight throughout the Maltese economy.
+
+## Box 2.25. Finland: Promoting creativity and experimentation in enterprises to support job creation
+
+Finland's WORK2030 programme supports enterprises in reforming operations, leveraging technology, and fostering workplace innovation. The programme focuses on three areas: conducting foresight and research, strengthening competence and renewal capacity, and reforming operational practices. A key element of the programme is promoting creativity as a driver of innovation and competitiveness. Eleven organisations and 16 companies collaborated to develop tools that measure and enhance creativity at both individual and organisational levels, delivering online training in partnership with researchers and experts.
+
+<table><tr><td colspan="7">The programme&#x27;s immediate impact was evident in participating organisations&#x27; ability to adopt new solutions and operational methods, thereby supporting job creation and reinforcing conditions for future employment growth. As of 2023, WORK2030 has directly reached nearly 14 000 jobs, with an additional estimated 260 000 jobs affected indirectly through activities such as communication campaigns.</td></tr><tr><td colspan="7">Source: Ministry of Social Affairs and Health (2023[203]), WORK2030 – Development programme for work and wellbeing at work, https://stm.fi/en/work2030-development-programme-for-work-and-wellbeing-at-work; Ministry of Social Affairs and Health (2023[204]), External evaluation of the WORK2030 programme (in Finnish), https://julkaisut.valtioneuvosto.fi/bitstream/handle/10024/164945/STM_2023_26_rap.pdf?sequence=1andisAllowed=y; Finnish Institute of Occupational Health (2023[205]), WORK2030 Final Webinar (in Finnish), https://hyvatyo.ttl.fi/hubfs/TY%C3%962030%20p%C3%A4%C3%A4t%C3%B6swebinaari.pdf.</td></tr></table>
+
+## Plan for implementation
+
+Support for enterprise leaders and managers to promote strategic foresight and workplace innovation could be led by the NSC.
+
+It will also be important to engage with Jobsplus as a partner and with the main providers of management and leadership training in Malta, both public and private, as this may involve adapting training programmes to better incorporate strategic foresight and workplace innovation. Additionally, it would be important to have the MCESD as a partner.
+
+The first step would be to take stock of existing training and incentives for managers and leaders and assess how they may need to be adapted to better promote strategic foresight and workplace innovation. This work could take place in Phase 2 (2028-2030). The timeline will largely depend on the extent to which existing programmes and incentives need to be adapted and/or new targeted measures introduced.
+
+Relative costs and administrative complexity of implementing the recommendation are expected to be moderate, but they will depend on the scope of activities. The introduction of new programmes or incentives would entail more substantial costs. Funding could be provided by NSC and additionally through EU sources, such as ESF+ and Erasmus+.
+
+An overview of the plan for implementation is presented in Table 2.25.
+
+Table 2.25. Implementation plan for Recommendation 25
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>25. Support enterprise leaders and managers to promote strategic foresight and workplace innovation, and stimulate demand for higher-level skills</td><td>Policy owner: NSC Partners: Jobsplus; providers of management and leadership training (public and private); MCESD</td><td>Phase 2 (2028-2030)</td><td>Relative cost and administrative complexity: moderate</td><td>NSC; ESF+; Erasmus+</td></tr></table>
+
+## Recommendation 26: Enhance validation systems to enable the effective use of skills card systems, and examine the feasibility of extending their application and integrating them into existing digital platforms
+
+It is recommended that Malta examine how to improve its validation system to support the effective expansion of the skills cards into other sectors. It is important to co-ordinate with the thematic committees mentioned in Recommendation 29 to define sector-specific skills and standards and determine the validity periods for the skills cards. Malta could also consider integrating the skills cards into existing digital infrastructure, such as BlockCerts via e-ID, to improve cost-efficiency and user familiarity.
+
+## Description
+
+Several OECD and EU countries – for example France’s Passeport de compétences (Mon Passeport Compétences, 2025[206]), Germany’s ProfilPASS (DIE, 2025[207]), and the Netherlands’ Passport for Work (OECD, 2023[208]) – have implemented skills cards to strengthen skills utilisation by validating individuals’ skills for work in specific industries and linking them to sectors with labour shortages.
+
+Skills cards document skills developed through formal and non-formal education and training as well as through informal learning. They rely on standardised assessments that support a skill-based approach to hiring. For employers, skills cards provide verified evidence of applicants' abilities, fostering greater confidence in prospective on-the-job performance. For employees, they offer a consolidated record of competencies, facilitating mobility across jobs and sectors while reducing administrative requirements linked to training (OECD, 2023[208]; ILO, 2023[209]). Skills cards are particularly valuable in countries that rely on foreign labour, where training and qualification standards could vary (OECD, 2025[6]).
+
+In Malta, skills cards have been introduced in the tourism and construction sectors (Institute of Tourism Studies, 2025; Building and Construction Authority, 2025) (Skills Pass, 2025[210]; Building & Construction Authority, 2025[211]). The idea of expanding the skills cards to other sectors is widely supported in Malta, and the National Skills Council has already begun a feasibility study to inform how to strengthen the validation system and support their application into other areas of the economy. The study aims to include a cost-benefit analysis for each economic sector (based on NACE codes) and identify a list of sectors that would benefit from the introduction of skills cards, ranked by priority to guide implementation (OECD, 2025[6]). The plan would be to develop a set of guidelines to support and guide sectors in the design and implementation of skills card systems. These guidelines would provide a consistent framework while allowing flexibility for sector-specific adaptations.
+
+Experience from other EU and OECD countries, such as the Netherlands, suggests that strong co-ordination with labour market actors, such as employers, is essential for the successful implementation of the skills cards (OECD, 2023[208]). In Malta, the thematic committees of the Smart Specialisation Strategy (see Recommendation 29) could play a central role expanding the use of skills cards.
+
+The thematic committees could define the sector-specific skills and standards to be included in the skills cards. They could also determine appropriate validity periods based on the pace of change within their respective sectors, while considering making transversal skills valid indefinitely to facilitate mobility (see Recommendation 27), particularly for third-country nationals. Malta could also consider integrating the skills cards into existing digital infrastructure, such as BlockCerts via e-ID, to improve cost-efficiency and user familiarity (TSI consultations of stakeholders, 2025[20]). The United Kingdom offers a useful reference point: a recognised provider consolidates multiple qualifications into digital skills cards, simplifying employer verification (see Box 2.26) (NOCN Group, 2025[212]).
+
+## Box 2.26. United Kingdom: Facilitating skills recognition for employers through digital skills cards
+
+Developed by the NOCN Group, a private training provider, the International Skills Card consolidates users' qualifications – including most UK regulated credentials – and achievements such as health and safety programmes and short industry-led courses. These qualifications are recorded on a photo ID-style card, providing a recognisable visual identity, while the underlying information is stored digitally and securely. Cards can be scanned via an application, linking to a learner database that enables rapid identification and verification of skills.
+
+NOCN's skills cards have been widely used in the United Kingdom to help employers manage workforce qualifications. In the construction sector, they are applied through the Construction Plant Competence
+
+<table><tr><td>Scheme (CPCS), which was established upon employers’ request to develop common standards for plant operators. Since being launched in 2003, hundreds of thousands of CPCS skills cards have been issued across more than 60 occupational categories, making them a well-recognised and trusted tool across the sector.</td></tr><tr><td>Source: NOCN Group (NOCN Group, 2025[212]), NOCN International Skills Card, www.nocn.org.uk/international/international-products-and-services/nocn-international-skills-card/; NOCN Group (2025[213]), Construction Plant Competence Scheme (CPCS), www.nocn.org.uk/products/competence-cards-and-tests/construction-plant-competence-scheme-cpcs/.</td></tr></table>
+
+## Plan for implementation
+
+Implementation of this recommendation could be led by the NSC, which is already conducting a feasibility study on skills cards and their potential application across other areas of the economy. The NSC would co-ordinate the development of sector-specific standards, validation protocols, and assessment frameworks.
+
+Close collaboration with the thematic committees (see Recommendation 29) will be required. The thematic committees could play a central role in expanding the use of skills cards by defining sector-specific skills and standards, as well as determining appropriate validity periods. Employers, training providers and relevant regulatory bodies would help to ensure that the skills cards are aligned with labour market needs and effectively integrated into hiring and mobility practices. In addition, Identità Malta should be involved to provide secure digital identity verification, ensuring that individuals' validated skills are reliably linked to their official identity and trusted by employers. Additional suggested partners for this recommendation are ITS, to support operating infrastructure, as well as union representatives.
+
+The first step would be to finalise the NSC feasibility study in Phase 1 (2 026-2 027). Based on its findings, full implementation in sectors would occur in Phase 2 (2 028-2 030), once the thematic committees are operational (to be implemented in Phase 1 [2026-2027]).
+
+Relative costs are expected to be low, but administrative complexity is anticipated to be moderate. Beyond the feasibility study, which includes a cost-benefit analysis for each economic sector, implementation will require a collaborative and time-intensive process to define sector-specific skills and standards, set appropriate validity periods, and integrate the skills cards into existing digital infrastructure, such as BlockCerts via e-ID.Funding could be provided by the NSC, or alternatively through EU sources such as ESF+.
+
+An overview of the plan for implementation is presented in Table 2.26.
+
+Table 2.26. Implementation plan for Recommendation 26
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>26. Enhance validation systems to enable the effective use of skills card systems, and examine the feasibility of extending their application and integrating them into existing digital platforms</td><td>Policy owner: NSCPartners: Identità Malta; ITS; unions (e.g. General Workers&#x27; Union [GWU]), Thematic committees (see Recommendation 29)</td><td>Phase 1 (2026-2027): Feasibility studyPhase 2 (2028-2030): Sectoral implementation</td><td>Relative cost: lowAdministrative complexity: moderate</td><td>NSC; ESF+</td></tr></table>
+
+## Recommendation 27: Develop a certificate recognising transversal skills to strengthen workers' employability and support skills-based hiring practices
+
+It is recommended that Malta explore the development of a process to assess and validate transversal skills that aligns with existing national frameworks. The process should draw on a variety of assessment methods to recognise transversal skills acquired in schools, workplaces, volunteering, and community activities.
+
+## Description
+
+Transversal skills are increasingly valued in Malta, with 63% of employers identifying them as the most important asset for workplace success. Evidence also points to their contribution to workplace productivity, teamwork and leadership (Malta Chamber of Commerce, Enterprise and Industry, 2025[214]). Nevertheless, employers continue to report challenges in recruiting new workers with well-developed transversal skills, such as communication (including active listening), teamwork, problem solving, critical thinking and creativity (JobsPlus and MFHEA, 2021[215]; TSI consultations of stakeholders, 2025[20]).
+
+As Malta seeks to strengthen transversal skills development throughout the life course (see Priority Topic 4), it is equally important to establish robust mechanisms for assessing, validating and certifying these skills. Standardised assessment, validation and certification can increase employers' confidence that job candidates possess the required transversal skills, while supporting recognition across sectors (OECD, 2025[216]). The introduction of a transversal skills certificate has already been noted in the National Employment Policy 2021-2030 and was reaffirmed by stakeholders during consultations for this project, reflecting growing stakeholder demand for greater visibility of transversal skills in recruitment and workplace practices (Ministry for Finance and Employment, 2021[5]; TSI consultations of stakeholders, 2025[20]).
+
+It is important that any assessment and validation process aligns with existing frameworks, including the Quality Assurance Guidelines of Validation of Non-Formal and Informal Learning (MFHEA, 2024[217]). The assessment and validation process could cover transversal skills acquired through a wide variety of settings, including school, previous employment, volunteering, and community work (Cedefop, 2025[218]).
+
+Assessment methods should also be diverse and inclusive, drawing on multiple procedures (for example self-assessments, e-portfolios, situational judgement tests) that reflect individuals' varied experiences and preferences. For example, in Iceland, the VISKA project involved a validation process that combined interviews and self-assessments with other documentation of transversal skills, such as recommendations from previous employers and work samples (see Box 2.27) (TRANSVAL EU, 2021[219]; VISKA, 2018[220]). As with the skills cards (see Recommendation 26), Malta could consider integrating the transversal skills certificate into existing digital infrastructure (e.g. BlockCerts via e-ID) to promote cost-efficiency and user familiarity.
+
+## Box 2.27. Iceland: Validating transversal skills through a combination of approaches
+
+The Visible Skills for Adults (VISKA) is a policy experimentation project implemented in Belgium (Flanders), Norway, Iceland and Ireland. It aims to make the skills of adults more visible through the validation of non-formal and informal learning, with a focus on supporting disadvantaged groups such as migrants, asylum seekers, refugees and low-skilled adults to transition into employment and access targeted training. In Iceland, the project beneficiaries include migrants with competences in trade-related fields and who are seeking further education and employment opportunities.
+
+The validation process begins with an introduction to its objectives and the relevant competence standards, followed by reflective exercises and group work. Participants document skills acquired through work, personal and community activities and provide supporting evidence such as employer recommendations, job descriptions, diplomas, certificates and work samples. They then undertake a structured self-assessment aligned with the standards, drawing on real-life examples. The process concludes with an individual interview with a counsellor, providing a formative assessment of how participants could further develop or mobilise their skills for employment. Successful candidates receive a certificate detailing the competences assessed, alongside a diploma.
+
+Source: TRANSVAL EU (TRANSVAL EU, 2021[219]), Validation of Transversal Skills Across Europe: European State of the Art Report, www.transvalproject.eu/wp-content/uploads/2022/03/D2.1 State-of-the-Art-Report EN public.pdf; VISKA (2018[220]), Criteria for assessing transversal skills, https://ba.boostskills.eu/files/5-criteria-for-assessing-transversal-skills.pdf.
+
+## Plan for implementation
+
+The implementation could be led by the NSC, to ensure alignment with ongoing work on skills cards (see Recommendation 26).
+
+The involvement of the MFHEA as a partner would be important to ensure alignment with existing frameworks, such as the Quality Assurance Guidelines for the Validation of Non-Formal and Informal Learning. Given that the assessment and validation process may cover transversal skills acquired through a wide variety of settings – including school, previous employment, volunteering, and community work – it may also be important to engage voluntary sector organisations, such as the Malta Council for the Voluntary Sector, Agenzija Żgħażagħ, and Kunsill Nazzjonali Żgħażagħ (Agenzija Żgħażagħ, 2026[221]). In addition, the Directorate for Digital Literacy and Transversal Skills (DDLTS, MEYR) and the Directorate for Lifelong Learning and Employability (DLE, MEYR) are recommended as key partners, given their responsibility for overseeing the development, support and embedding of digital competence and transversal skills across the education system, as well as for the recognition and validation of these skills for employment and upskilling.
+
+The first step would be to assess the design and structure of the certificate, including reviewing assessment methods and exploring how it can be integrated into existing digital infrastructure (e.g. BlockCerts via e-ID). This work could take place in Phase 1 (2026-2027). Based on the findings, full implementation across sectors would occur in Phase 2 (2028-2030).
+
+Relative costs are expected to be low, but administrative complexity is anticipated to be moderate. This would, for example, include developing diverse and inclusive assessment methods, aligning with existing frameworks, and integrating the certificate into digital infrastructure to promote cost-efficiency and user familiarity. Potential funding sources could include the NSC, and EU sources such as ESF+ and Erasmus+.
+
+An overview of the plan for implementation is presented in Table 2.27.
+
+Table 2.27. Implementation plan for Recommendation 27
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>27. Develop a certificate recognising transversal skills to strengthen workers&#x27; employability and support skills-based hiring practices</td><td>Policy owner: NSC Partners: MFHEA; Agenzija Zghazagh; Malta Council for the Voluntary Sector; MEYR (DDLTS, DLE); Kunsill Nazzjonali Żgħażagh</td><td>Phase 1 (2026-2027): Design Phase 2 (2028-2030): Implementation</td><td>Relative cost: low Administrative complexity: moderate</td><td>NSC; ESF+; Erasmus+</td></tr></table>
+
+## Recommendation 28: Conduct a study on the causes, scale and socio-economic impact of brain drain to inform policies for talent retention and attraction
+
+It is recommended that Malta undertake a comprehensive study to assess brain drain, examining both push (factors driving emigration) and pull (factors attracting workers abroad) factors using multiple data sources (e.g. graduate tracer surveys, migration registers, stakeholder consultations). Based on these findings, Malta could consider developing a talent repatriation strategy with incentives such as tax breaks, as well as a diaspora engagement strategy.
+
+## Description
+
+In an increasingly globalised world, labour mobility is a central feature of modern labour markets, enabling workers to move between jobs both domestically and internationally. While mobility allows countries with skills shortages, such as Malta, to attract foreign talent, it can also facilitate the emigration of highly qualified locals. If unmanaged, this emigration can reduce the supply of skills that can be utilised in the labour market, limiting countries' ability to recoup returns on workforce development investments (OECD, 2019[185]; OECD, 2024[222]).
+
+In Malta, employee turnover is a pressing concern for employers (TSI consultations of stakeholders, 2025[20]; Malta Chamber of Commerce, Enterprise and Industry, 2022[223]). The inability to retain technical and intellectual skills is constraining development by reducing the availability of skilled and productive labour (Fragile States Index, 2024[189]). Employee turnover and emigration feature in critical sectors, such as health (Camilleri, 2024[224]; EY, 2022[225]; Grech, 2011[226]). Notwithstanding such indicators, official statistics showed that in 2023, 1117 citizens moved out of the country while a further 2200 returned, suggesting an opportunity for Malta to build on this positive momentum and address brain drain challenges (TSI consultations of stakeholders, 2025[20]).
+
+Recent policy initiatives also point to growing recognition of the importance of engaging with Maltese nationals and descendants living abroad. In the 2026 Budget, the government announced a new measure aimed at supporting descendants of Maltese citizens aged between 18 and 30 to come to Malta to work or study, while strengthening their connection to the country and its cultural heritage. However, to maximise the effectiveness of such measures, a more comprehensive understanding of the scale, drivers and socio-economic impact of brain drain is required, including the motivations and barriers faced by different groups of emigrants and returnees.
+
+In this light, Malta could benefit from a comprehensive study to assess brain drain, complementing sector-specific studies already available online. The macro-level study to be developed would examine both push (factors driving emigration) and pull (factors attracting workers abroad) factors. It is important for the study to use multiple data sources, including graduate tracer surveys, migration registers (if available), and stakeholder consultations, and disaggregate data by sector, demographics, and qualification level.
+
+Based on these findings, evidence-informed recommendations could inform a talent repatriation strategy, including incentives such as time-limited tax breaks, improved job prospects, competitive salaries, and measures to foster entrepreneurship and innovation (TSI consultations of stakeholders, 2025[20]; Camilleri, 2024[224]). For example, Italy introduced a tax incentive scheme in 2010 to address brain drain among young, highly-skilled nationals. Evidence suggests that eligible individuals were $27\%$ more likely to return (see Box 2.28) (Bassetto and Ippedico, 2024[227]).
+
+Additionally, Malta could consider developing a diaspora engagement strategy and pilot skills transfer mechanisms, enabling Maltese abroad to contribute to domestic development. In Lithuania, this dual approach combining talent repatriation and diaspora engagement is used, ensuring that individuals have multiple avenues to fully utilise their skills regardless of their location (see Box 2.28Box 2.28) (Gal i Lietuva?, 2025[228]; Lithuanian Public Employment Service, 2025[229]; Global Lithuanian Leaders, 2024[230]).
+
+## Box 2.28. Italy and Lithuania: Combatting brain drain through targeted return migration policies
+
+## Italy: Providing tax incentives to young, highly skilled expatriates
+
+In 2010, Italy introduced a preferential tax incentive scheme through the Law of 12/30/2010 n.238 to encourage the return of young, highly skilled nationals. The scheme exempted income from employment, business, and self-employment from taxation by up to 20% for women and 30% for men. Eligibility criteria included a university degree (minimum undergraduate), birth after 1 January 1969, and at least two years of residence in Italy prior to moving abroad. While the incentives were initially expected to last two to four years, their effective duration ended up being five years.
+
+Evidence using administrative data suggests that eligible Italian expatriates were 27% more likely to return following the introduction of the 2010 tax incentive scheme. Furthermore, a cost-benefit analysis demonstrated that the scheme largely paid for itself, as its target group – young, highly-skilled expatriates – can contribute fiscally over a longer time horizon. The tax incentive scheme has since then undergone several changes in 2015, 2019 and 2023. Major changes include extending eligibility criteria to expand the scope of the scheme, as well as increasing the number of years in which beneficiaries are required to stay in the country.
+
+## Lithuania: Complementing return migration with diaspora engagement
+
+Lithuania adopts a comprehensive approach to leveraging the human and economic capital of its workforce abroad, combining return and reintegration efforts with diaspora engagement. One key initiative is Gal j Lietuvą, implemented by the Public Employment Service as part of the Interinstitutional Action Plan of the Demographic, Migration and Integration Policy Strategy 2018-2030, which targets Lithuanians who have emigrated and are considering returning to live and work in the country. The programme provides information on the Lithuanian labour market, organises events to connect diaspora members with potential employers, and facilitates job negotiations. Returning workers employed in shortage occupations may also receive a one-time grant of EUR 4 255.
+
+In parallel, Lithuania actively engages its diaspora to enable contributions of knowledge and skills from abroad. The GLL Business Advisors programme, run by Global Lithuanian Leaders, connects diaspora professionals with emerging enterprises, innovators, and entrepreneurs in Lithuania. Participating enterprises can access tailored advice and guidance from highly skilled diaspora experts, including support for international market expansion. The Ministry of Economy and Innovation covers a one-time consultation fee, ensuring that enterprises benefit from diaspora expertise without financial barriers. In 2023 alone, more than 35 consultations were organised with 27 diaspora professionals, as well as ten international missions organised in partnership with diaspora professionals and their networks.
+
+Source: Bassetto and Ippedico (2024[227]), Tax incentives and Return Migration, https://ippedico.github.io/website/ippedico\_JMP.pdf; Documentazione Economica e Finanziaria (2011[231]), Legge del 30/12/2010 n.238 – Incentivi fiscali per il rientro dei lavoratori in Italia, https://def.finanze.it/DocTribFrontend/getAttoNormativoDetail.do?ACTION=getSommarioandid={9AEAEAE9-3D5F-45FF-8496-96179FED94AF}; OECD (2024[232]), Migration Policy Debates N°35: Why do OECD countries offer tax relief programmes to attract foreign migrants and returning nationals?, www.oecd.org/content/dam/oecd/en/publications/reports/2024/06/why-do-oecd-countries-offer-tax-relief-programmes-to-attract-foreign-migrants-and-returning-nationals\_f4973c5d/5a23e2a3-en.pdf; Gal i Lietuva? (2025[228]), Homepage, https://galilietuva.lt; Lithuanian Public Employment Service (2025[229]), Arrival allowance for employees recruited from abroad, https://uzt.lt/darbo-ieskantiems/paramos-priemones/atvykimo-ismoka-is-uzsienio-pritrauktiems-darbuotojams/302; Global Lithuanian Leaders (2024[230]), GLL Business Advisors, https://lithuanianleaders.org/business-advisors-2/; Global Lithuanian Leaders (2023[233]), 2023 Annual Activity Report, https://lithuanianleaders.org/wp-content/uploads/2025/03/2023\_Annual-Report\_GLL-1.pdf.
+
+## Plan for implementation
+
+The implementation could be led by the NSC, given its mandate for skills intelligence and its role in co-ordinating evidence to inform skills and labour market policies. The NSC would work in close co-operation with providers of relevant administrative and survey data, including Jobsplus (e.g. data on labour market statistics, vacancy data, migration and employment registers), the National Statistics Office (NSO) (e.g. data on migration flows, demographic and socio-economic indicators), the Department for Social Security (Ministry for Social Policy and Children's Rights) (e.g. data on employment histories, contributions and benefit claims) and higher education institutions, to provide data from graduate tracer surveys. Agenzija Žgħażagħ could also be involved as a partner, particularly in relation to youth perspectives on migration intentions, aspirations and drivers of emigration, thereby strengthening the evidence base on youth-specific dimensions of brain drain.
+
+Given the NSC's ongoing studies on other urgent priorities – such as skills cards (Recommendation 26) and the transversal skills certificate (Recommendation 27) – it is recommended that this study be undertaken in Phase 2 (2028-2030) to distribute the administrative burden. A subsequent talent repatriation strategy and/or diaspora engagement strategy could then build on the study's findings and potentially be developed in Phase 3 (2030 onwards).
+
+The relative costs and administrative complexity of the study itself are expected to be low in comparison with other studies by the NSC (see Recommendations 26-27), although this will depend on the scope of data collection and stakeholder engagement. However, the development and implementation of a talent repatriation or diaspora engagement strategy would entail additional financial and administrative costs. Costs related to the study could be absorbed by the NSC.
+
+An overview of the plan for implementation is presented in Table 2.28.
+
+Table 2.28. Implementation plan for Recommendation 28
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>28. Conduct a study on the causes, scale and socio-economic impact of brain drain to inform policies for talent retention and attraction</td><td>Policy owner: NSC Partners: Jobsplus; Agenzija Żgħażagħ, NSO; Department for Social Security (Ministry for Social Policy and Children&#x27;s Rights); higher education institutions</td><td>Phase 2 (2028-2030): Conduct the study Phase 3 (2031-2035): Develop a talent repatriation or diaspora engagement strategy</td><td>Relative cost and administrative complexity: low</td><td>NSC</td></tr></table>
+
+## Priority Topic 8: Strengthening the governance of the skills system
+
+Given the cross-sectoral nature of skills strategies and their alignment with multiple national priorities, effective implementation of Malta's National Skills Strategy requires active engagement across government, the private sector, civil society, and other stakeholders. Evidence indicates that, compared with the EU average and project comparison countries such as Greece and the Netherlands, Malta has room to strengthen key skills governance elements, such as strategic capacity, inter-ministerial co-ordination, evidence-informed policymaking, and effective implementation (see Figure 2.8) (Bertelsmann Stiftung, 2022[234]).
+
+Figure 2.8. Malta's performance in key governance indicators central to skills policy implementation, 2022  
+![](images/d4745f7d029ac166cce7cca4f08b0d2c099af5f638b4c93eec59c0e46e2b64a7.jpg)  
+Note: Strategic capacity, as defined in the Sustainable Governance Indicators, refers to the ability of strategic planning units and bodies to influence government decision making, as well as the extent to which government regularly takes into account advice from non-governmental experts during decision making. Inter-ministerial co-ordination captures how effectively line ministries, cabinet committees, and officials align policy proposals with government priorities, using both formal and informal mechanisms, including digital tools for policy development and monitoring. Evidence-based instruments describe the systematic use of data and analyses – such as regulatory impact assessments – to review and refine new and existing policies. Finally, effective implementation encompasses the government's capacity to achieve policy objectives, monitor ministry-level execution, ensure adequate funding, and manage other factors essential for successful policy delivery. Source: Bertelsmann Stiftung (2022[234]), Sustainable Governance Indicators 2022, www.sgi-network.org/2022/Downloads.
+
+StatLink https://stat.link/5krp0u
+
+Successfully navigating the digital and net-zero transitions will require co-ordinated action to close skills gaps and deliver timely, relevant, and high-quality training (OECD, 2020[11]; OECD, 2024[235]). In Malta, stakeholder meetings led by the National Skills Council have improved the inclusiveness and responsiveness of skills interventions while raising the profile of skills on both the political agenda and industry priorities. These efforts can be reinforced through formal, regular consultation mechanisms to systematically integrate stakeholder input, build broad ownership, and strengthen commitment to the National Skills Strategy (OECD, 2024[235]; OECD, 2025[6]). Clear roles and responsibilities for improving skills performance are also necessary to ensure accountability and shared ownership among all partners.
+
+To better strengthen the governance of the skills system, the TSI project team recommends: 1) strengthening skills co-ordination to better align skills supply and demand in the thematic areas of Malta's Smart Specialisation Strategy; and 2) regularly reviewing action plans and strengthening reporting mechanisms to ensure that the strategy remains a living document and supports effective and responsive implementation.
+
+## Recommendation 29: Strengthen skills co-ordination to better align skills supply and demand in the thematic areas of Malta's Smart Specialisation Strategy
+
+It is recommended to consider assigning additional functions to existing thematic committees (sector-specific), set up in relation to the Smart Specialisation Strategy, through a clearer and more formalised mandate for skills-related co-ordination. Under this approach, the thematic committees could be formally tasked with addressing both demand- and supply-side dimensions of skills policy within their respective sectors, drawing on evidence from skills assessment and anticipation (SAA) exercises (see
+
+Recommendations 2 and 3). This would represent an expansion of their current advisory role, moving beyond strategic discussion to include structured input on skills needs, training provision, and workforce development, while remaining aligned with the objectives of the Smart Specialisation Strategy. Where relevant, new Industry Skills Alliances could be established in other strategic sectors of the Maltese economy where thematic committees do not yet exist, particularly in line with Malta Vision 2050.
+
+## Description
+
+Industry-led bodies for skills policy at the sectoral level play a crucial role in aligning skills supply and demand within specific sectors. On the demand side, these bodies identify current and future skills and qualification needs, monitor shortages, approve apprenticeship frameworks (e.g. entry requirements, learning outcomes, duration), and encourage employer investment in training. On the supply side, they advise on creating new training opportunities, adapting curricula to industry needs, accrediting providers, ensuring learning quality, and supporting skills assessment and validation (ILO, 2020[236]; ILO, 2021[237]; OECD, 2025[238]). For example, Australia's Jobs and Skills Councils (JSCs) are industry-led bodies that link skilling opportunities to workforce challenges across different sectors (see Box 2.29) (Department of Employment and Workplace Relations, 2025[239]).
+
+In Malta, the National Skills Council organises CareerScape, which brings together representatives from education, industry and government to discuss emerging careers in 13 sectors. CareerScape is, however, not a formal body and does not hold an official mandate for shaping skills policy (TSI consultations of stakeholders, 2025[20]; National Skills Council, 2024[240]). At the same time, Malta already has a number of sector-based co-ordination structures in place, notably the thematic committees established under the Smart Specialisation Strategy (Xjenza Malta, 2021[164]).
+
+Rather than establishing new standalone industry-led bodies for skills policy, Malta could consider assigning the core functions of these bodies to the existing thematic committees, through a clearer and more formalised mandate for skills-related co-ordination. Under this approach, the thematic committees could be formally tasked with addressing both demand- and supply-side dimensions of skills policy within their respective sectors, drawing on evidence from skills assessment and anticipation (SAA) exercises (see Recommendations 2 and 3).
+
+This would represent an expansion of current advisory role of thematic committees, moving beyond strategic discussion to include structured input on skills needs, training provision and workforce development, while remaining aligned with the objectives of the Smart Specialisation Strategy (Cedefop, 2017[241]; Legiżlazzjoni Malta, 2012[242]). On the demand side, thematic committees acting in this enhanced capacity could identify employers' current and emerging skilling needs and contribute to the development of National Occupational Standards, in collaboration with Sector Skills Units where appropriate. On the supply side, they could work with employers and training providers to create specialised learning opportunities (see Recommendation 16), facilitate access to relevant training, and support initiatives such as skills cards (see Recommendation 26) and other mechanisms for recognising and validating skills, thereby promoting lifelong learning.
+
+As part of the TSI project, Malta is recommended to pilot this enhanced role within the existing maritime thematic committee. The maritime committee could effectively act as a Maritime Skills Alliance, co-ordinating, serving as a formal co-ordination platform for maritime education and training, workforce planning, and industry development (see Recommendation 5 of Chapter 3). Lessons from the maritime pilot could inform the gradual roll-out of similar enhanced mandates across the other thematic areas of the Smart Specialisation Strategy.
+
+Where relevant, additional co-ordination bodies – so-called Industry Skills Alliances – could be established in other strategic sectors of the Maltese economy where thematic committees do not yet exist, particularly in line with the Malta Vision 2050. This would help address the need for stronger co-ordination on skills policy beyond the thematic priorities of the Smart Specialisation Strategy. These Industry Skills Alliances could be based on the revised model for the thematic committees and draw on lessons from the enhanced role of the maritime thematic committee.
+
+The effectiveness of this approach will depend on clear governance and representative membership, supported by appropriate co-ordination with the National Skills Council. It is important for membership to be representative and inclusive, ensuring the presence of industry, employer organisations, and academic experts, with group size adjusted to sectoral complexity (typically 7 to 30 in other EU countries). This multi-stakeholder approach can help effectively combine sector-specific knowledge with technical expertise (European Commission, 2023[243]).
+
+Under the guidance of the National Skills Council, it is recommended that the thematic committees with an enhanced skills mandate meet regularly – at least quarterly – and establish their own operating procedures. These would include setting clear agendas, appointing rotating chairs, and adopting transparent protocols for decision making and stakeholder engagement. Clarifying and strengthening the skills-related role of existing committees would help ensure coherence, reduce fragmentation, and support more effective implementation of Malta’s skills policy objectives, aligned with the broader objectives of Malta Vision 2050.
+
+## Box 2.29. Australia: Aligning skills supply and demand through Jobs and Skills Councils (JSCs)
+
+Australia has established Jobs and Skills Councils (JSCs) to give industry a leading role in shaping the vocational education and training (VET) system. Each JSC operates as a not-for-profit company that is both owned and led by industry actors, working closely with Jobs and Skills Australia, an independent government body responsible for skills research and advice. Employing a multi-stakeholder, tripartite approach, JSCs bring together employers, unions, and governments to ensure that skills supply meets evolving labour market demand. Their core functions encompass both the demand and supply sides of skills, backed by SAA intelligence on emerging challenges. On the demand side, JSCs are responsible for creating workforce development plans, maintaining alignment with national skills priorities, and identifying sector-specific skills needs. On the supply side, they map career pathways, develop and update VET training products, and support providers to improve training quality and assessment practices.
+
+Currently, there are ten JSCs in Australia, with each one covering both traditional and emerging fields. For example, the Manufacturing Industry Skills Alliance covers the traditional industries of manufacturing and engineering (e.g. food, pharmaceuticals, print), but also emerging industries including defence and space technologies. In 2025, the alliance published the Manufacturing Workforce Plan: Pathways to Transformation, which built on previous plans and identified growth opportunities in sub-sectors in line with national priorities (e.g. digitalisation, net-zero transition), as well as evolving job roles and required skills. To achieve workforce planning targets, the Manufacturing Industry Skills Alliance then examines current gaps in available training packages and develops new training opportunities.
+
+Source: Department of Employment and Workplace Relations (2025[239]), Jobs and Skills Councils, www.dewr.gov.au/skills-reform/jobs-and-skills-councils; Manufacturing Industry Skills Alliance (2025[244]), Manufacturing Workforce Plan 2025, https://manufacturingalliance.org.au/manufacturing-workforce-plan-2025-download/.
+
+## Plan for implementation
+
+The NSC, in collaboration with MEYR, could lead the process of strengthening skills co-ordination through the existing thematic committees aligned with the six thematic areas of the Smart Specialisation Strategy (S3). Given the link with the S3, it is important to involve the Office of the Parliamentary Secretary and Office of the Permanent Secretary within the MEYR when formalising and enhancing the skills-related mandate of these committees. These actors will also play an important role in potentially setting up additional Industry Skills Alliances, which could be established in other strategic sectors of the Maltese economy where thematic committees do not yet exist, and which could be based on the model of the thematic committees.
+
+Given the central role of the thematic committees in leading sectoral initiatives – such as contributing to the development of SAA methodologies (Recommendation 3) and supporting other recommendations, including specialised post-graduate qualifications (Recommendation 16) and sector-specific skills cards (Recommendation 26) – it is recommended that their enhanced skills mandate be implemented in Phase 1 (2026-2027).
+
+It is suggested to begin with a pilot in the maritime sector in this first phase. The enhanced maritime thematic committee will effectively act as a Maritime Skills Alliance, serving as a formal structure bringing together key actors in maritime education and training, workforce planning, and industry development in the sector (see Action Plan proposal for reforming Malta's maritime skills provision [Output 6]). This initiative could then inform the gradual roll-out of similar enhanced mandates across other S3 thematic areas and strategic sectors in Phase 2 (2028-2030), and the potential development of Industry Skills Alliances for those sectors in which a thematic committee is not yet established.
+
+While relative costs are expected to be low, administrative complexity is anticipated to be high. The multi-stakeholder approach will require careful organisation, and formalising governance arrangements and operating procedures – including rules for meetings, agendas, chairs, decision making protocols – will take time and sustained effort. It is therefore important to implement the enhanced mandate gradually, sector by sector. Potential funding could be provided by the NSC, in collaboration with MEYR.
+
+An overview of the plan for implementation is presented in Table 2.29.
+
+Table 2.29. Implementation plan for Recommendation 29
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>29. Strengthen skills co-ordination to better align skills supply and demand in the thematic areas of Malta&#x27;s Smart Specialisation Strategy</td><td>Policy owner: NSC, MEYR (Office of the Parliamentary Secretary; Office of the Permanent Secretary)Partners: Xjenza Malta</td><td>Phase 1 (2026-2027): Pilot the enhanced skills-related mandate within the maritime thematic committee (i.e. the so-called Maritime Skills Alliance)Phase 2 (2028-2030): Roll out the enhanced mandate across other Smart Specialisation Strategy thematic committees and establishment of Industry Skills Alliances in other strategic sectors.</td><td>Relative cost: lowAdministrative complexity: high</td><td>NSC; MEYR;</td></tr></table>
+
+## Recommendation 30: Regularly review action plans and strengthen reporting mechanisms to ensure that the strategy remains a living document and supports effective and responsive implementation
+
+It is recommended that Malta adopt shorter, regularly renewed action plans with clear timelines for each policy recommendation, monitored through a designated contact point in the National Skills Council. Minor ad hoc adjustments could be agreed upon with stakeholders to ensure responsiveness to evolving labour market needs, while ensuring timely delivery.
+
+## Description
+
+The success of Malta's National Skills Strategy depends on a structured approach to implementation, supported by a dedicated action plan that defines responsibilities, funding sources, timelines, milestones, implementation targets, and monitoring and reporting requirements. This TSI project will provide a proposal for this action plan.
+
+It would be important to embed flexibility in the action plan to ensure its continued relevance amid rapidly evolving labour markets. Megatrends such as the digital and net-zero transitions, as well as unforeseen shocks like the COVID-19 pandemic or changes in government, can shift skills priorities and delay policy implementation (OECD, 2024[235]). To ensure timely delivery, other EU countries with skills strategies regularly review their strategies and action plans, incorporating up-to-date information on current and future skills needs (OECD, 2024[235]; Greek Public Employment Service, 2023[245]; OECD, 2020[246]).
+
+Given Malta's National Skills Strategy spans a ten-year horizon, policymakers could benefit from shorter-term action plans that are regularly renewed. For example, Latvia's six-year strategy (2021-2027) was implemented through consecutive two-year plans (2021-2023, 2023-2025, 2026-2027) (see Box 2.30) (OECD, 2024[235]). Malta could adopt a similar approach, treating its action plan as a living document, reviewed every two or three years to reflect progress against established targets and emerging labour market insights from SAA exercises (see Recommendations 2 and 3).
+
+It is important for each policy recommendation in the National Skills Strategy to be assigned a timeframe – Phase 1 (2026-2027), Phase 2 (2028-2030) and Phase 3 (2031-2035) – with full strategy completion by 2035. By setting a clear timeline for each policy recommendation, Malta can set the pace and expectations for all actors to implement the measures assigned to them (Viennet and Pont, 2017[247]; OECD, 2020[246]). The task of determining the appropriate timeframe for each recommendation could be carried out in collaboration with the policy owners, taking into account potential implementation risks and establishing contingency plans where necessary. The action plan proposal developed through this TSI project, will also determine timeframes in consultation with policy owners and other stakeholders.
+
+To ensure timely implementation, a designated contact point could oversee regular progress updates (e.g. monthly) via the established performance management system. Where agreed with relevant stakeholders, minor, ad hoc adjustments to timelines (e.g. delays of one to two months) could be permitted to accommodate unforeseen challenges. This approach can help maintain implementation momentum while ensuring the strategy remains adaptable and responsive to evolving circumstances.
+
+## Box 2.30. Latvia: Ensuring responsiveness and flexibility through action plan renewal cycles
+
+Latvia's Education Development Guidelines (EDG) aim to ensure high-quality and inclusive education and training opportunities that support sustainable national growth. The latest EDG focusses on enhancing teachers' academic and pedagogical training, increasing adult learning participation, investing in digital skills, and strengthening strategic capacity for skills policy. While the EDG covers a six-year period (2021-2027), Latvia has adopted separate two-year implementation plans for
+
+2021-2023, 2023-2025, and 2026-2027. This renewal cycle, strongly supported by stakeholders, involves consultations to review emerging trends and challenges, alongside an analysis of national and EU data. By combining qualitative stakeholder insights with quantitative evidence, Latvia can adjust targets, refine policy measures, and ensure that the implementation remains responsive and aligned with evolving skills needs.
+
+Source: Cabinet of Ministers (2021[248]), About the Education Development Guidelines for 2021-2027, https://eprasmes.lv/wp-content/uploads/2022/02/Latvijas-lzglitibas-attsitibas-pamatnostadnes-2021-2027.pdf; OECD (2020[246]), OECD Skills Strategy Implementation Guidance for Latvia: Developing Latvia's Education Development Guidelines 2021-2027, https://doi.org/10.1787/ebc98a53-en; OECD (2024[235]), Insights from Skills Strategies in the European Union: Lessons Learnt for Developing and Implementing Effective Skills Policies, https://doi.org/10.1787/0bf9e78e-en.
+
+## Plan for implementation
+
+The NSC should lead the regular review of action plans and the strengthening of reporting mechanisms to ensure that the National Skills Strategy remains a living document and supports effective and responsive implementation.
+
+It will be particularly important to involve MEYR as a partner, including its Policy Monitoring and Evaluation Directorate (PMED), given its role to monitor and evaluate government strategies, and its expertise in policy evaluation and evidence-based assessment.
+
+The review of the action plan will be a continuous process throughout the ten-year implementation period. Chapter 3 provides a proposed monitoring and evaluation framework, with the NSC taking a leading role in the conducting of the evaluation at the end of Phase 1 (2026-2027), while PMED could oversee evaluations for Phase 2 (2028-2030) and Phase 3 (2031-2035).
+
+For each evaluation, policy owners will submit information on the implementation of actions, including performance indicators across input, output, outcome and impact levels, designed to quantify and track progress from each proposed action to its desired impact. The interim evaluations (after Phases 1 and 2) would identify any adjustments required to the details or timelines of the implementation plan for the subsequent period, ensuring that the strategy remains adaptive and responsive to emerging needs.
+
+Relative costs are anticipated to be low, while administrative complexity is expected to be moderate if evaluations are carried out internally. The evaluations will require staff time and time for data collection by policy owners. Funding could be provided jointly by the NSC and MEYR.
+
+Alternatively, an external evaluation might be advisable to ensure greater robustness, as it would provide independent and methodologically rigorous analysis, with relative costs expected to be moderate or high and administrative complexity likely to be low.
+
+An overview of the plan for implementation is presented in Table 2.30.
+
+Table 2.30. Implementation plan for Recommendation 30
+
+<table><tr><td>Recommendation</td><td>Roles</td><td>Timeline</td><td>Relative cost and administrative complexity</td><td>Possible funding sources</td></tr><tr><td>30. Regularly review action plans and strengthen reporting mechanisms to ensure that the strategy remains a living document and supports effective and responsive implementation</td><td>Policy owner: NSC Partners: MEYR (PMED) monitoring the implementation; all policy owners (providing input)</td><td>Review implementation at end of Phase 1 (late 2027), Phase 2 (late 2030) and Phase 3 (late 2035)</td><td>Relative cost: low Administrative complexity: moderate</td><td>NSC; MEYR (PMED)</td></tr></table>
+
+## References
+
+Academy of Singapore Teachers (2025), SkillsFuture for Educators: Overview, https://academyofsingaporeteachers.moe.edu.sg/professional-excellence/skillsfuture-for-educators/overview/.
+
+Academy of Singapore Teachers (2023), Infosheet on SkillsFuture for Educators (SFEd), https://academyofsingaporeteachers.moe.edu.sg/files/infosheet-on-SFEd.pdf.
+
+Agenzija Žgħażagħ (2026), Website Agenzija Žgħażagħ, https://youth.gov.mt/. [221]
+
+Ajzenman, N. et al. (2024), “Altruism or Money? Reducing Teacher Sorting Using Behavioral Strategies in Peru”, Journal of Labor Economics, Vol. 42/4, pp. 1049-1091, https://doi.org/10.1086/725166. [96]
+
+Attard, J. (2020), A continuum of leadership development: a project for middle management leaders to become agents of change in their schools, https://www.um.edu.mt/library/oar/handle/123456789/73738. [84]
+
+Barnes, S. et al. (2020), The role of parents and carers in providing careers guidance and how they can be better supported, https://cica.org.au/wp-content/uploads/IER\_Gatsby\_JPM\_parents\_carers\_practice\_report\_final.pdf. [32]
+
+Barnes, S. et al. (2023), Labour market information and an assessment of its applications: a series of international case studies, https://assets.publishing.service.gov.uk/media/63f362a7e90e077bb6c6d180/Labour\_market\_information\_and\_an\_assessment\_of\_its\_applications.pdf.
+
+Bassetto and Ippedico (2024), Tax incentived and Return Migration, https://ippedico.github.io/website/ippedico\_JMP.pdf.
+
+Bertelsmann Stiftung (2022), Sustainable Governance Indicators 2022, https://www.sgi-network.org/2022/Downloads (accessed on 17 December 2025). [234]
+
+Beyond (2025), Homepage BEYOND, https://welcome.beyond.edu.au/ (accessed on 10 December 2025). [33]
+
+Bezzina, C. (2024), “The Leadership Challenge: Improving Learning in Maltese Schools”, Education Sciences, Vol. 14/8, p. 916, https://doi.org/10.3390/educsci14080916. [82]
+
+Boeskens, L., D. Nusche and M. Yurita (2020), “Policies to support teachers’ continuing professional learning: A conceptual framework and mapping of OECD data”, OECD Education Working Papers, No. 235, OECD Publishing, Paris, https://doi.org/10.1787/247b7c4d-en.
+
+Borg, N. and M. Pace (2022), “Needs and Motivations of Adults Learning Foreign Languages. [141] The Maltese Perspective”, Symposia Melitensia, Vol. 18, pp. 127-142, https://www.um.edu.mt/library/oar/bitstream/123456789/97394/1/SymMel18A9.pdf.
+
+Building & Construcion Authority (2025), Skill Cards, https://bca.gov.mt/skill-cards/ (accessed on 18 December 2025). [211]
+
+Cabinet of Ministers (2021), About the Education Development Guidelines for 2021-2027, https://eprasmes.lv/wp-content/uploads/2022/02/Latvijas-lzglitibas-attsitibas-pamatnostadnes-2021-2027.pdf.
+
+Caena, F. (2014), “Teacher Competence Frameworks in Europe: policy-as-discourse and policy-as-practice”, European Journal of Education, Vol. 49/3, pp. 311-331, https://doi.org/10.1111/ejed.12088.
+
+Calleja, J. (2018), “Teacher Participation in Continuing Professional Development: Motivating Factors and Programme Effectiveness”, Malta Review of Educational Research, Vol. 12/1, pp. 5-29, https://www.um.edu.mt/library/oar/handle/123456789/32542.
+
+Camilleri, H. (2024), Brain drain's impact: a case study on final year students, University of Malta, https://www.um.edu.mt/library/oar/handle/123456789/133773.
+
+Catrillo-Fernández, O. (2015), Web Scraping: Applications and Tools, European Public Sector Information Platform,
+https://data.europa.eu/sites/default/files/report/2015\_web\_scraping\_applications\_and\_tools.pdf.
+
+Cedefop (2025), Improving VET image and attractiveness, https://www.smechamber.mt/apprenticeship-schemes-way-forward-to-bridge-education-and-employment/ (accessed on 17 December 2025).
+
+Cedefop (2025), Unlocking skills to empower people: Cedefop's new info-hub for the validation of learning, https://www.cedefop.europa.eu/en/news/unlocking-skills-empower-people-cedefops-new-info-hub-validation-learning (accessed on 18 December 2025).
+
+Cedefop (2024), Cedefop Skills Forecast: Future employment growth, https://www.cedefop.europa.eu/en/tools/skills-intelligence/trend-focus/future-jobs#1 (accessed on 17 December 2025).
+
+Cedefop (2024), Malta: a new digital education strategy adopted, https://www.cedefop.europa.eu/en/news/malta-new-digital-education-strategy-adopted (accessed on 17 December 2025).
+
+Cedefop (2024), Next generation skills intelligence for more learning and better matching: Skills anticipation trends, opportunities and challenges in EU Member States, https://www.cedefop.europa.eu/files/9190\_en.pdf. [2]
+
+Cedefop (2023), Employed population participating in learning, [101] https://www.cedefop.europa.eu/en/tools/skills-intelligence/employed-population-participating-learning?year=2023&country=MT#5 (accessed on 15 December 2025).
+
+Cedefop (2021), A more learner-centred approach to adult learning may encourage more to participate – Cedefop opinion survey, Cedefop, https://www.cedefop.europa.eu/en/press-releases/more-learner-centred-approach-adult-learning-may-encourage-more-participate-cedefop-opinion-survey (accessed on 9 December 2024).
+
+Cedefop (2020), Paid individual training leave, https://www.cedefop.europa.eu/en/tools/financing-adult-learning-db/search/paid-individual-training-leave-0 (accessed on 17 December 2025).
+
+Cedefop (2020), Payback clause: Czechia, https://www.cedefop.europa.eu/en/tools/financing-adult-learning-db/search/payback-clause-28 (accessed on 17 December 2025).
+
+Cedefop (2017), Malta: sector skills units helping meet labour market challenges, https://www.cedefop.europa.eu/en/news/malta-sector-skills-units-helping-meet-labour-market-challenges#:\~:text=To%20date%20seven%20sector%20skills,support%2C%20and%20the%20voluntary%20sector (accessed on 18 December 2025).
+
+Cedefop (2017), Vocational education and training in Malta: Short description, https://www.cedefop.europa.eu/files/4151\_en.pdf.
+
+Cedefop (2016), 2016 Update to the European Inventory on Validation of Non-formal and Informal Learning – Country Report: Netherlands, https://www.cedefop.europa.eu/files/2016\_validate\_nl.pdf (accessed on 17 December 2025). [162]
+
+Cedefop (2016), Safeguarding education investments: Mitigating overqualification in the EU, https://www.cedefop.europa.eu/files/esj-insights-mitigating-overqualification-in-the-eu.pdf.
+
+Christensen, S. et al. (2022), “Parental Perceptions of the Teaching Profession: Factors That Predict Parental Encouragement of Students to Enter the Teaching Profession”, Education Sciences, Vol. 12/11, p. 734, https://doi.org/10.3390/educsci12110734.
+
+Council of the European Union (2022), Council Recommendation on individual learning accounts, https://data.consilium.europa.eu/doc/document/ST-8944-2022-INIT/en/pdf.
+
+Damgaard, M. and H. Nielsen (2018), “Nudging in education”, Economics of Education Review, Vol. 64, pp. 313-342, https://doi.org/10.1016/j.econedurev.2018.03.008.
+
+Davenport, C. and A. Padwick (2025), “Making their minds up: flux and stability in young children’s career aspirations in North East England”, Humanities and Social Sciences Communications, Vol. 12/1, p. 1038, https://doi.org/10.1057/s41599-025-05364-z.
+
+Department of Employment and Workplace Relations (2025), Jobs and Skills Councils, https://www.dewr.gov.au/skills-reform/jobs-and-skills-councils (accessed on 17 December 2025).
+
+Diário da República (2009), Labour Code, https://files.dre.pt/diplomastraduzidos/7\_2009\_CodigoTrabalho\_EN\_publ.pdf.
+
+DIE (2025), profilPASS, https://www.die-bonn.de/institut/dienstleistungen/servicestellen/profilpass?lang=en (accessed on 18 December 2025).
+
+Die Bundesregierung (2022), unternehmensWert:Mensch, https://www.esf.de/portal/DE/ESF-2014-2020/Foerderprogramme/bmas/unternehmenswert-mensch.html (accessed on 17 December 2025).
+
+Digital Skills & Jobs Platform (2024), Diggino Tool - SME Digital Maturity Recommender, [177] https://digital-skills-jobs.europa.eu/en/inspiration/resources/diginno-tool-sme-digital-maturity-recommender (accessed on 17 December 2025).
+
+Digital Skills & Jobs Platform (2023), “Smart Latvia” - Supporting SMEs’ Digital Transformation, [179] https://digital-skills-jobs.europa.eu/en/inspiration/good-practices/smart-latvia-supporting-smes-digital-transformation (accessed on 17 December 2025).
+
+DiHubMT (2025), How We Work, https://dihubmt.eu/about/how-we-work/ (accessed on 18 December 2025).
+
+Documentazione Economica e Finanziaria (2011), Legge del 30/12/2010 n.238 – Incentivi fiscali per il rientro dei lavoratori in Italia, https://def.finanze.it/DocTribFrontend/getAttoNormativoDetail.do?ACTION=getSommario&id={9AEAEAE9-3D5F-45FF-8496-96179FED94AF}.
+
+EENE (2023), Evidence-based Solutions to Teacher Shortages, https://web.archive.org/web/20240123120437mp /https://eenee.eu/wp-content/uploads/2023/08/EENEE-NESET-joint-analytical-report-No-1.pdf.
+
+eSkills Malta Foundation (2021), ICT Skills Demand and Supply Monitor, https://digitalskills.mdia.gov.mt/wp-content/uploads/2021/07/ICT\_Demand\_Supply\_Monitor\_2021.pdf.
+
+Eurofound (2019), European Company Surveys (ECS), https://www.eurofound.europa.eu/en/surveys-and-data/surveys/european-company-survey/ecs-2019#ECS%202019%20(all%20questions) (accessed on 18 December 2025).
+
+Euroguidance (2025), Explore More Web portal for Secondary School students, https://euroguidance.eu/explore-more-project-web-portal (accessed on 10 December 2025).
+
+Euroguidance (2022), How do we reach vulnerable groups for career guidance?, [37] https://www.euroguidance.nl/wp-content/uploads/2022/10/Euroguidance\_A5Folder\_Kwetsbare\_doelgroepen\_Okt2022-EN.pdf.
+
+European Commission (2025), Competence Centre on Foresight, https://knowledge4policy.ec.europa.eu/foresight\_en (accessed on 10 December 2025).
+
+European Commission (2025), EPALE - Electronic Platform for Adult Learning in Europe, https://epale.ec.europa.eu/en/blog/importance-career-guidance-adult-education#:\~:text=Career%20guidance%20is%20instrumental%20in,barriers%20to%20employment%20and%20education (accessed on 10 December 2025).
+
+European Commission (2025), The Union of Skills, https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A52025DC0090.
+
+European Commission (2024), Education and Training Monitor 2024: Malta, https://op.europa.eu/webpub/eac/education-and-training-monitor/en/country-reports/malta.html (accessed on 3 December 2025).
+
+European Commission (2024), European e-Competence Framework (e-CF), https://esco.ec.europa.eu/en/about-esco/escopedia/escopedia/european-e-competence-framework-e-cf (accessed on 10 December 2025).
+
+European Commission (2024), Implementing in France the green transition roadmap of the general delegation for employment and professional training, https://reform-support.ec.europa.eu/what-we-do/skills-education-and-training/implementing-france-green-transition-roadmap-general-delegation-employment-and-professional-training\_en?prefLang=bg (accessed on 17 December 2025).
+
+European Commission (2024), Vocational Education and Training and the Green Transition – A Compendium of inspiring practices (2024 edition), https://employment-social-affairs.ec.europa.eu/vocational-education-and-training-and-green-transition-compendium-inspiring-practices-2024-edition\_en (accessed on 17 December 2025).
+
+European Commission (2023), A short guide to Sectoral Expert Councils in Latvia, Lithuania and Estonia, https://epale.ec.europa.eu/en/erasmus/strengthening-cooperation-between-institutions-coordinating-work-sectoral-expert-councils-0 (accessed on 18 December 2025).
+
+European Commission (2022), Feasibility study for a (self-) assessment tool on skills management practices in SMEs, https://op.europa.eu/en/publication-detail/-/publication/9319d22a-3ae8-11ed-9c68-01aa75ed71a1/language-en (accessed on 17 December 2025).
+
+European School Education Platform (2024), About eTwinning, https://school-education.ec.europa.eu/en/etwinning/about (accessed on 15 December 2025).
+
+European Training Foundation, Cedefop and ILO (2016), Using Labour Market Information, Publications Office of the European Union, https://www.cedefop.europa.eu/files/2215\_en.pdf. [19]
+
+European Training Foundation and UNICEF (2024), Learning for Careers: What kinds of career guidance and career education services do young people want in Europe and Central Asia?, https://www.etf.europa.eu/sites/default/files/2024-03/2024%20Career%20Guidance%20Report\_v09\_web.pdf.
+
+European Union (2024), European Year of Skills: Second edition of a one-year mutual learning programme on the individual learning accounts started, https://wayback.archive-it.org/12090/20250217154214/https://year-of-skills.europa.eu/news/second-edition-one-year-mutual-learning-programme-individual-learning-accounts-started-2024-05-16\_en (accessed on 15 December 2025).
+
+European Union (2022), Council Recommendation on individual learning accounts, https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32022H0627%2803%29 (accessed on 15 December 2025).
+
+Eurostat (2024), “Adult Education Survey 2022”, https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Adult\_Education\_Survey\_(AES)\_methodology.
+
+Eurostat (2024), Participation rate in education and training (last 4 weeks) by educational attainment level, https://ec.europa.eu/eurostat/databrowser/view/trng lfse\_03\_custom\_18503159/default/table (accessed on 18 December 2025).
+
+Eurostat (2022), Population not participating in education or training by main reason and educational attainment level, https://ec.europa.eu/eurostat/databrowser/view/trng\_aes\_197\_custom\_17749085/default/table (accessed on 18 December 2025). [145]
+
+Eurostat (2022), Search for information on learning possibilities by type of learning and educational attainment level, https://ec.europa.eu/eurostat/databrowser/view/trng\_aes\_184/default/table?lang=en&category=educ.educ\_part.trng.trng\_aes\_12m.trng\_aes\_12m1 (accessed on 10 December 2025).
+
+Eurostat (2020), Enterprises providing training by type of training and size class, https://ec.europa.eu/eurostat/databrowser/view/trng\_cvt\_01s\_custom\_14169336/default/table?lang=en (accessed on 2 July 2020).
+
+Eurostat (2020), Enterprises with CVT planning by type of planning, type of training provided and size class - % of all enterprises,
+https://ec.europa.eu/eurostat/databrowser/view/trng\_cvt\_07s\_custom\_18103345/default/table (accessed on 18 December 2025).
+
+Eurostat (2020), Enterprises with staff representatives involved in the management of CVT by type of involvement and size class - % of all enterprises, https://ec.europa.eu/eurostat/databrowser/view/trng\_cvt\_09s\_custom\_18102535/default/table (accessed on 18 December 2025).
+
+Eurostat (2016), Statistical approaches to the measurement of skills, https://ec.europa.eu/eurostat/documents/3888793/7753369/KS-TC-16-023-EN-N.pdf/438b69b5-2fcb-4923-b9e2-fa7b59906438.
+
+Eurostat (2015), Employed persons thinking that they do useful work by sex and age, [187] https://ec.europa.eu/eurostat/databrowser/view/qoe\_ewcs\_7b3/default/table?lang=en&category=qoe.qoe\_relmot.qoe\_mot (accessed on 18 December 2025).
+
+Eurydice (2025), Quality assurance: Quality assurance in adult education and training, [137] https://eurydice.eacea.ec.europa.eu/eurypedia/malta/quality-assurance-adult-education-and-training (accessed on 18 December 2025).
+
+Eurydice (2025), Validation of non-formal and informal learning, [158] https://eurydice.eacea.ec.europa.eu/eurypedia/malta/validation-non-formal-and-informal-learning (accessed on 18 December 2025).
+
+Eurydice (2024), Malta: A Sectoral Agreement enhancing educators' rights and working conditions, https://eurydice.eacea.ec.europa.eu/news/malta-sectoral-agreement-enhancing-educators-rights-and-working-conditions (accessed on 15 December 2025). [91]
+
+ExploreMore (2023), Homepage, https://exploremoreproject.eu/.
+
+EY (2025), Future realized: EU Attractiveness Survey Malta, https://www.ey.com/content/dam/ey-unified-site/ey-com/en-mt/events/2025/malta-attractiveness-report-2025.pdf.
+
+EY (2022), The pulse of Malta's future generations, https://assets.ey.com/content/dam/ey-unified-site/ey-com/en-mt/articles/documents/ey-malta-generate-report-2022.pdf.
+
+Fabian Galea (2020), “Actions Speak Louder Than Words: Investigating Teacher Attrition in Malta”, https://www.mreronline.org/wp-content/uploads/2020/06/5-Fabian-Galea-Investigating-Teacher-Attrition-in-Malta.pdf (accessed on 9 December 2024).
+
+Farrugia, K. and J. Chan (2024), “Breaking the cycle: Addressing workplace burnout and promoting sustainable well-being in Malta”, EWOP in Practice, Vol. 18/2, https://doi.org/10.21825/ewopinpractice.93183.
+
+Finnish Institute of Occupational Health (2023), WORK2030 Final Webinar (in Finnish), [205] https://hyvatyo.ttl.fi/hubfs/TY%C3%962030%20p%C3%A4%C3%A4t%C3%B6swebinaari.pdf.
+
+Finnish National Board of Education (2025), Forecast results, https://www.oph.fi/fi/tietoaineistotja-analyysit/ennakointi/ennakointituloksia.
+
+Finnish National Board of Education (2025), Osaamisen ennakointifoorumi #OEFoorumi, https://www.oph.fi/fi/palvelut/osaamisen-ennakointifoorumi-oef.
+
+Finnish National Board of Education (2024), Members of the Expertise Foresight Forum 2021-2024, https://www.oph.fi/fi/palvelut/osaamisen-ennakointifoorumin-jasenet-2021-2024.
+
+Fiorini, L. (2025), “Work-related mental health and well-being in Malta: Progress, challenges, and the evolving nature”, https://www.um.edu.mt/library/oar/bitstream/123456789/134186/1/Work-related%20mental%20health%20and%20well-being%20in%20Malta.pdf. [192]
+
+Forem (2025), Difficultés et opportunités de recrutement: Métiers / fonctions critiques et en pénurie en Wallonie, https://www.leforem.be/content/dam/leforem/fr/documents/chiffres-et-analyses/analyses/analyse-liste2025-fonctions-critiques.pdf (accessed on 17 December 2025).
+
+Forem (2025), Incitant+, une prime à la formation, https://www.leforem.be/citoyens/incitants-financiers-formation/incitant-plus.html (accessed on 17 December 2025). [150]
+
+Fragile States Index (2024), Global Data, https://fragilestatesindex.org/global-data/ (accessed on 18 December 2025). [189]
+
+France Compétences (2025), Mon conseil en évolution professionnelle, https://www.francecompetences.fr/reguler-le-marche/mon-cep/ (accessed on 10 December 2025).
+
+France Travail (2025), Le compte personnel de formation (CPF) est au service de votre projet de formation, https://www.francetravail.fr/candidat/en-formation/mes-aides-financieres/le-compte-personnel-de-formation.html (accessed on 15 December 2025).
+
+Frendo, J. (2023), “The Continuous Professional Development of School Leaders: Current Practices in Malta”, https://www.researchgate.net/publication/392518408\_THE\_CONTINUOUS\_PROFESSIONAL DEVELOPMENT\_OF\_SCHOOL\_LEADERS\_CURRENT\_PRACTICES\_IN\_MALTA.
+
+Froy, F., S. Giguère and M. Meghnagi (2012), “Skills for Competitiveness: A Synthesis Report”, OECD Local Economic and Employment Development (LEED) Papers, No. 2012/9, OECD Publishing, Paris, https://doi.org/10.1787/5k98xwskmvr6-en.
+
+Futurium (2025), About Us, https://futurium.de/en/about-us (accessed on 16 December 2025). [105]
+
+Gal i Lietuvą? (2025), Homepage, https://galilietuva.lt/ (accessed on 2025 December 17).
+
+Galanaki, E., D. Bourantas and N. Papalexandris (2008), “A decision model for outsourcing training functions: distinguishing between generic and firm-job-specific training content”, The International Journal of Human Resource Management, Vol. 19/12, pp. 2332-2351, https://doi.org/10.1080/09585190802479579.
+
+Global Environmental Education Partnership (2025), France, https://thegeep.org/resources/countries/france#:\~:text=France%20has%20demonstrated%20its%20commitment,to%20specialize%20in%20environmental%20fields (accessed on 17 December 2025).
+
+Global Lithuanian Leaders (2024), GLL Business Advisors, https://lithuanianleaders.org/business-advisors-2/ (accessed on 17 December 2025).
+
+Global Lithuanian Leaders (2023), 2023 Annual Activity Report, https://lithuanianleaders.org/wp-content/uploads/2025/03/2023\_Annual-Report\_GLL-1.pdf. [233]
+
+Government of Ireland (2025), GrowDigital: A digital toolkit for every business, https://www.growdigital.gov.ie/ (accessed on 17 December 2025).
+
+Government of Malta (2025), Malta Vision 2050, https://economy.gov.mt/wp-content/uploads/2025/04/Malta-Vision-2050-Public-Consultation.pdf.
+
+Government of Malta (2024), Digital Education Strategy 2024 - 2030, https://education.gov.mt/wp-content/uploads/2024/04/Digital-Education-Strategy-Consultation-Document-ENG-Version-3.pdf.
+
+Government of Malta (2023), Digital Decade Roadmap 2023-2030, https://economy.gov.mt/wp-content/uploads/2024/08/Digital-Decade-Strategic-Roadmap-2023-2030.pdf. [116]
+
+Government of Slovenia (2024), EU funding for the development of teachers' and school leaders' competences, https://www.gov.si/en/news/2024-11-22-eu-funding-for-the-development-of-teachers-and-school-leaders-competences/. [74]
+
+Grech, V. (2011), Lydgate, brain drain and the Maltese medical profession, University of Malta, [226] https://www.um.edu.mt/library/oar/bitstream/123456789/12732/1/Lydgate%2C%20brain%20drain%20and%20the%20maltese%20medical%20profession.pdf.
+
+Greek Public Employment Service (2023), Strategy for Labour Force Upskilling and Connection to the Labour Market, https://www.dypa.gov.gr/storage/efropaiko-etos-deksiotiton-2023/dypa-strategy-2023.pdf. [245]
+
+Higher Education Authority (2025), Human Capital Initiative, https://hea.ie/skills-engagement/human-capital-initiative-pillars-1-2-and-3/ (accessed on 17 December 2025). [134]
+
+Higher Education Authority (2025), What is the Human Capital Initiative (HCI)?, https://hea.ie/skills-engagement/what-is-human-capital-initiative-hci/ (accessed on 17 December 2025).
+
+Hoidn, S. and K. Kärkkäinen (2014), “Promoting Skills for Innovation in Higher Education: A Literature Review on the Effectiveness of Problem-based Learning and of Teaching Behaviours”, OECD Education Working Papers, No. 100, OECD Publishing, Paris, https://doi.org/10.1787/5k3tsj67l226-en.
+
+IHK-Projektgesellschaft mbH (2022), unternehmensWert:Mensch, https://www.ihk-projekt.de/uwm/ (accessed on 17 December 2025). [196]
+
+ILO (2025), Main sources of work statistics, https://www.ilo.org/sites/default/files/2025-02/Strengths%20and%20limitations%20of%20sources%20of%20work%20statistics.pdf. [29]
+
+ILO (2023), Empowering migrant workers through the National Skills Passport initiative, https://www.ilo.org/resource/news/empowering-migrant-workers-through-national-skills-passport-initiative (accessed on 18 November 2025).
+
+ILO (2021), A Resource Guide for Sector Skills Bodies, https://www.ilo.org/publications/resource-guide-sector-skills-bodies (accessed on 18 December 2025).
+
+ILO (2020), Sector Skills Councils,
+https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@asia/@ro-bangkok/@ilo-jakarta/documents/publication/wcms\_738640.pdf.
+
+ILO (2017), Upskilling SMEs, https://www.ilo.org/sites/default/files/wcmsp5/groups/public/%40ed\_emp/%40emp\_ent/documents/publication/wcms\_609267.pdf (accessed on 17 December 2025).
+
+Italian Ministry of Education, Universities and Research (2024), Carta del Docente, https://www.cartadeldocente.istruzione.it/ (accessed on 15 December 2025).
+
+JobsPlus (2026), Webpage MySkills Scheme, https://jobsplus.gov.mt/funding/myskills-scheme [154] (accessed on 15 April 2026).
+
+JobsPlus (2025), Bridging the Gap Scheme, https://jobsplus.gov.mt/funding-employer/bridging-the-gap-scheme (accessed on 18 December 2025). [153]
+
+JobsPlus (2025), Investing in Skills, https://jobsplus.gov.mt/funding-employer/investing-in-skills [152] (accessed on 18 December 2025).
+
+JobsPlus (2025), Job Brokerage Scheme, https://jobsplus.gov.mt/funding/job-brokerage-scheme [155] (accessed on 18 December 2025).
+
+JobsPlus (2025), Mature Workers Scheme, https://jobsplus.gov.mt/funding-employer/mature-workers-scheme (accessed on 18 December 2025). [178]
+
+JobsPlus (2025), VASTE Programme II, https://jobsplus.gov.mt/funding/vaste-programme-ii [156] (accessed on 18 December 2025).
+
+Jobsplus (2025), Jobseeker courses, https://jobsplus.gov.mt/jobseeker-courses (accessed on 17 December 2025). [132]
+
+JobsPlus and MFHEA (2021), National Employee Skills Survey, https://mfhea.mt/wp-content/uploads/2021/10/Employee-Skills-Survey-report.pdf.
+
+Johnson, M. and D. Majewska (2022), “Formal, non-formal and informal learning: What are they, [102] and how can we research them?”, Cambridge University Press & Assessment Research Report September, https://www.cambridgeassessment.org.uk/Images/665425-formal-non-formal-and-informal-learning-what-are-they-and-how-can-we-research-them-.pdf.
+
+Johnston, R. and G. Hawke (2002), Case studies of organisations with established learning cultures, NCVER, https://www.ncver.edu.au/research-and-statistics/publications/all-publications/case-studies-of-organisations-with-established-learning-cultures. [191]
+
+Joint Research Centre: EU Science Hub (2025), Digital Competence Framework (DigComp), [21] https://joint-research-centre.ec.europa.eu/projects-and-activities/education-and-training/digital-transformation-education/digital-competence-framework-digcomp\_en (accessed on 10 December 2025).
+
+KiesMBO (2026), “Webpage KiesMBO”, https://www.kiesmbo.nl/home (accessed on 15 April 2026). [126]
+
+Koolielu (2013), Overview, https://koolielu.ee/help/help (accessed on 15 December 2025). [89] Learning Box (2025), Homepage, https://learningbox.edu.mt/ (accessed on 18 December 2025). [144]
+
+Leğizlazzjoni Malta (2012), Validation of Non-Formal and Informal Learning, https://legislation.mt/eli/sl/607.2/eng.
+
+Lehrer in Sachsen (2025), Homepage, https://lehrer-werden-in-sachsen.de/ (accessed on 15 December 2025).
+
+Lithuanian Public Employment Service (2025), Arrival allowance for employees recruited from abroad, https://uzt.lt/darbo-ieskantiems/paramos-priemones/atvykimo-ismoka-is-uzsienio-pritrauktiems-darbuotojams/302 (accessed on 17 December 2025). [229]
+
+Malta Chamber of Commerce, Enterprise and Industry (2025), misco Talks – Training Practices in Organisations 2025, https://maltachamber.org.mt/events-list/misco-talks-training-practices-in-organisations-2025/ (accessed on 18 December 2025). [168]
+
+Malta Chamber of Commerce, Enterprise and Industry (2025), Training Practices in Organisations, https://maltachamber.org.mt/wp-content/uploads/2025/06/Training-Practices-in-Organisations-2025.pdf. [214]
+
+Malta Chamber of Commerce, Enterprise and Industry (2022), People, Education and Ethical Business, https://maltachamber.org.mt/people-education-and-ethical-business/ (accessed on 18 December 2025).
+
+Malta Chamber of SMEs (2024), SME Barometer (Q2 2024) shows discomfort and consistent concerns amongst local businesses whilst positively recognising lower inflation levels, https://www.smechamber.mt/sme-barometer-q2-2024-shows-discomfort-and-consistent-concerns-amongst-local-businesses-whilst-positively-recognising-lower-inflation-levels/ (accessed on 18 December 2025). [194]
+
+Malta Chamber of SMEs (2015), Apprenticeship Schemes – Way forward to bridge education and employment, https://www.smechamber.mt/apprenticeship-schemes-way-forward-to-bridge-education-and-employment/ (accessed on 17 December 2025). [122]
+
+Malta Enterprise (2024), Research and Development: Incentive Guidelines, https://maltaenterprise.com/sites/default/files/Research%20and%20Development%20-%20V1.0%2001.2024.pdf.
+
+Malta National Statistics Office (2023), Malta Skills Survey.
+
+Manufacturing Industry Skills Alliance (2025), Manufacturing Workforce Plan 2025, https://manufacturingalliance.org.au/manufacturing-workforce-plan-2025-download/.
+
+MCAST (2025), Master's programmes: Post-Graduate Certificate in Research Methods, [130] https://mcast.edu.mt/masters-programmes/ (accessed on 2025 December 17).
+
+McKay, M. et al. (2013), Transforming a Middle and High School Robotics Curriculum, ASEE [103] Conferences, https://doi.org/10.18260/1-2--22652.
+
+Meghnagi, M. and M. Tuccio (2022), “The recognition of prior learning: Validating general competences”, OECD Social, Employment and Migration Working Papers, No. 270, OECD Publishing, Paris, https://doi.org/10.1787/2d9fb06a-en. [160]
+
+Meyer, A. et al. (2023), “How can principal leadership practices promote teacher collaboration and organizational change? A longitudinal multiple case study of three school improvement initiatives”, Journal of Educational Change, Vol. 24/3, pp. 425-455, https://doi.org/10.1007/s10833-022-09451-9.
+
+MEYR (2025), Malta Education Foresight Forum (MEFF), https://planningandstrategicforesight.gov.mt/en/malta-education-foresight-forum/ (accessed on 10 December 2025).
+
+MEYR (2024), Visioning the Future by Trasnforming Education: National Education Strategy 2024-2030, https://education.gov.mt/wp-content/uploads/2023/12/NATIONAL-EDUCATION-BOOKLET-DEC-2023-2030.pdf. [52]
+
+MEYR (2023), Lifelong Learning Strategy, https://education.gov.mt/wp-content/uploads/2023/12/PDF-File-EN-National-LL-Strategy.pdf.
+
+MEYR (2023), National Quality Standards in Education (3-16 years), https://dqse.gov.mt/wp-content/uploads/2024/04/Standards-EN.pdf. [80]
+
+MFHEA (2024), Quality Assurance Guidelines of Validation of Non-Formal and Informal Learning (VNFIL), https://mfhea.mt/wp-content/uploads/2024/10/Guidlines-VNFIL-v2.pdf (accessed on 25 February 2025).
+
+MFHEA (2024), Referencing Report, https://mfhea.mt/wp-content/uploads/2024/03/RR\_Final-Cover-Front-Back\_compressed.pdf. [131]
+
+Ministry for Finance and Employment (2021), The National Employment Policy 2021-2030, [5] https://finanzi.gov.mt/wp-content/uploads/2023/06/nep.pdf.
+
+Ministry of National Education, Children and Youth (2024), Congé individual de formation, [173] https://men.public.lu/fr/systeme-educatif/professionnel/conge-individuel-de-formation.html (accessed on 17 December 2025).
+
+Ministry of Social Affairs and Health (2023), External evaluation of the WORK2030 programme (in Finnish), https://julkaisut.valtioneuvosto.fi/bitstream/handle/10024/164945/STM\_2023\_26\_rap.pdf?sequence=1&isAllowed=y (accessed on 17 December 2025).
+
+Ministry of Social Affairs and Health (2023), WORK2030 - Development programme for work and wellbeing at work, https://stm.fi/en/work2030-development-programme-for-work-and-wellbeing-at-work (accessed on 17 December 2025).
+
+Mon Compte Formation (2025), Envie de me former, qui peut m'aider ?, [42] https://www.moncompteformation.gouv.fr/espace-public/envie-de-me-former-qui-peut-maider (accessed on 10 December 2025).
+
+Mon Passeport Compétences (2025), Bienvenue sur le Passeport de compétences, https://competences.moncompteformation.gouv.fr/espace-public/ (accessed on 18 December 2025).
+
+Museum of the future (2026), Website Museum of the future, https://museumofthefuture.ae/en. [108]
+
+National Agency for Education (2015), The National School Leadership Training Programme: Goal Document 2015-2021, https://www.skolverket.se/download/18.6bfaca41169863e6a65b81a/1553966151968/pdf3469.pdf.
+
+National Enterprise Hub (2025), Skillnet Ireland: Become part of a team of private companies working together to address skill needs, https://www.neh.gov.ie/business-supports/skillnet-ireland-training-programme (accessed on 17 December 2025).
+
+National Skills Council (2024), CareerScape, https://nscmalta.gov.mt/event/careerscape-9/register (accessed on 18 December 2025).
+
+Navrátilová, L. and F. Milichovský (2015), “Ways of Using Guerrilla Marketing in SMEs”, Procedia - Social and Behavioral Sciences, Vol. 175, pp. 268-274, https://doi.org/10.1016/j.sbspro.2015.01.1200.
+
+NOCN Group (2025), Construction Plant Competence Scheme (CPCS), https://www.nocn.org.uk/products/competence-cards-and-tests/construction-plant-competence-scheme-cpcs/ (accessed on 17 December 2025).
+
+NOCN Group (2025), NOCS International Skills Card, https://www.nocn.org.uk/international/international-products-and-services/nocn-international-skills-card/ (accessed on 17 December 2025).
+
+NSC (2025), Career Guidance Services, https://nscmalta.gov.mt/career-guidance-services (accessed on 10 December 2025).
+
+OECD (2025), Advancing Adult Skills through Individual Learning Accounts: A Step-by-Step Guide for Policymakers, Getting Skills Right, OECD Publishing, Paris, https://doi.org/10.1787/08e1bdaf-en.
+
+OECD (2025), Building Anticipatory Capacity with Strategic Foresight in Government: Lessons from Lithuania, Italy, and Malta, OECD Public Governance Reviews, OECD Publishing, Paris, https://doi.org/10.1787/d7eb0bb6-en. [26]
+
+OECD (2025), Empowering the Workforce in the Context of a Skills-First Approach, OECD Skills [216] Studies, OECD Publishing, Paris, https://doi.org/10.1787/345b6528-en.
+
+OECD (2025), Ensuring Quality Vocational and Higher Education in Lithuania, Higher Education, [139] OECD Publishing, Paris/OECD, Paris Cedex 16, https://doi.org/10.1787/7a0131cf-en.
+
+OECD (2025), OECD Teaching Compass Concept Note: Section 5: Teacher Competencies for Navigating Complexities, https://www.oecd.org/content/dam/oecd/en/about/projects/edu/education-2040/publications/section\_5a.pdf. [70]
+
+OECD (2025), “OECD Teaching Compass: Reimagining teachers as agents of curriculum changes”, OECD Education Policy Perspectives, No. 123, OECD Publishing, Paris, https://doi.org/10.1787/8297a24a-en.
+
+OECD (2025), Shaping Malta's Future Through a National Skills Strategy and Targeted Maritime Sector Measures: Analysis Report (Output 2), https://www.oecd.org/content/dam/oecd/en/about/programmes/dg-reform/malta/Analysis-Report.pdf.
+
+OECD (2025), Strategic Foresight, https://www.oecd.org/en/about/programmes/strategic-foresight.html (accessed on 10 December 2025).
+
+OECD (2025), “The role of subnational governments in adult skills systems”, OECD Local Economic and Employment Development (LEED) Papers, No. 2025/02, OECD Publishing, Paris, https://doi.org/10.1787/d452e8b7-en.
+
+OECD (2025), Trends in Adult Learning: New Data from the 2023 Survey of Adult Skills, Getting Skills Right, OECD Publishing, Paris, https://doi.org/10.1787/ec0624a6-en. [166]
+
+OECD (2025), Unlocking High-Quality Teaching, OECD Publishing, Paris, https://doi.org/10.1787/f5b82176-en.
+
+OECD (2025), Vocational Education and Training and the Green Transition in Finland, OECD Reviews of Vocational Education and Training, OECD Publishing, Paris, https://doi.org/10.1787/4d29a34a-en.
+
+OECD (2024), Analysis of opportunities for improvement in the skills data infrastructure in Sweden, https://www.oecd.org/content/dam/oecd/en/about/programmes/dg-reform/sweden/Analysis-of-opportunities-for-improvement-in-the-skills-data-infrastructure-in-Sweden.pdf. [10]
+
+OECD (2024), BEYOND – Online Careers Guidance Platform: Case study, [34] https://www.oecd.org/en/publications/observatory-on-digital-technologies-in-career-guidance-for-youth-odicy\_e098122e-en/beyond-online-careers-guidance-platform\_8af47744-en.html.
+
+OECD (2024), Insights from Skills Strategies in the European Union: Lessons Learnt for Developing and Implementing Effective Skills Policies, OECD Skills Studies, OECD Publishing, Paris, https://doi.org/10.1787/0bf9e78e-en.
+
+OECD (2024), Migration Data Brief, OECD Publishing, Paris,
+https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/10/global-trends-in-immigration-to-oecd-countries-from-2000-01-to-2020-21\_079e649a/752a1b9e-en.pdf.
+
+OECD (2024), Migration Policy Debates N°35: Why do OECD countries offer tax relief programmes to attract foreign migrants and returning nationals?,, https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/06/why-do-oecd-countries-offer-tax-relief-programmes-to-attract-foreign-migrants-and-returning-nationals\_f4973c5d/5a23e2a3-en.pdf.
+
+OECD (2024), Outline for a Communication Campaign to Raise Awareness of the National Skills Strategy for Bulgaria: Output 4, OECD, Paris, https://www.oecd.org/content/dam/oecd/en/about/programmes/dg-reform/bulgaria/Outline-for-a-communication-campaign-to-raise-awareness-of-the-national-skills-strategy-for-Bulgaria.pdf.
+
+OECD (2024), Quality Matters: Strengthening the Quality Assurance of Adult Education and Training, OECD Skills Studies, OECD Publishing, Paris, https://doi.org/10.1787/f44a185b-en.
+
+OECD (2024), Skills forecasting in Flanders, https://www.oecd.org/en/publications/providing-local-actors-with-case-studies-evidence-and-solutions-places\_eb108047-en/skills-forecasting-in-flanders\_4e01136f-en.html.
+
+OECD (2024), Steps towards an Uncertainty Dashboard: Exploring the known and unknown in Malta, https://oecd-opsi.org/blog/steps-towards-an-uncertainty-dashboard-malta/ (accessed on 10 December 2025).
+
+OECD (2024), “Understanding Skill Gaps in Firms”, https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/12/understanding-skill-gaps-in-firms\_c8331908/b388d1da-en.pdf (accessed on 27 February 2025).
+
+OECD (2023), Assessing and Anticipating Skills for the Green Transition: Unlocking Talent for a Sustainable Future, Getting Skills Right, OECD Publishing, Paris, https://doi.org/10.1787/28fa0bb5-en.
+
+OECD (2023), “Education and innovation for the digital and green transitions: How higher education can support effective curricula in schools”, OECD Education Policy Perspectives, No. 81, OECD Publishing, Paris, https://doi.org/10.1787/3dedf4cb-en. [128]
+
+OECD (2023), OECD Digital Education Outlook 2023: Towards an Effective Digital Education Ecosystem, OECD Publishing, Paris, https://doi.org/10.1787/c74f03de-en. [69]
+
+OECD (2023), OECD Skills Strategy Bulgaria: Assessment and Recommendations, OECD Skills [140] Studies, OECD Publishing, Paris, https://doi.org/10.1787/c2eb2f34-en.
+
+OECD (2023), Passport for Work: Providing Local Actors with Case studies, Evidence and Solutions (PLACES), OECD Publishing, Paris, https://www.oecd.org/en/publications/providing-local-actors-with-case-studies-evidence-and-solutions-places\_eb108047-en/passport-for-work\_65e0aac2-en.html. [208]
+
+OECD (2022), Incentivising Business Investment in Skills: A Self-Assessment Tool for Firms' [180] Skill Needs, https://www.oecd.org/els/emp/skills-and-work/adult-learning/business-investment-skills-italy-assessment-EN.pdf (accessed on 18 October 2022).
+
+OECD (2022), PISA data and methodology, https://www.oecd.org/en/about/programmes/pisa/pisa-data.html (accessed on 10 December 2025).
+
+OECD (2022), “The recognition of prior learning”, https://www.oecd.org/en/publications/the-recognition-of-prior-learning\_2d9fb06a-en.html (accessed on 25 February 2025). [161]
+
+OECD (2021), Career Guidance for Adults in a Changing World of Work, Getting Skills Right, OECD Publishing, Paris, https://doi.org/10.1787/9a94bfad-en. [31]
+
+OECD (2021), Improving the Quality of Non-Formal Adult Learning: Learning from European Best Practices on Quality Assurance, Getting Skills Right, OECD Publishing, Paris, https://doi.org/10.1787/f1b450e1-en. [135]
+
+OECD (2021), “Incentives for SMEs to Invest in Skills”, [171] https://www.oecd.org/en/publications/incentives-for-smes-to-invest-in-skills\_1eb16dc7-en/full-report/component-4.html#chapter-d1e749 (accessed on 27 February 2025).
+
+OECD (2021), OECD Skills Strategy Lithuania: Assessment and Recommendations, OECD Skills Studies, OECD Publishing, Paris, https://doi.org/10.1787/14deb088-en.
+
+OECD (2021), “Social vouchers: Innovative tools for social inclusion and local development”, OECD Local Economic and Employment Development (LEED) Papers, No. 2021/08, OECD Publishing, Paris, https://doi.org/10.1787/a98f02c5-en.
+
+OECD (2021), Training in Enterprises: New Evidence from 100 Case Studies, Getting Skills Right, OECD Publishing, Paris, https://doi.org/10.1787/7d63d210-en.
+
+OECD (2020), Increasing Adult Learning Participation: Learning from Successful Reforms, Getting Skills Right, OECD Publishing, Paris, https://doi.org/10.1787/cf5d9c21-en.
+
+OECD (2020), OECD Skills Strategy Implementation Guidance for Latvia: Developing Latvia's Education Development Guidelines 2021-2027, OECD Skills Studies, OECD Publishing, Paris, https://doi.org/10.1787/ebc98a53-en. [246]
+
+OECD (2020), “Professional growth in times of change: Supporting teachers’ continuing professional learning and collaboration”, OECD Education Policy Perspectives, No. 10, OECD Publishing, Paris, https://doi.org/10.1787/753eaa89-en.
+
+OECD (2020), Strengthening the Governance of Skills Systems: Lessons from Six OECD Countries, OECD Skills Studies, OECD Publishing, Paris, https://doi.org/10.1787/3a4bb6ea-en. [11]
+
+OECD (2020), TALIS 2018 Results (Volume II): Teachers and School Leaders as Valued Professionals, TALIS, OECD Publishing, Paris, https://doi.org/10.1787/19cf08df-en. [75]
+
+OECD (2019), “Getting Skills Right: Future-Ready Adult Learning Systems”, [149] https://www.anc.edu.ro/wp-content/uploads/2021/04/Getting-Skills-Right-Future-Ready-Adult-Learning-Systems.pdf (accessed on 25 February 2025).
+
+OECD (2019), How teachers and schools innovate: New measures in TALIS 2018, OECD Publishing, Paris, https://doi.org/10.1787/71101b69-en. [49]
+
+OECD (2019), How teachers update their teaching skills to cope with the rapidly changing world, [57] OECD Publishing, Paris, https://doi.org/10.1787/282b9edd-en.
+
+OECD (2019), OECD Future of Education and Skills 2030: OECD Learning Compass 2030, [99] https://www.oecd.org/content/dam/oecd/en/about/projects/edu/education-2040/1-1-learning-compass/OECD\_Learning\_Compass\_2030\_Concept\_Note\_Series.pdf.
+
+OECD (2019), OECD Skills Strategy 2019: Skills to Shape a Better Future, OECD Publishing, Paris, https://doi.org/10.1787/9789264313835-en. [185]
+
+OECD (2019), Working and Learning Together: Rethinking Human Resource Policies for Schools, OECD Reviews of School Resources, OECD Publishing, Paris, https://doi.org/10.1787/b7aaf050-en. [51]
+
+OECD (2018), Malta: Results from TALIS 2018: Volume II, [54] https://www.oecd.org/content/dam/oecd/en/about/programmes/edu/talis/talis2018participantnotes/volii/TALIS2018\_CN\_MLT\_Vol\_II.pdf.
+
+OECD (2017), Financial Incentives for Steering Education and Training, Getting Skills Right, [170] OECD Publishing, Paris, https://doi.org/10.1787/9789264272415-en.
+
+OECD (2017), Investing in Innovation and Skills: Thriving in Global Value Chains, https://www.oecd.org/content/dam/oecd/en/publications/reports/2017/10/investing-in-innovation-and-skills\_7b1bd4ea/9e296b43-en.pdf.
+
+OECD (2016), Getting Skills Right: Assessing and Anticipating Changing Skill Needs, Getting Skills Right, OECD Publishing, Paris, https://doi.org/10.1787/9789264252073-en.
+
+Oecolution (2025), Fighters4Climate Homepage, https://jetzt.oecolution.at/fighters4climate [124] (accessed on 17 December 2025).
+
+PD (2026), Futurium – The House of Futures in Berlin, https://www.pd-g.de/en/our-customers-and-projects/project/futurium-in-berlin. [109]
+
+PD – Berater der öffentlichen Hand GmbH (2023), Futurium - The House of Futures in Berlin, [106] https://www.pd-g.de/en/our-customers-and-projects/project/futurium-in-berlin (accessed on 16 December 2025).
+
+Perez, C. and A. Vourc'h (2020), “Individualising training access schemes: France – the Compte Personnel de Formation (Personal Training Account – CPF)”, OECD Social, Employment and Migration Working Papers, No. 245, OECD Publishing, Paris, https://doi.org/10.1787/301041f1-en.
+
+Pioneer Communications GmbH (2024), Saxon State Ministry of Education and Cultural Affairs – Future makers wanted, https://www.pio-com.de/en/projects/lehrer-in-sachsen (accessed on 15 December 2025).
+
+Pulis, A. (2024), “Teaching as a Prospective Career: Motivators and Disincentives”, Malta Journal of Education, Vol. 4/1, pp. 86-109, https://doi.org/10.62695/WAIT3688.
+
+Salvi del Pero, A., P. Wyckoff and A. Vourc'h (2022), "Using Artificial Intelligence in the workplace: What are the main ethical risks?", OECD Social, Employment and Migration Working Papers, No. 273, OECD Publishing, Paris, https://doi.org/10.1787/840a2d9f-en. [112]
+
+Schwarz, J. et al. (2023), The world's top companies are using strategic foresight — you should too, https://www.weforum.org/stories/2023/06/the-world-s-top-companies-are-using-strategic-foresight-you-should-too/ (accessed on 18 December 2025). [200]
+
+Service Public (2025), Conseil en évolution professionnelle (CEP), https://www.service-public.gouv.fr/particuliers/vosdroits/F32457 (accessed on 10 December 2025).
+
+Skills Development Scotland (2025), Our career service in schools, [48] https://www.skillsdevelopmentscotland.co.uk/what-we-do/scotlands-career-service/our-careers-service-in-schools (accessed on 15 December 2025).
+
+Skills Development Scotland (2025), Support for parents and carers, [47] https://www.skillsdevelopmentscotland.co.uk/what-we-do/scotlands-career-service/our-careers-service-in-schools/support-for-parents-and-carers (accessed on 15 December 2025).
+
+Skills Pass (2025), Obtaining the Skills Pass, https://skillspass.org.mt/skillspass (accessed on 18 December 2025). [210]
+
+SkillsFuture (2025), Skills Demand for the Future Economy Report, https://jobsandskills.skillsfuture.gov.sg/sdfe-2025 (accessed on 25 February 2025).
+
+Skolverket (2015), The National School Leadership Training Programme, https://www.skolverket.se/download/18.6bfaca41169863e6a65b81a/1553966151968/pdf3469.pdf.
+
+Spiteri, A. (2016), “Developing a National Quality Culture for Further and Higher Education in a Micro-State: The Case of Malta”, Malta Review of Educational Research, Vol. 10/2, pp. 297-315, https://www.um.edu.mt/library/oar/bitstream/123456789/20786/1/7.%20DEVELOPING%20A%20NATIONAL%20QUALITY%20CULTURE%20FOR%20FURTHER%20AND%20HIGHER%20EDUCATION%20IN%20A%20MICRO-STATE.pdf.
+
+Talent Center (2026), Webpage Talent Center, https://talentcenter.at/en/ (accessed on 15 April 2026).
+
+Thake, A. (2012), “Cultivating human resources potential in Malta a challenge for the social partners”, Public life in Malta: essays on governance, politics and public affairs in the EU’s smallest member state, Vol. 1/2, https://www.academia.edu/71841555/Cultivating\_human\_resources\_potential\_in\_Malta\_a\_challenge\_for\_the\_social\_partners.
+
+The New York Times (2022), In Dubai, the Museum of the Future Conveys a Message, https://www.nytimes.com/2022/03/27/fashion/museum-of-the-future-dubai.html.
+
+TRANSVAL EU (2021), Validation of Transversal Skills Across Europe: European State of the Art Report, https://www.transvalproject.eu/wp-content/uploads/2022/03/D2.1\_State-of-the-Art-Report\_EN\_public.pdf (accessed on 17 December 2025).
+
+TSI consultations of stakeholders (2025), . [20]
+
+UK Department for Education (2025), ‘It all starts with skills’ campaign introduction and background, https://www.gov.uk/government/publications/it-all-starts-with-skills-campaign-introduction-and-background/it-all-starts-with-skills-campaign-introduction-and-background (accessed on 17 December 2025). [148]
+
+UK Department for Education (2025), It all starts with skills: Campaign guidelines, [146] https://assets.publishing.service.gov.uk/media/6853d2d3679778c74ec15eac/It\_all\_starts\_with\_skills\_campaign\_guidelines.pdf (accessed on 17 December 2025).
+
+UNESCO (2024), AI competency framework for teachers, [68] https://www.cedefop.europa.eu/files/unesco\_ai\_competency\_framework\_for\_teachers.pdf.
+
+UNESCO (2024), Leadership in education: Lead for learning, https://www.unesco.org/gem-report/en/publication/leadership (accessed on 15 December 2025). [79]
+
+UNESCO (2024), Matal: School Leadership, https://education-profiles.org/europe-and-northern-america/malta/\~school-leadership (accessed on 15 December 2025). [81]
+
+UNESCO (2017), Science and technology centres: reducing the gap between knowledge and action, https://www.unesco.org/en/articles/science-and-technology-centres-reducing-gap-between-knowledge-and-action (accessed on 16 December 2025). [104]
+
+UNICEF (2024), What are green skills?, https://www.unicef.org/eca/stories/what-are-green-skills [111] (accessed on 17 December 2025).
+
+University of Malta (2025), Postgraduate Prospectus: 2025 & 2026, https://www.um.edu.mt/media/um/docs/study/admissions/PG\_Prospectus.pdf.
+
+University of Malta (2024), Maintenance grants, https://www.um.edu.mt/registrar/stipends/grants/ [151] (accessed on 18 December 2025).
+
+Vella, R. and J. Azzopardi (2022), “Effective Continuing Professional Learning and Development: The Case of Mathematics Teachers in Malta”, Biomedical Journal of Scientific & Technical Research, Vol. 40/5, https://doi.org/10.26717/BJSTR.2022.40.006502.
+
+Viennet, R. and B. Pont (2017), “Education policy implementation: A literature review and proposed framework”, OECD Education Working Papers, No. 162, OECD Publishing, Paris, https://doi.org/10.1787/fc467a64-en. [247]
+
+Visit Berlin (2025), Flutuium - a house of futures, https://www.visitberlin.de/en/futurium-house-futures (accessed on 16 December 2025). [107]
+
+VISKA (2018), Criteria for assessing transversal skills, https://ba.boostskills.eu/files/5-criteria-for-assessing-transversal-skills.pdf. [220]
+
+Wilson, R. (2016), Labour Market Anticipation: Lessons from around the world, [17] https://assets.publishing.service.gov.uk/media/5a823acced915d74e34026c6/Labour\_Market\_Anticipation.pdf.
+
+Xjenza Malta (2021), Malta's Smart Specialisation Strategy: 2021 - 2027, [164] https://xjenzamalta.mt/wp-content/uploads/2024/09/RIS3-Strategy-2021-2027.pdf.
+
+Yüksekbilgili, Z. (2014), “The Use of Guerilla Marketing in SMEs”, International Journal of Advanced Multidisciplinary Research and Review (IJAMRR), Vol. 2, pp. 2-7, https://papers.ssrn.com/sol3/papers.cfm?abstract\_id=2406919.
+
+## Notes
+
+$^{1}$ The National Career Guidance Network includes: Directorate for Lifelong Learning and Employability (DLE/MEYR), Foundation for Human Resources Development (FHRD), Gozo Business Chamber, Independent Schools Association (ISA), Institute for Education (IfE), Institute for the Public Services (IPS), Institute of Tourism Studies (ITS), Jobsplus, Malta Career Guidance Association, Malta Chamber of Commerce, Enterprise and Industry, Malta Chamber of SMEs, Malta College of Arts, Science, and Technology (MCAST), Malta Employers Association, Malta Union of Teachers (MUT), Malta Further and Higher Education Authority (MFHEA), National Skills Council (NSC), Secretariat for Catholic Education, University of Malta, Verdala International School, Wellbeing Services Directorate (MEYR).
+
+$^{2}$ Web scraping refers to technologies that extract data from websites in an automated, quick and efficient manner for processing and analytical purposes (Catrillo-Fernández, 2015 $^{[249]}$ ).
+
+$^{3}$ Guerilla marketing refers to an advertising strategy that uses unconventional and relatively low-cost techniques, preferring creativity and innovation over traditional methods. Examples include flash mobs, graffiti or street art. (Yüksekbilgili, 2014 $^{[250]}$ ; Navrátilová and Milichovský, 2015 $^{[251]}$ ).
+
+# Monitoring and evaluation framework for Malta
+
+This chapter presents the monitoring and evaluation framework for implementing the recommendations of Malta's National Skills Strategy. It highlights the importance of systematic monitoring and reporting for enhancing policy effectiveness, accountability, and public trust. The chapter explains the role of indicators, proposes a set of indicators to measure inputs, outputs, outcomes, and impacts, and outlines a process for tracking implementation progress.
+
+## Introduction
+
+Monitoring and evaluation are key steps in the policy cycle, as long as they provide real-time, accurate and reliable information about the progress of implementation and the uptake of policy measures among target groups. Moreover, developing a monitoring and evaluation framework can improve policy outcomes and public trust by enhancing accountability for the use of public funds, improving understanding of the link between public interventions and their results, and facilitating policy learning over time to make future policies more efficient and effective (OECD, 2023[1]).
+
+However, despite the importance of monitoring and reporting, many countries may face challenges when it comes to establishing an effective framework. These include, among others, limited technical capacity, low quality of available data, the lack of an integrated evidence management system, challenges with whole-of-government co-operation, and ineffective use of reporting findings (OECD, 2020[2]).
+
+This chapter provides a monitoring and evaluation framework for implementing the recommendations for Malta's National Skills Strategy, emphasising the importance of systematic monitoring and reporting in improving policy effectiveness, accountability, and public trust. It describes the importance of indicators and the proposed process for measuring implementation progress.
+
+## Indicators for measuring implementation progress
+
+A monitoring and evaluation framework should be built on indicators that track whether interventions are on course to achieve desired outputs and outcomes at each stage of the policy cycle (e.g. design, funding, uptake), and ideally describe data collection responsibilities, sources and timelines, aligned with the policy being implemented (ILO, 2018[3]; OECD, 2021[4]). Overall, identifying suitable indicators early allows policymakers to map potential data sources and secure the most reliable evidence, which is vital for assessing policy impact (OECD, 2020[2]; OECD, 2021[5]).
+
+Measures as part of the monitoring and evaluation framework could be categorised according to four types of indicators:
+
+\- Input indicators refer to the financial, human and other resources (e.g. ICT, training of policymakers) allocated for the recommendations to be transformed from an idea to an implemented reality.
+
+\- Output indicators capture how many activities are produced and how many entities (e.g. individuals, companies, education providers, stakeholders) are participating in or making use of the recommendation once it is in operation.
+
+\- Outcome indicators reflect quantifiable means of discerning whether participation in the activity has had its desired effect on the target population and to what degree.
+
+\- Impact indicators track the effect of the activity on the wider population (e.g. spillover effect, positive externalities).
+
+Together, these indicators are intended to quantify and track progress from each proposed recommendation to its intended impact. The relationship between the different types of indicators is depicted in Figure 3.1.
+
+A proposed set of indicators to measure inputs, outputs, outcomes, and impacts for the 30 recommendations of the National Skills Strategy are outlined in the tables found in Annex 3.A. The indicators could directly inform the Maltese Government's monitoring and evaluation of the recommendations through the processes and allocation of responsibilities outlined in the next section.
+
+Figure 3.1. Relationship between indicator types  
+![](images/70541cf97a8786fec6c292c5974ca624931293105c3707a3565d8b384618c276.jpg)
+
+It should also be noted that the TSI project itself includes indicators relating to impact, outcomes, and nine outputs, as presented in the Indicative Logical Framework Matrix in the detailed project description. For example, impact indicators capture increases in the share of workers participating in training, both in the overall economy and in the maritime sector, as well as reductions in labour market tightness, measured by the number of vacancies per jobseeker. These indicators complement those presented below, which are more specific and directly tailored to the 30 recommendations.
+
+## The process of measuring implementation progress
+
+Monitoring and evaluating the implementation of the National Skills Strategy is a process that involves collecting data, analysing progress, disseminating the results and improving interventions. While monitoring supports ongoing, day-to-day internal management and course correction, evaluation provides periodic assessments to inform strategic policy revision and ensure public accountability.
+
+## Collecting the data
+
+The input, output, outcome, and impact indicators, as described above and presented in Annex 3.A, provide a solid starting point for Malta to collect data for its evaluations of the National Skills Strategy. Furthermore, to ensure that the required information will be collected, clear responsibilities for data collection should be assigned, with frequency linked to the pace of implementation. This ensures that information is updated regularly by those closest to delivery (OECD, 2021[4]).
+
+It is recommended that data collection for monitoring the relevant indicators be carried out by the entities already responsible for collecting such data. Overall, Malta should aim to leverage existing data collection systems to align with current policy frameworks, avoiding duplication by using data already gathered where possible (OECD, 2020[2]).
+
+However, where new data are required, responsibility could lie with the entities leading the implementation of the 30 recommendations – i.e. the policy owners described in Chapter 2. As the lead implementers, they are likely to have the most comprehensive overview of progress and be best placed to collect the necessary data.
+
+## Analysing progress
+
+The review of the Action Plan will be a continuous process throughout the ten-year implementation period. It is recommended that Malta compile and analyse all available data and conduct in-depth evaluations of implementation progress three times during this period: at the end of Phase 1 (2026-2027), Phase 2 (2028-2030), and Phase 3 (2031-2035). The interim evaluations (Phases 1 and 2) would help identify any adjustments required to the actions or timelines for subsequent phases, while the final evaluation at the end of Phase 3 would provide a comprehensive assessment of outcomes and overall effectiveness.
+
+A key consideration for Malta is whether these evaluations should be conducted internally or externally. Commissioning external evaluations could provide an independent and impartial assessment of progress, thereby strengthening credibility, transparency, and stakeholder confidence. External evaluators may also bring specialised methodological expertise, international benchmarking experience, and a degree of objectivity that can help identify systemic issues or blind spots that internal actors might overlook. However, this approach would entail additional financial costs and may require time for procurement, onboarding, and familiarisation with the policy context, which could affect timelines.
+
+By contrast, internal evaluations can be more cost-effective, allow for closer alignment with policy processes, and enable faster access to administrative data and institutional knowledge. They may also facilitate more continuous monitoring and iterative learning throughout implementation. Nonetheless, internal assessments can be perceived as less impartial and may face constraints related to capacity, resources, or institutional incentives, which could affect their perceived legitimacy or analytical depth.
+
+Malta already has mechanisms in place to monitor and evaluate government strategies. As described in Recommendation 30, the Policy Monitoring and Evaluation Directorate (PMED) within MEYR is mandated to monitor and assess government strategies and has substantial expertise in policy evaluation and evidence-based analysis. Since the National Skills Strategy, once adopted, will be part of the strategic documents within the Ministry for Education, PMED will have a clear role in the evaluation process. Typically, PMED collects information throughout implementation and conducts an evaluation at the end of the evaluation period, but it can also undertake interim reviews. In this context, it is recommended that PMED conduct the evaluation at the end of Phase 2 in 2030, coinciding with the midpoint of implementation, and again at the conclusion of Phase 3 in 2035.
+
+Moreover, the NSC could play a key role in overseeing the implementation of the National Skills Strategy, given its leading role in the strategy's development and its responsibility for implementing many of the recommendations. For this reason, it is recommended that the NSC conduct the evaluation at the end of Phase 1 in 2027.
+
+Overall, both the NSC and PMED can hold other policy owners responsible for monitoring and evaluating the implementation of the recommendations assigned to them. Moreover, since the NSC is also involved in the monitoring and evaluation of sectoral Skills Action Plans, such as for the maritime sector, it can adapt and refine processes with a view to extending best practices across sectors, as well as ensure alignment with the objectives of the National Skills Strategy.
+
+In its evaluations, the NSC and PMED could assess the implementation of the recommendations according to various criteria that together provide a holistic picture of the success of the implementation (OECD, 2021[4]). The evaluation should consider the following six criteria by addressing these six questions:
+
+\- Relevance: Is the policy measure doing the right things? Are objectives still aligned with needs?
+
+• Coherence: How well does the policy measure fit with other policies or intervention levels?
+
+• Effectiveness: Is the policy measure achieving its objectives?
+
+\- Efficiency: How well are resources being used? Can more be done with the same resources or can less input be used to achieve the same output?
+
+\- Impact: What difference does the policy measure make? Is there enough added value to continue?
+
+• Sustainability: Will the benefits last?
+
+## Disseminating and using results
+
+Disseminating evaluation results is critical to building support for the use of these results to inform future policy. This may involve producing evaluation reports, reviews, or policy briefs tailored to different stakeholders as well as direct discussions between evaluators and the target audiences of the evaluation (OECD, 2021[4]). Communications should clearly highlight key results, recommendations, good practices, and their relevance to stakeholders' roles. To this end, after conducting the evaluations, the NSC and PMED will be responsible for disseminating the evaluation results to the relevant government bodies, social partners, and education and training providers.
+
+Building on dissemination, it is essential that evaluation findings are systematically integrated into policy development and revision processes. This requires establishing formal feedback loops through which the NSC and PMED ensure that lessons learnt, evidence on effectiveness, and identified implementation challenges inform decision making, budget allocations, and the design of subsequent measures. Embedding such mechanisms can support adaptive policymaking, allowing authorities to refine actions, reallocate resources where impact is greatest, and discontinue measures that prove ineffective. Over time, the structured use of evaluation results can strengthen accountability, promote a culture of evidence-based governance, and enhance the overall coherence and responsiveness of the skills system.
+
+## References
+
+ILO (2018), Guide on Measuring Decent Jobs for Youth - Monitoring, evaluation and learning in labour market programmes,
+https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@ed\_emp/documents/instruction
+almaterial/wcms\_627311.pdf (accessed on 9 December 2025).
+
+OECD (2023), Policy monitoring and evaluation, https://www.oecd.org/en/topics/public-policy-monitoring-and-evaluation.html (accessed on 9 December 2025).
+
+OECD (2021), Applying Evaluation Criteria Thoughtfully, OECD Publishing, Paris, [4] https://doi.org/10.1787/543e84ed-en.
+
+OECD (2021), Incentives for SMEs to Invest in Skills: Lessons from European Good Practices, Getting Skills Right, OECD Publishing, Paris, https://doi.org/10.1787/1eb16dc7-en. [5]
+
+OECD (2020), Improving Governance with Policy Evaluation: Lessons From Country Experiences, OECD Public Governance Reviews, OECD Publishing, Paris, https://doi.org/10.1787/89b1577d-en.
+
+# Annex 3.A. Input, output, outcome and impact measures
+
+This Annex presents a proposed set of indicators to measure inputs, outputs, outcomes, and impacts for the 30 recommendations of the National Skills Strategy. The indicators have been selected in light of the descriptions above and could directly inform the Maltese Government's monitoring and evaluation of the recommendations through the processes and allocation of responsibilities outlined in the next section.
+
+The indicators are organised by the eight priority topics of the National Skills Strategy:
+
+\- Annex Table 3.A.1. Indicators for Priority Topic 1: Identifying skills needs through better assessment, forecast and foresight exercises
+
+\- Annex Table 3.A.2. Indicators for Priority Topic 2: Improving the dissemination of skills information and strengthening career guidance services
+
+\- Annex Table 3.A.3. Indicators for Priority Topic 3: Empowering educators and school leaders for future-ready education
+
+\- Annex Table 3.A.4. Indicators for Priority Topic 4: Equipping learners of all ages with skills for the future
+
+\- Annex Table 3.A.5. Indicators for Priority Topic 5: Encouraging and incentivising adults to participate in learning activities
+
+\- Annex Table 3.A.6. Indicators for Priority Topic 6: Incentivising employers to stimulate learning in their organisations
+
+\- Annex Table 3.A.7. Indicators for Priority Topic 7: Making better use of available domestic and foreign talent
+
+\- Annex Table 3.A.8. Indicators for Priority Topic 8: Strengthening the governance of the skills system
+
+Annex Table 3.A.1. Indicators for Priority Topic 1: Identifying skills needs through better assessment, forecast and foresight exercises
+
+<table><tr><td>Recommendation</td><td>Input</td><td>Output</td><td>Outcome</td><td>Impact</td></tr><tr><td>1. Establish the Malta Skills Observatory as a dedicated working group to oversee a coherent approach to SAA</td><td>Financial and human resources allocated to the establishment of the Malta Skills Observatory (MSO)</td><td>Number of annual meetings of the MSOAttendance of key stakeholders at regular meetings of MSONumber of SAA exercises initiated/co-ordinated by the MSO</td><td>Number of policy documents issued/matters discussed and decided upon</td><td>Share of stakeholders citing high levels of collaboration on SAA exercises</td></tr><tr><td>2. Design a national SAA methodology and strengthen strategic foresight capacity to identify skills needs in line with national policy frameworks</td><td>Financial and human resources allocated to the design of a national SAA methodology</td><td>Number of SAA methodology-related documents published</td><td>Adoption rate of SAA methodology in ongoing exercises</td><td>Number of policies/trainings adjusted based on SAA outcomes</td></tr><tr><td>3. Introduce sectoral and local SAA methodologies to provide more nuanced, localised assessments of skills demand</td><td>Financial and human resources allocated to sectoral and firm-level SAA methodologies</td><td>Number of sectors conducting sectoral SAA exercises</td><td>Number of sectoral SAA exercises completed</td><td>Share of employers (by sector) reporting adequate skills information for their respective sector</td></tr></table>
+
+Annex Table 3.A.2. Indicators for Priority Topic 2: Improving the dissemination of skills information and strengthening career guidance services
+
+<table><tr><td>Recommendation</td><td>Input</td><td>Output</td><td>Outcome</td><td>Impact</td></tr><tr><td>4. Launch a dynamic skills intelligence platform to disseminate timely, regularly updated insights on evolving skills needs</td><td>Financial and human resources allocated to the dynamic skills intelligence platform</td><td>Number/share of users* registered on the platformNumber/share of active (monthly) users*Duration of sessions* (time on the webpage)Usage* of tools/interactive interfaces/elements offered on the platform*Distinguish by type of end-users: job seekers, employers, career guidance professionals and policymakers</td><td>Feedback* on perceived usefulness of the tools/interactive interfaces/elements offered on the platform*Distinguish by type of end-users: job seekers, employers, career guidance professionals and policymakers</td><td>Share of adults participating in education and training programmes aligned with SAA-identified priority areas</td></tr><tr><td>5. Publish the Employment and Skills Barometer in partnership with Jobsplus to provide a more detailed analysis of skills trends in an accessible format</td><td>Financial and human resources allocated to the publication of the Employment and Skills Barometer</td><td>Number of publications of the Employment and Skills Barometer</td><td>Number/share of individuals being able to find skills information</td><td>Share of adults participating in education and training programmes aligned with SAA-identified priority areas</td></tr><tr><td>6. Explore the introduction of a universal career guidance service for all individuals to support job mobility and progression</td><td>Financial and human resources allocated to the introduction of a universal career guidance service</td><td>Number/share of individuals using the serviceNumber of sessions per individual</td><td>Number/share of individuals using the platform who are enrolled in training programmesNumber/share of individuals using the platform who are in employment</td><td>Share of adults changing jobs and progressing in their careers</td></tr><tr><td>7. Strengthen parents&#x27; involvement in career guidance through enhanced school engagement mechanisms</td><td>Financial and human resources allocated to platform improvements and events</td><td>Number/share of ExploreMore users*Number/share of ExploreMore users* exploring content related to SAA exercises*Equity component: could distinguish by socio-demographic characteristics</td><td>Number/share of students engaged in career planning (visiting fairs)</td><td>Number/share of students* selecting courses/programmes within SAA-identified priority areas*Equity component: could distinguish by socio-demographic characteristics</td></tr></table>
+
+Annex Table 3.A.3. Indicators for Priority Topic 3: Empowering educators and school leaders for future-ready education
+
+<table><tr><td>Recommendation</td><td>Input</td><td>Output</td><td>Outcome</td><td>Impact</td></tr><tr><td>8. Assess the feasibility of introducing individual learning accounts (ILAs) and piloting the ILA scheme with education practitioners</td><td>Financial and human resources allocated to the feasibility study</td><td>Publication of the feasibility study</td><td>Number/share of education practitioners applying for ILAsNumber/share of education practitioners granted ILAs</td><td>Improved skills of education practitioners</td></tr><tr><td>9. Develop competency frameworks for education practitioners to strengthen professional standards and skills development</td><td>Financial and human resources allocated to developing the competency frameworks</td><td>Number of competency frameworks for education practitioners developed</td><td>Adoption rate of the competency frameworkAlignment of continuous professional development (CPD) and competency framework: percentage of CPD activities mapped to competency descriptions.</td><td>Number/share of education practitioners engaged in CPD</td></tr><tr><td>10. Strengthen training for school leaders to improve leadership skills and promote a learning culture among school personnel</td><td>Financial and human resources allocated to the development of the training</td><td>Number of training modules designed</td><td>Number/share of school leaders enrolled in training</td><td>Improved skills of school leaders</td></tr><tr><td>11. Establish digital platforms and networks for informal learning among educators to regularly exchange best practices in pedagogy and assessment</td><td>Financial and human resources allocated to the development of the digital platform and networks</td><td>Number/share of registered educators on the platform and networksNumber/share of active (monthly) users</td><td>User feedback on adoption of teaching practices, intensity of peer collaboration, usefulness of resources</td><td>School/teacher feedback on improvement in classroom assessment practices</td></tr><tr><td>12. Implement targeted information campaigns to promote the teaching profession and prevent teacher shortages</td><td>Financial and human resources allocated to the information campaign</td><td>Number/share of students/adults reached through information campaignEngagement rate of information campaign (&quot;likes&quot;, shares, attendance)</td><td>Survey on perceived attractiveness of teaching profession</td><td>Teacher shortages (overall, STEM-fields)Number/share of students enrolled in teaching profession programmes (overall, STEM-fields)</td></tr></table>
+
+Annex Table 3.A.4. Indicators for Priority Topic 4: Equipping learners of all ages with skills for the future
+
+<table><tr><td>Recommendation</td><td>Input</td><td>Output</td><td>Outcome</td><td>Impact</td></tr><tr><td>13. Establish a future-focussed skills museum to foster transversal skills through non-formal and informal learning</td><td>Financial and human resources allocated to planning the museumNumber of partnerships/contributors</td><td>Number of annual visitorsNumber of events/exhibitions</td><td>Number/share of visitors reporting improved transversal skillsNumber/share of visitors participating in experiments fostering creativity/innovationNumber/share of visitors reporting interest in participating in learning opportunities</td><td>Percentage of adults with transversal skills</td></tr><tr><td>14. Integrate green skills across all education and training levels to prepare the workforce for the net-zero transition</td><td>Financial and human resources allocated to the elements of the recommendationNumber of programmes incorporated into curricula</td><td>Number/share of curricula* part of the mappingNumber/share of curricula* (not) embedding green skillsNumber/share of curricula* updated to integrate green skills*Could distinguish by grade, type of school, programme</td><td>Enrolment into fields of studies or programmes substantially affected by green transition</td><td>Number/share of businesses affected by labour/skills shortages in the green sector</td></tr><tr><td>15. Promote vocational education and training (VET) as a rewarding pathway for acquiring high-value digital and green skills</td><td>Financial and human resources allocated to awareness-raising initiatives</td><td>Number of initiatives launchedNumber of initiatives launched affecting specific sectors (STEM/ digital/green)Number of employers/ enterprises/ education providers/ programmes engaged in initiatives</td><td>Number/share of adults reached through awareness-raising initiativesEngagement rate of initiatives (“likes”, shares, attendance)</td><td>Number/share of students enrolled in VET programmes*Number of employers offering apprenticeships who are engaged in VET programmes*Could distinguish: overall/STEM/digital/ green sectors</td></tr><tr><td>16. Identify priority areas for specialised post-graduate qualifications or awards to ensure a steady supply of skills for the digital and net-zero transitions</td><td>Financial and human resources allocated to identifyingpriority areas</td><td>Number of new post-graduate programmes supporting the net-zero and digital transitionNumber of new awards (certificates/micro- credentials/short courses) supporting the net-zero and digital transition</td><td>Number/share of students enrolled in post-graduate programmes (new and overall) supporting the net-zero and digital transition</td><td>Number/share of businesses affected by labour/skills shortages in the green and digital sector</td></tr><tr><td>17. Conduct an in-depth evaluation of Malta's quality assurance system to streamline processes and strengthen future-readiness</td><td>Financial and human resources allocated to the evaluation</td><td>Number of processes mapped and reviewedNumber of experts/ stakeholders engaged in consultations</td><td>Number of processes simplifiedAdoption rate of simplified processesAverage time of accreditation process in the current quality assurance systemReduction in bureaucratic costs</td><td>Number of new training offers designed and accredited by employers and training providers</td></tr></table>
+
+Annex Table 3.A.5. Indicators for Priority Topic 5: Encouraging and incentivising adults to participate in learning activities
+
+<table><tr><td>Recommendation</td><td>Input</td><td>Output</td><td>Outcome</td><td>Impact</td></tr><tr><td>18. Complement existing awareness-raising initiatives with a comprehensive, integrated national campaign to promote lifelong learning</td><td>Financial and human resources allocated to awareness-raising initiatives</td><td>Number of initiatives initiatedNumber of initiatives initiated by target group/sector</td><td>Number/share of enterprises/adults reached through awareness-raising campaignsIncrease in awareness of lifelong learning opportunitiesEngagement rate of initiatives (&quot;likes&quot;, shares, attendance)Share of adults participating in education and training</td><td>Number/share of businesses affected by labour/skills shortages (in digital and green sectors)</td></tr><tr><td>19. Strengthen existing incentives for adult learners by increasing benefits and/or easing eligibility criteria for target groups to encourage training in areas of skills shortage</td><td>Financial and human resources allocated to reviewing the incentive framework and exploring the increasing value of subsidies</td><td>Number of incentives for adults in placeNumber of incentives for adults in place in shortage areas*Number of subsidies in placeNumber of existing incentives revised*Share of adults eligible to receive subsidies*Could distinguish by sector</td><td>Number of adults applying for learning incentivisesAmount of subsidy granted/approved/declined per applicant *by type of barrier</td><td>Number of employees participating in training (by sector)Number of employees participating in training in skills shortage areasShare/number of businesses affected by labour/skills shortagesNumber of adults reporting barriers to training</td></tr><tr><td>20. Increase uptake of recognition of prior learning (RPL) and validation of non-formal and informal learning (VINFL), with a particular focus on disadvantaged groups</td><td>Financial and human resources allocated to each element of the recommendation</td><td>Enhance the visibility of RPL and VINFLNumber/share of enterprises/employees reachedUptake among disadvantaged groupsNumber/share of disadvantaged**group reachedCollection and use of data relating to RPL and VINFLNumber of indicators collected*Indicator could distinguish by sector and size of enterprise**Measurement of disadvantaged status required</td><td>Enhance the visibility of RPL and VINFLApplications* for RPL/VINFLUptake among disadvantaged groupsApplications for RPL/VINFL, by disadvantaged**group*Indicator could distinguish by sector and size of enterprise**Measurement of disadvantaged status required</td><td>Number of assessments for RPL and VINFL conductedNumber of certifications/qualifications* issued/awarded*Distinguish by type of certificate/skill and by sector and by employer (size of enterprise)</td></tr></table>
+
+Annex Table 3.A.6. Indicators for Priority Topic 6: Incentivising employers to stimulate learning in their organisations
+
+<table><tr><td>Recommendation</td><td>Input</td><td>Output</td><td>Outcome</td><td>Impact</td></tr><tr><td>21. Assess the feasibility of introducing legislation on training during working hours, training leave, and payback clauses</td><td>Financial and human resources allocated to conducting the feasibility studies related to legislation on training during working hours, training leave policy, payback clauses</td><td>If feasibility confirmed:Legislation on training during working hoursNumber/share of enterprises informed about the legislationTraining leave policyNumber/share of employees eligible financial subsidiesPayback clausesNumber/share of employees/enterprises with payback clauses in place</td><td>If feasibility confirmed:Legislation on training during working hoursPercentage of employees who received training during working hoursTraining leave policyNumber/share of employees making use of financial subsidiesPayback clausesNumber/share of employees/enterprises who made use of payback clauses</td><td>Total number of trainings provided by enterpriseNumber of employees/adults participating in training</td></tr><tr><td>22. Strengthen in-house training within enterprises through the provision of practical tools for workplace learning</td><td>Financial and human resources allocated to providing information and guidance under this recommendation to enterprises</td><td>Number/share of enterprises* receiving information on tools to assess training needsNumber/share of enterprises* receiving guidance on how to translate assessment results to training plansNumber/share of enterprises* receiving suggestions about low-cost workplace learning formsNumber/share of enterprises* receiving guidance in the implementation of awareness raising campaigns*Indicator could distinguish by size of enterprise (small/medium/large) or sector</td><td>Number/share of enterprises* that have used tools to assess training needsNumber/share of enterprises* that used provided guidance to translate assessment results to training plansNumber/share of enterprises* that have implemented low-costs workplace learning formsNumber/share of enterprises* receiving guidance in the implementation of awareness raising campaigns*Indicator could distinguish by size of enterprise (small/medium/large) or sector</td><td>Total number of in-house trainings by enterprise*Number/share of employees that have benefited from in-house trainings**Indicator could be disaggregated by size of enterprise (small/medium/large) or sector</td></tr><tr><td>23. Match readily available trainers with enterprises – particularly SMEs – to ensure reliable access to expertise</td><td>Financial and human resources allocated to initiatives to better match trainers with enterprises</td><td>Number/share of enterprises* identified as having training needsNumber/share of available trainers*Indicator could distinguish by size of enterprise (small/medium/large) or sector or type of training</td><td>Total number of outsourced trainings by enterprise*Number/share of employees that have benefited from outsourced trainings**Indicator could be disaggregated by size of enterprise (small/medium/large) or sector or type of training</td><td>Number of trainings provided by enterpriseNumber of employees participating in trainingNumber of enterprises reporting barriers**By type of barrier</td></tr></table>
+
+Annex Table 3.A.7. Indicators for Priority Topic 7: Making better use of available domestic and foreign talent
+
+<table><tr><td>Recommendation</td><td>Input</td><td>Output</td><td>Outcome</td><td>Impact</td></tr><tr><td>24. Provide user-friendly information and targeted support to help firms – particularly SMEs – adopt workplace productivity practices</td><td>Financial and human resources allocated to providing user-friendly information and targeted support</td><td>Number/share of firms* registered on the platformNumber/share of firms* making use of resourcesNumber/share of firms* provided with personalised support*Indicator could distinguish by size of enterprise (small/medium/large) or sector</td><td>Number/share of firms implementing at least one new productivity practice within 12 months</td><td>Productivity (output per employee, revenue per employee)</td></tr><tr><td>25. Support enterprise leaders and managers to promote strategic foresight and workplace innovation, and stimulate demand for higher-level skills</td><td>Financial and human resources to support enterprise leaders and managers to promote strategic foresight and workplace innovation</td><td>Number/share of firms*/enterprise leaders engaged in training focussing on innovation management and foresight exercises*Indicator could distinguish by size of enterprise (small/medium/large) or sector</td><td>Number of firms* applying results of foresight exercises or innovative methods*Indicator could distinguish by size of enterprise (small/medium/large) or sector</td><td>Productivity (output per employee, revenue per employee)</td></tr><tr><td>26. Enhance validation systems to enable the effective use of skills card systems, and examine the feasibility of extending their application and integrating them into existing digital platforms</td><td>Financial and human resources allocated to conducting the feasibility studies</td><td>Number of sectors for which the feasibility study has been conductedNumber of sectors that would benefit from the introduction of skills cards</td><td>If feasibility confirmed:Number of sectors implementing skills cardsNumber of individuals making use of skills cardsNumber of validated skills.</td><td>Job vacancy rateShare/number of businesses affected by labour/skills shortages</td></tr><tr><td>27. Develop a certificate recognising transversal skills to strengthen workers' employability and support skills-based hiring practices</td><td>Financial and human resources to develop a certificate recognising transversal skills</td><td>Number of individuals assessed for transversal skillsNumber of transversal skills assessed, validated and certificates issuedDays between skills assessment and certification being issuedNumber of transversal skills assessed but not validated and not certifiedNumber (and type) of assessment procedures</td><td>Number of individuals with certified skills who are employedNumber of employers making use of skills certificates during hiring processes</td><td>Percentage of employers reporting difficulties finding candidates with transversal skills</td></tr><tr><td>28. Conduct a study on the causes, scale and socio-economic impact of brain drain to inform policies for talent retention and attraction</td><td>Financial and human resources to develop a study on brain drainNumber of available data sources</td><td>Number of completed studies</td><td>Number of incentives implemented that foster repatriationNumber of incentives implemented that foster engagement of diaspora</td><td>Net (skilled) migration balanceNumber of returning diaspora</td></tr></table>
+
+## Annex Table 3.A.8. Indicators for Priority Topic 8: Strengthening the governance of the skills system
+
+<table><tr><td>Recommendation</td><td>Input</td><td>Output</td><td>Outcome</td><td>Impact</td></tr><tr><td>29. Strengthen skills co-ordination to better align skills supply and demand in the thematic areas of Malta&#x27;s Smart Specialisation Strategy</td><td>Human resources to enhance the skills-related mandate of thematic committees and establish additional Industry Skills Alliances (ISAs)</td><td>Number of formal meetings held per sector and attendeesNumber of outputs produced and approved by thematic committees and ISAs</td><td>Number/share of employers/employees benefiting from outputs by thematic committees and ISAs</td><td>Job vacancy rate</td></tr><tr><td>30. Regularly review action plans and strengthen reporting mechanisms to ensure that the strategy remains a living document and supports effective and responsive implementation</td><td>Financial and human resources to review action plans and reporting</td><td>Number of progress reports/evaluations submitted</td><td>Progress reports/evaluations used to inform the implementation</td><td>Number/share of recommendations completed or revised based on evaluations</td></tr></table>
+
+## 4 Piloting the policy recommendations in the Maltese maritime sector
+
+In parallel with the National Skills Strategy, this TSI project undertook a detailed assessment of skills gaps in Malta’s maritime sector and developed a Skills Action Plan to address them. This chapter summarises the key findings and recommendations, including five strategic recommendations and ten actions aimed at strengthening skills development across all stages of the talent pipeline. A more detailed analysis and description of the proposed actions can be found in the reports Results of the Analysis for Malta’s Maritime Sector (Output 4) and Action Plan Proposal for Reforming Malta’s Maritime Skills Provision (Output 6).
+
+## Overview and performance
+
+Malta has achieved notable progress on a number of skills indicators, owing to efforts that put skills at the forefront of the national agenda, including the adoption of national strategies such as Malta Vision 2050 and the National Recovery and Resilience Plan (NRRP). However, challenges still remain and are particularly pronounced in certain sectors, including Malta's prominent maritime sector. The successful implementation of the National Skills Strategy at the country level will require localised, sector-specific interventions in parallel to ensure a holistic and co-ordinated approach across the entire Maltese economy.
+
+OECD analysis suggests that while there has a been a rise in demand for workers in the maritime sector in recent years, enrolment in maritime-related programmes does not appear to be keeping pace with the growth in vacancies. Employers report growing difficulty in filling vacancies for mechanical engineers, engineering technicians, crane operators, and seafarers – occupations that are essential to maintaining safety standards, ensuring compliance with international regulations, and preserving Malta's competitiveness in maritime trade and services. Overall demand for ancillary maritime occupations, which are indirectly related to the operation and servicing of ships (e.g. finance, logistics, ICT, legal services, and training), also appears to exceed supply.
+
+As the maritime sector undergoes significant transformation – driven by technological advancements, the net-zero transition, and evolving global trade and shipping patterns – its skills needs are evolving. Addressing these emerging needs through a dedicated skills action plan should be a priority for Malta. The development of targeted measures to close skills gaps in the maritime sector is supported by strong political commitment, reflecting the sector's strategic economic importance.
+
+In parallel with the National Skills strategy, this TSI project undertook a detailed assessment of skills gaps in the maritime sector and formulated a Skills Action Plan to address those gaps. The project involved close engagement with a broad range of government entities and stakeholders, fostering a shared commitment to implementation.
+
+## Policy recommendations for the maritime sector
+
+This section presents five strategic recommendations to reduce skills gaps in Malta's maritime sector, targeting challenges across all stages of the skilled labour pipeline. More specifically, the recommendations described in this chapter aim to enhance Malta's capacity to systematically monitor, assess, and respond to skills gaps as they emerge across the maritime sector.
+
+## Recommendation 1: Raise awareness of maritime careers through education and public engagement
+
+Malta's maritime sector is poised for substantial growth, with projections indicating it could contribute over 14% of national GDP in the coming years (Malta Maritime Forum, 2020[1]). However, this potential can only be realised if the sector succeeds in attracting new workers – particularly younger workers. Stakeholder consultations and recent analyses confirm that the maritime sector lacks visibility among Malta's general public, particularly among young people (Malta Maritime Forum, 2020[1]; Ministry for Transport, Infrastructure and Public Works, 2024[2]). This lack of visibility mirrors widespread challenges identified in the broader National Skills Strategy, particularly the limited availability of accessible, up-to-date information on skills demand across strategic industries (see Priority Topics 1 and 2 in Chapter 2).
+
+Analysis of PISA data reveals that fewer than 1% of students intend to pursue a maritime career. Even among students with a parent employed in the sector, fewer than 3% expressed interest in following a similar path (OECD, 2022[3]). This low level of engagement may partly reflect the lack of exposure school students have to maritime themes from an early age. Stakeholders report that students rarely encounter maritime-related content or career pathways during their education, reducing awareness and interest at a formative stage.
+
+To address these challenges, Malta would benefit from investing in raising awareness of maritime careers through targeted education initiatives and public outreach. The overall aim could be to rebrand the maritime sector and promote its attractiveness as a compelling, future-oriented career destination. To implement this recommendation, the following specific actions are proposed:
+
+1.1. Integrate maritime themes into schools. The Ministry for Education, Sport, Youth, Research and Innovation (MEYR), in collaboration with the Ministry for Transport, Infrastructure and Public Works (MTIP) and Malta Maritime Forum (MMF), is advised to collaborate to embed maritime content into primary and secondary education. This could include participation in international initiatives such as Adopt a Ship (Adopt a Ship, 2025[4]), as well as local initiatives such as site visits to vessels and maritime companies; school talks from industry professionals; and tailored resources for teachers and guidance counsellors. Implementation could leverage existing structures, including the Personal, Social and Career Development (PSCD) programmes, career guidance sessions, extracurricular competitions, or relevant educational modules.
+
+1.2. Launch a public awareness campaign to promote maritime careers. A campaign could be developed to raise the profile of the maritime sector and present it as a modern, innovative and purpose-driven industry. Branded as the “Choose Maritime” campaign, it would showcase the wide range of opportunities available at sea and on shore, linking the sector to themes such as sustainability and national heritage. It could position the sector as modern, dynamic, and purpose-driven. Storytelling and presenting role models would be central, using platforms such as YouTube, social media and radio to share career journeys that emphasise progression, adventure and innovation. The campaign’s primary audiences would be secondary students, their parents and entry-level workers. However, the campaign could also target mid-career adults who may be considering a career change. The campaign could also promote new incentives and programmes outlined in subsequent recommendations: hands-on learning (Recommendation 2), upskilling opportunities (Recommendation 3) and career mobility (Recommendation 4).
+
+## Recommendation 2: Strengthen career entry pathways by incentivising cadetships, apprenticeships and internships
+
+One of the most pressing barriers to entering the maritime sector in Malta is the limited availability of accessible, high-quality hands-on learning opportunities. While a vast majority of maritime employers (78%) indicate that they value hands-on learning more than academic credentials, only slightly more than half of maritime employers in Malta report offering any form of hands-on training, with sea-time opportunities for cadets being particularly scarce (Ministry for Transport, Infrastructure and Public Works, 2024[2]). Although apprentices currently receive both employer-paid wages and government top-ups, stakeholders agree that the financial burden on employers remains a deterrent. Employers often view the cost of providing structured training, particularly onboard placements, as outweighing the benefits.
+
+Due to the lack of learning opportunities, over half (52%) of maritime employers in Malta cite a lack of necessary skills among applicants as a leading recruitment challenge. Additionally, 41% report that new hires struggle to adapt to their roles. These findings reflect a shortage of both practical training prior to employment and structured onboarding processes once in the workplace (OECD, 2025[5]; Ministry for Transport, Infrastructure and Public Works, 2024[2]). Alongside strengthening industry-specific skills, it is important to integrate future skills such as transversal, digital and green skills into hands-on maritime training programmes, supporting the development of a future-ready workforce throughout the broader Maltese economy (see Priority Topic 4 in Chapter 2).
+
+Expanding access to cadetships, apprenticeships, and internships – both at sea and on land – is essential to build a more skilled, job-ready maritime workforce. These opportunities would not only increase the sector's appeal to students but also help reduce skills gaps and improve recruitment and retention. To implement this recommendation, the following specific actions are proposed:
+
+2.1. Introduce targeted financial incentives for employers to provide hands-on learning. The government could introduce direct grants, potentially complemented where appropriate by tax incentives, to encourage high quality hands-on learning such as cadetships, apprenticeships, and internships. Grants could be aligned with strategic priorities identified through SAA exercises for the maritime sector (Recommendation 5), with higher subsidies offered for high-cost training (e.g. cadetships at sea) or occupations with acute skill shortages. Malta could offer direct subsidies for all cadetships, apprenticeships, and internships, with differentiated amounts by occupation or type of training. Additional top-up grants could be provided for creating new apprenticeship places or for recruiting individuals from under-represented groups. These measures could be further reinforced by linking tonnage tax policies to minimum training requirements.
+
+2.2. Develop a national maritime mentorship programme to strengthen skills transfer, support workforce entry, and retain workers. MEYR, in partnership with the MMF, training providers and MTIP, could launch a national mentorship scheme for the maritime sector. The programme would involve one-to-one pairings between apprentices, interns, and cadets with experienced professionals, including retired or near-retirement professionals, serving as volunteer mentors. Government funding could support mentor training and programme co-ordination, while ensuring that participation remains free of charge to trainees, companies, and schools. This scheme could be piloted in the maritime sector, with a view to expanding it into other strategic sectors in Malta at a later stage.
+
+## Recommendation 3: Enhance lifelong learning in the sector through national and workplace initiatives
+
+In a sector shaped by evolving international standards, technological advancements, and regulatory updates, continuous training is essential. Yet Malta's maritime sector lags in providing effective lifelong learning opportunities. While most maritime companies in Malta (84%) provide some form of training to their employees, 71% still report significant skills gaps in their workforce and a nearly half of employers (49%) consider current training opportunities insufficient to meet upskilling needs.
+
+Both government support mechanisms and employer engagement in the maritime industry fall short, creating a mismatch between workforce skills and industry needs. Many firms are reluctant to invest in training that does not yield immediate returns, especially when there is a risk of trained workers being recruited by competitors. Moreover, smaller firms are also less likely to have the financial or human resources to sustain regular or specialised training. These challenges extend beyond the maritime sector and are evident across the Maltese economy, prompting the broader National Skills Strategy to explore policy measures that incentivise individuals to participate in learning (see Priority Topic 5 in Chapter 2) and support employers to provide work-based learning opportunities (see Priority Topic 6 in Chapter 2).
+
+While Malta has several schemes at the national level to support upskilling (e.g. Get Qualified, Skills Development, Investing in Skills), maritime programmes are not accredited under the Malta Qualifications Framework (MQF) and are legally mandated, making them ineligible for these schemes. Furthermore, while Jobsplus will be relaunching a scheme similar to Training Pays – which accepted Transport Malta-accredited STCW training – in early 2026, the new scheme will also exclude legally mandated training.
+
+To remain competitive and resilient, Malta's maritime sector must approach lifelong learning as a strategic investment rather than a discretionary expense. Achieving this will require targeted reforms to government funding schemes, alongside stronger public and private sector commitment to delivering relevant, high-quality, and responsive training opportunities. To implement this recommendation, the following specific actions are proposed:
+
+3.1. Adapt national skills incentive schemes for lifelong learning to better meet sector-specific needs. It is recommended that national skills development schemes be adapted to address the specific needs of priority sectors, including maritime. Existing schemes must be revised to reflect the distinct requirements of maritime training. For example, Transport Malta-accredited courses, such as STCW training, could be eligible under the Get Qualified scheme. These changes would better align financial incentives with actual industry demands and reduce financial barriers for both individuals and employers.
+
+3.2. Develop short, modular, and responsive training programmes, including on-the-job learning. Rapid-response training programmes are recommended and could be developed in partnership between the MMF, maritime education and training providers, and the National Skills Council. This collaboration would enable the timely identification of urgent skills gaps and the co-design of tailored training interventions. Training programmes would be short modular, and particularly relevant for training needs arising from new STCW regulations, evolving international safety standards, or the introduction of new maritime technologies. Training delivery should be flexible, taking place either on company premises or at education and training institutions, depending on the subject matter. In parallel, the National Skills Council could partner with employers to develop structured on-the-job training programmes. To encourage employer participation, salary subsidies could support workers undertaking place-and-train, reskilling, or job redesign opportunities. Additionally, the sector could implement standardised payback clauses to minimise the risk of poaching and foster greater employer investment in training.
+
+## Recommendation 4: Support career progression and transitions in the maritime sector
+
+Certain sub-sectors and occupations within Malta's maritime sector are growing in size (e.g. occupations in management and logistics, finance, ICT, mechanical engineering technicians, freight handlers) while other areas of the sector are stagnant or declining in prevalence. However, career mobility within the sector remains limited, with few structured pathways for workers to transition between different roles or specialisations. Although maritime experience is highly valued across the sector, practical barriers, such as training gaps, the absence of formal recognition for prior experience, and limited access to upskilling opportunities, often impede career progression. Aligning elements of the broader National Skills Strategy – particularly flexible training options, industry placements, RPL and targeted qualifications (see Priority Topics 4 and 5 in Chapter 2) – to the needs of the maritime sector can facilitate lateral movement and upward progression.
+
+Additionally, a common concern among seafarers is the lack of formal recognition for their sea-based experience. This challenge limits career progression and discourages long-term engagement in the sector. At the same time, the demanding lifestyle associated with long-term seafaring deters many young people from entering maritime careers in the first place. Establishing clearer, well-supported pathways from sea to shore could enhance the overall appeal of maritime careers, especially for those who may not wish to spend their entire working lives at sea.
+
+To strengthen career development and improve workforce adaptability across the maritime sector, Malta should improve pathways that enable movement between different maritime occupations. To implement this recommendation, the following specific actions are proposed:
+
+4.1. Establish a career transition and placement scheme for maritime workers. MTIP and MMF could jointly develop a programme to support industry placements and short-term work experience opportunities across the maritime sector. This scheme would target professionals transitioning into high-growth or strategically important areas and would combine classroom-based training with structured on-the-job learning. Mentorship and systematic employer engagement would be integral components. The programme would focus on mid-career professionals, both those already employed in the maritime industry and those entering from other sectors. Participation could be incentivised through government-funded salary support. The initiative could also be promoted as part of a broader campaign to showcase the diverse career pathways available in the sector (see Recommendation 1).
+
+4.2. Introduce flexible, accredited top-up qualifications to facilitate career transitions. In collaboration with MEYR, the National Skills Council, and MFHEA, education and training providers could be supported to develop modular top-up qualifications tailored to the maritime sector. These qualifications would be designed to address current and emerging skills gaps, with a focus on high-growth or strategically important areas. The programmes could formally recognise prior learning and professional experience, granting credit exemptions where appropriate and enabling experienced maritime professionals to complete qualifications at an accelerated pace. Structured into modules, the programmes would allow individuals to progress gradually while working, with the option to test out of modules based on existing competencies. To ensure recognition and transferability, qualifications could be accredited nationally and aligned with European or international standards. Importantly, they should be accessible to all maritime professionals – not only those transitioning from sea-based roles – thereby enhancing career mobility and workforce adaptability across the sector.
+
+## Recommendation 5: Pilot a Maritime Skills Alliance as a formal co-ordinating body for the maritime sector
+
+Sustained alignment between maritime education, industry needs, and national policy requires structured, ongoing collaboration among key stakeholders. The reconstitution of the MMF Sub-Committee on Education in 2023 represents a positive development in Malta. However, its informal status and lack of decision making authority significantly limit its impact. Malta’s existing Sectoral Skills Units (SSUs) also play an important role, particularly in areas such as occupational standards and the recognition of prior learning, but they lack the mandate to lead broader skills strategy or workforce planning. The need for a formal co-ordinating body, proposed in the broader National Skills Strategy (see Priority Topic 8 in Chapter 2), can support Malta’s maritime sector in bringing relevant actors together to guide skills development, anticipate future needs, and co-ordinate training efforts.
+
+Currently, there is also limited comprehensive data on training participation, skills gaps, or workforce mobility across the maritime sector, mirroring broader nation-wide SAA challenges discussed in the main National Skills Strategy (see Priority Topic 1 in Chapter 2). Skills planning for the sector remains short term and reactive, and systematic efforts to anticipate future skills needs, such as sectoral SAA exercises, have yet to be undertaken. Without forward-looking analysis, education and training systems risk falling out of step with industry developments, leaving workers underprepared for emerging demands. Beyond improving data and addressing mismatches, a co-ordinated approach is essential to oversee the implementation of the broader set of skills-related recommendations outlined in this report.
+
+To enable co-ordinated and forward-looking skills development in Malta's maritime sector, a Maritime Skills Alliance (MSA) should be established as a pilot initiative. This Alliance would serve as a formal platform for collaboration among key stakeholders and could later be replicated in other sectors facing similar workforce challenges. To implement this recommendation, the following specific actions are proposed:
+
+5.1. Create the Maritime Skills Alliance (MSA). It is recommended to pilot an enhanced role of the thematic committee for the maritime sector established under the Smart Specialisation Strategy. The maritime committee could effectively act as a Maritime Skills Alliance, serving as a formal structure bringing together key actors in maritime education and training, workforce planning, and industry development. It could convene social partners, education and training institutions, and relevant ministries and agencies. Its remit could include: overseeing implementation of skills-related recommendations of the forthcoming Maritime Transport Strategy; advising on training standards, qualifications, and career pathways; facilitating data-sharing and stakeholder alignment; and, leading strategic workforce planning, including developing a sectoral skills forecast. To ensure continuity and follow-up, the MSA could be supported by a dedicated secretariat, ideally housed within the National Skills Council.
+
+5.2. Conduct a sectoral skills forecast study. It is recommended that the maritime sector be prioritised for an early sectoral skills forecast as part of Malta's broader national SAA framework. Led by the MSA, the SAA exercise is advised to include: structured stakeholder consultations; employer surveys and company visits to identify real-time and emerging skills needs; and a comprehensive review of existing education and training programmes to assess gaps, overlaps, and misalignments. The study could generate both short- and long-term projections of the skills required across the sector, highlighting critical bottlenecks and workforce mismatches. These insights will provide a robust evidence base to guide policy decisions and targeted interventions across education, training, and employment systems.
+
+## References
+
+Adopt a Ship (2025), Homepage, https://www.adoptaship.org/ (accessed on 18 December 2025). [4]
+
+Malta Maritime Forum (2020), “Maritime Malta: Realising the Potential of the Maritime Sector Towards the Growth and Development of the Maltese Economy”, https://mmf.org.mt/the-maritime-sectors-potential-towards-economic-growth/ (accessed on 21 October 2025).
+
+Ministry for Transport, Infrastructure and Public Works (2024), Skills Gap Analysis Report: [2] Malta's Maritime Industry.
+
+OECD (2025), Shaping Malta's Future Through a National Skills Strategy and Targeted Maritime Sector Measures: Analysis Report (Output 2), OECD, Paris, https://www.oecd.org/content/dam/oecd/en/about/programmes/dg-reform/malta/Analysis-Report.pdf. [5]
+
+OECD (2022), PISA data and methodology, https://www.oecd.org/en/about/programmes/pisa/pisa-data.html.
+
+# A National Skills Strategy and Action Plan for Malta
+
+Skills are central to Malta's ambition to build a more innovative, sustainable and inclusive economy in a rapidly changing global context shaped by digitalisation, the green transition and demographic change. Ensuring that individuals develop relevant skills, that these skills are effectively used in the labour market, and that skills systems are well governed is essential to support productivity, competitiveness and social cohesion.
+
+This report, developed with financial support from the European Union through the Technical Support Instrument and in co-operation with the European Commission, supports Malta in designing a comprehensive National Skills Strategy and Action Plan. It identifies key priorities and sets out targeted, actionable recommendations to strengthen skills development, use and governance. The report is complemented by a detailed implementation roadmap, including timelines, responsibilities and monitoring mechanisms. In addition, it features a dedicated action plan for the maritime sector illustrating how national priorities can be translated into concrete sector-specific measures. The report offers valuable insights for OECD member countries on strengthening skills systems through both national and sector-specific approaches.

@@ -1,0 +1,29 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 3,
+    "successful_pdf_count": 3,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_005_epoc48yy/pdfs/0021-OECD_OECD-Anti-Bribery-Convention-Phase-4-Follow-Up-Report-on-T-r_a704fd03.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_005_epoc48yy/pdfs/0022-OECD_Trends-in-Global-Value-Chains_ba0daea5.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_005_epoc48yy/pdfs/0023-WTO_Members-review-MC14-outcomes-discuss-energy-crisis-responses_66cde954.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

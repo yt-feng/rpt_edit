@@ -1,0 +1,491 @@
+## TECHNICAL ASSISTANCE REPORT
+
+KINGDOM OF ESWATINI
+
+Report on the Monetary and Financial Statistics Technical Assistance Mission (May 12–23, 2025)
+
+## January 2026
+
+Prepared By:
+
+Nelson Rutto and Ibrahim Serwanja
+
+Authoring Department:
+
+Statistics Department
+
+## DISCLAIMER
+
+"The contents of this document constitute technical advice provided by the staff of the International Monetary Fund to the authorities of Eswatini (the "CD recipient") in response to their request for technical assistance. This document (in whole or in part) or summaries thereof may be disclosed by the IMF to the IMF Executive Director for Eswatini, to other IMF Executive Directors and members of their staff, as well as to other agencies or instrumentalities of the CD recipient, and upon their request, to World Bank staff, and other technical assistance providers and donors with legitimate interest, unless the CD recipient specifically objects to such disclosure (see Operational Guidance for the Dissemination of Capacity Development Information). Publication or Disclosure of this report (in whole or in part) to parties outside the IMF other than agencies or instrumentalities of the CD recipient, World Bank staff, other technical assistance providers and donors with legitimate interest shall require the explicit consent of the CD recipient and the IMF's Statistics department."
+
+## CD RECIPIENTS
+
+![](images/57750ea8e5439a3509bdb97960e18e50c7f9878def20e721fd9bfeb40f5b643f.jpg)  
+Eswatini, Kingdom of
+
+## Table of Contents
+
+Summary of Mission Outcomes and Priority Recommendations .... 5
+Introduction.... 6
+A. Background.... 6
+B. Structure of Eswatini's Financial System.... 7
+Detailed Technical Assessment and Recommendations.... 10
+A. Action Plan.... 10
+B. Institutional Collaboration.... 11
+C. Other Financial Corporations.... 12
+■ Pension sector.... 12
+■ Insurance corporations.... 13
+■ Collective Investment Schemes (MMFs and non-MMFs).... 15
+■ Credit providers.... 17
+D. Other Depository Corporations.... 17
+■ Savings and Credit Cooperative Organizations (SACCOs).... 17
+E. Compilation of MFS Analytical Surveys.... 19
+F. Balance Sheet Approach.... 19
+G. Capacity Development and Resources.... 20
+H. Metadata Reporting.... 20
+Appendices.... 21
+Appendix I. Additional details on the financial sector.... 22
+Appendix II. Updated Country Note for Eswatini.... 23
+Appendix III. Updated Surveys: ODCS, DCS, OFCS, and FCS.... 26
+Appendix IV. Officials met during the mission.... 28
+
+## Tables
+
+Table 1. Eswatini Priority Recommendations \_\_\_\_ 6
+Table 2. Eswatini: The Structure of the Financial Sector, December 2024 \_\_\_\_ 10
+
+Acronyms and Abbreviations
+
+<table><tr><td>AFR</td><td>African Department (of the IMF)</td></tr><tr><td>AUA</td><td>Assets Under Advisory</td></tr><tr><td>AUM</td><td>Assets Under Management</td></tr><tr><td>BSA</td><td>Balance Sheet Approach</td></tr><tr><td>CBE</td><td>Central Bank of Eswatini</td></tr><tr><td>FCs</td><td>Financial Corporations</td></tr><tr><td>FCS</td><td>Financial Corporations Survey</td></tr><tr><td>FSRA</td><td>Financial Services Regulatory Authority (of Eswatini)</td></tr><tr><td>GDP</td><td>Gross Domestic Product</td></tr><tr><td>IMF</td><td>International Monetary Fund</td></tr><tr><td>MFS</td><td>Monetary and Financial Statistics</td></tr><tr><td>MFSU</td><td>Monetary and Financial Statistics Unit (of the CBE)</td></tr><tr><td>MFSMCG</td><td>2016 Monetary and Financial Statistics Manual and Compilation Guide</td></tr><tr><td>MoU</td><td>Memorandum of Understanding</td></tr><tr><td>NFC</td><td>Nonfinancial Corporation</td></tr><tr><td>ODCs</td><td>Other Depository Corporations</td></tr><tr><td>OFCs</td><td>Other Financial Corporations</td></tr><tr><td>OFCS</td><td>Other Financial Corporations Survey</td></tr><tr><td>SACCO</td><td>Savings and Credit Cooperative Organization</td></tr><tr><td>SRF</td><td>Standardized Report Form</td></tr><tr><td>STA</td><td>Statistics Department (of the IMF)</td></tr><tr><td>TA</td><td>Technical Assistance</td></tr></table>
+
+## Summary of Mission Outcomes and Priority Recommendations
+
+1. The International Monetary Fund's (IMF's) Statistics Department (STA) conducted a Monetary and Financial Statistics (MFS) Technical Assistance (TA) mission during May 12–23, 2025, at the request of the Central Bank of Eswatini (CBE), and with the support of the IMF's African Department (AFR). The mission assisted staff from the Monetary and Financial Statistics Unit (MFSU) of the CBE in broadening the scope of MFS to include other financial corporations (OFCs) and in extending the coverage of other depository corporations (ODCs), following the methodology set out in the IMF's 2016 Monetary and Financial Statistics Manual and Compilation Guide (MFSMCG).
+
+2. The mission recommended that the CBE start disseminating standardized monetary statistics for the other financial corporations (OFCs) (SRF 4SR) in line with the MFSMCG. In Eswatini, the pension funds subsector, insurance corporations, credit providers, and collective investment schemes play a substantial role in mobilizing long-term savings and extending credit—accounting for about 66.2 percent of the total assets of the financial sector—excluding the central bank. The mission assisted the CBE in compiling monetary statistics for Eswatini's OFC sector covering pension funds, insurance corporations, and non-deposit-taking credit providers. This addition significantly enriched the coverage of Eswatini's MFS, the OFCs survey (OFCS), and the financial corporations (FC) survey (FCS), enhancing the analytical value of Eswatini's monetary statistics for monetary policy and financial sector surveillance.
+
+3. The mission expanded the coverage of ODCs subsector in 2SR with the incorporation of deposit-taking saving and credit cooperatives (SACCOs). SACCOs assets constitute 7.9 percent of those of ODCs, and their addition expanded the coverage of ODCs sector to about 33.8 percent of the total assets of the financial sector, excluding the central bank. The mission, working with CBE staff, integrated the mapping of the SACCOs into the 2SR.
+
+4. The mission reviewed the adequacy of the MFS source data and complementary compilation guidelines and recommended improvements to enrich their use to compile MFS in line with the MFSMCG methodology. The mission, together with CBE and Financial Services Regulatory Authority (FSRA), reviewed the data reports for pension funds, $^{1}$ insurance corporations, credit providers, SACCOs, and collective investment schemes, and recommended improving granularity in terms of breakdowns by financial instrument, counterpart sector, and currency of denomination, following the MFSMCG framework. Moreover, disaggregation along these dimensions provides critical insights—such as financial institutions' asset mix or domestic versus foreign allocation pursuant to regulatory/prudential requirements—for prudential oversight and policy formulation. Relatedly, the mission noted the need to enhance compilation guidelines to provide comprehensive descriptions of balance sheet items and their supplementary components, to support consistent and harmonized reporting by financial institutions.
+
+5. The inclusion of OFCs in the MFS coverage will enable enhancing the balance sheet approach (BSA) analysis. BSA is a systematic analytical framework that can highlight balance sheet weaknesses and potential propagation of financial vulnerabilities among sectors. The mission encouraged the CBE to compile
+
+BSA matrices on a regular basis as a medium-term priority, using IMF BSA tool, once the MFSU develops comprehensive MFS data for the financial sector.
+
+6. The mission worked closely with staff from CBE's MFSU and the FSRA, all listed in Appendix IV. The mission appreciates the extensive support and coordination from both CBE and FSRA senior management and staff, that enabled the mission to accomplish its objectives. Building staff capacity for MFS compilation is essential, and both CBE and FSRA staff can benefit from knowledge sharing and training. The CBE's recent strengthening of MFSU staffing to enhance the compilation of MFS for OFCs and deposit-takers supervised by the FSRA is commendable.
+
+7. The mission recommended an action plan with the following priority recommendations to improve MFS (Table 1). Following the mission, the CBE is well equipped to expand the coverage of MFS to enrich monetary policy analysis and financial sector surveillance—as also recommended by the 2023 Financial Sector Stability Review (FSSR). Further details on all the recommendations are provided in the action plan in the section Detailed Technical Assessment and Recommendations.
+
+Table 1. Eswatini Priority Recommendations
+
+<table><tr><td>Target Date</td><td>Priority Recommendation</td><td>Responsible Institution(s)</td></tr><tr><td>May 2026</td><td>Submit the SRF 4SR for OFCs that includes pension funds, insurance corporations, and credit providers, to the IMF STA for review.</td><td>CBE</td></tr><tr><td>May 2026</td><td>Submit the updated SRF 2SR for ODCs, that includes SACCOs&#x27; data from 2016, to the IMF STA for review.</td><td>CBE</td></tr><tr><td>July 2026</td><td>Split data for collective investment schemes between money market funds (MMF) and non-MMF, map them to ODCs and OFCs respectively, and submit the updated 2SR and 4SR to the IMF STA for review.</td><td>CBE, FSRA</td></tr></table>
+
+## Introduction
+
+## A. BACKGROUND
+
+8. The CBE currently reports the monetary and financial statistics (MFS) using standardized report forms (SRFs) for dissemination though the IMF's data portal. The data are reported monthly, using the SRF 1SR for central bank, 2SR for ODCs, and 5SR for monetary aggregates. As part of the 2023 Financial Sector Stability Review (FSSR) roadmap to strengthen financial sector surveillance, the CBE was expected to expand MFS coverage to include data for other financial corporations (OFCs), on account of their significance in the financial sector.
+
+9. An MFS mission which took place in April 2018 assisted the CBE in reviewing available source data for the OFCs and initiated the process of collecting data from them. Working with the CBE staff, the 2018 mission laid the groundwork to expand the coverage of other depository corporations (ODCs) to include SACCOs in the compilation of the standardized report form (SRF) 2SR and assisted in developing report forms for other financial corporations (OFCs). Since then, the CBE has made progress in collecting data from the FSRA, the supervisor of OFCs, with the next step being to map the data to the SRFs. Essentially, the data collected covers institutions that account for substantial proportions—by asset size—within the respective SACCOs, pension funds, insurance corporations, and credit providers sectors).
+
+10. The mission, working with CBE and FSRA staff, reviewed the OFCs' data collected and assisted in mapping it to the OFCs 4SR to compile the Financial Corporation survey (FCS) for Eswatini. The mission reviewed the adequacy of the OFCs' source data—for pension funds, insurance corporations, and credit institutions—in terms of coverage and financial instrument classification including by counterpart sectors. The mission mapped the OFCs' source data to the SRF 4SR template, which facilitated the compilation of the OFCs survey (OFCS). The mission also assisted the CBE staff to review source data for the deposit-taking SACCOs and incorporate them into the ODCs 2SR. These efforts enabled the compilation of the FCS covering the entire financial sector.
+
+11. MFS, compiled in accordance with the MFSMCG framework, provide valuable granular financial sector data for surveillance and policy needs. To the extent permitted by available source data, the SRFs for the central bank (1SR), the ODCs (2SR), and the OFCs (4SR) present data by type of financial instruments, counterpart sector, and by currency of denomination (national or foreign currency). Such level of granularity allows presentation of data to meet analytical needs of users including the compilation of balance sheet approach (BSA) matrices useful for macroprudential analysis. The data also enhances cross-country comparability.
+
+## B. STRUCTURE OF ESWATINI'S FINANCIAL SYSTEM
+
+12. Supervision of financial institutions in Eswatini is split between the Central Bank and the FSRA. The CBE is responsible for supervising banks only, as mandated by the Financial Institutions Act of 2005. There are currently four banks, including one state-owned domestic bank (Eswatini Bank) and three domestically incorporated subsidiaries of South African banks (First National Bank, NED Bank, and Standard Bank). The FSRA, established in 2012 under the FSRA Act 2010, holds the supervisory mandate over building societies, savings and credit cooperative organizations (SACCOs), and non-bank financial institutions or other financial corporations (OFCs). The OFCs include pension funds (PFs), insurance corporations (ICs), collective investment schemes (money market funds (MMF) and non-MMF investment funds), credit institutions (credit providers and development financial institutions), financial auxiliaries (asset managers, investment advisors, Eswatini Stock Exchange, and pension managers).
+
+13. The memorandum of understanding (MoU) between the CBE and FSRA, signed in 2018, laid the foundation for CBE to collect data from FSRA for compilation of MFS, and this collaboration can be strengthened. The FSRA provides financial statements for building societies, SACCOs, and other OFCs to support financial sector surveillance, with most of the data essentially provided on a quarterly basis. Prior to the establishment of FSRA, the largest building society reported to CBE and has continued to voluntarily share its balance sheet with CBE to inform MFS even though FSRA became its primary regulator. At the time of the mission, CBE was drafting an updated MoU that is planned to include CBE, FSRA, the Ministry of Finance, and the Centre for Financial Inclusion. The revised MoU is intended to strengthen cooperation and coordination in regulation and supervision of the financial sector, as well as to enhance technical capacity and exchange of information.
+
+14. OFCs dominate Eswatini's financial system with a share of about 66.2 percent of total financial sector assets. Pension funds constitute the largest proportion, 69.7 percent, of the OFCs sector total assets. The Public Service Pension Fund (PSPF) and Eswatini National Provident Fund (ENPF) have the largest share of the pension market, with about 73 percent and 13 percent respectively, and the top 10 constitute about 93 percent of the market. The insurance corporations constitute a little less than a tenth of total OFC assets. The mission did not have access to data to enable splitting of the collective investment schemes (CIS), which account for about 8.0 percent of the financial system (excluding CBE) total assets, between money market funds (MMFs) and non-MMFs.
+
+15. In assessing the relative size of the OFCs sector, the mission advised against double counting of assets of OFCs by excluding the assets under advisory (AUA). Investment Advisors (IAs) report on the asset portfolios under their advisory, but these are often misrepresented as constituting the balance sheets of the IAs. The AUA amounted to E 30.0 billion as of end-2024. Most of these assets remain on and are reported on the balance sheets of the respective financial institutions that own them, with pension funds and insurance accounting for 90.4 percent, and thus should not be double counted as part of the balance sheet of the IAs. Appendix I.1 provides details on the owners of the AUA, highlighting the potential double counting of assets.
+
+16. The size of the OFCs sector may be underestimated with respect to the financial auxiliaries, and future efforts can aim to incorporate them. Financial auxiliaries are an essential component of the financial system and constitute the OFCs sector as per the MFSMCG. They are financial corporations principally engaged in activities associated with transactions in financial assets and liabilities or with providing the regulatory context for these transactions but in circumstances that do not involve the auxiliaries taking ownership of the financial assets and liabilities being transacted. In Eswatini, these notably include investment advisors and asset managers, among others. These are respectively responsible for asset portfolios of E 30.0 billion and E 8.9 billion, as of December 2024, but should not be included in MFS on the basis of these portfolios as they do not own them. Typically, in many countries, the balance sheet sizes of financial auxiliaries are small, with their omission from MFS being insignificant. However, with the absence of data on their independent balance sheets, the mission was unable to assess the magnitude of the potential underestimation.
+
+## Recommendation:
+
+\- The CBE continues to engage FSRA to obtain periodic reports on the size of the financial auxiliaries, as their balance sheets sizes become significant, and gradually include them in the OFCs 4SR.
+
+17. Commercial banks constitute a relatively smaller proportion of the financial system in Eswatini, accounting for about 27.9 percent of the financial sector assets excluding the central bank. The other depository corporation (ODC) sector comprises commercial banks, SACCOs, a building society, and MMFs. One of the four commercial banks, all incorporated in Eswatini, is a government owned bank (Eswatini Bank). The other three banks, First National Bank, Standard Bank, and NED bank, all subsidiaries of South African commercial banks, had a combined market share of 90.0 percent. A total of 47 SACCOs—comprising 7.9 percent of the ODC sector—are licensed by FSRA and they take deposits from, and lend, to households. Twenty-three of these SACCOs consistently report data to FSRA.
+
+18. Eswatini's monetary arrangement, under the Common Monetary Area (CMA), has the South African Rand co-circulating with the Lilangeni at a fixed one-to-one exchange rate, and this has some implications for MFS. The Rand is accepted as legal tender and several financial institutions report most Rand-denominated instruments as national currency items, potentially obscuring the currency composition of financial assets and liabilities. The MFSMCG recommends disaggregation of financial instruments by currency of denomination, including for co-circulating foreign currencies.
+
+19. The balance sheets of financial institutions disaggregate financial instruments by residency—domestic versus foreign holdings—but further disaggregation by currency of denomination is necessary. The mission, in collaboration with MFSU staff, leveraged this domestic versus foreign distinction to map financial instruments to resident institutional sectors and non-residents. With the co-circulation of the domestic currency together with the South African rand in the economy, the reporting framework would benefit from further enhancement through explicit disaggregation of financial instruments by currency of denomination, particularly for domestic instruments. This additional detail is necessary to strengthen the assessment of currency mismatches, exchange rate risks, and financial stability vulnerabilities using MFS data.
+
+## Recommendation:
+
+\- The CBE and FSRA need to improve financial institutions' reporting framework to explicitly capture the currency denomination of all financial instruments, in line with the MFSMCG. This includes distinguishing Rand-denominated items from those in Emalangeni, even when all are recorded in national currency terms.
+
+$^{3/}$ Financial statements, independent of their portfolio, not available (NA) to the mission. NA – Not available.
+
+Table 2. Eswatini: The Structure of the Financial Sector, December 2024
+
+<table><tr><td rowspan="2">Financial Corporations Sector</td><td rowspan="2">Number of Institutions</td><td colspan="4">Total Assets</td></tr><tr><td>E&#x27; million</td><td>Share within ODC or OFC subsector (Percent)</td><td>Percent of total financial system assets (Excl. CBE)</td><td>Percent of GDP1</td></tr><tr><td>Central Bank of Eswatini</td><td>1</td><td>17,290.5</td><td></td><td></td><td></td></tr><tr><td>Other Depository Corporations</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Commercial Banks</td><td>4</td><td>31,204.3</td><td>82.4</td><td>27.9</td><td>32.7</td></tr><tr><td>Building Societies</td><td>2</td><td>3,682.3</td><td>9.7</td><td>3.3</td><td>3.9</td></tr><tr><td>SACCOs</td><td>47</td><td>3,009.5</td><td>7.9</td><td>2.7</td><td>3.2</td></tr><tr><td>ODC total</td><td></td><td>37,896.1</td><td>100</td><td>33.8</td><td>39.8</td></tr><tr><td>Other Financial Corporations</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Pension Funds</td><td></td><td>51,620.2</td><td>69.7</td><td>46.1</td><td>54.2</td></tr><tr><td>Insurance Corporations</td><td></td><td>7,101.7</td><td>9.6</td><td>6.3</td><td>7.5</td></tr><tr><td>Life insurance</td><td>8</td><td>5,457.2</td><td>7.4</td><td>4.9</td><td>5.7</td></tr><tr><td>Non-life insurance</td><td>6</td><td>1,492.7</td><td>2.0</td><td>1.3</td><td>1.6</td></tr><tr><td>Re-insurance</td><td>2</td><td>151.8</td><td>0.2</td><td>0.1</td><td>0.2</td></tr><tr><td>Collective Investment Schemes (CIS) $^{2}$ </td><td>NA</td><td>8,910.5</td><td>12.0</td><td>8.0</td><td>9.4</td></tr><tr><td>Credit Providers</td><td>158</td><td>6,435.4</td><td>8.7</td><td>5.7</td><td>6.7</td></tr><tr><td>Credit institutions and money lenders</td><td>155</td><td>3,927.8</td><td>5.3</td><td>3.5</td><td>4.1</td></tr><tr><td>Development Finance Institutions</td><td>3</td><td>2,507.6</td><td>3.4</td><td>2.2</td><td>2.6</td></tr><tr><td>Financial Auxiliaries $^{3}$ </td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CIS Managers (top 2: 89% of AUM)</td><td>4</td><td>NA</td><td></td><td></td><td></td></tr><tr><td>Investment Advisors (top 2: 52% of AUA)</td><td>12</td><td>NA</td><td></td><td></td><td></td></tr><tr><td>Stockbrokers</td><td>3</td><td>NA</td><td></td><td></td><td></td></tr><tr><td>Custodians</td><td>3</td><td>NA</td><td></td><td></td><td></td></tr><tr><td>Exempt dealers</td><td>1</td><td>NA</td><td></td><td></td><td></td></tr><tr><td>Stock Exchange</td><td>1</td><td>NA</td><td></td><td></td><td></td></tr><tr><td>OFC total</td><td></td><td>74,067.8</td><td>100.0</td><td>66.2</td><td>77.7</td></tr><tr><td>Total Financial sector, excl. CBE</td><td></td><td>111,963.9</td><td></td><td>100.0</td><td>117.5</td></tr></table>
+
+Source: CBE, FSRA  
+$^{1/}$ Eswatini's 2024 Gross Domestic Product is E95.3 billion (source: IMF World Economic Outlook database).  
+$^{2/}$ Mission recommends disaggregation of CIS into MMFs (ODCs) and non-MMFs (OFCs).
+
+## Detailed Technical Assessment and Recommendations
+
+## A. ACTION PLAN
+
+20. The Action Plan below includes steps to accomplish milestones as well as the target completion dates. Actions are identified as high (H), medium (M), and priority recommendations (PR).
+
+<table><tr><td>Priority</td><td>Action/Milestone</td><td>Target Completion Date</td></tr><tr><td colspan="3">Methodological basis for SRFs for the ODCs and OFCs follow internationally accepted standards, guidelines, or good practices.</td></tr><tr><td>PR</td><td>The CBE to submit the SRF 4SR for OFCs that includes pension funds, insurance corporations, and credit providers, to the IMF STA for review.</td><td>May 2026</td></tr><tr><td>PR</td><td>The CBE to submit the updated SRF 2SR for ODCs, that includes SACCOs&#x27; data from 2016, to the IMF STA for review.</td><td>May 2026</td></tr><tr><td>PR</td><td>The CBE and FSRA to split data for collective investment schemes between MMF and non-MMF and map them to ODCs and OFCs, respectively, and submit the updated 2SR and 4SR to the IMF STA for review.</td><td>July 2026</td></tr><tr><td>H</td><td>Finalize the country note for Eswatini and begin regular reporting of SRFs 4SR for OFCs and the expanded 2SR for ODCs to the IMF STA for dissemination in the IMF&#x27;s data portal.</td><td>May 2026</td></tr><tr><td>H</td><td>The CBE and the FSRA, in collaboration with the managers of CIS, to disaggregate the collective investment schemes&#x27; investor categories &quot;companies&quot; and &quot;institutional (others)&quot; into the granular MFSMCG institutional sectors.</td><td>September 2026</td></tr><tr><td>H</td><td>Strengthen and sustain collaboration between the CBE and FSRA to support consistent compilation of comprehensive MFS, covering pension funds, insurance corporations, MMF, non-MMF, SACCOs, building societies, and credit providers.</td><td>Ongoing</td></tr><tr><td>H</td><td>The CBE to refine report forms for ODCs to cater for disaggregation of financial instruments currency of denomination.</td><td>Ongoing</td></tr><tr><td>H</td><td>The CBE to engage FSRA to refine report forms for OFCs, SACCOs, and building societies, to cater for disaggregation of financial instruments, currency of denomination, and institutional sectors, in line with the MFSMCG framework; and update compilation notes to ensure harmonized data reporting.</td><td>Ongoing</td></tr><tr><td>H</td><td>The CBE to continue to engage FSRA on improving the reporting of liabilities by the pension funds.</td><td>Ongoing</td></tr><tr><td colspan="3">Technical Resources to support compilation of MFS</td></tr><tr><td>M</td><td>The CBE and FSRA to seek to optimize the Bank Supervision Application software to facilitate more efficient validation and aggregation of data reported by financial institutions, to support compilation of MFS.</td><td>Ongoing</td></tr><tr><td>M</td><td>The CBE (and where possible FSRA) to continue to build staff technical capacity on MFS, also leveraging IMF online and in-person MFS courses.</td><td>Ongoing</td></tr></table>
+
+## B. INSTITUTIONAL COLLABORATION
+
+21. Strong collaboration between CBE and FSRA is critical to foster development and compilation of quality MFS, particularly for OFCs. To compile comprehensive and insightful MFS, the CBE depends on supervisory data compiled and provided by FSRA from the entities it supervises – including SACCOs, insurance corporations, pension funds, and credit providers. FRSA and CBE can cooperate in refining the reporting forms and compilation notes, used by the OFCs and SACCOs, to support consistent classification of institutional units and harmonized reporting of source data by these financial institutions. Sustained CBE-FSRA collaboration—in particular, through joint technical working groups, regular inter-agency consultations, and capacity-building
+
+initiatives—will strengthen the institutional infrastructure and improve MFS data quality and coverage. This, in turn, will enhance both institutions' oversight of Eswatini's financial sector and enrich policymaking.
+
+## Recommendation:
+
+\- Strengthen and sustain collaboration between the CBE and FSRA to foster development and consistent compilation of comprehensive MFS.
+
+## C. OTHER FINANCIAL CORPORATIONS
+
+22. The mission focused on compiling the MFS for the OFCs, covering pension funds, insurance corporations, and non-deposit-taking credit institutions. Based on data as of December 2024, the total assets of these institutions accounted for about 98.6 percent of the OFCs sector's total assets. Several relatively small OFCs—including investment advisors, investment managers, stockbrokers, stock exchange, and credit bureaus—are not included.
+
+23. Bridge tables were developed to electronically map OFCs' data from source spreadsheets to the SRF 4SR, providing a tool to automatically derive the SRF 4SR. The source data was mapped according to the financial instrument classification, currency denomination, and institutional sectorization recommended in the MFSMCG. Using bridge tables minimizes manual intervention and associated errors. Furthermore, it provides clarity on the mapping of the source data, useful for future reference—including during further refinement as granular data becomes available—and training. The CBE is well equipped to compile and report the SRF 4SR for the OFCs using these spreadsheets.
+
+24. The mission worked with CBE's MFSU staff to improve source data. In addition to the development of the compilation framework, focus was also dedicated to improving the data reported by the OFCs to provide the necessary information for appropriate account classification as set out in the MFSMCG. To advance this objective, the mission team, together with MSFU staff, conducted an extensive review of the OFCs' report forms in collaboration with FSRA officials – the supervisors of the OFCs. As a result, the mission highlighted data gaps and necessary improvements, especially the disaggregation of financial instruments, currency of denomination, and counterparties, including during discussions with FSRA senior management. The MFSU staff will continue engagements with FSRA to address remaining data or reporting gaps in collaboration with the reporting financial institutions.
+
+## Pension sector
+
+25. Pension funds report quarterly assets data which is largely suitable for MFS compilation, but reporting of liabilities is constrained by a gap in the legal framework. FSRA closely monitors the pension funds' assets, especially the performance of their investment portfolio, from their mandatory quarterly reports. However, the Retirement Funds Act of 2005, under which the pension funds are supervised, only requires them to conduct actuarial valuations every three (3) years. The actuarial valuations are key for defined benefit schemes as these constitute the largest share of the pension sector, with the Public Service Pension Fund (PSPF) notably accounting for 73 percent of the sector. The infrequent actuarial valuations of the pension liabilities undermine regular reporting and compilation of pension liabilities to match the asset-side of the balance sheet, which limits both FSRA's surveillance and compilation of MFS.
+
+26. The mission estimated the pension funds' liabilities to match the assets reported quarterly, as the FSRA continues to pursue more consistent reporting of pension liabilities. The pension funds' annual audited financial statements have complete balance sheets, including updated actuarial valuation of pension liabilities. These annual audited liabilities provide a reasonable basis, upon which quarterly liabilities can be estimated for subsequent quarters as an interim measure while the FSRA continue to pursue improvement in quarterly reporting of liabilities. The estimation approach uses the liabilities line items available in the audited annual financial statements of the two largest entities: PSPF (a defined benefit scheme) and Eswatini National Provident Fund (a defined contribution scheme), accounting for about 73 percent and 13 percent, respectively, of Eswatini's pension sector. For clarity, the defined contribution and defined benefit (DB) pension liabilities, as well as the actuarial pension deficit/surplus in the case of DB, are retained as separate liabilities in the source data balance sheet structure. The mission proposed deriving the relative proportions of these liabilities from the audited annual statements and applying the proportions to the total assets in the subsequent quarters to estimate quarterly liabilities until the next year's audited financial statements – which would provide a more up-to-date proportion.
+
+27. The coverage of the pension funds' assets is broadly aligned with the IMF's MFSMCG, but there is room for improvement. To a significant extent, the assets are classified by instrument type and the institutional sectors but there is room for improvement in the granularity and sectoral disaggregation of financial instruments. For instance, while the current balance sheet includes a wide range of local and foreign assets, it lacks detailed metadata on counterparties, maturity structures, and currency denomination between national (including Rand) and foreign currency. This granularity is useful for intersectoral consistency and macroprudential analysis.
+
+## Recommendations:
+
+\- The FSRA continues to engage pension funds for consistent and frequent reporting of their liabilities with updated actuarial valuations, to support MFS compilation and surveillance.
+
+\- The FSRA needs to update the pension sector regulatory framework to mandate more frequent reporting of actuarially valued liabilities.
+
+\- The CBE to report the SRF 4SR that includes pension funds with data from March 2019.
+
+## Insurance corporations
+
+28. The CBE receives balance sheet data for insurance corporations from FSRA on a quarterly basis, and their incorporation in MFS constitutes a substantial addition. Insurance corporations (ICs) are the second largest OFCs subsector, after pension funds, accounting for about 9.6 percent. The data, which has been available since March 2019, is disaggregated into life insurance, non-life insurance, and reinsurance corporations, which vitally provides necessary granularity to better map their liabilities to institutional sectors. The data forms useful source data for compiling the insurance corporations' quarterly SRF 4SR and CBE can continue incorporating on a quarterly basis.
+
+29. While the data is reported regularly, full reconciliation of positions is necessary to ensure accuracy and consistency in the MFS. The balance sheet data from the FSRA is accompanied by supplementary notes that offer more granular details on certain instruments, which are essential for proper institutional sector attribution. CBE's MFSU staff proactively integrated the granular data from the notes into the balance sheets but often encounters unreconciled positions. Working with the MFSU, the mission mapped the ICs' data to the 4SR, highlighting some of the unreconciled positions to FSRA staff.
+
+30. The ICs' data includes detailed breakdown for most of the financial instruments in line with the MFSMCG classifications, but some require further disaggregation for accurate reporting in MFS. Some instruments are currently clubbed together. For instance, the asset categories "Banks (debt of or loan to banks, other than deposits)" and "non-bank financial institutions (debt of or loan to NBFIs, other than deposits)" combine loans and debt securities—which are supposed to be two separate financial instruments per the MFSMCG. While the mission learnt that the amounts currently reported under these bundled categories consisted of debt securities issued by ODCs and OFCs and held by the ICs, the consolidation of the two distinct financial instruments—loans and debt securities—risked distorting MFS compilation and analysis and thus requires explicit disaggregation in the source data report. Additionally, the asset category labeled "Others" was found, through discussion with FSRA staff, to consist of staff loans – an important detail that is missing from the report forms and complimentary guidance notes that would otherwise ensure consistent reporting and interpretation.
+
+31. The balance sheet report currently classifies assets into domestic and foreign categories, aligning with the MFSMCG on sectoral balance sheet compilation, but will benefit from further disaggregation by currency of denomination. The domestic-foreign asset distinction is essential for macroeconomic analysis and external sector surveillance, and the mission, working with MFSU staff, leveraged it in mapping the financial positions to resident institutional sectors and non-residents. However, the insurance corporations reporting could be significantly enhanced with explicit information on the currency denomination of financial instruments, especially the domestic instruments. This will improve assessment of currency mismatches, exchange rate risk, and financial stability vulnerabilities, using the MFS data.
+
+32. The ICs source data included amounts misclassified as debt securities issued by the CBE, when in fact they were issued by the central government. As the government's fiscal agent, the CBE facilitates the issuance of government debt securities, some of which are held by insurance corporations. However, some of these holdings were incorrectly reported as claims on the CBE. Following the MFSU staff confirmation that CBE did not have outstanding debt securities, the mission mapped the assets attributing them to Central government as the institutional sector issuer. This was discussed with FSRA, to accordingly guide the data reporters and prospectively embed the clarification in the compilation notes.
+
+## 33. The compilation notes could be more prescriptive to enhance consistent and harmonized
+
+reporting by ICs. For example, there are some significant liabilities, such as “investment contract liabilities” where detailed explanation on the type of underlying instrument (loan, deposit, or linked to performance of the insurance) through compilation notes could benefit consistent reporting and interpretation. If “investment contract liabilities” do not have significant insurance risk, they are akin to savings or other investment products (loans, equity, financial derivatives). The mission has mapped these investments to “Other deposits”, but the CBE with subsequent confirmation from FSRA, can subsequently remap them appropriately.
+
+## Recommendations:
+
+\- The FSRA needs to refine reporting forms and compilation notes to foster detailed and harmonized data from insurance corporations and to support MFS compilation by instrument, currency, and institutional sectors.
+
+\- The FSRA needs to improve alignment of balance sheet line items and their corresponding subcomponents in the supplementary notes to ensure consistency and enhance data quality.
+
+\- The CBE should submit to STA the SRF 4SR that includes insurance corporations with data from March 2019.
+
+Collective Investment Schemes (MMFs and non-MMFs) $^{2}$
+
+34. Collective Investment Schemes constitute a significant component of Eswatini's financial sector, and their incorporation into MFS is valuable for policy and surveillance. CBE receives quarterly data from FSRA on collective investment schemes (CIS) – on both investor classification (source of funds/liabilities) and investment allocations (assets). The investor classification shows the owners of the CIS units or shares, while the investment allocations show the assets in which the funds are invested. This data constitutes a good foundation to integrate the CIS's data into MFS, to provide more insight on liquidity and maturity transformation, institutional sector exposures, and financial sector interlinkages.
+
+35. The CBE currently receives the CIS data consolidated, but mission requested FSRA to disaggregate them into money market funds (MMFs) and non-MMFs for accurate compilation and analysis of MFS. MMFs—classified as part of the ODCs subsector—are particularly relevant for monetary statistics since their liabilities (shares or units) are close substitutes of deposits that are included in broad money aggregates. MMFs are also important in liquidity transformation as their activities influence short-term interest rates and liquidity conditions. As such, MMFs play a direct role in the transmission of monetary policy and are monitored closely for systemic risk, especially during periods of market stress when runs on MMFs can also impact the liquidity of deposit-taking institutions. Non-MMF investment funds, on the other hand, are classified as OFCs and are excluded from monetary aggregates but are essential for financial statistics and macroprudential surveillance.
+
+## Recommendation:
+
+\- Disaggregate the CIS data into balance sheets of MMFs and non-MMFs and incorporate them into the ODCs 2SR and OFCs 4SR respectively.
+
+36. While the CIS asset categories are largely aligned to the MFSMCG financial instruments classes, more granularity is necessary to enable correct institutional sector attribution for some assets. The mission, working with CBE and FSRA staff, highlighted cases of assets that are currently bundled while they could be attributed to different institutional sectors, and thus required disaggregation in that regard to support accurate compilation and interpretation of MFS. The cases in point are highlighted below, along with the recommended granularity.
+
+\- “Bonds/debentures” – split into issued by government, ODCs, OFCs, public NFCs, and other NFCs.
+
+\- “Equity Index-Linked Securities” – disaggregate into issued by MMFs, non-MMFs, and deposit-takers.
+
+\- “Listed securities: debt” and “Unlisted securities: Debt”—these could be issued by central government, state or local government, ODCs, OFCs, public NFCs, and other NFCs.
+
+\- “Commercial Paper” – can be issued by ODCs, OFCs, public NFCs, and other NFCs.
+
+37. The current classification of Collective Investment Scheme (CIS) investors provided a broadly sound basis for aligning their liabilities with the institutional sectors defined in the MFSMCG. In collaboration with the MFSU staff and with validation from FSRA, the mission mapped most CIS investor categories—such as retail investors, high-net-worth individuals, politically exposed persons, professional investors, and institutional investors (including pension funds, medical aid schemes, insurance companies, credit providers, SACCOs, banks, and other CIS)—to the appropriate MFSMCG institutional sectors.
+
+38. However, two CIS's investor categories—“companies” and “institutional (others)”—require more information to be definitively assigned to institutional sectors. The two jointly accounted for 22.6 percent of the CIS source of funding as of December 2024, which is significant and would benefit from more granularity in the institutional sectors. The MFSMCG emphasizes the importance of sectoral precision in classifying institutional units to ensure the integrity of MFS. The broad nature of these two categories obscures the underlying economic sectors, potentially leading to misclassification and analytical distortions in sectoral balance sheet data.
+
+## Recommendations:
+
+\- Engage CIS managers to review and disaggregate the “companies” investor category, in accordance with the MFSMCG, into:
+
+\- Public nonfinancial corporations, which are government-controlled entities engaged in market production of goods and services.
+
+\- Other non-financial corporations, which include privately owned or foreign-controlled entities.
+
+\- Relatedly, engage CIS managers to clarify the institutional units clubbed under 'institutional (others)' to support mapping to the appropriate institutional sectors in line with the MFSMCG framework.
+
+39. To enhance the assessment of external sector exposure, CIS financial instruments need to be disaggregated by both currency of denomination and counterpart sector. As of the mission date, FSRA-held data—reported by CIS managers and transmitted to the CBE—did not distinguish between assets and liabilities denominated in national versus foreign currencies. $^{3}$ This level of detail is essential, as recommended by the MFSMCG, for evaluating vulnerabilities to exchange rate fluctuations. Furthermore, the CIS data currently provides only the geographical distribution of total investments—domestic (65.6%), Common Market Area (26.3%), and offshore (8.1%) as of end-2024. Geographical location at the level of financial instruments would significantly enhance the analytical utility of the data – to highlight assets held with and liabilities due to non-residents.
+
+## Recommendation:
+
+\- Require CIS to report on all financial instruments held or issued with a breakdown by currency of denomination and counterparty sectors.
+
+## Credit providers
+
+40. The FSRA provides quarterly balance sheet data for credit providers to CBE, and their coverage within MFS further enriches the policy and surveillance value. Credit providers include credit institutions, development finance corporations, and money lenders, with an aggregate total asset base of E6,435.4 million, or 8.7 percent of the OFCs sector, as of end-2024. There are 3 development finance corporations: IDCE, FINCORP, and NIDC with assets of E1,251.8 million, E1,073.3 million, and E182.4 million, respectively.
+
+41. The financial instruments of credit providers are highly summarized, but some require further disaggregation and prescriptive compilation notes for clarity on institutional sector and financial instrument type. On the asset-side, loans and investments in subsidiaries are the main financial instruments, jointly accounting for about 71 percent of the balance sheet total. The main liabilities are included “Amounts owing to Related Parties” and “other financial liabilities” which, according to FSRA staff, were respectively borrowings from related parties and issuances of medium-term maturities (debt securities) to raise funds. The latter were apparently mostly held by other financial corporations. The mission, working with MFSU staff, relied on FSRA staff information to map some assets and liabilities as follows:
+
+\- The loans extended by credit institutions and money lenders were mapped to the 4SR's “other resident sectors” while loans made by the development finance institutions were mapped to the “private NFCs”. “Investment in subsidiaries” was mapped to the 4SR's “Shares Other Financial Corporations”.
+
+\- “Other financial liabilities” and “Amounts owing to Related Parties” were mapped to 4SR’s “Securities Excl. Other Financial Corporations” and “Loans Other Financial Corporations”, respectively.
+
+\- All positions were mapped as domestic currency instruments, following FSRA's indication that credit providers served domestic sectors.
+
+## Recommendations:
+
+\- Improve reporting forms to provide for disaggregation of credit providers' financial instruments in accordance with the MFSMCG framework, as well as the compilation notes to reports to foster harmonized reporting.
+
+\- The CBE should submit to STA the SRF 4SR that includes credit providers with data from March 2016.
+
+## D. OTHER DEPOSITORY CORPORATIONS
+
+Savings and Credit Cooperative Organizations (SACCOs)
+
+42. SACCOs' reporting to FSRA follows a tiered framework based on asset size. The FSRA distinguishes SACCOs into three tiers and these are subjected to varying prudential reporting requirements. However, specific circumstances may warrant imposition of modified requirements on any affected SACCO. The tiers and reporting requirements of the SACCOs are as follows.
+
+\- Tier 1 SACCOs: assets of E1.0 million and above and these are required to report to FSRA on a quarterly basis, including their balance sheet, income statement, and more prudential reports on capital and liquidity (monthly reporting).
+
+\- Tier 2 SACCOs: assets ranging from E300,000 to less than E1.0 million and these are required to report their balance sheet and income statements at least semi-annually.
+
+\- Tier 3 SACCOs: assets of less than E300,000 and these are subject to simplified annual reporting requirements agreed on a bilateral basis with the FSRA.
+
+43. The FSRA currently monitors the largest twenty-three SACCOs, which constitute over 90 percent of the subsector. The twenty-three SACCOs, all confirmed as deposit-taking, more consistently report their financial position and performance, and their aggregated balance sheet data is shared with CBE for MFS. However, the mission understood that occasionally the constituent SACCOs of the aggregated balance sheet data shared with CBE may vary—due to exclusion of late reporters or inclusion of new reporters—while CBE may not be unaware of such notable underlying changes to the data. This may lead to the integration of the unreconciled data into the MFS, with potential misinterpretation of the changes as due to movements in balance sheet positions rather than occasional exclusion or inclusion of reporting SACCOs.
+
+## Recommendation:
+
+\- CBE, as part of the periodic report from FSRA, should ascertain and track the constituent SACCOs in the aggregated balance sheet, to ensure consistency in MFS composition.
+
+44. The SACCOs' balance sheet has assets by main financial instruments, but more disaggregation is necessary including by institutional sector and currency denomination. The mission reviewed the mapping of the SACCOs, which were initiated during the 2018 TA mission, but had not yet been incorporated into the ODCs 2SR. The mapping was updated as follows, leveraging the information in the SACCOs guidelines of November 2018 (issued after the 2018 TA mission). The updated mapping also relied on the confirmation that SACCOs only served domestic households and had no transactions with non-residents.
+
+\- “Investments or balances with SACCOs” was moved from “Shares and other Equity” to “Other deposits”, considering that SACCOs guideline described it as "the total of all balances (overnight, call, and time) placed with other SACCOs including accrued interest but excluding un-cleared effects."
+
+\- “Investments or balances with financial institutions” was mapped to “Other Dep. Other Depository Corporations NC” on the asset-side, considering that the SACCOs guidelines describe this as "the total of all balances (overnight, call and time) placed by the SACCO with financial institutions (development financial institutions, Asset managers, building societies etc.), excluding un-cleared effects but including accrued interest". However, further institutional sector split should be considered to unbundle amounts that may be potentially attributable to ODCs or OFCs.
+
+\- "Savings (non-withdrawable deposits)" was remapped from "Other Dep. Excl. Other Depository Corporations NC" to "Other Dep. Excl. Other Resident Sectors NC" considering that these deposits are typically from individual members subscribing to the SACCOs.
+
+## Recommendation:
+
+\- FSRA should pursue disaggregating the SACCOs' financial instruments, especially loans and deposits, by the institutional sectors defined under the MFSMCG.
+
+45. The mission expanded the coverage of the ODC sector in MFS by including the balance sheet of SACCOs, resulting in an increase in assets of ODCs by about 8.6 percent. Working with CBE and FSRA staff, the mission updated the bridge tables that automatically generate SRF 2SR, to include the aggregated balance sheet of SACCOs.
+
+## Recommendation:
+
+\- The CBE to report to STA the SRF 2SR that includes SACCOs' data from 2016 and continue consistent compilation and reporting of SACCOs data as part of MFS.
+
+## E. COMPILATION OF MFS ANALYTICAL SURVEYS
+
+46. The mission worked with the CBE staff to compile the other financial corporations survey (OFCS), and financial corporation survey (FCS), based on the IMF integrated monetary database (IMD) framework and highlighted their policy value. The mission assisted to combine the compiled 4SR for pension funds, insurance corporations and credit institutions, and compiled the OFCS. Together with data for the central bank (1SR), ODCs (2SR combining banks, building societies and SACCOs), and OFCs (4SR), the mission assisted in compiling the financial corporation survey (FCS) covering the main financial sector entities in Eswatini, using the IMF IMD framework. The mission highlighted the policy relevance of the surveys to CBE senior management and staff.
+
+## F. BALANCE SHEET APPROACH
+
+47. The mission incorporated the OFCs 4SR data into the insightful Balance Sheet Approach (BSA) matrix. The BSA is a useful tool that highlights linkages between domestic sectors and the external sector, quantitatively summarizing financial positions or exposures. The main data source for the BSA matrix is MFS data presented in SRFs formats showing each financial instrument with counterpart sector and currency of denomination (domestic or foreign currency). The SRFs enable developing of ‘from-whom-to-whom’ tables for stocks for inclusion in the BSA. In addition, the BSA requires information from the external sector and government statistics to supplement MFS data.
+
+48. The mission presented the BSA matrix for Eswatini to senior management and staff of CBE and FSRA, underscoring the analytical value of comprehensive and quality MFS. The BSA enables insightful assessment of risks and vulnerabilities relative to macroeconomic developments. Its effectiveness relies heavily on the availability of detailed and reliable data. In particular, ongoing efforts to refine and exchange MFS data for OFCs, SACCOs, and building societies will further augment the surveillance and policy value of data presented in the BSA.
+
+## G. CAPACITY DEVELOPMENT AND RESOURCES
+
+49. There is need to build staff capacity on MFS both within the MFSU and the FSRA, through knowledge sharing and training. The MFSU recently added two staff, increasing the number to five staff, to effectively support the expansion of MFS coverage to also include OFCs and deposit-takers supervised by FSRA. The mission worked closely with all five MFSU staff and the technical staff at FSRA, observing a need to improve knowledge across the board. Training for all is essential to enhance understanding of MFS concepts and definitions to further improve source data quality, as well as to foster further collaboration between the CBE and FSRA.
+
+50. Both the CBE and FSRA use the Bank Supervision Application software to receive reports from financial institutions, but there is need to optimize the software functionality to support automated compilation of MFS. CBE's MFSU and FSRA staff download individual financial institutions' reports and then manually validate and aggregate them into the respective sector balance sheets for mapping to the MFS SRFs. The mission proposed to CBE staff, including MFSU and information technology (IT) department staff, and FSRA staff to enhance the capability of the Bank Supervision Application to validate the data and efficiently produce sector positions aligned for MFS compilation. This can improve efficiency of staff resources and compilation of MFS.
+
+## Recommendations:
+
+\- The CBE, and where possible FSRA, should encourage staff to enroll for the free online (self-paced and scheduled) MFS courses and to nominate technical staff to attend in-person training courses on MFS at the Africa Training Institute (ATI) or at IMF's headquarters in Washington DC.
+
+\- Staff should leverage MFS courses that are often provided by the Macroeconomic and Financial Management Institute of Eastern and Southern Africa (MEFMI), which are often facilitated by IMF STA staff.
+
+\- Optimize the Bank Supervision Application software to facilitate more efficient validation and aggregation of data reported by financial institutions, to support compilation of MFS.
+
+51. CBE's MFSU staff were familiarized with the mapping of the source data to the SRFs, but further technical support can be provided whenever more granular reporting is realized. The MFSU team learnt how the source data are mapped and will be able to update them when needed and use them to compile SRF 4SR and the expanded 2SR going forward. Nevertheless, the MFSU staff can seek IMF's advice on classification of new financial instruments or guidance to address technical issues within the compilation spreadsheets as well as to train staff, including FSRA technical staff.
+
+## H. METADATA REPORTING
+
+52. The CBE has made substantial progress in reporting financial sector statistics to IMF for surveillance purposes and for dissemination. On a monthly basis, the CBE reports SRFs 1SR for the central bank, 2SR for ODCs, and 5SR for monetary aggregates to IMF for publication though the IMF's data portal.
+
+53. The mission worked with the MFSU staff to update the country note for Eswatini to include a section on the OFCs sector and update the coverage of ODCs. The updated country note will be needed to publish the OFCs data and the increased coverage of ODCs though the IMF's data portal. The country note for Eswatini with the draft section on the OFCs sector and expanded coverage of ODCs is presented in Appendix II.
+
+## Recommendations:
+
+\- The CBE needs to review and finalize the country note for Eswatini, which was updated during the mission to reflect the compilation and reporting of the SRF 4SR for the OFCs and the expanded coverage of ODCs 2SR to include SACCOs, by May 2026.
+
+\- The CBE to start regular reporting of the OFCs 4SR and the expanded ODCs 2SR to STA, for disseminating though the IMF's data portal, by May 2026.
+
+## APPENDIX I. ADDITIONAL DETAILS ON THE FINANCIAL SECTOR
+
+Appendix I.1: Ownership Assets under Advisory
+
+<table><tr><td></td><td>AUA (E million)</td><td>Share (percent)</td></tr><tr><td>Retail Investors</td><td>539.0</td><td>1.80</td></tr><tr><td>Politically Exposed Persons</td><td>31.6</td><td>0.11</td></tr><tr><td>High Net worth Individuals</td><td>0.0</td><td>0.00</td></tr><tr><td>Professional Investors</td><td>0.0</td><td>0.00</td></tr><tr><td>Institutional - Retirement Funds</td><td>25,439.3</td><td>84.86</td></tr><tr><td>Institutional - Medical Aid Schemes</td><td>72.9</td><td>0.24</td></tr><tr><td>Institutional - Insurance Short Term</td><td>63.6</td><td>0.21</td></tr><tr><td>Institutional - Insurance Long Term</td><td>1,669.6</td><td>5.57</td></tr><tr><td>Collective Investment Schemes</td><td>0.0</td><td>0.00</td></tr><tr><td>Institutional - Credit Providers</td><td>2.6</td><td>0.01</td></tr><tr><td>Institutional - SACCOs</td><td>0.0</td><td>0.00</td></tr><tr><td>Institutional - Banks</td><td>101.5</td><td>0.34</td></tr><tr><td>Companies</td><td>2,039.6</td><td>6.80</td></tr><tr><td>Institutional - Other</td><td>19.6</td><td>0.07</td></tr><tr><td>Total</td><td>29,979.3</td><td>100.00</td></tr></table>
+
+Appendix I.2: Asset Managers and Investment Advisors
+
+<table><tr><td>Asset Managers</td><td>AUM (E million)</td><td>Market Share (Percent)</td></tr><tr><td>Stanlib</td><td>4,120.5</td><td>46.4</td></tr><tr><td>AA CIS</td><td>3,820.3</td><td>43.0</td></tr><tr><td>Old Mutual CIS</td><td>878.9</td><td>9.9</td></tr><tr><td>Inhlonhla</td><td>67.7</td><td>0.8</td></tr><tr><td>Total</td><td>8,887.4</td><td>100.0</td></tr><tr><td colspan="3"></td></tr><tr><td>Investment Advisors (IA)</td><td>AUA (E million)</td><td>Market Share (Percent)</td></tr><tr><td>Stanlib IA</td><td>13,621.7</td><td>45.4</td></tr><tr><td>Inhlonhla IA</td><td>3,563.5</td><td>11.9</td></tr><tr><td>Old Mutual IA</td><td>3,330.5</td><td>11.1</td></tr><tr><td>Alpha SZ</td><td>2,904.7</td><td>9.7</td></tr><tr><td>Imbewe Yesive IA</td><td>2,877.3</td><td>9.6</td></tr><tr><td>Aluwani IA</td><td>2,034.6</td><td>6.8</td></tr><tr><td>BLZI IA</td><td>1,132.0</td><td>3.8</td></tr><tr><td>African Alliance IA</td><td>514.9</td><td>1.7</td></tr><tr><td>Total</td><td>29,979.3</td><td>100.0</td></tr></table>
+
+Appendix I.3: Credit Providers
+
+<table><tr><td></td><td>Assets (E million)</td><td>Market share (Percent)</td></tr><tr><td>Credit institutions</td><td>3,913.8</td><td>60.8</td></tr><tr><td>Development finance institutions</td><td>2,507.6</td><td>39.0</td></tr><tr><td>Money lenders</td><td>14.0</td><td>0.2</td></tr><tr><td>Sub-total</td><td>6,435.4</td><td>100.0</td></tr></table>
+
+## ESWATINI 734
+
+Date of Fund Membership:
+
+September 22, 1969
+
+## Standard Sources:
+
+Central Bank of Eswatini
+
+Central Statistical Office
+
+## Exchange Rates:
+
+Official Rate: (End of Period and Period Average):
+
+The lilangeni is at par with the South African rand (see note on the page for South Africa for a description of the exchange rates).
+
+## Central Bank:
+
+Consists of the Central Bank of Eswatini only.
+
+† Beginning in August 2004, the data are based on a standardized report form (SRF) for central banks, which accords with the concepts and definitions of the IMF's Monetary and Financial Statistics Manual (MFSM), 2000. Departures from the MFSM methodology are explained below.
+
+Some accrued interest is included in Other Items (Net) rather than in the outstanding amounts of the financial assets and liabilities.
+
+For December 2001 through July 2004, data in the SRF format are compiled from pre-SRF data not based on the MFSM methodology. Departures from the MFSM methodology are explained below.
+
+Financial assets and liabilities not disaggregated by economic sector are allocated to the economic sector having the largest volume of transactions in the category.
+
+Some accrued interest is included in Other Items (Net) rather than in the outstanding amounts of the financial assets and liabilities.
+
+## Other Depository Corporations:
+
+Comprises commercial banks. Beginning in January 2006 includes the Swaziland Building Society. Beginning in 2016 includes deposit-taking Savings and Credit Cooperative Organizations (SACCOs).
+
+† Beginning in August 2004, data are based on a standardized report form (SRF) for other depository corporations, which accords with the concepts and definitions of the Monetary and Financial Statistics Manual (MFSM). For other depository corporations in Eswatini, departures from the MFSM methodology are explained below.
+
+Some accrued interest is included in Other Items (Net) rather than in the outstanding amounts of the financial assets or liabilities.
+
+For December 2001 through July 2004, data in the SRF format are compiled from pre-SRF data not based on the MFSM methodology. Departures from the MFSM methodology are explained below.
+
+Financial assets for which economic sectorization is unavailable are allocated to the economic sector having the largest volume of transactions in the category.
+
+Monthly data on the sectorization of deposit liabilities are estimated based on data available on a quarterly basis. Some accrued interest is included in Other Items (Net) rather than in the outstanding amounts of the financial assets and liabilities.
+
+## Depository Corporations:
+
+Consolidation of central bank and other depository corporations.
+
+## Other Financial Corporations
+
+Comprises pension funds (retirement schemes), insurance corporations (life and non-life insurance corporations and reinsurance corporations), and non-deposit-taking credit institutions (development finance institutions and credit providers). Data is based on a standardized report form (SRF) for other financial corporations, which accords with the concepts and definitions of the 2016 Monetary and Financial Statistics Manual and Compilation Guide (MFSMCG).
+
+## Financial Corporations
+
+† See notes on central bank, other depository corporations, and other financial corporations.
+
+## Monetary Aggregates:
+
+## Broad Money:
+
+Broad Money calculated from the liability data in the sections for the central bank and other depository corporations accords with the concepts and definitions of the MFSM and is consistent with M2 described below.
+
+## Money (National Definitions):
+
+M1 comprises notes and coins in circulation outside the depository corporations, other financial corporations' deposits with the CBE in national currency, and demand deposits in national and foreign currency of the private sector, local authorities and town councils, nonfinancial public corporations, and other financial corporations with depository corporations.
+
+M2 comprises M1 plus time and savings deposits in national and foreign currency of the private sector, local authorities and town councils, nonfinancial public corporations, and other financial corporations with depository corporations.
+
+## Interest Rates:
+
+Discount Rate (End of Period):
+
+Lowest rate at which the CBE discounts treasury bills to commercial banks.
+
+Money Market Rate:
+
+Interbank call deposit rate.
+
+Treasury Bill Rate:
+
+Yield on treasury bills with 91-days maturity auctioned by the CBE.
+
+Savings Rate:
+
+Midpoint rate offered by banks on savings deposits.
+
+Deposit Rate:
+
+Mid-point rate offered by commercial banks on three-month fixed term deposits.
+
+Lending Rate:
+
+Rate charged by banks to most creditworthy customers on short-term loans.
+
+## Prices and Labor:
+
+## Consumer Prices:
+
+Source: Central Statistical Office. Weights Reference Period: 2001; Geographical Coverage: Nine urban centers; Number of Items in Basket: 390; Basis for Calculation: The weights are derived from the Eswatini Household Income and Expenditure Survey (SHIES) conducted in 2001.
+
+## International Transactions:
+
+All trade value data are from the Central Bank. Imports, c.i.f. include customs duties, excises, and sales taxes paid and are therefore not comparable to the corresponding balance of payments data.
+
+Balance of Payments and International Investment Position:
+
+Metadata on balance of payments (BOP) and international investment position (IIP), when provided by individual countries, can be found at the BOP/IIP page of the IMF data portal.
+
+## Government Finance:
+
+Data are derived from the Central Bank and cover the budgetary central government. External debt data cover both budgetary central government and public guaranteed debt. The fiscal year ends March 31.
+
+## National Accounts:
+
+Source: Eswatini Central Statistical Office. Concepts and definitions are in accordance with the System of National Accounts, 1968. Volume estimates are compiled using a fixed base year (2011).
+
+## APPENDIX III. UPDATED SURVEYS: ODCS, DCS, OFCS, AND FCS
+
+## Appendix III.1 Other Depository Corporations Survey (ODCS)
+
+<table><tr><td>Millions-Emalangeni</td><td>2019M12</td><td>2020M12</td><td>2021M12</td><td>2022M12</td><td>2023M12</td><td>2024M12</td></tr><tr><td>NET FOREIGN ASSETS</td><td>1,566</td><td>2,621</td><td>2,799</td><td>2,736</td><td>2,593</td><td>1,866</td></tr><tr><td>CLAIMS ON NONRESIDENTS</td><td>2,104</td><td>2,997</td><td>3,333</td><td>4,681</td><td>4,801</td><td>4,547</td></tr><tr><td>LIABILITIES TO NONRESIDENTS</td><td>538</td><td>376</td><td>534</td><td>1,945</td><td>2,208</td><td>2,681</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>NET DOMESTIC ASSETS</td><td>16,062</td><td>17,866</td><td>17,867</td><td>18,699</td><td>20,081</td><td>21,937</td></tr><tr><td>NET DOMESTIC CLAIMS</td><td>20,547</td><td>23,697</td><td>24,221</td><td>25,603</td><td>26,981</td><td>29,904</td></tr><tr><td>NET CLAIMS ON CENTRAL GOVERNMENT</td><td>2,160</td><td>1,716</td><td>2,222</td><td>2,812</td><td>2,445</td><td>3,168</td></tr><tr><td>CLAIMS ON CENTRAL GOVERNMENT</td><td>2,830</td><td>4,209</td><td>4,795</td><td>4,875</td><td>4,494</td><td>5,018</td></tr><tr><td>GOVERNMENT SECURITIES</td><td>2,793</td><td>4,172</td><td>4,747</td><td>4,836</td><td>4,429</td><td>4,840</td></tr><tr><td>OTHER CLAIMS ON CENTRAL GOVERNMENT</td><td>37</td><td>36</td><td>48</td><td>39</td><td>64</td><td>178</td></tr><tr><td>LIABILITIES TO CENTRAL GOVERNMENT</td><td>670</td><td>2,492</td><td>2,573</td><td>2,063</td><td>2,049</td><td>1,850</td></tr><tr><td>CLAIMS ON STATE AND LOCAL GOVERNMENTS</td><td>18</td><td>42</td><td>43</td><td>56</td><td>84</td><td>73</td></tr><tr><td>CLAIMS ON PUBLIC NONFINANCIAL CORPORATIONS</td><td>519</td><td>233</td><td>266</td><td>246</td><td>297</td><td>467</td></tr><tr><td>CLAIMS ON PRIVATE SECTOR</td><td>13,457</td><td>15,714</td><td>16,365</td><td>18,351</td><td>19,589</td><td>21,465</td></tr><tr><td>of which: CREDIT TO PRIVATE SECTOR</td><td>13,457</td><td>15,697</td><td>16,346</td><td>18,331</td><td>19,573</td><td>21,444</td></tr><tr><td>CLAIMS ON FINANCIAL CORPORATIONS</td><td>4,394</td><td>5,992</td><td>5,325</td><td>4,138</td><td>4,565</td><td>4,732</td></tr><tr><td>CLAIMS ON CENTRAL BANK</td><td>3,603</td><td>4,462</td><td>4,032</td><td>3,432</td><td>3,695</td><td>3,772</td></tr><tr><td>CLAIMS ON OTHER FINANCIAL CORPORATIONS</td><td>791</td><td>1,530</td><td>1,293</td><td>705</td><td>870</td><td>960</td></tr><tr><td>EQUITY</td><td>4,720</td><td>5,298</td><td>5,810</td><td>6,176</td><td>6,499</td><td>7,003</td></tr><tr><td>OTHER ITEMS (NET)</td><td>235</td><td>-533</td><td>-543</td><td>-728</td><td>-401</td><td>-964</td></tr><tr><td>NET INTERBANK ASSETS</td><td>83</td><td>203</td><td>152</td><td>217</td><td>269</td><td>253</td></tr><tr><td>NET UNCLASSIFIED ASSETS</td><td>158</td><td>637</td><td>806</td><td>693</td><td>709</td><td>732</td></tr><tr><td>NONLIQUID LIABILITIES</td><td>6</td><td>1,372</td><td>1,501</td><td>1,638</td><td>1,379</td><td>1,948</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>LIQUID LIABILITIES</td><td>17,629</td><td>20,488</td><td>20,666</td><td>21,435</td><td>22,674</td><td>23,806</td></tr><tr><td>TRANSFERABLE DEPOSITS</td><td>6,278</td><td>6,290</td><td>7,780</td><td>7,594</td><td>8,857</td><td>9,006</td></tr><tr><td>OTHER DEPOSITS</td><td>11,351</td><td>14,197</td><td>12,886</td><td>13,841</td><td>13,817</td><td>14,800</td></tr><tr><td>SECURITIES OTHER THAN SHARES</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></table>
+
+Appendix III.2 Depository Corporations Survey (DCS)
+
+<table><tr><td>Millions-Emalangeni</td><td>2019M12</td><td>2020M12</td><td>2021M12</td><td>2022M12</td><td>2023M12</td><td>2024M12</td></tr><tr><td>NET FOREIGN ASSETS</td><td>6,752</td><td>7,891</td><td>7,354</td><td>5,791</td><td>6,612</td><td>8,201</td></tr><tr><td>GROSS RESERVES</td><td>5,839</td><td>7,674</td><td>8,822</td><td>7,376</td><td>8,497</td><td>9,834</td></tr><tr><td>OTHER CLAIMS ON NONRESIDENTS</td><td>2,437</td><td>3,326</td><td>3,623</td><td>4,971</td><td>5,118</td><td>4,870</td></tr><tr><td>LIABILITIES TO NONRESIDENTS</td><td>1,524</td><td>3,109</td><td>5,091</td><td>6,556</td><td>7,002</td><td>6,504</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>NET DOMESTIC ASSETS</td><td>11,616</td><td>13,518</td><td>14,111</td><td>16,447</td><td>16,961</td><td>16,467</td></tr><tr><td>NET DOMESTIC CLAIMS</td><td>17,180</td><td>18,801</td><td>20,470</td><td>23,005</td><td>23,515</td><td>24,767</td></tr><tr><td>NET CLAIMS ON CENTRAL GOVERNMENT</td><td>2,358</td><td>1,241</td><td>2,454</td><td>3,598</td><td>2,590</td><td>1,724</td></tr><tr><td>CLAIMS ON CENTRAL GOVERNMENT</td><td>5,878</td><td>7,283</td><td>8,063</td><td>8,025</td><td>7,666</td><td>8,199</td></tr><tr><td>LIABILITIES TO CENTRAL GOVERNMENT</td><td>3,520</td><td>6,042</td><td>5,608</td><td>4,427</td><td>5,076</td><td>6,474</td></tr><tr><td>CLAIMS ON STATE &amp; LOCAL GOVERNMENTS</td><td>18</td><td>42</td><td>43</td><td>56</td><td>84</td><td>73</td></tr><tr><td>CLAIMS ON PUBLIC NONFINANCIAL CORPORATIONS</td><td>519</td><td>233</td><td>266</td><td>246</td><td>297</td><td>467</td></tr><tr><td>CLAIMS ON PRIVATE SECTOR</td><td>13,494</td><td>15,756</td><td>16,414</td><td>18,399</td><td>19,673</td><td>21,544</td></tr><tr><td>of which: Credit to Private Sector</td><td>13,494</td><td>15,739</td><td>16,395</td><td>18,380</td><td>19,657</td><td>21,523</td></tr><tr><td>CLAIMS ON OTHER FINANCIAL CORPORATIONS</td><td>791</td><td>1,530</td><td>1,293</td><td>705</td><td>870</td><td>960</td></tr><tr><td>EQUITY</td><td>6,263</td><td>6,138</td><td>8,404</td><td>8,159</td><td>8,281</td><td>8,545</td></tr><tr><td>OTHER ITEMS (NET)</td><td>700</td><td>854</td><td>2,046</td><td>1,601</td><td>1,727</td><td>244</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>BROAD MONEY</td><td>18,369</td><td>21,408</td><td>21,465</td><td>22,239</td><td>23,573</td><td>24,671</td></tr><tr><td>NARROW MONEY</td><td>7,018</td><td>7,211</td><td>8,579</td><td>8,397</td><td>9,756</td><td>9,871</td></tr><tr><td>CURRENCY IN CIRCULATION</td><td>715</td><td>893</td><td>768</td><td>770</td><td>864</td><td>824</td></tr><tr><td>TRANSFERABLE DEPOSITS</td><td>6,303</td><td>6,318</td><td>7,811</td><td>7,627</td><td>8,892</td><td>9,047</td></tr><tr><td>OTHER DEPOSITS</td><td>11,351</td><td>14,197</td><td>12,886</td><td>13,841</td><td>13,817</td><td>14,800</td></tr><tr><td>SECURITIES OTHER THAN SHARES</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></table>
+
+Appendix III.3 Other Financial Corporations Survey (OFCS)
+
+<table><tr><td>Millions-Emalangeni</td><td>2019M12</td><td>2020M12</td><td>2021M12</td><td>2022M12</td><td>2023M12</td><td>2024M12</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>NET FOREIGN ASSETS</td><td>19,621</td><td>22,091</td><td>27,108</td><td>24,788</td><td>27,748</td><td>29,985</td></tr><tr><td>CLAIMS ON NONRESIDENTS</td><td>19,621</td><td>22,091</td><td>27,108</td><td>24,788</td><td>27,748</td><td>29,985</td></tr><tr><td>LIABILITIES TO NONRESIDENT</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>NET DOMESTIC ASSETS</td><td>24,804</td><td>26,183</td><td>28,778</td><td>30,289</td><td>33,247</td><td>36,860</td></tr><tr><td>NET DOMESTIC CLAIMS</td><td>15,272</td><td>17,432</td><td>17,579</td><td>17,982</td><td>19,278</td><td>20,106</td></tr><tr><td>NET CLAIMS ON CENTRAL GOVERNMENT</td><td>2,653</td><td>2,685</td><td>2,943</td><td>3,090</td><td>3,376</td><td>3,792</td></tr><tr><td>CLAIMS ON CENTRAL GOVERNMENT</td><td>2,653</td><td>2,685</td><td>2,943</td><td>3,090</td><td>3,376</td><td>3,792</td></tr><tr><td>GOVERNMENT SECURITIES</td><td>2,653</td><td>2,685</td><td>2,943</td><td>3,090</td><td>3,376</td><td>3,792</td></tr><tr><td>OTHER CLAIMS ON CENTRAL GOVERNMENT</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>LIABILITIES TO CENTRAL GOVERNMENT</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>CLAIMS ON STATE AND LOCAL GOVERNMENTS</td><td>32</td><td>38</td><td>301</td><td>327</td><td>491</td><td>280</td></tr><tr><td>CLAIMS ON PUBLIC NONFINANCIAL CORPORATIONS</td><td>2,403</td><td>2,176</td><td>1,392</td><td>1,263</td><td>1,116</td><td>1,087</td></tr><tr><td>CLAIMS ON PRIVATE SECTOR</td><td>7,200</td><td>9,191</td><td>8,939</td><td>9,296</td><td>10,491</td><td>11,060</td></tr><tr><td>of which: CREDIT TO PRIVATE SECTOR</td><td>3,614</td><td>4,260</td><td>4,462</td><td>4,656</td><td>5,061</td><td>4,557</td></tr><tr><td>CLAIMS ON FINANCIAL CORPORATIONS</td><td>2,985</td><td>3,342</td><td>4,004</td><td>4,007</td><td>3,804</td><td>3,888</td></tr><tr><td>CLAIMS ON CENTRAL BANK</td><td>10</td><td>2</td><td>1</td><td>1</td><td>3</td><td>8</td></tr><tr><td>CLAIMS ON OTHER DEPOSITORY CORPORATIONS</td><td>2,975</td><td>3,341</td><td>4,002</td><td>4,006</td><td>3,801</td><td>3,880</td></tr><tr><td>EQUITY</td><td>-3,910</td><td>-4,539</td><td>-5,310</td><td>-5,093</td><td>-5,807</td><td>-6,693</td></tr><tr><td>OTHER ITEMS (NET)</td><td>5,621</td><td>4,212</td><td>5,889</td><td>7,214</td><td>8,162</td><td>10,062</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>NONLIQUID LIABILITIES</td><td>44,425</td><td>48,274</td><td>55,886</td><td>55,079</td><td>60,995</td><td>66,810</td></tr></table>
+
+Appendix III.4 Financial Corporations Survey (FCS)
+
+<table><tr><td>Millions-Emalangeni</td><td>2019M12</td><td>2020M12</td><td>2021M12</td><td>2022M12</td><td>2023M12</td><td>2024M12</td></tr><tr><td>NET FOREIGN ASSETS</td><td>26,373</td><td>29,982</td><td>34,462</td><td>30,580</td><td>34,360</td><td>38,186</td></tr><tr><td>GROSS RESERVES</td><td>5,839</td><td>7,674</td><td>8,822</td><td>7,376</td><td>8,497</td><td>9,834</td></tr><tr><td>OTHER CLAIMS ON NONRESIDENTS</td><td>22,058</td><td>25,417</td><td>30,731</td><td>29,759</td><td>32,866</td><td>34,855</td></tr><tr><td>LIABILITIES TO NONRESIDENTS</td><td>1,524</td><td>3,109</td><td>5,091</td><td>6,556</td><td>7,002</td><td>6,504</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>NET DOMESTIC ASSETS</td><td>-9,582</td><td>-11,927</td><td>-15,389</td><td>-11,189</td><td>-13,266</td><td>-16,132</td></tr><tr><td>NET DOMESTIC CLAIMS</td><td>28,676</td><td>31,361</td><td>32,752</td><td>36,275</td><td>38,119</td><td>40,026</td></tr><tr><td>NET CLAIMS ON CENTRAL GOVERNMENT</td><td>5,011</td><td>3,925</td><td>5,398</td><td>6,687</td><td>5,967</td><td>5,516</td></tr><tr><td>CLAIMS ON CENTRAL GOVERNMENT</td><td>8,531</td><td>9,968</td><td>11,006</td><td>11,115</td><td>11,042</td><td>11,991</td></tr><tr><td>LIABILITIES TO CENTRAL GOVERNMENT</td><td>3,520</td><td>6,042</td><td>5,608</td><td>4,427</td><td>5,076</td><td>6,474</td></tr><tr><td>CLAIMS ON STATE &amp; LOCAL GOVERNMENTS</td><td>50</td><td>80</td><td>343</td><td>383</td><td>575</td><td>353</td></tr><tr><td>CLAIMS ON PUBLIC NONFINANCIAL CORPORATIONS</td><td>2,921</td><td>2,409</td><td>1,659</td><td>1,509</td><td>1,413</td><td>1,553</td></tr><tr><td>CLAIMS ON PRIVATE SECTOR</td><td>20,694</td><td>24,946</td><td>25,353</td><td>27,696</td><td>30,164</td><td>32,604</td></tr><tr><td>of which: CREDIT TO PRIVATE SECTOR</td><td>17,108</td><td>19,999</td><td>20,857</td><td>23,036</td><td>24,718</td><td>26,080</td></tr><tr><td>EQUITY</td><td>2,353</td><td>1,599</td><td>3,095</td><td>3,066</td><td>2,474</td><td>1,852</td></tr><tr><td>OTHER ITEMS (NET)</td><td>-35,905</td><td>-41,688</td><td>-45,047</td><td>-44,398</td><td>-48,911</td><td>-54,306</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>LIQUID LIABILITES</td><td>16,791</td><td>18,055</td><td>19,073</td><td>19,392</td><td>21,094</td><td>22,021</td></tr><tr><td>CURRENCY IN CIRCULATION</td><td>705</td><td>891</td><td>766</td><td>769</td><td>860</td><td>816</td></tr><tr><td>TRANSFERABLE DEPOSITS</td><td>6,203</td><td>5,774</td><td>7,219</td><td>7,091</td><td>8,501</td><td>8,530</td></tr><tr><td>OTHER DEPOSITS</td><td>9,883</td><td>11,390</td><td>11,088</td><td>11,533</td><td>11,733</td><td>12,675</td></tr><tr><td>SECURITIES OTHER THAN SHARES</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></table>
+
+## APPENDIX IV. OFFICIALS MET DURING THE MISSION
+
+## Name
+
+## Designation
+
+## Central Bank of Eswatini (CBE)
+
+<table><tr><td>Phil Mnisi</td><td>Governor, CBE</td></tr><tr><td>Felicia Dlamini Kunene</td><td>Deputy Governor</td></tr><tr><td>Sikhumbuzo Dlamini</td><td>General Manager, Economic Policy, Research, and Statistics</td></tr><tr><td>Acute Dlamini</td><td>Deputy Director, Domestic Economy</td></tr><tr><td>Rejoice Dlamimi</td><td>Principal Economist, MFS</td></tr><tr><td>Vangile Dlamini</td><td>Senior Economist, ODC, MFS Unit</td></tr><tr><td>Magagula Zamokuhle</td><td>Senior Economist, OFC, MFS Unit</td></tr><tr><td>Nonhlanhla Mamba</td><td>Economist, ODC, MFS Unit</td></tr><tr><td>Maduna Wandile</td><td>Economist, OFC, MFS Unit</td></tr><tr><td>Mcebo Zikalala</td><td>Economist, Public Finance Unit</td></tr><tr><td>Brian Sihlongonyane</td><td>Deputy Director, Applications&amp; Data Analytics - IT Department</td></tr><tr><td>Nkosinathi Dlamini</td><td>Senior Business Analyst, IT Department</td></tr><tr><td>Lindokuhle Ndzabukelwako</td><td>Business Analyst, IT Department</td></tr></table>
+
+## Financial Services Regulatory Authority (FSRA)
+
+<table><tr><td>Ncamiso Ntshalintshali</td><td>Chief Executive Officer, FSRA</td></tr><tr><td>Mbongiseni Nkambule</td><td>General Manager, Prudential Supervision</td></tr><tr><td>Nontokozo Zwane</td><td>Manager, Prudential Supervision</td></tr><tr><td>Manqoba Shabangu</td><td>Manager, Prudential Supervision</td></tr><tr><td>Mathale&#x27;a Lukhele</td><td>Manager, Research and Statistics</td></tr><tr><td>Velemseni Tsabedze</td><td>Senior Research Analyst</td></tr><tr><td>Sydney Hlophe</td><td>Senior Financial Analyst - Retirement Funds</td></tr><tr><td>Nolwazi Tsabedze</td><td>Senior Financial Analyst - Insurance</td></tr><tr><td>Tanele Dlamini</td><td>Senior Financial Analyst - Credit and Savings Institutions</td></tr><tr><td>Mbalenhle Mdluli</td><td>Financial Analyst - Retirement Funds</td></tr><tr><td>Sifiso Ngwenya</td><td>Research Analyst</td></tr><tr><td>Nombulelo Simelane</td><td>Research Analyst</td></tr><tr><td>Nokwanda Dlamini</td><td>Research Analyst</td></tr><tr><td>Siyanda Gumedze</td><td>Financial Analyst - Capital Markets</td></tr><tr><td>Tigcebile Maphalala</td><td>Financial Analyst - Credit Providers</td></tr><tr><td>Seluliwe Shiba</td><td>Financial Analyst - Credit Providers</td></tr><tr><td>Sikelela Motsa</td><td>Financial Analyst - Insurance</td></tr><tr><td>Simile Ntshalintshali</td><td>Financial Analyst - Insurance</td></tr><tr><td>Lindelwa Mangwe</td><td>Senior Financial Analyst - Capital</td></tr></table>

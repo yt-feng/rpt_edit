@@ -1,0 +1,4044 @@
+{
+    "pdf_info": [
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        70,
+                        123,
+                        120,
+                        136
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                70,
+                                123,
+                                120,
+                                136
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        70,
+                                        123,
+                                        120,
+                                        136
+                                    ],
+                                    "type": "text",
+                                    "content": "(26-2403)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        476,
+                        123,
+                        525,
+                        136
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                476,
+                                123,
+                                525,
+                                136
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        476,
+                                        123,
+                                        525,
+                                        136
+                                    ],
+                                    "type": "text",
+                                    "content": "Page: 1/4"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        142,
+                        188,
+                        155
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                142,
+                                188,
+                                155
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        142,
+                                        188,
+                                        155
+                                    ],
+                                    "type": "text",
+                                    "content": "Ministerial Conference"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        446,
+                        142,
+                        524,
+                        156
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                446,
+                                142,
+                                524,
+                                156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        446,
+                                        142,
+                                        524,
+                                        156
+                                    ],
+                                    "type": "text",
+                                    "content": "Original: English"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        154,
+                        172,
+                        166
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                154,
+                                172,
+                                166
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        154,
+                                        172,
+                                        166
+                                    ],
+                                    "type": "text",
+                                    "content": "Fourteenth Session"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        165,
+                        217,
+                        178
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                165,
+                                217,
+                                178
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        165,
+                                        217,
+                                        178
+                                    ],
+                                    "type": "text",
+                                    "content": "Yaoundé, 26-29 March 2026"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        150,
+                        216,
+                        443,
+                        245
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                150,
+                                216,
+                                443,
+                                245
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        150,
+                                        216,
+                                        443,
+                                        245
+                                    ],
+                                    "type": "text",
+                                    "content": "FOSSIL FUEL SUBSIDY REFORM (FFSR) INITIATIVE MINISTERIAL STATEMENT"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        68,
+                        258,
+                        525,
+                        305
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                258,
+                                525,
+                                305
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        258,
+                                        525,
+                                        305
+                                    ],
+                                    "type": "text",
+                                    "content": "The following communication, dated 26 March 2026, is being circulated at the request of the delegations of Albania; Chile; Colombia; Costa Rica; European Union; Fiji; Iceland; Liechtenstein; Moldova, Republic of; Montenegro; New Zealand; North Macedonia; Norway; Panama; Paraguay; Samoa; Switzerland; Tonga; United Kingdom; Uruguay; and Vanuatu."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        349,
+                        524,
+                        396
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                349,
+                                524,
+                                396
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        349,
+                                        524,
+                                        396
+                                    ],
+                                    "type": "text",
+                                    "content": "We, the Ministers representing the following WTO Members: Albania; Chile; Colombia; Costa Rica; European Union; Fiji; Iceland; Liechtenstein; Moldova, Republic of; Montenegro; New Zealand; North Macedonia; Norway; Panama; Paraguay; Samoa; Switzerland; Tonga; United Kingdom; Uruguay; and Vanuatu issue this statement:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        404,
+                        525,
+                        452
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                404,
+                                525,
+                                452
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        404,
+                                        525,
+                                        452
+                                    ],
+                                    "type": "text",
+                                    "content": "1. Recalling the WTO FFSR Initiative Joint Ministerial Statement issued at MC13 in Abu Dhabi (WT/MIN(24)/19 of 26 February 2024), as well as the commitments made internationally to fossil fuel subsidy reform under Sustainable Development Goal 12(c) of the 2030 Agenda, in the context of the Paris Agreement on Climate Change and by the G7, G20 and APEC Members;"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        460,
+                        524,
+                        485
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                460,
+                                524,
+                                485
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        460,
+                                        524,
+                                        485
+                                    ],
+                                    "type": "text",
+                                    "content": "2. Deeply concerned about the continued high levels of government support for fossil fuels, estimated in 2025 as at USD 0.92 trillion "
+                                },
+                                {
+                                    "bbox": [
+                                        68,
+                                        460,
+                                        524,
+                                        485
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{1}"
+                                },
+                                {
+                                    "bbox": [
+                                        68,
+                                        460,
+                                        524,
+                                        485
+                                    ],
+                                    "type": "text",
+                                    "content": " ;"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        493,
+                        525,
+                        530
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                493,
+                                525,
+                                530
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        493,
+                                        525,
+                                        530
+                                    ],
+                                    "type": "text",
+                                    "content": "3. Recognising the contribution fossil fuel subsidy reform can play in continuing efforts to limit global temperature increases to 1.5 degrees above pre-industrial levels and lower climate-related risks, as well as to delivering wider trade, economic, social and environmental benefits;"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        539,
+                        525,
+                        563
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                539,
+                                525,
+                                563
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        539,
+                                        525,
+                                        563
+                                    ],
+                                    "type": "text",
+                                    "content": "4. Recalling the role trade can play as a powerful enabling force for progress to achieve sustainable development;"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        572,
+                        525,
+                        608
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                572,
+                                525,
+                                608
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        572,
+                                        525,
+                                        608
+                                    ],
+                                    "type": "text",
+                                    "content": "5. Building on the analytical work and constructive discussions held under the WTO FFSR Initiative in the period since the 13th WTO Ministerial Conference, Members of the WTO FFSR Initiative intend to;"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        618,
+                        525,
+                        664
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                618,
+                                525,
+                                664
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        618,
+                                        525,
+                                        664
+                                    ],
+                                    "type": "text",
+                                    "content": "6. Advance our work to achieve the rationalisation, phase out or elimination of harmful fossil fuel subsidies, including through use of existing mechanisms or the development of new pathways to reform, through continued pursuit of the programme of work adopted at MC13 (WT/MIN(24)/19 of 26 February 2024), under the following three pillars:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        96,
+                        673,
+                        255,
+                        687
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                96,
+                                673,
+                                255,
+                                687
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        96,
+                                        673,
+                                        255,
+                                        687
+                                    ],
+                                    "type": "text",
+                                    "content": "• A: Enhanced Transparency;"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 18,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        97,
+                        696,
+                        277,
+                        709
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                97,
+                                696,
+                                277,
+                                709
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        97,
+                                        696,
+                                        277,
+                                        709
+                                    ],
+                                    "type": "text",
+                                    "content": "• B: Crisis Support Measures; and"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 19,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        63,
+                        45,
+                        257,
+                        104
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                63,
+                                45,
+                                257,
+                                104
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        63,
+                                        45,
+                                        257,
+                                        104
+                                    ],
+                                    "type": "text",
+                                    "content": "WORLD TRADE\nORGANIZATION"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        436,
+                        58,
+                        524,
+                        71
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                436,
+                                58,
+                                524,
+                                71
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        436,
+                                        58,
+                                        524,
+                                        71
+                                    ],
+                                    "type": "text",
+                                    "content": "WT/MIN(26)/23"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "bbox": [
+                        452,
+                        101,
+                        524,
+                        114
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                452,
+                                101,
+                                524,
+                                114
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        452,
+                                        101,
+                                        524,
+                                        114
+                                    ],
+                                    "type": "text",
+                                    "content": "26 March 2026"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2
+                },
+                {
+                    "bbox": [
+                        69,
+                        748,
+                        494,
+                        770
+                    ],
+                    "type": "page_footnote",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                748,
+                                494,
+                                770
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        748,
+                                        494,
+                                        770
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{1}"
+                                },
+                                {
+                                    "bbox": [
+                                        69,
+                                        748,
+                                        494,
+                                        770
+                                    ],
+                                    "type": "text",
+                                    "content": "  Joint OECD-IEA estimate, OECD Inventory of Support Measures for Fossil Fuels 2025, published December 2025."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 20
+                }
+            ],
+            "page_size": [
+                595,
+                841
+            ],
+            "page_idx": 0,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        70,
+                        123,
+                        120,
+                        136
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                70,
+                                123,
+                                120,
+                                136
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        70,
+                                        123,
+                                        120,
+                                        136
+                                    ],
+                                    "type": "text",
+                                    "content": "(26-2403)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        476,
+                        123,
+                        525,
+                        136
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                476,
+                                123,
+                                525,
+                                136
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        476,
+                                        123,
+                                        525,
+                                        136
+                                    ],
+                                    "type": "text",
+                                    "content": "Page: 1/4"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        142,
+                        188,
+                        155
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                142,
+                                188,
+                                155
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        142,
+                                        188,
+                                        155
+                                    ],
+                                    "type": "text",
+                                    "content": "Ministerial Conference"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        446,
+                        142,
+                        524,
+                        156
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                446,
+                                142,
+                                524,
+                                156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        446,
+                                        142,
+                                        524,
+                                        156
+                                    ],
+                                    "type": "text",
+                                    "content": "Original: English"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        154,
+                        172,
+                        166
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                154,
+                                172,
+                                166
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        154,
+                                        172,
+                                        166
+                                    ],
+                                    "type": "text",
+                                    "content": "Fourteenth Session"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        165,
+                        217,
+                        178
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                165,
+                                217,
+                                178
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        165,
+                                        217,
+                                        178
+                                    ],
+                                    "type": "text",
+                                    "content": "Yaoundé, 26-29 March 2026"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        150,
+                        216,
+                        443,
+                        245
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                150,
+                                216,
+                                443,
+                                245
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        150,
+                                        216,
+                                        443,
+                                        245
+                                    ],
+                                    "type": "text",
+                                    "content": "FOSSIL FUEL SUBSIDY REFORM (FFSR) INITIATIVE MINISTERIAL STATEMENT"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        68,
+                        258,
+                        525,
+                        305
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                258,
+                                525,
+                                305
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        258,
+                                        525,
+                                        305
+                                    ],
+                                    "type": "text",
+                                    "content": "The following communication, dated 26 March 2026, is being circulated at the request of the delegations of Albania; Chile; Colombia; Costa Rica; European Union; Fiji; Iceland; Liechtenstein; Moldova, Republic of; Montenegro; New Zealand; North Macedonia; Norway; Panama; Paraguay; Samoa; Switzerland; Tonga; United Kingdom; Uruguay; and Vanuatu."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        349,
+                        524,
+                        396
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                349,
+                                524,
+                                396
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        349,
+                                        524,
+                                        396
+                                    ],
+                                    "type": "text",
+                                    "content": "We, the Ministers representing the following WTO Members: Albania; Chile; Colombia; Costa Rica; European Union; Fiji; Iceland; Liechtenstein; Moldova, Republic of; Montenegro; New Zealand; North Macedonia; Norway; Panama; Paraguay; Samoa; Switzerland; Tonga; United Kingdom; Uruguay; and Vanuatu issue this statement:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        404,
+                        525,
+                        452
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                404,
+                                525,
+                                452
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        404,
+                                        525,
+                                        452
+                                    ],
+                                    "type": "text",
+                                    "content": "1. Recalling the WTO FFSR Initiative Joint Ministerial Statement issued at MC13 in Abu Dhabi (WT/MIN(24)/19 of 26 February 2024), as well as the commitments made internationally to fossil fuel subsidy reform under Sustainable Development Goal 12(c) of the 2030 Agenda, in the context of the Paris Agreement on Climate Change and by the G7, G20 and APEC Members;"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        460,
+                        524,
+                        485
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                460,
+                                524,
+                                485
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        460,
+                                        524,
+                                        485
+                                    ],
+                                    "type": "text",
+                                    "content": "2. Deeply concerned about the continued high levels of government support for fossil fuels, estimated in 2025 as at USD 0.92 trillion "
+                                },
+                                {
+                                    "bbox": [
+                                        68,
+                                        460,
+                                        524,
+                                        485
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{1}"
+                                },
+                                {
+                                    "bbox": [
+                                        68,
+                                        460,
+                                        524,
+                                        485
+                                    ],
+                                    "type": "text",
+                                    "content": " ;"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        493,
+                        525,
+                        530
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                493,
+                                525,
+                                530
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        493,
+                                        525,
+                                        530
+                                    ],
+                                    "type": "text",
+                                    "content": "3. Recognising the contribution fossil fuel subsidy reform can play in continuing efforts to limit global temperature increases to 1.5 degrees above pre-industrial levels and lower climate-related risks, as well as to delivering wider trade, economic, social and environmental benefits;"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        539,
+                        525,
+                        563
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                539,
+                                525,
+                                563
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        539,
+                                        525,
+                                        563
+                                    ],
+                                    "type": "text",
+                                    "content": "4. Recalling the role trade can play as a powerful enabling force for progress to achieve sustainable development;"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        572,
+                        525,
+                        608
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                572,
+                                525,
+                                608
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        572,
+                                        525,
+                                        608
+                                    ],
+                                    "type": "text",
+                                    "content": "5. Building on the analytical work and constructive discussions held under the WTO FFSR Initiative in the period since the 13th WTO Ministerial Conference, Members of the WTO FFSR Initiative intend to;"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        67,
+                        618,
+                        525,
+                        664
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                618,
+                                525,
+                                664
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        618,
+                                        525,
+                                        664
+                                    ],
+                                    "type": "text",
+                                    "content": "6. Advance our work to achieve the rationalisation, phase out or elimination of harmful fossil fuel subsidies, including through use of existing mechanisms or the development of new pathways to reform, through continued pursuit of the programme of work adopted at MC13 (WT/MIN(24)/19 of 26 February 2024), under the following three pillars:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        96,
+                        673,
+                        255,
+                        687
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                96,
+                                673,
+                                255,
+                                687
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        96,
+                                        673,
+                                        255,
+                                        687
+                                    ],
+                                    "type": "text",
+                                    "content": "• A: Enhanced Transparency;"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 18,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        97,
+                        696,
+                        277,
+                        709
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                97,
+                                696,
+                                277,
+                                709
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        97,
+                                        696,
+                                        277,
+                                        709
+                                    ],
+                                    "type": "text",
+                                    "content": "• B: Crisis Support Measures; and"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 19,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        96,
+                        84,
+                        403,
+                        96
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                96,
+                                84,
+                                403,
+                                96
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        96,
+                                        84,
+                                        403,
+                                        96
+                                    ],
+                                    "type": "text",
+                                    "content": "• C: Identifying and Addressing Harmful Fossil Fuel Subsidies."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        107,
+                        423,
+                        119
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                107,
+                                423,
+                                119
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        107,
+                                        423,
+                                        119
+                                    ],
+                                    "type": "text",
+                                    "content": "7. We adopt the following outputs from the WTO FFFSR Initiative to date:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        97,
+                        131,
+                        293,
+                        142
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                97,
+                                131,
+                                293,
+                                142
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        97,
+                                        131,
+                                        293,
+                                        142
+                                    ],
+                                    "type": "text",
+                                    "content": "- Pillar One – Enhanced Transparency"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        125,
+                        153,
+                        524,
+                        176
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                125,
+                                153,
+                                524,
+                                176
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        125,
+                                        153,
+                                        524,
+                                        176
+                                    ],
+                                    "type": "text",
+                                    "content": "- updated non-exhaustive list of sample questions on fossil fuel subsidies and fossil fuel subsidy reform for regular use in WTO Trade Policy Reviews (Annex I); and"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        97,
+                        188,
+                        308,
+                        199
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                97,
+                                188,
+                                308,
+                                199
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        97,
+                                        188,
+                                        308,
+                                        199
+                                    ],
+                                    "type": "text",
+                                    "content": "• Pillar Two – Temporary Crisis Measures"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        126,
+                        211,
+                        524,
+                        233
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                126,
+                                211,
+                                524,
+                                233
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        126,
+                                        211,
+                                        524,
+                                        233
+                                    ],
+                                    "type": "text",
+                                    "content": "guidelines for designing transparent, targeted and temporary fossil fuel subsidy measures in response to energy crises (Annex II)."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        244,
+                        524,
+                        267
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                244,
+                                524,
+                                267
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        244,
+                                        524,
+                                        267
+                                    ],
+                                    "type": "text",
+                                    "content": "8. Ministers take note of the progress report WT/MIN(26)/24 by the coordinator on work undertaken within the WTO FFSR Initiative since MC13."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        260,
+                        35,
+                        334,
+                        47
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                260,
+                                35,
+                                334,
+                                47
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        260,
+                                        35,
+                                        334,
+                                        47
+                                    ],
+                                    "type": "text",
+                                    "content": "WT/MIN(26)/23"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        292,
+                        59,
+                        302,
+                        68
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                292,
+                                59,
+                                302,
+                                68
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        292,
+                                        59,
+                                        302,
+                                        68
+                                    ],
+                                    "type": "text",
+                                    "content": "2"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1
+                }
+            ],
+            "page_size": [
+                595,
+                841
+            ],
+            "page_idx": 1,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        96,
+                        84,
+                        403,
+                        96
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                96,
+                                84,
+                                403,
+                                96
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        96,
+                                        84,
+                                        403,
+                                        96
+                                    ],
+                                    "type": "text",
+                                    "content": "• C: Identifying and Addressing Harmful Fossil Fuel Subsidies."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        107,
+                        423,
+                        119
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                107,
+                                423,
+                                119
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        107,
+                                        423,
+                                        119
+                                    ],
+                                    "type": "text",
+                                    "content": "7. We adopt the following outputs from the WTO FFFSR Initiative to date:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        97,
+                        131,
+                        293,
+                        142
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                97,
+                                131,
+                                293,
+                                142
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        97,
+                                        131,
+                                        293,
+                                        142
+                                    ],
+                                    "type": "text",
+                                    "content": "- Pillar One – Enhanced Transparency"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        125,
+                        153,
+                        524,
+                        176
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                125,
+                                153,
+                                524,
+                                176
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        125,
+                                        153,
+                                        524,
+                                        176
+                                    ],
+                                    "type": "text",
+                                    "content": "- updated non-exhaustive list of sample questions on fossil fuel subsidies and fossil fuel subsidy reform for regular use in WTO Trade Policy Reviews (Annex I); and"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        97,
+                        188,
+                        308,
+                        199
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                97,
+                                188,
+                                308,
+                                199
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        97,
+                                        188,
+                                        308,
+                                        199
+                                    ],
+                                    "type": "text",
+                                    "content": "• Pillar Two – Temporary Crisis Measures"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        126,
+                        211,
+                        524,
+                        233
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                126,
+                                211,
+                                524,
+                                233
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        126,
+                                        211,
+                                        524,
+                                        233
+                                    ],
+                                    "type": "text",
+                                    "content": "guidelines for designing transparent, targeted and temporary fossil fuel subsidy measures in response to energy crises (Annex II)."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        244,
+                        524,
+                        267
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                244,
+                                524,
+                                267
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        244,
+                                        524,
+                                        267
+                                    ],
+                                    "type": "text",
+                                    "content": "8. Ministers take note of the progress report WT/MIN(26)/24 by the coordinator on work undertaken within the WTO FFSR Initiative since MC13."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        273,
+                        84,
+                        321,
+                        95
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                273,
+                                84,
+                                321,
+                                95
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        273,
+                                        84,
+                                        321,
+                                        95
+                                    ],
+                                    "type": "text",
+                                    "content": "ANNEX I"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        138,
+                        109,
+                        455,
+                        143
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                138,
+                                109,
+                                455,
+                                143
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        138,
+                                        109,
+                                        455,
+                                        143
+                                    ],
+                                    "type": "text",
+                                    "content": "UPDATED NON-EXHAUSTIVE LIST OF SAMPLE QUESTIONS ON FOSSIL FUEL SUBSIDIES AND FOSSIL FUEL SUBSIDY REFORM FOR REGULAR USE IN WTO TRADE POLICY REVIEWS"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        68,
+                        154,
+                        525,
+                        211
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                154,
+                                525,
+                                211
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        154,
+                                        525,
+                                        211
+                                    ],
+                                    "type": "text",
+                                    "content": "As part of efforts to promote enhanced transparency in relation to fossil fuel subsidies and fossil fuel subsidy reform, the co-sponsors of the WTO Fossil Fuel Subsidy Reform Initiative have developed the following updated non-exhaustive list of sample questions. They are intended for use, on a voluntary basis, to guide the preparation of information for and engagement with other Members on these issues in WTO Trade Policy Reviews."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        221,
+                        413,
+                        233
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                221,
+                                413,
+                                233
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        221,
+                                        413,
+                                        233
+                                    ],
+                                    "type": "text",
+                                    "content": "Information about existing or planned fossil fuel subsidy measures"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        69,
+                        243,
+                        525,
+                        333
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                243,
+                                525,
+                                333
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        243,
+                                        525,
+                                        333
+                                    ],
+                                    "type": "text",
+                                    "content": "1. Noting the commitment made to fossil fuel subsidy reform under SDG 12(c) of the UN 2030 Agenda, could [WTO Member under review] please provide information about the nature, extent, policy objectives, design, beneficiaries, and implementation of any programmes or schemes, existing or under consideration, that support the production or consumption of fossil fuels? (Where information is provided, but is incomplete: could [WTO Member under review] please provide more information about the programmes or schemes that support the production or consumption of fossil fuels discussed in [the Member's TPR report], or any others that may be under consideration?)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        342,
+                        525,
+                        367
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                342,
+                                525,
+                                367
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        342,
+                                        525,
+                                        367
+                                    ],
+                                    "type": "text",
+                                    "content": "2. What was [WTO Member under review]'s response to the 2021 energy crisis in terms of temporary measures that support the production or consumption of fossil fuels?"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        376,
+                        474,
+                        390
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                376,
+                                474,
+                                390
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        376,
+                                        474,
+                                        390
+                                    ],
+                                    "type": "text",
+                                    "content": "Information about current and planned reforms of fossil fuel subsidy measures"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        400,
+                        525,
+                        502
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                400,
+                                525,
+                                502
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        400,
+                                        525,
+                                        502
+                                    ],
+                                    "type": "text",
+                                    "content": "1. How is [WTO Member under review] implementing commitments to accelerate efforts to rationalize and phase out harmful fossil fuel subsidies agreed at recent UNFCCC COPs and in line with UN Sustainable Development Goal 12(c)? What steps have been taken to ensure any remaining subsidies, where they exist, deliver on the objectives of UN SDG 12(c)? For G20 Members: What steps has [WTO Member under review] undertaken to abide by its G20 commitment to phase out inefficient fossil fuel subsidies, and what steps are planned to implement this phase-out? (If information about FFSR has been provided: could [WTO Member under review] please provide more details about its experiences with reforming and phasing out programmes supporting the production or consumption of fossil fuels?)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        510,
+                        525,
+                        545
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                510,
+                                525,
+                                545
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        510,
+                                        525,
+                                        545
+                                    ],
+                                    "type": "text",
+                                    "content": "2. What steps has [WTO Member under review] taken to phase out any temporary measures in support of the production or consumption of fossil fuels adopted in response to the 2021 energy crisis?"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        555,
+                        368,
+                        567
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                555,
+                                368,
+                                567
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        555,
+                                        368,
+                                        567
+                                    ],
+                                    "type": "text",
+                                    "content": "Information about impacts of fossil fuel subsidy measures"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        69,
+                        577,
+                        525,
+                        613
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                577,
+                                525,
+                                613
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        577,
+                                        525,
+                                        613
+                                    ],
+                                    "type": "text",
+                                    "content": "1. Has [WTO Member under review] undertaken recent analysis of the economic, social and environmental impacts of fossil fuel subsidies it applies, including on different beneficiary groups, and what have been the findings?"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        622,
+                        525,
+                        657
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                622,
+                                525,
+                                657
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        622,
+                                        525,
+                                        657
+                                    ],
+                                    "type": "text",
+                                    "content": "2. Could [WTO Member under review] please provide information on the impact of fossil fuel subsidies on the actual costs paid domestically for fuel, on any frameworks used to review or assess the efficiency of particular subsidies and on the government's budget?"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        667,
+                        525,
+                        713
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                667,
+                                525,
+                                713
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        667,
+                                        525,
+                                        713
+                                    ],
+                                    "type": "text",
+                                    "content": "3. In the context of fossil fuel subsidy reforms, what actions are being taken to ensure more effective targeting towards and/or mitigate the effects on vulnerable groups? What factors (for example remote location, climate conditions) are taken into account in determining vulnerable groups?"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        260,
+                        35,
+                        334,
+                        47
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                260,
+                                35,
+                                334,
+                                47
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        260,
+                                        35,
+                                        334,
+                                        47
+                                    ],
+                                    "type": "text",
+                                    "content": "WT/MIN(26)/23"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        292,
+                        58,
+                        302,
+                        68
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                292,
+                                58,
+                                302,
+                                68
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        292,
+                                        58,
+                                        302,
+                                        68
+                                    ],
+                                    "type": "text",
+                                    "content": "3"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1
+                }
+            ],
+            "page_size": [
+                595,
+                841
+            ],
+            "page_idx": 2,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        273,
+                        84,
+                        321,
+                        95
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                273,
+                                84,
+                                321,
+                                95
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        273,
+                                        84,
+                                        321,
+                                        95
+                                    ],
+                                    "type": "text",
+                                    "content": "ANNEX I"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        138,
+                        109,
+                        455,
+                        143
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                138,
+                                109,
+                                455,
+                                143
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        138,
+                                        109,
+                                        455,
+                                        143
+                                    ],
+                                    "type": "text",
+                                    "content": "UPDATED NON-EXHAUSTIVE LIST OF SAMPLE QUESTIONS ON FOSSIL FUEL SUBSIDIES AND FOSSIL FUEL SUBSIDY REFORM FOR REGULAR USE IN WTO TRADE POLICY REVIEWS"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        68,
+                        154,
+                        525,
+                        211
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                154,
+                                525,
+                                211
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        154,
+                                        525,
+                                        211
+                                    ],
+                                    "type": "text",
+                                    "content": "As part of efforts to promote enhanced transparency in relation to fossil fuel subsidies and fossil fuel subsidy reform, the co-sponsors of the WTO Fossil Fuel Subsidy Reform Initiative have developed the following updated non-exhaustive list of sample questions. They are intended for use, on a voluntary basis, to guide the preparation of information for and engagement with other Members on these issues in WTO Trade Policy Reviews."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        221,
+                        413,
+                        233
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                221,
+                                413,
+                                233
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        221,
+                                        413,
+                                        233
+                                    ],
+                                    "type": "text",
+                                    "content": "Information about existing or planned fossil fuel subsidy measures"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        69,
+                        243,
+                        525,
+                        333
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                243,
+                                525,
+                                333
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        243,
+                                        525,
+                                        333
+                                    ],
+                                    "type": "text",
+                                    "content": "1. Noting the commitment made to fossil fuel subsidy reform under SDG 12(c) of the UN 2030 Agenda, could [WTO Member under review] please provide information about the nature, extent, policy objectives, design, beneficiaries, and implementation of any programmes or schemes, existing or under consideration, that support the production or consumption of fossil fuels? (Where information is provided, but is incomplete: could [WTO Member under review] please provide more information about the programmes or schemes that support the production or consumption of fossil fuels discussed in [the Member's TPR report], or any others that may be under consideration?)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        342,
+                        525,
+                        367
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                342,
+                                525,
+                                367
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        342,
+                                        525,
+                                        367
+                                    ],
+                                    "type": "text",
+                                    "content": "2. What was [WTO Member under review]'s response to the 2021 energy crisis in terms of temporary measures that support the production or consumption of fossil fuels?"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        376,
+                        474,
+                        390
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                376,
+                                474,
+                                390
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        376,
+                                        474,
+                                        390
+                                    ],
+                                    "type": "text",
+                                    "content": "Information about current and planned reforms of fossil fuel subsidy measures"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        400,
+                        525,
+                        502
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                400,
+                                525,
+                                502
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        400,
+                                        525,
+                                        502
+                                    ],
+                                    "type": "text",
+                                    "content": "1. How is [WTO Member under review] implementing commitments to accelerate efforts to rationalize and phase out harmful fossil fuel subsidies agreed at recent UNFCCC COPs and in line with UN Sustainable Development Goal 12(c)? What steps have been taken to ensure any remaining subsidies, where they exist, deliver on the objectives of UN SDG 12(c)? For G20 Members: What steps has [WTO Member under review] undertaken to abide by its G20 commitment to phase out inefficient fossil fuel subsidies, and what steps are planned to implement this phase-out? (If information about FFSR has been provided: could [WTO Member under review] please provide more details about its experiences with reforming and phasing out programmes supporting the production or consumption of fossil fuels?)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        510,
+                        525,
+                        545
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                510,
+                                525,
+                                545
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        510,
+                                        525,
+                                        545
+                                    ],
+                                    "type": "text",
+                                    "content": "2. What steps has [WTO Member under review] taken to phase out any temporary measures in support of the production or consumption of fossil fuels adopted in response to the 2021 energy crisis?"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        555,
+                        368,
+                        567
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                555,
+                                368,
+                                567
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        555,
+                                        368,
+                                        567
+                                    ],
+                                    "type": "text",
+                                    "content": "Information about impacts of fossil fuel subsidy measures"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        69,
+                        577,
+                        525,
+                        613
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                577,
+                                525,
+                                613
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        577,
+                                        525,
+                                        613
+                                    ],
+                                    "type": "text",
+                                    "content": "1. Has [WTO Member under review] undertaken recent analysis of the economic, social and environmental impacts of fossil fuel subsidies it applies, including on different beneficiary groups, and what have been the findings?"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        622,
+                        525,
+                        657
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                622,
+                                525,
+                                657
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        622,
+                                        525,
+                                        657
+                                    ],
+                                    "type": "text",
+                                    "content": "2. Could [WTO Member under review] please provide information on the impact of fossil fuel subsidies on the actual costs paid domestically for fuel, on any frameworks used to review or assess the efficiency of particular subsidies and on the government's budget?"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        667,
+                        525,
+                        713
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                667,
+                                525,
+                                713
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        667,
+                                        525,
+                                        713
+                                    ],
+                                    "type": "text",
+                                    "content": "3. In the context of fossil fuel subsidy reforms, what actions are being taken to ensure more effective targeting towards and/or mitigate the effects on vulnerable groups? What factors (for example remote location, climate conditions) are taken into account in determining vulnerable groups?"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        271,
+                        84,
+                        323,
+                        95
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                271,
+                                84,
+                                323,
+                                95
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        271,
+                                        84,
+                                        323,
+                                        95
+                                    ],
+                                    "type": "text",
+                                    "content": "ANNEX II"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        85,
+                        109,
+                        507,
+                        132
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                109,
+                                507,
+                                132
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        109,
+                                        507,
+                                        132
+                                    ],
+                                    "type": "text",
+                                    "content": "GUIDELINES FOR DESIGNING TRANSPARENT, TARGETED AND TEMPORARY FOSSIL FUEL SUBSIDY MEASURES IN RESPONSE TO ENERGY CRISES"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        69,
+                        143,
+                        136,
+                        155
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                143,
+                                136,
+                                155
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        143,
+                                        136,
+                                        155
+                                    ],
+                                    "type": "text",
+                                    "content": "Transparent"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        166,
+                        524,
+                        200
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                166,
+                                524,
+                                200
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        166,
+                                        524,
+                                        200
+                                    ],
+                                    "type": "text",
+                                    "content": "- Follow good regulatory practice in the development and publication of measures, including through use of existing transparency mechanisms, and with due regard to relevant WTO notification requirements."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        211,
+                        525,
+                        235
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                211,
+                                525,
+                                235
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        211,
+                                        525,
+                                        235
+                                    ],
+                                    "type": "text",
+                                    "content": "- Communicate clearly the rationale, approach and nature of such measures - including that they are intended to be temporary only - to all interested stakeholders."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        245,
+                        119,
+                        257
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                245,
+                                119,
+                                257
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        245,
+                                        119,
+                                        257
+                                    ],
+                                    "type": "text",
+                                    "content": "Targeted"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        268,
+                        524,
+                        290
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                268,
+                                524,
+                                290
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        268,
+                                        524,
+                                        290
+                                    ],
+                                    "type": "text",
+                                    "content": "- Ensure a clear focus on most affected stakeholders (e.g. poorest or most vulnerable households)."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        301,
+                        524,
+                        326
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                301,
+                                524,
+                                326
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        301,
+                                        524,
+                                        326
+                                    ],
+                                    "type": "text",
+                                    "content": "- Avoid untargeted fossil fuel subsidies that distort the cost of fossil fuels in comparison to alternatives, are economically inefficient and impose high fiscal costs."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        335,
+                        525,
+                        370
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                335,
+                                525,
+                                370
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        335,
+                                        525,
+                                        370
+                                    ],
+                                    "type": "text",
+                                    "content": "- Consider alternative measures, including support for the just transition and clean energy sources, income support and other energy-neutral support measures, to deliver most efficient and effective targeting of temporary measures."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        380,
+                        524,
+                        415
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                380,
+                                524,
+                                415
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        380,
+                                        524,
+                                        415
+                                    ],
+                                    "type": "text",
+                                    "content": "- Examine ways to boost the energy transition, including through support for clean energy sources promoting energy efficiency and conservation, to enhance longer-term energy security, including for the most vulnerable population groups."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        426,
+                        128,
+                        438
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                426,
+                                128,
+                                438
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        426,
+                                        128,
+                                        438
+                                    ],
+                                    "type": "text",
+                                    "content": "Temporary"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        69,
+                        448,
+                        374,
+                        460
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                448,
+                                374,
+                                460
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        448,
+                                        374,
+                                        460
+                                    ],
+                                    "type": "text",
+                                    "content": "• Make such crisis support measures temporary, including by:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        96,
+                        470,
+                        525,
+                        495
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                96,
+                                470,
+                                525,
+                                495
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        96,
+                                        470,
+                                        525,
+                                        495
+                                    ],
+                                    "type": "text",
+                                    "content": "- setting limited timeframes, with clear end-dates (these could be supplemented, if needed, by clear criteria for consideration of any extension to these timeframes);"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        97,
+                        504,
+                        500,
+                        518
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                97,
+                                504,
+                                500,
+                                518
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        97,
+                                        504,
+                                        500,
+                                        518
+                                    ],
+                                    "type": "text",
+                                    "content": "• building in regular review clauses and/or sunset clauses, unless already provided;"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        97,
+                        528,
+                        524,
+                        550
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                97,
+                                528,
+                                524,
+                                550
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        97,
+                                        528,
+                                        524,
+                                        550
+                                    ],
+                                    "type": "text",
+                                    "content": "• incorporating built-in transition mechanisms to ensure smooth and progressive adaptation if applicable."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        561,
+                        524,
+                        596
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                561,
+                                524,
+                                596
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        561,
+                                        524,
+                                        596
+                                    ],
+                                    "type": "text",
+                                    "content": "- Consider the most efficient and effective ways to phase out such temporary measures, including starting with the least targeted ones, and continuing to refine the targeting of any remaining measures to facilitate their subsequent removal as well."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        260,
+                        35,
+                        334,
+                        47
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                260,
+                                35,
+                                334,
+                                47
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        260,
+                                        35,
+                                        334,
+                                        47
+                                    ],
+                                    "type": "text",
+                                    "content": "WT/MIN(26)/23"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        292,
+                        59,
+                        302,
+                        68
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                292,
+                                59,
+                                302,
+                                68
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        292,
+                                        59,
+                                        302,
+                                        68
+                                    ],
+                                    "type": "text",
+                                    "content": "4"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1
+                }
+            ],
+            "page_size": [
+                595,
+                841
+            ],
+            "page_idx": 3,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        271,
+                        84,
+                        323,
+                        95
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                271,
+                                84,
+                                323,
+                                95
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        271,
+                                        84,
+                                        323,
+                                        95
+                                    ],
+                                    "type": "text",
+                                    "content": "ANNEX II"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        85,
+                        109,
+                        507,
+                        132
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                109,
+                                507,
+                                132
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        109,
+                                        507,
+                                        132
+                                    ],
+                                    "type": "text",
+                                    "content": "GUIDELINES FOR DESIGNING TRANSPARENT, TARGETED AND TEMPORARY FOSSIL FUEL SUBSIDY MEASURES IN RESPONSE TO ENERGY CRISES"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        69,
+                        143,
+                        136,
+                        155
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                143,
+                                136,
+                                155
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        143,
+                                        136,
+                                        155
+                                    ],
+                                    "type": "text",
+                                    "content": "Transparent"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        166,
+                        524,
+                        200
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                166,
+                                524,
+                                200
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        166,
+                                        524,
+                                        200
+                                    ],
+                                    "type": "text",
+                                    "content": "- Follow good regulatory practice in the development and publication of measures, including through use of existing transparency mechanisms, and with due regard to relevant WTO notification requirements."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        211,
+                        525,
+                        235
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                211,
+                                525,
+                                235
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        211,
+                                        525,
+                                        235
+                                    ],
+                                    "type": "text",
+                                    "content": "- Communicate clearly the rationale, approach and nature of such measures - including that they are intended to be temporary only - to all interested stakeholders."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        245,
+                        119,
+                        257
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                245,
+                                119,
+                                257
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        245,
+                                        119,
+                                        257
+                                    ],
+                                    "type": "text",
+                                    "content": "Targeted"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        68,
+                        268,
+                        524,
+                        290
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                268,
+                                524,
+                                290
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        268,
+                                        524,
+                                        290
+                                    ],
+                                    "type": "text",
+                                    "content": "- Ensure a clear focus on most affected stakeholders (e.g. poorest or most vulnerable households)."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        301,
+                        524,
+                        326
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                301,
+                                524,
+                                326
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        301,
+                                        524,
+                                        326
+                                    ],
+                                    "type": "text",
+                                    "content": "- Avoid untargeted fossil fuel subsidies that distort the cost of fossil fuels in comparison to alternatives, are economically inefficient and impose high fiscal costs."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        335,
+                        525,
+                        370
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                335,
+                                525,
+                                370
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        335,
+                                        525,
+                                        370
+                                    ],
+                                    "type": "text",
+                                    "content": "- Consider alternative measures, including support for the just transition and clean energy sources, income support and other energy-neutral support measures, to deliver most efficient and effective targeting of temporary measures."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        68,
+                        380,
+                        524,
+                        415
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                68,
+                                380,
+                                524,
+                                415
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        68,
+                                        380,
+                                        524,
+                                        415
+                                    ],
+                                    "type": "text",
+                                    "content": "- Examine ways to boost the energy transition, including through support for clean energy sources promoting energy efficiency and conservation, to enhance longer-term energy security, including for the most vulnerable population groups."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        426,
+                        128,
+                        438
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                426,
+                                128,
+                                438
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        426,
+                                        128,
+                                        438
+                                    ],
+                                    "type": "text",
+                                    "content": "Temporary"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        69,
+                        448,
+                        374,
+                        460
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                448,
+                                374,
+                                460
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        448,
+                                        374,
+                                        460
+                                    ],
+                                    "type": "text",
+                                    "content": "• Make such crisis support measures temporary, including by:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        96,
+                        470,
+                        525,
+                        495
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                96,
+                                470,
+                                525,
+                                495
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        96,
+                                        470,
+                                        525,
+                                        495
+                                    ],
+                                    "type": "text",
+                                    "content": "- setting limited timeframes, with clear end-dates (these could be supplemented, if needed, by clear criteria for consideration of any extension to these timeframes);"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        97,
+                        504,
+                        500,
+                        518
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                97,
+                                504,
+                                500,
+                                518
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        97,
+                                        504,
+                                        500,
+                                        518
+                                    ],
+                                    "type": "text",
+                                    "content": "• building in regular review clauses and/or sunset clauses, unless already provided;"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        97,
+                        528,
+                        524,
+                        550
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                97,
+                                528,
+                                524,
+                                550
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        97,
+                                        528,
+                                        524,
+                                        550
+                                    ],
+                                    "type": "text",
+                                    "content": "• incorporating built-in transition mechanisms to ensure smooth and progressive adaptation if applicable."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        69,
+                        561,
+                        524,
+                        596
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                561,
+                                524,
+                                596
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        561,
+                                        524,
+                                        596
+                                    ],
+                                    "type": "text",
+                                    "content": "- Consider the most efficient and effective ways to phase out such temporary measures, including starting with the least targeted ones, and continuing to refine the targeting of any remaining measures to facilitate their subsequent removal as well."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17,
+                    "merge_prev": false
+                }
+            ]
+        }
+    ],
+    "_backend": "hybrid",
+    "_effort": "medium",
+    "_ocr_enable": true,
+    "_version_name": "3.4.0"
+}

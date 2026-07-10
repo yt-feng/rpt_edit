@@ -1,0 +1,2786 @@
+[
+    {
+        "type": "text",
+        "text": "TECHNICAL ASSISTANCE REPORT",
+        "text_level": 1,
+        "bbox": [
+            140,
+            233,
+            751,
+            314
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "IRAQ",
+        "bbox": [
+            143,
+            396,
+            264,
+            431
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Macro Frameworks Technical Assistance to the Central Bank of Iraq",
+        "text_level": 1,
+        "bbox": [
+            140,
+            435,
+            846,
+            505
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "July 2025",
+        "bbox": [
+            140,
+            520,
+            264,
+            546
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Prepared By",
+        "bbox": [
+            142,
+            602,
+            254,
+            622
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Yurii Sholomytskyi, Mumtaz Hussain, Stephanie Medina Cas",
+        "bbox": [
+            140,
+            619,
+            635,
+            641
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Authoring Departments/Institutions:",
+        "bbox": [
+            143,
+            739,
+            431,
+            758
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Institute for Capacity Development",
+        "bbox": [
+            143,
+            762,
+            651,
+            791
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            145,
+            116,
+            267,
+            213
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "© 2026 International Monetary Fund",
+        "bbox": [
+            112,
+            89,
+            380,
+            106
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The contents of this document constitute technical advice provided by the staff of the International Monetary Fund to the authorities of the Central bank of Iraq (the \"CD recipient\") in response to their request for technical assistance. Unless the CD recipient specifically objects to such disclosure, this document (in whole or in part) or summaries thereof may be disclosed by the IMF to the IMF Executive Director for Iraq, to other IMF Executive Directors and members of their staff, as well as to other agencies or instrumentalities of the CD recipient, and upon their request, to World Bank staff, and other technical assistance providers and donors with legitimate interest members of the Steering Committee of METAC (see Staff Operational Guidance on the Dissemination of Capacity Development Information). Publication or Disclosure of this report (in whole or in part) to parties outside the IMF other than agencies or instrumentalities of the CD recipient, World Bank staff, other technical assistance providers and donors with legitimate interest members of the Steering Committee of METAC shall require the explicit consent of the CD recipient and the IMF's ICD department.",
+        "bbox": [
+            111,
+            364,
+            885,
+            670
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The analysis and policy considerations expressed in this publication are those of Institute for Capacity Development.",
+        "bbox": [
+            111,
+            685,
+            883,
+            727
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "International Monetary Fund, IMF Publications\nP.O. Box 92780, Washington, DC 20090, U.S.A.\nT. +(1) 202.623.7430 • F. +(1) 202.623.7201\npublications@IMF.org\nIMF.org/pubs",
+        "bbox": [
+            284,
+            780,
+            707,
+            888
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Acknowledgments",
+        "text_level": 2,
+        "bbox": [
+            112,
+            92,
+            406,
+            119
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "METAC",
+        "text_level": 2,
+        "bbox": [
+            114,
+            157,
+            189,
+            174
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/df66246473b8ae388a6a8a3eb7642678f688463efdad6d387d3497cea12952af.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            120,
+            198,
+            230,
+            281
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "We would like to express our gratitude to METAC for their support, which has enabled the increased team size for in-person missions and facilitated a more comprehensive and productive approach to integrating the macro frameworks tools into Iraq's policy framework.",
+        "bbox": [
+            243,
+            193,
+            883,
+            279
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            114,
+            955,
+            151,
+            970
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            671,
+            957,
+            859,
+            970
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            870,
+            958,
+            883,
+            970
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Table of Contents",
+        "text_level": 2,
+        "bbox": [
+            115,
+            87,
+            361,
+            112
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Acknowledgments .... 3\nAcronyms and Abbreviations .... 56\nPreface .... 67\nExecutive Summary .... 78\nRecommendations .... 89\n1 Background .... 910\n2 Initiation of the technical assistance project .... 1041\n3 MFT features and customization .... 1243\nA. MFT features .... 1243\nB. MFT customization for the CBI.... 1344\nC. MFT core equations .... 1415\nD. Connecting high- and low frequency data .... 1748\n4 Policy analysis and forecasting with MFT .... 19\n5 TA challenges and risks .... 21\nA. Data .... 21\nB. Logistics .... 21\nC. Team turnover .... 21\nD. Operationalization of the MFT .... 22\nANNEX I. ACTION PLAN .... 23\nANNEX II: RESULTS FRAMEWORK .... 26",
+        "bbox": [
+            114,
+            139,
+            882,
+            695
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            117,
+            938,
+            154,
+            951
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            662,
+            938,
+            858,
+            952
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            867,
+            939,
+            878,
+            951
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Acronyms and Abbreviations",
+        "text_level": 2,
+        "bbox": [
+            115,
+            86,
+            495,
+            108
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/7ad2aaaffc0a524f968b36fb8280ed850a870d9257f85afc00b2506a9a039923.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>ICD</td><td>Institute for Capacity Development</td></tr><tr><td>CBI</td><td>Central Bank of Iraq</td></tr><tr><td>MFT</td><td>Macroeconomics Foundations Tool</td></tr><tr><td>TA</td><td>Technical Assistance</td></tr><tr><td>MCD</td><td>Middle East and Central Asia Department</td></tr><tr><td>METAC</td><td>Middle East Technical Assistance Center</td></tr><tr><td>GDP</td><td>Gross Domestic Product</td></tr><tr><td>CD</td><td>Capacity Development</td></tr><tr><td>CSO</td><td>Central Statistics Organization</td></tr></table>",
+        "bbox": [
+            112,
+            135,
+            668,
+            353
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "IMF",
+        "bbox": [
+            117,
+            936,
+            156,
+            951
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            662,
+            938,
+            857,
+            952
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            867,
+            939,
+            880,
+            951
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Preface",
+        "text_level": 2,
+        "bbox": [
+            115,
+            87,
+            245,
+            111
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "In an increasingly complex economic environment, effective policymaking significantly depends on the capacity for forecasting and policy analysis. Recognizing this, the Central Bank of Iraq (CBI), with the technical assistance of the International Monetary Fund's Capacity Development (CD) team, has initiated the development of a new tool to enhance its macroeconomic forecasting and policy analysis capabilities.",
+        "bbox": [
+            112,
+            142,
+            882,
+            244
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "This technical assistance project has adhered to established ICD practices, both in organizational and technical domains. It included comprehensive scoping missions, intensive training sessions, and continuous collaboration, all aimed at enhancing capacity development within the CBI. The focus of this project has been on strengthening the CBI's economic analysis and forecasting capabilities. Central to this effort was the development and customization of the Macroeconomic Foundations Tool (MFT) – an Excel-based macroeconomic forecasting tool. The development addressed specific challenges such as Iraq's dependence on the oil sector, the customization of fiscal and monetary policy frameworks, and the extension of these frameworks with short-term and nowcasting capabilities.",
+        "bbox": [
+            112,
+            259,
+            882,
+            464
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Throughout the project, members of the CBI worked closely with the ICD technical assistance (TA) team to refine their technical skills and to establish structured methodologies for effectively utilizing the MFT in their economic forecasting and analysis work. This collaboration has resulted in the creation of a tool that not only enhances the CBI's forecasting accuracy but also empowers the institution to explore various economic scenarios and their potential impacts on policy decisions.",
+        "bbox": [
+            112,
+            478,
+            882,
+            601
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "This document serves as the final report on the MFT project and details the process of developing and implementing the MFT within the CBI, highlighting the collaborative efforts, the technical and professional growth of the CBI team, and the achievements realized through this initiative. We extend our appreciation to all participants, including CBI officials, IMF staff, and other stakeholders, whose expertise and dedication have been instrumental in the successful realization of this project. It is our expectation that the MFT will serve as a vital resource for the CBI, aiding in navigating Iraq's complex economic challenges and contributing to the country's ongoing development and prosperity.",
+        "bbox": [
+            112,
+            615,
+            884,
+            800
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The CBI thanks the efforts made by the IMF, represented by the ICD team, for aiding with all technical details related to the MFT, and thanks METAC for its TA support.",
+        "bbox": [
+            112,
+            814,
+            882,
+            854
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            117,
+            936,
+            156,
+            951
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            662,
+            938,
+            858,
+            952
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            867,
+            939,
+            880,
+            951
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Executive Summary",
+        "text_level": 2,
+        "bbox": [
+            115,
+            86,
+            410,
+            110
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The CBI, in collaboration with the ICD TA team since 2022, has been developing a macro framework tool designed to strengthen the CBI's capacity in policy analysis and forecasting. It was agreed to organize the project around the development of the MFT, an annual Excel-based framework designed to generate an integrated macroeconomic forecast for an economy over several years. The action plan for the project is presented in Annex I.",
+        "bbox": [
+            112,
+            140,
+            882,
+            262
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The project began with intensive training on the features of the MFT and complementary self-education of core team members on related topics using IMF's online courses. The team also gathered the necessary data required for customizing the MFT and collaborated closely with the TA team to tailor the tool to the specific economic features and needs of Iraq and the CBI.",
+        "bbox": [
+            112,
+            277,
+            882,
+            378
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The customization of the MFT prioritized the integration of an oil sector model, given its significance to Iraq's economy. Additionally, the customization included the expansion of the tool with auxiliary models to leverage monthly and quarterly data to improve forecast accuracy and understand the impact of recent developments. This was achieved through an interpolation technique that combines higher frequency data with annual values for forecast revisions.",
+        "bbox": [
+            112,
+            393,
+            882,
+            514
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The core team has practiced utilizing the MFT for analysis and forecasting, following a structured procedure that included data collection, equation assessment, baseline forecast preparation, and result discussion. The team recognized the advantages of the MFT as a key forecasting tool and identified areas for improvement and additional support. It also developed alternative scenario to enhance its forecasting capabilities and gain a better understanding of policy choices. Additionally, the core team has mastered the documenting and presentation of forecasts.",
+        "bbox": [
+            112,
+            530,
+            882,
+            673
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "For the authorities to use the tool in their policy decision-making process, they should continue to use it to practice forecasting, including by making a presentation on the baseline and shock scenarios to the CBI's management. The core team should also explore ways of integrating the MFT with the current forecasting and policy analysis system at the CBI and enhance cooperation with the ministry of finance to obtain budgetary and medium-term financial information to strengthen the accuracy of the tool's forecasts. The current progress of the project and achieved results are shown in Annex II.",
+        "bbox": [
+            112,
+            689,
+            873,
+            851
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            117,
+            936,
+            156,
+            951
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            662,
+            938,
+            858,
+            952
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            865,
+            938,
+            880,
+            951
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Recommendations",
+        "text_level": 2,
+        "bbox": [
+            117,
+            87,
+            421,
+            111
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/e2bd6e5c13469b73a4519080bdcfa2fe037a03afd98657b91a4ba0a6aa948fe6.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"3\">Topic</td></tr><tr><td>III.B</td><td>Follow-up to work with the Central Statistics Organization (CSO) on retrieving the national accounts expenditure components in fixed prices</td><td>2025</td></tr><tr><td>IV</td><td>Cooperate with the ministry of finance on getting the budget next and medium-term year plans for baseline development</td><td>current-2025</td></tr><tr><td>IV</td><td>Ensure projections prepared with MFT are placed into decision-making process</td><td>2025</td></tr></table>",
+        "bbox": [
+            119,
+            140,
+            875,
+            362
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            117,
+            936,
+            154,
+            951
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            663,
+            938,
+            857,
+            952
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            867,
+            939,
+            878,
+            951
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "1 Background",
+        "text_level": 2,
+        "bbox": [
+            117,
+            86,
+            347,
+            112
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Post-October 2022, Iraq's stability and fiscal expansion face challenges from oil dependency and a constrained private sector. Since the new government took over in October 2022, Iraq has enjoyed greater domestic stability, leading to the approval of its first three-year budget and initiating significant fiscal expansion beginning in 2023. The non-oil sector quickly recovered in 2023 after a slowdown in 2022, demonstrating resilience against regional conflicts. Despite this, Iraq's economy remains vulnerable to oil price fluctuations and the private sector is stifled by the state's dominant role, including employment, corruption, bureaucracy, poor infrastructure, and limited credit access. Short-term economic growth looks promising, driven by fiscal expansion, but without policy adjustments, Iraq could encounter medium-term risks of sovereign debt and external instability, primarily due to oil price volatility or intensified regional conflicts.",
+        "bbox": [
+            112,
+            142,
+            884,
+            370
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Iraq requires fiscal adjustments to manage rising debt and sustain essential spending. In terms of fiscal policy, there is a pressing need for adjustments to ensure debt stability over the medium term, while safeguarding essential social and capital expenditures. Public debt stood at about 44 percent of GDP in 2023 and is projected to rise steeply in the coming years in the absence of fiscal adjustment. Oil revenues make up the bulk of total revenues. Significant savings could be realized by reducing the disproportionately large public wage bill and implementing policies to increase non-oil revenue. These measures should be complemented by improved public financial management and mitigating fiscal risks. The latter includes limiting the use of funds outside the budget and strictly adhering to the existing framework for government guarantees.",
+        "bbox": [
+            112,
+            382,
+            882,
+            592
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "With a fixed exchange rate, Iraq must enhance fiscal-monetary coordination and financial sector reforms for stability. Iraq has limited monetary policy maneuver as it has a conventional peg arrangement. For example, the CBI raised its policy interest rate from 4 to 7.5 percent in June 2023, but the pass-through is hampered by excess liquidity, due government deposits, and a lack of market development. At the same time, the reserve requirement was raised from 15 to 18 percent and a 14-day CBI bill facility was implemented.",
+        "bbox": [
+            112,
+            604,
+            882,
+            738
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "It is crucial to enhance coordination between fiscal and monetary policies to manage the surplus liquidity effectively and to better transmit monetary policy changes. The modernization of the financial sector is encouraged, as it will assist banks in establishing relationships with correspondent banks. Moreover, the restructuring of the largest state-owned banks remains a critical objective to ensure the financial sector's health and stability.",
+        "bbox": [
+            112,
+            751,
+            882,
+            864
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            117,
+            936,
+            156,
+            952
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            662,
+            938,
+            858,
+            952
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            867,
+            938,
+            880,
+            951
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "2 Initiation of the technical assistance project",
+        "text_level": 2,
+        "bbox": [
+            114,
+            86,
+            850,
+            112
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "In the end of 2021, the CBI requested a TA project to build capacity on macroeconomic forecasting. The scoping mission was undertaken to assess the authorities' needs and clarify their objectives with senior officials and experts from the CBI, the Ministry of Finance (MoF), the Central Statistics Organization (CSO), and the Ministry of Oil (MoO). The mission discussed the TA request with the authorities, assessed the current skills of the relevant employees, the data frameworks, and the tools being used at the CBI and other Iraqi institutions. A questionnaire on these key aspects was prepared by the mission team, and with the help of the authorities the responses were compiled.",
+        "bbox": [
+            112,
+            142,
+            882,
+            306
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The scoping mission in June 2022 assessed the CBI analytical and forecasting capacities at the CBI.",
+        "bbox": [
+            114,
+            312,
+            882,
+            348
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The core team members have had varied education and experience background. The knowledge of economics as well as local specifics were very competitive, however, they had limited exposure of the forecasting based on structural or semi-structural (e.g. system of equations) models.",
+        "bbox": [
+            112,
+            355,
+            882,
+            428
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "For example, CBI analysis and forecasts relied mostly on simple regressions and in very few cases on autoregressive multivariate models. The inflation forecast was based on univariate autoregressive models, while the impact of shocks was sometimes assessed with vector autoregression (VAR) models. Such forecasting approaches do not sufficiently account for interrelations with other macroeconomic variables, thereby limiting their use for policy analysis.",
+        "bbox": [
+            112,
+            434,
+            882,
+            544
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The mission proposed to develop a consistent and simple macroeconomic framework, which links together the basic sectors of the economy over the projection horizon and can substantially enhance the policy advice capabilities of the modelling and forecasting team at the CBI. Additionally, the mission found that a lack of national accounts data, in particular by expenditure in fixed prices, and of oil sector data negatively affected the quality of analysis and forecasts. These data issues would also need to be addressed by the TA.",
+        "bbox": [
+            112,
+            550,
+            882,
+            677
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "ICD staff recommended implementing the MFT. Considering the CBI's analytical and forecasting capacity assessment and the specifics of the request, with a focus on FX reserves forecasting, the TA team suggested an MFT project. The tool is a simple and easily customizable instrument and allows for a gradual and in-house development, that help to develop analytical capacity. The MFT can be expanded by adding the oil sector to the tool and capturing its ramifications on other sectors. The authorities can try to apply some of their current tools to the new framework.",
+        "bbox": [
+            112,
+            683,
+            884,
+            810
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "On the authorities' side, most of the participants in the core team are from the CBI's Statistics and Research department. The CBI staff represent the macro framework development group. To underpin capacity development of the core team, they were asked to take the online-courses, Financial Programming and Policies and",
+        "bbox": [
+            112,
+            816,
+            882,
+            890
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            117,
+            936,
+            156,
+            952
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            653,
+            938,
+            848,
+            952
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            858,
+            938,
+            880,
+            952
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Macroeconomic Diagnostics and Macroeconomic Management in Resource-rich Countries.",
+        "bbox": [
+            114,
+            85,
+            880,
+            120
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "After the scoping mission, the TA team agreed with the country authorities on an action plan for the implementation of the project. The plan was based on the responses to the scoping mission questionnaire and the findings of the mission. The main axes of the Action Plan were: (i) the development, implementation and operationalization of an Excel macro-projections tools that ensures consistency of data and forecasts across sectors; (ii) the construction of a baseline projection of key macro variables, focusing on a detailed analysis of FX reserves; and (iii) and the analysis of alternative macroeconomic policies and shocks on the projections.",
+        "bbox": [
+            112,
+            127,
+            882,
+            273
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The following mission focused on introducing the authorities to the MFT through training. The mission conducted four daily training sessions for the core team of the project in August 2022. The sessions consisted of two parts – the first one was devoted to recap key Financial Programming and Policies topics, and the second to introduce the MFT. The TA team presented the spreadsheets, the notations, data inputs, key accounting identities, behavioral equations, and the control panel for scenario generating. ICD staff introduced the core team to the estimation/calibration of the key equations, model construction and forecasting approaches used in the tool.",
+        "bbox": [
+            112,
+            279,
+            882,
+            425
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The CBI team gave an overview of the Iraqi economy. The team presented a detailed picture of the impact the balance of payments has on monetary policy, especially in terms of foreign reserves held by the central bank. It also explained the workings of monetary policy through the currency selling window, the types of currency demand, either cash or import purposes, and the impact of that on the exchange rate and inflation.",
+        "bbox": [
+            112,
+            431,
+            882,
+            539
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The development of the CBI version of the MFT was shaped by discussions with the Middle East and Central Asia Department's (MCD) Iraq team. The MCD Iraq team supported the development of a macroeconomic framework which can help the Iraqi authorities analyze the effects of macroeconomic shocks. In their view, such a tool can substantially improve the Iraqi authorities' discussions with the IMF on policy measures. In addition to focusing on foreign exchange reserves projections, the MCD team supported adding a richer representation of oil production and export, along with a detailed decomposition of the fiscal sector. The CBI team, in agreement with the MFT assistance team, applied several shocks to the tool by adding scenarios related to oil and exchange-rate shocks, in addition to the impact of a deficit in the balance of payments.",
+        "bbox": [
+            112,
+            545,
+            884,
+            746
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            117,
+            936,
+            156,
+            951
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            653,
+            938,
+            848,
+            952
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            858,
+            939,
+            878,
+            951
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "3 MFT features and customization",
+        "text_level": 1,
+        "bbox": [
+            115,
+            86,
+            663,
+            111
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "A. MFT features",
+        "text_level": 2,
+        "bbox": [
+            115,
+            142,
+            285,
+            159
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The MFT is an Excel-based macroeconomic framework is an integrated model of the economy to generate macroeconomic forecast and policy analysis over several years. This is achieved using input assumptions, core behavioral equations, and standard economic identities to ensure consistent projection. The original MFT template consists of six main sheets that forecast key macroeconomic variables across sectors of the economy, including real, fiscal, external, and monetary sectors.",
+        "bbox": [
+            112,
+            172,
+            882,
+            282
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Key features of the MFT include its simplicity, flexibility, consistency, minimal data requirements, and straightforward calibration for equations. While the forecasts allow for expert judgment, the tool incorporates essential interlinkages across sectors and performs consistency checks. It also considers financing sources. The MFT model is a comprehensive system of equations, with some being more complex behavioral equations, simple ratios, while others are identities. An iterative procedure is used to solve this system, using the Excel's goal seek procedure, producing a baseline scenario that remains consistent across all sectors.",
+        "bbox": [
+            112,
+            288,
+            882,
+            432
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The MFT facilitates coordination, collaboration, and policy dialogue across government bodies entrusted with macroeconomic policymaking. In a similar vein, the outputs from the MFT can be easily integrated into the official decision-making processes, and relevant policy documents, which also strengthens informed policy making.",
+        "bbox": [
+            112,
+            439,
+            882,
+            530
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The basic MFT version consists of interrelated sheets:",
+        "bbox": [
+            115,
+            536,
+            621,
+            554
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- The ‘Source Data’ and ‘Auto Data’ sheets record inputs of raw (original) historical data for all variables from different databases, as well as key assumptions for projections (e.g., external global environment assumptions or other exogenous variables).",
+        "bbox": [
+            144,
+            562,
+            882,
+            634
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- The ‘GDP & Prices’ sheet projects real GDP according to both the expenditure approach (relying on behavioral equations to calibrate and forecast real private consumption and investment, real exports and imports, plus real public consumption and investment), and the production approach (real output by sector). The sheet also projects potential output and the output gap, calculates disposable income, and forecasts key price variables in the economy: inflation, the GDP deflator and its subcomponents including export and import deflators, interest rates, and exchange rates.",
+        "bbox": [
+            144,
+            643,
+            882,
+            789
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- The 'Deficits & Financing' sheet projects the nominal level of macroeconomic variables of GDP, the balance of payments, disposable income, and the monetary survey. It also computes the savings-investment gaps (broken down into public and private gaps), and calculates a few relevant indicators, such as international reserves in months of imports.",
+        "bbox": [
+            144,
+            796,
+            882,
+            887
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            117,
+            936,
+            156,
+            951
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            653,
+            938,
+            848,
+            952
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            858,
+            938,
+            878,
+            951
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- The 'Policies' sheet projects the fiscal sector in nominal levels broken down into revenue and expenditure items, the overall fiscal deficit, and its financing sources (below the line), public debt stocks and debt service, as well as some analytical indicators (e.g., cyclical primary balance). The sheet also projects the monetary policy rule (e.g., policy rate, Taylor rule), and assumptions for the exchange rate.",
+        "bbox": [
+            144,
+            86,
+            882,
+            193
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- The ‘SEI’ output sheet which summarizes forecast results by sector and allows comparing outcomes between scenarios.",
+        "bbox": [
+            144,
+            202,
+            880,
+            237
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- The ‘Control panel’ sheet has an easy-to-use dashboard and macros to create policy scenarios and model shocks.",
+        "bbox": [
+            144,
+            246,
+            880,
+            282
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Once a baseline scenario is complete, the MFT can be used to conduct various simulations. These include: (i) changes in underlying forecast assumptions; (ii) the introduction of specific shocks to the forecast; and (iii) other policy measure changes, to assess the impact of these on projections. As such, the MFT allows users and policymakers to build different forecast scenarios under various assumptions, thereby contributing to richer policy analysis. Examples of shocks which can be modeled include changes in fiscal policy—tax or expenditure reforms—or changes to monetary policy via the policy interest rate, or shocks to the exchange rate or partner-country demand. Thus, the MFT could be used for policy analysis by comparing the baseline macro forecast scenario with that of the alternative scenarios.",
+        "bbox": [
+            112,
+            288,
+            884,
+            470
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "B. MFT customization for the CBI",
+        "text_level": 2,
+        "bbox": [
+            114,
+            483,
+            453,
+            501
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "First, recognizing the importance of the oil for Iraqi economy, the MFT was customized by adding the oil sector. Two options were considered and added to the tool. The first one relies on a top-down supply-driven approach, which builds the sectoral forecast using government plans for oil production and projections for global oil prices that match best with Iraq's historical average oil price. The second option is a bottom-up demand-driven approach, which utilizes exogenous projections for external demand and domestic consumption to generate aggregate demand for oil and gas products. The supply-driven approach performed better at forecasting given Iraq's strategy to increase oil production steadily and explore alternative markets in case of major external shocks. This approach also allows for adjusting production in line with OPEC decisions. The oil sector module represents the oil and natural gas sectors, with data on production (supply), plus exports and internal consumption (demand), along with oil and gas prices. It also sums up production to obtain a real and nominal oil GDP indicator (including natural gas), assuming constant intermediate cost for hydrocarbon sector.",
+        "bbox": [
+            112,
+            510,
+            884,
+            783
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Second, the core CBI team, with the assistance of ICD staff, modified the MFT to introduce the oil sector's linkages to the real, external, and fiscal sectors. The activity improved the authorities' capacity to understand and further improve the oil sector's linkages with the rest of the economy. The detailed breakdown of state budget revenues in the MFT provides a more direct link of fiscal revenues to the oil sector. Indirectly, other variables which are also affected by higher oil exports and fiscal revenues (such as current government spending including transfers, and investment)",
+        "bbox": [
+            112,
+            788,
+            884,
+            917
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            117,
+            936,
+            156,
+            951
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            653,
+            938,
+            848,
+            952
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            858,
+            938,
+            880,
+            951
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "in turn feed into GDP and disposable income. For its part, the CBI team stressed the importance of oil prices in determining government revenues, as well as the role of oil production, which is determined by OPEC, and the impact of oil on financial and monetary policies.",
+        "bbox": [
+            112,
+            85,
+            882,
+            158
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Third, the TA mission team helped the core team customize the monetary sector of the MFT. The CBI team discussed the impact of government spending on monetary variables, especially currency in circulation, narrow money, base money, and broad money. Furthermore, the team explained the importance of the foreign exchange reserve assets in the CBI and how they are managed to preserve the value of the local currency and stabilize inflation. The CBI core team highlighted the significance of monetary indicators, and as a result, the central bank survey was incorporated into the MFT's monetary sector.",
+        "bbox": [
+            112,
+            164,
+            884,
+            309
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Fourth, given the relatively short time series and the structural transformations that the Iraqi economy has been undergoing, a calibration strategy was selected to establish model parametrization. This strategy partially incorporates the results of econometric estimations while adjusting them to better align with recent periods and/or to fulfill theoretical constraints. In this respect, the approach mirrors the Bayesian framework, wherein prior beliefs and empirical data converge to yield a final estimation.",
+        "bbox": [
+            112,
+            315,
+            882,
+            425
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The analysis of the model's properties constituted a critical component of the calibration process. The Central Bank of Iraq (CBI) core team evaluated the model's attributes by simulating various alternative scenarios and benchmarking it against historical episodes. One such exercise involved a scenario based on a demand-driven oil shock characterized by simultaneous declines in both oil prices and oil production. This analysis not only contributed to the refinement of oil sector modeling but also fostered a dialogue regarding the implications of oil shocks on the broader economy and the significance of sectoral linkages.",
+        "bbox": [
+            112,
+            431,
+            882,
+            576
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Fifth, a short-term forecasting module was introduced into the MFT to complement the model's annual macro projections with high-frequency data tools that allow updating these projections with monthly and quarterly data updates. This modification of the MFT helps better understand the role of recent economic developments and shocks on projections. This modification considerable enhances the forecast value of the MFT for policymakers.",
+        "bbox": [
+            112,
+            582,
+            882,
+            690
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "C. MFT core equations",
+        "text_level": 2,
+        "bbox": [
+            114,
+            703,
+            351,
+            722
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The core of the model is represented by several behavioral equations, representing key elements of national accounts, inflation, simple ratios, and identities.",
+        "bbox": [
+            114,
+            732,
+            880,
+            769
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Real sector",
+        "text_level": 2,
+        "bbox": [
+            115,
+            782,
+            233,
+            799
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The GDP is represented by a sum of nominal expenditure components:",
+        "bbox": [
+            115,
+            807,
+            761,
+            825
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "equation",
+        "text": "$$\nG D P _ {t} = C _ {t} + G _ {t} + I _ {t} ^ {P} + I _ {t} ^ {G} + X _ {t} - M _ {t}\\tag{[M0]}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            292,
+            840,
+            611,
+            859
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "where $C_{t}$ is private consumption, $G_{t}$ – government consumption, $I_{t}^{P}$ and $I_{t}^{G}$ are private and government investment respectively, $X_{t}$ is exports and $M_{t}$ is imports.",
+        "bbox": [
+            114,
+            873,
+            880,
+            910
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            117,
+            936,
+            156,
+            951
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            653,
+            936,
+            848,
+            952
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            858,
+            939,
+            880,
+            951
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The real private consumption growth rate $(\\Delta C_{t})$ is determined by lagged consumption (persistence), and disposable income $(\\Delta Y_{t}^{d})$ .",
+        "bbox": [
+            114,
+            85,
+            880,
+            123
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\Delta C _ {t} = \\gamma_ {c} \\Delta C _ {t - 1} + a _ {c} \\Delta Y _ {t} ^ {d} + \\varepsilon_ {t} ^ {c}\\tag{[M1]}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            324,
+            136,
+            578,
+            156
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The government consumption and investment are retrieved from respective nominal items in the government budget and are deflated using the corresponding consumption and investment deflators.",
+        "bbox": [
+            114,
+            168,
+            870,
+            224
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The private investment growth rate $(\\Delta I_{t})$ is determined by the acceleration or change in GDP growth (potential output growth $(\\Delta Y_{t}^{*})$ and the change in real interest rate $(\\Delta r_{t})$ ):",
+        "bbox": [
+            114,
+            231,
+            875,
+            286
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\Delta I _ {t} = \\gamma_ {I} (\\Delta Y _ {t} - \\Delta Y _ {t - 1}) + a _ {I} \\Delta Y _ {t} ^ {*} + \\beta_ {I} \\Delta r _ {t} + \\varepsilon_ {t} ^ {I}\\tag{[M2]}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            260,
+            300,
+            640,
+            319
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The export growth rate $(\\Delta X_{t})$ is determined as oil exports $(\\Delta X_{t}^{oil})$ and the non-oil part which depends on foreign demand growth $(\\Delta Y_{t}^{f})$ , and the change in the real exchange rate $(\\Delta z_{t})$ :",
+        "bbox": [
+            114,
+            334,
+            873,
+            394
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\Delta X _ {t} = w _ {o i l} \\Delta X _ {t} ^ {o i l} + (1 - w _ {o i l}) (a _ {x} \\Delta Y _ {t} ^ {f} + \\beta_ {x} \\Delta z _ {t}) + \\varepsilon_ {t} ^ {X}\\tag{[M3]}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            226,
+            407,
+            675,
+            429
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The import growth rate is determined by domestic GDP growth $(\\Delta Y_{t})$ and the change in the real exchange rate:",
+        "bbox": [
+            114,
+            443,
+            873,
+            480
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\Delta M _ {t} = a _ {M} \\Delta Y _ {t} + \\beta_ {M} \\Delta z _ {t} + \\varepsilon_ {t} ^ {M}\\tag{[M4]}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            327,
+            494,
+            574,
+            513
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The oil export growth rate $(\\Delta X^{oil})$ is determined by the change in foreign demand $(\\Delta Y^{f})$ and export plan $(X^{oil,*})$ , which is a medium-term production target:",
+        "bbox": [
+            114,
+            527,
+            842,
+            565
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\Delta X ^ {o i l} = a _ {X o i l} \\Delta Y ^ {f} + \\beta_ {X o i l} \\left(\\frac {X ^ {o i l} - X ^ {o i l , *}}{X ^ {o i l , *}}\\right) + \\varepsilon_ {t} ^ {x o}\\tag{[M5]}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            250,
+            577,
+            650,
+            618
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The change in domestic oil ( $\\Delta O_{t}$ ) use depends on domestic GDP growth:",
+        "bbox": [
+            115,
+            634,
+            769,
+            653
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\Delta O _ {t} = a _ {o} \\Delta Y _ {t}\\tag{[M6]}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            394,
+            668,
+            509,
+            686
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The output gap, the deviation of output from its long-run trend $(Y_{t}^{*})$ , is calculated with Hodrick-Prescott filter:",
+        "bbox": [
+            114,
+            700,
+            877,
+            736
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\hat {Y} _ {t} = 1 0 0 \\cdot (Y _ {t} / Y _ {t} ^ {*} - 1)\\tag{[M7]}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            352,
+            750,
+            549,
+            770
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Prices",
+        "text_level": 2,
+        "bbox": [
+            115,
+            791,
+            184,
+            807
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The CPI inflation $(\\pi_{t})$ depends on the output gap $(\\hat{Y}_{t})$ , lagged inflation, the nominal exchange rate change $(\\Delta s_{t})$ , trading partner's inflation $(\\pi_{t}^{*})$ and long-run inflation term $(\\bar{\\pi}_{t})$ :",
+        "bbox": [
+            114,
+            816,
+            853,
+            872
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            858,
+            938,
+            880,
+            951
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            117,
+            936,
+            156,
+            951
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            653,
+            936,
+            848,
+            952
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\pi_ {t} = \\gamma_ {p} \\pi_ {t - 1} + (1 - \\gamma_ {p} - a _ {p}) \\bar {\\pi} _ {t} + a _ {p} \\hat {Y} _ {t} + \\beta_ {p} (\\Delta s _ {t} + \\pi_ {t} ^ {*}) + \\varepsilon_ {t} ^ {\\pi}\\tag{[M8]}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            189,
+            92,
+            712,
+            112
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "The deflators are built using the CPI inflation, imported inflation and oil prices, applying the proper weights.",
+        "bbox": [
+            114,
+            127,
+            815,
+            164
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Fiscal sector",
+        "text_level": 2,
+        "bbox": [
+            115,
+            177,
+            248,
+            195
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Budget revenues items $(R_{i,t})$ , except oil revenues, are modelled as ratio to GDP:",
+        "bbox": [
+            114,
+            203,
+            840,
+            222
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "$$\nR _ {i, t} = \\varepsilon_ {i} Y _ {t}\\tag{[M9]}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            403,
+            237,
+            497,
+            256
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Oil revenue is directly linked to nominal oil output:",
+        "bbox": [
+            114,
+            269,
+            566,
+            288
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "$$\nR _ {o i l, t} = \\varepsilon_ {o i l} Y _ {o i l, t}\\tag{[M9.1]}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            379,
+            304,
+            522,
+            322
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Budget expenditures $(E_{i,t})$ consist of non-interest and interest expenses, and are modelled as a ratio to GDP:",
+        "bbox": [
+            114,
+            336,
+            880,
+            373
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "$$\nE _ {i, t} = \\varepsilon_ {i} Y _ {t}\\tag{[M10]}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            405,
+            388,
+            497,
+            407
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "while the rest of expenditures determined exogenously.",
+        "bbox": [
+            114,
+            422,
+            618,
+            439
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "External sector and Balance of payments",
+        "text_level": 2,
+        "bbox": [
+            115,
+            447,
+            519,
+            464
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "The current account balance is derived from exports and imports of the real sector, and other items are assumptions (judgments).",
+        "bbox": [
+            114,
+            472,
+            878,
+            508
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "The government borrowing is linked to the fiscal sector and shown as a corresponding line of the financial account (FA). Other items are modeled as a random walk, or assumptions:",
+        "bbox": [
+            112,
+            516,
+            882,
+            569
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "$$\nF A _ {i, t} = \\varepsilon_ {i} Y _ {t}\\tag{[M11]}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            396,
+            583,
+            504,
+            602
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "External demand, as proxied by GDP, inflation, oil prices, interest and exchange rates reflect Iraq's external trade and its key trading partners. These indicators are considered exogenous, and forecasts are generated using external sources, such as the IMF World Economic Outlook (WEO).",
+        "bbox": [
+            112,
+            624,
+            882,
+            697
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Monetary policy and monetary sector",
+        "text_level": 2,
+        "bbox": [
+            115,
+            711,
+            482,
+            728
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Given the peg exchange rate regime, the exchange rate is represented by its previous period exchange rate and shock:",
+        "bbox": [
+            114,
+            736,
+            880,
+            772
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "$$\ns _ {t} = s _ {t - 1} + \\varepsilon_ {t} ^ {s}\\tag{[M12]}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            386,
+            787,
+            515,
+            804
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Money supply is equal to money demand where the latter is determined by the sum of net foreign assets (NFA) and net domestic assets (NDA).",
+        "bbox": [
+            114,
+            819,
+            882,
+            856
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "The claims on government are linked to the fiscal sector, while claims on the private sector depend on its lag and GDP growth.",
+        "bbox": [
+            114,
+            862,
+            880,
+            898
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            858,
+            938,
+            880,
+            952
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            117,
+            936,
+            156,
+            952
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            653,
+            936,
+            848,
+            952
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Identities",
+        "text_level": 2,
+        "bbox": [
+            115,
+            85,
+            211,
+            101
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "The rest of the model consist of accounting identities, most importantly the national account identity, which states that GDP is a sum of consumption, plus investment plus exports minus imports. The identities are used to construct aggregated variables (e.g. total revenues) or to link cross-sectoral variables. One of the key ideas of the framework is to analyze the determinants of the current account balance (CAB) via savings and investments, where $S_{P}$ is public savings, $I_{p}$ is public investment, $S_{g}$ , is government savings, and $I_{g}$ is government investment:",
+        "bbox": [
+            112,
+            110,
+            882,
+            240
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "equation",
+        "text": "$$\n(S _ {t} ^ {P} - I _ {t} ^ {P}) + (S _ {t} ^ {G} - I _ {t} ^ {G}) = C A B _ {t}\\tag{[M13]}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            317,
+            254,
+            584,
+            274
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Similarly, the change in foreign exchange reserves (FXRES) can be obtained from the balance of payments (BoP) identity as a sum of the current account and the financial accounts balances:",
+        "bbox": [
+            114,
+            287,
+            855,
+            341
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\Delta F X R E S _ {t} = C A _ {t} + F A _ {t}\\tag{[M14]}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            344,
+            355,
+            557,
+            375
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "D. Connecting high- and low frequency data",
+        "text_level": 2,
+        "bbox": [
+            114,
+            413,
+            554,
+            432
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "As noted above, a short-term forecasting module was introduced into the MFT. Operating only in annual frequency creates a need to complement the framework with tools that help update annual projections within a year. This gives better confidence in forecast accuracy and helps better understand the role of recent economic developments on forecasts. Based on the proposal of the CBI team, monthly and quarterly data were introduced into the MFT tool. The CSO, CBI, MoF and MoO produce some datasets in monthly and quarterly frequencies. For instance, the CSO calculates quarterly GDP by sector, thus quarterly GDP and quarterly oil production can help determine annual forecasts for total GDP and exports.",
+        "bbox": [
+            112,
+            441,
+            882,
+            605
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "The forecast revision is produced with interpolation technique where data from higher frequency data is combined with the annual value. Consider for example a revision in the GDP growth rate. It is assumed that for a given annual forecast with no available information on the quarterly growth rate $\\left(\\Delta y_{t}^{4}\\right)$ , the latter is equal to the annual rate $\\left(\\Delta y_{t}\\right)$ : $\\Delta y_{t=1:4}^{4} = \\Delta y_{t}$ . When the first quarter value $\\left(\\Delta y_{t=1}^{4,P}\\right)$ is published, then the annual forecast can be updated as: $\\Delta y_{t} = \\frac{1}{4} \\Delta y_{t=1}^{4,P} + \\frac{3}{4} \\Delta y_{t=1}^{4}$ . Similar approaches can be applied for inflation and other indicators. Additionally, monthly data can be used for short-term forecasting to get a projection for the whole quarter using the same technique.",
+        "bbox": [
+            112,
+            609,
+            882,
+            785
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            117,
+            936,
+            156,
+            951
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            653,
+            936,
+            848,
+            952
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            858,
+            938,
+            880,
+            951
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            117,
+            936,
+            156,
+            951
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            653,
+            938,
+            848,
+            952
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            858,
+            939,
+            880,
+            951
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "4 Policy analysis and forecasting with MFT",
+        "text_level": 1,
+        "bbox": [
+            114,
+            85,
+            737,
+            111
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Practicing the use of the MFT for analysis and forecasting is an integral part of the project. The typical procedure for the core team consists of the following steps:",
+        "bbox": [
+            112,
+            139,
+            882,
+            177
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "○ Collect necessary data, then check and correct data, if necessary, for consistency.",
+        "bbox": [
+            114,
+            181,
+            880,
+            202
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- Check equation performance, modify the equations (both behavioral and simple ratios/others) and change their parameters if needed.",
+        "bbox": [
+            115,
+            206,
+            880,
+            244
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "o Prepare and discuss (baseline) forecast assumptions (use hard values for variables which do not have equations or use values implied by equations if they have one).",
+        "bbox": [
+            115,
+            250,
+            882,
+            305
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- Run the forecast calculation procedure (use the designated elements on Excel spreadsheets which run the iterative procedure finding a solution) and check forecast consistency.",
+        "bbox": [
+            114,
+            312,
+            882,
+            366
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Once the forecast discussed and finalized, prepare a draft forecast presentation.",
+        "bbox": [
+            115,
+            373,
+            873,
+            392
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- Finally, prepare few alternative scenarios which usually focus on different oil price trajectories or fiscal adjustments or any other major macro shock facing Iraqi economy.",
+        "bbox": [
+            115,
+            398,
+            882,
+            453
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "The most frequent scenario modelled is an oil price shock. Here it is assumed the oil prices declines by 20 percent in the first projection year and then stabilizes at that level for the following two years. This decline reduces the value of oil exports and has a significant negative impact on the balance of payments as it shrinks the current account surplus and leads to a decline in foreign exchange reserves (Figure 1). As oil revenues account for most revenues, this decline in oil prices results in a substantial widening of the fiscal deficit and rise in public debt. It also lowers inflation and depresses real GDP growth due to lower net exports, and lower private consumption because of lower disposable income.",
+        "bbox": [
+            112,
+            458,
+            882,
+            623
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Figure 1. Baseline and alternative scenarios for GDP and inflation",
+        "bbox": [
+            201,
+            629,
+            794,
+            648
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "chart",
+        "img_path": "images/053f12b8b3384b43aaeda6fce7f1f794de469ab9307237ac2ee32287d3bfda60.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            126,
+            665,
+            468,
+            854
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a486e88567c36bbd2626d6914528c1fc0371eb49e6f82fa77d1303529862613b.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            507,
+            665,
+            858,
+            856
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "IMF",
+        "bbox": [
+            117,
+            936,
+            156,
+            951
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            653,
+            938,
+            848,
+            952
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            858,
+            938,
+            880,
+            951
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d01edc6b3122fc3ff68dd0917d16223ab972b3d3d2a65e0e2a43c4b4d85328ee.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            124,
+            86,
+            475,
+            277
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/96604b0c310ed7fba63a3f03f06079a58f341f1aca3fc71622f7d99e6213030f.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            510,
+            87,
+            843,
+            275
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b043bdd5baf6e7e29dfb08df9d075fae573701579dc937733e0df115b8f8c444.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            117,
+            297,
+            485,
+            488
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/fd1bd16a3536397da8baea485136c21d87d74eebbc8501481343696e7c775ee6.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 1. Baseline and alternative scenarios"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            517,
+            300,
+            843,
+            489
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            117,
+            936,
+            156,
+            951
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            653,
+            938,
+            848,
+            952
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "20",
+        "bbox": [
+            858,
+            938,
+            880,
+            951
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "5 TA challenges and risks",
+        "text_level": 1,
+        "bbox": [
+            115,
+            86,
+            534,
+            111
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Data limitations impairs the effectiveness of the analysis and forecasting ability of the MFT. The lack of reliable, regular, and complete source data for GDP by expenditure, including in fixed prices, weakens the quality of national accounts. METAC has been delivering statistical TA to improve national accounts and other data. The authorities and the CSO should continue to work with METAC on improving national accounts and producing GDP by expenditure in fixed prices. Fixed price data is used by economic models to understand the relationships between different economic variables, such as consumption, investment, and government spending, without the noise introduced by price changes.",
+        "bbox": [
+            112,
+            143,
+            882,
+            307
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "B. Logistics",
+        "text_level": 2,
+        "bbox": [
+            115,
+            319,
+            272,
+            338
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "In-person missions have been more effective than virtual ones. Iraq virtual missions have proven not to be effective due to the challenges posed by low participant engagement and weak internet connection in Iraq. The CBI team also believe that the knowledge exchange via hands-on exercises is integral to MFT development. Due to Iraq's HRL status, the Fund staff could not visit the CBI in Iraq, so starting from the second mission, TA missions were organized in-person and off-site in Jordan.",
+        "bbox": [
+            112,
+            350,
+            882,
+            476
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "METAC has financed the CBI's off-site mission travel and supported the success of the TA project. The CBI's team size for in-person missions was constrained due to financing issues as the authorities would only sponsor travel expenses for up to four people. To address these funding limitations, METAC stepped in to financing travel and accommodation for up to six people, bringing the core team's size to a more effective level. This collaborative effort and the establishment of personal contact during the in-person meetings has made the TA missions more efficient and enhanced the MFT's development and implementation.",
+        "bbox": [
+            112,
+            483,
+            882,
+            629
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "C. Team turnover",
+        "text_level": 2,
+        "bbox": [
+            114,
+            642,
+            326,
+            659
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "In July 2023, the CBI core team experienced almost complete turnover, which had a temporary impact on the TA action plan. The original plan for the TA mission in December 2023 involved creating and analyzing alternative scenarios. Instead, the TA team had to focus on providing an overview of the MFT features and properties, and on developing a baseline scenario with its key components. Nonetheless by the end of the mission, the core team had made such significant progress in comprehending the MFT, particularly its forecasting capabilities, that they were ready to develop alternative scenarios for the next mission. During the following mission, the CBI team was able to produce a forecast report and presented it to the TA team. The report included many financial, monetary, and real sector variables. The ICD team was impressed how fast the CBI team was able learn how to use the MFT tool.",
+        "bbox": [
+            112,
+            669,
+            882,
+            870
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "The ICD team is addressing the risks related to personnel. The change in core team staffing earlier highlights the risk of future high turnover, undermining the ability to develop, maintain, and operate the tool. To mitigate this risk, the TA team is encouraging the core team to use the MFT User Manual developed by ICD on how to use the tool for forecasting and policy analysis. The manual will also be adapted by adding a section on the customization of the MFT to the oil sector in Iraq.",
+        "bbox": [
+            114,
+            875,
+            882,
+            915
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            117,
+            936,
+            156,
+            952
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            653,
+            938,
+            848,
+            952
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "21",
+        "bbox": [
+            858,
+            939,
+            878,
+            951
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            112,
+            85,
+            882,
+            165
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "D. Operationalization of the MFT",
+        "text_level": 2,
+        "bbox": [
+            115,
+            180,
+            467,
+            198
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Further use of the tool and cooperation with the CBI are necessary to institutionalize the MFT. To enable the authorities to utilize the tool in their policy decision-making, it is essential for the core team to maintain its use for forecasting practices. This includes delivering a presentation on both baseline and shock scenarios to the management of the CBI. Additionally, the core team should investigate methods to integrate the MFT with the existing forecasting and policy analysis system at the CBI. In this regard, it will be important to engage in collaboration with the ministry of finance to secure the upcoming budget and medium-term financial plans necessary for developing baseline forecasts within the model. By incorporating the most current and relevant data from the budget and medium-term plans, the core team can establish a solid foundation that reflects realistic expectations for economic growth, inflation, and other key indicators. This accuracy is essential for informed decision-making and policy formulation.",
+        "bbox": [
+            112,
+            208,
+            884,
+            474
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            117,
+            936,
+            156,
+            951
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            653,
+            938,
+            848,
+            952
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_number",
+        "text": "22",
+        "bbox": [
+            858,
+            938,
+            878,
+            951
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "ANNEX I. ACTION PLAN",
+        "text_level": 2,
+        "bbox": [
+            117,
+            87,
+            312,
+            103
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "table",
+        "img_path": "images/6d0b6483a28cf86dfb6fc2319447d4af7b1816dcd77f6dc3a0cca0100b130cae.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Action</td><td>Delivery</td><td>Objective</td></tr><tr><td>Pre-Scoping Meeting</td><td>Dec 20, 2021</td><td>Consideration of request received from the CBI to provide technical assistance to develop a model for forecasting FX reservesBrainstorming with the Research and Investment Departments at the CBI, the MCD-Iraq team, and the Res Rep office on the best way forward</td></tr><tr><td>Scoping Mission</td><td>Jun 3 -10, 2022</td><td>Scoping mission was organized to assess the current tools used for the preparation of forecasts by the CBIMeetings with the CBI, MoF, MoO, and the CSO to understand the linkages, baseline capacities and data frameworksAgree on a core group that will be developing the framework and responsible for updating and operating itAgree on a forward-looking action plan to help develop and internalize a suitable macro-framework tool for CBI</td></tr><tr><td>Mission preparation</td><td>April – July 2022</td><td>Core Group to take the FPP.1X course onlinePrepare the first (generic) version of the MFT (Macroeconomic Foundations Tool) that will form a base that can be expanded to meet the requirements of the CBI:Ensure all input data is available (obtained as an actual and officially published data or calculated/estimated on a base of the actual data)Ensure scenarios are functioning as expectedPrepare training materials for the first customized TA mission that is linked to the Macro-Foundations Tool</td></tr><tr><td>Virtual TA mission</td><td>Aug 29 – Sep 2, 2022</td><td>·Present the customized training:○1-hour lectures per day with high level explanations of the economic concepts used in the framework○2-hour session per day demonstrating how these concepts are implemented in the framework.·Agree on a detailed action plan up to next mission, including:○Core Group to link the data sheets to their own data sources○Core Group to identify what tables, charts, outputs need to be generated for policy use within their organization·Brainstorm on how to forecast oil prices and oil revenues and how to integrate the oil sector with the MFT template·Brainstorm on how the MFT can be expanded to forecast forex reserves as desired by the CBI</td></tr><tr><td>Follow-up mission preparation</td><td>September - November 2022</td><td>·Follow up on the data updating process·Follow up on specific requirements of CBI: forecasting oil revenues and foreign exchange reserves·Identify additional priority areas for the following mission</td></tr><tr><td>In-person TA mission (organized in Jordan)</td><td>Nov 27 – Dec 1, 2022</td><td>·Introduce oil sector and link it to the rest of the model (fiscal, BoP)·Assess properties of the updated model, regarding oil price changes·Review existing model dataset and check for needs in additional data</td></tr><tr><td>Follow-up mission preparation</td><td>January-March, 2023</td><td>·Follow up on model update·Practice analysis of model properties·Start documenting the tool and operations with it·Identify additional priority areas for the following mission</td></tr><tr><td>TA mission</td><td>April 2023</td><td>·Preparation for baseline forecast development: current economic stance assessment, assumptions·Baseline forecast·Forecast presentation·Assessment of MFT usability and features for the forecast development</td></tr><tr><td>Follow-up mission preparation</td><td>May-July, 2023</td><td>·Follow up on baseline forecast development·Adding baseline forecast part to the model documentation·Identify additional priority areas for the following mission</td></tr><tr><td>TA mission</td><td>December 2023</td><td>·Review of the MFT properties and performance·Update data and provide Iraq's recent economic developments analysis.·Prepare baseline assumptions and simulate the scenario.·Prepare forecast presentation and discuss it with the mission team.·Discuss current forecast and policy analysis processes and changes about to be introduced with the MFT</td></tr><tr><td>Follow-up mission preparation</td><td>January-May, 2024</td><td>·Follow-up on the in-person mission·Review of the forecast presentation prepared by team·Preparation for the alternative scenario development·Review of added monthly and quarterly data·Review of expanding MFT with short-term forecasting model·Preparation of draft TA/project report.</td></tr><tr><td>TA mission</td><td>June 2024</td><td>·Update of a baseline·Development of an alternative scenarios and shocks·Discussion of draft TA/project report·Incorporation of additional monetary data into MFT·Discussion on further enhancement of the tool with monthly/quarterly data to update annual forecasts</td></tr><tr><td>Follow-up mission preparation</td><td>July-December, 2024</td><td>·Test the model's usage in the actual policy-making process·CBI team to prepare presentation with baseline and scenarios·Document forecast development process·Finish model documentation development·Update draft TA/project report</td></tr><tr><td>TA mission</td><td>January 2024</td><td>·Model revamp·Complete enhancements to MFT, including the monthly/quarterly data to aid with annual projections·Revamp the organization of the CBI's forecasting and policy analysis process: calendar, meetings, and documents·Draft communication of scenarios</td></tr><tr><td>Follow-up mission preparation</td><td>January-February, 2024</td><td>·Prepare complete forecast report and set of presentations·Finish model documentation development·Update final TA/project report</td></tr><tr><td>Final TA mission (virtual)</td><td>April, 2024</td><td>·Take stock of TA milestones and outcomes achieved·Develop recommendations for further capacity building·Finalize final TA/project report</td></tr></table>",
+        "bbox": [
+            127,
+            131,
+            927,
+            701
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            117,
+            936,
+            156,
+            951
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            653,
+            938,
+            848,
+            952
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_number",
+        "text": "23",
+        "bbox": [
+            858,
+            938,
+            878,
+            951
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "table",
+        "img_path": "",
+        "table_caption": [],
+        "table_footnote": [],
+        "bbox": [
+            127,
+            83,
+            929,
+            891
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            117,
+            936,
+            156,
+            951
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            653,
+            938,
+            848,
+            952
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "page_number",
+        "text": "24",
+        "bbox": [
+            858,
+            939,
+            880,
+            951
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "table",
+        "img_path": "",
+        "table_caption": [],
+        "table_footnote": [],
+        "bbox": [
+            127,
+            84,
+            929,
+            890
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            117,
+            936,
+            156,
+            951
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            653,
+            938,
+            848,
+            952
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "page_number",
+        "text": "25",
+        "bbox": [
+            858,
+            939,
+            878,
+            951
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "table",
+        "img_path": "images/7352f201d4d7ffa07630f3f3a9ea6964d81ad0e8b7634449f7b3f45343c41f23.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"4\">Objective:Stronger analytical skills and better macroeconomic forecasting and policy analysis at the Ministry / central bank / or other governmental agency(ies) feeds into the economic policymaking process - MFP</td></tr><tr><td colspan=\"4\">Outcome:Authorities have a baseline understanding of their existing macroeconomic forecasting, policy analysis and analytical capabilities and opportunities for improvement</td></tr><tr><td colspan=\"4\">Annual Assessment Rating: 4 Fully Achieved</td></tr><tr><td colspan=\"4\">Outcome Rating Date: 6/27/2024</td></tr><tr><td>Outcome Indicator</td><td>Baseline Value</td><td>Target Value</td><td>Current Assessment Value</td></tr><tr><td>Diagnostic or scoping have produced baseline and opportunities for improvement</td><td>none</td><td>yes</td><td>yes as of 6/27/2024</td></tr><tr><td>Milestone Name</td><td>Target Completion Date</td><td>Milestone Actual Completion Date</td><td>Milestone Rating</td></tr><tr><td>N/A</td><td></td><td></td><td></td></tr><tr><td colspan=\"4\"></td></tr><tr><td colspan=\"4\">Objective:Develop capacity in macroeconomic forecasting and policy analysis to support policy decision making and communications - MFR</td></tr><tr><td colspan=\"4\">Outcome:Improved analytical skills, and better macroeconomic forecasting and policy analysis capacity</td></tr><tr><td colspan=\"4\">Annual Assessment Rating: 3 Largely Achieved</td></tr><tr><td colspan=\"4\">Outcome Rating Date: 6/27/2024</td></tr><tr><td>Outcome Indicator</td><td>Baseline Value</td><td>Target Value</td><td>Current Assessment Value</td></tr><tr><td>Relevant staff demonstrates the capability to independently operate the MPT and other auxiliary analytical models and tools</td><td>MPT is not operated by staff</td><td>MPT is completed by staff, supported by TA, and staff demonstrates an absorption of knowledge to forecast with the MPT, analyze its results and produce different scenarios</td><td>Approximately 75% of the desired outcome has been realized as of 6/27/2024</td></tr><tr><td>Relevant staff have successfully built required skills to strengthen forecasting and policy analysis — to be measured by an increase in average score results in a survey covering a range of macroeconomic issues and forecasting techniques</td><td>Staff doesn’t have experience with forecasting and policy analysis based on a model</td><td>Staff has complete understanding of how model-based forecast and policy analysis system works and uses it to prepare policy recommendations</td><td>Around 50% of the outcome was achieved as of 6/27/2024</td></tr><tr><td>Milestone Name</td><td>Target Completion Date</td><td>Milestone Actual Completion Date</td><td>Milestone Rating</td></tr><tr><td>Staff demonstrates its ability to understand economic theory behind of the model, predict and interpret its behavior</td><td>1/31/2023</td><td>11/24/2023</td><td>4 Fully Achieved as of 6/26/2024</td></tr><tr><td>Staff demonstrates the successful acquisition of skills in the macroeconomic policy analysis and diagnostic topics covered by the project, during the exercises and presentations they conduct between and during the missions.</td><td>4/30/2023</td><td></td><td>3 Largely Achieved as of 6/26/2024</td></tr><tr><td>Staff demonstrates the successful acquisition of skills in forecasting topics covered by the project, during the exercises and presentations they conduct between and during the missions.</td><td>8/31/2023</td><td></td><td>3 Largely Achieved as of 6/26/2024</td></tr><tr><td>Staff can successfully go through the forecast development process with the MFT (including modification of equations)</td><td>11/24/2023</td><td></td><td>3 Largely Achieved as of 6/26/2024</td></tr><tr><td colspan=\"4\">Outcome:Analytical models and forecasting tools are developed and operational</td></tr><tr><td colspan=\"4\">Annual Assessment Rating: 3 Largely Achieved</td></tr><tr><td colspan=\"4\">Outcome Rating Date: 6/27/2024</td></tr><tr><td>Outcome Indicator</td><td>Baseline Value</td><td>Target Value</td><td>Current Assessment Value</td></tr><tr><td>Macroeconomic Projection Tool (MPT) is developed in the form of an Excel-based macroeconomic framework for forecasting and policy analysis, respecting accounting relationships</td><td>MFT is not suitable for forecasting or policy analysis purposes</td><td>MFT is fully developed and used to produce annual macroeconomic forecast with focus on FX reserves projection</td><td>the Macroeconomic Foundations Tool (MFT) is now fully developed and has been thoroughly tested. With the inclusion of the new short-term forecasting module, it will significantly improve the process of updating annual forecasts, offering more reliable anddynamic forecasting abilities. as of 6/27/2024</td></tr><tr><td>Milestone Name</td><td>Target Completion Date</td><td>Milestone Actual Completion Date</td><td>Milestone Rating</td></tr><tr><td>The CBI staff prepares pre-production customized version of the MFT which includes oil sector, under ICDMF guidance</td><td>12/29/2023</td><td>11/24/2023</td><td>4 Fully Achieved as of 6/26/2024</td></tr><tr><td>The CBI staff develops production version of the MFT and applies it for a baseline forecast development</td><td>3/15/2024</td><td>6/14/2024</td><td>4 Fully Achieved as of 6/26/2024</td></tr><tr><td>The CBI staff operates the MFT to produce regular baseline forecast and scenarios, in particular for FX reserves, and uses it in the CBI policy-making process</td><td>12/31/2024</td><td></td><td>2 Partially Achieved as of 6/26/2024</td></tr><tr><td>The CBI staff produces regular macroeconomic forecast report based on the inputs from MFT</td><td>3/31/2025</td><td></td><td>1 Not Achieved as of 6/26/2024</td></tr></table>",
+        "bbox": [
+            83,
+            188,
+            883,
+            878
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "header",
+        "text": "ANNEX II: RESULTS FRAMEWORK",
+        "bbox": [
+            82,
+            124,
+            269,
+            147
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "page_number",
+        "text": "IMF",
+        "bbox": [
+            82,
+            910,
+            110,
+            931
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            481,
+            912,
+            619,
+            932
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "page_number",
+        "text": "26",
+        "bbox": [
+            626,
+            914,
+            642,
+            931
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "table",
+        "img_path": "",
+        "table_caption": [],
+        "table_footnote": [],
+        "bbox": [
+            83,
+            119,
+            883,
+            875
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "page_number",
+        "text": "IMF",
+        "bbox": [
+            80,
+            910,
+            111,
+            931
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            481,
+            912,
+            619,
+            932
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "page_number",
+        "text": "27",
+        "bbox": [
+            625,
+            914,
+            642,
+            931
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "table",
+        "img_path": "",
+        "table_caption": [],
+        "table_footnote": [],
+        "bbox": [
+            83,
+            119,
+            883,
+            853
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "page_number",
+        "text": "IMF",
+        "bbox": [
+            82,
+            912,
+            111,
+            931
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            481,
+            912,
+            619,
+            932
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "page_number",
+        "text": "28",
+        "bbox": [
+            626,
+            914,
+            642,
+            929
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "table",
+        "img_path": "",
+        "table_caption": [],
+        "table_footnote": [],
+        "bbox": [
+            83,
+            117,
+            883,
+            527
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            82,
+            912,
+            110,
+            931
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            482,
+            914,
+            619,
+            931
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "page_number",
+        "text": "29",
+        "bbox": [
+            626,
+            914,
+            642,
+            929
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "footer",
+        "text": "IMF",
+        "bbox": [
+            117,
+            936,
+            156,
+            951
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "footer",
+        "text": "Technical Assistance Report",
+        "bbox": [
+            653,
+            938,
+            848,
+            952
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "page_number",
+        "text": "30",
+        "bbox": [
+            858,
+            939,
+            880,
+            951
+        ],
+        "page_idx": 29
+    }
+]

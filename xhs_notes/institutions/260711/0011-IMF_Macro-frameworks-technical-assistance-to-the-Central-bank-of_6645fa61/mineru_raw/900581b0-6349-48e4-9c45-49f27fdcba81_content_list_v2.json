@@ -1,0 +1,709 @@
+[
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "HIGH-LEVEL SUMMARY\nTECHNICAL ASSISTANCE\nREPORT"
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                237,
+                746,
+                357
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "IRAQ"
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                382,
+                276,
+                419
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Macro frameworks technical assistance to the Central bank of Iraq"
+                    }
+                ]
+            },
+            "bbox": [
+                137,
+                426,
+                875,
+                494
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "July 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                138,
+                549,
+                287,
+                575
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Prepared By"
+                    }
+                ]
+            },
+            "bbox": [
+                138,
+                619,
+                271,
+                641
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Yurii Sholomytskyi, Mumtaz Hussain, Stephanie Medina Cas"
+                    }
+                ]
+            },
+            "bbox": [
+                138,
+                641,
+                633,
+                662
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "PARTNERS"
+                    }
+                ]
+            },
+            "bbox": [
+                138,
+                729,
+                258,
+                750
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Middle East Regional Technical Assistance Center (METAC)"
+                    }
+                ]
+            },
+            "bbox": [
+                138,
+                752,
+                674,
+                773
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                143,
+                117,
+                267,
+                214
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "High-Level Summary Technical Assistance Report Institute for Capacity Development"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                300,
+                122,
+                697,
+                157
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Macro frameworks technical assistance to the Central bank of Iraq: TA project report\nPrepared by Yurii Sholomytskyi, Mumtaz Hussain, Stephanie Medina Cas"
+                    }
+                ]
+            },
+            "bbox": [
+                166,
+                176,
+                831,
+                213
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The High-Level Summary Technical Assistance Report series provides high-level summaries of the assistance provided to IMF capacity development recipients, describing the high-level objectives, findings, and recommendations."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                231,
+                859,
+                285
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ABSTRACT: The document outlines the development and implementation of a macroeconomic projection tool at the Central Bank of Iraq (CBI), emphasizing collaboration and the growth of the CBI team. In a complex economic landscape, effective policymaking relies on robust forecasting and analysis. With support from the International Monetary Fund's Capacity Development (ICD) team, CBI initiated a project to enhance these capabilities. The project followed established ICD practices, involving scoping missions, training, and ongoing collaboration. A key outcome was the Macroeconomic Foundations Tool (MFT), an Excel-based forecasting tool tailored to address Iraq's oil dependency and customize fiscal and monetary policies with nowcasting capabilities."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                304,
+                885,
+                450
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JEL Classification Numbers: E60, E62, E17, E10"
+                    }
+                ]
+            },
+            "bbox": [
+                120,
+                506,
+                480,
+                523
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Keywords: Macroeconomic Framework, Financial Programming and Policies, Forecasting and Policy Analysis, Macroeconomic Foundations Tool"
+                    }
+                ]
+            },
+            "bbox": [
+                120,
+                534,
+                854,
+                571
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The contents of this document constitute a high-level summary of technical advice provided by the staff of the International Monetary Fund (IMF) to the authorities of a member country or international agency (the \"CD recipient\") in response to their request for capacity development. Unless the CD recipient specifically objects within 30 business days of its transmittal, the IMF will publish this high-level summary on IMF.org (see Staff Operational Guidance on the Dissemination of Capacity Development Information)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                667,
+                880,
+                758
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "International Monetary Fund, IMF Publications\nP.O. Box 92780, Washington, DC 20090, U.S.A.\nT. +(1) 202.623.7430 • F. +(1) 202.623.7201\npublications@IMF.org\nIMF.org/pubs"
+                    }
+                ]
+            },
+            "bbox": [
+                320,
+                791,
+                673,
+                883
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 International Monetary Fund"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                89,
+                375,
+                106
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HLS/26/38"
+                    }
+                ]
+            },
+            "bbox": [
+                795,
+                89,
+                877,
+                104
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Background"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                92,
+                292,
+                117
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Iraq's economy has been grappling with substantial challenges, primarily due to its heavy reliance on oil revenues, which exposes it to price volatility and constrains the growth of the private sector. The state's predominant role in the economy, coupled with inadequate infrastructure and other issues, further impedes private sector development. Acknowledging the urgent need for prudent macroeconomic policies, the Central Bank of Iraq (CBI), in collaboration with the International Monetary Fund's Institute for Capacity Development (ICD) staff, has embarked on the development of a new tool aimed at enhancing its macroeconomic forecasting and policy analysis capabilities."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                133,
+                885,
+                260
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In 2022, the scoping mission was conducted by ICD to evaluate the needs of the CBI, focusing on the competencies of relevant personnel and the current data frameworks in place. This mission uncovered significant limitations in the CBI's forecasting methodologies, which often had difficulties with capturing the intricate interrelations among various macroeconomic variables. As a result, the mission recommended the establishment of a comprehensive macroeconomic framework, opting for the Macroeconomic Foundations Tool (MFT) as a solution to bolster the CBI's policy analysis capacities."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                273,
+                859,
+                383
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The MFT is designed to be both simple and customizable, facilitating the gradual development of analytical skills within the CBI. The initiative includes targeted training sessions for CBI staff, emphasizing financial programming and effective utilization of the MFT to enhance forecasting and policy analysis. By implementing this robust analytical framework, the CBI aims to gain deeper insights into the effects of macroeconomic shocks, thereby strengthening its dialogues with international partners, including the International Monetary Fund, on critical policy measures."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                398,
+                880,
+                508
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Summary of Findings"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                559,
+                421,
+                584
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Central Bank of Iraq (CBI) possesses full capabilities to effectively utilize the customized Macroeconomic Foundations Tool (MFT), which has been specifically tailored to address the unique dynamics of the Iraqi economy. Recognizing the critical role of oil in Iraq's economic framework, the MFT incorporates an oil sector module. Furthermore, the MFT has been enhanced to illustrate the interconnections between the oil sector and the real, external, and fiscal sectors, bolstering the CBI's understanding of these linkages. This comprehensive framework includes a detailed analysis of state budget revenues directly tied to oil revenues, which subsequently influences government spending, investments, GDP, and disposable income. Additionally, the monetary sector of the MFT has been customized to evaluate the effects of government spending on various monetary variables and to incorporate foreign exchange reserve management, ensuring that the CBI can stabilize the local currency and control inflation. With a calibration strategy reflecting recent economic transformations, the MFT is equipped to simulate various scenarios, including oil shocks, and includes a short-term forecasting module that integrates high-frequency data, significantly enhancing its predictive capabilities for policymakers."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                599,
+                880,
+                854
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Data-related challenges present opportunities for future development. The lack of reliable and comprehensive source data for GDP by expenditure, particularly in fixed prices, poses a challenge to the quality of national accounts. This data is crucial for economic models to increase accuracy of the analysis of the relationships between expenditure components of national accounts and the rest of the economy."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                869,
+                875,
+                904
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                955,
+                151,
+                970
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "High-Level Summary Technical Assistance Report"
+                    }
+                ]
+            },
+            "bbox": [
+                491,
+                955,
+                861,
+                972
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                869,
+                957,
+                883,
+                970
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                111,
+                89,
+                880,
+                126
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The CBI team has made significant progress in the adoption of the tool, but team turnover remains a noteworthy challenge. In July 2023, the CBI core team experienced a substantial turnover, which had a temporary impact on the technical assistance action plan. However, the newly formed core team has shown remarkable progress in understanding the MFT, especially its forecasting functionalities, enabling them to begin developing alternative scenarios in the upcoming mission."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                141,
+                879,
+                232
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Summary of Recommendations"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                292,
+                563,
+                316
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "A. Operationalization of the MFT"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                111,
+                340,
+                431,
+                359
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Continued utilization of the tool is vital for institutionalizing the MFT. To empower the authorities in their policy decision-making processes, it is important for the core team to consistently engage with the tool for forecasting practices. This engagement should encompass presenting both baseline and shock scenarios to the management of the CBI, as well as revising macroeconomic reports within the CBI to align with the logic and capabilities of the MFT."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                372,
+                882,
+                463
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "B. Statistical data improvements"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                487,
+                433,
+                505
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Enhancing statistical data quality is a fundamental component of optimizing the MFT's effectiveness. This entails a proactive follow-up with the Central Statistics Organization (CSO) to retrieve the national accounts expenditure components in fixed prices, which are crucial for accurate economic modeling, as well as enhanced collection of information on a quarterly or monthly basis. It is important to cooperate with the METAC which has been delivering statistical TA to improve national accounts and other data."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                518,
+                877,
+                609
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "C. Cooperation with other economic institutions"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                632,
+                578,
+                651
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To further bolster the effectiveness of the monetary policy, it is essential for the CBI to actively cooperate with other economic institutions, particularly the Ministry of Finance. By incorporating the most current and relevant data from the budget and medium-term plans, the core team can establish solid assumptions to build reflect realistic projections for economic growth, inflation, and other key indicators."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                662,
+                874,
+                736
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                955,
+                151,
+                970
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "High-Level Summary Technical Assistance Report"
+                    }
+                ]
+            },
+            "bbox": [
+                491,
+                955,
+                861,
+                972
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                869,
+                957,
+                882,
+                970
+            ]
+        }
+    ]
+]
