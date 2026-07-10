@@ -150,11 +150,27 @@ jobs:
         with:
           fetch-depth: 1
           clean: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github
+            scripts
+            prompts
+            requirements.txt
+            kc_translated_reports/ark/${{ needs.fetch-and-build.outputs.date_folder }}
+            wechat_drafts/ark/${{ needs.fetch-and-build.outputs.date_folder }}
 
       - name: Pull latest generated ARK articles
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          git fetch --no-tags --prune --depth=1 origin +refs/heads/main:refs/remotes/origin/main
+          git sparse-checkout set --no-cone \
+            .github \
+            scripts \
+            prompts \
+            requirements.txt \
+            "kc_translated_reports/ark/${{ needs.fetch-and-build.outputs.date_folder }}" \
+            "wechat_drafts/ark/${{ needs.fetch-and-build.outputs.date_folder }}"
+          git fetch --filter=blob:none --no-tags --prune --depth=1 origin +refs/heads/main:refs/remotes/origin/main
           git reset --hard origin/main
           git clean -fdx
 

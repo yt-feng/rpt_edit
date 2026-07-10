@@ -73,13 +73,38 @@ jobs:
         with:
           fetch-depth: 1
           clean: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github
+            scripts
+            prompts
+            requirements.txt
+            wechat_drafts/xhs_notes
 
       - name: Pull latest generated XHS notes
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          git fetch --no-tags --prune --depth=1 origin +refs/heads/main:refs/remotes/origin/main
+          DATE_FOLDER="${{ github.event.inputs.date_folder || 'latest' }}"
+          RESOLVED_DATE_FOLDER="$DATE_FOLDER"
+          git fetch --filter=blob:none --no-tags --prune --depth=1 origin +refs/heads/main:refs/remotes/origin/main
+          if [ "$DATE_FOLDER" = "latest" ]; then
+            RESOLVED_DATE_FOLDER="$(git ls-tree -d --name-only origin/main xhs_notes/dropbox | sed 's#xhs_notes/dropbox/##' | grep -E '^[0-9]{6,8}$' | sort -n | tail -1)"
+            if [ -z "$RESOLVED_DATE_FOLDER" ]; then
+              echo "No date-named folders found under xhs_notes/dropbox"
+              exit 1
+            fi
+          fi
+          git sparse-checkout set --no-cone \
+            .github \
+            scripts \
+            prompts \
+            requirements.txt \
+            "xhs_notes/dropbox/$RESOLVED_DATE_FOLDER" \
+            "wechat_drafts/xhs_notes/$RESOLVED_DATE_FOLDER"
           git reset --hard origin/main
           git clean -fdx
+          echo "RESOLVED_DATE_FOLDER=$RESOLVED_DATE_FOLDER" >> "$GITHUB_ENV"
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -98,19 +123,9 @@ jobs:
         run: |
           set -o pipefail
           DATE_FOLDER="${{ github.event.inputs.date_folder || 'latest' }}"
-          RESOLVED_DATE_FOLDER="$DATE_FOLDER"
+          RESOLVED_DATE_FOLDER="${RESOLVED_DATE_FOLDER:-$DATE_FOLDER}"
           if [ "$DATE_FOLDER" = "latest" ]; then
-            RESOLVED_DATE_FOLDER="$(python - <<'PY'
-          from pathlib import Path
-          import re
-
-          root = Path("xhs_notes/dropbox")
-          candidates = [p.name for p in root.iterdir() if p.is_dir() and re.match(r"^\d{6,8}$", p.name)]
-          if not candidates:
-              raise SystemExit("No date-named folders found under xhs_notes/dropbox")
-          print(max(candidates, key=int))
-          PY
-          )"
+            DATE_FOLDER="$RESOLVED_DATE_FOLDER"
           fi
           MAX_ARTICLES="${{ github.event.inputs.max_articles || 'all' }}"
           ARTICLE_OFFSET="${{ github.event.inputs.article_offset || '0' }}"
