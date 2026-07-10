@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_x1pov5hl/pdfs/0001-16-DB-Thematic Research-DB CoTD- Is EM a huge tech play--260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_x1pov5hl/pdfs/0002-17-GS-AMERICAS TECHNOLOGY- IT SERVICES-2Q Earnings Preview- Expect guidance to move toward midpoints given increased macro uncertainty-260709.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_x1pov5hl/pdfs/0003-18-DB-Xiaomi-1810.HK-Entry into Family Car and Outdoor Travel Segments with New -SkyNomad- PHEVs-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_x1pov5hl/pdfs/0004-19-GS-China Data Centers-NDRC approved two C-REIT projects- Implications for Range GDS-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_x1pov5hl/pdfs/0005-20-GS-Asia Pacific Banks- New measures announced to deepen financial connectivity- Structural positive for HK banks-260708.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
