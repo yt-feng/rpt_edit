@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_viez2ti9/pdfs/0001-41-JPM-Qingdao TGOOD Electric-300001--Key takeaways from the management call- lifting PT on strong outlook for DC and overseas power orders-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_viez2ti9/pdfs/0002-42-MS-Chengxin Lithium Group Co. Ltd.-002240-Strong Preliminary 1H26 Results- Raise PT-260709.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_viez2ti9/pdfs/0003-43-MS-Fiserv Inc.-FISV.US-Potential Debit Network Sale Could Unlock Value- Another Leadership Change Adds to Uncertainty-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_viez2ti9/pdfs/0004-44-MS-China Market-Wise-China Outperforming in a Volatile Market - What-s Next--260709.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_viez2ti9/pdfs/0005-45-MS-China Mengniu Dairy-2319.HK-Sustaining Positive Sales Trend-260708.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
