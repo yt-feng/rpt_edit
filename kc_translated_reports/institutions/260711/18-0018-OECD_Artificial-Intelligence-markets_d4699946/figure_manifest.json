@@ -1,0 +1,30 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/institutions/260711/0018-OECD_Artificial-Intelligence-markets_d4699946/mineru_raw/images/54aaf779e38cd4d700e8735a799e7d2128d5eaa06078c3acde431ec0c6ebef2b.jpg",
+    "path": "kc_translated_reports/institutions/260711/18-0018-OECD_Artificial-Intelligence-markets_d4699946/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=5;non_chart_context,chart_context,chart_ratio,edge:0.14,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/institutions/260711/0018-OECD_Artificial-Intelligence-markets_d4699946/mineru_raw/images/e59a71d96bb25b4f0f0e8c9555ba8337ede8c74c9c06478403ae740534d8af39.jpg",
+    "path": "kc_translated_reports/institutions/260711/18-0018-OECD_Artificial-Intelligence-markets_d4699946/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=3;non_chart_context,chart_context,chart_ratio,large"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/institutions/260711/0018-OECD_Artificial-Intelligence-markets_d4699946/mineru_raw/images/8a1efbbd63d11e41660bb6104865e55adddc42740818f34f474f188c06021624.jpg",
+    "path": "kc_translated_reports/institutions/260711/18-0018-OECD_Artificial-Intelligence-markets_d4699946/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=4;non_chart_context,chart_context,edge:0.17,contrast"
+  },
+  {
+    "token": "[[KC_IMAGE_004]]",
+    "source_path": "xhs_notes/institutions/260711/0018-OECD_Artificial-Intelligence-markets_d4699946/mineru_raw/images/4603126c695b1e465e8c99f0ae6624a0df3ddfd1a21fd6ffff057a5eb2ba9710.jpg",
+    "path": "kc_translated_reports/institutions/260711/18-0018-OECD_Artificial-Intelligence-markets_d4699946/assets/fig_004.jpg",
+    "relative_path": "fig_004.jpg",
+    "chart_filter": "score=5;non_chart_context,chart_context,chart_ratio,edge:0.18,contrast"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/institutions/260711/0001-ADB_Bond-Connect-and-Recent-China-Inter-Bank-Bond-Market-Develop_870831e9/mineru_raw/images/80996b321b1ca07837d56b9b2f6d974da3f8cec489b935d941150bdde0cbf42d.jpg",
+    "path": "kc_translated_reports/institutions/260711/01-0001-ADB_Bond-Connect-and-Recent-China-Inter-Bank-Bond-Market-Develop_870831e9/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.24,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/institutions/260711/0001-ADB_Bond-Connect-and-Recent-China-Inter-Bank-Bond-Market-Develop_870831e9/mineru_raw/images/f1d0863cac7709b1bbb74928e826f9c502f543f79c4b811b356110d8933e5d79.jpg",
+    "path": "kc_translated_reports/institutions/260711/01-0001-ADB_Bond-Connect-and-Recent-China-Inter-Bank-Bond-Market-Develop_870831e9/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.18,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/institutions/260711/0001-ADB_Bond-Connect-and-Recent-China-Inter-Bank-Bond-Market-Develop_870831e9/mineru_raw/images/2db48ec94b073366d0948199052d0fc1b14b714fcbdc99fba056f9065b21b2e9.jpg",
+    "path": "kc_translated_reports/institutions/260711/01-0001-ADB_Bond-Connect-and-Recent-China-Inter-Bank-Bond-Market-Develop_870831e9/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=9;chart_context,chart_ratio,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_004]]",
+    "source_path": "xhs_notes/institutions/260711/0001-ADB_Bond-Connect-and-Recent-China-Inter-Bank-Bond-Market-Develop_870831e9/mineru_raw/images/27b25942727aefc8183c8f27ca0033f204c8fc2b1d289e391dffa82a40d2dc8e.jpg",
+    "path": "kc_translated_reports/institutions/260711/01-0001-ADB_Bond-Connect-and-Recent-China-Inter-Bank-Bond-Market-Develop_870831e9/assets/fig_004.jpg",
+    "relative_path": "fig_004.jpg",
+    "chart_filter": "score=9;chart_context,chart_ratio,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_005]]",
+    "source_path": "xhs_notes/institutions/260711/0001-ADB_Bond-Connect-and-Recent-China-Inter-Bank-Bond-Market-Develop_870831e9/mineru_raw/images/efe3d7e2dd8cf34923a8dec9d864762364551299393cbcb2dc0adf37c88feb1f.jpg",
+    "path": "kc_translated_reports/institutions/260711/01-0001-ADB_Bond-Connect-and-Recent-China-Inter-Bank-Bond-Market-Develop_870831e9/assets/fig_005.jpg",
+    "relative_path": "fig_005.jpg",
+    "chart_filter": "score=8;chart_context,chart_ratio,large"
+  }
+]

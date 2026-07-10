@@ -1,0 +1,23 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/institutions/260711/0002-ADB_Toward-More-Livable-Cities-in-the-Hindu-Kush-Himalayas-Lesso_4c92419f/mineru_raw/images/ea8bad6f91581c5efda4ce4da5adc463b1328b8942fa0faedd0e88a53ac32a32.jpg",
+    "path": "kc_translated_reports/institutions/260711/02-0002-ADB_Toward-More-Livable-Cities-in-the-Hindu-Kush-Himalayas-Lesso_4c92419f/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.11,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/institutions/260711/0002-ADB_Toward-More-Livable-Cities-in-the-Hindu-Kush-Himalayas-Lesso_4c92419f/mineru_raw/images/76696a1e5282f2626c8cebd1e03500077f3e0a44f1b0fdbb2517fec76216502e.jpg",
+    "path": "kc_translated_reports/institutions/260711/02-0002-ADB_Toward-More-Livable-Cities-in-the-Hindu-Kush-Himalayas-Lesso_4c92419f/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=4;non_chart_context,chart_context,edge:0.21,contrast"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/institutions/260711/0002-ADB_Toward-More-Livable-Cities-in-the-Hindu-Kush-Himalayas-Lesso_4c92419f/mineru_raw/images/a16ea8a14cdb2a1bfb2ab938894bcaa304f55401eafbf2fde3f6963821dad598.jpg",
+    "path": "kc_translated_reports/institutions/260711/02-0002-ADB_Toward-More-Livable-Cities-in-the-Hindu-Kush-Himalayas-Lesso_4c92419f/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.17,large"
+  }
+]
