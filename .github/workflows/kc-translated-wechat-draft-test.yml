@@ -76,13 +76,38 @@ jobs:
         with:
           fetch-depth: 1
           clean: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github
+            scripts
+            prompts
+            requirements.txt
+            wechat_drafts
 
       - name: Pull latest generated translated reports
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          git fetch --no-tags --prune --depth=1 origin +refs/heads/main:refs/remotes/origin/main
+          DATE_FOLDER="${{ github.event.inputs.date_folder || 'latest' }}"
+          RESOLVED_DATE_FOLDER="$DATE_FOLDER"
+          git fetch --filter=blob:none --no-tags --prune --depth=1 origin +refs/heads/main:refs/remotes/origin/main
+          if [ "$DATE_FOLDER" = "latest" ]; then
+            RESOLVED_DATE_FOLDER="$(git ls-tree -d --name-only origin/main kc_translated_reports | sed 's#kc_translated_reports/##' | grep -E '^[0-9]{6,8}$' | sort -n | tail -1)"
+            if [ -z "$RESOLVED_DATE_FOLDER" ]; then
+              echo "No date-named folders found under kc_translated_reports"
+              exit 1
+            fi
+          fi
+          git sparse-checkout set --no-cone \
+            .github \
+            scripts \
+            prompts \
+            requirements.txt \
+            "kc_translated_reports/$RESOLVED_DATE_FOLDER" \
+            "wechat_drafts/$RESOLVED_DATE_FOLDER"
           git reset --hard origin/main
           git clean -fdx
+          echo "RESOLVED_DATE_FOLDER=$RESOLVED_DATE_FOLDER" >> "$GITHUB_ENV"
 
       - name: Download translated reports artifact
         if: ${{ github.event.inputs.source_run_id != '' }}
@@ -110,6 +135,9 @@ jobs:
         run: |
           set -o pipefail
           DATE_FOLDER="${{ github.event.inputs.date_folder || 'latest' }}"
+          if [ "$DATE_FOLDER" = "latest" ]; then
+            DATE_FOLDER="${RESOLVED_DATE_FOLDER:-latest}"
+          fi
           MAX_ARTICLES="${{ github.event.inputs.max_articles || '1' }}"
           ARTICLE_OFFSET="${{ github.event.inputs.article_offset || '0' }}"
           ARTICLES_PER_DRAFT="${{ github.event.inputs.articles_per_draft || '8' }}"
