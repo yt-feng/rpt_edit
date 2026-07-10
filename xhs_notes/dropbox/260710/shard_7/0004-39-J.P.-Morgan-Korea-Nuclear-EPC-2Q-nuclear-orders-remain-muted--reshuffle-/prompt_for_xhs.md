@@ -1,0 +1,189 @@
+你是资深小红书内容策划 + 投研翻译官，擅长把英文/中文研报改写成高互动、可收藏、可转发的中文小红书笔记。
+
+【目标】
+- 把下面的研报解析内容，改写成一篇中文小红书笔记。
+- 风格：投研博主风：信息密度高，但像给朋友讲逻辑
+- 长度：不超过 1000 字，信息密度高但不要写长文。
+- emoji 密度：中
+
+【必须输出的结构】
+1. 第一行：标题，20 字以内，不要像论文标题，也不要用夸张极限词。
+2. 第二行：封面短标题，10 字以内，适合放在图中间。
+3. 第三行：封面副标题，10-18 字，短句。
+4. 正文分段清晰，每段不超过 3 行，可以用编号、小标题或加粗。
+5. 正文要自然呈现观点，但不要暴露写作框架或思考过程。
+6. 末尾可以保留 2-4 个相关标签，只允许从这些标签里选择：`#学习笔记`、`#研究笔记`、`#学习研究`、`#研报解读`。
+
+【严禁输出】
+- 不要出现这些栏目名或类似栏目名：`一句话结论`、`我最想提醒的一点`、`配图建议`、`免责声明`、`非投资建议`、`仅做学习交流`、`仅作学习交流`。
+- 不要在正文最后追加配图建议，不要告诉我第 2/3/4 张图怎么配文。
+- 不要输出任何包含“投资”的免责声明，也不要输出“非投资建议”这种表述。
+- 不要输出财经敏感标签：`#投资学习`、`#财经`、`#金融`、`#股票`、`#基金`、`#理财`。
+- 不要输出无关标签：`#小红书笔记`、`#笔记分享`、`#干货分享`。
+- 不要写“关注”“点赞”“求关注”“评论区见”“评论区留言”等直接互动诱导；可以写“欢迎一起讨论”“可以继续交流”。
+
+【平台发布合规要求】
+- 不要写“爆款”“震惊”“必看”“必读”“最强”“最全”“唯一”“全网首发”等极限词或夸张词。
+- 不要写“投资建议”“买入”“卖出”“强烈推荐”“稳赚”“保本”“必涨”“抄底”“上车”“内幕”“翻倍”等金融操作或收益承诺表达。
+- “投资”相关词尽量改成“投研”“研究”“观察”“学习参考”；如果必须保留，也要放在中性语境里。
+- 不要承诺收益，不要引导交易，不要暗示确定性结果。
+
+【内容要求】
+- 只能基于研报原文和解析结果推导，不要编造数据、公司动作、引用。
+- 可以把专业表达翻成人话，但不能扭曲意思。
+- 遇到不确定或缺失信息：用“研报未给出”或“这里是推测”明确标注。
+- 默认避免出现具体投行品牌名，比如“GS”“GS”，统一写作“投行研报”。
+- 不要解释你的思考过程，不要输出多余说明。
+
+【推荐写法】
+- 开头直接给一个自然判断，不要加“结论：”标签。
+- 中间用 1/2/3 拆逻辑，但小标题要像正常内容标题，不要像写作模板。
+- 结尾可以留下一个自然讨论问题，但不要引导关注、点赞或评论。
+- 最后一行输出 2-4 个标签，优先：`#学习笔记 #研究笔记 #学习研究 #研报解读`。
+
+【研报解析内容】
+"""
+## Korea Nuclear EPC
+
+## 2Q nuclear orders remain muted; reshuffle our nuclear order estimates
+
+2Q order intake was solid but nuclear orders remained muted, with only a small KEPCO E&C maintenance contract (W33bn) from KHNP. Non-nuclear orders were strong: Doosan Enerbility's (Doosan) US steam turbine orders and Hyundai E&C's (HDEC) W10tn intake, including the Apgujeong 3rd District reconstruction (W5.6tn). We are reshuffling our order estimates, pushing back our overseas nuclear project assumptions by 1-2 years due to geopolitical tensions, trimming 2026-28E orderbook estimates and lowering price targets. 2Q earnings should be broadly in-line with consensus, with limited downside risk as problematic overseas projects near completion. We maintain a constructive sector view on all three names with Overweight ratings, with Doosan as our top pick.
+
+\- 2Q new orders: strong overall, but nuclear orders remain muted. The only disclosed nuclear-related award was KEPCO E&C's emergency maintenance contract for an existing nuclear plant (W33bn) from KEPCO. Outside nuclear, Doosan booked W2.4tn of new orders, highlighted by another large US steam turbine and generator contract, reinforcing continued robust US CCPP (combined-cycle gas power plant) demand. HDEC also delivered strong order momentum in 2Q, booking W10tn of new orders led by the Apgujeong 3rd District reconstruction project (W5.6tn). Looking ahead, we expect Doosan to secure the \~W3tn construction portion of the Czech Dukovany nuclear project in the coming quarter.
+
+\- Reshuffling our order estimates. Political complications and extended execution timelines have delayed several overseas nuclear projects, and we have pushed back our order assumptions by 1-2 years. In particular, we have pushed back our assumed US timeline from 2028 to 2029. In our view, this is largely dependent on intergovernmental decision-making between Korea and the US, including how Korea's planned \$200bn investment over the next 10 years in US infrastructure is allocated and sequenced. As a result, we cut our 2026-28E orderbook estimates for Doosan, KEPCO E&C, and HDEC by 5-17%, 3-31%, and 12-21%, respectively, which also drives lower target prices. That said, we believe the absence of a nuclear order win this year is largely priced in. Investor feedback from our Asia marketing last week suggests expectations have shifted towards a bear-case scenario in which only Korea and Vietnam orders are awarded (link to our note).
+
+\- 2Q earnings likely a non-event; broadly in-line with BBG consensus. We do not expect a meaningful beat or miss, although quarterly volatility may persist due to uneven project progress. HDEC disclosed an additional upward order revision of W337bn for domestic projects, which should partially offset expected site-related cost overruns. In addition, previously problematic overseas projects are either completed or nearing completion (e.g., HDEC's
+
+Korea Auto, EV battery, Nuclear and Utility
+
+Sonny Lee AC
+
+(82-2) 758 5716
+
+sonny.lee@JPM.com
+
+Seri Yoon
+
+(82-2) 758 5704
+
+seri.yoon@JPM.com
+
+JPM Securities (Far East) Limited, Seoul Branch
+
+Equity Ratings and Price Targets
+
+<table><tr><td rowspan="2">Company</td><td rowspan="2">Ticker</td><td rowspan="2">Mkt Cap ($ mn)</td><td rowspan="2">Price CCY</td><td rowspan="2">Price</td><td colspan="2">Rating</td><td colspan="4">Price Target</td></tr><tr><td>Cur</td><td>Prev</td><td>Cur</td><td>End Date</td><td>Prev End Date</td><td></td></tr><tr><td>Doosan Enerbility</td><td>034020 KS</td><td>31,290</td><td>KRW</td><td>74,000</td><td>OW</td><td>n/c</td><td>130,000</td><td>Dec-27</td><td>160,000</td><td>n/c</td></tr><tr><td>KEPCO E&amp;C</td><td>052690 KS</td><td>2,407</td><td>KRW</td><td>95,400</td><td>OW</td><td>n/c</td><td>180,000</td><td>Dec-27</td><td>260,000</td><td>n/c</td></tr><tr><td>Hyundai E&amp;C</td><td>000720 KS</td><td>7,457</td><td>KRW</td><td>100,500</td><td>OW</td><td>n/c</td><td>170,000</td><td>Dec-27</td><td>180,000</td><td>n/c</td></tr></table>
+
+Source: Company data, Bloomberg Finance L.P., JPM estimates. n/c = no change. All prices as of 08 Jul 26.
+
+See page 23 for analyst certification and important disclosures, including non-US analyst disclosures.
+
+Saudi Arabia projects), reducing the risk of further margin drag.
+
+\- Stay Overweight on the three nuclear EPC names. Despite softer sentiment on the near-term nuclear project outlook, we maintain a constructive view on the Korea nuclear EPC sector. Our top pick remains Doosan, supported by its expanding orderbook and balanced exposure across large-scale nuclear, SMRs, and gas turbines. We prefer the nuclear EPC names over KEPCO (UW), given: 1) better visibility on overseas EPC catalysts; and 2) relatively lower policy risk vs. KEPCO.
+
+Wbn  
+Table 1: Korea nuclear EPC companies: major order intake in 2Q26
+
+<table><tr><td rowspan="2">Date announced</td><td rowspan="2">New/ Revision</td><td rowspan="2">Contract amount (Wbn)</td><td rowspan="2">Detail</td><td rowspan="2">Project owner</td><td colspan="2">Contract period</td></tr><tr><td>Start</td><td>End</td></tr><tr><td>Doosan Enerbility</td><td></td><td>2,369</td><td></td><td></td><td></td><td></td></tr><tr><td>5/6/2026</td><td>New</td><td>523</td><td>Busan Metropolitan City Myeongjang Park apartment construction</td><td>Jeongsang City Park</td><td>9/30/2026</td><td>12/30/2030</td></tr><tr><td>5/26/2026</td><td>New</td><td>480</td><td>Long Term Procurement Management contract for GT</td><td>Korea Southern Power</td><td>n/a</td><td>n/a</td></tr><tr><td>5/27/2026</td><td>New</td><td>n/a</td><td>W370MW steam turbine + generator supply contract</td><td>US company</td><td>n/a</td><td>~2029</td></tr><tr><td>6/1/2026</td><td>New</td><td>837</td><td>Jafurah Phase II cogeneration plant</td><td>KEPCO</td><td>6/1/2026</td><td>6/30/2029</td></tr><tr><td>6/15/2026</td><td>New</td><td>529</td><td>Duqm independent power project</td><td>Coastal Power SAOC</td><td>6/12/2026</td><td>4/1/2029</td></tr><tr><td>HDEC</td><td></td><td>9,791</td><td></td><td></td><td></td><td></td></tr><tr><td>4/15/2026</td><td>Reivision</td><td>241</td><td>Daejang-Hongdae metropolitan railway private investment facility construction</td><td>Seobu Metropolitan Metro</td><td>n/a</td><td>n/a</td></tr><tr><td>4/29/2026</td><td>Reivision</td><td>96</td><td>Itaewon UN site complex development</td><td>Yongsan Eleven</td><td>2/11/2023</td><td>6/4/2027</td></tr><tr><td>5/26/2026</td><td>New</td><td>5,561</td><td>Apgujeong Apartment District Special Planning Zone 3 housing redevelopment</td><td>Apgujeong Apartment District Special Planning Zone 3 Redevelopment Association</td><td>n/a</td><td>n/a</td></tr><tr><td>6/5/2026</td><td>New</td><td>3,039</td><td>Wirye Bokjeong station area complex development</td><td>Songpa Biz Cluster PFV</td><td>6/15/2026</td><td>1/14/2031</td></tr><tr><td>6/22/2026</td><td>New</td><td>853</td><td>Beomcheon 4 District housing redevelopment</td><td>Beomcheon 4 District Redevelopment Association</td><td>n/a</td><td>n/a</td></tr><tr><td>KEPCO E&amp;C</td><td></td><td>33</td><td></td><td></td><td></td><td></td></tr><tr><td>4/16/2026</td><td>New</td><td>33</td><td>Operating nuclear plants emergency maintenance</td><td>KHNP</td><td>4/14/2026</td><td>4/13/2027</td></tr></table>
+
+Source: Company data
+
+Table 2: Nearest nuclear projects relevant to Korea EPC companies  
+Number of reactor units
+
+<table><tr><td></td><td>Prime contractor</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td></tr><tr><td colspan="6">Large-scale projects</td></tr><tr><td>Bulgaria</td><td>Westinghouse</td><td></td><td>2</td><td></td><td></td></tr><tr><td>Poland</td><td>Westinghouse</td><td></td><td>3</td><td></td><td></td></tr><tr><td>Vietnam</td><td>KEPCO</td><td></td><td>2</td><td></td><td></td></tr><tr><td>Korea</td><td>KEPCO</td><td></td><td></td><td>2</td><td></td></tr><tr><td>US</td><td>Westinghouse</td><td></td><td></td><td></td><td>2</td></tr><tr><td>US</td><td>KEPCO</td><td></td><td></td><td></td><td>2</td></tr><tr><td colspan="6">Reactor units by prime contractor</td></tr><tr><td>KEPCO</td><td></td><td></td><td>2</td><td>2</td><td>2</td></tr><tr><td>Westinghouse</td><td></td><td></td><td>5</td><td></td><td>2</td></tr></table>
+
+Source: Company data, JPM estimates.
+
+Table 3: Estimated orders from the nearest large-scale nuclear projects \$bn
+
+<table><tr><td></td><td>Prime contractor</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td></tr><tr><td colspan="6">Projected contract value</td></tr><tr><td>Bulgaria</td><td>Westinghouse</td><td></td><td>&gt;20</td><td></td><td></td></tr><tr><td>Poland</td><td>Westinghouse</td><td></td><td>&gt;30</td><td></td><td></td></tr><tr><td>Vietnam</td><td>KEPCO</td><td></td><td>10</td><td></td><td></td></tr><tr><td>Korea</td><td>KEPCO</td><td></td><td></td><td>10</td><td></td></tr><tr><td>US</td><td>Westinghouse</td><td></td><td></td><td></td><td>&gt;20</td></tr><tr><td>US</td><td>KEPCO</td><td></td><td></td><td></td><td>20</td></tr><tr><td colspan="6">Project by prime contractor</td></tr><tr><td>KEPCO</td><td></td><td></td><td>10</td><td>10</td><td>20</td></tr><tr><td>Westinghouse</td><td></td><td></td><td>&gt;50</td><td></td><td>&gt;20</td></tr><tr><td colspan="6">Est. order size for Korean EPC companies</td></tr><tr><td>Doosan</td><td>~$2bn for KEPCO reactor; ~$200mn per Westinghouse reactor</td><td></td><td>5.0</td><td>4.0</td><td>4.4</td></tr><tr><td>KEPCO E&amp;C</td><td>~$0.5bn per KEPCO reactor</td><td></td><td>1.0</td><td>1.0</td><td>1.0</td></tr><tr><td>HDEC</td><td>~$1.2bn per KEPCO reactor in Korea (double for overseas) x 50% chance; ~$4bn per Westinghouse reactor (Bulgaria, US)</td><td></td><td>10.4</td><td>1.2</td><td>10.4</td></tr></table>
+
+Source: IAEA, company data, JPM estimates
+
+Table 4: Estimated orders from the nearest SMR projects \$bn
+
+<table><tr><td></td><td>SMR projects</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td></tr><tr><td>Doosan</td><td>NuScale, TerraPower, etc.</td><td>0.7</td><td>0.7</td><td>1.4</td><td>2.1</td></tr><tr><td>HDEC</td><td>Holtec International</td><td>2.0</td><td>2.0</td><td></td><td></td></tr></table>
+
+Source: Company data, JPM estimates
+
+## Table 5: JPMe vs consensus
+
+<table><tr><td colspan="10">Doosan Enerbility</td></tr><tr><td rowspan="2"></td><td colspan="3">2026E</td><td colspan="3">2027E</td><td colspan="3">2028E</td></tr><tr><td>JPMe</td><td>Consensus</td><td>Diff</td><td>JPMe</td><td>Consensus</td><td>Diff</td><td>JPMe</td><td>Consensus</td><td>Diff</td></tr><tr><td>Revenue</td><td>17,060</td><td>18,037</td><td>-5%</td><td>19,240</td><td>20,096</td><td>-4%</td><td>22,484</td><td>22,458</td><td>0%</td></tr><tr><td>OP</td><td>1,119</td><td>1,145</td><td>-2%</td><td>1,542</td><td>1,568</td><td>-2%</td><td>2,065</td><td>2,042</td><td>1%</td></tr><tr><td colspan="10">Hyundai E&amp;C</td></tr><tr><td rowspan="2"></td><td colspan="3">2026E</td><td colspan="3">2027E</td><td colspan="3">2028E</td></tr><tr><td>JPMe</td><td>Consensus</td><td>Diff</td><td>JPMe</td><td>Consensus</td><td>Diff</td><td>JPMe</td><td>Consensus</td><td>Diff</td></tr><tr><td>Revenue</td><td>27,492</td><td>27,168</td><td>1%</td><td>28,484</td><td>29,218</td><td>-3%</td><td>31,029</td><td>31,444</td><td>-1%</td></tr><tr><td>OP</td><td>817</td><td>826</td><td>-1%</td><td>1,137</td><td>1,184</td><td>-4%</td><td>1,426</td><td>1,487</td><td>-4%</td></tr></table>
+
+No consensus est. for KEPCO E&C  
+Source: Bloomberg Finance L.P., JPM estimates.
+
+## Overweight
+
+034020.KS, 034020 KS
+Price (08 Jul 26):W74,000
+
+▼ Price Target (Dec-27):W130,000  
+Prior (Dec-27):W160,000
+
+## Korea Auto, EV battery, Nuclear and Utility
+
+Sonny Lee AC
+(82-2) 758 5716
+sonny.lee@JPM.com
+JPM Securities (Far East) Limited, Seoul Branch
+
+Key Changes (FYE Dec)
+
+<table><tr><td></td><td>Prev</td><td>Cur</td><td>Δ</td></tr><tr><td>Adj. EPS - 26E (W)</td><td>578</td><td>512</td><td>-11.5%</td></tr><tr><td>Adj. EPS - 27E (W)</td><td>1,193</td><td>1,046</td><td>-12.3%</td></tr></table>
+
+Quarterly Forecasts (FYE Dec)
+Adj. EPS (W)
+
+<table><tr><td colspan="4">Adj. EPS (R)</td></tr><tr><td></td><td>2025A</td><td>2026E</td><td>2027E</td></tr><tr><td>Q1</td><td>(107)</td><td>1A</td><td>173</td></tr><tr><td>Q2</td><td>204</td><td>153</td><td>248</td></tr><tr><td>Q3</td><td>(78)</td><td>175</td><td>258</td></tr><tr><td>Q4</td><td>114</td><td>183</td><td>367</td></tr><tr><td>FY</td><td>132</td><td>512</td><td>1,046</td></tr></table>
+
+Style Exposure
+
+<table><tr><td rowspan="2">Quant Factors</td><td rowspan="2">Current %Rank</td><td colspan="4">Hist %Rank (1=Top)</td></tr><tr><td>6M</td><td>1Y</td><td>3Y</td><td>5Y</td></tr><tr><td>Value</td><td>90</td><td>88</td><td>74</td><td>70</td><td>4</td></tr><tr><td>Growth</td><td>7</td><td>62</td><td>42</td><td>9</td><td>58</td></tr><tr><td>Momentum</td><td>21</td><td>6</td><td>25</td><td>54</td><td>11</td></tr><tr><td>Quality</td><td>85</td><td>81</td><td>74</td><td>15</td><td>100</td></tr><tr><td>Low Vol</td><td>82</td><td>81</td><td>66</td><td>82</td><td>100</td></tr><tr><td>ESGQ</td><td>19</td><td>14</td><td>29</td><td>97</td><td>-</td></tr></table>
+
+## Doosan Enerbility
+
+## Gas turbines to fill orderbook while nuclear remains silent
+
+Doosan Enerbility continues to benefit from robust gas/steam turbine demand and CCPP (combined-cycle gas power plant) EPC, with orders flowing in steadily and robust demand continuing for the next several years. Nuclear orders remained muted in 1H: the Czech Dukovany construction portion (\~W3tn) leads the order momentum, but we have pushed Bulgaria's Kozloduy project into 2027 following a change in government that has slowed progress, and conservatively deferred Korea's domestic nuclear project order to next year, as site selection was only confirmed in June 2026. Accordingly, we trim our 2026-28E orderbook est. by 5-17% and cut our PT to W130,000, while earnings estimates remain largely unchanged.
+
+Table 6: Doosan: 2Q26 preview
+Wbn, %
+
+<table><tr><td rowspan="2"></td><td colspan="3">2Q26</td><td rowspan="2">2Q25</td><td rowspan="2">% y/y</td><td rowspan="2">1Q26</td><td rowspan="2">% q/q</td></tr><tr><td>JPMe</td><td>BBG</td><td>Diff.</td></tr><tr><td>Revenue</td><td>4,487</td><td>4,657</td><td>-4%</td><td>4,569</td><td>-2%</td><td>4,261</td><td>5%</td></tr><tr><td>OP</td><td>283</td><td>268</td><td>5%</td><td>271</td><td>4%</td><td>234</td><td>21%</td></tr><tr><td>OP margin</td><td>6.3%</td><td>5.8%</td><td></td><td>5.9%</td><td></td><td>5.5%</td><td></td></tr><tr><td>NP</td><td>163</td><td>68</td><td>142%</td><td>198</td><td>-17%</td><td>60</td><td>171%</td></tr><tr><td>NP margin</td><td>3.6%</td><td>1.5%</td><td></td><td>4.3%</td><td></td><td>1.4%</td><td></td></tr></table>
+
+Source: Company data, Bloomberg Finance L.P.  
+Table 7: Doosan: Price target
+
+Wbn, W, x
+
+<table><tr><td colspan="2"></td><td>Value</td><td>Note</td></tr><tr><td>Doosan Enerbility</td><td>(a)</td><td>82,293</td><td></td></tr><tr><td>2028E Orderbook</td><td></td><td>43,312</td><td>Enerbility-only orderbook</td></tr><tr><td>Target Price/Orderbook</td><td></td><td>1.9x</td><td>Upcycle multiple</td></tr><tr><td>Investment value</td><td>(b)</td><td>4,445</td><td></td></tr><tr><td>Doosan Bobcat</td><td></td><td>2,839</td><td>48.2% stake x Market cap</td></tr><tr><td>Doosan Fuelcell</td><td></td><td>847</td><td>30.3% stake x Market cap</td></tr><tr><td>Doosan Skoda Power</td><td></td><td>759</td><td>67.0% stake x Market cap</td></tr><tr><td>Discount to investment value</td><td>(c)</td><td>50%</td><td></td></tr><tr><td>Target market cap</td><td>(a)+(b)x(1-c)</td><td>84,516</td><td></td></tr><tr><td>Price target</td><td></td><td>130,000</td><td></td></tr></table>
+
+Source: Bloomberg Finance L.P., JPM estimates.
+
+Price Performance  
+![](images/b145642f31b8bfdf676abffca8a35b2ba85995048dc7f5c33d2f0ab0aa6ddcc9.jpg)
+
+— 034020.KS Price (W)
+
+<table><tr><td></td><td>YTD</td><td>1m</td><td>3m</td><td>12m</td></tr><tr><td>Abs</td><td>-2.4%</td><td>-14.4%</td><td>-27.7%</td><td>11.1%</td></tr></table>
+
+<table><tr><td colspan="2">Company Data</td></tr><tr><td>Shares O/S (mn)</td><td>641</td></tr><tr><td>52-week range (W)</td><td>139,200-51,100</td></tr><tr><td>Market cap ($ mn)</td><td>31,290</td></tr><tr><td>Exchange rate</td><td>1,514.90</td></tr><tr><td>Free float (%)</td><td>61.5%</td></tr><tr><td>3M ADV (mn)</td><td>7.89</td></tr><tr><td>3M ADV ($ mn)</td><td>563.9</td></tr><tr><td>Volatility (90 Day)</td><td>81</td></tr><tr><td>Index</td><td>KOSPI</td></tr><tr><td>BBG ANR (Buy | Hold | Sell)</td><td>24|0|0</td></tr></table>
+
+Key Metrics (FYE Dec)
+
+<table><tr><td>W in billions</td><td>FY25A</td><td>FY26E</td><td>FY27E</td><td>FY28E</td></tr><tr><td colspan="5">Financial Estimates</td></tr><tr><td>Revenue</td><td>17,058</td><td>17,060</td><td>19,240</td><td>22,484</td></tr><tr><td>Adj. EBITDA</td><td>1,320</td><td>1,700</td><td>2,233</td><td>2,754</td></tr><tr><td>Adj. EBIT</td><td>763</td><td>1,119</td><td>1,542</td><td>2,065</td></tr><tr><td>Adj. net income</td><td>85</td><td>328</td><td>670</td><td>990</td></tr><tr><td>Adj. EPS</td><td>132</td><td>512</td><td>1,046</td><td>1,546</td></tr><tr><td>BBG EPS</td><td>165</td><td>510</td><td>911</td><td>1,299</td></tr
+
+[中间内容因长度限制已省略]
+
+ found at the following link: JPM EMEA - Research Independence Policy.
+
+U.S.: JPM Securities LLC (“JPMS”) is a member of the NYSE, FINRA, SIPC, and the NFA. JPM Chase Bank, N.A. is a member of the FDIC. Material published by non-U.S. affiliates is distributed in the U.S. by JPMS who accepts responsibility for its content.
+
+General: Additional information is available upon request. The information in this material has been obtained from sources believed to be reliable. While all reasonable care has been taken to ensure that the facts stated in this material are accurate and that the forecasts, opinions and expectations contained herein are fair and reasonable, JPM Chase & Co. or its affiliates and/or subsidiaries (collectively JPM) make no representations or warranties whatsoever to the completeness or accuracy of the material provided, except with respect to any disclosures relative to JPM and the Research Analyst's involvement with the issuer that is the subject of the material. Accordingly, no reliance should be placed on the accuracy, fairness or completeness of the information contained in this material. There may be certain discrepancies with data and/or limited content in this material as a result of calculations, adjustments, translations to different languages, and/or local regulatory restrictions, as applicable. These discrepancies should not impact the overall investment analysis, views and/or recommendations of the subject company(ies) that may be discussed in the material. Artificial intelligence tools may have been used in the preparation of this material, including assisting in data analysis, pattern recognition, and content drafting for research material. JPM accepts no liability whatsoever for any loss arising from any use of this material or its contents, and neither JPM nor any of its respective directors, officers or employees, shall be in any way responsible for the contents hereof, apart from the liabilities and responsibilities that may be imposed on them by the relevant regulatory authority in the jurisdiction in question, or the regulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction.
+
+Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or
+"""

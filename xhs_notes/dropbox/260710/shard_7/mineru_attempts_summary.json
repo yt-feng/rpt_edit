@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_laod1brq/pdfs/0001-36-JPM-China Healthcare BCI Expert Call Takeaways- Commercial Validation- Not Technology Demonstration- Is the Next Inflection Point-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_laod1brq/pdfs/0002-37-JPM-Korea Banks-Share price momentum to strengthen ahead of eventful 2Q26 earnings season- extended re-rating in large FGs-260709.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_laod1brq/pdfs/0003-38-JPM-J-T Express - H-1519.HK-2Q26 update- Macro volatility no barrier to scale- quality- and accelerating global growth-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_laod1brq/pdfs/0004-39-JPM-Korea Nuclear EPC-2Q nuclear orders remain muted- reshuffle our nuclear order estimates-260709.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_laod1brq/pdfs/0005-40-MS-BOE Technology-000725-2Q26 Preliminary Net Profit Beat-260708.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
