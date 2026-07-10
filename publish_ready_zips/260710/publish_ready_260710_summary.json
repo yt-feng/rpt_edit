@@ -1,0 +1,218 @@
+{
+  "created_at_utc": "2026-07-10T23:22:05.138486+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260710",
+  "output_dir": "publish_ready_zips/260710",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 12,
+  "skipped_shards": [],
+  "total_files": 1033,
+  "total_renamed_markdown_count": 295,
+  "total_raw_file_bytes": 143056565,
+  "zip_count": 2,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260710/publish_ready_260710_part001.zip",
+      "size_bytes": 88191157,
+      "file_count": 673,
+      "renamed_markdown_count": 200,
+      "raw_file_bytes": 94306907,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_10",
+        "shard_11",
+        "shard_2",
+        "shard_3",
+        "shard_4",
+        "shard_5",
+        "shard_6"
+      ]
+    },
+    {
+      "path": "publish_ready_zips/260710/publish_ready_260710_part002.zip",
+      "size_bytes": 45196855,
+      "file_count": 360,
+      "renamed_markdown_count": 95,
+      "raw_file_bytes": 48749658,
+      "shards": [
+        "shard_6",
+        "shard_7",
+        "shard_8",
+        "shard_9"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 99,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14214275,
+      "reports": [
+        "0001-01-Bernstein-Memory-New-Memory-LTAs-part-2---Case-studies-from-Microchip-an",
+        "0002-02-Bernstein-CoreWeave--Inc.-CRWV.US-2Q26-Preview--A-holding-pattern-260709",
+        "0003-03-Barclays-U.S.-Equity-Strategy-The-Midterm-Elections-Playbook-260708",
+        "0004-04-Bernstein-US-Business-Services-US-Waste--A-primer-on-the-Renewable-Energ",
+        "0005-05-Bernstein-Weekend-Consumer-Blast--Japan--the-revenue-management-dream-26"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 81,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 10540304,
+      "reports": [
+        "0001-06-Bernstein-Netflix-Inc-NFLX.US-NFLX--Key-takeaways-from-2Q26-streaming-we",
+        "0002-07-CITI-Hengli-Hydraulic--601100--2Q26E-Preview--Strong-Core-Business-but-S",
+        "0003-08-CITI-Leader-Drive--688017--Shifting-Focus-to-Humanoid-Robot-from-Industr",
+        "0004-09-CITI-Artificial-Intelligence-Bottlenecks-Remain-for-Scaling-Physical-AI-",
+        "0005-10-Citi-NVIDIA-Corp-NVDA.O-What-Are-Investors-Asking--260708"
+      ]
+    },
+    {
+      "shard": "shard_10",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 19516505,
+      "reports": [
+        "0001-51-Morgan-Stanley-Korea-Macro-Strategy--Equity-Strategy---Economics-Why-Is-",
+        "0002-52-Nomura-Asia-Economic-Monthly-Asia-s-El-Ni-o-playbook-Eight-lessons-from-",
+        "0003-53-Morgan-Stanley-Sanofi-SA-SASY.PA--Q2-26-Preview--Beat-and-raise--260708",
+        "0004-54-Morgan-Stanley-Xiaomi-Corp-1810.HK-Cutting-Price-Target-to-Reflect-Headw",
+        "0005-55-Nomura-Suzhou-TFC-Optical-Communication-300394-1.6T-optical-engine-may-a"
+      ]
+    },
+    {
+      "shard": "shard_11",
+      "report_count": 4,
+      "file_count": 56,
+      "renamed_markdown_count": 20,
+      "raw_file_bytes": 6180016,
+      "reports": [
+        "0001-56-Nomura-Hubei-Dinglong-300054-Scaling-on-track--record-slurry-month--phot",
+        "0002-57-Nomura-Asia-Insights-China--CPI-inflation-retreated-while-PPI-inflation-",
+        "0003-58-Nomura-USD-CNY-fix-model-Projection--6.7936-260710",
+        "0004-59-UBS-Gold-Mining-2Q26-Quarterly-Preview-260708"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 89,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12153181,
+      "reports": [
+        "0001-11-CITI-Metal-Matters-We-expect-copper-price-upside-from-September-with-med",
+        "0002-12-CITI-Yageo--2327.TW--2Q26-Revenue-Exceeded-Guidance--Upcycle-Intact-2607",
+        "0003-13-Deutsche-Bank-Pop-Mart-9992.HK-2Q26-Preview--From-Scarcity-to-Slowdown-2",
+        "0004-14-Deutsche-Bank-FX-Blog-An-EM-FX-hedge-for-a-tech-unwind-260708",
+        "0005-15-Deutsche-Bank-Japan-Monetary-Policy-Watch-Basic-Policy-revisions--A-step"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 65,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 7935528,
+      "reports": [
+        "0001-16-Deutsche-Bank-Thematic-Research-DB-CoTD--Is-EM-a-huge-tech-play--260708",
+        "0002-17-Goldman-Sachs-AMERICAS-TECHNOLOGY--IT-SERVICES-2Q-Earnings-Preview--Expe",
+        "0003-18-Deutsche-Bank-Xiaomi-1810.HK-Entry-into-Family-Car-and-Outdoor-Travel-Se",
+        "0004-19-Goldman-Sachs-China-Data-Centers-NDRC-approved-two-C-REIT-projects--Impl",
+        "0005-20-Goldman-Sachs-Asia-Pacific-Banks--New-measures-announced-to-deepen-finan"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 5,
+      "file_count": 87,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12121190,
+      "reports": [
+        "0001-21-Goldman-Sachs-Agriculture-Analyst-Risks-to-Agricultural-Prices-From-Food",
+        "0002-22-Goldman-Sachs-Japan-Electronic-Components--Expert-call--reconfirming-sus",
+        "0003-23-Goldman-Sachs-Inspur--000977---AI-server-shipment-accelerated-ramp-up--2",
+        "0004-24-Goldman-Sachs-Japan-Chemicals--Specialty--Micron-to-sign-10-year-long-te",
+        "0005-25-Goldman-Sachs-Navigating-China-AI-models_-LLM-primer_-Critical-point-of-"
+      ]
+    },
+    {
+      "shard": "shard_5",
+      "report_count": 5,
+      "file_count": 73,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 10057224,
+      "reports": [
+        "0001-26-Goldman-Sachs-MiniMax-Group--0100.HK--Key-focuses-post-share-unlock--ups",
+        "0002-27-Goldman-Sachs-Japan-Exchange-Group--8697.T--Raising-our-target-price-on-",
+        "0003-28-Goldman-Sachs-Thailand-Tech-Tour--Delton--001389---AI-PCB-in-expansion--",
+        "0004-29-Goldman-Sachs-Sino-Biopharmaceutical--1177.HK---Dual-Respiratory-Milesto",
+        "0005-30-Goldman-Sachs-Thailand-Tech-Tour--Dtech--301377---Capacity-expansion-to-"
+      ]
+    },
+    {
+      "shard": "shard_6",
+      "report_count": 5,
+      "file_count": 99,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14594426,
+      "reports": [
+        "0001-31-Goldman-Sachs-Thailand-Tech-Tour--Dynamic-Electronics--603175--Chairman-",
+        "0002-32-HSBC-China-Equity-Strategy-Tighter-capital-rules-positive-for-the-A-shar",
+        "0003-33-HSBC-Greater-China-Real-Estate-Better-surprise-vector--mainland-China-ov",
+        "0004-34-J.P.-Morgan-HK-CH-banks-China-banks--risk-off-rotation-rally-may-fade--S",
+        "0005-35-J.P.-Morgan-China-International-Capital-Corporation--3908.HK-2Q26-result"
+      ]
+    },
+    {
+      "shard": "shard_7",
+      "report_count": 5,
+      "file_count": 89,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 11917103,
+      "reports": [
+        "0001-36-J.P.-Morgan-China-Healthcare-BCI-Expert-Call-Takeaways--Commercial-Valid",
+        "0002-37-J.P.-Morgan-Korea-Banks-Share-price-momentum-to-strengthen-ahead-of-even",
+        "0003-38-J.P.-Morgan-J-T-Express---H-1519.HK-2Q26-update--Macro-volatility-no-bar",
+        "0004-39-J.P.-Morgan-Korea-Nuclear-EPC-2Q-nuclear-orders-remain-muted--reshuffle-",
+        "0005-40-Morgan-Stanley-BOE-Technology-000725-2Q26-Preliminary-Net-Profit-Beat-26"
+      ]
+    },
+    {
+      "shard": "shard_8",
+      "report_count": 5,
+      "file_count": 89,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 11618231,
+      "reports": [
+        "0001-41-J.P.-Morgan-Qingdao-TGOOD-Electric-300001--Key-takeaways-from-the-manage",
+        "0002-42-Morgan-Stanley-Chengxin-Lithium-Group-Co.-Ltd.-002240-Strong-Preliminary",
+        "0003-43-Morgan-Stanley-Fiserv-Inc.-FISV.US-Potential-Debit-Network-Sale-Could-Un",
+        "0004-44-Morgan-Stanley-China-Market-Wise-China-Outperforming-in-a-Volatile-Marke",
+        "0005-45-Morgan-Stanley-China-Mengniu-Dairy-2319.HK-Sustaining-Positive-Sales-Tre"
+      ]
+    },
+    {
+      "shard": "shard_9",
+      "report_count": 5,
+      "file_count": 91,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12208582,
+      "reports": [
+        "0001-46-Morgan-Stanley-Greater-China-Technology-Hardware-GB200-and-GB300-NVL72-R",
+        "0002-47-Morgan-Stanley-Greater-China-Technology-Hardware-Chart-of-the-Day--China",
+        "0003-48-Morgan-Stanley-Global-Materials-Aluminum--From-Deficit-to-Oversupply-260",
+        "0004-49-Morgan-Stanley-RMB-Internationalization--via-CNH-260708",
+        "0005-50-Morgan-Stanley-Kingsoft-Cloud-Holdings--Transition-to-AI-Cloud-Bearing-F"
+      ]
+    }
+  ]
+}
