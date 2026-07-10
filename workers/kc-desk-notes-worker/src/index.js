@@ -5854,8 +5854,8 @@ async function latestBbgRenderedClipFiles(env, maxItems = 26) {
   const sourceTasks = [];
   const topVideos = rootDirs.find((dir) => String(dir.name || "") === "top-videos");
   const arkInvest = rootDirs.find((dir) => String(dir.name || "") === "ark-invest");
-  if (topVideos) sourceTasks.push(bbgNestedSourceFiles(env, topVideos, 3, 12));
-  if (arkInvest) sourceTasks.push(bbgNestedSourceFiles(env, arkInvest, 3, 10));
+  if (topVideos) sourceTasks.push(bbgNestedSourceFiles(env, topVideos, 1, 12));
+  if (arkInvest) sourceTasks.push(bbgNestedSourceFiles(env, arkInvest, 2, 10));
   for (const dir of sortGithubEntriesDesc(rootDirs.filter((item) => !["top-videos", "ark-invest"].includes(String(item.name || "")))).slice(0, 14)) {
     sourceTasks.push(collectGithubMp4Files(env, BBG_SHOW_REPO, dir.path, {
       maxFiles: 10,
