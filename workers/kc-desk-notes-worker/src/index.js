@@ -176,8 +176,11 @@ const ANALYTICS_BACKUP_PREFIX = "_analytics_backup/events";
 const ANALYTICS_DASHBOARD_DAYS = 7;
 const ANALYTICS_DASHBOARD_LIMIT = 50;
 const ANALYTICS_DASHBOARD_R2_READ_BUDGET = 60;
-const ANALYTICS_DASHBOARD_TIMEOUT_MS = 6000;
-const ADMIN_GITHUB_FILES_TIMEOUT_MS = 6500;
+const ANALYTICS_DASHBOARD_TIMEOUT_MS = 9000;
+const ADMIN_GITHUB_FILES_TIMEOUT_MS = 12000;
+const ADMIN_GITHUB_SOURCE_TIMEOUT_MS = 8500;
+const ADMIN_GITHUB_ARTIFACT_TIMEOUT_MS = 2500;
+const GITHUB_API_TIMEOUT_MS = 5500;
 const ADMIN_CATALOG_TIMEOUT_MS = 3500;
 const ADMIN_WECHAT_TIMEOUT_MS = 3500;
 const NEWSFEED_CACHE_PREFIX = "_newsfeed/cache";
@@ -3307,11 +3310,12 @@ function encodeGithubPath(path) {
 }
 
 async function githubApiFetch(env, path, init = {}, repo = githubRepo(env)) {
-  const response = await fetch(`https://api.github.com/repos/${repo}${path}`, {
-    ...init,
-    headers: githubHeaders(env, init.headers || {}, repo),
-    redirect: init.redirect || "follow",
-  });
+  const { timeoutMs, ...requestInit } = init || {};
+  const response = await fetchWithTimeout(`https://api.github.com/repos/${repo}${path}`, {
+    ...requestInit,
+    headers: githubHeaders(env, requestInit.headers || {}, repo),
+    redirect: requestInit.redirect || "follow",
+  }, Number(timeoutMs) || GITHUB_API_TIMEOUT_MS);
   if (!response.ok) {
     const text = await response.text().catch(() => "");
     throw new Error(`GitHub API ${response.status}: ${text.slice(0, 200)}`);
@@ -5381,7 +5385,7 @@ function titleFromGeneratedPath(path) {
 }
 
 function renderedClipDate(path) {
-  const match = String(path || "").match(/^rendered-clips\/(?:[^/]+\/)*(20\d{2}-\d{2}-\d{2})\//);
+  const match = String(path || "").match(/^rendered-clips\/(?:[^/]*\/)*[^/]*(20\d{2}-\d{2}-\d{2})[^/]*\//);
   return match ? match[1] : "";
 }
 
@@ -5418,13 +5422,14 @@ function bbgRenderedClipInfo(path) {
       notePrefix: "ark-invest",
     };
   }
-  if (/^20\d{2}-\d{2}-\d{2}$/.test(source)) {
-    const generatedDate = isoDateAddDays(source, 1);
+  const sourceDate = (source.match(/^(20\d{2}-\d{2}-\d{2})(?:$|[-_])/) || [])[1] || "";
+  if (sourceDate) {
+    const generatedDate = source === sourceDate ? isoDateAddDays(sourceDate, 1) : sourceDate;
     return {
       source: "daily-clips",
       label: "BBG Show 视频",
-      generatedDate: generatedDate || source,
-      contentDate: source,
+      generatedDate: generatedDate || sourceDate,
+      contentDate: sourceDate,
       sourceOrder: 0,
       notePrefix: "普通 clips",
     };
@@ -5796,11 +5801,79 @@ function bbgClipTakeLimit(source) {
   return 4;
 }
 
+function isGithubMp4File(item) {
+  return item && item.type === "file" && /\.mp4$/i.test(String(item.name || item.path || ""));
+}
+
+function sortGithubEntriesDesc(items) {
+  return (items || [])
+    .slice()
+    .sort((a, b) => {
+      const score = dateScore(b && (b.name || b.path)) - dateScore(a && (a.name || a.path));
+      if (score) return score;
+      return String(b && (b.name || b.path) || "").localeCompare(String(a && (a.name || a.path) || ""));
+    });
+}
+
+async function githubContentsOrEmpty(env, path, repo, timeoutMs = GITHUB_API_TIMEOUT_MS) {
+  return resolveWithin(githubContents(env, path, repo), timeoutMs, []);
+}
+
+async function collectGithubMp4Files(env, repo, dirPath, options = {}) {
+  const maxFiles = Math.max(1, Number(options.maxFiles || 20));
+  const nestedDirLimit = Math.max(0, Number(options.nestedDirLimit || 0));
+  const entries = await githubContentsOrEmpty(env, dirPath, repo, options.timeoutMs || GITHUB_API_TIMEOUT_MS);
+  const files = sortGithubEntriesDesc(entries.filter(isGithubMp4File));
+  if (files.length >= maxFiles || nestedDirLimit <= 0) return files.slice(0, maxFiles);
+
+  const nestedDirs = sortGithubEntriesDesc(entries.filter((item) => item && item.type === "dir")).slice(0, nestedDirLimit);
+  const nested = await Promise.all(nestedDirs.map((dir) => collectGithubMp4Files(env, repo, dir.path, {
+    maxFiles,
+    nestedDirLimit: 0,
+    timeoutMs: options.timeoutMs || GITHUB_API_TIMEOUT_MS,
+  })));
+  return [...files, ...nested.flat()].slice(0, maxFiles);
+}
+
+async function bbgNestedSourceFiles(env, sourceDir, maxDateDirs, maxFilesPerDir) {
+  const children = await githubContentsOrEmpty(env, sourceDir.path, BBG_SHOW_REPO, GITHUB_API_TIMEOUT_MS);
+  const dateDirs = sortGithubEntriesDesc(children.filter((item) => item && item.type === "dir")).slice(0, maxDateDirs);
+  const dirs = dateDirs.length ? dateDirs : [sourceDir];
+  const groups = await Promise.all(dirs.map((dir) => collectGithubMp4Files(env, BBG_SHOW_REPO, dir.path, {
+    maxFiles: maxFilesPerDir,
+    nestedDirLimit: maxFilesPerDir,
+    timeoutMs: GITHUB_API_TIMEOUT_MS,
+  })));
+  return groups.flat();
+}
+
 async function latestBbgRenderedClipFiles(env, maxItems = 26) {
-  const tree = await githubRecursiveTree(env, BBG_SHOW_REPO);
+  const roots = await githubContentsOrEmpty(env, BBG_SHOW_PREFIX, BBG_SHOW_REPO, ADMIN_GITHUB_SOURCE_TIMEOUT_MS);
+  const rootFiles = roots.filter(isGithubMp4File);
+  const rootDirs = roots.filter((item) => item && item.type === "dir");
+  const sourceTasks = [];
+  const topVideos = rootDirs.find((dir) => String(dir.name || "") === "top-videos");
+  const arkInvest = rootDirs.find((dir) => String(dir.name || "") === "ark-invest");
+  if (topVideos) sourceTasks.push(bbgNestedSourceFiles(env, topVideos, 3, 12));
+  if (arkInvest) sourceTasks.push(bbgNestedSourceFiles(env, arkInvest, 3, 10));
+  for (const dir of sortGithubEntriesDesc(rootDirs.filter((item) => !["top-videos", "ark-invest"].includes(String(item.name || "")))).slice(0, 14)) {
+    sourceTasks.push(collectGithubMp4Files(env, BBG_SHOW_REPO, dir.path, {
+      maxFiles: 10,
+      nestedDirLimit: 1,
+      timeoutMs: GITHUB_API_TIMEOUT_MS,
+    }));
+  }
+  const listedFiles = [
+    ...rootFiles,
+    ...(await Promise.all(sourceTasks)).flat(),
+  ];
+  const seen = new Set();
   const grouped = new Map();
-  for (const item of tree || []) {
-    if (!item || item.type !== "blob" || !/^rendered-clips\/.+\.mp4$/i.test(item.path || "")) continue;
+  for (const item of listedFiles || []) {
+    if (!isGithubMp4File(item) || !/^rendered-clips\/.+\.mp4$/i.test(item.path || "")) continue;
+    const path = String(item.path || "");
+    if (seen.has(path)) continue;
+    seen.add(path);
     const info = bbgRenderedClipInfo(item.path);
     if (!info.generatedDate) continue;
     const rows = grouped.get(info.source) || [];
@@ -6018,14 +6091,14 @@ async function latestGithubArtifacts(env) {
 }
 
 async function latestAdminGithubFiles(env) {
-  const [bbg, market, entertainVideos, rpt2vidVideos, siteVideos] = await Promise.all([
-    latestBbgRenderedClipFiles(env).catch(() => []),
-    latestMarketViewFiles(env).catch(() => []),
-    latestKcEntertainmentFiles(env).catch(() => []),
-    latestRpt2vidPdfKcFiles(env).catch(() => []),
-    latestSiteVideoFiles(env).catch(() => []),
+  const [bbg, market, entertainVideos, rpt2vidVideos, siteVideos, artifacts] = await Promise.all([
+    resolveWithin(latestBbgRenderedClipFiles(env), ADMIN_GITHUB_SOURCE_TIMEOUT_MS, []),
+    resolveWithin(latestMarketViewFiles(env), ADMIN_GITHUB_SOURCE_TIMEOUT_MS, []),
+    resolveWithin(latestKcEntertainmentFiles(env), ADMIN_GITHUB_SOURCE_TIMEOUT_MS, []),
+    resolveWithin(latestRpt2vidPdfKcFiles(env), ADMIN_GITHUB_SOURCE_TIMEOUT_MS, []),
+    resolveWithin(latestSiteVideoFiles(env), ADMIN_GITHUB_SOURCE_TIMEOUT_MS, []),
+    resolveWithin(latestGithubArtifacts(env), ADMIN_GITHUB_ARTIFACT_TIMEOUT_MS, []),
   ]);
-  const artifacts = await latestGithubArtifacts(env);
   const fallback = [];
   if (!market.length) fallback.push(...artifacts.filter((item) => item.kind === "market-views").slice(0, 3));
   if (!siteVideos.length) fallback.push(...artifacts.filter((item) => item.kind === "site-video").slice(0, 3));
