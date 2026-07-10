@@ -1,0 +1,449 @@
+SpaceX
+
+# The Next Frontier Initiating Overweight with a \$225 PT
+
+Doug Anmuth AC
+(212) 622-6571
+douglas.anmuth@JPM.com
+JPM Securities LLC
+
+Seth Seifman, CFA $^{AC}$ (212) 622-5597
+Seth.m.seifman@JPM.com
+JPM Securities LLC
+
+Sebastiano Petti $^{AC}$ (212) 622-8529
+Sebastiano.c.petti@JPM.com
+JPM Securities LLC
+
+Richard Choe $^{AC}$ (212) 622-6708
+Richard.choe@JPM.com
+JPM Securities LLC
+
+See the end pages of this presentation for analyst certification and important disclosures, including non-US analyst disclosures.
+JPM does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision.
+
+## Leadership Across Space, Connectivity, & AI
+
+\$18.7B
+
+2025 Revenue
+
+\~650
+
+Total Falcon Launches
+
+99%+
+
+80%+
+
+% of Global Mass to Orbit Since 2023
+
+Falcon Mission Success Rate
+
+9,600+
+
+Starlink Satellites
+
+75%
+
+% of All Active Maneuverable Satellites
+
+10.3M
+
+Starlink Subscribers
+
+\~1GW
+
+Nameplate Compute Draw
+
+550M
+
+X MAUs
+
+## Company History & Milestones
+
+![](images/a7fc4edf4813dbed97683ceab6d0f93a2a4eb535fd6e25fab2440766e2d181bd.jpg)
+
+## Investment Thesis
+
+<table><tr><td>1</td><td>SpaceX&#x27;s mission leads to potentially the largest economic frontier ever. Mission to build the systems &amp; tech to make life multi-planetary; Positioned to go after what SpaceX believes is a TAM of $28T+ across Space, Connectivity, &amp; AI</td></tr><tr><td>2</td><td>Launch leadership is the key enabler &amp; differentiator. SpaceX has completed ~670 orbital launches with 99%+ mission success rate across its Falcon rockets &amp; has launched 80%+ of all mass to orbit since 2023; Starship V3 should represent a step function improvement in both affordability &amp; throughput</td></tr><tr><td>3</td><td>Extreme vertical integration &amp; engineering first culture. Speed/cost advantage is evident across rocket launches, satellite manufacturing, data center construction, &amp; AI model training, among other areas; Engineering-first culture has resulted in a series of technological breakthroughs and industry-defining firsts</td></tr><tr><td>4</td><td>Starlink uniquely positioned to drive broadband market share, though we view mobile as less likely. SpaceX is the only company that controls the entire satellite value chain in house; Starlink is the world&#x27;s largest LEO constellation with 9,600+ broadband &amp; mobile satellites, serving 12M+ active customers across 164 countries, territories, &amp; other markets</td></tr><tr><td>5</td><td>First terrestrial, then orbital – AI forecast to drive SpaceX. SpaceX operates a leading AI infrastructure footprint, frontier model, &amp; scaled platform for real-time data &amp; distribution; SpaceX continues to ramp terrestrial compute &amp; appears to be the only company with a commercially viable path to building orbital AI compute at scale</td></tr><tr><td>6</td><td>Valuation upside supported by strong growth &amp; margin expansion. We initiate coverage with an OW rating &amp; a December 2027 PT of $225 based on ~41x our 2028E GAAP EPS of $5.50, supported by 44x 2028E EBIT &amp; our SOTP; We believe SPCX offers a compelling risk/reward, with extreme vertical integration, a structural launch moat, &amp; durable unit economics underpinning multi-year growth in what the company estimates to be the largest economic opportunity ever</td></tr></table>
+
+1 Can SpaceX Scale Starship Launches to Deliver Massive Orbital Compute?
+2 Could Starlink Become a Direct Mobile Operator & What Are the Potential Lateral Impacts Across the Telecom Sector?
+3 How Much US Market Share Can Starlink Take by 2030? What Impact Would That Have on the Broadband Ecosystem?
+4 Can SpaceX Build Out 9GW of Terrestrial Compute by 2028?
+5 Data Centers in Space... Why Do They Make Sense and How Does SpaceX Plan to Build Them Out?
+6 What Is the Anticipated AI Monetization Path Across Grok/Cursor & Neocloud?
+7 Could SpaceX Acquire or Combine w/Tesla?
+8 How Does SpaceX Plan To Fund Its Massive AI Infrastructure Compute Buildout?
+9 Can SpaceX Hit \$1T of Revenue in 2030-2031?
+10 Dream The Dream... What Else Could SpaceX Do Over Time?
+
+## 1. Can SpaceX Scale Starship Launches to Deliver Massive Orbital Compute?
+
+## Our View
+
+\- Our launch forecast assumes SpaceX can gradually reach 5k annual Starship launches early next decade to support its planned orbital compute and communications requirements with additional capacity for lunar and Martian missions
+
+\- Our ramp is roughly consistent with management's intention to launch tens of Starships in 2027, hundreds in 2028, and thousands beyond
+
+\- The challenges to ramping starship come in two varieties, 1) Proving the capabilities of the rocket & 2) scaling the production system
+
+JPMe Starship Launch Supply & Demand
+
+<table><tr><td></td><td>&#x27;26E</td><td>&#x27;27E</td><td>&#x27;28E</td><td>&#x27;29E</td><td>&#x27;30E</td><td>&#x27;31E</td></tr><tr><td>Build rate per month</td><td>na</td><td>3.0</td><td>6.0</td><td>10.0</td><td>18.0</td><td>30.0</td></tr><tr><td>Spacecraft built</td><td></td><td>36</td><td>72</td><td>120</td><td>216</td><td>360</td></tr><tr><td>Retirements</td><td></td><td>(10)</td><td>(36)</td><td>(72)</td><td>(120)</td><td>(216)</td></tr><tr><td>Year end fleet</td><td>10</td><td>36</td><td>72</td><td>120</td><td>216</td><td>360</td></tr><tr><td>Cumulative spacecraft built</td><td>10</td><td>46</td><td>118</td><td>238</td><td>454</td><td>814</td></tr><tr><td>Flights per spacecraft (avg)</td><td>3.0</td><td>4.0</td><td>7.0</td><td>10.0</td><td>12.0</td><td>16.0</td></tr><tr><td>Turnaround time (days)</td><td></td><td></td><td>52</td><td>37</td><td>30</td><td>23</td></tr><tr><td>Launches (Supply)</td><td>na</td><td>40</td><td>300</td><td>1,000</td><td>2,500</td><td>5,000</td></tr><tr><td>Orbital Compute</td><td></td><td>0</td><td>40</td><td>801</td><td>1,845</td><td>4,821</td></tr><tr><td>Mobile</td><td></td><td>20</td><td>50</td><td>50</td><td>50</td><td>50</td></tr><tr><td>Broadband</td><td></td><td>30</td><td>125</td><td>125</td><td>125</td><td>125</td></tr><tr><td>Moon (12 per mission)</td><td></td><td>12</td><td>12</td><td>24</td><td>60</td><td>120</td></tr><tr><td>Mars (12 per mission)</td><td></td><td>0</td><td>60</td><td>0</td><td>240</td><td>0</td></tr><tr><td>Launches (Demand)</td><td></td><td>62</td><td>287</td><td>1,000</td><td>2,320</td><td>5,116</td></tr><tr><td>Over / (Under) Supply</td><td></td><td>(22)</td><td>13</td><td>0</td><td>180</td><td>(116)</td></tr></table>
+
+## 2. Could Starlink Become a Direct Mobile Operator & What Are the Potential Lateral Impacts Across the Telecom Sector?
+
+## Our View
+
+\- We are constructive on Starlink Mobile's revenue trajectory, which we expect to be driven by MNO partnerships, IoT, and international DTC adoption
+
+We do not expect Starlink Mobile to take meaningful U.S. wireless share over our forecast period: 1) We do not expect SpaceX to secure a U.S. MVNO any time soon; 2) A standalone terrestrial build would take significant time & capital; 3) The consumer value proposition remains unclear; 4) We view the potential acquisition of a U.S. wireless carrier as unlikely
+
+U.S. Industry Mobile Service Revenue Appears Fragmented  
+![](images/d3f166618c636f5f7cb6eaad34c2b077c3bb9f3e00953f8ef6a5fb7540d7d113.jpg)
+
+## 3. How Much US Market Share Can Starlink Take by 2030? What Impact Would That Have on the Broadband Ecosystem?
+
+## Our View
+
+• We expect Starlink to emerge as a steady third share-taker in U.S. residential broadband, lifting satellite share from 3% today to 8% by 2030
+
+\- Core cohort should remain concentrated in copper-only & underinvested-cable markets, with limited L-T risk to fiber
+
+\- Serving this TAM hinges on orbital capacity; Starship will begin delivering V3 satellites, which offer \~11x the downlink capacity per satellite vs. V2-Mini
+
+JPMe Estimated U.S. Starlink Broadband Subscribers  
+![](images/e166236e1a994c8a51b4cc726653900c3d72b03823d3367cb2bf6a5d35166094.jpg)
+
+## 4. Can SpaceX Build Out 9GW of Terrestrial Compute by 2028?
+
+## Our View
+
+\- SpaceX has demonstrated the ability to build high-density compute capacity at breakneck pace with the initial phases of Colossus 1 & 2
+
+We estimate SpaceX will end 2026 with \~2.0GW, then add \~2.2GW in 2027, \~3.5GW in 2028, & \~1.2GW in 2029, reaching \~8.9GW
+
+\- Looking ahead, we believe SpaceX can achieve a build cost \~29-43% lower than peers by reducing redundant infrastructure, utilizing internal technologies, & capitalizing on talent-driven efficiencies
+
+JPMe Estimated Timeline of Terrestrial Capacity (MW)  
+![](images/bf52f302ba4bc544a807a09f99c982db1802cda196a5264c9e36c868c3f392f3.jpg)
+
+## 5. Data Centers in Space... Why Do They Make Sense and How Does SpaceX Plan to Build Them Out?
+
+## Our View
+
+\- The premise for orbital AI data centers is that demand for AI compute will surge while terrestrial capacity may struggle to keep pace due to land, power, & regulatory constraints
+
+We expect SpaceX to begin launching its first operational AI satellites in 2028, with 0.4GW online by the end of the year scaling to 75.1GW by the end of 2031
+
+\- Requires Starship launches to scale to the thousands on an annual basis by 2030 & 2031; Semiconductor industry will need to scale up chip supply
+
+## SpaceX Plans to Leverage Existing Satellite Expertise for AI Satellites
+
+![](images/d7b2f9e018eaa5714dc8040cb04190d0a732777f55e942fd80a6639717fcef09.jpg)
+
+## 6. What Is the Anticipated AI Monetization Path Across Grok/Cursor & Neocloud?
+
+## Our View
+
+\- While Grok monetization is below peers, we expect the acquisition of Cursor & integration of Cursor data into Grok training to result in a more well-rounded model & should increase both enterprise & consumer adoption
+
+• We believe the \$/W of recent neocloud contracts (Anthropic & Google) are materially higher than current Grok monetization, and expect SpaceX to continue maximizing spare compute with additional agreements
+
+\- Overtime, we expect SpaceX to be bringing on enough capacity to meet the needs of both businesses
+
+SpaceX Illustrative Neocloud Model
+
+<table><tr><td>SpaceX Neocloud</td><td>Average Rental Rate</td><td>High-end Rental Rate</td><td>Premium Rental Rate</td></tr><tr><td>Rental ($/W/annual)</td><td>$15.00</td><td>$20.00</td><td>$50.00</td></tr><tr><td>Rental revenue ($)</td><td>13,500,000,000</td><td>18,000,000,000</td><td>45,000,000,000</td></tr><tr><td>Rental revenue ($m)</td><td>13,500.0</td><td>18,000.0</td><td>45,000.0</td></tr><tr><td>Implied $/kW/month</td><td>$1.13</td><td>$1.50</td><td>$3.75</td></tr><tr><td>Implied rental revenue/GPU/month</td><td>$2.91</td><td>$3.88</td><td>$9.70</td></tr><tr><td>Electricity costs</td><td>837.7</td><td>837.7</td><td>837.7</td></tr><tr><td>Rental operating and maintenance costs</td><td>480.0</td><td>480.0</td><td>480.0</td></tr><tr><td>Property taxes</td><td>96.0</td><td>96.0</td><td>96.0</td></tr><tr><td>Insurance</td><td>12.0</td><td>12.0</td><td>12.0</td></tr><tr><td>G&amp;A</td><td>300.0</td><td>300.0</td><td>300.0</td></tr><tr><td>Total operating costs</td><td>1,725.7</td><td>1,725.7</td><td>1,725.7</td></tr><tr><td>Adj. EBITDA</td><td>11,774.33</td><td>16,274.33</td><td>43,274.33</td></tr><tr><td>Adj. EBITDA margin</td><td>87.2%</td><td>90.4%</td><td>96.2%</td></tr><tr><td>Data center depreciation</td><td>500.0</td><td>500.0</td><td>500.0</td></tr><tr><td>IT equipment depreciation</td><td>4,558.8</td><td>4,558.8</td><td>4,558.8</td></tr><tr><td>Total costs</td><td>6,784.5</td><td>6,784.5</td><td>6,784.5</td></tr><tr><td>Operating profit</td><td>6,715.5</td><td>11,215.5</td><td>38,215.5</td></tr><tr><td>Operating profit margin</td><td>49.7%</td><td>62.3%</td><td>84.9%</td></tr><tr><td>NPV of unlevered FCF</td><td>$9,650</td><td>$25,871</td><td>$123,200</td></tr><tr><td>IRR</td><td>23.3%</td><td>40.6%</td><td>129.9%</td></tr></table>
+
+## 7. Could SpaceX Acquire or Combine w/Tesla?
+
+## Our View
+
+We see the possibility of a SpaceX-Tesla combination rising materially over the next 1-2 years, though we do not believe it is likely imminent
+
+\- Potential strategic logic appears compelling: vertical integration across AI, robotics, energy, transportation, & space, anchored by Terafab & a combined \~\$28.5T TAM narrative on the SpaceX side
+
+\- Potential impediments include governance asymmetry, valuation gap, & regulatory complexity
+
+## Potential Deal Structures
+
+## All-Stock SpaceX-led Acquisition
+
+\- SpaceX issues new shares at a fixed conversion ratio & modest premium
+
+• We believe likely best reconciles the valuation gap while avoiding a large cash outlay
+
+• Most probable in our view
+
+## NewCo/HoldCo Roll-Up
+
+\- Both entities fold into a newly formed parent
+
+\- Could offer cleaner “merger of equals” optics & ease minority-holder concerns
+
+\- We'd expect exchange ratios to still likely skew toward SpaceX in such a scenario
+
+## Cash & Stock Hybrid
+
+• Could deliver a sharper premium & accelerate approval
+
+\- We'd view as less likely N-T since any cash outlay would likely further strain leverage/FCF against SpaceX's AI-heavy capex
+
+## Phased/Partial Combination
+
+• Could de-risk the likely regulatory & governance hurdles
+
+• Could provide a longer runway toward what we think may ultimately be an all but inevitable combination
+
+## 8. How Does SpaceX Plan To Fund Its Massive AI Infrastructure Compute Buildout?
+
+## Our View
+
+\- We’d frame SpaceX’s heavy investments as coming from a position of strength against a very large & unique opportunity set
+
+\- Cash-generative legacy businesses (Space & Connectivity) help fund the AI build, supplemented by \~\$375B of modeled debt proceeds over 2026-2030
+
+• We do not model positive FCF until 2031, and any cost overruns or scale delays could extend the magnitude & duration of the burn while also increasing capital raise requirements
+
+JPMe SpaceX Debt Flow vs. FCF, 2023A to 2031E
+
+![](images/a1592c6d201907046a0f01aec9d7a2b4124a190957705ecf766dbc9effe8ae26.jpg)
+
+## 9. Can SpaceX Hit \$1T of Revenue in 2030-2031?
+
+## Our View
+
+\- Elon Musk has said he believes SpaceX may be able to reach \~\$1T of revenue in 2030 and that he would be surprised if revenue were not >\$1T in 2031
+
+\- Reaching the \$1T milestone in 2031 is possible, in our view, but requires strong execution across an ambitious timeframe
+
+\- While focus tends to fall on the potential downside risks, we project 2031 revenue of \$956B, only \~5% from the \$1T milestone; we believe the building blocks are identifiable & bridging the gap is potentially achievable
+
+## Potential Sources of Upside to JPMe 2030-2031 Revenue
+
+<table><tr><td>Segment</td><td>Upside Vector</td><td>Driver</td></tr><tr><td>AI</td><td>Faster compute scaling</td><td>Faster Starship ramp, Starship V4 (~200t payload capacity), higher AI satellite compute density</td></tr><tr><td>AI</td><td>Higher revenue per watt</td><td>Improved Grok monetization across Enterprise &amp; Consumer, higher third party hosting rates</td></tr><tr><td>Connectivity</td><td>IoT</td><td>Greater device penetration of the ~47B IoT devices expected by 2031</td></tr><tr><td>Connectivity</td><td>Mobile Direct-to-Consumer</td><td>Sooner than expected MVNO with a U.S. wireless carrier or faster traction within the U.S. market</td></tr><tr><td>Connectivity</td><td>U.S. Broadband</td><td>Higher penetration of addressable househoulds incl. higher adoption in fiber markets</td></tr><tr><td>Space</td><td>New &amp; emerging markets</td><td>In-orbit manufacturing, point-to-point transport, Lunar economy</td></tr></table>
+
+## 10. Dream The Dream... What Else Could SpaceX Do Over Time?
+
+## Our View
+
+We believe SpaceX has a proven track record of leveraging its differentiated capabilities across launch, engineering, & manufacturing to unlock and scale entirely new markets
+
+\- SpaceX has identified several emerging or novel markets that it believes can eventually represent multi-trillion dollar opportunities
+
+\- While these are unproven, L-T opportunities with significant technological, economic, & regulatory challenges, we believe SpaceX is uniquely positioned to address them
+
+## New Market Opportunities
+
+## In-Orbit Opportunities
+
+\- Recent demo of Starfall highlights opportunity across in-space manufacturing & point-to-point global logistics & transport
+
+\- Starfall is a re-entry vehicle designed to safely return payloads from space to Earth
+
+\- Potential demand from a wide range of industries for in-space manufacturing, as well as the U.S. government
+
+## Scaling the Lunar Economy
+
+\- Goal of establishing a sustainable lunar presence
+
+\- Would serve as a proving ground for scientific exploration, industrialization, and a steppingstone to Mars
+
+\- SpaceX will participate in NASA's Artemis III mission (planned for mid-2027) to test its landing systems in space before they are sent to the Moon
+
+## Making Life Multiplanetary
+
+\- Foundational mission is to build the systems & technologies necessary to make life multiplanetary & establish a self-sufficient city on Mars
+
+\- SpaceX has indicated that uncrewed Starship cargo flights to Mars could begin as early as 2028, while NASA is working to send astronauts as early as the 2030s
+
+## Valuation Methodology
+
+\- \$225 December 2027 PT based on \~41x our 2028E GAAP EPS of \$5.50, supported by 44x 2028E EBIT & our SOTP
+
+\- Mega-cap peers (Mag7 + PLTR) trade at an average of \~38x & median of \~20x 2028E GAAP EPS
+
+\- We believe SPCX's category leadership in launch that provides dominant access to a very large \$28.5T estimated TAM warrants a premium over core comps
+
+\- Attractive financial profile: revenue scaling from \$19B in 2025 to \$470B in 2030E (91% CAGR) and GAAP Operating Income margin expanding from -14% in 2025 to \~50% in 2030E
+
+SpaceX Comp Table
+
+<table><tr><td rowspan="2">$M, except where noted Company</td><td rowspan="2">Ticker</td><td rowspan="2">Share Price as of 7/2/2026</td><td rowspan="2">Equity Value 2027E</td><td rowspan="2">Enterprise Value 2027E</td><td colspan="3">Revenue</td><td colspan="4">Revenue Y/Y Growth</td><td colspan="3">Gross Margins</td><td colspan="3">Operating Income (EBIT)</td><td colspan="3">Operating Income (EBIT) Margin</td><td colspan="2">EV / EBIT</td><td colspan="3">GAAP EPS</td><td colspan="2">GAAP PE</td><td colspan="2">PEG</td><td>JPM Coverage Rating Analyst</td><td></td><td></td></tr><tr><td>2026E</td><td>2027E</td><td>2028E</td><td>&#x27;25-&#x27;26E</td><td>&#x27;26E-&#x27;27E</td><td>&#x27;27E-&#x27;28E</td><td>&#x27;28E-&#x27;29E</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2027E</td><td>2028E</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2027E</td><td>2028E</td><td>2027E</td><td>2028E</td><td></td></tr><tr><td>SPACEX</td><td>JPM YE27 PT</td><td>$225.00</td><td>3,047,713</td><td>3,075,404</td><td>41,266</td><td>74,816</td><td>160,412</td><td>121%</td><td>81%</td><td>114%</td><td>69%</td><td>61%</td><td>64%</td><td>67%</td><td>69%</td><td>3,769</td><td>17,417</td><td>70,349</td><td>9%</td><td>23%</td><td>44%</td><td>45%</td><td>176.6x</td><td>43.7x</td><td>$0.11</td><td>$0.94</td><td>$5.50</td><td>240.3x</td><td>40.9x</td><td>0.3x</td><td>0.1x</td><td rowspan="2">OW Anmuth</td></tr><tr><td>SPACEX</td><td>SPCX</td><td>$162.00</td><td>2,194,353</td><td>2,222,045</td><td>41,266</td><td>74,816</td><td>160,412</td><td>121%</td><td>81%</td><td>114%</td><td>69%</td><td>61%</td><td>64%</td><td>67%</td><td>69%</td><td>3,769</td><td>17,417</td><td>70,349</td><td>9%</td><td>23%</td><td>44%</td><td>45%</td><td>127.6x</td><td>31.6x</td><td>$0.11</td><td>$0.94</td><td>$5.50</td><td>173.0x</td><td>29.5x</td><td>0.2x</td><td>0.1x</td></tr><tr><td colspan="5">CORE (Mag7 + PLTR)</td><td colspan="7"></td><td colspan="19"></td><td></td><td></td></tr><tr><td>NVIDIA</td><td>NVDA</td><td>$194.83</td><td>4,716,700</td><td>4,422,930</td><td>379,848</td><td>549,768</td><td>676,877</td><td>82%</td><td>45%</td><td>23%</td><td>8%</td><td>75%</td><td>74%</td><td>73%</td><td>74%</td><td>252,373</td><td>365,883</td><td>443,819</td><td>66%</td><td>67%</td><td>66%</td><td>62%</td><td>12.1x</td><td>10.0x</td><td>$9.28</td><td>$12.77</td><td>$15.60</td><td>15.3x</td><td>12.5x</td><td>0.4x</td><td>0.6x</td><td>OW Sur</td></tr><tr><td>ALPHABET</td><td>GOOG</td><td>$356.18</td><td>4,429,006</td><td>4,344,144</td><td>422,761</td><td>512,962</td><td>615,512</td><td>23%</td><td>21%</td><td>20%</td><td>18%</td><td>71%</td><td>67%</td><td>65%</td><td>71%</td><td>170,197</td><td>208,193</td><td>250,258</td><td>40%</td><td>41%</td><td>41%</td><td>40%</td><td>20.9x</td><td>17.4x</td><td>$14.37</td><td>$14.72</td><td>$17.39</td><td>24.2x</td><td>20.5x</td><td>9.9x</td><td>1.1x</td><td>OW Anmuth</td></tr><tr><td>APPLE</td><td>AAPL</td><td>$308.63</td><td>4,352,921</td><td>4,235,419</td><td>487,734</td><td>532,097</td><td>557,583</td><td>12%</td><td>9%</td><td>5%</td><td>3%</td><td>48%</td><td>48%</td><td>48%</td><td>49%</td><td>156,993</td><td>173,398</td><td>167,107</td><td>32%</td><td>33%</td><td>30%</td><td>22%</td><td>24.4x</td><td>25.3x</td><td>$8.91</td><td>$10.09</td><td>$10.93</td><td>30.6x</td><td>28.2x</td><td>2.3x</td><td>3.4x</td><td>OW Chatterjee</td></tr><tr><td>MICROSOFT</td><td>MSFT</td><td>$390.49</td><td>2,938,114</td><td>2,910,999</td><td>355,327</td><td>418,179</td><td>504,562</td><td>16%</td><td>18%</td><td>21%</td><td>21%</td><td>67%</td><td>66%</td><td>65%</td><td>64%</td><td>164,727</td><td>194,606</td><td>232,443</td><td>46%</td><td>47%</td><td>46%</td><td>46%</td><td>15.0x</td><td>12.5x</td><td>$17.96</td><td>$20.93</td><td>$25.24</td><td>18.7x</td><td>15.5x</td><td>1.1x</td><td>0.8x</td><td>OW Chatterjee</td></tr><tr><td>AMAZON</td><td>AMZN</td><td>$242.67</td><td>2,641,202</td><td>2,674,138</td><td>824,906</td><td>934,012</td><td>1,037,393</td><td>15%</td><td>13%</td><td>11%</td><td>13%</td><td>51%</td><td>53%</td><td>54%</td><td>55%</td><td>104,150</td><td>131,222</td><td>166,034</td><td>13%</td><td>14%</td><td>16%</td><td>17%</td><td>20.4x</td><td>16.1x</td><td>$8.79</td><td>$10.05</td><td>$12.90</td><td>24.2x</td><td>18.8x</td><td>1.7x</td><td>0.7x</td><td>OW Anmuth</td></tr><tr><td>META</td><td>META</td><td>$582.90</td><td>1,498,296</td><td>1,528,056</td><td>253,077</td><td>301,833</td><td>353,530</td><td>26%</td><td>19%</td><td>17%</td><td>13%</td><td>80%</td><td>79%</td><td>78%</td><td>77%</td><td>90,647</td><td>105,211</td><td>123,633</td><td>36%</td><td>35%</td><td>35%</td><td>37%</td><td>14.5x</td><td>12.4x</td><td>$32.80</td><td>$35.13</td><td>$40.60</td><td>16.6x</td><td>14.4x</td><td>2.3x</td><td>0.9x</td><td>N Anmuth</td></tr><tr><td>TESLA</td><td>TSLA</td><td>$393.45</td><td>1,433,338</td><td>1,458,848</td><td>103,434</td><td>116,911</td><td>139,117</td><td>9%</td><td>13%</td><td>19%</td><td>36%</td><td>20%</td><td>20%</td><td>21%</td><td>23%</td><td>5,782</td><td>8,276</td><td>12,169</td><td>6%</td><td>7%</td><td>9%</td><td>12%</td><td>176.3x</td><td>119.9x</td><td>$1.32</td><td>$1.83</td><td>$2.71</td><td>214.8x</td><td>145.0x</td><td>5.5x</td><td>3.0x</td><td>N Gupta</td></tr><tr><td>PALANTIR</td><td>PLTR</td><td>$129.30</td><td>296,882</td><td>288,989</td><td>7,728</td><td>11,254</td><td>16,208</td><td>73%</td><td>46%</td><td>44%</td><td>52%</td><td>87%</td><td>86%</td><td>86%</td><td>86%</td><td>4,482</td><td>6,328</td><td>9,384</td><td>58%</td><td>56%</td><td>58%</td><td>62%</td><td>45.7x</td><td>30.8x</td><td>$1.30</td><td>$1.80</td><td>$2.59</td><td>71.7x</td><td>50.0x</td><td>1.9x</td><td>1.1x</td><td>NC -</td></tr><tr><td>Mean</td><td></td><td></td><td>2,788,307</td><td>2,732,940</td><td>354,352</td><td>422,127</td><td>487,598</td><td>32%</td><td>23%</td><td>20%</td><td>21%</td><td>62%</td><td>62%</td><td>61%</td><td>62%</td><td>118,669</td><td>149,140</td><td>175,606</td><td>37%</td><td>37%</td><td>37%</td><td>37%</td><td>41.1x</td><td>30.5x</td><td>$11.84</td><td>$13.41</td><td>$15.99</td><td>52.0x</td><td>38.1x</td><td>3.1x</td><td>1.4x</td><td></td></tr><tr><td>Median</td><td></td><td></td><td>2,789,658</td><td>2,792,568</td><td>367,588</td><td>465,571</td><td>531,072</td><td>20%</td><td>18%</td><td>19%</td><td>16%</td><td>69%</td><td>67%</td><td>65%</td><td>67%</td><td>130,571</td><td>152,310</td><td>166,571</td><td>38%</td><td>38%</td><td>38%</td><td>38%</td><td>20.6x</td><td>16.7x</td><td>$9.10</td><td>$11.43</td><td>$14.25</td><td>24.2x</td><td>19.7x</td><td>2.1x</td><td>1.0x</td><td></td></tr></table>
+
+<table><tr><td>Key Risks</td></tr><tr><td>Everything depends on Starship. We view Starship’s path to rapid &amp; complete reusability as the critical enabler underpinning SpaceX’s many long-term growth drivers. Accordingly, any delays, technical setbacks, or regulatory hurdles that constrain the launch trajectory will impede planned growth across multiple business lines</td></tr><tr><td>Supply constraints, especially in AI. Supply bottlenecks – particularly power availability &amp; silicon/chip supply – could constrain Starlink ramp, orbital satellite production, &amp; overall buildout of compute power</td></tr><tr><td>Extremely strong execution required. Continued execution across both existing initiatives &amp; newer, even more ambitious ones will inevitably bring unforeseen challenges given the scale, complexity, &amp; frontier nature of what SpaceX is pursuing. While SpaceX is currently many years ahead, competition is picking up w/Blue Origin, Amazon (AMZN), &amp; international players</td></tr><tr><td>Heavy capital intensity &amp; N-T FCF burn. The multi-year investment cycle for Starship, Starlink, &amp; compute infrastructure buildout weighs on FCF &amp; we expect the company to rely heavily on the debt market going forward</td></tr><tr><td>Regulatory. Export controls, ITAR, spectrum allocation, &amp; environmental reviews could moderate launch pace or market access</td></tr><tr><td>There’s only one Elon. Elon Musk’s outsized influence &amp; control (82% voting power) is central to SpaceX’s culture, vision, &amp; operational strategy, &amp; we believe his leadership has been a defining driver of the company’s success. At the same time, that concentration of control raises governance considerations &amp; exposes the company to leadership-transition risk</td></tr></table>
+
+## Disclosures
+
+Companies Discussed in This Report (all prices in this report as of market close on 06 July 2026, unless otherwise indicated)
+SpaceX(SPCX/\$160.42/OW)
+
+## Important Disclosures
+
+• Market Maker: JPM Securities LLC makes a market in the securities of SpaceX or related entities.
+
+\- Market Maker/ Liquidity Provider: JPM is a market maker and/or liquidity provider in the financial instruments of/related to SpaceX or related entities.
+
+\- Manager or Co-manager: JPM acted as manager or co-manager in a public offering of securities or financial instruments (as such term is defined in Directive 2014/65/EU) of/for SpaceX or related entities within the past 12 months.
+
+\- Client: JPM currently has, or had within the past 12 months, the following entity(ies) as clients: SpaceX or related entities.
+
+\- Client/Investment Banking: JPM currently has, or had within the past 12 months, the following entity(ies) as investment banking clients: SpaceX or related entities.
+
+\- Client/Non-Investment Banking, Securities-Related: JPM currently has, or had within the past 12 months, the following entity(ies) as clients, and the services provided were non-investment-banking, securities-related: SpaceX or related entities.
+
+\- Client/Non-Securities-Related: JPM currently has, or had within the past 12 months, the following entity(ies) as clients, and the services provided were non-securities-related: SpaceX or related entities.
+
+\- Investment Banking Compensation Received: JPM has received in the past 12 months compensation for investment banking services from SpaceX or related entities.
+
+\- Potential Investment Banking Compensation: JPM expects to receive, or intends to seek, compensation for investment banking services in the next three months from SpaceX or related entities.
+
+\- Non-Investment Banking Compensation Received: JPM has received compensation in the past 12 months for products or services other than investment banking from SpaceX or related entities.
+
+\- Debt Position: JPM may hold a position in the debt securities of SpaceX or related entities, if any.
+
+## Disclosures
+
+SpaceX (SPCX, SPCX US) Price Chart  
+![](images/6969eaac04952d791636d8e78782366ef0c5dca456e7f992ca2f85303d1e581f.jpg)  
+Source: Bloomberg Finance L.P. and JPM; price data adjusted for stock splits and dividends. Initiated coverage Jul 07, 2026. All share prices are as of market close on the previous business day.
+
+## Disclosures
+
+Analyst Certification: The Research Analyst(s) denoted by an “AC” on the cover of this report certifies (or, where multiple Research Analysts are primarily responsible for this report, the Research Analyst denoted by an “AC” on the cover or within the document individually certifies, with respect to each security or issuer that the Research Analyst covers in this research) that: (1) all of the views expressed in this report accurately reflect the Research Analyst’s personal views about any and all of the subject securities or issuers; and (2) no part of any of the Research Analyst's compensation was, is, or will be directly or indirectly related to the specific recommendations or views expressed by the Research Analyst(s) in this report. For all Korea-based Research Analysts listed on the front cover, if applicable, they also certify, as per KOFIA requirements, that the Research Analyst’s analysis was made in good faith and that the views reflect the Research Analyst’s own opinion, without undue influence or intervention.
+
+All authors named within this report are Research Analysts who produce independent research unless otherwise specified. In Europe, Sector Specialists (Sales and Trading) may be shown on this report as contacts but are not authors of the report or part of the Research Department.
+
+## Important Disclosures
+
+Company-Specific Disclosures: JPM does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. Important disclosures, including price charts and credit opinion history tables, are available for compendium reports and all JPM-covered companies, and certain non-covered companies, by visiting https://www.jpmm.com/research/disclosures, calling 1-800-477-0406, or e-mailing research.disclosure.inquiries@JPM.com with your request.
+
+## Explanation of Equity Research Ratings, Designations and Analyst(s) Coverage Universe:
+
+JPM uses the following rating system: Overweight (over the duration of the price target indicated in this report, we expect this stock will outperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); Neutral (over the duration of the price target indicated in this report, we expect this stock will perform in line with the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); and Underweight (over the duration of the price target indicated in this report, we expect this stock will underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe. NR is Not Rated. In this case, JPM has removed the rating and, if applicable, the price target, for this stock because of either a lack of a sufficient fundamental basis or for legal, regulatory or policy reasons. The previous rating and, if applicable, the price target, no longer should be relied upon. An NR designation is not a recommendation or a rating. Some stocks under coverage have a rating but no price target; in these cases, we expect the stock will outperform/perform in line/underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe of the relevant duration of the region. In our Asia (ex-Australia and ex-India) and U.K. small- and mid-cap Equity Research, each stock's expected total return is compared to the expected total return of a benchmark country market index, not to those Research Analysts' coverage universe. If it does not appear in the Important Disclosures section of this report, the certifying Research Analyst's coverage universe can be found on JPM's Research website, https://www.JPMmarkets.com.
+
+## Disclosures
+
+## JPM Equity Research Ratings Distribution, as of July 04, 2026
+
+<table><tr><td></td><td>Overweight (buy)</td><td>Neutral (hold)</td><td>Underweight (sell)</td></tr><tr><td>JPM Global Equity Research Coverage*</td><td>53%</td><td>36%</td><td>12%</td></tr><tr><td>IB clients**</td><td>83%</td><td>80%</td><td>73%</td></tr><tr><td>JPMS Equity Research Coverage*</td><td>51%</td><td>37%</td><td>12%</td></tr><tr><td>IB clients**</td><td>95%</td><td>92%</td><td>87%</td></tr></table>
+
+\*Please note that the percentages may not add to 100% because of rounding.
+
+\*\*Percentage of subject companies within each of the "buy," "hold" and "sell" categories for which JPM has provided investment banking services within the previous 12 months. For purposes of FINRA ratings distribution rules only, our Overweight rating falls into a buy rating category; our Neutral rating falls into a hold rating category; and our Underweight rating falls into a sell rating category. Please note that stocks with an NR designation are not included in the table above. This information is current as of the end of the most recent calendar quarter.
+
+Equity Valuation and Risks: For valuation methodology and risks associated with covered companies or price targets for covered companies, please see the most recent company-specific research report at http://www.JPMmarkets.com, contact the primary analyst or your JPM representative, or email research.disclosure.inquiries@JPM.com. For material information about the proprietary models used, please see the Summary of Financials in company-specific research reports and the Company Tearsheets, which are available to download on the company pages of our client website, http://www.JPMmarkets.com. This report also sets out within it the material underlying assumptions used.
+
+## History of Investment Recommendations:
+
+A history of JPM investment recommendations disseminated during the preceding 12 months can be accessed on the Research & Commentary page of http://www.JPMmarkets.com where you can also search by analyst name, sector or financial instrument.
+
+Analysts' Compensation: The research analysts responsible for the preparation of this report receive compensation based upon various factors, including the quality and accuracy of research, client feedback, competitive factors, and overall firm revenues.
+
+## Other Disclosures
+
+JPM is a marketing name for investment banking businesses of JPM Chase & Co. and its subsidiaries and affiliates worldwide.
+
+UK MIFID FICC research unbundling exemption: UK clients should refer to UK MIFID Research Unbundling exemption for details of JPM's implementation of the FICC research exemption and guidance on relevant FICC research categorisation.
+
+All research material made available to clients are simultaneously available on our client website, JPM Markets, unless specifically permitted by relevant laws. Not all research content is redistributed, e-mailed or made available to third-party aggregators. For all research material available on a particular stock, please contact your sales representative.
+
+Any long form nomenclature for references to China; Hong Kong; Taiwan; and Macau within this research material are Mainland China; Hong Kong SAR (China); Taiwan (China); and Macau SAR (China).
+
+JPM may, from time to time, write on issuers or securities targeted by economic or financial sanctions imposed or administered by the governmental authorities of the U.S., EU, UK or other relevant jurisdictions (Sanctioned Securities). Nothing in this report is intended to be read or construed as encouraging, facilitating, promoting or otherwise approving investment or dealing in such Sanctioned Securities. Clients should be aware of their own legal and compliance obligations when making investment decisions.
+
+Any digital or crypto assets discussed in this research report are subject to a rapidly changing regulatory landscape. For relevant regulatory advisories on crypto assets, including bitcoin and ether, please see https://www.JPM.com/disclosures/cryptoasset-disclosure.
+
+## Disclosures
+
+The author(s) of this research report may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so.
+
+Exchange-Traded Funds (ETFs): JPM Securities LLC (“JPMS”) acts as authorized participant for substantially all U.S.-listed ETFs. To the extent that any ETFs are mentioned in this report, JPMS may earn commissions and transaction-based compensation in connection with the distribution of those ETF shares and may earn fees for performing other trade-related services, such as securities lending to short sellers of the ETF shares. JPMS may also perform services for the ETFs themselves, including acting as a broker or dealer to the ETFs. In addition, affiliates of JPMS may perform services for the ETFs, including trust, custodial, administration, lending, index calculation and/or maintenance and other services.
+
+Options and Futures related research: If the information contained herein regards options- or futures-related research, such information is available only to persons who have received the proper options or futures risk disclosure documents. Please contact your JPM Representative or visit https://www.theocc.com/components/docs/riskstoc.pdf for a copy of the Option Clearing Corporation's Characteristics and Risks of Standardized Options or https://www.finra.org/sites/default/files/2020-
+
+08/Security\_Futures\_Risk\_Disclosure\_Statement\_2020.pdf for a copy of the Security Futures Risk Disclosure Statement.
+
+Changes to Interbank Offered Rates (IBORs) and other benchmark rates: Certain interest rate benchmarks are, or may in the future become, subject to ongoing international, national and other regulatory guidance, reform and proposals for reform. For more information, please consult:
+https://www.JPM.com/global/disclosures/interbank\_offered\_rates
+
+Private Bank Clients: Where you are receiving research as a client of the private banking businesses offered by JPM Chase & Co. and its subsidiaries (“JPM Private Bank”), research is provided to you by JPM Private Bank and not by any other division of JPM, including, but not limited to, the JPM Corporate and Investment Bank and its Global Research division.
+
+Legal entity responsible for the production and distribution of research: The legal entity identified below the name of the Reg AC Research Analyst who authored this material is the legal entity responsible for the production of this research. Where multiple Reg AC Research Analysts authored this material with different legal entities identified below their names, these legal entities are jointly responsible for the production of this research. Where more than one legal entity is listed under an analyst's name, the first legal entity is responsible for the production unless stated otherwise. Research Analysts from various JPM affiliates may have contributed to the production of this material but may not be licensed to carry out regulated activities in your jurisdiction (and do not hold themselves out as being able to do so). Unless otherwise stated below in the legal entity disclosures, this material has been distributed by the legal entity responsible for production, or where more than one legal entity is listed under the analyst's name, the first legal entity will be responsible for distribution. If you have any queries, please contact the relevant Research Analyst in your jurisdiction or the entity in your jurisdiction that has distributed this research material.
+
+## Legal Entities Disclosures and Country-/Region-Specific Disclosures:
+
+Argentina: JPM Chase Bank N.A Sucursal Buenos Aires is regulated by Banco Central de la República Argentina (“BCRA”- Central Bank of Argentina) and Comisión Nacional de Valores (“CNV”- Argentinian Securities Commission - ALYC y AN Integral N°51).
+
+Australia: JPM Securities Australia Limited (“JPMSAL”) (ABN 61 003 245 234/AFS Licence No: 238066) is regulated by the Australian Securities and Investments Commission and is a Market Participant of ASX Limited, a Clearing and Settlement Participant of ASX Clear Pty Limited and a Clearing Participant of ASX Clear (Futures) Pty Limited. This material is issued and distributed in Australia by or on behalf of JPMSAL only to "wholesale clients" (as defined in section 761G of the Corporations Act 2001). A list of all financial products covered can be found by visiting https://www.jpmm.com/research/disclosures. JPM seeks to cover companies of relevance to the domestic and international investor base across all Global Industry Classification Standard (GICS) sectors, as well as across a range of market capitalisation sizes. If applicable, in the course of conducting public side due diligence on the subject company(ies), the Research Analyst team may at times perform such diligence through corporate engagements such as site visits, discussions with company representatives, management presentations, etc. Research issued by JPMSAL has been prepared in accordance with JPM Australia’s Research Independence Policy which can be found at the following link: JPM Australia - Research Independence Policy.
+
+## Disclosures
+
+Brazil: Banco JPM S.A. is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsman JPM: 0800-7700847 / 0800-7700810 (For Hearing Impaired) / ouvidoria.jp.morgan@jpmchase.com.
+
+Canada: JPM Securities Canada Inc. is a registered investment dealer, regulated by the Canadian Investment Regulatory Organization and the Ontario Securities Commission and is the participating member on Canadian exchanges. This material is distributed in Canada by or on behalf of JPM Securities Canada Inc.
+
+Chile: Inversiones JPM Limitada is an unregulated entity incorporated in Chile.
+
+China: JPM Securities (China) Company Limited has been approved by CSRC to conduct the securities investment consultancy business.
+
+Colombia: Banco JPM Colombia S.A. is supervised by the Superintendencia Financiera de Colombia (SFC). Any reference in this material to products or services offered abroad by entities other than the Bank in Colombia is included exclusively for descriptive purposes. Such references do not constitute, and should not be construed as, promotional activity or the provision of financial products or services within Colombian territory, as defined under applicable Colombian regulation.
+
+Dubai International Financial Centre (DIFC): JPM Chase Bank, N.A., Dubai Branch is regulated by the Dubai Financial Services Authority (DFSA) and its registered address is Dubai International Financial Centre - The Gate, West Wing, Level 3 and 9 PO Box 506551, Dubai, UAE. This material has been distributed by JPM Chase Bank, N.A., Dubai Branch to persons regarded as professional clients or market counterparties as defined under the DFSA rules.
+
+European Economic Area (EEA): Unless specified to the contrary, research is distributed in the EEA by JPM SE (“JPM SE”), which is authorised as a credit institution by the Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and jointly supervised by the BaFin, the German Central Bank (Deutsche Bundesbank) and the European Central Bank (ECB). JPM SE is a company headquartered in Frankfurt with registered address at TaunusTurm, Taunustor 1, Frankfurt am Main, 60310, Germany. The material has been distributed in the EEA to persons regarded as professional investors (or equivalent) pursuant to Art. 4 para. 1 no. 10 and Annex II of MiFID II and its respective implementation in their home jurisdictions (“EEA professional investors”). This material must not be acted on or relied on by persons who are not EEA professional investors. Any investment or investment activity to which this material relates is only available to EEA relevant persons and will be engaged in only with EEA relevant persons.
+
+Hong Kong: JPM Securities (Asia Pacific) Limited (CE number AAJ321) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission in Hong Kong, and JPM Broking (Hong Kong) Limited (CE number AAB027) is regulated by the Securities and Futures Commission in Hong Kong. JPM Chase Bank, N.A., Hong Kong Branch (CE Number AAL996) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission, is organized under the laws of the United States with limited liability. Where the distribution of this material is a regulated activity in Hong Kong, the material is distributed in Hong Kong by or through JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited.
+
+India: JPM India Private Limited (Corporate Identity Number - U67120MH1992FTC068724), having its registered office at JPM Tower, Off. C.S.T. Road, Kalina, Santacruz - East, Mumbai – 400098, is registered with the Securities and Exchange Board of India (SEBI) as a ‘Research Analyst’ having registration number INH000001873. JPM India Private Limited is also registered with SEBI as a member of the National Stock Exchange of India Limited and the Bombay Stock Exchange Limited (SEBI Registration Number – INZ000239730) and as a Merchant Banker (SEBI Registration Number - MB/INM000002970). Telephone: 91-22-6157 3000, Facsimile: 91-22-6157 3990 and Website: http://www.jpmipl.com. JPM Chase Bank, N.A. - Mumbai Branch is licensed by the Reserve Bank of India (RBI) (Licence No. 53/ Licence No. BY.4/94; SEBI - IN/CUS/014/ CDSL : IN-DP-CDSL-444-2008/ IN-DP-NSDL-285-2008/ INBI00000984/ INE231311239) as a Scheduled Commercial Bank in India, which is its primary license allowing it to carry on Banking business in India and other activities, which a Bank branch in India are permitted to undertake. For non-local research material, this material is not distributed in India by JPM India Private Limited. Compliance Officer: Ashutosh Sharma; ashutosh.j.sharma@jpmchase.com; +912261575002. Grievance Officer:
+
+Ramprasadh K, jpmipl.research.feedback@JPM.com; +912261573000. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Please visit Terms and Conditions and Most Important Terms and Conditions (MITC). The annual Compliance audit report is available at http://www.jpmipl.com/#research.
+
+Indonesia: PT JPM Sekuritas Indonesia is a member of the Indonesia Stock Exchange and is registered and supervised by the Otoritas Jasa Keuangan (OJK).
+
+Korea: JPM Securities (Far East) Limited, Seoul Branch, is a member of the Korea Exchange (KRX). JPM Chase Bank, N.A., Seoul Branch, is licensed as a branch office of foreign bank (JPM Chase Bank, N.A.) in Korea. Both entities are regulated by the Financial Services Commission (FSC) and the Financial Supervisory Service (FSS). For non-macro research material, the material is distributed in Korea by or through JPM Securities (Far East) Limited, Seoul Branch.
+
+Japan: JPM Securities Japan Co., Ltd. and JPM Chase Bank, N.A., Tokyo Branch are regulated by the Financial Services Agency in Japan.
+
+Malaysia: This material is issued and distributed in Malaysia by JPM Securities (Malaysia) Sdn Bhd (18146-X), which is a Participating Organization of Bursa Malaysia Berhad and holds a Capital Markets Services License issued by the Securities Commission in Malaysia.
+
+Mexico: JPM Casa de Bolsa, S.A. de C.V. and JPM Grupo Financiero are members of the Mexican Stock Exchange and are authorized to act as a broker dealer by the National Banking and Securities Exchange Commission. (“Bolsa Mexicana de Valores”) and the Institutional Stock Exchange (“Bolsa Institucional de Valores”), and it is authorized to act as a broker dealer by the National Banking and Securities Exchange Commission (“Comisión Nacional Bancaria y de Valores”).
+
+## Disclosures
+
+New Zealand: This material is issued and distributed by JPMSAL in New Zealand only to "wholesale clients" (as defined in the Financial Markets Conduct Act 2013). JPMSAL is registered as a Financial Service Provider under the Financial Service providers (Registration and Dispute Resolution) Act of 2008.
+
+Philippines: JPM Securities Philippines Inc. is a Trading Participant of the Philippine Stock Exchange and a member of the Securities Clearing Corporation of the Philippines and the Securities Investor Protection Fund. It is regulated by the Securities and Exchange Commission.
+
+Singapore: This material is issued and distributed in Singapore by or through JPM Securities Singapore Private Limited (JPMSS) [MDDI (P) 057/08/2025 and Co. Reg. No.: 199405335R], which is a member of the Singapore Exchange Securities Trading Limited, and/or JPM Chase Bank, N.A., Singapore branch (JPMCB Singapore), both of which are regulated by the Monetary Authority of Singapore. This material is issued and distributed in Singapore only to accredited investors, expert investors and institutional investors, as defined in Section 4A of the Securities and Futures Act, Cap. 289 (SFA). This material is not intended to be issued or distributed to any retail investors or any other investors that do not fall into the classes of “accredited investors,” “expert investors” or “institutional investors,” as defined under Section 4A of the SFA. Recipients of this material in Singapore are to contact JPMSS or JPMCB Singapore in respect of any matters arising from, or in connection with, the material.
+
+South Africa: JPM Equities South Africa Proprietary Limited and JPM Chase Bank, N.A., Johannesburg Branch are members of the Johannesburg Securities Exchange and are regulated by the Financial Services Conduct Authority (FSCA).
+
+Taiwan: JPM Securities (Taiwan) Limited is a participant of the Taiwan Stock Exchange (company-type) and regulated by the Taiwan Securities and Futures Bureau. Material relating to equity securities is issued and distributed in Taiwan by JPM Securities (Taiwan) Limited, subject to the license scope and the applicable laws and the regulations in Taiwan. To the extent that JPM Securities (Taiwan) Limited produces research materials on securities not listed on the Taiwan Stock Exchange or Taipei Exchange (“Non-Taiwan Listed Securities”), these materials shall not constitute securities recommendations for the purpose of applicable Taiwan regulations, and, for the avoidance of doubt, JPM Securities (Taiwan) Limited does not act as broker for Non-Taiwan Listed Securities. According to Paragraph 2, Article 7-1 of Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers (as amended or supplemented) and/or other applicable laws or regulations, please note that the recipient of this material is not permitted to engage in any activities in connection with the material that may give rise to conflicts of interests, unless otherwise disclosed in the “Important Disclosures” in this material.
+
+Thailand: This material is issued and distributed in Thailand by JPM Securities (Thailand) Ltd., which is a member of the Stock Exchange of Thailand and is regulated by the Ministry of Finance and the Securities and Exchange Commission. The registered address is 548 One City Center Building, 50th Floor, Ploenchit Road, Lymphini, Pathum Wan, Bangkok 10330.
+
+UK: Research is produced in the UK by JPM Securities plc (“JPMS plc”) which is a member of the London Stock Exchange and is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority or JPM Markets Limited (“JPMML Ltd”) which is authorised and regulated by the Financial Conduct Authority. Unless specified to the contrary, this material is distributed in the UK by JPMS plc and is directed in the UK only to: (a) persons having professional experience in matters relating to investments falling within article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) (Order) 2005 (“the FPO”); (b) persons outlined in article 49 of the FPO (high net worth companies, unincorporated associations or partnerships, the trustees of high value trusts, etc.); or (c) any persons to whom this communication may otherwise lawfully be made; all such persons being referred to as "UK relevant persons". This material must not be acted on or relied on by persons who are not UK relevant persons. Any investment or investment activity to which this material relates is only available to UK relevant persons and will be engaged in only with UK relevant persons. A description of JPM EMEA’s policy for prevention and avoidance of conflicts of interest related to the production of Research can be found at the following link: JPM EMEA - Research Independence Policy.
+
+U.S.: JPM Securities LLC (“JPMS”) is a member of the NYSE, FINRA, SIPC, and the NFA. JPM Chase Bank, N.A. is a member of the FDIC. Material published by non-U.S. affiliates is distributed in the U.S. by JPMS who accepts responsibility for its content.
+
+General: Additional information is available upon request. The information in this material has been obtained from sources believed to be reliable. While all reasonable care has been taken to ensure that the facts stated in this material are accurate and that the forecasts, opinions and expectations contained herein are fair and reasonable, JPM Chase & Co. or its affiliates and/or subsidiaries (collectively JPM) make no representations or warranties whatsoever to the completeness or accuracy of the material provided, except with respect to any disclosures relative to JPM and the Research Analyst's involvement with the issuer that is the subject of the material. Accordingly, no reliance should be placed on the accuracy, fairness or completeness of the information contained in this material. There may be certain discrepancies with data and/or limited content in this material as a result of calculations, adjustments, translations to different languages, and/or local regulatory restrictions, as applicable. These discrepancies should not impact the overall investment analysis, views and/or recommendations of the subject company(ies) that may be discussed in the material. Artificial intelligence tools may have been used in the preparation of this material, including assisting in data analysis, pattern recognition, and content drafting for research material. JPM accepts no liability whatsoever for any loss arising from any use of this material or its contents, and neither JPM nor any of its respective directors, officers or employees, shall be in any way responsible for the contents hereof, apart from the liabilities
+
+## Disclosures
+
+and responsibilities that may be imposed on them by the relevant regulatory authority in the jurisdiction in question, or the regulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by
+
+changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction.
+
+Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email
+
+MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer
+
+Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not constitute investment advice nor an endorsement of any product or project; (4) are provided solely for informational purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All Rights Reserved.
+
+"Other Disclosures" last revised July 04, 2026.
+
+Copyright 2026 JPM Chase & Co. All rights reserved. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM. It is strictly prohibited to use or share without prior written consent from JPM any research material received from JPM or an authorized third-party (“JPM Data”) in any third-party artificial intelligence (“AI”) systems or models when such JPM Data is accessible by a third-party.
