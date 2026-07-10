@@ -1,0 +1,3073 @@
+[
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                1.0,
+                0.236
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.05,
+                0.271,
+                0.137,
+                0.289
+            ],
+            "angle": 0,
+            "content": "AI AGENTS",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.319,
+                0.757,
+                0.416
+            ],
+            "angle": 0,
+            "content": "Decision Agents Bring\nAI into the Boardroom"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.447,
+                0.572,
+                0.466
+            ],
+            "angle": 0,
+            "content": "By Tobias Schmidt, Christoph Heuser, Nino Mori, and Luis Jäger",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.49,
+                0.362,
+                0.508
+            ],
+            "angle": 0,
+            "content": "ARTICLE JULY 07, 2026 12 MIN READ",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.569,
+                0.932,
+                0.708
+            ],
+            "angle": 0,
+            "content": "How familiar is this? Your executive committee discussions routinely hit a wall. Someone asks a seemingly straightforward question: “What happens if demand softens in Q3?” Or “What if our main supplier in Asia suddenly hikes its prices?” Or “What’s our real exposure if this regulation lands?” Everyone knows the data exists. It’s just never in the room at the time. Or else it arrives later, after a week of follow-ups, reconciled spreadsheets, and debates over whose numbers are “right”—and considerable effort that drains precious energy and resources. This gap quickly becomes overlooked in AI investment discussion.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.721,
+                0.873,
+                0.783
+            ],
+            "angle": 0,
+            "content": "Most AI programs target productivity and process improvements—faster closes, cleaner handoffs, better throughput. But they’ve largely ignored the most consequential area: the strategic decisions that span functions, deploy capital, and set enterprise priorities.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.796,
+                0.955,
+                0.915
+            ],
+            "angle": 0,
+            "content": "Closing that gap will be the source of the next competitive advantage, and that's where decision agents come into play. This new class of AI agent assembles cross-functional evidence, tests scenarios in real time, and supports leaders in their most complex and most consequential work: strategic decision making. Decision agents are truly transformational, providing unprecedented clarity and transparency, elevating the quality of information inputs, and leading to faster, sharper decisions that can have tangible, powerful impact.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.97,
+                0.251,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.942,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.276,
+                0.128,
+                0.286
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.314,
+                0.74,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.369,
+                0.759,
+                0.418
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.449,
+                0.569,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.494,
+                0.358,
+                0.506
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.57,
+                0.926,
+                0.587
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.591,
+                0.914,
+                0.606
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.61,
+                0.922,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.631,
+                0.924,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.648,
+                0.928,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.668,
+                0.897,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.69,
+                0.506,
+                0.704
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.723,
+                0.868,
+                0.739
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.743,
+                0.868,
+                0.759
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.764,
+                0.82,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.799,
+                0.922,
+                0.813
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.818,
+                0.891,
+                0.833
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.837,
+                0.946,
+                0.853
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.858,
+                0.93,
+                0.873
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.876,
+                0.952,
+                0.892
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.896,
+                0.511,
+                0.912
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.055,
+                0.102,
+                0.639,
+                0.183
+            ],
+            "angle": 0,
+            "content": "This new class of AI agent assembles cross-functional evidence, tests scenarios in real time, and supports leaders in their most complex and most consequential work: strategic decision making."
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.287,
+                0.846,
+                0.369
+            ],
+            "angle": 0,
+            "content": "AI Remains Under the Radar for Major Decisions"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.395,
+                0.957,
+                0.476
+            ],
+            "angle": 0,
+            "content": "AI investment is accelerating: companies expect to double their AI investment this year to \\(1.7\\%\\) of revenues, according to BCG's AI Radar 2026 survey of some 2,400 executives around the world. And it delivers value in execution. But while it has improved how work gets done, it hasn't yet improved how critical decisions get made.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.489,
+                0.954,
+                0.61
+            ],
+            "angle": 0,
+            "content": "Most of the investment continues to be directed toward operations, process, and task automation. Fewer than one-fifth of leaders ranked decision making among their top AI investment priorities. The issue isn't that executives are resistant to using AI agents; some \\(42\\%\\) of CEOs report they're now personally using agents weekly according BCG's AI Radar 2026 survey. But even among those companies stating that they consider decision making a top strategic application for AI, the actual investment in AI agents is the lowest of any topic, at just \\(14\\%\\).",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.041,
+                0.679,
+                0.851,
+                0.757
+            ],
+            "angle": 0,
+            "content": "What Are Decision Agents—and What Makes Them Valuable?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.785,
+                0.941,
+                0.886
+            ],
+            "angle": 0,
+            "content": "There are essentially two basic types of AI agents. Execution agents, the first and most widely used today, automate complex operational tasks with little or no human intervention. Decision agents are far more sophisticated; they synthesize inputs, evaluate alternatives, and generate recommendations according to explicit business logic. Crucially, they operate not at the point of execution but at the point of choice.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.942,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.288,
+                0.843,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.329,
+                0.446,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.397,
+                0.955,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.418,
+                0.921,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.437,
+                0.901,
+                0.453
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.456,
+                0.433,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.492,
+                0.841,
+                0.507
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.512,
+                0.847,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.531,
+                0.95,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.552,
+                0.931,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.571,
+                0.898,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.59,
+                0.885,
+                0.605
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.677,
+                0.853,
+                0.719
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.718,
+                0.766,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.788,
+                0.911,
+                0.803
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.808,
+                0.92,
+                0.823
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.827,
+                0.915,
+                0.842
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.849,
+                0.935,
+                0.861
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.867,
+                0.38,
+                0.882
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.918,
+                0.108
+            ],
+            "angle": 0,
+            "content": "Decision agents can support individual managers or entire functional teams, creating value in three ways:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.121,
+                0.939,
+                0.242
+            ],
+            "angle": 0,
+            "content": "They establish a common evidence base. They combine inputs from different departments and formats to create a single, consistent baseline. The formats include structured and unstructured data, encompassing everything from emails and spreadsheets to individuals' knowledge—which needs to be codified in order for the agents to perform most effectively. Instead of working with fragmented, function-specific information, leaders can start their deliberations with more comprehensive, better-quality information.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.055,
+                0.289,
+                0.629,
+                0.351
+            ],
+            "angle": 0,
+            "content": "Instead of working with fragmented, function-specific information, leaders can start their deliberations with more comprehensive, better-quality information.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.421,
+                0.941,
+                0.501
+            ],
+            "angle": 0,
+            "content": "They develop scenarios and evaluate them in real time. After presenting an initial assessment, decision agents can test different scenarios, updating the implications immediately. Leaders can see in real time—mid-meeting—what happens when they change assumptions. This capability reduces the time it takes to cycle through questions, analysis, and decision making.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.514,
+                0.955,
+                0.615
+            ],
+            "angle": 0,
+            "content": "They limit bias. By grounding recommendations in shared data and explicit business logic, decision agents limit asymmetric preparation, unchallenged assumptions, and the introduction of selective inputs, thereby creating a more neutral foundation. They do not eliminate subjective views altogether, but they make tradeoffs more transparent, recommendations more objective, and outcomes easier to trace.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.684,
+                0.685,
+                0.766
+            ],
+            "angle": 0,
+            "content": "Transforming Boardroom\nDecision Making"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.791,
+                0.951,
+                0.912
+            ],
+            "angle": 0,
+            "content": "Perhaps the most underappreciated, yet most valuable, use of decision agents is in meetings of executive committees. Customized decision agents can help cross-functional, senior-level committees navigate the complex, high-stakes decisions they face: integrated business planning (where volume, capacity, and budgets must align across functions); portfolio investment allocation (where capital commitments depend on inputs from strategy, finance, and operations); and market-entry decisions (where risk, feasibility, and timing need to be assessed in integrated",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.068,
+                0.917,
+                0.088
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.09,
+                0.152,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.124,
+                0.933,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.144,
+                0.936,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.163,
+                0.934,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.183,
+                0.921,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.204,
+                0.868,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.222,
+                0.444,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.054,
+                0.29,
+                0.116,
+                0.329
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.293,
+                0.621,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.311,
+                0.626,
+                0.329
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.332,
+                0.581,
+                0.348
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.423,
+                0.936,
+                0.438
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.443,
+                0.937,
+                0.458
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.462,
+                0.919,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.482,
+                0.815,
+                0.498
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.517,
+                0.886,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.538,
+                0.952,
+                0.553
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.557,
+                0.914,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.578,
+                0.921,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.596,
+                0.322,
+                0.611
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.682,
+                0.687,
+                0.727
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.723,
+                0.46,
+                0.767
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.794,
+                0.93,
+                0.809
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.815,
+                0.874,
+                0.827
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.833,
+                0.936,
+                0.848
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.853,
+                0.859,
+                0.867
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.871,
+                0.949,
+                0.889
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.892,
+                0.933,
+                0.907
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.901,
+                0.108
+            ],
+            "angle": 0,
+            "content": "(fashion). Not only are the inputs complex, but the cost of misalignment is high, and speed in decision making is critical for informing business outcomes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.122,
+                0.948,
+                0.242
+            ],
+            "angle": 0,
+            "content": "A custom-developed decision agent can serve as another team member in the boardroom—in effect, an omniscient chief of staff with supercomputing powers. Based on information provided ahead of time, the agent “arrives” at the meeting with a preliminary memo-level assessment that it updates as the discussion unfolds. It can gather and synthesize inputs, test different scenarios, and then formulate a recommendation and translate it into concrete follow-up actions. In this way, it helps coalesce and improve the decisions that govern all else.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.29,
+                0.64,
+                0.351
+            ],
+            "angle": 0,
+            "content": "A custom-developed decision agent can serve as another team member in the boardroom—in effect, an omniscient chief of staff with supercomputing powers.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.422,
+                0.773,
+                0.442
+            ],
+            "angle": 0,
+            "content": "Specifically, decision agents can best be put to use in three high-impact areas:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.456,
+                0.954,
+                0.616
+            ],
+            "angle": 0,
+            "content": "Supply Chain Management. In organizations with complex supply chains, the key functional areas operate on fundamentally different incentives. Sales, for instance, pushes volume growth, while manufacturing optimizes for utilization, and procurement seeks cost efficiency and supply continuity. None have a clear view of the others' constraints. On top of these differences is the added complexity of the external disruptions from growing geopolitical shifts (such as tariffs). In short, with so many inputs and variables, supply chain planning has become increasingly complicated. Executive committee meetings require intensive preparation that extends into weeks. Even then, leaders never get an integrated view of the options.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.629,
+                0.947,
+                0.767
+            ],
+            "angle": 0,
+            "content": "A decision agent, on the other hand, can act as a digital twin of the supply chain. It can assemble demand forecasts, data on suppliers' capacities, and information on the cost structures across the full set of components. It pinpoints information gaps and maps potential responses against the supplier cost curves. It then helps users assess the various scenarios and evaluate the tradeoffs, offering cost implications and feasibility. And all this analysis is performed on the spot: while they meet, leaders can adjust volume assumptions and supplier choices, and the agent recalculates immediately.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.782,
+                0.952,
+                0.861
+            ],
+            "angle": 0,
+            "content": "Rather than spend time arguing over conflicting inputs, leaders can focus the conversation on the pivotal strategic questions and arrive at decisions faster. Decision agents, then, allow leaders to save weeks while enjoying a structured, comprehensive, consistently maintained data foundation (with codified business logic).",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.972,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.069,
+                0.898,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.088,
+                0.598,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.124,
+                0.917,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.144,
+                0.928,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.162,
+                0.944,
+                0.179
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.183,
+                0.943,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.204,
+                0.912,
+                0.217
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.223,
+                0.683,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.125,
+                0.292,
+                0.583,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.125,
+                0.31,
+                0.639,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.125,
+                0.33,
+                0.636,
+                0.35
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.423,
+                0.771,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.457,
+                0.952,
+                0.474
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.477,
+                0.925,
+                0.491
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.497,
+                0.881,
+                0.513
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.517,
+                0.917,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.537,
+                0.93,
+                0.553
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.556,
+                0.872,
+                0.573
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.577,
+                0.897,
+                0.591
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.597,
+                0.691,
+                0.611
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.629,
+                0.939,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.65,
+                0.921,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.669,
+                0.936,
+                0.687
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.69,
+                0.883,
+                0.704
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.709,
+                0.942,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.73,
+                0.906,
+                0.744
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.748,
+                0.285,
+                0.764
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.784,
+                0.95,
+                0.799
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.804,
+                0.93,
+                0.819
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.823,
+                0.943,
+                0.839
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.843,
+                0.318,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.102,
+                0.644,
+                0.162
+            ],
+            "angle": 0,
+            "content": "“Rather than spend time arguing over conflicting inputs, leaders can focus the conversation on the pivotal strategic questions and arrive at decisions faster.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.233,
+                0.955,
+                0.354
+            ],
+            "angle": 0,
+            "content": "Product Innovation. Product committee leaders face a similar degree of complexity in deciding what features to develop, considering everything from customer feedback and development costs to competitor signals and margin impact. Moreover, these inputs extend across different functions, so gathering the necessary data manually is unwieldy enough. Ensuring a complete and up-to-date picture is a challenge, given the variation in the frequency of updates from different data sources and in the reporting schedules of the different functional areas.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.366,
+                0.955,
+                0.447
+            ],
+            "angle": 0,
+            "content": "A decision agent overcomes these limitations by combining external competitive intelligence with internal feasibility and financial data. It integrates this data into a recommendation that ranks the potential new features, providing the logic underpinning the tradeoffs. While they meet, leaders evaluate and adjust the criteria weightings, and the agent makes the associated updates.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.46,
+                0.956,
+                0.58
+            ],
+            "angle": 0,
+            "content": "Risk Intelligence Management. Every large organization faces a long list of risks, from demand volatility and supply chain disruption to geopolitical developments and regulatory changes. Different teams monitor these risks using different data. Rarely are the implications, financial and otherwise, translated into a common measure of business impact. Updates are fragmented, so leaders do not have a consolidated view of the organization’s exposure—or of the potential cost of that exposure.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.594,
+                0.949,
+                0.712
+            ],
+            "angle": 0,
+            "content": "With a customized decision agent, the risk management team can continuously obtain aggregated internal and external risk signals. The agent assesses each one's impact on business performance (relative to a common metric, such as contribution margin) and calculates the point at which active mitigation is worth the cost versus the cost of the impact if the risk materializes. Above the breakeven point, the agent can provide concrete mitigation options, including their costs and effectiveness.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.726,
+                0.95,
+                0.788
+            ],
+            "angle": 0,
+            "content": "With these costs spelled out, risk committee leaders get an integrated and more accurate picture of enterprise risks—staying ahead of possible events and making informed decisions on the totality of risks the organization faces.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.858,
+                0.418,
+                0.9
+            ],
+            "angle": 0,
+            "content": "Getting Started"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.103,
+                0.641,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.122,
+                0.591,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.144,
+                0.586,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.236,
+                0.923,
+                0.25
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.255,
+                0.949,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.275,
+                0.864,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.295,
+                0.952,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.315,
+                0.921,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.335,
+                0.757,
+                0.35
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.369,
+                0.952,
+                0.383
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.389,
+                0.92,
+                0.402
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.408,
+                0.892,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.429,
+                0.939,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.463,
+                0.921,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.481,
+                0.895,
+                0.499
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.501,
+                0.953,
+                0.517
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.522,
+                0.919,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.542,
+                0.937,
+                0.557
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.56,
+                0.203,
+                0.577
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.596,
+                0.847,
+                0.611
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.615,
+                0.944,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.635,
+                0.946,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.656,
+                0.926,
+                0.67
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.674,
+                0.912,
+                0.689
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.694,
+                0.27,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.728,
+                0.948,
+                0.745
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.749,
+                0.9,
+                0.764
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.77,
+                0.402,
+                0.785
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.857,
+                0.42,
+                0.901
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.953,
+                0.265
+            ],
+            "angle": 0,
+            "content": "In working with clients to launch the Executive Decision Agent by BCG X, we’ve learned the importance of starting with a pilot. Companies should choose one cross-functional, high-friction decision process to test, such as integrated business planning, capex allocation, or new-market entry. Next, they define the key inputs needed, such as volumes, capacity, budget, and competitor metrics. The leaders of the relevant functions (typically sales, operations, and finance) work together to hammer out a single working version of key inputs, recognizing that it may not be perfect but can be refined. Companies then embed the agent in each of the steps involved in the decision-making process, from preparation to discussion to follow-through actions. In this way, agents are viewed not as a separate analytics layer but rather as a participant in the process end to end.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.055,
+                0.314,
+                0.624,
+                0.394
+            ],
+            "angle": 0,
+            "content": "“Companies should choose one cross-functional, high-friction decision process to test, such as integrated business planning, capex allocation, or new-market entry.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.465,
+                0.921,
+                0.505
+            ],
+            "angle": 0,
+            "content": "Beyond these practical steps, companies should consider several important elements as they begin to use decision agents. They will need to:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.521,
+                0.947,
+                0.6
+            ],
+            "angle": 0,
+            "content": "Establish a governance system. While agents support judgment, they are no substitute for accountability. Leaders need to set guidelines that delineate which domain owners are responsible for each of the underlying data sets and business logic. They should also specify who has access to which data and set quality standards so agents can be monitored regularly.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.614,
+                0.933,
+                0.753
+            ],
+            "angle": 0,
+            "content": "Ensure the right data infrastructure is in place. The extraordinary value decision agents offer is their ability to integrate inputs from different functional areas. Those inputs, however, are rarely complete, consistent, or connected. Companies therefore need to develop a structured, cross-functional data layer—a shared data lake or consolidation layer to which agents have access. Without this foundational layer, even the most sophisticated agent logic will yield unreliable results. Semantic layers that sit on top of the data layer store the codified business logic and ontology that agents will tap.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.767,
+                0.926,
+                0.846
+            ],
+            "angle": 0,
+            "content": "Recognize the inherent constraints of data. Leaders must also be ready to interpret and even challenge agents' outputs. Data may be imperfect, but it is still usable. Moreover, the iterative ability of AI means that it is constantly improving over time, so there is no reason to wait for perfection.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.861,
+                0.943,
+                0.92
+            ],
+            "angle": 0,
+            "content": "Expect adoption to challenge existing processes and structures. Decision agents touch the very heart of organizational decision making, and in doing so, shine a light on how decisions are currently made. They also expose data and process gaps and reveal where accountability is",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.884,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.091,
+                0.923,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.929,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.129,
+                0.947,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.148,
+                0.898,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.169,
+                0.9,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.189,
+                0.941,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.206,
+                0.914,
+                0.225
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.228,
+                0.947,
+                0.243
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.246,
+                0.113,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.054,
+                0.313,
+                0.118,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.316,
+                0.621,
+                0.333
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.334,
+                0.605,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.356,
+                0.609,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.125,
+                0.372,
+                0.188,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.467,
+                0.915,
+                0.482
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.487,
+                0.482,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.522,
+                0.883,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.541,
+                0.845,
+                0.557
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.56,
+                0.941,
+                0.575
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.58,
+                0.871,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.615,
+                0.929,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.636,
+                0.929,
+                0.65
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.656,
+                0.918,
+                0.67
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.675,
+                0.91,
+                0.689
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.693,
+                0.896,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.714,
+                0.901,
+                0.728
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.735,
+                0.317,
+                0.749
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.768,
+                0.923,
+                0.784
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.788,
+                0.912,
+                0.803
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.808,
+                0.896,
+                0.823
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.828,
+                0.149,
+                0.844
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.863,
+                0.939,
+                0.876
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.883,
+                0.881,
+                0.897
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.903,
+                0.892,
+                0.916
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.937,
+                0.107
+            ],
+            "angle": 0,
+            "content": "unclear. Companies should therefore be willing to address these realities rather than try to work around them.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.156,
+                0.635,
+                0.217
+            ],
+            "angle": 0,
+            "content": "Decision agents touch the very heart of organizational decision making, and in doing so, shine a light on how decisions are currently made.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.287,
+                0.952,
+                0.427
+            ],
+            "angle": 0,
+            "content": "Regard decision agents as a structural investment, not just another initiative. Unlike other types of agents, decision agents represent far more than operational improvements. They are a transformational tool—one that not only creates reusable foundations now but that will also make future generations of agents faster and cheaper. To that end, companies need to ensure their security architecture is sound, that systems are properly integrated, and that they have the right operational infrastructure. These elements are critical preconditions for deploying agents at scale.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.477,
+                0.956,
+                0.558
+            ],
+            "angle": 0,
+            "content": "Clients and other first movers have already experienced how decision agents create value. They recognize that decision agents move AI from the margins to the very heart of decision making, where the most consequential choices are made. This promise of AI, this transformative capability, is here. It’s time to capture the value—and build advantage that will only compound over time.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.933,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.088,
+                0.171,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.157,
+                0.117,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.158,
+                0.633,
+                0.176
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.177,
+                0.627,
+                0.196
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.198,
+                0.405,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.29,
+                0.906,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.31,
+                0.932,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.33,
+                0.911,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.349,
+                0.913,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.37,
+                0.932,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.388,
+                0.949,
+                0.404
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.407,
+                0.105,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.479,
+                0.93,
+                0.495
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.499,
+                0.912,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.519,
+                0.953,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.538,
+                0.921,
+                0.554
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.229,
+                0.909,
+                0.258
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner\nStuttgart"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.105,
+                0.247,
+                0.142
+            ],
+            "angle": 0,
+            "content": "Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.073,
+                0.188,
+                0.218,
+                0.295
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.245,
+                0.196,
+                0.418,
+                0.218
+            ],
+            "angle": 0,
+            "content": "Tobias Schmidt"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.229,
+                0.446,
+                0.259
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner\nHamburg"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.34,
+                0.22,
+                0.448
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.263,
+                0.275,
+                0.28
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.538,
+                0.187,
+                0.684,
+                0.293
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.708,
+                0.196,
+                0.902,
+                0.218
+            ],
+            "angle": 0,
+            "content": "Christoph Heuser"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.263,
+                0.737,
+                0.28
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.246,
+                0.348,
+                0.361,
+                0.372
+            ],
+            "angle": 0,
+            "content": "Nino Mori"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.382,
+                0.445,
+                0.412
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner Vienna",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.246,
+                0.416,
+                0.275,
+                0.433
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.532,
+                0.339,
+                0.684,
+                0.447
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.708,
+                0.348,
+                0.817,
+                0.373
+            ],
+            "angle": 0,
+            "content": "Luis Jäger"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.416,
+                0.738,
+                0.433
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.383,
+                0.779,
+                0.412
+            ],
+            "angle": 0,
+            "content": "Associate Frankfurt"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.534,
+                0.436,
+                0.553
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.569,
+                0.952,
+                0.69
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.103,
+                0.247,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.35,
+                0.359,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.384,
+                0.442,
+                0.396
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.398,
+                0.296,
+                0.409
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.709,
+                0.348,
+                0.815,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.537,
+                0.433,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.571,
+                0.95,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.59,
+                0.901,
+                0.607
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.611,
+                0.903,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.63,
+                0.912,
+                0.644
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.649,
+                0.934,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.672,
+                0.592,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

@@ -1,0 +1,3465 @@
+{
+    "pdf_info": [
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        39,
+                        204,
+                        436,
+                        302
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                204,
+                                436,
+                                302
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        204,
+                                        436,
+                                        302
+                                    ],
+                                    "type": "text",
+                                    "content": "HOW TO BECOME A CUSTOMER-CENTRIC GROCER"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        39,
+                        313,
+                        475,
+                        329
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                313,
+                                475,
+                                329
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        313,
+                                        475,
+                                        329
+                                    ],
+                                    "type": "text",
+                                    "content": "By Gavin Parker, Thomas Jensen, Pascale Morillon, Bill Urda, and Stephanie Halgren"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        129,
+                        411,
+                        320,
+                        550
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                411,
+                                320,
+                                550
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        411,
+                                        320,
+                                        550
+                                    ],
+                                    "type": "text",
+                                    "content": "FOR GROCERY RETAILERS, customer-centricity is a bit like personal virtue: everyone agrees that it's a good thing, and no one can possibly argue against it, but actually achieving it is a challenge. Most grocery executives understand that they need to put their customers first, and many have initiatives in place to do so. Yet in most cases, these efforts result in marginal programs that don't fundamentally improve the customer experience."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        129,
+                        561,
+                        321,
+                        749
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                561,
+                                321,
+                                749
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        561,
+                                        321,
+                                        749
+                                    ],
+                                    "type": "text",
+                                    "content": "Consequently, large grocers in markets around the world are struggling as they face more competitive threats than ever, from a wider array of players. Discounters can beat grocers on price, and specialty retailers can beat them with a deeper selection of products and better service and expertise in a specific category. In this environment, the only way that grocers can differentiate themselves and grow is by identifying the things that matter most to their customers and then executing to meet those needs. Grocers must understand their unique value proposition and create a far more relevant customer experi-"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        328,
+                        410,
+                        507,
+                        449
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                328,
+                                410,
+                                507,
+                                449
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        328,
+                                        410,
+                                        507,
+                                        449
+                                    ],
+                                    "type": "text",
+                                    "content": "ence in stores, online, in marketing communications, and at every other touch point with customers."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        328,
+                        460,
+                        518,
+                        587
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                328,
+                                460,
+                                518,
+                                587
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        328,
+                                        460,
+                                        518,
+                                        587
+                                    ],
+                                    "type": "text",
+                                    "content": "A grocer's success depends on more than an incremental initiative or two. It requires fundamentally rewiring the organization to put the customer first—aligning the company's culture, brand strategy, operations, and organizational and cultural enablers. There is a real opportunity to engage employees more effectively, to make customers happier, and ultimately to improve the company's financial performance."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        327,
+                        598,
+                        520,
+                        750
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                327,
+                                598,
+                                520,
+                                750
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        327,
+                                        598,
+                                        520,
+                                        750
+                                    ],
+                                    "type": "text",
+                                    "content": "This is the third publication in BCG's “Retail Revival” series. In the first piece, we discussed how grocery transformations must begin at the store level. (See “Succeeding with a Store-Led Strategy,” BCG article, September 2014.) In the second, we focused on clarifying the customer value proposition, resetting categories, and aligning operations to deliver on that promise. (See “Help Your Shelf: The Moves Mainstream Grocers Must Make Now,” BCG article, April 2016.) In this third and final part"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        39,
+                        45,
+                        248,
+                        91
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                45,
+                                248,
+                                91
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        45,
+                                        248,
+                                        91
+                                    ],
+                                    "type": "text",
+                                    "content": "bcg. perspectives\nby THE BOSTON CONSULTING GROUP"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        200,
+                        768,
+                        393,
+                        780
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                200,
+                                768,
+                                393,
+                                780
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        200,
+                                        768,
+                                        393,
+                                        780
+                                    ],
+                                    "type": "text",
+                                    "content": "For more on this topic, go to bcgperspectives.com"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8
+                }
+            ],
+            "page_size": [
+                595,
+                807
+            ],
+            "page_idx": 0,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        39,
+                        204,
+                        436,
+                        302
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                204,
+                                436,
+                                302
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        204,
+                                        436,
+                                        302
+                                    ],
+                                    "type": "text",
+                                    "content": "HOW TO BECOME A CUSTOMER-CENTRIC GROCER"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        39,
+                        313,
+                        475,
+                        329
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                313,
+                                475,
+                                329
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        313,
+                                        475,
+                                        329
+                                    ],
+                                    "type": "text",
+                                    "content": "By Gavin Parker, Thomas Jensen, Pascale Morillon, Bill Urda, and Stephanie Halgren"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        129,
+                        411,
+                        320,
+                        550
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                411,
+                                320,
+                                550
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        411,
+                                        320,
+                                        550
+                                    ],
+                                    "type": "text",
+                                    "content": "FOR GROCERY RETAILERS, customer-centricity is a bit like personal virtue: everyone agrees that it's a good thing, and no one can possibly argue against it, but actually achieving it is a challenge. Most grocery executives understand that they need to put their customers first, and many have initiatives in place to do so. Yet in most cases, these efforts result in marginal programs that don't fundamentally improve the customer experience."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        129,
+                        561,
+                        321,
+                        749
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                561,
+                                321,
+                                749
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        561,
+                                        321,
+                                        749
+                                    ],
+                                    "type": "text",
+                                    "content": "Consequently, large grocers in markets around the world are struggling as they face more competitive threats than ever, from a wider array of players. Discounters can beat grocers on price, and specialty retailers can beat them with a deeper selection of products and better service and expertise in a specific category. In this environment, the only way that grocers can differentiate themselves and grow is by identifying the things that matter most to their customers and then executing to meet those needs. Grocers must understand their unique value proposition and create a far more relevant customer experi-"
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                328,
+                                410,
+                                507,
+                                449
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        328,
+                                        410,
+                                        507,
+                                        449
+                                    ],
+                                    "type": "text",
+                                    "content": "ence in stores, online, in marketing communications, and at every other touch point with customers."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        328,
+                        410,
+                        507,
+                        449
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [],
+                    "index": 5,
+                    "merge_prev": false,
+                    "lines_deleted": true
+                },
+                {
+                    "bbox": [
+                        328,
+                        460,
+                        518,
+                        587
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                328,
+                                460,
+                                518,
+                                587
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        328,
+                                        460,
+                                        518,
+                                        587
+                                    ],
+                                    "type": "text",
+                                    "content": "A grocer's success depends on more than an incremental initiative or two. It requires fundamentally rewiring the organization to put the customer first—aligning the company's culture, brand strategy, operations, and organizational and cultural enablers. There is a real opportunity to engage employees more effectively, to make customers happier, and ultimately to improve the company's financial performance."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        327,
+                        598,
+                        520,
+                        750
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                327,
+                                598,
+                                520,
+                                750
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        327,
+                                        598,
+                                        520,
+                                        750
+                                    ],
+                                    "type": "text",
+                                    "content": "This is the third publication in BCG's “Retail Revival” series. In the first piece, we discussed how grocery transformations must begin at the store level. (See “Succeeding with a Store-Led Strategy,” BCG article, September 2014.) In the second, we focused on clarifying the customer value proposition, resetting categories, and aligning operations to deliver on that promise. (See “Help Your Shelf: The Moves Mainstream Grocers Must Make Now,” BCG article, April 2016.) In this third and final part"
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                129,
+                                74,
+                                315,
+                                137
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        74,
+                                        315,
+                                        137
+                                    ],
+                                    "type": "text",
+                                    "content": "of the series, we explain how grocers can promote customer-centricity throughout the organization by fostering the right culture, using analytics, and developing employees' capabilities.",
+                                    "cross_page": true
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        129,
+                        74,
+                        315,
+                        137
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                74,
+                                315,
+                                137
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        74,
+                                        315,
+                                        137
+                                    ],
+                                    "type": "text",
+                                    "content": "of the series, we explain how grocers can promote customer-centricity throughout the organization by fostering the right culture, using analytics, and developing employees' capabilities."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        130,
+                        156,
+                        281,
+                        184
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                130,
+                                156,
+                                281,
+                                184
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        130,
+                                        156,
+                                        281,
+                                        184
+                                    ],
+                                    "type": "text",
+                                    "content": "Stores Tend to Be as Homogenized as the Milk"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        129,
+                        186,
+                        319,
+                        438
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                186,
+                                319,
+                                438
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        186,
+                                        319,
+                                        438
+                                    ],
+                                    "type": "text",
+                                    "content": "Almost all grocery executives tell us that they are customer-centric. And yet the customer experience in most grocery stores is bland and interchangeable. BCG's Brand Advocacy Index research, which looks at companies across all industries, supports this. (See “The Most Recommended Brands 2015,” BCG article, September 2015). Customers’ expectations have changed, and many grocers haven’t kept up. Given the industry’s narrow margins, the situation is understandable: Most companies have focused on supplier relationships and trade spending. Their primary objectives have been to streamline processes, reduce costs, and match their competitors’ tactics on pricing and assortment—priorities that invariably lead to decisions aimed at improving stores’ financial performance, rather than upgrading their customer experience."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        129,
+                        448,
+                        320,
+                        612
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                448,
+                                320,
+                                612
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        448,
+                                        320,
+                                        612
+                                    ],
+                                    "type": "text",
+                                    "content": "A recent BCG survey of companies across industries found that fewer than half of the leadership decisions that companies make reflect insights into customers. (See “The Introverted Corporation,” BCG article, April 2016.) The numbers for strategic decisions—such as portfolio strategy and mergers and acquisitions—are even worse: only one-third are made with the customer in mind. In four of every five responding companies, customer insights played a major role only in commercial functions such as sales and marketing."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        129,
+                        623,
+                        321,
+                        749
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                623,
+                                321,
+                                749
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        623,
+                                        321,
+                                        749
+                                    ],
+                                    "type": "text",
+                                    "content": "Technology has upended that thinking. Customers today are less brand-loyal and more empowered by technology to compare prices and shop around, often by smartphone, and younger people are more willing to visit multiple stores. Consumers want to be able to quickly find exactly what they're looking for, and they'll seek elsewhere if a store fails to meet their expectations. New market entrants are another challenge."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        328,
+                        74,
+                        516,
+                        263
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                328,
+                                74,
+                                516,
+                                263
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        328,
+                                        74,
+                                        516,
+                                        263
+                                    ],
+                                    "type": "text",
+                                    "content": "Discounters typically offer significantly lower prices on a limited set of products—up to 60% lower in some categories—and they are starting to catch up to full-line grocers in quality as well. On the other hand, although some discounters have put significant thought into improving the customer experience—with fun, innovative store features—many are expanding to a point where they look and feel closer to a traditional grocery store. As a result, they must guard against diluting the very features and experience that attracted customers and fueled their growth over the past decade."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        329,
+                        273,
+                        520,
+                        349
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                329,
+                                273,
+                                520,
+                                349
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        329,
+                                        273,
+                                        520,
+                                        349
+                                    ],
+                                    "type": "text",
+                                    "content": "Meanwhile, specialty retailers are winning against traditional grocers in ever narrower segments. In this environment, incumbent full-line grocers are stuck in the middle, with higher prices and a less compelling customer experience."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        329,
+                        368,
+                        500,
+                        396
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                329,
+                                368,
+                                500,
+                                396
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        329,
+                                        368,
+                                        500,
+                                        396
+                                    ],
+                                    "type": "text",
+                                    "content": "Five Priorities for Leadership Teams"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        328,
+                        398,
+                        520,
+                        649
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                328,
+                                398,
+                                520,
+                                649
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        328,
+                                        398,
+                                        520,
+                                        649
+                                    ],
+                                    "type": "text",
+                                    "content": "If companies are to compete effectively and grow in the current environment, they need to consistently provide a relevant and differentiated customer experience across all channels. A company can't simply focus its customer initiatives on a few parts of its operations such as store operations and marketing, because success won't come through an isolated program or change effort. Instead, customer needs must become a core strategic theme—a central organizing principle in what the company does and how it thinks on all fronts. Besides affecting obvious aspects such as store design and layout, customer needs should influence how the company handles pricing and assortment, how it works with suppliers, and how it makes virtually every other decision, every day, from the board room to the store floor."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        328,
+                        660,
+                        520,
+                        748
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                328,
+                                660,
+                                520,
+                                748
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        328,
+                                        660,
+                                        520,
+                                        748
+                                    ],
+                                    "type": "text",
+                                    "content": "That level of rethinking calls for changes in the company's organization model, processes, systems, employee engagement, and corporate culture. It's a complex challenge, but we think it comes down to five strategic priorities. Most companies focus on one or two of these, but few address all of them."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        215,
+                        765,
+                        493,
+                        783
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                215,
+                                765,
+                                493,
+                                783
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        215,
+                                        765,
+                                        493,
+                                        783
+                                    ],
+                                    "type": "text",
+                                    "content": "bcg. perspectives | HOW TO BECOME A CUSTOMER-CENTRIC GROCER by THE BOSTON CONSULTING GROUP"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10
+                },
+                {
+                    "bbox": [
+                        546,
+                        769,
+                        553,
+                        779
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                546,
+                                769,
+                                553,
+                                779
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        546,
+                                        769,
+                                        553,
+                                        779
+                                    ],
+                                    "type": "text",
+                                    "content": "2"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11
+                }
+            ],
+            "page_size": [
+                595,
+                807
+            ],
+            "page_idx": 1,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        129,
+                        74,
+                        315,
+                        137
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [],
+                    "index": 0,
+                    "merge_prev": false,
+                    "lines_deleted": true
+                },
+                {
+                    "bbox": [
+                        130,
+                        156,
+                        281,
+                        184
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                130,
+                                156,
+                                281,
+                                184
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        130,
+                                        156,
+                                        281,
+                                        184
+                                    ],
+                                    "type": "text",
+                                    "content": "Stores Tend to Be as Homogenized as the Milk"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        129,
+                        186,
+                        319,
+                        438
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                186,
+                                319,
+                                438
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        186,
+                                        319,
+                                        438
+                                    ],
+                                    "type": "text",
+                                    "content": "Almost all grocery executives tell us that they are customer-centric. And yet the customer experience in most grocery stores is bland and interchangeable. BCG's Brand Advocacy Index research, which looks at companies across all industries, supports this. (See “The Most Recommended Brands 2015,” BCG article, September 2015). Customers’ expectations have changed, and many grocers haven’t kept up. Given the industry’s narrow margins, the situation is understandable: Most companies have focused on supplier relationships and trade spending. Their primary objectives have been to streamline processes, reduce costs, and match their competitors’ tactics on pricing and assortment—priorities that invariably lead to decisions aimed at improving stores’ financial performance, rather than upgrading their customer experience."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        129,
+                        448,
+                        320,
+                        612
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                448,
+                                320,
+                                612
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        448,
+                                        320,
+                                        612
+                                    ],
+                                    "type": "text",
+                                    "content": "A recent BCG survey of companies across industries found that fewer than half of the leadership decisions that companies make reflect insights into customers. (See “The Introverted Corporation,” BCG article, April 2016.) The numbers for strategic decisions—such as portfolio strategy and mergers and acquisitions—are even worse: only one-third are made with the customer in mind. In four of every five responding companies, customer insights played a major role only in commercial functions such as sales and marketing."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        129,
+                        623,
+                        321,
+                        749
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                623,
+                                321,
+                                749
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        623,
+                                        321,
+                                        749
+                                    ],
+                                    "type": "text",
+                                    "content": "Technology has upended that thinking. Customers today are less brand-loyal and more empowered by technology to compare prices and shop around, often by smartphone, and younger people are more willing to visit multiple stores. Consumers want to be able to quickly find exactly what they're looking for, and they'll seek elsewhere if a store fails to meet their expectations. New market entrants are another challenge."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        328,
+                        74,
+                        516,
+                        263
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                328,
+                                74,
+                                516,
+                                263
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        328,
+                                        74,
+                                        516,
+                                        263
+                                    ],
+                                    "type": "text",
+                                    "content": "Discounters typically offer significantly lower prices on a limited set of products—up to 60% lower in some categories—and they are starting to catch up to full-line grocers in quality as well. On the other hand, although some discounters have put significant thought into improving the customer experience—with fun, innovative store features—many are expanding to a point where they look and feel closer to a traditional grocery store. As a result, they must guard against diluting the very features and experience that attracted customers and fueled their growth over the past decade."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        329,
+                        273,
+                        520,
+                        349
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                329,
+                                273,
+                                520,
+                                349
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        329,
+                                        273,
+                                        520,
+                                        349
+                                    ],
+                                    "type": "text",
+                                    "content": "Meanwhile, specialty retailers are winning against traditional grocers in ever narrower segments. In this environment, incumbent full-line grocers are stuck in the middle, with higher prices and a less compelling customer experience."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        329,
+                        368,
+                        500,
+                        396
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                329,
+                                368,
+                                500,
+                                396
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        329,
+                                        368,
+                                        500,
+                                        396
+                                    ],
+                                    "type": "text",
+                                    "content": "Five Priorities for Leadership Teams"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        328,
+                        398,
+                        520,
+                        649
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                328,
+                                398,
+                                520,
+                                649
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        328,
+                                        398,
+                                        520,
+                                        649
+                                    ],
+                                    "type": "text",
+                                    "content": "If companies are to compete effectively and grow in the current environment, they need to consistently provide a relevant and differentiated customer experience across all channels. A company can't simply focus its customer initiatives on a few parts of its operations such as store operations and marketing, because success won't come through an isolated program or change effort. Instead, customer needs must become a core strategic theme—a central organizing principle in what the company does and how it thinks on all fronts. Besides affecting obvious aspects such as store design and layout, customer needs should influence how the company handles pricing and assortment, how it works with suppliers, and how it makes virtually every other decision, every day, from the board room to the store floor."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        328,
+                        660,
+                        520,
+                        748
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                328,
+                                660,
+                                520,
+                                748
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        328,
+                                        660,
+                                        520,
+                                        748
+                                    ],
+                                    "type": "text",
+                                    "content": "That level of rethinking calls for changes in the company's organization model, processes, systems, employee engagement, and corporate culture. It's a complex challenge, but we think it comes down to five strategic priorities. Most companies focus on one or two of these, but few address all of them."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        129,
+                        74,
+                        320,
+                        300
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                74,
+                                320,
+                                300
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        74,
+                                        320,
+                                        300
+                                    ],
+                                    "type": "text",
+                                    "content": "Give senior leadership a baseline understanding, grounded in data, of the company's customers. Change toward dedicated consumer-centricity starts in the C-suite, with a strong endorsement of change from the CEO (and not merely the CMO, who oversees the customer experience at most grocers). The senior leadership team should gather available customer data from loyalty schemes, point-of-sale systems, syndicated agencies, e-commerce data, and the company's proprietary research (including direct conversations with customers), and then aggregate that data in a single, baseline view of the customer. C-level leaders should then carefully review the insights from this data and identify potential gaps that call for more investigation."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        129,
+                        311,
+                        320,
+                        499
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                311,
+                                320,
+                                499
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        311,
+                                        320,
+                                        499
+                                    ],
+                                    "type": "text",
+                                    "content": "At many companies, where customer insights show up only in certain areas of the organization such as marketing, adopting this approach means committing to a major change in mindset. (Grocers tend to be far more disciplined in tracking their financial performance and their competitors' moves, than in tracking their own customers.) Customer insights need to become a common language throughout the organization and a critical conceptual foundation that shapes and informs all future strategic and tactical decisions—in stores, at centralized departments such as logistics, and in back-office functions such as HR."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        129,
+                        511,
+                        321,
+                        749
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                511,
+                                321,
+                                749
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        511,
+                                        321,
+                                        749
+                                    ],
+                                    "type": "text",
+                                    "content": "Create a customer-centric culture grounded in the company's purpose. Because the move to a consistently consumer-centric orientation is so comprehensive, companies need to develop a complementary culture that provides guidance for all employees and reinforces “the way we do things around here.” Fostering this culture requires understanding and articulating the company’s purpose, a central organizational ethos reflecting something that goes deeper than the company’s bottom line. For example, one grocer’s purpose might be to help its customers become healthier (by carrying a greater variety of fresh produce, organic goods, and similar items), while a second grocer’s purpose might be to delight its customers (by designing stores to be fun and unconventional)."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        329,
+                        74,
+                        518,
+                        237
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                329,
+                                74,
+                                518,
+                                237
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        329,
+                                        74,
+                                        518,
+                                        237
+                                    ],
+                                    "type": "text",
+                                    "content": "Pursuing the right purpose addresses the needs of customers, but it also gives greater meaning to the work that employees do. BrightHouse, a division of BCG, found that having a purpose grounded in shared values led to a greater sense of loyalty among employees, turned customers into brand advocates, and ultimately yielded better financial performance. Across all industries, organizations with a purpose-driven culture enjoyed substantially higher revenue and better stock performance than their competitors."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        329,
+                        248,
+                        520,
+                        450
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                329,
+                                248,
+                                520,
+                                450
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        329,
+                                        248,
+                                        520,
+                                        450
+                                    ],
+                                    "type": "text",
+                                    "content": "Once the company is aligned behind a specific purpose regarding its customers' primary concerns, management needs to translate that viewpoint into a common language, using insights from customer data—so that everyone understands the goal and can communicate it in a consistent manner. This language runs through all strategic and operational initiatives, and ultimately into a set of customer promises that clarify the organization's priorities. For example, a customer promise might be that the grocer will offer the lowest prices no matter what, or it might be that customers will leave the store happier than they were when they arrived."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        329,
+                        461,
+                        517,
+                        674
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                329,
+                                461,
+                                517,
+                                674
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        329,
+                                        461,
+                                        517,
+                                        674
+                                    ],
+                                    "type": "text",
+                                    "content": "Such promises serve as lodestars for the workforce. Some grocers have more than a million employees, many of whom deal directly with customers every day and thus directly influence those customers' experience. Given such large head counts, it's not practical or desirable to issue scripted rules for how to respond in specific situations throughout a workday. Instead, developing the right purpose—and translating that purpose into a small number of customer promises upheld across the organization—gives employees the tools they need to make the proper customer-centric decisions on their own, without requiring explicit guidance or resorting to a playbook from HR."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        329,
+                        685,
+                        513,
+                        748
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                329,
+                                685,
+                                513,
+                                748
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        329,
+                                        685,
+                                        513,
+                                        748
+                                    ],
+                                    "type": "text",
+                                    "content": "Develop KPIs to measure progress and reward improvements. Companies should develop KPIs to systematically track, store by store, how well they are carrying out their customer promises and to make"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        215,
+                        765,
+                        493,
+                        783
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                215,
+                                765,
+                                493,
+                                783
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        215,
+                                        765,
+                                        493,
+                                        783
+                                    ],
+                                    "type": "text",
+                                    "content": "bcg. perspectives | HOW TO BECOME A CUSTOMER-CENTRIC GROCER by THE BOSTON CONSULTING GROUP"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7
+                },
+                {
+                    "bbox": [
+                        546,
+                        769,
+                        553,
+                        780
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                546,
+                                769,
+                                553,
+                                780
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        546,
+                                        769,
+                                        553,
+                                        780
+                                    ],
+                                    "type": "text",
+                                    "content": "3"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8
+                }
+            ],
+            "page_size": [
+                595,
+                807
+            ],
+            "page_idx": 2,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        129,
+                        74,
+                        320,
+                        300
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                74,
+                                320,
+                                300
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        74,
+                                        320,
+                                        300
+                                    ],
+                                    "type": "text",
+                                    "content": "Give senior leadership a baseline understanding, grounded in data, of the company's customers. Change toward dedicated consumer-centricity starts in the C-suite, with a strong endorsement of change from the CEO (and not merely the CMO, who oversees the customer experience at most grocers). The senior leadership team should gather available customer data from loyalty schemes, point-of-sale systems, syndicated agencies, e-commerce data, and the company's proprietary research (including direct conversations with customers), and then aggregate that data in a single, baseline view of the customer. C-level leaders should then carefully review the insights from this data and identify potential gaps that call for more investigation."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        129,
+                        311,
+                        320,
+                        499
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                311,
+                                320,
+                                499
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        311,
+                                        320,
+                                        499
+                                    ],
+                                    "type": "text",
+                                    "content": "At many companies, where customer insights show up only in certain areas of the organization such as marketing, adopting this approach means committing to a major change in mindset. (Grocers tend to be far more disciplined in tracking their financial performance and their competitors' moves, than in tracking their own customers.) Customer insights need to become a common language throughout the organization and a critical conceptual foundation that shapes and informs all future strategic and tactical decisions—in stores, at centralized departments such as logistics, and in back-office functions such as HR."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        129,
+                        511,
+                        321,
+                        749
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                511,
+                                321,
+                                749
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        511,
+                                        321,
+                                        749
+                                    ],
+                                    "type": "text",
+                                    "content": "Create a customer-centric culture grounded in the company's purpose. Because the move to a consistently consumer-centric orientation is so comprehensive, companies need to develop a complementary culture that provides guidance for all employees and reinforces “the way we do things around here.” Fostering this culture requires understanding and articulating the company’s purpose, a central organizational ethos reflecting something that goes deeper than the company’s bottom line. For example, one grocer’s purpose might be to help its customers become healthier (by carrying a greater variety of fresh produce, organic goods, and similar items), while a second grocer’s purpose might be to delight its customers (by designing stores to be fun and unconventional)."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        329,
+                        74,
+                        518,
+                        237
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                329,
+                                74,
+                                518,
+                                237
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        329,
+                                        74,
+                                        518,
+                                        237
+                                    ],
+                                    "type": "text",
+                                    "content": "Pursuing the right purpose addresses the needs of customers, but it also gives greater meaning to the work that employees do. BrightHouse, a division of BCG, found that having a purpose grounded in shared values led to a greater sense of loyalty among employees, turned customers into brand advocates, and ultimately yielded better financial performance. Across all industries, organizations with a purpose-driven culture enjoyed substantially higher revenue and better stock performance than their competitors."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        329,
+                        248,
+                        520,
+                        450
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                329,
+                                248,
+                                520,
+                                450
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        329,
+                                        248,
+                                        520,
+                                        450
+                                    ],
+                                    "type": "text",
+                                    "content": "Once the company is aligned behind a specific purpose regarding its customers' primary concerns, management needs to translate that viewpoint into a common language, using insights from customer data—so that everyone understands the goal and can communicate it in a consistent manner. This language runs through all strategic and operational initiatives, and ultimately into a set of customer promises that clarify the organization's priorities. For example, a customer promise might be that the grocer will offer the lowest prices no matter what, or it might be that customers will leave the store happier than they were when they arrived."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        329,
+                        461,
+                        517,
+                        674
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                329,
+                                461,
+                                517,
+                                674
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        329,
+                                        461,
+                                        517,
+                                        674
+                                    ],
+                                    "type": "text",
+                                    "content": "Such promises serve as lodestars for the workforce. Some grocers have more than a million employees, many of whom deal directly with customers every day and thus directly influence those customers' experience. Given such large head counts, it's not practical or desirable to issue scripted rules for how to respond in specific situations throughout a workday. Instead, developing the right purpose—and translating that purpose into a small number of customer promises upheld across the organization—gives employees the tools they need to make the proper customer-centric decisions on their own, without requiring explicit guidance or resorting to a playbook from HR."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        329,
+                        685,
+                        513,
+                        748
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                329,
+                                685,
+                                513,
+                                748
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        329,
+                                        685,
+                                        513,
+                                        748
+                                    ],
+                                    "type": "text",
+                                    "content": "Develop KPIs to measure progress and reward improvements. Companies should develop KPIs to systematically track, store by store, how well they are carrying out their customer promises and to make"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        129,
+                        74,
+                        320,
+                        400
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                74,
+                                320,
+                                400
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        74,
+                                        320,
+                                        400
+                                    ],
+                                    "type": "text",
+                                    "content": "rapid, tangible improvements over time. Many grocers already have KPIs and dashboards in place, but these tools tend to emphasize financial performance. Customer experience needs to be a critical part of a company's dashboards too, and the metrics need to be as concrete and granular as possible. This will enable the company to convert the qualitative experience it delivers to customers into quantitative yardsticks, which it can then analyze and use to devise tangible steps toward improvement, in stores and throughout the organization. Specific KPIs include in-store metrics (such as product availability, time spent in checkout lines, and store cleanliness) and loyalty measures (such as a customer's increased affiliation with the brand and willingness to recommend it to friends, or growth in the number of loyal customers the store has). If a store receives low customer-service ratings, the company might respond by shifting top-performing employees to other departments, offering events such as tastings, or taking other steps to rectify the problem quickly."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        129,
+                        411,
+                        319,
+                        512
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                411,
+                                319,
+                                512
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        411,
+                                        319,
+                                        512
+                                    ],
+                                    "type": "text",
+                                    "content": "Critically, a grocer's KPIs should be linked to employees', managers', and senior leaders' incentive plans. If a customer-centric culture is to succeed, people from the boardroom to the shop floor need to know that they will be rewarded for making gains—and feel the financial consequences if they fall short."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        129,
+                        523,
+                        315,
+                        612
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                523,
+                                315,
+                                612
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        523,
+                                        315,
+                                        612
+                                    ],
+                                    "type": "text",
+                                    "content": "Use analytics to make customer-oriented decisions. Understanding customers' expectations entails understanding their emotional, functional, and experiential needs. Analytics can give companies deep insights into these aspects of their customers, especially in three particular areas."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        129,
+                        623,
+                        320,
+                        749
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                623,
+                                320,
+                                749
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        623,
+                                        320,
+                                        749
+                                    ],
+                                    "type": "text",
+                                    "content": "One crucial application of analytics involves studying customers to determine how they shop and what they want, down to the level of individual products. Another involves using this information to understand the potential trade-offs associated with every operating decision the company makes, such as pricing, promotions, and new service levels in stores. At each decision point, the insight should help answer"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        329,
+                        74,
+                        518,
+                        162
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                329,
+                                74,
+                                518,
+                                162
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        329,
+                                        74,
+                                        518,
+                                        162
+                                    ],
+                                    "type": "text",
+                                    "content": "a fundamental question: will this decision improve or erode the customer experience, and by how much? A third application of analytics is to gauge the company's performance in meeting its customers' expectations, so that the company can continuously refine its service and offerings."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        329,
+                        174,
+                        520,
+                        450
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                329,
+                                174,
+                                520,
+                                450
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        329,
+                                        174,
+                                        520,
+                                        450
+                                    ],
+                                    "type": "text",
+                                    "content": "Many traditional grocers are accustomed to basing their decisions on gut instinct—or on financial objectives or their competitors' actions—rather than on customer-data-driven insights. For example, consider a grocer that carries seven types of strawberry yogurt. Although analytics may reveal that customers strongly favor five of those options, eliminating two brands may seem counterintuitive, since merchandisers tend to believe that offering more choices is automatically better than offering fewer. Yet the right data and analytics can help the grocer accurately determine whether reducing the range of options will lead to a better customer experience (as is often the case). To make that decision, however, the company must ensure that it has the right data and capabilities in place, and it must be willing to make decisions that may seem counterintuitive—and may run counter to what the competition is doing."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        329,
+                        461,
+                        518,
+                        549
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                329,
+                                461,
+                                518,
+                                549
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        329,
+                                        461,
+                                        518,
+                                        549
+                                    ],
+                                    "type": "text",
+                                    "content": "The same principle holds true for private-label products. In-depth research can often help a grocer understand what customers don't like about certain products that it stocks, and the company can then respond by creating its own branded versions to address those shortcomings."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        329,
+                        561,
+                        520,
+                        749
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                329,
+                                561,
+                                520,
+                                749
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        329,
+                                        561,
+                                        520,
+                                        749
+                                    ],
+                                    "type": "text",
+                                    "content": "Invest in the company's people. Employees make or break the customer experience. Companies need to train their workers in both hard skills (such as technical abilities) and soft skills (such as communication and customer engagement), with an unwavering emphasis on putting the customer first and building advocacy and loyalty. Adopting the right training approach will help employees understand the key role they play in creating a positive customer experience and recognize how specific—and often seemingly small—actions can improve that experience. Brand loyalty is built on authenticity and genuine interac-"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        215,
+                        766,
+                        493,
+                        783
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                215,
+                                766,
+                                493,
+                                783
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        215,
+                                        766,
+                                        493,
+                                        783
+                                    ],
+                                    "type": "text",
+                                    "content": "bcg. perspectives | HOW TO BECOME A CUSTOMER-CENTRIC GROCER by THE BOSTON CONSULTING GROUP"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8
+                },
+                {
+                    "bbox": [
+                        546,
+                        770,
+                        553,
+                        780
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                546,
+                                770,
+                                553,
+                                780
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        546,
+                                        770,
+                                        553,
+                                        780
+                                    ],
+                                    "type": "text",
+                                    "content": "4"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9
+                }
+            ],
+            "page_size": [
+                595,
+                807
+            ],
+            "page_idx": 3,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        129,
+                        74,
+                        320,
+                        400
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                74,
+                                320,
+                                400
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        74,
+                                        320,
+                                        400
+                                    ],
+                                    "type": "text",
+                                    "content": "rapid, tangible improvements over time. Many grocers already have KPIs and dashboards in place, but these tools tend to emphasize financial performance. Customer experience needs to be a critical part of a company's dashboards too, and the metrics need to be as concrete and granular as possible. This will enable the company to convert the qualitative experience it delivers to customers into quantitative yardsticks, which it can then analyze and use to devise tangible steps toward improvement, in stores and throughout the organization. Specific KPIs include in-store metrics (such as product availability, time spent in checkout lines, and store cleanliness) and loyalty measures (such as a customer's increased affiliation with the brand and willingness to recommend it to friends, or growth in the number of loyal customers the store has). If a store receives low customer-service ratings, the company might respond by shifting top-performing employees to other departments, offering events such as tastings, or taking other steps to rectify the problem quickly."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        129,
+                        411,
+                        319,
+                        512
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                411,
+                                319,
+                                512
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        411,
+                                        319,
+                                        512
+                                    ],
+                                    "type": "text",
+                                    "content": "Critically, a grocer's KPIs should be linked to employees', managers', and senior leaders' incentive plans. If a customer-centric culture is to succeed, people from the boardroom to the shop floor need to know that they will be rewarded for making gains—and feel the financial consequences if they fall short."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        129,
+                        523,
+                        315,
+                        612
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                523,
+                                315,
+                                612
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        523,
+                                        315,
+                                        612
+                                    ],
+                                    "type": "text",
+                                    "content": "Use analytics to make customer-oriented decisions. Understanding customers' expectations entails understanding their emotional, functional, and experiential needs. Analytics can give companies deep insights into these aspects of their customers, especially in three particular areas."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        129,
+                        623,
+                        320,
+                        749
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                623,
+                                320,
+                                749
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        623,
+                                        320,
+                                        749
+                                    ],
+                                    "type": "text",
+                                    "content": "One crucial application of analytics involves studying customers to determine how they shop and what they want, down to the level of individual products. Another involves using this information to understand the potential trade-offs associated with every operating decision the company makes, such as pricing, promotions, and new service levels in stores. At each decision point, the insight should help answer"
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                329,
+                                74,
+                                518,
+                                162
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        329,
+                                        74,
+                                        518,
+                                        162
+                                    ],
+                                    "type": "text",
+                                    "content": "a fundamental question: will this decision improve or erode the customer experience, and by how much? A third application of analytics is to gauge the company's performance in meeting its customers' expectations, so that the company can continuously refine its service and offerings."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        329,
+                        74,
+                        518,
+                        162
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [],
+                    "index": 4,
+                    "merge_prev": false,
+                    "lines_deleted": true
+                },
+                {
+                    "bbox": [
+                        329,
+                        174,
+                        520,
+                        450
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                329,
+                                174,
+                                520,
+                                450
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        329,
+                                        174,
+                                        520,
+                                        450
+                                    ],
+                                    "type": "text",
+                                    "content": "Many traditional grocers are accustomed to basing their decisions on gut instinct—or on financial objectives or their competitors' actions—rather than on customer-data-driven insights. For example, consider a grocer that carries seven types of strawberry yogurt. Although analytics may reveal that customers strongly favor five of those options, eliminating two brands may seem counterintuitive, since merchandisers tend to believe that offering more choices is automatically better than offering fewer. Yet the right data and analytics can help the grocer accurately determine whether reducing the range of options will lead to a better customer experience (as is often the case). To make that decision, however, the company must ensure that it has the right data and capabilities in place, and it must be willing to make decisions that may seem counterintuitive—and may run counter to what the competition is doing."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        329,
+                        461,
+                        518,
+                        549
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                329,
+                                461,
+                                518,
+                                549
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        329,
+                                        461,
+                                        518,
+                                        549
+                                    ],
+                                    "type": "text",
+                                    "content": "The same principle holds true for private-label products. In-depth research can often help a grocer understand what customers don't like about certain products that it stocks, and the company can then respond by creating its own branded versions to address those shortcomings."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        329,
+                        561,
+                        520,
+                        749
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                329,
+                                561,
+                                520,
+                                749
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        329,
+                                        561,
+                                        520,
+                                        749
+                                    ],
+                                    "type": "text",
+                                    "content": "Invest in the company's people. Employees make or break the customer experience. Companies need to train their workers in both hard skills (such as technical abilities) and soft skills (such as communication and customer engagement), with an unwavering emphasis on putting the customer first and building advocacy and loyalty. Adopting the right training approach will help employees understand the key role they play in creating a positive customer experience and recognize how specific—and often seemingly small—actions can improve that experience. Brand loyalty is built on authenticity and genuine interac-"
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                129,
+                                74,
+                                319,
+                                112
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        74,
+                                        319,
+                                        112
+                                    ],
+                                    "type": "text",
+                                    "content": "tions; employees must understand this and feel empowered to create these crucial experiences for customers.",
+                                    "cross_page": true
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        129,
+                        74,
+                        319,
+                        112
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                74,
+                                319,
+                                112
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        74,
+                                        319,
+                                        112
+                                    ],
+                                    "type": "text",
+                                    "content": "tions; employees must understand this and feel empowered to create these crucial experiences for customers."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        129,
+                        124,
+                        321,
+                        312
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                124,
+                                321,
+                                312
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        124,
+                                        321,
+                                        312
+                                    ],
+                                    "type": "text",
+                                    "content": "When a customer complains, store associates should be trained to treat the situation as an opportunity to build loyalty by fixing the problem in a way that surprises and delights the customer. Some companies in other industries give employees a small amount of discretionary money that they are authorized to spend to rectify problems and please customers. Similarly, a grocer might give its employees the leeway to open a package on request to give a customer a sample. Or it might permit them to accept returns from customers—no questions asked—without requiring a manager's approval."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        129,
+                        323,
+                        316,
+                        387
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                323,
+                                316,
+                                387
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        323,
+                                        316,
+                                        387
+                                    ],
+                                    "type": "text",
+                                    "content": "In addition, companies need to reinforce employees' awareness that the best ideas often come from the bottom up, thus encouraging and empowering employees to take measures that the training did not ex-"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        328,
+                        74,
+                        520,
+                        125
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                328,
+                                74,
+                                520,
+                                125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        328,
+                                        74,
+                                        520,
+                                        125
+                                    ],
+                                    "type": "text",
+                                    "content": "explicitly cover. Employees should have clear, two-way communication processes that enable them to give suggestions and feedback to top management."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        329,
+                        149,
+                        520,
+                        388
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                329,
+                                149,
+                                520,
+                                388
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        329,
+                                        149,
+                                        520,
+                                        388
+                                    ],
+                                    "type": "text",
+                                    "content": "A S THE TERM itself suggests, customer-centricity entails putting the customer at the heart of everything a company does. Yet most grocers don't operate that way. Instead, they tend to separate their customer insights into a few isolated functions, while focusing far more on their financial performance and on the moves their competitors make. The situation opens a real opportunity for companies to create a sustainable competitive advantage by taking deliberate steps to better understand customers and by considering how every decision the company makes will ultimately affect them. This undertaking involves making a profound shift toward consumer-centric planning and management—a shift that requires a lot of hard work. Yet there are clear rewards for companies that get it right."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        130,
+                        418,
+                        224,
+                        430
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                130,
+                                418,
+                                224,
+                                430
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        130,
+                                        418,
+                                        224,
+                                        430
+                                    ],
+                                    "type": "text",
+                                    "content": "About the Authors"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        129,
+                        431,
+                        512,
+                        466
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                431,
+                                512,
+                                466
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        431,
+                                        512,
+                                        466
+                                    ],
+                                    "type": "text",
+                                    "content": "Gavin Parker is a partner and managing director in the Melbourne office of The Boston Consulting Group. He leads the firm's global work in retail transformation and reinvention, particularly among large national and international grocery chains. You may contact him by email at parker.gavin@bcg.com."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        130,
+                        476,
+                        515,
+                        510
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                130,
+                                476,
+                                515,
+                                510
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        130,
+                                        476,
+                                        515,
+                                        510
+                                    ],
+                                    "type": "text",
+                                    "content": "Thomas Jensen is a partner and managing director in the firm's Stockholm office. He leads the firm's Consumer practice in the Nordic countries, and he is a core member of BCG's Marketing, Sales & Pricing practice. You may contact him by email at jensen.thomas@bcg.com."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        130,
+                        520,
+                        456,
+                        544
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                130,
+                                520,
+                                456,
+                                544
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        130,
+                                        520,
+                                        456,
+                                        544
+                                    ],
+                                    "type": "text",
+                                    "content": "Pascale Morillon is a principal in BCG's London office. You may contact her by email at morillon.pascale@bcg.com."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        129,
+                        554,
+                        514,
+                        578
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                554,
+                                514,
+                                578
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        554,
+                                        514,
+                                        578
+                                    ],
+                                    "type": "text",
+                                    "content": "Bill Urda is a senior knowledge expert in the firm's Washington, DC, office and a member of BCG's Consumer practice, specializing in the grocery sector. You may contact him by email at urda.bill@bcg.com."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        130,
+                        588,
+                        502,
+                        612
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                130,
+                                588,
+                                502,
+                                612
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        130,
+                                        588,
+                                        502,
+                                        612
+                                    ],
+                                    "type": "text",
+                                    "content": "Stephanie Halgren is a senior knowledge analyst in BCG's Washington, DC, office and a member of BCG's Consumer practice. You may contact her by email at halgren.stephanie@bcg.com."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        129,
+                        622,
+                        518,
+                        711
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                622,
+                                518,
+                                711
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        622,
+                                        518,
+                                        711
+                                    ],
+                                    "type": "text",
+                                    "content": "The Boston Consulting Group (BCG) is a global management consulting firm and the world's leading advisor on business strategy. We partner with clients from the private, public, and not-for-profit sectors in all regions to identify their highest-value opportunities, address their most critical challenges, and transform their enterprises. Our customized approach combines deep insight into the dynamics of companies and markets with close collaboration at all levels of the client organization. This ensures that our clients achieve sustainable competitive advantage, build more capable organizations, and secure lasting results. Founded in 1963, BCG is a private company with 85 offices in 48 countries. For more information, please visit bcg.com."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        130,
+                        721,
+                        416,
+                        733
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                130,
+                                721,
+                                416,
+                                733
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        130,
+                                        721,
+                                        416,
+                                        733
+                                    ],
+                                    "type": "text",
+                                    "content": "© The Boston Consulting Group, Inc. 2017. All rights reserved. 3/17 Rev. 7/17"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        215,
+                        766,
+                        492,
+                        782
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                215,
+                                766,
+                                492,
+                                782
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        215,
+                                        766,
+                                        492,
+                                        782
+                                    ],
+                                    "type": "text",
+                                    "content": "bcg. perspectives | HOW TO BECOME A CUSTOMER-CENTRIC GROCER by THE BOSTON CONSULTING GROUP"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13
+                },
+                {
+                    "bbox": [
+                        546,
+                        769,
+                        553,
+                        780
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                546,
+                                769,
+                                553,
+                                780
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        546,
+                                        769,
+                                        553,
+                                        780
+                                    ],
+                                    "type": "text",
+                                    "content": "5"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14
+                }
+            ],
+            "page_size": [
+                595,
+                807
+            ],
+            "page_idx": 4,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        129,
+                        74,
+                        319,
+                        112
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [],
+                    "index": 0,
+                    "merge_prev": false,
+                    "lines_deleted": true
+                },
+                {
+                    "bbox": [
+                        129,
+                        124,
+                        321,
+                        312
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                124,
+                                321,
+                                312
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        124,
+                                        321,
+                                        312
+                                    ],
+                                    "type": "text",
+                                    "content": "When a customer complains, store associates should be trained to treat the situation as an opportunity to build loyalty by fixing the problem in a way that surprises and delights the customer. Some companies in other industries give employees a small amount of discretionary money that they are authorized to spend to rectify problems and please customers. Similarly, a grocer might give its employees the leeway to open a package on request to give a customer a sample. Or it might permit them to accept returns from customers—no questions asked—without requiring a manager's approval."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        129,
+                        323,
+                        316,
+                        387
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                323,
+                                316,
+                                387
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        323,
+                                        316,
+                                        387
+                                    ],
+                                    "type": "text",
+                                    "content": "In addition, companies need to reinforce employees' awareness that the best ideas often come from the bottom up, thus encouraging and empowering employees to take measures that the training did not ex-"
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                328,
+                                74,
+                                520,
+                                125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        328,
+                                        74,
+                                        520,
+                                        125
+                                    ],
+                                    "type": "text",
+                                    "content": "explicitly cover. Employees should have clear, two-way communication processes that enable them to give suggestions and feedback to top management."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        328,
+                        74,
+                        520,
+                        125
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [],
+                    "index": 3,
+                    "merge_prev": false,
+                    "lines_deleted": true
+                },
+                {
+                    "bbox": [
+                        329,
+                        149,
+                        520,
+                        388
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                329,
+                                149,
+                                520,
+                                388
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        329,
+                                        149,
+                                        520,
+                                        388
+                                    ],
+                                    "type": "text",
+                                    "content": "A S THE TERM itself suggests, customer-centricity entails putting the customer at the heart of everything a company does. Yet most grocers don't operate that way. Instead, they tend to separate their customer insights into a few isolated functions, while focusing far more on their financial performance and on the moves their competitors make. The situation opens a real opportunity for companies to create a sustainable competitive advantage by taking deliberate steps to better understand customers and by considering how every decision the company makes will ultimately affect them. This undertaking involves making a profound shift toward consumer-centric planning and management—a shift that requires a lot of hard work. Yet there are clear rewards for companies that get it right."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        130,
+                        418,
+                        224,
+                        430
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                130,
+                                418,
+                                224,
+                                430
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        130,
+                                        418,
+                                        224,
+                                        430
+                                    ],
+                                    "type": "text",
+                                    "content": "About the Authors"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        129,
+                        431,
+                        512,
+                        466
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                431,
+                                512,
+                                466
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        431,
+                                        512,
+                                        466
+                                    ],
+                                    "type": "text",
+                                    "content": "Gavin Parker is a partner and managing director in the Melbourne office of The Boston Consulting Group. He leads the firm's global work in retail transformation and reinvention, particularly among large national and international grocery chains. You may contact him by email at parker.gavin@bcg.com."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        130,
+                        476,
+                        515,
+                        510
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                130,
+                                476,
+                                515,
+                                510
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        130,
+                                        476,
+                                        515,
+                                        510
+                                    ],
+                                    "type": "text",
+                                    "content": "Thomas Jensen is a partner and managing director in the firm's Stockholm office. He leads the firm's Consumer practice in the Nordic countries, and he is a core member of BCG's Marketing, Sales & Pricing practice. You may contact him by email at jensen.thomas@bcg.com."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        130,
+                        520,
+                        456,
+                        544
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                130,
+                                520,
+                                456,
+                                544
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        130,
+                                        520,
+                                        456,
+                                        544
+                                    ],
+                                    "type": "text",
+                                    "content": "Pascale Morillon is a principal in BCG's London office. You may contact her by email at morillon.pascale@bcg.com."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        129,
+                        554,
+                        514,
+                        578
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                554,
+                                514,
+                                578
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        554,
+                                        514,
+                                        578
+                                    ],
+                                    "type": "text",
+                                    "content": "Bill Urda is a senior knowledge expert in the firm's Washington, DC, office and a member of BCG's Consumer practice, specializing in the grocery sector. You may contact him by email at urda.bill@bcg.com."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        130,
+                        588,
+                        502,
+                        612
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                130,
+                                588,
+                                502,
+                                612
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        130,
+                                        588,
+                                        502,
+                                        612
+                                    ],
+                                    "type": "text",
+                                    "content": "Stephanie Halgren is a senior knowledge analyst in BCG's Washington, DC, office and a member of BCG's Consumer practice. You may contact her by email at halgren.stephanie@bcg.com."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        129,
+                        622,
+                        518,
+                        711
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                622,
+                                518,
+                                711
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        622,
+                                        518,
+                                        711
+                                    ],
+                                    "type": "text",
+                                    "content": "The Boston Consulting Group (BCG) is a global management consulting firm and the world's leading advisor on business strategy. We partner with clients from the private, public, and not-for-profit sectors in all regions to identify their highest-value opportunities, address their most critical challenges, and transform their enterprises. Our customized approach combines deep insight into the dynamics of companies and markets with close collaboration at all levels of the client organization. This ensures that our clients achieve sustainable competitive advantage, build more capable organizations, and secure lasting results. Founded in 1963, BCG is a private company with 85 offices in 48 countries. For more information, please visit bcg.com."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        130,
+                        721,
+                        416,
+                        733
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                130,
+                                721,
+                                416,
+                                733
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        130,
+                                        721,
+                                        416,
+                                        733
+                                    ],
+                                    "type": "text",
+                                    "content": "© The Boston Consulting Group, Inc. 2017. All rights reserved. 3/17 Rev. 7/17"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12,
+                    "merge_prev": false
+                }
+            ]
+        }
+    ],
+    "_backend": "hybrid",
+    "_effort": "medium",
+    "_ocr_enable": true,
+    "_version_name": "3.4.0"
+}

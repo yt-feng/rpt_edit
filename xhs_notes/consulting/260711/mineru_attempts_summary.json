@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_ktijs7et/pdfs/0001-BCG_AI-First-Enterprise-Operations-Reinventing-the-Operating-Sys_b6a7f793.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ktijs7et/pdfs/0002-BCG_Decision-Agents-Bring-AI-into-the-Boardroom_286cea9c.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ktijs7et/pdfs/0003-BCG_Help-Your-Shelf-The-Moves-Mainstream-Grocers-Must-Make-Now_f0f417e5.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ktijs7et/pdfs/0004-BCG_How-to-Become-a-Customer-Centric-Grocer_c394e4f0.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ktijs7et/pdfs/0005-BCG_Securing-the-Oil-and-Gas-Resources-of-the-Future_aca9fb29.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

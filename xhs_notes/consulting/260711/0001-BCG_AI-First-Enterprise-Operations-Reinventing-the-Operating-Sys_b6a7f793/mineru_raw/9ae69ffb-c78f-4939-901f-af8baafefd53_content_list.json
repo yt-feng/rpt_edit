@@ -1,0 +1,7069 @@
+[
+    {
+        "type": "text",
+        "text": "BCG",
+        "bbox": [
+            109,
+            64,
+            187,
+            131
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Executive Perspectives",
+        "bbox": [
+            107,
+            181,
+            239,
+            283
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Applied AI at its most impactful with Agentic Enterprise Operations",
+        "text_level": 2,
+        "bbox": [
+            341,
+            392,
+            908,
+            533
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Agentic Enterprise Operations",
+        "bbox": [
+            342,
+            564,
+            711,
+            625
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "June 2026",
+        "bbox": [
+            339,
+            657,
+            439,
+            709
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Introduction",
+        "text_level": 2,
+        "bbox": [
+            27,
+            94,
+            180,
+            138
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Agentic AI is redefining how enterprises operate, and represents Applied AI at its most transformative. Many organizations have captured their first productivity gains from AI, deploying copilots, bots, and an automation layer, yet few companies have realized impact at scale. As with many general-purpose technologies, unlocking the full value requires structural reinvention of end-to-end (E2E) processes and their governance. AI-native pioneers demonstrate that completely different outcomes are possible when enterprise operations built or rebuilt for AI autonomy from the ground up.",
+        "bbox": [
+            25,
+            177,
+            646,
+            400
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Building agentic enterprise operations requires moving beyond individual AI use cases to AI-enabled processes E2E. To succeed, organizations need to shift their focus from tasks to outcomes, from improving individual efficiency by embedding AI in human-led workflows to redesigning entire processes for multistep AI autonomy. Organizations also need to rethink how decisions are governed and how risk and accountability are structured while building the underlying AI, data, and orchestration capabilities required to enable reliable multistep AI autonomy at scale.",
+        "bbox": [
+            25,
+            418,
+            651,
+            609
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "This journey raises a new set of leadership questions that we address in this executive perspective:",
+        "bbox": [
+            26,
+            625,
+            645,
+            661
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "• How will agentic enterprise operations disrupt and redefine workflows and business models?",
+        "bbox": [
+            35,
+            668,
+            637,
+            701
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "• What will be needed to enable multistep AI autonomy at scale (e.g., process redesign)?",
+        "bbox": [
+            35,
+            705,
+            600,
+            738
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Which transformation path best fits the organization’s starting point and ambition?",
+        "bbox": [
+            35,
+            742,
+            579,
+            775
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "While agentic AI is still maturing, its exponential trajectory leaves little room for delay: Now is the time to build the operational and technical foundations for near-term value realization and scale.",
+        "bbox": [
+            25,
+            796,
+            638,
+            862
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "This document is a guide for CEOs, C-suite executives, and Operations leaders to rethink enterprise operations end-to-end in the light of agentic AI for true value unlock.",
+        "bbox": [
+            25,
+            879,
+            642,
+            946
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "In this Executive Perspective, we explore how agentic AI reveals full value once redesigning enterprise operations E2E for AI autonomy and application at scale",
+        "bbox": [
+            684,
+            98,
+            939,
+            535
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/1e55032f92648e686676d27ba98e5f39f4508f5ed01a84686a4674b8f815dcbe.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            664,
+            550,
+            998,
+            998
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/682d60a0a0dc602c1fd1b7389daee6a35db012a2414079e66743d9b8ff35ea60.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            21,
+            416,
+            42,
+            464
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Summary | Rethinking value creation with agentic enterprise operations",
+        "text_level": 2,
+        "bbox": [
+            48,
+            59,
+            913,
+            112
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Agentic enterprise operations rewrite the AI paradigm",
+        "text_level": 2,
+        "bbox": [
+            50,
+            220,
+            132,
+            353
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/3572c46e6c1c140533ed60aa3f31ea3798e129741f378eaec89c966bf9e300ad.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            19,
+            261,
+            43,
+            312
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "• AI has delivered measurable productivity gains, yet 60% of enterprises have not structurally unlocked value at scale",
+        "bbox": [
+            161,
+            211,
+            758,
+            240
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Most transformations left the operating system of work untouched: Limited E2E redesign, unclear process ownership, and tech constraints continue to cap impact, while AI-native companies operate at radically different FTE-to-revenue ratios owing to multistep autonomous agents embedded E2E",
+        "bbox": [
+            160,
+            244,
+            936,
+            301
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Building agentic enterprise operations – redesigning E2E processes for multistep autonomy that are managed by outcomes, not tasks – is the step change; first transformations are already targeting material impact (e.g., up to 80% straight-through processing, 60% cost-out, and 30% CLTV uplift)",
+        "bbox": [
+            160,
+            305,
+            919,
+            364
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Focus shifts from optimizing tasks to designing autonomy",
+        "text_level": 2,
+        "bbox": [
+            50,
+            379,
+            146,
+            509
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Traditional process optimization improved task efficiency in human-led systems; with agentic execution, capacity stops being scarce and the constraints shift toward control, integration, and reliability",
+        "bbox": [
+            160,
+            383,
+            943,
+            440
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Process steering evolves toward a unified process owner, accountable for E2E outcomes with system-embedded decision rights and coordination",
+        "bbox": [
+            160,
+            444,
+            905,
+            475
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Near-instant, capacity-elastic execution unlocks new value propositions and business models (e.g., real-time decisions or always-on operations)",
+        "bbox": [
+            160,
+            479,
+            898,
+            509
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "1. Focus on outcomes: Review your processes focusing on the outcomes before optimizing your as-is operations",
+        "bbox": [
+            159,
+            529,
+            732,
+            559
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Five elements to successfully build your agentic enterprise operations",
+        "text_level": 2,
+        "bbox": [
+            50,
+            533,
+            136,
+            692
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/2730a6b13d3913065df591bc2530e6cb36d44e7c8c128c1246d6d1fd51917ddd.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            20,
+            579,
+            43,
+            629
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "2. Build an \"agentic process transformation factory\": Centralize E2E process transformation and standardize embedding of AI agents",
+        "bbox": [
+            159,
+            564,
+            879,
+            594
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "3. Make tech choices a C-level priority: Elevate ecosystem orchestration and build the AI layer for agentic scale",
+        "bbox": [
+            159,
+            598,
+            726,
+            627
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "4. Place a platform bet: Pick one agentic platform and get started; portability is expected to increase as agentic AI matures",
+        "bbox": [
+            159,
+            631,
+            789,
+            662
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "5. Start the journey early and evolve governance along the way: Pick 1 or 2 high-value domains while addressing the new challenges resulting from change",
+        "bbox": [
+            159,
+            666,
+            946,
+            698
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Since agentic AI is still maturing and key questions and tradeoffs remain, there is no single successful blueprint; choices such as a greenfield or brownfield transformation, a governance or ownership model, and autonomy boundaries will determine each organization’s transformation path",
+        "bbox": [
+            161,
+            714,
+            908,
+            772
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "D",
+        "text_level": 2,
+        "bbox": [
+            21,
+            781,
+            45,
+            829
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Different transformation paths can succeed",
+        "text_level": 2,
+        "bbox": [
+            50,
+            751,
+            140,
+            853
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Five bets can anchor the path forward: Building muscle now is crucial, platforms will converge, integration efforts will become easier, an outcome-first redesign will unlock true value, and tailored pathways will be required",
+        "bbox": [
+            160,
+            775,
+            929,
+            833
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- To get started, first sensible steps are assessing agentic maturity and value potential, defining transformation principles, and prioritizing process redesign domain; integrated into a holistic approach of strategic ambition, program orchestration, agentic operations design and agentic foundation",
+        "bbox": [
+            160,
+            837,
+            948,
+            894
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Note: FTE = full-time equivalent; CLTV = customer lifetime value.\nSource: BCG research.",
+        "bbox": [
+            47,
+            912,
+            342,
+            957
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            951,
+            957,
+            961,
+            977
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            951
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Chapter A",
+        "text_level": 2,
+        "bbox": [
+            48,
+            490,
+            172,
+            540
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Agentic Enterprise Operations Rewrite the AI Paradigm",
+        "text_level": 2,
+        "bbox": [
+            46,
+            655,
+            804,
+            842
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "AI has boosted task efficiency, yet 60% of companies still miss material value mainly due to unchanged work systems and persistent tech constraints",
+        "text_level": 2,
+        "bbox": [
+            47,
+            33,
+            926,
+            138
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "60% companies are not generating material value from previous AI waves focused on task efficiency $^{1}$",
+        "bbox": [
+            45,
+            359,
+            503,
+            442
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Task-focused AI use cases generated early enthusiasm (e.g., 10% to 20% productivity increases with copilots and isolated bots)",
+        "bbox": [
+            45,
+            501,
+            485,
+            574
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "First AI waves left the operating system of work untouched\nLimited structural gains given low E2E redesign and change management",
+        "bbox": [
+            46,
+            638,
+            519,
+            709
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Use case impact was limited by practical tech challenges (e.g., data fragmentation and quality, security issues, compliance risks)",
+        "bbox": [
+            45,
+            775,
+            503,
+            846
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "True value can be realized by embedding agents E2E in enterprise operations",
+        "text_level": 2,
+        "bbox": [
+            572,
+            353,
+            948,
+            437
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Structural reinvention and E2E redesign of processes is needed to unlock full impact",
+        "bbox": [
+            572,
+            500,
+            920,
+            575
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "First companies are redesigning processes and workflows for E2E agentic execution",
+        "bbox": [
+            572,
+            635,
+            952,
+            711
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "AI-first pioneers achieve step-change impact (e.g., 3x productivity improvement, 80% cycle time reduction)",
+        "bbox": [
+            572,
+            775,
+            951,
+            846
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "A Agentic Enterprise Operations Rewrite the AI Paradigm",
+        "bbox": [
+            47,
+            1,
+            336,
+            33
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "1. “The Widening AI Value Gap,” BCG, 2025. Source: BCG analysis.",
+        "bbox": [
+            47,
+            912,
+            251,
+            957
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            951,
+            957,
+            961,
+            977
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/f19b3216528ebbdcd278e0b1373486e0b59f302367df379a9b80945a0b05fefa.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            218,
+            842,
+            254,
+            879
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "At the same time, AI-native companies operate at structurally lower FTE-to-revenue ratios, enabled by autonomous agents embedded E2E",
+        "text_level": 2,
+        "bbox": [
+            47,
+            35,
+            875,
+            138
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Differentiators of AI-native companies",
+        "text_level": 2,
+        "bbox": [
+            47,
+            220,
+            320,
+            257
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/36b8d6ae9ee1d471564c5108285cddd88bc099e37fc38055a8bd9cabb6189e56.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Operations are built for AI autonomy and scale by design, not superior LLMs",
+            "Time to scale from \\$1M to \\$100M ARR (years)"
+        ],
+        "content": "",
+        "bbox": [
+            54,
+            316,
+            101,
+            400
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/a533187d415ddc3e66c52c34aa9c164bd55a02e46dfa5c03a456cbdefe0ea037.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            53,
+            533,
+            103,
+            616
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Processes embed AI agents E2E who are led by outcomes",
+        "bbox": [
+            116,
+            529,
+            279,
+            627
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/4ac4d782eb7bb3519e86befa3e7311fdd6d73cf164bafc8e4c81d2c9e6cd356d.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            57,
+            750,
+            100,
+            827
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Agent-driven execution\n(control flow) and\nmultiagent orchestration",
+        "bbox": [
+            117,
+            744,
+            300,
+            840
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Deep dive follows",
+        "bbox": [
+            255,
+            840,
+            307,
+            898
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Note: ARR = annual recurring revenue;\nLLM = large language model.\nSources: BCG-conducted expert interviews; BCG analysis.",
+        "bbox": [
+            47,
+            892,
+            295,
+            961
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/58fe5f28704d321861adbd38924aaec668fccd2f4b7ecf5eb229ecf3a3fa56c8.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            347,
+            325,
+            673,
+            762
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Other notable companies",
+        "bbox": [
+            340,
+            803,
+            506,
+            840
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Together.ai | Sales force | Deel | Drop box | Okta | Servicenow",
+        "bbox": [
+            339,
+            859,
+            664,
+            909
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "ARR and FTEs",
+        "text_level": 2,
+        "bbox": [
+            696,
+            218,
+            802,
+            255
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Lovable \\$200M ARR",
+        "bbox": [
+            701,
+            540,
+            838,
+            579
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "120 FTEs, 2025",
+        "bbox": [
+            852,
+            542,
+            953,
+            579
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Up to \\$1M to \\$5M ARR per employee",
+        "bbox": [
+            732,
+            785,
+            946,
+            879
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "A Agentic Enterprise Operations Rewrite the AI Paradigm",
+        "bbox": [
+            48,
+            3,
+            335,
+            33
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            951,
+            957,
+            961,
+            979
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Agentic enterprise operations, with multiagent systems, reinvent the entire operating system of work and unlock completely different AI value creation",
+        "text_level": 2,
+        "bbox": [
+            47,
+            35,
+            951,
+            137
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/40b04beb98a14eaf86bf60a5427752e081f6eea61505f3ac2e8c6189ce55c2db.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            47,
+            257,
+            650,
+            929
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Agentic enterprise Key characteristics",
+        "text_level": 2,
+        "bbox": [
+            704,
+            268,
+            895,
+            357
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Redefined, amplified and outcome-led processes",
+        "bbox": [
+            725,
+            381,
+            897,
+            448
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "E2E processes run by reusable AI agents",
+        "text_level": 2,
+        "bbox": [
+            733,
+            503,
+            938,
+            568
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Decisions AI-driven by default across execution and control flow",
+        "text_level": 2,
+        "bbox": [
+            733,
+            624,
+            946,
+            688
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Multi-agent coordination across functions & systems",
+        "text_level": 2,
+        "bbox": [
+            733,
+            744,
+            911,
+            809
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "AI augmented",
+        "bbox": [
+            434,
+            890,
+            540,
+            925
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "A Agentic Enterprise Operations Rewrite the AI Paradigm",
+        "bbox": [
+            48,
+            3,
+            335,
+            33
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "AI supported",
+        "bbox": [
+            180,
+            888,
+            270,
+            925
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG analysis.",
+        "bbox": [
+            48,
+            933,
+            150,
+            957
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "Human-led or oversight",
+        "bbox": [
+            716,
+            896,
+            826,
+            922
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            559,
+            888,
+            594,
+            925
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "AI agent executing",
+        "bbox": [
+            597,
+            896,
+            684,
+            922
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "#",
+        "bbox": [
+            696,
+            888,
+            716,
+            927
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            980,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            951,
+            957,
+            961,
+            977
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The AI gap is massive – agent-native organizations largely run without humans, while most enterprises have <3% of the work run by agents",
+        "text_level": 2,
+        "bbox": [
+            47,
+            35,
+            887,
+            135
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "What's happening now",
+        "text_level": 2,
+        "bbox": [
+            48,
+            218,
+            279,
+            261
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/d7abb7556aefa3fc9e1a67b58aaf5ca5c8b16870886c1ea12aebc73b2cbc8bd1.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            50,
+            277,
+            103,
+            377
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "StrongDM Dark Factory",
+        "text_level": 2,
+        "bbox": [
+            111,
+            290,
+            255,
+            316
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Three engineers, zero human code review. Shipping production security software with AI agents",
+        "bbox": [
+            111,
+            316,
+            450,
+            372
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/e8031e9f2774351c21a89858fd98bb35c83ecf4e266bee6196fe02cb2a54b3d0.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            50,
+            394,
+            103,
+            494
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Goldman Sachs and Devin",
+        "text_level": 2,
+        "bbox": [
+            111,
+            407,
+            272,
+            433
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\~12,000 developers from Goldman Sachs working alongside Cognition's Devin AI. Firm plans for thousands of agent instances.",
+        "bbox": [
+            111,
+            433,
+            468,
+            490
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/9a2a346847475bb2d3a3ab2aa52f8f2338b33ad960906ae9c21ac41d38268b50.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            60,
+            529,
+            93,
+            603
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Anthropic internal",
+        "text_level": 2,
+        "bbox": [
+            111,
+            525,
+            225,
+            551
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "90% of Claude Code written by Claude Code itself. 4% of all GitHub commits written by Claude Code.",
+        "bbox": [
+            110,
+            551,
+            472,
+            605
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/7162e85163b6e99e920b8a5828788bf4fb440fc488ced6615bcdc140685911ed.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            51,
+            633,
+            102,
+            729
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Zero Human Company",
+        "text_level": 2,
+        "bbox": [
+            111,
+            644,
+            250,
+            670
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "First autonomous company; the AI CEO, named Grok, and more than 30 agents handle all operations",
+        "bbox": [
+            110,
+            672,
+            456,
+            725
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/b79a0c7b30dc3b4ca545dbcafa82a5c9fbf90e53f6f227f818f8931fd69a6c4b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            50,
+            750,
+            103,
+            850
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Y Combinator Winter 2025 Startups",
+        "text_level": 2,
+        "bbox": [
+            111,
+            762,
+            325,
+            788
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "25% of startups have 95% AI-generated codebases; agent-native from day one",
+        "bbox": [
+            110,
+            790,
+            455,
+            844
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "What we typically see",
+        "text_level": 2,
+        "bbox": [
+            522,
+            218,
+            742,
+            262
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/851a5ddcdedc917d7de64820eee0216119885968a035c7704c7b4bfe1681f341.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            564,
+            298,
+            594,
+            372
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/b476128421b98c1e54c6fc93af29a7dafb355dd918a592755e5a3d34b40c7755.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            869,
+            305,
+            915,
+            364
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Three pilots\napproved",
+        "bbox": [
+            541,
+            381,
+            618,
+            444
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "One copilot\ndeployed",
+        "bbox": [
+            855,
+            381,
+            931,
+            444
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\~2%",
+        "bbox": [
+            693,
+            466,
+            780,
+            529
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "of work run by\nautonomous\nagents",
+        "bbox": [
+            684,
+            544,
+            788,
+            653
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/b12206cbc4b32030fa19ae11262c60f239e0e00208ab45dc424f8f9bd616d8d1.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            560,
+            618,
+            600,
+            677
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/ef0c17a3049197695f636d02ade123a1f62f327e1b3ad64b523869915733b4bf.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            879,
+            618,
+            907,
+            683
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Al roadmap for 2028",
+        "bbox": [
+            541,
+            696,
+            618,
+            757
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Governance\nunclear",
+        "bbox": [
+            854,
+            698,
+            932,
+            757
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "While competitors run 90%+ autonomous",
+        "bbox": [
+            550,
+            787,
+            922,
+            825
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "A Agentic Enterprise Operations Rewrite the AI Paradigm",
+        "bbox": [
+            48,
+            3,
+            334,
+            31
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            951
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "Companies won’t compete with just rivals that adopt AI tools, they will compete with companies built from the ground up as agent-native organizations",
+        "bbox": [
+            70,
+            881,
+            927,
+            912
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "Source: Public announcements, March 2026; BCG analysis.",
+        "bbox": [
+            48,
+            933,
+            317,
+            957
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            952,
+            957,
+            961,
+            977
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "There are successful AI transformations - key ambitions we see on agentic",
+        "text_level": 2,
+        "bbox": [
+            47,
+            59,
+            935,
+            111
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Success stories of previous AI transformations",
+        "text_level": 2,
+        "bbox": [
+            18,
+            233,
+            183,
+            350
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Reckitt",
+        "bbox": [
+            48,
+            366,
+            98,
+            400
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Foxconn",
+        "bbox": [
+            150,
+            366,
+            206,
+            400
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "BMW",
+        "bbox": [
+            48,
+            446,
+            90,
+            479
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Alphabet",
+        "bbox": [
+            150,
+            446,
+            211,
+            481
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Capita",
+        "bbox": [
+            48,
+            527,
+            94,
+            562
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "DKB",
+        "bbox": [
+            150,
+            525,
+            184,
+            561
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Merck",
+        "bbox": [
+            50,
+            607,
+            93,
+            640
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Amazon",
+        "bbox": [
+            150,
+            607,
+            206,
+            640
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Rio Tinto",
+        "bbox": [
+            50,
+            685,
+            111,
+            720
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "DHL",
+        "bbox": [
+            150,
+            685,
+            183,
+            720
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Signal Iduna",
+        "bbox": [
+            48,
+            766,
+            132,
+            803
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Salesforce",
+        "bbox": [
+            150,
+            768,
+            219,
+            801
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\+ many more...",
+        "bbox": [
+            86,
+            853,
+            167,
+            881
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Ambitions and impact we see at our clients for agentic transformations",
+        "text_level": 2,
+        "bbox": [
+            266,
+            253,
+            912,
+            298
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/e486ca0be4e8a6895169e401d97e62490db4888b762f7b4292305190e543ca1e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            293,
+            355,
+            350,
+            455
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/2a5293689bca7f28386578cf5351caecb6d4622ba2689b32dde2772e3a1aabe5.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            457,
+            348,
+            523,
+            464
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/cf2be51601f72798dcabded1934526009e9d701b77d4a8da163cdb5d4673608a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            627,
+            348,
+            669,
+            455
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/8b9e4962beb0cb0d697a9904b4c44f5b076f37cf2136c9e428cfb384935e9872.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            798,
+            364,
+            863,
+            448
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Up to",
+        "bbox": [
+            281,
+            509,
+            331,
+            550
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "80%",
+        "bbox": [
+            282,
+            562,
+            361,
+            625
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Straight-through processing",
+        "bbox": [
+            280,
+            685,
+            417,
+            770
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "More than",
+        "bbox": [
+            450,
+            511,
+            537,
+            550
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "60%",
+        "bbox": [
+            450,
+            564,
+            528,
+            627
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Cost reduction\nlong-term",
+        "bbox": [
+            447,
+            688,
+            571,
+            772
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Up to",
+        "bbox": [
+            614,
+            509,
+            663,
+            551
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "20%",
+        "bbox": [
+            614,
+            562,
+            694,
+            625
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Short-term savings unlocked",
+        "bbox": [
+            612,
+            685,
+            770,
+            768
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Up to",
+        "bbox": [
+            794,
+            509,
+            844,
+            551
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "30%",
+        "bbox": [
+            794,
+            562,
+            875,
+            627
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "CLTV\nimprovement",
+        "bbox": [
+            789,
+            685,
+            906,
+            770
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "A Agentic Enterprise Operations Rewrite the AI Paradigm",
+        "bbox": [
+            47,
+            1,
+            335,
+            33
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            980,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "CLTV = Customer Lifetime Value; Source: BCG project experience; BCG research.",
+        "bbox": [
+            275,
+            929,
+            642,
+            955
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            951,
+            957,
+            961,
+            977
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "A global bank implemented an OpsAI agent in its retail lending processes and realized significant benefits in production",
+        "text_level": 2,
+        "bbox": [
+            47,
+            35,
+            927,
+            135
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Context",
+        "text_level": 2,
+        "bbox": [
+            47,
+            224,
+            123,
+            257
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "A global bank was experiencing rapid growth accompanied by a significant increase in operating costs and complexity. This was because of the limited scalability of its operations caused by heavily manual retail-lending processes:",
+        "bbox": [
+            47,
+            296,
+            243,
+            485
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "\\- Human agents manually screened, categorized, extracted, transferred, validated, and corrected information.",
+        "bbox": [
+            47,
+            494,
+            240,
+            601
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "\\- These tasks were repetitive, had limited complexity, and added minimal business value, but they consumed significant resources (FTEs).",
+        "bbox": [
+            47,
+            612,
+            242,
+            748
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The bank's ambition was to upscale operational excellence to cap operating costs while further pursuing an ambitious growth trajectory.",
+        "bbox": [
+            47,
+            755,
+            245,
+            892
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Note: OCR = optical character recognition.\nSource: BCG experience.",
+        "bbox": [
+            47,
+            914,
+            242,
+            957
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "BCG's approach",
+        "text_level": 2,
+        "bbox": [
+            272,
+            222,
+            418,
+            262
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "To help the bank achieve its ambition, BCG recommended setting up a scalable operation and E2E processes. The bank deployed BCG's OpsAI agent as part of a holistic, zero-based process transformation. The OpsAI agent automates E2E retail-lending processes in a reliable fashion by replicating human processing. Combining LLMs, OCR and data synchronization, file splitting, and validation, the OpsAI agent leverages five key capabilities to automate unstructured data handling.",
+        "bbox": [
+            270,
+            296,
+            637,
+            514
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "5 capabilities of the OpsAI Agent for significant productivity gains:",
+        "bbox": [
+            270,
+            533,
+            647,
+            564
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/7e3bc03265ddc0761f26f8253e5a1fb7300993e3c5ae1f4e1172ae7d7e2ff6f6.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            273,
+            583,
+            305,
+            618
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Document recognition and classification, incl. quality checks",
+        "bbox": [
+            314,
+            585,
+            643,
+            618
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/175820ca39f846baff70ca8d1dce7db24acdc725cfe2c76c23225dab85d02453.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            275,
+            638,
+            305,
+            700
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "File splitting and data synchronization across systems",
+        "bbox": [
+            315,
+            655,
+            608,
+            687
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/fa1fef5f558d67294cf3ea37dc9b9c9158b7ed35927e3bd945510005a94eb241.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            273,
+            712,
+            307,
+            764
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Autonomous data extraction, interpretation, and correction",
+        "bbox": [
+            314,
+            724,
+            635,
+            755
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/59dbf062faa3d13e5cf1cdd2633236d1fde3f0a5ef6813aced0997d1ecec86a9.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            276,
+            781,
+            303,
+            833
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/c952a6c4330382add3d1e8f7f005ea873ca5254bdd899b9ec82b3a8dad4efc07.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            275,
+            855,
+            306,
+            896
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Integrated consistency, fraud, and plausibility checks",
+        "bbox": [
+            315,
+            792,
+            601,
+            824
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Signature recognition and contract validation",
+        "bbox": [
+            315,
+            861,
+            561,
+            892
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/8d52b658d7392018c1ddbc6df2c79a930fa38e7a689a3d2d48f2357dcf27f6e9.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            681,
+            294,
+            770,
+            453
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": ">90%",
+        "bbox": [
+            695,
+            357,
+            759,
+            398
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/d895b11204f02f7aff9caeaeaf75713805d86d36f441e87a9e59b41598e7f097.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            686,
+            540,
+            767,
+            683
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Automation rate of E2E processing of consumer loans",
+        "bbox": [
+            779,
+            325,
+            953,
+            424
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": ">70%",
+        "bbox": [
+            700,
+            598,
+            753,
+            633
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Automation rate of E2E processing of mortgage loans",
+        "bbox": [
+            779,
+            562,
+            950,
+            662
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": ">50%",
+        "bbox": [
+            704,
+            818,
+            750,
+            846
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/88508e2dcc5d5c39031ccf05d1a8bd79c62b67ad38a8a2817ac796b4d73a0829.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            694,
+            770,
+            759,
+            888
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Productivity gains\nacross retail lending\nprocesses",
+        "bbox": [
+            779,
+            781,
+            928,
+            879
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "A Agentic Enterprise Operations Rewrite the AI Paradigm",
+        "bbox": [
+            48,
+            3,
+            335,
+            31
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            951
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            951,
+            957,
+            961,
+            977
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/36c57e88383da087d74159750935d8aaf0433eb2f2ee6cd041d865935ea9ee76.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            270,
+            557,
+            294,
+            601
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "A global technology company redesigned E2E processes across support functions, realizing significant cost reductions",
+        "text_level": 2,
+        "bbox": [
+            47,
+            35,
+            894,
+            135
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Context",
+        "text_level": 2,
+        "bbox": [
+            47,
+            224,
+            122,
+            257
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "A global tech company started a transformation in the context of a structural cost gap and a high-complexity operating and technology footprint:",
+        "bbox": [
+            47,
+            279,
+            225,
+            412
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "• Support-function expense to revenue in 3rd quartile",
+        "bbox": [
+            57,
+            412,
+            223,
+            464
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- \\~5% incremental annual targets delivered marginal impact",
+        "bbox": [
+            58,
+            466,
+            250,
+            518
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- Process and system complexity from M&A and fragmented ERP and application landscape (incl. over 5,000 IT back-office apps)",
+        "bbox": [
+            57,
+            520,
+            247,
+            625
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- Stranded cost following major portfolio moves (e.g., spin-offs)",
+        "bbox": [
+            58,
+            627,
+            241,
+            681
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The ambition was to deliver a step change in productivity and cost transformation to move support functions to first-quartile expense to revenue, as well as to increase free cash flow to fund strategic pivot to hybrid cloud and AI to fuel growth",
+        "bbox": [
+            46,
+            705,
+            243,
+            920
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "BCG's approach",
+        "text_level": 2,
+        "bbox": [
+            272,
+            222,
+            418,
+            261
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "As part of the broader transformation roadmap, the tech company followed a three-step approach to drive productivity and ensure value realization across all prioritized processes",
+        "bbox": [
+            270,
+            279,
+            631,
+            362
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/335541f5a2fc3716a859c9740d06deebc30c136f70370233ecc7506c2fa02f14.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            269,
+            394,
+            294,
+            438
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Eliminate",
+        "text_level": 2,
+        "bbox": [
+            300,
+            405,
+            370,
+            435
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Detailed, critical evaluation of every process (no protected processes or functions) to identify opportunities to eliminate superfluous processes that did not add value",
+        "bbox": [
+            276,
+            444,
+            608,
+            525
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "2 Simplify",
+        "text_level": 2,
+        "bbox": [
+            269,
+            559,
+            359,
+            601
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Identification of opportunities to remove complexity, minimize process steps, and handoffs between teams and systems; Put focus on designing simple workflows to reduce touch and cycle time",
+        "bbox": [
+            275,
+            607,
+            616,
+            716
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "3 Agentification",
+        "text_level": 2,
+        "bbox": [
+            269,
+            750,
+            400,
+            792
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Infusion of agentic AI throughout the redesigned processes to automate activities in areas with more subjectivity, enable self-service, and leverage unstructured data in analysis (e.g., summarization of tax documents with an inconsistent format)",
+        "bbox": [
+            275,
+            794,
+            633,
+            903
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/9b1015e11c99084106743a7093d099d46654c97074560fee7f867708bb8646be.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            682,
+            294,
+            770,
+            453
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Savings delivered in the first 18 months",
+        "bbox": [
+            779,
+            337,
+            942,
+            414
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/e6e45110c6e83782a71198d9dd0e2d4316f7bf6a1cb1720d6a314f7b93832e44.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            682,
+            522,
+            770,
+            681
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Annual savings delivered",
+        "text_level": 2,
+        "bbox": [
+            779,
+            566,
+            905,
+            638
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/5f2aafe225ec4c062c5697c23868e39a866aedcfe91c0e2cdd4adf8505f55985.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            683,
+            750,
+            770,
+            907
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Activities automated",
+        "text_level": 2,
+        "bbox": [
+            779,
+            792,
+            872,
+            866
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "A Agentic Enterprise Operations Rewrite the AI Paradigm",
+        "bbox": [
+            48,
+            3,
+            335,
+            31
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "Note: ERP = enterprise resource planning. Source: BCG experience.",
+        "bbox": [
+            47,
+            933,
+            353,
+            957
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            951
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            946,
+            957,
+            960,
+            977
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Chapter B",
+        "text_level": 2,
+        "bbox": [
+            48,
+            490,
+            172,
+            540
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Focus Shifts From Optimizing Tasks to Designing Autonomy",
+        "text_level": 2,
+        "bbox": [
+            48,
+            655,
+            750,
+            848
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Agentic AI is radically changing the way processes are designed and governed by shifting focus from optimizing flow to business outcomes",
+        "text_level": 2,
+        "bbox": [
+            47,
+            35,
+            883,
+            138
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Traditional process optimization",
+        "text_level": 2,
+        "bbox": [
+            47,
+            225,
+            344,
+            268
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/1aa7a595a59a31e344f36c713aeff37f50ee9cc96ce4e92288cb9ac5c98e2eec.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            62,
+            335,
+            101,
+            411
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Optimization for availability and cost of human capacity",
+        "bbox": [
+            130,
+            333,
+            468,
+            416
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/ce1786889687491a472e9f098717d59fac02eaefc8263d8f8058dd76d08432dd.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            59,
+            538,
+            102,
+            598
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Tedious standardization of process",
+        "text_level": 2,
+        "bbox": [
+            130,
+            531,
+            440,
+            570
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "variants to generate automation at scale",
+        "bbox": [
+            130,
+            572,
+            461,
+            612
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/a557710676cde4be571da6d542d2a78bfde14bf1d800bbe8960092ffece74944.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            59,
+            744,
+            104,
+            785
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Reduction of unhappy-path deviations with predefined breakouts",
+        "bbox": [
+            130,
+            729,
+            450,
+            809
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "New opportunities with agentic enterprise ops",
+        "bbox": [
+            525,
+            225,
+            944,
+            268
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Abundant, scalable execution capacity with completely revised economics",
+        "bbox": [
+            531,
+            333,
+            880,
+            416
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Decoupling of bespoke processes from standard business outcomes through agentic flexibility",
+        "bbox": [
+            531,
+            531,
+            951,
+            614
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Process deviation as part of core design of agentic systems",
+        "bbox": [
+            531,
+            727,
+            872,
+            809
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "B Focus Shifts From Optimizing Tasks to Designing Autonomy",
+        "bbox": [
+            48,
+            3,
+            358,
+            33
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            980,
+            581,
+            993,
+            951
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG experience.",
+        "bbox": [
+            48,
+            933,
+            162,
+            957
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            947,
+            957,
+            961,
+            977
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Agentic enterprise operations shift process steering from multiple owners to a single agentic process owner",
+        "text_level": 2,
+        "bbox": [
+            47,
+            33,
+            931,
+            137
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Traditional, distributed process ownership up to wave 3 Wave 3: AI agents",
+        "text_level": 2,
+        "bbox": [
+            53,
+            231,
+            480,
+            303
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/97643524a201721b9929bed16237d128d97dbcf87f8c5137e01133e9582148d8.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Business process owners leading E2E process oversight and continues improvement",
+            "Technical Owners leading individual use cases (e.g., bots and AI tools)",
+            "Singular process ownership in wave 4\nWave 4: Agentic enterprise"
+        ],
+        "content": "",
+        "bbox": [
+            45,
+            346,
+            269,
+            677
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- Multiple partial owners, each owning separately functional P&L, business process, and technical dimension",
+        "bbox": [
+            54,
+            692,
+            458,
+            755
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- As ownership is distributed across different aspects of the process, a significant coordination effort is needed to steer and optimize for outcomes with often diverging KPIs and targets - Single steering logic, with agentic process owner having E2E accountability for the redesigned process",
+        "bbox": [
+            54,
+            777,
+            459,
+            872
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/6a2ca91cf8bd150c5366bfca060466b7f255d61b5da69c2546225ab859a18bcc.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Agentic process owner, accountable E2E for all steering dimensions",
+            "Enabling teams such as the responsible AI or data infrastructure team"
+        ],
+        "content": "",
+        "bbox": [
+            529,
+            398,
+            743,
+            672
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            536,
+            692,
+            945,
+            755
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- Agentic process owner can become central supervisor for steering AI-executed process flows by outcomes, with respective accountability and decision rights",
+        "bbox": [
+            537,
+            777,
+            930,
+            872
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "B Focus Shifts From Optimizing Tasks to Designing Autonomy",
+        "bbox": [
+            48,
+            3,
+            358,
+            33
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG analysis.",
+        "bbox": [
+            48,
+            933,
+            150,
+            957
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "Human executing",
+        "bbox": [
+            175,
+            924,
+            294,
+            959
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "Data",
+        "bbox": [
+            397,
+            922,
+            453,
+            959
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "Data flow",
+        "bbox": [
+            311,
+            922,
+            387,
+            959
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "AI augmented",
+        "bbox": [
+            500,
+            931,
+            567,
+            955
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "Human-led or oversight",
+        "bbox": [
+            748,
+            929,
+            858,
+            955
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            584,
+            924,
+            620,
+            959
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "AI agent executing",
+        "bbox": [
+            626,
+            931,
+            713,
+            955
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "#",
+        "bbox": [
+            719,
+            920,
+            743,
+            962
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            946,
+            957,
+            960,
+            977
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            980,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Shifting processes\nto agentic AI E2E\nallows an evolution\nof business models\nand a GTM approach",
+        "bbox": [
+            45,
+            414,
+            301,
+            724
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/8e574acab3b56f347c35cb6d772e3ed1d636346742a4e2fff99932556aa26574.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            358,
+            318,
+            415,
+            416
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/c757ada933f569688ae02a82cea7345fbf885dd3acf3d8dea6e5fad70aa9aaf4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            365,
+            533,
+            408,
+            631
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Outcome-based offerings are enabled by full process-control and highly decreased incremental cost (e.g., for optimization)",
+        "bbox": [
+            438,
+            335,
+            948,
+            412
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Truly tailored offerings and services are delivered at scale due to a low marginal cost of changes, regardless of complexity",
+        "bbox": [
+            438,
+            546,
+            948,
+            625
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/a880934da86ff7406388a1f980c6c1db80eaa4413a2b769958e6a43d2cc89257.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            359,
+            751,
+            414,
+            850
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Monetization shifts from static offerings to dynamic value-capture models as processes continuously optimize",
+        "bbox": [
+            438,
+            764,
+            922,
+            840
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "B Focus Shifts From Optimizing Tasks to Designing Autonomy",
+        "bbox": [
+            50,
+            3,
+            358,
+            31
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "When execution becomes nearly instantaneous and capacity is elastic, value propositions and business models evolve",
+        "bbox": [
+            47,
+            33,
+            889,
+            133
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "Example business model evolutions",
+        "bbox": [
+            740,
+            227,
+            936,
+            255
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "Note: GTM = go to market.\nSource: BCG experience.",
+        "bbox": [
+            47,
+            914,
+            172,
+            957
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            980,
+            581,
+            993,
+            951
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            947,
+            957,
+            961,
+            977
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Chapter C",
+        "text_level": 2,
+        "bbox": [
+            48,
+            490,
+            171,
+            540
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Five Elements to Successfully Build Your Agentic Enterprise Operations",
+        "text_level": 2,
+        "bbox": [
+            47,
+            655,
+            845,
+            846
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "image",
+        "img_path": "images/77fdf7850c957b56db97c7c698779c8d4ca2e32230a937cdab510d031e00476b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            287,
+            807,
+            323,
+            877
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "image",
+        "img_path": "images/72bd23ae46f8bc08383fc7ee499a4a5f4f9132e7574a59258499be082099a18b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            286,
+            264,
+            322,
+            335
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Five elements\nto successfully\nbuild your\nagentic\nenterprise\noperations",
+        "bbox": [
+            42,
+            305,
+            235,
+            650
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Focus on outcomes: Review your processes focusing on the outcomes before optimizing your as-is operations",
+        "bbox": [
+            330,
+            96,
+            878,
+            188
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Build an \"agentic process transformation factory\": Centralize E2E process transformation and standardize embedding of AI agents",
+        "bbox": [
+            330,
+            257,
+            950,
+            351
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Make tech choices a C-level priority: Elevate ecosystem orchestration and build the AI layer for agentic scale",
+        "bbox": [
+            330,
+            438,
+            854,
+            531
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Place a platform bet: Pick one agentic platform and get started – portability is expected to increase as agentic matures",
+        "bbox": [
+            330,
+            620,
+            933,
+            712
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Start the journey early and evolve governance and change management on the way",
+        "bbox": [
+            329,
+            801,
+            876,
+            888
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG experience.",
+        "bbox": [
+            48,
+            933,
+            162,
+            957
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            947,
+            957,
+            961,
+            977
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Five elements to successfully build your agentic enterprise operations",
+        "text_level": 2,
+        "bbox": [
+            48,
+            59,
+            885,
+            111
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "1",
+        "bbox": [
+            50,
+            251,
+            68,
+            300
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Focus on outcomes: Review your processes focusing on the outcomes before optimizing your as-is operations. Rather than layering AI onto unstable or fragmented processes, start by redesigning processes from the outcome and intent back to ensure autonomy amplifies value rather than structural weaknesses",
+        "bbox": [
+            88,
+            227,
+            929,
+            324
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "2",
+        "bbox": [
+            50,
+            398,
+            69,
+            444
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Build an \"agentic process transformation factory\": Centralize E2E process transformation and standardize embedding of AI agents. Centralize the prioritization of E2E processes, funding, and guardrails, and standardize how to embed AI agents E2E with evaluations and a continuous feedback loop – C-level owned, run by integrated business and tech teams and measured on value",
+        "bbox": [
+            89,
+            372,
+            945,
+            468
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "3",
+        "bbox": [
+            50,
+            542,
+            68,
+            590
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Make tech choices a C-level priority: Elevate ecosystem orchestration and build the AI layer for agentic scale. To successfully drive and scale the agentic process transformation, it requires multivendor ecosystem orchestration and a solid AI layer (e.g., based on data, workflow integration, and testing)",
+        "bbox": [
+            89,
+            518,
+            953,
+            614
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "4",
+        "bbox": [
+            50,
+            688,
+            69,
+            735
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Design for interoperability (among APIs, standards, logging) as vendor capabilities and product boundaries will likely evolve; next-generation architectures will increasingly mix agents across platforms",
+        "bbox": [
+            88,
+            694,
+            923,
+            757
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "5",
+        "bbox": [
+            50,
+            833,
+            68,
+            879
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Start the journey early and evolve governance and change mgmt. along the way. Focus on shifting processes to agentic AI across one or two high-value domains and create a path to scale. Use pilots to set up and harden governance and data products. At the same time address new challenges from redefining roles, align on risk thresholds and institutionalize continuous improvement before scale",
+        "bbox": [
+            87,
+            807,
+            951,
+            903
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Source: BCG experience.",
+        "bbox": [
+            48,
+            933,
+            162,
+            957
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "Five Elements to Successfully Build Your Agentic Enterprise Operations",
+        "bbox": [
+            48,
+            3,
+            409,
+            31
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            951
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            946,
+            957,
+            960,
+            977
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "An outcome-first design unlocks true value from an agentic transformation",
+        "text_level": 2,
+        "bbox": [
+            47,
+            59,
+            941,
+            109
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Common pitfall: Introducing agents for unstable legacy processes",
+        "text_level": 2,
+        "bbox": [
+            54,
+            255,
+            306,
+            322
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "image",
+        "img_path": "images/71c1c03fe2e0f1b1551bd0f6870de01f25671e1bfdf00c21438a84405eaa274c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            53,
+            355,
+            75,
+            770
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Legacy processes are often manual, fragmented, and error-prone",
+        "bbox": [
+            82,
+            368,
+            309,
+            435
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "AI is layered onto inefficient workflows without redesign",
+        "bbox": [
+            82,
+            450,
+            261,
+            516
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Automation accelerates existing flaws and causes rework",
+        "bbox": [
+            82,
+            531,
+            287,
+            596
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Errors become more visible and scale faster",
+        "bbox": [
+            81,
+            612,
+            285,
+            677
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Poorly defined processes limit true agent autonomy",
+        "bbox": [
+            81,
+            694,
+            303,
+            759
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Don't use AI agents for existing broken processes because this will amplify structural weaknesses",
+        "text_level": 2,
+        "bbox": [
+            56,
+            827,
+            301,
+            922
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Source: BCG experience.",
+        "bbox": [
+            48,
+            933,
+            162,
+            957
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Design processes and workflows starting at the target outcomes and intents",
+        "text_level": 2,
+        "bbox": [
+            355,
+            255,
+            888,
+            290
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "image",
+        "img_path": "images/6735bc95e397553f4706984e1e2aeebe5bd7d7176efeda12abe13f77156ee395.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            361,
+            346,
+            462,
+            527
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "image",
+        "img_path": "images/081bb074a56bcef6ff4d1c3e1fca00bc96225060ecc0fb6c857a2cf97ea3b5f0.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            476,
+            346,
+            576,
+            527
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Agentic outcomes",
+        "bbox": [
+            378,
+            581,
+            446,
+            642
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Value stream mapping",
+        "bbox": [
+            482,
+            581,
+            572,
+            646
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Identify targeted\noutcomes and\nintents and clarify\nunmet needs of\nusers and agents",
+        "bbox": [
+            355,
+            703,
+            461,
+            864
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "image",
+        "img_path": "images/8d1eb101eaa6bb6cbe22658b33b8c694ad184d78ec362e496772cb872234ecbd.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Decision analysis"
+        ],
+        "content": "",
+        "bbox": [
+            591,
+            346,
+            690,
+            527
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Map decisions,\nhandoffs,\ndependencies, and\nownership across\nthe value stream",
+        "bbox": [
+            470,
+            703,
+            578,
+            864
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "image",
+        "img_path": "images/80c3ee7495540780793c59fdb80ff982037f58fcbc8c995332a244bb10a63967.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            704,
+            346,
+            806,
+            527
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Clarify decision and\nescalation logic\nand determine\nconfidence\nthresholds",
+        "bbox": [
+            584,
+            703,
+            700,
+            862
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Agent-first redesign",
+        "bbox": [
+            720,
+            581,
+            790,
+            646
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Reimagine the customer journey and processes AI agent-first with human oversight",
+        "bbox": [
+            700,
+            703,
+            803,
+            864
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "image",
+        "img_path": "images/81f12176a58a7b33bfc6be2da141869e2cf5a3cda247b5d94f8151dcc190b102.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            831,
+            346,
+            934,
+            527
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Agentic foundation design",
+        "bbox": [
+            820,
+            581,
+            947,
+            644
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Design the agentic foundation (including governance) to enable scalable autonomous execution",
+        "bbox": [
+            814,
+            703,
+            945,
+            862
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "Five Elements to Successfully Build Your Agentic Enterprise Operations",
+        "bbox": [
+            48,
+            3,
+            410,
+            33
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "1",
+        "bbox": [
+            963,
+            31,
+            975,
+            59
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            947,
+            957,
+            960,
+            977
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Deep-dive | The mantra shifts from focus on output to focus on outcomes",
+        "text_level": 2,
+        "bbox": [
+            48,
+            59,
+            921,
+            111
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Example: Loan application processing",
+        "text_level": 2,
+        "bbox": [
+            48,
+            240,
+            353,
+            277
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Start with outcomes as business goals (decide what you are trying to achieve)",
+        "bbox": [
+            47,
+            296,
+            478,
+            325
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Reduced time-to-outcome",
+        "bbox": [
+            73,
+            346,
+            173,
+            403
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Customer satisfaction increase",
+        "bbox": [
+            200,
+            348,
+            325,
+            403
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Lower processing cost",
+        "bbox": [
+            341,
+            362,
+            465,
+            392
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Break into dependency trees, with pain points and human constraints",
+        "bbox": [
+            68,
+            464,
+            458,
+            494
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Accelerated case resolution",
+        "bbox": [
+            61,
+            540,
+            150,
+            596
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "reduced\nexception backlog automated validation and checks",
+        "bbox": [
+            165,
+            512,
+            255,
+            562
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            266,
+            512,
+            365,
+            559
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "manual touchpoints improved decision consistency",
+        "bbox": [
+            161,
+            598,
+            260,
+            622
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            270,
+            575,
+            360,
+            622
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Prioritize and assess decomposed outcomes as agent opportunities",
+        "bbox": [
+            75,
+            679,
+            452,
+            711
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Document verification",
+        "bbox": [
+            81,
+            727,
+            200,
+            755
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Remediation suggestions",
+        "bbox": [
+            241,
+            727,
+            387,
+            757
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Prioritize opportunities systematically, and consider impact, feasibility, and agent fit",
+        "bbox": [
+            136,
+            818,
+            390,
+            877
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Key pain point",
+        "text_level": 2,
+        "bbox": [
+            67,
+            890,
+            139,
+            918
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Source: BCG experience.",
+        "bbox": [
+            48,
+            933,
+            162,
+            957
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Outcome-first design defines success over process; forcing clarity on what good looks like helps to prioritize where agents can add measurable value",
+        "bbox": [
+            518,
+            307,
+            934,
+            418
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Decomposition reveals leverage points; breaking outcomes into dependencies and pain points uncovers the specific tasks and decision areas that move the KPIs",
+        "bbox": [
+            518,
+            503,
+            940,
+            616
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Agent opportunities then emerge naturally; clear dependencies allow for roles to be defined early, and the design process can develop from here",
+        "bbox": [
+            518,
+            701,
+            910,
+            812
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "1",
+        "bbox": [
+            963,
+            31,
+            975,
+            59
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "Five Elements to Successfully Build Your Agentic Enterprise Operations",
+        "bbox": [
+            48,
+            3,
+            410,
+            33
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            947,
+            957,
+            960,
+            977
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Build an \"agentic process transformation factory\" to deliver value at speed",
+        "text_level": 2,
+        "bbox": [
+            48,
+            57,
+            940,
+            114
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Continuously\nImprove workflows",
+        "bbox": [
+            556,
+            237,
+            680,
+            305
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Leadership vision",
+        "text_level": 2,
+        "bbox": [
+            66,
+            400,
+            152,
+            477
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Enterprise AI\nambition and value\ntargets",
+        "bbox": [
+            59,
+            496,
+            160,
+            585
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Aligned leadership on priority workflows",
+        "bbox": [
+            55,
+            601,
+            162,
+            666
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Governance and\ndecision rights",
+        "bbox": [
+            67,
+            683,
+            151,
+            744
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Decide",
+        "text_level": 2,
+        "bbox": [
+            184,
+            340,
+            240,
+            377
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "• Map workflows at task level",
+        "bbox": [
+            191,
+            379,
+            325,
+            442
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "• Identify/prioritize automation opportunities",
+        "bbox": [
+            192,
+            442,
+            322,
+            544
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Design",
+        "text_level": 2,
+        "bbox": [
+            358,
+            342,
+            413,
+            379
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Redesign workflows to AI-first",
+        "bbox": [
+            365,
+            379,
+            483,
+            444
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Set-up deliver and scale prioritization logic",
+        "bbox": [
+            365,
+            444,
+            475,
+            572
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Deliver",
+        "text_level": 2,
+        "bbox": [
+            518,
+            340,
+            576,
+            377
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Rapid, iterative deployment to production",
+        "bbox": [
+            526,
+            379,
+            643,
+            475
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "• Measure real impact; Use proof points to build momentum",
+        "bbox": [
+            527,
+            475,
+            681,
+            572
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Scale",
+        "text_level": 2,
+        "bbox": [
+            725,
+            342,
+            770,
+            377
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Scale across functions",
+        "bbox": [
+            732,
+            377,
+            893,
+            412
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Track ongoing performance and value capture",
+        "bbox": [
+            733,
+            414,
+            861,
+            512
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Op. Model Enablement (Change mgmt., employee transformation, adoption acceleration)",
+        "bbox": [
+            276,
+            607,
+            842,
+            648
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Enable & Sustain",
+        "text_level": 2,
+        "bbox": [
+            188,
+            655,
+            258,
+            731
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Agent Platform (Data platforms, model orchestration, integration layers)",
+        "bbox": [
+            277,
+            675,
+            740,
+            718
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Foundations (Governance, security, and workforce enablement)",
+        "bbox": [
+            277,
+            746,
+            680,
+            788
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Process delivers early value through quick iteration cycles; Embed and institutionalize to build repeatable agentic factory that efficiently scales transformation",
+        "bbox": [
+            194,
+            822,
+            912,
+            909
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "Five Elements to Successfully Build Your Agentic Enterprise Operations",
+        "bbox": [
+            47,
+            1,
+            410,
+            33
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            962,
+            29,
+            975,
+            59
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            980,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG experience.",
+        "bbox": [
+            48,
+            933,
+            162,
+            957
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "20",
+        "bbox": [
+            946,
+            957,
+            960,
+            977
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "While agentic AI is still maturing, it is time to lay an agnostic technology foundation that supports exponential capability build and scale",
+        "text_level": 2,
+        "bbox": [
+            47,
+            35,
+            910,
+            135
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Agnostic technology blueprint $^{1}$",
+        "text_level": 2,
+        "bbox": [
+            47,
+            216,
+            272,
+            255
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/11dd75e292e8cb1839ed13ba36fe6e67531b86ad52e71686d3bdba1128a90807.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            47,
+            277,
+            348,
+            907
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "4. Core transaction layer\nCross-industry systems | Industry-specific systems",
+        "bbox": [
+            59,
+            772,
+            285,
+            822
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "1. Value creation layer",
+        "text_level": 2,
+        "bbox": [
+            422,
+            222,
+            580,
+            251
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Deliver customer and employee digital journeys, orchestrate front-end workflows, and embed smart decision engines and AI-enhanced apps for a personalized, omnichannel experience.",
+        "bbox": [
+            420,
+            251,
+            960,
+            303
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "2. AI and agentic layer",
+        "text_level": 2,
+        "bbox": [
+            422,
+            309,
+            580,
+            338
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Drive enterprise AI and the agentic layer through governed model access and controlled agent orchestration, enabling secure, compliant, real-time AI-driven decisions across products and processes.",
+        "bbox": [
+            421,
+            338,
+            960,
+            390
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "3. Data layer",
+        "text_level": 2,
+        "bbox": [
+            422,
+            396,
+            513,
+            424
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Collect, organize, and expose trusted data products through standard access points, ensuring high-quality information for both operational and analytical use.",
+        "bbox": [
+            421,
+            422,
+            947,
+            475
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "4. Core transaction layer",
+        "text_level": 2,
+        "bbox": [
+            422,
+            481,
+            596,
+            511
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Execute and record mission-critical business transactions in systems-of-record, ensuring authoritative data for the enterprise and exposing clean APIs to the upper layers.",
+        "bbox": [
+            421,
+            509,
+            950,
+            562
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "5. Infrastructure and cloud layer",
+        "text_level": 2,
+        "bbox": [
+            422,
+            568,
+            650,
+            596
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Supply automated, scalable compute, storage, networking, orchestration, and physical systems so every workload runs on a consistent, monitored foundation.",
+        "bbox": [
+            421,
+            596,
+            937,
+            648
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "6. Integration layer",
+        "text_level": 2,
+        "bbox": [
+            422,
+            653,
+            558,
+            683
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Ensure systems are integrated and developer friendly. These enablers provide the foundation for consistent, scalable, and efficient delivery across all horizontal layers.",
+        "bbox": [
+            421,
+            683,
+            956,
+            733
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "7. Cybersecurity",
+        "text_level": 2,
+        "bbox": [
+            422,
+            740,
+            537,
+            770
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Ensure systems are secure and compliant. These enablers provide the foundation for consistent, scalable, and efficient delivery across all horizontal layers.",
+        "bbox": [
+            421,
+            768,
+            946,
+            820
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "8. Operations and governance",
+        "text_level": 2,
+        "bbox": [
+            422,
+            827,
+            633,
+            855
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Ensure that AI, data, and digital ops run safely, reliably, and in compliance by managing life cycle processes, monitoring performance, enforcing governance controls, and coordinating cross-functional workflows.",
+        "bbox": [
+            421,
+            855,
+            960,
+            907
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "Five Elements to Successfully Build Your Agentic Enterprise Operations",
+        "bbox": [
+            48,
+            3,
+            410,
+            31
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            963,
+            31,
+            975,
+            62
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            951
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "1. Not all companies will need all capabilities; adoption depends on use cases and other factors (e.g., maturity and skills) and is vendor, product, and technology agnostic. Source: BCG analysis.",
+        "bbox": [
+            46,
+            933,
+            912,
+            959
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_number",
+        "text": "21",
+        "bbox": [
+            946,
+            957,
+            960,
+            977
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Three realities to consider when building the agentic layer",
+        "text_level": 2,
+        "bbox": [
+            47,
+            59,
+            746,
+            111
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Agentic scale will ramp exponentially within months enforcing the need to manage complexity",
+        "text_level": 2,
+        "bbox": [
+            131,
+            216,
+            794,
+            246
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "image",
+        "img_path": "images/75a111aea9ff4013d2ee9ebb4d74373df5a1359ecca55dee0ba527be1f8226a8.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            35,
+            253,
+            115,
+            392
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- Typical businesses have 100 to 150 core processes and about 7,000 to 8,000 subprocesses; if one-third of them become agentic, this implies roughly 2,000 agentic solutions with 3 to 5 agents each, and about 8 to 12 new configuration items per agent to manage – leading to a high risk of overwhelming traditional IT service management",
+        "bbox": [
+            140,
+            248,
+            928,
+            342
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- ADLC is needed to manage a federated control of an AI platform and services, establish clear graduation pathways for scaling discipline, continuously refactor the data and architecture, and redefine IT service mgmt. by adopting observability-first ops, automated guardrails and evaluation gates with joint tech-risks-ops accountability",
+        "bbox": [
+            141,
+            340,
+            927,
+            437
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "image",
+        "img_path": "images/370effbc01772b8cf2e585fd6db169aac16b28f61bfc093bc2470e25a3715d61.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            35,
+            514,
+            115,
+            655
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "To scale, progressively build AI services and upgrade critical tech services at the pace of agentic adoption",
+        "text_level": 2,
+        "bbox": [
+            131,
+            509,
+            863,
+            540
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "• Progressively build AI-shared services in lockstep with agentic process adoption",
+        "bbox": [
+            140,
+            542,
+            659,
+            570
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- Run a software delivery life cycle along with an agentic delivery lifecycle as adoption grows (progressively standardizing build-to-run controls); when about 30% to 40% of E2E processes are agent-focused, consider to execute a one-off shift to agentic delivery lifecycle mgmt. by default",
+        "bbox": [
+            140,
+            572,
+            908,
+            666
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "image",
+        "img_path": "images/827fb6f15339a00fa7771a8cf6db60cc51626c3814634f184c59180a189b046b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            36,
+            746,
+            115,
+            885
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Clear AI graduation pathways are needed to bring agentic solutions into the business fast",
+        "text_level": 2,
+        "bbox": [
+            131,
+            738,
+            757,
+            768
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- Establish clear graduation pathways with funded routes for successful value proofs, adopting real-time service acceptance",
+        "bbox": [
+            140,
+            770,
+            919,
+            801
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- Ensure disciplined scaling (e.g., staged rollout, thresholds, and operational readiness) for maturing minimal viable products, treating use case graduation as an ongoing investment",
+        "bbox": [
+            141,
+            801,
+            875,
+            864
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- Give every agent a managed identity, and automate continuous improvement checks (flag redundancy, drift, rogue agents)",
+        "bbox": [
+            141,
+            864,
+            925,
+            896
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            963,
+            31,
+            975,
+            62
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "header",
+        "text": "Five Elements to Successfully Build Your Agentic Enterprise Operations",
+        "bbox": [
+            48,
+            3,
+            410,
+            31
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            980,
+            581,
+            993,
+            951
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG experience.",
+        "bbox": [
+            50,
+            933,
+            165,
+            957
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_number",
+        "text": "22",
+        "bbox": [
+            946,
+            957,
+            960,
+            977
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Orchestrating the tech ecosystem will be inevitable",
+        "text_level": 2,
+        "bbox": [
+            48,
+            59,
+            661,
+            109
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Examples",
+        "text_level": 2,
+        "bbox": [
+            576,
+            203,
+            633,
+            229
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "image",
+        "img_path": "images/4ff44da64cdd31d9b3cf9bc65c39d062128000ff2236bb5639b915ddaabb9e10.jpg",
+        "image_caption": [
+            "Source: BCG experience; BCG AI Agent Ecosystem Database."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            52,
+            277,
+            650,
+            888
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Structural reality",
+        "text_level": 2,
+        "bbox": [
+            686,
+            275,
+            843,
+            314
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "• E2E autonomy exceeds the scope of any single vendor",
+        "bbox": [
+            686,
+            335,
+            907,
+            407
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "\\- Most solutions address slices of the stack",
+        "bbox": [
+            686,
+            416,
+            942,
+            485
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Strategic implication",
+        "text_level": 2,
+        "bbox": [
+            686,
+            553,
+            878,
+            592
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Enterprises must deliberately orchestrate the multivendor ecosystem",
+        "bbox": [
+            685,
+            614,
+            900,
+            720
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "\\- Define integration standards",
+        "bbox": [
+            686,
+            731,
+            920,
+            766
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "• Make explicit buy-versus-build decisions",
+        "bbox": [
+            686,
+            777,
+            929,
+            848
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "\\- Maintain architectural coherence over time",
+        "bbox": [
+            686,
+            862,
+            875,
+            931
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "header",
+        "text": "Five Elements to Successfully Build Your Agentic Enterprise Operations",
+        "bbox": [
+            48,
+            3,
+            410,
+            31
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            951
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "page_number",
+        "text": "23",
+        "bbox": [
+            947,
+            957,
+            960,
+            977
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Next-generation architectures will increasingly mix agents across platforms, with shared protocols enabling cross-platform communication",
+        "text_level": 2,
+        "bbox": [
+            47,
+            35,
+            923,
+            138
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Emergence of tightly coupled agents 2023 – 2024",
+        "text_level": 2,
+        "bbox": [
+            47,
+            246,
+            218,
+            353
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Agents built directly into existing apps, with hardcoded workflows and system-specific integrations, limiting adaptability",
+        "bbox": [
+            46,
+            379,
+            300,
+            462
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "image",
+        "img_path": "images/779bf764197f7cd6fb7779568c890384d6ba5a036d4eb0293521e34e3dcfc27d.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Code, data, and deployment in the same stack constrain scalability and reuse"
+        ],
+        "content": "",
+        "bbox": [
+            92,
+            496,
+            272,
+            774
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Progression to decoupled agent platforms 2025",
+        "text_level": 2,
+        "bbox": [
+            363,
+            246,
+            551,
+            353
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Rise of agent platforms; agent logic and orchestration separate to existing back-end systems to facilitate reuse and scaling",
+        "bbox": [
+            362,
+            379,
+            592,
+            462
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "image",
+        "img_path": "images/af32f8cf57dcf9daa3e5fe7ed75df3d1610ab6c7d18a5c10f0bb3dec1ff41ac0.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "1. Interoperability refers to cross-platform orchestration.",
+            "Source: BCG analysis.",
+            "Decoupling offers modularity and flexibility, breaking down integration barriers",
+            "Note: DAM = digital asset management; CRM = customer relationship management."
+        ],
+        "content": "",
+        "bbox": [
+            406,
+            496,
+            590,
+            775
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Rise of agent interoperability across platforms 2026 and after",
+        "text_level": 2,
+        "bbox": [
+            679,
+            244,
+            918,
+            353
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Next-generation architectures may mix agents across platforms, with shared protocols allowing for cross-platform communication",
+        "bbox": [
+            678,
+            377,
+            941,
+            457
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "image",
+        "img_path": "images/b32e12fa052faa7823c4c89aa000c0e7a4d905fda6c192fbdfa84aecd2004d78.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Hybrid architectures enable interoperability, $^{1}$ adaptability, and connected agent ecosystems"
+        ],
+        "content": "",
+        "bbox": [
+            688,
+            494,
+            942,
+            774
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "header",
+        "text": "Five Elements to Successfully Build Your Agentic Enterprise Operations",
+        "bbox": [
+            48,
+            3,
+            410,
+            31
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "page_number",
+        "text": "24",
+        "bbox": [
+            946,
+            957,
+            961,
+            977
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "The agentic transformation redefines the change imperative",
+        "text_level": 2,
+        "bbox": [
+            47,
+            59,
+            772,
+            112
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Examples",
+        "text_level": 2,
+        "bbox": [
+            81,
+            201,
+            133,
+            225
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Change mgmt. often became bottleneck for AI success Wave 1-3",
+        "text_level": 2,
+        "bbox": [
+            47,
+            268,
+            455,
+            331
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/1d9e2a0026ba1a1cc3e203906fa7cdff6dfb7ea38cf79ab223bf3d9ddce010d8.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            48,
+            366,
+            77,
+            416
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Reliance on voluntary frontline adoption",
+        "bbox": [
+            88,
+            375,
+            343,
+            409
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/b7eb37e8719be8e3fe751ddeb0512c7c407a1658f40d9d663a6db0fe400c94c4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            48,
+            468,
+            77,
+            518
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Incentives and KPIs not aligned with AI usage",
+        "bbox": [
+            88,
+            479,
+            377,
+            514
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/17023cc6f524aa9ec397a2335888ba07dfddf83ad46ba2b9594eff094ba898cf.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            48,
+            572,
+            77,
+            622
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Leadership misalignment and unclear sponsorship",
+        "bbox": [
+            88,
+            583,
+            408,
+            618
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/2a8eabf2dc406335ec2b725799834d955b023242413f8a66b30b61d77d6b4191.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            50,
+            675,
+            77,
+            725
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Operating model not designed for scale",
+        "bbox": [
+            87,
+            685,
+            337,
+            720
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/9ff1baac09916d7c9e8fcf600b5bfe1adc6d1d12c508e762d97e3d671e3af53e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            48,
+            779,
+            77,
+            827
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Immature pilots undermining credibility",
+        "bbox": [
+            88,
+            790,
+            342,
+            824
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Pivoting to agentic enterprise ops shifts type of change Wave 4",
+        "text_level": 2,
+        "bbox": [
+            531,
+            268,
+            922,
+            331
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/cc8830dcfad076f96c5ac015d82c022e3ffac3fc5aa6db4396d9e6f4c0dc140f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            534,
+            401,
+            575,
+            472
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Classical change management shifts from driving tool adoption to governing agentic execution, where usage is embedded in E2E processes and humans become supervisors instead of users",
+        "bbox": [
+            586,
+            377,
+            926,
+            503
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/9dfc8163fb9f17cd16e3e3a42d81b20b5e3e765494ff64f73be3ab3238444079.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            531,
+            590,
+            576,
+            650
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Process governance will likely need to shift, with",
+        "text_level": 2,
+        "bbox": [
+            587,
+            559,
+            923,
+            592
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "redefined roles and accountabilities, reviewed decision rights and risk thresholds supporting AI-led execution, and new escalation mechanisms",
+        "bbox": [
+            585,
+            590,
+            931,
+            685
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/881c63002c11fc7fbf02e2983b04a6828fb116a18ad0851dceb7f8073313c555.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            530,
+            762,
+            578,
+            846
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Continuous improvement broadens, combining coaching and upskilling of people with oversight of system behavior, including monitoring and steering of autonomous processes moving to self-adjustment over time",
+        "bbox": [
+            586,
+            744,
+            948,
+            872
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            963,
+            31,
+            975,
+            62
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "header",
+        "text": "Five Elements to Successfully Build Your Agentic Enterprise Operations",
+        "bbox": [
+            50,
+            3,
+            410,
+            31
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            951
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG analysis.",
+        "bbox": [
+            48,
+            933,
+            150,
+            957
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "page_number",
+        "text": "25",
+        "bbox": [
+            947,
+            957,
+            960,
+            977
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Chapter D",
+        "text_level": 2,
+        "bbox": [
+            50,
+            490,
+            162,
+            540
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "Different Transformation Paths Can Succeed",
+        "text_level": 2,
+        "bbox": [
+            51,
+            657,
+            930,
+            740
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "Path forward: Key questions for agentic enterprises and bets to place",
+        "text_level": 2,
+        "bbox": [
+            50,
+            59,
+            872,
+            112
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Key questions to address in the future",
+        "text_level": 2,
+        "bbox": [
+            42,
+            227,
+            353,
+            268
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "image",
+        "img_path": "images/9f658474a0cd769f5d9c61dec87dabfcc8f9363220a7a900c7a11b831eae1951.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            44,
+            298,
+            66,
+            340
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Where will P&L ownership and control for business outcomes sit (e.g., with an E2E process owner or with a functional owner)?",
+        "bbox": [
+            68,
+            298,
+            475,
+            361
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "image",
+        "img_path": "images/876ed98dbb4625152447cec9702912c8521d4010fef3bffea69106538eba5dcf.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            44,
+            427,
+            66,
+            470
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "How does functional governance and process governance look like (e.g., who defines standards, who arbitrates trade-offs etc.)?",
+        "bbox": [
+            68,
+            427,
+            469,
+            492
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "image",
+        "img_path": "images/80519ee0adbf8abf2c8e4ef57920d88c4221f1f9d3522d47d284c7018485eb15.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            44,
+            553,
+            66,
+            596
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "What does AI and IT governance in the future look like (e.g., who is the technical owner and who will be the control function)?",
+        "bbox": [
+            67,
+            555,
+            476,
+            616
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "image",
+        "img_path": "images/1647373077db11936ff29b839c380754b50ce0b9d348332efd6a3ed5401669d2.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            44,
+            679,
+            66,
+            722
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "How will process and AI governance interlink (e.g., will one person own each or both)?",
+        "bbox": [
+            68,
+            681,
+            438,
+            742
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "image",
+        "img_path": "images/d3c04e94e452e27248c18b1001116b4f7e511accc9f99dd0cfcbad0c3fb24d5e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            43,
+            805,
+            66,
+            851
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "How to run the transformation (e.g., will the shift to agentic layers, functions, or processes use a brownfield or greenfield approach)?",
+        "bbox": [
+            68,
+            800,
+            486,
+            861
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Core bets for agentic enterprise operations",
+        "text_level": 2,
+        "bbox": [
+            507,
+            227,
+            854,
+            268
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "While agentic AI is still maturing, exponential development makes building the muscle now inevitable",
+        "bbox": [
+            635,
+            307,
+            901,
+            403
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "There will be no one size fits all, allowing room and need for tailored individual transformation pathways",
+        "bbox": [
+            512,
+            462,
+            644,
+            655
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "image",
+        "img_path": "images/0bbe5faf378c379fb6368fa375dd590b6c44138aa0bcb944031eb01cfbf3a88c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            654,
+            414,
+            826,
+            733
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Platform decisions may lose importance as platforms converge and agents become increasingly portable across stacks",
+        "bbox": [
+            836,
+            462,
+            976,
+            653
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Outcome-first redesign will avoid embedding agents in unstable workflows and will allow true value unlock",
+        "bbox": [
+            547,
+            742,
+            725,
+            870
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Integration friction falls as agentic AI manages legacy complexity and reduces integration efforts",
+        "bbox": [
+            754,
+            742,
+            925,
+            870
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "header",
+        "text": "D Different Transformation Paths Can Succeed",
+        "bbox": [
+            48,
+            3,
+            287,
+            31
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG experience.",
+        "bbox": [
+            48,
+            933,
+            162,
+            957
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "page_number",
+        "text": "27",
+        "bbox": [
+            947,
+            957,
+            960,
+            977
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "The agentic enterprise transformation journey will be shaped by different strategic design choices and tradeoffs",
+        "text_level": 2,
+        "bbox": [
+            47,
+            33,
+            928,
+            133
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "Two major design choices and tradeoffs",
+        "bbox": [
+            382,
+            207,
+            608,
+            242
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "image",
+        "img_path": "images/37c14d59dd093cff6430454fd9e05c4811135a75aad47ff95749727a7f477e5a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            53,
+            264,
+            81,
+            368
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "GREENFIELD VS. BROWNFIELD?",
+        "text_level": 2,
+        "bbox": [
+            95,
+            303,
+            390,
+            338
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "image",
+        "img_path": "images/8e8c549dc75e532b9c80063f82833dd5b9de72efa2cc8352efdcf4dc09effc34.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            516,
+            264,
+            544,
+            368
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "\\- While both greenfield and brownfield approaches can unlock full value, organizations need to decide whether to build on an existing AI stack and processes or design autonomy-first from scratch",
+        "bbox": [
+            47,
+            429,
+            494,
+            525
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "\\- A brownfield build of agentic enterprise ops progressively adds agents to stable cores, prioritizing continuity and controlled risk",
+        "bbox": [
+            47,
+            535,
+            463,
+            600
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "\\- A greenfield build enables an autonomy-first redesign of processes if legacy constraints make incremental change not economical",
+        "bbox": [
+            47,
+            607,
+            500,
+            672
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "FULL VS. PARTIAL SHIFT TO AGENTIC AI",
+        "text_level": 2,
+        "bbox": [
+            561,
+            303,
+            928,
+            340
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "\\- The key decision is whether to partially phase toward full autonomy or commit to an all-in redesign from the start",
+        "bbox": [
+            513,
+            429,
+            909,
+            494
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "\\- Partially shifting to agentic AI doesn’t unlock the full value, but it allows less disruption, higher speed, and lower investment, while preserving human-agent models where judgment remains critical",
+        "bbox": [
+            513,
+            503,
+            943,
+            600
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "\\- Fully shifting to agentic AI E2E unlocks the full structural value by redesigning entire processes for autonomous execution",
+        "bbox": [
+            513,
+            607,
+            939,
+            672
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "AGENTIC FOUNDATION",
+        "text_level": 2,
+        "bbox": [
+            419,
+            738,
+            579,
+            770
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "• Strategic design decisions should align with foundational readiness across technology, data, processes, governance, and talent",
+        "bbox": [
+            54,
+            798,
+            898,
+            829
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "\\- For a brownfield approach, a maturity assessment helps to prioritize a foundational buildup, while a greenfield approach demands a deliberate focus on tech and people strategy; the speed and scope of a transformation remain separate design choices",
+        "bbox": [
+            54,
+            840,
+            940,
+            903
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "header",
+        "text": "D Different Transformation Paths Can Succeed",
+        "bbox": [
+            48,
+            3,
+            287,
+            29
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            980,
+            581,
+            993,
+            951
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG experience.",
+        "bbox": [
+            47,
+            933,
+            162,
+            957
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "page_number",
+        "text": "28",
+        "bbox": [
+            947,
+            957,
+            960,
+            977
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "An agentic enterprise transformation requires a holistic approach including Strategic Clarity and Applied AI – beginning with these first steps",
+        "text_level": 2,
+        "bbox": [
+            46,
+            35,
+            948,
+            140
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Strategic ambition",
+        "text_level": 2,
+        "bbox": [
+            54,
+            268,
+            228,
+            312
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Define the value ambition, transformation principles, and governance philosophy",
+        "bbox": [
+            53,
+            320,
+            420,
+            392
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Program orchestration",
+        "text_level": 2,
+        "bbox": [
+            116,
+            433,
+            326,
+            477
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Set up transformation governance, roadmap sequencing, value assurance, and change management",
+        "bbox": [
+            114,
+            485,
+            478,
+            555
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Agentic operations design",
+        "text_level": 2,
+        "bbox": [
+            165,
+            598,
+            405,
+            642
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Redesign E2E processes (starting with target outcomes), deploy agentic workflows, and establish continuous monitoring and new agentic governance",
+        "bbox": [
+            164,
+            651,
+            654,
+            720
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Agentic foundation",
+        "text_level": 2,
+        "bbox": [
+            213,
+            762,
+            392,
+            807
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Build the enabling AI capabilities across tech, data, processes, talent, and governance",
+        "bbox": [
+            212,
+            814,
+            539,
+            885
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "First steps to get started",
+        "text_level": 2,
+        "bbox": [
+            694,
+            266,
+            872,
+            305
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "image",
+        "img_path": "images/47432d58fc33f93414f8729dedf5835eaa91b745f00ebebfc205503ae694d3f1.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            697,
+            366,
+            738,
+            435
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Assess agentic maturity and value potential across key E2E processes",
+        "bbox": [
+            746,
+            362,
+            946,
+            462
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "image",
+        "img_path": "images/f87e3e2acbdc70289797959d9130f1fe62acf82d72853961e0409896f4c7d1ba.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            695,
+            572,
+            740,
+            644
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Define transformation principles (e.g., brownfield or greenfield approach)",
+        "bbox": [
+            746,
+            562,
+            938,
+            662
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "image",
+        "img_path": "images/416ff1046ccbe00068339d1e34c8d16b00b20287c366e9ebe143d8e799110d3b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            695,
+            772,
+            740,
+            827
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Select 1 or 2 priority domains for process prioritization, redesign and the target state definition",
+        "bbox": [
+            746,
+            762,
+            961,
+            862
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "header",
+        "text": "D Different Transformation Paths Can Succeed",
+        "bbox": [
+            47,
+            1,
+            288,
+            31
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            980,
+            579,
+            993,
+            953
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG project experience.",
+        "bbox": [
+            47,
+            933,
+            196,
+            959
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "page_number",
+        "text": "29",
+        "bbox": [
+            933,
+            933,
+            948,
+            955
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "BCG experts | Key contacts for Agentic Enterprise Operations",
+        "text_level": 2,
+        "bbox": [
+            48,
+            59,
+            777,
+            112
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "Global Leadership",
+        "text_level": 2,
+        "bbox": [
+            50,
+            190,
+            201,
+            231
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/c1703fea1c59da4732e1b86245f07b30341f54c8a98c134010001408747991bc.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Marcus\nWittig"
+        ],
+        "content": "",
+        "bbox": [
+            47,
+            250,
+            100,
+            346
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/a349179164806ab91a0a3e743486705e846d705eb478670bb79fdcc6ae99b6ad.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Alfonso\nAbella"
+        ],
+        "content": "",
+        "bbox": [
+            203,
+            250,
+            256,
+            346
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/44a6ec672d0827ffa864f9cc9700d7254f469d42bff26fe4d4d12cf75f4cd3bb.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Nicolas de Bellefonds"
+        ],
+        "content": "",
+        "bbox": [
+            359,
+            250,
+            413,
+            346
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "Europe, Middle East, and South America",
+        "text_level": 2,
+        "bbox": [
+            50,
+            362,
+            378,
+            401
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/5afbb8ff8a59e842d7a25bb7ae9cd999c3ec9036db01a0e5bf84c4a1ab17a84b.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Hrvoje Jenkač"
+        ],
+        "content": "",
+        "bbox": [
+            47,
+            418,
+            100,
+            514
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/d69446d06462c6f5b88c5b4de5ca8fa6813cc127a3e9df012837cb847a316172.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Sebastian\nSchmöger"
+        ],
+        "content": "",
+        "bbox": [
+            47,
+            522,
+            100,
+            616
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/7974af57947523d418f383c247e8c5397876d118b5a9fd28cb40934900680791.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Alexander\nNoßmann"
+        ],
+        "content": "",
+        "bbox": [
+            203,
+            418,
+            256,
+            514
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/9f2e47b9b83328830aa1325512a72a3ca8e20206884279dea31f67eba8b840f9.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Tamsin\nHirson"
+        ],
+        "content": "",
+        "bbox": [
+            203,
+            522,
+            257,
+            616
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/c89b3f732ecd97f9091adb3762b1bc45393686cfd3040f1cb1b37e34f551a85d.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Michael Engels"
+        ],
+        "content": "",
+        "bbox": [
+            359,
+            418,
+            413,
+            514
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/2cef17eb8871ec874b8bfb537379d9d3a44b466d239965690c9c3d88dc6b9082.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Ignacio\nHafner"
+        ],
+        "content": "",
+        "bbox": [
+            359,
+            522,
+            413,
+            618
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/f61fcb9df2932b215275283d1080c4c51c0a17b073a71e0dec87732b360a38fd.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Lukas\nHaider"
+        ],
+        "content": "",
+        "bbox": [
+            47,
+            624,
+            100,
+            718
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/df46a432f2d80ea2f8961a9471d3c1566a255b91541e116cd8d0069309b75850.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            203,
+            624,
+            257,
+            718
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/9255becd63b3edfe8db1210a0bbc9d70bdc2f21f661c3d77dd04676084814b30.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Juan Martin\nMaglione",
+            "Salvatore Cali",
+            "Christoph Schmitt"
+        ],
+        "content": "",
+        "bbox": [
+            47,
+            727,
+            100,
+            822
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/33cd36336be6bbf316afa8ce42ffc8cf606d4612f8a28cf3d79b9b8642a48c87.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            203,
+            727,
+            256,
+            822
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/c792496c5d668dddce418cb9f8c65b52fd4f80d0d8eaf787acb6f98b549895d1.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Yann\nLetourneux"
+        ],
+        "content": "",
+        "bbox": [
+            359,
+            624,
+            413,
+            720
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/0927a03ca557a4d79325c89b5e7cabe317f1f6769630c95e44e0b10e41bb3f92.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Melih\nYener"
+        ],
+        "content": "",
+        "bbox": [
+            47,
+            829,
+            100,
+            924
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/36afc68307f24650fcbaccae2fc407474a033576c09094108df0a28069100b0f.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Guillem\nBorrell"
+        ],
+        "content": "",
+        "bbox": [
+            203,
+            829,
+            257,
+            924
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/e7312a6e0f82114f86fad31643910f91395e70c22915553e20e5346e90fa3544.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Robin\nAnders"
+        ],
+        "content": "",
+        "bbox": [
+            359,
+            725,
+            413,
+            822
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/a60d45a2d11ec9dc18d22ffeef204c96f45e9cb273e5333870f4ea1b461ab4b7.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Carolin\nBimmermann"
+        ],
+        "content": "",
+        "bbox": [
+            359,
+            829,
+            413,
+            924
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/b9fa826880768e7e7e1f30fb0d871d76493b15c297957dc45d4a43844e5a616f.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Olivier\nBouffault"
+        ],
+        "content": "",
+        "bbox": [
+            516,
+            250,
+            570,
+            346
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/1db2b4999ef3983ac90adb435bce87e5a7a0b6722301b4af43b10f6cee4d96ef.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Matthew Marchingo"
+        ],
+        "content": "",
+        "bbox": [
+            672,
+            250,
+            726,
+            346
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "North America",
+        "text_level": 2,
+        "bbox": [
+            518,
+            362,
+            641,
+            400
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/c3e02a356fe5f3773335a9aec07e7dd8f9cba6ea52a9e5bc112c6686e13c7f77.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Simon\nBamberger",
+            "Samir\nKapur"
+        ],
+        "content": "",
+        "bbox": [
+            516,
+            418,
+            570,
+            514
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/10d7df73de066efe8a0fa3a2c8a975ea5419443d35d13b106ce7fe3e2a5f6288.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Luke\nPurcell"
+        ],
+        "content": "",
+        "bbox": [
+            516,
+            522,
+            569,
+            616
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/f7c3c2719d6062e95a01be60761ecc985edc9c65fd285152d0458dc772f05778.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Haytham\nYassine"
+        ],
+        "content": "",
+        "bbox": [
+            672,
+            418,
+            726,
+            514
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/514c8d46a851cdd2293e8b214a2ef6cbb89a4978e7a96c315008b67a7cc542b0.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            672,
+            520,
+            726,
+            616
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/eb3d30bafdee73723ad9ee91859c3fb70dfa460f788e9ced4a9215ad58cf08f1.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Amit Kumar"
+        ],
+        "content": "",
+        "bbox": [
+            516,
+            624,
+            569,
+            718
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/25ccee314a257f5e8346b8320167fef0be1a7c26b654117f9b14e9b29090e9da.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Shervin\nKhodabandeh"
+        ],
+        "content": "",
+        "bbox": [
+            672,
+            624,
+            726,
+            718
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/4fe9231cd5deb9dff834cf3411d413171b4b77eaea09aafac8577fbd8b1f8d40.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Angad\nGrewal"
+        ],
+        "content": "",
+        "bbox": [
+            516,
+            727,
+            569,
+            820
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/dbf1d4074ab7342cdbd37f94ad149d53349bd20415a5378fd78928a7bb5fd734.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Lingqiao Li"
+        ],
+        "content": "",
+        "bbox": [
+            516,
+            825,
+            570,
+            920
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/ebee2cdfce9282f55354d4815923cfa9863ac4c64e9a6cdf60115ef1fdf6d7d1.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Stephen Robnett"
+        ],
+        "content": "",
+        "bbox": [
+            672,
+            727,
+            726,
+            820
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/cc568d1ce0d3377e2da778123dc1b391ab782506bd06a7a906d1fac65b29a6be.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Uche\nMonu"
+        ],
+        "content": "",
+        "bbox": [
+            672,
+            825,
+            726,
+            918
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/2e4692813aaaeeddaef0cdcd6f0b8307c17948b2269187a038ad51828b8e4765.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Alexander\nDuerloo"
+        ],
+        "content": "",
+        "bbox": [
+            829,
+            250,
+            882,
+            346
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "Asia-Pacific",
+        "text_level": 2,
+        "bbox": [
+            830,
+            361,
+            927,
+            400
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/830fb7ae484a526ca0361f52f74bac3600d66a4345a6503e81333e3dd7feb665.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Johannes\nGoltsche"
+        ],
+        "content": "",
+        "bbox": [
+            829,
+            418,
+            882,
+            514
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/1301e286d8675335b6e365423524836880b20067c372ce28217442401f409d6f.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Manish\nChandra"
+        ],
+        "content": "",
+        "bbox": [
+            829,
+            522,
+            882,
+            616
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/62165f19bfac17ebc49f6aa907621527fd7489ad1e3f7aea7f169a967f9275ff.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Tarandeep\nSingh"
+        ],
+        "content": "",
+        "bbox": [
+            829,
+            624,
+            882,
+            720
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/ac650aaa49662f5259e3bf62a346324dd69c667b6670d92b0c9a61f90c753810.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            828,
+            725,
+            915,
+            822
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "aside_text",
+        "text": "Copyright © 2026 by Boston Consulting Group. All rights reserved.",
+        "bbox": [
+            981,
+            581,
+            993,
+            953
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "page_number",
+        "text": "30",
+        "bbox": [
+            947,
+            957,
+            960,
+            977
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "BOG",
+        "text_level": 2,
+        "bbox": [
+            367,
+            394,
+            639,
+            607
+        ],
+        "page_idx": 31
+    }
+]
