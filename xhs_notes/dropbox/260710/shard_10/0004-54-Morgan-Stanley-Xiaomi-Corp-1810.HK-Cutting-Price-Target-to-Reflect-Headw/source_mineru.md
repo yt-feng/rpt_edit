@@ -1,0 +1,462 @@
+Xiaomi Corp | Asia Pacific
+
+# Cutting Price Target to Reflect Headwinds from EV Shipment Weakness and Chipflation
+
+<table><tr><td colspan="3">WHAT&#x27;S CHANGED</td></tr><tr><td>Xiaomi Corp (1810.HK)</td><td>From</td><td>To</td></tr><tr><td>Price Target</td><td>HK$45.00</td><td>HK$32.00</td></tr></table>
+
+We acknowledge that Xiaomi is battling near-term headwinds. However, we maintain our long-term positive view on Xiaomi's 'Human+Car+Home' ecosystem with continuous AI investment. Cut PT to HK\$32 but maintain OW.
+
+## Key Takeaways
+
+Chipflation has made consensus bearish on smartphone shipment and margin;
+
+Softer China EV industry sales made it difficult for Xiaomi to achieve its full-year shipment target;
+
+Cyclical weakness has offered up an attractive entry point.
+
+EV shipment likely to stay at \~180k in 1H26, full-year target difficult to achieve: We estimate Xiaomi's EV shipment at \~100k in 2Q26 and \~180k in 1H26, 33% of its full-year target. Even allowing for product launches in 2H26, we think unlikely that Xiaomi can achieve its full-year shipment target. Thus we cut our EV shipment forecast from 580k to 500k units in 2026 and from 750k to 700k units in 2027.
+
+Victim of chipflation, but AI value fully ignored: Due to significant increases in memory cost, investors are cautious on Xiaomi's smartphone shipment and margin trend in 2026. However, even if we further trim our smartphone shipment, the impact of intrinsic value is limited at only Rmb21bn in our SOTP valuation.
+
+Meanwhile, we believe the market has completely ignored Xiaomi's AI value, which we conservatively value at Rmb32bn. Once the company resumes earnings growth, we believe its AI valuation will lift significantly from the current level.
+
+When to invest: For investors with a 12–18 month horizon, we believe the current level offers an attractive entry point. However, smartphone margin pressure is more likely to materialize in 4Q26, and EV weakness could lead to downward revisions to 2026 shipment targets. For investors with only a 3–6 month horizon, a better entry point may emerge in 3Q–4Q26.
+
+Lowering PT to HK\$32: With a lower EV shipment forecast, we reduce our EV value from Rmb349bn to Rmb121bn. We also cut our internet division's intrinsic value from Rmb283bn to Rmb176bn to reflect concerns of slowing MAU growth due to less smartphone sales, but include a conservative AI intrinsic value estimate of Rmb32bn. Our new PT of HK\$32 implies 22x 2027e P/E and 15x 2028e P/E.
+
+<table><tr><td colspan="2">MS ASIA LIMITED+</td></tr><tr><td colspan="2">Andy Meng, CFA</td></tr><tr><td colspan="2">Equity Analyst</td></tr><tr><td>Andy.Meng@morganstanley.com</td><td>+852 2239-7689</td></tr><tr><td colspan="2">Betty Chen</td></tr><tr><td colspan="2">Research Associate</td></tr><tr><td>Betty.H.Chen@morganstanley.com</td><td>+852 2239-7213</td></tr><tr><td colspan="2">Lillian Lou</td></tr><tr><td colspan="2">Equity Analyst</td></tr><tr><td>Lillian.Lou@morganstanley.com</td><td>+852 2848-6502</td></tr><tr><td colspan="2">Hildy Ling</td></tr><tr><td colspan="2">Equity Analyst</td></tr><tr><td>Hildy.Ling@morganstanley.com</td><td>+852 2239-7834</td></tr><tr><td colspan="2">Gary Yu</td></tr><tr><td colspan="2">Equity Analyst</td></tr><tr><td>Gary.Yu@morganstanley.com</td><td>+852 2848-6918</td></tr></table>
+
+![](images/46121d0989701fa5e6cc5e54b00c06d4429ec32a5e880b73a2cccf82c5c00a06.jpg)
+
+Greater China Technology Hardware | China
+
+<table><tr><td>Stock Rating</td><td>Overweight</td></tr><tr><td>Industry View</td><td>In-Line</td></tr><tr><td>Price target</td><td>HK$32.00</td></tr><tr><td>Up/downside to price target (%)</td><td>26</td></tr><tr><td>Shr price, close (Jul 8, 2026)</td><td>HK$25.30</td></tr><tr><td>52-Week Range</td><td>HK$59.90-21.30</td></tr><tr><td>Sh out, dil, curr (mn)</td><td>26,695</td></tr><tr><td>Mkt cap, curr (mn)</td><td>US$86,114</td></tr><tr><td>Avg daily trading value (mn)</td><td>US$846</td></tr></table>
+
+<table><tr><td>Fiscal Year Ending</td><td>12/25</td><td>12/26e</td><td>12/27e</td><td>12/28e</td></tr><tr><td>EPS (Rmb)**</td><td>1.47</td><td>0.89</td><td>1.27</td><td>1.85</td></tr><tr><td>Prior EPS (Rmb)**</td><td>-</td><td>1.0</td><td>1.3</td><td>2.2</td></tr><tr><td>Revenue, net (Rmb bn)</td><td>457.3</td><td>438.9</td><td>533.8</td><td>646.2</td></tr><tr><td>EBITDA (Rmb bn)</td><td>38.2</td><td>21.6</td><td>36.6</td><td>56.4</td></tr><tr><td>ModelWare net inc (Rmb bn)</td><td>41.6</td><td>16.2</td><td>25.2</td><td>39.6</td></tr><tr><td>P/E</td><td>22.6</td><td>35.7</td><td>23.0</td><td>14.6</td></tr></table>
+
+Unless otherwise noted, all metrics are based on MS ModelWare framework  
+\*\* = Based on consensus methodology  
+e = MS estimates
+
+MS does and seeks to do business with companies covered in MS. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of MS. Investors should consider MS as only a single factor in making their investment decision.
+
+## For analyst certification and other important disclosures, refer to the Disclosure Section, located at the end of this report.
+
++= Analysts employed by non-U.S. affiliates are not registered with FINRA, may not be associated persons of the member and may not be subject to FINRA restrictions on communications with a subject company, public appearances and trading securities held by a research analyst account.
+
+## Lower 2026 forecasts for the EV business
+
+Considering the weaker-than-expected EV market growth in 2026, we are making the following adjustments:
+
+1. Reduce our volume forecast for total EV sales from 580k to 500k for 2026 and from 750k to 700k for 2027; and
+
+2. Trim our vehicle gross margin assumption from 20.1% to 20.0% for 2026 while keeping our 2027 assumption unchanged at 20.0%.
+
+As a result, our forecast for cumulative vehicle gross profit declines from Rmb91.9bn to Rmb85.3bn for 2025-2027E.
+
+Exhibit 1: Our base/bull/bear cases for Xiaomi's Mi EV product roadmap and sales volume forecasts
+
+2024 total volume & mkt share%
+
+![](images/71c801a00d066cf717e94469948038a3da1a7c8f96a9b891b72a63b7ecb1c762.jpg)  
+2025A total volume & mkt share%
+
+![](images/fda43db053b2d1357ae3be2ef0ef0358a915a16e69f5223d8699e09baf313481.jpg)  
+2026E total volume & mkt share%
+
+![](images/60bba40d760887acb6435fd013943c6e9767409b65d15777a6cc60f7702b98b7.jpg)  
+2027E total volume & mkt share% 800k
+
+![](images/cf7b8ff99248311dc8ec1fe3ec67a0a266da9d9f609bdce7e5e634146529d217.jpg)
+
+![](images/e98700a48e297b174266492f863ddd1782d1152419aa7c9b3d986f193bb28f79.jpg)
+
+![](images/ec7405f58b3741fd1db43cbd006c3155948acb799fdaa9d86db88b9df16ee60a.jpg)  
+Second Mi EV
+
+![](images/dfab4b9fcee77d607cfdc431681c71d83f6fe0c615cc3a7c13ed48e35a957da9.jpg)  
+Third Mi EV
+
+![](images/415cefbbe0cb0ca33cf8db294f98114bd322dd6b2a10ae0e379e6c74983e962b.jpg)
+
+![](images/6c76ac4bffb53d67e2146c3387cc0a68d6acddaeecc0aa6eb8dc5311fd35cc89.jpg)  
+Fourth Mi EV
+
+![](images/1433ddec9d6dc97b50c9c35c99c396b3eb016292519f5f88bdcb73bea2fbdf21.jpg)
+
+![](images/a29953c1cfd362ebd18beab8d035f163cbf80dbf2b2b0ac860628f15fd3e7ed5.jpg)  
+Source: Company data, MS (E) estimates. Note: Market share is calculated based on domestic NEV volume.  
+Lower intrinsic value forecasts based on lower EV value: We continue to use a probability-weighted bull-base-bear valuation methodology (Exhibit 2) to value Xiaomi's EV business.
+
+Exhibit 2: Our probability-weighted bull-base-bear valuation of Xiaomi's EV project  
+![](images/319e846712c0e33107319f100d9a74b71578039bad1577e30d526d0df393f070.jpg)  
+Source: MS estimates.
+
+As illustrated in Exhibit 3, we lower our intrinsic value estimates in our base, bull, and bear case scenarios. We assign a higher probability to the bear case (20% vs. 10% previously) and lower probability to the bull case (20% vs. 30%), reflecting a more balanced risk-reward profile. While Xiaomi's long-term EV opportunity remains intact, we believe the recent EV growth slow-down will make investors less likely to grant a higher probability to the bull case, therefore, a more balanced weighting should reflect the latest business developments. Our new weighted intrinsic value estimate is Rmb121bn, which equates to \~24% of Xiaomi's current market cap.
+
+Exhibit 3: We lower our intrinsic value forecasts for Xiaomi's EV business (Rmb bn)
+
+<table><tr><td></td><td colspan="2">Old</td><td colspan="2">New</td><td colspan="2">Change</td></tr><tr><td></td><td>Probability</td><td>Valuation</td><td>Probability</td><td>Valuation</td><td>Probability</td><td>Valuation</td></tr><tr><td>Bear</td><td>10%</td><td>93</td><td>20%</td><td>49</td><td>10%</td><td>-47%</td></tr><tr><td>Base</td><td>60%</td><td>327</td><td>60%</td><td>123</td><td>0%</td><td>-62%</td></tr><tr><td>Bull</td><td>30%</td><td>477</td><td>20%</td><td>187</td><td>-10%</td><td>-61%</td></tr><tr><td>EV value</td><td>100%</td><td>349</td><td>100%</td><td>121</td><td></td><td>-65%</td></tr></table>
+
+Source: MS estimates
+
+## Adjusting Our Earnings Estimates...
+
+We are revising our estimates based on the following key assumption changes:
+
+\- Revenue: For 2026 and 2027, we cut our forecasts by $5\%$ and $7\%$ , respectively, mainly due to the slowdown in smartphone and EV shipments. For smartphone, we cut shipments by $10\%$ in 2026 and $24\%$ in 2027 as we expect the company to raise prices more aggressively to pass through the memory cost. We see limited revenue impact as higher ASP could partially offset the lower volume.
+
+\- Gross margin: We raise our assumptions 0.4ppt for 2026 and 1.3ppt for 2027 to reflect better-than-expected smartphone and AIoT margins in 1Q26.
+
+\- Non-IFRS adjusted net income: Alongside higher-than-expected selling expenses, we cut this by $13\%$ for 2026 and $5\%$ for 2027 to reflect cyclical risks.
+
+Exhibit 4: Xiaomi: Earnings estimate revisions
+
+<table><tr><td rowspan="2">Rmb mn</td><td colspan="3">New</td><td colspan="3">Old</td><td colspan="3">Change</td></tr><tr><td>2026E</td><td>2027E</td><td>2028E</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td colspan="10">Key Financials</td></tr><tr><td>Revenue</td><td>438,947</td><td>533,769</td><td>646,211</td><td>460,928</td><td>572,269</td><td>711,087</td><td>-5%</td><td>-7%</td><td>-9%</td></tr><tr><td>Smartphone</td><td>159,248</td><td>184,279</td><td>229,788</td><td>159,561</td><td>208,403</td><td>217,563</td><td>0%</td><td>-12%</td><td>6%</td></tr><tr><td>IoT &amp; Lifestyles</td><td>113,931</td><td>126,276</td><td>140,039</td><td>115,607</td><td>128,152</td><td>142,140</td><td>-1%</td><td>-1%</td><td>-1%</td></tr><tr><td>Internet Services</td><td>38,963</td><td>44,162</td><td>47,334</td><td>38,963</td><td>44,162</td><td>47,334</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td>EV</td><td>122,500</td><td>175,000</td><td>225,000</td><td>142,492</td><td>187,500</td><td>300,000</td><td>-14%</td><td>-7%</td><td>-25%</td></tr><tr><td>Others</td><td>4,305</td><td>4,051</td><td>4,051</td><td>4,305</td><td>4,051</td><td>4,051</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td>Gross Profit</td><td>90,037</td><td>110,299</td><td>139,302</td><td>92,854</td><td>110,830</td><td>154,391</td><td>-3%</td><td>0%</td><td>-10%</td></tr><tr><td>Operating expenses</td><td>-76,100</td><td>-80,010</td><td>-90,470</td><td>-72,717</td><td>-78,816</td><td>-94,241</td><td>5%</td><td>2%</td><td>-4%</td></tr><tr><td>Selling</td><td>-33,233</td><td>-31,971</td><td>-35,542</td><td>-28,722</td><td>-31,475</td><td>-39,110</td><td>16%</td><td>2%</td><td>-9%</td></tr><tr><td>G&amp;A</td><td>-6,727</td><td>-8,007</td><td>-9,693</td><td>-7,057</td><td>-8,584</td><td>-10,666</td><td>-5%</td><td>-7%</td><td>-9%</td></tr><tr><td>R&amp;D</td><td>-36,139</td><td>-40,033</td><td>-45,235</td><td>-36,939</td><td>-38,757</td><td>-44,465</td><td>-2%</td><td>3%</td><td>2%</td></tr><tr><td>Operating income</td><td>13,938</td><td>30,289</td><td>48,833</td><td>20,136</td><td>32,014</td><td>60,150</td><td>-31%</td><td>-5%</td><td>-19%</td></tr><tr><td>Total non-op</td><td>6,180</td><td>2,000</td><td>2,000</td><td>4,028</td><td>2,000</td><td>2,000</td><td>53%</td><td>0%</td><td>0%</td></tr><tr><td>Net income</td><td>16,246</td><td>25,185</td><td>39,650</td><td>19,483</td><td>26,531</td><td>48,477</td><td>-17%</td><td>-5%</td><td>-18%</td></tr><tr><td>Non-IFRS adj. net income</td><td>23,631</td><td>33,724</td><td>48,835</td><td>27,143</td><td>35,512</td><td>58,343</td><td>-13%</td><td>-5%</td><td>-16%</td></tr><tr><td>Non-IFRS EPS (Rmb)</td><td>0.89</td><td>1.27</td><td>1.85</td><td>1.03</td><td>1.34</td><td>2.21</td><td>-13%</td><td>-5%</td><td>-16%</td></tr><tr><td>MW EPS (IFRS, RMB)</td><td>0.61</td><td>0.95</td><td>1.50</td><td>0.74</td><td>1.00</td><td>1.83</td><td>-17%</td><td>-5%</td><td>-18%</td></tr><tr><td colspan="10">Margins</td></tr><tr><td>Gross Margin %</td><td>20.5%</td><td>20.7%</td><td>21.6%</td><td>20.1%</td><td>19.4%</td><td>21.7%</td><td>0.4%</td><td>1.3%</td><td>-0.2%</td></tr><tr><td>Smartphone</td><td>7.0%</td><td>6.9%</td><td>11.4%</td><td>5.9%</td><td>6.9%</td><td>11.3%</td><td>1.1%</td><td>0.1%</td><td>0.1%</td></tr><tr><td>IoT &amp; Lifestyles</td><td>21.9%</td><td>23.0%</td><td>23.0%</td><td>21.8%</td><td>19.9%</td><td>23.8%</td><td>0.0%</td><td>3.1%</td><td>-0.8%</td></tr><tr><td>Internet Services</td><td>76.7%</td><td>76.7%</td><td>76.8%</td><td>76.7%</td><td>76.7%</td><td>76.8%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>EV</td><td>20.0%</td><td>20.0%</td><td>20.0%</td><td>20.1%</td><td>20.0%</td><td>20.0%</td><td>-0.1%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Others</td><td>-9.9%</td><td>-10.0%</td><td>-10.0%</td><td>-9.9%</td><td>-10.0%</td><td>-10.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Opex %</td><td>17.3%</td><td>15.0%</td><td>14.0%</td><td>15.8%</td><td>13.8%</td><td>13.3%</td><td>1.6%</td><td>1.2%</td><td>0.7%</td></tr><tr><td>Selling %</td><td>7.6%</td><td>6.0%</td><td>5.5%</td><td>6.2%</td><td>5.5%</td><td>5.5%</td><td>1.3%</td><td>0.5%</td><td>0.0%</td></tr><tr><td>G&amp;A %</td><td>1.5%</td><td>1.5%</td><td>1.5%</td><td>1.5%</td><td>1.5%</td><td>1.5%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>R&amp;D %</td><td>8.2%</td><td>7.5%</td><td>7.0%</td><td>8.0%</td><td>6.8%</td><td>6.3%</td><td>0.2%</td><td>0.7%</td><td>0.7%</td></tr><tr><td>Adj. Net margin %</td><td>5.4%</td><td>6.3%</td><td>7.6%</td><td>5.9%</td><td>6.2%</td><td>8.2%</td><td>-0.5%</td><td>0.1%</td><td>-0.6%</td></tr><tr><td colspan="10">Key Operating Metrics</td></tr><tr><td>Smartphone shipment (mn units)</td><td>109.9</td><td>120.3</td><td>149.1</td><td>122.6</td><td>157.4</td><td>161.8</td><td>-10%</td><td>-24%</td><td>-8%</td></tr><tr><td>MIUI MAU (mn)</td><td>754</td><td>778</td><td>802</td><td>754</td><td>778</td><td>802</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td>Domestic</td><td>197</td><td>201</td><td>205</td><td>197</td><td>201</td><td>205</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td>Overseas</td><td>556</td><td>576</td><td>596</td><td>556</td><td>576</td><td>596</td><td>0%</td><td>0%</td><td>0%</td></tr></table>
+
+Source: MS (E) estimates
+
+## ...and Price Target
+
+We continue to derive our price target (which is also our base case value) from a sum-of-the-parts (SOTP) methodology to capture the different growth profiles of Xiaomi's business segments. We use a residual income (RI) model for three of the businesses. Our key assumptions are unchanged. We apply a CoE of 11% to the smartphone business, 11% to IoT, and 11.4% to Internet Services, with terminal growth rates of 3%, 3%, and 6%, respectively.
+
+For the EV division's intrinsic value, we apply a DCF valuation (Exhibit 7). We reduce our volume forecasts for total EV sales from 580k to 500k for 2026, and from 750k to 700k for 2027. Our EV gross margin assumption also declines from $20.1\%$ to $20.0\%$ for 2026 and is unchanged at $20.0\%$ for 2027. Other assumptions are unchanged. We continue to apply a WACC of $12.2\%$ to the EV business with a terminal growth rate of $5\%$ . Our base case valuation details are shown in Exhibit 5. We also continue to apply a probability-weighted bull-base-bear valuation methodology to value Xiaomi's EV business ( $20\%$ bull, $60\%$ base, $20\%$ bear), which results in an intrinsic value of Rmb121bn (Exhibit 21).
+
+As a result, our price target moves down to HK\$32 from HK\$45 after reflecting the negative impact from an EV slowdown. Our bull case value is adjusted to HK\$50 from HK \$65, and bear case value shifts to HK\$15 from HK\$25.
+
+Exhibit 5: Xiaomi EV DCF Valuation: base case
+
+<table><tr><td>Rmb mn</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2030E</td><td>2031E</td><td>2032E</td><td>2033E</td><td>2034E</td><td>2035E</td><td>2036E</td></tr><tr><td colspan="12">Vehicle valuation</td></tr><tr><td>Vehicle revenue</td><td>122,500</td><td>175,000</td><td>225,000</td><td>294,970</td><td>352,207</td><td>374,852</td><td>398,282</td><td>422,504</td><td>447,525</td><td>471,504</td><td>496,104</td></tr><tr><td>YoY%</td><td>16%</td><td>43%</td><td>29%</td><td>31%</td><td>19%</td><td>6%</td><td>6%</td><td>6%</td><td>6%</td><td>5%</td><td>5%</td></tr><tr><td>EBIT</td><td>-1,595</td><td>3,110</td><td>10,780</td><td>21,573</td><td>24,806</td><td>25,678</td><td>25,316</td><td>24,820</td><td>26,355</td><td>23,933</td><td>21,013</td></tr><tr><td>EBIT margin - vehicle %</td><td>-1%</td><td>2%</td><td>5%</td><td>7%</td><td>7%</td><td>7%</td><td>6%</td><td>6%</td><td>6%</td><td>5%</td><td>4%</td></tr><tr><td></td><td>-1%</td><td>2%</td><td>5%</td><td>7%</td><td>7%</td><td>7%</td><td>6%</td><td>6%</td><td>6%</td><td>5%</td><td>4%</td></tr><tr><td>Net profit</td><td>-1,356</td><td>2,644</td><td>9,163</td><td>18,337</td><td>19,845</td><td>20,543</td><td>20,252</td><td>19,856</td><td>21,084</td><td>19,147</td><td>16,810</td></tr><tr><td>Net margin - vehicle %</td><td>-1.1%</td><td>1.5%</td><td>4.1%</td><td>6.2%</td><td>5.6%</td><td>5.5%</td><td>5.1%</td><td>4.7%</td><td>4.7%</td><td>4.1%</td><td>3.4%</td></tr><tr><td>Terminal value</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>213,786</td></tr><tr><td>Discount factor</td><td>0.89</td><td>0.79</td><td>0.71</td><td>0.63</td><td>0.56</td><td>0.50</td><td>0.45</td><td>0.40</td><td>0.35</td><td>0.32</td><td>0.28</td></tr><tr><td>Enterprise value</td><td>119,478</td><td>140,847</td><td>163,284</td><td>180,417</td><td>191,141</td><td>199,606</td><td>203,991</td><td>208,905</td><td>214,897</td><td>220,305</td><td>228,487</td></tr><tr><td>Total Equity Value</td><td>119,478</td><td>140,847</td><td>163,284</td><td>180,417</td><td>191,141</td><td>199,606</td><td>203,991</td><td>208,905</td><td>214,897</td><td>220,305</td><td>228,487</td></tr><tr><td colspan="12">Software valuation</td></tr><tr><td>Software revenue</td><td>10</td><td>26</td><td>52</td><td>93</td><td>250</td><td>473</td><td>763</td><td>1,119</td><td>1,282</td><td>1,449</td><td>1,620</td></tr><tr><td>YoY%</td><td></td><td>149%</td><td>100%</td><td>79%</td><td>170%</td><td>89%</td><td>61%</td><td>47%</td><td>15%</td><td>13%</td><td>12%</td></tr><tr><td>Unlevered Free Cash Flow</td><td>3</td><td>8</td><td>19</td><td>34</td><td>82</td><td>159</td><td>261</td><td>388</td><td>461</td><td>527</td><td>594</td></tr><tr><td>% Margin</td><td>28.5%</td><td>32.7%</td><td>36.1%</td><td>36.4%</td><td>32.8%</td><td>33.6%</td><td>34.2%</td><td>34.7%</td><td>36.0%</td><td>36.3%</td><td>36.7%</td></tr><tr><td>Terminal value</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>8,643</td></tr><tr><td>Discount factor</td><td>0.89</td><td>0.79</td><td>0.71</td><td>0.63</td><td>0.56</td><td>0.50</td><td>0.45</td><td>0.40</td><td>0.35</td><td>0.32</td><td>0.28</td></tr><tr><td>Enterprise value</td><td>3,781</td><td>4,239</td><td>4,748</td><td>5,307</td><td>5,918</td><td>6,549</td><td>7,171</td><td>7,754</td><td>8,266</td><td>8,759</td><td>9,238</td></tr><tr><td>Total Equity Value</td><td>3,781</td><td>4,239</td><td>4,748</td><td>5,307</td><td>5,918</td><td>6,549</td><td>7,171</td><td>7,754</td><td>8,266</td><td>8,759</td><td>9,238</td></tr><tr><td colspan="12">DCF Valuation</td></tr><tr><td>Vehicle Equity Value</td><td>119,478</td><td>140,847</td><td>163,284</td><td>180,417</td><td>191,141</td><td>199,606</td><td>203,991</td><td>208,905</td><td>214,897</td><td>220,305</td><td>228,487</td></tr><tr><td>Software Equity Value</td><td>3,781</td><td>4,239</td><td>4,748</td><td>5,307</td><td>5,918</td><td>6,549</td><td>7,171</td><td>7,754</td><td>8,266</td><td>8,759</td><td>9,238</td></tr><tr><td>Total Equity Value</td><td>123,259</td><td>145,086</td><td>168,032</td><td>185,724</td><td>197,059</td><td>206,155</td><td>211,162</td><td>216,659</td><td>223,163</td><td>229,063</td><td>237,724</td></tr></table>
+
+Source: Company data, MS (E) estimates
+
+Exhibit 6: Xiaomi: Residual income valuation for smartphone, IoT and Internet Service businesses; probability-weighted DCF model for EV business
+
+<table><tr><td colspan="12">Residual Income Valuation</td></tr><tr><td>Rmb mn</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2030E</td><td>2031E</td><td>2032E</td><td>2033E</td><td>2034E</td><td>2035E</td><td>2036E</td></tr><tr><td colspan="12">Smartphone</td></tr><tr><td>Total equity</td><td>115,518</td><td>125,751</td><td>149,757</td><td>150,474</td><td>151,219</td><td>151,995</td><td>152,801</td><td>153,632</td><td>154,487</td><td>155,369</td><td>156,276</td></tr><tr><td>Net profit</td><td>(5,098)</td><td>(5,581)</td><td>7,114</td><td>7,169</td><td>7,456</td><td>7,754</td><td>8,065</td><td>8,307</td><td>8,556</td><td>8,812</td><td>9,077</td></tr><tr><td>ROE %</td><td>-4%</td><td>-5%</td><td>6%</td><td>5%</td><td>5%</td><td>5%</td><td>5%</td><td>5%</td><td>6%</td><td>6%</td><td>6%</td></tr><tr><td>Residual income</td><td>(17,658)</td><td>(18,288)</td><td>(6,719)</td><td>(9,304)</td><td>(9,096)</td><td>(8,880)</td><td>(8,655)</td><td>(8,502)</td><td>(8,344)</td><td>(8,181)</td><td>(8,014)</td></tr><tr><td>Terminal value</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>(103,178)</td></tr><tr><td>Equity value</td><td>20,824</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan="12">IoT</td></tr><tr><td>Total equity</td><td>82,645</td><td>86,170</td><td>91,266</td><td>94,076</td><td>97,224</td><td>100,750</td><td>104,698</td><td>109,121</td><td>114,074</td><td>119,572</td><td>125,620</td></tr><tr><td>Net profit</td><td>13,293</td><td>16,450</td><td>20,623</td><td>18,737</td><td>20,986</td><td>23,504</td><td>26,324</td><td>29,483</td><td>33,021</td><td>36,654</td><td>40,319</td></tr><tr><td>ROE %</td><td>18%</td><td>20%</td><td>24%</td><td>21%</td><td>22%</td><td>24%</td><td>26%</td><td>28%</td><td>30%</td><td>32%</td><td>34%</td></tr><tr><td>Residual income</td><td>4,993</td><td>7,359</td><td>11,144</td><td>8,698</td><td>10,637</td><td>12,809</td><td>15,242</td><td>17,966</td><td>21,018</td><td>24,105</td><td>27,166</td></tr><tr><td>Terminal value</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>349,763</td></tr><tr><td>Equity value</td><td>287,384</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan="12">Internet service</td></tr><tr><td>Total equity</td><td>84,406</td><td>95,833</td><td>106,382</td><td>117,458</td><td>128,978</td><td>141,610</td><td>154,622</td><td>168,024</td><td>181,828</td><td>195,770</td><td>209,712</td></tr><tr><td>Net profit</td><td>15,436</td><td>22,854</td><td>21,098</td><td>22,153</td><td>23,039</td><td>25,265</td><td>26,023</td><td>26,804</td><td>27,608</td><td>27,884</td><td>27,884</td></tr><tr><td>ROE %</td><td>20%</td><td>27%</td><td>22%</td><td>21%</td><td>20%</td><td>20%</td><td>18%</td><td>17%</td><td>16%</td><td>15%</td><td>14%</td></tr><tr><td>Residual income</td><td>6,674</td><td>13,211</td><td>10,149</td><td>9,999</td><td>9,619</td><td>10,530</td><td>9,844</td><td>9,138</td><td>8,411</td><td>7,110</td><td>5,517</td></tr><tr><td>Terminal value</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>102,814</td></tr><tr><td>Equity value</td><td>176,412</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan="12">EV</td></tr><tr><td>Equity Value</td><td>121,225</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan="12">Xiaomi&#x27;s Al Investment</td></tr><tr><td>Equity Value</td><td>32,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan="12">Xiaomi&#x27;s External Investment</td></tr><tr><td>Fair value of investment</td><td>87,100</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan="12">Aggregate Valuation</td></tr><tr><td>Total equity value</td><td>724,945</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td># of shares</td><td>25,774</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Per share price (RMB)</td><td>28.1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Per share price (HKD)</td><td>32.0</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Implied P/E (x)</td><td>22.1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Implied P/B (x)</td><td>2.4</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+Source: Company data, MS (E) estimates
+
+Exhibit 7: Our framework to assess the intrinsic value of Xiaomi's EV project  
+![](images/bf87db214b2841bd414591efb38772d4ea2a2f7ebc9eb695163637d3f666203e.jpg)  
+Source: MS
+
+Exhibit 8: Changes of valuation by segment
+
+<table><tr><td>Rmb bn</td><td>New</td><td>Old</td><td>Pct. Of Change</td></tr><tr><td>Smartphone</td><td>21</td><td>20</td><td>2%</td></tr><tr><td>AIoT</td><td>287</td><td>299</td><td>-4%</td></tr><tr><td>Internet services</td><td>176</td><td>283</td><td>-38%</td></tr><tr><td>EV</td><td>121</td><td>349</td><td>-65%</td></tr><tr><td>AI investment</td><td>32</td><td>-</td><td>NM</td></tr><tr><td>External investment</td><td>87</td><td>69</td><td>26%</td></tr><tr><td>Total Equity Value</td><td>725</td><td>1,020</td><td>-29%</td></tr></table>
+
+Source: Company data, MS (E) estimates
+
+## Financial Summary
+
+Exhibit 9: Xiaomi: Financial Summary
+
+Xiaomi Corp (1810.HK) Financial Summary
+
+<table><tr><td>Rmb mn</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td>Net Sales</td><td>457,287</td><td>438,947</td><td>533,769</td><td>646,211</td></tr><tr><td>COGS</td><td>(355,481)</td><td>(348,910)</td><td>(423,469)</td><td>(506,908)</td></tr><tr><td>Gross Profit</td><td>101,806</td><td>90,037</td><td>110,299</td><td>139,302</td></tr><tr><td>Selling</td><td>(33,214)</td><td>(33,233)</td><td>(31,971)</td><td>(35,542)</td></tr><tr><td>G&amp;A</td><td>(6,653)</td><td>(6,727)</td><td>(8,007)</td><td>(9,693)</td></tr><tr><td>R&amp;D</td><td>(33,132)</td><td>(36,139)</td><td>(40,033)</td><td>(45,235)</td></tr><tr><td>Operating Income</td><td>28,806</td><td>13,938</td><td>30,289</td><td>48,833</td></tr><tr><td>Finance costs, net</td><td>1,746</td><td>1,616</td><td>2,000</td><td>2,000</td></tr><tr><td>Investment income</td><td>13,638</td><td>1,992</td><td>-</td><td>-</td></tr><tr><td>Others</td><td>5,457</td><td>2,572</td><td>-</td><td>-</td></tr><tr><td>Pre-tax Income</td><td>49,647</td><td>20,117</td><td>32,289</td><td>50,833</td></tr><tr><td>Income Tax</td><td>(8,081)</td><td>(3,872)</td><td>(7,104)</td><td>(11,183)</td></tr><tr><td>Profit for the year</td><td>41,566</td><td>16,246</td><td>25,185</td><td>39,650</td></tr><tr><td>Minority interests</td><td>(77)</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Net Income</td><td>41,489</td><td>16,246</td><td>25,185</td><td>39,650</td></tr><tr><td>Non-IFRS Net Income</td><td>39,166</td><td>23,631</td><td>33,724</td><td>48,835</td></tr><tr><td>EPS (non-IFRS, RMB)</td><td>1.47</td><td>0.89</td><td>1.27</td><td>1.85</td></tr><tr><td>MW EPS (IFRS, RMB)</td><td>1.56</td><td>0.61</td><td>0.95</td><td>1.50</td></tr><tr><td>EBITDA</td><td>32,739</td><td>19,070</td><td>36,622</td><td>56,366</td></tr></table>
+
+<table><tr><td>Balance Sheet</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td>CCE</td><td>31,493</td><td>29,496</td><td>37,898</td><td>58,599</td></tr><tr><td>Inventory</td><td>80,989</td><td>83,467</td><td>106,368</td><td>133,693</td></tr><tr><td>Trade receivables</td><td>15,240</td><td>16,092</td><td>21,524</td><td>28,665</td></tr><tr><td>Other current assets</td><td>127,088</td><td>127,088</td><td>127,088</td><td>127,088</td></tr><tr><td>Total current assets</td><td>254,811</td><td>256,143</td><td>292,880</td><td>348,046</td></tr><tr><td>Net PPE</td><td>27,950</td><td>40,818</td><td>52,485</td><td>62,952</td></tr><tr><td>Other non-current assets</td><td>225,335</td><td>225,335</td><td>225,335</td><td>225,335</td></tr><tr><td>Total non-current assets</td><td>253,285</td><td>266,152</td><td>277,820</td><td>288,287</td></tr><tr><td>Trade payables</td><td>110,699</td><td>108,653</td><td>131,872</td><td>157,855</td></tr><tr><td>Borrowings - short term</td><td>13,202</td><td>13,202</td><td>13,202</td><td>13,202</td></tr><tr><td>Other current liabilities</td><td>68,504</td><td>68,504</td><td>68,504</td><td>68,504</td></tr><tr><td>Total current liabilities</td><td>192,405</td><td>190,359</td><td>213,578</td><td>239,561</td></tr><tr><td>Borrowings - long term</td><td>22,921</td><td>22,921</td><td>22,921</td><td>22,921</td></tr><tr><td>Other non-current liabilities</td><td>26,446</td><td>26,446</td><td>26,446</td><td>26,446</td></tr><tr><td>Total non-current liabilities</td><td>49,367</td><td>49,367</td><td>49,367</td><td>49,367</td></tr><tr><td>Net Assets</td><td>266,323</td><td>282,569</td><td>307,755</td><td>347,404</td></tr><tr><td>Paid-in capital</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Capital reserves</td><td>266,218</td><td>282,464</td><td>307,649</td><td>347,299</td></tr><tr><td>Minority interests</td><td>105</td><td>105</td><td>105</td><td>105</td></tr><tr><td>Total shareholder&#x27;s equity</td><td>266,323</td><td>282,569</td><td>307,755</td><td>347,404</td></tr></table>
+
+<table><tr><td>Total shareholder&#x27;s equity</td><td>266,323</td><td>282,569</td><td>307,755</td><td>347,404</td></tr><tr><td>Cash Flow Statement</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td>Cash flow from operations</td><td>34,142</td><td>16,003</td><td>26,402</td><td>38,701</td></tr><tr><td>Net income</td><td>41,489</td><td>16,246</td><td>25,185</td><td>39,650</td></tr><tr><td>Depreciation</td><td>3,933</td><td>5,133</td><td>6,333</td><td>7,533</td></tr><tr><td>Change in working capital</td><td>(6,712)</td><td>(5,375)</td><td>(5,116)</td><td>(8,481)</td></tr><tr><td>Others</td><td>(4,568)</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Cash flow from investing</td><td>(71,679)</td><td>(18,000)</td><td>(18,000)</td><td>(18,000)</td></tr><tr><td>Capex</td><td>(18,157)</td><td>(18,000)</td><td>(18,000)</td><td>(18,000)</td></tr><tr><td>Others</td><td>(53,522)</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Cash flow from financing</td><td>30,766</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Net borrowings</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Dividend paid</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Proceeds from new issues</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Others</td><td>30,766</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Changes in cash</td><td>(6,747)</td><td>(1,997)</td><td>8,402</td><td>20,701</td></tr></table>
+
+Source: Company data, MS estimates
+
+<table><tr><td>Ratio Analysis</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td colspan="5">Growth %</td></tr><tr><td>Net Sales</td><td>25%</td><td>-4%</td><td>22%</td><td>21%</td></tr><tr><td>Gross Profit</td><td>33%</td><td>-12%</td><td>23%</td><td>26%</td></tr><tr><td>EBIT</td><td>34%</td><td>-52%</td><td>117%</td><td>61%</td></tr><tr><td>EBITDA</td><td>35%</td><td>-42%</td><td>92%</td><td>54%</td></tr><tr><td>Pre-tax Income</td><td>77%</td><td>-59%</td><td>61%</td><td>57%</td></tr><tr><td>Net Income (Non-IFRS)</td><td>44%</td><td>-40%</td><td>43%</td><td>45%</td></tr><tr><td colspan="5">Margins %</td></tr><tr><td>Gross Margin</td><td>22.3%</td><td>20.5%</td><td>20.7%</td><td>21.6%</td></tr><tr><td>EBIT Margin</td><td>6.3%</td><td>3.2%</td><td>5.7%</td><td>7.6%</td></tr><tr><td>EBITDA Margin</td><td>7.2%</td><td>4.3%</td><td>6.9%</td><td>8.7%</td></tr><tr><td>Net Profit Margin</td><td>8.6%</td><td>5.4%</td><td>6.3%</td><td>7.6%</td></tr><tr><td colspan="5">Retrun %</td></tr><tr><td>ROE</td><td>18%</td><td>6%</td><td>9%</td><td>12%</td></tr><tr><td>ROA</td><td>8%</td><td>3%</td><td>4%</td><td>6%</td></tr><tr><td colspan="5">Gearing %</td></tr><tr><td>Net Debt/Equity</td><td>3%</td><td>4%</td><td>1%</td><td>-5%</td></tr><tr><td>Liabilities/Equity</td><td>91%</td><td>85%</td><td>85%</td><td>83%</td></tr><tr><td>Segment Analysis</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td colspan="5">Revenue</td></tr><tr><td>Smartphone</td><td>186,440</td><td>159,248</td><td>184,279</td><td>229,788</td></tr><tr><td>IoT</td><td>123,200</td><td>113,931</td><td>126,276</td><td>140,039</td></tr><tr><td>Internet Services</td><td>37,440</td><td>38,963</td><td>44,162</td><td>47,334</td></tr><tr><td>Others</td><td>4,137</td><td>4,305</td><td>4,051</td><td>4,051</td></tr><tr><td colspan="5">Revenue YoY%</td></tr><tr><td>Smartphone</td><td>-3%</td><td>-15%</td><td>16%</td><td>25%</td></tr><tr><td>IoT</td><td>18%</td><td>-8%</td><td>11%</td><td>11%</td></tr><tr><td>Internet Services</td><td>10%</td><td>4%</td><td>13%</td><td>7%</td></tr><tr><td>Others</td><td>30%</td><td>4%</td><td>-6%</td><td>0%</td></tr><tr><td colspan="5">Gross Profit</td></tr><tr><td>Smartphone</td><td>20,266</td><td>11,154</td><td>12,797</td><td>26,125</td></tr><tr><td>IoT</td><td>28,423</td><td>24,920</td><td>29,044</td><td>32,209</td></tr><tr><td>Internet Services</td><td>28,640</td><td>29,890</td><td>33,864</td><td>36,374</td></tr><tr><td>Others</td><td>(1,287)</td><td>(427)</td><td>(405)</td><td>(405)</td></tr><tr><td colspan="5">Gross Margin</td></tr><tr><td>Smartphone</td><td>10.9%</td><td>7.0%</td><td>6.9%</td><td>11.4%</td></tr><tr><td>IoT</td><td>23.1%</td><td>21.9%</td><td>23.0%</td><td>23.0%</td></tr><tr><td>Internet Services</td><td>76.5%</td><td>76.7%</td><td>76.7%</td><td>76.8%</td></tr><tr><td>Others</td><td>-31.1%</td><td>-9.9%</td><td>-10.0%</td><td>-10.0%</td></tr><tr><td colspan="5">Smartphone Shipment</td></tr><tr><td>China</td><td>44</td><td>29</td><td>32</td><td>38</td></tr><tr><td>India</td><td>20</td><td>13</td><td>15</td><td>18</td></tr><tr><td>EMEA</td><td>60</td><td>38</td><td>40</td><td>52</td></tr><tr><td>Others</td><td>42</td><td>30</td><td>33</td><td>41</td></tr><tr><td>Blended ASP (Rmb)</td><td>1,128</td><td>1,449</td><td>1,531</td><td>1,541</td></tr><tr><td>MIUI MAUs</td><td>754</td><td>754</td><td>778</td><td>802</td></tr><tr><td>China</td><td>190</td><td>197</td><td>201</td><td>205</td></tr><tr><td>Oversea</td><td>564</td><td>556</td><td>576</td><td>596</td></tr><tr><td>Valuation</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td>P/E</td><td>13.0</td><td>21.3</td><td>14.9</td><td>10.3</td></tr><tr><td>P/B</td><td>1.8</td><td>1.7</td><td>1.5</td><td>1.4</td></tr><tr><td>P/S</td><td>1.0</td><td>1.1</td><td>0.9</td><td>0.7</td></tr><tr><td>EV/EBITDA</td><td>13.8</td><td>23.8</td><td>12.4</td><td>8.0</td></tr></table>
+
+## Risk Reward – Xiaomi Corp (1810.HK) Top Pick
+
+Key Beneficiary of AI Home Appliance Market; Top Pick
+
+## PRICE TARGET HK\$32.00
+
+Base case, sum of the parts.
+
+\- Residual income (RI) model for three of the units. We apply a CoE of $11\%$ to the smartphone business, $11\%$ to IoT, and $11.4\%$ to Internet Services, with terminal growth rates of $3\%$ , $3\%$ , and $6\%$ , respectively.
+
+\- EV business: DCF, probability-weighted $20\%$ bull, $60\%$ base, $20\%$ bear to reflect likely success for the EV business. WACC $12.2\%$ , terminal growth rate $5\%$ .
+
+• We add the value of investments.
+
+Consensus Price Target Distribution
+
+Source: Refinitiv, MS
+
+![](images/0745f0151838a4b6a4fd1dcbb926b57173244ce46ef02a4556b1835dced4abaf.jpg)
+
+## RISK REWARD CHART AND OPTIONS IMPLIED PROBABILITIES (12M)
+
+![](images/6306180ad2d75b33d261427f30011a6d9fbfac0281bc3c2070d0c72d8e9b47a6.jpg)  
+Key: — Historical Stock Performance ● Current Stock Price ◆ Price Target
+
+## OVERWEIGHT THESIS
+
+Source: Refinitiv, MS, MS Institutional Equities Division. The probabilities of our Bull, Base, and Bear case scenarios playing out were estimated with implied volatility data from the options market as of 8 Jul 2026. All figures are approximate risk-neutral probabilities of the stock reaching beyond the scenario price in either three-months' or one-years' time. View explanation of Options Probabilities methodology here
+
+■ With innovative product launches and better product mix, we believe Xiaomi is well positioned to capitalize on the evolution of the AI-enabled home appliance market.
+
+■ After the recent share price correction, we believe most cyclical risks are largely priced in. This brings a good investment opportunity on a 12- to 18-month horizon. Our SOTP valuation implies attractive risk-reward.
+
+We think Xiaomi's unique "Human + Car + Home" model and diversified revenue exposure will make it more competitive than peers.
+
+## Consensus Rating Distribution
+
+![](images/055946b89bc3b78255d9fa20d25f1c58e2c3aad6f8bf875ee211c19d3b2b6487.jpg)  
+Source: Refinitiv, MS
+
+## Risk Reward Themes
+
+Disruption: Positive Electric Vehicles: Positive
+
+View descriptions of Risk Rewards Themes here
+
+## BULL CASE
+
+HK\$50.00
+
+## 35x 2027e base case non-IFRS EPS
+
+Smaller-than-expected memory price hikes with rapid market share gain for premium smartphones: Smaller-than-expected memory price hikes would be a positive for smartphone gross margin. Rapid market share gains in premium smartphones might not only lift near-term revenue and earnings but also boost long-term revenue and margin expectations. Also, faster-than-expected overseas AIoT growth and better-than-expected new EV model performance could bring further upside.
+
+## BASE CASE
+
+HK\$32.00
+
+## 22x 2027e base case non-IFRS EPS
+
+Smartphone headwinds still on, new EV launch a potential catalyst in 2H26: With surging memory cost, smartphone headwinds are still there and investors are monitoring the smartphone margin trend to gauge the inflection point. We expect the new EV launching in 2H26 to become a catalyst while AloT revenue is also likely to regain positive momentum in 2H26.
+
+## BEAR CASE
+
+HK\$15.00
+
+## 10x 2027e base case non-IFRS EPS
+
+Rising geopolitical tension, weaker-than-expected new EV performance: Rising geopolitical tensions could result in key component supply issue or sales performance in overseas countries. Meanwhile, new EV launching in 2H26 is not well received by the end market. If so, it could have a negative impact on earnings, valuation, and stock performance.
+
+## Risk Reward – Xiaomi Corp (1810.HK)
+
+## KEY EARNINGS INPUTS
+
+<table><tr><td>Drivers</td><td>2025</td><td>2026e</td><td>2027e</td><td>2028e</td></tr><tr><td>Smartphone volume YoY (%)</td><td>(1.9)</td><td>(33.5)</td><td>9.5</td><td>23.9</td></tr><tr><td>Smartphone ASP YoY (%)</td><td>(0.9)</td><td>28.4</td><td>5.7</td><td>0.6</td></tr><tr><td>MIUI MAU (mn) (Rmb, mn)</td><td>754</td><td>754</td><td>778</td><td>802</td></tr></table>
+
+## INVESTMENT DRIVERS
+
+• Smartphone margin trend and memory cost
+
+\- Penetration of midrange to high-end smartphone market to lift ASP and Internet service ARPU
+
+\- Increase in MIUI ARPU
+
+• EV shipments and customer satisfaction
+
+## GLOBAL REVENUE EXPOSURE
+
+![](images/45360d59fd5c8335d0b9d0227f6da98897752b255372124928abd607188c3577.jpg)  
+Source: MS Estimate View explanation of regional hierarchies here  
+- Better-than-expected orders and customer feedback for the new EV model  
+- Good ramp-up for offline expansion in China with strong volume contribution  
+• Higher share gain in overseas markets
+
+## MS ALPHA MODELS
+
+## 3/5 MOST 3 Month Horizon
+
+Source: Refinitiv, FactSet, MS; 1 is the highest favored Quintile and 5 is the least favored Quintile
+
+## RISKS TO PT/RATING
+
+## RISKS TO UPSIDE
+
+## RISKS TO DOWNSIDE
+
+## OWNERSHIP POSITIONING
+
+<table><tr><td>Inst. Owners, % Active</td><td>42.6%</td></tr></table>
+
+Source: Refinitiv, MS
+
+- Continued fierce EV competition  
+- Smartphone gross margin pressure from inventory de-stocking and weak demand  
+- More concerns about smart EV investment, which could exert pressure  
+MS ESTIMATES VS. CONSENSUS  
+FY Dec 2026e  
+![](images/8d2c621b70899aa4b029dfdefe9f0e0ef745ff27a9fc632bd6612de376b4ffda.jpg)
+
+![](images/707c42c4bb6e45779bd508f2965fe5bb34289005bc23fd6150be831467fe2eba.jpg)
+
+![](images/d736623c67b569555d003cad8dc3746a3174de347b9e93cf4027ffb9d8b36ef8.jpg)
+
+![](images/ad16f81d5754a8885a03868f3ed828026b0a2f011d6f35d032af1d7ab8edf5b0.jpg)
+
+![](images/619e23f5cd256ed926e9591ec9c7294cdf467d6ef57d48eb3856a987ecb0d6c7.jpg)  
+◆ Mean ◆ MS Estimates  
+Source: Refinitiv, MS
+
+## Risk Reward Reference links
+
+1. View explanation of Options Probabilities methodology -
+
+Options\_Probabilities\_Exhibit\_Link.pdf
+
+2. View descriptions of Risk Rewards Themes - RR\_Themes\_Exhibit\_Link.pdf
+
+3. View explanation of regional hierarchies - GEG\_Exhibit\_Link.pdf
+
+4. View explanation of Theme/Exposure methodology -
+
+ESG\_Sustainable\_Solutions\_External\_Link.pdf
+
+5. View explanation of HERS methodology - ESG\_HERS\_External\_Link.pdf
+
+## Disclosure Section
+
+The information and opinions in MS were prepared or are disseminated by MS Asia Limited (which accepts the responsibility for its contents) and/or MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS), and/or MS Taiwan Limited and/or MS & Co International plc, Seoul Branch, and/or MS Australia Limited (A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents), and/or MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents), and/or MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India ("SEBI") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com which accepts the responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS, and their affiliates (collectively, "MS"). MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts.
+
+For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA.
+
+For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA.
+
+## Analyst Certification
+
+The following analysts hereby certify that their views about the companies and their securities discussed in this report are accurately expressed and that they have not received and will not receive direct or indirect compensation in exchange for expressing specific recommendations or views in this report: Hildy Ling; Lillian Lou; Andy Meng, CFA; Gary Yu.
+
+## Global Research Conflict Management Policy
+
+MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br
+
+## Important Regulatory Disclosures on Subject Companies
+
+As of June 30, 2026, MS beneficially owned 1% or more of a class of common equity securities of the following companies covered in MS: AAC Technologies Holdings, Accton Technology Corporation, AirTAC International, AU Optronics, Auras Technology Co Ltd, Bizlink, BOE Technology, Catcher Technology, Chenbro, Chroma Ate Inc., Compal Electronics, Delta Electronics Inc., E Ink Holdings Inc., Eoptolink Technology Inc Ltd, Fositek Corp, Genius Electronic Optical Co. Ltd., Giga-Byte Technology Co. Ltd., Gold Circuit Electronics Ltd., Hiwin Technologies Corp., Innolux, LandMark Optoelectronics Corporation, Largan Precision, Lingyi Itech Guangdong Co, Lite-On Technology, Lotes Co. Ltd., Nan Ya PCB, Radiant Opto-Electronics Corporation, Sunny Optical, Suzhou TFC Optical Communication Co Ltd., TCL Corp., Unimicron, Visual Photonics Epitaxy Co Ltd, Wistron Corporation, Wiwynn Corp, Xiaomi Corp, Yageo Corp., Zhejiang Crystal-Optech Co Ltd, Zhen Ding, Zhongji Innolight Co Ltd, ZTE Corporation.
+
+Within the last 12 months, MS managed or co-managed a public offering (or 144A offering) of securities of Unimicron, Wistron Corporation, Wiwynn Corp, Zhen Ding.
+
+Within the last 12 months, MS has received compensation for investment banking services from Lenovo, Wistron Corporation, Wiwynn Corp, Xiaomi Corp, Yageo Corp., Zhen Ding. In the next 3 months, MS expects to receive or intends to seek compensation for investment banking services from AAC Technologies Holdings, Accton Technology Corporation, Acer Inc., Advantech, AirTAC International, Asia Vital Components Co. Ltd., Asustek Computer Inc., AU Optronics, Bizlink, Catcher Technology, Chenbro, Compal Electronics, Delta Electronics Inc., E Ink Holdings Inc., Ennostar Inc, Eoptolink Technology Inc Ltd, FIT Hon Teng Ltd, Giga-Byte Technology Co. Ltd., GoerTek Inc, Gold Circuit Electronics Ltd., Hon Hai Precision, Innolux, Lenovo, Lens Technology, Lingyi Itech Guangdong Co, Lite-On Technology, Luxshare Precision Industry Co., Ltd., Pegatron Corporation, Q Technology (Group) Company Ltd, Quanta Computer Inc., Shanghai Conant Optical Co Ltd, Shenzhen Transsion Holdings Co Ltd, Suzhou TFC Optical Communication Co Ltd., TCL Corp., Unimicron, Wistron Corporation, Wiwynn Corp, Xiaomi Corp, Yageo Corp., Yangtze Optical Fibre and Cable JSC Ltd, Zhen Ding, Zhongji Innolight Co Ltd.
+
+Within the last 12 months, MS has received compensation for products and services other than investment banking services from AAC Technologies Holdings, Accton Technology Corporation, Acer Inc., Asustek Computer Inc., AU Optronics, BYD Electronics, Compal Electronics, E Ink Holdings Inc., Eoptolink Technology Inc Ltd, Giga-Byte Technology Co. Ltd., GoerTek Inc, Hon Hai Precision, Innolux, Lenovo, Lingyi Itech Guangdong Co, Quanta Computer Inc., Xiaomi Corp, Yageo Corp..
+
+Within the last 12 months, MS has provided or is providing investment banking services to, or has an investment banking client relationship with, the following company: AAC Technologies Holdings, Accton Technology Corporation, Acer Inc., Advantech, AirTAC International, Asia Vital Components Co. Ltd., Asustek Computer Inc., AU Optronics, Bizlink, Catcher Technology, Chenbro, Compal Electronics, Delta Electronics Inc., E Ink Holdings Inc., Ennostar Inc, Eoptolink Technology Inc Ltd, FIT Hon Teng Ltd, Giga-Byte Technology Co. Ltd., GoerTek Inc, Gold Circuit Electronics Ltd., Hon Hai Precision, Innolux, Lenovo, Lens Technology, Lingyi Itech Guangdong Co, Lite-On Technology, Luxshare Precision Industry Co., Ltd., Pegatron Corporation, Q Technology (Group) Company Ltd, Quanta Computer Inc., Shanghai Conant Optical Co Ltd, Shenzhen Transsion Holdings Co Ltd, Suzhou TFC Optical Communication Co Ltd., TCL Corp., Unimicron, Wistron Corporation, Wiwynn Corp, Xiaomi Corp, Yageo Corp., Yangtze Optical Fibre and Cable JSC Ltd, Zhen Ding, Zhongji Innolight Co Ltd.
+
+Within the last 12 months, MS has either provided or is providing non-investment banking, securities-related services to and/or in the past has entered into an agreement to provide services or has a client relationship with the following company: AAC Technologies Holdings, Accton Technology Corporation, Acer Inc., Asustek Computer Inc., AU Optronics, BYD Electronics, Compal Electronics, E Ink Holdings Inc., Eoptolink Technology Inc Ltd, Giga-Byte Technology Co. Ltd., GoerTek Inc, Hon Hai Precision, Innolux, Lenovo, Lingyi Itech Guangdong Co, Quanta Computer Inc., Xiaomi Corp, Yageo Corp., Zhen Ding.
+
+The equity research analysts or strategists principally responsible for the preparation of MS have received compensation based upon various factors, including quality of research, investor client feedback, stock picking, competitive factors, firm revenues and overall investment banking revenues. Equity Research analysts' or strategists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+MS and its affiliates do business that relates to companies/instruments covered in MS, including market making, providing liquidity, fund management, commercial banking, extension of credit, investment services and investment banking. MS sells to and buys from customers the securities/instruments of companies covered in MS on a principal basis. MS may have a position in the debt of the Company or instruments discussed in this report. MS trades or may trade as principal in the debt securities (or in related derivatives) that are the subject of the debt research report. Certain disclosures listed above are also for compliance with applicable regulations in non-US jurisdictions.
+
+## STOCK RATINGS
+
+MS uses a relative rating system using terms such as Overweight, Equal-weight, Not-Rated or Underweight (see definitions below). MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold and sell. Investors should carefully read the definitions of all ratings used in MS. In addition, since MS contains more complete information concerning the analyst's views, investors should carefully read MS, in its entirety, and not infer the contents from the rating alone. In any case, ratings (or research) should not be used or relied upon as investment advice. An investor's decision to buy or sell a stock should depend on individual circumstances (such as the investor's existing holdings) and other considerations.
+
+## Global Stock Ratings Distribution
+
+## (as of June 30, 2026)
+
+The Stock Ratings described below apply to MS's Fundamental Equity Research and do not apply to Debt Research produced by the Firm.
+
+For disclosure purposes only (in accordance with FINRA requirements), we include the category headings of Buy, Hold, and Sell alongside our ratings of Overweight, Equal-weight, Not-Rated and Underweight. MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold, and sell but represent recommended relative weightings (see definitions below). To satisfy regulatory requirements, we correspond Overweight, our most positive stock rating, with a buy recommendation; we correspond Equal-weight and Not-Rated to hold and Underweight to sell recommendations, respectively.
+
+<table><tr><td></td><td colspan="2">Coverage Universe</td><td colspan="3">Investment Banking Clients (IBC)</td><td colspan="2">Other Material Investment Services Clients (MISC)</td></tr><tr><td>Stock Rating Category</td><td>Count</td><td>% of Total</td><td>Count</td><td>% of Total IBC</td><td>% of Rating Category</td><td>Count</td><td>% of Total Other MISC</td></tr><tr><td>Overweight/Buy</td><td>1544</td><td>42%</td><td>453</td><td>49%</td><td>29%</td><td>757</td><td>44%</td></tr><tr><td>Equal-weight/Hold</td><td>1577</td><td>43%</td><td>390</td><td>42%</td><td>25%</td><td>769</td><td>44%</td></tr><tr><td>Not-Rated/Hold</td><td>3</td><td>0%</td><td>1</td><td>0%</td><td>33%</td><td>1</td><td>0%</td></tr><tr><td>Underweight/Sell</td><td>544</td><td>15%</td><td>89</td><td>10%</td><td>16%</td><td>204</td><td>12%</td></tr><tr><td>Total</td><td>3,668</td><td></td><td>933</td><td></td><td></td><td>1731</td><td></td></tr></table>
+
+Data include common stock and ADRs currently assigned ratings. Investment Banking Clients are companies from whom MS received investment banking compensation in the last 12 months. Due to rounding off of decimals, the percentages provided in the "% of total" column may not add up to exactly 100 percent.
+
+## Analyst Stock Ratings
+
+Overweight (O). The stock's total return is expected to exceed the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Equal-weight (E). The stock's total return is expected to be in line with the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Not-Rated (NR). Currently the analyst does not have adequate conviction about the stock's total return relative to the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Underweight (U). The stock's total return is expected to be below the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Unless otherwise specified, the time frame for price targets included in MS is 12 to 18 months.
+
+## Analyst Industry Views
+
+Attractive (A): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be attractive vs. the relevant broad market benchmark, as indicated below.
+
+In-Line (I): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be in line with the relevant broad market benchmark, as indicated below. Cautious (C): The analyst views the performance of his or her industry coverage universe over the next 12-18 months with caution vs. the relevant broad market benchmark, as indicated below. Benchmarks for each region are as follows: North America - S&P 500; Latin America - relevant MSCI country index or MSCI Latin America Index; Europe - MSCI Europe; Japan - TOPIX; Asia - relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.
+
+## Stock Price, Price Target and Rating History (See Rating Definitions)
+
+Xiaomi Corp (1810.HK) - As of 07/04/26 GMT in HKD
+Industry : Greater China Technology Hardware
+
+![](images/9e295affd7a007a05fb8a4054e2a63ff0a4557485244630bc8fa339283dd992f.jpg)  
+Stock Rating History: 7/1/21 : 0/I
+
+Price Target History: 5/27/21 : 33.5; 11/4/21 : 31.5; 12/17/21 : 27; 5/18/22 : 14; 8/5/22 : 13.4; 11/15/22 : 12; 1/9/23 : 15;
+
+Source: MS Date Format : MM/DD/YY Price Target No Price Target Assigned (NA)
+
+Stock Price (Not Covered by Current Analyst) — Stock Price (Covered by Current Analyst)
+
+Stock and Industry Ratings (abbreviations below) appear as ♦ Stock Rating/Industry View
+
+Stock Ratings: Overweight (O) Equal-weight (E) Underweight (U) Not-Rated (NR) No Rating Available (NA)
+
+Industry View: Attractive (A) In-line (I) Cautious (C) No Rating (NR)
+
+Effective January 13, 2014, the stocks covered by MS Asia Pacific will be rated relative to the analyst's industry (or industry team's) coverage.
+
+Effective January 13, 2014, the industry view benchmarks for MS Asia Pacific are as follows: relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.
+
+## Important Disclosures for MS Smith Barney LLC Customers
+
+Important disclosures regarding any material conflict of interest that can reasonably be expected to have influenced MS Smith Barney LLC's choice of a third-party research provider or the subject company of a third-party research report, are available on the MS Wealth Management disclosure website at www.morganstanley.com/online/researchdisclosures. For MS specific disclosures, you may refer to https://www.morganstanley.com/eqr/disclosures/webapp/generalresearch.
+
+Each MS report is reviewed and approved on behalf of MS Smith Barney LLC. This review and approval is conducted by the same person who reviews the research report on behalf of MS. This could create a conflict of interest.
+
+## Other Important Disclosures
+
+As of July 6, 2026, MS beneficially owned a net long position exceeding $0.5\%$ of the total issued share capital of the following companies covered in MS: Lingyi Itech Guangdong Co.
+
+MS policy is to update research reports as and when the Research Analyst and Research Management deem appropriate, based on developments with the issuer, the sector, or the market that may have a material impact on the research views or opinions stated therein. In addition, certain Research publications are intended to be updated on a regular periodic basis (weekly/monthly/quarterly/annual) and will ordinarily be updated with that frequency, unless the Research Analyst and Research Management determine that a different publication schedule is appropriate based on current conditions.
+
+MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act.
+
+MS produces an equity research product called a "Tactical Idea." Views contained in a "Tactical Idea" on a particular stock may be contrary to the recommendations or views expressed in research on the same stock. This may be the result of differing time horizons, methodologies, market events, or other factors. For all research available on a particular stock, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.
+
+MS is provided to our clients through our proprietary research portal on Matrix and also distributed electronically by MS to clients. Certain, but not all, MS products are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience. For access to all available MS, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.
+
+Any access and/or use of MS is subject to MS's Terms of Use (http://www.morganstanley.com/terms.html). By accessing and/or using MS, you are indicating that you have read and agree to be bound by our Terms of Use (http://www.morganstanley.com/terms.html). In addition you consent to MS processing your personal data and using cookies in accordance with our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\_pledge.html), including for the purposes of setting your preferences and to collect readership data so that we can deliver better and more personalized service and products to you. To find out more information about how MS processes personal data, how we use cookies and how to reject cookies see our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\_pledge.html). Please use the provided link to review the Terms and Conditions and Most Important Terms and Conditions for MS India Company Private Limited (https://www.morganstanley.com/assets/pdfs/about-us-global-offices/india/Terms\_and\_conditions.pdf) and the following link to review the audit report (https://ny.matrix.ms.com/eqr/research/webapp/researchdocs/MSICPL\_Morgan\_Stanley\_Research\_Audit\_Report.pdf).
+
+If you do not agree to our Terms of Use and/or if you do not wish to provide your consent to MS processing your personal data or using cookies please do not access our research. MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments.
+
+The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+The "Important Regulatory Disclosures on Subject Companies" section in MS lists all companies mentioned where MS owns 1% or more of a class of common equity securities of the companies. For all other companies mentioned in MS, MS may have an investment of less than 1% in securities/instruments or derivatives of securities/instruments of companies and may trade them in ways different from those discussed in MS. Employees of MS not involved in the preparation of MS may have investments in securities/instruments or derivatives of securities/instruments of companies mentioned and may trade them in ways different from those discussed in MS. Derivatives may be issued by MS or associated persons.
+
+With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel.
+
+MS personnel may participate in company events such as site visits and are generally prohibited from accepting payment by the company of associated expenses unless pre-approved by authorized members of Research management.
+
+MS may make investment decisions that are inconsistent with the recommendations or views in this report.
+
+To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited ("MSTL"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments.
+
+Certain information in MS was sourced by employees of the Shanghai Representative Office of MS Asia Limited for the use of MS Asia Limited. MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only.
+
+MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118J); in Australia to "wholesale clients" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to "wholesale clients" and "retail clients" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India ("SEBI") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., authorised and regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 149169; in the US by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the "Order"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only.
+
+MS Hong Kong Securities Limited is the liquidity provider/market maker for securities of AAC Technologies Holdings, BYD Electronics, FIT Hon Teng Ltd, Hon Hai Precision, Lenovo, Lens Technology, Luxshare Precision Industry Co., Ltd., Sunny Optical, Xiaomi Corp, Yangtze Optical Fibre and Cable JSC Ltd, ZTE Corporation listed on the Stock Exchange of Hong Kong Limited. An updated list can be found on HKEx website: http://www.hkex.com.hk.
+
+The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative.
+
+The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA.
+
+As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations.
+
+The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P.
+
+MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS.
+
+Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework.
+
+The issuers and/or fixed income products recommended or discussed in certain fixed income research reports may not be continuously followed. Accordingly, investors should regard those fixed income research reports as providing stand-alone analysis and should not expect continuing analysis or additional reports relating to such issuers and/or individual fixed income products. MS may hold, from time to time, material financial and commercial interests regarding the company subject to the Research report.
+
+Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing.
+
+INDUSTRY COVERAGE: Greater China Technology Hardware
+
+<table><tr><td>COMPANY (TICKER)</td><td>RATING (AS OF)</td><td>PRICE* (07/08/2026)</td></tr><tr><td colspan="3">Andy Meng, CFA</td></tr><tr><td>AAC Technologies Holdings (2018.HK)</td><td>O (01/29/2024)</td><td>HK$39.02</td></tr><tr><td>Accelink Technologies Co. Ltd. (002281.SZ)</td><td>U (05/12/2022)</td><td>Rmb216.81</td></tr><tr><td>BYD Electronics (0285.HK)</td><td>O (04/28/2023)</td><td>HK$21.36</td></tr><tr><td>China TransInfo Technology Co Ltd (002373.SZ)</td><td>E (07/18/2023)</td><td>Rmb7.10</td></tr><tr><td>Dahua Technology Co. Ltd. (002236.SZ)</td><td>E (12/12/2024)</td><td>Rmb16.96</td></tr><tr><td>Eoptolink Technology Inc Ltd (300502.SZ)</td><td>O (02/27/2026)</td><td>Rmb510.84</td></tr><tr><td>Genius Electronic Optical Co. Ltd. (3406.TW)</td><td>E (04/23/2025)</td><td>NT$612.00</td></tr><tr><td>Gosuncn Technology Group Co Ltd (300098.SZ)</td><td>U (11/07/2022)</td><td>Rmb4.40</td></tr><tr><td>HIKVision Digital Technology (002415.SZ)</td><td>E (12/12/2024)</td><td>Rmb34.35</td></tr><tr><td>Largan Precision (3008.TW)</td><td>E (10/17/2025)</td><td>NT$3,950.00</td></tr><tr><td>LianChuang Electronic Technology Co Ltd (002036.SZ)</td><td>U (06/12/2024)</td><td>Rmb6.55</td></tr><tr><td>OFILM Group Co Ltd (002456.SZ)</td><td>U (06/12/2024)</td><td>Rmb8.78</td></tr><tr><td>Q Technology (Group) Company Ltd (1478.HK)</td><td>U (03/23/2026)</td><td>HK$6.92</td></tr><tr><td>Quectel Wireless Solutions Co Ltd (603236.SS)</td><td>E (10/09/2024)</td><td>Rmb50.12</td></tr><tr><td>Shanghai Conant Optical Co Ltd (2276.HK)</td><td>O (04/10/2026)</td><td>HK$32.34</td></tr><tr><td>Shenzhen Transsion Holdings Co Ltd (688036.SS)</td><td>E (03/23/2026)</td><td>Rmb62.25</td></tr><tr><td>Sunny Optical (2382.HK)</td><td>E (03/23/2026)</td><td>HK$57.45</td></tr><tr><td>Suzhou TFC Optical Communication Co Ltd. (300394.SZ)</td><td>E (11/06/2025)</td><td>Rmb245.68</td></tr><tr><td>Wingtech Technology Co Ltd (600745.SS)</td><td>U (05/18/2026)</td><td>Rmb18.53</td></tr><tr><td>Xiaomi Corp (1810.HK)</td><td>O (04/14/2021)</td><td>HK$25.30</td></tr><tr><td>Yangtze Optical Fibre and Cable JSC Ltd (601869.SS)</td><td>U (10/13/2021)</td><td>Rmb410.00</td></tr><tr><td>Yangtze Optical Fibre and Cable JSC Ltd (6869.HK)</td><td>E (04/20/2023)</td><td>HK$151.90</td></tr><tr><td>Yongxin Optics Co Ltd (603297.SS)</td><td>E (11/15/2022)</td><td>Rmb120.56</td></tr><tr><td>Zhejiang Crystal-Optech Co Ltd (002273.SZ)</td><td>O (11/15/2022)</td><td>Rmb32.04</td></tr><tr><td>Zhongji Innolight Co Ltd (300308.SZ)</td><td>++</td><td>Rmb1,128.35</td></tr><tr><td>ZTE Corporation (0763.HK)</td><td>O (06/04/2026)</td><td>HK$23.20</td></tr><tr><td>ZTE Corporation (000063.SZ)</td><td>E (06/04/2026)</td><td>Rmb36.87</td></tr><tr><td colspan="3">Derrick Yang</td></tr><tr><td>Accton Technology Corporation (2345.TW)</td><td>O (06/06/2024)</td><td>NT$2,415.00</td></tr><tr><td>Advantech (2395.TW)</td><td>O (01/20/2021)</td><td>NT$546.00</td></tr><tr><td>AirTAC International (1590.TW)</td><td>O (04/16/2025)</td><td>NT$1,345.00</td></tr><tr><td>AU Optronics (2409.TW)</td><td>E (02/10/2026)</td><td>NT$29.55</td></tr><tr><td>Bizlink (3665.TW)</td><td>O (03/10/2025)</td><td>NT$1,900.00</td></tr><tr><td>BOE Technology (000725.SZ)</td><td>O (09/06/2019)</td><td>Rmb7.63</td></tr><tr><td>Chenbro (8210.TW)</td><td>O (07/23/2025)</td><td>NT$1,195.00</td></tr><tr><td>Chroma Ate Inc. (2360.TW)</td><td>O (10/05/2021)</td><td>NT$1,855.00</td></tr><tr><td>E Ink Holdings Inc. (8069.TWO)</td><td>O (05/11/2026)</td><td>NT$199.00</td></tr><tr><td>Ennostar Inc (3714.TW)</td><td>U (09/23/2022)</td><td>NT$61.90</td></tr><tr><td>Hiwin Technologies Corp. (2049.TW)</td><td>O (03/30/2026)</td><td>NT$340.00</td></tr><tr><td>Innolux (3481.TW)</td><td>E (04/07/2025)</td><td>NT$65.20</td></tr><tr><td>King Slide Works Co. Ltd. (2059.TW)</td><td>O (11/08/2023)</td><td>NT$8,095.00</td></tr><tr><td>Lens Technology (300433.SZ)</td><td>E (07/22/2020)</td><td>Rmb46.05</td></tr><tr><td>Radiant Opto-Electronics Corporation (6176.TW)</td><td>E (03/01/2024)</td><td>NT$90.90</td></tr><tr><td>TCL Corp. (000100.SZ)</td><td>E (04/07/2025)</td><td>Rmb5.04</td></tr><tr><td>Tianma Microelectronics (000050.SZ)</td><td>U (01/24/2018)</td><td>Rmb7.86</td></tr><tr><td>Wuhan Jingce Electronic Group Co Ltd (300567.SZ)</td><td>E (11/26/2021)</td><td>Rmb297.10</td></tr><tr><td colspan="3">Howard Kao</td></tr><tr><td>Acer Inc. (2353.TW)</td><td>U (04/23/2025)</td><td>NT$32.30</td></tr><tr><td>Asustek Computer Inc. (2357.TW)</td><td>U (11/16/2025)</td><td>NT$687.00</td></tr><tr><td>Compal Electronics (2324.TW)</td><td>U (04/23/2025)</td><td>NT$35.50</td></tr><tr><td>FIT Hon Teng Ltd (6088.HK)</td><td>O (11/03/2025)</td><td>HK$6.17</td></tr><tr><td>Giga-Byte Technology Co. Ltd. (2376.TW)</td><td>E (11/16/2025)</td><td>NT$335.00</td></tr><tr><td>Gold Circuit Electronics Ltd. (2368.TW)</td><td>O (10/06/2022)</td><td>NT$1,150.00</td></tr><tr><td>Inspur Electronic Information (000977.SZ)</td><td>E (08/28/2023)</td><td>Rmb78.17</td></tr><tr><td>Lenovo (0992.HK)</td><td>E (11/16/2025)</td><td>HK$22.32</td></tr><tr><td>Lotes Co. Ltd. (3533.TW)</td><td>E (05/12/2025)</td><td>NT$1,990.00</td></tr><tr><td>Nan Ya PCB (8046.TW)</td><td>O (02/23/2026)</td><td>NT$1,105.00</td></tr><tr><td>Pegatron Corporation (4938.TW)</td><td>E (03/25/2026)</td><td>NT$83.80</td></tr><tr><td>Quanta Computer Inc. (2382.TW)</td><td>O (05/01/2023)</td><td>NT$377.00</td></tr><tr><td>Shengyi Technology Co Ltd. (600183.SS)</td><td>E (05/26/2022)</td><td>Rmb145.46</td></tr><tr><td>Shennan Circuits Co Ltd (002916.SZ)</td><td>E (08/24/2023)</td><td>Rmb402.33</td></tr><tr><td>Unimicron (3037.TW)</td><td>O (02/23/2026)</td><td>NT$863.00</td></tr><tr><td>Wistron Corporation (3231.TW)</td><td>O (07/12/2023)</td><td>NT$146.50</td></tr><tr><td>Wiwynn Corp (6669.TW)</td><td>O (11/10/2025)</td><td>NT$5,050.00</td></tr><tr><td>Yageo Corp. (2327.TW)</td><td>O (10/28/2025)</td><td>NT$891.00</td></tr><tr><td>Zhen Ding (4958.TW)</td><td>O (05/18/2026)</td><td>NT$565.00</td></tr><tr><td colspan="3">Sharon Shih</td></tr><tr><td>Asia Vital Components Co. Ltd. (3017.TW)</td><td>O (07/30/2024)</td><td>NT$2,325.00</td></tr><tr><td>Auras Technology Co Ltd (3324.TWO)</td><td>E (05/04/2023)</td><td>NT$925.00</td></tr><tr><td>Catcher Technology (2474.TW)</td><td>U (11/17/2025)</td><td>NT$195.00</td></tr><tr><td>Delta Electronics Inc. (2308.TW)</td><td>O (07/13/2017)</td><td>NT$1,885.00</td></tr><tr><td>Fositek Corp (6805.TW)</td><td>O (06/25/2025)</td><td>NT$1,395.00</td></tr><tr><td>Foxconn Industrial Internet Co. Ltd. (601138.SS)</td><td>O (07/10/2019)</td><td>Rmb66.01</td></tr><tr><td>GoerTek Inc (002241.SZ)</td><td>U (04/23/2025)</td><td>Rmb20.41</td></tr><tr><td>Hon Hai Precision (2317.TW)</td><td>O (03/15/2024)</td><td>NT$237.50</td></tr><tr><td>LandMark Optoelectronics Corporation (3081.TWO)</td><td>E (03/26/2026)</td><td>NT$2,095.00</td></tr><tr><td>Lingyi Itech Guangdong Co (002600.SZ)</td><td>U (04/23/2025)</td><td>Rmb15.06</td></tr><tr><td>Lite-On Technology (2301.TW)</td><td>E (01/15/2025)</td><td>NT$214.00</td></tr><tr><td>Luxshare Precision Industry Co., Ltd. (002475.SZ)</td><td>O (10/24/2016)</td><td>Rmb62.47</td></tr><tr><td>Visual Photonics Epitaxy Co Ltd (2455.TW)</td><td>E (09/11/2023)</td><td>NT$335.00</td></tr></table>
+
+© 2026 MS

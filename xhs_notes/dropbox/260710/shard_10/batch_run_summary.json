@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 59,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 10,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/51-MS-Korea Macro Strategy, Equity Strategy & Economics Why Is KRW So Weak-260708.pdf",
+          "batch_file": "/tmp/pdf_batch_001_o8j1lk43/pdfs/0001-51-MS-Korea Macro Strategy- Equity Strategy - Economics Why Is KRW So Weak-260708.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/52-NOM-Asia Economic Monthly：Asia's El Ni-o playbook：Eight lessons from 25 years of shocks-260710.pdf",
+          "batch_file": "/tmp/pdf_batch_001_o8j1lk43/pdfs/0002-52-NOM-Asia Economic Monthly-Asia-s El Ni-o playbook-Eight lessons from 25 years of shocks-260710.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/53-MS-Sanofi SA（SASY.PA）：Q2'26 Preview： Beat and raise？-260708.pdf",
+          "batch_file": "/tmp/pdf_batch_001_o8j1lk43/pdfs/0003-53-MS-Sanofi SA-SASY.PA--Q2-26 Preview- Beat and raise--260708.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/54-MS-Xiaomi Corp（1810.HK）Cutting Price Target to Reflect Headwinds from EV Shipment Weakness and Chipflation-260708.pdf",
+          "batch_file": "/tmp/pdf_batch_001_o8j1lk43/pdfs/0004-54-MS-Xiaomi Corp-1810.HK-Cutting Price Target to Reflect Headwinds from EV Shipment Weakness and Chipflation-260708.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/55-NOM-Suzhou TFC Optical Communication（300394）1.6T optical engine may accelerate in 2H26...-260709.pdf",
+          "batch_file": "/tmp/pdf_batch_001_o8j1lk43/pdfs/0005-55-NOM-Suzhou TFC Optical Communication-300394-1.6T optical engine may accelerate in 2H26...-260709.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
