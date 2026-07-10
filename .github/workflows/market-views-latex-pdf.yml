@@ -52,6 +52,7 @@ jobs:
           sparse-checkout: |
             .github/workflows
             scripts
+            prompts
             requirements.txt
             xhs_notes/dropbox
             xhs_notes/institutions
@@ -100,7 +101,7 @@ jobs:
           MODEL="${{ github.event.inputs.model || 'deepseek-chat' }}"
           BASE_URL="${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}"
           COMPILE_LATEX="${{ github.event.inputs.compile_latex || 'false' }}"
-          echo "::notice::Building market views from source roots with date_folder=$DATE_FOLDER. No report or figure limits are applied. Fast PDF renderer will run after this step."
+          echo "::notice::Building bank-led Market Views with dynamic topic planning and per-section DeepSeek coverage validation."
           python scripts/build_market_views_pdf.py \
             --dropbox-output-root "xhs_notes/dropbox" \
             --extra-roots "xhs_notes/institutions,xhs_notes/consulting" \
@@ -110,9 +111,13 @@ jobs:
             --deepseek-base-url "$BASE_URL" \
             --max-reports 0 \
             --per-report-extract-chars 2200 \
+            --deepseek-max-tokens 8192 \
             --max-figures 0 \
             --max-selected-figures 0 \
-            --max-figures-per-report 0 \
+            --max-figures-per-report 5 \
+            --max-reports-per-bank-section 12 \
+            --max-section-figure-candidates 40 \
+            --figures-per-bank-section 4 \
             --max-external-visuals-per-report 0 \
             --compile "$COMPILE_LATEX" 2>&1 | tee market_views_build_progress.log
           RESOLVED_DATE_FOLDER="$(grep -Eo 'MARKET_VIEWS_DATE_FOLDER=[0-9]+' market_views_build_progress.log | tail -1 | cut -d= -f2)"

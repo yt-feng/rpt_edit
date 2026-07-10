@@ -493,7 +493,21 @@ def call_deepseek(prompt: str, args: argparse.Namespace, label: str) -> str:
     response = requests.post(
         args.deepseek_base_url.rstrip("/") + "/chat/completions",
         headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
-        json={"model": args.model, "temperature": 0.35, "messages": [{"role": "system", "content": "你是专业宏观策略研究编辑。只输出合法 JSON，不要输出 Markdown 代码块。"}, {"role": "user", "content": prompt}]},
+        json={
+            "model": args.model,
+            "temperature": 0.25,
+            "max_tokens": getattr(args, "deepseek_max_tokens", 8192),
+            "messages": [
+                {
+                    "role": "system",
+                    "content": (
+                        "你是面向全球机构投资者的资深研究编辑。严格执行报告 ID 覆盖要求，"
+                        "保留关键数据、方向、分歧与边际变化。只输出合法 JSON，不要输出 Markdown 代码块。"
+                    ),
+                },
+                {"role": "user", "content": prompt},
+            ],
+        },
         timeout=240,
     )
     data = parse_json_response(response, label)
@@ -512,76 +526,38 @@ def extract_json(text: str) -> Any:
 
 
 def build_prompt(reports: list[dict[str, Any]], figures: list[dict[str, Any]], args: argparse.Namespace) -> str:
-    report_payload = [
-        {
-            "id": r["id"],
-            "title": r["title"],
-            "source_group": r.get("source_group", ""),
-            "source_label": r.get("source_label") or source_group_label(r.get("source_group", "")),
-            "institution": r.get("institution_name") or "",
-            "digest": trim_text(r["digest"], args.per_report_prompt_chars),
-        }
-        for r in reports
-    ]
-    figure_payload = [
-        {
-            "figure_id": f["figure_id"],
-            "report_id": f["report_id"],
-            "label": f["label"],
-            "figure_type": f.get("figure_type", "source_exhibit"),
-            "context": f["context"],
-        }
-        for f in figures
-    ]
-    source_counts = {source_group_label(group): sum(1 for r in reports if r.get("source_group") == group) for group in ROUNDUP_SOURCE_ORDER}
-    figure_rule = "可以使用所有 figure_ids，没有总数限制，但只选择真正支撑该板块观点且图表说明干净的图。"
-    if args.max_selected_figures > 0:
-        figure_rule = f"可以使用 figure_ids，但总图表数不要超过 {args.max_selected_figures} 张。"
+    source_counts = {
+        source_group_label(group): sum(1 for report in reports if report.get("source_group") == group)
+        for group in ROUNDUP_SOURCE_ORDER
+    }
     return f"""
-请基于下面每天新报告的摘要，写一份“Market Views / 国际信源汇编&评论”的结构化 JSON，用于生成 PDF。
+# Market Views 生成协议
 
-目标读者：
-关注每日更新的国际信源汇编&评论，希望快速看到国际主流叙事、数据、图表和边际变化。读者来自头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询、智库等。
+目标读者是关注国际主流叙事、数据、图表和边际变化的机构从业者。
 
-要求：
-1. 严格按来源拆成三个并列板块，不要混在一起：投行/券商（source_group=bank_research）、战略咨询（source_group=consulting）、智库/国际机构（source_group=institution）。
-2. 三个板块篇幅要尽量接近。即使某一类报告更多，也要压缩成和另外两类相近的阅读体量；不要让世界银行/智库报告把 PDF 撑成长篇翻译。
-3. 每个来源板块内部再按主题归纳 2-4 个 themes，例如宏观与利率、AI/算力、能源与大宗、地缘政治、企业战略、发展经济等。主题由内容决定，不要机械套模板。
-4. 每个 theme 综合多篇报告，写 3-5 个 bullets；每条必须是可读完整句，保留关键数据、方向、分歧和边际变化，不要逐篇复述。
-5. 每个 theme 必须给 references，引用报告 ID；三个来源板块合计 references 应覆盖全部或绝大多数报告。覆盖清单会展示这些 references，所以不要漏。
-6. {figure_rule}
-7. 投行名字必须脱敏：常见投行写 GS、JPM、MS、BofA、Citi、UBS、DB 等缩写，不确定就写“投行”。
-8. 不要给投资建议，不要写买卖评级。
-9. 不要输出“逐篇报告摘录”；正文只需要整合后的信号、评论、数据和图表。
-10. source_roundups 必须按 source_group 输出三个对象，顺序为 bank_research、consulting、institution；如果某类当天没有报告，仍输出空 themes，并在 summary 写“今日暂无新增”。
-11. 输出必须是 JSON 对象，不要 Markdown 代码块。
+1. 投行/券商是正文主体；战略咨询与智库/国际机构只作两个彼此独立的辅助板块。
+2. 先依据当天投行报告标题规划动态目录，再逐目录板块调用 DeepSeek。禁止把全部报告与全部图表塞入一次请求。
+3. 每篇投行报告必须进入至少一条可见的 bank_view；只有 references 而没有观点文本不算覆盖。
+4. 每个投行板块必须给出共识、分歧、逐机构整合观点、关键数据、边际变化及 2-4 张原始报告图表。
+5. 正文不展示报告 ID、文件名或逐篇标题目录；PDF 只展示整合后的观点与简短覆盖统计。
+6. 投行常用 GS、JPM、MS、BofA、Citi、UBS、DB、NOM 等缩写。
+7. 不给投资建议，不写买卖评级，不输出纯文字的逐篇摘录。
+8. 当投行输入很多时允许形成 40-70 页，不设 20 页上限。
 
-JSON 格式：
-{{"title":"市场最新观点汇总","subtitle":"一句话说明今天国际信源的共同主线","executive_summary":["全局要点1"],"source_roundups":[{{"source_group":"bank_research","title":"投行/券商","summary":"本来源板块一句话摘要","themes":[{{"heading":"主题标题","thesis":"核心判断","bullets":["要点1"],"figure_ids":["F001"],"references":["R001","R002"]}}]}},{{"source_group":"consulting","title":"战略咨询","summary":"本来源板块一句话摘要","themes":[]}},{{"source_group":"institution","title":"智库/国际机构","summary":"本来源板块一句话摘要","themes":[]}}],"closing":"简短收束"}}
-
-来源数量：
-{json.dumps(source_counts, ensure_ascii=False, indent=2)}
-
-报告摘要：
-{json.dumps(report_payload, ensure_ascii=False, indent=2)}
-
-可选图表候选（已经过滤掉邮箱、电话、HTML/table 噪音）：
-{json.dumps(figure_payload, ensure_ascii=False, indent=2)}
+本次输入：{len(reports)} 篇报告、{len(figures)} 张清洁图表候选。
+来源数量：{json.dumps(source_counts, ensure_ascii=False)}
+每篇报告送入单个主题请求的最大正文长度：{args.per_report_prompt_chars} 字符。
 """.strip()
 
 
 def fallback_summary(reports: list[dict[str, Any]], figures: list[dict[str, Any]]) -> dict[str, Any]:
-    return {
-        "title": "市场最新观点汇总",
-        "subtitle": "以下汇总基于今日新增报告的自动整理。",
-        "executive_summary": [
-            "今日信源按投行/券商、战略咨询、智库/国际机构三类拆开整理，避免不同类型叙事互相混杂。",
-            "正文只保留整合后的主线、边际变化、数据和图表；逐篇原文摘录不进入 PDF。",
-            "报告覆盖清单用于核对所有纳入的报告及其整合位置。",
-        ],
-        "source_roundups": build_source_roundups(reports, figures),
-        "closing": "后续更重要的是跟踪哪些叙事被数据确认，哪些只停留在观点层面。",
-    }
+    bank_reports = source_group_reports(reports, "bank_research")
+    supporting = [
+        build_source_roundup_for_group(source_group_reports(reports, group), figures, group, max_themes=3)
+        for group in ("consulting", "institution")
+    ]
+    bank_roundup = build_fallback_bank_roundup(bank_reports, figures)
+    return compose_market_summary(bank_roundup, supporting, reports)
 
 
 EXTERNAL_CATEGORY_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
@@ -646,7 +622,7 @@ def first_signal(text: str, max_chars: int = 110) -> str:
         if len(sentence) > max_chars:
             sentence = sentence[:max_chars].rstrip() + "..."
         return sentence
-    return "该外部来源提供了一个需要纳入今日市场判断的补充信号。"
+    return "该报告提供了一条需要纳入今日市场判断的新增信号。"
 
 
 def relevance_for_category(category: str) -> str:
@@ -663,22 +639,73 @@ def relevance_for_category(category: str) -> str:
     return "用于补充投行报告之外的政策、产业或长期结构变量。"
 
 
+BANK_CATEGORY_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
+    ("宏观、央行与利率", ("macro", "fed", "ecb", "boj", "inflation", "fiscal", "rates", "yield", "bond", "宏观", "美联储", "欧央行", "央行", "通胀", "财政", "利率", "收益率", "债券")),
+    ("外汇与跨境资金", ("fx", "currency", "dollar", "yen", "renminbi", "rmb", "forex", "外汇", "美元", "日元", "人民币", "汇率", "中间价", "跨境资金")),
+    ("股票策略、估值与资金流", ("equity strategy", "valuation", "earnings", "positioning", "fund flow", "liquidity", "retail investor", "股票策略", "估值", "盈利", "仓位", "资金流", "流动性", "散户", "风险偏好")),
+    ("AI、半导体与硬件", ("ai", "semiconductor", "chip", "gpu", "cpu", "memory", "hbm", "server", "pcb", "ccl", "mlcc", "abf", "算力", "半导体", "芯片", "存储", "服务器", "硬件", "载板")),
+    ("软件、互联网与数字平台", ("software", "cloud", "internet", "e-commerce", "platform", "saas", "token", "软件", "云", "互联网", "电商", "平台", "即时零售", "大模型")),
+    ("中国经济、地产与金融", ("china", "property", "real estate", "bank", "insurance", "credit", "inventory cycle", "中国", "地产", "房地产", "银行", "保险", "信贷", "库存周期", "人民币流动性")),
+    ("消费、零售与奢侈品", ("consumer", "retail", "luxury", "beauty", "travel", "leisure", "apparel", "消费", "零售", "奢侈品", "美妆", "旅游", "免税")),
+    ("医疗健康与生命科学", ("healthcare", "pharma", "biotech", "drug", "medical", "hospital", "医药", "医疗", "生物制药", "新药", "管线", "医院")),
+    ("能源、大宗与公用事业", ("oil", "gas", "commodity", "copper", "gold", "power", "utility", "energy", "solar", "原油", "天然气", "能源", "大宗", "铜", "铝", "黄金", "电力", "公用事业", "光伏")),
+    ("汽车、新能源与工业", ("auto", "ev", "battery", "industrial", "machinery", "robot", "automation", "汽车", "电动车", "新能源", "电池", "工业", "机械", "机器人", "自动化")),
+    ("航天、国防与先进制造", ("space", "defense", "aerospace", "satellite", "rocket", "advanced manufacturing", "航天", "太空", "国防", "防务", "卫星", "火箭", "先进制造")),
+    ("日本、韩国与亚洲市场", ("japan", "korea", "india", "asean", "singapore", "日本", "韩国", "印度", "东南亚", "新加坡", "亚洲")),
+    ("欧洲、美洲与新兴市场", ("europe", "eurozone", "latin america", "emerging market", "canada", "mexico", "欧洲", "欧元区", "拉美", "新兴市场", "加拿大", "墨西哥")),
+)
+
+BANK_ALIAS_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
+    ("GS", ("goldman sachs", "goldman", "高盛", "gs")),
+    ("JPM", ("jpmorgan", "jp morgan", "摩根大通", "jpm")),
+    ("MS", ("morgan stanley", "摩根士丹利", "ms")),
+    ("BofA", ("bank of america", "bofa", "美银")),
+    ("Citi", ("citigroup", "citi", "花旗")),
+    ("UBS", ("ubs", "瑞银")),
+    ("DB", ("deutsche bank", "deutsche", "德银", "db")),
+    ("NOM", ("nomura", "野村", "nom")),
+    ("Bernstein", ("bernstein", "伯恩斯坦")),
+    ("Barclays", ("barclays", "巴克莱")),
+    ("Jefferies", ("jefferies", "杰富瑞")),
+    ("HSBC", ("hsbc", "汇丰")),
+    ("Macquarie", ("macquarie", "麦格理")),
+)
+
+
 def bank_category_for(report: dict[str, Any]) -> str:
-    haystack = " ".join([
-        str(report.get("title") or ""),
-        str(report.get("digest") or "")[:1600],
-    ]).lower()
-    rules = (
-        ("宏观、利率与外汇", ("macro", "rates", "fed", "ecb", "boj", "inflation", "fx", "currency", "bond", "yield", "宏观", "利率", "美联储", "欧央行", "央行", "通胀", "外汇", "人民币", "债券", "收益率")),
-        ("AI、科技与产业链", ("ai", "semiconductor", "data center", "cloud", "software", "chip", "tech", "算力", "半导体", "数据中心", "芯片", "科技", "互联网", "软件")),
-        ("能源、大宗与资源", ("oil", "gas", "commodity", "copper", "gold", "power", "utility", "energy", "solar", "battery", "原油", "天然气", "能源", "大宗", "铜", "黄金", "电力", "公用事业", "光伏", "电池")),
-        ("中国、消费与地产", ("china", "consumer", "property", "real estate", "retail", "bank", "中国", "消费", "地产", "房地产", "银行", "零售", "美妆")),
-        ("区域市场与风险偏好", ("japan", "india", "europe", "em", "equity", "liquidity", "retail", "flow", "日本", "印度", "欧洲", "新兴市场", "股票", "资金流", "散户", "风险偏好")),
-    )
-    for category, keywords in rules:
-        if any(keyword in haystack for keyword in keywords):
+    title = str(report.get("title") or "").lower()
+    for category, keywords in BANK_CATEGORY_RULES:
+        if any(keyword in title for keyword in keywords):
             return category
-    return "其他市场边际信号"
+    digest = str(report.get("digest") or "")[:1800].lower()
+    scored = []
+    for index, (category, keywords) in enumerate(BANK_CATEGORY_RULES):
+        score = sum(1 for keyword in keywords if keyword in digest)
+        if score:
+            scored.append((score, -index, category))
+    if scored:
+        return max(scored)[2]
+    return "其他公司与行业信号"
+
+
+def bank_alias(report: dict[str, Any]) -> str:
+    raw_name = normalize_space(str(report.get("institution_name") or ""))
+    title = normalize_space(str(report.get("title") or ""))
+    haystack = f"{raw_name} {title[:40]}".lower()
+    for alias, keywords in BANK_ALIAS_RULES:
+        for keyword in keywords:
+            lowered = keyword.lower()
+            if lowered == raw_name.lower():
+                return alias
+            if len(lowered) <= 3:
+                if re.search(rf"(?<![a-z0-9]){re.escape(lowered)}(?![a-z0-9])", haystack):
+                    return alias
+            elif lowered in haystack:
+                return alias
+    if raw_name:
+        return raw_name[:20]
+    prefix = re.split(r"[：:]", title, maxsplit=1)[0].strip()
+    return prefix[:20] if prefix else "投行"
 
 
 def report_category_for(report: dict[str, Any]) -> str:
@@ -692,16 +719,325 @@ def source_group_reports(reports: list[dict[str, Any]], source_group: str) -> li
     return [r for r in reports if r.get("source_group") == source_group]
 
 
+def signal_sentences(text: str, limit: int = 3, max_chars: int = 180) -> list[str]:
+    cleaned = clean_markdown_for_extract(text or "").replace("[... middle omitted ...]", " ")
+    candidates = re.split(r"(?<=[。.!?！？])\s+|\n{2,}", cleaned)
+    signals: list[str] = []
+    for candidate in candidates:
+        sentence = normalize_space(re.sub(r"^#+\s*", "", candidate))
+        if len(sentence) < 24 or sentence.startswith("!") or sentence.startswith("["):
+            continue
+        if sentence in signals:
+            continue
+        if len(sentence) > max_chars:
+            sentence = sentence[:max_chars].rstrip() + "..."
+        signals.append(sentence)
+        if len(signals) >= limit:
+            break
+    return signals
+
+
+def report_signal_fallback(report: dict[str, Any], max_chars: int = 180) -> list[str]:
+    signals = signal_sentences(
+        report.get("extract") or report.get("digest") or "",
+        limit=4,
+        max_chars=max_chars,
+    )
+    title = normalize_space(str(report.get("title") or ""))
+    return [signal for signal in signals if signal != title and not title.startswith(signal)]
+
+
+def report_view_fallback(report: dict[str, Any]) -> dict[str, Any]:
+    signals = report_signal_fallback(report)
+    return {
+        "bank": bank_alias(report),
+        "view": signals[0] if signals else "该报告提供了一条需要纳入本节判断的新增市场信号。",
+        "data_points": signals[1:3],
+        "marginal_change": "",
+        "report_ids": [report["id"]],
+    }
+
+
+def heuristic_bank_plan(reports: list[dict[str, Any]], max_reports_per_section: int = 12) -> list[dict[str, Any]]:
+    grouped: dict[str, list[str]] = {}
+    for report in reports:
+        grouped.setdefault(bank_category_for(report), []).append(report["id"])
+    plan: list[dict[str, Any]] = []
+    for heading, report_ids in grouped.items():
+        chunks = [report_ids[index:index + max_reports_per_section] for index in range(0, len(report_ids), max_reports_per_section)]
+        for index, chunk in enumerate(chunks, 1):
+            chunk_heading = heading if len(chunks) == 1 else f"{heading}（{index}）"
+            plan.append({"heading": chunk_heading, "report_ids": chunk})
+    return plan
+
+
+def normalize_bank_plan(
+    raw_plan: dict[str, Any],
+    reports: list[dict[str, Any]],
+    max_reports_per_section: int = 12,
+) -> list[dict[str, Any]]:
+    valid_ids = {report["id"] for report in reports}
+    assigned: set[str] = set()
+    normalized: list[dict[str, Any]] = []
+    raw_categories = raw_plan.get("categories") if isinstance(raw_plan, dict) else []
+    for raw_category in raw_categories or []:
+        if not isinstance(raw_category, dict):
+            continue
+        heading = normalize_space(raw_category.get("heading") or "未命名主题")
+        report_ids: list[str] = []
+        for report_id in raw_category.get("report_ids") or []:
+            rid = str(report_id)
+            if rid in valid_ids and rid not in assigned:
+                report_ids.append(rid)
+                assigned.add(rid)
+        if not report_ids:
+            continue
+        chunks = [report_ids[index:index + max_reports_per_section] for index in range(0, len(report_ids), max_reports_per_section)]
+        for index, chunk in enumerate(chunks, 1):
+            chunk_heading = heading if len(chunks) == 1 else f"{heading}（{index}）"
+            normalized.append({"heading": chunk_heading, "report_ids": chunk})
+
+    missing_reports = [report for report in reports if report["id"] not in assigned]
+    normalized.extend(heuristic_bank_plan(missing_reports, max_reports_per_section=max_reports_per_section))
+    return normalized or heuristic_bank_plan(reports, max_reports_per_section=max_reports_per_section)
+
+
+def bank_plan_prompt(reports: list[dict[str, Any]]) -> str:
+    target_sections = max(4, min(14, (len(reports) + 7) // 8))
+    inventory = [
+        {"id": report["id"], "bank": bank_alias(report), "title": report.get("title") or ""}
+        for report in reports
+    ]
+    return f"""
+请只根据下面的投行报告清单，为今日 Market Views 规划动态目录。
+
+硬性要求：
+1. 目标约 {target_sections} 个类别，通常每类 5-12 篇；类别数量随当天内容调整。
+2. 每个报告 ID 必须且只能出现一次，不能遗漏，不能重复。
+3. 类别按资产、市场或产业主题命名，例如宏观、利率、FX、Equity、科技、能源、消费、医疗、区域市场；不要按投行名称分类。
+4. 避免一个笼统的“其他”吞掉大量报告；相关性弱时拆成更清楚的行业或市场类别。
+5. 只做目录规划，不写摘要，不引用文件名。
+
+输出 JSON：
+{{"categories":[{{"heading":"主题名称","report_ids":["R001","R002"]}}]}}
+
+投行报告清单：
+{json.dumps(inventory, ensure_ascii=False, indent=2)}
+""".strip()
+
+
+def section_figure_candidates(
+    figures: list[dict[str, Any]],
+    report_ids: list[str],
+    max_candidates: int,
+) -> list[dict[str, Any]]:
+    report_id_set = set(report_ids)
+    by_report: dict[str, list[dict[str, Any]]] = {report_id: [] for report_id in report_ids}
+    for figure in figures:
+        report_id = str(figure.get("report_id") or "")
+        if report_id not in report_id_set or figure.get("figure_type") == "external_card":
+            continue
+        if len(by_report[report_id]) >= 4:
+            continue
+        by_report[report_id].append({
+            "figure_id": figure.get("figure_id"),
+            "report_id": report_id,
+            "label": figure.get("label"),
+            "context": trim_text(str(figure.get("context") or ""), 260),
+        })
+    payload: list[dict[str, Any]] = []
+    for depth in range(4):
+        for report_id in report_ids:
+            candidates = by_report.get(report_id) or []
+            if depth >= len(candidates):
+                continue
+            payload.append(candidates[depth])
+            if max_candidates > 0 and len(payload) >= max_candidates:
+                return payload
+    return payload
+
+
+def bank_section_prompt(
+    heading: str,
+    reports: list[dict[str, Any]],
+    figures: list[dict[str, Any]],
+    args: argparse.Namespace,
+) -> str:
+    report_payload = [
+        {
+            "id": report["id"],
+            "bank": bank_alias(report),
+            "title": report.get("title") or "",
+            "digest": trim_text(report.get("digest") or "", args.per_report_prompt_chars),
+        }
+        for report in reports
+    ]
+    report_ids = [report["id"] for report in reports]
+    figure_payload = section_figure_candidates(
+        figures,
+        report_ids,
+        getattr(args, "max_section_figure_candidates", 40),
+    )
+    return f"""
+你正在撰写 Market Views 的投行主体栏目“{heading}”。输入只有本栏目相关报告，必须做系统汇编。
+
+硬性要求：
+1. 先给 3-5 条主流共识、2-4 条分歧或条件差异，再给“机构观点”。
+2. bank_views 是正文内容，不是报告目录。可以把同一投行、同一子主题的多篇报告合并成一条，但每条要写成 100-220 字的完整判断，保留方向、机制、数字和边际变化。
+3. 输入中的每个报告 ID 必须出现在某条 bank_view.report_ids 中；只放进 references 不算覆盖。不得漏掉任何 ID。
+4. 同一条 bank_view 不要混合不同投行。投行名称使用 GS、JPM、MS、BofA、Citi、UBS、DB、NOM 等缩写。
+5. data_points 提炼 4-10 条最有辨识度的数字或事实，不能写空泛结论；marginal_change 说明相对旧叙事的新变化。
+6. 从候选中选择最多 {getattr(args, 'figures_per_bank_section', 4)} 张真正支撑观点的原始报告图；优先来自不同报告。没有合适图可以少选，禁止编造 figure_id。
+7. 不写买卖评级，不写逐篇报告标题，不输出文件名，不做纯翻译堆叠。
+8. references 必须列出本栏目全部输入 ID，供程序校验，但这些 ID 不会在 PDF 正文显示。
+
+输出 JSON：
+{{"heading":"可优化的栏目标题","thesis":"本栏目的核心判断","consensus":["共识1"],"divergences":["分歧1"],"bank_views":[{{"bank":"JPM","view":"整合后的机构判断","data_points":["关键数字"],"marginal_change":"边际变化","report_ids":["R001"]}}],"data_points":["跨报告关键数字"],"figure_ids":["F001"],"references":{json.dumps(report_ids, ensure_ascii=False)}}}
+
+报告摘要：
+{json.dumps(report_payload, ensure_ascii=False, indent=2)}
+
+本栏目可选图表：
+{json.dumps(figure_payload, ensure_ascii=False, indent=2)}
+""".strip()
+
+
+def select_section_figures(
+    requested_ids: list[Any],
+    report_ids: list[str],
+    figures: list[dict[str, Any]],
+    limit: int,
+) -> list[str]:
+    if limit <= 0:
+        return []
+    report_id_set = set(report_ids)
+    figures_by_id = {str(figure.get("figure_id") or ""): figure for figure in figures}
+    selected: list[str] = []
+    selected_reports: set[str] = set()
+    for requested_id in requested_ids:
+        figure_id = str(requested_id)
+        figure = figures_by_id.get(figure_id)
+        if not figure or str(figure.get("report_id") or "") not in report_id_set:
+            continue
+        if figure_id not in selected:
+            selected.append(figure_id)
+            selected_reports.add(str(figure.get("report_id") or ""))
+        if len(selected) >= limit:
+            return selected
+
+    for distinct_only in (True, False):
+        for figure in figures:
+            report_id = str(figure.get("report_id") or "")
+            figure_id = str(figure.get("figure_id") or "")
+            if report_id not in report_id_set or not figure_id or figure_id in selected:
+                continue
+            if distinct_only and report_id in selected_reports:
+                continue
+            selected.append(figure_id)
+            selected_reports.add(report_id)
+            if len(selected) >= limit:
+                return selected
+    return selected
+
+
+def clean_string_list(value: Any, limit: int) -> list[str]:
+    if not isinstance(value, list):
+        return []
+    cleaned = [normalize_space(str(item)) for item in value if normalize_space(str(item))]
+    return cleaned[:limit]
+
+
+def normalize_bank_section(
+    raw_section: dict[str, Any],
+    planned_heading: str,
+    reports: list[dict[str, Any]],
+    figures: list[dict[str, Any]],
+    figure_limit: int,
+) -> dict[str, Any]:
+    reports_by_id = {report["id"]: report for report in reports}
+    valid_ids = set(reports_by_id)
+    bank_views: list[dict[str, Any]] = []
+    covered: set[str] = set()
+    raw_views = (raw_section.get("bank_views") or raw_section.get("views") or []) if isinstance(raw_section, dict) else []
+    for raw_view in raw_views:
+        if not isinstance(raw_view, dict):
+            continue
+        raw_ids = raw_view.get("report_ids") or ([raw_view.get("report_id")] if raw_view.get("report_id") else [])
+        report_ids = [
+            str(report_id)
+            for report_id in raw_ids
+            if str(report_id) in valid_ids and str(report_id) not in covered
+        ]
+        if not report_ids:
+            continue
+        by_bank: dict[str, list[str]] = {}
+        for report_id in report_ids:
+            by_bank.setdefault(bank_alias(reports_by_id[report_id]), []).append(report_id)
+        for bank, bank_report_ids in by_bank.items():
+            view = normalize_space(str(raw_view.get("view") or raw_view.get("summary") or ""))
+            if not view:
+                view = report_view_fallback(reports_by_id[bank_report_ids[0]])["view"]
+            bank_views.append({
+                "bank": bank,
+                "view": view,
+                "data_points": clean_string_list(raw_view.get("data_points") or [], 4),
+                "marginal_change": normalize_space(str(raw_view.get("marginal_change") or "")),
+                "report_ids": bank_report_ids,
+            })
+            covered.update(bank_report_ids)
+
+    for report in reports:
+        if report["id"] not in covered:
+            bank_views.append(report_view_fallback(report))
+            covered.add(report["id"])
+
+    report_ids = [report["id"] for report in reports]
+    requested_figures = (raw_section.get("figure_ids") or []) if isinstance(raw_section, dict) else []
+    figure_ids = select_section_figures(requested_figures, report_ids, figures, figure_limit)
+    consensus = clean_string_list(
+        raw_section.get("consensus") or raw_section.get("bullets") or [],
+        6,
+    ) if isinstance(raw_section, dict) else []
+    if not consensus:
+        consensus = [view["view"] for view in bank_views[:3]]
+    thesis = normalize_space(str(raw_section.get("thesis") or "")) if isinstance(raw_section, dict) else ""
+    return {
+        "heading": normalize_space(str(raw_section.get("heading") or planned_heading)) if isinstance(raw_section, dict) else planned_heading,
+        "thesis": thesis or "本节按机构观点、关键数据和边际变化汇总今日新增投行研究。",
+        "consensus": consensus,
+        "divergences": clean_string_list(raw_section.get("divergences") or [], 5) if isinstance(raw_section, dict) else [],
+        "bank_views": bank_views,
+        "data_points": clean_string_list(raw_section.get("data_points") or [], 10) if isinstance(raw_section, dict) else [],
+        "figure_ids": figure_ids,
+        "references": report_ids,
+    }
+
+
+def build_fallback_bank_roundup(reports: list[dict[str, Any]], figures: list[dict[str, Any]]) -> dict[str, Any]:
+    reports_by_id = {report["id"]: report for report in reports}
+    sections = []
+    for planned in heuristic_bank_plan(reports):
+        section_reports = [reports_by_id[report_id] for report_id in planned["report_ids"]]
+        sections.append(normalize_bank_section({}, planned["heading"], section_reports, figures, figure_limit=4))
+    return {
+        "title": "全球投行叙事汇编",
+        "summary": f"今日纳入 {len(reports)} 篇投行/券商研究，按 {len(sections)} 个市场与产业主题系统整理。",
+        "sections": sections,
+    }
+
+
 def fallback_theme_for_reports(
     heading: str,
     reports: list[dict[str, Any]],
     figures: list[dict[str, Any]],
-    max_bullets: int = 4,
+    max_bullets: int = 8,
 ) -> dict[str, Any]:
     refs = [r["id"] for r in reports]
-    bullets = [first_signal(r.get("extract") or r.get("digest") or "", max_chars=120) for r in reports[:max_bullets]]
-    if len(reports) > max_bullets:
-        bullets.append(f"另有 {len(reports) - max_bullets} 篇同主题报告已纳入 references，用于校准该主题的叙事覆盖与边际变化。")
+    bullet_limit = len(reports) if max_bullets <= 0 else max_bullets
+    bullets = [
+        (report_signal_fallback(report, max_chars=140) or ["该报告提供了一条需要纳入本主题判断的新增信号。"])[0]
+        for report in reports[:bullet_limit]
+    ]
     figure_ids: list[str] = []
     for report in reports:
         for fig_id in figure_ids_for_report(figures, report["id"], limit=1):
@@ -746,7 +1082,7 @@ def build_source_roundup_for_group(
         overflow_reports = [report for _, items in overflow for report in items]
         primary.append(("其他边际信号", overflow_reports))
 
-    themes = [fallback_theme_for_reports(heading, items, figures) for heading, items in primary if items]
+    themes = [fallback_theme_for_reports(heading, items, figures, max_bullets=len(items)) for heading, items in primary if items]
     total_refs = sum(len(theme.get("references") or []) for theme in themes)
     summary = f"今日纳入 {len(reports)} 篇，压缩为 {len(themes)} 个主题、{total_refs} 个引用点，重点看叙事和数据边际变化。"
     return {
@@ -759,7 +1095,12 @@ def build_source_roundup_for_group(
 
 def build_source_roundups(reports: list[dict[str, Any]], figures: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return [
-        build_source_roundup_for_group(source_group_reports(reports, source_group), figures, source_group)
+        build_source_roundup_for_group(
+            source_group_reports(reports, source_group),
+            figures,
+            source_group,
+            max_themes=12 if source_group == "bank_research" else 3,
+        )
         for source_group in ROUNDUP_SOURCE_ORDER
     ]
 
@@ -817,15 +1158,14 @@ def normalize_source_roundup(
     referenced = collect_roundup_references(roundup)
     missing = [rid for rid in source_report_ids if rid not in referenced]
     if missing:
-        target = roundup["themes"][-1] if roundup["themes"] else None
-        if target is None:
-            fallback = build_source_roundup_for_group([reports_by_id[rid] for rid in missing], list(figures_by_id.values()), source_group)
-            roundup["themes"] = fallback["themes"]
-        else:
-            target.setdefault("references", [])
-            target["references"].extend(rid for rid in missing if rid not in target["references"])
-            target.setdefault("bullets", [])
-            target["bullets"].append(f"另有 {len(missing)} 篇同来源报告纳入 references，用于校准该来源板块覆盖面。")
+        missing_reports = [reports_by_id[rid] for rid in missing]
+        fallback = build_source_roundup_for_group(
+            missing_reports,
+            list(figures_by_id.values()),
+            source_group,
+            max_themes=12 if source_group == "bank_research" else 3,
+        )
+        roundup["themes"].extend(fallback["themes"])
 
     if not roundup["summary"]:
         total_refs = len(collect_roundup_references(roundup))
@@ -858,6 +1198,280 @@ def enrich_source_roundups(
     summary.pop("sections", None)
     summary.pop("external_roundup", None)
     return summary
+
+
+def request_model_json(
+    prompt: str,
+    args: argparse.Namespace,
+    label: str,
+    raw_path: Path,
+) -> dict[str, Any]:
+    raw = call_deepseek(prompt, args, label)
+    raw_path.write_text(raw, encoding="utf-8")
+    parsed = extract_json(raw)
+    if not isinstance(parsed, dict):
+        raise ValueError(f"{label}: expected a JSON object")
+    return parsed
+
+
+def generate_bank_roundup(
+    reports: list[dict[str, Any]],
+    figures: list[dict[str, Any]],
+    args: argparse.Namespace,
+    out_dir: Path,
+    use_model: bool,
+) -> dict[str, Any]:
+    if not reports:
+        return {"title": "全球投行叙事汇编", "summary": "今日暂无新增投行研究。", "sections": []}
+
+    raw_plan: dict[str, Any] = {}
+    if use_model:
+        try:
+            raw_plan = request_model_json(
+                bank_plan_prompt(reports),
+                args,
+                "bank category plan",
+                out_dir / "deepseek_bank_category_plan_raw.json",
+            )
+        except Exception as exc:
+            log(f"DeepSeek bank category plan failed; using heuristic plan: {exc}")
+            (out_dir / "deepseek_bank_category_plan_error.txt").write_text(str(exc), encoding="utf-8")
+
+    plan = normalize_bank_plan(
+        raw_plan,
+        reports,
+        max_reports_per_section=getattr(args, "max_reports_per_bank_section", 12),
+    )
+    (out_dir / "bank_category_plan.json").write_text(json.dumps(plan, ensure_ascii=False, indent=2), encoding="utf-8")
+    reports_by_id = {report["id"]: report for report in reports}
+    sections: list[dict[str, Any]] = []
+    for index, planned in enumerate(plan, 1):
+        section_reports = [reports_by_id[report_id] for report_id in planned["report_ids"]]
+        raw_section: dict[str, Any] = {}
+        if use_model:
+            try:
+                raw_section = request_model_json(
+                    bank_section_prompt(planned["heading"], section_reports, figures, args),
+                    args,
+                    f"bank section {index}/{len(plan)}",
+                    out_dir / f"deepseek_bank_section_{index:02d}_raw.json",
+                )
+            except Exception as exc:
+                log(f"DeepSeek bank section {index} failed; using content fallback: {exc}")
+                (out_dir / f"deepseek_bank_section_{index:02d}_error.txt").write_text(str(exc), encoding="utf-8")
+        section = normalize_bank_section(
+            raw_section,
+            planned["heading"],
+            section_reports,
+            figures,
+            figure_limit=getattr(args, "figures_per_bank_section", 4),
+        )
+        sections.append(section)
+        content_ids = {
+            report_id
+            for view in section.get("bank_views") or []
+            for report_id in view.get("report_ids") or []
+        }
+        log(
+            f"Bank section {index}/{len(plan)}: {section['heading']} | "
+            f"reports={len(section_reports)} content_covered={len(content_ids)} figures={len(section['figure_ids'])}"
+        )
+
+    return {
+        "title": "全球投行叙事汇编",
+        "summary": f"今日纳入 {len(reports)} 篇投行/券商研究，按 {len(sections)} 个市场、资产与产业主题系统整理。",
+        "sections": sections,
+    }
+
+
+def supporting_roundup_prompt(
+    source_group: str,
+    reports: list[dict[str, Any]],
+    figures: list[dict[str, Any]],
+    args: argparse.Namespace,
+) -> str:
+    label = source_group_label(source_group)
+    report_payload = [
+        {
+            "id": report["id"],
+            "institution": report.get("institution_name") or label,
+            "title": report.get("title") or "",
+            "digest": trim_text(report.get("digest") or "", min(args.per_report_prompt_chars, 1800)),
+        }
+        for report in reports
+    ]
+    figure_payload = section_figure_candidates(
+        figures,
+        [report["id"] for report in reports],
+        max_candidates=16,
+    )
+    return f"""
+请把下面的“{label}”新增研究整理成 Market Views 的独立辅助板块。它不能与投行主体混写，也不需要和投行板块等长。
+
+要求：
+1. 按当天内容归纳 1-3 个 themes，每个 theme 写 3-5 条完整要点，保留数据、政策含义和边际变化。
+2. 每篇输入报告都必须在某个 theme 中得到实质整合，并列入该 theme.references；不能只把 ID 堆到最后。
+3. 这是辅助信号，只写对宏观、产业、企业战略或资产叙事有帮助的部分，不做逐篇翻译。
+4. 每个 theme 最多选 2 张原始报告图表，不要输出文件名。
+
+输出 JSON：
+{{"source_group":"{source_group}","title":"{label}","summary":"本板块摘要","themes":[{{"heading":"主题","thesis":"核心含义","bullets":["要点"],"figure_ids":["F001"],"references":["R001"]}}]}}
+
+报告摘要：
+{json.dumps(report_payload, ensure_ascii=False, indent=2)}
+
+可选图表：
+{json.dumps(figure_payload, ensure_ascii=False, indent=2)}
+""".strip()
+
+
+def generate_supporting_roundup(
+    source_group: str,
+    reports: list[dict[str, Any]],
+    figures: list[dict[str, Any]],
+    args: argparse.Namespace,
+    out_dir: Path,
+    use_model: bool,
+) -> dict[str, Any]:
+    raw_roundup: dict[str, Any] = {}
+    if reports and use_model:
+        try:
+            raw_roundup = request_model_json(
+                supporting_roundup_prompt(source_group, reports, figures, args),
+                args,
+                f"supporting roundup {source_group}",
+                out_dir / f"deepseek_support_{source_group}_raw.json",
+            )
+        except Exception as exc:
+            log(f"DeepSeek supporting roundup {source_group} failed; using fallback: {exc}")
+            (out_dir / f"deepseek_support_{source_group}_error.txt").write_text(str(exc), encoding="utf-8")
+
+    reports_by_id = {report["id"]: report for report in reports}
+    figures_by_id = {figure["figure_id"]: figure for figure in figures}
+    return normalize_source_roundup(raw_roundup, reports_by_id, figures_by_id, source_group)
+
+
+def overview_prompt(bank_roundup: dict[str, Any], supporting_roundups: list[dict[str, Any]], reports: list[dict[str, Any]]) -> str:
+    section_payload = [
+        {
+            "heading": section.get("heading"),
+            "thesis": section.get("thesis"),
+            "consensus": (section.get("consensus") or [])[:4],
+            "divergences": (section.get("divergences") or [])[:3],
+            "report_count": len(section.get("references") or []),
+        }
+        for section in bank_roundup.get("sections") or []
+    ]
+    supporting_payload = [
+        {
+            "title": roundup.get("title"),
+            "summary": roundup.get("summary"),
+            "themes": [theme.get("heading") for theme in roundup.get("themes") or []],
+        }
+        for roundup in supporting_roundups
+    ]
+    bank_count = sum(1 for report in reports if report.get("source_group") == "bank_research")
+    return f"""
+请为今日 Market Views 写封面信息和一页摘要。投行叙事是绝对主体，咨询与国际机构只作为辅助校准。
+
+要求：
+1. executive_summary 写 6-8 条，每条必须指出主流叙事、关键数据或分歧，不写编辑流程和覆盖说明。
+2. subtitle 一句话概括今天最重要的跨主题变化。
+3. closing 说明后续需要验证的数据或叙事节点，不给投资建议。
+4. 不引用报告 ID、文件名或标题清单。
+
+输出 JSON：
+{{"title":"Market Views｜全球投行叙事汇编","subtitle":"今日主线","executive_summary":["要点"],"closing":"收束"}}
+
+投行报告数：{bank_count}
+投行板块：
+{json.dumps(section_payload, ensure_ascii=False, indent=2)}
+
+辅助板块：
+{json.dumps(supporting_payload, ensure_ascii=False, indent=2)}
+""".strip()
+
+
+def compose_market_summary(
+    bank_roundup: dict[str, Any],
+    supporting_roundups: list[dict[str, Any]],
+    reports: list[dict[str, Any]],
+    overview: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    overview = overview or {}
+    bank_count = sum(1 for report in reports if report.get("source_group") == "bank_research")
+    consulting_count = sum(1 for report in reports if report.get("source_group") == "consulting")
+    institution_count = sum(1 for report in reports if report.get("source_group") == "institution")
+    executive_summary = clean_string_list(overview.get("executive_summary") or [], 8)
+    if not executive_summary:
+        for section in bank_roundup.get("sections") or []:
+            points = section.get("consensus") or []
+            if points:
+                executive_summary.append(normalize_space(str(points[0])))
+            if len(executive_summary) >= 6:
+                break
+    if not executive_summary:
+        executive_summary = ["今日投行研究按宏观、资产、区域与产业主题分组整理，正文逐篇落实到机构观点。"]
+
+    content_covered = {
+        str(report_id)
+        for section in bank_roundup.get("sections") or []
+        for view in section.get("bank_views") or []
+        for report_id in view.get("report_ids") or []
+    }
+    return {
+        "schema_version": 2,
+        "title": normalize_space(str(overview.get("title") or "Market Views｜全球投行叙事汇编")),
+        "subtitle": normalize_space(str(overview.get("subtitle") or f"今日以 {bank_count} 篇投行研究为主体，观察全球市场叙事与数据的边际变化。")),
+        "executive_summary": executive_summary,
+        "bank_roundup": bank_roundup,
+        "supporting_roundups": supporting_roundups,
+        "coverage": {
+            "bank_reports": bank_count,
+            "bank_content_covered": len(content_covered),
+            "consulting_reports": consulting_count,
+            "institution_reports": institution_count,
+        },
+        "closing": normalize_space(str(overview.get("closing") or "后续重点是跟踪关键数据能否继续验证今日形成的共识与分歧。")),
+    }
+
+
+def build_market_summary(
+    reports: list[dict[str, Any]],
+    figures: list[dict[str, Any]],
+    args: argparse.Namespace,
+    out_dir: Path,
+) -> dict[str, Any]:
+    use_model = bool(os.getenv("DEEPSEEK_API_KEY"))
+    if not use_model:
+        log("DEEPSEEK_API_KEY is missing; building deterministic content fallback without model calls.")
+    bank_reports = source_group_reports(reports, "bank_research")
+    bank_roundup = generate_bank_roundup(bank_reports, figures, args, out_dir, use_model)
+    supporting_roundups = [
+        generate_supporting_roundup(
+            source_group,
+            source_group_reports(reports, source_group),
+            figures,
+            args,
+            out_dir,
+            use_model,
+        )
+        for source_group in ("consulting", "institution")
+    ]
+
+    overview: dict[str, Any] = {}
+    if use_model:
+        try:
+            overview = request_model_json(
+                overview_prompt(bank_roundup, supporting_roundups, reports),
+                args,
+                "market views overview",
+                out_dir / "deepseek_market_overview_raw.json",
+            )
+        except Exception as exc:
+            log(f"DeepSeek market overview failed; using section-derived summary: {exc}")
+            (out_dir / "deepseek_market_overview_error.txt").write_text(str(exc), encoding="utf-8")
+    return compose_market_summary(bank_roundup, supporting_roundups, reports, overview)
 
 
 def build_external_roundup(
@@ -978,51 +1592,99 @@ def render_latex(summary: dict[str, Any], reports_by_id: dict[str, dict[str, Any
     for item in summary.get("executive_summary", []):
         lines.append(r"  \item " + latex_escape(item))
     lines.append(r"\end{itemize}")
-    for roundup in summary.get("source_roundups", []) or []:
-        lines.append(r"\section{" + latex_escape(roundup.get("title") or source_group_label(roundup.get("source_group", ""))) + r"}")
+
+    bank_roundup = summary.get("bank_roundup") or build_fallback_bank_roundup(
+        [report for report in reports_by_id.values() if report.get("source_group") == "bank_research"],
+        list(figures_by_id.values()),
+    )
+    lines.append(r"\section{" + latex_escape(bank_roundup.get("title") or "全球投行叙事汇编") + r"}")
+    if bank_roundup.get("summary"):
+        lines.append(latex_escape(bank_roundup.get("summary")))
+    for section in bank_roundup.get("sections") or []:
+        lines.append(r"\newpage")
+        lines.append(r"\subsection{" + latex_escape(section.get("heading") or "投行市场主线") + r"}")
+        if section.get("thesis"):
+            lines.append(r"\textbf{" + latex_escape(section.get("thesis")) + r"}")
+        for label, key in (("主流共识", "consensus"), ("分歧与条件差异", "divergences")):
+            values = section.get(key) or []
+            if not values:
+                continue
+            lines += [r"\subsubsection*{" + label + r"}", r"\begin{itemize}"]
+            lines.extend(r"  \item " + latex_escape(value) for value in values)
+            lines.append(r"\end{itemize}")
+        lines.append(r"\subsubsection*{机构观点}")
+        for view in section.get("bank_views") or []:
+            lines.append(r"\paragraph{" + latex_escape(view.get("bank") or "投行") + r"} " + latex_escape(view.get("view") or ""))
+            for data_point in view.get("data_points") or []:
+                lines.append(r"{\small\color{refgray}数据：" + latex_escape(data_point) + r"\par}")
+            if view.get("marginal_change"):
+                lines.append(r"{\small\color{refgray}边际变化：" + latex_escape(view.get("marginal_change")) + r"\par}")
+        if section.get("data_points"):
+            lines += [r"\subsubsection*{关键数据}", r"\begin{itemize}"]
+            lines.extend(r"  \item " + latex_escape(value) for value in section.get("data_points") or [])
+            lines.append(r"\end{itemize}")
+        for fig_id in (section.get("figure_ids") or [])[:4]:
+            fig = figures_by_id.get(str(fig_id))
+            if not fig:
+                continue
+            lines += [r"\begin{figure}[htbp]", r"\centering", r"\includegraphics[width=0.88\linewidth]{" + fig["latex_path"] + r"}", r"\caption{" + latex_escape(f"{fig.get('label', 'Figure')} - {fig.get('context', '')}") + r"}", r"\end{figure}"]
+        report_names = []
+        for report_id in section.get("references") or []:
+            report = reports_by_id.get(str(report_id))
+            if not report:
+                continue
+            name = bank_alias(report)
+            if name not in report_names:
+                report_names.append(name)
+        lines.append(r"{\small\color{refgray}" + latex_escape(f"本节综合 {len(section.get('references') or [])} 篇研究；涉及 {'、'.join(report_names)}。") + r"}")
+
+    for roundup in summary.get("supporting_roundups") or []:
+        lines.append(r"\newpage")
+        lines.append(r"\section{" + latex_escape("辅助信号｜" + str(roundup.get("title") or source_group_label(roundup.get("source_group", "")))) + r"}")
         if roundup.get("summary"):
             lines.append(latex_escape(roundup.get("summary")))
-            lines.append("")
         for theme in roundup.get("themes") or []:
-            lines.append(r"\subsection{" + latex_escape(theme.get("heading") or "未命名主题") + r"}")
+            lines.append(r"\subsection{" + latex_escape(theme.get("heading") or "辅助研究主题") + r"}")
             if theme.get("thesis"):
                 lines.append(r"\textbf{" + latex_escape(theme.get("thesis")) + r"}")
-                lines.append("")
             if theme.get("bullets"):
                 lines.append(r"\begin{itemize}")
-                for bullet in theme.get("bullets", []):
-                    lines.append(r"  \item " + latex_escape(bullet))
+                lines.extend(r"  \item " + latex_escape(value) for value in theme.get("bullets") or [])
                 lines.append(r"\end{itemize}")
-            for fig_id in (theme.get("figure_ids") or []):
-                fig = figures_by_id.get(fig_id)
+            for fig_id in (theme.get("figure_ids") or [])[:2]:
+                fig = figures_by_id.get(str(fig_id))
                 if not fig:
                     continue
                 lines += [r"\begin{figure}[htbp]", r"\centering", r"\includegraphics[width=0.88\linewidth]{" + fig["latex_path"] + r"}", r"\caption{" + latex_escape(f"{fig.get('label', 'Figure')} - {fig.get('context', '')}") + r"}", r"\end{figure}"]
-            refs = []
-            for ref_id in theme.get("references", []):
-                report = reports_by_id.get(str(ref_id))
-                if report:
-                    refs.append(f"[{ref_id}] {report['title']}")
-            if refs:
-                lines.append(r"{\small\color{refgray}\textbf{References:} " + latex_escape("; ".join(refs)) + r"}")
-            lines.append("")
-        if not roundup.get("themes"):
-            lines.append(r"\begin{itemize}")
-            lines.append(r"  \item " + latex_escape(roundup.get("summary") or "今日暂无新增报告。"))
-            lines.append(r"\end{itemize}")
     if summary.get("closing"):
         lines += [r"\section{结语}", latex_escape(summary.get("closing"))]
-    lines += [r"\newpage", r"\section{报告覆盖清单}", r"\begin{itemize}"]
-    coverage = source_roundup_map(summary)
-    for report_id, report in reports_by_id.items():
-        categories = " / ".join(coverage.get(report_id, ["未被来源板块引用"]))
-        source = source_group_label(report.get("source_group", ""))
-        lines.append(r"  \item " + latex_escape(f"[{report_id}] {source} | {categories} - {report.get('title', '')}"))
-    lines += [r"\end{itemize}"]
-    lines += [r"\section{Disclaimer}", r"{\scriptsize\color{refgray}"]
+    source_counts = {group: sum(1 for report in reports_by_id.values() if report.get("source_group") == group) for group in ROUNDUP_SOURCE_ORDER}
+    bank_counts: dict[str, int] = {}
+    for report in reports_by_id.values():
+        if report.get("source_group") != "bank_research":
+            continue
+        name = bank_alias(report)
+        bank_counts[name] = bank_counts.get(name, 0) + 1
+    bank_mix = " / ".join(f"{name} {count}篇" for name, count in sorted(bank_counts.items(), key=lambda item: (-item[1], item[0])))
+    lines += [
+        r"\newpage",
+        r"\section{覆盖概览}",
+        latex_escape(f"投行/券商 {source_counts['bank_research']} 篇；战略咨询 {source_counts['consulting']} 篇；智库/国际机构 {source_counts['institution']} 篇。") + r"\par",
+        latex_escape("投行覆盖：" + bank_mix) + r"\par",
+        r"\section{Disclaimer}",
+        r"{\scriptsize\color{refgray}",
+    ]
     for para in DISCLAIMER_TEXT.split("\n\n"):
         lines.append(latex_escape(para) + r"\par")
-    lines += [r"}", r"\end{document}"]
+    lines += [
+        r"}",
+        r"\newpage",
+        r"\begin{center}",
+        r"{\Large 更多详情报告kcdesk.com}\par\vspace{0.8cm}",
+        r"\includegraphics[width=0.58\linewidth]{\detokenize{../../prompts/zsxq_img.jpg}}",
+        r"\end{center}",
+        r"\end{document}",
+    ]
     return "\n".join(lines) + "\n"
 
 
@@ -1048,6 +1710,7 @@ def main() -> int:
     parser.add_argument("--output-root", default="market_view_summaries")
     parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-chat"))
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
+    parser.add_argument("--deepseek-max-tokens", type=int, default=8192)
     parser.add_argument("--max-reports", type=int, default=0, help="0 means no limit")
     parser.add_argument("--per-report-prompt-chars", type=int, default=2200)
     parser.add_argument("--per-report-extract-chars", type=int, default=2200)
@@ -1058,6 +1721,12 @@ def main() -> int:
                         help="Deprecated; Market Views uses source exhibits only, not generated visual cards.")
     parser.add_argument("--max-external-roundup-items", type=int, default=24,
                         help="Maximum institution/consulting items to expand in the external roundup.")
+    parser.add_argument("--max-reports-per-bank-section", type=int, default=12,
+                        help="Split planned bank themes above this size so DeepSeek can cover every report.")
+    parser.add_argument("--max-section-figure-candidates", type=int, default=40,
+                        help="Maximum relevant exhibit candidates sent to one DeepSeek bank-section request.")
+    parser.add_argument("--figures-per-bank-section", type=int, default=4,
+                        help="Maximum source exhibits rendered for each bank-led theme.")
     parser.add_argument("--compile", default="false")
     args = parser.parse_args()
 
@@ -1121,18 +1790,23 @@ def main() -> int:
     (out_dir / "report_inputs.json").write_text(json.dumps(reports, ensure_ascii=False, indent=2), encoding="utf-8")
     (out_dir / "figure_candidates.json").write_text(json.dumps(figures, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    prompt = build_prompt(reports, figures, args)
-    (out_dir / "prompt_for_market_views.md").write_text(prompt, encoding="utf-8")
-    try:
-        raw = call_deepseek(prompt, args, "market views roundup")
-        (out_dir / "deepseek_market_views_raw.json").write_text(raw, encoding="utf-8")
-        summary = extract_json(raw)
-    except Exception as exc:
-        log(f"DeepSeek market summary failed; using fallback: {exc}")
-        summary = fallback_summary(reports, figures)
-        (out_dir / "deepseek_market_views_error.txt").write_text(str(exc), encoding="utf-8")
+    for stale_path in out_dir.glob("deepseek_bank_section_*_raw.json"):
+        stale_path.unlink()
+    for stale_path in out_dir.glob("deepseek_bank_section_*_error.txt"):
+        stale_path.unlink()
+    (out_dir / "prompt_for_market_views.md").write_text(build_prompt(reports, figures, args), encoding="utf-8")
+    summary = build_market_summary(reports, figures, args, out_dir)
     summary = json.loads(sanitize_text(json.dumps(summary, ensure_ascii=False)))
-    summary = enrich_source_roundups(summary, reports, figures)
+    coverage = summary.get("coverage") or {}
+    if coverage.get("bank_content_covered") != coverage.get("bank_reports"):
+        raise RuntimeError(
+            "Bank content coverage validation failed: "
+            f"covered={coverage.get('bank_content_covered')} total={coverage.get('bank_reports')}"
+        )
+    log(
+        "Validated substantive bank coverage: "
+        f"{coverage.get('bank_content_covered')}/{coverage.get('bank_reports')} reports appear in bank_views"
+    )
     (out_dir / "market_views_structured.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
     tex_path = out_dir / f"market_views_{report_date}.tex"
     tex_path.write_text(render_latex(summary, {r["id"]: r for r in reports}, {f["figure_id"]: f for f in figures}, report_date), encoding="utf-8")

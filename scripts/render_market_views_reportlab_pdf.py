@@ -58,6 +58,21 @@ SOURCE_GROUP_LABELS = {
     "consulting": "战略咨询",
     "institution": "智库/国际机构",
 }
+BANK_ALIAS_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
+    ("GS", ("goldman sachs", "goldman", "高盛", "gs")),
+    ("JPM", ("jpmorgan", "jp morgan", "摩根大通", "jpm")),
+    ("MS", ("morgan stanley", "摩根士丹利", "ms")),
+    ("BofA", ("bank of america", "bofa", "美银")),
+    ("Citi", ("citigroup", "citi", "花旗")),
+    ("UBS", ("ubs", "瑞银")),
+    ("DB", ("deutsche bank", "deutsche", "德银", "db")),
+    ("NOM", ("nomura", "野村", "nom")),
+    ("Bernstein", ("bernstein", "伯恩斯坦")),
+    ("Barclays", ("barclays", "巴克莱")),
+    ("Jefferies", ("jefferies", "杰富瑞")),
+    ("HSBC", ("hsbc", "汇丰")),
+    ("Macquarie", ("macquarie", "麦格理")),
+)
 
 
 def log(message: str) -> None:
@@ -181,6 +196,26 @@ def report_source_name(report: dict[str, Any]) -> str:
     return report_source_label(report)
 
 
+def report_bank_name(report: dict[str, Any]) -> str:
+    raw_name = clean_plain(report.get("institution_name") or report.get("source_name") or "")
+    title = clean_plain(report.get("title") or "")
+    haystack = f"{raw_name} {title[:40]}".lower()
+    for alias, keywords in BANK_ALIAS_RULES:
+        for keyword in keywords:
+            lowered = keyword.lower()
+            if lowered == raw_name.lower():
+                return alias
+            if len(lowered) <= 3:
+                if re.search(rf"(?<![a-z0-9]){re.escape(lowered)}(?![a-z0-9])", haystack):
+                    return alias
+            elif lowered in haystack:
+                return alias
+    if raw_name:
+        return raw_name[:20]
+    prefix = re.split(r"[：:]", title, maxsplit=1)[0].strip()
+    return prefix[:20] if prefix else "投行"
+
+
 def external_section_map(summary: dict[str, Any]) -> dict[str, list[str]]:
     mapping: dict[str, list[str]] = {}
     roundup = summary.get("external_roundup") or {}
@@ -229,7 +264,7 @@ def figure_ids_for_report(figures: dict[str, dict[str, Any]], report_id: str, li
 def first_signal(text: str, max_chars: int = 96) -> str:
     paragraphs = extract_paragraphs(text, max_paragraphs=3)
     if not paragraphs:
-        return "该外部来源提供了一个需要纳入今日市场判断的补充信号。"
+        return "该报告提供了一条需要纳入今日市场判断的新增信号。"
     sentence = re.split(r"(?<=[。.!?！？])\s+", paragraphs[0])[0]
     if len(sentence) > max_chars:
         sentence = sentence[:max_chars].rstrip() + "..."
@@ -324,9 +359,8 @@ def fallback_source_roundup(source_group: str, reports: dict[str, dict[str, Any]
         return {"source_group": source_group, "title": label, "summary": "今日暂无新增报告。", "themes": []}
 
     refs = [rid for rid, _ in source_reports]
-    bullets = [first_signal(report.get("extract") or report.get("digest") or "") for _, report in source_reports[:5]]
-    if len(source_reports) > 5:
-        bullets.append(f"另有 {len(source_reports) - 5} 篇同来源报告纳入 references，用于校准该来源板块覆盖面。")
+    bullet_limit = len(source_reports) if source_group in EXTERNAL_SOURCE_GROUPS else min(10, len(source_reports))
+    bullets = [first_signal(report.get("extract") or report.get("digest") or "") for _, report in source_reports[:bullet_limit]]
     figure_ids: list[str] = []
     for rid, _ in source_reports:
         for fig_id in figure_ids_for_report(figures, rid, limit=1):
@@ -397,11 +431,148 @@ def source_roundups(summary: dict[str, Any], reports: dict[str, dict[str, Any]],
         elif not roundup["summary"]:
             roundup["summary"] = f"今日纳入 {len(source_ids)} 篇，整合为 {len(themes)} 个主题。"
         missing = [rid for rid in source_ids if rid not in source_roundup_map([roundup])]
-        if missing and themes:
-            themes[-1].setdefault("references", []).extend(rid for rid in missing if rid not in themes[-1].get("references", []))
-            themes[-1].setdefault("bullets", []).append(f"另有 {len(missing)} 篇同来源报告纳入 references，用于校准该来源板块覆盖面。")
+        if missing:
+            themes.append({
+                "heading": "补充信号",
+                "thesis": "以下观点补齐本来源中尚未进入前述主题的新增研究。",
+                "bullets": [first_signal(reports[rid].get("extract") or reports[rid].get("digest") or "", max_chars=130) for rid in missing],
+                "figure_ids": [],
+                "references": missing,
+            })
         normalized.append(roundup)
     return normalized
+
+
+def clean_list(value: Any, limit: int = 0) -> list[str]:
+    if not isinstance(value, list):
+        return []
+    items = [clean_plain(item) for item in value if clean_plain(item)]
+    return items[:limit] if limit > 0 else items
+
+
+def fallback_bank_view(report_id: str, report: dict[str, Any]) -> dict[str, Any]:
+    view = first_signal(report.get("extract") or report.get("digest") or "", max_chars=180)
+    title = clean_plain(report.get("title") or "")
+    if view == title or title.startswith(view):
+        paragraphs = extract_paragraphs(report.get("extract") or report.get("digest") or "", max_paragraphs=4)
+        view = next((paragraph for paragraph in paragraphs if paragraph != title and not title.startswith(paragraph)), view)
+        if len(view) > 180:
+            view = view[:180].rstrip() + "..."
+    return {
+        "bank": report_bank_name(report),
+        "view": view,
+        "data_points": [],
+        "marginal_change": "",
+        "report_ids": [report_id],
+    }
+
+
+def normalized_bank_roundup(
+    summary: dict[str, Any],
+    reports: dict[str, dict[str, Any]],
+    figures: dict[str, dict[str, Any]],
+) -> dict[str, Any]:
+    bank_ids = {report_id for report_id, report in reports.items() if report_source_group(report) == "bank_research"}
+    raw_roundup = summary.get("bank_roundup")
+    if not isinstance(raw_roundup, dict) or not isinstance(raw_roundup.get("sections"), list):
+        grouped = source_roundups(summary, reports, figures)
+        bank_source = next((item for item in grouped if item.get("source_group") == "bank_research"), None)
+        bank_source = bank_source or fallback_source_roundup("bank_research", reports, figures)
+        sections = []
+        for theme in bank_source.get("themes") or []:
+            refs = [str(ref) for ref in theme.get("references") or [] if str(ref) in bank_ids]
+            sections.append({
+                "heading": clean_plain(theme.get("heading") or "投行市场主线"),
+                "thesis": clean_plain(theme.get("thesis") or ""),
+                "consensus": clean_list(theme.get("bullets") or []),
+                "divergences": [],
+                "bank_views": [fallback_bank_view(report_id, reports[report_id]) for report_id in refs],
+                "data_points": [],
+                "figure_ids": [str(fig_id) for fig_id in theme.get("figure_ids") or [] if str(fig_id) in figures][:4],
+                "references": refs,
+            })
+        return {
+            "title": "全球投行叙事汇编",
+            "summary": clean_plain(bank_source.get("summary") or f"今日纳入 {len(bank_ids)} 篇投行研究。"),
+            "sections": sections,
+        }
+
+    sections = []
+    for raw_section in raw_roundup.get("sections") or []:
+        if not isinstance(raw_section, dict):
+            continue
+        refs = [str(ref) for ref in raw_section.get("references") or [] if str(ref) in bank_ids]
+        views = []
+        covered: set[str] = set()
+        for raw_view in raw_section.get("bank_views") or []:
+            if not isinstance(raw_view, dict):
+                continue
+            view_ids = [
+                str(report_id)
+                for report_id in raw_view.get("report_ids") or []
+                if str(report_id) in bank_ids and str(report_id) not in covered
+            ]
+            if not view_ids:
+                continue
+            views.append({
+                "bank": clean_plain(raw_view.get("bank") or report_bank_name(reports[view_ids[0]])),
+                "view": clean_plain(raw_view.get("view") or first_signal(reports[view_ids[0]].get("extract") or "", max_chars=180)),
+                "data_points": clean_list(raw_view.get("data_points") or [], 4),
+                "marginal_change": clean_plain(raw_view.get("marginal_change") or ""),
+                "report_ids": view_ids,
+            })
+            covered.update(view_ids)
+        for report_id in refs:
+            if report_id not in covered:
+                views.append(fallback_bank_view(report_id, reports[report_id]))
+                covered.add(report_id)
+        sections.append({
+            "heading": clean_plain(raw_section.get("heading") or "投行市场主线"),
+            "thesis": clean_plain(raw_section.get("thesis") or ""),
+            "consensus": clean_list(raw_section.get("consensus") or raw_section.get("bullets") or [], 6),
+            "divergences": clean_list(raw_section.get("divergences") or [], 5),
+            "bank_views": views,
+            "data_points": clean_list(raw_section.get("data_points") or [], 10),
+            "figure_ids": [str(fig_id) for fig_id in raw_section.get("figure_ids") or [] if str(fig_id) in figures][:4],
+            "references": refs,
+        })
+    return {
+        "title": clean_plain(raw_roundup.get("title") or "全球投行叙事汇编"),
+        "summary": clean_plain(raw_roundup.get("summary") or f"今日纳入 {len(bank_ids)} 篇投行研究。"),
+        "sections": sections,
+    }
+
+
+def normalized_supporting_roundups(
+    summary: dict[str, Any],
+    reports: dict[str, dict[str, Any]],
+    figures: dict[str, dict[str, Any]],
+) -> list[dict[str, Any]]:
+    raw_supporting = summary.get("supporting_roundups")
+    if isinstance(raw_supporting, list):
+        grouped = source_roundups({"source_roundups": raw_supporting}, reports, figures)
+    else:
+        grouped = source_roundups(summary, reports, figures)
+    return [roundup for roundup in grouped if roundup.get("source_group") in ("consulting", "institution")]
+
+
+def coverage_sentence(report_ids: list[Any], reports: dict[str, dict[str, Any]], bank_only: bool = False) -> str:
+    valid_reports = []
+    for report_id in report_ids:
+        report = reports.get(str(report_id))
+        if not report or (bank_only and report_source_group(report) != "bank_research"):
+            continue
+        valid_reports.append(report)
+    names: list[str] = []
+    for report in valid_reports:
+        name = report_bank_name(report) if report_source_group(report) == "bank_research" else report_source_name(report)
+        if name and name not in names:
+            names.append(name)
+    institution_text = "、".join(names[:10])
+    if len(names) > 10:
+        institution_text += "等"
+    suffix = f"；涉及 {institution_text}" if institution_text else ""
+    return f"本节综合 {len(valid_reports)} 篇研究{suffix}。"
 
 
 def extract_paragraphs(text: str, max_paragraphs: int = 5) -> list[str]:
@@ -432,8 +603,11 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
         for item in load_json(summary_dir / "figure_candidates.json")
         if item.get("figure_type") != "external_card"
     }
-    grouped_roundups = source_roundups(summary, reports, figures)
-    coverage_map = source_roundup_map(grouped_roundups)
+    bank_roundup = normalized_bank_roundup(summary, reports, figures)
+    supporting_roundups = normalized_supporting_roundups(summary, reports, figures)
+    cta_path = repo_asset_path(summary_dir, "prompts/zsxq_img.jpg")
+    if not cta_path.exists():
+        raise RuntimeError(f"Required Market Views ending image is missing: {cta_path}")
 
     styles = getSampleStyleSheet()
     styles.add(ParagraphStyle(name="KCTitle", fontName=font, fontSize=22, leading=28, alignment=TA_CENTER, spaceAfter=10))
@@ -441,7 +615,10 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
     styles.add(ParagraphStyle(name="KCTocTitle", fontName=font, fontSize=15, leading=20, spaceBefore=10, spaceAfter=8))
     styles.add(ParagraphStyle(name="KCH1", fontName=font, fontSize=15, leading=20, spaceBefore=14, spaceAfter=8))
     styles.add(ParagraphStyle(name="KCH2", fontName=font, fontSize=11.5, leading=15, spaceBefore=10, spaceAfter=5))
+    styles.add(ParagraphStyle(name="KCH3", fontName=font, fontSize=10.2, leading=14, spaceBefore=8, spaceAfter=4, textColor=colors.HexColor("#344054")))
     styles.add(ParagraphStyle(name="KCBody", fontName=font, fontSize=10.5, leading=16, spaceAfter=7))
+    styles.add(ParagraphStyle(name="KCBankView", fontName=font, fontSize=9.8, leading=15, leftIndent=8, firstLineIndent=-8, spaceAfter=7, textColor=colors.HexColor("#1F2937")))
+    styles.add(ParagraphStyle(name="KCLabel", fontName=font, fontSize=9, leading=12, textColor=colors.HexColor("#475467"), spaceBefore=7, spaceAfter=4))
     styles.add(ParagraphStyle(name="KCRef", fontName=font, fontSize=8, leading=11, textColor=colors.HexColor("#777777"), spaceBefore=4, spaceAfter=10))
     styles.add(ParagraphStyle(name="KCSmall", fontName=font, fontSize=8.5, leading=12, textColor=colors.HexColor("#666666"), spaceAfter=5))
     styles.add(ParagraphStyle(name="KCCardTitle", fontName=font, fontSize=10, leading=13, textColor=colors.HexColor("#1F2937"), spaceBefore=5, spaceAfter=3))
@@ -474,16 +651,49 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
     doc.addPageTemplates([PageTemplate(id="main", frames=[frame], onPage=draw_page)])
 
     story: list[Any] = []
-    story.append(Paragraph(clean_text(summary.get("title") or "市场最新观点汇总"), styles["KCTitle"]))
+
+    def append_figures(figure_ids: list[Any], max_count: int) -> None:
+        rendered = 0
+        for raw_figure_id in figure_ids:
+            if rendered >= max_count:
+                break
+            figure = figures.get(str(raw_figure_id))
+            if not figure:
+                continue
+            image_path = summary_dir / figure.get("latex_path", "")
+            image = image_flowable(image_path, max_width=15.2 * cm, max_height=8.2 * cm)
+            if not image:
+                continue
+            story.append(Spacer(1, 0.12 * cm))
+            story.append(image)
+            caption = f"{figure.get('label', 'Figure')} - {str(figure.get('context', ''))}"
+            story.append(Paragraph(clean_text(caption), styles["KCCaption"]))
+            rendered += 1
+
+    source_counts = {
+        group: sum(1 for report in reports.values() if report_source_group(report) == group)
+        for group in ROUNDUP_SOURCE_ORDER
+    }
+    selected_figure_ids = {
+        str(figure_id)
+        for section in bank_roundup.get("sections") or []
+        for figure_id in section.get("figure_ids") or []
+    }
+    selected_figure_ids.update(
+        str(figure_id)
+        for roundup in supporting_roundups
+        for theme in roundup.get("themes") or []
+        for figure_id in theme.get("figure_ids") or []
+    )
+    story.append(Paragraph(clean_text(summary.get("title") or "Market Views｜全球投行叙事汇编"), styles["KCTitle"]))
     story.append(Paragraph(clean_text(summary.get("subtitle") or "Daily market views roundup"), styles["KCSubtitle"]))
-    story.append(Paragraph(clean_text(f"覆盖报告：{len(reports)} 篇 | 图表候选：{len(figures)} 张 | 日期文件夹：{summary_dir.name}"), styles["KCRef"]))
-    source_counts: dict[str, int] = {}
-    for report in reports.values():
-        label = report_source_label(report)
-        source_counts[label] = source_counts.get(label, 0) + 1
-    if source_counts:
-        source_mix = " / ".join(f"{label}{count}篇" for label, count in source_counts.items())
-        story.append(Paragraph(clean_text("来源结构：" + source_mix), styles["KCRef"]))
+    story.append(Paragraph(
+        clean_text(
+            f"投行/券商 {source_counts['bank_research']} 篇 | 战略咨询 {source_counts['consulting']} 篇 | "
+            f"智库/国际机构 {source_counts['institution']} 篇 | 正文原始图表 {len(selected_figure_ids)} 张 | 日期 {summary_dir.name}"
+        ),
+        styles["KCRef"],
+    ))
     story.append(Spacer(1, 0.2 * cm))
     story.append(Paragraph("目录", styles["KCTocTitle"]))
     toc = TableOfContents()
@@ -493,92 +703,113 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
 
     story.append(Paragraph("一页摘要", styles["KCH1"]))
     for item in summary.get("executive_summary", []):
-        # Avoid the unicode bullet glyph; it rendered as a CJK character in some CID fonts.
         story.append(Paragraph("- " + clean_text(item), styles["KCBody"]))
 
-    for roundup in grouped_roundups:
-        story.append(Paragraph(clean_text(roundup.get("title") or SOURCE_GROUP_LABELS.get(str(roundup.get("source_group") or ""), "来源")), styles["KCH1"]))
+    story.append(PageBreak())
+    story.append(Paragraph(clean_text(bank_roundup.get("title") or "全球投行叙事汇编"), styles["KCH1"]))
+    if bank_roundup.get("summary"):
+        story.append(Paragraph(clean_text(bank_roundup.get("summary")), styles["KCSmall"]))
+
+    for section_index, section in enumerate(bank_roundup.get("sections") or []):
+        if section_index > 0:
+            story.append(PageBreak())
+        heading_block = [Paragraph(clean_text(section.get("heading") or "投行市场主线"), styles["KCH2"])]
+        if section.get("thesis"):
+            heading_block.append(Paragraph("<b>" + clean_text(section.get("thesis")) + "</b>", styles["KCBody"]))
+        story.append(KeepTogether(heading_block))
+
+        if section.get("consensus"):
+            story.append(Paragraph("<b>主流共识</b>", styles["KCLabel"]))
+            for point in section.get("consensus") or []:
+                story.append(Paragraph("- " + clean_text(point), styles["KCBody"]))
+        if section.get("divergences"):
+            story.append(Paragraph("<b>分歧与条件差异</b>", styles["KCLabel"]))
+            for point in section.get("divergences") or []:
+                story.append(Paragraph("- " + clean_text(point), styles["KCBody"]))
+
+        story.append(Paragraph("<b>机构观点</b>", styles["KCLabel"]))
+        for view in section.get("bank_views") or []:
+            bank = clean_text(view.get("bank") or "投行")
+            body = clean_text(view.get("view") or "")
+            story.append(Paragraph(f"<b>{bank}</b>｜{body}", styles["KCBankView"]))
+            for data_point in view.get("data_points") or []:
+                story.append(Paragraph("数据：" + clean_text(data_point), styles["KCSmall"]))
+            if view.get("marginal_change"):
+                story.append(Paragraph("边际变化：" + clean_text(view.get("marginal_change")), styles["KCSmall"]))
+
+        if section.get("data_points"):
+            story.append(Paragraph("<b>关键数据</b>", styles["KCLabel"]))
+            for data_point in section.get("data_points") or []:
+                story.append(Paragraph("- " + clean_text(data_point), styles["KCBody"]))
+
+        append_figures(section.get("figure_ids") or [], 4)
+        story.append(Paragraph(
+            clean_text(coverage_sentence(section.get("references") or [], reports, bank_only=True)),
+            styles["KCRef"],
+        ))
+
+    for roundup in supporting_roundups:
+        story.append(PageBreak())
+        title = roundup.get("title") or SOURCE_GROUP_LABELS.get(str(roundup.get("source_group") or ""), "辅助信号")
+        story.append(Paragraph(clean_text("辅助信号｜" + str(title)), styles["KCH1"]))
         if roundup.get("summary"):
             story.append(Paragraph(clean_text(roundup.get("summary")), styles["KCSmall"]))
         if not roundup.get("themes"):
             story.append(Paragraph("- " + clean_text(roundup.get("summary") or "今日暂无新增报告。"), styles["KCBody"]))
-            continue
         for theme in roundup.get("themes") or []:
-            block: list[Any] = [
-                Paragraph(clean_text(theme.get("heading") or "未命名主题"), styles["KCH2"])
-            ]
+            block = [Paragraph(clean_text(theme.get("heading") or "辅助研究主题"), styles["KCH2"])]
             if theme.get("thesis"):
                 block.append(Paragraph("<b>" + clean_text(theme.get("thesis")) + "</b>", styles["KCBody"]))
             story.append(KeepTogether(block))
-            for bullet in (theme.get("bullets") or []):
+            for bullet in theme.get("bullets") or []:
                 story.append(Paragraph("- " + clean_text(bullet), styles["KCBody"]))
-
-            for fig_id in iter_figure_ids(theme)[:3]:
-                fig = figures.get(fig_id)
-                if not fig:
-                    continue
-                img_path = summary_dir / fig.get("latex_path", "")
-                img = image_flowable(img_path, max_width=15.2 * cm, max_height=8.2 * cm)
-                if img:
-                    story.append(Spacer(1, 0.12 * cm))
-                    story.append(img)
-                    caption = f"{fig.get('label', 'Figure')} - {str(fig.get('context', ''))}"
-                    story.append(Paragraph(clean_text(caption), styles["KCCaption"]))
-
-            refs = []
-            for ref_id in (theme.get("references") or []):
-                report = reports.get(str(ref_id))
-                if report:
-                    refs.append(f"[{ref_id}] {report.get('title', '')}")
-            if refs:
-                story.append(Paragraph("References: " + clean_text("; ".join(refs)), styles["KCRef"]))
+            append_figures(theme.get("figure_ids") or [], 2)
+            story.append(Paragraph(
+                clean_text(coverage_sentence(theme.get("references") or [], reports)),
+                styles["KCRef"],
+            ))
 
     if summary.get("closing"):
         story.append(Paragraph("结语", styles["KCH1"]))
         story.append(Paragraph(clean_text(summary.get("closing")), styles["KCBody"]))
 
     story.append(PageBreak())
-    story.append(Paragraph("报告覆盖清单", styles["KCH1"]))
-    table_rows = [[
-        Paragraph(clean_text("ID"), styles["KCRef"]),
-        Paragraph(clean_text("来源"), styles["KCRef"]),
-        Paragraph(clean_text("归类"), styles["KCRef"]),
-        Paragraph(clean_text("报告标题"), styles["KCRef"]),
-    ]]
-    for report_id, report in reports.items():
-        categories = " / ".join(coverage_map.get(report_id, ["未被来源板块引用"]))
-        source = report_source_label(report)
-        source_name = report_source_name(report)
-        source_text = source if source_name == source else f"{source}｜{source_name}"
-        table_rows.append([
-            Paragraph(clean_text(report_id), styles["KCRef"]),
-            Paragraph(clean_text(source_text), styles["KCRef"]),
-            Paragraph(clean_text(categories), styles["KCRef"]),
-            Paragraph(clean_text(report.get("title", "")), styles["KCRef"]),
-        ])
-    table = Table(table_rows, colWidths=[1.15 * cm, 2.4 * cm, 4.0 * cm, 8.0 * cm], repeatRows=1, splitByRow=1)
-    table.setStyle(TableStyle([
-        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#F2F4F7")),
-        ("TEXTCOLOR", (0, 0), (-1, 0), colors.HexColor("#555555")),
-        ("GRID", (0, 0), (-1, -1), 0.25, colors.HexColor("#DDDDDD")),
-        ("VALIGN", (0, 0), (-1, -1), "TOP"),
-        ("LEFTPADDING", (0, 0), (-1, -1), 4),
-        ("RIGHTPADDING", (0, 0), (-1, -1), 4),
-        ("TOPPADDING", (0, 0), (-1, -1), 4),
-        ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
-    ]))
-    story.append(table)
-
-    story.append(PageBreak())
-    story.append(Paragraph("更多详情报告kcdesk.com", styles["KCCTA"]))
-    cta_image = image_flowable(repo_asset_path(summary_dir, "prompts/zsxq_img.jpg"), max_width=9.5 * cm, max_height=11.0 * cm)
-    if cta_image:
-        story.append(cta_image)
+    story.append(Paragraph("覆盖概览", styles["KCH1"]))
+    story.append(Paragraph(
+        clean_text(
+            f"今日共纳入 {len(reports)} 篇研究，其中投行/券商 {source_counts['bank_research']} 篇，"
+            f"战略咨询 {source_counts['consulting']} 篇，智库/国际机构 {source_counts['institution']} 篇。"
+        ),
+        styles["KCBody"],
+    ))
+    bank_counts: dict[str, int] = {}
+    for report in reports.values():
+        if report_source_group(report) != "bank_research":
+            continue
+        name = report_bank_name(report)
+        bank_counts[name] = bank_counts.get(name, 0) + 1
+    if bank_counts:
+        bank_mix = " / ".join(f"{name} {count}篇" for name, count in sorted(bank_counts.items(), key=lambda item: (-item[1], item[0])))
+        story.append(Paragraph(clean_text("投行覆盖：" + bank_mix), styles["KCBody"]))
+    story.append(Paragraph("<b>主题分布</b>", styles["KCLabel"]))
+    for section in bank_roundup.get("sections") or []:
+        story.append(Paragraph(
+            "- " + clean_text(f"{section.get('heading') or '投行主题'}：{len(section.get('references') or [])} 篇"),
+            styles["KCBody"],
+        ))
 
     story.append(PageBreak())
     story.append(Paragraph("Disclaimer", styles["KCH1"]))
     for paragraph in DISCLAIMER_TEXT.split("\n\n"):
         story.append(Paragraph(clean_text(paragraph), styles["KCDisclaimer"]))
+
+    story.append(PageBreak())
+    story.append(Spacer(1, 0.8 * cm))
+    story.append(Paragraph("更多详情报告kcdesk.com", styles["KCCTA"]))
+    cta_image = image_flowable(cta_path, max_width=10.5 * cm, max_height=12.5 * cm)
+    if not cta_image:
+        raise RuntimeError(f"Could not render required Market Views ending image: {cta_path}")
+    story.append(cta_image)
 
     doc.multiBuild(story)
     if not output_pdf.exists() or output_pdf.stat().st_size < 1024:
