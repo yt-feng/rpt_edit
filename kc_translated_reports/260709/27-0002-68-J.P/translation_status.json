@@ -1,0 +1,32 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260709/shard_13/0002-68-J.P.-Morgan-Trading-Companies-Energy-Earnings-Outlook-Apr-Jun--260708",
+  "title": "摩根大通：原油铜价同比大涨，日本贸易公司盈利依赖资源价格滞后",
+  "source_title": "JPM：资源价格高位已成明牌，日本商社真正催化剂是回购计划",
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_27.pdf",
+  "figure_count": 0,
+  "institution_name": "摩根大通",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "股票|个股->公司 x2",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x3",
+    "股票|个股->公司 x4",
+    "股价->报价 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x2",
+    "股票|个股->公司 x1",
+    "sanitize_wechat_stock_line",
+    "(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议)->公司观点 x1",
+    "投资->研究 x1",
+    "股票|个股->公司 x2",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "财经->研究 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}
