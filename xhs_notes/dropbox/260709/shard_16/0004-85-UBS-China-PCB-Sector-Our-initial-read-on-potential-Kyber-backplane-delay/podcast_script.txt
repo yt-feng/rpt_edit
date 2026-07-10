@@ -1,0 +1,57 @@
+ZH_A: 最近有一份关于中国PCB行业的研报，里面提到英伟达的Kyber背板可能要延迟到2028年，这个新闻你注意到了吗？
+ZH_B: 对，这个时间点其实和我们之前的预期是一致的。
+ZH_A: 你们之前就预测到了？这背后有什么故事？
+ZH_B: 早在五月份，我们通过上游CCL供应商的调研就发现，正交背板的技术路线存在挑战，当时就判断可能会推迟到Feynman那代产品。
+ZH_A: 那现在具体卡在哪里了？
+ZH_B: 主要问题出在材料和工艺上。比如M9加Q玻璃的方案，加工难度大、供应不足，成本还高，试了好几轮都没能推进。
+ZH_A: 那有没有替代方案？
+ZH_B: 有的，PTFE材料意外地成为了一个很有潜力的选项，性能好，良率也在提升，但供应链还需要时间准备。
+ZH_A: 所以这个延迟对PCB公司的业绩影响大吗？
+ZH_B: 其实影响有限。因为Kyber原本就是2027年底才量产，量不大，现在推迟到2028年，并不是取消。
+ZH_A: 那除了这个新闻，报告里还提到什么值得关注的点？
+ZH_B: 传统CCL涨价在加速，这是一个很重要的信号。KBL最近又宣布了一轮15%的涨价，已经是第三轮了。
+ZH_A: 连续涨价？那这轮周期能持续多久？
+ZH_B: 我们预计涨价会持续到2026年下半年甚至2027年上半年，主要原因是AI需求挤压了传统产能，而新增产能有限。
+ZH_A: 这意味着什么？对投资者来说，现在该关注哪些环节？
+ZH_B: 我们更看好上游的CCL厂商，而不是下游的PCB公司。PCB里面要选那些客户多元化、在英伟达链里有份额提升空间的。
+ZH_A: 报告里还提到了一些新的产能扩张，比如mSAP？
+ZH_B: 对，这是为1.6T和3.2T光模块需求准备的。像东山精密、方正科技都在大规模扩产，这是另一个值得长期跟踪的方向。
+ZH_A: 听起来机会很多，但风险也不小。那报告里有没有哪些问题还没完全说清楚？
+ZH_B: 有一个关键悬念：Kyber背板最终会采用哪种材料组合？PTFE和M9的混合方案目前看是首选，但还没有最终确定，需要等后续验证。
+ZH_A: 还有呢？
+ZH_B: 另外，BT基板的价格走势也存在不确定性。虽然我们调研发现国内厂商没有降价压力，但韩国存储器厂商在推动降价，这个博弈结果还不明朗。
+ZH_A: 所以这些悬念在完整报告里会有更深入的讨论？
+ZH_B: 是的，完整报告里我们对这些技术路线和供应链细节做了更详细的拆解，包括各家公司的估值和风险分析。
+ZH_A: 那听众如果想获取完整报告，应该怎么做？
+ZH_B: 可以加入我们的社群，或者直接联系我们的销售团队获取PDF版本。
+ZH_A: 好，今天先聊到这里，感谢你的分享。
+ZH_B: 谢谢，下次再聊。
+
+EN_A: So there's this new report on China's PCB sector, and the headline is that Nvidia's Kyber backplane might be delayed to 2028. What's going on?
+EN_B: Actually, that timeline is exactly what we expected.
+EN_A: You saw this coming? How?
+EN_B: Back in May, we did some early research with upstream CCL vendors. They hinted that the orthogonal backplane could face delays, and we penciled in 2028 for the Feynman generation.
+EN_A: So what's the bottleneck here?
+EN_B: It's a mix of material and manufacturing challenges. The M9 plus Q-glass combination is tough to process, expensive, and supply is limited. They've run multiple trials but it's basically on hold.
+EN_A: Is there a plan B?
+EN_B: PTFE has emerged as a strong alternative. It performs well, yields are improving, but the supply chain isn't ready yet. More testing is needed.
+EN_A: Does this delay hurt PCB companies' earnings?
+EN_B: Not much. Kyber was originally scheduled for late 2027 with small volumes. Moving to 2028 is a shift, not a cancellation.
+EN_A: What else stands out in the report?
+EN_B: Conventional CCL price hikes are accelerating. KBL just announced a third round of 15% increases.
+EN_A: That's aggressive. How long can this cycle last?
+EN_B: We think monthly hikes could continue through the second half of 2026 into early 2027. The driver is AI demand crowding out conventional supply, and there's limited new capacity coming online.
+EN_A: So what does that mean for investors?
+EN_B: We prefer upstream CCL players over downstream PCB companies right now. Within PCB, we're selective on names with diversified AI exposure and potential to gain share in the Nvidia chain.
+EN_A: The report also mentions mSAP capacity expansion?
+EN_B: Yes, that's driven by demand for 1.6T and 3.2T optical modules. Companies like Avary and FastPrint are investing heavily in new plants. That's a longer-term theme to watch.
+EN_A: Sounds like there's a lot to digest. What questions does the report leave open?
+EN_B: One big one: what will the final material choice be for the Kyber backplane? PTFE-M9 hybrid looks like the leading candidate, but it's not confirmed yet.
+EN_A: And the other?
+EN_B: BT substrate pricing. Our checks show no pressure from Chinese makers, but Korean memory makers are pushing for cuts. The outcome is still uncertain.
+EN_A: So the full report goes deeper on these?
+EN_B: Exactly. It breaks down the technical paths, supply chain details, and includes valuation and risk analysis for each company.
+EN_A: How can listeners get the full report?
+EN_B: Join our community or reach out to our sales team for the PDF.
+EN_A: Great. Thanks for the insights.
+EN_B: My pleasure. Talk next time.
