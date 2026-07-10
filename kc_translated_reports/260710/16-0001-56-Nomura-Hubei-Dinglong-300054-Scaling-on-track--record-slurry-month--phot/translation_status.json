@@ -1,0 +1,20 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260710/shard_11/0001-56-Nomura-Hubei-Dinglong-300054-Scaling-on-track--record-slurry-month--phot",
+  "title": "野村：鼎龙半导体材料平台业绩拐点，CMP浆料月销创新高",
+  "source_title": "NOM：鼎龙半导体材料业务进入规模化阶段",
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_16.pdf",
+  "figure_count": 1,
+  "institution_name": "野村",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "remove_target_price_clause x2",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}
