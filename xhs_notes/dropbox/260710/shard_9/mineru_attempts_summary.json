@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_2w9axirx/pdfs/0001-46-MS-Greater China Technology Hardware GB200 and GB300 NVL72 Racks in June 2026-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_2w9axirx/pdfs/0002-47-MS-Greater China Technology Hardware-Chart of the Day- China PC and Tablet Shipments in May 2026-260709.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_2w9axirx/pdfs/0003-48-MS-Global Materials Aluminum- From Deficit to Oversupply-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_2w9axirx/pdfs/0004-49-MS-RMB Internationalization- via CNH-260708.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_2w9axirx/pdfs/0005-50-MS-Kingsoft Cloud Holdings- Transition to AI Cloud Bearing Fruit- MaaS Brings Further Upside-260708.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
