@@ -5865,7 +5865,7 @@ async function latestBbgRenderedClipFiles(env, maxItems = 26) {
   }
   const listedFiles = [
     ...rootFiles,
-    ...(await Promise.all(sourceTasks)).flat(),
+    ...(await Promise.all(sourceTasks.map((task) => resolveWithin(task, ADMIN_GITHUB_SOURCE_TIMEOUT_MS - 1000, [])))).flat(),
   ];
   const seen = new Set();
   const grouped = new Map();
