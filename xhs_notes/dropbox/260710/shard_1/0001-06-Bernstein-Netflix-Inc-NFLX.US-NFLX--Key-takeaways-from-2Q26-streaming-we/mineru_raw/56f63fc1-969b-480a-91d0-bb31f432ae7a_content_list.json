@@ -1,0 +1,3737 @@
+[
+    {
+        "type": "text",
+        "text": "100.00 USD",
+        "bbox": [
+            294,
+            217,
+            379,
+            235
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "NFLX",
+        "bbox": [
+            66,
+            215,
+            135,
+            235
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "NFLX: Key takeaways from 2Q26 streaming webinar - Q2 had some challenges & 2H unlikely an easy one; all eyes on advertising",
+        "text_level": 1,
+        "bbox": [
+            65,
+            291,
+            838,
+            379
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "We hosted a webinar with experts from Parrot Analytics and Puck News to discuss the latest trends in streaming engagement, subscriber dynamics and content performance for 2Q26. Replay is available here, please reach out for the full deck. Four key takeaways:",
+        "bbox": [
+            63,
+            403,
+            630,
+            450
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The World Cup exacerbated seasonally softer Q2 engagement. 1H26 total engagement is estimated at under 96B hours — above the weak-slate 1H25 but below the strong-slate 2H25. The more notable signal was that Q2 didn't follow the usual seasonal pattern: rather than the typical spring-to-summer upswing, engagement kept declining into June as the World Cup pulled a meaningful share of eyeballs away from Netflix (and other streaming platforms as well). This pressure reinforces why live sports and event programming matter strategically, a thesis Netflix is already leaning into and reportedly extending further, with the company said to be in talks for 2030 World Cup rights.",
+        "bbox": [
+            63,
+            461,
+            640,
+            587
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The World Cup drag is directly affecting subscriber growth, with soft 1H26 net adds tracking below 1H25 and 1H24 levels. This softness puts pressure on the high end of Netflix's 2026 revenue guide of 12-14% growth, which implicitly assumes roughly \\~20M net adds for the year alongside the March price increases and \\~\\$3B in expected advertising revenue. Reaching that full-year subscriber target now requires a meaningful 2H reacceleration from an already-soft starting point, and/or >\\$3B advertising revenue.",
+        "bbox": [
+            63,
+            596,
+            637,
+            692
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/44d418da36b9072d7c6f1031afb5699e0bc928953930e22e6e62c5ee3ececfc5.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Close Date</td><td>8 Jul 2026</td></tr><tr><td>NFLX Close Price (USD)</td><td>75.59</td></tr><tr><td>Price Target (USD)</td><td>100.00</td></tr><tr><td>Upside/(Downside)</td><td>32%</td></tr><tr><td>52-Week Range</td><td>129.33/70.86</td></tr><tr><td>SPX</td><td>7,482.71</td></tr><tr><td>FYE</td><td>Dec</td></tr><tr><td>Div Yield</td><td>NA</td></tr><tr><td>Market Cap (USD) (M)</td><td>318,294</td></tr><tr><td>EV (USD) (M)</td><td>322,748</td></tr></table>",
+        "bbox": [
+            653,
+            406,
+            924,
+            565
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/4fbd084f4312422475b49b84fa0a300de1a87998affadce7d6cc787e0929e9d3.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Price Performance, 1YR"
+        ],
+        "table_body": "<table><tr><td>Performance</td><td>YTD</td><td>1M</td><td>6M</td><td>12M</td></tr><tr><td>Absolute (%)</td><td>(19.4)</td><td>(8.5)</td><td>(16.5)</td><td>(40.7)</td></tr><tr><td>SPX (%)</td><td>9.3</td><td>1.0</td><td>8.1</td><td>20.2</td></tr><tr><td>Relative (%)</td><td>(28.7)</td><td>(9.6)</td><td>(24.6)</td><td>(60.9)</td></tr><tr><td colspan=\"5\">Source: Bloomberg, Bernstein estimates and analysis.</td></tr></table>",
+        "bbox": [
+            653,
+            569,
+            924,
+            645
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The 2H26 content slate doesn't offer an obvious catalyst to drive that reacceleration. Headline returning titles — Lupin, Emily in Paris, Avatar: The Last Airbender — screen weaker on projected engagement than the franchise hits that fueled 2H25 and 2H24 net adds (Squid Games, Stranger Things, Wednesday), implying revenue growth may have to lean more on advertising upside than on a breakout title to reach the top end of guidance. Summary continues on the next page...",
+        "bbox": [
+            63,
+            702,
+            638,
+            795
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b7694a9ef90b8c1fd82fc119d4c81cf847cc3881e73f476c468f07a1064490d1.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            651,
+            677,
+            883,
+            791
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Investment Implications",
+        "text_level": 2,
+        "bbox": [
+            66,
+            808,
+            246,
+            822
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "We maintain our Outperform rating for NFLX with a PT of \\$100 - unchanged.",
+        "bbox": [
+            66,
+            824,
+            540,
+            839
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/368e7972518caf189f3878725f68cfa54e5e9f9c99f6ab09acedbbeed9cad8fc.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Bloomberg, Bernstein estimates and analysis."
+        ],
+        "table_body": "<table><tr><td>Adjusted EPS</td><td>F25A</td><td>F26E</td><td>F27E</td></tr><tr><td>NFLX (USD)</td><td>2.53</td><td>3.15</td><td>3.83</td></tr></table>",
+        "bbox": [
+            68,
+            835,
+            341,
+            906
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/48839ace8998527a2b6632375f01251aa1de2179670d2753757c0ee9ce510462.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Financials</td><td>F25A</td><td>F26E</td><td>F27E</td><td>CAGR</td></tr><tr><td>EBITDA (M)</td><td>13,660</td><td>16,721</td><td>19,863</td><td>--</td></tr><tr><td>Revenues (M)</td><td>45,183</td><td>51,329</td><td>57,434</td><td>--</td></tr><tr><td>EBIT (M)</td><td>13,327</td><td>16,341</td><td>19,449</td><td>--</td></tr></table>",
+        "bbox": [
+            346,
+            838,
+            678,
+            908
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/fc302806be116ac1685a5193dfe4cb1f2ab04a9dc0509ab49f6cc6a2735075f9.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Valuation Metrics</td><td>F25A</td><td>F26E</td><td>F27E</td></tr><tr><td>Adjusted P/E (x)</td><td>29.9</td><td>24.0</td><td>19.7</td></tr><tr><td>EV/EBITDA (x)</td><td>23.6</td><td>19.3</td><td>16.2</td></tr><tr><td>EV/EBIT (x)</td><td>24.2</td><td>19.8</td><td>16.6</td></tr></table>",
+        "bbox": [
+            684,
+            835,
+            919,
+            908
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "BERNSTEIN\nSG GROUP",
+        "bbox": [
+            65,
+            11,
+            292,
+            60
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "9 July 2026",
+        "bbox": [
+            723,
+            33,
+            816,
+            51
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "US Media & Telecom",
+        "bbox": [
+            66,
+            95,
+            204,
+            112
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Netflix Inc",
+        "bbox": [
+            66,
+            116,
+            189,
+            136
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Rating",
+        "bbox": [
+            66,
+            145,
+            116,
+            162
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Outperform",
+        "bbox": [
+            66,
+            162,
+            202,
+            187
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "The quick brown fox jumps over the lazy dog.",
+        "bbox": [
+            656,
+            71,
+            710,
+            113
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Laurent Yoon  \n+1 917 344 8502  \nlaurent.yoon@bernsteinsg.com",
+        "bbox": [
+            723,
+            76,
+            880,
+            114
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Price Target",
+        "bbox": [
+            66,
+            193,
+            151,
+            210
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "",
+        "bbox": [
+            656,
+            122,
+            710,
+            165
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Martin Boruchowicz  \n+1 917 344 8564  \nmartin.boruchowicz@bernsteinsg.com",
+        "bbox": [
+            723,
+            127,
+            915,
+            165
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "The quick brown fox jumps over the lazy dog.",
+        "bbox": [
+            656,
+            174,
+            710,
+            215
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Andrew Chung  \n+1 917 344 8302  \nandrew.chung@bernsteinsg.com",
+        "bbox": [
+            723,
+            178,
+            888,
+            215
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "See the Disclosure Appendix of this report for required disclosures, analyst certifications and other important information. Alternatively, visit our Global Research Disclosure Website. First Published: 09 Jul 2026 04:05 UTC Completion Date: 09 Jul 2026 03:46 UTC",
+        "bbox": [
+            65,
+            934,
+            702,
+            978
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "www.bernsteinresearch.com",
+        "bbox": [
+            776,
+            934,
+            919,
+            947
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "DETAILS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            50,
+            174,
+            65
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Summary continued...",
+        "bbox": [
+            104,
+            80,
+            240,
+            95
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Structurally, engagement per subscriber remains under pressure — a trend we've discussed before — and it's driving Netflix to invest more broadly and diversify across content types. Faster-decaying library content means Netflix needs to continue adding volume to sustain engagement, while returning seasons, though unexpectedly underperforming their prior installment, remain a core retention tool that Netflix is leaning on heavily (a large share of the 2026 slate is returning seasons). The trade-off is cost: sequels get progressively more expensive, international content is no longer the cheap lever it once was (at least not as cheap as before), and Netflix (and others) still needs to keep building new franchises alongside all of these to keep feeding the content pipeline.",
+        "bbox": [
+            102,
+            109,
+            893,
+            217
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "RELEVANT RECENT NOTES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            244,
+            300,
+            259
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "8 Jul 2026 - NFLX Q2: More than a quarter - key debates heading into the print",
+        "bbox": [
+            104,
+            264,
+            593,
+            279
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "7 Jul 2026 - US Media: The cost of growth - the return of rising content spend",
+        "bbox": [
+            104,
+            291,
+            586,
+            307
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "23 Jun 2026 - Netflix: At 52-lows, we expect continued near-term volatility",
+        "bbox": [
+            104,
+            320,
+            568,
+            335
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "4 Jun 2026 - Netflix: Messy Near-Term Narrative, but a Durable Engine",
+        "bbox": [
+            104,
+            348,
+            540,
+            364
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "22 May 2026 - Weekend Media Blast: The Battle of 16:9 vs 9:16",
+        "bbox": [
+            104,
+            377,
+            504,
+            392
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "WORLD CUP DISRUPTS SEASONAL ENGAGEMENT PATTERN",
+        "text_level": 2,
+        "bbox": [
+            104,
+            419,
+            563,
+            437
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Total 1H26 engagement is tracking below 96B hours, landing between last year's 1H and 2H. Netflix's global hours watched are projected to come in just under 96B for 1H26, roughly -0.5% versus 2H25 and +0.5% versus 1H25. This places 1H26 between a strong 2H25, which benefited from a robust content slate, and a weaker 1H25, which suffered from a thinner slate — suggesting total 1H26 engagement hours did not meaningfully grow despite some subscriber growth (Exhibit 1, Exhibit 2).",
+        "bbox": [
+            102,
+            454,
+            888,
+            532
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Weekly hours watched declined steadily through the first half, with a sharp drop into June due to the FIFA World Cup. Engagement typically eases through the spring months following a strong holiday viewing season, but 2026 saw declines extend further and steepen heading into June, breaking from the normal seasonal pattern. Summer is usually a seasonal pickup period (as children are out of school etc.) but this year's June instead saw engagement decline further rather than recover. This steeper-than-normal June decline can be directly attributed to the start of the FIFA World Cup in North America. This year's tournament expanded to over 45 participating countries (up from 32 in 2022) with significantly more matches than prior editions (40 more games), creating direct competition for viewing time. Looking at engagement across individual countries, the majority of World Cup participating countries saw Netflix engagement decline versus both May 2026 and June 2025 (Exhibit 3).",
+        "bbox": [
+            102,
+            543,
+            887,
+            669
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "This engagement pressure reinforces the growing strategic importance of sports and live programming. Netflix has already been increasing investment in this area (NFL, MLB, WWE, Boxing etc.), as data supports that sports programming has historically delivered more stable, resilient engagement than scripted content over time. This isn't isolated to Netflix — other major media and long-form platforms are increasingly recognizing the value of live sports rights – CNBC reports that Netflix, Disney & YouTube are exploring rights packages for the 2030 or 2034 World Cup, underscoring how seriously streaming and digital platforms now view live sports as core to retention and engagement strategy",
+        "bbox": [
+            102,
+            680,
+            874,
+            773
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            883,
+            940,
+            893,
+            950
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Laurent Yoon +1 917 344 8502 laurent.yoon@bernsteinsg.com",
+        "bbox": [
+            104,
+            18,
+            426,
+            29
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "9 July 2026",
+        "bbox": [
+            831,
+            18,
+            893,
+            29
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "US MEDIA & TELECOM",
+        "bbox": [
+            104,
+            939,
+            194,
+            949
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            939,
+            861,
+            950
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Global Hours dip below 3.6B a week",
+        "bbox": [
+            176,
+            114,
+            413,
+            130
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4c9396f39221a524bd68c0ff609f614dcc4493b0adefea8ec14feff04758d40b.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 1: Engagement is expected to be under 96B hours in 1H26, lower than 2H25, which had a strong content slate"
+        ],
+        "chart_footnote": [
+            "9 Streaming Outlook | Parrot Analytics 2026. All Rights Reserved."
+        ],
+        "bbox": [
+            143,
+            131,
+            473,
+            338
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/de99c09dcd2688a28056b281f8a044013571313276fcdd27715854c829c3b91d.jpg",
+        "content": "",
+        "chart_caption": [
+            "Half-year total is expected to be under 96B",
+            "Source: Parrot Analytics",
+            "EXHIBIT 2: Netflix experienced declining engagement in Q2, and did not experience the seasonal increase in June due to WC26 headwind. However, total 1H26 engagement was comparable to 1H25 (which had a weak content slate)"
+        ],
+        "chart_footnote": [
+            "Global Hours trend lower as summer arrives"
+        ],
+        "bbox": [
+            477,
+            133,
+            843,
+            335
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e1bb1c1113f5c0cd5e48bf9064efb83c5c7e01439c6fdbf92b03650907f82561.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "10 Streaming Outlook | Parrot Analytics 2026. All Rights Reserved.",
+            "H12026 maintains lead over H12025"
+        ],
+        "bbox": [
+            153,
+            534,
+            486,
+            736
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/c112a53131ccaaef53dc55df32749fe161ab4d22068dd4c231484912a0f24d18.jpg",
+        "content": "",
+        "chart_caption": [
+            "Source: Parrot Analytics"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            480,
+            536,
+            846,
+            737
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Laurent Yoon +1 917 344 8502 laurent.yoon@bernsteinsg.com",
+        "bbox": [
+            104,
+            16,
+            426,
+            31
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "9 July 2026",
+        "bbox": [
+            831,
+            18,
+            893,
+            29
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            883,
+            940,
+            893,
+            950
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "US MEDIA & TELECOM",
+        "bbox": [
+            106,
+            937,
+            194,
+            949
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            939,
+            861,
+            950
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3b5e7c9dee36c41a48043fca101cf694df024ae51b4df5fadc5b9ca6663751df.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 3: WC2026 has led to a meaningful decline in engagement in key World Cup markets"
+        ],
+        "chart_footnote": [
+            "12 Streaming Outlook | Parrot Analytics 2026. All Rights Reserved.",
+            "PARROT Magelying the future",
+            "Source: Parrot Analytics"
+        ],
+        "bbox": [
+            143,
+            80,
+            854,
+            344
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "SUBSCRIBER NET ADDS UNDER PRESSURE FROM WORLD CUP, WITH LIMITED 2H CATALYSTS FOR REACCELERATION",
+        "text_level": 2,
+        "bbox": [
+            102,
+            441,
+            852,
+            476
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "World Cup-related engagement pressure is translating into soft 1H26 subscriber growth, with net adds tracking to just roughly 3-4M for the first half. LATAM and EMEA net adds forecasts deteriorated around the same time as the World Cup's kickoff — as viewers redirected attention away from Netflix. Even so, churn has remained notably low even in softer markets, suggesting existing subscribers still view Netflix as a \"primary service\" they'll return to.",
+        "bbox": [
+            102,
+            483,
+            872,
+            546
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "This soft start creates risk to reaching the high end of Netflix's 2026 revenue guide. As we noted in our NFLX 2Q26 preview, the top end of the 12-14% revenue growth guidance implicitly assumes roughly 7% subscriber growth for the year, or net adds in the high-teens-to-\\~22M range, alongside the March price increases and an expected \\~\\$3B in advertising revenue. With only 3-4M net adds tracked through 1H, Netflix would need a meaningful reacceleration in 2H to still hit the full year target — a bar that looks increasingly difficult given current trends.",
+        "bbox": [
+            102,
+            556,
+            888,
+            635
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The 2H26 content slate doesn't offer notable catalyst to drive that reacceleration. Comparing projected first-90-day views for 2H26's headline titles — Lupin S4, Emily in Paris S5, and Avatar: The Last Airbender S2 — against last year's Wednesday and Stranger Things, or Squid Game S2 the year before, the upcoming slate screens weaker apples-to-apples. The prior-year hits were instrumental in driving strong Q3/Q4 net adds, and this year's 2H slate is unlikely to fully replicate 2025's 2H engagement lift.",
+        "bbox": [
+            102,
+            645,
+            887,
+            724
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Live sports and advertising could still provide upside, but visibility remains limited. The addition of NFL games to Netflix's live-event slate, along with the possibility of advertising revenue outperformance, represent two swing factors that could help offset softer subscription-driven growth in the first half of the year. However, without a new structural catalyst — such as the password-sharing crackdown in prior years — it's not reasonable to assume Netflix can outrun the World Cup-related headwind through organic acceleration alone.",
+        "bbox": [
+            102,
+            736,
+            862,
+            813
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Laurent Yoon +1 917 344 8502 laurent.yoon@bernsteinsg.com",
+        "bbox": [
+            104,
+            16,
+            428,
+            31
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "9 July 2026",
+        "bbox": [
+            831,
+            18,
+            893,
+            29
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "US MEDIA & TELECOM",
+        "bbox": [
+            104,
+            937,
+            194,
+            949
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            939,
+            861,
+            950
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            880,
+            940,
+            892,
+            950
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 4: Subscriber growth in Q2 lags prior years",
+        "bbox": [
+            104,
+            49,
+            450,
+            65
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Net adds projections for EMEA and LATAM were above 2025 levels before WC negative effect",
+        "bbox": [
+            138,
+            83,
+            844,
+            122
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/de9ca1c7fa5aced43523b20efcab6932379d17080c77847cc95c63d0c9b77231.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "13 Streaming Outlook | Parrot Analytics 2026. All Rights Reserved."
+        ],
+        "bbox": [
+            135,
+            126,
+            859,
+            412
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Source: Parrot Analytics",
+        "bbox": [
+            104,
+            435,
+            225,
+            448
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 5: 2H26's content slate is projected to be weaker vs 2H25 which may not lead to as much of an engagement lift as needed to offset 1H headwinds",
+        "bbox": [
+            104,
+            459,
+            890,
+            490
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "N 2H26 returning slate is competitive but lacks the big tentpole",
+        "text_level": 2,
+        "bbox": [
+            138,
+            512,
+            795,
+            538
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4904141437fff36d49d9c8de9a27ac5b3911c9b5dac88161cb4ae1aa764c8a2b.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "20 Streaming Outlook | Parrot Analytics 2026. All Rights Reserved.",
+            "Source: Parrot Analytics"
+        ],
+        "bbox": [
+            137,
+            551,
+            857,
+            825
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            883,
+            940,
+            893,
+            950
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Laurent Yoon +1 917 344 8502 laurent.yoon@bernsteinsg.com",
+        "bbox": [
+            104,
+            16,
+            428,
+            31
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "9 July 2026",
+        "bbox": [
+            831,
+            16,
+            893,
+            29
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "US MEDIA & TELECOM",
+        "bbox": [
+            104,
+            937,
+            194,
+            949
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            939,
+            861,
+            950
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "FLAT TO DECLINING PER SUBSCRIBER ENGAGEMENT",
+        "text_level": 2,
+        "bbox": [
+            104,
+            65,
+            513,
+            82
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Engagement per subscriber has been roughly flat to slightly declining over the past several years (a topic we've discussed in depth), pushing Netflix to continue increasing content investment to hold the line (Exhibit 6). Although Netflix still leads the industry on highest engagement—averaging \\~51 hours per subscriber per month versus Disney+'s \\~13 hours — the multi-year trend shows engagement intensity per user isn't meaningfully growing, meaning incremental subscriber growth increasingly has to come from adding more hours of content rather than users simply watching more.",
+        "bbox": [
+            102,
+            100,
+            880,
+            178
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Library content now drives the majority of hours, but its decay curve is steepening. Library titles have grown from roughly half of total hours in 1Q23 to about $63\\%$ by 2Q26, yet successive additions of library content are decaying faster than prior years' cohorts once titles clear the initial release window. Because per-title engagement is shrinking over time, Netflix has to keep expanding the volume of both owned and licensed content available on the platform just to support total library hours (Exhibit 7).",
+        "bbox": [
+            102,
+            189,
+            883,
+            267
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Returning seasons underperform their prior installment, but their predictability still makes them a core retention tool — one that's getting steadily more expensive. Data across recent franchise sequels (Squid Game, You, The Night Agent, Bridgerton) consistently shows new seasons landing below their predecessor's first-90-day engagement, reflecting natural franchise fatigue rather than anything Netflix-specific — the same pattern has long existed in broadcast and cable television. Despite this fatigue, returning seasons still offer more reliable, lower-risk engagement than new originals, and supports Netflix's own upfront commentary indicating that the majority of its 2026 TV slate would be returning seasons. The trade-off is cost: each season tends to get more expensive than the last, and Netflix is compelled to keep developing new franchises in parallel to avoid becoming overly reliant on aging IP (Exhibit 8).",
+        "bbox": [
+            102,
+            280,
+            890,
+            403
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "International content is playing a larger role in sustaining library engagement, but it's also becoming more expensive as competition for premium licenses intensifies. Netflix has meaningfully expanded its licensing footprint in recent quarters — adding more non-English titles— and this expanded international library content is a real contributor to the library-hours growth discussed above. But as this content increasingly proves it can travel and drive engagement, licensing costs for these titles are rising as well, meaning the \"cheaper\" international content strategy is becoming less of a cost offset than it once was.",
+        "bbox": [
+            102,
+            414,
+            888,
+            493
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            883,
+            940,
+            893,
+            950
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Laurent Yoon +1 917 344 8502 laurent.yoon@bernsteinsg.com",
+        "bbox": [
+            104,
+            18,
+            428,
+            29
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "9 July 2026",
+        "bbox": [
+            831,
+            18,
+            893,
+            29
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "US MEDIA & TELECOM",
+        "bbox": [
+            104,
+            939,
+            194,
+            949
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            939,
+            861,
+            950
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 6: Even though Netflix leads the industry in engagement, flat-to-declining per sub engagement trends have led to the need to increase content investment",
+        "bbox": [
+            104,
+            49,
+            862,
+            81
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/aa13e4817d4ef1d5cddd3e2ab7aa4170f59cdd91bd54ce33790da7280fca0d0c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            140,
+            99,
+            210,
+            127
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Growing engagement is everyone's business",
+        "text_level": 2,
+        "bbox": [
+            168,
+            103,
+            720,
+            129
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3ad39b0c321dcaeb7994243dff5cf79d94dcda5be8b98f7482e74fd765ca6df0.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "21 Streaming Outlook | Parrot Analytics 2026. All Rights Reserved."
+        ],
+        "bbox": [
+            153,
+            171,
+            437,
+            397
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9e43653a959652e291e5544368a5b5543893853c3ef17393d1d6e9445b930d51.jpg",
+        "content": "",
+        "chart_caption": [
+            "Source: Parrot Analytics"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            452,
+            178,
+            718,
+            394
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 7: Library titles have begun to decay faster, prompting Netflix to add more titles sooner to keep up with the engagement it drives",
+        "bbox": [
+            104,
+            476,
+            867,
+            509
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "N Faster decay of library requires adding more titles to keep up volume of hours",
+        "text_level": 2,
+        "bbox": [
+            138,
+            521,
+            797,
+            560
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/aa89b70be53890f8eb054457de9b11fc513f716153b7d8c39dd93d05ae344c05.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "15 Streaming Outlook | Parrot Analytics 2026. All Rights Reserved."
+        ],
+        "bbox": [
+            153,
+            600,
+            455,
+            822
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2514b049dc1af113800b31c9ac184051f7ac4cd06ff76d98fe1adeb8169fb84b.jpg",
+        "content": "",
+        "chart_caption": [
+            "Source: Parrot Analytics"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            483,
+            620,
+            833,
+            830
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            883,
+            940,
+            893,
+            950
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Laurent Yoon +1 917 344 8502 laurent.yoon@bernsteinsg.com",
+        "bbox": [
+            104,
+            16,
+            426,
+            31
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "9 July 2026",
+        "bbox": [
+            831,
+            16,
+            893,
+            29
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "US MEDIA & TELECOM",
+        "bbox": [
+            104,
+            937,
+            194,
+            949
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            939,
+            861,
+            950
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Source: Parrot Analytics",
+        "bbox": [
+            104,
+            452,
+            225,
+            465
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            883,
+            940,
+            892,
+            950
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "N",
+        "bbox": [
+            140,
+            100,
+            174,
+            126
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Laurent Yoon +1 917 344 8502 laurent.yoon@bernsteinsg.com",
+        "bbox": [
+            104,
+            18,
+            426,
+            29
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "9 July 2026",
+        "bbox": [
+            831,
+            18,
+            893,
+            29
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "EXHIBIT 8: Although returning seasons underperform previous releases, they still are still a predictable driver of engagement",
+        "bbox": [
+            104,
+            49,
+            870,
+            81
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "N Returning seasons tend to underperform previous releases",
+        "bbox": [
+            140,
+            103,
+            833,
+            127
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Returning seasons - first-90-day cumulative hours: new season (solid, colored by launch quarter) vs previous (dotted grey)\nTop 6 returning seasons launched 2024+ with the prior season inside data coverage. % = new vs prior at day 90.",
+        "bbox": [
+            187,
+            155,
+            687,
+            173
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Bridgerton 54 vs S3 2026Q1 (81%)",
+        "bbox": [
+            168,
+            173,
+            351,
+            290
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Squid Game (요칭 계임) S3 vs S2 2025Q2 (63%)\nCum hours (B)\nWeek since premiere\n2\n4\n6\n8\n10\n12",
+        "bbox": [
+            357,
+            173,
+            542,
+            290
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "You S5 vs S4 2025Q2 (84%)\nLaunch quarter\nweek since premiere\nCum hours (B)\n2026Q1\nprevious season\n2025Q2\n2024Q4\n2025Q1",
+        "bbox": [
+            547,
+            171,
+            813,
+            290
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Outer Banks S4 vs S3 2024Q4 (101%)\nCum hours (B) on Y-axis against Week since premiere on X-axis\nWeek since premiere 2 to 12",
+        "bbox": [
+            165,
+            291,
+            351,
+            410
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "17 Streaming Outlook | Parrot Analytics 2026. All Rights Reserved.",
+        "bbox": [
+            140,
+            419,
+            370,
+            430
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "The Night Agent S2 vs S1 2025Q1 (63%)",
+        "bbox": [
+            357,
+            291,
+            537,
+            410
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "One Piece S2 vs S1 2026Q1 (88%)",
+        "bbox": [
+            545,
+            291,
+            728,
+            410
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "PARROT\nMagifying the future",
+        "bbox": [
+            797,
+            416,
+            852,
+            430
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "US MEDIA & TELECOM",
+        "bbox": [
+            106,
+            939,
+            194,
+            949
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            939,
+            861,
+            950
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "APPENDIX - FINANCIAL FORECASTS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            50,
+            385,
+            65
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 9: NFLX Financial Summary",
+        "text_level": 2,
+        "bbox": [
+            104,
+            78,
+            352,
+            95
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/265a2162d2c2de501fed0ee579aeffc52c163b773e2ec91d824b2cd2e090e657.jpg",
+        "table_caption": [
+            "in millions except per share and percentage data"
+        ],
+        "table_footnote": [
+            "Source: Company reports, Bernstein estimates & analysis"
+        ],
+        "table_body": "<table><tr><td>NFLX</td><td>1Q26</td><td>2Q26E</td><td>3Q26E</td><td>4Q26E</td><td>FY2025</td><td>FY2026E</td><td>FY2027E</td></tr><tr><td>GAAP INCOME STATEMENT</td><td colspan=\"4\"></td><td colspan=\"3\"></td></tr><tr><td>Revenue</td><td>12,250</td><td>12,547</td><td>12,986</td><td>13,546</td><td>45,183</td><td>51,329</td><td>57,434</td></tr><tr><td>Cost of Revenue</td><td>5,888</td><td>6,150</td><td>6,451</td><td>6,843</td><td>23,275</td><td>25,332</td><td>27,459</td></tr><tr><td>Marketing expense</td><td>842</td><td>788</td><td>845</td><td>1,208</td><td>3,301</td><td>3,683</td><td>4,027</td></tr><tr><td>Technology and development</td><td>960</td><td>934</td><td>911</td><td>946</td><td>3,391</td><td>3,751</td><td>4,081</td></tr><tr><td>General and administrative</td><td>603</td><td>565</td><td>517</td><td>539</td><td>1,888</td><td>2,223</td><td>2,418</td></tr><tr><td>Total Expenses</td><td>8,293</td><td>8,436</td><td>8,723</td><td>9,536</td><td>31,856</td><td>34,988</td><td>37,986</td></tr><tr><td>EBIT</td><td>3,957</td><td>4,112</td><td>4,263</td><td>4,009</td><td>13,327</td><td>16,341</td><td>19,449</td></tr><tr><td>D&amp;A</td><td>99</td><td>91</td><td>94</td><td>98</td><td>333</td><td>381</td><td>415</td></tr><tr><td>EBITDA</td><td>4,056</td><td>4,202</td><td>4,357</td><td>4,107</td><td>13,660</td><td>16,721</td><td>19,863</td></tr><tr><td>Other Expenses (Benefits)</td><td>-1,326</td><td>696</td><td>885</td><td>671</td><td>2,345</td><td>926</td><td>3,296</td></tr><tr><td>Net Income</td><td>5,283</td><td>3,415</td><td>3,378</td><td>3,338</td><td>10,981</td><td>15,414</td><td>16,152</td></tr><tr><td>Weight Avg. Diluted Shares</td><td>4,298</td><td>4,283</td><td>4,268</td><td>4,253</td><td>4,344</td><td>4,276</td><td>4,216</td></tr><tr><td>GAAP EPS (Diluted)</td><td>1.23</td><td>0.80</td><td>0.79</td><td>0.78</td><td>2.53</td><td>3.60</td><td>3.83</td></tr><tr><td>Adj. EPS (Diluted)</td><td>0.78</td><td>0.80</td><td>0.79</td><td>0.78</td><td>2.53</td><td>3.15</td><td>3.83</td></tr><tr><td>GAAP Margins:</td><td colspan=\"4\"></td><td colspan=\"3\"></td></tr><tr><td>Gross Margin</td><td>52%</td><td>51%</td><td>50%</td><td>49%</td><td>48%</td><td>51%</td><td>52%</td></tr><tr><td>EBIT Margin</td><td>32%</td><td>33%</td><td>33%</td><td>30%</td><td>29%</td><td>32%</td><td>34%</td></tr><tr><td>EBITDA Margin</td><td>33%</td><td>33%</td><td>34%</td><td>30%</td><td>30%</td><td>33%</td><td>35%</td></tr><tr><td>Y/Y Growth (GAAP):</td><td colspan=\"4\"></td><td colspan=\"3\"></td></tr><tr><td>Revenue</td><td>16%</td><td>13%</td><td>13%</td><td>12%</td><td>16%</td><td>14%</td><td>12%</td></tr><tr><td>BALANCE SHEET &amp; CASH FLOW</td><td colspan=\"4\"></td><td colspan=\"3\"></td></tr><tr><td>Cash and Cash Equivalents</td><td>12,260</td><td>14,589</td><td>15,336</td><td>16,687</td><td>9,034</td><td>16,687</td><td>23,518</td></tr><tr><td>Content assets, net</td><td>33,376</td><td>33,376</td><td>34,098</td><td>34,498</td><td>32,778</td><td>34,498</td><td>36,437</td></tr><tr><td>Property and equipment, net</td><td>2,148</td><td>2,234</td><td>2,323</td><td>2,415</td><td>2,004</td><td>2,415</td><td>2,809</td></tr><tr><td>All other</td><td>13,232</td><td>12,030</td><td>12,425</td><td>13,117</td><td>11,781</td><td>13,117</td><td>14,834</td></tr><tr><td>Total Assets</td><td>61,016</td><td>62,229</td><td>64,181</td><td>66,717</td><td>55,597</td><td>66,717</td><td>77,598</td></tr><tr><td>Streaming content liabilities</td><td>5,679</td><td>5,679</td><td>5,679</td><td>5,679</td><td>5,664</td><td>5,679</td><td>5,679</td></tr><tr><td>All other</td><td>24,211</td><td>23,295</td><td>23,151</td><td>23,625</td><td>23,317</td><td>23,625</td><td>24,679</td></tr><tr><td>Total Liabilities</td><td>29,890</td><td>28,974</td><td>28,830</td><td>29,304</td><td>28,982</td><td>29,304</td><td>30,358</td></tr><tr><td>SBC-Adj. FCF</td><td>4,954</td><td>3,615</td><td>2,029</td><td>2,628</td><td>9,093</td><td>13,226</td><td>13,156</td></tr><tr><td>SBC-Adj. FCF Margin</td><td>40%</td><td>29%</td><td>16%</td><td>19%</td><td>20%</td><td>26%</td><td>23%</td></tr></table>",
+        "bbox": [
+            107,
+            118,
+            888,
+            675
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            883,
+            940,
+            892,
+            950
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Laurent Yoon +1 917 344 8502 laurent.yoon@bernsteinsg.com",
+        "bbox": [
+            104,
+            18,
+            426,
+            29
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "9 July 2026",
+        "bbox": [
+            831,
+            18,
+            892,
+            29
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "US MEDIA & TELECOM",
+        "bbox": [
+            106,
+            939,
+            194,
+            949
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            939,
+            861,
+            950
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "BERNSTEIN TICKER TABLE",
+        "text_level": 2,
+        "bbox": [
+            104,
+            50,
+            313,
+            65
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "table",
+        "img_path": "images/4539e995c89429f0556f8e236eb11133f27a604143ce4712a299589dcc830582.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "O - Outperform, M - Market-Perform, U - Underperform, NR - Not Rated, CS - Coverage Suspended",
+            "Source: Bloomberg, Bernstein estimates and analysis."
+        ],
+        "table_body": "<table><tr><td colspan=\"3\"></td><td rowspan=\"2\">8 Jul 2026 Closing Price Target</td><td rowspan=\"2\">TTM Rel. Perf.</td><td colspan=\"4\">Adjusted EPS</td><td colspan=\"3\">Adjusted P/E (x)</td><td></td></tr><tr><td>Ticker</td><td>Rating</td><td>Cur</td><td>Cur</td><td>2025A</td><td>2026E</td><td>2027E</td><td>2025A</td><td>2026E</td><td>2027E</td><td></td></tr><tr><td>NFLX (Netflix)</td><td>O</td><td>USD</td><td>75.59</td><td>100.00</td><td>(60.9)%</td><td>USD</td><td>2.53</td><td>3.15</td><td>3.83</td><td>29.9</td><td>24.0</td><td>19.7</td></tr><tr><td>SPX</td><td></td><td></td><td>7,482.71</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+        "bbox": [
+            107,
+            78,
+            890,
+            156
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            877,
+            940,
+            892,
+            950
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Laurent Yoon +1 917 344 8502 laurent.yoon@bernsteinsg.com",
+        "bbox": [
+            104,
+            18,
+            426,
+            29
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "9 July 2026",
+        "bbox": [
+            831,
+            18,
+            893,
+            29
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "US MEDIA & TELECOM",
+        "bbox": [
+            106,
+            939,
+            194,
+            949
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            939,
+            861,
+            950
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "I. REQUIRED DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            78,
+            297,
+            91
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "References to \"Bernstein\" or the \"Firm\" in these disclosures relate to the following entities: Bernstein Institutional Services LLC (April 1, 2024 onwards), Bernstein & Co., LLC (pre April 1, 2024), Bernstein Autonomous LLP, BSG France S.A. (April 1, 2024 onwards), Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited, Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社) and analysts employed by SG Africa Technologies & Services to produce Bernstein under a Global Services Agreement in place between Bernstein and SG.",
+        "bbox": [
+            102,
+            105,
+            895,
+            202
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Bernstein is part of a joint venture between SG (SG) and AllianceBernstein, L.P. (AB). Unless specifically noted otherwise, for purposes of these disclosures, references to Bernstein's \"affiliates\" relate to both SG and AB and their respective affiliates.",
+        "bbox": [
+            102,
+            215,
+            893,
+            257
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "VALUATION METHODOLOGY",
+        "text_level": 2,
+        "bbox": [
+            104,
+            270,
+            300,
+            285
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Netflix Inc",
+        "text_level": 2,
+        "bbox": [
+            104,
+            299,
+            179,
+            313
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "We value NFLX's shares at an implied 26x multiple (rounded) on FY27 EPS estimates of \\$3.83 (PT of \\$100). Two key assumptions are '27E EPS of \\$3.83 and 26x (rounded) EPS multiple.",
+        "bbox": [
+            102,
+            326,
+            893,
+            357
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "RISKS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            370,
+            155,
+            385
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Netflix Inc",
+        "text_level": 2,
+        "bbox": [
+            104,
+            399,
+            179,
+            413
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Downside risks: - AVOD does not lift ARM in UCAN as much as expected. Digital advertising may not recover as quickly or as strongly as we modeled which could lead to lower ARM, particularly in UCAN. Netflix could lose subscribers as streaming gets increasing competitive. Streaming is getting increasingly competitive with big tech investing more in the space. Competition from social platforms with user generated content. Short form videos are taking users eyeballs, which could have a long term impact on engagement.",
+        "bbox": [
+            102,
+            427,
+            893,
+            503
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "RATINGS DEFINITIONS, BENCHMARKS AND DISTRIBUTION",
+        "text_level": 2,
+        "bbox": [
+            104,
+            515,
+            509,
+            531
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "EQUITY RATINGS DEFINITIONS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            543,
+            320,
+            556
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Bernstein brand",
+        "text_level": 2,
+        "bbox": [
+            104,
+            569,
+            218,
+            585
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The Bernstein brand rates stocks based on forecasts of relative performance for the next 12 months versus the S&P 500 for stocks listed on the U.S. and Canadian exchanges, versus the Bloomberg Europe Developed Markets Large and Mid Cap Price Return Index EUR (EDME) for stocks listed on the European exchanges and emerging markets exchanges outside of the Asia Pacific region, versus the Bloomberg Japan Large and Mid Cap Price Return Index USD (JPL) for stocks listed on the Japanese exchanges, and versus the Bloomberg Asia ex-Japan Large and Mid Cap Price Return Index (ASIAX) for stocks listed on the Asian (ex-Japan) exchanges -unless otherwise specified.",
+        "bbox": [
+            102,
+            596,
+            893,
+            682
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The Bernstein brand has three categories of ratings:",
+        "bbox": [
+            104,
+            693,
+            429,
+            708
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- Outperform: Stock will outpace the market index by more than 15 pp",
+        "bbox": [
+            104,
+            720,
+            549,
+            736
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "• Market-Perform: Stock will perform in line with the market index to within +/-15 pp",
+        "bbox": [
+            104,
+            750,
+            638,
+            764
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\- Underperform: Stock will trail the performance of the market index by more than 15 pp",
+        "bbox": [
+            104,
+            777,
+            658,
+            791
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Coverage Suspended: Coverage of a company under the Bernstein brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.",
+        "bbox": [
+            102,
+            804,
+            893,
+            835
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.",
+        "bbox": [
+            102,
+            846,
+            893,
+            888
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            879,
+            940,
+            893,
+            950
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Laurent Yoon +1 917 344 8502 laurent.yoon@bernsteinsg.com",
+        "bbox": [
+            104,
+            18,
+            426,
+            29
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "9 July 2026",
+        "bbox": [
+            831,
+            18,
+            893,
+            29
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "DISCLOSURE APPENDIX",
+        "bbox": [
+            727,
+            50,
+            893,
+            64
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "US MEDIA & TELECOM",
+        "bbox": [
+            104,
+            937,
+            194,
+            949
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            939,
+            861,
+            950
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Not Covered (NC) denotes companies that are not under coverage.",
+        "bbox": [
+            104,
+            50,
+            517,
+            64
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Bernstein brand stock ratings are based on a 12-month time horizon.",
+        "bbox": [
+            104,
+            77,
+            532,
+            91
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand – common stocks",
+        "text_level": 2,
+        "bbox": [
+            104,
+            104,
+            361,
+            117
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand rates common stocks as indicated below. As our benchmarks we use the Bloomberg Europe 500 Banks And Financial Services Index (BEBANKS) and Bloomberg Europe Dev Mkt Financials Large and Mid Cap Price Ret Index EUR (EDMFI) index for developed European banks and Payments, the Bloomberg Europe 500 Insurance Index (BEINSUR) for European insurers, the S&P 500 and S&P Financials for US banks and Payments coverage, S5LIFE for US Insurance, the S&P Insurance Select Industry (SPSIINS) for US Non-Life Insurers coverage, and the Bloomberg Emerging Markets Financials Large, Mid and Small Cap Price Return Index (EMLSF) for emerging market banks and insurers and Payments. Ratings are stated relative to the sector (not the market).",
+        "bbox": [
+            102,
+            130,
+            893,
+            229
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of common stock ratings:",
+        "bbox": [
+            104,
+            241,
+            542,
+            255
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Outperform (OP): Stock will outpace the relevant index by more than 10 pp",
+        "bbox": [
+            104,
+            268,
+            584,
+            282
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Neutral (N): Stock will perform in line with the market index to within $+/-10$ pp",
+        "bbox": [
+            104,
+            297,
+            604,
+            311
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Underperform (UP): Stock will trail the performance of the relevant index by more than 10 pp",
+        "bbox": [
+            104,
+            325,
+            694,
+            339
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Coverage Suspended: Coverage of a company under the Autonomous research brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.",
+        "bbox": [
+            104,
+            352,
+            893,
+            382
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.",
+        "bbox": [
+            102,
+            392,
+            893,
+            436
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Those denoted as 'Feature' (e.g., Feature Outperform FOP, Feature Under Outperform FUP) are our core ideas.",
+        "bbox": [
+            104,
+            448,
+            784,
+            463
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Not Covered (NC) denotes companies that are not under coverage.",
+        "bbox": [
+            104,
+            475,
+            519,
+            489
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand common stock ratings are based on a 12-month time horizon.",
+        "bbox": [
+            104,
+            502,
+            607,
+            516
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand – preferred stocks",
+        "text_level": 2,
+        "bbox": [
+            104,
+            529,
+            367,
+            543
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of preferred stock ratings:",
+        "bbox": [
+            104,
+            555,
+            547,
+            569
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Outperform (OP): The total return of the preferred instrument is expected to outperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            583,
+            893,
+            613
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Neutral (N): The total return of the preferred instrument is expected to perform in line with preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            626,
+            893,
+            657
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Underperform (UP): The total return of the preferred instrument is expected to underperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            670,
+            893,
+            700
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Autonomous preferred stock ratings are based on a 6-month time horizon.",
+        "bbox": [
+            104,
+            713,
+            565,
+            728
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "AUTONOMOUS CREDIT RESEARCH",
+        "text_level": 2,
+        "bbox": [
+            104,
+            739,
+            348,
+            754
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Where this report contains investment recommendations for credit instruments, as defined in article 3(1)(35) of the Market Abuse Regulation, the information below is presented to comply with its disclosure requirements.",
+        "bbox": [
+            102,
+            766,
+            893,
+            795
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The report may also include reference(s) to published opinions by other Autonomous or Bernstein analysts covering the equity securities of the issuer(s) referenced herein. Please note an investment recommendation for credit instruments published by the author(s) of this report may differ from the published view of the analyst covering equity securities for the issuer(s) contained in this report and vice versa.",
+        "bbox": [
+            102,
+            807,
+            893,
+            864
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "CREDIT RATINGS DEFINITIONS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            875,
+            320,
+            890
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            877,
+            940,
+            892,
+            950
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Laurent Yoon +1 917 344 8502 laurent.yoon@bernsteinsg.com",
+        "bbox": [
+            104,
+            18,
+            426,
+            29
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "9 July 2026",
+        "bbox": [
+            831,
+            18,
+            893,
+            29
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "US MEDIA & TELECOM",
+        "bbox": [
+            104,
+            939,
+            194,
+            949
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            939,
+            861,
+            950
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of credit ratings:",
+        "bbox": [
+            104,
+            50,
+            486,
+            64
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Credit Outperform (C-OP): The total return of the Reference Credit Instrument is expected to outperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            77,
+            893,
+            108
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Credit Neutral (C-N): The total return of the Reference Credit Instrument is expected to perform in line with the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            121,
+            893,
+            152
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Credit Underperform (C-UP): The total return of the Reference Credit Instrument is expected to underperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            164,
+            893,
+            195
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Autonomous credit ratings are based on a 6-month time horizon.",
+        "bbox": [
+            104,
+            206,
+            506,
+            222
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "A list of all investment recommendations produced by the author(s) of this report alongside credit ratings history are available upon request.",
+        "bbox": [
+            102,
+            233,
+            893,
+            263
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e. the private side) within the Firm, and into other areas, units, groups or affiliates (i.e. public side) of the Firm",
+        "bbox": [
+            102,
+            273,
+            893,
+            319
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "table",
+        "img_path": "images/556bbbec56f03d46540595a9c4559a929433dd5f5aaad474f5a6d3c29a66fff2.jpg",
+        "table_caption": [
+            "DISTRIBUTION OF EQUITY RATINGS/INVESTMENT BANKING SERVICES"
+        ],
+        "table_footnote": [
+            "\\* These figures represent the percentage of companies within each equity rating category for which affiliates of Bernstein have provided investment banking services within the previous 12 months.\nAs of June 30, 2026. All figures are updated quarterly."
+        ],
+        "table_body": "<table><tr><td>Equity Rating</td><td>Market Abuse Regulation (MAR) and FINRA Rating Category</td><td>Global Rating Distribution</td><td>Investment Banking Relationships*</td></tr><tr><td>Outperform</td><td>BUY</td><td>51.2%</td><td>15.3%</td></tr><tr><td>Market-Perform (Bernstein Brand) Neutral (Autonomous Brand)</td><td>HOLD</td><td>35.8%</td><td>16.2%</td></tr><tr><td>Underperform</td><td>SELL</td><td>13.1%</td><td>13.6%</td></tr></table>",
+        "bbox": [
+            107,
+            379,
+            890,
+            505
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "PRICE CHARTS / RATINGS AND PRICE TARGET HISTORY",
+        "text_level": 2,
+        "bbox": [
+            104,
+            586,
+            490,
+            600
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Prior to April 1, 2024, Bernstein & Co., LLC. issued the ratings and price target information in the graph(s) below for the following companies: Netflix Inc.",
+        "bbox": [
+            104,
+            613,
+            893,
+            642
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b49639dbc4cbf6b55197b020dd8cdea6c0003c98310d7449651fa40332dc439f.jpg",
+        "content": "",
+        "chart_caption": [
+            "Netflix Inc (NFLX) Rating History for Bernstein as of 07/08/2026"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            125,
+            684,
+            875,
+            899
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            877,
+            940,
+            892,
+            950
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Laurent Yoon +1 917 344 8502 laurent.yoon@bernsteinsg.com",
+        "bbox": [
+            104,
+            18,
+            428,
+            29
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "9 July 2026",
+        "bbox": [
+            831,
+            18,
+            893,
+            29
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "US MEDIA & TELECOM",
+        "bbox": [
+            106,
+            939,
+            194,
+            949
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            939,
+            861,
+            950
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "All price target and closing price data in the chart(s) above are denominated in the currency noted in the Ticker Table of this report.",
+        "bbox": [
+            104,
+            50,
+            892,
+            64
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "CONFLICTS OF INTEREST",
+        "text_level": 2,
+        "bbox": [
+            104,
+            90,
+            282,
+            103
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Bernstein Autonomous LLP or BSG France SA, beneficially, has either a net long or short position of 0.5% or more of the total issued share capital of a class of common equity securities of the following MiFID eligible securities: Netflix Inc.",
+        "bbox": [
+            102,
+            116,
+            893,
+            145
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "An affiliate of Bernstein has received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Netflix Inc.",
+        "bbox": [
+            102,
+            170,
+            893,
+            198
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Bernstein and/or affiliates have received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Netflix Inc.",
+        "bbox": [
+            102,
+            211,
+            893,
+            240
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Bernstein and/or affiliates expect to receive or intend to seek compensation for investment banking services in the next three months from Netflix Inc.",
+        "bbox": [
+            102,
+            251,
+            893,
+            280
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Certain affiliates of Bernstein act as market maker or liquidity provider in the debt securities of: Netflix Inc.",
+        "bbox": [
+            104,
+            293,
+            754,
+            307
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Certain affiliates of Bernstein act as market maker or liquidity provider in the equities securities of: Netflix Inc.",
+        "bbox": [
+            104,
+            332,
+            774,
+            347
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "OTHER MATTERS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            359,
+            228,
+            373
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The legal entity(ies) employing the analyst(s) listed in this report, and their location, can be determined by the country code of their phone number, as follows:",
+        "bbox": [
+            102,
+            386,
+            893,
+            414
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "+1 Bernstein Institutional Services LLC; New York, New York, USA",
+        "bbox": [
+            104,
+            427,
+            514,
+            441
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "+44 Bernstein Autonomous LLP; London UK",
+        "bbox": [
+            104,
+            454,
+            385,
+            468
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "+212 SG Africa Technologies & Services; Casablanca, Morocco",
+        "bbox": [
+            104,
+            480,
+            584,
+            494
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "+33 BSG France S.A.; Paris, France",
+        "bbox": [
+            104,
+            507,
+            328,
+            521
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "+34 BSG France S.A.; Madrid, Spain",
+        "bbox": [
+            104,
+            534,
+            333,
+            547
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "+41 Bernstein Autonomous LLP; Geneva, Switzerland",
+        "bbox": [
+            104,
+            560,
+            441,
+            574
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "+49 BSG France S.A.; Frankfurt, Germany",
+        "bbox": [
+            104,
+            587,
+            367,
+            602
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "+91 Bernstein (India) Private Limited; Mumbai, India",
+        "bbox": [
+            104,
+            614,
+            496,
+            627
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "+852 Bernstein (Hong Kong) Limited 盛博香港有限公司; Hong Kong, China",
+        "bbox": [
+            104,
+            640,
+            643,
+            656
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "+65 Bernstein (Singapore) Private Limited; Singapore",
+        "bbox": [
+            104,
+            667,
+            506,
+            683
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "+81 Bernstein Japan KK; Tokyo, Japan",
+        "bbox": [
+            104,
+            695,
+            413,
+            710
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Where this report has been prepared by research analyst(s) employed by a non-US affiliate, such analyst(s), is/are (unless otherwise expressly noted below) not registered as associated persons of Bernstein Institutional Services LLC or any other SEC-registered broker-dealer and are not licensed or qualified as research analysts with FINRA. Accordingly, such analyst(s) may not be subject to FINRA's restrictions regarding (among other things) communications by research analysts with a subject company, interactions between research analysts and investment banking personnel, participation by research analysts in solicitation and marketing activities relating to investment banking transactions, public appearances by research analysts, and trading securities held by a research analyst account.",
+        "bbox": [
+            102,
+            722,
+            893,
+            821
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Where this report has been prepared by research analyst(s) employed by SG Africa Technologies & Services (part of the SG group of companies), it has been prepared on behalf of a Bernstein company under a Global Services Agreement in place between Bernstein and SG.",
+        "bbox": [
+            102,
+            832,
+            893,
+            875
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "CERTIFICATION",
+        "text_level": 2,
+        "bbox": [
+            104,
+            887,
+            218,
+            900
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            877,
+            940,
+            892,
+            950
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Laurent Yoon +1 917 344 8502 laurent.yoon@bernsteinsg.com",
+        "bbox": [
+            104,
+            18,
+            426,
+            29
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "9 July 2026",
+        "bbox": [
+            831,
+            18,
+            893,
+            29
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "US MEDIA & TELECOM",
+        "bbox": [
+            104,
+            939,
+            194,
+            949
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            939,
+            861,
+            950
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Each research analyst listed in this report, who is primarily responsible for the preparation of the content of this report, certifies that all of the views expressed in this publication accurately reflect that analyst's personal views about any and all of the subject securities or issuers and that no part of that analyst's compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views in this publication.",
+        "bbox": [
+            102,
+            50,
+            893,
+            107
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "II. ADDITIONAL GLOBAL CONFLICT DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            118,
+            446,
+            133
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e., the private side) within the Firm, and into other areas, units, groups or affiliates (i.e., public side) of the Firm.",
+        "bbox": [
+            102,
+            145,
+            893,
+            189
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "III. OTHER IMPORTANT INFORMATION AND DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            198,
+            503,
+            215
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Separate branding is maintained for \"Bernstein\" and \"Autonomous\" research products.",
+        "bbox": [
+            104,
+            227,
+            638,
+            242
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\- Bernstein produces a number of different types of research products including, among others, fundamental analysis and quantitative analysis under both the “Autonomous” and “Bernstein” brands. Recommendations contained within one type of research product may differ from recommendations contained within other types of research products, whether as a result of differing time horizons, methodologies or otherwise. Furthermore, views or recommendations within a research product issued under one brand may differ from views or recommendations under the same type of research product issued under the other brand. The Research Ratings System for the two brands and other information related to those Rating Systems are included in the previous section.",
+        "bbox": [
+            104,
+            254,
+            895,
+            361
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\- Autonomous operates as a separate business unit within the following entities: Bernstein Institutional Services LLC, Bernstein Autonomous LLP, Bernstein (Hong Kong) Limited 盛博香港有限公司 and Bernstein (India) Private Limited. For information relating to “Autonomous” branded products (including certain Sales materials) please visit: www.autonomous.com. For information relating to Bernstein branded products please visit: www.bernsteinresearch.com.",
+        "bbox": [
+            104,
+            375,
+            893,
+            437
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Analysts are compensated based on aggregate contributions to the research franchise as measured by account penetration, productivity and proactivity of investment ideas. No analysts are compensated based on performance in, or contributions to, generating investment banking revenues.",
+        "bbox": [
+            102,
+            448,
+            893,
+            492
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "This report has been produced by an independent analyst as defined in Article 3 (1)(34)(i) of EU 596/2014 Market Abuse Regulation (“MAR”) and the same article of MAR as it forms part of United Kingdom domestic law by virtue of the European Union (Withdrawal) Act 2018.",
+        "bbox": [
+            102,
+            502,
+            893,
+            546
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the United States: Bernstein Institutional Services LLC, a broker-dealer registered with the U.S. Securities and Exchange Commission (\"SEC\") and a member of the U.S. Financial Industry Regulatory Authority, Inc. (\"FINRA\") is distributing this publication in the United States and accepts responsibility for its contents. Where this material contains an analysis of debt product(s), such material is intended only for institutional investors and is not subject to the US independence and disclosure standards applicable to debt research prepared for retail investors.",
+        "bbox": [
+            102,
+            556,
+            895,
+            630
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Bernstein Institutional Services LLC may act as principal for its own account or as agent for another person (including an affiliate) in sales or purchases of any security which is a subject of this report. This report does not purport to meet the objectives or needs of any specific individuals, entities or accounts.",
+        "bbox": [
+            102,
+            640,
+            893,
+            684
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Canada: If this publication pertains to a Canadian domiciled company, it is being distributed in Canada by Bernstein (Canada) Limited, which is licensed and regulated by the Canadian Investment Regulatory Organization. If the publication pertains to a non-Canadian domiciled company, it is being distributed by Bernstein Institutional Services LLC, which is licensed and regulated by both the SEC and FINRA, into Canada under the International Dealers Exemption.",
+        "bbox": [
+            102,
+            695,
+            895,
+            753
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "This document may not be passed onto any person in Canada unless that person qualifies as \"permitted client\" as defined in Section 1.1 of NI 31-103.",
+        "bbox": [
+            102,
+            764,
+            893,
+            793
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Brazil: This report has been prepared by Bernstein Institutional Services LLC, and Banco BTG Pactual S.A. (\"BTG\") is responsible for the distribution of this report in Brazil.",
+        "bbox": [
+            102,
+            804,
+            893,
+            834
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "To readers in the United Kingdom: This publication has been issued or approved for issue in the United Kingdom by Bernstein Autonomous LLP, authorised and regulated by the Financial Conduct Authority and located at 60 London Wall, London EC2M 5SH, +44 (0)20-7170-5000. Registered in England & Wales No OC343985.",
+        "bbox": [
+            102,
+            844,
+            893,
+            888
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "Laurent Yoon +1 917 344 8502 laurent.yoon@bernsteinsg.com",
+        "bbox": [
+            104,
+            18,
+            428,
+            29
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "9 July 2026",
+        "bbox": [
+            831,
+            18,
+            893,
+            29
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            877,
+            940,
+            893,
+            950
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "US MEDIA & TELECOM",
+        "bbox": [
+            104,
+            937,
+            194,
+            949
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            939,
+            861,
+            950
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "This document is for distribution only to persons who (i) have professional experience in matters relating to investments falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the “Financial Promotion Order”), (ii) are persons falling within Article 49(2)(a) to (d) (“high net worth companies, unincorporated associations, etc.”) of the Financial Promotion Order, (iii) are outside the United Kingdom, or (iv) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the FSMA) in connection with the issue or sale of any securities may otherwise lawfully be communicated or caused to be communicated (all such persons together being referred to as “relevant persons”). This document is directed only at relevant persons and must not be acted on or relied on by persons who are not relevant persons. Any investment or investment activity to which this document relates is available only to relevant persons and will be engaged in only with relevant persons.",
+        "bbox": [
+            102,
+            50,
+            895,
+            178
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the member states of the EEA: This publication is being distributed by BSG France SA, which is authorised and regulated by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and Autorité des Marchés Financiers (AMF).",
+        "bbox": [
+            102,
+            188,
+            893,
+            218
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Hong Kong: This publication is being distributed in Hong Kong by Bernstein (Hong Kong) Limited 盛博香港有限公司, which is licensed and regulated by the Hong Kong Securities and Futures Commission (Central Entity No. AXC846) to carry out Type 4 (Advising on Securities) regulated activities and subject to the licensing conditions mentioned in the SFC Public Register (https://www.sfc.hk/publicregWeb/corp/AXC846/details)). This publication is solely for professional investors, as defined in the Securities and Futures Ordinance (Cap. 571). The purpose of this report is solely to provide an analysis of the issuers referred to in this report and is not intended for any purpose contrary to the laws of Hong Kong.",
+        "bbox": [
+            102,
+            228,
+            895,
+            315
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Singapore: This publication is being distributed in Singapore by Bernstein (Singapore) Private Limited, only to accredited investors or institutional investors, as defined in the Securities and Futures Act 2001 of Singapore (\"SFA\"). Recipients in Singapore should contact Bernstein (Singapore) Private Limited in respect of matters arising from, or in connection with, this publication. Bernstein (Singapore) Private Limited is regulated by the Monetary Authority of Singapore and licensed under the SFA as a capital markets services licence holder for dealing in capital markets products that are securities and collective investment schemes and an exempt financial adviser for advising on, issuing and promulgating analyses and reports on securities. Bernstein (Singapore) Private Limited is registered in Singapore with Company Registration No. 20213710W and located at 8 Marina Boulevard, #12-01, Marina Bay Financial Centre, Singapore 018981, +65-6326-7000.",
+        "bbox": [
+            102,
+            325,
+            895,
+            440
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the People's Republic of China: The securities referred to in this document are not being offered or sold and may not be offered or sold, directly or indirectly, in the People's Republic of China (for such purposes, not including the Hong Kong and Macau Special Administrative Regions or Taiwan, the \"PRC\") in contravention of any applicable laws of the PRC.",
+        "bbox": [
+            102,
+            449,
+            893,
+            494
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "This document does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC to any person to whom it is unlawful to make the offer or solicitation in the PRC.",
+        "bbox": [
+            102,
+            503,
+            893,
+            534
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "We do not represent that this document may be lawfully distributed, or that any securities may be lawfully offered, in compliance with any applicable registration or other requirements in the PRC, or pursuant to an exemption available thereunder, or assume any responsibility for facilitating any such distribution or offering. In particular, no action has been taken by us which would permit a public offering of any securities or distribution of this document in the PRC. Accordingly, the securities are not being offered or sold within the PRC by means of this document or any other document. Neither this document nor any advertisement or other offering material may be distributed or published in the PRC, except under circumstances that will result in compliance with any applicable laws and regulations.",
+        "bbox": [
+            102,
+            545,
+            895,
+            645
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Japan: This publication is being distributed in Japan by Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社), which is registered in Japan as a Financial Instruments Business Operator with the Kanto Local Finance Bureau (registration number: The Director-General of Kanto Local Finance Bureau (FIBO) No.3387) and regulated by the Financial Services Agency. It is also a member of Investment Management Association of Japan. This publication is solely for qualified institutional investors in Japan only, as defined in Article 2, paragraph (3), items (i) of the Financial Instruments and Exchange Act.",
+        "bbox": [
+            102,
+            655,
+            895,
+            741
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "For the institutional client readers in Japan who have been granted access to the Bernstein website by Daiwa Group Inc. (\"Daiwa\"), your access to this document should not be construed as meaning that Bernstein is providing you with investment advice for any purposes. Whilst Bernstein has prepared this document, your relationship is, and will remain with, Daiwa, and Bernstein has neither any contractual relationship with you nor any obligations towards you.",
+        "bbox": [
+            102,
+            751,
+            895,
+            811
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Australia: Bernstein (Hong Kong) Limited 盛博香港有限公司 is responsible for distributing research in Australia. It is regulated by the Securities and Exchange Commission under U.S. laws, by the Financial Conduct Authority under U.K. laws, which differs from Australian laws. Bernstein (Hong Kong) Limited 盛博香港有限公司 is exempt from the requirement to hold an Australian financial services license under the Corporations Act 2001 in respect of the provision of the following financial services to wholesale clients:",
+        "bbox": [
+            102,
+            821,
+            895,
+            892
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "Laurent Yoon +1 917 344 8502 laurent.yoon@bernsteinsg.com",
+        "bbox": [
+            104,
+            16,
+            428,
+            29
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "9 July 2026",
+        "bbox": [
+            831,
+            18,
+            893,
+            29
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "US MEDIA & TELECOM",
+        "bbox": [
+            104,
+            937,
+            194,
+            950
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            939,
+            861,
+            950
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            877,
+            940,
+            893,
+            950
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "• providing financial product advice;",
+        "bbox": [
+            104,
+            51,
+            341,
+            65
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "• dealing in a financial product;",
+        "bbox": [
+            104,
+            78,
+            310,
+            93
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "• making a market for a financial product; and",
+        "bbox": [
+            104,
+            107,
+            398,
+            122
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "• providing a custodial or depository service.",
+        "bbox": [
+            104,
+            135,
+            390,
+            149
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "To our readers in India: This publication is being distributed in India by Bernstein (India) Private Limited (SCB India) which is licensed and regulated by Securities and Exchange Board of India (\"SEBI\") as a research analyst entity under the SEBI (Research Analyst) Regulations, 2014, having registration no. INH000006378 and as a stock broker having registration no. INZ000213537. SCB India is currently engaged in the business of providing research and stock broking services. Please refer to www.bernsteinresearch.in for more information.",
+        "bbox": [
+            102,
+            162,
+            893,
+            233
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- SCB India is a Private limited company incorporated under the Companies Act, 2013, on April 12, 2017 bearing corporate identification number U65999MH2017FTC293762, and registered office at Level 3A, 4th Floor, First International Financial Centre, Plot Nos C-54 and C-55, G Block, Near CBI Office, Bandra Kurla Complex, Bandra (East), Mumbai 400098, Maharashtra, India (Phone No: +91-22-68421401).",
+        "bbox": [
+            104,
+            246,
+            893,
+            307
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- For details of Associates (i.e., affiliates/group companies) of SCB India, kindly email MUM-BERNSTEIN-InCompliance@bernsteinsg.com.",
+        "bbox": [
+            104,
+            320,
+            893,
+            351
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- SCB India does not have any disciplinary history as on the date of this report.",
+        "bbox": [
+            104,
+            364,
+            594,
+            379
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- Except as noted above, SCB India and/or its Associates (i.e., affiliates/group companies), the Research Analysts authoring this report, and their relatives",
+        "bbox": [
+            104,
+            392,
+            893,
+            422
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "• do not have any financial interest in the subject company",
+        "bbox": [
+            122,
+            436,
+            493,
+            450
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- do not have actual/beneficial ownership of one percent or more in securities of the subject company;",
+        "bbox": [
+            122,
+            463,
+            764,
+            479
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- is not engaged in any investment banking activities for Indian companies, as such;",
+        "bbox": [
+            122,
+            492,
+            647,
+            507
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "• have not managed or co-managed a public offering in the past twelve months for any Indian companies;",
+        "bbox": [
+            122,
+            521,
+            781,
+            536
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- have not received any compensation for investment banking services or merchant banking services from the subject company in the past 12 months;",
+        "bbox": [
+            122,
+            547,
+            893,
+            578
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "• have not received compensation for brokerage services from the subject company in the past twelve months;",
+        "bbox": [
+            122,
+            591,
+            813,
+            607
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- have not received any compensation or other benefits from the subject company or third party related to the specific recommendations or views in this report; and",
+        "bbox": [
+            122,
+            620,
+            893,
+            651
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- do not currently, but may in the future, act as a market maker in the financial instruments of the companies covered in the report.",
+        "bbox": [
+            122,
+            664,
+            893,
+            693
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- do not have any conflict of interest in the subject company as of the date of this report.",
+        "bbox": [
+            122,
+            706,
+            674,
+            723
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- Except as noted above, the subject company has not been a client of SCB India during twelve months preceding the date of distribution of this research report. Neither SCB India nor its Associates (i.e., affiliates/group companies) have received compensation for products or services other than investment banking, merchant banking or brokerage services from the subject company in the past twelve months.",
+        "bbox": [
+            104,
+            736,
+            893,
+            797
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- The principal research analyst(s) who prepared this report, members of the analysts' team, and members of their households are not an officer, director, employee or advisory board member of the companies covered in the report.",
+        "bbox": [
+            104,
+            810,
+            893,
+            841
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- Our Compliance officer / Grievance officer is Ms. Rupal Talati, who can be reached at +91-22-68421451, or MUM-BERNSTEIN-InCompliance@bernsteinsg.com / Scbin-investorgrievance@bernsteinsg.com",
+        "bbox": [
+            104,
+            852,
+            893,
+            883
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            877,
+            940,
+            893,
+            950
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "Laurent Yoon +1 917 344 8502 laurent.yoon@bernsteinsg.com",
+        "bbox": [
+            104,
+            18,
+            426,
+            29
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "9 July 2026",
+        "bbox": [
+            831,
+            18,
+            893,
+            29
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "US MEDIA & TELECOM",
+        "bbox": [
+            104,
+            937,
+            194,
+            949
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            939,
+            861,
+            950
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- The Research investor charter and Terms & Conditions of SCB India are available on its website and may be accessed at Bernstein (India) Private Limited (https://bernsteinresearch.in/) for your reference.",
+        "bbox": [
+            104,
+            50,
+            893,
+            82
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "\\- Disclaimer: Registration granted by SEBI, and certification from NISM, is in no way a guarantee of performance of the intermediary or provide any assurance of returns to investors. Investments in securities market are subject to market risks. Read all the related documents carefully before investing.",
+        "bbox": [
+            104,
+            94,
+            893,
+            140
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Switzerland: This document is provided in Switzerland by or through Bernstein Autonomous LLP, and is provided only to qualified investors as defined in article 10 of the Swiss Collective Investment Scheme Act (“CISA”) and related provisions of the Collective Investment Scheme Ordinance and in strict compliance with applicable Swiss law and regulations. The products mentioned in this document may not be suitable for all types of investors. This document is based on the Directives on the Independence of Financial Research issued by the Swiss Bankers Association (SBA) in January 2008.",
+        "bbox": [
+            102,
+            152,
+            895,
+            224
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the Middle East: Bernstein Autonomous LLP, DIFC branch has its principal office at Gate Village 06, DIFC, Dubai, UAE. Bernstein Autonomous LLP, DIFC branch is regulated by the Dubai Financial Services Authority (DFSA) with the registration number CL10040 and is provisioned for Arranging Deals in Investments and Advising on Financial Products. All communications and services are directed at Professional Clients and Market Counterparties only (as defined in the DFSA rulebook). Persons other than Professional Clients and Market Counterparties, such as Retail Clients, are not the intended recipients of our communications or services.",
+        "bbox": [
+            102,
+            233,
+            895,
+            320
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "LEGAL",
+        "text_level": 2,
+        "bbox": [
+            104,
+            330,
+            156,
+            344
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "All research publications are disseminated to our clients through posting on the firm's password protected websites, bernsteinresearch.com and autonomous.com. Certain, but not all, research publications are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience.",
+        "bbox": [
+            102,
+            357,
+            893,
+            401
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "This publication has been published and distributed in accordance with the Firm's policy for management of conflicts of interest in investment research, a copy of which is available from Bernstein Institutional Services LLC, Director of Compliance, 245 Park Avenue, New York, NY 10167. Additional disclosures and information regarding Bernstein's business are available on our website www.bernsteinresearch.com.",
+        "bbox": [
+            102,
+            412,
+            895,
+            470
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. This publication is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of, or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or which would subject any of the entities referenced herein or any of their subsidiaries or affiliates to any registration or licensing requirement within such jurisdiction. This publication is based upon public sources we believe to be reliable, but no representation is made by us that the publication is accurate or complete. We do not undertake to advise you of any change in the reported information or in the opinions herein. This publication was prepared and issued by entity referred to herein for distribution to eligible counterparties or professional clients. This publication is not an offer to buy or sell any security, and it does not constitute investment, legal or tax advice. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with their professional advisors in light of their specific circumstances. The value of investments may fluctuate, and investments that are denominated in foreign currencies may fluctuate in value as a result of exposure to exchange rate movements. Information about past performance of an investment is not necessarily a guide to, indicator of, or assurance of, future performance.",
+        "bbox": [
+            102,
+            481,
+            895,
+            679
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "This report is directed to and intended only for our clients who are “eligible counterparties”, “professional clients”, “institutional investors” and/or “professional investors” as defined by the aforementioned regulators, and must not be redistributed to retail clients as defined by the aforementioned regulators. Retail clients who receive this report should note that the services of the entities noted herein are not available to them and should not rely on the material herein to make an investment decision. The result of such act will not hold the entities noted herein liable for any loss thus incurred as the entities noted herein are not registered/authorised/licensed to deal with retail clients and will not enter into any contractual agreement/arrangement with retail clients. This report is provided subject to the terms and conditions of any agreement that the clients may have entered into with the entities noted herein. All research reports are disseminated on a simultaneous basis to eligible clients through electronic publication to our client portal.",
+        "bbox": [
+            102,
+            689,
+            895,
+            817
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "The information in this report was prepared by Bernstein solely for the internal business use of our clients. Clients may store, display, analyze, reformat and print the information in this report for this limited use only. Clients may not copy, alter, create derivative works, resell, reverse engineer, commercially exploit, share or distribute any part of the information contained herein for any purpose without Bernstein's express written consent. These restrictions include extracting data or using the content to develop indices or other products. Further, you may not use this report, or any portion of this report, to train or finetune any third-party machine learning or artificial intelligence system, or as a prompt or input into any such system. You also may not, without",
+        "bbox": [
+            102,
+            828,
+            895,
+            914
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            877,
+            940,
+            893,
+            950
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "Laurent Yoon +1 917 344 8502 laurent.yoon@bernsteinsg.com",
+        "bbox": [
+            104,
+            18,
+            428,
+            31
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "9 July 2026",
+        "bbox": [
+            831,
+            18,
+            893,
+            29
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "US MEDIA & TELECOM",
+        "bbox": [
+            104,
+            937,
+            194,
+            949
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            939,
+            861,
+            950
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Bernstein's express written consent, do any of the foregoing in connection with your own internal machine learning or artificial intelligence system.",
+        "bbox": [
+            102,
+            50,
+            893,
+            78
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Bernstein may use artificial intelligence tools in the preparation of its materials. Any such materials are reviewed by Bernstein's research analysts prior to publication.",
+        "bbox": [
+            102,
+            91,
+            893,
+            120
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "This report has been prepared for information purposes only and is based on current public information that we consider reliable, but the entities noted herein do not warrant or represent (express or implied) as to the sources of information or data contained herein are accurate, complete, not misleading or as to its fitness for the purpose intended even though the entities noted herein rely on reputable or trustworthy data providers, it should not be relied upon as such. Opinions expressed are the author(s)' current opinions as of the date appearing on the material only and we do not undertake to advise you of any change in the reported information or in the opinions herein.",
+        "bbox": [
+            102,
+            131,
+            895,
+            217
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Any references to SG herein are purely factual, based upon publicly available information, and included for comparative purposes only. They do not constitute an opinion or recommendation with respect to the securities of SG.",
+        "bbox": [
+            102,
+            228,
+            893,
+            270
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "This publication was prepared and issued by the entity referred to herein for distribution to eligible counterparties or professional clients. The information in this report is intended for general circulation and does not constitute an offer to buy or sell any security, investment, legal or tax advice nor a personal recommendation, as defined by any of the aforementioned regulators. It does not take into account the particular investment objectives, financial situations, or needs of individual investors. The report has not been reviewed by any of the aforementioned regulators and does not represent any official recommendation from the aforementioned regulators. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with advice sought from a financial adviser regarding the suitability of the investment product, taking into account the specific investment objectives, financial situation or particular needs of any recipient of the recommendation, before the recipient makes a commitment to purchase the investment product.",
+        "bbox": [
+            102,
+            282,
+            895,
+            410
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "The analysis contained herein is based on numerous assumptions. Different assumptions could result in materially different results. The information in this report does not constitute, or form part of, any offer to sell or issue, or any offer to purchase or subscribe for shares, or to induce engagement in any other investment activity. The value of any securities or financial instruments mentioned in this report may fluctuate subject to market conditions. Information about past performance of an investment is not necessarily a guide to, indicative of, or assurance of future performance. Estimates of future performance mentioned by the research analyst in this report are based on assumptions that may not be realized due to unforeseen factors like market volatility/fluctuation. In relation to securities or financial instruments denominated in a foreign currency other than the clients' home currency, movements in exchange rates will have an effect on the value, either favorable or unfavorable. Before acting on any recommendations in this report, recipients should consider the appropriateness of investing in the subject securities or financial instruments mentioned in this report and, if necessary, seek independent professional advice.",
+        "bbox": [
+            102,
+            421,
+            895,
+            563
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject the entities noted herein to any regulation or licensing requirement within such jurisdiction.",
+        "bbox": [
+            102,
+            573,
+            895,
+            645
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Source: Bloomberg Index Services Limited. BLOOMBERG® is a trademark and service mark of Bloomberg Finance L.P. and its affiliates (collectively \"Bloomberg\"). Bloomberg or Bloomberg's licensors own all proprietary rights in the Bloomberg Indices. Neither Bloomberg nor Bloomberg's licensors approves or endorses this material, or guarantees the accuracy or completeness of any information herein, or makes any warranty, express or implied, as to the results to be obtained therefrom and, to the maximum extent allowed by law, neither shall have any liability or responsibility for injury or damages arising in connection therewith.",
+        "bbox": [
+            102,
+            656,
+            895,
+            728
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "No part of this material may be reproduced, distributed or transmitted or otherwise made available without prior consent of the entities noted herein. Copyright Bernstein Institutional Services LLC Bernstein Autonomous LLP, BSG France S.A., Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited and Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社). All rights reserved. The trademarks and service marks contained herein are the property of their respective owners. Any unauthorized use or disclosure is strictly prohibited. The entities noted herein may pursue legal action if the unauthorized use results in any defamation and/or reputational risk to the entities noted herein and research published under the Bernstein and Autonomous brands.",
+        "bbox": [
+            102,
+            737,
+            895,
+            852
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "Laurent Yoon +1 917 344 8502 laurent.yoon@bernsteinsg.com",
+        "bbox": [
+            104,
+            18,
+            428,
+            29
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "9 July 2026",
+        "bbox": [
+            831,
+            18,
+            893,
+            29
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            877,
+            940,
+            893,
+            950
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "US MEDIA & TELECOM",
+        "bbox": [
+            104,
+            937,
+            194,
+            949
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            939,
+            861,
+            950
+        ],
+        "page_idx": 18
+    }
+]

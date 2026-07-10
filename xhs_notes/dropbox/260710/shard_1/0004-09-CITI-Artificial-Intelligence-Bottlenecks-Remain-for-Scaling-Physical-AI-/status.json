@@ -1,0 +1,41 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_nr1p3zo5/pdfs/0004-09-CITI-Artificial Intelligence-Bottlenecks Remain for Scaling Physical AI- But Commercialization Progressing-260708.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "Citi",
+  "cover_short_title": "物理AI商业化已来，",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资回报->回报表现 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "投资回报->回报表现 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "Citi：人形机器人定价低于人工成本，物理AI进入商业部署阶段",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/xhs_card_01.png"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "460",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}

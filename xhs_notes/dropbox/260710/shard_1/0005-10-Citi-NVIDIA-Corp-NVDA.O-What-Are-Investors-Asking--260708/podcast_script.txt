@@ -1,0 +1,59 @@
+ZH_A: 今天我们要聊一份关于英伟达的研报，但这不是那种泛泛而谈的业绩回顾。我听说这份报告非常特别，它直接回应了投资者最近最关心的几个问题。B，你先给我们一个总体的感觉吧，这份报告到底想说什么？
+
+ZH_B: 没错，这份报告的核心价值在于，它并不是分析师自己闭门造车，而是直接和英伟达的投资者关系团队沟通之后，总结出的投资者最想问的八个关键话题。我们的主判断是，英伟达在各条战线上都表现出极强的信心，尤其是在产品路线图、功耗效率和客户需求广度上。但同时，报告也留下了一些非常有意思的悬念，比如CPO技术的实际落地速度和太空数据中心的可行性。
+
+ZH_A: 好，那我先问第一个问题。现在市场上最担心的就是英伟达下一代芯片会不会延期，比如那个叫Vera Rubin的。报告里怎么说？
+
+ZH_B: 英伟达的态度非常明确：路线图完全不变。他们甚至强调，今年Computex上展示的NVLink域设计也没有任何变化。这意味着，至少在英伟达自己的表述中，生产节奏一切正常。但要注意，这里有一个关键点，报告没有展开讨论，那就是供应链上游的内存供应是否真的能跟上。英伟达之所以被列为首选股，恰恰是因为他们被认为在DRAM内存获取上有优势，但这部分逻辑需要你在完整报告里细看。
+
+ZH_A: 所以你看，市场担心延期，但英伟达说没问题。那除了这个，还有一个技术热点叫CPO，就是共封装光学。这听起来很前沿，英伟达现在做到哪一步了？
+
+ZH_B: CPO是一个关键的分水岭。报告里提到，目前CPO主要用于扩展网络，他们的Spectrum-X产品已经在生产了。但真正的大招是，从2028年的Feynman架构开始，客户可以选择用CPO还是铜缆来连接NVLink。这意味着一场技术路线的切换正在酝酿。不过，报告也埋了一个悬念：客户对CPO的采用率到底有多高？英伟达说很高，但具体数字和案例，要等到今年晚些时候才会有更多细节。这里仍需要继续验证。
+
+ZH_A: 这很有趣，技术路线在切换，但客户到底买不买账，还是个问号。接下来说说市场的结构吧。我们都知道，超大规模云厂商是英伟达的大客户，但最近大家都在讨论，是不是只有他们才是未来？
+
+ZH_B: 这正是报告里一个非常核心的洞察。英伟达承认，最初确实是超大规模云厂商推动了大部分部署。但他们强调，过去两年，AI实验室、主权国家和企业级本地部署的需求正在加速。他们的核心判断是，当AI的承诺真正变成现实时，非超大规模云厂商的市场份额最终会变得更大，尤其是当物理AI开始崛起之后。这意味着什么？意味着英伟达正在构建一个更分散、更抗风险的客户基础，而不仅仅是依赖那几家巨头。
+
+ZH_A: 也就是说，英伟达认为未来的蛋糕会更大，而且分蛋糕的人会更多。那关于模型开源还是闭源的问题，英伟达站哪边？
+
+ZH_B: 英伟达非常聪明，他们说两者都重要。前沿模型推动性能边界，而开源模型让企业和主权国家能够快速采用和扩展AI。所以他们自己开发了免费的模型，比如Nemotron和Cosmos。但报告里特别澄清了一点：英伟达的目标不是和前沿模型竞争，而是帮助主权国家和企业走完他们的AI旅程。这是一个非常清晰的定位，他们卖的是铲子，而不是金子。
+
+ZH_A: 说到铲子，就不得不提成本。黄仁勋之前说过一个数字，每1GW要花1000亿美元，这听起来太吓人了。报告里怎么解释这个？
+
+ZH_B: 这是一个非常关键的澄清。管理层的解释是，这是一个能效指标。意思是，未来用1000亿美元买到的算力，只需要1GW的电力。而今天，30到400亿美元只能买到1GW的算力。因为Blackwell的能效是Hopper的25倍。所以，这不是成本在飙升，而是效率在飞跃。英伟达认为他们可以保持这个节奏。反过来，随着投资回报率提高，每GW的收入强度也会增加。这是一个非常看涨的长期叙事。
+
+ZH_A: 好，最后问一个听起来有点科幻的问题：数据中心放到太空里？这是真的吗？
+
+ZH_B: 是的，英伟达在GTC上宣布了这件事，他们有一个针对太空的Vera Rubin变体，叫加速卫星。报告里提到，虽然工程挑战很大，但英伟达认为并非不可能。这听起来像是一个“登月计划”，但如果你去读完整报告，会发现它和英伟达对物理AI的布局是联系在一起的。太空数据中心到底是为了解决什么问题，报告里没有完全展开，这是留给读者的一个悬念。
+
+ZH_A: 太棒了，今天的讨论让我们看到了英伟达在技术、市场和成本上的多重叙事。如果你想知道更多细节，比如内存供应商的长期协议影响，或者英伟达资本配置的具体逻辑，欢迎去阅读这份完整报告。感谢B的精彩解读，我们下期再见。
+
+EN_A: Today we are digging into a research report on NVIDIA. But this is not your typical earnings recap. I hear this one is special because it directly answers the questions investors are asking right now. So, B, give us a sense. What is the big takeaway?
+
+EN_B: Absolutely. The core value of this report is that it is not just the analyst's own view. It is a synthesis of a direct conversation with NVIDIA's investor relations team. They tackled eight key investor topics. Our main takeaway is that NVIDIA shows strong confidence across the board, especially on its product roadmap, power efficiency, and customer diversity. But the report also leaves some very interesting questions open, like the real adoption speed of CPO technology and the feasibility of data centers in space.
+
+EN_A: Okay, let me start with the first big one. The market is really worried about delays for the next-gen chip, Vera Rubin. What does the report say?
+
+EN_B: NVIDIA is very clear. The roadmap is fully intact. They even emphasized that the NVLink domain designs shown at Computex have not changed. So, at least according to NVIDIA, production is on track. But here is the key point the report does not fully answer: can the supply chain, specifically the DRAM memory supply, keep up? The reason NVIDIA is a top pick is because of their strong access to memory. You will need to read the full report to understand that logic in detail.
+
+EN_A: So the market fears delays, but NVIDIA says no problem. Besides that, there is a hot topic called CPO, or co-packaged optics. How far along is NVIDIA with that?
+
+EN_B: CPO is a big inflection point. The report says it is already in production for scale-out networks using Spectrum-X. But the real news is that starting in 2028 with the Feynman architecture, customers will have the option to use CPO or copper for NVLink. That signals a major technology shift is coming. However, the report leaves a cliffhanger. How high is customer adoption? NVIDIA says it is high, but the specific numbers and case studies will not come until later this year. This is an area that still needs to be verified.
+
+EN_A: So the technology is shifting, but whether customers are buying in is still a question mark. Let us talk about market structure. Everyone knows the hyperscalers are the big customers. But is that the whole story?
+
+EN_B: This is one of the most insightful parts of the report. NVIDIA admits that hyperscalers drove most of the initial deployments. But they point out that over the past two years, demand from AI labs, sovereign states, and enterprise on-premise has been accelerating. Their core judgment is that as AI promise becomes reality, the non-hyperscaler portion of the market will eventually have to be bigger, especially as physical AI ramps up. What does this mean? It means NVIDIA is building a more diversified and less risky customer base, not just relying on a few giants.
+
+EN_A: So NVIDIA thinks the future pie will be bigger, and more people will be eating it. What about the open versus closed model debate? Which side is NVIDIA on?
+
+EN_B: NVIDIA is very smart about this. They say both are important. Frontier models push the performance boundary, while open source models allow enterprises and sovereigns to adopt and scale AI quickly. So they developed their own free models, like Nemotron and Cosmos. But the report makes one thing very clear: NVIDIA's goal is not to compete with frontier models. It is to help sovereigns and enterprises along their AI journey. That is a very clear positioning. They are selling the shovels, not the gold.
+
+EN_A: Speaking of shovels, we have to talk about cost. Jensen Huang mentioned a huge number, 100 billion dollars per gigawatt. That sounds terrifying. How does the report explain it?
+
+EN_B: This is a critical clarification. Management explained it as an energy efficiency comment. It means that in the future, 100 billion dollars worth of compute will only need one gigawatt of power. Today, 30 to 40 billion dollars gets you one gigawatt of power. Why? Because Blackwell is 25 times more power efficient than Hopper. So this is not a cost explosion. It is an efficiency leap. NVIDIA believes they can keep this pace. And as return on investment increases, they expect more revenue intensity per gigawatt. This is a very bullish long-term narrative.
+
+EN_A: Okay, one last question that sounds a bit like science fiction. Data centers in space? Is that real?
+
+EN_B: Yes, NVIDIA announced this at GTC. They have a variant of Vera Rubin for space, called an accelerated satellite. The report says there are significant engineering challenges, but NVIDIA does not think it is impossible. This sounds like a moonshot. But if you read the full report, you will find it connects to their broader vision for physical AI. The report does not fully explain why space data centers are needed. That is a mystery left for the reader.
+
+EN_A: Great. Today we have seen NVIDIA's multiple narratives on technology, market, and cost. If you want more details, like the impact of memory supplier agreements or NVIDIA's capital allocation strategy, please go read the full report. Thank you, B, for the great insights. See you next time.
