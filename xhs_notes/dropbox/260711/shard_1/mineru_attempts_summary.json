@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_lq7uufix/pdfs/0001-06-CITI-China Auto Manufacturers-Jun NEV Database Update- CR5 at 57.1- --0.1ppt MoM--260709.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_lq7uufix/pdfs/0002-07-CITI-China Battery Materials Lithium into 2nd week of July - Our read to the sell off this week-260709.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_lq7uufix/pdfs/0003-08-CITI-China Economics-Austerity Now- Acceleration Later--260709.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_lq7uufix/pdfs/0004-09-CITI-China Economics-A Plateauing Inflation Path in 26H2E after Energy Shock--260709.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_lq7uufix/pdfs/0005-10-CITI-Dongfang Electric -1072.HK- Decent New Order Growth- More Gas Turbine Sales to Data Centers-260709.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
