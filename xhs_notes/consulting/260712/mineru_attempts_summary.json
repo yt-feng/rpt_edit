@@ -1,0 +1,24 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 2,
+    "successful_pdf_count": 2,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_tk8kr85c/pdfs/0001-McKinsey_PDF-Global-Economics-Intelligence_98d80850.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_tk8kr85c/pdfs/0002-McKinsey_PDF-MWC-2025---pages.mckinsey.com_f92f4582.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

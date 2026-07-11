@@ -1,0 +1,3856 @@
+[
+    {
+        "type": "text",
+        "text": "McKinsey & Company",
+        "text_level": 2,
+        "bbox": [
+            40,
+            62,
+            202,
+            159
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "MWC 2025",
+        "text_level": 2,
+        "bbox": [
+            40,
+            492,
+            307,
+            577
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Key Take-aways and Highlights",
+        "bbox": [
+            42,
+            598,
+            336,
+            646
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "March 2025",
+        "bbox": [
+            41,
+            655,
+            125,
+            690
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "MWC25",
+        "bbox": [
+            72,
+            783,
+            222,
+            833
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Key take-aways from MWC 2025",
+        "text_level": 2,
+        "bbox": [
+            39,
+            79,
+            482,
+            138
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Overarching theme: AI and its impact on operations, network and next generation enterprise and consumer products taking center stage while remaining industry defining trends continue to evolve",
+        "bbox": [
+            45,
+            172,
+            907,
+            253
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/cb9b21c404de80542b244a1835bf239149e3e1a1f87d637dc432defbdffd02ca.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            50,
+            268,
+            90,
+            342
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "AI and Gen AI: Omnipresent – integral to nearly every launch, announcement, and demo. Uncertainty remains around what will endure and deliver sustainable value.",
+        "bbox": [
+            104,
+            275,
+            930,
+            351
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/b60b76543bd42f214324245d8dae86c5c1f5ec8efd7e2c82a77726b6d2631bf2.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            50,
+            362,
+            92,
+            435
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "(Network) APIs: The number of implementations is increasing, but the timeline for achieving true scale and significant monetization remains uncertain",
+        "bbox": [
+            104,
+            366,
+            905,
+            444
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/16da1756d861d88335ee5b27a4943eb5b40435e4aa52a8dcfaf2f2d19d754b12.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            51,
+            455,
+            90,
+            529
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Energy efficiency: Advancements in RAN and fixed technology provide telcos with ample opportunities to lower energy costs while enhancing sustainability",
+        "bbox": [
+            104,
+            457,
+            943,
+            537
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/6070f37e60086840cb7ae74fb2736387bb252e236e63d96c1a29685081096552.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            50,
+            550,
+            91,
+            624
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Non-terrestrial networks: From concept to reality – a series of new partnerships unveiled which have to potential to bring direct-to-device satellite connectivity to hundreds of millions of users",
+        "bbox": [
+            103,
+            550,
+            954,
+            629
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/c1eb36edb151bcc932466f6f39f81224ab7d784a023b242569ff5eb5f73769ca.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            50,
+            650,
+            92,
+            707
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "(○) 6G: AI, sensing, and 4-7 GHz spectrum lead 6G discussions, while Terahertz spectrum has limited traction",
+        "bbox": [
+            50,
+            657,
+            900,
+            707
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/39d65e79c2e21173cf214e918b21a20d9d72f898a059ab31635df17fb42831c9.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            50,
+            735,
+            92,
+            809
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Quantum computing: Quantum-safe cryptography is becoming an important topic for telcos to protect their networks while quantum safe networking emerges as a new proposition offered to enterprises",
+        "bbox": [
+            104,
+            738,
+            910,
+            816
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/c88325b2235e059199527a12e2a2b1feeb3fa0d145f0722dc5b66e65fc529c57.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            48,
+            851,
+            92,
+            881
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Other topics discussed: ORAN, private networks, 5G/6G for public safety and defense, consolidation & regulation and spectrum allocation reform",
+        "bbox": [
+            104,
+            829,
+            913,
+            907
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "McKinsey & Company",
+        "bbox": [
+            828,
+            946,
+            926,
+            968
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            946,
+            948,
+            956,
+            966
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Highlights overview at MWC 2025",
+        "text_level": 2,
+        "bbox": [
+            40,
+            77,
+            503,
+            137
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/6fb192326bf14cf7f0055ad27a1338e59add249792abef1dc903cc8b410303e8.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            45,
+            222,
+            78,
+            290
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Relative relevance at MWC",
+        "bbox": [
+            225,
+            175,
+            363,
+            203
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Telecom products and services",
+        "bbox": [
+            41,
+            301,
+            112,
+            372
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/1fba67b1d173a8916df9a11a58722806a53d5e4c63bf2ca1f389e8084568716d.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            43,
+            590,
+            79,
+            655
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Telecom operations and infrastructure",
+        "bbox": [
+            41,
+            670,
+            100,
+            762
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Connectivity",
+        "bbox": [
+            125,
+            224,
+            191,
+            253
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/a9db2e60391131eeccd5d151eb613a5bd396c495eb0eb1b99928498dd0c8b5b6.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            204,
+            220,
+            227,
+            264
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Near Core",
+        "bbox": [
+            125,
+            316,
+            179,
+            344
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Beyond the Core",
+        "bbox": [
+            125,
+            409,
+            186,
+            457
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/7dfa63e98ae0f54324a2a54c074302a35838ac3c754517b6c7b34b44fa222e8a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            125,
+            500,
+            140,
+            529
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/2e1a74971494d40b9996daba3ca90b151f28f97b9056416aebe05200dea148dc.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            204,
+            312,
+            226,
+            355
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/ad237d142fcf26e60f16f9fb20d11bb1d03fd1b7a227fdb4d33c3f15cf7771ae.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            204,
+            405,
+            226,
+            446
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Direct-to-Satellite/ NTN: From concept to reality",
+        "bbox": [
+            228,
+            224,
+            351,
+            275
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "AI in operations",
+        "bbox": [
+            125,
+            592,
+            183,
+            644
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/00157a8db23701f1b39a1dc638262cc99b07d54fa2be6a027f2817529c94f0dd.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            206,
+            500,
+            225,
+            538
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "APIs gaining momentum, but still early days. Supply ramping up—albeit slower than hoped",
+        "bbox": [
+            226,
+            314,
+            389,
+            390
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/b2d2d9ad4c8885d94e1f7278755a3c42cc7416991694dd671ce733597b9969ba.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            195,
+            550,
+            216,
+            587
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Mobile network equipment",
+        "bbox": [
+            125,
+            685,
+            206,
+            735
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Telcos are intensifying their focus on security offerings by capitalizing on internal expertise",
+        "bbox": [
+            228,
+            407,
+            394,
+            481
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Others",
+        "bbox": [
+            125,
+            870,
+            163,
+            896
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Fixed network equipment",
+        "bbox": [
+            125,
+            777,
+            200,
+            827
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/796056e4bddb1d957e67dd450b71a8635da31057b2a0978fe6bcb541c3ae762f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            204,
+            590,
+            226,
+            629
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Telcos launching a range of AI services targeting consumers",
+        "bbox": [
+            228,
+            500,
+            359,
+            574
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Vendors and MNOs highlight (gen)-AI-driven use cases designed to enhance nw efficiency",
+        "bbox": [
+            228,
+            592,
+            380,
+            664
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/4f077cebdbe460be2a9bce84d9139ab7be7262c20a55f966519b56b12a6856b2.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            226,
+            750,
+            248,
+            792
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Energy efficiency increasingly becomes a key selling point across network equipment categories",
+        "bbox": [
+            250,
+            753,
+            373,
+            870
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/4e651ddff6f51b5edcd99e8f1af2fe74ceaaaac32b6f1c535fc470552a1a282b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            398,
+            314,
+            419,
+            353
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "5G use case narrative shifted from technology-centric to emphasizing business outcomes",
+        "bbox": [
+            420,
+            316,
+            585,
+            388
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/e42d77a41b6256a363015ede0eeb605bbaa00fbe55ec75f37e5fd2ba56cae13a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            398,
+            498,
+            418,
+            538
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/75e6a157ef5682f63cad3b1dd9f30993fc3722d897a1002f849b1bd3ccadf15a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            397,
+            588,
+            419,
+            629
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "AI-driven solutions tailored for enterprise needs are emerging within Telco B2B portfolios",
+        "bbox": [
+            420,
+            500,
+            567,
+            574
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Telcos leverage AI agents to transform customer experience",
+        "bbox": [
+            421,
+            592,
+            566,
+            664
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/a98417645150cc70f5d432eb8fcd5a0fe2222a838c017d5bb5670ffd732e758c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            398,
+            679,
+            419,
+            722
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "AI, sensing and 4-7 GHz spectrum dominate 6G discussions",
+        "bbox": [
+            420,
+            683,
+            544,
+            755
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/3cddcf00d85964a201bc66dc5f1a5d8e7cb6943a89999f79642a6a5e000844c7.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            398,
+            772,
+            419,
+            814
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/1f8313bebc94b24bcc140b9da084b6b4509406864dc17d802bda943a230b51df.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            585,
+            407,
+            606,
+            446
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/d0aebfa7267adaf62c0e2492a3126d86902c322f41c06fbf6ff04199092f082a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            585,
+            222,
+            606,
+            262
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/bcce718260b8e43c519124f9fb9de55410a4fe32e0d4ff6b99a2c325f76559a9.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            398,
+            866,
+            419,
+            903
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Quantum networks positioned the next strategic frontier for equipment vendors",
+        "bbox": [
+            420,
+            775,
+            581,
+            850
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "own networks against threats arising from quantum computing",
+        "bbox": [
+            420,
+            894,
+            576,
+            940
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Quantum safe networks emerging a new B2B proposition",
+        "bbox": [
+            607,
+            225,
+            711,
+            298
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Sovereignty emerges as a core component of the cloud value proposition",
+        "bbox": [
+            608,
+            409,
+            726,
+            481
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/4d92fe67a86b3c8ddfd335733908b872a13e8638dc0b4b010a86aeafc47704e7.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            585,
+            588,
+            606,
+            629
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "AI-RAN: Moving RAN workloads to GPUs is under exploration",
+        "bbox": [
+            608,
+            592,
+            720,
+            666
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/a63d6507751e573c0f66b6fa15c20ce8a53ed86db51c51e6fe26690fae857e33.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            585,
+            679,
+            606,
+            722
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Long tail of smaller RAN vendors targeting private networks opportunities",
+        "bbox": [
+            608,
+            683,
+            739,
+            757
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\\- Telcos to consumers\n- Network vendors to telcos ○ Telcos to enterprises\n● Others",
+        "bbox": [
+            671,
+            92,
+            810,
+            146
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            821,
+            92,
+            938,
+            146
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Deep Dives",
+        "bbox": [
+            876,
+            161,
+            950,
+            190
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/49d0a738d2f760d91c4dfceee093542e6c41f6ee154ea9a49424ecfe58023033.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            743,
+            222,
+            764,
+            264
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "\"Build your own MVNO platform\" launched by tech/ wholesale players",
+        "bbox": [
+            763,
+            224,
+            934,
+            275
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/c405d179c8397bd1a449729ddee9f0a1423132f32732a2af243a8cb96839acb8.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            743,
+            312,
+            762,
+            355
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "5G/6G for defense and public safety is emerging as a promising growth opportunity for vendors and MNOs",
+        "bbox": [
+            759,
+            314,
+            944,
+            390
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/f7c42d0bf066934146d40533783fab9c4bf9f41b1ce8c174ba6d317e1ce295ce.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            743,
+            498,
+            763,
+            540
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Several operators unveil plans to introduce GPUaaS for enterprises",
+        "bbox": [
+            761,
+            500,
+            932,
+            574
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/57c5376e4281cb4c3a747786aa081982150afea3a8303e32e2a16d7a5975f90b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            743,
+            588,
+            763,
+            631
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "New AI alliances between telcos announced",
+        "bbox": [
+            763,
+            592,
+            887,
+            640
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/04868529cc36a93d299c7c415c1b3a3ec3f4f4fd64704c02ebee56d547a5fe90.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            744,
+            681,
+            763,
+            720
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "ORAN compliant equipment choice increases but weakening traction",
+        "bbox": [
+            763,
+            683,
+            930,
+            733
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "McKinsey & Company",
+        "bbox": [
+            829,
+            946,
+            925,
+            968
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            946,
+            948,
+            955,
+            966
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "1. Direct-to-Satellite/ NTN: From concept to reality",
+        "text_level": 2,
+        "bbox": [
+            39,
+            29,
+            629,
+            133
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Why it is relevant",
+        "text_level": 2,
+        "bbox": [
+            41,
+            192,
+            200,
+            231
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/2b5382a4f445966991733157194941e6590007fc30f61438798604c232523036.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            242,
+            164,
+            277,
+            233
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Direct to Satellite / NTN technology makes mobile communication available everywhere",
+        "bbox": [
+            41,
+            250,
+            273,
+            346
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Europe's ambition to become relevant and autonomous in satellite connectivity",
+        "bbox": [
+            41,
+            355,
+            248,
+            451
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/909d180842729e34ed69df4a5e71c540814a8c9a5a1e70f6f2d7c20de4d8adf5.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            44,
+            477,
+            136,
+            540
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "of the global mobile subscriber base are served by one of the 91 operators which already have agreements with satellite providers in place",
+        "bbox": [
+            41,
+            566,
+            288,
+            692
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "10 bn €",
+        "bbox": [
+            43,
+            718,
+            203,
+            783
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Deal between the European Commission and SpaceRISE consortium",
+        "bbox": [
+            41,
+            807,
+            234,
+            900
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Key observations",
+        "text_level": 2,
+        "bbox": [
+            310,
+            194,
+            470,
+            231
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/8f3bb449e3da1e5d01c309fc7d5509f3426a0644d00a6e2058cd6b7988f61272.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            662,
+            174,
+            700,
+            229
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Wave of new partnerships announced: Vodafone and AST SpaceMobile SatCo, KDDI and Starlink, Verizon's' partnership with Singtel and Skylo",
+        "bbox": [
+            308,
+            250,
+            675,
+            346
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "EU reigniting European ambition on satellite connectivity by signing a 10Bn Eur deal to develop satellite constellations with SpaceRise Consortium by 2030, aimed at bridging digital divide and strengthening European autonomy in this space",
+        "bbox": [
+            308,
+            355,
+            689,
+            514
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "MNOs position NTNs value proposition clearly as a mean to expand coverage beyond cellular footprints: “We have a mission to finish the job of covering the last 400 million people and satellite service is the solution to filling coverage gaps” – Bharti Airtel CEO",
+        "bbox": [
+            308,
+            520,
+            701,
+            679
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/e8f7015a34042d8bdd792e847122eeab57ac82a5cc8a84113953143e9f8ba62f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            311,
+            694,
+            413,
+            948
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/87849aa6c5e9d7ab56c1d631ff352998e6ffefe1d4c4869293303ff9b0a21bdd.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            428,
+            694,
+            610,
+            950
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Implications",
+        "text_level": 2,
+        "bbox": [
+            744,
+            194,
+            858,
+            233
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/552ca245cadd14735ae4381807a3dd4ae98c8d07a0edad877dc005fed1d0742a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            915,
+            164,
+            954,
+            233
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "1) No dominant player has emerged in the satellite market, with key players (AST, Starlink, Eutelsat) forming the majority of partnerships",
+        "bbox": [
+            744,
+            250,
+            942,
+            440
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "2) Wide consensus that satellites will complement, not replace mobile connectivity provided by MNOs",
+        "bbox": [
+            744,
+            455,
+            943,
+            614
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "3) However, technology competition between LEO and cellular connectivity exists in IoT and FWA",
+        "bbox": [
+            744,
+            629,
+            945,
+            785
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "Source: MWC 2025 announcements, press, McKinsey",
+        "bbox": [
+            42,
+            946,
+            247,
+            966
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "McKinsey & Company",
+        "bbox": [
+            828,
+            948,
+            925,
+            968
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            947,
+            948,
+            955,
+            966
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "4. APIs gaining momentum, but still early days. Supply is ramping up—albeit slower than hoped",
+        "text_level": 2,
+        "bbox": [
+            40,
+            31,
+            659,
+            135
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Why it is relevant",
+        "text_level": 2,
+        "bbox": [
+            41,
+            192,
+            200,
+            233
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/a7f5b931718ec9d8413582043994f6f1576bcd95cc59c42a5a97d023cf5d224b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            242,
+            164,
+            277,
+            233
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "At MWC 2025 APIs became a topics for all major telco operators\nCurrent use case focus is on verification, security and quality of services",
+        "bbox": [
+            40,
+            250,
+            268,
+            420
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "20+",
+        "text_level": 2,
+        "bbox": [
+            42,
+            490,
+            127,
+            542
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "International telcos have formed a global JV to monetize the Network API opportunity",
+        "bbox": [
+            41,
+            566,
+            267,
+            662
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "20 bn €",
+        "text_level": 2,
+        "bbox": [
+            42,
+            718,
+            208,
+            785
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Commutative opportunity between 2025 and 2028",
+        "bbox": [
+            41,
+            807,
+            267,
+            870
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Key observations",
+        "text_level": 2,
+        "bbox": [
+            310,
+            194,
+            470,
+            231
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/7ec8cbe8c9a23c6d530317cb05abe132b9e21de27acd341853391d0f09341c0b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            662,
+            175,
+            701,
+            229
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Two days ahead of MWC Orange announced LiveNet, a dedicated business unit aimed at marketing network APIs. At MWC Orange demonstrated their Industry 4.0 network APIs in action. Further use cases demonstrated were fixed and mobile connectivity QoD use cases and security APIs designed to combat fraud",
+        "bbox": [
+            308,
+            250,
+            689,
+            440
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Network APIs are not a single-company game. Operators like Telefonica leveraged MWC to get the developer community together in API hackathons",
+        "bbox": [
+            308,
+            455,
+            702,
+            551
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Deutsche Telekom's T Wholesale and Nokia announced a deal to drive and simplify developer-created applications for Network APIs",
+        "bbox": [
+            308,
+            566,
+            692,
+            661
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/3c86db9095794ddc3b623b1fe2e977106dadea10d2b1a66394301c0408ba1b33.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            311,
+            681,
+            462,
+            916
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/8f04cedf80008120ede3649421c536207d477df09f1b3b3a89fe63c6dc07548c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            482,
+            683,
+            700,
+            918
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Implications",
+        "text_level": 2,
+        "bbox": [
+            744,
+            192,
+            858,
+            233
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/4593d757b515b81342b7b90c226e4a56f06eef24ceaf2db67a41b2043675aa98.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            915,
+            164,
+            954,
+            233
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "1) This is an ecosystem game. The industry needs to collaborate along the full value chain to ramp up the network API business",
+        "bbox": [
+            744,
+            250,
+            951,
+            407
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "2) Network APIs are gaining momentum, but still early days, operators should focus on use cases gaining traction like fraud prevention and QoD (Quality on Demand)",
+        "bbox": [
+            743,
+            424,
+            953,
+            646
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "3) The big question: the business model. Real revenue remains low so far, but are expected to grow over the next years, so operators need to think strategically about this",
+        "bbox": [
+            743,
+            659,
+            954,
+            883
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "Source: MWC 2025 announcements, press, McKinsey",
+        "bbox": [
+            42,
+            946,
+            247,
+            966
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "McKinsey & Company",
+        "bbox": [
+            828,
+            946,
+            925,
+            968
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            946,
+            948,
+            955,
+            966
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "9. AI is part of almost every launch, announcement, and demo",
+        "text_level": 1,
+        "bbox": [
+            41,
+            29,
+            519,
+            129
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Unclear what exactly will stay and generate sustainable value yet - Telcos to consumers\n- Network vendors to telcos - Telcos to enterprises\n- Others",
+        "bbox": [
+            41,
+            133,
+            526,
+            168
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            670,
+            90,
+            809,
+            146
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            820,
+            90,
+            937,
+            144
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Gen AI play presented at MWC",
+        "text_level": 2,
+        "bbox": [
+            119,
+            207,
+            335,
+            242
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Telcos and (Gen) AI",
+        "text_level": 2,
+        "bbox": [
+            41,
+            257,
+            102,
+            353
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "A Telcos launching a range of AI services targeting consumers AI-powered consumer products and services, including AI Phone, personal AI Agents and AI-enabled XR/VR glasses",
+        "text_level": 2,
+        "bbox": [
+            126,
+            255,
+            709,
+            340
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "B AI-driven solutions tailored for enterprise needs are emerging within Telco B2B portfolios Tailored solutions for business customers, including AI digital assistants for SMBs, proprietary GPT models, and targeted industrial applications such as AI-driven smart maintenance",
+        "text_level": 2,
+        "bbox": [
+            120,
+            368,
+            695,
+            455
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Several operators unveil plans to introduce GPUaaS for enterprises On-demand GPU service for enterprises. Telcos see a right to win to host GPUs in the RAN i.e. closer to the customers reducing latency while leveraging synergies with hosting RAN workloads",
+        "text_level": 2,
+        "bbox": [
+            120,
+            470,
+            727,
+            557
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Players (non exhaustive)",
+        "text_level": 2,
+        "bbox": [
+            761,
+            207,
+            929,
+            242
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/f2def513817fb4dc34e89ef9109c09198d69a8e23f0928eececc103ef74e1227.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            761,
+            275,
+            805,
+            318
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/df8240f5759be47ce65a5f2ee07b6f390d43521e7368d6ea4a326bb40decbaf7.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            819,
+            277,
+            879,
+            316
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/1cee311232a76693298112a7858fbb946745ccf074268ee552a09af5222a6057.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            761,
+            364,
+            836,
+            459
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/4ddd9743ec7f65c2b0b9e9af51e238e1e4afe8a3d1db946358079d86e0e7db68.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            845,
+            379,
+            881,
+            446
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/a331946094ac7bc09b8b85a06f76d45cd8a84e19035f7142df9b0b527c326dcb.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            891,
+            368,
+            954,
+            461
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "D Vendors and MNOs highlight (gen)-AI-driven use cases designed to enhance nw efficiency LLM are leveraged to use unstructured dataset to further advance towards zero-touch network operations",
+        "text_level": 2,
+        "bbox": [
+            119,
+            568,
+            733,
+            627
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/d463bbbf8c5818f71f3443c69893e1c1e8a7d97298d8875683d8586b6094c9df.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            763,
+            492,
+            823,
+            533
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/4754492d432586e1fbcf0e404e2f406ce62ee682e666ad359251a581b4576076.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            834,
+            492,
+            893,
+            533
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/712d07390b9242003fb042836d7058e4655ce491d7186dc81404a3b3668d5860.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            760,
+            575,
+            805,
+            618
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/cb929af5e852cddde179e970c4d1c49e971777d61bcd84035d0476e09dc592d7.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            815,
+            579,
+            886,
+            618
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/5d356fa6c12d3f3842143ffae4cc1535e59f56edac88fcff9b435ac0f702b0e4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            900,
+            568,
+            953,
+            627
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Telcos leverage GenAI to transform customer experience across consumer contact points AI agents transform customer service by shifting from basic chatbot task handling to delivering AI-powered, tailored experience journeys",
+        "text_level": 2,
+        "bbox": [
+            119,
+            640,
+            689,
+            725
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/0c1c46b70e9c0c94f28f0dcad93ab2b7eef94f108ecddc0f838202d5a2441301.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            762,
+            650,
+            810,
+            714
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/a7a053763de231664fa6976c4589c757996c5db8a0fa54c32c2ec80e7d9f676b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            820,
+            659,
+            885,
+            701
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/f6be03ae9c765d1b75a9da55bcae979f168b313497dd8de070bc1192368cb52e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            895,
+            662,
+            955,
+            701
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "F AI-RAN: GPUaaS and moving RAN workloads to GPUs is under exploration",
+        "text_level": 2,
+        "bbox": [
+            126,
+            738,
+            597,
+            768
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "TelCos did not capture a fair share of growth from tech disruptions (increased video consumption, introduction of 5G) in the last decade; AI-RAN provides a monetization opportunity through GPUaaS",
+        "bbox": [
+            145,
+            768,
+            703,
+            824
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/f3ec999cabbc8cda9e3109a0641e6dbfe8f69964525938538cdb559305a8f8d6.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            762,
+            757,
+            822,
+            800
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/7ae127a6578e4942dd8ac8fa4831ae0b46d843fdd04c700febcc1ff945e82163.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            834,
+            759,
+            894,
+            800
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "G New AI alliances between telcos announced",
+        "text_level": 2,
+        "bbox": [
+            122,
+            833,
+            412,
+            862
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "AI-RAN Alliance membership including now 7 service providers, 43 tech companies, 15 academic institutions, 6 industry associations, and 4 laboratories (from 11 to 75 members in 12 months), Telco LLM",
+        "bbox": [
+            144,
+            861,
+            729,
+            918
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/2333ea056ff2f1b7936050e008a46e135b600e263ab1cf8208d60d19f969547c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            863,
+            851,
+            927,
+            901
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/3e28003c3309c9758639b98d71c190879ddb94394adfdd435a4f09255af7cabd.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            932,
+            855,
+            956,
+            894
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "Source: MWC 2025 announcements, press, McKinsey",
+        "bbox": [
+            42,
+            946,
+            247,
+            966
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "McKinsey & Company",
+        "bbox": [
+            828,
+            946,
+            925,
+            968
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            946,
+            948,
+            955,
+            966
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "9A. Telcos launching a range of AI services targeting consumers",
+        "text_level": 2,
+        "bbox": [
+            40,
+            27,
+            616,
+            133
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Why it is relevant",
+        "text_level": 2,
+        "bbox": [
+            41,
+            192,
+            200,
+            231
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/e9eccbb5ed156a8f91dc781d042d800dac88622f721a87c8d33e05b35af061d7.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            242,
+            164,
+            277,
+            233
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "AI consumers propositions are moving beyond concepts and becoming a reality, potentially restoring appetite for diversified revenues streams in B2C",
+        "bbox": [
+            41,
+            251,
+            269,
+            407
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/8b51ebc435a511e048378dc9acc51e07292fffa97b6525a54eb4e9866cdc3893.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            44,
+            477,
+            197,
+            548
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "AI demand in mobile communications by 2030, according to SKT projections",
+        "bbox": [
+            41,
+            566,
+            268,
+            662
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/a69bddd88c2eb49bac65a1ab05d3cf5faa9e685fe4509abcd155be100ef8c8c4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            45,
+            720,
+            163,
+            792
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Population in countries like US and UK, still not using Gen AI",
+        "bbox": [
+            41,
+            807,
+            272,
+            870
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Key observations",
+        "text_level": 2,
+        "bbox": [
+            310,
+            194,
+            470,
+            231
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/aa7b99730d457b4a5acb85e47117d13e1d4d44f83f616062d99b8946dfb07a57.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            662,
+            170,
+            700,
+            229
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "AI Phone soon to become reality: From MWC 2024 vision to MWC 2025 reality, DT's Magenta AI phone expected launch in H2 2025, featuring “virtual butler” by Perplexity's AI. AI Phone allows multiple tasks w/o switching apps",
+        "bbox": [
+            308,
+            250,
+            701,
+            377
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "“..our AI Phone, will help you in many situations: find reliable answers with reference to the source. Conveniently book a restaurant or taxi. (...) All without having to switch between apps. Intuitively and preferably by voice. This is the future of AI innovation for consumers” – DT BoD Member",
+        "bbox": [
+            308,
+            387,
+            704,
+            544
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "AI Personal Agents pervasive especially among Asian Telcos offerings: LGU+, China Mobile, SKT all showcasing personal AI Agents whether within existing caring app or as different solution. SKT Astar soon to launch in NA in 2025",
+        "bbox": [
+            308,
+            555,
+            701,
+            681
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/1c5fa9808a5e61864ac33349e619adc24483ddc6d09375e68d4c40fb66f193a6.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            311,
+            690,
+            480,
+            898
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/1844c6d234b0bb46b15fcc86a53adbb8be099d99f1947aba558a208c3d686495.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            492,
+            690,
+            588,
+            898
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/553127fcc7b8cb5721fb43e24712e7cf02edb12bffa209ed560d7e74c2c8c773.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            600,
+            690,
+            695,
+            898
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Implications",
+        "text_level": 2,
+        "bbox": [
+            744,
+            194,
+            858,
+            233
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/8ce0f3f2db4cb2df1e8f091fea46018a835fc59c202db39d6282401cfbcfc75b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            916,
+            166,
+            954,
+            233
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "1) Partners are key for success – Telcos shouldn't do it on their own and partners like Perplexity, Google are instrumental to offer AI products / services,",
+        "bbox": [
+            744,
+            250,
+            954,
+            440
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "2) Potential to offer AI Personal Agents as a service to non-customers to unlock additional revenues stream",
+        "bbox": [
+            744,
+            455,
+            945,
+            612
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "3) Focus on user experience: importance to have an intuitive, user-friendly UX to drive adoption",
+        "bbox": [
+            744,
+            629,
+            950,
+            788
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "Source: MWC 2025 announcements, press, McKinsey",
+        "bbox": [
+            42,
+            946,
+            247,
+            966
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "McKinsey & Company",
+        "bbox": [
+            828,
+            948,
+            925,
+            968
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            946,
+            948,
+            955,
+            966
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "9E. Telcos leverage GenAI agents to transform customer experience across consumer contact points",
+        "text_level": 2,
+        "bbox": [
+            41,
+            38,
+            700,
+            133
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Why it is relevant",
+        "text_level": 2,
+        "bbox": [
+            41,
+            194,
+            200,
+            231
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/6cca35a7d55378fb57f4de1b4b9781ea6216fce1ebc4e1c60f5e4f20d551f018.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            242,
+            164,
+            277,
+            231
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Telco customer service is evolving from chatbot-based task resolution to AI-driven, personalized experience journeys",
+        "bbox": [
+            41,
+            251,
+            280,
+            377
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/4af0ade33f03b0d64a604ad2cc024b0e852f0e6b8e77f0d89b27d102ff61e51f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            42,
+            401,
+            215,
+            466
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Vodafone's investment in Customer Experience transformation",
+        "bbox": [
+            41,
+            479,
+            275,
+            544
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/69ba7013529f7ffa33cf2b3192d451d002e6a01ff8a706bd0bbf8a9ca04d06aa.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            44,
+            568,
+            177,
+            631
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Investment commitment on AI services in the next 4 years by LGU+",
+        "bbox": [
+            41,
+            650,
+            284,
+            712
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/77bda8e01be99e36a99f3db6c2ccae236017107c66eb7ce276ecbb77acb7cef1.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            43,
+            737,
+            125,
+            803
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Improvement of first-time resolution rate for complex journeys for Vodafones' SuperTobi",
+        "bbox": [
+            41,
+            818,
+            275,
+            911
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Key observations",
+        "text_level": 2,
+        "bbox": [
+            310,
+            194,
+            470,
+            231
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/cc178cd6f226153af191248640d8d11589774fcca847556a5ff58bdca023b566.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            662,
+            175,
+            700,
+            229
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "AI Agents in the spotlight with telcos showcasing how they are integrating Gen AI/AI into existing chatbots, revolutionizing how telcos interact with their customers",
+        "bbox": [
+            308,
+            251,
+            701,
+            344
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Vodafone Super TOBI delivers personalized interactions in 15 languages, improving first-time resolution up to 50%. Super TOBI uses retrieval-augmented generation to handle complex queries with contextual accuracy",
+        "bbox": [
+            309,
+            350,
+            693,
+            475
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- LG U+: Introduced multiple AI agents, such as the U+ Counseling Agent, providing tailored recommendations for services like roaming plans based on user travel.",
+        "bbox": [
+            310,
+            481,
+            687,
+            575
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "AI support tools for human agents are increasingly seen as critical for consistent support and employee skills expansion (e.g., Vodafone's Super Agent)",
+        "bbox": [
+            308,
+            588,
+            691,
+            683
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/dcfc35c0ffc82f1bb214a2dcb285969948e23d16f7b3cf0d0e8882563954b5b7.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            313,
+            700,
+            442,
+            911
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/09d41dd14c633a28a0fc1ca0695dfbc419168148d3d7e2aaafb82f60710e6171.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            475,
+            698,
+            567,
+            909
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/70f4d9e8c7252d6c6df27455d0b1e650c4b3ff8c8589e884cc6534026fe7c738.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            600,
+            698,
+            701,
+            909
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Implications",
+        "text_level": 2,
+        "bbox": [
+            744,
+            194,
+            858,
+            233
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/0a32f1fceaac99fa667e00dcca1518a146dfc54c429ce3592585d58a6b010d63.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            916,
+            166,
+            954,
+            233
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "1) Robust data analytics and AI training models are critical investments for Telcos to ensure the AI Agents can accurately understand and respond to diverse customer needs",
+        "bbox": [
+            746,
+            250,
+            947,
+            470
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "2) Provide adequate training for human agents to effectively collaborate with AI Agents and leverage their capabilities, turning them into human \"super agents\"",
+        "bbox": [
+            744,
+            474,
+            954,
+            664
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "3) Establish clear AI frameworks and governance structures to address ethical concerns proactively, mitigate potential biases, and ensure that AI-driven decisions align with core values",
+        "bbox": [
+            744,
+            666,
+            956,
+            916
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "Source: MWC 2025 announcements, press, McKinsey",
+        "bbox": [
+            42,
+            946,
+            247,
+            966
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "McKinsey & Company",
+        "bbox": [
+            828,
+            948,
+            925,
+            968
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            947,
+            948,
+            955,
+            966
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "9C/ F. AI-RAN: GPUaaS and moving RAN workloads to GPUs is under exploration",
+        "text_level": 2,
+        "bbox": [
+            39,
+            27,
+            645,
+            142
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Why it is relevant",
+        "text_level": 2,
+        "bbox": [
+            41,
+            192,
+            200,
+            231
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/15557f4bb13c9952ae15b61bae24ed2257652e185627c6c633cf5b8356d443cb.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            242,
+            164,
+            277,
+            233
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Stakeholders across the value chain hold varying perspectives on the necessity of GPUs in the RAN to achieve these RAN-related advancements",
+        "bbox": [
+            40,
+            251,
+            280,
+            407
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Key observations",
+        "text_level": 2,
+        "bbox": [
+            310,
+            192,
+            470,
+            231
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/026535c93b511e2b65a4c40ee786e8ea3f6c3b72865455ab4ffc9dabcc4c77f1.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            662,
+            174,
+            701,
+            229
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Telecom operators",
+        "text_level": 2,
+        "bbox": [
+            309,
+            250,
+            435,
+            279
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- TelCos are planning to use AI to optimize their networks and prepare for AI traffic growth",
+        "bbox": [
+            309,
+            279,
+            680,
+            338
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- E.g., SoftBank and Viavi have a concept on using AI to improve spectral efficiency, KDDI planning to deploy disaggregated backbone routers to scale with traffic",
+        "bbox": [
+            309,
+            338,
+            662,
+            427
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Equipment manufacturers",
+        "text_level": 2,
+        "bbox": [
+            310,
+            431,
+            483,
+            462
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Vendors claim RAN optimization using AI does not require GPUs",
+        "bbox": [
+            309,
+            462,
+            654,
+            518
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- E.g. Nokia claims AI for RAN optimization performing on Marvell accelerators, Intel claims that AI optimization for RAN only needs additional cores on Xeon 6",
+        "bbox": [
+            309,
+            520,
+            678,
+            607
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Potential global demand for GPUaaS addressable by TelCos by 2030",
+        "bbox": [
+            40,
+            800,
+            275,
+            894
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "New entrants",
+        "text_level": 2,
+        "bbox": [
+            309,
+            616,
+            400,
+            642
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- There are new players entering the value chain to challenge traditional players",
+        "bbox": [
+            309,
+            644,
+            648,
+            701
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\$ 35-70 bn",
+        "text_level": 2,
+        "bbox": [
+            42,
+            724,
+            225,
+            788
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- E.g., Capgemini claims to have AI-RAN implementation which includes L2/L3 software traditionally built by OEMs and orchestrator between AI and RAN workloads",
+        "bbox": [
+            309,
+            701,
+            685,
+            788
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/47001de7f53a529ef20396334fcf9a392747e0ba333e6831133eafe6f7b19cef.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            329,
+            792,
+            443,
+            929
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/f6ded69caac7b484b6b95a0ba6219e5777aa7f6b53404ca0a256f3c7b022955c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            457,
+            792,
+            567,
+            929
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Implications",
+        "text_level": 2,
+        "bbox": [
+            744,
+            192,
+            858,
+            233
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/522bc19d2e2a564ddb81ec0af15b4ce5efe7e77174fc1f984f5768056f3b7dd2.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            916,
+            164,
+            955,
+            235
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/3dac3a11f61958a437fa799660f3cf4717b10fa656b71c1aabbf4f65c79b5ffd.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            584,
+            792,
+            693,
+            927
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "1) There is interest in the value chain for AI-driven network optimization",
+        "bbox": [
+            744,
+            250,
+            939,
+            348
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "2) Stakeholders across the value chain hold varying perspectives on the necessity of GPUs in the RAN to achieve these RAN-related advancements",
+        "bbox": [
+            744,
+            364,
+            947,
+            587
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "3) The opportunity for GPUaaS has more traction",
+        "bbox": [
+            744,
+            605,
+            952,
+            670
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "Source: MWC 2025 announcements, press, McKinsey",
+        "bbox": [
+            41,
+            946,
+            247,
+            966
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "10. Energy efficiency increasingly becomes a key selling point across network equipment categories",
+        "text_level": 2,
+        "bbox": [
+            40,
+            31,
+            693,
+            135
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Why it is relevant",
+        "text_level": 2,
+        "bbox": [
+            41,
+            192,
+            201,
+            233
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/14fe86400b1e6d6a6eaf59afef1cdeb71ccee4fff3881daa41fa88b8e05b15f8.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            242,
+            164,
+            277,
+            233
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "GSMA presented its new Telecom energy efficiency benchmark on Day 2 of MWC",
+        "bbox": [
+            41,
+            250,
+            266,
+            346
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Energy efficiency becomes an important key purchasing factors and was on top of all vendors/ exhibitors' minds",
+        "bbox": [
+            41,
+            355,
+            273,
+            481
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "30-40%",
+        "text_level": 2,
+        "bbox": [
+            42,
+            755,
+            208,
+            829
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Of energy reduction possible with new energy efficient equipment",
+        "bbox": [
+            41,
+            842,
+            262,
+            907
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Key observations",
+        "text_level": 2,
+        "bbox": [
+            310,
+            194,
+            470,
+            231
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/e464442ddb853645715dca535354d25c394e2b569238f01837fa82057d5a43c1.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            662,
+            177,
+            700,
+            229
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Areas of energy consumptions are the RAN with 76% of all energy consumed, followed by core & datacenters with 19% and other operations with 5%",
+        "bbox": [
+            308,
+            250,
+            700,
+            344
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "On average 29% of energy is consumed by passive infrastructure (reasons: cooling, site design and older power sources)",
+        "bbox": [
+            308,
+            351,
+            667,
+            446
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Ahead of MWC Ericsson expanded the portfolio with seven new energy-efficient and high-performing Massive MIMO and Remote radios, Indoor 5G solutions, and new open fronthaul products called RAN Connect to reduce energy consumption by up to 30 percent",
+        "bbox": [
+            308,
+            451,
+            679,
+            611
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Rohde & Schwarz and VIAVI Solutions have collaborated with Analog Devices to showcase the potential of network energy saving (NES) in open radio access networks to which saves up to 40% of energy during low traffic load",
+        "bbox": [
+            308,
+            614,
+            694,
+            742
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/8c5569e9363463900f139f6f866d4d5df8c2bc17012a05e13b6ad894864dc74a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            312,
+            751,
+            489,
+            922
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/3ae89036509cbb89e6522ea755b01c677d293add0231e8ad3e46bfd13d8c9a20.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            495,
+            753,
+            673,
+            922
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Implications",
+        "text_level": 2,
+        "bbox": [
+            744,
+            194,
+            858,
+            233
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/e1c71dd6a4283093d0193dadcfd285b7bfbe95f07d944f2c3a34e4146d90c8ed.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            915,
+            166,
+            954,
+            233
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "1) Focus on RAN: the Radio Access Network is the largest energy consumer, accounting for 76% of total energy usage. Prioritizing energy-saving initiatives in this area can yield the most significant impact",
+        "bbox": [
+            744,
+            250,
+            955,
+            503
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "2) Evaluate upgrading passive infrastructure components as well",
+        "bbox": [
+            744,
+            518,
+            930,
+            614
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "3) Leverage advancements in energy-efficient technologies by reviewing current supplier base based on energy efficiency metrics",
+        "bbox": [
+            743,
+            629,
+            946,
+            820
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "Source: GSMA telco energy efficiency benchmark, interviews, press releases",
+        "bbox": [
+            41,
+            946,
+            332,
+            966
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "McKinsey & Company",
+        "bbox": [
+            828,
+            948,
+            925,
+            968
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            942,
+            948,
+            955,
+            966
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "11. AI, sensing and 4-7 GHz spectrum dominate discussions on 6G",
+        "text_level": 2,
+        "bbox": [
+            41,
+            33,
+            650,
+            129
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Why it is relevant",
+        "text_level": 2,
+        "bbox": [
+            42,
+            194,
+            200,
+            231
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/db06ca5c85bc0772bcb0e8169fe3c23c3d13d714127b523723b4edc209eb4b3d.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            242,
+            164,
+            277,
+            231
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Major industry meetup ahead of key 3GPP meeting in South Korea with pivotal discussions on the goals and properties of 6G networks to advance 6G standardization",
+        "bbox": [
+            41,
+            251,
+            278,
+            407
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "ITU vision has been published after last year's MWC, now the industry needs to translate it into a roadmap requiring consensus to be built",
+        "bbox": [
+            41,
+            416,
+            272,
+            572
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Key observations",
+        "text_level": 2,
+        "bbox": [
+            310,
+            194,
+            470,
+            231
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/1fa26f225150af47ebbdb876f54d217df68d551d4fbfdfceebcb18f51a33b825.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            662,
+            172,
+            700,
+            229
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Sensing demos evolved from purely technical PoCs to PoCs of first-use cases:",
+        "bbox": [
+            308,
+            250,
+            675,
+            312
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "NOKIA Real-life 6G demo, pinpointing location and distance",
+        "bbox": [
+            307,
+            331,
+            694,
+            364
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Large-scale private network digital twin showcasing the importance of 6G for sensing systems",
+        "bbox": [
+            315,
+            381,
+            688,
+            446
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Strong industry preference for 6G to utilize 4-7 GHz spectrum, while Terahertz discussion remained muted",
+        "bbox": [
+            308,
+            461,
+            668,
+            525
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Growing consensus that 6G will be AI-native, however, key stakeholders have yet to align on its exact implications",
+        "bbox": [
+            308,
+            542,
+            682,
+            638
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/db5b82597613ca7cc69c0428bdc25e4e8982efd0a8585bba013b04b8c0e43db5.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            312,
+            692,
+            456,
+            874
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/b6c532abcff5dab954c3be981ed3cca7c7b37ce08d2f6b9b08ceb04355ca8fdb.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            464,
+            692,
+            546,
+            872
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/bc32b0f104d762cc05446627c5777f308af87d58566294e933e638c12806794e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            558,
+            692,
+            700,
+            877
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Implications",
+        "text_level": 2,
+        "bbox": [
+            744,
+            194,
+            858,
+            233
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/d5a73997cd4722d8bf1ad3e8fe72603ae2852d239683d121c18e315893f8d1a3.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            916,
+            166,
+            954,
+            235
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "1) 3GPP meeting more decisive than MWC",
+        "bbox": [
+            745,
+            250,
+            916,
+            314
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "2) First implications can be drawn on the directions for R&D with the highest likelihood to meet WTP from customers – sensing, 4—7 Ghz support, AI",
+        "bbox": [
+            744,
+            329,
+            948,
+            551
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "3) Wide consensus that AI native will be a key differentiator, however unclear what 6G should deliver incrementally over AI-RAN, GPUaaS and AI in operations",
+        "bbox": [
+            744,
+            566,
+            941,
+            788
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "4-5",
+        "bbox": [
+            43,
+            768,
+            111,
+            829
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "Source: GSAM telco energy efficiency benchmark, interviews, press releases",
+        "bbox": [
+            41,
+            946,
+            332,
+            966
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "McKinsey & Company",
+        "bbox": [
+            828,
+            948,
+            925,
+            968
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            942,
+            948,
+            954,
+            966
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/9e20f3a235dfc9dc33cb4da6befed4ee9125088088cd79100a8bc5a8a9c030ed.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            545,
+            357,
+            579,
+            400
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "6/13. 5G/6G for defense and public safety is emerging as a promising growth opportunity, longtail of smaller equipment players targeting PNs",
+        "bbox": [
+            39,
+            14,
+            708,
+            168
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Why it is relevant",
+        "text_level": 2,
+        "bbox": [
+            41,
+            192,
+            201,
+            233
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/8eaf3c263f83c13f8588fa466ff13e3248e2e0b3eaa93567497e361e13624103.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            242,
+            164,
+            277,
+            233
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Public safety organizations are transitioning from non-3GPP standards like TETRA and P25 to cellular systems to enable broadband services, as governments worldwide expand defense budgets in response to rising tensions",
+        "bbox": [
+            40,
+            250,
+            264,
+            501
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Smaller RAN equipment vendors have faced a declining market share in public networks over recent years and are now seeking areas to return to growth",
+        "bbox": [
+            40,
+            509,
+            272,
+            670
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/618f34755056c3d8fb5a7a9c0be1d37eb25fd83dc197f11c41cf2120b2aaa436.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            42,
+            700,
+            118,
+            772
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "PNs deployed in defense and public safety, while spending is significantly (e.g., vs. factories) higher due to larger areas covered per PN",
+        "bbox": [
+            41,
+            783,
+            282,
+            912
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Key observations",
+        "text_level": 2,
+        "bbox": [
+            310,
+            192,
+            470,
+            233
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/0e080ce6642ae9133df8384b7c87680a5f272151141dc7330e7f1c725c8bfd1f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            662,
+            177,
+            701,
+            229
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Private networks have shown reduced momentum compared to last years, particularly in respect to announced growth ambitions of the leading vendors",
+        "bbox": [
+            308,
+            250,
+            664,
+            348
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Emerging RAN vendors\nfocusing on private\nnetwork opportunities",
+        "bbox": [
+            309,
+            361,
+            467,
+            461
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Bacells\nComba\nZTT 中天科技",
+        "bbox": [
+            487,
+            364,
+            534,
+            470
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Defense and public safety stand out as the most prominent verticals in recent announcements",
+        "bbox": [
+            308,
+            494,
+            626,
+            557
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/903c56bb7c444199f0ef10792293e40a36946b23f2c0ded8865e875e2afb4092.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            311,
+            557,
+            346,
+            620
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "mcX MCPTT service leveraging its 4G and 5G networks",
+        "bbox": [
+            351,
+            572,
+            655,
+            637
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Launched a range of mcX solutions, e.g. The MCPPT service platform Hy Talk MC and the 5G mcX handset PNC660",
+        "bbox": [
+            312,
+            655,
+            675,
+            751
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/5ac7d354a7fb60ccb141f8245f53e3d4af0f819012f0b2df6d7a88c8dab96a55.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            310,
+            759,
+            332,
+            798
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Nokia and Verizon integrated Nokias' military-grade NOKIA 5G solution in Lockhead Martins' hybrid base verizon station",
+        "bbox": [
+            308,
+            764,
+            682,
+            861
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Implications",
+        "text_level": 2,
+        "bbox": [
+            744,
+            192,
+            859,
+            233
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/3f2a4901f1683b292dede94a3276d508e009a3bd0a6a927e687685e9793ffe4c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            915,
+            164,
+            955,
+            235
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "1) Consolidation among ORAN vendors presents a significant opportunity going forward",
+        "bbox": [
+            745,
+            250,
+            948,
+            379
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "2) Vendors and MNOs may benefit from prioritizing the public safety and military verticals in their G2M strategy, as a significant portion of spending will be committed in the coming years with many agencies globally transitioning to 3GPP standards",
+        "bbox": [
+            743,
+            392,
+            954,
+            738
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "Source: GSA, interviews, team analysis, press releases",
+        "bbox": [
+            41,
+            946,
+            252,
+            966
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "McKinsey & Company",
+        "bbox": [
+            828,
+            946,
+            925,
+            968
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            942,
+            948,
+            955,
+            966
+        ],
+        "page_idx": 11
+    }
+]

@@ -1,0 +1,23 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_tk8kr85c/pdfs/0002-McKinsey_PDF-MWC-2025---pages.mckinsey.com_f92f4582.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "麦肯锡",
+  "cover_short_title": "MWC 2025 五",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "麦肯锡：6G讨论聚焦AI原生和感知，但各方对定义尚未对齐",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}
