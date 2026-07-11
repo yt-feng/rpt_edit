@@ -1,0 +1,28 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260711/shard_5/0001-26-Goldman-Sachs-Samsung-Biologics-Co.-207940.KS-2Q26-Preview-expecting-res",
+  "title": "高盛：美元走强推高三星生物制剂利润率，中国及韩国医疗科技服务韧性",
+  "source_title": "GS：三星生物制剂最被低估的变量是汇率，不是罢工",
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_26.pdf",
+  "figure_count": 5,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "投资者->读者 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "风险->不确定性 x3",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

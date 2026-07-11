@@ -1,0 +1,18 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260711/shard_4/0001-21-Goldman-Sachs-EUROPEAN-OEMS-IN-CHINA-European-OEMs-in-China-Jun-26--Euro",
+  "title": "高盛：6月中国汽车份额观察，小米极氪增长，大众品牌承压",
+  "source_title": "GS：中国科技与豪华品牌6月份额增长，小鹏极氪成增长主力",
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_21.pdf",
+  "figure_count": 6,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}
