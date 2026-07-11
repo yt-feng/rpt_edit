@@ -1,0 +1,148 @@
+你是闲鱼资料类商品文案编辑，擅长把一份投研/行业/公司研报改写成适合闲鱼发布的商品说明。
+
+【目标】
+- 基于下面研报解析内容，生成一份可以复制到闲鱼商品详情里的中文文案。
+- 风格参考用户提供的闲鱼对标笔记：标题直给、信息密度高、用途明确、适合人群明确、交付方式清楚。
+- 语言要自然，像真实卖家发布，不要像公众号文章、小红书笔记或 AI 摘要。
+- 不要使用太夸张的营销词，不要承诺收益，不要说“稳赚”“内幕”“必涨”。
+- 可以适度口语化，但不要低俗。
+- 硬性要求：全文不要使用任何 emoji 或符号表情。
+- 硬性要求：全文必须低于 1500 字，宁可少写，也不要超长。
+
+【必须输出结构】
+1. `闲鱼标题：` 一行，控制在 30 字以内，适合商品标题。
+2. `商品描述：` 正文，适合直接粘贴到闲鱼详情页。
+3. `Hashtag：` 一行，给 6-10 个平台可用标签，用 `#` 开头，空格分隔。
+
+【长度硬性要求】
+- 输出总字数必须低于 1500 字，包括标题、商品描述、Hashtag。
+- 商品描述控制在 900-1200 字以内，避免写成长文。
+- 亮点 bullet 每条控制在 30 字以内。
+
+【严禁输出】
+- 不要输出 `建议价格：`。
+- 不要输出 `搜索关键词：`。
+- 不要输出“搜索词”“关键词”“搜索关键词”等栏目。
+- 不要给具体价格区间、成交承诺或价格建议。
+- 不要使用任何 emoji，例如 ✅、🔥、📌、👉、💰、⭐ 等。
+
+【商品描述写法】
+- 第一段：直接说明这是什么报告，页数/语言/主题/公司或行业。如果页数、日期、语言不确定，就不要编。
+- 第二段：说明适合谁，比如投研、券商面试、PE/VC、行业研究、学习参考、写报告等。
+- 第三段：用 3-5 个亮点 bullet，风格参考：
+  - 三大情景框架：DCF、P/ARR、EV/Sales
+  - 关键变量分析
+  - 估值逻辑、假设、终值占比等核心内容覆盖
+  - 适合准备 AI 相关面试、研究 AI 估值的同学
+- 第四段：交付说明，参考：`资料为电子版 PDF，拍下后 24 小时内发网盘链接或邮箱。`
+- 第五段：虚拟商品说明，参考：`电子类资料一经发货不退不换，有问题可以提前咨询。`
+- 可以补一句：`需要其他报告也可以私聊，支持一站式咨询。`
+
+【Hashtag 写法】
+- 只输出平台相对安全、偏学习和资料属性的标签。
+- 推荐从这些里选择：`#学习资料` `#研究笔记` `#学习笔记` `#行业研究` `#研报资料` `#资料整理` `#报告学习` `#案例研究`。
+- 不要输出 `#财经` `#投资` `#股票` `#基金` `#理财` `#暴富` `#内幕` 等敏感标签。
+
+【平台发布合规要求】
+- 不要出现“投资建议”“买入”“卖出”“强烈推荐”“稳赚”“保本”“必涨”“抄底”“上车”“内幕”“翻倍”等金融操作或收益承诺表达。
+- “投资”相关词尽量改成“投研”“研究”“观察”“学习参考”；如果必须保留，也要保持中性。
+- 不要出现“独家”“原版”“内部”“无水印”“全网最低”“最全”“最强”“必看”等高风险或极限词。
+- 不要写“关注”“点赞”“求关注”“评论区留言”等直接互动诱导。
+- 不要承诺资料一定可用于获利、就业、通过面试或获得收益。
+
+【合规与避坑】
+- 默认避免出现具体投行品牌名，比如“GS”“GS”“MS”，统一写作“投行研报”或“投行研报”。
+- 不要承诺研究或交易结果。
+- 不要伪造页数、日期、作者、公司覆盖范围。研报未给出时就不写。
+- 不要输出解释说明，只输出闲鱼文案本身。
+
+【研报解析内容】
+"""
+# US Software
+
+## Themes into 2Q26 Software Earnings: AI Drives Improvement in Spending; Remain Selective
+
+## CITI'S TAKE
+
+Ahead of software earnings and detailed company-specific previews, we are updating our views and top picks. Our CIO Survey, checks with partners/customers, etc, IT Day and recent industry conferences point to an improved spending backdrop after a softer Q1. However, we believe investors should resist extrapolating recent improvements into a broad-based recovery across software. We continue to see spending improvement remaining highly concentrated among a relatively narrow group of beneficiaries within our software universe, particularly cloud & data infrastructure, and a select group of application vendors with strong AI-driven product cycle. We continue to see consolidation pressure and heightened ROI scrutiny across many traditional application software categories. As a result, we remain selective in our positioning and continue to favor companies most directly levered to enterprise AI adoption and infrastructure buildout. Our top picks are MDB, SNOW and PLTR.
+
+See Overall Spending Improving QoQ But Consolidation Pressure Remains — Our conversations at Snowflake Summit, Databricks events, AWS Summits and Cannes reinforced our view that modern data architecture is foundational for AI deployment across a variety of industries. At the same time, we continue to hear consolidation pressure and heightened ROI scrutiny across many traditional application software categories, particularly those which lack an AI story and have increasingly relied on price increases. We continue to believe the data management companies are best positioned to capture incremental enterprise AI spending.
+
+5 Key Themes into 2Q26 Earnings — 1. IT Spending Improved, But We Are Not Calling a Broad Software Recovery; 2. AI Spending Continues to Favor the Data Layer; 3. From Token Maximization to AI Optimization; 4. Capex and Returns Remain the Next Major Debates; 5. Less Enthusiastic Earnings Setup for Neoclouds.
+
+Top Picks — Heading into 2Q earnings, we see improving spending trends relative to 1Q but remain cautious about characterizing the environment as a broad software recovery. Instead, we continue to see a highly bifurcated market in which AI-related spending is benefiting a relatively concentrated group of winners. Our preferred positioning remains centered on MDB, SNOW, and PLTR within data infrastructure and AI enablement, MSFT among hyperscalers and AI infrastructure beneficiaries, and FIG and SHOP within application software. In our view, these companies remain among the best positioned to capture incremental enterprise AI spending while many areas of software continue to face elevated competitive pressure and ongoing questions around long-term business model durability.
+
+Tyler Radke $^{AC}$ +1-415-951-1660
+tyler.radke@citi.com
+
+Yitchuin Wong
+yitchuin.wong@citi.com
+
+Peter Griffith
+peter.griffith@citi.com
+
+Data Summary
+
+<table><tr><td rowspan="2" colspan="6"></td><td rowspan="2" colspan="2">Rating</td><td rowspan="3">Short-Term View</td><td rowspan="2" colspan="2">Target Price</td><td rowspan="2" colspan="4"></td><td colspan="2">Current Fiscal Year</td><td colspan="2">Next Fiscal Year</td></tr><tr><td colspan="2">EPS</td><td colspan="2">EPS</td></tr><tr><td>Company</td><td>Ticker</td><td>Ccy</td><td>Price</td><td>Mkt Cap (M)</td><td>Date &amp; Time</td><td>Old</td><td>New</td><td>Old</td><td>New</td><td>ESPR (%)</td><td>Div Yld (%)</td><td>ETR (%)</td><td>Last Rpt Yr</td><td>Old</td><td>New</td><td>Old</td><td>New</td></tr><tr><td>Amplitude</td><td>AMPL</td><td>US$</td><td>8.81</td><td>1,168</td><td>08 Jul 16:00</td><td>2H</td><td>nc</td><td>-</td><td>7.00</td><td>10.00</td><td>13.5</td><td>0.0</td><td>13.5</td><td>Dec-25</td><td>0.07</td><td>nc</td><td>0.12</td><td>nc</td></tr><tr><td>SimilarWeb</td><td>SMWB</td><td>US$</td><td>6.18</td><td>541</td><td>08 Jul 16:00</td><td>2H</td><td>nc</td><td>-</td><td>3.00</td><td>7.00</td><td>13.3</td><td>0.0</td><td>13.3</td><td>Dec-25</td><td>0.14</td><td>nc</td><td>0.26</td><td>nc</td></tr><tr><td>ZoomInfo Technologies</td><td>GTM</td><td>US$</td><td>2.92</td><td>861</td><td>08 Jul 16:00</td><td>3H</td><td>nc</td><td>-</td><td>4.00</td><td>2.00</td><td>-31.5</td><td>0.0</td><td>-31.5</td><td>Dec-24</td><td>1.09</td><td>nc</td><td>1.08</td><td>nc</td></tr><tr><td colspan="6">1 = Buy, 2 = Neutral, 3 = Sell, H = High Risk</td><td colspan="13">ESPR = Expected Share Price Return, ETR = Expected Total Return, nc = no change</td></tr><tr><td colspan="6">Source: Citi</td><td colspan="13">^Catalyst Watch</td></tr></table>
+
+# Key Themes into Earnings
+
+## 1. IT Spending Improved, But Unlikely Enough for a Broad-Based Software Recovery
+
+Our latest CIO work suggests technology spending improved through the quarter following a weaker 1Q, with signs that some delayed projects moved forward. We believe part of the improvement likely reflects the continued expansion of AI-related spending, while partner commentary also suggests some transactions that slipped earlier in the year may have closed in 2Q. That said, we see limited evidence that spending improvements are being distributed evenly across software. Incremental budget dollars continue to flow disproportionately toward AI infrastructure, cloud platforms, and data modernization projects.
+
+## 2. AI Spending Continues to Favor the Data Layer
+
+Perhaps the strongest takeaway from our recent work is that AI remains one of the few areas where strategic prioritization continues to increase. Across CIO conversations, industry conferences, and customer discussions, enterprises consistently cite data modernization as one of the most important prerequisites for successful AI deployment. Modern data platforms such as Snowflake, Databricks, MongoDB, Palantir, and the hyperscalers are increasingly occupying strategic positions within enterprise AI architectures.
+
+As organizations move from experimentation toward broader deployment, we believe data management, governance, and orchestration become increasingly important parts of the technology stack. This remains a key reason why data infrastructure continues to be our preferred segment within software.
+
+## 3. From Token Maximization to AI Optimization
+
+One of the more notable shifts we observed during the quarter was the growing focus on AI efficiency. Earlier phases of AI adoption prioritized access to leading models and maximizing model performance. Increasingly, enterprises are shifting attention toward managing costs, optimizing workloads across models, and improving overall AI economics.
+
+At Cannes, many organizations discussed routing workloads across different models based on cost and complexity, while placing greater emphasis on controlling token consumption and improving ROI. We believe this transition favors platforms that help customers manage, govern, and operationalize AI at scale rather than simply providing model access.
+
+We view this trend as supportive for Microsoft given its growing role as an agnostic model marketplace and enterprise AI control plane, while MongoDB, Snowflake, and Palantir also appear well positioned as organizations pursue more efficient token spending to drive higher throughput.
+
+## 4. Capex and Returns Remain the Next Major Debates
+
+Beyond software fundamentals, we expect AI infrastructure economics to remain a central focus of earnings season. Investors will likely remain focused on cloud and AI infrastructure capital spending, GPU availability, memory pricing trends, utilization rates, and ultimately the return profile on unprecedented infrastructure investments.
+
+Recent discussions continue to suggest AI demand remains “insatiable” across cloud and AI ecosystem. That said, investor conversations have evolved from questions on demand to capital deployment, and which companies can convert that investment into sustainable returns and durable competitive advantages. Commentary from hyperscalers, infrastructure providers, and AI beneficiaries around capacity, utilization, and monetization trends will likely be among the most important topics this earnings season.
+
+## 5. Less Enthusiastic Earnings Setup for Neoclouds, ADBE, GTM
+
+As we approach 2Q earnings, we recognize that earnings seasons have typically been a time for negative near-term profit revisions from neoclouds like CoreWeave, which have often led to weakness post-results. We see increased risk of a negative profit revision to guidance given more expansive spending on datacenters and infrastructure, resulting in elevated capex and interest costs. At the same time, we would view such as a solid demand signal for AI workloads. However, we would expect to see more volatile stock reaction post-earnings.
+
+## Zoominfo and Adobe among Least Preferred
+
+We're more broadly cautious/negative on Adobe and ZoomInfo given weaker checks at our latest AI/IT Day and the 2026 Cannes Lions festival, as well as amid significant changes in each of their go-to-market strategies. We expect to see higher execution risk as well as a push-out in near-term bookings growth. Both companies cut guidance meaningfully in the prior quarter. Additionally, Adobe is in the midst of a CEO/CFO transition while ZoomInfo announced at $20\%$ RIF in 1Q.
+
+Figure 1. Top Picks MDB, SNOW, PLTR
+
+<table><tr><td>Company</td><td>Rating</td><td>Price 07/08/26</td><td>Price Target</td><td>Stock View</td></tr><tr><td>MDB</td><td>Buy/High Risk</td><td>$359.40</td><td>$455.00</td><td>We expect continued acceleration in Atlas and topline growth, driven by ramping AI native consumption and faster migrations from coding assistants. Underlying fundamentals are improving, supported by strengthening net $ adds and bookings. Upcoming catalysts including the SF.Local Build Conference in August and September Analyst Day should highlight further Ai tailwinds.</td></tr><tr><td>SNOW</td><td>Buy</td><td>$261.31</td><td>$320.00</td><td>SNOW&#x27;s topline inflection to well beyond the 30%+ growth trajectory reinforces its status as a key AI beneficiary, driven by ramping AI products (CoCo &amp; CoWork), faster migration activity, and disciplined spending in GTM and R&amp;D.</td></tr><tr><td>PLTR</td><td>Buy/High Risk</td><td>$132.22</td><td>$225.00</td><td>See pathways for continued momentum from US Commercial driven by accelerating AI Budget and Government due to renewed urgency in the defense supercycle, including Golden Dome projects. These could drive another significant positive revisions into 2027.</td></tr><tr><td>MSFT</td><td>Buy</td><td>$383.34</td><td>$620.00</td><td>We see upside in MSFT&#x27;s valuation dislocation relative to the S&amp;P50, driven by management&#x27;s outlook for an upcoming Azure reacceleration, expanding AI Monetization in Copilot and the latest FDE pivot with Microsoft Frontier. We expect durable top and bottom-line acceleration story and disciplined OpEx management, including latest RiFs to offset ongoing weakness in Gaming and PC.</td></tr><tr><td>FIG</td><td>Buy/High Risk</td><td>$21.67</td><td>$36.00</td><td>FIG offers a rare blend of multiplayer and orchestral functionality, that along with its deep enterprise and designer penetration, could position it well to capture the value of new app/design generation born from AI. Additionally, we expect early success in upselling its own AI tools, and several untapped levers that could boost ARPU growth above expectations</td></tr><tr><td>SHOP</td><td>Buy/High Risk</td><td>$119.22</td><td>$156.00</td><td>We like Shopify&#x27;s secular growth story underpinned by a broadening surface area across commerce (internationally, upmarket, and offline) and steady product innovation (Audiences, Markets/Pro, Balance, Installments, etc.). It continues to stay ahead of AI developments and pursue strategic partnerships with key AI players, which suggests it will not be left behind in the emerging agentic commerce era.</td></tr><tr><td>BRZE</td><td>Buy/High Risk</td><td>$23.80</td><td>$48.00</td><td>We see BRZE well positioned into FY27 with top-line acceleration, a potential AI product cycle with AI Decisioning Studio/OfferFit becoming a foundational piece of the portfolio, and a discounted valuation vs. front office peers with legacy migration/consolidation tailwinds.</td></tr><tr><td>CRWV</td><td>Buy/High Risk</td><td>$90.00</td><td>$158.00</td><td>An AI-hyperscaler seeing impressive growth from a first mover advantage and relationships with MSFT and NVDA. We see a strong demand environment with capacity mostly sold out for 2026 and 2027 more of an allocation narrative with large contracts spanning from AI labs and hyperscalers and verticals/enterprises also showing interest in capacity. We continue to see investors focused on backlog, improving financing terms, and power/site buildouts.</td></tr><tr><td>KVYO</td><td>Buy/High Risk</td><td>$16.60</td><td>$31.00</td><td>We believe high-growth can continue on the back of continued Shopify GMV strength, international expansion with minimal impacts from de minimis/tariffs. Minimal AI disruption risk with focus on first party data and lack of seat-based pricing model. Customer Hub + Service Product Cycle has the potential to reaccelerate growth and re-rate shares.</td></tr><tr><td>ESTC</td><td>Buy/High Risk</td><td>$60.08</td><td>$104.00</td><td>ESTC could continue its acceleration trends, driven by bookings momentum, improving AI monetization, and recent large federal contracts. We see valuation upside, as the stock trades at a significant discount to consumption peers, especially amid an active M&amp;A environment.</td></tr><tr><td>NOW</td><td>Buy</td><td>$107.78</td><td>$158.00</td><td>We see a durable 20%+ growth profile driven by consolidation and organic product development tailwinds combined with consistent margin expansion and easier FY26 compares amid more sluggish FY25 Federal business. We see the monetization of GenAI via Pro-Plus SKU, entrenchment in back/mid-office, and a push to become an AI orchestration layer as offsets to seat-based pricing risk.</td></tr><tr><td>ZM</td><td>Buy</td><td>$87.40</td><td>$126.00</td><td>We believe multi-product growth (Contact Center + AI monetization) can drive a sustainable acceleration in revenue to 5%+. Less AI-risks with infrastructure/video differentiation and some exposure to Anthropic.</td></tr></table>
+
+© 2026 Citi Inc. No redistribution without Citi's written permission.
+Source: Citi, FactSet
+
+Figure 2. Neutrals & Sells
+
+<table><tr><td>Company</td><td>Rating</td><td>Price 07/08/26</td><td>Price Target</td><td>Stock View</td></tr><tr><td>ADSK</td><td>Neutral</td><td>$206.04</td><td>$252.00</td><td>Strong execution, but lapping peak pricing/distribution growth with AI tailwinds still rather negligible. We expect margin expansion to remain ahead of FY29 targets as the company further optimizes its S&amp;M spend but see shares range bound with growth rates moderating. Well positioned long-term</td></tr><tr><td>VEEV</td><td>Neutral</td><td>$188.17</td><td>$190.00</td><td>We see a more balanced set-up despite lower valuation with R&amp;D growth decelerating, increased investments and modest but not accelerating AI momentum. Still well positioned long-term.</td></tr><tr><td>HUBS</td><td>Neutral/High Risk</td><td>$197.82</td><td>$230.00</td><td>We&#x27;ve become more cautious on HUBS as the company has undertaken shifts in its go-to-market strategy that have the potential to increase execution risk and push out bookings growth near-term. We continue to view HUBS as a &quot;best-of-breed&quot; front-office asset with substantial AI and upmarket opportunity over the medium/long term.</td></tr><tr><td>CCC</td><td>Neutral</td><td>$5.43</td><td>$6.00</td><td>Unique vertical asset at the intersection of insurance and autos.. However we beli
+
+[中间内容因长度限制已省略]
+
+eipt by the report's author or distribution to external parties. This data should be considered in the context of other economic indicators and publicly available information. Further, the selected data represents only a subset of Citi's proprietary credit card transactions due to the selection methodology or other limitations and should not be considered as indicative or predictive of the past or future financial performance of Citi or its credit card business.
+
+Citi product may source data from dataCentral. dataCentral is a Citi proprietary database, which includes the Firm's estimates, data from company reports and feeds from LSEG Data & Analytics. The source for all referenced prices, unless otherwise stated, is DataCentral. Past performance is not a guarantee or reliable indicator of future results. Forecasts are not a guarantee or reliable indicator of future performance. The printed and printable version of the research report may not include all the information <(e.g. certain financial summary information and comparable company data) that is linked to the online version available on the Firm's proprietary electronic distribution platforms.
+
+Where included in this report, MSCI sourced information is the exclusive property of MS Capital International Inc. (MSCI). Without prior written permission of MSCI, this information and any other MSCI intellectual property may not be reproduced, redisseminated or used to create any financial products, including any indices. This information is provided on an "as is" basis. The user assumes the entire risk of any use made of this information. MSCI, its affiliates and any third party involved in, or related to, computing or compiling the information hereby expressly disclaim all warranties of originality, accuracy, completeness, merchantability or fitness for a particular purpose with respect to any of this information. Without limiting any of the foregoing, in no event shall MSCI, any of its affiliates or any third party involved in, or related to, computing or compiling the information have any liability for any damages of any kind. MSCI, MS Capital International and the MSCI indexes are services marks of MSCI and its affiliates. Where data is attributed to Morningstar that data is © 2026 Morningstar, Inc. All Rights Reserved. That information: (1) is proprietary to Morningstar and/or its content providers; (2) may not be copied or distributed; and (3) is not warranted to be accurate, complete or timely. Neither Morningstar nor its content providers are responsible for any damages or losses arising from any use of this information.
+
+The Firm accepts no liability whatsoever for the actions of third parties. The Product may provide the addresses of, or contain hyperlinks to, websites. Except to the extent to which the Product refers to website material of the Firm, the Firm has not reviewed the linked site. Equally, except to the extent to which the Product refers to website material of the Firm, the Firm takes no responsibility for, and makes no representations or warranties whatsoever as to, the data and information contained therein. Such address or hyperlink (including addresses or hyperlinks to website material of the Firm) is provided solely for your convenience and information and the content of the linked site does not in any way form part of this document. Accessing such website or following such link through the Product or the website of the Firm shall be at your own risk and the Firm shall have no liability arising out of, or in connection with, any such referenced website.
+
+© 2026 Citi Global Markets Inc. Citi is a division of Citi Global Markets Inc. Citi and Citi and Arc Design are trademarks and service marks of Citi Inc. and its affiliates and are used and registered throughout the world. All rights reserved. The research data in this report are not intended to be used for the purpose of (a) determining the price of or amounts due in respect of (or to value) one or more financial products or instruments and/or (b) measuring or comparing the performance of, or defining the asset allocation of a financial product, a portfolio of financial instruments, or a collective
+
+investment undertaking, and any such use is strictly prohibited without the prior written consent of Citi. Any unauthorized use, duplication, redistribution or disclosure of this report (the “Product”), including, but not limited to, redistribution of the Product by electronic mail, posting of the Product on a website or page, and/or providing to a third party a link to the Product, is prohibited by law and will result in prosecution. The information contained in the Product is intended solely for the recipient and may not be further distributed by the recipient to any third party.
+
+ADDITIONAL INFORMATION IS AVAILABLE UPON REQUEST
+"""
