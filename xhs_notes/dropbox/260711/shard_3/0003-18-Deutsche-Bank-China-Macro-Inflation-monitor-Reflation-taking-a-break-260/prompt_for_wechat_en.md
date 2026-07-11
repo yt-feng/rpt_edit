@@ -1,0 +1,184 @@
+You are a senior financial newsletter editor with a consulting-style strategy lens. You turn research-report material into a long-form English article that is structured, insightful, and suitable for a serious business audience.
+
+Objective:
+- Write an English Markdown article based on the report parsing below.
+- Target length: around 2200 words, plus or minus 15%.
+- Tone: serious, analytical, strategic, and readable.
+- The article should not feel like a summary. It should make an argument.
+- You may extend the report's logic into reasonable second-order implications, but do not invent data, company actions, or quotes.
+- Do not disclose every detail. Keep the article concise and end after the last substantive point.
+
+McKinsey-style writing principles:
+1. Answer first: open with the controlling idea, not background.
+2. Governing thought: every section must support the main answer.
+3. Mutually exclusive, collectively exhaustive logic: avoid overlapping sections.
+4. So what: every section must explain why the point matters.
+5. Synthesis over summary: do not list facts; interpret what the pattern means.
+6. Action titles: section headings must be complete, insight-bearing sentences. Do not use generic headings such as "Key Takeaways", "Market Background", "Core View", or "Reader Implications".
+7. Source specificity: ground every interpretation in a concrete number, named mechanism, comparison, or causal relationship from the report.
+
+Required Markdown structure:
+- `# Title`: make it a direct argument, not a topic label.
+- Opening: 4-6 short paragraphs that state the main thesis and why now matters.
+- 4-6 `##` sections. Each `##` heading must be an action title: a sentence that tells the reader the insight.
+- One section should translate the report into a decision framework for readers.
+- Never create a section about unresolved questions, what the report failed to answer, research gaps, limitations, further reading, or community access. If the source explicitly states a limitation, mention it once inside the relevant analytical paragraph.
+- End with the final substantive paragraph. Do not add a CTA, promotional invitation, website, community reference, summary, or rhetorical question.
+- End with: `*For informational purposes only. Portions may be generated, translated, summarized, or edited with AI assistance based on source materials and may contain omissions or errors. Please verify independently. This is not investment, legal, tax, accounting, or other professional advice.*`
+
+Content boundaries:
+- Do not mention specific investment bank names such as GS. Use "a global investment bank report" if needed.
+- Do not use emoji.
+- Do not write like a viral post.
+- Open with the most specific fact, contrast, or tension in the source. Avoid generic openings such as "Against this backdrop", "In recent years", or "As the market evolves".
+- Vary sentence and paragraph length naturally. Do not repeat stock transitions such as "This means", "In other words", or "What matters most".
+- Do not invent a personal voice, interview, or first-hand experience. Editorial character must come from evidence selection and precise phrasing.
+- Do not output your reasoning process.
+- Do not generate image Markdown; the system will insert original MinerU images afterward.
+
+Report parsing:
+"""
+## Economics China Macro
+
+## Inflation monitor: Reflation taking a break
+
+China's reflation is taking a break. Both CPI and PPI recorded declines on a month-on-month basis, with most components decelerating from May. The decline is broader than lower oil prices; it reflects that softening domestic demand is starting to negatively impact China's reflation momentum.
+
+Headline CPI fell to 1.0% YoY and -0.3% MoM due to sharp declines in energy and subdued food inflation, while core inflation also decreased, though services and AI-related product prices remained relatively resilient.
+
+\- Energy prices fell sharply by 4.5% MoM, reducing the contribution to CPI by 0.2ppt. Food inflation also remained subdued at -1.6% YoY.
+
+\- Core inflation edged down 0.1ppt to 1.0% YoY, the lowest reading since September last year (after Lunar New Year adjustment). On a sequential basis, it fell 0.1% MoM, marking a second consecutive monthly decline.
+
+\- Consumer goods prices showed weakness, dropping by 0.5ppt to $1.1\%$ YoY. Prices of home appliances and autos saw moderation, likely resulting from diminished impact from trade-in subsidies.
+
+\- Prices of services and AI-related products remained relatively resilient. Services inflation held steady at 0.8% YoY, with inflation in education, tourism and recreation edging up by 0.1ppt on YoY horizon. Meanwhile, communication device prices accelerated by a further 1.0ppt to 7.6% YoY.
+
+PPI rose to 4.1% YoY due to base effect; however, it declined by 0.3% MoM as the oil-price shock on upstream and midstream faded, while only limited pass-through to downstream industries emerged amid weak domestic demand.
+
+\- Oil-price shock in upstream and midstream sectors is fading. PPI inflation in fossil-fuel-related industries turned sharply negative on a MoM basis, weighing on prices for chemicals, plastics and rubber products.
+
+\- There are signs that previous price hikes are being passed through to some downstream sectors, such as equipment, furniture, automobiles and communication devices. However, the pass-through remains modest, constrained by soft domestic demand.
+
+We reiterate our full-year CPI inflation forecast at 1.3% and PPI inflation forecast to 3.0%, both of which have been revised down in our H2 outlook. The latest June data confirms that softening domestic demand has increasingly transmitted into price dynamics, preventing price transmission from upstream to downstream products. Looking forward, we expect more supportive domestic policy in the second half, fiscal spending in particular, will help revert the recent slip in consumer prices. Absent such policy support, we see risk of CPI inflation weakening further.
+
+Figure 1: Momentum slowed across upstream and midstream  
+![](images/75cf3a628b24432e682b7e51ca47c019d52b039dc9f6fbc9f56e9d32e25fe6d4.jpg)  
+Source: DB, Wind
+
+Figure 2: Limited pass-through to downstream industries emerged  
+![](images/bec5716dd22ed9e482b94c82bb1f036f0228434c3fc0602f55ad7b5ae268d385.jpg)
+
+Figure 3: Energy prices' contribution to CPI dropped by 0.2ppt  
+![](images/2d0e771beca6f6bb2e13d15e975ecd1035ca1ef89a022379023056a4403a6018.jpg)  
+Jan-24 Apr-24 Jul-24 Oct-24 Jan-25 Apr-25 Jul-25 Oct-25 Jan-26 Apr-26
+
+Figure 4: Headline CPI and core CPI slowed in June  
+![](images/f0af7dadaa3462a5781e3ac5f1ba306aabb257e2b932dd8d23376602c8f98329.jpg)
+
+Figure 5: Core inflation underperformed seasonality  
+![](images/08a45f4151a3c5a6439d7fdd2c8417255543821f570fac9ef04b322229ccb9fc.jpg)  
+Source: DB, Wind
+
+Figure 6: Food inflation remained in negative territory  
+![](images/5e83c86ac07ad24e1709b4b3240209676c718750487b26e25eb3a5fb28fa5dbb.jpg)  
+Source: DB, Wind
+
+Figure 7: Consumer goods prices showed weakness  
+![](images/ad8049d9902d4b3832f904d6254e1097adec421344ca349860119329a467b572.jpg)  
+Source: DB, Wind
+
+Figure 8: We have revised down our full-year CPI forecast to 1.3%  
+![](images/4da2b7a113e62f9d144ab4dad3bcd1f9758027e2c6b3f49807e01ee53834e4fb.jpg)  
+Source: DB, Wind
+
+Figure 9: June inflation momentum
+
+<table><tr><td>%, YoY</td><td>Weight</td><td>21 avg</td><td>22 avg</td><td>23 avg</td><td>24 avg</td><td>25 avg</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td><td>Jun-26</td></tr><tr><td>Headline CPI</td><td></td><td>0.9</td><td>2.0</td><td>0.2</td><td>0.2</td><td>0.0</td><td>0.2</td><td>1.3</td><td>1.0</td><td>1.2</td><td>1.2</td><td>1.0</td></tr><tr><td>Core CPI</td><td></td><td>0.8</td><td>0.9</td><td>0.7</td><td>0.5</td><td>0.8</td><td>0.8</td><td>1.8</td><td>1.1</td><td>1.2</td><td>1.1</td><td>1.0</td></tr><tr><td>Food, Tobacco, Alcohol &amp; Dining Out</td><td>30%</td><td>-0.3</td><td>2.5</td><td>0.3</td><td>-0.1</td><td>-0.6</td><td>-0.2</td><td>1.4</td><td>0.4</td><td>-0.8</td><td>-0.9</td><td>-0.8</td></tr><tr><td>Clothing</td><td>5%</td><td>0.3</td><td>0.5</td><td>1.0</td><td>1.4</td><td>1.5</td><td>1.9</td><td>1.9</td><td>1.6</td><td>1.5</td><td>1.4</td><td>1.4</td></tr><tr><td>Housing</td><td>22%</td><td>0.8</td><td>0.7</td><td>0.0</td><td>0.1</td><td>0.1</td><td>-0.1</td><td>-0.2</td><td>-0.2</td><td>-0.2</td><td>-0.2</td><td>-0.3</td></tr><tr><td>Household Articles &amp; Services</td><td>6%</td><td>0.4</td><td>1.2</td><td>0.1</td><td>0.5</td><td>0.9</td><td>2.6</td><td>2.8</td><td>1.5</td><td>1.4</td><td>1.8</td><td>1.3</td></tr><tr><td>Transportation &amp; Communication</td><td>14%</td><td>4.2</td><td>5.2</td><td>-2.3</td><td>-1.9</td><td>-2.6</td><td>-3.4</td><td>-0.7</td><td>0.9</td><td>4.6</td><td>5.4</td><td>4.1</td></tr><tr><td>Recreation Education &amp; Cultural Services</td><td>11%</td><td>1.9</td><td>1.8</td><td>2.0</td><td>1.5</td><td>0.8</td><td>0.0</td><td>2.0</td><td>1.1</td><td>1.3</td><td>1.3</td><td>1.4</td></tr><tr><td>Medicine &amp; Healthcare</td><td>9%</td><td>0.4</td><td>0.6</td><td>1.1</td><td>1.3</td><td>0.8</td><td>1.7</td><td>1.9</td><td>1.9</td><td>2.2</td><td>2.1</td><td>2.3</td></tr><tr><td>Others</td><td>3%</td><td>-1.3</td><td>1.6</td><td>3.2</td><td>3.8</td><td>9.2</td><td>13.2</td><td>15.4</td><td>13.5</td><td>11.0</td><td>9.9</td><td>6.6</td></tr><tr><td>Headline PPI</td><td></td><td>8.1</td><td>4.2</td><td>-3.0</td><td>-2.1</td><td>-2.6</td><td>-1.4</td><td>-0.9</td><td>0.5</td><td>2.8</td><td>3.9</td><td>4.1</td></tr><tr><td>Mining &amp; Quarrying</td><td></td><td>34.8</td><td>18.7</td><td>-7.6</td><td>-2.8</td><td>-8.9</td><td>-8.1</td><td>-5.3</td><td>2.0</td><td>10.6</td><td>15.8</td><td>16.5</td></tr><tr><td>Raw Materials</td><td></td><td>15.9</td><td>10.7</td><td>-4.3</td><td>-1.6</td><td>-3.4</td><td>-2.0</td><td>-1.9</td><td>1.1</td><td>7.1</td><td>9.2</td><td>8.6</td></tr><tr><td>Manufacturing</td><td></td><td>6.6</td><td>1.6</td><td>-3.3</td><td>-2.9</td><td>-2.4</td><td>-0.4</td><td>0.3</td><td>0.9</td><td>1.5</td><td>2.3</td><td>3.0</td></tr></table>
+
+Source: DB, Wind
+
+## Appendix 1
+
+## Analyst Certification
+
+The views expressed in this report accurately reflect the personal views of the undersigned lead analyst(s). In addition, the undersigned lead analyst(s) has not and will not receive any compensation for providing a specific recommendation or view in this report. Deyun Ou, Yi Xiong, Ph.D..
+
+## Important Disclosures
+
+Prices are current as of the end of the previous trading session unless otherwise indicated and are sourced from local exchanges via Reuters, Bloomberg and other vendors. Other information is sourced from DB, subject companies, and other sources. For further information regarding disclosures relevant to DB, please visit our global disclosure look-up page on our website at
+
+https://research.db.com/Research/Disclosures/FICCDisclosures. Aside from within this report, important risk and conflict disclosures can also be found at https://research.db.com/Research/Disclosures/Disclaimer. Investors are strongly encouraged to review this information before investing.
+
+## Additional Information
+
+The information and opinions in this report were prepared by DB AG or one of its affiliates (collectively 'DB'). Though the information herein is believed to be reliable and has been obtained from public sources believed to be reliable, DB makes no representation as to its accuracy or completeness. Hyperlinks to third-party websites in this report are provided for reader convenience only. DB neither endorses the content nor is responsible for the accuracy or security controls of those websites.
+
+If you use the services of DB in connection with a purchase or sale of a security that is discussed in this report, or is included or discussed in another communication (oral or written) from a DB analyst, DB may act as principal for its own account or as agent for another person.
+
+DB may consider this report in deciding to trade as principal. It may also engage in transactions, for its own account or with customers, in a manner inconsistent with the views taken in this research report. Others within DB, including strategists, sales staff and other analysts, may take views that are inconsistent with those taken in this research report. DB issues a variety of research products, including fundamental analysis, equity-linked analysis, quantitative analysis and trade ideas. Recommendations contained in one type of communication may differ from recommendations contained in others, whether as a result of differing time horizons, methodologies, perspectives or otherwise. DB and/or its affiliates may also be holding debt or equity securities of the issuers it writes on. Analysts are paid in part based on the profitability of DB AG and its affiliates, which includes investment banking, trading and principal trading revenues.
+
+Opinions, estimates and projections constitute the current judgment of the author as of the date of this report. They do not necessarily reflect the opinions of DB and are subject to change without notice. DB provides liquidity for buyers and sellers of securities issued by the companies it covers. DB analysts sometimes have shorter-term trade ideas that may be inconsistent with DB's existing longer-term ratings. Some trade ideas for equities are listed as Catalyst Calls on the Research Website (https://research.db.com/Research/), and can be found on the general coverage list and also on the covered company's page. A Catalyst Call represents a high-conviction belief by an analyst that a stock will outperform or underperform the market and/or a specified sector over a time frame of no less than two weeks and no more than three months. In addition to Catalyst Calls, analysts may occasionally discuss with our clients, and with DB salespersons and traders, trading strategies or ideas that reference catalysts or events that may have a near-term or medium-term impact on the market price of the securities discussed in this report, which impact may be directionally counter to the analysts' current 12-month view of total return or investment return as described herein. DB has no obligation to update, modify or amend this report or to otherwise notify a recipient thereof if an opinion, forecast or estimate changes or becomes inaccurate. Coverage and the frequency of changes in market conditions and in both general and company-specific economic prospects make it difficult to update research at defined intervals. Updates are at the sole discretion of the coverage analyst or of the Research Department Management, and the majority of reports are published at irregular intervals. This report is provided for informational purposes only and does not take into account the particular investment objectives, financial situations, or needs of individual clients. It is not an offer or a solicitation of an offer to buy or sell any financial instruments or to participate in any particular trading strategy. Target prices are inherently imprecise and a product of the analyst's judgment. The financial instruments discussed in this report may not be suitable for all investors, and investors must make their own informed investment decisions. Prices and availability of financial instruments are subject to change without notice, and investment transactions can lead to losses as a result of price fluctuations and other factors. If a financial instrument is denominated in a currency other than an investor's currency, a change in exchange rates may adversely affect the investment. Past performance is not necessarily indicative of future results. Performance calculations exclude transaction costs, unless otherwise indicated. Unless otherwise indicated, prices are current as of the end of the previous trading session and are sourced from local exchanges via Reuters, Bloomberg and other vendors. Data is also sourced from DB, subject companies, and other parties. Artificial intelligence tools may be used in the preparation of this material, including but not limited to assist in fact-finding, data analysis, pattern recognition, content drafting and editorial corrections pertaining to research material.
+
+The DB Department is independent of other business divisions of the Bank. Details regarding our organizational arrangements and information barriers we have to prevent and avoid conflicts of interest with respect to our research are available on our website (https://research.db.com/Research/) under Disclaimer.
+
+Macroeconomic fluctuations often account for most of the risks associated with exposures to instruments that promise to pay fixed or variable interest rates. For an investor who is long fixed-rate instruments (thus receiving these cash flows), increases in interest rates naturally lift the discount factors applied to the expected cash flows and thus cause a loss. The longer the maturity of a certain cash flow and the higher the move in the discount factor, the higher will be the loss. Upside surprises in inflation, fiscal funding needs, and FX depreciation rates are among the most common adverse macroeconomic shocks to receivers. But counterparty exposure, issuer creditworthiness, client segmentation, regulation (including changes in assets holding limits for different types of investors), changes in tax policies, currency convertibility (which may constrain currency conversion, repatriation of profits and/or liquidation of positions), and settlement issues related to local clearing houses are also important risk factors. The sensitivity of fixed-income instruments to macroeconomic shocks may be mitigated by indexing the contracted cash flows to inflation, to FX depreciation, or to specified interest rates - these are common in emerging markets. The index fixings may - by construction - lag or mis-measure the actual move in the underlying variables they are intended to track. The choice of the proper fixing (or metric) is particularly important in swaps markets, where floating coupon rates (i.e., coupons indexed to a typically short-dated interest rate reference index) are exchanged for fixed coupons. Funding in a currency that differs from the currency in which coupons are denominated carries FX risk. Options on swaps (swaptions) the risks typical to options in addition to the risks related to rates movements.
+
+Derivative transactions involve numerous risks including market, counterparty default and illiquidity risk. The appropriateness of these products for use by investors depends on the investors' own circumstances, including their tax position, their regulatory environment and the nature of their other assets and liabilities; as such, investors should take expert legal and financial advice before entering into any transaction similar to or inspired by the contents of this publication. The risk of loss in futures trading and options, foreign or domestic, can be substantial. As a result of the high degree of leverage obtainable in futures and options trading, losses may be incurred that are greater than the amount of funds initially deposited - up to theoretically unlimited losses. Trading in options involves risk and is not suitable for all investors. Prior to buying or selling an option, investors must review the 'Characteristics and Risks of Standardized Options", at https://www.theocc.com/company-information/documents-and-archives/options-disclosure-document. If you are unable to access the website, please contact your DB representative for a copy of this important document.
+
+Participants in foreign exchange transactions may incur risks arising from several factors, including the following: (i) exchange rates can be volatile and are subject to large fluctuations; (ii) the value of currencies may be affected by numerous market factors, including world and national economic, political and regulatory events, events in equity and debt markets and changes in interest rates; and (iii) currencies may be subject to devaluation or government-imposed exchange controls, which could affect the value of the currency. Investors in securities such as ADRs, whose values are affected by the currency of an underlying security, effectively assume currency risk.
+
+Unless governing law provides otherwise, all transactions should be executed through the DB entity in the investor's home jurisdiction. Aside from within this report, important conflict disclosures can also be found at https://research.db.com/Research/ on each company's research page or under the 'Disclosures' tab. Investors are strongly encouraged to review this information before investing.
+
+DB (which includes DB AG, its branches and affiliated companies) is not acting as a financial adviser, consultant or fiduciary to you or any of your agents (collectively, "You" or "Your") with respect to any information provided in this report. DB does not provide investment, legal, tax or accounting advice, DB is not acting as your impartial adviser, and does not express any opinion or recommendation whatsoever as to any strategies, products or any other information presented in the materials. Information contained herein is being provided solely on the basis that the recipient will make an independent assessment of the merits of any investment decision, and it does not constitute a recommendation of, or express an opinion on, any product or service or any trading strategy.
+
+The information presented is general in nature and is not directed to retirement accounts or any specifi
+
+[中间内容因长度限制已省略]
+
+t has likely been in contact with the company that is the subject of this research for confirmation/clarification of data, facts, statements, permission to use company-sourced material in the report, and/or site-visit attendance. Without prior approval from Research Management, analysts may not accept from current or potential Banking clients the costs of travel, accommodations, or other expenses incurred by analysts attending site visits, conferences, social events, and the like. Similarly, without prior approval from Research Management and Anti-Bribery and Corruption ("ABC") team, analysts may not accept perks or other items of value for their personal use from issuers they cover.
+
+Additional information relative to securities, other financial products or issuers discussed in this report is available upon request. This report may not be reproduced, distributed or published without DB's prior written consent.
+
+Backtested, hypothetical or simulated performance results have inherent limitations. Unlike an actual performance record based on trading actual client portfolios, simulated results are achieved by means of the retroactive application of a backtested model itself designed with the benefit of hindsight. Taking into account historical events the backtesting of performance also differs from actual account performance because an actual investment strategy may be adjusted any time, for any reason, including a response to material, economic or market factors. The backtested performance includes hypothetical results that do not reflect the reinvestment of dividends and other earnings or the deduction of advisory fees, brokerage or other commissions, and any other expenses that a client would have paid or actually paid. No representation is made that any trading strategy or account will or is likely to achieve profits or losses similar to those shown. Alternative modeling techniques or assumptions might produce significantly different results and prove to be more appropriate. Past hypothetical backtest results are neither an indicator nor guarantee of future returns. Actual results will vary, perhaps materially, from the analysis.
+
+The method for computing individual E,S,G and composite ESG scores set forth herein is a novel method developed by the Research department within DB AG, computed using a systematic approach without human intervention. Different data providers, market sectors and geographies approach ESG analysis and incorporate the findings in a variety of ways. As such, the ESG scores referred to herein may differ from equivalent ratings developed and implemented by other ESG data providers in the market and may also differ from equivalent ratings developed and implemented by other divisions within the DB Group. Such ESG scores also differ from other ratings and rankings that have historically been applied in research reports published by DB AG. Further, such ESG scores do not represent a formal or official view of DB AG.
+
+It should be noted that the decision to incorporate ESG factors into any investment strategy may inhibit the ability to participate in certain investment opportunities that otherwise would be consistent with your investment objective and other principal investment strategies. The returns on a portfolio consisting primarily of sustainable investments may be lower or higher than portfolios where ESG factors, exclusions, or other sustainability issues are not considered, and the investment opportunities available to such portfolios may differ. Companies may not necessarily meet high performance standards on all aspects of ESG or sustainable investing issues; there is also no guarantee that any company will meet expectations in connection with corporate responsibility, sustainability, and/or impact performance.
+
+Copyright © 2026 DB AG
+
+David Folkerts-Landau  
+Group Chief Economist and Global Head of Research
+
+<table><tr><td>Pam Finelli
+COO and Head of Fixed Income Research</td><td>Steve Pollard
+Global Head of Company Research and Sales</td><td>Jim Reid
+Global Head of Macro and Thematic Research</td><td>Tim Rokossa
+Head of European Company Research</td></tr><tr><td>Matthew Barnard
+Head of Americas
+Company Research</td><td>Debbie Jones
+Global Head of Sustainability and Data Innovation, Research</td><td>Robin Winkler
+Head of German Macro Research</td><td>Sameer Goel
+Global Head of EM &amp; APAC Research</td></tr><tr><td>Francis Yared
+Global Head of Rates Research</td><td>George Saravelos
+Global Head of FX Research</td><td>Peter Hooper
+Vice-Chair of Research</td><td>Nilendra de-Mel
+Head of APAC &amp; Middle East Product Development</td></tr></table>
+
+International Production Locations
+
+<table><tr><td>DB AG</td><td>DB AG</td><td>DB AG</td><td>Deutsche Securities Inc.</td></tr><tr><td>DB Place</td><td>Equity Research</td><td>Filiale Hongkong</td><td>1-3-1 Azabudai</td></tr><tr><td>Level 16</td><td>Mainzer Landstrasse 11-17</td><td>International Commerce Centre</td><td>Azabudai Hills Mori JP Tower</td></tr><tr><td>Corner of Hunter &amp; Phillip Streets</td><td>60329 Frankfurt am Main Germany</td><td>1 Austin Road West, Kowloon,</td><td>Minato-ku, Tokyo 106-0041</td></tr><tr><td>Sydney, NSW 2000 Australia</td><td>Tel: (49) 69 910 00</td><td>Hong Kong</td><td>Japan</td></tr><tr><td>Tel: (61) 2 8258 1234</td><td></td><td>Tel: (852) 2203 8888</td><td>Tel: (81) 3 6730 1000</td></tr></table>
+
+DB AG  
+21 Moorfields  
+London EC2Y 9DB  
+United Kingdom  
+Tel: (44) 20 7545 8000
+
+DB AG  
+Filiale Singapur  
+One Raffles Quay, South Tower  
+Singapore 048583  
+Tel: (65) 6423 8001
+"""

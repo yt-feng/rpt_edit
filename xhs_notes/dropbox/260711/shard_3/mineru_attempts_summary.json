@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_o26tqdu7/pdfs/0001-16-GS-Americas Technology- Hardware- Expert Network Series- Former Director of AI Transformation at Microsoft on AI infrastructure demand-260710.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_o26tqdu7/pdfs/0002-17-GS-COSCO Shipping Energy -1138.HK- 2Q26 earnings largely in-line- with much lower revenue contribution from tankers trapped inside the Gulf-260710.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_o26tqdu7/pdfs/0003-18-DB-China Macro-Inflation monitor-Reflation taking a break-260709.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_o26tqdu7/pdfs/0004-19-GS-E-Town Semis -688729-- Riding on memory and advanced node capacity expansion in local market- maintain Neutral on fair valuation-260710.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_o26tqdu7/pdfs/0005-20-GS-EUROPE AUTOMOBILES China retail volume Jun-26- ICE weakness weighs on German JVs pending new product launches-260710.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
