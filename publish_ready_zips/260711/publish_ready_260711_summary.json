@@ -1,0 +1,159 @@
+{
+  "created_at_utc": "2026-07-11T22:52:25.920049+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260711",
+  "output_dir": "publish_ready_zips/260711",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 8,
+  "skipped_shards": [],
+  "total_files": 722,
+  "total_renamed_markdown_count": 200,
+  "total_raw_file_bytes": 97825695,
+  "zip_count": 2,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260711/publish_ready_260711_part001.zip",
+      "size_bytes": 88233088,
+      "file_count": 697,
+      "renamed_markdown_count": 190,
+      "raw_file_bytes": 94103956,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_2",
+        "shard_3",
+        "shard_4",
+        "shard_5",
+        "shard_6",
+        "shard_7"
+      ]
+    },
+    {
+      "path": "publish_ready_zips/260711/publish_ready_260711_part002.zip",
+      "size_bytes": 3437088,
+      "file_count": 25,
+      "renamed_markdown_count": 10,
+      "raw_file_bytes": 3721739,
+      "shards": [
+        "shard_7"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 87,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 10569921,
+      "reports": [
+        "0001-01-Bernstein-INVEST-IN-THE-CARBON-TRANSITION-Corporate-carbon-toolbox--2026",
+        "0002-02-Bernstein-Largan-Precision-Co-Ltd-3008.TT-Largan-2Q26--the-CPO-business-",
+        "0003-03-Bernstein-Honeywell-International-Inc-HON.US-Honeywell-Technologies--Mod",
+        "0004-04-Bernstein-U.S.-Apparel---Specialty-Retail-Nike-and-Adidas--Pou-Sheng--Ju",
+        "0005-05-Bernstein-MediaTek-Inc-2454.TT-Quick-Take--MediaTek-2Q26-revenue-beat-gu"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 99,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14093430,
+      "reports": [
+        "0001-06-CITI-China-Auto-Manufacturers-Jun-NEV-Database-Update--CR5-at-57.1----0.",
+        "0002-07-CITI-China-Battery-Materials-Lithium-into-2nd-week-of-July---Our-read-to",
+        "0003-08-CITI-China-Economics-Austerity-Now--Acceleration-Later--260709",
+        "0004-09-CITI-China-Economics-A-Plateauing-Inflation-Path-in-26H2E-after-Energy-S",
+        "0005-10-CITI-Dongfang-Electric--1072.HK--Decent-New-Order-Growth--More-Gas-Turbi"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 85,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 9313597,
+      "reports": [
+        "0001-11-CITI-Global-Technology---Communications-Citi-CIO-Survey--IT-Budgets-Impr",
+        "0002-12-CITI-China-PCB-Equipment-2Q26-Preliminary--Strong-or-Strong-Beat-for-Bot",
+        "0003-13-CITI-Space-Exploration-Technologies--SPCX.US--10--Top-Takeaways-From-the",
+        "0004-14-CITI-Sungrow-Power-Supply--300274.SZ--New-SST-Launch-Today-with-Represen",
+        "0005-15-CITI-US-Software-Themes-into-2Q26-Software-Earnings--AI-Drives-Improveme"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 93,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 13079018,
+      "reports": [
+        "0001-16-Goldman-Sachs-Americas-Technology--Hardware--Expert-Network-Series--Form",
+        "0002-17-Goldman-Sachs-COSCO-Shipping-Energy--1138.HK--2Q26-earnings-largely-in-l",
+        "0003-18-Deutsche-Bank-China-Macro-Inflation-monitor-Reflation-taking-a-break-260",
+        "0004-19-Goldman-Sachs-E-Town-Semis--688729---Riding-on-memory-and-advanced-node-",
+        "0005-20-Goldman-Sachs-EUROPE-AUTOMOBILES-China-retail-volume-Jun-26--ICE-weaknes"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 5,
+      "file_count": 91,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12757740,
+      "reports": [
+        "0001-21-Goldman-Sachs-EUROPEAN-OEMS-IN-CHINA-European-OEMs-in-China-Jun-26--Euro",
+        "0002-22-Goldman-Sachs-GLOBAL-FX-TRADER-Divided-We-Carry-260710",
+        "0003-23-Goldman-Sachs-GLOBAL-RATES-TRADER-Energy-Speedbump-260710",
+        "0004-24-Goldman-Sachs-Laopu-Gold--6181.HK---Gold-price-weighs-on-sales-yet-suppo",
+        "0005-25-Goldman-Sachs-WUS--002463---Thailand-Tech-Tour--Capacity-diversification"
+      ]
+    },
+    {
+      "shard": "shard_5",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 17948459,
+      "reports": [
+        "0001-26-Goldman-Sachs-Samsung-Biologics-Co.-207940.KS-2Q26-Preview-expecting-res",
+        "0002-27-Goldman-Sachs-WEEKLY-FUND-FLOWS-Memory-Lane-260710",
+        "0003-28-J.P.-Morgan-Netflix-Inc-NFLX.US-NFLX-Trending---2Q-Preview--7-10-26--Foc",
+        "0004-29-J.P.-Morgan-China-Auto-Industry-June-sales--Weak-domestic--robust-export",
+        "0005-30-Goldman-Sachs-Xiaomi-Corp.--1810.HK--Sharpening-the-scene-ahead-of-SkyNo"
+      ]
+    },
+    {
+      "shard": "shard_6",
+      "report_count": 5,
+      "file_count": 83,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 10422182,
+      "reports": [
+        "0001-31-J.P.-Morgan-Zijin-Mining-Zijin-Gold-First-Take--Slight-miss-but-maintain",
+        "0002-32-Nomura-China-Aerospace-Net-catch--China-s-original-route-to-rocket-reuse",
+        "0003-33-J.P.-Morgan-Taiwan-Energy-2Q-NP-rises-to-5-year-high--reiterate-full-set",
+        "0004-34-Nomura-China-Auto-EV-Same-story-for-each-month-in-2Q26-260710",
+        "0005-35-Nomura-China-consumer-CPI-moderates-in-June-260709"
+      ]
+    },
+    {
+      "shard": "shard_7",
+      "report_count": 5,
+      "file_count": 69,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 9641348,
+      "reports": [
+        "0001-36-Nomura-China-healthcare-National-Essential-Medicines-List--2026-edition-",
+        "0002-37-Nomura-YOFC-6869.HK-China-Mobile-announced-2026-27-optical-cable-tender-",
+        "0003-38-Nomura-US-Economic-Weekly-The-force-awakens-260710",
+        "0004-39-Nomura-Largan-Precision-3008.TW-Faster-progress-in-CPO-FA-260709",
+        "0005-40-UBS-Yunnan-Energy-New-Material-002812-Q226-results-beat-260710"
+      ]
+    }
+  ]
+}
