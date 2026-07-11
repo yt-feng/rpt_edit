@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_uq_6m91o/pdfs/0001-21-GS-EUROPEAN OEMS IN CHINA European OEMs in China Jun-26- European premium loss widens amid German product lull-260710.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_uq_6m91o/pdfs/0002-22-GS-GLOBAL FX TRADER-Divided We Carry-260710.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_uq_6m91o/pdfs/0003-23-GS-GLOBAL RATES TRADER-Energy Speedbump-260710.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_uq_6m91o/pdfs/0004-24-GS-Laopu Gold -6181.HK-- Gold price weighs on sales yet supports margin- cut earnings TP on growth deceleration but remain Buy rated-260710.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_uq_6m91o/pdfs/0005-25-GS-WUS -002463-- Thailand Tech Tour- Capacity diversification ongoing- AI networking drives demand ahead- Buy-260709.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
