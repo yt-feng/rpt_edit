@@ -36,6 +36,7 @@ from wechat_title_optimizer import (
     extract_wechat_keywords,
 )
 from sensitive_content_guard import sanitize_wechat_stock_language
+from wechat_article_quality import audit_wechat_article_markdown, sanitize_wechat_article_markdown
 
 
 BRAND = "KC桌面——外资精译"
@@ -972,6 +973,7 @@ def clean_markdown(markdown: str) -> str:
             break
         cleaned.append(line)
     text, _stock_changes = sanitize_wechat_stock_language("\n".join(cleaned).strip())
+    text, _editorial_changes = sanitize_wechat_article_markdown(text)
     return text
 
 
@@ -1398,6 +1400,14 @@ def markdown_to_wechat_html(
     max_chars: int,
     outer_title: str = "",
 ) -> tuple[str, int, int]:
+    markdown = clean_markdown(markdown)
+    blocking_issues = [
+        issue
+        for issue in audit_wechat_article_markdown(markdown)
+        if issue in {"forbidden_meta_section", "model_cta"}
+    ]
+    if blocking_issues:
+        raise RuntimeError(f"WeChat article failed upload-time editorial guard: {blocking_issues}")
     title, _title_stock_changes = sanitize_wechat_stock_language(title)
     title = optimizer_clean_wechat_title(title, "", max_chars=CONTENT_HEADER_TITLE_MAX_CHARS)
     title = trim_title_complete(title.replace("…", ""), CONTENT_HEADER_TITLE_MAX_CHARS, 8)

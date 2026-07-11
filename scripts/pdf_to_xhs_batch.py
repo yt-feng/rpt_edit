@@ -38,6 +38,12 @@ from wechat_title_optimizer import (
     extract_wechat_keywords,
 )
 from sensitive_content_guard import sanitize_wechat_stock_language
+from wechat_article_quality import (
+    WECHAT_EDITORIAL_GUARD_ZH,
+    WECHAT_EDITOR_SYSTEM_PROMPT,
+    audit_wechat_article_markdown,
+    sanitize_wechat_article_markdown,
+)
 
 MINERU_BASE_URL = "https://mineru.net"
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp", ".bmp"}
@@ -550,12 +556,13 @@ def build_xhs_prompt(template_path: Path, source_text: str, args: argparse.Names
 
 def build_wechat_prompt(template_path: Path, source_text: str, args: argparse.Namespace, institution_name: str = "") -> str:
     source_text = trim_source_text(source_text, args.wechat_prompt_chars)
-    return template_path.read_text(encoding="utf-8").format(
+    prompt = template_path.read_text(encoding="utf-8").format(
         target_length=args.wechat_length,
         community_cta=args.community_cta,
         institution_name=institution_name or "可从报告标题识别的机构中文名",
         source_text=source_text,
     )
+    return f"{prompt.rstrip()}\n\n{WECHAT_EDITORIAL_GUARD_ZH}\n"
 
 
 def ensure_markdown_h1_institution(markdown: str, institution_name: str) -> str:
@@ -573,16 +580,25 @@ def ensure_markdown_h1_institution(markdown: str, institution_name: str) -> str:
     return markdown
 
 
-def call_deepseek(prompt: str, args: argparse.Namespace, label: str) -> str:
+def call_deepseek(
+    prompt: str,
+    args: argparse.Namespace,
+    label: str,
+    temperature: float = 0.7,
+    system_content: str | None = None,
+) -> str:
     api_key = os.getenv("DEEPSEEK_API_KEY")
     if not api_key:
         raise RuntimeError(f"Missing DEEPSEEK_API_KEY for {label}")
     url = args.deepseek_base_url.rstrip("/") + "/chat/completions"
     payload = {
         "model": args.model,
-        "temperature": 0.7,
+        "temperature": temperature,
         "messages": [
-            {"role": "system", "content": "你是严谨但有传播力的中文内容编辑，输出必须可直接发布。"},
+            {
+                "role": "system",
+                "content": system_content or "你是严谨但有传播力的中文内容编辑，输出必须可直接发布。",
+            },
             {"role": "user", "content": prompt},
         ],
     }
@@ -594,9 +610,15 @@ def call_deepseek(prompt: str, args: argparse.Namespace, label: str) -> str:
         raise RuntimeError(f"Unexpected DeepSeek response: {json.dumps(data, ensure_ascii=False)[:1000]}") from exc
 
 
-def safe_generate_text(prompt: str, args: argparse.Namespace, label: str) -> str:
+def safe_generate_text(
+    prompt: str,
+    args: argparse.Namespace,
+    label: str,
+    temperature: float = 0.7,
+    system_content: str | None = None,
+) -> str:
     try:
-        return call_deepseek(prompt, args, label)
+        return call_deepseek(prompt, args, label, temperature=temperature, system_content=system_content)
     except Exception as exc:
         raise RuntimeError(f"DeepSeek generation failed for {label}: {exc}") from exc
 
@@ -638,7 +660,7 @@ def refine_wechat_article_title(
         source_keywords=source_keywords,
     )
     try:
-        raw = call_deepseek(prompt, args, f"WeChat title refine: {source_title[:40]}")
+        raw = call_deepseek(prompt, args, f"WeChat title refine: {source_title[:40]}", temperature=0.22)
         candidates = extract_title_candidates(raw)
     except Exception as exc:
         print(f"Title refinement failed for {source_title[:80]}: {exc}", flush=True)
@@ -849,10 +871,19 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
     status["images"] = create_visual_assets(raw_dir, pdf_path, assets_dir, args.max_images, title=title)
     wechat_prompt = build_wechat_prompt(Path(args.wechat_prompt_template), source_text, args, institution_name)
     (item_dir / "prompt_for_wechat.md").write_text(wechat_prompt, encoding="utf-8")
-    wechat_article = safe_generate_text(wechat_prompt, args, "WeChat article")
+    wechat_article = safe_generate_text(
+        wechat_prompt,
+        args,
+        "WeChat article",
+        temperature=0.38,
+        system_content=WECHAT_EDITOR_SYSTEM_PROMPT,
+    )
     wechat_article, stock_changes = sanitize_wechat_stock_language(wechat_article)
     if stock_changes:
         status["wechat_stock_language_sanitized"] = stock_changes[:40]
+    wechat_article, quality_changes = sanitize_wechat_article_markdown(wechat_article)
+    if quality_changes:
+        status["wechat_editorial_guard_changes"] = quality_changes[:40]
     wechat_article = ensure_markdown_h1_institution(wechat_article, institution_name)
     refined_wechat_title = refine_wechat_article_title(pdf_path.stem, wechat_article, institution_name, args)
     refined_wechat_title, title_stock_changes = sanitize_wechat_stock_language(refined_wechat_title)
@@ -865,6 +896,17 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
     if stock_changes_after_images:
         status.setdefault("wechat_stock_language_sanitized", [])
         status["wechat_stock_language_sanitized"].extend(stock_changes_after_images[:20])
+    wechat_article, final_quality_changes = sanitize_wechat_article_markdown(wechat_article)
+    if final_quality_changes:
+        status.setdefault("wechat_editorial_guard_changes", [])
+        status["wechat_editorial_guard_changes"].extend(final_quality_changes[:20])
+    blocking_issues = [
+        issue
+        for issue in audit_wechat_article_markdown(wechat_article)
+        if issue in {"forbidden_meta_section", "model_cta"}
+    ]
+    if blocking_issues:
+        raise RuntimeError(f"WeChat article failed deterministic editorial guard: {blocking_issues}")
     (item_dir / "wechat_article.md").write_text(wechat_article, encoding="utf-8")
     try:
         make_cover(pdf_path, assets_dir / "cover.png", title, subtitle, args.watermark)

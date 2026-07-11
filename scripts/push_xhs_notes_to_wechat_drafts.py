@@ -65,6 +65,7 @@ from push_kc_translated_to_wechat_drafts import (  # noqa: E402
 
 from institution_names import ensure_title_has_institution, infer_institution_name  # noqa: E402
 from sensitive_content_guard import sanitize_wechat_stock_language  # noqa: E402
+from wechat_article_quality import sanitize_wechat_article_markdown  # noqa: E402
 
 DATE_DIR_RE = re.compile(r"^\d{6,8}$")
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp"}
@@ -125,6 +126,7 @@ def clean_xhs_markdown(markdown: str) -> str:
             continue
         cleaned.append(raw)
     text, _stock_changes = sanitize_wechat_stock_language("\n".join(cleaned).strip())
+    text, _editorial_changes = sanitize_wechat_article_markdown(text)
     return text
 
 

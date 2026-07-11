@@ -50,6 +50,12 @@ from wechat_title_optimizer import (
     extract_wechat_keywords,
 )
 from sensitive_content_guard import sanitize_wechat_stock_language
+from wechat_article_quality import (
+    WECHAT_EDITORIAL_GUARD_ZH,
+    WECHAT_EDITOR_SYSTEM_PROMPT,
+    audit_wechat_article_markdown,
+    sanitize_wechat_article_markdown,
+)
 
 # Maps the institution keys used by fetch_institution_latest_pdfs.py to the Chinese
 # names institution_names.infer_institution_name returns, so --exclude-institutions
@@ -862,7 +868,10 @@ def insert_article_tokens(markdown: str, tokens: list[str]) -> str:
 
     lines = text.splitlines()
     h2_indices = [idx for idx, line in enumerate(lines) if line.startswith("## ")]
-    insert_positions = h2_indices[1:] or h2_indices or [min(len(lines), 4)]
+    # Put one image at each section boundary. With the required three H2s this
+    # keeps all three charts inside the narrative instead of appending one at
+    # the end when DeepSeek forgets the placeholders.
+    insert_positions = h2_indices or [min(len(lines), 4)]
     offset = 0
     for token, pos in zip(missing, insert_positions):
         insert_at = min(len(lines), pos + offset)
@@ -884,7 +893,7 @@ def build_article_style_prompt(markdown: str, title: str, institution_name: str,
 
 写作目标：
 - 不是逐段翻译，而是基于原报告写一篇完整、顺滑、有主线的中文综述。
-- 保留报告里的核心数据、结论、因果链和读者最该追问的问题。
+- 保留报告里的核心数据、结论和因果链，只写最能支撑主判断的证据。
 - 删除作者介绍、头像说明、访谈口吻、网页导航、版权页、脚注长串、目录、免责声明、机构自我宣传。
 - 不能编造原文没有的信息；如果某个数字不确定，就不要写。
 - 语言要像人工编辑润色过：句长有变化，不要整齐排比，不要用模板化转折堆段落。
@@ -907,6 +916,8 @@ def build_article_style_prompt(markdown: str, title: str, institution_name: str,
 11. 如果是单一公司报告，只写公司情况、行业变化、业务进展、竞争格局和报告事实；禁止输出目标价、评级、买入、卖出、增持、减持、推荐、荐股、Buy、Sell、Overweight、Underweight、Outperform、Underperform、PT、TP、PO 等卖方操作口径。
 12. 不要输出代码块，不要输出英文原文，不要输出“以下是”等解释。
 
+{WECHAT_EDITORIAL_GUARD_ZH}
+
 机构中文名：{institution_name or "该机构"}
 原报告标题：{title}
 
@@ -924,20 +935,27 @@ def generate_article_style_markdown(
 ) -> str:
     image_tokens = [str(item.get("token") or "") for item in figures[:ARTICLE_STYLE_MAX_IMAGE_TOKENS] if item.get("token")]
     prompt = build_article_style_prompt(clean_markdown, title, institution_name, image_tokens)
-    system_content = (
-        "你是专业中文研究导读编辑，擅长把英文公共机构、咨询公司、国际机构报告改写成"
-        "微信公众号可读的中文报告导读。只根据原文写作，不编造。"
-    )
     article = call_deepseek(
         prompt,
         args,
         f"article-style rewrite: {title[:40]}",
-        temperature=0.18,
-        system_content=system_content,
+        temperature=0.38,
+        system_content=WECHAT_EDITOR_SYSTEM_PROMPT,
     )
     article = article.replace("```markdown", "").replace("```", "")
     article = insert_article_tokens(article, image_tokens)
     article, _stock_changes = sanitize_wechat_stock_language(article)
+    article, quality_changes = sanitize_wechat_article_markdown(article)
+    if quality_changes:
+        log(f"  Editorial guard removed {len(quality_changes)} generated block(s): {title[:60]}")
+    article = insert_article_tokens(article, image_tokens)
+    blocking_issues = [
+        issue
+        for issue in audit_wechat_article_markdown(article)
+        if issue in {"forbidden_meta_section", "model_cta"}
+    ]
+    if blocking_issues:
+        raise RuntimeError(f"WeChat article failed deterministic editorial guard: {blocking_issues}")
     return sanitize_text(article).strip() + "\n"
 
 
