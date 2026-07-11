@@ -1,0 +1,91 @@
+{
+  "date_folder": "260712",
+  "dry_run": false,
+  "publish": false,
+  "max_articles": "all",
+  "input_selected_count": 2,
+  "selected_count": 2,
+  "include_institutions": [],
+  "institution_filtered_count": 0,
+  "skipped_title_policy_count": 0,
+  "skipped_title_policy": [],
+  "articles_per_draft": 8,
+  "draft_count": 1,
+  "max_body_chars": 1200,
+  "max_content_chars": 19500,
+  "max_content_bytes": 18000,
+  "min_inline_images": 3,
+  "max_inline_images": 3,
+  "body_hook": "",
+  "image_upload_delay_seconds": 3.0,
+  "article_delay_seconds": 12.0,
+  "draft_delay_seconds": 90.0,
+  "draft_verify_delay_seconds": 8.0,
+  "trailing_image": "/opt/actions-runner-rpt-edit/_work/rpt_edit/rpt_edit/prompts/zsxq_img.jpg",
+  "drafts": [
+    {
+      "draft_index": 1,
+      "media_id": "avPwUQVH0p7DPpCFFkit8zl-JAwPugeXmTEZeTAoQdYIwssxZmQj_vcql7HDCYnb",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 2,
+      "payload_bytes": 17108,
+      "payload": "wechat_drafts/consulting/260712/draft_payload_01.json",
+      "titles": [
+        "麦肯锡：中国Q2增长5.2%超年度目标，消费与就业指标改善",
+        "麦肯锡：中国移动等运营商推AI助手，6G定义尚未对齐，AI无处不在"
+      ],
+      "wechat_titles": [
+        "麦肯锡：中国Q2增长5.2%超年度目标，消费与就业指标改善",
+        "麦肯锡：中国移动等运营商推AI助手，6G定义尚未对齐，AI无处不在"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 2,
+        "expected_article_count": 2,
+        "matches_expected_article_count": true,
+        "titles": [
+          "éº¦è¯é¡ï¼ä¸­å½Q2å¢é¿5.2%è¶ å¹´åº¦ç®æ ï¼æ¶è´¹ä¸å°±ä¸ææ æ¹å",
+          "éº¦è¯é¡ï¼ä¸­å½ç§»å¨ç­è¿è¥åæ¨AIå©æï¼6Gå®ä¹å°æªå¯¹é½ï¼AIæ å¤ä¸å¨"
+        ],
+        "create_time": 1783812808,
+        "update_time": 1783812809
+      }
+    }
+  ],
+  "articles": [
+    {
+      "title": "麦肯锡：中国Q2增长5.2%超年度目标，消费与就业指标改善",
+      "wechat_title": "麦肯锡：中国Q2增长5.2%超年度目标，消费与就业指标改善",
+      "header_title": "消费与就业指标改善，消费贡献率过半，但进口调整与贸易结构变化值得关注",
+      "digest": "中国Q2增长5.2%超年度目标，消费与就业指标改善，消费贡献率过半。",
+      "institution_name": "麦肯锡",
+      "source_report_name": "McKinsey PDF-Global-Economics-Intelligence 98d80850",
+      "report_dir": "kc_translated_reports/consulting/260712/01-0001-McKinsey_PDF-Global-Economics-Intelligence_98d80850",
+      "content_chars": 6548,
+      "content_bytes": 8620,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "wechat_drafts/consulting/260712/_assets/article_01_cover.jpg"
+    },
+    {
+      "title": "麦肯锡：中国移动等运营商推AI助手，6G定义尚未对齐，AI无处不在",
+      "wechat_title": "麦肯锡：中国移动等运营商推AI助手，6G定义尚未对齐，AI无处不在",
+      "header_title": "6G定义尚未对齐，AI无处不在，但可持续价值路径尚未清晰",
+      "digest": "中国移动等运营商推AI助手，6G定义尚未对齐，AI无处不在，但可持续价值路径尚未清晰。",
+      "institution_name": "麦肯锡",
+      "source_report_name": "McKinsey PDF-MWC-2025---pages.mckinsey.com f92f4582",
+      "report_dir": "kc_translated_reports/consulting/260712/02-0002-McKinsey_PDF-MWC-2025---pages.mckinsey",
+      "content_chars": 5362,
+      "content_bytes": 7282,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 1,
+      "cover_image": "wechat_drafts/consulting/260712/_assets/article_02_cover.jpg"
+    }
+  ]
+}
