@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_sy96hulu/pdfs/0001-01-Bernstein-INVEST IN THE CARBON TRANSITION-Corporate carbon toolbox- 2026 update- transition credibility is the new alpha-260710.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_sy96hulu/pdfs/0002-02-Bernstein-Largan Precision Co Ltd-3008.TT-Largan 2Q26- the CPO business is getting real-260709.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_sy96hulu/pdfs/0003-03-Bernstein-Honeywell International Inc-HON.US-Honeywell Technologies- Model update to account for Aerospace spin-260710.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_sy96hulu/pdfs/0004-04-Bernstein-U.S. Apparel - Specialty Retail Nike and Adidas- Pou Sheng -June revenue down HSD--260710.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_sy96hulu/pdfs/0005-05-Bernstein-MediaTek Inc-2454.TT-Quick Take- MediaTek 2Q26 revenue beat guidance high-end and consensus-260710.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
