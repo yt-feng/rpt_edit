@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_lacne4ud/pdfs/0001-26-GS-Samsung Biologics Co.-207940.KS-2Q26 Preview-expecting resilient earnings on FX tailwinds-strike impact shifts to 3Q with recovery thereafter-260709.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_lacne4ud/pdfs/0002-27-GS-WEEKLY FUND FLOWS-Memory Lane-260710.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_lacne4ud/pdfs/0003-28-JPM-Netflix Inc-NFLX.US-NFLX Trending - 2Q Preview- 7 10 26- Focus on Engagement- Content Quality- - Revenue Growth- Remain Overweight-260710.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_lacne4ud/pdfs/0004-29-JPM-China Auto Industry June sales- Weak domestic- robust exports- Chinese brands gain share rapidly in Europe-260710.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_lacne4ud/pdfs/0005-30-GS-Xiaomi Corp. -1810.HK- Sharpening the scene ahead of SkyNomad launch and continued AI progress- Buy-260710.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
