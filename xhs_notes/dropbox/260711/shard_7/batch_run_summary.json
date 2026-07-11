@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 40,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 7,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/36-NOM-China healthcare：National Essential Medicines List （2026 edition） released-260709.pdf",
+          "batch_file": "/tmp/pdf_batch_001_hxjoi8m7/pdfs/0001-36-NOM-China healthcare-National Essential Medicines List -2026 edition- released-260709.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/37-NOM-YOFC（6869.HK）China Mobile announced 2026~27 optical cable tender-260709.pdf",
+          "batch_file": "/tmp/pdf_batch_001_hxjoi8m7/pdfs/0002-37-NOM-YOFC-6869.HK-China Mobile announced 2026-27 optical cable tender-260709.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/38-NOM-US Economic Weekly：The force awakens-260710.pdf",
+          "batch_file": "/tmp/pdf_batch_001_hxjoi8m7/pdfs/0003-38-NOM-US Economic Weekly-The force awakens-260710.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/39-NOM-Largan Precision（3008.TW）Faster progress in CPO FA-260709.pdf",
+          "batch_file": "/tmp/pdf_batch_001_hxjoi8m7/pdfs/0004-39-NOM-Largan Precision-3008.TW-Faster progress in CPO FA-260709.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/40-UBS-Yunnan Energy New Material（002812）Q226 results beat-260710.pdf",
+          "batch_file": "/tmp/pdf_batch_001_hxjoi8m7/pdfs/0005-40-UBS-Yunnan Energy New Material-002812-Q226 results beat-260710.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
