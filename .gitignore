@@ -9,3 +9,4 @@ workers/kc-desk-notes-worker/wrangler.toml
 # We keep the original PDF link in institution_feeds/, never the PDF itself.
 _institution_latest_pdfs/
 _consulting_latest_pdfs/
+workers/kc-desk-notes-worker/.wrangler/

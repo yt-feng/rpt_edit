@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import gzip
 import hashlib
 from html import escape as html_escape
 import json
@@ -556,6 +557,130 @@ def sort_date_value(value: str) -> tuple[int, int, str]:
     return 1, 0, text
 
 
+def merge_history_catalog(
+    catalog: dict[str, Any],
+    history_catalog_path: Path,
+    history_text_dir: Path,
+) -> tuple[dict[str, Any], dict[str, str], dict[str, int]]:
+    """Merge the one-time ib_rpt_history import into the public catalog.
+
+    History reports that title-match a live Dropbox report are dropped from the
+    catalog (the live record wins, it may still have a PDF) and their search
+    text is re-attached to the live report id instead. Runs before the archive
+    catalog merge so archive title records duplicating history are also skipped.
+    """
+    stats = {"history_total": 0, "history_deduped": 0, "history_added": 0, "history_texts": 0}
+    if not history_catalog_path.exists():
+        return catalog, {}, stats
+
+    history = load_json_default(history_catalog_path, {"items": []})
+    live_items = [item for item in catalog.get("items", []) if item.get("id")]
+    history_items = [item for item in history.get("items", []) if item.get("id")]
+    stats["history_total"] = len(history_items)
+
+    lookup = build_title_lookup(live_items)
+    id_remap: dict[str, str] = {}
+    added_items: list[dict[str, Any]] = []
+    for item in history_items:
+        live_id = match_report_id(str(item.get("title") or ""), lookup)
+        if live_id:
+            id_remap[str(item["id"])] = live_id
+        else:
+            added_items.append({key: item.get(key) for key in PUBLIC_ITEM_KEYS if key in item})
+    stats["history_deduped"] = len(id_remap)
+    stats["history_added"] = len(added_items)
+
+    merged = dict(catalog)
+    merged_items = live_items + added_items
+    merged_items.sort(
+        key=lambda item: (str(item.get("date_folder") or ""), str(item.get("title") or "").lower()),
+        reverse=True,
+    )
+    merged["items"] = merged_items
+    merged["item_count"] = len(merged_items)
+
+    texts: dict[str, str] = {}
+    if history_text_dir.exists():
+        for shard_path in sorted(history_text_dir.glob("shard_*.json.gz")):
+            mapping = json.loads(gzip.decompress(shard_path.read_bytes()).decode("utf-8"))
+            for history_id, text in mapping.items():
+                if not text:
+                    continue
+                target = id_remap.get(str(history_id), str(history_id))
+                existing = texts.get(target)
+                if existing:
+                    if text not in existing:
+                        texts[target] = f"{existing} {text}"
+                else:
+                    texts[target] = text
+    stats["history_texts"] = len(texts)
+    return merged, texts, stats
+
+
+def build_history_search_index(
+    catalog: dict[str, Any],
+    texts: dict[str, str],
+    limit_bytes: int,
+) -> dict[str, Any]:
+    index = {
+        "schema_version": 1,
+        "updated_at_bjt": catalog.get("updated_at_bjt", ""),
+        "item_count": len(texts),
+        "items": [{"id": report_id, "text": text} for report_id, text in sorted(texts.items())],
+    }
+    return limit_search_index_by_size(index=index, catalog=catalog, limit_bytes=limit_bytes)
+
+
+def write_history_search_shards(
+    history_index: dict[str, Any],
+    catalog: dict[str, Any],
+    output_dir: Path,
+) -> dict[str, Any]:
+    """Split the size-capped history text index into per-month shard files.
+
+    The browser loads the manifest lazily and then streams shards newest-first,
+    so the initial page load never downloads the history text at all. The
+    Worker keeps loading only the small search_index.json.
+    """
+    id_to_month: dict[str, str] = {}
+    for item in catalog.get("items", []):
+        report_id = str(item.get("id") or "")
+        if report_id:
+            id_to_month[report_id] = str(item.get("date_folder") or "")[:4] or "0000"
+
+    groups: dict[str, list[dict[str, str]]] = {}
+    for entry in history_index.get("items", []):
+        month = id_to_month.get(str(entry.get("id")), "0000")
+        groups.setdefault(month, []).append(entry)
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+    shards: list[dict[str, Any]] = []
+    for month in sorted(groups, reverse=True):
+        filename = f"shard_{month}.json"
+        payload = json.dumps({"items": groups[month]}, ensure_ascii=False, separators=(",", ":"))
+        shard_path = output_dir / filename
+        shard_path.write_text(payload, encoding="utf-8")
+        shards.append({
+            "file": filename,
+            "month": month,
+            "item_count": len(groups[month]),
+            "bytes": len(payload.encode("utf-8")),
+        })
+
+    manifest = {
+        "schema_version": 1,
+        "updated_at_bjt": history_index.get("updated_at_bjt", ""),
+        "item_count": history_index.get("item_count", 0),
+        "text_storage_limit_bytes": history_index.get("text_storage_limit_bytes", 0),
+        "text_storage_size_bytes": history_index.get("text_storage_size_bytes", 0),
+        "text_pruned_dates": history_index.get("text_pruned_dates", []),
+        "total_bytes": sum(shard["bytes"] for shard in shards),
+        "shards": shards,
+    }
+    write_json(output_dir / "manifest.json", manifest)
+    return manifest
+
+
 def public_catalog(catalog: dict[str, Any]) -> dict[str, Any]:
     items: list[dict[str, Any]] = []
     for item in catalog.get("items", []):
@@ -1036,6 +1161,15 @@ def main() -> int:
         default=2,
         help="Maximum public text index size in GiB. Oldest date folders are removed from the text index if exceeded. 0 disables.",
     )
+    parser.add_argument("--history-catalog", default="kc_desk_notes/data/history_catalog.json")
+    parser.add_argument("--history-text-dir", default="kc_desk_notes/data/history_text")
+    parser.add_argument(
+        "--history-index-limit-gb",
+        type=float,
+        default=0.06,
+        help="Maximum browser-only history text index size in GiB. Oldest date folders lose their"
+        " body text first (titles stay searchable via the catalog). 0 disables.",
+    )
     args = parser.parse_args()
 
     site_src = Path(args.site_src)
@@ -1043,6 +1177,11 @@ def main() -> int:
     copy_site(site_src, output_dir)
 
     catalog = public_catalog(load_json(Path(args.catalog_path)))
+    catalog, history_texts, history_stats = merge_history_catalog(
+        catalog=catalog,
+        history_catalog_path=Path(args.history_catalog),
+        history_text_dir=Path(args.history_text_dir),
+    )
     archive_catalog_path = Path(args.archive_catalog_path)
     archive_catalog = build_archive_catalog(
         live_catalog=catalog,
@@ -1067,6 +1206,16 @@ def main() -> int:
         catalog=catalog,
         limit_bytes=int(args.search_index_limit_gb * 1024 * 1024 * 1024),
     )
+    history_index = build_history_search_index(
+        catalog=catalog,
+        texts=history_texts,
+        limit_bytes=int(args.history_index_limit_gb * 1024 * 1024 * 1024),
+    )
+    history_manifest = write_history_search_shards(
+        history_index=history_index,
+        catalog=catalog,
+        output_dir=output_dir / "data" / "search_index_history",
+    )
     rules = public_password_rules(load_json(Path(args.password_rules)))
     write_json(output_dir / "data" / "catalog.json", catalog)
     write_json(output_dir / "data" / "search_index.json", search_index)
@@ -1078,7 +1227,10 @@ def main() -> int:
     version_assets(output_dir)
     print(
         f"Built {output_dir} with {catalog['item_count']} catalog items "
-        f"and {search_index['item_count']} full-text search entries"
+        f"({history_stats['history_added']} history-only, {history_stats['history_deduped']} history deduped) "
+        f"and {search_index['item_count']} full-text search entries, "
+        f"{history_index['item_count']} history text entries in {len(history_manifest['shards'])} lazy shards "
+        f"({history_manifest['total_bytes'] / 1e6:.1f} MB)"
     )
     return 0
 

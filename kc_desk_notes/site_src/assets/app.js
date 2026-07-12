@@ -3093,26 +3093,69 @@
       scheduleExternalSearch();
     }
 
-    loadJson("data/search_index.json")
-      .then((searchIndex) => {
-        const searchItems = Array.isArray(searchIndex.items) ? searchIndex.items : [];
-        searchItems.forEach((entry) => {
-          if (entry.id && entry.text) {
-            searchTextById.set(entry.id, String(entry.text));
-          }
-        });
-        searchIndexLabel = `Text index ${searchTextById.size} reports`;
-        if (searchIndex.text_pruned_dates && searchIndex.text_pruned_dates.length) {
-          searchIndexLabel += " (recent text)";
+    let searchIndexPrunedText = false;
+    let historyTextState = "idle";
+    const searchIndexStatusLabel = () => {
+      let label = `Text index ${searchTextById.size} reports`;
+      if (historyTextState === "loading") label += " +";
+      if (searchIndexPrunedText) label += " (recent text)";
+      return label;
+    };
+    const mergeSearchIndex = (searchIndex) => {
+      const searchItems = Array.isArray(searchIndex.items) ? searchIndex.items : [];
+      searchItems.forEach((entry) => {
+        if (!entry.id || !entry.text) return;
+        const existing = searchTextById.get(entry.id);
+        searchTextById.set(entry.id, existing ? `${existing} ${entry.text}` : String(entry.text));
+      });
+      if (searchIndex.text_pruned_dates && searchIndex.text_pruned_dates.length) {
+        searchIndexPrunedText = true;
+      }
+      searchIndexLabel = searchIndexStatusLabel();
+      updateMeta();
+      // Re-rendering matters only when full text can change visible results.
+      if (input && input.value.trim()) render();
+    };
+    // The whole text index is lazy: first paint only needs the catalog. The
+    // main index and the browser-only history shards start downloading once
+    // the page is idle or the visitor touches the search box. The Worker keeps
+    // loading the same small(er) search_index.json URL as before.
+    const startTextIndexLoad = () => {
+      if (historyTextState !== "idle") return;
+      historyTextState = "loading";
+      (async () => {
+        try {
+          mergeSearchIndex(await loadJson("data/search_index.json"));
+        } catch (error) {
+          console.warn(error);
         }
+        try {
+          const manifest = await loadJson("data/search_index_history/manifest.json");
+          if (manifest.text_pruned_dates && manifest.text_pruned_dates.length) {
+            searchIndexPrunedText = true;
+          }
+          const shards = Array.isArray(manifest.shards) ? manifest.shards : [];
+          for (const shard of shards) {
+            if (!shard || !shard.file) continue;
+            mergeSearchIndex(await loadJson(`data/search_index_history/${shard.file}`));
+            // Yield between shards so parsing never blocks typing or scrolling.
+            await new Promise((resolve) => setTimeout(resolve, 30));
+          }
+          historyTextState = "done";
+        } catch (error) {
+          console.warn(error);
+          historyTextState = "failed";
+        }
+        searchIndexLabel = searchTextById.size ? searchIndexStatusLabel() : "Text index unavailable";
         updateMeta();
         render();
-      })
-      .catch((error) => {
-        console.warn(error);
-        searchIndexLabel = "Text index unavailable";
-        updateMeta();
-      });
+      })();
+    };
+    if (input) {
+      input.addEventListener("focus", startTextIndexLoad);
+      input.addEventListener("input", startTextIndexLoad);
+    }
+    window.setTimeout(startTextIndexLoad, 3000);
 
     updateMeta();
     render();
@@ -3822,10 +3865,9 @@
   async function initReport() {
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
-    const [catalog, config, searchIndex] = await Promise.all([
+    const [catalog, config] = await Promise.all([
       loadJson("data/catalog.json"),
       loadJson("data/config.json"),
-      loadOptionalJson("data/search_index.json", { items: [] }),
     ]);
     const workerUrl = workerBaseUrl(config);
     initAccountGate(workerUrl);
@@ -3838,13 +3880,40 @@
       return;
     }
     const searchTextById = new Map();
-    for (const entry of Array.isArray(searchIndex.items) ? searchIndex.items : []) {
-      if (entry.id && entry.text) searchTextById.set(entry.id, String(entry.text));
-    }
     document.title = `${titleText(item)} | KC Desk Notes`;
     renderDetail(item, config, items, searchTextById, {
       password: params.get("password") || "",
     });
+    // The text index only improves related-report ranking, so load it after
+    // the detail renders instead of blocking the page on a large download.
+    loadOptionalJson("data/search_index.json", { items: [] }).then((searchIndex) => {
+      const entries = Array.isArray(searchIndex.items) ? searchIndex.items : [];
+      if (!entries.length) return;
+      for (const entry of entries) {
+        if (entry.id && entry.text) searchTextById.set(entry.id, String(entry.text));
+      }
+      refreshRelatedReports(item, items, searchTextById);
+    });
+  }
+
+  function refreshRelatedReports(item, catalogItems, searchTextById) {
+    const detail = document.getElementById("detail");
+    if (!detail) return;
+    const related = relatedReports(item, catalogItems, searchTextById);
+    if (!related.length) return;
+    let section = detail.querySelector(".related-section");
+    if (!section) {
+      section = document.createElement("section");
+      section.className = "related-section";
+      section.setAttribute("aria-labelledby", "relatedTitle");
+      detail.appendChild(section);
+    }
+    section.innerHTML = `
+      <div class="related-heading">
+        <h3 id="relatedTitle">Related Reports</h3>
+      </div>
+      <div class="related-list">${related.map(relatedRow).join("")}</div>
+    `;
   }
 
   function externalItemFromParams(params) {
@@ -4047,17 +4116,20 @@
       return;
     }
 
-    const [config, catalog, searchIndex] = await Promise.all([
+    const [config, catalog] = await Promise.all([
       loadOptionalJson("data/config.json", {}),
       loadOptionalJson("data/catalog.json", { items: [] }),
-      loadOptionalJson("data/search_index.json", { items: [] }),
     ]);
     const workerUrl = workerBaseUrl(config);
     const catalogItems = Array.isArray(catalog.items) ? catalog.items : [];
     const searchTextById = new Map();
-    for (const entry of Array.isArray(searchIndex.items) ? searchIndex.items : []) {
-      if (entry.id && entry.text) searchTextById.set(entry.id, String(entry.text));
-    }
+    // Fetch the large text index in the background; related rendering below
+    // waits on this promise without blocking the detail render.
+    const searchIndexPromise = loadOptionalJson("data/search_index.json", { items: [] }).then((searchIndex) => {
+      for (const entry of Array.isArray(searchIndex.items) ? searchIndex.items : []) {
+        if (entry.id && entry.text) searchTextById.set(entry.id, String(entry.text));
+      }
+    });
     initAccountGate(workerUrl);
     initAdminGate(workerUrl);
     initNewsfeedNav();
@@ -4123,7 +4195,7 @@
         </section>
         ${externalRelatedMarkup()}
       `;
-      initExternalRelated(item, workerUrl, catalogItems, searchTextById);
+      searchIndexPromise.then(() => initExternalRelated(item, workerUrl, catalogItems, searchTextById));
       return;
     }
 
@@ -4157,7 +4229,7 @@
       </section>
       ${externalRelatedMarkup()}
     `;
-    initExternalRelated(item, workerUrl, catalogItems, searchTextById);
+    searchIndexPromise.then(() => initExternalRelated(item, workerUrl, catalogItems, searchTextById));
 
     const form = document.getElementById("externalDetailForm");
     const input = document.getElementById("externalDetailPassword");
