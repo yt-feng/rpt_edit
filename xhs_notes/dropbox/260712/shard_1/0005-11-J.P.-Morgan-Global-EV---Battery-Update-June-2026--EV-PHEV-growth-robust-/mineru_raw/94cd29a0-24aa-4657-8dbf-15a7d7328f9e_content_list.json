@@ -1,0 +1,2320 @@
+[
+    {
+        "type": "text",
+        "text": "This material is neither intended to be distributed to Mainland China investors nor to provide securities investment consultancy services within the territory of Mainland China. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM.",
+        "bbox": [
+            133,
+            66,
+            908,
+            95
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Global EV & Battery Update",
+        "text_level": 1,
+        "bbox": [
+            133,
+            138,
+            557,
+            167
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "June 2026: EV/PHEV growth robust in EU, moderating in China, US stays tepid; ESS remains the sweet spot",
+        "text_level": 2,
+        "bbox": [
+            133,
+            174,
+            651,
+            215
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "EV+PHEV penetration trends by region. June EU-5+US+China EV/PHEV momentum remained resilient, with sales at 1.4mn units (+10% y/y, -2% m/m) and penetration at 36% (+2%pts y/y, +2%pts m/m). EU-5 continued to drive penetration gains, China's penetration rose despite soft PV sales, while the US remained muted.",
+        "bbox": [
+            132,
+            234,
+            665,
+            297
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- EU-5. June EV/PHEV sales volume grew 49% y/y and penetration reached 34% (+8%pts y/y, +2%pts m/m) with strength across all regions. EU-5 penetration continues to rise: France (+12%pts), followed by Germany (+11%pts), Italy (+8%pts), UK (+7%pts), Spain (+2%pts), supported by country-level subsidy schemes and affordable mass EVs penetrating the market. Our EU auto team forecasts Chinese OEMs' market share in Europe will rise to \\~20% from \\~12% currently, with localization continuing and Spain seen as a key hub for further regional production localization (link).",
+        "bbox": [
+            133,
+            301,
+            665,
+            421
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- US. June EV/PHEV sales volume fell 26% y/y with penetration at 7% (-3%pts y/y, -1%pts m/m), continuing to print y/y declines. By OEM, M/S remained broadly muted m/m: Tesla (#1) followed by GM (#2), HMG (#3), Toyota (#4) and Rivian (#5). EVs declined more meaningfully m/m than the broader industry, suggesting that stabilizing gas prices triggered by the US-Iran peace talks may be prompting some consumers to shift back towards ICE.",
+        "bbox": [
+            133,
+            424,
+            665,
+            513
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- China. CPCA June NEV retail sales volume came in at 1mn units (-9% y/y, +6% m/m), with collective penetration at 63% (+10%pts y/y, flat m/m) out of a total of 1.6mn PV sales. While overall PV sales continue to fall, NEV sales held up relatively better. The Chinese government has launched the rural NEV subsidy program, but our China auto team sees it as more of a “mix + replacement” stabilizer than a true demand turnaround, given weak PV demand and subdued consumer confidence. JPM’s 2026 China PV demand forecast remains at -15% y/y, with a gradual recovery expected in 2H26 (link).",
+        "bbox": [
+            133,
+            516,
+            666,
+            637
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "EV index performance. Over the past month, Asian EV supply chain stocks have traded soft, with Korea (-12%) and China (-8%) underperforming, while Japan outperformed (+8%). By subsector, cathodes (-13%) lagged the most, followed by battery foil (-11%), anodes (-6%), cell makers (-3%), and separators (-2%), while electrolytes outperformed (+1%).",
+        "bbox": [
+            132,
+            643,
+            665,
+            720
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Implications of the US FERC's policy for ESS. Rising social pushback over data center buildouts and electricity bill impacts has likely catalyzed the US FERC's grid queue reform, which highlights BTM (behind-the-meter) solutions as one potential path. Expert feedback suggests it is increasingly becoming a standard component of data center on-site microgrids, working alongside gas turbines and fuel cells to improve efficiency and resilience (link). More importantly, FERC has issued orders that could compress data center power-approval timelines from years to \\~90 days, particularly when paired with ESS via curtailable transmission service, effectively incentivizing ESS attachment. We therefore raise our 2030 US ESS demand forecast by 52% to 303 GWh, with data centers comprising \\~45% of total demand by 2030 (link).",
+        "bbox": [
+            132,
+            724,
+            666,
+            888
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Korea Auto, EV battery, Nuclear and Utility",
+        "bbox": [
+            687,
+            234,
+            947,
+            263
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Sonny Lee AC\n(82-2) 758 5716\nsonny.lee@JPM.com\nJPM Securities (Far East) Limited, Seoul Branch",
+        "bbox": [
+            687,
+            266,
+            939,
+            327
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Seri Yoon\n(82-2) 758 5704\nseri.yoon@JPM.com\nJPM Securities (Far East) Limited, Seoul Branch",
+        "bbox": [
+            687,
+            329,
+            939,
+            388
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Asia Autos & EV Battery",
+        "bbox": [
+            689,
+            388,
+            866,
+            405
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(852) 2800-8505\nrebecca.y.wen@JPM.com\nJPM Securities (Asia Pacific) Limited/ J.P.\nMorgan Broking (Hong Kong) Limited",
+        "bbox": [
+            687,
+            419,
+            942,
+            469
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Asia Energy & Chemicals / EV Battery",
+        "bbox": [
+            689,
+            469,
+            903,
+            497
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Parsley Ong\n(65) 6882-8578\nparsley.rh.ong@JPM.com\nJPM Securities Singapore Private Limited/\nJPM Securities (Asia Pacific) Limited/ J.P.\nMorgan Broking (Hong Kong) Limited",
+        "bbox": [
+            687,
+            500,
+            947,
+            570
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "European Autos",
+        "bbox": [
+            689,
+            570,
+            810,
+            585
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Jose M Asumendi\n(44-20) 7742-5315\njose.m.asumendi@JPM.com\nJPM Securities plc",
+        "bbox": [
+            687,
+            589,
+            869,
+            641
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "See page 10 for analyst certification and important disclosures, including non-US analyst disclosures.",
+        "bbox": [
+            133,
+            933,
+            859,
+            953
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "aside_text",
+        "text": "J.D.Morgan",
+        "bbox": [
+            3,
+            564,
+            94,
+            880
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            133,
+            22,
+            344,
+            60
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n10 July 2026",
+        "bbox": [
+            689,
+            26,
+            895,
+            55
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "LGES 2Q OP was a slight miss vs BBGe, with limited OEM compensation and weaker-than-expected AMPC, suggesting ESS production bottlenecks persisted. That said, channel checks indicate LGES has onboarded a second company to help with ESS packs, which should ease most bottlenecks by 3Q26. LGES continues to guide for a 3Q restart of the Ultium plant (offline in 1H26). At the July 30 earnings conf call, we expect updates on US EV battery ramp, OEM compensation, ESS ramp, and order backlog (link).",
+        "bbox": [
+            66,
+            148,
+            663,
+            239
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Ecopro BM announced a W1.2tn rights issue on June 30 via 9.9mn new shares. Proceeds are to be used mainly for a \\~20% stake in Indonesia's BNSI nickel smelter (W765bn), with the balance for Hungary funding (W150bn), etc. We view deeper nickel upstream integration as adding incremental risks: 1) reduced flexibility toward LFP opportunities; 2) higher sensitivity to nickel price swings; and 3) policy risk from Indonesian controls (link).",
+        "bbox": [
+            66,
+            244,
+            663,
+            319
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Stock recommendations and potential future catalysts. Europe continues to print strong EV growth and China's NEV penetration is rising despite soft PV sales, while the US remains subdued. Global ESS battery demand decelerated m/m due to capacity constraints but remains robust y/y, with China still the largest demand driver. In the US, ESS battery sourcing is shifting rapidly away from Chinese suppliers towards Korean players: KR/JP shipments surged $>200\\%$ y/y, while Chinese suppliers' ESS shipments to the US fell 40% y/y in May. 2Q earnings season begins this month, and we focus on the improving earnings trajectory. Near-term catalysts would be battery makers' smooth ramp-up of ESS capacity that translates into earnings, while longer-term catalysts center on persistent AI data center orders for ESS.",
+        "bbox": [
+            66,
+            324,
+            665,
+            459
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Stock positioning. In Korea, we like auto OEMs (Hyundai Motor, Kia) on resilient auto earnings driven by increasing HEV mix. Within the Korea battery supply chain, we prefer battery makers (LGES/SDI OW) over materials (LG Chem/L&F OW; EBM N; PFM UW) and lithium producers (POSCO, N), reflecting relative bargaining power and execution capability (LGES, LG Chem covered by Parsley Ong). In China, we like BYD-A/H (covered by Nick Lai) for its strong execution on global expansion along with overseas production ramp-up; and CATL-A/H (covered by Rebecca Wen) given its technology and leadership position in the global EV and ESS battery market.",
+        "bbox": [
+            66,
+            464,
+            665,
+            583
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Sonny Lee AC\n(82-2) 758 5716\nsonny.lee@JPM.com",
+        "bbox": [
+            68,
+            55,
+            207,
+            89
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n10 July 2026",
+        "bbox": [
+            343,
+            55,
+            503,
+            78
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            70,
+            952,
+            81,
+            964
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/ffb28b228c90327af1962340e52e8b91907bbff7485f27a56b227350bbc036ee.jpg",
+        "table_caption": [
+            "Table 1: June 2026 PV+EV+PHEV monthly and YTD sales and penetration trends (by region)"
+        ],
+        "table_footnote": [
+            "Source: CNEV Post, Motor Intelligence, European Union"
+        ],
+        "table_body": "<table><tr><td>Global PV Sales (&#x27;000s)</td><td>Jun-26</td><td>Jun-25</td><td>y/y%</td><td>6M26</td><td>6M25</td><td>y/y%</td></tr><tr><td colspan=\"7\">Passenger Vehicles (PV)</td></tr><tr><td>Europe (EU5)</td><td>973</td><td>868</td><td>12.1%</td><td>5,066</td><td>4,752</td><td>6.6%</td></tr><tr><td>Germany</td><td>296</td><td>256</td><td>15.7%</td><td>1,484</td><td>1,403</td><td>5.8%</td></tr><tr><td>France</td><td>189</td><td>170</td><td>11.4%</td><td>857</td><td>842</td><td>1.8%</td></tr><tr><td>Italy</td><td>146</td><td>132</td><td>10.8%</td><td>938</td><td>855</td><td>9.8%</td></tr><tr><td>Spain</td><td>128</td><td>119</td><td>7.8%</td><td>648</td><td>610</td><td>6.2%</td></tr><tr><td>United Kingdom</td><td>213</td><td>191</td><td>11.4%</td><td>1,138</td><td>1,042</td><td>9.2%</td></tr><tr><td>China</td><td>1,602</td><td>2,085</td><td>-23.2%</td><td>8,721</td><td>10,895</td><td>-20.0%</td></tr><tr><td>US</td><td>1,379</td><td>1,280</td><td>7.7%</td><td>7,954</td><td>8,181</td><td>-2.8%</td></tr><tr><td>Total</td><td>3,954</td><td>4,233</td><td>-6.6%</td><td>21,740</td><td>23,828</td><td>-8.8%</td></tr><tr><td colspan=\"7\">Battery Electric Vehicles (EV)</td></tr><tr><td>Europe (EU5)</td><td>233</td><td>143</td><td>63.1%</td><td>1,037</td><td>713</td><td>45.4%</td></tr><tr><td>Germany</td><td>84</td><td>47</td><td>78.2%</td><td>368</td><td>249</td><td>47.9%</td></tr><tr><td>France</td><td>56</td><td>29</td><td>91.7%</td><td>242</td><td>149</td><td>62.5%</td></tr><tr><td>Italy</td><td>15</td><td>8</td><td>88.3%</td><td>80</td><td>45</td><td>77.8%</td></tr><tr><td>Spain</td><td>14</td><td>11</td><td>26.5%</td><td>63</td><td>46</td><td>36.6%</td></tr><tr><td>United Kingdom</td><td>64</td><td>47</td><td>35.0%</td><td>285</td><td>225</td><td>26.6%</td></tr><tr><td>China</td><td>685</td><td>661</td><td>3.6%</td><td>3,106</td><td>3,336</td><td>-6.9%</td></tr><tr><td>US</td><td>73</td><td>101</td><td>-27.6%</td><td>458</td><td>616</td><td>-25.7%</td></tr><tr><td>Total</td><td>991</td><td>905</td><td>9.6%</td><td>4,601</td><td>4,665</td><td>-1.4%</td></tr><tr><td colspan=\"7\">Plug-in Hybrid Vehicles (PHEV)</td></tr><tr><td>Europe (EU5)</td><td>102</td><td>82</td><td>25.2%</td><td>516</td><td>394</td><td>31.1%</td></tr><tr><td>Germany</td><td>32</td><td>26</td><td>25.8%</td><td>164</td><td>139</td><td>17.8%</td></tr><tr><td>France</td><td>12</td><td>12</td><td>4.4%</td><td>42</td><td>49</td><td>-15.4%</td></tr><tr><td>Italy</td><td>16</td><td>10</td><td>64.6%</td><td>85</td><td>43</td><td>98.6%</td></tr><tr><td>Spain</td><td>16</td><td>14</td><td>15.0%</td><td>78</td><td>56</td><td>39.2%</td></tr><tr><td>United Kingdom</td><td>27</td><td>21</td><td>24.9%</td><td>148</td><td>107</td><td>38.4%</td></tr><tr><td>China</td><td>323</td><td>450</td><td>-28.2%</td><td>1,614</td><td>2,128</td><td>-24.2%</td></tr><tr><td>US</td><td>18</td><td>21</td><td>-15.9%</td><td>86</td><td>175</td><td>-51.1%</td></tr><tr><td>Total</td><td>443</td><td>553</td><td>-19.8%</td><td>2,216</td><td>2,697</td><td>-17.8%</td></tr></table>",
+        "bbox": [
+            70,
+            176,
+            495,
+            513
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/3ea923ecbeb2f954e7ad08922aece55b4b908765cd84d8e7e62fd56986682b71.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Note: China data are based on preliminary CPCA retail sales data.",
+            "GWh, %"
+        ],
+        "table_body": "<table><tr><td>Global EV/PHEV Penetration (%)</td><td>Jun-26</td><td>Jun-25</td><td>y/y%</td><td>6M26</td><td>6M25</td><td>y/y%</td></tr><tr><td colspan=\"7\">EV/PHEV Penetration (%)</td></tr><tr><td>Europe (EU5)</td><td>34.5%</td><td>25.9%</td><td>8.6%p</td><td>30.7%</td><td>23.3%</td><td>7.4%p</td></tr><tr><td>Germany</td><td>39.2%</td><td>28.4%</td><td>10.8%p</td><td>35.8%</td><td>27.6%</td><td>8.2%p</td></tr><tr><td>France</td><td>36.1%</td><td>24.1%</td><td>12.0%p</td><td>33.0%</td><td>23.5%</td><td>9.5%p</td></tr><tr><td>Italy</td><td>20.9%</td><td>13.2%</td><td>7.7%p</td><td>17.5%</td><td>10.2%</td><td>7.3%p</td></tr><tr><td>Spain</td><td>23.2%</td><td>20.8%</td><td>2.4%p</td><td>21.8%</td><td>16.8%</td><td>5.0%p</td></tr><tr><td>United Kingdom</td><td>42.5%</td><td>35.9%</td><td>6.6%p</td><td>38.0%</td><td>31.8%</td><td>6.2%p</td></tr><tr><td>China</td><td>62.9%</td><td>53.3%</td><td>9.6%p</td><td>54.1%</td><td>50.1%</td><td>4.0%p</td></tr><tr><td>US</td><td>6.6%</td><td>9.5%</td><td>-2.9%p</td><td>6.8%</td><td>9.7%</td><td>-2.8%p</td></tr><tr><td>Total</td><td>36.3%</td><td>34.4%</td><td>1.8%p</td><td>31.4%</td><td>30.9%</td><td>0.5%p</td></tr><tr><td colspan=\"7\"></td></tr><tr><td colspan=\"7\">EV Penetration (%)</td></tr><tr><td>Europe (EU5)</td><td>23.9%</td><td>16.4%</td><td>7.5%p</td><td>20.5%</td><td>15.0%</td><td>5.5%p</td></tr><tr><td>Germany</td><td>28.4%</td><td>18.4%</td><td>10.0%p</td><td>24.8%</td><td>17.7%</td><td>7.1%p</td></tr><tr><td>France</td><td>29.6%</td><td>17.2%</td><td>12.4%p</td><td>28.2%</td><td>17.6%</td><td>10.5%p</td></tr><tr><td>Italy</td><td>10.2%</td><td>6.0%</td><td>4.2%p</td><td>8.5%</td><td>5.2%</td><td>3.2%p</td></tr><tr><td>Spain</td><td>11.1%</td><td>9.4%</td><td>1.6%p</td><td>9.8%</td><td>7.6%</td><td>2.2%p</td></tr><tr><td>United Kingdom</td><td>30.0%</td><td>24.8%</td><td>5.2%p</td><td>25.0%</td><td>21.6%</td><td>3.4%p</td></tr><tr><td>China</td><td>42.8%</td><td>31.7%</td><td>11.1%p</td><td>35.6%</td><td>30.6%</td><td>5.0%p</td></tr><tr><td>US</td><td>5.3%</td><td>7.9%</td><td>-2.6%p</td><td>5.8%</td><td>7.5%</td><td>-1.8%p</td></tr><tr><td>Total</td><td>25.1%</td><td>21.4%</td><td>3.7%p</td><td>21.2%</td><td>19.6%</td><td>1.6%p</td></tr><tr><td colspan=\"7\"></td></tr><tr><td colspan=\"7\">PHEV Penetration (%)</td></tr><tr><td>Europe (EU5)</td><td>10.5%</td><td>9.4%</td><td>1.1%p</td><td>10.2%</td><td>8.3%</td><td>1.9%p</td></tr><tr><td>Germany</td><td>10.9%</td><td>10.0%</td><td>0.9%p</td><td>11.0%</td><td>9.9%</td><td>1.1%p</td></tr><tr><td>France</td><td>6.5%</td><td>7.0%</td><td>-0.4%p</td><td>4.8%</td><td>5.8%</td><td>-1.0%p</td></tr><tr><td>Italy</td><td>10.7%</td><td>7.2%</td><td>3.5%p</td><td>9.1%</td><td>5.0%</td><td>4.0%p</td></tr><tr><td>Spain</td><td>12.1%</td><td>11.4%</td><td>0.8%p</td><td>12.0%</td><td>9.2%</td><td>2.9%p</td></tr><tr><td>United Kingdom</td><td>12.5%</td><td>11.2%</td><td>1.4%p</td><td>13.0%</td><td>10.3%</td><td>2.7%p</td></tr><tr><td>China</td><td>20.2%</td><td>21.6%</td><td>-1.4%p</td><td>18.5%</td><td>19.5%</td><td>-1.0%p</td></tr><tr><td>US</td><td>1.3%</td><td>1.6%</td><td>-0.4%p</td><td>1.1%</td><td>2.1%</td><td>-1.1%p</td></tr><tr><td>Total</td><td>11.2%</td><td>13.1%</td><td>-1.9%p</td><td>10.2%</td><td>11.3%</td><td>-1.1%p</td></tr></table>",
+        "bbox": [
+            506,
+            176,
+            926,
+            513
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Figure 1: Global EV battery installations by company vs KOR battery cell market share",
+        "bbox": [
+            68,
+            569,
+            470,
+            599
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/aaa27a1988c78ba4af24baf777bab96354467af0c7a0bab0590e5732d592fb3f.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: SNE Research."
+        ],
+        "bbox": [
+            71,
+            617,
+            486,
+            768
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a64311244639b3a7d64779862870bd22513f0e4411e48149c6743caf836a8fc1.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 2: Global EV battery installation market share trend by company %"
+        ],
+        "chart_footnote": [
+            "Source: SNE Research."
+        ],
+        "bbox": [
+            514,
+            618,
+            923,
+            762
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Sonny Lee AC\n(82-2) 758 5716\nsonny.lee@JPM.com",
+        "bbox": [
+            68,
+            54,
+            207,
+            89
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n10 July 2026",
+        "bbox": [
+            343,
+            54,
+            503,
+            78
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            75
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            916,
+            952,
+            928,
+            964
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9d2a2cc6f0c6366b256ef8b9be6bec5813eb8ff2c13624df996fd060148adb49.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 3: EU10 + US + China EV/PHEV sales and penetration trend\nUnits in 000s, %",
+            "Source: CNEV Post, Motor Intelligence, European Union"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            81,
+            180,
+            486,
+            349
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/786ae79a0073c91ecb04244aa5ea496182955975363ed04ff61e51b279cf6d21.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 4: EU10 + US + China EV sales and penetration trend\nUnits in 000s, %",
+            "Source: CNEV Post, Motor Intelligence, European Union"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            513,
+            179,
+            924,
+            349
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/aba014a28f2a87c3210e28124fe5c69772d6112df41a379525ad12be699e1734.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 5: EU-5+US+China EV/PHEV sales mix trend\nUnits mn, %",
+            "Source: CNEV Post, Motor Intelligence, European Union"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            76,
+            416,
+            485,
+            589
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/fbc06c6baee4f3d941b12081f27f8e97dbadf3dc3526e6eeba964c77bfa9d7b5.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 6: US EV/PHEV penetration trend %"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            514,
+            414,
+            915,
+            598
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/25b97ab03dece6eee0bbefafd61c957c6da7432074952a39a81cc07685eb75e2.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 7: EU-5 EV/PHEV penetration trend"
+        ],
+        "chart_footnote": [
+            "Source: European Union",
+            "Source: Motor Intelligence"
+        ],
+        "bbox": [
+            76,
+            643,
+            477,
+            824
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/c79be681ce1382b63bb5b58c416318cb7b8f525c3879f72739be24cfe99154db.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 8: China EV/PHEV penetration trend"
+        ],
+        "chart_footnote": [
+            "Source: CNEV Post"
+        ],
+        "bbox": [
+            513,
+            645,
+            915,
+            824
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Sonny Lee AC\n(82-2) 758 5716\nsonny.lee@JPM.com",
+        "bbox": [
+            68,
+            55,
+            207,
+            89
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n10 July 2026",
+        "bbox": [
+            343,
+            54,
+            503,
+            78
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            75
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            70,
+            952,
+            81,
+            963
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Units, %, %p",
+        "bbox": [
+            68,
+            164,
+            138,
+            178
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/08bd5430125ba142872b621527f40ff96fe34eefdf086e52187a3c25d420c937.jpg",
+        "table_caption": [
+            "Table 2: US/Germany: June 2026 EV monthly and YTD sales and market share trends (by OEM)"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Global EV Sales by OEM (units)</td><td>Jun-26</td><td>Jun-25</td><td>y/y%</td><td>6M26</td><td>6M25</td><td>y/y%</td></tr><tr><td colspan=\"7\">US</td></tr><tr><td>Tesla</td><td>36,642</td><td>45,628</td><td>-20%</td><td>234,670</td><td>274,638</td><td>-15%</td></tr><tr><td>GM</td><td>9,077</td><td>15,337</td><td>-41%</td><td>56,679</td><td>78,195</td><td>-28%</td></tr><tr><td>Toyota</td><td>4,845</td><td>1,986</td><td>144%</td><td>29,656</td><td>13,028</td><td>128%</td></tr><tr><td>HMC</td><td>3,394</td><td>5,117</td><td>-34%</td><td>27,466</td><td>30,859</td><td>-11%</td></tr><tr><td>Ford</td><td>2,322</td><td>4,856</td><td>-52%</td><td>16,606</td><td>38,988</td><td>-57%</td></tr><tr><td>Others</td><td>2,294</td><td>2,071</td><td>11%</td><td>9,398</td><td>16,449</td><td>-43%</td></tr><tr><td>Rivian</td><td>2,290</td><td>3,303</td><td>-31%</td><td>13,801</td><td>15,131</td><td>-9%</td></tr><tr><td>Kia</td><td>2,226</td><td>2,074</td><td>7%</td><td>12,731</td><td>13,674</td><td>-7%</td></tr><tr><td>BMW</td><td>1,874</td><td>4,858</td><td>-61%</td><td>11,263</td><td>27,794</td><td>-59%</td></tr><tr><td>Subaru</td><td>1,870</td><td>1,175</td><td>59%</td><td>10,058</td><td>6,501</td><td>55%</td></tr><tr><td>Honda</td><td>1,706</td><td>4,117</td><td>-59%</td><td>8,515</td><td>26,652</td><td>-68%</td></tr><tr><td>Volvo</td><td>1,313</td><td>1,303</td><td>1%</td><td>7,635</td><td>8,715</td><td>-12%</td></tr><tr><td>Lucid</td><td>1,055</td><td>840</td><td>26%</td><td>7,785</td><td>5,047</td><td>54%</td></tr><tr><td>VW</td><td>689</td><td>908</td><td>-24%</td><td>4,686</td><td>12,120</td><td>-61%</td></tr><tr><td>Mercedes</td><td>448</td><td>1,615</td><td>-72%</td><td>2,255</td><td>9,226</td><td>-76%</td></tr><tr><td>Audi</td><td>374</td><td>1,746</td><td>-79%</td><td>1,728</td><td>11,380</td><td>-85%</td></tr><tr><td>Nissan</td><td>326</td><td>2,352</td><td>-86%</td><td>1,774</td><td>15,544</td><td>-89%</td></tr><tr><td>Stellantis</td><td>268</td><td>1,481</td><td>-82%</td><td>1,264</td><td>11,265</td><td>-89%</td></tr><tr><td>Jaguar Land Rover (JLR)</td><td>1</td><td>25</td><td>-96%</td><td>34</td><td>980</td><td>-97%</td></tr><tr><td>Total</td><td>73,014</td><td>100,792</td><td>-28%</td><td>458,004</td><td>616,186</td><td>-26%</td></tr></table>",
+        "bbox": [
+            70,
+            176,
+            495,
+            397
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/d4050c1077865f7230a25d573bf1ddaa34aa69e3bc0555516541ec2d98e5d384.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Global EV M/S by OEM (%)</td><td>Jun-26</td><td>Jun-25</td><td>y/y%</td><td>6M26</td><td>6M25</td><td>y/y%</td></tr><tr><td colspan=\"7\">US</td></tr><tr><td>Tesla</td><td>50.2%</td><td>45.3%</td><td>4.9%p</td><td>51.2%</td><td>44.6%</td><td>6.7%p</td></tr><tr><td>GM</td><td>12.4%</td><td>15.2%</td><td>-2.8%p</td><td>12.4%</td><td>12.7%</td><td>-0.3%p</td></tr><tr><td>Toyota</td><td>6.6%</td><td>2.0%</td><td>4.7%p</td><td>6.5%</td><td>2.1%</td><td>4.4%p</td></tr><tr><td>HMC</td><td>4.6%</td><td>5.1%</td><td>-0.4%p</td><td>6.0%</td><td>5.0%</td><td>1.0%p</td></tr><tr><td>Ford</td><td>3.2%</td><td>4.8%</td><td>-1.6%p</td><td>3.6%</td><td>6.3%</td><td>-2.7%p</td></tr><tr><td>Others</td><td>3.1%</td><td>2.1%</td><td>1.1%p</td><td>2.1%</td><td>2.7%</td><td>-0.6%p</td></tr><tr><td>Rivian</td><td>3.1%</td><td>3.3%</td><td>-0.1%p</td><td>3.0%</td><td>2.5%</td><td>0.6%p</td></tr><tr><td>Kia</td><td>3.0%</td><td>2.1%</td><td>1.0%p</td><td>2.8%</td><td>2.2%</td><td>0.6%p</td></tr><tr><td>BMW</td><td>2.6%</td><td>4.8%</td><td>-2.3%p</td><td>2.5%</td><td>4.5%</td><td>-2.1%p</td></tr><tr><td>Subaru</td><td>2.6%</td><td>1.2%</td><td>1.4%p</td><td>2.2%</td><td>1.1%</td><td>1.1%p</td></tr><tr><td>Honda</td><td>2.3%</td><td>4.1%</td><td>-1.7%p</td><td>1.9%</td><td>4.3%</td><td>-2.5%p</td></tr><tr><td>Volvo</td><td>1.8%</td><td>1.3%</td><td>0.5%p</td><td>1.7%</td><td>1.4%</td><td>0.3%p</td></tr><tr><td>Lucid</td><td>1.4%</td><td>0.8%</td><td>0.6%p</td><td>1.7%</td><td>0.8%</td><td>0.9%p</td></tr><tr><td>VW</td><td>0.9%</td><td>0.9%</td><td>0.0%p</td><td>1.0%</td><td>2.0%</td><td>-0.9%p</td></tr><tr><td>Mercedes</td><td>0.6%</td><td>1.6%</td><td>-1.0%p</td><td>0.5%</td><td>1.5%</td><td>-1.0%p</td></tr><tr><td>Audi</td><td>0.5%</td><td>1.7%</td><td>-1.2%p</td><td>0.4%</td><td>1.8%</td><td>-1.5%p</td></tr><tr><td>Nissan</td><td>0.4%</td><td>2.3%</td><td>-1.9%p</td><td>0.4%</td><td>2.5%</td><td>-2.1%p</td></tr><tr><td>Stellantis</td><td>0.4%</td><td>1.5%</td><td>-1.1%p</td><td>0.3%</td><td>1.8%</td><td>-1.6%p</td></tr><tr><td>Jaguar Land Rover (JLR)</td><td>0.0%</td><td>0.0%</td><td>0.0%p</td><td>0.0%</td><td>0.2%</td><td>-0.2%p</td></tr><tr><td>Total</td><td>100%</td><td>100%</td><td></td><td>100%</td><td>100%</td><td></td></tr></table>",
+        "bbox": [
+            506,
+            176,
+            926,
+            397
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/2eb2d9c189489f36f7c64e5f6d7ac53bda4d2bb5d280b3f861612a2e7ff21b81.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Motor Intelligence, KBA (Germany Auto Association)"
+        ],
+        "table_body": "<table><tr><td colspan=\"7\">Germany</td></tr><tr><td>VW</td><td>8,711</td><td>8,046</td><td>8%</td><td>49,495</td><td>52,445</td><td>-6%</td></tr><tr><td>TESLA</td><td>7,768</td><td>1,860</td><td>318%</td><td>28,857</td><td>8,890</td><td>225%</td></tr><tr><td>BMW</td><td>7,705</td><td>4,479</td><td>72%</td><td>30,943</td><td>22,583</td><td>37%</td></tr><tr><td>SKODA</td><td>6,709</td><td>4,360</td><td>54%</td><td>36,654</td><td>22,370</td><td>64%</td></tr><tr><td>Mercedes</td><td>5,930</td><td>2,600</td><td>128%</td><td>26,133</td><td>14,438</td><td>81%</td></tr><tr><td>Audi</td><td>4,904</td><td>3,382</td><td>45%</td><td>24,906</td><td>19,632</td><td>27%</td></tr><tr><td>Others</td><td>4,825</td><td>1,157</td><td>317%</td><td>16,331</td><td>5,812</td><td>181%</td></tr><tr><td>SEAT</td><td>4,571</td><td>2,503</td><td>83%</td><td>17,432</td><td>16,299</td><td>7%</td></tr><tr><td>Renault</td><td>3,190</td><td>1,430</td><td>123%</td><td>10,933</td><td>5,598</td><td>95%</td></tr><tr><td>KIA</td><td>3,178</td><td>1,027</td><td>209%</td><td>12,949</td><td>6,906</td><td>88%</td></tr><tr><td>Hyundai</td><td>2,900</td><td>2,732</td><td>6%</td><td>14,835</td><td>12,963</td><td>14%</td></tr><tr><td>Ford</td><td>2,723</td><td>1,558</td><td>75%</td><td>10,527</td><td>6,922</td><td>52%</td></tr><tr><td>OPEL</td><td>2,355</td><td>1,963</td><td>20%</td><td>13,459</td><td>8,702</td><td>55%</td></tr><tr><td>BYD</td><td>2,329</td><td>1,293</td><td>80%</td><td>10,381</td><td>4,544</td><td>128%</td></tr><tr><td>MINI</td><td>2,327</td><td>1,288</td><td>81%</td><td>8,750</td><td>5,596</td><td>56%</td></tr><tr><td>Dacia</td><td>1,702</td><td>599</td><td>184%</td><td>3,396</td><td>2,732</td><td>24%</td></tr><tr><td>Others</td><td>12,230</td><td>6,886</td><td>78%</td><td>52,025</td><td>32,310</td><td>61%</td></tr><tr><td>Total</td><td>84,057</td><td>47,163</td><td>78%</td><td>368,006</td><td>248,742</td><td>48%</td></tr></table>",
+        "bbox": [
+            70,
+            404,
+            495,
+            592
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/8db772d27bf3276e1bf6b4e4b14a17f8ac5864794b39b189a138cf71ff69ca92.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"7\">Germany</td></tr><tr><td>VW</td><td>10.4%</td><td>17.1%</td><td>-6.7%p</td><td>13.4%</td><td>21.1%</td><td>-7.6%p</td></tr><tr><td>TESLA</td><td>9.2%</td><td>3.9%</td><td>5.3%p</td><td>7.8%</td><td>3.6%</td><td>4.3%p</td></tr><tr><td>BMW</td><td>9.2%</td><td>9.5%</td><td>-0.3%p</td><td>8.4%</td><td>9.1%</td><td>-0.7%p</td></tr><tr><td>SKODA</td><td>8.0%</td><td>9.2%</td><td>-1.3%p</td><td>10.0%</td><td>9.0%</td><td>1.0%p</td></tr><tr><td>Mercedes</td><td>7.1%</td><td>5.5%</td><td>1.5%p</td><td>7.1%</td><td>5.8%</td><td>1.3%p</td></tr><tr><td>Audi</td><td>5.8%</td><td>7.2%</td><td>-1.3%p</td><td>6.8%</td><td>7.9%</td><td>-1.1%p</td></tr><tr><td>Others</td><td>5.7%</td><td>2.5%</td><td>3.3%p</td><td>4.4%</td><td>2.3%</td><td>2.1%p</td></tr><tr><td>SEAT</td><td>5.4%</td><td>5.3%</td><td>0.1%p</td><td>4.7%</td><td>6.6%</td><td>-1.8%p</td></tr><tr><td>Renault</td><td>3.8%</td><td>3.0%</td><td>0.8%p</td><td>3.0%</td><td>2.3%</td><td>0.7%p</td></tr><tr><td>KIA</td><td>3.8%</td><td>2.2%</td><td>1.6%p</td><td>3.5%</td><td>2.8%</td><td>0.7%p</td></tr><tr><td>Hyundai</td><td>3.5%</td><td>5.8%</td><td>-2.3%p</td><td>4.0%</td><td>5.2%</td><td>-1.2%p</td></tr><tr><td>Ford</td><td>3.2%</td><td>3.3%</td><td>-0.1%p</td><td>2.9%</td><td>2.8%</td><td>0.1%p</td></tr><tr><td>OPEL</td><td>2.8%</td><td>4.2%</td><td>-1.4%p</td><td>3.7%</td><td>3.5%</td><td>0.2%p</td></tr><tr><td>BYD</td><td>2.8%</td><td>2.7%</td><td>0.0%p</td><td>2.8%</td><td>1.8%</td><td>1.0%p</td></tr><tr><td>MINI</td><td>2.8%</td><td>2.7%</td><td>0.0%p</td><td>2.4%</td><td>2.2%</td><td>0.1%p</td></tr><tr><td>Dacia</td><td>2.0%</td><td>1.3%</td><td>0.8%p</td><td>0.9%</td><td>1.1%</td><td>-0.2%p</td></tr><tr><td>Others</td><td>14.5%</td><td>14.6%</td><td>-0.1%p</td><td>14.1%</td><td>13.0%</td><td>1.1%p</td></tr><tr><td>Total</td><td>100%</td><td>100%</td><td></td><td>100%</td><td>100%</td><td></td></tr></table>",
+        "bbox": [
+            506,
+            404,
+            926,
+            592
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/f7566b3b5bc5d03d166a75c85b14bcca7c91b314f7ef68c5be220a478528147f.jpg",
+        "table_caption": [
+            "Table 3: Chinese OEM NEV sales trends",
+            "Units, %"
+        ],
+        "table_footnote": [
+            "Source: CNEV Post"
+        ],
+        "table_body": "<table><tr><td>China OEM NEV sales</td><td>Jan-25</td><td>Feb-25</td><td>Mar-25</td><td>Apr-25</td><td>May-25</td><td>Jun-25</td><td>Jul-25</td><td>Aug-25</td><td>Sep-25</td><td>Oct-25</td><td>Nov-25</td><td>Dec-25</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td><td>Jun-26</td></tr><tr><td>BYD</td><td>300,538</td><td>322,846</td><td>377,420</td><td>380,089</td><td>382,476</td><td>382,585</td><td>344,296</td><td>373,626</td><td>396,270</td><td>441,706</td><td>480,186</td><td>420,398</td><td>205,518</td><td>187,782</td><td>295,693</td><td>321,123</td><td>383,453</td><td>403,472</td></tr><tr><td>Geely</td><td>117,576</td><td>98,433</td><td>86,329</td><td>125,563</td><td>138,021</td><td>122,367</td><td>130,124</td><td>147,347</td><td>165,201</td><td>307,133</td><td>310,428</td><td>236,817</td><td>124,252</td><td>117,488</td><td>127,319</td><td>135,591</td><td>133,355</td><td>161,449</td></tr><tr><td>Tesla China</td><td>33,703</td><td>26,777</td><td>74,127</td><td>28,731</td><td>38,588</td><td>61,484</td><td>40,617</td><td>57,152</td><td>71,525</td><td>26,006</td><td>73,145</td><td>93,843</td><td>18,485</td><td>38,206</td><td>56,107</td><td>25,956</td><td>47,281</td><td>48,991</td></tr><tr><td>Li Auto</td><td>29,927</td><td>26,263</td><td>36,674</td><td>33,939</td><td>40,856</td><td>36,279</td><td>30,731</td><td>28,529</td><td>33,951</td><td>31,767</td><td>33,181</td><td>44,246</td><td>27,668</td><td>26,421</td><td>41,053</td><td>34,085</td><td>33,350</td><td>30,895</td></tr><tr><td>Xpeng</td><td>30,350</td><td>30,453</td><td>33,205</td><td>35,045</td><td>33,525</td><td>34,611</td><td>36,717</td><td>37,709</td><td>41,581</td><td>42,013</td><td>36,728</td><td>37,508</td><td>20,011</td><td>15,256</td><td>27,415</td><td>31,011</td><td>32,158</td><td>40,126</td></tr><tr><td>NIO</td><td>13,863</td><td>13,192</td><td>15,039</td><td>23,900</td><td>23,231</td><td>24,925</td><td>21,017</td><td>31,305</td><td>34,749</td><td>40,397</td><td>36,275</td><td>48,135</td><td>27,182</td><td>20,797</td><td>35,486</td><td>29,356</td><td>37,705</td><td>40,597</td></tr><tr><td>Leap Motor</td><td>25,170</td><td>25,287</td><td>37,095</td><td>41,039</td><td>45,067</td><td>48,006</td><td>50,129</td><td>57,066</td><td>66,657</td><td>70,289</td><td>70,327</td><td>60,423</td><td>32,059</td><td>28,067</td><td>50,029</td><td>71,387</td><td>81,569</td><td>93,376</td></tr><tr><td>Zeekr</td><td>11,942</td><td>14,039</td><td>15,422</td><td>13,727</td><td>18,908</td><td>16,702</td><td>16,977</td><td>17,626</td><td>18,257</td><td>21,423</td><td>28,843</td><td>30,267</td><td>23,852</td><td>23,867</td><td>23,867</td><td>31,787</td><td>34,377</td><td>35,169</td></tr></table>",
+        "bbox": [
+            70,
+            667,
+            926,
+            747
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Sonny Lee AC\n(82-2) 758 5716\nsonny.lee@JPM.com",
+        "bbox": [
+            68,
+            55,
+            207,
+            89
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n10 July 2026",
+        "bbox": [
+            343,
+            54,
+            504,
+            78
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            75
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            916,
+            952,
+            928,
+            964
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/4fbfb61a7d2c30814c14c22ce6806526ee0c86862bb491a8ee0209b43047f395.jpg",
+        "table_caption": [
+            "Table 4: US – BEV market share trend by OEM"
+        ],
+        "table_footnote": [
+            "Source: U.S. Motor Intelligence"
+        ],
+        "table_body": "<table><tr><td>US EV share, %</td><td>Jan-25</td><td>Feb-25</td><td>Mar-25</td><td>Apr-25</td><td>May-25</td><td>Jun-25</td><td>Jul-25</td><td>Aug-25</td><td>Sep-25</td><td>Oct-25</td><td>Nov-25</td><td>Dec-25</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td><td>Jun-26</td></tr><tr><td>Tesla</td><td>49.4%</td><td>44.9%</td><td>40.1%</td><td>44.8%</td><td>43.6%</td><td>45.3%</td><td>41.3%</td><td>37.4%</td><td>39.9%</td><td>56.1%</td><td>57.6%</td><td>55.7%</td><td>61.0%</td><td>54.6%</td><td>49.2%</td><td>47.9%</td><td>46.9%</td><td>50.2%</td></tr><tr><td>GM</td><td>8.4%</td><td>9.6%</td><td>12.9%</td><td>14.9%</td><td>14.7%</td><td>15.2%</td><td>14.8%</td><td>14.6%</td><td>17.0%</td><td>14.8%</td><td>8.3%</td><td>10.2%</td><td>8.3%</td><td>12.5%</td><td>13.9%</td><td>13.8%</td><td>12.7%</td><td>12.4%</td></tr><tr><td>Ford</td><td>5.8%</td><td>7.5%</td><td>8.6%</td><td>4.7%</td><td>6.4%</td><td>4.8%</td><td>6.3%</td><td>7.2%</td><td>7.9%</td><td>6.5%</td><td>6.5%</td><td>6.4%</td><td>2.7%</td><td>3.0%</td><td>3.6%</td><td>4.7%</td><td>4.4%</td><td>3.2%</td></tr><tr><td>VW</td><td>5.5%</td><td>2.6%</td><td>1.5%</td><td>0.8%</td><td>0.8%</td><td>0.9%</td><td>3.9%</td><td>3.7%</td><td>3.0%</td><td>0.3%</td><td>0.6%</td><td>0.8%</td><td>0.7%</td><td>0.7%</td><td>0.7%</td><td>1.2%</td><td>1.7%</td><td>0.9%</td></tr><tr><td>Rivian</td><td>2.2%</td><td>2.4%</td><td>2.4%</td><td>1.7%</td><td>2.7%</td><td>3.3%</td><td>2.5%</td><td>2.4%</td><td>2.5%</td><td>2.9%</td><td>3.1%</td><td>2.9%</td><td>2.3%</td><td>2.3%</td><td>3.0%</td><td>3.8%</td><td>3.3%</td><td>3.1%</td></tr><tr><td>Kia</td><td>3.1%</td><td>3.1%</td><td>2.4%</td><td>1.4%</td><td>1.4%</td><td>2.1%</td><td>2.8%</td><td>3.7%</td><td>4.2%</td><td>1.8%</td><td>2.5%</td><td>2.3%</td><td>2.1%</td><td>2.2%</td><td>2.8%</td><td>3.1%</td><td>3.3%</td><td>3.0%</td></tr><tr><td>HMC</td><td>3.8%</td><td>4.3%</td><td>5.8%</td><td>5.1%</td><td>5.8%</td><td>5.1%</td><td>6.5%</td><td>7.1%</td><td>7.5%</td><td>3.5%</td><td>4.3%</td><td>3.7%</td><td>4.7%</td><td>5.7%</td><td>6.8%</td><td>6.1%</td><td>7.5%</td><td>4.6%</td></tr><tr><td>BMW</td><td>3.4%</td><td>4.1%</td><td>5.7%</td><td>5.1%</td><td>3.8%</td><td>4.8%</td><td>2.5%</td><td>2.1%</td><td>2.9%</td><td>3.2%</td><td>3.7%</td><td>3.2%</td><td>1.7%</td><td>1.9%</td><td>2.5%</td><td>3.0%</td><td>2.8%</td><td>2.6%</td></tr><tr><td>Nissan</td><td>2.1%</td><td>2.1%</td><td>2.2%</td><td>3.2%</td><td>3.2%</td><td>2.3%</td><td>1.1%</td><td>0.8%</td><td>0.9%</td><td>0.2%</td><td>0.0%</td><td>0.4%</td><td>0.4%</td><td>0.3%</td><td>0.3%</td><td>0.4%</td><td>0.5%</td><td>0.4%</td></tr><tr><td>Mercedes</td><td>1.2%</td><td>1.3%</td><td>1.7%</td><td>1.6%</td><td>1.5%</td><td>1.6%</td><td>1.5%</td><td>1.4%</td><td>1.2%</td><td>1.2%</td><td>1.2%</td><td>1.1%</td><td>0.6%</td><td>0.5%</td><td>0.5%</td><td>0.4%</td><td>0.4%</td><td>0.6%</td></tr><tr><td>Audi</td><td>1.5%</td><td>1.9%</td><td>2.3%</td><td>1.9%</td><td>1.7%</td><td>1.7%</td><td>3.1%</td><td>4.1%</td><td>4.2%</td><td>0.3%</td><td>0.3%</td><td>1.3%</td><td>0.3%</td><td>0.3%</td><td>0.3%</td><td>0.4%</td><td>0.5%</td><td>0.5%</td></tr><tr><td>Volvo</td><td>1.0%</td><td>1.9%</td><td>1.4%</td><td>1.6%</td><td>1.3%</td><td>1.3%</td><td>1.0%</td><td>1.1%</td><td>0.7%</td><td>1.7%</td><td>1.1%</td><td>1.8%</td><td>2.0%</td><td>1.7%</td><td>1.5%</td><td>1.7%</td><td>1.5%</td><td>1.8%</td></tr><tr><td>Toyota</td><td>2.5%</td><td>2.2%</td><td>2.1%</td><td>1.7%</td><td>2.1%</td><td>2.0%</td><td>2.1%</td><td>1.1%</td><td>0.1%</td><td>0.1%</td><td>2.1%</td><td>3.4%</td><td>5.7%</td><td>6.9%</td><td>7.0%</td><td>6.2%</td><td>6.3%</td><td>6.6%</td></tr><tr><td>Others</td><td>3.3%</td><td>4.3%</td><td>2.9%</td><td>3.8%</td><td>3.8%</td><td>2.9%</td><td>2.8%</td><td>3.4%</td><td>2.1%</td><td>5.9%</td><td>6.7%</td><td>4.7%</td><td>5.2%</td><td>4.7%</td><td>3.7%</td><td>2.6%</td><td>2.2%</td><td>4.6%</td></tr></table>",
+        "bbox": [
+            70,
+            165,
+            926,
+            316
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/7276bc7ed135f6f29665f5b6e7b9db3306737745e0e98e4788391f7c406a738a.jpg",
+        "table_caption": [
+            "Table 5: Germany – EV market share trend by OEM"
+        ],
+        "table_footnote": [
+            "Source: KBA (Germany Auto Association)"
+        ],
+        "table_body": "<table><tr><td>Germany EV share, %</td><td>Jan-25</td><td>Feb-25</td><td>Mar-25</td><td>Apr-25</td><td>May-25</td><td>Jun-25</td><td>Jul-25</td><td>Aug-25</td><td>Sep-25</td><td>Oct-25</td><td>Nov-25</td><td>Dec-25</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td><td>Jun-26</td></tr><tr><td>Audi</td><td>5.6%</td><td>9.2%</td><td>8.0%</td><td>7.4%</td><td>9.8%</td><td>7.2%</td><td>6.4%</td><td>7.8%</td><td>5.0%</td><td>6.3%</td><td>7.9%</td><td>8.6%</td><td>8.6%</td><td>7.7%</td><td>7.4%</td><td>6.8%</td><td>5.3%</td><td>5.8%</td></tr><tr><td>BMW</td><td>8.1%</td><td>9.9%</td><td>9.3%</td><td>9.1%</td><td>8.4%</td><td>9.5%</td><td>11.2%</td><td>9.1%</td><td>6.2%</td><td>9.5%</td><td>10.4%</td><td>12.2%</td><td>7.6%</td><td>6.1%</td><td>8.2%</td><td>9.5%</td><td>8.7%</td><td>9.2%</td></tr><tr><td>BYD</td><td>0.6%</td><td>0.4%</td><td>1.4%</td><td>2.3%</td><td>2.8%</td><td>2.7%</td><td>1.2%</td><td>1.7%</td><td>2.9%</td><td>1.2%</td><td>2.1%</td><td>4.0%</td><td>3.7%</td><td>3.5%</td><td>1.6%</td><td>2.9%</td><td>3.1%</td><td>2.8%</td></tr><tr><td>Citroen (under STLA group)</td><td>0.5%</td><td>0.7%</td><td>1.1%</td><td>1.0%</td><td>0.8%</td><td>0.8%</td><td>1.2%</td><td>1.5%</td><td>1.0%</td><td>1.8%</td><td>1.6%</td><td>1.3%</td><td>2.0%</td><td>2.1%</td><td>1.7%</td><td>1.6%</td><td>1.9%</td><td>1.9%</td></tr><tr><td>Dacia</td><td>2.5%</td><td>0.9%</td><td>1.0%</td><td>0.7%</td><td>0.5%</td><td>1.3%</td><td>1.1%</td><td>0.8%</td><td>0.8%</td><td>0.5%</td><td>0.9%</td><td>1.1%</td><td>0.3%</td><td>0.2%</td><td>0.6%</td><td>1.2%</td><td>0.5%</td><td>2.0%</td></tr><tr><td>Fiat (under STLA group)</td><td>0.7%</td><td>0.4%</td><td>1.8%</td><td>1.7%</td><td>2.5%</td><td>2.1%</td><td>2.4%</td><td>2.8%</td><td>2.9%</td><td>2.1%</td><td>3.1%</td><td>3.4%</td><td>2.5%</td><td>2.0%</td><td>1.5%</td><td>1.9%</td><td>2.6%</td><td>1.9%</td></tr><tr><td>Ford</td><td>1.2%</td><td>2.3%</td><td>2.5%</td><td>3.5%</td><td>3.4%</td><td>3.3%</td><td>4.1%</td><td>5.2%</td><td>5.1%</td><td>4.0%</td><td>5.1%</td><td>4.7%</td><td>2.1%</td><td>3.1%</td><td>2.9%</td><td>3.4%</td><td>2.1%</td><td>3.2%</td></tr><tr><td>Great Wall Motors (GWM)</td><td>0.2%</td><td>0.2%</td><td>0.2%</td><td>0.2%</td><td>0.3%</td><td>1.7%</td><td>0.3%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Hyundai</td><td>4.2%</td><td>4.4%</td><td>5.4%</td><td>5.4%</td><td>5.7%</td><td>5.8%</td><td>5.6%</td><td>5.5%</td><td>4.7%</td><td>4.4%</td><td>2.9%</td><td>2.5%</td><td>4.2%</td><td>4.4%</td><td>3.7%</td><td>4.6%</td><td>4.3%</td><td>3.5%</td></tr><tr><td>KIA</td><td>2.8%</td><td>2.9%</td><td>2.8%</td><td>3.0%</td><td>3.0%</td><td>2.2%</td><td>2.9%</td><td>3.6%</td><td>3.3%</td><td>2.9%</td><td>2.7%</td><td>2.2%</td><td>3.1%</td><td>3.2%</td><td>3.0%</td><td>3.9%</td><td>3.8%</td><td>3.8%</td></tr><tr><td>Maxus</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.1%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Mazda</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.1%</td><td>0.1%</td><td>0.4%</td><td>0.5%</td><td>0.7%</td><td>0.7%</td><td>0.7%</td><td>0.6%</td><td>0.5%</td><td>0.7%</td><td>0.7%</td><td>0.7%</td><td>0.6%</td></tr><tr><td>Mercedes</td><td>6.4%</td><td>6.4%</td><td>6.0%</td><td>5.8%</td><td>4.9%</td><td>5.5%</td><td>6.2%</td><td>7.1%</td><td>6.3%</td><td>7.4%</td><td>7.7%</td><td>6.3%</td><td>6.6%</td><td>6.5%</td><td>6.4%</td><td>8.2%</td><td>7.6%</td><td>7.1%</td></tr><tr><td>MG Roewe</td><td>3.5%</td><td>1.9%</td><td>1.0%</td><td>2.0%</td><td>1.4%</td><td>1.5%</td><td>1.2%</td><td>1.6%</td><td>1.5%</td><td>2.1%</td><td>2.3%</td><td>0.3%</td><td>0.4%</td><td>1.3%</td><td>0.6%</td><td>1.1%</td><td>1.1%</td><td>1.3%</td></tr><tr><td>MINI</td><td>2.4%</td><td>2.0%</td><td>2.0%</td><td>2.2%</td><td>2.0%</td><td>2.7%</td><td>3.9%</td><td>3.5%</td><td>3.8%</td><td>2.9%</td><td>3.0%</td><td>3.1%</td><td>2.9%</td><td>2.7%</td><td>1.8%</td><td>2.1%</td><td>2.3%</td><td>2.8%</td></tr><tr><td>NIO</td><td>0.1%</td><td>0.1%</td><td>0.0%</td><td>0.0%</td><td>0.1%</td><td>0.0%</td><td>0.1%</td><td>0.1%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.2%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>OPEL</td><td>2.2%</td><td>4.0%</td><td>2.4%</td><td>4.2%</td><td>3.7%</td><td>4.2%</td><td>2.7%</td><td>3.2%</td><td>2.9%</td><td>3.6%</td><td>3.2%</td><td>3.9%</td><td>4.5%</td><td>4.9%</td><td>3.9%</td><td>3.5%</td><td>3.2%</td><td>2.8%</td></tr><tr><td>Peugeot</td><td>0.8%</td><td>0.6%</td><td>0.6%</td><td>0.6%</td><td>0.7%</td><td>0.9%</td><td>0.9%</td><td>1.2%</td><td>1.2%</td><td>1.8%</td><td>2.1%</td><td>1.6%</td><td>2.1%</td><td>2.2%</td><td>1.7%</td><td>2.0%</td><td>1.7%</td><td>1.5%</td></tr><tr><td>Polestar</td><td>0.7%</td><td>0.7%</td><td>0.8%</td><td>0.7%</td><td>0.6%</td><td>1.1%</td><td>1.4%</td><td>0.9%</td><td>0.8%</td><td>1.1%</td><td>0.7%</td><td>1.4%</td><td>1.2%</td><td>0.6%</td><td>0.6%</td><td>0.4%</td><td>0.5%</td><td>0.7%</td></tr><tr><td>Porsche</td><td>2.3%</td><td>2.1%</td><td>2.3%</td><td>1.7%</td><td>1.8%</td><td>1.4%</td><td>1.8%</td><td>1.4%</td><td>2.0%</td><td>1.8%</td><td>1.3%</td><td>1.2%</td><td>2.3%</td><td>2.5%</td><td>1.1%</td><td>0.8%</td><td>1.1%</td><td>1.3%</td></tr><tr><td>Renault</td><td>1.6%</td><td>2.4%</td><td>3.1%</td><td>1.9%</td><td>1.4%</td><td>3.0%</td><td>2.7%</td><td>2.2%</td><td>1.8%</td><td>2.7%</td><td>2.3%</td><td>1.9%</td><td>2.0%</td><td>2.2%</td><td>2.1%</td><td>3.3%</td><td>3.8%</td><td>3.8%</td></tr><tr><td>SEAT</td><td>7.9%</td><td>6.9%</td><td>6.7%</td><td>7.0%</td><td>5.9%</td><td>5.3%</td><td>5.1%</td><td>5.2%</td><td>6.4%</td><td>6.0%</td><td>5.4%</td><td>5.6%</td><td>4.4%</td><td>3.3%</td><td>5.3%</td><td>4.5%</td><td>4.8%</td><td>5.4%</td></tr><tr><td>SKODA</td><td>9.7%</td><td>6.7%</td><td>8.3%</td><td>9.3%</td><td>10.5%</td><td>9.2%</td><td>9.7%</td><td>8.1%</td><td>9.5%</td><td>11.3%</td><td>9.8%</td><td>8.9%</td><td>11.6%</td><td>12.4%</td><td>10.3%</td><td>9.5%</td><td>9.8%</td><td>8.0%</td></tr><tr><td>SMART</td><td>1.4%</td><td>0.8%</td><td>0.6%</td><td>0.6%</td><td>0.8%</td><td>0.7%</td><td>0.8%</td><td>1.0%</td><td>1.0%</td><td>0.9%</td><td>0.7%</td><td>1.2%</td><td>1.1%</td><td>0.8%</td><td>1.0%</td><td>1.5%</td><td>1.3%</td><td>1.1%</td></tr><tr><td>TESLA</td><td>3.7%</td><td>4.0%</td><td>5.2%</td><td>1.9%</td><td>2.8%</td><td>3.9%</td><td>2.3%</td><td>3.7%</td><td>7.5%</td><td>1.4%</td><td>3.2%</td><td>3.7%</td><td>3.0%</td><td>4.9%</td><td>13.1%</td><td>4.9%</td><td>8.5%</td><td>9.2%</td></tr><tr><td>Toyota</td><td>1.8%</td><td>1.8%</td><td>1.4%</td><td>0.9%</td><td>0.9%</td><td>1.7%</td><td>1.6%</td><td>1.0%</td><td>0.6%</td><td>0.3%</td><td>0.3%</td><td>0.5%</td><td>1.0%</td><td>0.9%</td><td>1.0%</td><td>1.0%</td><td>1.2%</td><td>1.2%</td></tr><tr><td>Volvo</td><td>2.6%</td><td>2.1%</td><td>2.1%</td><td>2.0%</td><td>2.0%</td><td>2.0%</td><td>1.6%</td><td>1.1%</td><td>1.3%</td><td>1.4%</td><td>1.3%</td><td>1.6%</td><td>1.7%</td><td>1.6%</td><td>1.4%</td><td>1.5%</td><td>1.5%</td><td>1.9%</td></tr><tr><td>VW</td><td>23.9%</td><td>23.0%</td><td>20.9%</td><td>21.4%</td><td>21.6%</td><td>17.1%</td><td>18.8%</td><td>16.3%</td><td>17.6%</td><td>18.5%</td><td>15.9%</td><td>14.1%</td><td>15.8%</td><td>15.3%</td><td>14.2%</td><td>14.3%</td><td>12.8%</td><td>10.4%</td></tr><tr><td>Others</td><td>2.5%</td><td>2.7%</td><td>2.4%</td><td>2.8%</td><td>1.2%</td><td>2.5%</td><td>2.5%</td><td>3.4%</td><td>3.0%</td><td>2.6%</td><td>2.9%</td><td>2.9%</td><td>3.9%</td><td>4.4%</td><td>3.4%</td><td>4.2%</td><td>4.5%</td><td>5.7%</td></tr></table>",
+        "bbox": [
+            70,
+            382,
+            926,
+            681
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Sonny Lee AC\n(82-2) 758 5716\nsonny.lee@JPM.com",
+        "bbox": [
+            68,
+            55,
+            207,
+            88
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n10 July 2026",
+        "bbox": [
+            343,
+            55,
+            503,
+            78
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            53,
+            926,
+            75
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            70,
+            952,
+            81,
+            963
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/8d2f901171e1ff669e3a1bffeb41056411e4948a25d031eee73a7856986335d7.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 9: US: EV penetration and incentive trends"
+        ],
+        "chart_footnote": [
+            "Source: Company data"
+        ],
+        "bbox": [
+            71,
+            165,
+            475,
+            335
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3d7a3b00eeea646f47204f74908f9859057fb3e2f437db98f34274e8ce575a5d.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 10: US: EV inventory trends"
+        ],
+        "chart_footnote": [
+            "Source: Company data."
+        ],
+        "bbox": [
+            509,
+            164,
+            924,
+            348
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/96ffb6e2c7dd8378b642d36dc104bbce09c933585e2f650fef35ca9836b4c9d6.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 11: HMC/Kia vs global OEM share performance"
+        ],
+        "chart_footnote": [
+            "Source: Bloomberg Finance L.P. Note: Past performance is not an indicator of future results"
+        ],
+        "bbox": [
+            71,
+            390,
+            485,
+            573
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d271678d034123d6d96488fe93a6627a04b30f5c58efc9ebe04d931f22b521ed.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 12: HMC/Kia vs JP OEM share performance"
+        ],
+        "chart_footnote": [
+            "Source: Bloomberg Finance L.P. Note: Past performance is not an indicator of future results"
+        ],
+        "bbox": [
+            508,
+            390,
+            924,
+            569
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4feb15afda68fdf4360170581fbd564c6d35b598e7a0d903bc5d5256f7c8ff57.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 13: HMC/Kia vs US OEM share performance"
+        ],
+        "chart_footnote": [
+            "Source: Bloomberg Finance L.P. Note: Past performance is not an indicator of future results"
+        ],
+        "bbox": [
+            71,
+            617,
+            486,
+            792
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9f896da03f719233b3581b0eaa0cfc6bd1cd908d2a578cf531d4244a9d557e12.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 14: HMC/Kia vs EU OEM share performance"
+        ],
+        "chart_footnote": [
+            "Source: Bloomberg Finance L.P. Note: Past performance is not an indicator of future results"
+        ],
+        "bbox": [
+            509,
+            616,
+            924,
+            792
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Sonny Lee AC\n(82-2) 758 5716\nsonny.lee@JPM.com",
+        "bbox": [
+            68,
+            54,
+            207,
+            89
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n10 July 2026",
+        "bbox": [
+            343,
+            54,
+            503,
+            78
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            75
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            916,
+            952,
+            926,
+            964
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/36582cd23e3d8af76cd4fc82b2a277af3f61e02c90a01618f4bebba27a3d6065.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 15: Share price performance – regional comparison %",
+            "Source: Bloomberg Finance L.P. Note: Past performance is not an indicator of future results, Priced as of 10 July, 2026"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            76,
+            180,
+            488,
+            323
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5ef3a0febb3966841294372284431323d953855352ebe4f02c6ae1e6b626fb30.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 16: Korean EV battery and material market capitalization \\$bn",
+            "Source: Bloomberg Finance L.P. Note: Past performance is not an indicator of future results"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            513,
+            176,
+            923,
+            314
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/cc8e7bc9c4bf423c545dccce8fc8a2a57c817f8eefd8cf41df691454bf52d9c4.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 17: Battery ecosystem – FY26E P/E multiple vs sales growth\nP/E (x), %"
+        ],
+        "chart_footnote": [
+            "Source: Bloomberg Finance L.P."
+        ],
+        "bbox": [
+            73,
+            401,
+            485,
+            522
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/fb7c7367e4c7b90f8747cb8434b531011ee5a7c921a7e719b2b76c068779621e.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 19: Battery ecosystem – FY26E P/E multiple vs OPM",
+            "Figure 18: Battery ecosystem – FY27E P/E multiple vs sales growth\nP/E (x), %",
+            "Source: Bloomberg Finance L.P."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            511,
+            400,
+            913,
+            523
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/1d2ae2e0e727c0ebad150b203b2d788c178e27df004b545ffcdb62bac8eae68c.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Bloomberg Finance L.P."
+        ],
+        "bbox": [
+            71,
+            580,
+            485,
+            702
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4ea37fffc155b1299fa04755a715c835d29700f4c63efb0c89f83ce62638c56b.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 20: Battery ecosystem – FY27E P/E multiple vs OPM\nP/E (x), %",
+            "Figure 21: Battery ecosystem – FY26E EV/EBITDA multiple vs EBITDAM"
+        ],
+        "chart_footnote": [
+            "Source: Bloomberg Finance L.P."
+        ],
+        "bbox": [
+            509,
+            580,
+            913,
+            703
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b451c8873c3d979e09722c73ad32c587b457ba8fe30af6e91f666abb45c8066c.jpg",
+        "content": "",
+        "chart_caption": [
+            "EV/EBITDA (x), %",
+            "Figure 22: Battery ecosystem – FY27E EV/EBITDA multiple vs EBITDAM"
+        ],
+        "chart_footnote": [
+            "Source: Bloomberg Finance L.P.",
+            "EV/EBITDA (x), %"
+        ],
+        "bbox": [
+            71,
+            775,
+            473,
+            896
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/99561ccc95f2122ff5b98196f1f21b62fb4fdefdd5629cf5a6df82c784b76bde.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Bloomberg Finance L.P."
+        ],
+        "bbox": [
+            509,
+            776,
+            913,
+            895
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Sonny Lee AC\n(82-2) 758 5716\nsonny.lee@JPM.com",
+        "bbox": [
+            68,
+            55,
+            207,
+            89
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n10 July 2026",
+        "bbox": [
+            343,
+            54,
+            504,
+            78
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            75
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            70,
+            952,
+            81,
+            963
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/b75e6075f07baea3d4e2d9086153952cf2842df7b68a41ff8ce52e41df3c4d6a.jpg",
+        "table_caption": [
+            "Table 6: Asia EV ecosystem valuation comparison (consensus estimates)",
+            "Share price and price target in local currency"
+        ],
+        "table_footnote": [
+            "Source: Bloomberg Finance L.P. estimates; JPM price targets and ratings for stocks covered by JPM. Note: Share prices as of 9 July 2026 close. NC = Not Covered."
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">Company</td><td rowspan=\"2\">Ticker</td><td rowspan=\"2\">Currency</td><td rowspan=\"2\">JPM Rating</td><td rowspan=\"2\">JPM PT</td><td rowspan=\"2\">Share Price 7/9/2026</td><td rowspan=\"2\">Mkt. Cap US$bn</td><td colspan=\"2\">P/E (x)</td><td colspan=\"2\">P/B (x)</td><td colspan=\"2\">EV/EBITDA (x)</td><td colspan=\"2\">Sales Growth (%)</td><td colspan=\"2\">OP Margin (%)</td><td colspan=\"2\">ROE (%)</td><td colspan=\"2\">EBITDA Margin (%)</td></tr><tr><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td></tr><tr><td colspan=\"21\">Battery Cell</td></tr><tr><td>LG Energy Solution</td><td>373220 KS</td><td>KRW</td><td>OW</td><td>430,000</td><td>316,500</td><td>50.8</td><td>n.m.</td><td>43.9x</td><td>3.6x</td><td>3.3x</td><td>18.8x</td><td>12.6x</td><td>26%</td><td>24%</td><td>4%</td><td>10%</td><td>-4%</td><td>0%</td><td>19%</td><td>23%</td></tr><tr><td>Samsung SDI</td><td>006400 KS</td><td>KRW</td><td>OW</td><td>770,000</td><td>403,000</td><td>23.3</td><td>98.2x</td><td>24.6x</td><td>1.4x</td><td>1.3x</td><td>19.9x</td><td>12.2x</td><td>22%</td><td>24%</td><td>0%</td><td>7%</td><td>-3%</td><td>2%</td><td>15%</td><td>20%</td></tr><tr><td>Murata</td><td>6981 JP</td><td>JPY</td><td>OW</td><td>15,200</td><td>9,475</td><td>119.8</td><td>79.0x</td><td>51.8x</td><td>6.0x</td><td>5.4x</td><td>30.4x</td><td>22.3x</td><td>12%</td><td>16%</td><td>21%</td><td>26%</td><td>8%</td><td>12%</td><td>30%</td><td>36%</td></tr><tr><td>Panasonic</td><td>6752 JP</td><td>JPY</td><td>N</td><td>4,600</td><td>4,455</td><td>68.1</td><td>42.1x</td><td>22.9x</td><td>1.9x</td><td>1.7x</td><td>11.7x</td><td>10.1x</td><td>0%</td><td>6%</td><td>7%</td><td>9%</td><td>5%</td><td>9%</td><td>13%</td><td>14%</td></tr><tr><td>TDK</td><td>6762 JP</td><td>JPY</td><td>OW</td><td>5,500</td><td>3,382</td><td>40.8</td><td>32.5x</td><td>27.6x</td><td>2.7x</td><td>2.5x</td><td>11.1x</td><td>9.7x</td><td>9%</td><td>7%</td><td>12%</td><td>13%</td><td>10%</td><td>10%</td><td>21%</td><td>22%</td></tr><tr><td>CATL</td><td>300750 CH</td><td>CNY</td><td>OW</td><td>520</td><td>376</td><td>242.6</td><td>17.9x</td><td>14.5x</td><td>4.2x</td><td>3.5x</td><td>10.9x</td><td>9.0x</td><td>45%</td><td>21%</td><td>19%</td><td>19%</td><td>23%</td><td>25%</td><td>23%</td><td>23%</td></tr><tr><td>Gotion</td><td>002074 CH</td><td>CNY</td><td>UW</td><td>28</td><td>26</td><td>6.8</td><td>23.0x</td><td>16.2x</td><td>1.5x</td><td>1.4x</td><td>13.8x</td><td>11.4x</td><td>38%</td><td>23%</td><td>4%</td><td>5%</td><td>10%</td><td>7%</td><td>12%</td><td>12%</td></tr><tr><td>EVE Energy</td><td>300014 CH</td><td>CNY</td><td>N</td><td>70</td><td>57</td><td>17.8</td><td>17.3x</td><td>13.0x</td><td>2.5x</td><td>2.1x</td><td>13.2x</td><td>10.5x</td><td>51%</td><td>28%</td><td>8%</td><td>8%</td><td>11%</td><td>15%</td><td>11%</td><td>11%</td></tr><tr><td>CALB</td><td>3931 HK</td><td>HKD</td><td>OW</td><td>40</td><td>22</td><td>4.9</td><td>15.2x</td><td>10.3x</td><td>1.0x</td><td>0.9x</td><td>11.3x</td><td>8.6x</td><td>64%</td><td>33%</td><td>7%</td><td>8%</td><td>4%</td><td>7%</td><td>15%</td><td>14%</td></tr><tr><td>Average</td><td></td><td></td><td></td><td></td><td></td><td></td><td>40.6x</td><td>25.0x</td><td>2.8x</td><td>2.5x</td><td>15.7x</td><td>11.8x</td><td>30%</td><td>20%</td><td>9%</td><td>12%</td><td>7%</td><td>10%</td><td>18%</td><td>19%</td></tr><tr><td colspan=\"21\">Cathode</td></tr><tr><td>L&amp;F</td><td>066970 KS</td><td>KRW</td><td>OW</td><td>290,000</td><td>92,200</td><td>2.7</td><td>n.m.</td><td>45.0x</td><td>6.0x</td><td>5.3x</td><td>19.7x</td><td>18.0x</td><td>41%</td><td>24%</td><td>6%</td><td>5%</td><td>-54%</td><td>-4%</td><td>9%</td><td>8%</td></tr><tr><td>EBM</td><td>247540 KS</td><td>KRW</td><td>N</td><td>180,000</td><td>111,300</td><td>7.9</td><td>258.5x</td><td>109.7x</td><td>6.3x</td><td>6.0x</td><td>59.9x</td><td>38.8x</td><td>16%</td><td>32%</td><td>4%</td><td>5%</td><td>2%</td><td>2%</td><td>8%</td><td>9%</td></tr><tr><td>PFM</td><td>003670 KS</td><td>KRW</td><td>UW</td><td>100,000</td><td>145,800</td><td>9.0</td><td>304.5x</td><td>125.5x</td><td>3.2x</td><td>3.1x</td><td>49.4x</td><td>38.5x</td><td>5%</td><td>30%</td><td>3%</td><td>4%</td><td>1%</td><td>1%</td><td>11%</td><td>10%</td></tr><tr><td>Ronbay</td><td>688005 CH</td><td>CNY</td><td>UW</td><td>24</td><td>27</td><td>2.8</td><td>44.7x</td><td>26.7x</td><td>2.3x</td><td>2.2x</td><td>19.4x</td><td>15.0x</td><td>29%</td><td>44%</td><td>3%</td><td>4%</td><td>-1%</td><td>6%</td><td>8%</td><td>7%</td></tr><tr><td>Dynanonic</td><td>300769 CH</td><td>CNY</td><td>UW</td><td>52</td><td>54</td><td>2.1</td><td>20.6x</td><td>14.7x</td><td>2.8x</td><td>2.4x</td><td>11.3x</td><td>9.3x</td><td>104%</td><td>21%</td><td>5%</td><td>6%</td><td>-11%</td><td>13%</td><td>10%</td><td>10%</td></tr><tr><td>Hunan Yuneng</td><td>301358 CH</td><td>CNY</td><td>N</td><td>95</td><td>66</td><td>7.9</td><td>13.8x</td><td>10.9x</td><td>3.1x</td><td>2.4x</td><td>9.1x</td><td>8.0x</td><td>88%</td><td>21%</td><td>8%</td><td>8%</td><td>11%</td><td>23%</td><td>11%</td><td>11%</td></tr><tr><td>Easpring</td><td>300073 CH</td><td>CNY</td><td>NC</td><td>n.a.</td><td>44</td><td>3.5</td><td>21.9x</td><td>17.0x</td><td>1.5x</td><td>1.4x</td><td>13.1x</td><td>10.0x</td><td>58%</td><td>25%</td><td>7%</td><td>8%</td><td>6%</td><td>7%</td><td>10%</td><td>10%</td></tr><tr><td>Average</td><td></td><td></td><td></td><td></td><td></td><td></td><td>110.7x</td><td>49.9x</td><td>3.6x</td><td>3.3x</td><td>26.0x</td><td>19.7x</td><td>49%</td><td>28%</td><td>5%</td><td>6%</td><td>-7%</td><td>7%</td><td>9%</td><td>9%</td></tr><tr><td colspan=\"21\">Lithium</td></tr><tr><td>Albemarle</td><td>ALB US</td><td>USD</td><td>N</td><td>160</td><td>128</td><td>15.1</td><td>10.3x</td><td>10.4x</td><td>1.5x</td><td>1.4x</td><td>6.2x</td><td>6.2x</td><td>25%</td><td>4%</td><td>23%</td><td>22%</td><td>-1%</td><td>15%</td><td>47%</td><td>46%</td></tr><tr><td>SQM</td><td>SQM US</td><td>USD</td><td>N</td><td>100</td><td>74</td><td>20.1</td><td>10.3x</td><td>9.8x</td><td>2.9x</td><td>2.5x</td><td>6.2x</td><td>6.2x</td><td>81%</td><td>1%</td><td>40%</td><td>40%</td><td>11%</td><td>29%</td><td>47%</td><td>46%</td></tr><tr><td>Ganfeng Lithium</td><td>002460 CH</td><td>CNY</td><td>OW</td><td>80</td><td>56</td><td>15.4</td><td>13.8x</td><td>13.2x</td><td>2.2x</td><td>1.9x</td><td>11.2x</td><td>10.2x</td><td>115%</td><td>9%</td><td>22%</td><td>23%</td><td>2%</td><td>16%</td><td>27%</td><td>27%</td></tr><tr><td>Tianqi Lithium</td><td>002466 CH</td><td>CNY</td><td>N</td><td>62</td><td>50</td><td>11.5</td><td>11.9x</td><td>11.0x</td><td>1.7x</td><td>1.5x</td><td>5.0x</td><td>4.8x</td><td>141%</td><td>6%</td><td>63%</td><td>62%</td><td>2%</td><td>14%</td><td>67%</td><td>66%</td></tr><tr><td>Pilbara Minerals</td><td>PLS AU</td><td>AUD</td><td>OW</td><td>7</td><td>5</td><td>10.4</td><td>26.5x</td><td>12.4x</td><td>2.8x</td><td>2.4x</td><td>7.3x</td><td>8.7x</td><td>62%</td><td>-10%</td><td>57%</td><td>48%</td><td>14%</td><td>25%</td><td>66%</td><td>61%</td></tr><tr><td>Mineral Resources</td><td>MIN AU</td><td>AUD</td><td>NR</td><td>n.a.</td><td>58</td><td>8.2</td><td>15.5x</td><td>14.1x</td><td>2.3x</td><td>2.0x</td><td>6.7x</td><td>6.6x</td><td>5%</td><td>1%</td><td>23%</td><td>22%</td><td>20%</td><td>16%</td><td>38%</td><td>38%</td></tr><tr><td>Average</td><td></td><td></td><td></td><td></td><td></td><td></td><td>14.7x</td><td>11.8x</td><td>2.2x</td><td>1.9x</td><td>7.1x</td><td>7.1x</td><td>71%</td><td>2%</td><td>38%</td><td>36%</td><td>8%</td><td>19%</td><td>49%</td><td>47%</td></tr></table>",
+        "bbox": [
+            59,
+            235,
+            938,
+            643
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Sonny Lee AC\n(82-2) 758 5716\nsonny.lee@JPM.com",
+        "bbox": [
+            59,
+            78,
+            167,
+            120
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n10 July 2026",
+        "bbox": [
+            375,
+            78,
+            500,
+            107
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            835,
+            73,
+            938,
+            106
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            928,
+            924,
+            938,
+            939
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Companies Discussed in This Report (all prices in this report as of market close on 10 July 2026, unless otherwise indicated) BYD Company Limited - A(002594.SZ/Rmb90.00/OW), BYD Company Limited - H(1211.HK/HK\\$84.90/OW), CATL - A(300750.SZ/Rmb348.76/OW), CATL - H(3750.HK/HK\\$587.00/OW), Ecopro BM(247540.KQ/W122,700/N), Hyundai Motor Company(005380.KS/W463,000/OW), Kia Corp(000270.KS/W149,100/OW), L&F(066970.KQ/W102,400/OW), LG Chem Ltd(051910.KS/W268,500/OW), LG Energy Solution(373220.KS/W329,000/OW), POSCO Future M(003670.KS/W153,300/UW), Samsung SDI(006400.KS/W440,000/OW)",
+        "bbox": [
+            66,
+            147,
+            913,
+            229
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Analyst Certification: The Research Analyst(s) denoted by an “AC” on the cover of this report certifies (or, where multiple Research Analysts are primarily responsible for this report, the Research Analyst denoted by an “AC” on the cover or within the document individually certifies, with respect to each security or issuer that the Research Analyst covers in this research) that: (1) all of the views expressed in this report accurately reflect the Research Analyst’s personal views about any and all of the subject securities or issuers; and (2) no part of any of the Research Analyst's compensation was, is, or will be directly or indirectly related to the specific recommendations or views expressed by the Research Analyst(s) in this report. For all Korea-based Research Analysts listed on the front cover, if applicable, they also certify, as per KOFIA requirements, that the Research Analyst’s analysis was made in good faith and that the views reflect the Research Analyst’s own opinion, without undue influence or intervention.",
+        "bbox": [
+            66,
+            253,
+            924,
+            358
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "All authors named within this report are Research Analysts who produce independent research unless otherwise specified. In Europe, Sector Specialists (Sales and Trading) may be shown on this report as contacts but are not authors of the report or part of the Research Department.",
+        "bbox": [
+            66,
+            363,
+            901,
+            391
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Important Disclosures",
+        "text_level": 2,
+        "bbox": [
+            68,
+            396,
+            230,
+            412
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "• Market Maker/ Liquidity Provider: JPM is a market maker and/or liquidity provider in the financial instruments of/related to Ecopro BM, Hyundai Motor Company, Kia Corp, L&F, LG Chem Ltd, LG Energy Solution, POSCO Future M, Posco Holdings (PKX), Samsung SDI or related entities.",
+        "bbox": [
+            68,
+            434,
+            924,
+            474
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "- Manager or Co-manager: JPM acted as manager or co-manager in a public offering of securities or financial instruments (as such term is defined in Directive 2014/65/EU) of/for LG Energy Solution or related entities within the past 12 months.",
+        "bbox": [
+            68,
+            477,
+            901,
+            503
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "- Beneficial Ownership (1% or more): JPM beneficially owns 1% or more of a class of common equity securities of Hyundai Motor Company, L&F, LG Chem Ltd, LG Energy Solution or related entities.",
+        "bbox": [
+            68,
+            506,
+            908,
+            534
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "- Client: JPM currently has, or had within the past 12 months, the following entity(ies) as clients: Ecopro BM, Hyundai Motor Company, Kia Corp, L&F, LG Chem Ltd, LG Energy Solution, POSCO Future M, Posco Holdings (PKX), Samsung SDI or related entities.",
+        "bbox": [
+            68,
+            536,
+            926,
+            563
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "- Client/Investment Banking: JPM currently has, or had within the past 12 months, the following entity(ies) as investment banking clients: Hyundai Motor Company, LG Energy Solution or related entities.",
+        "bbox": [
+            68,
+            566,
+            898,
+            593
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "- Client/Non-Investment Banking, Securities-Related: JPM currently has, or had within the past 12 months, the following entity(ies) as clients, and the services provided were non-investment-banking, securities-related: Ecopro BM, Hyundai Motor Company, Kia Corp, LG Chem Ltd, LG Energy Solution, POSCO Future M, Posco Holdings (PKX), Samsung SDI or related entities.",
+        "bbox": [
+            68,
+            595,
+            913,
+            635
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "- Client/Non-Securities-Related: JPM currently has, or had within the past 12 months, the following entity(ies) as clients, and the services provided were non-securities-related: Hyundai Motor Company, Kia Corp, LG Chem Ltd, LG Energy Solution, POSCO Future M, Posco Holdings (PKX) or related entities.",
+        "bbox": [
+            68,
+            638,
+            895,
+            676
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "- Investment Banking Compensation Received: JPM has received in the past 12 months compensation for investment banking services from Hyundai Motor Company, LG Energy Solution or related entities.",
+        "bbox": [
+            68,
+            679,
+            926,
+            708
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "- Potential Investment Banking Compensation: JPM expects to receive, or intends to seek, compensation for investment banking services in the next three months from Ecopro BM, Hyundai Motor Company, Kia Corp, L&F, LG Chem Ltd, LG Energy Solution, POSCO Future M, Posco Holdings (PKX), Samsung SDI or related entities.",
+        "bbox": [
+            68,
+            710,
+            898,
+            750
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "• Non-Investment Banking Compensation Received: JPM has received compensation in the past 12 months for products or services other than investment banking from Ecopro BM, Hyundai Motor Company, Kia Corp, LG Chem Ltd, LG Energy Solution, POSCO Future M, Posco Holdings (PKX), Samsung SDI or related entities.",
+        "bbox": [
+            68,
+            752,
+            911,
+            791
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "- Debt Position: JPM may hold a position in the debt securities of Ecopro BM, Hyundai Motor Company, Kia Corp, L&F, LG Chem Ltd, LG Energy Solution, POSCO Future M, Posco Holdings (PKX), Samsung SDI or related entities, if any.",
+        "bbox": [
+            68,
+            794,
+            901,
+            821
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "Company-Specific Disclosures: JPM does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. Important disclosures, including price charts and credit opinion history tables (if applicable), are available for compendium reports and all JPM-covered companies, and certain non-covered companies, by visiting https://www.jpmm.com/research/disclosures, calling 1-800-477-0406, or e-mailing research.disclosure.inquiries@JPM.com with your request.",
+        "bbox": [
+            68,
+            832,
+            926,
+            907
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "ref_text",
+        "text": "Explanation of Equity Research Ratings, Designations and Analyst(s) Coverage Universe:",
+        "bbox": [
+            68,
+            915,
+            635,
+            930
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Sonny Lee AC\n(82-2) 758 5716\nsonny.lee@JPM.com",
+        "bbox": [
+            68,
+            55,
+            207,
+            89
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n10 July 2026",
+        "bbox": [
+            343,
+            55,
+            503,
+            78
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            71,
+            952,
+            88,
+            964
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "JPM uses the following rating system: Overweight (over the duration of the price target indicated in this report, we expect this stock will outperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); Neutral (over the duration of the price target indicated in this report, we expect this stock will perform in line with the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); and Underweight (over the duration of the price target indicated in this report, we expect this stock will underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe. NR is Not Rated. In this case, JPM has removed the rating and, if applicable, the price target, for this stock because of either a lack of a sufficient fundamental basis or for legal, regulatory or policy reasons. The previous rating and, if applicable, the price target, no longer should be relied upon. An NR designation is not a recommendation or a rating. Some stocks under coverage have a rating but no price target; in these cases, we expect the stock will outperform/perform in line/underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe of the relevant duration of the region. In our Asia (ex-Australia and ex-India) and U.K. small- and mid-cap Equity Research, each stock's expected total return is compared to the expected total return of a benchmark country market index, not to those Research Analysts' coverage universe. If it does not appear in the Important Disclosures section of this report, the certifying Research Analyst's coverage universe can be found on JPM's Research website, https://www.JPMmarkets.com.",
+        "bbox": [
+            66,
+            147,
+            926,
+            314
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Coverage Universe: Lee, Sonny : Doosan Enerbility (034020.KS), Ecopro BM (247540.KQ), HL Mando (204320.KS), Hyundai Autoever (307950.KS), Hyundai E&C (000720.KS), Hyundai Mobis (012330.KS), Hyundai Motor Company (005380.KS), KEPCO (015760.KS), KEPCO E&C (052690.KS), Kia Corp (000270.KS), L&F (066970.KQ), POSCO (005490.KS), POSCO Future M (003670.KS), Samsung SDI (006400.KS)",
+        "bbox": [
+            66,
+            319,
+            916,
+            372
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/6fdbf99664a1525af4bbf53a9bf3b1fd9693cbcf7460d2d10627d0031b3873c9.jpg",
+        "table_caption": [
+            "JPM Equity Research Ratings Distribution, as of July 04, 2026"
+        ],
+        "table_footnote": [
+            "\\*Please note that the percentages may not add to 100% because of rounding."
+        ],
+        "table_body": "<table><tr><td></td><td>Overweight (buy)</td><td>Neutral (hold)</td><td>Underweight (sell)</td></tr><tr><td>JPM Global Equity Research Coverage*</td><td>53%</td><td>36%</td><td>12%</td></tr><tr><td>IB clients**</td><td>83%</td><td>80%</td><td>73%</td></tr><tr><td>JPMS Equity Research Coverage*</td><td>51%</td><td>37%</td><td>12%</td></tr><tr><td>IB clients**</td><td>95%</td><td>92%</td><td>87%</td></tr></table>",
+        "bbox": [
+            68,
+            398,
+            924,
+            474
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Percentage of subject companies within each of the \"buy,\" \"hold\" and \"sell\" categories for which JPM has provided investment banking services within the previous 12 months.",
+        "bbox": [
+            68,
+            494,
+            864,
+            518
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "For purposes of FINRA ratings distribution rules only, our Overweight rating falls into a buy rating category; our Neutral rating falls into a hold rating category; and our Underweight rating falls into a sell rating category. Please note that stocks with an NR designation are not included in the table above. This information is current as of the end of the most recent calendar quarter.",
+        "bbox": [
+            66,
+            518,
+            918,
+            556
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Equity Valuation and Risks: For valuation methodology and risks associated with covered companies or price targets for covered companies, please see the most recent company-specific research report at http://www.JPMmarkets.com, contact the primary analyst or your JPM representative, or email research.disclosure.inquiries@JPM.com. For material information about the proprietary models used, please see the Summary of Financials in company-specific research reports and the Company Tearsheets, which are available to download on the company pages of our client website, http://www.JPMmarkets.com. This report also sets out within it the material underlying assumptions used.",
+        "bbox": [
+            66,
+            571,
+            913,
+            648
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "History of Investment Recommendations:",
+        "text_level": 2,
+        "bbox": [
+            68,
+            654,
+            336,
+            667
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "A history of JPM investment recommendations disseminated during the preceding 12 months can be accessed on the Research & Commentary page of http://www.JPMmarkets.com where you can also search by analyst name, sector or financial instrument.",
+        "bbox": [
+            68,
+            667,
+            875,
+            695
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Analysts' Compensation: The research analysts responsible for the preparation of this report receive compensation based upon various factors, including the quality and accuracy of research, client feedback, competitive factors, and overall firm revenues.",
+        "bbox": [
+            68,
+            699,
+            918,
+            728
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Registration of non-US Analysts: Unless otherwise noted, the non-US analysts listed on the front of this report are employees of non-US affiliates of JPM Securities LLC, may not be registered as research analysts under FINRA rules, may not be associated persons of JPM Securities LLC, and may not be subject to FINRA Rule 2241 or 2242 restrictions on communications with covered companies, public appearances, and trading securities held by a research analyst account.",
+        "bbox": [
+            66,
+            732,
+            913,
+            786
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Other Disclosures",
+        "text_level": 2,
+        "bbox": [
+            68,
+            791,
+            200,
+            806
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "JPM is a marketing name for investment banking businesses of JPM Chase & Co. and its subsidiaries and affiliates worldwide.",
+        "bbox": [
+            68,
+            837,
+            897,
+            852
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "UK MIFID FICC research unbundling exemption: UK clients should refer to UK MIFID Research Unbundling exemption for details of JPM's implementation of the FICC research exemption and guidance on relevant FICC research categorisation.",
+        "bbox": [
+            68,
+            856,
+            923,
+            885
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "All research material made available to clients are simultaneously available on our client website, JPM Markets, unless specifically permitted by relevant laws. Not all research content is redistributed, e-mailed or made available to third-party aggregators. For all research material available on a particular stock, please contact your sales representative.",
+        "bbox": [
+            66,
+            888,
+            892,
+            930
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Sonny Lee AC\n(82-2) 758 5716\nsonny.lee@JPM.com",
+        "bbox": [
+            68,
+            55,
+            207,
+            89
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n10 July 2026",
+        "bbox": [
+            343,
+            54,
+            503,
+            78
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            911,
+            952,
+            926,
+            964
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Any long form nomenclature for references to China; Hong Kong; Taiwan; and Macau within this research material are Mainland China; Hong Kong SAR (China); Taiwan (China); and Macau SAR (China).",
+        "bbox": [
+            68,
+            147,
+            918,
+            175
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "JPM may, from time to time, write on issuers or securities targeted by economic or financial sanctions imposed or administered by the governmental authorities of the U.S., EU, UK or other relevant jurisdictions (Sanctioned Securities). Nothing in this report is intended to be read or construed as encouraging, facilitating, promoting or otherwise approving investment or dealing in such Sanctioned Securities. Clients should be aware of their own legal and compliance obligations when making investment decisions.",
+        "bbox": [
+            66,
+            179,
+            924,
+            234
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Any digital or crypto assets discussed in this research report are subject to a rapidly changing regulatory landscape. For relevant regulatory advisories on crypto assets, including bitcoin and ether, please see https://www.JPM.com/disclosures/cryptoasset-disclosure.",
+        "bbox": [
+            68,
+            239,
+            893,
+            266
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The author(s) of this research report may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so.",
+        "bbox": [
+            68,
+            271,
+            897,
+            299
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Exchange-Traded Funds (ETFs): JPM Securities LLC (“JPMS”) acts as authorized participant for substantially all U.S.-listed ETFs. To the extent that any ETFs are mentioned in this report, JPMS may earn commissions and transaction-based compensation in connection with the distribution of those ETF shares and may earn fees for performing other trade-related services, such as securities lending to short sellers of the ETF shares. JPMS may also perform services for the ETFs themselves, including acting as a broker or dealer to the ETFs. In addition, affiliates of JPMS may perform services for the ETFs, including trust, custodial, administration, lending, index calculation and/or maintenance and other services.",
+        "bbox": [
+            66,
+            303,
+            926,
+            382
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Options and Futures related research: If the information contained herein regards options- or futures-related research, such information is available only to persons who have received the proper options or futures risk disclosure documents. Please contact your JPM Representative or visit https://www.theocc.com/components/docs/riskstoc.pdf for a copy of the Option Clearing Corporation's Characteristics and Risks of Standardized Options or",
+        "bbox": [
+            68,
+            387,
+            915,
+            439
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "https://www.finra.org/sites/default/files/2020-08/Security\\_Futures\\_Risk\\_Disclosure\\_Statement\\_2020.pdf for a copy of the Security Futures Risk Disclosure Statement.",
+        "bbox": [
+            68,
+            438,
+            900,
+            465
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Changes to Interbank Offered Rates (IBORs) and other benchmark rates: Certain interest rate benchmarks are, or may in the future become, subject to ongoing international, national and other regulatory guidance, reform and proposals for reform. For more information, please consult: https://www.JPM.com/global/disclosures/interbank\\_offered\\_rates",
+        "bbox": [
+            68,
+            470,
+            924,
+            511
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Private Bank Clients: Where you are receiving research as a client of the private banking businesses offered by JPM Chase & Co. and its subsidiaries (“JPM Private Bank”), research is provided to you by JPM Private Bank and not by any other division of JPM, including, but not limited to, the JPM Corporate and Investment Bank and its Global Research division.",
+        "bbox": [
+            66,
+            516,
+            926,
+            556
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Legal entity responsible for the production and distribution of research: The legal entity identified below the name of the Reg AC Research Analyst who authored this material is the legal entity responsible for the production of this research. Where multiple Reg AC Research Analysts authored this material with different legal entities identified below their names, these legal entities are jointly responsible for the production of this research. Where more than one legal entity is listed under an analyst's name, the first legal entity is responsible for the production unless stated otherwise. Research Analysts from various JPM affiliates may have contributed to the production of this material but may not be licensed to carry out regulated activities in your jurisdiction (and do not hold themselves out as being able to do so). Unless otherwise stated below in the legal entity disclosures, this material has been distributed by the legal entity responsible for production, or where more than one legal entity is listed under the analyst's name, the first legal entity will be responsible for distribution. If you have any queries, please contact the relevant Research Analyst in your jurisdiction or the entity in your jurisdiction that has distributed this research material.",
+        "bbox": [
+            66,
+            561,
+            928,
+            678
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Legal Entities Disclosures and Country-/Region-Specific Disclosures:",
+        "text_level": 2,
+        "bbox": [
+            68,
+            683,
+            506,
+            696
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Argentina: JPM Chase Bank N.A Sucursal Buenos Aires is regulated by Banco Central de la República Argentina (“BCRA”- Central Bank of Argentina) and Comisión Nacional de Valores (“CNV”- Argentinian Securities Commission - ALYC y AN Integral N°51).",
+        "bbox": [
+            68,
+            696,
+            897,
+            723
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Australia: JPM Securities Australia Limited (\"JPMSAL\") (ABN 61 003 245 234/AFS Licence No: 238066) is regulated by the Australian Securities and Investments Commission and is a Market Participant of ASX Limited, a Clearing and Settlement Participant of ASX Clear Pty Limited and a Clearing Participant of ASX Clear (Futures) Pty Limited. This material is issued and distributed in Australia by or on behalf of JPMSAL only to \"wholesale clients\" (as defined in section 761G of the Corporations Act 2001). A list of all financial products covered can be found by visiting https://www.jpmm.com/research/disclosures. JPM seeks to cover companies of relevance to the domestic and international investor base across all Global Industry Classification Standard (GICS) sectors, as well as across a range of market capitalisation sizes. If applicable, in the course of conducting public side due diligence on the subject company(ies), the Research Analyst team may at times perform such diligence through corporate engagements such as site visits, discussions with company representatives, management presentations, etc. Research issued by JPMSAL has been prepared in accordance with JPM Australia's Research Independence Policy which can be found at the following link: JPM Australia - Research Independence Policy.",
+        "bbox": [
+            66,
+            728,
+            928,
+            858
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Brazil: Banco JPM S.A. is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsman JPM: 0800-7700847 / 0800-7700810 (For Hearing Impaired) / ouvidoria.jp.morgan@jpmchase.com.",
+        "bbox": [
+            66,
+            862,
+            906,
+            890
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Canada: JPM Securities Canada Inc. is a registered investment dealer, regulated by the Canadian Investment Regulatory Organization and the Ontario Securities Commission and is the participating member on Canadian exchanges. This material is distributed in Canada by or on behalf of JPM Securities Canada Inc.",
+        "bbox": [
+            66,
+            893,
+            921,
+            934
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Sonny Lee AC\n(82-2) 758 5716\nsonny.lee@JPM.com",
+        "bbox": [
+            68,
+            55,
+            207,
+            89
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research 10 July 2026",
+        "bbox": [
+            343,
+            54,
+            503,
+            79
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            71,
+            952,
+            88,
+            964
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "ref_text",
+        "text": "Chile: Inversiones JPM Limitada is an unregulated entity incorporated in Chile.",
+        "bbox": [
+            66,
+            147,
+            589,
+            162
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "China: JPM Securities (China) Company Limited has been approved by CSRC to conduct the securities investment consultancy business.",
+        "bbox": [
+            66,
+            167,
+            875,
+            194
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Colombia: Banco JPM Colombia S.A. is supervised by the Superintendencia Financiera de Colombia (SFC). Any reference in this material to products or services offered abroad by entities other than the Bank in Colombia is included exclusively for descriptive purposes. Such references do not constitute, and should not be construed as, promotional activity or the provision of financial products or services within Colombian territory, as defined under applicable Colombian regulation.",
+        "bbox": [
+            66,
+            200,
+            916,
+            253
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Dubai International Financial Centre (DIFC): JPM Chase Bank, N.A., Dubai Branch is regulated by the Dubai Financial Services Authority (DFSA) and its registered address is Dubai International Financial Centre - The Gate, West Wing, Level 3 and 9 PO Box 506551, Dubai, UAE. This material has been distributed by JPM Chase Bank, N.A., Dubai Branch to persons regarded as professional clients or market counterparties as defined under the DFSA rules.",
+        "bbox": [
+            66,
+            258,
+            911,
+            311
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "European Economic Area (EEA): Unless specified to the contrary, research is distributed in the EEA by JPM SE (“JPM SE”), which is authorised as a credit institution by the Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and jointly supervised by the BaFin, the German Central Bank (Deutsche Bundesbank) and the European Central Bank (ECB). JPM SE is a company headquartered in Frankfurt with registered address at TaunusTurm, Taunustor 1, Frankfurt am Main, 60310, Germany. The material has been distributed in the EEA to persons regarded as professional investors (or equivalent) pursuant to Art. 4 para. 1 no. 10 and Annex II of MiFID II and its respective implementation in their home jurisdictions (“EEA professional investors”). This material must not be acted on or relied on by persons who are not EEA professional investors. Any investment or investment activity to which this material relates is only available to EEA relevant persons and will be engaged in only with EEA relevant persons.",
+        "bbox": [
+            66,
+            316,
+            923,
+            420
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Hong Kong: JPM Securities (Asia Pacific) Limited (CE number AAJ321) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission in Hong Kong, and JPM Broking (Hong Kong) Limited (CE number AAB027) is regulated by the Securities and Futures Commission in Hong Kong. JPM Chase Bank, N.A., Hong Kong Branch (CE Number AAL996) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission, is organized under the laws of the United States with limited liability. Where the distribution of this material is a regulated activity in Hong Kong, the material is distributed in Hong Kong by or through JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited.",
+        "bbox": [
+            66,
+            424,
+            926,
+            503
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "India: JPM India Private Limited (Corporate Identity Number - U67120MH1992FTC068724), having its registered office at JPM Tower, Off. C.S.T. Road, Kalina, Santacruz - East, Mumbai – 400098, is registered with the Securities and Exchange Board of India (SEBI) as a 'Research Analyst' having registration number INH000001873. JPM India Private Limited is also registered with SEBI as a member of the National Stock Exchange of India Limited and the Bombay Stock Exchange Limited (SEBI Registration Number – INZ000239730) and as a Merchant Banker (SEBI Registration Number - MB/INM000002970). Telephone: 91-22-6157 3000, Facsimile: 91-22-6157 3990 and Website: http://www.jpmipl.com. JPM Chase Bank, N.A. - Mumbai Branch is licensed by the Reserve Bank of India (RBI) (Licence No. 53/Licence No. BY.4/94; SEBI - IN/CUS/014/ CDSL : IN-DP-CDSL-444-2008/ IN-DP-NSDL-285-2008/ INBI00000984/ INE231311239) as a Scheduled Commercial Bank in India, which is its primary license allowing it to carry on Banking business in India and other activities, which a Bank branch in India are permitted to undertake. For non-local research material, this material is not distributed in India by JPM India Private Limited. Compliance Officer: Ashutosh Sharma; ashutosh.j.sharma@jpmchase.com; +912261575002. Grievance Officer: Ramprasadh K, jpmipl.research.feedback@JPM.com; +912261573000. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Please visit Terms and Conditions and Most Important Terms and Conditions (MITC). The annual Compliance audit report is available at http://www.jpmipl.com/#research.",
+        "bbox": [
+            66,
+            508,
+            926,
+            675
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Indonesia: PT JPM Sekuritas Indonesia is a member of the Indonesia Stock Exchange and is registered and supervised by the Otoritas Jasa Keuangan (OJK).",
+        "bbox": [
+            68,
+            679,
+            910,
+            708
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Korea: JPM Securities (Far East) Limited, Seoul Branch, is a member of the Korea Exchange (KRX). JPM Chase Bank, N.A., Seoul Branch, is licensed as a branch office of foreign bank (JPM Chase Bank, N.A.) in Korea. Both entities are regulated by the Financial Services Commission (FSC) and the Financial Supervisory Service (FSS). For non-macro research material, the material is distributed in Korea by or through JPM Securities (Far East) Limited, Seoul Branch.",
+        "bbox": [
+            68,
+            713,
+            924,
+            766
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Japan: JPM Securities Japan Co., Ltd. and JPM Chase Bank, N.A., Tokyo Branch are regulated by the Financial Services Agency in Japan.",
+        "bbox": [
+            66,
+            771,
+            923,
+            797
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Malaysia: This material is issued and distributed in Malaysia by JPM Securities (Malaysia) Sdn Bhd (18146-X), which is a Participating Organization of Bursa Malaysia Berhad and holds a Capital Markets Services License issued by the Securities Commission in Malaysia.",
+        "bbox": [
+            68,
+            803,
+            915,
+            832
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "Mexico: JPM Casa de Bolsa, S.A. de C.V., JPM Grupo Financiero is member of the Mexican Stock Exchange (“Bolsa Mexicana de Valores”) and the Institutional Stock Exchange (“Bolsa Institucional de Valores”), and it is authorized to act as a broker dealer by the National Banking and Securities Exchange Commission (“Comisión Nacional Bancaria y de Valores”).",
+        "bbox": [
+            68,
+            837,
+            918,
+            877
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "ref_text",
+        "text": "New Zealand: This material is issued and distributed by JPMSAL in New Zealand only to \"wholesale clients\" (as defined in the Financial Markets Conduct Act 2013). JPMSAL is registered as a Financial Service Provider under the Financial Service providers (Registration and Dispute Resolution) Act of 2008.",
+        "bbox": [
+            68,
+            882,
+            893,
+            922
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Sonny Lee AC\n(82-2) 758 5716\nsonny.lee@JPM.com",
+        "bbox": [
+            68,
+            55,
+            207,
+            89
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n10 July 2026",
+        "bbox": [
+            343,
+            55,
+            504,
+            78
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            75
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            910,
+            952,
+            928,
+            964
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Philippines: JPM Securities Philippines Inc. is a Trading Participant of the Philippine Stock Exchange and a member of the Securities Clearing Corporation of the Philippines and the Securities Investor Protection Fund. It is regulated by the Securities and Exchange Commission.",
+        "bbox": [
+            66,
+            147,
+            924,
+            175
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Singapore: This material is issued and distributed in Singapore by or through JPM Securities Singapore Private Limited (JPMSS) [MDDI (P) 057/08/2025 and Co. Reg. No.: 199405335R], which is a member of the Singapore Exchange Securities Trading Limited, and/or JPM Chase Bank, N.A., Singapore branch (JPMCB Singapore), both of which are regulated by the Monetary Authority of Singapore. This material is issued and distributed in Singapore only to accredited investors, expert investors and institutional investors, as defined in Section 4A of the Securities and Futures Act, Cap. 289 (SFA). This material is not intended to be issued or distributed to any retail investors or any other investors that do not fall into the classes of “accredited investors,” “expert investors” or “institutional investors,” as defined under Section 4A of the SFA. Recipients of this material in Singapore are to contact JPMSS or JPMCB Singapore in respect of any matters arising from, or in connection with, the material.",
+        "bbox": [
+            66,
+            179,
+            926,
+            284
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "South Africa: JPM Equities South Africa Proprietary Limited and JPM Chase Bank, N.A., Johannesburg Branch are members of the Johannesburg Securities Exchange and are regulated by the Financial Services Conduct Authority (FSCA).",
+        "bbox": [
+            66,
+            287,
+            915,
+            316
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Taiwan: JPM Securities (Taiwan) Limited is a participant of the Taiwan Stock Exchange (company-type) and regulated by the Taiwan Securities and Futures Bureau. Material relating to equity securities is issued and distributed in Taiwan by JPM Securities (Taiwan) Limited, subject to the license scope and the applicable laws and the regulations in Taiwan. To the extent that JPM Securities (Taiwan) Limited produces research materials on securities not listed on the Taiwan Stock Exchange or Taipei Exchange (“Non-Taiwan Listed Securities”), these materials shall not constitute securities recommendations for the purpose of applicable Taiwan regulations, and, for the avoidance of doubt, JPM Securities (Taiwan) Limited does not act as broker for Non-Taiwan Listed Securities. According to Paragraph 2, Article 7-1 of Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers (as amended or supplemented) and/or other applicable laws or regulations, please note that the recipient of this material is not permitted to engage in any activities in connection with the material that may give rise to conflicts of interests, unless otherwise disclosed in the “Important Disclosures” in this material.",
+        "bbox": [
+            66,
+            321,
+            926,
+            450
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Thailand: This material is issued and distributed in Thailand by JPM Securities (Thailand) Ltd., which is a member of the Stock Exchange of Thailand and is regulated by the Ministry of Finance and the Securities and Exchange Commission. The registered address is 548 One City Center Building, 50th Floor, Ploenchit Road, Lymphini, Pathum Wan, Bangkok 10330.",
+        "bbox": [
+            66,
+            455,
+            928,
+            496
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "UK: Research is produced in the UK by JPM Securities plc (“JPMS plc”) which is a member of the London Stock Exchange and is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority or JPM Markets Limited (“JPMML Ltd”) which is authorised and regulated by the Financial Conduct Authority. Unless specified to the contrary, this material is distributed in the UK by JPMS plc and is directed in the UK only to: (a) persons having professional experience in matters relating to investments falling within article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) (Order) 2005 (“the FPO”); (b) persons outlined in article 49 of the FPO (high net worth companies, unincorporated associations or partnerships, the trustees of high value trusts, etc.); or (c) any persons to whom this communication may otherwise lawfully be made; all such persons being referred to as \"UK relevant persons\". This material must not be acted on or relied on by persons who are not UK relevant persons. Any investment or investment activity to which this material relates is only available to UK relevant persons and will be engaged in only with UK relevant persons. A description of JPM EMEA’s policy for prevention and avoidance of conflicts of interest related to the production of Research can be found at the following link: JPM EMEA - Research Independence Policy.",
+        "bbox": [
+            66,
+            501,
+            929,
+            643
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "U.S.: JPM Securities LLC (“JPMS”) is a member of the NYSE, FINRA, SIPC, and the NFA. JPM Chase Bank, N.A. is a member of the FDIC. Material published by non-U.S. affiliates is distributed in the U.S. by JPMS who accepts responsibility for its content.",
+        "bbox": [
+            66,
+            647,
+            915,
+            675
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "General: Additional information is available upon request. The information in this material has been obtained from sources believed to be reliable. While all reasonable care has been taken to ensure that the facts stated in this material are accurate and that the forecasts, opinions and expectations contained herein are fair and reasonable, JPM Chase & Co. or its affiliates and/or subsidiaries (collectively JPM) make no representations or warranties whatsoever to the completeness or accuracy of the material provided, except with respect to any disclosures relative to JPM and the Research Analyst's involvement with the issuer that is the subject of the material. Accordingly, no reliance should be placed on the accuracy, fairness or completeness of the information contained in this material. There may be certain discrepancies with data and/or limited content in this material as a result of calculations, adjustments, translations to different languages, and/or local regulatory restrictions, as applicable. These discrepancies should not impact the overall investment analysis, views and/or recommendations of the subject company(ies) that may be discussed in the material. Artificial intelligence tools may have been used in the preparation of this material, including assisting in data analysis, pattern recognition, and content drafting for research material. JPM accepts no liability whatsoever for any loss arising from any use of this material or its contents, and neither JPM nor any of its respective directors, officers or employees, shall be in any way responsible for the contents hereof, apart from the liabilities and responsibilities that may be imposed on them by the relevant regulatory authority in the jurisdiction in question, or the regulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results.",
+        "bbox": [
+            65,
+            679,
+            929,
+            936
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Sonny Lee AC\n(82-2) 758 5716\nsonny.lee@JPM.com",
+        "bbox": [
+            68,
+            55,
+            207,
+            89
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n10 July 2026",
+        "bbox": [
+            343,
+            55,
+            504,
+            78
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            71,
+            952,
+            88,
+            964
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction.",
+        "bbox": [
+            66,
+            147,
+            928,
+            327
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email",
+        "bbox": [
+            66,
+            332,
+            924,
+            436
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer",
+        "bbox": [
+            66,
+            439,
+            923,
+            506
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not constitute investment advice nor an endorsement of any product or project; (4) are provided solely for informational purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All Rights Reserved.",
+        "bbox": [
+            66,
+            511,
+            919,
+            589
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\"Other Disclosures\" last revised July 04, 2026.",
+        "bbox": [
+            68,
+            594,
+            349,
+            609
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Copyright 2026 JPM Chase & Co. All rights reserved. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM. It is strictly prohibited to use or share without prior written consent from JPM any research material received from JPM or an authorized third-party (“JPM Data”) in any third-party artificial intelligence (“AI”) systems or models when such JPM Data is accessible by a third-party.",
+        "bbox": [
+            66,
+            619,
+            923,
+            672
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "Sonny Lee AC\n(82-2) 758 5716\nsonny.lee@JPM.com",
+        "bbox": [
+            68,
+            55,
+            207,
+            89
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "Asia Pacific Equity Research\n10 July 2026",
+        "bbox": [
+            343,
+            55,
+            504,
+            78
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "Completed 10 Jul 2026 05:05 PM HKT",
+        "bbox": [
+            68,
+            676,
+            308,
+            691
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "Disseminated 10 Jul 2026 05:05 PM HKT",
+        "bbox": [
+            674,
+            676,
+            928,
+            691
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            910,
+            952,
+            928,
+            964
+        ],
+        "page_idx": 14
+    }
+]

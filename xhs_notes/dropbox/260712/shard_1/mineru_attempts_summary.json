@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_2ya4frzy/pdfs/0001-07-GS-INDIA STRATEGY-Room To Rebound0-260711.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_2ya4frzy/pdfs/0002-08-GS-Nexchip -688249- China Semis Capex upcycle to drive growth ahead- TP up to Rmb70- maintain Neutral on fair valuation-260711.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_2ya4frzy/pdfs/0003-09-GS-China Restaurants- Monthly Tracker- Jun update- weakness continued with weather headwind- FMD relatively resilient despite high base-260711.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_2ya4frzy/pdfs/0004-10-JEF-Tencent Holdings-0700.HK-Making Progress in AI on Multiple Fronts- Investment is Not New to Market-260710.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_2ya4frzy/pdfs/0005-11-JPM-Global EV - Battery Update June 2026- EV PHEV growth robust in EU- moderating in China- US stays tepid- ESS remains the sweet spot-260710.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
