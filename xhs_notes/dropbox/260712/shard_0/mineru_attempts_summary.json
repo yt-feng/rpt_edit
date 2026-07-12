@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_sxj9ucy7/pdfs/0001-01-Bofa-Global Memory Tech Weekly theme-Samsung correction- strong indicator- CXMT IPO- Nanya Tech upturn-260711.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_sxj9ucy7/pdfs/0002-02-Bernstein-Japan Autos - Auto Parts- Japanese automakers- interest in humanoid robots appears to be re-emerging-260710.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_sxj9ucy7/pdfs/0003-03-Bernstein-Volkswagen AG-VOW3.GR-Volkswagen- Na und- Some thoughts about the Future Plan-260710.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_sxj9ucy7/pdfs/0004-04-CITI-China Materials-Glass Fiber - E-fabric - Weekly Snapshot - 20260709-260710.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_sxj9ucy7/pdfs/0005-05-GS-Asia Pacific Technology- Semiconductors -Memory- Nanya Tech 2Q26 read-across- solid ASP growth and positive industry outlook-260710.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

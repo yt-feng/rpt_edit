@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 14,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/01-Bofa-Global Memory Tech Weekly theme-Samsung correction, strong indicator, CXMT IPO, Nanya Tech upturn-260711.pdf",
+          "batch_file": "/tmp/pdf_batch_001_sxj9ucy7/pdfs/0001-01-Bofa-Global Memory Tech Weekly theme-Samsung correction- strong indicator- CXMT IPO- Nanya Tech upturn-260711.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/02-Bernstein-Japan Autos & Auto Parts： Japanese automakers' interest in humanoid robots appears to be re~emerging-260710.pdf",
+          "batch_file": "/tmp/pdf_batch_001_sxj9ucy7/pdfs/0002-02-Bernstein-Japan Autos - Auto Parts- Japanese automakers- interest in humanoid robots appears to be re-emerging-260710.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/03-Bernstein-Volkswagen AG（VOW3.GR）Volkswagen： Na und？ Some thoughts about the Future Plan-260710.pdf",
+          "batch_file": "/tmp/pdf_batch_001_sxj9ucy7/pdfs/0003-03-Bernstein-Volkswagen AG-VOW3.GR-Volkswagen- Na und- Some thoughts about the Future Plan-260710.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/04-CITI-China Materials：Glass Fiber & E~fabric – Weekly Snapshot – 20260709-260710.pdf",
+          "batch_file": "/tmp/pdf_batch_001_sxj9ucy7/pdfs/0004-04-CITI-China Materials-Glass Fiber - E-fabric - Weekly Snapshot - 20260709-260710.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/05-GS-Asia Pacific Technology： Semiconductors ~Memory： Nanya Tech 2Q26 read~across： solid ASP growth and positive industry outlook-260710.pdf",
+          "batch_file": "/tmp/pdf_batch_001_sxj9ucy7/pdfs/0005-05-GS-Asia Pacific Technology- Semiconductors -Memory- Nanya Tech 2Q26 read-across- solid ASP growth and positive industry outlook-260710.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
