@@ -291,6 +291,14 @@ KC-<base32(hmac_sha256(PASSWORD_SECRET, "kc-desk-notes:" + report_id)) 前 12 �
 - 前端对 mp4、以及大于 5 MB 的 pdf/zip 使用分段下载，显示进度条和取消按钮。
 - 中国大陆员工只需要下载 `kcdesk.com/api/account-admin/github-file...`，不需要直连 GitHub raw。
 
+坚果云运营镜像：
+
+- `.github/workflows/kcdesk-ops-jianguoyun-sync.yml` 每小时在北京时间 08:15 至次日 00:15 运行，并回补最近 3 天。
+- `scripts/sync_ops_videos_to_jianguoyun.py` 从运营后台可见的视频源发现文件，上传到 `/我的坚果云/KCdesk/Ops/YYYY-MM-DD/<类型>/`。
+- 镜像类型包括 `BBG Show`、`BBG Top Videos`、`ARK Invest`、`报告视频`、`KC娱乐`；管理员专属的“站内视频”不进入运营镜像。
+- 上传按远端文件大小幂等跳过；同目录同名文件自动加短 hash，避免覆盖。
+- WebDAV 只清理符合 `YYYY-MM-DD` 的过期日期目录，始终保留最近 3 个北京时间自然日。
+
 视频账号标注：
 
 - BBG 系列根据标题规则标注 `KC桌面` 或 `KC偏见`。
@@ -373,6 +381,9 @@ dashboard：
 | `SUPABASE_SERVICE_ROLE_KEY` | secret | Supabase service role。 |
 | `GH_READ_TOKEN` | secret | 读取 GitHub 文件/私有 repo。 |
 | `GH_DISPATCH_TOKEN` | secret | 触发后台准备 workflow。 |
+| `JIANGUOYUN_WEBDAV_URL` | secret | 坚果云 WebDAV endpoint。 |
+| `JIANGUOYUN_WEBDAV_USERNAME` | secret | 坚果云 WebDAV 账号。 |
+| `JIANGUOYUN_WEBDAV_PASSWORD` | secret | 坚果云应用密码。 |
 | `CLOUDFLARE_API_TOKEN` | secret | 部署 Worker。 |
 | `CLOUDFLARE_ACCOUNT_ID` | secret/var | 部署 Worker / R2。 |
 | `KC_DESK_WORKER_URL` | var | Pages 前端 API base，生产通常为 `/api`。 |

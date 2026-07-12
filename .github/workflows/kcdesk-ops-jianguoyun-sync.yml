@@ -1,0 +1,55 @@
+name: KC Desk Ops Jianguoyun Sync
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_date:
+        description: "Last Beijing date to sync (YYYY-MM-DD; blank uses today)"
+        required: false
+        default: ""
+      sync_days:
+        description: "Number of dates to sync, ending at target_date"
+        required: true
+        default: "3"
+  schedule:
+    # Hourly from 08:15 through 00:15 Beijing time. Each run backfills three days.
+    - cron: "15 0-16 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kcdesk-ops-jianguoyun-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            scripts
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check requests
+
+      - name: Sync operations videos to Jianguoyun
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_READ_TOKEN || secrets.GH_DISPATCH_TOKEN || github.token }}
+          JIANGUOYUN_WEBDAV_URL: ${{ secrets.JIANGUOYUN_WEBDAV_URL }}
+          JIANGUOYUN_WEBDAV_USERNAME: ${{ secrets.JIANGUOYUN_WEBDAV_USERNAME }}
+          JIANGUOYUN_WEBDAV_PASSWORD: ${{ secrets.JIANGUOYUN_WEBDAV_PASSWORD }}
+        run: |
+          python scripts/sync_ops_videos_to_jianguoyun.py \
+            --target-date "${{ github.event.inputs.target_date || '' }}" \
+            --days "${{ github.event.inputs.sync_days || '3' }}" \
+            --retention-days 3 \
+            --remote-root "/我的坚果云/KCdesk/Ops"
