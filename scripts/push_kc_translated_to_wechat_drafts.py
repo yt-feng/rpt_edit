@@ -31,7 +31,6 @@ from PIL import Image, ImageDraw
 
 from institution_names import ensure_title_has_institution, infer_institution_name
 from wechat_title_optimizer import (
-    choose_best_wechat_title,
     clean_wechat_title as optimizer_clean_wechat_title,
     extract_wechat_keywords,
 )
@@ -576,11 +575,12 @@ def remove_generic_title_noise(title: str) -> str:
 def fit_wechat_title(title: str, institution_name: str = "") -> str:
     cleaned = remove_redundant_title_aliases(title)
     cleaned = remove_generic_title_noise(cleaned)
-    cleaned, _stock_changes = sanitize_wechat_stock_language(cleaned)
+    cleaned, _stock_changes = sanitize_wechat_stock_language(cleaned, strict_wording=False)
     cleaned = optimizer_clean_wechat_title(
         cleaned,
         institution_name,
         max_chars=max(RAW_MARKDOWN_TITLE_MAX_CHARS, WECHAT_TITLE_MAX_CHARS),
+        strict_wording=False,
     )
     cleaned = remove_generic_title_noise(cleaned.replace("…", ""))
     cleaned = limit_title_colons(cleaned)
@@ -641,15 +641,7 @@ def sharpen_wechat_title(title: str, institution_name: str = "") -> str:
     if institution_name:
         cleaned = strip_unexpected_leading_institution_prefix(cleaned, institution_name)
         cleaned = ensure_title_has_institution(cleaned, canonicalize_institution_title_name(institution_name))
-    source_keywords = extract_wechat_keywords(cleaned, max_keywords=8)
-    selected = choose_best_wechat_title(
-        [cleaned, optimizer_clean_wechat_title(cleaned, institution_name, max_chars=WECHAT_TITLE_MAX_CHARS)],
-        fallback=cleaned,
-        institution_name=institution_name,
-        source_keywords=source_keywords,
-        max_chars=max(RAW_MARKDOWN_TITLE_MAX_CHARS, WECHAT_TITLE_MAX_CHARS),
-    )
-    return fit_wechat_title(selected, institution_name)
+    return fit_wechat_title(cleaned, institution_name)
 
 
 def truncate_chars(text: str, max_chars: int) -> str:
@@ -972,7 +964,10 @@ def clean_markdown(markdown: str) -> str:
         if TRAILING_DISCLOSURE_RE.search(line):
             break
         cleaned.append(line)
-    text, _stock_changes = sanitize_wechat_stock_language("\n".join(cleaned).strip())
+    text, _stock_changes = sanitize_wechat_stock_language(
+        "\n".join(cleaned).strip(),
+        strict_h1_wording=False,
+    )
     text, _editorial_changes = sanitize_wechat_article_markdown(text)
     return text
 
@@ -1408,8 +1403,13 @@ def markdown_to_wechat_html(
     ]
     if blocking_issues:
         raise RuntimeError(f"WeChat article failed upload-time editorial guard: {blocking_issues}")
-    title, _title_stock_changes = sanitize_wechat_stock_language(title)
-    title = optimizer_clean_wechat_title(title, "", max_chars=CONTENT_HEADER_TITLE_MAX_CHARS)
+    title, _title_stock_changes = sanitize_wechat_stock_language(title, strict_wording=False)
+    title = optimizer_clean_wechat_title(
+        title,
+        "",
+        max_chars=CONTENT_HEADER_TITLE_MAX_CHARS,
+        strict_wording=False,
+    )
     title = trim_title_complete(title.replace("…", ""), CONTENT_HEADER_TITLE_MAX_CHARS, 8)
     title = repair_wechat_title_structure(title)
     if len(title) < 6:
@@ -2272,7 +2272,10 @@ def build_article(
     trailing_image_url: str,
 ) -> dict[str, Any]:
     translated_path = report_dir / "translated.md"
-    markdown, stock_changes = sanitize_wechat_stock_language(translated_path.read_text(encoding="utf-8", errors="ignore"))
+    markdown, stock_changes = sanitize_wechat_stock_language(
+        translated_path.read_text(encoding="utf-8", errors="ignore"),
+        strict_h1_wording=False,
+    )
     if stock_changes:
         log(f"Sanitized stock wording for {report_dir.name}: {len(stock_changes)} change(s).")
     status = read_json(report_dir / "translation_status.json")

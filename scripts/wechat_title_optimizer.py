@@ -240,6 +240,67 @@ ENGLISH_SLUG_SKIP_WORDS = {
     "research",
 }
 
+FILENAME_DATE_SUFFIX_RE = re.compile(
+    r"(?:[-_\s]+(?:19|20)?\d{6,8}|[-_\s]+(?:19|20)\d{2}[-_.]\d{1,2}[-_.]\d{1,2})$",
+    re.I,
+)
+FILENAME_SERIAL_PREFIX_RE = re.compile(r"^(?:(?:\d{1,4})[-_]){2,5}")
+FILENAME_INSTITUTION_EXTRA_ALIASES: dict[str, list[str]] = {
+    "IMF": ["IMF", "International Monetary Fund"],
+    "世界银行": ["World Bank", "WorldBank"],
+    "国际清算银行": ["BIS", "Bank for International Settlements"],
+    "经合组织": ["OECD"],
+    "亚洲开发银行": ["ADB", "Asian Development Bank"],
+    "世界经济论坛": ["WEF", "World Economic Forum"],
+    "联合国贸发会议": ["UNCTAD"],
+    "世界贸易组织": ["WTO", "World Trade Organization"],
+    "麦肯锡": ["McKinsey", "McKinsey & Company"],
+    "波士顿咨询": ["BCG", "Boston Consulting Group"],
+    "贝恩": ["Bain", "Bain & Company"],
+    "木头姐ARK": ["ARK", "ARK Invest"],
+}
+FILENAME_PHRASE_TRANSLATIONS: list[tuple[str, str]] = [
+    ("market strategy japan", "日本市场策略"),
+    ("corporate caution", "公司谨慎"),
+    ("inflationary pressure", "通胀压力"),
+    ("market strategy", "市场策略"),
+    ("artificial intelligence", "人工智能"),
+    ("supply chain", "供应链"),
+    ("capital expenditure", "资本开支"),
+    ("interest rates", "利率"),
+    ("real estate", "房地产"),
+]
+FILENAME_WORD_TRANSLATIONS = {
+    "and": "和",
+    "japan": "日本",
+    "china": "中国",
+    "global": "全球",
+    "market": "市场",
+    "strategy": "策略",
+    "corporate": "公司",
+    "caution": "谨慎",
+    "inflation": "通胀",
+    "inflationary": "通胀",
+    "pressure": "压力",
+    "outlook": "展望",
+    "update": "更新",
+    "energy": "能源",
+    "security": "安全",
+    "consumer": "消费",
+    "technology": "科技",
+    "software": "软件",
+    "hardware": "硬件",
+    "semiconductor": "半导体",
+    "semiconductors": "半导体",
+    "automotive": "汽车",
+    "autos": "汽车",
+    "property": "地产",
+    "rates": "利率",
+    "trade": "贸易",
+    "policy": "政策",
+    "growth": "增长",
+}
+
 
 def normalize_space(text: str) -> str:
     return re.sub(r"\s+", " ", str(text or "")).strip()
@@ -477,9 +538,14 @@ def truncate_chars(text: str, max_chars: int) -> str:
     return cut.strip("，,；;：: ")
 
 
-def clean_wechat_title(title: str, institution_name: str = "", max_chars: int = 64) -> str:
+def clean_wechat_title(
+    title: str,
+    institution_name: str = "",
+    max_chars: int = 64,
+    strict_wording: bool = True,
+) -> str:
     cleaned = strip_markdown_markup(title)
-    cleaned, _stock_changes = sanitize_wechat_stock_language(cleaned)
+    cleaned, _stock_changes = sanitize_wechat_stock_language(cleaned, strict_wording=strict_wording)
     cleaned = re.sub(r"^(?:标题|微信标题|公众号标题)\s*[：:]\s*", "", cleaned)
     cleaned = re.sub(r"[《》#>*]+", "", cleaned)
     cleaned = remove_redundant_title_aliases(cleaned)
@@ -496,6 +562,227 @@ def clean_wechat_title(title: str, institution_name: str = "", max_chars: int = 
     cleaned = remove_redundant_title_aliases(cleaned)
     cleaned = limit_title_colons(cleaned)
     return truncate_chars(cleaned, max_chars).strip("：: -—")
+
+
+def strip_source_filename_noise(source_filename: str) -> str:
+    """Return the semantic filename stem without archive numbering or dates."""
+    cleaned = re.split(r"[/\\]", normalize_space(source_filename))[-1]
+    cleaned = re.sub(r"\.(?:pdf|docx?|pptx?|xlsx?)$", "", cleaned, flags=re.I)
+    cleaned = FILENAME_SERIAL_PREFIX_RE.sub("", cleaned)
+    cleaned = re.sub(r"^(?:19|20)?\d{6,8}[-_]+", "", cleaned)
+    for _ in range(2):
+        cleaned = FILENAME_DATE_SUFFIX_RE.sub("", cleaned).strip(" -_")
+    cleaned = re.sub(r"(?i)(?:^|[-_\s])shared(?=$|[-_\s])", "-", cleaned)
+    cleaned = re.sub(r"[-_]{4,}", "---", cleaned)
+    return cleaned.strip(" -_")
+
+
+def filename_institution_aliases(institution_name: str) -> list[str]:
+    expected = canonicalize_institution_title_name(institution_name)
+    aliases: list[str] = [expected] if expected else []
+    for cn_name, known_aliases in INSTITUTION_TITLE_ALIASES:
+        if canonicalize_institution_title_name(cn_name) == expected:
+            aliases.extend([cn_name, *known_aliases])
+    aliases.extend(FILENAME_INSTITUTION_EXTRA_ALIASES.get(expected, []))
+    return list(dict.fromkeys(alias for alias in aliases if alias))
+
+
+def strip_filename_institution_prefix(source_filename: str, institution_name: str) -> str:
+    cleaned = strip_source_filename_noise(source_filename)
+    aliases = filename_institution_aliases(institution_name)
+    if not aliases:
+        return cleaned
+    alias_group = "|".join(alias_pattern(alias) for alias in sorted(aliases, key=len, reverse=True))
+    return re.sub(
+        rf"^(?:{alias_group})\s*(?:[：:，,、;；\-—_/]+\s*)?",
+        "",
+        cleaned,
+        count=1,
+        flags=re.I,
+    ).strip(" -_：:")
+
+
+def translate_filename_terms_fallback(value: str) -> str:
+    """Conservative phrase translation used only when DeepSeek is unavailable."""
+    segment_token = "␞"
+    translated = value
+    translated = translated.replace("：", f" {segment_token} ").replace(":", f" {segment_token} ")
+    translated = re.sub(r"-{2,}", f" {segment_token} ", translated)
+    translated = re.sub(r"(?<=[A-Za-z0-9])[-_](?=[A-Za-z0-9])", " ", translated)
+    translated = translated.replace("_", " ")
+    for phrase, chinese in FILENAME_PHRASE_TRANSLATIONS:
+        translated = re.sub(rf"\b{re.escape(phrase)}\b", chinese, translated, flags=re.I)
+    for word, chinese in FILENAME_WORD_TRANSLATIONS.items():
+        translated = re.sub(rf"\b{re.escape(word)}\b", chinese, translated, flags=re.I)
+    translated = re.sub(rf"\s*{re.escape(segment_token)}\s*", "-", translated)
+    translated = re.sub(r"\s*-\s*", "-", translated)
+    translated = re.sub(r"(?<=[\u4e00-\u9fff])\s+|\s+(?=[\u4e00-\u9fff])", "", translated)
+    translated = normalize_space(translated).replace(" -", "-").replace("- ", "-")
+    return translated.strip(" -_：:")
+
+
+def fit_filename_title(text: str, max_chars: int) -> str:
+    cleaned = normalize_space(text)
+    if len(cleaned) <= max_chars:
+        return cleaned
+    boundaries: list[str] = []
+    for match in re.finditer(r"[-，,；;。！？!?]", cleaned):
+        candidate = cleaned[: match.start()].strip(" -，,；;。！？!?")
+        if 10 <= len(candidate) <= max_chars:
+            boundaries.append(candidate)
+    if boundaries:
+        return boundaries[-1]
+    return truncate_chars(cleaned, max_chars)
+
+
+def clean_filename_wechat_title(title: str, institution_name: str = "", max_chars: int = 35) -> str:
+    """Apply structural gates without reinterpreting the filename's meaning."""
+    cleaned = strip_source_filename_noise(strip_markdown_markup(title))
+    cleaned, _stock_changes = sanitize_wechat_stock_language(cleaned, strict_wording=False)
+    cleaned = re.sub(r"^(?:标题|微信标题|公众号标题)\s*[：:]\s*", "", cleaned)
+    cleaned = re.sub(r"[《》#>*]+", "", cleaned)
+    cleaned = cleaned.replace("摩根斯坦利", "摩根士丹利").replace("美国银行", "美银")
+    cleaned = remove_redundant_title_aliases(cleaned)
+    if institution_name:
+        cleaned = strip_unexpected_leading_institution_prefix(cleaned, institution_name)
+        cleaned = ensure_title_has_institution_local(cleaned, institution_name)
+    cleaned = remove_redundant_title_aliases(cleaned)
+    cleaned = re.sub(r"\s*[：:]\s*", "：", cleaned)
+    if "：" in cleaned:
+        head, tail = cleaned.split("：", 1)
+        tail = re.sub(r"[：:]", "-", tail)
+        cleaned = f"{head}：{tail}"
+    cleaned = re.sub(r"\s*-\s*", "-", cleaned)
+    cleaned = re.sub(r"\s+", "", cleaned)
+    cleaned = limit_title_colons(cleaned).strip("：: -—")
+    return fit_filename_title(cleaned, max_chars).strip("：: -—")
+
+
+def filename_title_fallback(source_filename: str, institution_name: str = "", max_chars: int = 35) -> str:
+    body = strip_filename_institution_prefix(source_filename, institution_name)
+    body = translate_filename_terms_fallback(body)
+    if not body:
+        body = "报告更新"
+    title = ensure_title_has_institution_local(body, institution_name) if institution_name else body
+    return clean_filename_wechat_title(title, institution_name, max_chars=max_chars)
+
+
+def finalize_filename_wechat_title(
+    translated_title: str,
+    source_filename: str,
+    institution_name: str = "",
+    max_chars: int = 35,
+) -> str:
+    fallback = filename_title_fallback(source_filename, institution_name, max_chars=max_chars)
+    candidate = clean_filename_wechat_title(translated_title, institution_name, max_chars=max_chars)
+    candidate_body = candidate.split("：", 1)[-1] if candidate else ""
+    if len(candidate_body) < 4:
+        return fallback
+    return candidate
+
+
+def _title_semantic_body(title: str) -> str:
+    body = clean_filename_wechat_title(title, "", max_chars=80)
+    if "：" in body:
+        body = body.split("：", 1)[1]
+    body = re.sub(r"(?:报告|研究|更新|观点|展望)$", "", body)
+    return re.sub(r"[^A-Za-z0-9\u4e00-\u9fff]+", "", body).lower()
+
+
+def _character_ngrams(value: str, size: int = 2) -> set[str]:
+    compact = _title_semantic_body(value)
+    if len(compact) < size:
+        return set(compact)
+    return {compact[index : index + size] for index in range(len(compact) - size + 1)}
+
+
+def filename_anchor_coverage(candidate: str, anchor: str) -> float:
+    anchor_grams = _character_ngrams(anchor)
+    if not anchor_grams:
+        return 0.0
+    return len(anchor_grams & _character_ngrams(candidate)) / len(anchor_grams)
+
+
+def _numeric_title_tokens(value: str) -> set[str]:
+    return set(re.findall(r"(?<![A-Za-z0-9])\d+(?:\.\d+)?", value or ""))
+
+
+def filename_title_additions_are_supported(
+    candidate: str,
+    anchor: str,
+    source_filename: str,
+    evidence_text: str,
+) -> bool:
+    evidence = f"{strip_source_filename_noise(source_filename)}\n{evidence_text}"
+    added_numbers = _numeric_title_tokens(candidate) - _numeric_title_tokens(anchor)
+    if not added_numbers.issubset(_numeric_title_tokens(evidence)):
+        return False
+    added_names = [term for term in BIG_NAME_TERMS if term in candidate and term not in anchor]
+    return all(term.lower() in evidence.lower() for term in added_names)
+
+
+def choose_filename_anchored_title(
+    candidates: list[str],
+    source_filename: str,
+    institution_name: str = "",
+    max_chars: int = 35,
+    evidence_text: str = "",
+) -> str:
+    """Let hooks improve a title only when filename semantics remain dominant."""
+    fallback = filename_title_fallback(source_filename, institution_name, max_chars=max_chars)
+    faithful_raw = candidates[0] if candidates else fallback
+    anchor = finalize_filename_wechat_title(
+        faithful_raw,
+        source_filename,
+        institution_name,
+        max_chars=max_chars,
+    )
+    pool: list[str] = []
+    for raw in [anchor, *candidates[1:], fallback]:
+        cleaned = finalize_filename_wechat_title(raw, source_filename, institution_name, max_chars=max_chars)
+        if cleaned and cleaned not in pool:
+            pool.append(cleaned)
+    if not pool:
+        return fallback
+
+    anchor_segments = [
+        segment
+        for segment in re.split(r"[-，,；;。！？!?]", anchor.split("：", 1)[-1])
+        if len(_title_semantic_body(segment)) >= 4
+    ]
+
+    def preserves_each_segment(candidate: str) -> bool:
+        return all(filename_anchor_coverage(candidate, segment) >= 0.30 for segment in anchor_segments)
+
+    eligible = [
+        candidate
+        for candidate in pool
+        if filename_anchor_coverage(candidate, anchor) >= 0.72
+        and preserves_each_segment(candidate)
+        and filename_title_additions_are_supported(
+            candidate,
+            anchor,
+            source_filename,
+            evidence_text,
+        )
+    ] or [anchor]
+
+    def anchored_score(candidate: str) -> tuple[float, int]:
+        coverage = filename_anchor_coverage(candidate, anchor)
+        hook_hits = sum(1 for term in CONTRARIAN_TERMS if term in candidate)
+        added_big_names = sum(1 for term in BIG_NAME_TERMS if term in candidate and term not in anchor)
+        data_bonus = 3 if re.search(r"(?:\d+(?:\.\d+)?%?|20\d{2}|Q[1-4])", candidate) else 0
+        length_bonus = 4 if 18 <= len(candidate) <= 35 else 1
+        score = (
+            coverage * 80
+            + min(hook_hits, 2) * 6
+            + min(added_big_names, 2) * 5
+            + data_bonus
+            + length_bonus
+        )
+        return score, -pool.index(candidate)
+
+    return max(eligible, key=anchored_score)
 
 
 def parse_title_candidates(raw: str) -> list[str]:
@@ -633,6 +920,38 @@ def extract_wechat_keywords(title: str, body: str = "", max_keywords: int = 8) -
         if len(keywords) >= max_keywords:
             break
     return keywords[:max_keywords]
+
+
+def build_filename_title_translation_prompt(
+    source_filename: str,
+    institution_name: str,
+    article_excerpt: str = "",
+) -> str:
+    cleaned_filename = strip_source_filename_noise(source_filename)
+    filename_body = strip_filename_institution_prefix(cleaned_filename, institution_name)
+    return f"""
+你是微信公众号标题编辑。原始 PDF 文件名标题是最高权重的语义底稿；正文摘录只能用于补充文件名已经指向的数据节点、反常识差异或人物钩子，不能重新概括一篇与文件名不同的标题。
+
+硬性规则：
+1. 只返回 JSON：{{"titles":["忠实底稿","数据增强版","反常识增强版"]}}，固定三个候选，不要解释。
+2. 删除文件扩展名、开头归档编号和末尾发布日期；不要删除文件名中的主题、地区、公司、数据或判断。
+3. 已识别机构必须写中文名，并放在唯一的中文冒号前。不要保留英文机构简称。
+4. 第一个候选是忠实中文底稿：按原文件名顺序翻译，允许为自然中文调整词序，但不能另选角度。
+5. 第二个候选优先补充正文摘录中明确出现的数据节点；第三个候选优先补充明确的反常识差异、大机构或知名人物。没有可靠钩子时，直接重复忠实底稿，严禁编造。
+6. 两个增强版仍必须保留底稿中的地区/对象、主题和核心判断；钩子只能补充或锐化，不能替换文件名命题。
+7. 原文件名如果包含“主标题：副标题”或明显的双层结构，中文标题使用“主标题-副标题”；不要生成第二个冒号。
+8. 尽量控制在 20-35 个字符。过长时只能压缩“报告、更新、研究”等文体词或使用更短的直译，不能截断句子，不能另选角度。
+9. 常用专有名词和缩写可保留，例如 AI、GDP、CPI、GPU；其余普通英文应译成简体中文。
+10. 不要输出“报告指出、报告认为、核心观点、关键要点、研报速览”等正文概括措辞。
+
+已识别机构：{institution_name or "未知"}
+原始文件名：{source_filename}
+去除编号和日期后的文件名：{cleaned_filename}
+待翻译的文件名正文：{filename_body or cleaned_filename}
+
+正文第一段摘录（只用于验证数据或反常识钩子，不能替代文件名命题）：
+{article_excerpt[:1800] or "无"}
+""".strip()
 
 
 def build_wechat_title_refinement_prompt(

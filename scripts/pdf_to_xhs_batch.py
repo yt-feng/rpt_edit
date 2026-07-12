@@ -32,10 +32,10 @@ except Exception:  # pragma: no cover
         return ""
 
 from wechat_title_optimizer import (
-    build_wechat_title_refinement_prompt,
-    choose_best_wechat_title,
+    build_filename_title_translation_prompt,
+    choose_filename_anchored_title,
     extract_title_candidates,
-    extract_wechat_keywords,
+    filename_title_fallback,
 )
 from sensitive_content_guard import sanitize_wechat_stock_language
 from wechat_article_quality import (
@@ -623,16 +623,6 @@ def safe_generate_text(
         raise RuntimeError(f"DeepSeek generation failed for {label}: {exc}") from exc
 
 
-def first_markdown_heading(markdown: str, fallback: str) -> str:
-    for raw in markdown.splitlines():
-        stripped = raw.strip()
-        if stripped.startswith("#"):
-            title = re.sub(r"^#{1,6}\s*", "", stripped).strip()
-            if title:
-                return title
-    return fallback
-
-
 def replace_first_markdown_heading(markdown: str, title: str) -> str:
     lines = markdown.splitlines()
     for index, raw in enumerate(lines):
@@ -642,34 +632,34 @@ def replace_first_markdown_heading(markdown: str, title: str) -> str:
     return f"# {title}\n\n{markdown.strip()}\n"
 
 
-def refine_wechat_article_title(
-    source_title: str,
+def wechat_title_from_filename(
+    source_filename: str,
     wechat_article: str,
     institution_name: str,
     args: argparse.Namespace,
 ) -> str:
-    fallback = ensure_title_has_institution(first_markdown_heading(wechat_article, source_title), institution_name)
+    fallback = filename_title_fallback(source_filename, institution_name)
     if not getattr(args, "wechat_title_refine", True):
-        return choose_best_wechat_title([], fallback=fallback, institution_name=institution_name)
-    source_keywords = extract_wechat_keywords(source_title, wechat_article, max_keywords=10)
-    article_excerpt = re.sub(r"\s+", " ", re.sub(r"[#>*`!\\[\\]()]+", " ", wechat_article)).strip()[:2400]
-    prompt = build_wechat_title_refinement_prompt(
-        source_title=source_title,
-        institution_name=institution_name,
-        article_excerpt=article_excerpt,
-        source_keywords=source_keywords,
-    )
+        return fallback
+    article_excerpt = re.sub(r"\s+", " ", re.sub(r"[#>*`!\\[\\]()]+", " ", wechat_article)).strip()[:1800]
+    prompt = build_filename_title_translation_prompt(source_filename, institution_name, article_excerpt)
     try:
-        raw = call_deepseek(prompt, args, f"WeChat title refine: {source_title[:40]}", temperature=0.22)
+        raw = call_deepseek(
+            prompt,
+            args,
+            f"WeChat filename title: {source_filename[:40]}",
+            temperature=0.25,
+            system_content="你是中文标题编辑，以原始 PDF 文件名为最高权重锚点，只输出严格 JSON。",
+        )
         candidates = extract_title_candidates(raw)
     except Exception as exc:
-        print(f"Title refinement failed for {source_title[:80]}: {exc}", flush=True)
+        print(f"Filename-anchored title fine-tuning failed for {source_filename[:80]}: {exc}", flush=True)
         candidates = []
-    return choose_best_wechat_title(
+    return choose_filename_anchored_title(
         candidates,
-        fallback=fallback,
-        institution_name=institution_name,
-        source_keywords=source_keywords,
+        source_filename,
+        institution_name,
+        evidence_text=article_excerpt,
     )
 
 
@@ -885,14 +875,21 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
     if quality_changes:
         status["wechat_editorial_guard_changes"] = quality_changes[:40]
     wechat_article = ensure_markdown_h1_institution(wechat_article, institution_name)
-    refined_wechat_title = refine_wechat_article_title(pdf_path.stem, wechat_article, institution_name, args)
-    refined_wechat_title, title_stock_changes = sanitize_wechat_stock_language(refined_wechat_title)
+    refined_wechat_title = wechat_title_from_filename(pdf_path.name, wechat_article, institution_name, args)
+    refined_wechat_title, title_stock_changes = sanitize_wechat_stock_language(
+        refined_wechat_title,
+        strict_wording=False,
+    )
     if title_stock_changes:
         status["wechat_title_stock_language_sanitized"] = title_stock_changes[:20]
     wechat_article = replace_first_markdown_heading(wechat_article, refined_wechat_title)
     status["wechat_title"] = refined_wechat_title
+    status["wechat_title_source"] = "source_filename_weighted_finetune"
     wechat_article = embed_images_in_wechat_article(wechat_article, status.get("images", []), max_images=3)
-    wechat_article, stock_changes_after_images = sanitize_wechat_stock_language(wechat_article)
+    wechat_article, stock_changes_after_images = sanitize_wechat_stock_language(
+        wechat_article,
+        strict_h1_wording=False,
+    )
     if stock_changes_after_images:
         status.setdefault("wechat_stock_language_sanitized", [])
         status["wechat_stock_language_sanitized"].extend(stock_changes_after_images[:20])
@@ -933,7 +930,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--length", type=int, default=1000)
     parser.add_argument("--wechat-length", type=int, default=1200)
     parser.add_argument("--no-wechat-title-refine", dest="wechat_title_refine", action="store_false",
-                        help="Skip the extra DeepSeek title-candidate pass for WeChat articles.")
+                        help="Skip filename-anchored DeepSeek fine-tuning and use the deterministic filename fallback.")
     parser.set_defaults(wechat_title_refine=True)
     parser.add_argument(
         "--community-cta",

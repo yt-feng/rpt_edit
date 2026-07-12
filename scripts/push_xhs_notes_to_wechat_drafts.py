@@ -125,7 +125,10 @@ def clean_xhs_markdown(markdown: str) -> str:
         if line.startswith("<p") and ("not investment advice" in lowered or "personal reading notes" in lowered):
             continue
         cleaned.append(raw)
-    text, _stock_changes = sanitize_wechat_stock_language("\n".join(cleaned).strip())
+    text, _stock_changes = sanitize_wechat_stock_language(
+        "\n".join(cleaned).strip(),
+        strict_h1_wording=False,
+    )
     text, _editorial_changes = sanitize_wechat_article_markdown(text)
     return text
 
@@ -158,7 +161,10 @@ def xhs_article_title(markdown: str, fallback: str, institution_name: str) -> st
 
 def xhs_article_title_metadata(report_dir: Path) -> dict[str, str]:
     markdown_path = report_dir / "wechat_article.md"
-    markdown, stock_changes = sanitize_wechat_stock_language(clean_xhs_markdown(markdown_path.read_text(encoding="utf-8", errors="ignore")))
+    markdown, stock_changes = sanitize_wechat_stock_language(
+        clean_xhs_markdown(markdown_path.read_text(encoding="utf-8", errors="ignore")),
+        strict_h1_wording=False,
+    )
     if stock_changes:
         log(f"Sanitized stock wording for {report_dir.name}: {len(stock_changes)} change(s).")
     status = read_json(report_dir / "status.json")

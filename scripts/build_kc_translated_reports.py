@@ -44,10 +44,10 @@ except Exception:  # pragma: no cover
         return ""
 
 from wechat_title_optimizer import (
-    build_wechat_title_refinement_prompt,
-    choose_best_wechat_title,
+    build_filename_title_translation_prompt,
+    choose_filename_anchored_title,
     extract_title_candidates,
-    extract_wechat_keywords,
+    filename_title_fallback,
 )
 from sensitive_content_guard import sanitize_wechat_stock_language
 from wechat_article_quality import (
@@ -381,26 +381,16 @@ def find_report_dirs(date_dir: Path) -> list[Path]:
 
 
 def report_title(report_dir: Path) -> str:
-    for filename in ["wechat_article.md", "note.md", "source_mineru.md"]:
-        path = report_dir / filename
-        if not path.exists():
-            continue
-        for raw in path.read_text(encoding="utf-8", errors="ignore").splitlines():
-            line = raw.strip()
-            if line.startswith("# "):
-                title = re.sub(r"^#+\s*", "", line).strip()
-                if title:
-                    return sanitize_text(title[:140])
     status_path = report_dir / "status.json"
     if status_path.exists():
         try:
             status = json.loads(status_path.read_text(encoding="utf-8", errors="ignore"))
             source_pdf = status.get("source_pdf") or ""
             if source_pdf:
-                return sanitize_text(Path(source_pdf).stem[:140])
+                return Path(source_pdf).stem[:140]
         except Exception:
             pass
-    return sanitize_text(report_dir.name.replace("-", " ")[:140])
+    return report_dir.name[:140]
 
 
 def resolve_image_path(markdown_path: Path, image_ref: str) -> Path | None:
@@ -959,41 +949,34 @@ def generate_article_style_markdown(
     return sanitize_text(article).strip() + "\n"
 
 
-def refine_wechat_title_with_deepseek(
-    source_title: str,
+def wechat_title_from_filename(
+    source_filename: str,
     translated_md: str,
     institution_name: str,
     args: argparse.Namespace,
 ) -> str:
-    fallback = clean_display_title(first_heading(translated_md, source_title), institution_name)
+    fallback = filename_title_fallback(source_filename, institution_name)
     if not getattr(args, "title_refine", True):
         return fallback
-    article_excerpt = normalize_space(re.sub(r"[#>*`!\\[\\]()]+", " ", translated_md))[:2400]
-    source_keywords = extract_wechat_keywords(source_title, translated_md, max_keywords=10)
-    prompt = build_wechat_title_refinement_prompt(
-        source_title=source_title,
-        institution_name=institution_name,
-        article_excerpt=article_excerpt,
-        source_keywords=source_keywords,
-    )
+    article_excerpt = normalize_space(re.sub(r"[#>*`!\\[\\]()]+", " ", translated_md))[:1800]
+    prompt = build_filename_title_translation_prompt(source_filename, institution_name, article_excerpt)
     try:
         raw = call_deepseek(
             prompt,
             args,
-            f"WeChat title refine: {source_title[:40]}",
+            f"WeChat filename title: {source_filename[:40]}",
             temperature=0.25,
-            system_content="你是中文微信公众号标题编辑，只输出严格 JSON。",
+            system_content="你是中文标题编辑，以原始 PDF 文件名为最高权重锚点，只输出严格 JSON。",
         )
         candidates = extract_title_candidates(raw)
     except Exception as exc:
-        log(f"  Title refinement failed, using generated heading: {exc}")
+        log(f"  Filename-anchored title fine-tuning failed, using deterministic filename fallback: {exc}")
         candidates = []
-    return choose_best_wechat_title(
+    return choose_filename_anchored_title(
         candidates,
-        fallback=fallback,
-        institution_name=institution_name,
-        source_keywords=source_keywords,
-        max_chars=64,
+        source_filename,
+        institution_name,
+        evidence_text=article_excerpt,
     )
 
 
@@ -1220,10 +1203,13 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
     else:
         translated_md = translate_markdown(clean_md, args)
     translated_md, stock_changes = sanitize_wechat_stock_language(translated_md)
-    display_title = refine_wechat_title_with_deepseek(source_title, translated_md, institution_name, args)
-    display_title, title_stock_changes = sanitize_wechat_stock_language(display_title)
+    display_title = wechat_title_from_filename(source_title, translated_md, institution_name, args)
+    display_title, title_stock_changes = sanitize_wechat_stock_language(display_title, strict_wording=False)
     translated_md = replace_first_heading(translated_md, display_title)
-    translated_md, stock_changes_after_title = sanitize_wechat_stock_language(translated_md)
+    translated_md, stock_changes_after_title = sanitize_wechat_stock_language(
+        translated_md,
+        strict_h1_wording=False,
+    )
     translated_path = report_out_dir / "translated.md"
     translated_path.write_text(translated_md, encoding="utf-8")
 
@@ -1234,6 +1220,7 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
         "source_report_dir": str(report_dir),
         "title": display_title,
         "source_title": source_title,
+        "wechat_title_source": "source_filename_weighted_finetune",
         "source_clean": "source_clean.md",
         "translated_markdown": "translated.md",
         "pdf": output_pdf.name,
@@ -1264,7 +1251,7 @@ def main() -> int:
     parser.add_argument("--include-institutions", default="",
                         help="Comma list of institution keys/names to keep, e.g. bis,imf.")
     parser.add_argument("--no-title-refine", dest="title_refine", action="store_false",
-                        help="Skip the extra DeepSeek title-candidate pass and use the generated heading.")
+                        help="Skip filename-anchored DeepSeek fine-tuning and use the deterministic filename fallback.")
     parser.set_defaults(title_refine=True)
     parser.add_argument("--title-guard", action="store_true",
                         help="Use DeepSeek to skip reports whose title is China-sensitive (keeps them out of WeChat).")

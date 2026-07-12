@@ -274,8 +274,12 @@ def sanitize_wechat_strict_wording(text: str) -> tuple[str, list[str]]:
     return cleaned, changes
 
 
-def sanitize_wechat_stock_language(text: str) -> tuple[str, list[str]]:
-    """Remove broker target-price/rating/recommendation wording from WeChat text."""
+def sanitize_wechat_stock_language(
+    text: str,
+    strict_wording: bool = True,
+    strict_h1_wording: bool | None = None,
+) -> tuple[str, list[str]]:
+    """Remove broker calls; optionally neutralize broader finance-adjacent wording."""
     changes: list[str] = []
     out_lines: list[str] = []
     for raw in (text or "").splitlines():
@@ -319,8 +323,12 @@ def sanitize_wechat_stock_language(text: str) -> tuple[str, list[str]]:
         line = re.sub(r"(?:[，,；;]\s*){2,}", "，", line)
         line = re.sub(r"[，,；;：:]\s*(?=$)", "", line)
         line = re.sub(r"(公司情况更新){2,}", "公司情况更新", line)
-        line, strict_changes = sanitize_wechat_strict_wording(line)
-        changes.extend(strict_changes)
+        line_strict_wording = strict_wording
+        if marker and len(marker.group(1).strip()) == 1 and strict_h1_wording is not None:
+            line_strict_wording = strict_h1_wording
+        if line_strict_wording:
+            line, strict_changes = sanitize_wechat_strict_wording(line)
+            changes.extend(strict_changes)
         line = re.sub(r"\s*([，。；;,:：])\s*", r"\1", line)
         line = re.sub(r"[，,]+([。；;])", r"\1", line)
         line = re.sub(r"(?:[，,；;]\s*){2,}", "，", line)
