@@ -1,0 +1,26 @@
+{
+  "date_folder": "260713",
+  "max_reports": "all",
+  "selected_count": 1,
+  "successful_count": 1,
+  "sensitive_skipped_count": 0,
+  "sensitive_skipped": [],
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/consulting/260713/0001-BCG_Mega-Projects-Powered-by-Renewables-A-Practical-Playbook-for_6542b8dc",
+      "title": "波士顿咨询：可再生能源驱动的巨型项目实用手册",
+      "source_title": "0001-BCG_Mega-Projects-Powered-by-Renewables-A-Practical-Playbook-for_6542b8dc",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 1,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/consulting/260713/01-0001-BCG_Mega-Projects-Powered-by-Renewables-A-Practical-Playbook-for_6542b8dc",
+      "pdf_path": "kc_translated_reports/consulting/260713/01-0001-BCG_Mega-Projects-Powered-by-Renewables-A-Practical-Playbook-for_6542b8dc/kc_translated_report_01.pdf"
+    }
+  ]
+}
