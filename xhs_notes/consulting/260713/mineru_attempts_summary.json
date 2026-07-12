@@ -1,0 +1,19 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 1,
+    "successful_pdf_count": 1,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_ga4yvz4d/pdfs/0001-BCG_Mega-Projects-Powered-by-Renewables-A-Practical-Playbook-for_6542b8dc.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
