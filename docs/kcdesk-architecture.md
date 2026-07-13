@@ -1,6 +1,6 @@
 # kcdesk.com 技术架构文档
 
-最后更新：2026-07-03
+最后更新：2026-07-13
 维护范围：`kcdesk.com` / KC Desk Notes 搜索站、报告详情页、外部报告检索、账号权限、管理后台、运营后台、每日文件缓存、访问埋点。
 
 ## 1. 总览
@@ -21,6 +21,7 @@ flowchart LR
   API --> SB["Supabase<br/>site_users / entitlements"]
   API --> GH["GitHub API / raw files"]
   API --> EXT["外部报告源<br/>Worker 代理"]
+  API --> SNAP["R2 管理后台快照<br/>last-known-good"]
   GHA["GitHub Actions"] --> PAGES["GitHub Pages artifact"]
   GHA --> R2
   PAGES --> D
@@ -93,7 +94,7 @@ Worker 支持 `/api/...` 路径，也兼容直接访问无 `/api` 的路径。
 
 | Endpoint | 方法 | 用途 |
 | --- | --- | --- |
-| `/health` | GET | 健康检查。 |
+| `/health` | GET | 健康检查，同时返回管理后台每日文件/分析快照的新鲜度，不含私有内容。 |
 | `/analytics` | POST | 前端访问/搜索/下载/发货链接埋点。 |
 | `/captcha` | GET | 注册/登录验证码。 |
 | `/auth` | GET/POST | 获取 session、注册、登录。 |
@@ -126,6 +127,7 @@ Worker 支持 `/api/...` 路径，也兼容直接访问无 `/api` 的路径。
 | `reportify-status/<id>.json` | 外部报告后台准备状态；用户端不展示这个名称。 |
 | `_account/...` | R2 兜底账号、权益、购买记录、GitHub 文件缓存。 |
 | `_account/github-cache/...` | 管理后台/运营后台每日文件缓存。 |
+| `_account/admin-snapshots/*.json` | 管理后台各模块最后一次成功快照：每日文件、精选、公众号批次、分析、用户列表。 |
 | `_analytics/events/YYYY-MM-DD/...json` | 访问、搜索、打开报告、下载等埋点事件。 |
 | `_search-cache/...` | 外部搜索实时缓存。 |
 | `_search-mirror/...` | 外部搜索镜像结果。 |
@@ -223,6 +225,8 @@ KC-<base32(hmac_sha256(PASSWORD_SECRET, "kc-desk-notes:" + report_id)) 前 12 �
 
 数据入口：`/api/account-admin/summary`
 
+该接口不再在一次请求中同步等待所有上游。每日文件、精选、公众号批次、访问分析和用户列表分别读取 R2 中的 last-known-good 快照；每日文件超过 10 分钟、访问分析超过 15 分钟、其他模块超过 30 分钟后，仍先返回旧数据，再由 `ctx.waitUntil` 在后台刷新。任一模块更新失败时只影响自己的状态，不会清空其他模块，也不会把普通刷新错误误报成登录失效。
+
 管理后台包含：
 
 - 每日精选。
@@ -237,6 +241,16 @@ KC-<base32(hmac_sha256(PASSWORD_SECRET, "kc-desk-notes:" + report_id)) 前 12 �
 - 每日文件。
 - 不包含用户信息、访问埋点、公众号发送时间。
 - 不包含“站内视频”类文件。
+
+更新状态：
+
+- `fresh`：显示仍在各模块新鲜度窗口内的成功快照。
+- `updating`：继续显示最近一次成功内容，同时提示数据更新中。
+- `degraded`：快照超过 2 小时仍未完整刷新，继续保留旧内容并提示稍后重试。
+- 没有任何快照时显示“数据正在首次同步，请约半小时后重新进入”，不展示内部异常信息。
+- 前端对 summary 请求设置 22 秒超时并自动重试一次；同一登录会话内还会保留最后一次成功画面。不同账号之间不会复用该画面。
+- 发现模块正在后台更新时，前端 12 秒后自动读取一次新快照，不需要用户反复点刷新。
+- 手动点击“刷新”会触发一次完整的后台快照更新；页面先保留旧内容，更新完成后自动回读。
 
 ### 每日精选
 
@@ -283,8 +297,9 @@ KC-<base32(hmac_sha256(PASSWORD_SECRET, "kc-desk-notes:" + report_id)) 前 12 �
 
 缓存与加速：
 
-- Worker cron 每 30 分钟执行 `warmAdminGithubCache`。
-- 打开/刷新管理后台或运营后台时，也会异步触发一次预热。
+- Worker cron 每 30 分钟先刷新每日文件快照，再执行 `warmAdminGithubCache`。
+- 管理后台打开时只读取快照；快照过期后在后台触发刷新，不让 GitHub 聚合阻塞页面。
+- BBG Show、BBG Top、ARK、Market Views、报告视频等按类型合并；某一类型本轮未取到时保留该类型上一轮成功结果，避免列表忽隐忽现。
 - 预热会把最新每日文件缓存到 R2 `_account/github-cache/...`。
 - 缓存保留 3 天，Worker 按文件日期或缓存时间清理。
 - 下载 endpoint 支持 HTTP Range。
@@ -326,9 +341,10 @@ _analytics/events/YYYY-MM-DD/<timestamp>-<random>.json
 dashboard：
 
 - 只在 `twotigers` super 管理后台显示。
-- 默认看近 30 天。
+- 默认看近 7 天。
 - 展示访客数、搜索数、报告打开、下载、发货链接、热门搜索、热门报告、最近事件。
 - visitor id 存在浏览器本地，Worker 同时保存 IP hash，避免直接保存明文 IP。
+- 聚合后的 dashboard 写入 `_account/admin-snapshots/analytics.json`；读取事件超时不会清空管理后台的历史统计。
 
 ## 13. 搜索镜像与中国大陆访问
 
@@ -431,6 +447,8 @@ node --check workers/kc-desk-notes-worker/src/index.js
 curl -s https://kcdesk.com/api/health
 ```
 
+返回的 `dashboard_cache.files` 和 `dashboard_cache.analytics` 包含 `state`、`updated_at`、`age_seconds`，用于判断定时刷新是否工作；不会返回文件名、用户或埋点明细。
+
 ## 17. 命名约束
 
 面向用户的页面、链接、按钮和状态文案只使用产品命名：
@@ -444,3 +462,22 @@ curl -s https://kcdesk.com/api/health
 - `KC娱乐`
 
 不要在用户可见页面出现真实上游品牌名、内部抓取项目名、第三方 API 域名、后台实现路径或调试词。源码内部常量、历史 R2 prefix、workflow 文件名可以保留，但新增 UI 文案要按上面的产品命名。
+
+## 18. 稳定性约束与排障顺序
+
+稳定性约束：
+
+1. 上游实时读取不得直接决定管理后台模块是否为空；必须优先使用 last-known-good 快照。
+2. 定时任务按 cron 隔离：30 分钟任务负责管理后台快照、每日文件 R2 预热和智库 PDF；10 分钟窗口任务只负责 Newsfeed 缓存与邮件，避免多组重任务同时争用 Worker。
+3. GitHub、Supabase、Pages JSON 请求都有明确超时。已签名登录请求优先读取 R2 用户镜像，Supabase 查询超时后也回退 R2；Pages catalog/search 超时后保留精选快照。
+4. 用户权限修改仍以 `_account/access/...` 的主记录、latest backup、history backup 三份写入并读回校验；用户列表快照只是管理后台展示层，不参与实际下载授权判断。
+5. 用户权限新增、编辑、禁用后立即更新对应的用户列表快照；即使随后刷新失败，当前管理界面也保留服务端刚确认的结果。
+6. Pages workflow 在同步和部署前执行前端与 Worker 的 `node --check`；语法校验失败时禁止继续部署 Worker。
+
+排障顺序：
+
+1. 请求 `/api/health`，检查 `dashboard_cache` 的状态和时间。
+2. 查看 30 分钟 cron 是否执行完成；视频已经在源 repo 生成但后台未出现时，优先检查 files snapshot，而不是重新生成视频。
+3. files 为 `updating` 时等待后台刷新；旧文件仍应可见。若旧文件也消失，视为快照回归问题。
+4. analytics 为 `updating` 时检查 R2 `_analytics/events/` 是否持续写入，以及 `_account/admin-snapshots/analytics.json` 的更新时间。
+5. 权限显示与下载结果不一致时，以 `/entitlement` 和 `_account/access/...` 为准，不以用户列表快照作为授权依据。
