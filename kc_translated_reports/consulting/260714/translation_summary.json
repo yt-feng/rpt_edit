@@ -1,0 +1,41 @@
+{
+  "date_folder": "260714",
+  "max_reports": "all",
+  "selected_count": 2,
+  "successful_count": 2,
+  "sensitive_skipped_count": 0,
+  "sensitive_skipped": [],
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/consulting/260714/0001-BCG_AI-Infrastructure-A-Strategic-Opportunity-for-Thailand_193bc216",
+      "title": "波士顿咨询：泰国AI基础设施的战略机遇",
+      "source_title": "0001-BCG_AI-Infrastructure-A-Strategic-Opportunity-for-Thailand_193bc216",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 6,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/consulting/260714/01-0001-BCG_AI-Infrastructure-A-Strategic-Opportunity-for-Thailand_193bc216",
+      "pdf_path": "kc_translated_reports/consulting/260714/01-0001-BCG_AI-Infrastructure-A-Strategic-Opportunity-for-Thailand_193bc216/kc_translated_report_01.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260714/0002-BCG_Keeping-Defense-Aircraft-Mission-Ready_be523867",
+      "title": "波士顿咨询：保持国防战机任务就绪",
+      "source_title": "0002-BCG_Keeping-Defense-Aircraft-Mission-Ready_be523867",
+      "wechat_title_source": "source_filename_weighted_finetune",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_02.pdf",
+      "figure_count": 0,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "stock_language_sanitized": [],
+      "output_dir": "kc_translated_reports/consulting/260714/02-0002-BCG_Keeping-Defense-Aircraft-Mission-Ready_be523867",
+      "pdf_path": "kc_translated_reports/consulting/260714/02-0002-BCG_Keeping-Defense-Aircraft-Mission-Ready_be523867/kc_translated_report_02.pdf"
+    }
+  ]
+}
