@@ -183,6 +183,19 @@ const ADMIN_GITHUB_ARTIFACT_TIMEOUT_MS = 2500;
 const GITHUB_API_TIMEOUT_MS = 5500;
 const ADMIN_CATALOG_TIMEOUT_MS = 3500;
 const ADMIN_WECHAT_TIMEOUT_MS = 3500;
+const INTERNAL_JSON_TIMEOUT_MS = 10000;
+const SUPABASE_TIMEOUT_MS = 6500;
+const SUPABASE_WRITE_TIMEOUT_MS = 15000;
+const ADMIN_SNAPSHOT_PREFIX = "_account/admin-snapshots";
+const ADMIN_FILES_SNAPSHOT_KEY = `${ADMIN_SNAPSHOT_PREFIX}/files.json`;
+const ADMIN_PICKS_SNAPSHOT_KEY = `${ADMIN_SNAPSHOT_PREFIX}/picks.json`;
+const ADMIN_WECHAT_SNAPSHOT_KEY = `${ADMIN_SNAPSHOT_PREFIX}/wechat.json`;
+const ADMIN_ANALYTICS_SNAPSHOT_KEY = `${ADMIN_SNAPSHOT_PREFIX}/analytics.json`;
+const ADMIN_USERS_SNAPSHOT_KEY = `${ADMIN_SNAPSHOT_PREFIX}/users.json`;
+const ADMIN_SNAPSHOT_FRESH_MS = 30 * 60 * 1000;
+const ADMIN_FILES_SNAPSHOT_FRESH_MS = 10 * 60 * 1000;
+const ADMIN_ANALYTICS_SNAPSHOT_FRESH_MS = 15 * 60 * 1000;
+const ADMIN_SNAPSHOT_VERSION = 1;
 const NEWSFEED_CACHE_PREFIX = "_newsfeed/cache";
 const NEWSFEED_TOPICS_PREFIX = "_newsfeed/topics";
 const NEWSFEED_SETTINGS_PREFIX = "_newsfeed/settings";
@@ -312,6 +325,11 @@ let rulesCache = null;
 let rulesFetchedAt = 0;
 let searchIndexCache = null;
 let searchIndexFetchedAt = 0;
+let adminFilesRefreshPromise = null;
+let adminPicksRefreshPromise = null;
+let adminWechatRefreshPromise = null;
+let adminAnalyticsRefreshPromise = null;
+let adminUsersRefreshPromise = null;
 
 function allowedOrigin(request, env) {
   const requestOrigin = request.headers.get("Origin") || "";
@@ -354,7 +372,7 @@ function jsonResponse(request, env, status, body) {
 }
 
 async function fetchJson(url) {
-  const response = await fetch(url, { headers: { "Accept": "application/json" } });
+  const response = await fetchWithTimeout(url, { headers: { "Accept": "application/json" } }, INTERNAL_JSON_TIMEOUT_MS);
   if (!response.ok) {
     throw new Error(`Could not fetch ${url}: ${response.status}`);
   }
@@ -751,11 +769,12 @@ async function supabaseRequest(env, method, path, payload = null, options = {}) 
   };
   if (options.prefer) headers.Prefer = options.prefer;
   else if (options.preferReturn) headers.Prefer = "return=representation";
-  const response = await fetch(`${supabaseBaseUrl(env)}${path}`, {
+  const timeoutMs = String(method || "GET").toUpperCase() === "GET" ? SUPABASE_TIMEOUT_MS : SUPABASE_WRITE_TIMEOUT_MS;
+  const response = await fetchWithTimeout(`${supabaseBaseUrl(env)}${path}`, {
     method,
     headers,
     body: payload === null ? undefined : JSON.stringify(payload),
-  });
+  }, timeoutMs);
   const text = await response.text();
   if (!response.ok) {
     throw new Error(`Account database error ${response.status}: ${text.slice(0, 300)}`);
@@ -969,7 +988,9 @@ async function currentUserFromRequest(env, request) {
   const token = bearerToken(request);
   if (!token) throw new Error("Please log in.");
   const payload = await verifyAccountPayload(env, token, "user");
-  const user = await findSiteUserByUsername(env, normalizeUsername(payload.username));
+  const username = normalizeUsername(payload.username);
+  const mirroredUser = await safeR2GetJson(env, accountKey("users", "username", username));
+  const user = mirroredUser || await findSiteUserByUsername(env, username);
   if (!user) throw new Error("Account not found.");
   const merged = await mergeSiteUserAdminState(env, user);
   if (accountDisabled(merged)) throw new Error(disabledAccountMessage());
@@ -5847,7 +5868,7 @@ async function bbgNestedSourceFiles(env, sourceDir, maxDateDirs, maxFilesPerDir)
   return groups.flat();
 }
 
-async function latestBbgRenderedClipFiles(env, maxItems = 26) {
+async function bbgRenderedClipFilesFromContents(env) {
   const roots = await githubContentsOrEmpty(env, BBG_SHOW_PREFIX, BBG_SHOW_REPO, ADMIN_GITHUB_SOURCE_TIMEOUT_MS);
   const rootFiles = roots.filter(isGithubMp4File);
   const rootDirs = roots.filter((item) => item && item.type === "dir");
@@ -5863,10 +5884,23 @@ async function latestBbgRenderedClipFiles(env, maxItems = 26) {
       timeoutMs: GITHUB_API_TIMEOUT_MS,
     }));
   }
-  const listedFiles = [
+  return [
     ...rootFiles,
     ...(await Promise.all(sourceTasks.map((task) => resolveWithin(task, ADMIN_GITHUB_SOURCE_TIMEOUT_MS - 1000, [])))).flat(),
   ];
+}
+
+async function latestBbgRenderedClipFiles(env, maxItems = 26) {
+  const tree = await resolveWithin(githubRecursiveTree(env, BBG_SHOW_REPO), ADMIN_GITHUB_SOURCE_TIMEOUT_MS - 500, []);
+  const treeFiles = (Array.isArray(tree) ? tree : [])
+    .filter((item) => item && item.type === "blob" && /^rendered-clips\/.+\.mp4$/i.test(String(item.path || "")))
+    .map((item) => ({
+      type: "file",
+      name: String(item.path || "").split("/").pop(),
+      path: item.path,
+      size: Number(item.size || 0),
+    }));
+  const listedFiles = treeFiles.length ? treeFiles : await bbgRenderedClipFilesFromContents(env);
   const seen = new Set();
   const grouped = new Map();
   for (const item of listedFiles || []) {
@@ -5936,6 +5970,29 @@ function kcEntertainmentNote(path, date) {
 }
 
 async function latestKcEntertainmentFiles(env, maxItems = 12) {
+  const tree = await resolveWithin(githubRecursiveTree(env, ENTERTAIN_CUT_REPO), ADMIN_GITHUB_SOURCE_TIMEOUT_MS - 500, []);
+  const treeVideos = (Array.isArray(tree) ? tree : [])
+    .filter((item) => item && item.type === "blob" && /^outputs\/kc_entertain\/20\d{2}-\d{2}-\d{2}\/.+\.mp4$/i.test(String(item.path || "")))
+    .sort((a, b) => dateScore(b.path) - dateScore(a.path) || String(a.path || "").localeCompare(String(b.path || "")));
+  if (treeVideos.length) {
+    return treeVideos.slice(0, maxItems).map((video) => {
+      const path = String(video.path || "");
+      const date = kcEntertainmentDateFromPath(path);
+      return adminGithubFile(
+        "kc-entertain",
+        "KC 娱乐视频",
+        { name: path.split("/").pop(), path, size: video.size },
+        date,
+        kcEntertainmentNote(path, date),
+        ENTERTAIN_CUT_REPO,
+        {
+          recommended_account: "KC娱乐",
+          account_label_confidence: "高",
+          account_label_reason: "KC娱乐专属内容",
+        },
+      );
+    });
+  }
   let entries = [];
   try {
     entries = await githubContents(env, KC_ENTERTAIN_PREFIX, ENTERTAIN_CUT_REPO);
@@ -5998,6 +6055,27 @@ function rpt2vidNote(path, date) {
 }
 
 async function latestRpt2vidPdfKcFiles(env, maxItems = 20) {
+  const tree = await resolveWithin(githubRecursiveTree(env, RPT2VID_REPO), ADMIN_GITHUB_SOURCE_TIMEOUT_MS - 500, []);
+  const escapedPrefix = RPT2VID_PDF_KC_PREFIX.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const treePattern = new RegExp(`^${escapedPrefix}/(?:\\d{6}|20\\d{6})/.+\\.mp4$`, "i");
+  const treeVideos = (Array.isArray(tree) ? tree : [])
+    .filter((item) => item && item.type === "blob" && treePattern.test(String(item.path || "")))
+    .sort((a, b) => dateScore(b.path) - dateScore(a.path) || String(a.path || "").localeCompare(String(b.path || "")));
+  if (treeVideos.length) {
+    return treeVideos.slice(0, maxItems).map((video) => {
+      const path = String(video.path || "");
+      const date = rpt2vidDateFromPath(path);
+      return adminGithubFile(
+        "rpt2vid-pdf-kc",
+        "报告视频",
+        { name: path.split("/").pop(), path, size: video.size },
+        date,
+        rpt2vidNote(path, date),
+        RPT2VID_REPO,
+        rpt2vidAccountRecommendation(path),
+      );
+    });
+  }
   let entries = [];
   try {
     entries = await githubContents(env, RPT2VID_PDF_KC_PREFIX, RPT2VID_REPO);
@@ -6112,6 +6190,274 @@ async function resolveWithin(promise, timeoutMs, fallbackValue) {
   ]).catch(() => fallbackValue);
 }
 
+function hasAdminSnapshot(snapshot) {
+  return Boolean(
+    snapshot &&
+    typeof snapshot === "object" &&
+    Object.prototype.hasOwnProperty.call(snapshot, "data"),
+  );
+}
+
+function adminSnapshotStatus(snapshot, freshMs = ADMIN_SNAPSHOT_FRESH_MS) {
+  if (!hasAdminSnapshot(snapshot)) {
+    return {
+      state: "updating",
+      has_data: false,
+      updated_at: "",
+      retry_after_minutes: 30,
+    };
+  }
+  const updatedMs = Date.parse(String(snapshot.updated_at || ""));
+  const ageMs = Number.isFinite(updatedMs) ? Math.max(0, Date.now() - updatedMs) : Number.POSITIVE_INFINITY;
+  const partial = Boolean(snapshot.partial);
+  let state = !partial && ageMs <= freshMs ? "fresh" : "updating";
+  if (ageMs > freshMs * 4) state = "degraded";
+  return {
+    state,
+    has_data: true,
+    partial,
+    updated_at: String(snapshot.updated_at || ""),
+    attempted_at: String(snapshot.attempted_at || snapshot.updated_at || ""),
+    age_seconds: Number.isFinite(ageMs) ? Math.round(ageMs / 1000) : null,
+    retry_after_minutes: 30,
+  };
+}
+
+async function writeAdminSnapshot(env, key, data, extra = {}) {
+  const snapshot = {
+    version: ADMIN_SNAPSHOT_VERSION,
+    updated_at: new Date().toISOString(),
+    data,
+    ...extra,
+  };
+  await r2PutJson(env, key, snapshot);
+  return snapshot;
+}
+
+async function loadAdminSnapshotModule(env, key, options = {}) {
+  let snapshot = await safeR2GetJson(env, key);
+  const refresh = options.refresh;
+  const freshMs = Number(options.freshMs || ADMIN_SNAPSHOT_FRESH_MS);
+  const timeoutMs = Number(options.timeoutMs || ADMIN_GITHUB_FILES_TIMEOUT_MS);
+  if (!hasAdminSnapshot(snapshot) && typeof refresh === "function") {
+    const refreshPromise = refresh();
+    const refreshed = await resolveWithin(refreshPromise, timeoutMs, null);
+    if (hasAdminSnapshot(refreshed)) snapshot = refreshed;
+    else if (options.ctx && typeof options.ctx.waitUntil === "function") {
+      options.ctx.waitUntil(refreshPromise.catch(() => null));
+    }
+  }
+  const status = adminSnapshotStatus(snapshot, freshMs);
+  if (status.has_data && status.state !== "fresh" && typeof refresh === "function" && options.ctx && typeof options.ctx.waitUntil === "function") {
+    options.ctx.waitUntil(refresh().catch(() => null));
+  }
+  return {
+    data: status.has_data ? snapshot.data : options.fallback,
+    status,
+    snapshot,
+  };
+}
+
+function adminFileGroup(file) {
+  const path = String(file && file.path || "");
+  const kind = String(file && file.kind || "");
+  if (/^rendered-clips\/top-videos\//i.test(path)) return "bbg-top";
+  if (kind === "bbg-ark-invest" || /^rendered-clips\/ark-invest\//i.test(path)) return "bbg-ark";
+  if (kind === "bbg-show") return "bbg-show";
+  if (kind === "market-views") return "market-views";
+  if (kind === "kc-entertain") return "kc-entertain";
+  if (kind === "rpt2vid-pdf-kc") return "report-videos";
+  if (kind === "site-video") return "site-videos";
+  return kind || String(file && file.type || "other");
+}
+
+function adminFileKey(file) {
+  return [file && file.type, file && file.repo, file && (file.path || file.id || file.name)].map((part) => String(part || "")).join(":");
+}
+
+function groupAdminFiles(files) {
+  const grouped = new Map();
+  for (const file of Array.isArray(files) ? files : []) {
+    const group = adminFileGroup(file);
+    const rows = grouped.get(group) || [];
+    rows.push(file);
+    grouped.set(group, rows);
+  }
+  return grouped;
+}
+
+function mergeAdminFilesWithSnapshot(liveFiles, previousFiles) {
+  const live = groupAdminFiles(liveFiles);
+  const previous = groupAdminFiles(previousFiles);
+  const orderedGroups = [
+    "bbg-top",
+    "bbg-show",
+    "bbg-ark",
+    "market-views",
+    "kc-entertain",
+    "report-videos",
+    "site-videos",
+  ];
+  const groups = [...new Set([...orderedGroups, ...live.keys(), ...previous.keys()])];
+  const staleGroups = [];
+  const merged = [];
+  const seen = new Set();
+  for (const group of groups) {
+    const current = live.get(group) || [];
+    const fallback = previous.get(group) || [];
+    const rows = current.length ? current : fallback;
+    if (!current.length && fallback.length) staleGroups.push(group);
+    for (const file of rows) {
+      const key = adminFileKey(file);
+      if (!key || seen.has(key)) continue;
+      seen.add(key);
+      merged.push(file);
+    }
+  }
+  const expectedGroups = ["bbg-top", "bbg-show"];
+  for (const group of expectedGroups) {
+    if (!live.has(group) && !staleGroups.includes(group)) staleGroups.push(group);
+  }
+  return {
+    files: applyAdminVideoContinuityMajority(merged),
+    stale_groups: staleGroups,
+  };
+}
+
+async function refreshAdminFilesSnapshot(env) {
+  const previous = await safeR2GetJson(env, ADMIN_FILES_SNAPSHOT_KEY);
+  const previousFiles = hasAdminSnapshot(previous) && Array.isArray(previous.data && previous.data.files)
+    ? previous.data.files
+    : [];
+  const liveFiles = await latestAdminGithubFiles(env);
+  const merged = mergeAdminFilesWithSnapshot(liveFiles, previousFiles);
+  if (!merged.files.length) throw new Error("No daily files are currently available.");
+  if (!liveFiles.length && previousFiles.length) {
+    const retained = {
+      ...previous,
+      attempted_at: new Date().toISOString(),
+      partial: true,
+    };
+    await r2PutJson(env, ADMIN_FILES_SNAPSHOT_KEY, retained);
+    return retained;
+  }
+  return writeAdminSnapshot(env, ADMIN_FILES_SNAPSHOT_KEY, { files: merged.files }, {
+    attempted_at: new Date().toISOString(),
+    partial: merged.stale_groups.length > 0,
+    stale_groups: merged.stale_groups,
+  });
+}
+
+function refreshAdminFilesSnapshotOnce(env) {
+  if (!adminFilesRefreshPromise) {
+    adminFilesRefreshPromise = refreshAdminFilesSnapshot(env).finally(() => {
+      adminFilesRefreshPromise = null;
+    });
+  }
+  return adminFilesRefreshPromise;
+}
+
+async function refreshAdminPicksSnapshot(env) {
+  const [catalog, searchIndex] = await Promise.all([loadCatalog(env), loadSearchIndex(env)]);
+  if (!catalog || !Array.isArray(catalog.items) || !catalog.items.length) {
+    throw new Error("Catalog is not ready.");
+  }
+  return writeAdminSnapshot(env, ADMIN_PICKS_SNAPSHOT_KEY, {
+    daily_picks: selectDailyPicks(catalog, 5, searchIndex),
+    access_options: accessOptionRowsFromCatalog(catalog),
+  });
+}
+
+function refreshAdminPicksSnapshotOnce(env) {
+  if (!adminPicksRefreshPromise) {
+    adminPicksRefreshPromise = refreshAdminPicksSnapshot(env).finally(() => {
+      adminPicksRefreshPromise = null;
+    });
+  }
+  return adminPicksRefreshPromise;
+}
+
+async function refreshAdminWechatSnapshot(env) {
+  return writeAdminSnapshot(env, ADMIN_WECHAT_SNAPSHOT_KEY, await buildWechatDraftSchedule(env));
+}
+
+function refreshAdminWechatSnapshotOnce(env) {
+  if (!adminWechatRefreshPromise) {
+    adminWechatRefreshPromise = refreshAdminWechatSnapshot(env).finally(() => {
+      adminWechatRefreshPromise = null;
+    });
+  }
+  return adminWechatRefreshPromise;
+}
+
+async function refreshAdminAnalyticsSnapshot(env) {
+  return writeAdminSnapshot(env, ADMIN_ANALYTICS_SNAPSHOT_KEY, await buildAnalyticsDashboard(env));
+}
+
+function refreshAdminAnalyticsSnapshotOnce(env) {
+  if (!adminAnalyticsRefreshPromise) {
+    adminAnalyticsRefreshPromise = refreshAdminAnalyticsSnapshot(env).finally(() => {
+      adminAnalyticsRefreshPromise = null;
+    });
+  }
+  return adminAnalyticsRefreshPromise;
+}
+
+async function refreshAdminUsersSnapshot(env) {
+  const [userRows, entitlementRows] = await Promise.all([listSiteUsers(env), listEntitlementRows(env)]);
+  if (!Array.isArray(userRows) || !userRows.length) throw new Error("User list is not ready.");
+  const entitlementsByEmail = entitlementMap(entitlementRows);
+  const accessRows = await Promise.all(userRows.map((user) => findAccessGrant(env, user.email).catch(() => publicAccessGrant(null))));
+  const users = userRows.map((user, index) => adminVisibleUser(
+    user,
+    entitlementsByEmail.get(normalizeEmail(user.email)),
+    accessRows[index],
+  ));
+  return writeAdminSnapshot(env, ADMIN_USERS_SNAPSHOT_KEY, { users });
+}
+
+function refreshAdminUsersSnapshotOnce(env) {
+  if (!adminUsersRefreshPromise) {
+    adminUsersRefreshPromise = refreshAdminUsersSnapshot(env).finally(() => {
+      adminUsersRefreshPromise = null;
+    });
+  }
+  return adminUsersRefreshPromise;
+}
+
+async function patchAdminUsersSnapshotUser(env, user) {
+  if (!user || !user.email) return false;
+  const previous = await safeR2GetJson(env, ADMIN_USERS_SNAPSHOT_KEY);
+  const hasPreviousUsers = hasAdminSnapshot(previous) && Array.isArray(previous.data && previous.data.users);
+  const users = hasPreviousUsers
+    ? previous.data.users.slice()
+    : [];
+  const email = normalizeEmail(user.email);
+  const index = users.findIndex((row) => normalizeEmail(row && row.email) === email);
+  if (index >= 0) users[index] = user;
+  else users.unshift(user);
+  await writeAdminSnapshot(env, ADMIN_USERS_SNAPSHOT_KEY, { users }, { partial: !hasPreviousUsers });
+  return true;
+}
+
+async function refreshAdminDashboardSnapshots(env) {
+  const filesResult = await refreshAdminFilesSnapshotOnce(env).catch(() => null);
+  await refreshAdminWechatSnapshotOnce(env).catch(() => null);
+  await Promise.allSettled([
+    refreshAdminPicksSnapshotOnce(env),
+    refreshAdminAnalyticsSnapshotOnce(env),
+    refreshAdminUsersSnapshotOnce(env),
+  ]);
+  const filesSnapshot = hasAdminSnapshot(filesResult)
+    ? filesResult
+    : await safeR2GetJson(env, ADMIN_FILES_SNAPSHOT_KEY);
+  const files = hasAdminSnapshot(filesSnapshot) && Array.isArray(filesSnapshot.data && filesSnapshot.data.files)
+    ? filesSnapshot.data.files
+    : [];
+  if (files.length) await warmAdminGithubCache(env, files).catch(() => null);
+  return { ok: true, generated_at: new Date().toISOString() };
+}
+
 function operatorVisibleAdminFiles(files) {
   return (Array.isArray(files) ? files : []).filter((file) => {
     const kind = String(file && file.kind || "");
@@ -6125,75 +6471,99 @@ function adminFilesForUser(files, user) {
 }
 
 async function handleAccountAdminSummary(request, env, ctx = null) {
+  let adminUser;
   try {
-    const adminUser = await requireOperationsUser(request, env);
+    adminUser = await requireOperationsUser(request, env);
+  } catch (error) {
+    return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+  }
+  try {
     const isSuper = isSuperAccount(adminUser);
-    const [userRows, entitlementRows, allFiles, catalog, searchIndex, wechatSchedule, analyticsResult] = await Promise.all([
-      isSuper ? listSiteUsers(env) : Promise.resolve([]),
-      isSuper ? listEntitlementRows(env) : Promise.resolve([]),
-      resolveWithin(latestAdminGithubFiles(env), ADMIN_GITHUB_FILES_TIMEOUT_MS, []),
-      resolveWithin(loadCatalog(env), ADMIN_CATALOG_TIMEOUT_MS, { items: [] }),
-      resolveWithin(loadSearchIndex(env), ADMIN_CATALOG_TIMEOUT_MS, { items: [] }),
-      isSuper ? resolveWithin(buildWechatDraftSchedule(env), ADMIN_WECHAT_TIMEOUT_MS, {
-        today_folder: bjtTodayFolder(),
-        date_folder: "",
-        date_label: "",
-        is_today: false,
-        window: "08:00 - 次日 00:30",
-        source_dates: [],
-        total_batches: 0,
-        total_articles: 0,
-        batches: [],
-      }) : Promise.resolve(null),
-      isSuper
-        ? resolveWithin(
-          buildAnalyticsDashboard(env)
-            .then((data) => ({ data, error: "" }))
-            .catch((error) => ({ data: null, error: error && error.message || "Analytics unavailable." })),
-          ANALYTICS_DASHBOARD_TIMEOUT_MS,
-          { data: null, error: "Analytics loading timed out." },
-        )
-        : Promise.resolve({ data: null, error: "" }),
+    const forceRefresh = new URL(request.url).searchParams.get("refresh") === "1";
+    if (forceRefresh && ctx && typeof ctx.waitUntil === "function") {
+      ctx.waitUntil(refreshAdminDashboardSnapshots(env).catch(() => null));
+    }
+    const emptyWechatSchedule = {
+      today_folder: bjtTodayFolder(),
+      date_folder: "",
+      date_label: "",
+      is_today: false,
+      window: "08:00 - 次日 00:30",
+      source_dates: [],
+      total_batches: 0,
+      total_articles: 0,
+      batches: [],
+    };
+    const [filesModule, picksModule, wechatModule, analyticsModule, usersModule] = await Promise.all([
+      loadAdminSnapshotModule(env, ADMIN_FILES_SNAPSHOT_KEY, {
+        refresh: () => refreshAdminFilesSnapshotOnce(env),
+        timeoutMs: ADMIN_GITHUB_FILES_TIMEOUT_MS,
+        freshMs: ADMIN_FILES_SNAPSHOT_FRESH_MS,
+        fallback: { files: [] },
+        ctx,
+      }),
+      loadAdminSnapshotModule(env, ADMIN_PICKS_SNAPSHOT_KEY, {
+        refresh: () => refreshAdminPicksSnapshotOnce(env),
+        timeoutMs: Math.max(ADMIN_CATALOG_TIMEOUT_MS * 2, 8000),
+        fallback: { daily_picks: [], access_options: null },
+        ctx,
+      }),
+      isSuper ? loadAdminSnapshotModule(env, ADMIN_WECHAT_SNAPSHOT_KEY, {
+        refresh: () => refreshAdminWechatSnapshotOnce(env),
+        timeoutMs: Math.max(ADMIN_WECHAT_TIMEOUT_MS * 2, 8000),
+        fallback: emptyWechatSchedule,
+        ctx,
+      }) : Promise.resolve({ data: null, status: null }),
+      isSuper ? loadAdminSnapshotModule(env, ADMIN_ANALYTICS_SNAPSHOT_KEY, {
+        refresh: () => refreshAdminAnalyticsSnapshotOnce(env),
+        timeoutMs: Math.max(ANALYTICS_DASHBOARD_TIMEOUT_MS, 10000),
+        freshMs: ADMIN_ANALYTICS_SNAPSHOT_FRESH_MS,
+        fallback: null,
+        ctx,
+      }) : Promise.resolve({ data: null, status: null }),
+      isSuper ? loadAdminSnapshotModule(env, ADMIN_USERS_SNAPSHOT_KEY, {
+        refresh: () => refreshAdminUsersSnapshotOnce(env),
+        timeoutMs: 15000,
+        fallback: { users: [] },
+        ctx,
+      }) : Promise.resolve({ data: { users: [] }, status: null }),
     ]);
-    const analytics = analyticsResult && analyticsResult.data || null;
-    const analyticsError = analyticsResult && analyticsResult.error || "";
+    const filesData = filesModule.data && typeof filesModule.data === "object" ? filesModule.data : { files: [] };
+    const picksData = picksModule.data && typeof picksModule.data === "object" ? picksModule.data : { daily_picks: [], access_options: null };
+    const usersData = usersModule.data && typeof usersModule.data === "object" ? usersModule.data : { users: [] };
+    const allFiles = Array.isArray(filesData.files) ? filesData.files : [];
     const files = adminFilesForUser(allFiles, adminUser);
-    const entitlementsByEmail = entitlementMap(entitlementRows);
-    const accessByEmail = new Map();
-    if (isSuper) {
-      const accessRows = await Promise.all(userRows.map((user) => findAccessGrant(env, user.email).catch(() => publicAccessGrant(null))));
-      userRows.forEach((user, index) => {
-        const email = normalizeEmail(user.email);
-        if (email) accessByEmail.set(email, accessRows[index]);
-      });
-    }
-    const dailyPicks = selectDailyPicks(catalog, 5, searchIndex);
-    if (ctx && typeof ctx.waitUntil === "function") {
-      ctx.waitUntil(warmAdminGithubCache(env, files).catch(() => null));
-    }
+    const dailyPicks = Array.isArray(picksData.daily_picks) ? picksData.daily_picks : [];
+    const userRows = Array.isArray(usersData.users) ? usersData.users : [];
     return jsonResponse(request, env, 200, {
       user: publicUser(adminUser),
       dashboard_title: isSuper ? "管理后台" : "运营后台",
       can_view_users: isSuper,
       can_view_wechat: isSuper,
       can_view_analytics: isSuper,
-      users: isSuper ? userRows.map((user) => adminVisibleUser(
-        user,
-        entitlementsByEmail.get(normalizeEmail(user.email)),
-        accessByEmail.get(normalizeEmail(user.email)),
-      )) : [],
-      access_options: isSuper ? accessOptionRowsFromCatalog(catalog) : null,
+      users: isSuper ? userRows : [],
+      access_options: isSuper ? picksData.access_options || null : null,
       files,
       daily_picks: dailyPicks,
-      wechat_schedule: wechatSchedule || null,
-      analytics: analytics || null,
-      analytics_error: analyticsError,
+      wechat_schedule: isSuper ? wechatModule.data || emptyWechatSchedule : null,
+      analytics: isSuper ? analyticsModule.data || null : null,
+      analytics_error: "",
+      module_status: {
+        files: forceRefresh ? { ...filesModule.status, state: "updating" } : filesModule.status,
+        picks: forceRefresh ? { ...picksModule.status, state: "updating" } : picksModule.status,
+        wechat: isSuper ? (forceRefresh ? { ...wechatModule.status, state: "updating" } : wechatModule.status) : null,
+        analytics: isSuper ? (forceRefresh ? { ...analyticsModule.status, state: "updating" } : analyticsModule.status) : null,
+        users: isSuper ? (forceRefresh ? { ...usersModule.status, state: "updating" } : usersModule.status) : null,
+      },
       repo: githubRepo(env),
       ref: githubRef(env),
       generated_at: new Date().toISOString(),
     });
   } catch (error) {
-    return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+    return jsonResponse(request, env, 503, {
+      detail: "后台数据正在更新，请稍后重试。",
+      code: "dashboard_updating",
+    });
   }
 }
 
@@ -6223,11 +6593,13 @@ async function handleAccountAdminUserAccess(request, env) {
     }
     let user = await findSiteUserByEmail(env, email).catch(() => null);
     if (!user && payload.username) user = await findSiteUserByUsername(env, normalizeUsername(payload.username)).catch(() => null);
+    const visibleUser = user ? adminVisibleUser(user, await findEntitlement(env, email).catch(() => null), access) : null;
+    if (visibleUser) await patchAdminUsersSnapshotUser(env, visibleUser).catch(() => false);
     return jsonResponse(request, env, 200, {
       ok: true,
       verified: true,
       backup_count: 3,
-      user: user ? adminVisibleUser(user, await findEntitlement(env, email).catch(() => null), access) : null,
+      user: visibleUser,
       access,
     });
   } catch (error) {
@@ -6281,9 +6653,11 @@ async function handleAccountAdminUserCreate(request, env) {
       updated_at: now,
     });
     const merged = await mergeSiteUserAdminState(env, user);
+    const visibleUser = adminVisibleUser(merged, await findEntitlement(env, email).catch(() => null), await findAccessGrant(env, email).catch(() => publicAccessGrant(null)));
+    await patchAdminUsersSnapshotUser(env, visibleUser).catch(() => false);
     return jsonResponse(request, env, 201, {
       ok: true,
-      user: adminVisibleUser(merged, await findEntitlement(env, email).catch(() => null), await findAccessGrant(env, email).catch(() => publicAccessGrant(null))),
+      user: visibleUser,
     });
   } catch (error) {
     const text = String(error && error.message || "");
@@ -6318,9 +6692,11 @@ async function handleAccountAdminUserStatus(request, env) {
     if (isSuperAccount(user)) return jsonResponse(request, env, 400, { detail: "管理员账号不能禁用。" });
     const state = await saveUserAdminState(env, user, { disabled: Boolean(payload.disabled) }, adminUser);
     const merged = await mergeSiteUserAdminState(env, { ...user, ...state });
+    const visibleUser = adminVisibleUser(merged, await findEntitlement(env, email).catch(() => null), await findAccessGrant(env, email).catch(() => publicAccessGrant(null)));
+    await patchAdminUsersSnapshotUser(env, visibleUser).catch(() => false);
     return jsonResponse(request, env, 200, {
       ok: true,
-      user: adminVisibleUser(merged, await findEntitlement(env, email).catch(() => null), await findAccessGrant(env, email).catch(() => publicAccessGrant(null))),
+      user: visibleUser,
     });
   } catch (error) {
     return jsonResponse(request, env, 400, { detail: error.message || "Could not update user status." });
@@ -7944,7 +8320,17 @@ export default {
     }
 
     if (pathname === "/health") {
-      return jsonResponse(request, env, 200, { ok: true });
+      const [filesSnapshot, analyticsSnapshot] = await Promise.all([
+        safeR2GetJson(env, ADMIN_FILES_SNAPSHOT_KEY),
+        safeR2GetJson(env, ADMIN_ANALYTICS_SNAPSHOT_KEY),
+      ]);
+      return jsonResponse(request, env, 200, {
+        ok: true,
+        dashboard_cache: {
+          files: adminSnapshotStatus(filesSnapshot, ADMIN_FILES_SNAPSHOT_FRESH_MS),
+          analytics: adminSnapshotStatus(analyticsSnapshot, ADMIN_ANALYTICS_SNAPSHOT_FRESH_MS),
+        },
+      });
     }
 
     if (pathname === "/analytics" && request.method === "POST") {
@@ -8106,12 +8492,17 @@ export default {
     return jsonResponse(request, env, 404, { error: "Not found." });
   },
 
-  async scheduled(_event, env, ctx) {
-    ctx.waitUntil(Promise.all([
-      warmAdminGithubCache(env).catch(() => null),
-      warmThinkTankPdfCache(env).catch(() => null),
-      warmNewsfeedCaches(env).catch(() => null),
-      sendDueNewsfeedDigestEmails(env).catch(() => null),
-    ]));
+  async scheduled(event, env, ctx) {
+    const cron = String(event && event.cron || "");
+    const tasks = [];
+    if (!cron || cron === "*/30 * * * *") {
+      tasks.push(refreshAdminDashboardSnapshots(env));
+      tasks.push(warmThinkTankPdfCache(env));
+    }
+    if (!cron || cron !== "*/30 * * * *") {
+      tasks.push(warmNewsfeedCaches(env));
+      tasks.push(sendDueNewsfeedDigestEmails(env));
+    }
+    ctx.waitUntil(Promise.allSettled(tasks));
   },
 };
