@@ -1,0 +1,421 @@
+[
+  {
+    "id": 0,
+    "name": "Bernstein-Americas Power & Energy Transition： Baseload， Rising~Bernstein's Power Forecast until 2030-260713.pdf",
+    "dropbox_path": "/zip_backup/260713/bernstein-americas power & energy transition： baseload， rising~bernstein's power forecast until 2030-260713.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-americas power & energy transition： baseload， rising~bernstein's power forecast until 2030-260713.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "行业供需趋势，电力预测",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 1,
+    "name": "Bernstein-Global Digital Assets：The Tokenization Memo： Robinhood Chain’s strong debut launch （3 n）-260713.pdf",
+    "dropbox_path": "/zip_backup/260713/bernstein-global digital assets：the tokenization memo： robinhood chain’s strong debut launch （3 n）-260713.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-global digital assets：the tokenization memo： robinhood chain’s strong debut launch （3 n）-260713.pdf",
+    "category": "macro_trend",
+    "score": 0.93,
+    "reason": "全球数字资产，宏观主题；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 1,
+    "macro_priority_score": 1,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 2,
+    "name": "Bernstein-Americas Energy & Transition：Americas Natural Gas： New Bernstein Power Model helps confirm our bullish gas outlook...Haynesville activity doesn't deter us-260713.pdf",
+    "dropbox_path": "/zip_backup/260713/bernstein-americas energy & transition：americas natural gas： new bernstein power model helps confirm our bullish gas outlook...haynesville activity doesn't deter us-260713.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-americas energy & transition：americas natural gas： new bernstein power model helps confirm our bullish gas outlook...haynesville activity doesn't deter us-260713.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "行业供需趋势，天然气展望",
+    "classifier": "deepseek",
+    "macro_hint_score": 3,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 3,
+    "name": "Bernstein-Nike Inc（NKE.US）Nike： Key takeaways from Bernstein's Retail Forum-260713.pdf",
+    "dropbox_path": "/zip_backup/260713/bernstein-nike inc（nke.us）nike： key takeaways from bernstein's retail forum-260713.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-nike inc（nke.us）nike： key takeaways from bernstein's retail forum-260713.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "单一公司Nike，业绩点评；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=2",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=2"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Bernstein-Global Semis and Semi Caps：Global Semis — Can semi cap work if memory doesn't？-260713.pdf",
+    "dropbox_path": "/zip_backup/260713/bernstein-global semis and semi caps：global semis — can semi cap work if memory doesn't？-260713.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-global semis and semi caps：global semis — can semi cap work if memory doesn't？-260713.pdf",
+    "category": "macro_trend",
+    "score": 0.93,
+    "reason": "全球半导体行业，非单一公司；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 1,
+    "macro_priority_score": 1,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 5,
+    "name": "Bernstein-Global Luxury Goods： Tracking the AI wealth effect in 2Q26E-260713.pdf",
+    "dropbox_path": "/zip_backup/260713/bernstein-global luxury goods： tracking the ai wealth effect in 2q26e-260713.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-global luxury goods： tracking the ai wealth effect in 2q26e-260713.pdf",
+    "category": "macro_trend",
+    "score": 0.88,
+    "reason": "全球奢侈品行业，宏观主题；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 1,
+    "macro_priority_score": 1,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 6,
+    "name": "GS-ASIA IN FOCUS A New Funding Source for China’s High~Tech Ambitions-260712.pdf",
+    "dropbox_path": "/zip_backup/260713/GS-asia in focus a new funding source for china’s high~tech ambitions-260712.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-asia in focus a new funding source for china’s high~tech ambitions-260712.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "亚洲焦点，中国高科技融资",
+    "classifier": "deepseek",
+    "macro_hint_score": 3,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 7,
+    "name": "GS-ASIA ECONOMICS ANALYST：Transmission of AI Super Surplus in Korea~Mostly Through FX and Fiscal Policy-260713.pdf",
+    "dropbox_path": "/zip_backup/260713/GS-asia economics analyst：transmission of ai super surplus in korea~mostly through fx and fiscal policy-260713.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-asia economics analyst：transmission of ai super surplus in korea~mostly through fx and fiscal policy-260713.pdf",
+    "category": "macro_trend",
+    "score": 0.99,
+    "reason": "亚洲经济，汇率与财政政策；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 5,
+    "macro_priority_score": 4,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 8,
+    "name": "Bernstein-Space Exploration Technologies Corporation（SPCX.US）SpaceX： China Long March 10 booster catch~The real competitor steps forward； SpaceX readies launch 13-260713.pdf",
+    "dropbox_path": "/zip_backup/260713/bernstein-space exploration technologies corporation（spcx.us）spacex： china long march 10 booster catch~the real competitor steps forward； spacex readies launch 13-260713.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-space exploration technologies corporation（spcx.us）spacex： china long march 10 booster catch~the real competitor steps forward； spacex readies launch 13-260713.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "单一公司SpaceX，个股点评；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=3",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 2,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=3"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "GS-Bilibili Inc. （BILI.US）： Investor Day takeaways： Healthy community reinforces monetization flywheel； Enhancing game pipeline info 2026~27-260713.pdf",
+    "dropbox_path": "/zip_backup/260713/GS-bilibili inc. （bili.us）： investor day takeaways： healthy community reinforces monetization flywheel； enhancing game pipeline info 2026~27-260713.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-bilibili inc. （bili.us）： investor day takeaways： healthy community reinforces monetization flywheel； enhancing game pipeline info 2026~27-260713.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "单一公司Bilibili，投资者日；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=2",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=2"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "GS-Americas Technology： Semiconductors： EDA： Poised to begin capturing Agentic AI value with potential revenue acceleration—Buy CDNS， SNPS-260713.pdf",
+    "dropbox_path": "/zip_backup/260713/GS-americas technology： semiconductors： eda： poised to begin capturing agentic ai value with potential revenue acceleration—buy cdns， snps-260713.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-americas technology： semiconductors： eda： poised to begin capturing agentic ai value with potential revenue acceleration—buy cdns， snps-260713.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "行业主题，半导体EDA，含个股推荐",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 11,
+    "name": "GS-BMW （BMWG.DE）： 2Q26 preview： China drags but resilient US Europe holds the Auto margin in the 1~3% guide； share buyback accelerates-260713.pdf",
+    "dropbox_path": "/zip_backup/260713/GS-bmw （bmwg.de）： 2q26 preview： china drags but resilient us europe holds the auto margin in the 1~3% guide； share buyback accelerates-260713.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-bmw （bmwg.de）： 2q26 preview： china drags but resilient us europe holds the auto margin in the 1~3% guide； share buyback accelerates-260713.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "单一公司BMW，业绩预览",
+    "classifier": "deepseek",
+    "macro_hint_score": 4,
+    "macro_priority_score": 1,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 12,
+    "name": "GS-China：Three things in China-260712.pdf",
+    "dropbox_path": "/zip_backup/260713/GS-china：three things in china-260712.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china：three things in china-260712.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "中国市场宏观，区域市场",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 13,
+    "name": "GS-China Restaurants： Luckin Chagee initiation feedback； addressing key investor questions-260712.pdf",
+    "dropbox_path": "/zip_backup/260713/GS-china restaurants： luckin chagee initiation feedback； addressing key investor questions-260712.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china restaurants： luckin chagee initiation feedback； addressing key investor questions-260712.pdf",
+    "category": "company_stock",
+    "score": 0.9,
+    "reason": "中国餐饮行业，非单一公司；本地规则排除个股/评级/目标价/财报信号：contains_rating_or_target_price,company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_rating_or_target_price",
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "GS-CATL （300750 3750.HK）Beyond Cells， Into Energy Solutions； Initiate at Buy-260713.pdf",
+    "dropbox_path": "/zip_backup/260713/GS-catl （300750 3750.hk）beyond cells， into energy solutions； initiate at buy-260713.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-catl （300750 3750.hk）beyond cells， into energy solutions； initiate at buy-260713.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "单一公司CATL，首次覆盖；本地规则排除个股/评级/目标价/财报信号：contains_ticker,contains_rating_or_target_price,company_hint_score=2",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "contains_rating_or_target_price",
+      "company_hint_score=2"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "GS-JAPAN BANKS：Raising earnings forecasts and target prices on the 3 megabanks to reflect capital markets activity and growing loan demand-260713.pdf",
+    "dropbox_path": "/zip_backup/260713/GS-japan banks：raising earnings forecasts and target prices on the 3 megabanks to reflect capital markets activity and growing loan demand-260713.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-japan banks：raising earnings forecasts and target prices on the 3 megabanks to reflect capital markets activity and growing loan demand-260713.pdf",
+    "category": "company_stock",
+    "score": 0.9,
+    "reason": "日本银行，但针对3家具体公司；本地规则排除个股/评级/目标价/财报信号：company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 2,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "GS-Japan Technology： Semiconductors： Investor visit feedback： Expectations for front~end firms seem high， including for price hikes-260713.pdf",
+    "dropbox_path": "/zip_backup/260713/GS-japan technology： semiconductors： investor visit feedback： expectations for front~end firms seem high， including for price hikes-260713.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-japan technology： semiconductors： investor visit feedback： expectations for front~end firms seem high， including for price hikes-260713.pdf",
+    "category": "company_stock",
+    "score": 0.9,
+    "reason": "日本半导体行业，非单一公司；本地规则排除个股/评级/目标价/财报信号：company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "GS-Foxconn Industrial Internet （601138）： Chairman & Vietnam factory tour： AI servers & switches with strong automated production； Buy-260712.pdf",
+    "dropbox_path": "/zip_backup/260713/GS-foxconn industrial internet （601138）： chairman & vietnam factory tour： ai servers & switches with strong automated production； buy-260712.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-foxconn industrial internet （601138）： chairman & vietnam factory tour： ai servers & switches with strong automated production； buy-260712.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "单一公司Foxconn，工厂参观",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 18,
+    "name": "GS-Rotation Temptation-260713.pdf",
+    "dropbox_path": "/zip_backup/260713/GS-rotation temptation-260713.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-rotation temptation-260713.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "策略主题，板块轮动",
+    "classifier": "deepseek",
+    "macro_hint_score": 0,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 19,
+    "name": "GS-Thailand   Vietnam Tech Tour： Top Six takeaways from factory visits across PCB， Networking， and AI server supply chain-260713.pdf",
+    "dropbox_path": "/zip_backup/260713/GS-thailand   vietnam tech tour： top six takeaways from factory visits across pcb， networking， and ai server supply chain-260713.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-thailand   vietnam tech tour： top six takeaways from factory visits across pcb， networking， and ai server supply chain-260713.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "行业供应链主题，泰国越南科技",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 20,
+    "name": "GS-Porsche AG （P911_p.DE） Expect a strong 2Q26 as cost momentum accelerates and 911 mix offsets lower FY27 volumes； Reiterate Buy-260713.pdf",
+    "dropbox_path": "/zip_backup/260713/GS-porsche ag （p911_p.de） expect a strong 2q26 as cost momentum accelerates and 911 mix offsets lower fy27 volumes； reiterate buy-260713.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-porsche ag （p911_p.de） expect a strong 2q26 as cost momentum accelerates and 911 mix offsets lower fy27 volumes； reiterate buy-260713.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "单一公司Porsche，业绩预期",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 1,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 21,
+    "name": "JPM-Meta Platforms Inc（META.US）AI Outlook Flips as Muse Spark 1.1 Model Advances，  with Signs of External AI Monetization & AI Product Cycle； Incrementally Positive， But Remain Neutral-260712.pdf",
+    "dropbox_path": "/zip_backup/260713/JPM-meta platforms inc（meta.us）ai outlook flips as muse spark 1.1 model advances，  with signs of external ai monetization & ai product cycle； incrementally positive， but remain neutral-260712.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-meta platforms inc（meta.us）ai outlook flips as muse spark 1.1 model advances，  with signs of external ai monetization & ai product cycle； incrementally positive， but remain neutral-260712.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "单一公司Meta，AI展望；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=2",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 2,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=2"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "GS-US ECONOMICS ANALYST：Tracking Inflation Risks from the Middle East Conflict-260712.pdf",
+    "dropbox_path": "/zip_backup/260713/GS-us economics analyst：tracking inflation risks from the middle east conflict-260712.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-us economics analyst：tracking inflation risks from the middle east conflict-260712.pdf",
+    "category": "macro_trend",
+    "score": 0.99,
+    "reason": "美国经济，通胀风险；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 3,
+    "macro_priority_score": 3,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 23,
+    "name": "JPM-Equity Strategy：Q2 Earnings Preview~robust corporate profits to offer support to the market-260713.pdf",
+    "dropbox_path": "/zip_backup/260713/JPM-equity strategy：q2 earnings preview~robust corporate profits to offer support to the market-260713.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-equity strategy：q2 earnings preview~robust corporate profits to offer support to the market-260713.pdf",
+    "category": "macro_trend",
+    "score": 0.93,
+    "reason": "权益策略，盈利预览；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 3,
+    "macro_priority_score": 1,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 24,
+    "name": "JPM-Server JPM proprietary server CPU shipment model-260712.pdf",
+    "dropbox_path": "/zip_backup/260713/jpm-server jpm proprietary server cpu shipment model-260712.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/jpm-server jpm proprietary server cpu shipment model-260712.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "行业模型，服务器CPU出货",
+    "classifier": "deepseek",
+    "macro_hint_score": 0,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 25,
+    "name": "MS-NVIDIA Corp.（NVDA.US）NVDA NDR highlights diversified growth opportunities-260710.pdf",
+    "dropbox_path": "/zip_backup/260713/MS-nvidia corp.（nvda.us）nvda ndr highlights diversified growth opportunities-260710.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-nvidia corp.（nvda.us）nvda ndr highlights diversified growth opportunities-260710.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "单一公司NVIDIA，NDR；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=3",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=3"
+    ]
+  },
+  {
+    "id": 26,
+    "name": "MS-Internet - North America $1.4trln of Capex, 4X in Compute Capacity, and AI Revenue Streams to Watch into '28-260712.pdf",
+    "dropbox_path": "/zip_backup/260713/MS-internet - north america $1.4trln of capex, 4x in compute capacity, and ai revenue streams to watch into '28-260712.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-internet - north america $1.4trln of capex, 4x in compute capacity, and ai revenue streams to watch into '28-260712.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "行业主题，互联网资本开支",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 27,
+    "name": "NOM-Victory Giant（2476.HK）Concerns about product delay and share loss overdone...-260713.pdf",
+    "dropbox_path": "/zip_backup/260713/NOM-victory giant（2476.hk）concerns about product delay and share loss overdone...-260713.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-victory giant（2476.hk）concerns about product delay and share loss overdone...-260713.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "单一公司Victory Giant；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 0,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 28,
+    "name": "NOM-USD CNY fix model：Projection，6.7841-260713.pdf",
+    "dropbox_path": "/zip_backup/260713/NOM-usd cny fix model：projection，6.7841-260713.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-usd cny fix model：projection，6.7841-260713.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "汇率模型，宏观",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 29,
+    "name": "MS-Space：Adding SpaceX to the Space 60： US Space Value Chain Mapping-260713.pdf",
+    "dropbox_path": "/zip_backup/260713/MS-space：adding spacex to the space 60： us space value chain mapping-260713.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-space：adding spacex to the space 60： us space value chain mapping-260713.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "行业主题，太空价值链",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  }
+]
