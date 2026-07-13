@@ -1,0 +1,72 @@
+{
+  "date_folder": "260714",
+  "dry_run": false,
+  "publish": false,
+  "max_articles": "all",
+  "input_selected_count": 1,
+  "selected_count": 1,
+  "include_institutions": [],
+  "institution_filtered_count": 0,
+  "skipped_title_policy_count": 0,
+  "skipped_title_policy": [],
+  "articles_per_draft": 8,
+  "draft_count": 1,
+  "max_body_chars": 1200,
+  "max_content_chars": 19500,
+  "max_content_bytes": 18000,
+  "min_inline_images": 3,
+  "max_inline_images": 3,
+  "body_hook": "",
+  "image_upload_delay_seconds": 3.0,
+  "article_delay_seconds": 12.0,
+  "draft_delay_seconds": 90.0,
+  "draft_verify_delay_seconds": 8.0,
+  "trailing_image": "/opt/actions-runner-rpt-edit/_work/rpt_edit/rpt_edit/prompts/zsxq_img.jpg",
+  "drafts": [
+    {
+      "draft_index": 1,
+      "media_id": "avPwUQVH0p7DPpCFFkit896mJ9OeGWkleHAyvBFJPYaXdWwHmFk_60rvSlxLx_Ei",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 1,
+      "payload_bytes": 7783,
+      "payload": "wechat_drafts/ark/260714/draft_payload_01.json",
+      "titles": [
+        "木头姐ARK：开拓者行动HHS加速药物开发"
+      ],
+      "wechat_titles": [
+        "木头姐ARK：开拓者行动HHS加速药物开发"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 1,
+        "expected_article_count": 1,
+        "matches_expected_article_count": true,
+        "titles": [
+          "æ¨å¤´å§ARKï¼å¼æè è¡å¨HHSå éè¯ç©å¼å"
+        ],
+        "create_time": 1783986240,
+        "update_time": 1783986241
+      }
+    }
+  ],
+  "articles": [
+    {
+      "title": "木头姐ARK：开拓者行动HHS加速药物开发",
+      "wechat_title": "木头姐ARK：开拓者行动HHS加速药物开发",
+      "header_title": "中国监管松绑推动早期研发份额上升",
+      "digest": "开拓者行动-HHS加速药物开发，中国监管松绑推动早期研发份额上升。",
+      "institution_name": "",
+      "source_report_name": "ARK 516-Operation-Trailblazer-HHS-Moves-To-Accelerate-Drug-Development-As-Ch 29149b3f45178b70",
+      "report_dir": "kc_translated_reports/ark/260714/01-0001-ARK_516-Operation-Trailblazer-HHS-Moves-To-Accelerate-Drug-Development-As-Ch_29149b3f45178b",
+      "content_chars": 5220,
+      "content_bytes": 7234,
+      "visible_text_chars": 871,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/ark/260714/_assets/article_01_cover.jpg"
+    }
+  ]
+}
