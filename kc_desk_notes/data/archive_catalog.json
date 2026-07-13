@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "updated_at_bjt": "2026-07-12 14:25:48 +0800",
+  "updated_at_bjt": "2026-07-13 12:59:52 +0800",
   "item_count": 14,
   "sources": {
     "previous_archive_items": 14,
-    "bank_catalog_titles": 1004,
+    "bank_catalog_titles": 1290,
     "archive_items_added": 0,
-    "archive_items_updated": 14,
-    "live_matches_skipped": 990
+    "archive_items_updated": 20,
+    "live_matches_skipped": 1270
   },
   "items": [
     {
@@ -19,14 +19,15 @@
       "date_folders": [
         "260707",
         "260709",
-        "260711"
+        "260711",
+        "260712"
       ],
       "bank_code": "BofA",
       "bank_name": "BofA",
       "password_group": "default",
       "size_bytes": 0,
       "first_seen_at_bjt": "2026-07-10 13:32:37 +0800",
-      "last_seen_at_bjt": "2026-07-12 14:25:48 +0800",
+      "last_seen_at_bjt": "2026-07-13 12:59:52 +0800",
       "available": false,
       "present_in_latest_scan": false,
       "industry": "",
@@ -46,14 +47,15 @@
       "date_folders": [
         "260707",
         "260709",
-        "260711"
+        "260711",
+        "260712"
       ],
       "bank_code": "BofA",
       "bank_name": "BofA",
       "password_group": "default",
       "size_bytes": 0,
       "first_seen_at_bjt": "2026-07-10 13:32:37 +0800",
-      "last_seen_at_bjt": "2026-07-12 14:25:48 +0800",
+      "last_seen_at_bjt": "2026-07-13 12:59:52 +0800",
       "available": false,
       "present_in_latest_scan": false,
       "industry": "",
@@ -73,14 +75,15 @@
       "date_folders": [
         "260707",
         "260709",
-        "260711"
+        "260711",
+        "260712"
       ],
       "bank_code": "BofA",
       "bank_name": "BofA",
       "password_group": "default",
       "size_bytes": 0,
       "first_seen_at_bjt": "2026-07-10 13:32:37 +0800",
-      "last_seen_at_bjt": "2026-07-12 14:25:48 +0800",
+      "last_seen_at_bjt": "2026-07-13 12:59:52 +0800",
       "available": false,
       "present_in_latest_scan": false,
       "industry": "",
@@ -100,14 +103,15 @@
       "date_folders": [
         "260707",
         "260709",
-        "260711"
+        "260711",
+        "260712"
       ],
       "bank_code": "BofA",
       "bank_name": "BofA",
       "password_group": "default",
       "size_bytes": 0,
       "first_seen_at_bjt": "2026-07-10 13:32:37 +0800",
-      "last_seen_at_bjt": "2026-07-12 14:25:48 +0800",
+      "last_seen_at_bjt": "2026-07-13 12:59:52 +0800",
       "available": false,
       "present_in_latest_scan": false,
       "industry": "",
@@ -127,14 +131,15 @@
       "date_folders": [
         "260707",
         "260709",
-        "260711"
+        "260711",
+        "260712"
       ],
       "bank_code": "BofA",
       "bank_name": "BofA",
       "password_group": "default",
       "size_bytes": 0,
       "first_seen_at_bjt": "2026-07-10 13:32:37 +0800",
-      "last_seen_at_bjt": "2026-07-12 14:25:48 +0800",
+      "last_seen_at_bjt": "2026-07-13 12:59:52 +0800",
       "available": false,
       "present_in_latest_scan": false,
       "industry": "",
@@ -154,14 +159,15 @@
       "date_folders": [
         "260707",
         "260709",
-        "260711"
+        "260711",
+        "260712"
       ],
       "bank_code": "BofA",
       "bank_name": "BofA",
       "password_group": "default",
       "size_bytes": 0,
       "first_seen_at_bjt": "2026-07-10 13:32:37 +0800",
-      "last_seen_at_bjt": "2026-07-12 14:25:48 +0800",
+      "last_seen_at_bjt": "2026-07-13 12:59:52 +0800",
       "available": false,
       "present_in_latest_scan": false,
       "industry": "",
@@ -311,7 +317,7 @@
       "password_group": "default",
       "size_bytes": 0,
       "first_seen_at_bjt": "2026-07-06 13:52:32 +0800",
-      "last_seen_at_bjt": "2026-07-12 14:25:48 +0800",
+      "last_seen_at_bjt": "2026-07-13 12:59:52 +0800",
       "available": false,
       "present_in_latest_scan": false,
       "industry": "",
@@ -341,7 +347,7 @@
       "password_group": "default",
       "size_bytes": 0,
       "first_seen_at_bjt": "2026-07-06 13:52:32 +0800",
-      "last_seen_at_bjt": "2026-07-12 14:25:48 +0800",
+      "last_seen_at_bjt": "2026-07-13 12:59:52 +0800",
       "available": false,
       "present_in_latest_scan": false,
       "industry": "",
