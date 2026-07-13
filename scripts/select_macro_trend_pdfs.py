@@ -69,12 +69,20 @@ def write_github_output(key: str, value: str) -> None:
 
 
 def sanitize_filename(name: str, fallback: str) -> str:
-    name = Path(name).name.strip() or fallback
+    name = Path(name).name.strip() or Path(fallback).name.strip() or "report.pdf"
     name = re.sub(r"[\\/:*?\"<>|]+", "-", name)
     name = re.sub(r"\s+", " ", name).strip()
-    if not name.lower().endswith(".pdf"):
-        name += ".pdf"
-    return name[:180]
+
+    # Reserve room for the extension before truncating. Truncating the complete
+    # name used to turn long PDFs into a trailing `.p`, so downstream *.pdf
+    # discovery silently omitted the report.
+    stem = name[:-4] if name.lower().endswith(".pdf") else name
+    stem = stem.rstrip(" .-") or Path(fallback).stem.rstrip(" .-") or "report"
+    max_stem_bytes = 180 - len(".pdf")
+    encoded = stem.encode("utf-8")
+    if len(encoded) > max_stem_bytes:
+        stem = encoded[:max_stem_bytes].decode("utf-8", errors="ignore").rstrip(" .-")
+    return f"{stem or 'report'}.pdf"
 
 
 def load_manifest(input_dir: Path) -> list[dict[str, Any]]:

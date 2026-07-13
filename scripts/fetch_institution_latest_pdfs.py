@@ -151,13 +151,13 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         "token": "WorldBank",
         "kind": "worldbank_api",
         "pdf": "direct",
-        "api_base": "https://search.worldbank.org/api/v2/wds",
-        # WDS docdt lags real publication by many months, so a recency window would
-        # always be empty. Take the newest available by docdt and rely on seen-dedup.
-        "recency_filter": False,
+        "api_base": "https://search.worldbank.org/api/v3/wds",
+        # WDS v3 returns current publication dates, so the normal freshness window
+        # applies. The retired v2 endpoint had gone stale at March 2025.
+        "recency_filter": True,
         "params": {
             "format": "json",
-            "srt": "docdt",
+            "sort": "docdt",
             "order": "desc",
             "fl": "docdt,display_title,docna,pdfurl,url,docty,guid",
             # Substantive research reports, not loan / project agreements.
@@ -361,6 +361,35 @@ def log(message: str) -> None:
 
 def warn(message: str) -> None:
     print(f"[WARN] {message}", flush=True)
+
+
+def github_warning(message: str) -> None:
+    """Add a visible Actions annotation without aborting the other sources."""
+    warn(message)
+    if os.getenv("GITHUB_ACTIONS", "").lower() == "true":
+        escaped = message.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+        print(f"::warning::{escaped}", flush=True)
+
+
+def write_source_health_summary(source_checks: list[dict[str, Any]]) -> None:
+    summary_path = os.getenv("GITHUB_STEP_SUMMARY")
+    if not summary_path:
+        return
+    status_label = {"ok": "OK", "empty": "EMPTY", "error": "ERROR"}
+    lines = [
+        "## Institution source health",
+        "",
+        "| Source | Status | Items checked | New PDFs | Detail |",
+        "|---|---:|---:|---:|---|",
+    ]
+    for check in source_checks:
+        detail = str(check.get("error", "")).replace("|", "\\|").replace("\n", " ")[:240]
+        lines.append(
+            f"| {check['institution']} | {status_label.get(check['status'], check['status'])} "
+            f"| {check.get('item_count', 0)} | {check.get('new_pdf_count', 0)} | {detail} |"
+        )
+    with open(summary_path, "a", encoding="utf-8") as handle:
+        handle.write("\n".join(lines) + "\n")
 
 
 def write_github_output(key: str, value: str) -> None:
@@ -1165,6 +1194,7 @@ def main() -> int:
 
     downloaded: list[dict[str, Any]] = []
     skipped: list[dict[str, Any]] = []
+    source_checks: list[dict[str, Any]] = []
     used_pdf_urls: set[str] = set()
 
     proxy_url: str | None = None
@@ -1201,8 +1231,24 @@ def main() -> int:
             else:
                 items = collect_rss_items(cfg, session, args.request_timeout)
         except Exception as exc:  # noqa: BLE001 - never let one source kill the run
-            warn(f"{cfg['name_en']} source failed entirely: {exc}")
+            message = f"{cfg['name_en']} source failed entirely: {exc}"
+            github_warning(message)
+            source_checks.append({
+                "institution": key,
+                "institution_en": cfg["name_en"],
+                "status": "error",
+                "item_count": 0,
+                "new_pdf_count": 0,
+                "error": str(exc),
+            })
             continue
+
+        source_status = "ok" if items else "empty"
+        if source_status == "empty":
+            github_warning(
+                f"{cfg['name_en']} source returned no items; treating this as "
+                "source health degradation, not confirmed zero updates"
+            )
 
         new_count = 0
         for item in items:
@@ -1284,6 +1330,13 @@ def main() -> int:
             new_count += 1
             log(f"  saved {filename} ({record['bytes'] // 1024} KB) <- {used_url}")
 
+        source_checks.append({
+            "institution": key,
+            "institution_en": cfg["name_en"],
+            "status": source_status,
+            "item_count": len(items),
+            "new_pdf_count": new_count,
+        })
         log(f"  {cfg['name_en']}: {new_count} new PDF(s)")
 
     prune_seen_state(state, args.seen_retention_days)
@@ -1297,6 +1350,7 @@ def main() -> int:
         "institutions": enabled,
         "downloaded_count": len(downloaded),
         "skipped_count": len(skipped),
+        "source_checks": source_checks,
         "force_reprocess": force_reprocess,
         "downloaded": downloaded,
         "skipped": skipped,
@@ -1306,8 +1360,11 @@ def main() -> int:
     )
 
     write_github_output("pdf_count", str(len(downloaded)))
+    write_github_output("source_error_count", str(sum(check["status"] == "error" for check in source_checks)))
+    write_github_output("source_empty_count", str(sum(check["status"] == "empty" for check in source_checks)))
     write_github_output("output_dir", str(output_dir))
     write_github_output("date_folder", args.date)
+    write_source_health_summary(source_checks)
     log(f"Done. Downloaded {len(downloaded)} new PDF(s), skipped {len(skipped)}.")
     return 0
 
