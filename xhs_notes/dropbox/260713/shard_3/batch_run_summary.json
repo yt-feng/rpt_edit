@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 30,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 3,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/16-GS-JAPAN BANKS：Raising earnings forecasts and target prices on the 3 megabanks to reflect capital markets activity and growing loan demand-260713.pdf",
+          "batch_file": "/tmp/pdf_batch_001_fo2eo9v_/pdfs/0001-16-GS-JAPAN BANKS-Raising earnings forecasts and target prices on the 3 megabanks to reflect capital markets activity and growing loan demand-260713.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/17-GS-Japan Technology： Semiconductors： Investor visit feedback： Expectations for front~end firms seem high， including for price hikes-260713.pdf",
+          "batch_file": "/tmp/pdf_batch_001_fo2eo9v_/pdfs/0002-17-GS-Japan Technology- Semiconductors- Investor visit feedback- Expectations for front-end firms seem high- including for price hikes-260713.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/18-GS-Foxconn Industrial Internet （601138）： Chairman & Vietnam factory tour： AI servers & switches with strong automated production； Buy-260712.pdf",
+          "batch_file": "/tmp/pdf_batch_001_fo2eo9v_/pdfs/0003-18-GS-Foxconn Industrial Internet -601138-- Chairman - Vietnam factory tour- AI servers - switches with strong automated production- Buy-260712.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/19-GS-Rotation Temptation-260713.pdf",
+          "batch_file": "/tmp/pdf_batch_001_fo2eo9v_/pdfs/0004-19-GS-Rotation Temptation-260713.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/20-GS-Thailand Vietnam Tech Tour： Top Six takeaways from factory visits across PCB， Networking， and AI server supply chain-260713.pdf",
+          "batch_file": "/tmp/pdf_batch_001_fo2eo9v_/pdfs/0005-20-GS-Thailand Vietnam Tech Tour- Top Six takeaways from factory visits across PCB- Networking- and AI server supply chain-260713.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

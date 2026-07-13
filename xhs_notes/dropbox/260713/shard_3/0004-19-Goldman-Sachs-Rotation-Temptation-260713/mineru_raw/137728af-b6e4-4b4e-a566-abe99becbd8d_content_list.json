@@ -1,0 +1,1640 @@
+[
+    {
+        "type": "text",
+        "text": "CHINA MUSINGS",
+        "bbox": [
+            107,
+            97,
+            238,
+            114
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Rotation Temptation",
+        "text_level": 1,
+        "bbox": [
+            107,
+            123,
+            331,
+            148
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "1. We recently held extensive investor meetings in Asia and the Americas, with client conversations centering on: a) the substantial underperformance of H vs. A shares and other regional peers ytd; b) the potential and possible timing for a leadership shift from A to H shares, or from Hard to Soft Tech; c) the reasons for disappointing earnings by listed Chinese companies and the drivers for a profit turnaround; d) are A-share AI stocks overheated? e) investor flows and positioning in Chinese stocks vis-a-vis other North Asian markets; f) the impacts of an active IPO pipeline on market returns and liquidity; g) AI developments in China, and the investment strategy within the Chinese AI ecosystem; and; h) how to make generate returns in 2H26, especially in the non-AI universe?",
+        "bbox": [
+            76,
+            227,
+            692,
+            405
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "In this China Musings, we summarize investor feedback/FAQs and our refreshed views on these subjects, reiterate our broad A over H (Hard vs. Soft Tech) tactical preference, emphasize our high-conviction thematic ideas such as GS Select AI Portfolio and GS 15FYP Portfolio, but would start scaling into select Soft Tech/Internet proxies in H shares post their de-rating and in anticipation of their earnings recovery in the months ahead.",
+        "bbox": [
+            76,
+            414,
+            679,
+            521
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "2. Extraordinary gains and dispersion of Asian equities. The return dispersion across the region and within the Chinese equity universe has been a subject featured in all of our client conversations. The impressive ytd gains in Korea and Taiwan, propelled by memory, foundry, and AI infrastructure plays, are well recognized and appreciated by international investors, but the equally significant divergence between A and H shares, and in similar vein, the wide relative return gaps between Hard and Soft Tech seem less well-telegraphed among investors outside of Asia. For instance, STAR50 (a proxy for onshore AI Hard Tech) has outpaced HSTECH (dominated by offshore Internet/platform companies) by 68pp ytd, while ChiNext has led SHCOMP/CSI300 by 19pp/17pp so far this year, both reaching unprecedented or extreme levels in the history of Chinese equities. This great divergence suggests to us that the AI bottleneck, Hard vs. Software, or AI infrastructure supplier vs. AI capex spender trade is also at play in China, although manifesting in pockets of the equity universe that are less well followed and positioned by foreign investors.",
+        "bbox": [
+            76,
+            531,
+            697,
+            799
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Kinger Lau, CFA\n+852-2978-1224 | kinger.lau@gs.com\nGS (Asia) L.L.C.",
+        "bbox": [
+            718,
+            228,
+            905,
+            261
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Timothy Moe, CFA\n+65-6889-1199 | timothy.moe@gs.com\nGS (Singapore) Pte",
+        "bbox": [
+            718,
+            265,
+            913,
+            299
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Si Fu, Ph.D.\n+852-2978-0200 | si.fu@gs.com\nGS (Asia) L.L.C.",
+        "bbox": [
+            718,
+            303,
+            880,
+            335
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Kevin Wang, CFA\n+852-2978-2446 | kevin.wang@gs.com\nGS (Asia) L.L.C.",
+        "bbox": [
+            718,
+            340,
+            911,
+            373
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Goldman Research Sachs",
+        "bbox": [
+            78,
+            23,
+            297,
+            63
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Portfolio Strategy Research\n13 July 2026 | 4:36AM HKT",
+        "bbox": [
+            709,
+            26,
+            919,
+            64
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html.",
+        "bbox": [
+            76,
+            926,
+            854,
+            973
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e6a746c7c96ecbc08e3b661b6be67b9c49ab65d5dc0681b3b3f04f61d125a4c3.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 1: The AI bottleneck, Hard vs. Software, or AI supplier vs. AI capex spender trade has been a dominant equity theme globally"
+        ],
+        "chart_footnote": [
+            "Source: Wind, FactSet, GS Global Investment Research"
+        ],
+        "bbox": [
+            94,
+            122,
+            477,
+            311
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 2: Indexes with higher AI Hardware exposures have outperformed ytd in the Chinese equity universe",
+        "bbox": [
+            506,
+            71,
+            916,
+            101
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/52cc911c139b3da2f3291c4a501eb4505c51747f0ca227d063a0d313dce72b69.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: FactSet, MSCI, HSI, CSI, GS Global Investment Research"
+        ],
+        "bbox": [
+            514,
+            119,
+            910,
+            318
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "3. Rotation temptation. The significant return disparity and index return concentration has prompted investor questions about the likelihood, necessary conditions, and timing of a potential rotation from A to H, or from Hard to Soft Tech. Indeed, HSTECH has rebounded 11% in the past two weeks (still down 14% ytd), led by a few Internet incumbents on better newsflows, suppressed starting valuations, and continued AI application/monetization developments. Our top-down Hard vs. Soft Tech rotation model, an extension of our A-H Market Rotation Model, also points to the direction that H-share Soft Tech equities may start to trade better in the coming months, potentially narrowing their underperformance gaps vis-a-vis their A-share Hard Tech counterparts on various fundamental, valuation, and liquidity factors. That said, while recognizing that prevailing valuations of leading Internet names may have already factored in further de-rating in their core businesses and/or negative NPV/ROIs on their AI investments, which seem overly bearish to us, we believe a sustained price rally would require a visible recovery in underlying profits, which could be still a couple of months or quarters away as we elaborate below.",
+        "bbox": [
+            267,
+            345,
+            913,
+            612
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            39
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "China Musings",
+        "bbox": [
+            820,
+            29,
+            916,
+            42
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "13 July 2026",
+        "bbox": [
+            81,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 3: H-share Soft Tech may start to close its underperformance gaps vis-a-vis Hard Tech in A shares in the months ahead",
+        "bbox": [
+            269,
+            71,
+            883,
+            101
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/1c1b0afa85f83468c976b5fed5de2855915b742c52937439319c2531caa65309.jpg",
+        "content": "",
+        "chart_caption": [
+            "MSCI China AI Hard Tech vs Soft Tech Relative Returns (rolling 6 months)"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            279,
+            137,
+            908,
+            396
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/715695da6e15678217088f6d2d813eaf33f0ff215196b509fffaf0e097dd196e.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Wind, FactSet, GS Global Investment Research",
+            "Exhibit 4: A bearish scenario in terms of Chinese Internet companies' AI investments could be already in the price"
+        ],
+        "table_body": "<table><tr><td></td><td>Coef.</td><td>t Stat</td></tr><tr><td>Intercept</td><td>-0.15</td><td>-2.86</td></tr><tr><td>PE premium</td><td>-0.24</td><td>-1.87</td></tr><tr><td>fEPS revision gap</td><td>0.80</td><td>3.11</td></tr><tr><td>24m fEPSg gap</td><td>1.89</td><td>3.66</td></tr><tr><td>Turnover velocity ratio</td><td>0.13</td><td>5.05</td></tr><tr><td>CSI300 vs MXCN return</td><td>1.32</td><td>9.22</td></tr></table>",
+        "bbox": [
+            656,
+            301,
+            913,
+            390
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a13591a5cbc2ba80c96ae381d3581d7beb2ec9d0dd1baac4fc3327fa5c0df644.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Top 9 internet companies include: Tencent, Alibaba, PDD, Xiaomi, Meituan, NetEase, Baidu, JD, and Trip.com."
+        ],
+        "bbox": [
+            274,
+            497,
+            671,
+            683
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Source: Company data, GS Global Investment Research",
+        "bbox": [
+            271,
+            729,
+            619,
+            743
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "4. No earnings, no gains. Subdued earnings delivery has weighed on returns of offshore indexes, and was a key input to our downgrade of MSCI China from Overweight to Market-weight 6 weeks ago. 1Q26 profits were down 8% for MSCI China, dragged primarily by the Internet sector (35% of earnings weight), which has incurred more than Rmb180bn of subsidy losses cumulatively since 2Q25, and has been a major sponsor for AI capex domestically that could top US\\$100bn/US\\$120bn this year and next on GS estimates. The weak 1Q results follow a lackluster year in 2025 when index earnings grew merely 7%, trailing below consensus expectations for 6 consecutive years. Looking ahead, we are still of the view that narrowing subsidy losses, fast-growing AI-related new opportunities (e.g. Cloud, agentic AI, and AI tokens), and stable, cash-generating",
+        "bbox": [
+            267,
+            750,
+            916,
+            928
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "China Musings",
+        "bbox": [
+            818,
+            27,
+            918,
+            42
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "13 July 2026",
+        "bbox": [
+            81,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "e-commerce businesses could help drive a (operating) profit turnaround for Internet heavyweights in their 2Q or 3Q results season, at which point investors may be better placed to quantify these companies' AI upside optionality, and could be more incentivized to value these stocks on a sum-of-the-parts basis as opposed to a likely blended (earnings) approach now, in our view.",
+        "bbox": [
+            269,
+            59,
+            910,
+            148
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5dcc8497e7a9f3e5c1e1a2b4f8dbc5d02a9e364712a48979753c50d11cf0b7cc.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 5: Chinese Internet/Soft Tech stocks have seen persistent downward earnings pressures in the past year"
+        ],
+        "chart_footnote": [
+            "Source: MSCI, FactSet, IBES, GS Global Investment Research"
+        ],
+        "bbox": [
+            86,
+            204,
+            480,
+            390
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e3da0aaed5a59c0518f275cbb9ec9e63148db2eb67953835a2e4ece972930d4a.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 6: Chinese big tech companies' returns are most sensitive to realized profit growth"
+        ],
+        "chart_footnote": [
+            "Source: Wind, FactSet, GS Global Investment Research"
+        ],
+        "bbox": [
+            513,
+            202,
+            908,
+            392
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/05d5532fad39736387a1c2832cacc3ef19323bfdc61981fe0212d2800bef22ec.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 7: Profit growth momentum for offshore tech could improve in 2H26 per GS and consensus expectations",
+            "Earnings growth yoy - 9 large Chinese Internet companies"
+        ],
+        "chart_footnote": [
+            "Source: MSCI, FactSet, GS Global Investment Research"
+        ],
+        "bbox": [
+            281,
+            489,
+            906,
+            750
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "5. Are China AI stocks overheated? This is a popular question from investors, probably a derivative of the AI bubble debate that has dominated investors' mind-share globally in recent months. In sum, we push back to the notion that the aggregate Chinese AI equity bloc is a bubble as our top-down analysis shows that the potential economic benefits via efficiency gains and new profit/TAM creation could be 50% to 100% higher than what is currently discounted in AI equity prices. That said, we see emerging signs of overheating in certain pockets of the AI universe, namely the semi cohort and select A-share Hard Tech proxies where valuations are at rich premiums vs. historical",
+        "bbox": [
+            267,
+            786,
+            910,
+            928
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "China Musings",
+        "bbox": [
+            820,
+            27,
+            916,
+            42
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "13 July 2026",
+        "bbox": [
+            81,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "(USD tn) Market cap increase vs PDV of AI-related value creation norms and global comparables, and concentration and leverage risks are rising at somewhat concerning paces. This warrants heightened focus from investors on controlling risks, diversifying exposures, and leaning into earnings-powered strategies to strike better risk/reward. See #10 for details.",
+        "bbox": [
+            279,
+            196,
+            753,
+            210
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            267,
+            59,
+            915,
+            130
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 8: The (net) appreciation in Chinese AI market cap since the DeepSeek moment looks moderate compared with the potential growth and earnings upside that AI could generate in the future",
+        "bbox": [
+            269,
+            146,
+            911,
+            190
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a32efc76c1028eaf26bf611585957d24a6a53a6b414bf2a6fc6ce922c6a7f011.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Please refer to AI changes the game (Part 2) for the definition of China AI and non-AI universe.",
+            "Source: Bloomberg, FactSet, GS Global Investment Research"
+        ],
+        "bbox": [
+            274,
+            202,
+            823,
+            417
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e25d941934a86e171bcb0257727918000e7c5f4360ae31d7d4262f90c32f60d0.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 9: Valuations have risen, but not at extreme levels"
+        ],
+        "chart_footnote": [
+            "Source: Wind, GS Global Investment Research"
+        ],
+        "bbox": [
+            93,
+            510,
+            477,
+            696
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9586d143f06bc1bec3d12e4c66292bfbedb8485b2e72dc0530a0b42ff4d7f24c.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 10: Valuations for A-share Hard Tech equities are still slightly below their historical norms"
+        ],
+        "chart_footnote": [
+            "Note: Based on latest constituents; z-score over past 12 years (monthly)",
+            "Source: FactSet, I/B/E/S, CSI, GS Global Investment Research"
+        ],
+        "bbox": [
+            517,
+            510,
+            908,
+            676
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "6. Are Korea and Taiwan stealing thunder from China? Empirically, the directional return correlations between China and the two North Asian markets are near their respective historical troughs. Per GS Prime Brokerage statistics, hedge funds' net risk exposures in EM Asia (ex-China) are at all-time highs while those in Chinese stocks are at the bottom of the range. However, allocations from mutual funds, especially for EM mandates, have edged up to multi-year highs (modest Overweight by EM funds for the first time on record dating back to 2011, likely due to China's reduced index weights in the EM benchmark), gross exposures from hedge funds are near cycle peaks, and participation from foreign cornerstone investors in HK IPOs ytd are comparable to the historical highs in 2021, all suggesting that foreign investors are still active and engaged, but prioritizing market-neutral strategies and alpha opportunities over beta risks in",
+        "bbox": [
+            267,
+            726,
+            915,
+            921
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "China Musings",
+        "bbox": [
+            818,
+            27,
+            918,
+            42
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "13 July 2026",
+        "bbox": [
+            81,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/cacc0133646f360a3407a8ccc9f483d69cb461a731a36e14c1cc2450b5c2afc3.jpg",
+        "content": "",
+        "chart_caption": [
+            "Chinese equities.",
+            "Exhibit 11: Chinese equities' return correlations with Korea and Taiwan are close to historical lows"
+        ],
+        "chart_footnote": [
+            "Source: FactSet, GS Global Investment Research"
+        ],
+        "bbox": [
+            91,
+            133,
+            480,
+            310
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/1d671697f748479719d610f92862fcea1e300036b1c8c90b4433701d1e05697b.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 12: EM funds are now Overweight China for the first time in history"
+        ],
+        "chart_footnote": [
+            "Source: EPFR, GS Global Investment Research"
+        ],
+        "bbox": [
+            514,
+            132,
+            901,
+            319
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3575542dc5de88d8e75c78c8f3bc7123239e3946eaaf658e440334d76143687f.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 13: Global hedge funds' gross allocation to China has risen faster than their net exposures, suggesting stronger bias for alpha trading"
+        ],
+        "chart_footnote": [
+            "Source: GS FICC and Equities and Prime Services data as of July 3, 2026."
+        ],
+        "bbox": [
+            89,
+            407,
+            493,
+            606
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "7. Excitements and worries about IPOs. IPOs have become a popular avenue for investors to extract alpha in a challenging beta environment. Our study shows that 100 companies have made their debuts on the HK bourse ytd, raising US\\$35bn in total and generating a median stock return of 32% and 30% in the first 1 and 3 months post-listing. Factors such as (large) issuance size, standalone H-share listing, and moderate cornerstone ownership (30%-50%) have explained a large extent of the outperformance among the new listings. The active and long IPO pipeline in HK has nevertheless raised investor concerns about liquidity drain, which appears overdone to us considering the expected issuance size in the remainder of this year (US\\$25bn for IPOs and US\\$45bn including follow-ons on GS estimates) and the record-high cash returned to shareholders by listed companies via dividends and buybacks (US\\$500bn/FU\\$560bn for FY2025/FY2026). A-share IPO activity is also picking up pace with CXMT, a Chinese DRAM maker, reportedly aiming for STAR board listing and looking to raise US\\$4.3bn in its primary issuance, which would be the largest A-share IPO since May 2022.",
+        "bbox": [
+            267,
+            647,
+            915,
+            912
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            39
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "China Musings",
+        "bbox": [
+            820,
+            27,
+            916,
+            42
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "13 July 2026",
+        "bbox": [
+            81,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 14: Investors participating in IPOs over the past two years could have achieved approximately 20-30% returns in the first three months post-listing",
+        "bbox": [
+            78,
+            71,
+            464,
+            114
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2de646bcde8dd7178ce176ee24405636c30632cb9b75079fbb8abddae954f868.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Wind, FactSet, GS Global Investment Research"
+        ],
+        "bbox": [
+            83,
+            121,
+            480,
+            310
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 15: The amount of new issuance supply looks manageable compared with the record-high cash returns to shareholders from listed corporates",
+        "bbox": [
+            506,
+            71,
+            906,
+            114
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/79518b288e87b9196291b02ea0a2732cdba90268f7e56a835700f7e3968198e0.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Wind, Bloomberg, GS Global Investment Research"
+        ],
+        "bbox": [
+            511,
+            119,
+            908,
+            310
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "8. AI has indeed changed the game and has dominated our client conversations, which have revolved mainly around: a) the progress of the self-reliant AI ecosystem build-out in China; b) the technological breakthroughs in certain choke points in the supply chain, namely EDA, lithography, advanced packaging, and High-Bandwidth Memory (HBM); c) the cost and efficiency differentials between AI capex spent in the US and China; d) China's competitive threats to global incumbents in areas such as LLMs, robotics, and AI tokens, with the latter already representing almost half of the global consumption; e) AI use cases, monetization, and economics of AI investment; and, f) the role of the Chinese government in AI regulation and infrastructure build-out. Overall, China is an integral part of the global AI equity universe, accounting for 11%/18% of AI-related market cap/revenue worldwide, but China AI equities are significantly under-owned by international investors, especially in the Power, Infra, and Physical AI layers where Chinese companies arguably have comparative and competitive advantages on a global basis. We'd continue to recommend our China Select AI Portfolio which comprises 50 names from 22 specific AI industries, aiming to provide investors with balanced and comprehensive exposures across the whole AI value chain. See Part 1, 2, 3, and 4 of our AI changes the game series for details.",
+        "bbox": [
+            267,
+            338,
+            916,
+            638
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/47d4cef321769bbc31cc9efa7134cf7663be26fca03f31746452b3d29dcb086b.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 16: China is an integral part of the global AI equity universe"
+        ],
+        "chart_footnote": [
+            "Source: FactSet, MSCI, GS Global Investment Research"
+        ],
+        "bbox": [
+            89,
+            686,
+            478,
+            875
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/1c6e64edb81ce1e1c2cebff8a55056281f6d60d3a16347df9ef859c296927fe4.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 17: Chinese AI models account for almost half of the world's token usage"
+        ],
+        "chart_footnote": [
+            "Note: based on top 10 used model companies in OpenRouter; other US/Chinese model companies may be classified under \"Others\".",
+            "Source: OpenRouter"
+        ],
+        "bbox": [
+            517,
+            688,
+            911,
+            853
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "9. Macro taking a backseat, for now. The topicality of AI has overshadowed investors' interest in macro-related subjects. That said, important economic subjects such as the China's potential housing market stabilization in 2027, China's resiliency in the latest global oil shock, the continued weakness in domestic consumption, the strength of the Rmb (vs. the USD) and Chinese exports, and potential policy responses (stimulus) in the July Politburo meeting have come up in our meetings with macro-focused investors and asset allocators. This orientation is partly reflected in and consistent with (the readings) our US-China Relations Barometer, which is currently at the lowest levels since 2022 (i.e. low bilateral tensions implied by market prices), indicating that prevailing equity market pricing could be more driven by the AI theme and other idiosyncratic micro factors as opposed to general macro forces and geopolitical issues, at least tactically.",
+        "bbox": [
+            269,
+            902,
+            903,
+            919
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "China Musings",
+        "bbox": [
+            818,
+            27,
+            918,
+            42
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "13 July 2026",
+        "bbox": [
+            80,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            267,
+            59,
+            915,
+            237
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 18: US-China Relations Barometer (GSSRUSCN) is at 39, around the lowest level since April 2022",
+        "bbox": [
+            271,
+            252,
+            683,
+            282
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0c27a7a38ca7d657ffbb52780c81a2e58f1d0dda586f320719d327a117a1a14c.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "bbox": [
+            277,
+            289,
+            683,
+            474
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "10. Ways to generate returns in 2H26. By market, our tactical preference still resides with China A (maintain OW) given its more favorable earnings momentum cyclically and underappreciated diversification benefits (to international investors), although we'd begin to scale into certain large-cap H-share Internet stocks considering their meaningful de-rating ytd and our envisaged profit recovery in the quarters ahead. Sectorally, our overweights in Materials, Cap Goods, and Insurance may offer investors alpha opportunities beyond the AI universe, in addition to other non-AI micro ideas in ship-building, (new) consumption, healthcare/biotech, the extended housing value chain, brokers, and hog cycle that our sector analysts have recently highlighted. Thematically, our Select China AI Portfolio and GS 15FYP Portfolio remain our high-conviction ideas, and together with our HALO screen, our China Prominent 10 Portfolio, GS China Growth Portfolio, and our Shareholder Returns list, they should render investors exposures to what we view as alpha-generating themes and vectors within the Chinese equity universe.",
+        "bbox": [
+            269,
+            502,
+            911,
+            750
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "China Musings",
+        "bbox": [
+            818,
+            27,
+            918,
+            42
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "13 July 2026",
+        "bbox": [
+            81,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 19: Policy (support) and AI are the two factors underpinning our preferred investment themes in the China equity universe",
+        "bbox": [
+            269,
+            71,
+            836,
+            101
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/57fa90fba0db7e17ab8b0ad268016f847991604ec76df198b9d0c9ce25bf6fc7.jpg",
+        "content": "",
+        "chart_caption": [
+            "Performance of Top China Themes since 2024"
+        ],
+        "chart_footnote": [
+            "Source: FactSet, GS Global Investment Research"
+        ],
+        "bbox": [
+            277,
+            128,
+            895,
+            383
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            39
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "China Musings",
+        "bbox": [
+            820,
+            29,
+            918,
+            42
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "13 July 2026",
+        "bbox": [
+            81,
+            954,
+            158,
+            967
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Disclosure Appendix",
+        "text_level": 2,
+        "bbox": [
+            78,
+            60,
+            253,
+            80
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Reg AC",
+        "text_level": 2,
+        "bbox": [
+            78,
+            101,
+            138,
+            116
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "We, Kinger Lau, CFA, Timothy Moe, CFA, Si Fu, Ph.D. and Kevin Wang, CFA, hereby certify that all of the views expressed in this report accurately reflect our personal views, which have not been influenced by considerations of the firm's business or client relationships.",
+        "bbox": [
+            76,
+            122,
+            910,
+            147
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.",
+        "bbox": [
+            76,
+            151,
+            888,
+            165
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Contributing Authors: Kinger Lau, CFA GS (Asia) L.L.C., Timothy Moe, CFA GS (Singapore) Pte, Si Fu, Ph.D. GS (Asia) L.L.C., Kevin Wang, CFA GS (Asia) L.L.C..",
+        "bbox": [
+            76,
+            169,
+            892,
+            194
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.",
+        "bbox": [
+            76,
+            198,
+            897,
+            222
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Disclosures",
+        "text_level": 2,
+        "bbox": [
+            78,
+            234,
+            169,
+            248
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Other disclosures",
+        "text_level": 2,
+        "bbox": [
+            78,
+            253,
+            215,
+            266
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Marquee is a product of GS FICC and Equities. Any Marquee content linked in this report is not necessarily representative of GS Research views. If you need access to Marquee, please contact your GS salesperson or email the Marquee team at gs-marquee-sales@gs.com.",
+        "bbox": [
+            76,
+            265,
+            903,
+            289
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Regulatory disclosures",
+        "text_level": 2,
+        "bbox": [
+            78,
+            300,
+            253,
+            315
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Disclosures required by United States laws and regulations",
+        "text_level": 2,
+        "bbox": [
+            78,
+            319,
+            517,
+            333
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; 1% or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.",
+        "bbox": [
+            76,
+            332,
+            908,
+            378
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.",
+        "bbox": [
+            76,
+            383,
+            913,
+            462
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States",
+        "text_level": 2,
+        "bbox": [
+            78,
+            472,
+            875,
+            484
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details, a copy of the annual compliance audit report and other relevant information and disclosures can be found at this link:",
+        "bbox": [
+            76,
+            482,
+            913,
+            791
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "https://www.goldmansachs.com/worldwide/india/research-analyst. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters",
+        "bbox": [
+            76,
+            789,
+            916,
+            934
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            898,
+            955,
+            918,
+            965
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            39
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "China Musings",
+        "bbox": [
+            818,
+            27,
+            918,
+            42
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "13 July 2026",
+        "bbox": [
+            81,
+            955,
+            158,
+            967
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.",
+        "bbox": [
+            76,
+            60,
+            913,
+            128
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.",
+        "bbox": [
+            76,
+            133,
+            908,
+            210
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.",
+        "bbox": [
+            76,
+            215,
+            915,
+            273
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Global product; distributing entities",
+        "text_level": 2,
+        "bbox": [
+            78,
+            284,
+            351,
+            297
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.",
+        "bbox": [
+            76,
+            297,
+            916,
+            417
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.",
+        "bbox": [
+            78,
+            422,
+            880,
+            446
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.",
+        "bbox": [
+            76,
+            452,
+            903,
+            497
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "General disclosures",
+        "text_level": 2,
+        "bbox": [
+            78,
+            508,
+            228,
+            522
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.",
+        "bbox": [
+            76,
+            522,
+            913,
+            579
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).",
+        "bbox": [
+            78,
+            583,
+            913,
+            618
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.",
+        "bbox": [
+            76,
+            623,
+            916,
+            657
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.",
+        "bbox": [
+            76,
+            662,
+            890,
+            686
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.",
+        "bbox": [
+            78,
+            691,
+            916,
+            715
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.",
+        "bbox": [
+            76,
+            720,
+            913,
+            744
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "This research is focused on investment themes across markets, industries and sectors. It does not attempt to distinguish between the prospects or performance of, or provide analysis of, individual companies within any industry or sector we describe.",
+        "bbox": [
+            76,
+            750,
+            887,
+            773
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Any trading recommendation in this research relating to an equity or credit security or securities within an industry or sector is reflective of the investment theme being discussed and is not a recommendation of any such security in isolation.",
+        "bbox": [
+            76,
+            777,
+            867,
+            801
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.",
+        "bbox": [
+            76,
+            806,
+            916,
+            875
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\\_fcm\\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be",
+        "bbox": [
+            76,
+            878,
+            906,
+            925
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            39
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "China Musings",
+        "bbox": [
+            820,
+            29,
+            916,
+            42
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "13 July 2026",
+        "bbox": [
+            81,
+            955,
+            158,
+            967
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            898,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "supplied upon request.",
+        "text_level": 2,
+        "bbox": [
+            78,
+            61,
+            210,
+            73
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.",
+        "bbox": [
+            76,
+            79,
+            903,
+            179
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.",
+        "bbox": [
+            76,
+            183,
+            897,
+            229
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.",
+        "bbox": [
+            78,
+            234,
+            888,
+            257
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "© 2026 GS.",
+        "text_level": 2,
+        "bbox": [
+            78,
+            263,
+            220,
+            275
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.",
+        "bbox": [
+            76,
+            281,
+            911,
+            359
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            39
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "China Musings",
+        "bbox": [
+            820,
+            29,
+            916,
+            42
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            898,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "13 July 2026",
+        "bbox": [
+            81,
+            955,
+            158,
+            967
+        ],
+        "page_idx": 11
+    }
+]
