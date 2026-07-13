@@ -1,0 +1,55 @@
+ZH_A: 最近有一份关于英伟达的研报，里面提到他们正在加速增长，甚至说在接近千亿美元季度收入的体量上还在加速。这听起来有点反直觉，你怎么看？
+
+ZH_B: 确实，这可以说是这份报告最核心的判断。报告来自某家顶级投行，他们刚和英伟达的CEO黄仁勋、CFO以及投资者关系负责人开完一系列会议。结论很明确，英伟达的增长故事不仅没有减速，反而在多元化和加速。
+
+ZH_A: 那这个“加速”主要来自哪里？我们都知道英伟达在AI芯片领域很强，但市场总担心他们的大客户，比如那些云巨头，会自己搞芯片。
+
+ZH_B: 报告恰恰回应了这个担忧。它把英伟达的业务分成了三块。第一块是AI实验室，大约占总需求的20%。你要注意，报告里提到一个很关键的例子：有一个前沿大模型最初主要是在ASIC上开发的，英伟达几乎没分到蛋糕。但现在，这个模型在英伟达上的比例已经飙升到接近50%。这意味着什么？英伟达正在从竞争对手那里抢回份额。
+
+ZH_A: 所以不是简单的“大家都有得赚”，而是英伟达的生态和性能优势在让客户回流。那第二块呢？
+
+ZH_B: 第二块是传统的超大规模云厂商，大约占一半的收入。这部分增长依然很强劲，但瓶颈已经不是需求，而是物理空间和电力。不过报告指出，英伟达正在通过网络和CPU来扩展其可寻址市场。他们特别强调了今年200亿美元的CPU目标，而且其中将近一半是用于独立CPU机架的。
+
+ZH_A: 等等，英伟达做CPU？这听起来是个不小的战略动作。这意味着他们不再只是GPU公司了。
+
+ZH_B: 完全正确。这其实引出了第三块，也是最有想象力的部分：所谓的“AI云、工业和企业”板块。这部分现在也占了数据中心收入的一半。报告认为，由于电力、空间限制和地缘政治因素，主权国家、中小云厂商和传统企业将带来巨大的、碎片化的需求。而且英伟达在这个领域几乎没有竞争。
+
+ZH_A: 这个“几乎没有竞争”听起来很诱人。那这份报告有没有提到什么风险或者还没完全讲清楚的地方？
+
+ZH_B: 当然有。首先是内存短缺问题。报告提到内存短缺可能会持续数年，但英伟达用计算和网络来弥补。这就引出一个悬念：这种“拆东墙补西墙”的做法能持续多久？对内存供应链的影响到底有多大？报告没有完全展开。
+
+ZH_A: 这确实是个值得深挖的点。还有别的吗？
+
+ZH_B: 另一个是英伟达最近推出的新商业模式，允许客户共同投资并分享收入。市场更多在关注英伟达为此承担的信用风险，但报告暗示，这背后的“收益分享”可能让英伟达成为GPU云网络的“部分所有者”。这个模式会如何改变他们的商业模式和利润率？报告里只提了个头，留下了很大的想象空间。
+
+ZH_A: 听起来这份报告不仅讲了英伟达现在的增长，还埋了很多值得继续追踪的线索。如果想看完整版，去哪里找？
+
+ZH_B: 可以到我们财经社群或公众号后台回复“英伟达研报”，就能看到这份报告的完整解读。今天我们就聊到这里，下期再见。
+
+EN_A: So I just read this note on NVIDIA from a top investment bank, and the headline is pretty striking. They say growth is actually accelerating, even as revenues approach a hundred billion dollars a quarter. How is that possible?
+
+EN_B: That is exactly the big question the report sets out to answer. The analysts just wrapped up a non-deal roadshow with Jensen Huang, Colette Kress, and the IR head. And their conclusion is that NVIDIA's growth story is not just continuing, it's diversifying and accelerating at the same time.
+
+EN_A: Okay, but where is that acceleration coming from? Everyone knows they dominate AI chips, but there's always this fear that the big cloud customers will build their own.
+
+EN_B: The report directly addresses that. It breaks NVIDIA's business into three segments. First, AI labs, which is about 20% of demand. And here's the key point: one of the most prominent frontier models was originally built mostly on a custom ASIC, so NVIDIA had almost no exposure. But now, that same model runs close to 50% on NVIDIA. That means they are actively taking share back.
+
+EN_A: So it's not just a rising tide lifting all boats. NVIDIA is winning on performance and ecosystem. What about the second segment?
+
+EN_B: That's the traditional hyperscalers, about half of revenue. Growth there is still very strong, but the bottleneck is now physical space and power. However, the report highlights that NVIDIA is expanding its total addressable market through networking and, more recently, CPUs. They reiterated a 20 billion dollar CPU target for this year, and nearly half of that is for standalone CPU racks.
+
+EN_A: Wait, NVIDIA is making CPUs for standalone racks? That sounds like a massive strategic shift. They are no longer just a GPU company.
+
+EN_B: Exactly. And that leads to the third segment, which the report calls the most exciting: AI clouds, industrial, and enterprise. This is now also about half of data center revenue. The report argues that because of power, space, and geopolitical pressures, sovereign states, neoclouds, and traditional enterprises will drive huge, fragmented demand. And NVIDIA faces almost no competition there.
+
+EN_A: "Almost no competition" is a powerful phrase. But what about the risks? What didn't this report fully answer?
+
+EN_B: Two big things. First, the memory shortage. The report says it could last for years, and NVIDIA is using compute and networking to compensate. But the big question is: how long can this balancing act last? And what does it mean for the memory supply chain? The report doesn't fully unpack that.
+
+EN_A: That is a good cliffhanger. What is the second one?
+
+EN_B: NVIDIA just announced a new business model where they co-invest with customers and share revenue. Most people focused on the credit risk NVIDIA is taking on. But the report hints that the revenue sharing part could turn NVIDIA into a partial owner of a huge network of GPU clouds. How that changes their long-term margins and business model? The report only teases that idea.
+
+EN_A: Sounds like this note is full of great insights, but it leaves you wanting more. Where can our listeners get the full report?
+
+EN_B: You can find the full breakdown in our research community. Just search for the report title. And remember, we only scratched the surface today. There is a lot more in the original document. Thanks for listening.
