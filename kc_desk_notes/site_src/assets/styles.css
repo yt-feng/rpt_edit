@@ -994,6 +994,16 @@ a.secondary-button {
   font-weight: 800;
 }
 
+.account-admin-module-notice {
+  padding: 9px 11px;
+  border: 1px solid #f0c36b;
+  border-radius: 6px;
+  color: #6b4c12;
+  background: #fffaf0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
 .account-admin-table-wrap {
   overflow-x: auto;
   border: 1px solid var(--line);
