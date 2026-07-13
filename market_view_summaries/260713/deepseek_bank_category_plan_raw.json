@@ -1,0 +1,20 @@
+{
+  "categories": [
+    {
+      "heading": "科技与半导体",
+      "report_ids": ["R001", "R005", "R007", "R009"]
+    },
+    {
+      "heading": "汽车与出行",
+      "report_ids": ["R002", "R003", "R010", "R013", "R014"]
+    },
+    {
+      "heading": "消费与餐饮",
+      "report_ids": ["R008", "R012"]
+    },
+    {
+      "heading": "区域市场与策略",
+      "report_ids": ["R004", "R006", "R011"]
+    }
+  ]
+}
