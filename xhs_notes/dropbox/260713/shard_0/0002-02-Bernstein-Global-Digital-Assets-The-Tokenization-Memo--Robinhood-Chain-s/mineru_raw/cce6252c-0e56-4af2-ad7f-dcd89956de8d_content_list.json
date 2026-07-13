@@ -1,0 +1,3796 @@
+[
+    {
+        "type": "text",
+        "text": "Global Digital Assets",
+        "text_level": 2,
+        "bbox": [
+            65,
+            126,
+            299,
+            148
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Gautam Chhugani +91 226 842 1416 gautam.chhugani@bernsteinsg.com",
+        "bbox": [
+            65,
+            159,
+            478,
+            174
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Mahika Sapra +91 226 842 1408 mahika.sapra@bernsteinsg.com",
+        "bbox": [
+            65,
+            176,
+            433,
+            191
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Sanskar Chindalia +91 226 842 1445 sanskar.chindalia@bernsteinsg.com",
+        "bbox": [
+            65,
+            194,
+            478,
+            209
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Harsh Misra +91 226 842 1457 harsh.misra@bernsteinsg.com",
+        "bbox": [
+            65,
+            213,
+            413,
+            227
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The Tokenization Memo: Robinhood Chain's strong debut launch (3/n)",
+        "text_level": 1,
+        "bbox": [
+            65,
+            263,
+            913,
+            320
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Robinhood Chain's launch expands Robinhood's product offering across tokenized stocks, decentralized lending and perpetual futures products. Strong early adoption highlights the growing convergence of tokenized real world assets with the broader DeFi ecosystem, as industry participants continue to innovate across multiple business models for regulated asset tokenization.",
+        "bbox": [
+            80,
+            356,
+            875,
+            404
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Tokenized RWA Industry Metrics - Market cap of tokenized real-world assets has grown from \\$35Bn in 2025 YE to over \\$51Bn today, up 50% YTD (Exhibit 6-Exhibit 7). Tokenized real world assets have demonstrated strong resilience vs broader crypto markets that are down \\~25% YTD. Private credit remains the dominant asset class at 48% of total RWA market cap, followed by U.S. Treasuries (29%) and commodities (9%). Ethereum and Provenance continue to host the bulk of onchain RWA activity, representing \\~70% of total tokenized assets (Exhibit 8). Total RWA asset holders have crossed 1Mn, up \\~75% YTD (Exhibit 10).",
+        "bbox": [
+            63,
+            429,
+            910,
+            506
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Robinhood Chain launches with strong traction across DeFi and tokenized assets",
+        "text_level": 2,
+        "bbox": [
+            65,
+            517,
+            611,
+            532
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Robinhood launched the public mainnet of Robinhood Chain (link), expanding its product offering across tokenized stocks, decentralized lending and perpetual futures products. Early traction on the Robinhood Chain has been strong in terms of trading volumes and user adoption.",
+        "bbox": [
+            63,
+            544,
+            903,
+            590
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Robinhood Chain DEX volumes vs other chains: In the last 7 days, Robinhood Chain has grown to be among the Top 5 chains in terms of DEX volumes - with \\$3.1Bn in cumulative DEX volumes over the last 7 days (Exhibit 3-Exhibit 4). Early trading volumes on Robinhood Chain were led by meme coins but shows strong liquidity and tractions from crypto native traders. Over time, Robinhood is focused on dominating RWA (equities, commodities and perpetual futures) trading with Robinhood Chain and Bitstamp's growing product suite and market liquidity. Since the launch of Robinhood Chain on July 1, over \\~65K users now hold \\$13Mn of stock tokens and \\$300Mn in stablecoin balances on the chain (Exhibit 1-Exhibit 2).",
+        "bbox": [
+            63,
+            602,
+            929,
+            693
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Key partnerships and offerings: Robinhood Chain is an Arbitrum-based Ethereum L2, built for financial services, tokenized real world assets with a permissionless environment for blockchain builders. Robinhood's blockchain ecosystem is continuously growing with deep integration from industry players like Uniswap (liquidity protocol), Pleiades (prop trading), Lighter, Morpho, BitGo (not covered), and Chainlink. Key offerings include:",
+        "bbox": [
+            63,
+            704,
+            931,
+            766
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- Stock tokens: Robinhood Chain integrates Robinhood's tokenized stocks with the broader DeFi ecosystem. The new stock tokens are now available in 120+ countries (not currently available in US), support 24x7 trading (on decentralized exchanges like Uniswap, Lighter etc.) and improves token utility as lending and trading collateral.",
+        "bbox": [
+            65,
+            777,
+            915,
+            823
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- Decentralized lending: Robinhood has partnered with Morpho, allowing eligible US users to lend their USDG (dollar-backed stablecoin) directly on the main Robinhood app. Currently, users can earn up to 7% APY through Robinhood's decentralized lending product.",
+        "bbox": [
+            65,
+            834,
+            924,
+            866
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- Perpetual futures: Eligible users can now access perpetual future contracts through Lighter, a decentralized exchange. Lighter is offering incentives for Robinhood users to trade perpetuals (committed \\$11Mn of LIT tokens for the community).",
+        "bbox": [
+            63,
+            877,
+            887,
+            909
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "BERNSTEIN FLASHMAIL",
+        "bbox": [
+            723,
+            16,
+            929,
+            32
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "BERNSTEIN\nSG GROUP",
+        "bbox": [
+            65,
+            32,
+            292,
+            80
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "13 July 2026",
+        "bbox": [
+            831,
+            47,
+            931,
+            66
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "See the Disclosure Appendix of this report for required disclosures, analyst certifications and other important information. Alternatively, visit our Global Research Disclosure Website.\nFirst Published: 13 Jul 2026 08:43 UTC Completion Date: 13 Jul 2026 08:43 UTC",
+        "bbox": [
+            63,
+            935,
+            700,
+            977
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "www.bernsteinresearch.com",
+        "bbox": [
+            774,
+            935,
+            919,
+            948
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Custodial tokenized equity model - DeFi integration enhances token utility while regulated U.S models emerge",
+        "text_level": 2,
+        "bbox": [
+            65,
+            71,
+            805,
+            85
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Equity tokenization continues to attract mainstream interest with tokenized equities growing 170% YTD from \\$0.7Bn to \\$1.9Bn. Multiple business models are being attempted for equity tokenization, while the industry still awaits regulatory clarity for securities tokenization including potential expectation of an ‘innovation exemption’. Broadly, the issuer-sponsored tokenization model uses blockchain native shares issued directly by the issuing company. While the custodial model involves a third party sponsor buying the underlying shares, custody them in a secured account and issuing a blockchain token against them.",
+        "bbox": [
+            63,
+            99,
+            929,
+            174
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Over the last few weeks, we have seen two major developments gaining momentum in the custodial equity tokenization model - leveraging DeFi ecosystem to enhance stock token utility and first live application of a U.S regulated custodial tokenization model. Robinhood Chain enables Robinhood to expand its custodial model for equity tokenization. So far, the stock tokens were only available in EU, with limited utility beyond tracking the price of the underlying shares. However, with Robinhood Chain, Robinhood issued stock tokens are now available in 120+ countries (not currently available in US). The stock tokens can be traded 24x7 on decentralized exchanges, used as collateral in trading, or deposited in lending pools for additional yield. This enhances the utility of broker-issued stock tokens vs previous model. Currently, \\~\\$13Mn stock tokens are held on Robinhood Chain, across 90+ stocks.",
+        "bbox": [
+            63,
+            186,
+            924,
+            292
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Recently, Ondo Finance (not covered) announced (link) the first third-party tokenized securities compliant with existing US regulations. Under this model, Ondo's registered transfer agent mints security tokens backed 1:1 by underlying shares. The tokenizer will receive the same shareholder rights - via a common voting and shareholder communication platform. Ondo has tokenized an ETF and a stock to demonstrate the application of this model.",
+        "bbox": [
+            63,
+            304,
+            900,
+            364
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/86d97a49926c8967a2ed94151f2b99afbe347289277cf24b40ba32a2d669b05c.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 1: Robinhood Chain TVL is currently dominated by stablecoins, with \\$13Mn in tokenized stocks"
+        ],
+        "chart_footnote": [
+            "Source: RWA.xyz, Bernstein analysis"
+        ],
+        "bbox": [
+            84,
+            407,
+            900,
+            704
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            919,
+            941,
+            929,
+            950
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Gautam Chhugani +91 226 842 1416 gautam.chhugani@bernsteinsg.com",
+        "bbox": [
+            66,
+            39,
+            444,
+            51
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "13 July 2026",
+        "bbox": [
+            862,
+            39,
+            929,
+            50
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL DIGITAL ASSETS",
+        "bbox": [
+            68,
+            939,
+            166,
+            950
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            714,
+            940,
+            895,
+            950
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d94afc67b5800c4063ab159804dd14d42dc180b9380a635a11c1708f26ad54a9.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 2: RWA holders on Robinhood Chain have surpassed 67K users",
+            "Robinhood Chain - RWA Holders (in '000s)"
+        ],
+        "chart_footnote": [
+            "Source: RWA.xyz, Bernstein analysis"
+        ],
+        "bbox": [
+            76,
+            106,
+            911,
+            401
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/05192aae264eb34422d047ed5691e979843c59bdce3121b9b074261fbfe69433.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 3: DEX volumes have crossed \\$3Bn in last 7 days",
+            "Top Chains by DEX Volumes (\\$Bn) - Last 7 days"
+        ],
+        "chart_footnote": [
+            "Source: DeFiLlama, Bernstein analysis"
+        ],
+        "bbox": [
+            84,
+            494,
+            913,
+            782
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            919,
+            941,
+            929,
+            952
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Gautam Chhugani +91 226 842 1416 gautam.chhugani@bernsteinsg.com",
+        "bbox": [
+            66,
+            39,
+            444,
+            51
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "13 July 2026",
+        "bbox": [
+            862,
+            39,
+            931,
+            50
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL DIGITAL ASSETS",
+        "bbox": [
+            66,
+            939,
+            166,
+            950
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            714,
+            940,
+            897,
+            952
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/aa5d7931ad53a1a76b8475b4cc2dfe4f4a50c050c34017e95087d2699ea63cf1.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 4: Robinhood Chain has surpassed leading chains in daily DEX volumes",
+            "Top Chains by DEX Volumes (\\$Mn) - Last 24 hrs"
+        ],
+        "chart_footnote": [
+            "Source: DeFiLlama, Bernstein analysis"
+        ],
+        "bbox": [
+            84,
+            121,
+            911,
+            404
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/027af125efa60a61b840ee78b3566133edf9670a0985ee96c523cd23df465d1c.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 5: DeFi TVL has crossed \\$100Mn in less than 15 days of launch on Robinhood Chain",
+            "Robinhood Chain - DeFi TVL (\\$Mn)"
+        ],
+        "chart_footnote": [
+            "Source: DeFiLlama, Bernstein analysis"
+        ],
+        "bbox": [
+            78,
+            501,
+            908,
+            784
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            919,
+            941,
+            929,
+            950
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Gautam Chhugani +91 226 842 1416 gautam.chhugani@bernsteinsg.com",
+        "bbox": [
+            66,
+            39,
+            444,
+            51
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "13 July 2026",
+        "bbox": [
+            862,
+            39,
+            931,
+            50
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL DIGITAL ASSETS",
+        "bbox": [
+            66,
+            939,
+            166,
+            950
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            714,
+            940,
+            897,
+            952
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b2ce0e209e2c5231af3468dff142c32f6d69c5f2cb385e32664a0e49a90d880a.jpg",
+        "content": "",
+        "chart_caption": [
+            "RWA TOKENIZATION DASHBOARD\nEXHIBIT 6: Tokenized RWA - Market Cap (\\$Bn)"
+        ],
+        "chart_footnote": [
+            "Private credit also includes Figure tokenized credit",
+            "Source: RWA.xyz, Bernstein analysis"
+        ],
+        "bbox": [
+            81,
+            137,
+            913,
+            435
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/708f59c6a993431b2ec68c72c7bb760e3cad9683862ce7fafb8bd3c4dc32616b.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 7: Tokenized RWA market cap split by asset class"
+        ],
+        "chart_footnote": [
+            "Private credit includes Figure tokenized credit\nSource: RWA.xyz, Bernstein analysis"
+        ],
+        "bbox": [
+            81,
+            523,
+            900,
+            784
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            919,
+            941,
+            929,
+            950
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Gautam Chhugani +91 226 842 1416 gautam.chhugani@bernsteinsg.com",
+        "bbox": [
+            66,
+            39,
+            444,
+            51
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "13 July 2026",
+        "bbox": [
+            862,
+            39,
+            931,
+            50
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL DIGITAL ASSETS",
+        "bbox": [
+            66,
+            939,
+            166,
+            950
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            714,
+            940,
+            897,
+            952
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 8: Tokenized RWA split by blockchain network",
+        "text_level": 2,
+        "bbox": [
+            66,
+            70,
+            442,
+            85
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Tokenized RWA - Blockchain network split (%)",
+        "bbox": [
+            313,
+            102,
+            683,
+            119
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f0ffe77a1315c7613d99aa15ea98bb2d70c4c4daf7efdc42643fc4d8a7ca5481.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: RWA.xyz, Bernstein analysis"
+        ],
+        "bbox": [
+            305,
+            123,
+            692,
+            406
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/f172bfded1ec60d68cc5628e55ed004c1f7f70f5c32db6a583a0ed3912e5f2fb.jpg",
+        "table_caption": [
+            "EXHIBIT 9: Top RWA tokenization platform"
+        ],
+        "table_footnote": [
+            "Source: RWA.xyz, Bernstein analysis"
+        ],
+        "table_body": "<table><tr><td></td><td>Platform</td><td>Asset Class</td><td>Tokenized Assets ($Bn)</td></tr><tr><td>1</td><td>Figure</td><td>Private Credit</td><td>19.9</td></tr><tr><td>2</td><td>Securitize</td><td>Treasury, stocks</td><td>5.1</td></tr><tr><td>3</td><td>Ondo</td><td>Treasury, stocks</td><td>3.6</td></tr><tr><td>4</td><td>Circle</td><td>Treasury</td><td>3.1</td></tr><tr><td>5</td><td>Tether</td><td>Commodities</td><td>2.5</td></tr><tr><td>6</td><td>Franklin Templeton</td><td>Treasury</td><td>2.5</td></tr><tr><td>7</td><td>Spiko</td><td>Private Credit</td><td>2.1</td></tr><tr><td>8</td><td>Paxos</td><td>Commodities</td><td>1.8</td></tr><tr><td>9</td><td>Centrifuge</td><td>Treasury, credit</td><td>1.6</td></tr><tr><td>10</td><td>Maple</td><td>Credit, Treasuries</td><td>1.4</td></tr></table>",
+        "bbox": [
+            68,
+            467,
+            710,
+            676
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            919,
+            941,
+            929,
+            950
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Gautam Chhugani +91 226 842 1416 gautam.chhugani@bernsteinsg.com",
+        "bbox": [
+            66,
+            39,
+            444,
+            51
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "13 July 2026",
+        "bbox": [
+            862,
+            39,
+            931,
+            50
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL DIGITAL ASSETS",
+        "bbox": [
+            68,
+            939,
+            166,
+            950
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            714,
+            940,
+            895,
+            952
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0eee9b31bd69ebf8cf6043808b025e552676e488d831251db9ad925110ea5297.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 10: Tokenized real world asset holders",
+            "RWA Asset Holders (in '000)"
+        ],
+        "chart_footnote": [
+            "Current as of July 11, 2026",
+            "Source: RWA.xyz, Bernstein analysis",
+            "137% YoY growth, 47% QoQ growth"
+        ],
+        "bbox": [
+            84,
+            119,
+            911,
+            401
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 11: FIGR - Consumer Loan Volumes (\\$Bn)",
+        "bbox": [
+            65,
+            457,
+            397,
+            473
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d4f8d61a7cc4bdbced49e94b97caf0dd97b712cee410efc29b53e795de25ca01.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Company filings, Bernstein analysis"
+        ],
+        "bbox": [
+            78,
+            503,
+            911,
+            794
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            919,
+            941,
+            929,
+            950
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Gautam Chhugani +91 226 842 1416 gautam.chhugani@bernsteinsg.com",
+        "bbox": [
+            66,
+            39,
+            444,
+            51
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "13 July 2026",
+        "bbox": [
+            862,
+            39,
+            931,
+            50
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL DIGITAL ASSETS",
+        "bbox": [
+            66,
+            939,
+            166,
+            950
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            714,
+            940,
+            897,
+            952
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3a34934f7796daa1f2053da27a68305577ecb4af9e455281a953e03d23091bd1.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 12: Tokenized Equities - Monthly Transfer Volumes",
+            "Tokenized Equity - Transfer Volumes (\\$Bn)"
+        ],
+        "chart_footnote": [
+            "Source: RWA.xyz, Bernstein analysis"
+        ],
+        "bbox": [
+            84,
+            104,
+            913,
+            401
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            919,
+            941,
+            929,
+            950
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Gautam Chhugani +91 226 842 1416 gautam.chhugani@bernsteinsg.com",
+        "bbox": [
+            66,
+            39,
+            444,
+            51
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "13 July 2026",
+        "bbox": [
+            862,
+            39,
+            931,
+            50
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL DIGITAL ASSETS",
+        "bbox": [
+            68,
+            939,
+            166,
+            950
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            714,
+            940,
+            895,
+            952
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "BERNSTEIN TICKER TABLE",
+        "text_level": 2,
+        "bbox": [
+            66,
+            69,
+            274,
+            85
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/766d5f6d293f8c49afffaa753069a7e39c3095605d90fc3fb21dd6b9637b310c.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "O - Outperform, M - Market-Perform, U - Underperform, NR - Not Rated, CS - Coverage Suspended",
+            "BLSH estimate is Adjusted EPS; BLSH valuation is Adjusted P/E (x); BLSH base year is 2024;"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">Ticker</td><td rowspan=\"2\">Rating</td><td colspan=\"3\">10 Jul 2026</td><td rowspan=\"2\">TTMRel.Perf.</td><td colspan=\"4\">Reported EPS</td><td colspan=\"3\">Reported P/E (x)</td></tr><tr><td>Cur</td><td>ClosingPrice</td><td>PriceTarget</td><td>Cur</td><td>2025A</td><td>2026E</td><td>2027E</td><td>2025A</td><td>2026E</td><td>2027E</td></tr><tr><td>FIGR (Figure)</td><td>O</td><td>USD</td><td>31.80</td><td>67.00</td><td>NA</td><td>USD</td><td>0.54</td><td>0.98</td><td>1.52</td><td>58.9</td><td>32.4</td><td>20.9</td></tr><tr><td>BLSH (Bullish)</td><td>M</td><td>USD</td><td>24.23</td><td>50.00</td><td>NA</td><td>USD</td><td>0.09</td><td>0.07</td><td>0.14</td><td>280.2</td><td>333.4</td><td>173.1</td></tr><tr><td>COIN (Coinbase )</td><td>O</td><td>USD</td><td>159.07</td><td>330.00</td><td>(79.5)%</td><td>USD</td><td>4.85</td><td>5.97</td><td>13.20</td><td>32.8</td><td>26.6</td><td>12.0</td></tr><tr><td>HOOD (Robinhood)</td><td>O</td><td>USD</td><td>111.97</td><td>130.00</td><td>(6.8)%</td><td>USD</td><td>2.12</td><td>2.65</td><td>3.70</td><td>52.8</td><td>42.3</td><td>30.2</td></tr><tr><td>SBET (Sharplink)</td><td>O</td><td>USD</td><td>5.51</td><td>24.00</td><td>(95.2)%</td><td>USD</td><td>(7.37)</td><td>1.73</td><td>(4.59)</td><td>(0.7)</td><td>3.2</td><td>(1.2)</td></tr><tr><td>SPX</td><td></td><td></td><td>7,575.39</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+        "bbox": [
+            68,
+            99,
+            926,
+            234
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Source: Bloomberg, Bernstein estimates and analysis.",
+        "bbox": [
+            66,
+            268,
+            348,
+            282
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            919,
+            941,
+            929,
+            950
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Gautam Chhugani +91 226 842 1416 gautam.chhugani@bernsteinsg.com",
+        "bbox": [
+            66,
+            39,
+            444,
+            51
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "13 July 2026",
+        "bbox": [
+            862,
+            39,
+            929,
+            50
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL DIGITAL ASSETS",
+        "bbox": [
+            68,
+            939,
+            166,
+            950
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            714,
+            940,
+            895,
+            950
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "I. REQUIRED DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            98,
+            297,
+            112
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "References to \"Bernstein\" or the \"Firm\" in these disclosures relate to the following entities: Bernstein Institutional Services LLC (April 1, 2024 onwards), Bernstein & Co., LLC (pre April 1, 2024), Bernstein Autonomous LLP, BSG France S.A. (April 1, 2024 onwards), Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited, Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社) and analysts employed by SG Africa Technologies & Services to produce Bernstein under a Global Services Agreement in place between Bernstein and SG.",
+        "bbox": [
+            102,
+            125,
+            893,
+            220
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Bernstein is part of a joint venture between SG (SG) and AllianceBernstein, L.P. (AB). Unless specifically noted otherwise, for purposes of these disclosures, references to Bernstein's “affiliates” relate to both SG and AB and their respective affiliates.",
+        "bbox": [
+            102,
+            232,
+            893,
+            273
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "VALUATION METHODOLOGY",
+        "text_level": 2,
+        "bbox": [
+            104,
+            286,
+            300,
+            300
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Figure Technology Solutions",
+        "text_level": 2,
+        "bbox": [
+            104,
+            314,
+            300,
+            329
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "We value FIGR on 25x EV/27E EBITDA, at a premium to traditional exchanges and crypto peers, led by FIGR's structural growth prospects as pure-play tokenization platform and profitable core lending business. We rate Figure Outperform (PT\\$67).",
+        "bbox": [
+            102,
+            342,
+            893,
+            372
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Bullish",
+        "text_level": 2,
+        "bbox": [
+            104,
+            383,
+            156,
+            398
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "We value BLSH using 34x EV/Adjusted EBITDA'27E, at a premium on COIN and HOOD, considering the early stage of business and wide array of growth opportunities ahead. We rate BLSH Market-Perform with PT \\$50.",
+        "bbox": [
+            102,
+            412,
+            893,
+            441
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Coinbase Global Inc.",
+        "text_level": 2,
+        "bbox": [
+            104,
+            455,
+            246,
+            469
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "We value COIN using a 25x Price/2027E Earnings, in-line with the average of similar crypto/fintech/broker peers, to arrive at our price target of \\$330.",
+        "bbox": [
+            102,
+            482,
+            893,
+            512
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Robinhood Markets Inc",
+        "text_level": 2,
+        "bbox": [
+            104,
+            525,
+            264,
+            539
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Robinhood is scaling up rapidly and is a cyclical business. As a consequence, we value HOOD using a \\~35x Price/2027E Earnings to arrive at our price target of \\$130.",
+        "bbox": [
+            102,
+            551,
+            893,
+            582
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Sharplink Gaming",
+        "text_level": 2,
+        "bbox": [
+            104,
+            595,
+            230,
+            609
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "We value SBET using a 10-year ETH treasury holding model based on our ETH forecasts and SBET's ETH growth strategy. We discount back the estimated 2035E SBET price to arrive at 2026E SBET equity, implying a long-term 15% premium to SBET's 2026E ETH treasury NAV. We rate SBET Outperform (PT\\$24).",
+        "bbox": [
+            102,
+            623,
+            893,
+            667
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "RISKS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            680,
+            153,
+            694
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Figure Technology Solutions",
+        "text_level": 2,
+        "bbox": [
+            104,
+            708,
+            300,
+            723
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "1. FIGR's business model involve some macro risks, for example, aggressive interest rate decline makes mortgage refinancing more competitive, impacting the demand for HELOCs.",
+        "bbox": [
+            104,
+            736,
+            893,
+            766
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "2. FIGR's business model is dependent on continued growth of private credit, any risks emerging leading to a slowdown in private credit could impact uptake for tokenized credit on Figure's marketplace.",
+        "bbox": [
+            102,
+            779,
+            893,
+            809
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "3. We expect non-HELOC loans to contribute \\~20% of FIGR's total loan volumes by 2027E, any delay in expansion into new loan categories can affect Figure's loan growth.",
+        "bbox": [
+            102,
+            821,
+            893,
+            851
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Bullish",
+        "text_level": 2,
+        "bbox": [
+            104,
+            864,
+            156,
+            877
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Upside Risks to our price target include:",
+        "bbox": [
+            104,
+            891,
+            354,
+            905
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Gautam Chhugani +91 226 842 1416 gautam.chhugani@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            482,
+            51
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "13 July 2026",
+        "bbox": [
+            825,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "DISCLOSURE APPENDIX",
+        "bbox": [
+            727,
+            69,
+            893,
+            84
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL DIGITAL ASSETS",
+        "bbox": [
+            104,
+            939,
+            204,
+            950
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "1. Early roll-out of BLSH's U.S and crypto derivatives business can front load the growth in their trading volumes vs our estimates. We expect Bullish to launch U.S spot trading in 2026E and roll out options trading (ex-US) in 2026E.",
+        "bbox": [
+            102,
+            71,
+            892,
+            101
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "2. Rapid scaling of Bullish's subscription services (new multi-year liquidity services contract, increased index adoption etc.) can further grow the subscription revenue lines.",
+        "bbox": [
+            102,
+            114,
+            893,
+            143
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Downside risks to our price target include:",
+        "bbox": [
+            104,
+            156,
+            369,
+            170
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "1. Risk of fresh competition from U.S based and international exchanges (e.g Coinbase, Binance) and brokers (e.g Robinhood, Schwab) causing pricing & market share pressure in the U.S as well as international markets.",
+        "bbox": [
+            102,
+            184,
+            893,
+            214
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "2. We expect \\~15% of Bullish's transaction revenues from U.S by 2027E, any delay in receiving the U.S NY DFS license, delaying the US spot or derivatives launch could affect U.S revenues.",
+        "bbox": [
+            102,
+            226,
+            893,
+            256
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "3. Digital Assets are a new asset class with limited price history and often display high-beta volatility to changes in macro including any recessionary challenges in U.S.",
+        "bbox": [
+            102,
+            268,
+            893,
+            299
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Coinbase Global Inc.",
+        "text_level": 2,
+        "bbox": [
+            104,
+            311,
+            246,
+            325
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "1. Risk of fresh competition from international exchanges (e.g., Binance) and brokers (e.g., Robinhood, Schwab) causing pricing & market share pressure in the US home market.",
+        "bbox": [
+            102,
+            339,
+            893,
+            369
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "2. Any delay in passing key regulation to establish the Digital assets regulatory framework in the U.S including risk of regulatory volatility from political changes (e.g., mid-term US elections).",
+        "bbox": [
+            102,
+            382,
+            893,
+            412
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "3. Digital Assets are a new asset class with limited price history and often display high-beta volatility to changes in macro including any recessionary challenges in the US.",
+        "bbox": [
+            102,
+            425,
+            893,
+            454
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Robinhood Markets Inc",
+        "text_level": 2,
+        "bbox": [
+            104,
+            468,
+            264,
+            481
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Robinhood faces regulatory risks on its revenue model, particularly its PFOF model from SEC and other regulatory bodies. This also applies to the crypto trading business.",
+        "bbox": [
+            102,
+            494,
+            893,
+            525
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "SEC has historically been harsh on crypto trading businesses, with focus on token trading platforms, as some tokens maybe considered securities.",
+        "bbox": [
+            102,
+            537,
+            893,
+            566
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Digital assets are a new asset class, with limited price history i.e Bitcoin itself is less than 14 years old. The remaining digital assets industry reflected by smart contracts and other blockchain applications is even younger and still evolving into its utility phase.",
+        "bbox": [
+            102,
+            580,
+            893,
+            609
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Sharplink Gaming",
+        "text_level": 2,
+        "bbox": [
+            104,
+            623,
+            230,
+            637
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "1. Digital Asset treasury management involves significant balance sheet and liquidity risk, if companies deploy short term callable debt.",
+        "bbox": [
+            107,
+            650,
+            892,
+            678
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "If Ethereum price is weak especially during maturity of debt, they will have to sell its ETH holdings to repay debt or refinance its debt at unfavourable terms.",
+        "bbox": [
+            122,
+            680,
+            892,
+            709
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "2. SBET and other ETH Digital asset treasury companies deploy ETH in staking strategies. Native staking might pose some custody and liquidity issues due to long unstaking queues.",
+        "bbox": [
+            107,
+            723,
+            893,
+            753
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "3. SBET might use decentralised finance and other applications to offer higher than market staking yield on ETH. DeFi yield strategies involve smart contract risk and may add to volatility in ETH rewards.",
+        "bbox": [
+            107,
+            766,
+            893,
+            795
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "RATINGS DEFINITIONS, BENCHMARKS AND DISTRIBUTION",
+        "text_level": 2,
+        "bbox": [
+            104,
+            806,
+            509,
+            821
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "EQUITY RATINGS DEFINITIONS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            834,
+            320,
+            847
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Bernstein brand",
+        "text_level": 2,
+        "bbox": [
+            104,
+            859,
+            218,
+            875
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The Bernstein brand rates stocks based on forecasts of relative performance for the next 12 months versus the S&P 500 for stocks listed on the U.S. and Canadian exchanges, versus the Bloomberg Europe Developed Markets Large and Mid Cap Price",
+        "bbox": [
+            102,
+            886,
+            893,
+            914
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            877,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Gautam Chhugani +91 226 842 1416 gautam.chhugani@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            482,
+            51
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "13 July 2026",
+        "bbox": [
+            825,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL DIGITAL ASSETS",
+        "bbox": [
+            104,
+            939,
+            204,
+            950
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Return Index EUR (EDME) for stocks listed on the European exchanges and emerging markets exchanges outside of the Asia Pacific region, versus the Bloomberg Japan Large and Mid Cap Price Return Index USD (JPL) for stocks listed on the Japanese exchanges, and versus the Bloomberg Asia ex-Japan Large and Mid Cap Price Return Index (ASIAX) for stocks listed on the Asian (ex-Japan) exchanges -unless otherwise specified.",
+        "bbox": [
+            102,
+            70,
+            893,
+            126
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The Bernstein brand has three categories of ratings:",
+        "bbox": [
+            104,
+            138,
+            429,
+            152
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Outperform: Stock will outpace the market index by more than 15 pp",
+        "bbox": [
+            104,
+            164,
+            549,
+            179
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "• Market-Perform: Stock will perform in line with the market index to within +/-15 pp",
+        "bbox": [
+            104,
+            193,
+            637,
+            205
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "• Underperform: Stock will trail the performance of the market index by more than 15 pp",
+        "bbox": [
+            104,
+            220,
+            658,
+            234
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Coverage Suspended: Coverage of a company under the Bernstein brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.",
+        "bbox": [
+            102,
+            247,
+            893,
+            275
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.",
+        "bbox": [
+            102,
+            287,
+            893,
+            328
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Not Covered (NC) denotes companies that are not under coverage.",
+        "bbox": [
+            104,
+            340,
+            519,
+            354
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Bernstein brand stock ratings are based on a 12-month time horizon.",
+        "bbox": [
+            104,
+            366,
+            532,
+            380
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand – common stocks",
+        "text_level": 2,
+        "bbox": [
+            104,
+            393,
+            359,
+            406
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand rates common stocks as indicated below. As our benchmarks we use the Bloomberg Europe 600 Financials Price Return Index (E600BK) and Bloomberg Europe Dev Mkt Financials Large and Mid Cap Price Ret Index EUR (EDMFI) index for developed European banks and Payments, the Bloomberg Europe 600 Insurance Price Return Index (E600IN) for European insurers, the S&P 500 and S&P Financials for US banks and Payments coverage, S5LIFE for US Insurance, the S&P Insurance Select Industry (SPSIINS) for US Non-Life Insurers coverage, and the Bloomberg Emerging Markets Financials Large, Mid and Small Cap Price Return Index (EMLSF) for emerging market banks and insurers and Payments. Ratings are stated relative to the sector (not the market).",
+        "bbox": [
+            102,
+            419,
+            893,
+            515
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of common stock ratings:",
+        "bbox": [
+            104,
+            527,
+            542,
+            541
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Outperform (OP): Stock will outpace the relevant index by more than 10 pp",
+        "bbox": [
+            104,
+            554,
+            584,
+            568
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Neutral (N): Stock will perform in line with the market index to within +/-10 pp",
+        "bbox": [
+            104,
+            582,
+            604,
+            595
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "• Underperform (UP): Stock will trail the performance of the relevant index by more than 10 pp",
+        "bbox": [
+            104,
+            609,
+            692,
+            623
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Coverage Suspended: Coverage of a company under the Autonomous research brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.",
+        "bbox": [
+            102,
+            636,
+            892,
+            665
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.",
+        "bbox": [
+            102,
+            676,
+            893,
+            717
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Those denoted as ‘Feature’ (e.g., Feature Outperform FOP, Feature Under Outperform FUP) are our core ideas.",
+        "bbox": [
+            104,
+            729,
+            784,
+            744
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Not Covered (NC) denotes companies that are not under coverage.",
+        "bbox": [
+            104,
+            756,
+            519,
+            770
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand common stock ratings are based on a 12-month time horizon.",
+        "bbox": [
+            104,
+            782,
+            607,
+            796
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand – preferred stocks",
+        "text_level": 2,
+        "bbox": [
+            104,
+            809,
+            364,
+            821
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of preferred stock ratings:",
+        "bbox": [
+            104,
+            834,
+            547,
+            849
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Outperform (OP): The total return of the preferred instrument is expected to outperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            861,
+            893,
+            891
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Gautam Chhugani +91 226 842 1416 gautam.chhugani@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            482,
+            51
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "13 July 2026",
+        "bbox": [
+            825,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL DIGITAL ASSETS",
+        "bbox": [
+            104,
+            939,
+            204,
+            950
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Neutral (N): The total return of the preferred instrument is expected to perform in line with preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            71,
+            893,
+            101
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Underperform (UP): The total return of the preferred instrument is expected to underperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            114,
+            892,
+            143
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Autonomous preferred stock ratings are based on a 6-month time horizon.",
+        "bbox": [
+            102,
+            156,
+            565,
+            170
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "AUTONOMOUS CREDIT RESEARCH",
+        "text_level": 2,
+        "bbox": [
+            104,
+            181,
+            346,
+            195
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Where this report contains investment recommendations for credit instruments, as defined in article 3(1)(35) of the Market Abuse Regulation, the information below is presented to comply with its disclosure requirements.",
+        "bbox": [
+            102,
+            208,
+            893,
+            237
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The report may also include reference(s) to published opinions by other Autonomous or Bernstein analysts covering the equity securities of the issuer(s) referenced herein. Please note an investment recommendation for credit instruments published by the author(s) of this report may differ from the published view of the analyst covering equity securities for the issuer(s) contained in this report and vice versa.",
+        "bbox": [
+            102,
+            248,
+            893,
+            304
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "CREDIT RATINGS DEFINITIONS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            314,
+            320,
+            329
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of credit ratings:",
+        "bbox": [
+            104,
+            340,
+            486,
+            356
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Credit Outperform (C-OP): The total return of the Reference Credit Instrument is expected to outperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            369,
+            893,
+            398
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Credit Neutral (C-N): The total return of the Reference Credit Instrument is expected to perform in line with the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            411,
+            893,
+            441
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Credit Underperform (C-UP): The total return of the Reference Credit Instrument is expected to underperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            453,
+            893,
+            484
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Autonomous credit ratings are based on a 6-month time horizon.",
+        "bbox": [
+            104,
+            496,
+            504,
+            510
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "A list of all investment recommendations produced by the author(s) of this report alongside credit ratings history are available upon request.",
+        "bbox": [
+            102,
+            521,
+            892,
+            550
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e. the private side) within the Firm, and into other areas, units, groups or affiliates (i.e. public side) of the Firm",
+        "bbox": [
+            102,
+            561,
+            893,
+            604
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "table",
+        "img_path": "images/02c4eb4f46fa8e22d77bb17a271019201706e1395174c653fdf729927ad28914.jpg",
+        "table_caption": [
+            "DISTRIBUTION OF EQUITY RATINGS/INVESTMENT BANKING SERVICES"
+        ],
+        "table_footnote": [
+            "\\* These figures represent the percentage of companies within each equity rating category for which affiliates of Bernstein have provided investment banking services within the previous 12 months.\nAs of June 30, 2026. All figures are updated quarterly."
+        ],
+        "table_body": "<table><tr><td>Equity Rating</td><td>Market Abuse Regulation (MAR) and FINRA Rating Category</td><td>Global Rating Distribution</td><td>Investment Banking Relationships*</td></tr><tr><td>Outperform</td><td>BUY</td><td>51.2%</td><td>15.3%</td></tr><tr><td>Market-Perform (Bernstein Brand) Neutral (Autonomous Brand)</td><td>HOLD</td><td>35.8%</td><td>16.2%</td></tr><tr><td>Underperform</td><td>SELL</td><td>13.1%</td><td>13.6%</td></tr></table>",
+        "bbox": [
+            107,
+            665,
+            890,
+            787
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "PRICE CHARTS / RATINGS AND PRICE TARGET HISTORY",
+        "text_level": 2,
+        "bbox": [
+            104,
+            864,
+            490,
+            880
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            877,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Gautam Chhugani +91 226 842 1416 gautam.chhugani@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            482,
+            51
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "13 July 2026",
+        "bbox": [
+            825,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL DIGITAL ASSETS",
+        "bbox": [
+            104,
+            939,
+            204,
+            950
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Outperform (O); Market-Perform (M); Underperform (U); Coverage Suspended (CS); Not Covered (NC)",
+        "bbox": [
+            267,
+            541,
+            705,
+            553
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Prior to April 1, 2024, Bernstein & Co., LLC. issued the ratings and price target information in the graph(s) below for the following companies: Coinbase Global Inc..",
+        "bbox": [
+            102,
+            70,
+            893,
+            98
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "chart",
+        "img_path": "images/060b714bb1f3d5fa6acb60e97342c41a84a31f38f4e2b0c7c478ace0b54f6fee.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure Technology Solutions (FIGR) Rating History for Bernstein as of 07/10/2026",
+            "Outperform (O); Market-Perform (M); Underperform (U); Coverage Suspended (CS); Not Covered (NC)"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            122,
+            140,
+            874,
+            311
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0d43943f7de760deb61b26338e03a67ee11fa8f927d5bb25ec00f7d8ae945e3c.jpg",
+        "content": "",
+        "chart_caption": [
+            "Bullish (BLSH) Rating History for Bernstein as of 07/10/2026"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            122,
+            366,
+            875,
+            539
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "chart",
+        "img_path": "images/84b29ff3d33cc64ca5a5e97f474ecea865ae6750d0d6928833cd0a484f712e43.jpg",
+        "content": "",
+        "chart_caption": [
+            "Coinbase Global Inc. (COIN) Rating History for Bernstein as of 07/10/2026",
+            "Outperform (O); Market-Perform (M); Underperform (U); Coverage Suspended (CS); Not Covered (NC)"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            122,
+            590,
+            874,
+            760
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            877,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Gautam Chhugani +91 226 842 1416 gautam.chhugani@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            483,
+            51
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "13 July 2026",
+        "bbox": [
+            825,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL DIGITAL ASSETS",
+        "bbox": [
+            104,
+            940,
+            204,
+            950
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "chart",
+        "img_path": "images/af0bf003ea6754d6c759ed43a32af8cc3142004939973f199c66cffa28bf2009.jpg",
+        "content": "",
+        "chart_caption": [
+            "Robinhood Markets Inc (HOOD) Rating History for Bernstein as of 07/10/2026",
+            "Outperform (O); Market-Perform (M); Underperform (U); Coverage Suspended (CS); Not Covered (NC)"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            124,
+            88,
+            875,
+            260
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "chart",
+        "img_path": "images/1b24a3006071e7351cb55d65a36b488a9672cc9d57b28d18ebb8cf282383ba7a.jpg",
+        "content": "",
+        "chart_caption": [
+            "Sharplink Gaming (SBET) Rating History for Bernstein as of 07/10/2026",
+            "Outperform (O); Market-Perform (M); Underperform (U); Coverage Suspended (CS); Not Covered (NC)"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            125,
+            314,
+            877,
+            486
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Figure Technology Solutions, Coinbase Global Inc. and Robinhood Markets Inc are covered by both the Autonomous and Bernstein brands. For the research ratings and price target history please go to https://bernstein-autonomous.bluematrix.com/sellside/Disclosures.action.",
+        "bbox": [
+            102,
+            520,
+            893,
+            561
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "All price target and closing price data in the chart(s) above are denominated in the currency noted in the Ticker Table of this report.",
+        "bbox": [
+            102,
+            574,
+            892,
+            589
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "CONFLICTS OF INTEREST",
+        "text_level": 2,
+        "bbox": [
+            104,
+            612,
+            282,
+            626
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Gautam Chhugani maintains long positions in various crypto currencies.",
+        "bbox": [
+            104,
+            638,
+            547,
+            652
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "SG and/or its affiliates beneficially own 0.5% or more of [the total issued share capital/any class of common equity securities] with a net [long/short] position of: Figure Technology Solutions.",
+        "bbox": [
+            102,
+            652,
+            893,
+            681
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Bernstein and/or affiliates have received compensation for investment banking services in the past twelve months from Figure Technology Solutions, Bullish and Sharplink Gaming.",
+        "bbox": [
+            102,
+            705,
+            893,
+            734
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Bernstein has received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Figure Technology Solutions, Bullish and Sharplink Gaming.",
+        "bbox": [
+            102,
+            744,
+            893,
+            773
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Bernstein and/or affiliates have received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Figure Technology Solutions, Bullish and Sharplink Gaming.",
+        "bbox": [
+            102,
+            797,
+            893,
+            825
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Bernstein and/or affiliates expect to receive or intend to seek compensation for investment banking services in the next three months from Figure Technology Solutions, Bullish and Sharplink Gaming.",
+        "bbox": [
+            102,
+            837,
+            893,
+            866
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Affiliates of Bernstein managed or co-managed in the past twelve months a public offering of securities of Figure Technology Solutions, Bullish and Sharplink Gaming.",
+        "bbox": [
+            102,
+            877,
+            893,
+            905
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            877,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "Gautam Chhugani +91 226 842 1416 gautam.chhugani@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            483,
+            51
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "13 July 2026",
+        "bbox": [
+            825,
+            39,
+            893,
+            50
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL DIGITAL ASSETS",
+        "bbox": [
+            104,
+            939,
+            205,
+            950
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Bernstein and/or affiliates had an investment banking client relationship during the past twelve months with Figure Technology Solutions, Bullish and Sharplink Gaming.",
+        "bbox": [
+            102,
+            70,
+            893,
+            99
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Certain affiliates of Bernstein act as market maker or liquidity provider in the equities securities of: Coinbase Global Inc., Robinhood Markets Inc and Sharplink Gaming.",
+        "bbox": [
+            102,
+            109,
+            893,
+            138
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "OTHER MATTERS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            150,
+            228,
+            164
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "The legal entity(ies) employing the analyst(s) listed in this report, and their location, can be determined by the country code of their phone number, as follows:",
+        "bbox": [
+            102,
+            176,
+            893,
+            204
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "+1 Bernstein Institutional Services LLC; New York, New York, USA",
+        "bbox": [
+            104,
+            215,
+            514,
+            229
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "+44 Bernstein Autonomous LLP; London UK",
+        "bbox": [
+            104,
+            243,
+            385,
+            256
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "+212 SG Africa Technologies & Services; Casablanca, Morocco",
+        "bbox": [
+            104,
+            268,
+            584,
+            282
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "+33 BSG France S.A.; Paris, France",
+        "bbox": [
+            104,
+            295,
+            328,
+            308
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "+34 BSG France S.A.; Madrid, Spain",
+        "bbox": [
+            104,
+            321,
+            331,
+            334
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "+41 Bernstein Autonomous LLP; Geneva, Switzerland",
+        "bbox": [
+            104,
+            348,
+            441,
+            361
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "+49 BSG France S.A.; Frankfurt, Germany",
+        "bbox": [
+            104,
+            375,
+            367,
+            388
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "+91 Bernstein (India) Private Limited; Mumbai, India",
+        "bbox": [
+            104,
+            400,
+            496,
+            414
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "+852 Bernstein (Hong Kong) Limited 盛博香港有限公司; Hong Kong, China",
+        "bbox": [
+            104,
+            426,
+            643,
+            440
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "+65 Bernstein (Singapore) Private Limited; Singapore",
+        "bbox": [
+            104,
+            452,
+            506,
+            465
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "+81 Bernstein Japan KK; Tokyo, Japan",
+        "bbox": [
+            104,
+            479,
+            413,
+            493
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Where this report has been prepared by research analyst(s) employed by a non-US affiliate, such analyst(s), is/are (unless otherwise expressly noted below) not registered as associated persons of Bernstein Institutional Services LLC or any other SEC-registered broker-dealer and are not licensed or qualified as research analysts with FINRA. Accordingly, such analyst(s) may not be subject to FINRA's restrictions regarding (among other things) communications by research analysts with a subject company, interactions between research analysts and investment banking personnel, participation by research analysts in solicitation and marketing activities relating to investment banking transactions, public appearances by research analysts, and trading securities held by a research analyst account.",
+        "bbox": [
+            102,
+            505,
+            893,
+            602
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Where this report has been prepared by research analyst(s) employed by SG Africa Technologies & Services (part of the SG group of companies), it has been prepared on behalf of a Bernstein company under a Global Services Agreement in place between Bernstein and SG.",
+        "bbox": [
+            102,
+            613,
+            893,
+            655
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "CERTIFICATION",
+        "text_level": 2,
+        "bbox": [
+            104,
+            666,
+            217,
+            680
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Each research analyst listed in this report, who is primarily responsible for the preparation of the content of this report, certifies that all of the views expressed in this publication accurately reflect that analyst's personal views about any and all of the subject securities or issuers and that no part of that analyst's compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views in this publication.",
+        "bbox": [
+            102,
+            693,
+            893,
+            748
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "II. ADDITIONAL GLOBAL CONFLICT DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            758,
+            444,
+            773
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e., the private side) within the Firm, and into other areas, units, groups or affiliates (i.e., public side) of the Firm.",
+        "bbox": [
+            102,
+            787,
+            893,
+            829
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "III. OTHER IMPORTANT INFORMATION AND DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            839,
+            501,
+            853
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Separate branding is maintained for “Bernstein” and “Autonomous” research products.",
+        "bbox": [
+            102,
+            866,
+            638,
+            880
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "\\- Bernstein produces a number of different types of research products including, among others, fundamental analysis and quantitative analysis under both the “Autonomous” and “Bernstein” brands. Recommendations contained within one type of research product may differ from recommendations contained within other types of research products, whether as a result of differing time horizons, methodologies or otherwise. Furthermore, views or recommendations within a research product issued under one brand may differ from views or recommendations under the same type of research product issued under the other brand. The Research Ratings System for the two brands and other information related to those Rating Systems are included in the previous section.",
+        "bbox": [
+            104,
+            893,
+            893,
+            922
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            877,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "Gautam Chhugani +91 226 842 1416 gautam.chhugani@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            483,
+            51
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "13 July 2026",
+        "bbox": [
+            825,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL DIGITAL ASSETS",
+        "bbox": [
+            104,
+            939,
+            205,
+            950
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            120,
+            71,
+            895,
+            146
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- Autonomous operates as a separate business unit within the following entities: Bernstein Institutional Services LLC, Bernstein Autonomous LLP, Bernstein (Hong Kong) Limited 盛博香港有限公司 and Bernstein (India) Private Limited. For information relating to “Autonomous” branded products (including certain Sales materials) please visit: www.autonomous.com. For information relating to Bernstein branded products please visit: www.bernsteinresearch.com.",
+        "bbox": [
+            104,
+            159,
+            893,
+            219
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Analysts are compensated based on aggregate contributions to the research franchise as measured by account penetration, productivity and proactivity of investment ideas. No analysts are compensated based on performance in, or contributions to, generating investment banking revenues.",
+        "bbox": [
+            102,
+            231,
+            893,
+            273
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "This report has been produced by an independent analyst as defined in Article 3 (1)(34)(i) of EU 596/2014 Market Abuse Regulation (“MAR”) and the same article of MAR as it forms part of United Kingdom domestic law by virtue of the European Union (Withdrawal) Act 2018.",
+        "bbox": [
+            102,
+            284,
+            893,
+            325
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the United States: Bernstein Institutional Services LLC, a broker-dealer registered with the U.S. Securities and Exchange Commission (“SEC”) and a member of the U.S. Financial Industry Regulatory Authority, Inc. (“FINRA”) is distributing this publication in the United States and accepts responsibility for its contents. Where this material contains an analysis of debt product(s), such material is intended only for institutional investors and is not subject to the US independence and disclosure standards applicable to debt research prepared for retail investors.",
+        "bbox": [
+            102,
+            337,
+            893,
+            407
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Bernstein Institutional Services LLC may act as principal for its own account or as agent for another person (including an affiliate) in sales or purchases of any security which is a subject of this report. This report does not purport to meet the objectives or needs of any specific individuals, entities or accounts.",
+        "bbox": [
+            102,
+            419,
+            893,
+            460
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Canada: If this publication pertains to a Canadian domiciled company, it is being distributed in Canada by Bernstein (Canada) Limited, which is licensed and regulated by the Canadian Investment Regulatory Organization. If the publication pertains to a non-Canadian domiciled company, it is being distributed by Bernstein Institutional Services LLC, which is licensed and regulated by both the SEC and FINRA, into Canada under the International Dealers Exemption.",
+        "bbox": [
+            102,
+            472,
+            893,
+            529
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "This document may not be passed onto any person in Canada unless that person qualifies as \"permitted client\" as defined in Section 1.1 of NI 31-103.",
+        "bbox": [
+            102,
+            539,
+            893,
+            566
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Brazil: This report has been prepared by Bernstein Institutional Services LLC, and Banco BTG Pactual S.A. (\"BTG\") is responsible for the distribution of this report in Brazil.",
+        "bbox": [
+            102,
+            579,
+            893,
+            608
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "To readers in the United Kingdom: This publication has been issued or approved for issue in the United Kingdom by Bernstein Autonomous LLP, authorised and regulated by the Financial Conduct Authority and located at 60 London Wall, London EC2M 5SH, +44 (0)20-7170-5000. Registered in England & Wales No OC343985.",
+        "bbox": [
+            102,
+            619,
+            893,
+            661
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "This document is for distribution only to persons who (i) have professional experience in matters relating to investments falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the “Financial Promotion Order”), (ii) are persons falling within Article 49(2)(a) to (d) (“high net worth companies, unincorporated associations, etc.”) of the Financial Promotion Order, (iii) are outside the United Kingdom, or (iv) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the FSMA) in connection with the issue or sale of any securities may otherwise lawfully be communicated or caused to be communicated (all such persons together being referred to as “relevant persons”). This document is directed only at relevant persons and must not be acted on or relied on by persons who are not relevant persons. Any investment or investment activity to which this document relates is available only to relevant persons and will be engaged in only with relevant persons.",
+        "bbox": [
+            102,
+            672,
+            895,
+            797
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the member states of the EEA: This publication is being distributed by BSG France SA, which is authorised and regulated by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and Autorité des Marchés Financiers (AMF).",
+        "bbox": [
+            102,
+            808,
+            893,
+            837
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Hong Kong: This publication is being distributed in Hong Kong by Bernstein (Hong Kong) Limited 盛博香港有限公司, which is licensed and regulated by the Hong Kong Securities and Futures Commission (Central Entity No. AXC846) to carry out Type 4 (Advising on Securities) regulated activities and subject to the licensing conditions mentioned in the SFC Public Register (https://www.sfc.hk/publicregWeb/corp/AXC846/details)). This publication is solely for professional investors, as defined in the Securities and Futures Ordinance (Cap. 571). The purpose of this report is solely to provide an analysis of the issuers referred to in this report and is not intended for any purpose contrary to the laws of Hong Kong.",
+        "bbox": [
+            102,
+            847,
+            895,
+            917
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            877,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "Gautam Chhugani +91 226 842 1416 gautam.chhugani@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            483,
+            51
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "13 July 2026",
+        "bbox": [
+            825,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL DIGITAL ASSETS",
+        "bbox": [
+            104,
+            939,
+            205,
+            950
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            102,
+            70,
+            777,
+            85
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Singapore: This publication is being distributed in Singapore by Bernstein (Singapore) Private Limited, only to accredited investors or institutional investors, as defined in the Securities and Futures Act 2001 of Singapore (\"SFA\"). Recipients in Singapore should contact Bernstein (Singapore) Private Limited in respect of matters arising from, or in connection with, this publication. Bernstein (Singapore) Private Limited is regulated by the Monetary Authority of Singapore and licensed under the SFA as a capital markets services licence holder for dealing in capital markets products that are securities and collective investment schemes and an exempt financial adviser for advising on, issuing and promulgating analyses and reports on securities. Bernstein (Singapore) Private Limited is registered in Singapore with Company Registration No. 20213710W and located at 8 Marina Boulevard, #12-01, Marina Bay Financial Centre, Singapore 018981, +65-6326-7000.",
+        "bbox": [
+            101,
+            95,
+            893,
+            208
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the People's Republic of China: The securities referred to in this document are not being offered or sold and may not be offered or sold, directly or indirectly, in the People's Republic of China (for such purposes, not including the Hong Kong and Macau Special Administrative Regions or Taiwan, the \"PRC\") in contravention of any applicable laws of the PRC.",
+        "bbox": [
+            102,
+            219,
+            893,
+            261
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "This document does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC to any person to whom it is unlawful to make the offer or solicitation in the PRC.",
+        "bbox": [
+            102,
+            271,
+            893,
+            300
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "We do not represent that this document may be lawfully distributed, or that any securities may be lawfully offered, in compliance with any applicable registration or other requirements in the PRC, or pursuant to an exemption available thereunder, or assume any responsibility for facilitating any such distribution or offering. In particular, no action has been taken by us which would permit a public offering of any securities or distribution of this document in the PRC. Accordingly, the securities are not being offered or sold within the PRC by means of this document or any other document. Neither this document nor any advertisement or other offering material may be distributed or published in the PRC, except under circumstances that will result in compliance with any applicable laws and regulations.",
+        "bbox": [
+            102,
+            311,
+            893,
+            409
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Japan: This publication is being distributed in Japan by Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社), which is registered in Japan as a Financial Instruments Business Operator with the Kanto Local Finance Bureau (registration number: The Director-General of Kanto Local Finance Bureau (FIBO) No.3387) and regulated by the Financial Services Agency. It is also a member of Investment Management Association of Japan. This publication is solely for qualified institutional investors in Japan only, as defined in Article 2, paragraph (3), items (i) of the Financial Instruments and Exchange Act.",
+        "bbox": [
+            102,
+            419,
+            893,
+            503
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "For the institutional client readers in Japan who have been granted access to the Bernstein website by Daiwa Group Inc. (\"Daiwa\"), your access to this document should not be construed as meaning that Bernstein is providing you with investment advice for any purposes. Whilst Bernstein has prepared this document, your relationship is, and will remain with, Daiwa, and Bernstein has neither any contractual relationship with you nor any obligations towards you.",
+        "bbox": [
+            102,
+            513,
+            893,
+            571
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Australia: Bernstein (Hong Kong) Limited 盛博香港有限公司 is responsible for distributing research in Australia. It is regulated by the Securities and Exchange Commission under U.S. laws, by the Financial Conduct Authority under U.K. laws, which differs from Australian laws. Bernstein (Hong Kong) Limited 盛博香港有限公司 is exempt from the requirement to hold an Australian financial services license under the Corporations Act 2001 in respect of the provision of the following financial services to wholesale clients:",
+        "bbox": [
+            102,
+            580,
+            893,
+            651
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "• providing financial product advice;",
+        "bbox": [
+            104,
+            662,
+            339,
+            678
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "• dealing in a financial product;",
+        "bbox": [
+            104,
+            691,
+            310,
+            705
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "• making a market for a financial product; and",
+        "bbox": [
+            104,
+            718,
+            398,
+            733
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "• providing a custodial or depository service.",
+        "bbox": [
+            104,
+            746,
+            390,
+            760
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "To our readers in India: This publication is being distributed in India by Bernstein (India) Private Limited (SCB India) which is licensed and regulated by Securities and Exchange Board of India (\"SEBI\") as a research analyst entity under the SEBI (Research Analyst) Regulations, 2014, having registration no. INH000006378 and as a stock broker having registration no. INZ000213537. SCB India is currently engaged in the business of providing research and stock broking services. Please refer to www.bernsteinresearch.in for more information.",
+        "bbox": [
+            102,
+            772,
+            893,
+            842
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "\\- SCB India is a Private limited company incorporated under the Companies Act, 2013, on April 12, 2017 bearing corporate identification number U65999MH2017FTC293762, and registered office at Level 3A, 4th Floor, First International Financial Centre, Plot Nos C-54 and C-55, G Block, Near CBI Office, Bandra Kurla Complex, Bandra (East), Mumbai 400098,",
+        "bbox": [
+            104,
+            854,
+            893,
+            898
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            877,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "Gautam Chhugani +91 226 842 1416 gautam.chhugani@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            483,
+            51
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "13 July 2026",
+        "bbox": [
+            825,
+            39,
+            893,
+            50
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL DIGITAL ASSETS",
+        "bbox": [
+            104,
+            939,
+            205,
+            950
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Maharashtra, India (Phone No: +91-22-68421401).",
+        "bbox": [
+            122,
+            71,
+            447,
+            85
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- For details of Associates (i.e., affiliates/group companies) of SCB India, kindly email MUM-BERNSTEIN-InCompliance@bernsteinsg.com.",
+        "bbox": [
+            104,
+            99,
+            892,
+            128
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "• SCB India does not have any disciplinary history as on the date of this report.",
+        "bbox": [
+            104,
+            141,
+            594,
+            156
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- Except as noted above, SCB India and/or its Associates (i.e., affiliates/group companies), the Research Analysts authoring this report, and their relatives",
+        "bbox": [
+            104,
+            169,
+            893,
+            199
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "• do not have any financial interest in the subject company",
+        "bbox": [
+            122,
+            212,
+            493,
+            226
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "• do not have actual/beneficial ownership of one percent or more in securities of the subject company;",
+        "bbox": [
+            122,
+            239,
+            764,
+            253
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- is not engaged in any investment banking activities for Indian companies, as such;",
+        "bbox": [
+            122,
+            267,
+            647,
+            281
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "• have not managed or co-managed a public offering in the past twelve months for any Indian companies;",
+        "bbox": [
+            122,
+            294,
+            781,
+            309
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- have not received any compensation for investment banking services or merchant banking services from the subject company in the past 12 months;",
+        "bbox": [
+            122,
+            321,
+            893,
+            352
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "• have not received compensation for brokerage services from the subject company in the past twelve months;",
+        "bbox": [
+            122,
+            364,
+            813,
+            378
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- have not received any compensation or other benefits from the subject company or third party related to the specific recommendations or views in this report; and",
+        "bbox": [
+            122,
+            392,
+            893,
+            422
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- do not currently, but may in the future, act as a market maker in the financial instruments of the companies covered in the report.",
+        "bbox": [
+            122,
+            435,
+            893,
+            464
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- do not have any conflict of interest in the subject company as of the date of this report.",
+        "bbox": [
+            122,
+            478,
+            674,
+            492
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- Except as noted above, the subject company has not been a client of SCB India during twelve months preceding the date of distribution of this research report. Neither SCB India nor its Associates (i.e., affiliates/group companies) have received compensation for products or services other than investment banking, merchant banking or brokerage services from the subject company in the past twelve months.",
+        "bbox": [
+            104,
+            505,
+            893,
+            565
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- The principal research analyst(s) who prepared this report, members of the analysts' team, and members of their households are not an officer, director, employee or advisory board member of the companies covered in the report.",
+        "bbox": [
+            104,
+            577,
+            893,
+            608
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- Our Compliance officer / Grievance officer is Ms. Rupal Talati, who can be reached at +91-22-68421451, or MUM-BERNSTEIN-InCompliance@bernsteinsg.com / Scbin-investorgrievance@bernsteinsg.com",
+        "bbox": [
+            104,
+            619,
+            893,
+            650
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- The Research investor charter and Terms & Conditions of SCB India are available on its website and may be accessed at Bernstein (India) Private Limited (https://bernsteinresearch.in/) for your reference.",
+        "bbox": [
+            104,
+            662,
+            893,
+            693
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- Disclaimer: Registration granted by SEBI, and certification from NISM, is in no way a guarantee of performance of the intermediary or provide any assurance of returns to investors. Investments in securities market are subject to market risks. Read all the related documents carefully before investing.",
+        "bbox": [
+            104,
+            705,
+            893,
+            750
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Switzerland: This document is provided in Switzerland by or through Bernstein Autonomous LLP, and is provided only to qualified investors as defined in article 10 of the Swiss Collective Investment Scheme Act (“CISA”) and related provisions of the Collective Investment Scheme Ordinance and in strict compliance with applicable Swiss law and regulations. The products mentioned in this document may not be suitable for all types of investors. This document is based on the Directives on the Independence of Financial Research issued by the Swiss Bankers Association (SBA) in January 2008.",
+        "bbox": [
+            102,
+            762,
+            893,
+            833
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the Middle East: Bernstein Autonomous LLP, DIFC branch has its principal office at Gate Village 06, DIFC, Dubai, UAE. Bernstein Autonomous LLP, DIFC branch is regulated by the Dubai Financial Services Authority (DFSA) with the registration number CL10040 and is provisioned for Arranging Deals in Investments and Advising on Financial Products. All communications and services are directed at Professional Clients and Market Counterparties only (as defined in the DFSA rulebook). Persons other than Professional Clients and Market Counterparties, such as Retail Clients, are not the intended",
+        "bbox": [
+            102,
+            844,
+            893,
+            914
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            877,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "Gautam Chhugani +91 226 842 1416 gautam.chhugani@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            483,
+            51
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "13 July 2026",
+        "bbox": [
+            823,
+            39,
+            893,
+            50
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL DIGITAL ASSETS",
+        "bbox": [
+            104,
+            939,
+            205,
+            950
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "recipients of our communications or services.",
+        "bbox": [
+            102,
+            70,
+            388,
+            84
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "LEGAL",
+        "text_level": 2,
+        "bbox": [
+            104,
+            95,
+            155,
+            109
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "All research publications are disseminated to our clients through posting on the firm's password protected websites, bernsteinresearch.com and autonomous.com. Certain, but not all, research publications are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience.",
+        "bbox": [
+            102,
+            123,
+            893,
+            166
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "This publication has been published and distributed in accordance with the Firm's policy for management of conflicts of interest in investment research, a copy of which is available from Bernstein Institutional Services LLC, Director of Compliance, 245 Park Avenue, New York, NY 10167. Additional disclosures and information regarding Bernstein's business are available on our website www.bernsteinresearch.com.",
+        "bbox": [
+            102,
+            176,
+            893,
+            232
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. This publication is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of, or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or which would subject any of the entities referenced herein or any of their subsidiaries or affiliates to any registration or licensing requirement within such jurisdiction. This publication is based upon public sources we believe to be reliable, but no representation is made by us that the publication is accurate or complete. We do not undertake to advise you of any change in the reported information or in the opinions herein. This publication was prepared and issued by entity referred to herein for distribution to eligible counterparties or professional clients. This publication is not an offer to buy or sell any security, and it does not constitute investment, legal or tax advice. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with their professional advisors in light of their specific circumstances. The value of investments may fluctuate, and investments that are denominated in foreign currencies may fluctuate in value as a result of exposure to exchange rate movements. Information about past performance of an investment is not necessarily a guide to, indicator of, or assurance of, future performance.",
+        "bbox": [
+            102,
+            244,
+            895,
+            436
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "This report is directed to and intended only for our clients who are “eligible counterparties”, “professional clients”, “institutional investors” and/or “professional investors” as defined by the aforementioned regulators, and must not be redistributed to retail clients as defined by the aforementioned regulators. Retail clients who receive this report should note that the services of the entities noted herein are not available to them and should not rely on the material herein to make an investment decision. The result of such act will not hold the entities noted herein liable for any loss thus incurred as the entities noted herein are not registered/authorised/licensed to deal with retail clients and will not enter into any contractual agreement/arrangement with retail clients. This report is provided subject to the terms and conditions of any agreement that the clients may have entered into with the entities noted herein. All research reports are disseminated on a simultaneous basis to eligible clients through electronic publication to our client portal.",
+        "bbox": [
+            102,
+            446,
+            895,
+            571
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "The information in this report was prepared by Bernstein solely for the internal business use of our clients. Clients may store, display, analyze, reformat and print the information in this report for this limited use only. Clients may not copy, alter, create derivative works, resell, reverse engineer, commercially exploit, share or distribute any part of the information contained herein for any purpose without Bernstein's express written consent. These restrictions include extracting data or using the content to develop indices or other products. Further, you may not use this report, or any portion of this report, to train or finetune any third-party machine learning or artificial intelligence system, or as a prompt or input into any such system. You also may not, without Bernstein's express written consent, do any of the foregoing in connection with your own internal machine learning or artificial intelligence system.",
+        "bbox": [
+            102,
+            583,
+            893,
+            694
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Bernstein may use artificial intelligence tools in the preparation of its materials. Any such materials are reviewed by Bernstein's research analysts prior to publication.",
+        "bbox": [
+            102,
+            704,
+            893,
+            732
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "This report has been prepared for information purposes only and is based on current public information that we consider reliable, but the entities noted herein do not warrant or represent (express or implied) as to the sources of information or data contained herein are accurate, complete, not misleading or as to its fitness for the purpose intended even though the entities noted herein rely on reputable or trustworthy data providers, it should not be relied upon as such. Opinions expressed are the author(s)' current opinions as of the date appearing on the material only and we do not undertake to advise you of any change in the reported information or in the opinions herein.",
+        "bbox": [
+            102,
+            744,
+            893,
+            828
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Any references to SG herein are purely factual, based upon publicly available information, and included for comparative purposes only. They do not constitute an opinion or recommendation with respect to the securities of SG.",
+        "bbox": [
+            102,
+            839,
+            893,
+            880
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "This publication was prepared and issued by the entity referred to herein for distribution to eligible counterparties or professional clients. The information in this report is intended for general circulation and does not constitute an offer to buy or sell any security, investment, legal or tax advice nor a personal recommendation, as defined by any of the aforementioned regulators. It does not take into account the particular investment objectives, financial situations, or needs of individual investors. The report has not been reviewed by any of the aforementioned regulators and does not represent any official recommendation from the aforementioned regulators. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with advice sought from a financial adviser regarding the suitability of the investment product, taking into account the specific investment objectives, financial situation or particular needs of any recipient of the recommendation, before the recipient makes a commitment to purchase the investment product.",
+        "bbox": [
+            102,
+            892,
+            893,
+            921
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "20",
+        "bbox": [
+            875,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "Gautam Chhugani +91 226 842 1416 gautam.chhugani@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            483,
+            51
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "13 July 2026",
+        "bbox": [
+            825,
+            39,
+            893,
+            50
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL DIGITAL ASSETS",
+        "bbox": [
+            104,
+            939,
+            205,
+            950
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            102,
+            70,
+            893,
+            167
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "The analysis contained herein is based on numerous assumptions. Different assumptions could result in materially different results. The information in this report does not constitute, or form part of, any offer to sell or issue, or any offer to purchase or subscribe for shares, or to induce engagement in any other investment activity. The value of any securities or financial instruments mentioned in this report may fluctuate subject to market conditions. Information about past performance of an investment is not necessarily a guide to, indicative of, or assurance of future performance. Estimates of future performance mentioned by the research analyst in this report are based on assumptions that may not be realized due to unforeseen factors like market volatility/fluctuation. In relation to securities or financial instruments denominated in a foreign currency other than the clients' home currency, movements in exchange rates will have an effect on the value, either favorable or unfavorable. Before acting on any recommendations in this report, recipients should consider the appropriateness of investing in the subject securities or financial instruments mentioned in this report and, if necessary, seek independent professional advice.",
+        "bbox": [
+            102,
+            179,
+            893,
+            316
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject the entities noted herein to any regulation or licensing requirement within such jurisdiction.",
+        "bbox": [
+            102,
+            327,
+            893,
+            398
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Source: Bloomberg Index Services Limited. BLOOMBERG® is a trademark and service mark of Bloomberg Finance L.P. and its affiliates (collectively “Bloomberg”). Bloomberg or Bloomberg’s licensors own all proprietary rights in the Bloomberg Indices. Neither Bloomberg nor Bloomberg’s licensors approves or endorses this material, or guarantees the accuracy or completeness of any information herein, or makes any warranty, express or implied, as to the results to be obtained therefrom and, to the maximum extent allowed by law, neither shall have any liability or responsibility for injury or damages arising in connection therewith.",
+        "bbox": [
+            102,
+            407,
+            893,
+            478
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "No part of this material may be reproduced, distributed or transmitted or otherwise made available without prior consent of the entities noted herein. Copyright Bernstein Institutional Services LLC Bernstein Autonomous LLP, BSG France S.A., Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited and Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社). All rights reserved. The trademarks and service marks contained herein are the property of their respective owners. Any unauthorized use or disclosure is strictly prohibited. The entities noted herein may pursue legal action if the unauthorized use results in any defamation and/or reputational risk to the entities noted herein and research published under the Bernstein and Autonomous brands.",
+        "bbox": [
+            102,
+            489,
+            893,
+            599
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "21",
+        "bbox": [
+            877,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "Gautam Chhugani +91 226 842 1416 gautam.chhugani@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            483,
+            51
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "13 July 2026",
+        "bbox": [
+            825,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL DIGITAL ASSETS",
+        "bbox": [
+            104,
+            939,
+            205,
+            950
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 20
+    }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_wclzietj/pdfs/0001-01-Bernstein-Americas Power - Energy Transition- Baseload- Rising-Bernstein-s Power Forecast until 2030-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_wclzietj/pdfs/0002-02-Bernstein-Global Digital Assets-The Tokenization Memo- Robinhood Chain-s strong debut launch -3 n--260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_wclzietj/pdfs/0003-03-Bernstein-Americas Energy - Transition-Americas Natural Gas- New Bernstein Power Model helps confirm our bullish gas outlook...Haynesville activity doesn-t deter us-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_wclzietj/pdfs/0004-04-Bernstein-Nike Inc-NKE.US-Nike- Key takeaways from Bernstein-s Retail Forum-260713.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_wclzietj/pdfs/0005-05-Bernstein-Global Semis and Semi Caps-Global Semis - Can semi cap work if memory doesn-t--260713.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
