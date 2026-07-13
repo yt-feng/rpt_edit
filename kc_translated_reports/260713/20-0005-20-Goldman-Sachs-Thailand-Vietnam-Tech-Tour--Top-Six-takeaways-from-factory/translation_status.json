@@ -1,0 +1,30 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260713/shard_3/0005-20-Goldman-Sachs-Thailand-Vietnam-Tech-Tour--Top-Six-takeaways-from-factory",
+  "title": "高盛：泰国越南科技考察，PCB、网络及AI服务器供应链六大要点",
+  "source_title": "0005-20-GS-Thailand Vietnam Tech Tour- Top Six takeaways from factory visits across PCB- Networking- and AI server supply chain-260713",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_20.pdf",
+  "figure_count": 15,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "remove_stock_parenthetical x4",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "sanitize_wechat_stock_line",
+    "remove_stock_parenthetical x1",
+    "sanitize_wechat_stock_line",
+    "压力->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line"
+  ]
+}

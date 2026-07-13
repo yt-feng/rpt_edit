@@ -1,0 +1,27 @@
+{
+  "source_report_dir": "xhs_notes/dropbox/260713/shard_2/0005-15-Goldman-Sachs-CATL--300750-3750.HK-Beyond-Cells--Into-Energy-Solutions--",
+  "title": "高盛：宁德时代-超越电池，迈向能源解决方案-更新公司观点",
+  "source_title": "0005-15-GS-CATL -300750 3750.HK-Beyond Cells- Into Energy Solutions- Initiate at Buy-260713",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "source_clean": "source_clean.md",
+  "translated_markdown": "translated.md",
+  "pdf": "kc_translated_report_15.pdf",
+  "figure_count": 3,
+  "institution_name": "高盛",
+  "article_style": false,
+  "stock_language_sanitized": [
+    "(?:维持|重申|给予|首予|首次覆盖|恢复|上调|下调)\\s*(?:买入|卖出|增持|减持|持有|中性|跑赢大市|跑输大市|优于大市|弱于大市)\\s*(?:评级|建议|观点)?->更新公司观点 x1",
+    "sanitize_wechat_stock_line",
+    "remove_target_price_clause x1",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line",
+    "风险->不确定性 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ]
+}
