@@ -69,6 +69,12 @@ jobs:
       - name: Install Python dependencies
         run: pip install requests boto3 pypdf
 
+      - name: Validate site and Worker JavaScript
+        id: code_validation
+        run: |
+          node --check kc_desk_notes/site_src/assets/app.js
+          node --check workers/kc-desk-notes-worker/src/index.js
+
       - name: Update catalog and mirror current PDFs to R2
         id: catalog
         env:
@@ -169,7 +175,7 @@ jobs:
 
       - name: Prepare Cloudflare Worker deploy config
         id: worker_config
-        if: ${{ always() }}
+        if: ${{ always() && steps.code_validation.outcome == 'success' }}
         env:
           DEPLOY_WORKER: ${{ github.event.inputs.deploy_worker || 'true' }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

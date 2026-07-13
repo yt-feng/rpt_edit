@@ -21,6 +21,9 @@
   let accountAdminDailyPicks = new Map();
   let accountAdminUsersByEmail = new Map();
   let accountAdminAccessOptions = {};
+  let accountAdminLastSummary = null;
+  let accountAdminLastSummaryOwner = "";
+  let accountAdminRefreshTimer = null;
   let pdfJsLoadPromise = null;
   const activeAdminButtonActions = new WeakMap();
 
@@ -691,6 +694,7 @@
               <strong>每日精选</strong>
               <span id="accountAdminPickCount"></span>
             </div>
+            <div id="accountAdminPicksNotice" class="account-admin-module-notice" hidden></div>
             <div id="accountAdminPicks" class="account-admin-picks"></div>
           </section>
           <section class="account-admin-section account-admin-wechat-section" id="accountAdminWechatSection" ${showWechat ? "" : "hidden"}>
@@ -698,13 +702,15 @@
               <strong>公众号发送时间</strong>
               <span id="accountAdminWechatCount"></span>
             </div>
+            <div id="accountAdminWechatNotice" class="account-admin-module-notice" hidden></div>
             <div id="accountAdminWechatSchedule" class="account-admin-wechat-schedule"></div>
           </section>
           <section class="account-admin-section">
             <div class="account-admin-heading">
               <strong>每日文件</strong>
-              <span>GitHub latest</span>
+              <span>最近同步</span>
             </div>
+            <div id="accountAdminFilesNotice" class="account-admin-module-notice" hidden></div>
             <div id="accountAdminFiles" class="account-admin-files"></div>
           </section>
           <section class="account-admin-section" id="accountAdminAnalyticsSection" ${showAnalytics ? "" : "hidden"}>
@@ -712,6 +718,7 @@
               <strong>访问与搜索</strong>
               <span id="accountAdminAnalyticsCount"></span>
             </div>
+            <div id="accountAdminAnalyticsNotice" class="account-admin-module-notice" hidden></div>
             <div id="accountAdminAnalytics" class="account-admin-analytics"></div>
           </section>
           <section class="account-admin-section" id="accountAdminUsersSection" ${showUsers ? "" : "hidden"}>
@@ -720,6 +727,7 @@
               <span id="accountAdminUserCount"></span>
               <button class="secondary-button" id="accountAdminNewUser" type="button">新增用户</button>
             </div>
+            <div id="accountAdminUsersNotice" class="account-admin-module-notice" hidden></div>
             <form id="accountAdminUserCreator" class="account-admin-user-editor" hidden>
               <div class="account-admin-user-editor-head">
                 <strong>新增用户</strong>
@@ -1609,60 +1617,189 @@
     if (pdf && typeof pdf.destroy === "function") pdf.destroy();
   }
 
-  async function loadAccountAdminSummary(workerUrl, targets) {
+  function formatAdminDateTime(value) {
+    const date = new Date(String(value || ""));
+    if (!Number.isFinite(date.getTime())) return "";
+    try {
+      return new Intl.DateTimeFormat("zh-CN", {
+        timeZone: "Asia/Shanghai",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false,
+      }).format(date).replaceAll("/", "-");
+    } catch (_error) {
+      return String(value || "").replace("T", " ").slice(0, 19);
+    }
+  }
+
+  function mergeAccountAdminSummaryWithLast(data) {
+    if (!accountAdminLastSummary) return data;
+    const merged = { ...data, module_status: { ...(data.module_status || {}) } };
+    const modules = [
+      ["files", ["files"]],
+      ["picks", ["daily_picks", "access_options"]],
+      ["wechat", ["wechat_schedule"]],
+      ["analytics", ["analytics"]],
+      ["users", ["users"]],
+    ];
+    for (const [moduleName, fields] of modules) {
+      const status = merged.module_status[moduleName];
+      if (!status || status.has_data !== false) continue;
+      for (const field of fields) {
+        if (Object.prototype.hasOwnProperty.call(accountAdminLastSummary, field)) {
+          merged[field] = accountAdminLastSummary[field];
+        }
+      }
+      const previousStatus = accountAdminLastSummary.module_status && accountAdminLastSummary.module_status[moduleName];
+      merged.module_status[moduleName] = {
+        ...(previousStatus || {}),
+        ...status,
+        has_data: true,
+        state: "updating",
+        updated_at: previousStatus && previousStatus.updated_at || "",
+      };
+    }
+    return merged;
+  }
+
+  function renderAdminModuleNotice(target, status) {
+    if (!target) return;
+    const state = String(status && status.state || "fresh");
+    if (state === "fresh") {
+      target.hidden = true;
+      target.textContent = "";
+      return;
+    }
+    const updated = formatAdminDateTime(status && status.updated_at);
+    target.hidden = false;
+    target.textContent = status && status.has_data
+      ? `数据更新中，当前显示最近一次成功数据${updated ? `（北京时间 ${updated}）` : ""}。系统每 30 分钟自动刷新。`
+      : "数据正在首次同步，请约半小时后重新进入。";
+  }
+
+  function renderAccountAdminSummary(data, targets) {
+    const users = Array.isArray(data.users) ? data.users : [];
+    const files = Array.isArray(data.files) ? data.files : [];
+    const dailyPicks = Array.isArray(data.daily_picks) ? data.daily_picks : [];
+    const wechatSchedule = data.wechat_schedule && typeof data.wechat_schedule === "object" ? data.wechat_schedule : {};
+    const analytics = data.analytics && typeof data.analytics === "object" ? data.analytics : null;
+    const moduleStatus = data.module_status && typeof data.module_status === "object" ? data.module_status : {};
+    accountAdminUsersByEmail = new Map(users.map((user) => [String(user.email || ""), user]));
+    if (data.access_options && typeof data.access_options === "object") accountAdminAccessOptions = data.access_options;
+    const canViewUsers = data.can_view_users !== false;
+    const canViewWechat = data.can_view_wechat !== false;
+    const canViewAnalytics = data.can_view_analytics !== false;
+    if (targets.title && data.dashboard_title) targets.title.textContent = data.dashboard_title;
+    if (targets.usersSection) targets.usersSection.hidden = !canViewUsers;
+    if (targets.wechatSection) targets.wechatSection.hidden = !canViewWechat;
+    if (targets.analyticsSection) targets.analyticsSection.hidden = !canViewAnalytics;
+    accountAdminDailyPicks = new Map(dailyPicks.map((pick) => [String(pick.id || ""), pick]));
+    targets.pickCount.textContent = dailyPicks.length ? `${dailyPicks.length} reports` : "";
+    targets.picks.innerHTML = dailyPicks.length
+      ? dailyPicks.map(adminDailyPickRow).join("")
+      : `<div class="empty-state">数据正在同步，请约半小时后重新进入。</div>`;
+    renderAdminModuleNotice(targets.picksNotice, moduleStatus.picks);
+    if (canViewWechat && targets.wechatCount && targets.wechatSchedule) {
+      targets.wechatCount.textContent = wechatSchedule.total_batches ? `${wechatSchedule.total_batches} batches` : "";
+      targets.wechatSchedule.innerHTML = renderAdminWechatSchedule(wechatSchedule);
+      renderAdminModuleNotice(targets.wechatNotice, moduleStatus.wechat);
+    }
+    if (canViewUsers && targets.userCount && targets.users) {
+      renderAdminUserTable(targets);
+      renderAdminModuleNotice(targets.usersNotice, moduleStatus.users);
+    }
+    if (canViewAnalytics && targets.analytics && targets.analyticsCount) {
+      targets.analyticsCount.textContent = analytics
+        ? `近 ${analytics.range_days || 7} 天 · ${analytics.event_count || 0} events`
+        : "";
+      targets.analytics.innerHTML = analytics
+        ? renderAccountAdminAnalytics(analytics)
+        : `<div class="empty-state">数据正在同步，请约半小时后重新进入。</div>`;
+      renderAdminModuleNotice(targets.analyticsNotice, moduleStatus.analytics);
+    }
+    targets.files.innerHTML = files.length
+      ? files.map(adminFileRow).join("")
+      : `<div class="empty-state">数据正在同步，请约半小时后重新进入。</div>`;
+    renderAdminModuleNotice(targets.filesNotice, moduleStatus.files);
+    const statuses = Object.values(moduleStatus).filter(Boolean);
+    const updating = statuses.some((status) => String(status.state || "") !== "fresh");
+    targets.status.className = "status-line ok";
+    targets.status.textContent = updating
+      ? "后台已打开，部分数据正在更新；现有内容会继续保留。"
+      : `数据已同步：${formatAdminDateTime(data.generated_at)}`;
+  }
+
+  async function fetchAccountAdminSummary(workerUrl, options = {}) {
+    let lastError = null;
+    for (let attempt = 0; attempt < 2; attempt += 1) {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 22000);
+      try {
+        const endpoint = `${workerUrl}/account-admin/summary${options.forceRefresh ? "?refresh=1" : ""}`;
+        const response = await fetch(endpoint, {
+          cache: "no-store",
+          headers: authHeaders(),
+          signal: controller.signal,
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) {
+          const error = new Error(data.detail || "后台读取失败。");
+          error.status = response.status;
+          throw error;
+        }
+        return data;
+      } catch (error) {
+        lastError = error;
+        if (error && (error.status === 401 || error.status === 403)) break;
+        if (attempt === 0) await new Promise((resolve) => setTimeout(resolve, 600));
+      } finally {
+        clearTimeout(timer);
+      }
+    }
+    throw lastError || new Error("后台读取失败。");
+  }
+
+  async function loadAccountAdminSummary(workerUrl, targets, options = {}) {
     targets.status.className = "status-line";
-    targets.status.textContent = "正在读取后台信息…";
+    targets.status.textContent = accountAdminLastSummary
+      ? "正在刷新，当前内容会继续保留…"
+      : "正在读取最近一次成功数据…";
     targets.refresh.disabled = true;
     try {
-      const response = await fetch(`${workerUrl}/account-admin/summary`, {
-        cache: "no-store",
-        headers: authHeaders(),
-      });
-      const data = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error(data.detail || "后台读取失败。");
-      const users = Array.isArray(data.users) ? data.users : [];
-      const files = Array.isArray(data.files) ? data.files : [];
-      const dailyPicks = Array.isArray(data.daily_picks) ? data.daily_picks : [];
-      const wechatSchedule = data.wechat_schedule && typeof data.wechat_schedule === "object" ? data.wechat_schedule : {};
-      const analytics = data.analytics && typeof data.analytics === "object" ? data.analytics : null;
-      const analyticsError = String(data.analytics_error || "");
-      accountAdminUsersByEmail = new Map(users.map((user) => [String(user.email || ""), user]));
-      accountAdminAccessOptions = data.access_options && typeof data.access_options === "object" ? data.access_options : {};
-      const canViewUsers = data.can_view_users !== false;
-      const canViewWechat = data.can_view_wechat !== false;
-      const canViewAnalytics = data.can_view_analytics !== false;
-      if (targets.title && data.dashboard_title) targets.title.textContent = data.dashboard_title;
-      if (targets.usersSection) targets.usersSection.hidden = !canViewUsers;
-      if (targets.wechatSection) targets.wechatSection.hidden = !canViewWechat;
-      if (targets.analyticsSection) targets.analyticsSection.hidden = !canViewAnalytics;
-      accountAdminDailyPicks = new Map(dailyPicks.map((pick) => [String(pick.id || ""), pick]));
-      targets.pickCount.textContent = dailyPicks.length ? `${dailyPicks.length} reports` : "";
-      targets.picks.innerHTML = dailyPicks.length
-        ? dailyPicks.map(adminDailyPickRow).join("")
-        : `<div class="empty-state">还没有可用精选。新 PDF 同步后会自动根据宏观/页数/横屏规则筛选。</div>`;
-      if (canViewWechat && targets.wechatCount && targets.wechatSchedule) {
-        targets.wechatCount.textContent = wechatSchedule.total_batches ? `${wechatSchedule.total_batches} batches` : "";
-        targets.wechatSchedule.innerHTML = renderAdminWechatSchedule(wechatSchedule);
+      const fetched = await fetchAccountAdminSummary(workerUrl, options);
+      const data = mergeAccountAdminSummaryWithLast(fetched);
+      accountAdminLastSummary = data;
+      renderAccountAdminSummary(data, targets);
+      const statuses = Object.values(data.module_status || {}).filter(Boolean);
+      if (!options.backgroundRetry && statuses.some((status) => String(status.state || "") !== "fresh")) {
+        if (accountAdminRefreshTimer) clearTimeout(accountAdminRefreshTimer);
+        accountAdminRefreshTimer = setTimeout(() => {
+          accountAdminRefreshTimer = null;
+          if (document.getElementById("accountAdminModal")) {
+            loadAccountAdminSummary(workerUrl, targets, { backgroundRetry: true });
+          }
+        }, 12000);
       }
-      if (canViewUsers && targets.userCount && targets.users) {
-        renderAdminUserTable(targets);
-      }
-      if (canViewAnalytics && targets.analytics && targets.analyticsCount) {
-        targets.analyticsCount.textContent = analytics
-          ? `近 ${analytics.range_days || 30} 天 · ${analytics.event_count || 0} events`
-          : (analyticsError ? "读取异常" : "");
-        targets.analytics.innerHTML = analyticsError
-          ? `<div class="empty-state">访问数据读取失败：${escapeHtml(analyticsError)}</div>`
-          : renderAccountAdminAnalytics(analytics);
-      }
-      targets.files.innerHTML = files.length
-        ? files.map(adminFileRow).join("")
-        : `<div class="empty-state">还没有找到最新文件。可以稍后刷新，或检查 GitHub workflow 是否已完成。</div>`;
-      targets.status.textContent = `已更新：${String(data.generated_at || "").replace("T", " ").slice(0, 19)}`;
-      targets.status.classList.add("ok");
     } catch (error) {
-      targets.status.textContent = error.message || "后台读取失败。";
-      targets.status.classList.add("error");
+      if (error && (error.status === 401 || error.status === 403)) {
+        targets.status.textContent = "登录状态已失效，请重新登录后打开后台。";
+        targets.status.className = "status-line error";
+      } else if (accountAdminLastSummary) {
+        renderAccountAdminSummary(accountAdminLastSummary, targets);
+        targets.status.textContent = "数据更新中，当前显示最近一次成功内容；请稍后刷新。";
+        targets.status.className = "status-line ok";
+      } else {
+        const message = "数据正在更新，请约半小时后重新进入。";
+        targets.status.textContent = message;
+        targets.status.className = "status-line";
+        [targets.picks, targets.wechatSchedule, targets.files, targets.analytics].filter(Boolean).forEach((target) => {
+          target.innerHTML = `<div class="empty-state">${message}</div>`;
+        });
+      }
     } finally {
       targets.refresh.disabled = false;
     }
@@ -1672,6 +1809,9 @@
     if (!workerUrl || !canOpenOperationsPanel()) return;
     const session = loadAuthSession();
     const isOperatorOnly = isOperatorSession(session) && !isSuperSession(session);
+    const summaryOwner = String(session && session.user && (session.user.email || session.user.username) || "").toLowerCase();
+    if (accountAdminLastSummaryOwner && accountAdminLastSummaryOwner !== summaryOwner) accountAdminLastSummary = null;
+    accountAdminLastSummaryOwner = summaryOwner;
     const existing = document.getElementById("accountAdminModal");
     if (existing) existing.remove();
     document.body.insertAdjacentHTML("beforeend", accountAdminModalMarkup({
@@ -1688,8 +1828,10 @@
     const status = document.getElementById("accountAdminStatus");
     const pickCount = document.getElementById("accountAdminPickCount");
     const picks = document.getElementById("accountAdminPicks");
+    const picksNotice = document.getElementById("accountAdminPicksNotice");
     const wechatCount = document.getElementById("accountAdminWechatCount");
     const wechatSchedule = document.getElementById("accountAdminWechatSchedule");
+    const wechatNotice = document.getElementById("accountAdminWechatNotice");
     const wechatSection = document.getElementById("accountAdminWechatSection");
     const userCount = document.getElementById("accountAdminUserCount");
     const users = document.getElementById("accountAdminUsers");
@@ -1711,20 +1853,26 @@
     const accessPageRanges = document.getElementById("accountAdminAccessPageRanges");
     const accessNote = document.getElementById("accountAdminAccessNote");
     const files = document.getElementById("accountAdminFiles");
+    const filesNotice = document.getElementById("accountAdminFilesNotice");
     const analyticsCount = document.getElementById("accountAdminAnalyticsCount");
     const analytics = document.getElementById("accountAdminAnalytics");
+    const analyticsNotice = document.getElementById("accountAdminAnalyticsNotice");
     const analyticsSection = document.getElementById("accountAdminAnalyticsSection");
+    const usersNotice = document.getElementById("accountAdminUsersNotice");
     const targets = {
       title,
       status,
       refresh,
       pickCount,
       picks,
+      picksNotice,
       wechatCount,
       wechatSchedule,
+      wechatNotice,
       wechatSection,
       analyticsCount,
       analytics,
+      analyticsNotice,
       analyticsSection,
       userCount,
       users,
@@ -1746,9 +1894,15 @@
       accessPageRanges,
       accessNote,
       files,
+      filesNotice,
+      usersNotice,
     };
 
     function finish() {
+      if (accountAdminRefreshTimer) {
+        clearTimeout(accountAdminRefreshTimer);
+        accountAdminRefreshTimer = null;
+      }
       modal.remove();
     }
 
@@ -1756,7 +1910,7 @@
     modal.addEventListener("click", (event) => {
       if (event.target === modal) finish();
     });
-    refresh.addEventListener("click", () => loadAccountAdminSummary(workerUrl, targets));
+    refresh.addEventListener("click", () => loadAccountAdminSummary(workerUrl, targets, { forceRefresh: true }));
     if (accessMode) accessMode.addEventListener("change", () => updateUserAccessEditorMode(targets));
     if (newUser && userCreator) {
       newUser.addEventListener("click", () => {
@@ -1846,7 +2000,7 @@
         status.textContent = "正在保存用户权限…";
         try {
           await saveUserAccess(workerUrl, targets);
-          await loadAccountAdminSummary(workerUrl, targets);
+          renderAdminUserTable(targets);
           status.textContent = "用户权限已保存，并已读回确认。";
           status.classList.add("ok");
         } catch (error) {
@@ -2384,12 +2538,6 @@
     `;
   }
 
-  function externalTitleMatchesQuery(item, query) {
-    const cleanQuery = normalize(query);
-    if (!cleanQuery) return false;
-    return textMatches(normalize([item.title, item.title_cn].join(" ")), cleanQuery);
-  }
-
   function thinkTankMeta(item) {
     return [
       item.institution,
@@ -2627,13 +2775,11 @@
       if (!scoped.length) {
         results.innerHTML = '<div class="empty-state">No matching reports.</div>';
         scheduleCatalogSearchAnalytics(rawQuery, scoped.length);
-        maybeRunAuthoritySearch(input.value.trim());
         return;
       }
       results.innerHTML = visible.map((entry) => resultRow(entry.item)).join("");
       results.scrollTop = 0;
       scheduleCatalogSearchAnalytics(rawQuery, scoped.length);
-      maybeRunAuthoritySearch(input.value.trim());
     }
 
     function activeFilterPayload() {
@@ -2737,9 +2883,6 @@
     let externalToken = 0;
     let reportAToken = 0;
     let authorityToken = 0;
-    let externalSearchSettled = false;
-    let externalTitleMatchCount = 0;
-    let externalQuery = "";
     let authorityQuery = "";
     const thinkTankItems = new Map();
     const externalItems = new Map();
@@ -2798,16 +2941,6 @@
       setAuthorityStatus("");
     }
 
-    function maybeRunAuthoritySearch(query) {
-      const cleanQuery = String(query || "").trim();
-      if (!cleanQuery || externalQuery !== cleanQuery || !externalSearchSettled || externalTitleMatchCount > 0) {
-        hideAuthorityResults();
-        return;
-      }
-      if (authorityQuery === cleanQuery && authorityItems.size) return;
-      runAuthoritySearch(cleanQuery);
-    }
-
     async function runThinkTankSearch(query) {
       if (!thinkTankSection || !thinkTankResults) return;
       if (!externalUrl || !query) {
@@ -2857,9 +2990,6 @@
     async function runExternalSearch(query) {
       if (!externalSection || !externalResults) return;
       if (!externalUrl || !query) {
-        externalQuery = "";
-        externalSearchSettled = true;
-        externalTitleMatchCount = 0;
         externalSection.hidden = true;
         externalResults.innerHTML = "";
         externalItems.clear();
@@ -2869,10 +2999,6 @@
         return;
       }
       const token = ++externalToken;
-      externalQuery = query;
-      externalSearchSettled = false;
-      externalTitleMatchCount = 0;
-      hideAuthorityResults();
       externalSection.hidden = false;
       if (externalCount) externalCount.textContent = "搜索中…";
       setExternalStatus("");
@@ -2893,8 +3019,6 @@
         const items = Array.isArray(data.items) ? data.items : [];
         externalItems.clear();
         items.forEach((item) => externalItems.set(String(item.id), item));
-        externalTitleMatchCount = items.filter((item) => externalTitleMatchesQuery(item, query)).length;
-        externalSearchSettled = true;
         if (externalCount) externalCount.textContent = items.length ? `${items.length} 条` : "";
         externalResults.innerHTML = items.length
           ? items.map(externalRow).join("")
@@ -2906,15 +3030,11 @@
           total_count: data.total_count || data.total_page || 0,
           cache_status: data.cache_status || "",
         });
-        maybeRunAuthoritySearch(query);
       } catch (error) {
         if (token !== externalToken) return;
-        externalTitleMatchCount = 0;
-        externalSearchSettled = true;
         if (externalCount) externalCount.textContent = "";
         externalResults.innerHTML = "";
         setExternalStatus(error.message || "搜索暂不可用。", "error");
-        maybeRunAuthoritySearch(query);
       }
     }
 
@@ -3018,6 +3138,7 @@
         runThinkTankSearch(query);
         runExternalSearch(query);
         runReportASearch(query);
+        runAuthoritySearch(query);
       }, 400);
     }
 
