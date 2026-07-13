@@ -1,0 +1,91 @@
+{
+  "date_folder": "260714",
+  "dry_run": false,
+  "publish": false,
+  "max_articles": "all",
+  "input_selected_count": 2,
+  "selected_count": 2,
+  "include_institutions": [],
+  "institution_filtered_count": 0,
+  "skipped_title_policy_count": 0,
+  "skipped_title_policy": [],
+  "articles_per_draft": 8,
+  "draft_count": 1,
+  "max_body_chars": 1200,
+  "max_content_chars": 19500,
+  "max_content_bytes": 18000,
+  "min_inline_images": 3,
+  "max_inline_images": 3,
+  "body_hook": "",
+  "image_upload_delay_seconds": 3.0,
+  "article_delay_seconds": 12.0,
+  "draft_delay_seconds": 90.0,
+  "draft_verify_delay_seconds": 8.0,
+  "trailing_image": "/opt/actions-runner-rpt-edit/_work/rpt_edit/rpt_edit/prompts/zsxq_img.jpg",
+  "drafts": [
+    {
+      "draft_index": 1,
+      "media_id": "avPwUQVH0p7DPpCFFkit8ySb29mKBrkuCmtrh6JBx5sE7FKlavzaFUN3_6BeJxB9",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 2,
+      "payload_bytes": 17397,
+      "payload": "wechat_drafts/consulting/260714/draft_payload_01.json",
+      "titles": [
+        "波士顿咨询：泰国AI基础设施的战略机遇，本地化算力是解锁AI宏观环境",
+        "波士顿咨询：保持国防战机任务就绪，投入翻倍，出勤率反降12%至19%"
+      ],
+      "wechat_titles": [
+        "波士顿咨询：泰国AI基础设施的战略机遇，本地化算力是解锁AI宏观环境",
+        "波士顿咨询：保持国防战机任务就绪，投入翻倍，出勤率反降12%至19%"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 2,
+        "expected_article_count": 2,
+        "matches_expected_article_count": true,
+        "titles": [
+          "æ³¢å£«é¡¿å¨è¯¢ï¼æ³°å½AIåºç¡è®¾æ½çæç¥æºéï¼æ¬å°åç®åæ¯è§£éAIå®è§ç¯å¢",
+          "æ³¢å£«é¡¿å¨è¯¢ï¼ä¿æå½é²ææºä»»å¡å°±ç»ªï¼æå ¥ç¿»åï¼åºå¤çåé12%è³19%"
+        ],
+        "create_time": 1783985740,
+        "update_time": 1783985741
+      }
+    }
+  ],
+  "articles": [
+    {
+      "title": "波士顿咨询：泰国AI基础设施的战略机遇，本地化算力是解锁AI宏观环境",
+      "wechat_title": "波士顿咨询：泰国AI基础设施的战略机遇，本地化算力是解锁AI宏观环境",
+      "header_title": "本地化算力是解锁AI宏观环境的关键前提",
+      "digest": "泰国AI基础设施的战略机遇，本地化算力是解锁AI宏观环境的关键前提。",
+      "institution_name": "波士顿咨询",
+      "source_report_name": "BCG AI-Infrastructure-A-Strategic-Opportunity-for-Thailand 193bc216",
+      "report_dir": "kc_translated_reports/consulting/260714/01-0001-BCG_AI-Infrastructure-A-Strategic-Opportunity-for-Thailand_193bc216",
+      "content_chars": 5804,
+      "content_bytes": 7834,
+      "visible_text_chars": 1200,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "wechat_drafts/consulting/260714/_assets/article_01_cover.jpg"
+    },
+    {
+      "title": "波士顿咨询：保持国防战机任务就绪，投入翻倍，出勤率反降12%至19%",
+      "wechat_title": "波士顿咨询：保持国防战机任务就绪，投入翻倍，出勤率反降12%至19%",
+      "header_title": "保持国防战机任务就绪，投入翻倍，出勤率反降12%至19%",
+      "digest": "保持国防战机任务就绪，投入翻倍，出勤率反降12%至19%。",
+      "institution_name": "波士顿咨询",
+      "source_report_name": "BCG Keeping-Defense-Aircraft-Mission-Ready be523867",
+      "report_dir": "kc_translated_reports/consulting/260714/02-0002-BCG_Keeping-Defense-Aircraft-Mission-Ready_be523867",
+      "content_chars": 6013,
+      "content_bytes": 8377,
+      "visible_text_chars": 1083,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/consulting/260714/_assets/article_02_cover.jpg"
+    }
+  ]
+}
