@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 30,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 2,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/11-GS-Americas Technology： Semiconductors： EDA： Poised to begin capturing Agentic AI value with potential revenue acceleration—Buy CDNS， SNPS-260713.pdf",
+          "batch_file": "/tmp/pdf_batch_001_4jpmsh7o/pdfs/0001-11-GS-Americas Technology- Semiconductors- EDA- Poised to begin capturing Agentic AI value with potential revenue acceleration-Buy CDNS- SNPS-260713.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/12-GS-BMW （BMWG.DE）： 2Q26 preview： China drags but resilient US Europe holds the Auto margin in the 1~3% guide； share buyback accelerates-260713.pdf",
+          "batch_file": "/tmp/pdf_batch_001_4jpmsh7o/pdfs/0002-12-GS-BMW -BMWG.DE-- 2Q26 preview- China drags but resilient US Europe holds the Auto margin in the 1-3- guide- share buyback accelerates-260713.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/13-GS-China：Three things in China-260712.pdf",
+          "batch_file": "/tmp/pdf_batch_001_4jpmsh7o/pdfs/0003-13-GS-China-Three things in China-260712.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/14-GS-China Restaurants： Luckin Chagee initiation feedback； addressing key investor questions-260712.pdf",
+          "batch_file": "/tmp/pdf_batch_001_4jpmsh7o/pdfs/0004-14-GS-China Restaurants- Luckin Chagee initiation feedback- addressing key investor questions-260712.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/15-GS-CATL （300750 3750.HK）Beyond Cells， Into Energy Solutions； Initiate at Buy-260713.pdf",
+          "batch_file": "/tmp/pdf_batch_001_4jpmsh7o/pdfs/0005-15-GS-CATL -300750 3750.HK-Beyond Cells- Into Energy Solutions- Initiate at Buy-260713.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
