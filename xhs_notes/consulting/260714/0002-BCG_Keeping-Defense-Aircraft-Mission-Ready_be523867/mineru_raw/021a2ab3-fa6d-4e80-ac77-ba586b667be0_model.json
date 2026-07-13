@@ -1,0 +1,3912 @@
+[
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.047,
+                0.187,
+                0.087
+            ],
+            "angle": 0,
+            "content": "BCG",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.065,
+                0.121,
+                0.878,
+                0.241
+            ],
+            "angle": 0,
+            "content": "Keeping Defense\nAircraft Mission-Ready"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.094,
+                0.263,
+                0.178,
+                0.281
+            ],
+            "angle": 0,
+            "content": "July 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.297,
+                0.533,
+                0.328
+            ],
+            "angle": 0,
+            "content": "By Doug Peck, Brian Hirshman, Lacy Ketzner, Diana Dimitrova, Patrick Frailey, and Greg Mallory",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.333,
+                1.0,
+                0.991
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.042,
+                0.19,
+                0.09
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.063,
+                0.121,
+                0.674,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.177,
+                0.878,
+                0.24
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.263,
+                0.178,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.297,
+                0.531,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.312,
+                0.31,
+                0.326
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                0.999,
+                0.22
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.258,
+                0.481,
+                0.456
+            ],
+            "angle": 0,
+            "content": "The US Department of War spends nearly a third of its annual budget on operations and maintenance, yet the mission-capable rates for most defense aircraft have fallen steadily for decades.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.467,
+                0.483,
+                0.569
+            ],
+            "angle": 0,
+            "content": "Roughly 1,900 aircraft are out of service on a given day. Across 49 aircraft types studied by the Government Accountability Office between 2011 and 2021, only four met their annual mission-capable goals in a majority of years. Twenty-six did not meet them in any year. Similarly, in the UK, only one-third of its F-35 fleet was fully mission capable in 2024, far below both UK and global program targets.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.581,
+                0.481,
+                0.754
+            ],
+            "angle": 0,
+            "content": "Many countries around the world face readiness challenges with their air defenses. The typical response has been to throw resources at the problem: more maintenance staff, more spare parts, more depot capacity, more funding. Yet based on our engagements with military aviation clients around the world, resources are not the limiting factor. Instead, the operating system—the velocity, prioritization, demand discipline, and governance through which those inputs are deployed—is the real chokepoint on mission readiness. In many forces, maintenance systems are decades out of date when compared with commercial best practices. In other cases, the system is solid but forces don’t have the discipline to follow it.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.767,
+                0.478,
+                0.883
+            ],
+            "angle": 0,
+            "content": "By directly addressing these system elements and improving maintenance processes, armed services can improve mission-capable (MC) rates in aviation by 30% to 50% in 6 to 12 months, without any additional inputs. The measures required are not radically innovative; many are in wide use among commercial aviation fleets. When implemented and executed consistently, they can keep military assets where they belong: airborne and executing missions.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.515,
+                0.26,
+                0.896,
+                0.31
+            ],
+            "angle": 0,
+            "content": "More Resources, Yet Fewer Mission-Ready Aircraft"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.324,
+                0.931,
+                0.526
+            ],
+            "angle": 0,
+            "content": "A few numbers show the clear disconnect between inputs and outcomes in defense readiness. In the US, the absolute spending on operations and maintenance is roughly double what it was in 2000, when adjusted for inflation. Yet, as the exhibit shows, aviation readiness levels for the Air Force and Navy have decreased 12% to 19% over the same period. The Air Force's fleet-wide MC rate declined to 67% in 2024, the lowest in at least two decades, with a weighted average closer to 62% when accounting for fleet size. (Notably, reported readiness rates can overstate actual fleet availability because they typically exclude aircraft undergoing long-term overhauls, upgrades, or modifications.) The services have more maintainers, more spare parts funding, and more depot capacity than they did a generation ago. Yet MC rates continue to fall.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.514,
+                0.538,
+                0.92,
+                0.654
+            ],
+            "angle": 0,
+            "content": "In France, fighter aircraft and tactical transport aircraft availability fell by 26.5 points and 15 points, respectively, compared with 2014, despite substantial efforts to reform maintenance contracting and structure. Similarly, while Germany's Bundeswehr reported average readiness of \\(76\\%\\) across all major weapon systems, combat aircraft readiness averaged only \\(64\\%\\)—well below the \\(80\\%\\) benchmark commonly associated with highly available operational fleets.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.667,
+                0.929,
+                0.826
+            ],
+            "angle": 0,
+            "content": "While these figures may be cause for concern, particularly in a time of geopolitical instability, there are solutions. For example, between 2008 and 2018, MC rates for the US Navy's F/A-18 Super Hornet were below \\(50\\%\\), representing billions of dollars of assets grounded. In 2018, the Navy launched a program to improve the rate to \\(80\\%\\), largely by applying the concepts discussed in this publication. Within a year, the service achieved its MC target rate and continued making progress, reaching a fleet record number of mission-capable Super Hornets by 2023. At the same time, per-aircraft maintenance costs fell by approximately half.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.838,
+                0.929,
+                0.896
+            ],
+            "angle": 0,
+            "content": "The Super Hornet case illustrates a broader principle: the constraint was not inputs. It was the system that converted inputs to outcomes. The same platform, fleet, and maintainers used a different operating model to deliver a radically different outcome.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.069,
+                0.946,
+                0.12,
+                0.969
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.131,
+                0.952,
+                0.307,
+                0.965
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.257,
+                0.464,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.286,
+                0.45,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.316,
+                0.481,
+                0.341
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.343,
+                0.435,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.372,
+                0.432,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.401,
+                0.45,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.429,
+                0.447,
+                0.454
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.469,
+                0.478,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.483,
+                0.452,
+                0.495
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.497,
+                0.446,
+                0.509
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.512,
+                0.481,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.527,
+                0.466,
+                0.538
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.541,
+                0.472,
+                0.551
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.555,
+                0.276,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.584,
+                0.456,
+                0.594
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.597,
+                0.478,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.612,
+                0.477,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.626,
+                0.456,
+                0.636
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.64,
+                0.464,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.655,
+                0.453,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.669,
+                0.459,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.684,
+                0.464,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.698,
+                0.42,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.711,
+                0.476,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.726,
+                0.467,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.74,
+                0.406,
+                0.751
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.769,
+                0.464,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.784,
+                0.474,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.798,
+                0.43,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.812,
+                0.475,
+                0.822
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.826,
+                0.441,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.839,
+                0.47,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.854,
+                0.471,
+                0.865
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.869,
+                0.285,
+                0.879
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.26,
+                0.893,
+                0.283
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.285,
+                0.84,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.327,
+                0.911,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.342,
+                0.869,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.356,
+                0.929,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.369,
+                0.905,
+                0.38
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.384,
+                0.922,
+                0.394
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.398,
+                0.902,
+                0.409
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.412,
+                0.897,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.427,
+                0.919,
+                0.437
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.441,
+                0.92,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.516,
+                0.454,
+                0.918,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.469,
+                0.857,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.484,
+                0.926,
+                0.495
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.499,
+                0.869,
+                0.508
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.512,
+                0.805,
+                0.522
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.54,
+                0.875,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.555,
+                0.886,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.57,
+                0.892,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.584,
+                0.877,
+                0.594
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.597,
+                0.901,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.516,
+                0.611,
+                0.907,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.627,
+                0.859,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.641,
+                0.915,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.669,
+                0.914,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.683,
+                0.92,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.698,
+                0.894,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.712,
+                0.926,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.726,
+                0.89,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.741,
+                0.881,
+                0.751
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.755,
+                0.924,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.516,
+                0.768,
+                0.909,
+                0.78
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.784,
+                0.921,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.797,
+                0.871,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.811,
+                0.64,
+                0.823
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.839,
+                0.874,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.854,
+                0.926,
+                0.865
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.869,
+                0.912,
+                0.879
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.883,
+                0.921,
+                0.894
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.047,
+                0.906,
+                0.099
+            ],
+            "angle": 0,
+            "content": "Despite Increased Investment in the US, Aviation Mission Readiness Has Declined Since 2000",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.067,
+                0.108,
+                0.93,
+                0.409
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.067,
+                0.426,
+                0.914,
+                0.45
+            ],
+            "angle": 0,
+            "content": "Sources: DoD National Defense Budget Estimates (Green Book); GAO-03-300; GAO-23-106217; GAO-25-107870; CBO; Air & Space Forces Magazine FY2025 Almanac data; FY2027 President's Budget Overview Book (April 2026)."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.067,
+                0.448,
+                0.887,
+                0.472
+            ],
+            "angle": 0,
+            "content": "Note: O&M = operations and maintenance. Spending includes total discretionary and mandatory. FY2027 reflects PB27 request. Readiness is a proxy constructed from publicly available service-average/representative data."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.516,
+                0.461,
+                0.567
+            ],
+            "angle": 0,
+            "content": "Identifying the Root Causes to Develop Solutions"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.581,
+                0.424,
+                0.625
+            ],
+            "angle": 0,
+            "content": "Our work across a range of military aviation platforms has consistently identified four root causes for low mission-capable rates.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.638,
+                0.479,
+                0.783
+            ],
+            "angle": 0,
+            "content": "Highly variable maintenance cycle times. Identical scheduled inspections on the same aircraft type can often take two to three times longer at some squadrons than others. A small number of long-tail events, typically 15% to 20% of all maintenance actions, account for a disproportionate share of total non-mission-capable days. The difference in inspection times across facilities typically comes down to the details of execution: planning discipline, structured and integrated master schedules, ring-fenced maintainer capacity, pre-kitting, standardized work, and avoiding mid-event diversions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.795,
+                0.481,
+                0.897
+            ],
+            "angle": 0,
+            "content": "Lack of fleet-wide prioritization. Each unit typically focuses on its own performance and controls its own supply of scarce resources, including maintenance staff, parts, and input from engineers. No entity looks at overall enterprise readiness and reallocates resources to the aircraft most critical to the current mission. Short-term priorities like the current day's flying schedule supersede what is best for readiness overall.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.594,
+                0.911,
+                0.697
+            ],
+            "angle": 0,
+            "content": "programs. Maintenance programs and inspection requirements accumulate over time, based on historical precedents and OEM specifications rather than current maintenance issues and data from the field. For example, corrosion programs designed for one deployment profile get applied uniformly across a fleet, even to aircraft operating under different conditions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.709,
+                0.926,
+                0.811
+            ],
+            "angle": 0,
+            "content": "Ineffective governance. Most services have readiness governance structures—weekly reviews, daily stand-ups, and monthly briefings—but they tend to focus on reporting aircraft status rather than making decisions to improve performance. Many of these structures are delegated to lower-level officers, rather than the three- and four-star leaders who can mandate change.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.602,
+                0.952,
+                0.87,
+                0.965
+            ],
+            "angle": 0,
+            "content": "KEEPING DEFENSE AIRCRAFT MISSION-READY"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.895,
+                0.952,
+                0.913,
+                0.966
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.049,
+                0.903,
+                0.069
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.078,
+                0.371,
+                0.096
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.516,
+                0.459,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.542,
+                0.359,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.584,
+                0.42,
+                0.594
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.598,
+                0.395,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.613,
+                0.216,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.64,
+                0.467,
+                0.65
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.655,
+                0.454,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.669,
+                0.452,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.682,
+                0.419,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.698,
+                0.467,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.712,
+                0.461,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.726,
+                0.459,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.741,
+                0.436,
+                0.751
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.754,
+                0.477,
+                0.766
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.769,
+                0.423,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.797,
+                0.476,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.811,
+                0.447,
+                0.823
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.825,
+                0.467,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.84,
+                0.469,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.855,
+                0.478,
+                0.864
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.868,
+                0.441,
+                0.879
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.883,
+                0.418,
+                0.893
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.597,
+                0.839,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.612,
+                0.883,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.626,
+                0.877,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.64,
+                0.891,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.655,
+                0.906,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.67,
+                0.893,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.684,
+                0.69,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.712,
+                0.87,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.726,
+                0.923,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.74,
+                0.883,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.754,
+                0.883,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.769,
+                0.888,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.784,
+                0.883,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.797,
+                0.743,
+                0.807
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.059,
+                0.423,
+                0.111
+            ],
+            "angle": 0,
+            "content": "Rethinking Maintenance Systems"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.125,
+                0.479,
+                0.241
+            ],
+            "angle": 0,
+            "content": "Each of these root causes has an effective solution. These are not radically innovative actions—many have been in use in commercial aviation fleets for decades. Notably, defense ministries often tell us that versions of these solutions are already in place. But in our experience, they need to be implemented in full, as a coherent, integrated system. Military units can take the following actions to deliver a meaningful difference in mission-capable rates.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.068,
+                0.261,
+                0.45,
+                0.31
+            ],
+            "angle": 0,
+            "content": "Develop and strengthen the maintenance operations center."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.325,
+                0.481,
+                0.455
+            ],
+            "angle": 0,
+            "content": "A maintenance operations center (MOC) operates as a central hub of information and a resource allocation engine. It maintains a real-time picture of fleet material condition and has the institutional authority to rapidly address issues. Effective, fleet-level MOCs have strong organizational and data infrastructure. They are directly integrated with supply and engineering systems, and they have the authority to actively redirect parts and personnel to where they can have the biggest impact on fleet readiness.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.467,
+                0.481,
+                0.569
+            ],
+            "angle": 0,
+            "content": "These entities have strong governance in place, focusing on a handful of leading indicators tied to a specific MC target, with explicit owners and clear escalation paths for issues. AI and data tools are increasingly the differentiator here: services that integrate real-time fleet data into governance forums can identify emerging constraints days earlier, prioritize more precisely, and iterate faster, without adding headcount.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.068,
+                0.589,
+                0.348,
+                0.64
+            ],
+            "angle": 0,
+            "content": "Develop a demand\nmanagement program."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.653,
+                0.478,
+                0.797
+            ],
+            "angle": 0,
+            "content": "Demand management programs track the performance of components and parts and maintain a single, ranked list of degraders—the parts that fail most frequently. Based on that information, military leaders can conduct a cross-functional root-cause analysis of these degraders, determine actions and timelines to improve, and enforce them. In one BCG engagement, we found that the top eight degraders accounted for approximately 20% of total days down for maintenance. A targeted demand-management effort could reduce that number by half.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.515,
+                0.061,
+                0.793,
+                0.111
+            ],
+            "angle": 0,
+            "content": "Optimize maintenance requirements."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.125,
+                0.931,
+                0.242
+            ],
+            "angle": 0,
+            "content": "Reducing unnecessary maintenance and inspection requirements to what is truly necessary—based on operational data—can free up maintainer capacity and improve aircraft material condition. A strong program puts the right maintenance solution at the right place, at the right time, with the right crew. The impact can be dramatic: a 20% to 40% decrease in scheduled maintenance labor hours, which translates to gains in MC rates of three to five percentage points.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.515,
+                0.261,
+                0.776,
+                0.31
+            ],
+            "angle": 0,
+            "content": "Create a supply chain control tower."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.324,
+                0.925,
+                0.469
+            ],
+            "angle": 0,
+            "content": "When high numbers of aircraft are grounded while waiting for parts, the problem is usually prioritization and visibility. The part exists somewhere in the system, but the service doesn't have a mechanism to locate it and route it to the right aircraft. Or, if a given part is consistently scarce, the enterprise doesn't have the supplier relationships needed to fulfill orders. Supply control towers provide real-time visibility into the location of parts, order status, and administrative lead time, consistently reducing non-mission-capable days without requiring additional investment in inventory.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.515,
+                0.489,
+                0.773,
+                0.54
+            ],
+            "angle": 0,
+            "content": "Enable the workforce through digital."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.553,
+                0.925,
+                0.712
+            ],
+            "angle": 0,
+            "content": "Digital technology can help military units make their current maintenance workforce far more productive. In many forces, maintenance processes are still documented on paper logs or isolated, desktop computers. New AI-enabled tools are increasingly prevalent in commercial fleets and can be applied to defense applications as well. These tools can clarify processes in real-time on job sites and create audit trails for each procedure, reducing administrative workloads and keeping wrench-time metrics high. Similarly, troubleshooting generative AI tools and AR- and VR-enabled training can help technicians gain new skills faster.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.069,
+                0.946,
+                0.12,
+                0.969
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.131,
+                0.952,
+                0.307,
+                0.965
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.06,
+                0.42,
+                0.084
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.087,
+                0.186,
+                0.111
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.127,
+                0.472,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.142,
+                0.453,
+                0.152
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.155,
+                0.44,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.169,
+                0.447,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.184,
+                0.429,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.198,
+                0.476,
+                0.209
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.212,
+                0.455,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.226,
+                0.302,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.262,
+                0.406,
+                0.283
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.289,
+                0.447,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.326,
+                0.475,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.341,
+                0.426,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.356,
+                0.46,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.37,
+                0.43,
+                0.38
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.383,
+                0.479,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.398,
+                0.451,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.413,
+                0.46,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.426,
+                0.434,
+                0.438
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.441,
+                0.29,
+                0.452
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.469,
+                0.469,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.484,
+                0.47,
+                0.495
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.499,
+                0.457,
+                0.508
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.513,
+                0.478,
+                0.522
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.526,
+                0.443,
+                0.538
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.541,
+                0.444,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.555,
+                0.427,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.589,
+                0.298,
+                0.611
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.617,
+                0.346,
+                0.638
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.654,
+                0.452,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.67,
+                0.456,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.684,
+                0.469,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.698,
+                0.459,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.712,
+                0.473,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.726,
+                0.409,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.74,
+                0.475,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.754,
+                0.452,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.768,
+                0.446,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.783,
+                0.174,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.063,
+                0.791,
+                0.084
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.091,
+                0.686,
+                0.111
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.127,
+                0.848,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.142,
+                0.92,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.156,
+                0.897,
+                0.166
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.516,
+                0.169,
+                0.844,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.185,
+                0.914,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.199,
+                0.885,
+                0.209
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.516,
+                0.212,
+                0.868,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.227,
+                0.929,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.262,
+                0.776,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.288,
+                0.68,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.327,
+                0.917,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.341,
+                0.909,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.355,
+                0.913,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.369,
+                0.921,
+                0.379
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.383,
+                0.923,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.398,
+                0.917,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.413,
+                0.911,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.427,
+                0.917,
+                0.437
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.441,
+                0.865,
+                0.452
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.455,
+                0.744,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.49,
+                0.771,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.516,
+                0.515,
+                0.699,
+                0.538
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.555,
+                0.912,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.569,
+                0.911,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.583,
+                0.918,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.598,
+                0.874,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.612,
+                0.881,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.626,
+                0.922,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.64,
+                0.908,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.655,
+                0.877,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.669,
+                0.914,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.683,
+                0.916,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.698,
+                0.735,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.059,
+                0.457,
+                0.084
+            ],
+            "angle": 0,
+            "content": "What Leaders Can Do Now"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.096,
+                0.429,
+                0.142
+            ],
+            "angle": 0,
+            "content": "To begin closing the gap in mission-readiness, without requiring additional resources, military leaders can immediately begin to implement the following actions.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.161,
+                0.44,
+                0.184
+            ],
+            "angle": 0,
+            "content": "Set an explicit North Star goal."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.196,
+                0.442,
+                0.313
+            ],
+            "angle": 0,
+            "content": "Vague objectives like “improve readiness” aren’t helpful. Organizations do better with a specific, time-bound, quantifiable target: a defined number of mission-capable aircraft by a target date, derived from operational requirements, with a named owner who is formally accountable for results. This kind of specificity forces trade-offs, exposes constraints, and creates the urgency needed to evolve beyond the status quo.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.332,
+                0.464,
+                0.383
+            ],
+            "angle": 0,
+            "content": "Accurately diagnose the problem before jumping into solutions."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.396,
+                0.484,
+                0.556
+            ],
+            "angle": 0,
+            "content": "Mission-capable rates are a lagging indicator. Before designing interventions, leaders can break the broader issue down into its component categories (supply, unscheduled maintenance, scheduled maintenance, and out-of-reporting). Teams can then compare the baseline performance of each category and identify which account for the majority of days lost. If the corrective actions still focus on a request for “more people and more parts,” push the team to try again on root cause analysis. This forward-looking approach can help organizations identify the true underlying issues and focus their actions and accountability accordingly.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.514,
+                0.061,
+                0.885,
+                0.11
+            ],
+            "angle": 0,
+            "content": "Make readiness an enterprise-wide initiative."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.125,
+                0.931,
+                0.199
+            ],
+            "angle": 0,
+            "content": "Operational squadrons cannot solve this problem on their own. Top-performing organizations integrate data from across the fleet, leverage advanced AI tools, assemble cross-functional teams, and ensure that root-cause analyses have the right level of urgency and the right level of leadership authority.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.515,
+                0.218,
+                0.889,
+                0.268
+            ],
+            "angle": 0,
+            "content": "Manage at the fleet level,\nrather than the squadron level."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.282,
+                0.932,
+                0.37
+            ],
+            "angle": 0,
+            "content": "Avoid decisions that optimize local metrics at the expense of overall readiness. MOCs perform best when they are centralized and have the insights and clout needed to prioritize across the entire fleet. Restructuring authority in this way requires adjusting operational metrics, so that units aren't punished for missing readiness targets at their level.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.515,
+                0.389,
+                0.883,
+                0.439
+            ],
+            "angle": 0,
+            "content": "Govern to make decisions and track outcomes."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.453,
+                0.93,
+                0.612
+            ],
+            "angle": 0,
+            "content": "Effective governance is linked directly to operational performance, with cascading metrics. Avoid status updates or “strategic” meetings that discuss issues but don’t have the operational rigor to identify and implement solutions. Readiness is the daily business of senior leaders, not delegated to their deputies or staffs. The effort of governance teams rises with the scale of the problem: bigger issues require more frequent interventions from more senior leaders. And AI and data tools can be part of the governance and oversight, starting today, to surface constraints faster and reduce the burden of manual processes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.657,
+                0.909,
+                0.829
+            ],
+            "angle": 0,
+            "content": "As defense budgets face renewed scrutiny and as recapitalization timelines extend, the armed service divisions that improve readiness within existing budgets and constraints will gain a meaningful strategic advantage over those waiting for more resources. But in a fast-changing world, the time to act is now.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.602,
+                0.951,
+                0.871,
+                0.966
+            ],
+            "angle": 0,
+            "content": "KEEPING DEFENSE AIRCRAFT MISSION-READY"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.895,
+                0.952,
+                0.914,
+                0.966
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.059,
+                0.455,
+                0.083
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.098,
+                0.422,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.113,
+                0.401,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.128,
+                0.424,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.162,
+                0.437,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.198,
+                0.435,
+                0.209
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.213,
+                0.407,
+                0.223
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.228,
+                0.44,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.242,
+                0.393,
+                0.252
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.256,
+                0.4,
+                0.266
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.269,
+                0.415,
+                0.281
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.283,
+                0.433,
+                0.296
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.298,
+                0.333,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.334,
+                0.461,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.36,
+                0.424,
+                0.38
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.398,
+                0.479,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.413,
+                0.463,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.426,
+                0.467,
+                0.438
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.44,
+                0.481,
+                0.452
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.454,
+                0.437,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.469,
+                0.439,
+                0.48
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.483,
+                0.479,
+                0.495
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.497,
+                0.479,
+                0.509
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.513,
+                0.471,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.526,
+                0.42,
+                0.538
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.54,
+                0.242,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.061,
+                0.883,
+                0.084
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.088,
+                0.689,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.127,
+                0.925,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.142,
+                0.91,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.156,
+                0.907,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.171,
+                0.928,
+                0.18
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.184,
+                0.861,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.219,
+                0.824,
+                0.24
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.245,
+                0.886,
+                0.266
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.283,
+                0.913,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.298,
+                0.86,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.313,
+                0.927,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.326,
+                0.892,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.341,
+                0.897,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.355,
+                0.857,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.39,
+                0.881,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.416,
+                0.709,
+                0.437
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.455,
+                0.857,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.469,
+                0.92,
+                0.48
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.52,
+                0.484,
+                0.897,
+                0.494
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.498,
+                0.865,
+                0.508
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.511,
+                0.927,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.527,
+                0.927,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.517,
+                0.54,
+                0.888,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.555,
+                0.91,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.516,
+                0.569,
+                0.877,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.516,
+                0.583,
+                0.899,
+                0.594
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.518,
+                0.598,
+                0.706,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.657,
+                0.756,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.687,
+                0.793,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.714,
+                0.906,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.742,
+                0.888,
+                0.768
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.77,
+                0.846,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.802,
+                0.469,
+                0.823
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.047,
+                0.506,
+                0.086
+            ],
+            "angle": 0,
+            "content": "About the Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.068,
+                0.106,
+                0.214,
+                0.209
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.067,
+                0.225,
+                0.278,
+                0.284
+            ],
+            "angle": 0,
+            "content": "Doug Peck\nManaging Director and Partner\nWashington, DC\npeck.doug@bcg.com"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.517,
+                0.105,
+                0.662,
+                0.209
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.515,
+                0.225,
+                0.77,
+                0.284
+            ],
+            "angle": 0,
+            "content": "Brian Hirshman\nManaging Director and Senior Partner\nDallas\nhirshman.brian@bcg.com"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.069,
+                0.319,
+                0.215,
+                0.422
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.067,
+                0.439,
+                0.323,
+                0.498
+            ],
+            "angle": 0,
+            "content": "Lacy Ketzner\nManaging Director and Senior Partner\nPhiladelphia\nketzner.lacy@bcg.com"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.516,
+                0.319,
+                0.661,
+                0.422
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.515,
+                0.439,
+                0.725,
+                0.498
+            ],
+            "angle": 0,
+            "content": "Diana Dimitrova\nManaging Director and Partner\nLondon\ndimitrova.diana@bcg.com"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.534,
+                0.211,
+                0.637
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.067,
+                0.653,
+                0.235,
+                0.712
+            ],
+            "angle": 0,
+            "content": "Patrick Frailey\nPartner\nWashington, DC\nfrailey.patrick@bcg.com"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.517,
+                0.533,
+                0.661,
+                0.636
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.515,
+                0.652,
+                0.77,
+                0.712
+            ],
+            "angle": 0,
+            "content": "Greg Mallory\nManaging Director and Senior Partner\nWashington, DC\nmallory.greg@bcg.com"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.068,
+                0.946,
+                0.119,
+                0.97
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.131,
+                0.951,
+                0.308,
+                0.965
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.047,
+                0.504,
+                0.084
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.047,
+                0.163,
+                0.077
+            ],
+            "angle": 0,
+            "content": "BCG"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.111,
+                0.374,
+                0.125
+            ],
+            "angle": 0,
+            "content": "Where Strategic Clarity Meets Applied AI"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.124,
+                0.478,
+                0.284
+            ],
+            "angle": 0,
+            "content": "We are navigating an era of unprecedented change and disruption—powered by technology, marked by complexity, where change amplifies at scale. To lead, companies need a partner that can bridge the gap between ambition and outcomes. BCG is built for this moment. We bring strategic clarity, rooted in over 60 years of deep domain knowledge, to ensure leaders make the right choices. We combine it with applied AI, shaped and wielded by our practitioners, teaming shoulder-to-shoulder with your teams to deliver transformative impact at scale. The result? Stronger returns, transferred capabilities, and change that sticks. We are BCG.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.852,
+                0.479,
+                0.924
+            ],
+            "angle": 0,
+            "content": "For information or permission to reprint, please contact BCG at permissions@bcg.com. To find the latest BCG content and register to receive e-alerts on this topic or others, please visit bcg.com. Follow Boston Consulting Group on LinkedIn, Instagram, Facebook, and X.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.067,
+                0.938,
+                0.459,
+                0.952
+            ],
+            "angle": 0,
+            "content": "© Boston Consulting Group 2026. All rights reserved. 7/26"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.06,
+                0.044,
+                0.166,
+                0.081
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.111,
+                0.372,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.126,
+                0.442,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.141,
+                0.469,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.154,
+                0.459,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.17,
+                0.447,
+                0.18
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.183,
+                0.467,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.198,
+                0.461,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.212,
+                0.449,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.226,
+                0.454,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.24,
+                0.447,
+                0.253
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.253,
+                0.476,
+                0.267
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.268,
+                0.475,
+                0.281
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.852,
+                0.479,
+                0.866
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.867,
+                0.479,
+                0.881
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.882,
+                0.449,
+                0.895
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.895,
+                0.468,
+                0.909
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.91,
+                0.262,
+                0.923
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.043,
+                1.0,
+                0.994
+            ],
+            "angle": 0,
+            "content": null
+        }
+    ]
+]
