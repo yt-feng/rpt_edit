@@ -1,0 +1,30 @@
+{
+  "source_pdf": "/tmp/pdf_batch_002_yk0e1dug/pdfs/0010-OECD_OECD-Reviews-of-Labour-Market-and-Social-Policies-Colombia-2_3f9e69cc.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "经合组织",
+  "cover_short_title": "哥伦比亚劳动市场：改",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "基金->产品 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "经合组织：哥伦比亚劳动市场与社会政策评估",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

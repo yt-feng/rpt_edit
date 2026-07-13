@@ -1,0 +1,3080 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.089,
+                0.082,
+                0.336,
+                0.141
+            ],
+            "angle": 0,
+            "content": "BIS"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.085,
+                0.382,
+                0.524,
+                0.446
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.729,
+                0.475,
+                0.949,
+                0.527
+            ],
+            "angle": 0,
+            "content": "No 127",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.085,
+                0.627,
+                0.853,
+                0.669
+            ],
+            "angle": 0,
+            "content": "Competition in retail digital payments"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.085,
+                0.728,
+                0.568,
+                0.758
+            ],
+            "angle": 0,
+            "content": "Daniele Natalizi and Vatsala Shreeti",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.098,
+                0.92,
+                0.27,
+                0.946
+            ],
+            "angle": 0,
+            "content": "13 July 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.378,
+                0.529,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.722,
+                0.476,
+                0.951,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.625,
+                0.852,
+                0.668
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.729,
+                0.566,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.099,
+                0.92,
+                0.268,
+                0.947
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.322,
+                0.876,
+                0.449
+            ],
+            "angle": 0,
+            "content": "BIS Bulletins are written by staff members of the Bank for International Settlements, and from time to time by other economists, and are published by the Bank. The papers are on subjects of topical interest and are technical in character. The views expressed in this publication are those of the authors and do not necessarily reflect the views of the BIS or its member central banks. The authors are grateful to Iñaki Aldasoro, Jon Frost, Pablo Hernández de Cos, Gaston Gelos, Anneke Kosse, Thomas Lammer, Ulf Lewrick, Andrea Maechler, Benoit Mojon, Tara Rice, Tom Rosewall, Takeshi Shirakami, Peter Wierts and Leanne Zhang for comments, to Rudraksh Kansal for excellent research assistance, and to Nicola Faessler for administrative support.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.455,
+                0.625,
+                0.472
+            ],
+            "angle": 0,
+            "content": "The editors of the BIS Bulletin series are Gaston Gelos and Frank Smets.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.662,
+                0.549,
+                0.678
+            ],
+            "angle": 0,
+            "content": "This publication is available on the BIS website (www.bis.org).",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.091,
+                0.73,
+                0.875,
+                0.762
+            ],
+            "angle": 0,
+            "content": "© Bank for International Settlements 2026. All rights reserved. Brief excerpts may be reproduced or translated provided the source is stated."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.09,
+                0.854,
+                0.347,
+                0.886
+            ],
+            "angle": 0,
+            "content": "ISSN: 2708-0420 (online)\nISBN: 978-92-9259-966-9 (online)"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.323,
+                0.871,
+                0.335
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.339,
+                0.872,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.355,
+                0.872,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.371,
+                0.871,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.385,
+                0.871,
+                0.399
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.402,
+                0.871,
+                0.414
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.417,
+                0.871,
+                0.429
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.433,
+                0.265,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.458,
+                0.622,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.663,
+                0.547,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.863,
+                0.945,
+                0.873,
+                0.956
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.576,
+                0.086,
+                0.872,
+                0.101
+            ],
+            "angle": 0,
+            "content": "Daniele Natalizi Vatsala Shreeti"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.547,
+                0.107,
+                0.872,
+                0.121
+            ],
+            "angle": 0,
+            "content": "Daniele.Natalizi@bis.org Vatsala.shreeti@bis.org"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.091,
+                0.197,
+                0.545,
+                0.222
+            ],
+            "angle": 0,
+            "content": "Competition in retail digital payments"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.275,
+                0.218,
+                0.292
+            ],
+            "angle": 0,
+            "content": "Key takeaways"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.298,
+                0.877,
+                0.331
+            ],
+            "angle": 0,
+            "content": "- Retail payments have digitalised rapidly in both advanced economies and emerging market and developing economies.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.337,
+                0.877,
+                0.37
+            ],
+            "angle": 0,
+            "content": "- Digitalisation has altered the competitive landscape, with new entrants (eg fintechs and big techs) and new technologies, yet incumbent banks and card networks retain their dominant position in key markets.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.376,
+                0.875,
+                0.409
+            ],
+            "angle": 0,
+            "content": "- In their role as operators, overseers and catalysts in payment systems, central banks support competition in diverse ways, depending on their mandates and institutional arrangements.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.432,
+                0.875,
+                0.513
+            ],
+            "angle": 0,
+            "content": "Digitalisation has transformed retail payments. Expanding internet and smartphone adoption, entry of new players like fintechs, big techs and other non-banks, innovations in underlying payment systems and the development of new payment technologies have changed the way households and businesses make payments. At the same time, these shifts are also altering the competitive landscape and the industrial organisation of retail digital payments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.518,
+                0.875,
+                0.616
+            ],
+            "angle": 0,
+            "content": "Central banks play diverse roles in ensuring the safety and efficiency of retail payments – objectives that are influenced by the competitive landscape. This Bulletin examines recent trends in retail digital payments in advanced economies (AEs) and emerging market and developing economies (EMDEs). It highlights structural features of payment markets, the strategic behaviour of market participants and the ensuing risks of reduced competition. While mandates differ, several central banks support competition through direct interventions or close coordination with competition authorities.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.636,
+                0.479,
+                0.654
+            ],
+            "angle": 0,
+            "content": "The changing landscape of retail payments"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.668,
+                0.875,
+                0.732
+            ],
+            "angle": 0,
+            "content": "Retail digital payments are based on an architecture with three components: the user-facing front end, back-end retail payment systems and back-end wholesale settlement among payment service providers (PSPs) ((BIS (2020); OECD (2025)). This Bulletin focuses on domestic retail payments and analyses the first two components. \\( ^{1} \\)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.738,
+                0.876,
+                0.835
+            ],
+            "angle": 0,
+            "content": "The user-facing front end refers to the interfaces, services and instruments through which end consumers, like households or businesses, initiate or accept digital payments. These can include payment cards, bank consortium apps (eg Swish in Sweden, TWINT in Switzerland), fintech payment services (eg PayPal, Revolut, PhonePe), big tech wallets (eg Apple Pay, Google Pay, Alipay, WeChat Pay) and mobile network operator-based systems (eg Airtel, M-Pesa, MTN). Some of these hold user funds in their ecosystem, while others transfer funds directly using the underlying retail payment system. These",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.09,
+                0.877,
+                0.875,
+                0.917
+            ],
+            "angle": 0,
+            "content": "1 Cross-border digital payments may raise distinct competition concerns, including the dominance of correspondent banking networks, high fees and the risk that new cross-border technologies replicate domestic concentration risks. See Claessens and Rice (2026) for further details."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.093,
+                0.944,
+                0.16,
+                0.956
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.198,
+                0.543,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.275,
+                0.214,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.124,
+                0.299,
+                0.873,
+                0.314
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.317,
+                0.291,
+                0.329
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.34,
+                0.874,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.355,
+                0.871,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.098,
+                0.378,
+                0.872,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.393,
+                0.69,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.434,
+                0.872,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.45,
+                0.872,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.465,
+                0.872,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.482,
+                0.872,
+                0.494
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.497,
+                0.38,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.521,
+                0.872,
+                0.533
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.536,
+                0.872,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.552,
+                0.872,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.569,
+                0.871,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.584,
+                0.871,
+                0.597
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.6,
+                0.68,
+                0.611
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.637,
+                0.476,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.669,
+                0.871,
+                0.682
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.685,
+                0.871,
+                0.698
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.701,
+                0.872,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.716,
+                0.23,
+                0.73
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.739,
+                0.871,
+                0.753
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.756,
+                0.872,
+                0.768
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.771,
+                0.871,
+                0.784
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.787,
+                0.871,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.803,
+                0.869,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.819,
+                0.872,
+                0.831
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.085,
+                0.875,
+                0.118
+            ],
+            "angle": 0,
+            "content": "interfaces are usually compatible with various access technologies like near field communication (NFC) or quick response (QR) codes and can work remotely for e-commerce as well as at physical points of sale.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.124,
+                0.876,
+                0.22
+            ],
+            "angle": 0,
+            "content": "Retail payment systems refer to infrastructures and arrangements that route, authorise and clear retail transactions. These can include card networks, such as Visa, Mastercard, Cartes Bancaires, Bancomat or Rupay. They can also include account-to-account (A2A) transactions based on fast payment systems (FPS) such as Pix in Brazil, the Unified Payments Interface (UPI) in India or TARGET Instant Payment Settlement (TIPS) in Europe. Finally, they can include proprietary systems like the ones used by M-Pesa and other mobile money providers in East Africa for A2A payments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.226,
+                0.875,
+                0.291
+            ],
+            "angle": 0,
+            "content": "Retail digital payments have taken off rapidly in both AEs and EMDEs, although important differences between them remain. In AEs, the increase in the volume of retail digital payments has been driven largely by card payments, while in EMDEs, A2A transactions dominate (Graph 1.A). At the same time, cash in circulation has fallen in many AEs and EMDEs, particularly those that launched an FPS (Graph 1.B).",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.091,
+                0.311,
+                0.635,
+                0.329
+            ],
+            "angle": 0,
+            "content": "Retail digital payments are increasingly popular in AEs and EMDEs"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.091,
+                0.337,
+                0.479,
+                0.593
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.816,
+                0.314,
+                0.873,
+                0.329
+            ],
+            "angle": 0,
+            "content": "Graph 1",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.488,
+                0.337,
+                0.875,
+                0.583
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.51,
+                0.582,
+                0.779,
+                0.596
+            ],
+            "angle": 0,
+            "content": "- Global average, year 0 = 2015 (no FPS)"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.091,
+                0.604,
+                0.875,
+                0.666
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\)  Account-to-account (A2A) transactions include credit transfers, direct debit and e-money payments. AEs include Australia, Belgium, Canada, France, Germany, Hong Kong SAR, Italy, Japan, Korea, Netherlands, Singapore, Spain, Sweden, Switzerland, United Kingdom and United States. EMDEs include Argentina, Brazil, China, India, Indonesia, Mexico, Saudi Arabia, South Africa and Türkiye.  \\( ^{2} \\)  Banknotes and coins in circulation are shown as a percentage of narrow money (M1), except for KR for which currency in circulation/narrow money is shown. The dashed black line represents the average cash in circulation in jurisdictions that do not have a fast payment system (FPS)."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.091,
+                0.67,
+                0.502,
+                0.684
+            ],
+            "angle": 0,
+            "content": "Sources: Aksonthung et al (2026); Frost et al (2024); authors' calculations."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.709,
+                0.875,
+                0.79
+            ],
+            "angle": 0,
+            "content": "Broader market changes have been important catalysts for rapid digitalisation of retail payments. These include rising smartphone penetration and mobile internet access, particularly in EMDEs. Mobile devices can also allow unbanked households and businesses to access digital payments (OECD (2025)). Moreover, the Covid-19 pandemic sharply accelerated digitalisation in several jurisdictions, as many individuals made their first retail digital payment during the pandemic (Demirgüç-Kunt et al (2022)).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.796,
+                0.875,
+                0.876
+            ],
+            "angle": 0,
+            "content": "Beyond these changes, the entry of new players in the payments market and the development of new technologies have also propelled retail digital payments. Mobile applications and wallet-based payment services provided by non-banks – including fintechs and big techs – have become popular. These are particularly prominent in economies with low penetration of alternative digital payment methods like cards (eg Alipay and WeChat Pay in China).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.882,
+                0.875,
+                0.914
+            ],
+            "angle": 0,
+            "content": "At the same time, new technologies like NFC and QR codes for contactless payments have made digital payments easier to make, increasing their popularity. Recent innovations in building alternative",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.093,
+                0.944,
+                0.105,
+                0.956
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.807,
+                0.944,
+                0.874,
+                0.956
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.086,
+                0.872,
+                0.099
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.104,
+                0.852,
+                0.115
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.127,
+                0.871,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.141,
+                0.872,
+                0.154
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.157,
+                0.871,
+                0.17
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.173,
+                0.872,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.189,
+                0.871,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.204,
+                0.516,
+                0.217
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.228,
+                0.871,
+                0.24
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.242,
+                0.871,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.259,
+                0.87,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.274,
+                0.816,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.818,
+                0.316,
+                0.874,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.71,
+                0.872,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.725,
+                0.872,
+                0.739
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.742,
+                0.871,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.757,
+                0.871,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.774,
+                0.832,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.797,
+                0.872,
+                0.81
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.812,
+                0.872,
+                0.825
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.83,
+                0.871,
+                0.84
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.844,
+                0.871,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.861,
+                0.367,
+                0.873
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.125,
+                0.882,
+                0.872,
+                0.896
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.899,
+                0.871,
+                0.911
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.814,
+                0.396,
+                0.872,
+                0.41
+            ],
+            "angle": 0,
+            "content": "Graph 2"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.086,
+                0.875,
+                0.134
+            ],
+            "angle": 0,
+            "content": "retail-level payment systems, like the launch of FPS, have also led to greater uptake of retail digital payments. \\( ^{2} \\)  Together, these forces have shifted the competitive landscape in retail payments and expanded the choices for households and businesses.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.156,
+                0.533,
+                0.173
+            ],
+            "angle": 0,
+            "content": "Market structure and competition considerations"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.187,
+                0.875,
+                0.316
+            ],
+            "angle": 0,
+            "content": "Markets for retail digital payments have become more contestable in many economies in the past decade. This has paved the way for new entrants. In the user-facing front end, mobile payment apps for both person-to-person (P2P) payments and person-to-merchant (P2M) payments (often provided by non-bank PSPs) have become popular in AEs and EMDEs alike, enabling greater choice for consumers (Graph 2.A). Contestability has also increased for back-end retail payment systems, supported by FPS that can provide alternatives to card networks. Yet the entry of new players does not guarantee effective competition by itself. In some cases, eg for card payments, incumbents continue to dominate retail digital payments. In the past decade, major global card networks have seen rising revenue and high margins (Graph 2.B). \\( ^{3} \\)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.321,
+                0.876,
+                0.37
+            ],
+            "angle": 0,
+            "content": "Ensuring competition in payments markets can be inherently challenging. Many markets for front-end payment services, such as P2M payments, are two-sided (Rochet and Tirole (2003)). A wallet, app or card is valuable to consumers only if many merchants accept it and it is valuable to merchants only if",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.089,
+                0.393,
+                0.52,
+                0.411
+            ],
+            "angle": 0,
+            "content": "The competitive landscape in retail digital payments"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.089,
+                0.418,
+                0.478,
+                0.673
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.484,
+                0.419,
+                0.874,
+                0.672
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.088,
+                0.68,
+                0.873,
+                0.754
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\)  Based on the top 100 person-to-person (P2P) and top 100 person-to-merchant (P2M) apps as classified by Sensor Tower for each AE and EMDE category.  \\( ^{2} \\)  The profit margins are expressed as a percentage, calculated as the ratio of net income to net revenue. AEs include Australia, Canada, Czechia, Denmark, euro area, Hong Kong SAR, Israel, Japan, Korea, New Zealand, Norway, Singapore, Sweden, Switzerland, United Kingdom and United States. EMDEs include Algeria, Argentina, Brazil, Chile, China, Colombia, Hungary, India, Indonesia, Kuwait, Malaysia, Mexico, Morocco, Peru, Philippines, Poland, Romania, Russia, Saudi Arabia, South Africa, Thailand, Türkiye, United Arab Emirates and Vietnam."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.088,
+                0.758,
+                0.872,
+                0.784
+            ],
+            "angle": 0,
+            "content": "Sources: Lubbersen (2026); Sensor Tower; authors' elaboration based on the annual reports of Visa and Mastercard (accessed online on 13 April 2026)."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.836,
+                0.874,
+                0.876
+            ],
+            "angle": 0,
+            "content": "2 Other recent innovations include cryptoassets, stablecoins and retail central bank digital currencies, but their use in retail payments is currently limited (Hernández de Cos (2026)). Since the focus of this Bulletin is on gauging the current competitive landscape in retail digital payments, we do not focus on innovations that have not yet achieved scale.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.878,
+                0.875,
+                0.917
+            ],
+            "angle": 0,
+            "content": "3 The combined global market share of Mastercard and Visa, as measured by the annual number of card transactions in major jurisdictions (excluding China), has been stable at around 95% of all card transactions in the last decade. See Statista (2025), accessed on 25 April 2026.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.093,
+                0.944,
+                0.16,
+                0.956
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.863,
+                0.944,
+                0.874,
+                0.956
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.087,
+                0.872,
+                0.1
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.103,
+                0.872,
+                0.115
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.118,
+                0.492,
+                0.131
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.156,
+                0.53,
+                0.171
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.189,
+                0.869,
+                0.199
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.204,
+                0.872,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.221,
+                0.872,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.235,
+                0.872,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.252,
+                0.872,
+                0.266
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.269,
+                0.871,
+                0.281
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.284,
+                0.871,
+                0.296
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.299,
+                0.844,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.323,
+                0.871,
+                0.336
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.338,
+                0.873,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.355,
+                0.872,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.394,
+                0.516,
+                0.409
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.837,
+                0.101,
+                0.844
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.837,
+                0.872,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.851,
+                0.872,
+                0.861
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.864,
+                0.727,
+                0.873
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.878,
+                0.102,
+                0.886
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.881,
+                0.871,
+                0.89
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.892,
+                0.871,
+                0.902
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.905,
+                0.284,
+                0.914
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.09,
+                0.086,
+                0.874,
+                0.118
+            ],
+            "angle": 0,
+            "content": "consumers use it. This can give rise to significant direct and indirect network effects, organically creating barriers for new entrants and coordination failures, reinforcing the market power of incumbents. \\( ^{4} \\)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.124,
+                0.875,
+                0.189
+            ],
+            "angle": 0,
+            "content": "At the same time, strategic behaviour by market participants in the front end can also stifle competition. Where digital payments rely on third-party providers, as with NFC technology for in-store payments, front-end competition can be constrained by gatekeepers that provide hardware. An example is Apple restricting third-party payment apps from accessing the NFC functionality on iPhones. \\( ^{5} \\)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.195,
+                0.875,
+                0.275
+            ],
+            "angle": 0,
+            "content": "Fragmentation and lack of interoperability add to these challenges. If not addressed adequately, competing private payment interfaces may choose to keep their systems siloed, increasing costs for merchants and locking in consumers, ie reducing contestability. For example, prior to regulatory interventions in China and Peru, the biggest payment apps (eg WeChat Pay and Alipay in China and Yape and Plin in Peru) were incompatible with each other and with other payment apps.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.281,
+                0.876,
+                0.471
+            ],
+            "angle": 0,
+            "content": "Differences among PSPs in data access and usage capabilities, advantages from adjacent markets and strategic partnerships can be additional threats to competition in front-end payment markets. Banks hold detailed financial data. Fintechs may have superior data analytics tools but can lack the scale of banks. Big techs, when they provide payments, can combine transaction data with other data from their wider ecosystems (eg social media, search history). These differences in the scope and use of data can translate into competitive advantages, particularly when data-sharing obligations across market participants are also asymmetric. Participants can also leverage market power in adjacent markets to distort competition in payments by bundling, cross-selling or subsidising products and services. For example, Safaricom's market dominance in the Kenyan mobile money market has been sustained in part due to its control of the underlying telecom infrastructure (CAK (2016)). Traditional players like banks may also enter partnerships with their competitors like fintechs. In some cases, such partnerships can weaken competition (Puri et al (2024)).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.477,
+                0.876,
+                0.622
+            ],
+            "angle": 0,
+            "content": "The competitive forces shaping the market for underlying retail-level payment systems differ from front-end markets. Retail-level payment systems involve high fixed costs to build and maintain, and they exhibit strong network effects since a payment system's value for a participant depends on wide participation by other banks, non-banks, consumers and merchants. Payment systems also exhibit economies of scale in transaction processing (Bolt and Humphrey (2007)). These characteristics mean that the market structure can often tend towards a natural monopoly. As such, in many jurisdictions, particularly in AEs, incumbent card networks have retained their dominant positions, contestability is limited, and fees are high. More recently, FPS have increased contestability by providing alternative payment systems (especially in EMDEs), but competition challenges can re-emerge in the front end.\\(^{6}\\)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.091,
+                0.642,
+                0.555,
+                0.66
+            ],
+            "angle": 0,
+            "content": "The role of central banks in supporting competition"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.675,
+                0.875,
+                0.739
+            ],
+            "angle": 0,
+            "content": "Central banks' engagement with retail digital payments varies significantly across jurisdictions. This reflects differences in mandates, institutional arrangements and market structures. Only a few central banks have explicit mandates to promote competition in retail payments (eg Reserve Bank of Australia). But many are responsible for the efficiency of payment systems, ultimately supporting competition.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.089,
+                0.775,
+                0.875,
+                0.828
+            ],
+            "angle": 0,
+            "content": "4 Two-sided markets involve interaction between two distinct groups of users, eg consumers using a payment app or card and merchants accepting payments using that app or card. Direct network effects occur when the value of using the app or card to a user increases with the number of users on the same side of the market. Indirect network effects occur when the value of using the app or card increases with the number of users on the other side of the market."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.089,
+                0.833,
+                0.875,
+                0.885
+            ],
+            "angle": 0,
+            "content": "5 After the European Commission's investigation into Apple's NFC restrictions, the company committed in 2024 to fair access within the European Economic Area for 10 years. Subsequently, Vipps MobilePay launched an alternative to iPhone-based Apple Pay, now serving around 12.4 million users across the Nordic region. See Vipps MobilePay (2026), accessed on 3 June 2026."
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.089,
+                0.89,
+                0.874,
+                0.917
+            ],
+            "angle": 0,
+            "content": "For example, despite the open and interoperable design of UPI in India, two providers (Google Pay and PhonePe) account for 80% of the user-facing front-end market (Cornelli et al (2024))."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.093,
+                0.945,
+                0.105,
+                0.955
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.807,
+                0.944,
+                0.874,
+                0.956
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.087,
+                0.871,
+                0.1
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.102,
+                0.813,
+                0.115
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.126,
+                0.871,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.141,
+                0.871,
+                0.154
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.157,
+                0.871,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.172,
+                0.802,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.196,
+                0.871,
+                0.209
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.213,
+                0.871,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.227,
+                0.871,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.243,
+                0.872,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.26,
+                0.703,
+                0.272
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.281,
+                0.871,
+                0.294
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.298,
+                0.872,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.314,
+                0.871,
+                0.326
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.33,
+                0.871,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.346,
+                0.871,
+                0.358
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.362,
+                0.871,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.378,
+                0.871,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.393,
+                0.872,
+                0.405
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.409,
+                0.872,
+                0.421
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.424,
+                0.871,
+                0.436
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.441,
+                0.871,
+                0.453
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.456,
+                0.224,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.478,
+                0.871,
+                0.491
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.495,
+                0.871,
+                0.506
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.51,
+                0.871,
+                0.521
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.526,
+                0.872,
+                0.538
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.541,
+                0.872,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.558,
+                0.869,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.574,
+                0.871,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.589,
+                0.872,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.605,
+                0.706,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.642,
+                0.552,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.675,
+                0.872,
+                0.689
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.69,
+                0.872,
+                0.704
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.707,
+                0.872,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.722,
+                0.726,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.086,
+                0.876,
+                0.198
+            ],
+            "angle": 0,
+            "content": "Generally, central bank roles in payments fall into three broad categories: operator, overseer and catalyst (CPSS (2003); BIS (2020)). As operators, central banks build and run payment systems directly. As overseers (and regulators), they set requirements regarding access, risk management, governance, transparency and compliance in payment systems. As catalysts, they convene stakeholders, promote standards (eg ISO 20022) and encourage innovation without directly mandating outcomes. Despite these differences in roles, central banks are increasingly attentive to issues surrounding retail digital payments, particularly in EMDEs, as reflected in speeches on these issues (Graphs A.1.A and A.1.B in the online annex).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.204,
+                0.877,
+                0.331
+            ],
+            "angle": 0,
+            "content": "As operators, some central banks have built public payment systems that can directly reshape competitive dynamics at the retail level. For example, the Central Bank of Brazil (BCB) developed and operates Pix, an FPS that created a credible alternative to card networks. Pix enabled competitive entry by fintech companies and smaller banks (Duarte et al (2022)). Other examples include FedNow in the United States, SINPE Móvil in Costa Rica and TIPS in Europe. In these cases, central banks' direct operation of a retail payment system can enhance contestability. Some central banks have also introduced retail digital currencies, and others are actively experimenting with them. Their overall impact on the evolution of competition remains to be seen.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.337,
+                0.876,
+                0.464
+            ],
+            "angle": 0,
+            "content": "As regulators and overseers, central banks collaborate with the legislative bodies and can stimulate competition by fostering interoperability and non-discriminatory market access and regulating fees. For example, central banks in China, India and Peru mandated the interoperability of competing mobile wallets, which were previously closed-loop and incompatible with each other. In terms of market access, some central banks have issued explicit regulation to allow non-banks to participate in the payment system (eg BCB in 2013, Bank of England in 2017, ECB in 2025). \\( ^{7} \\)  Several central banks also regulate prices of retail digital payments, particularly interchange fees and more unusually merchant fees. The overall effect of such regulation on competition is mixed (Mukharlyamov and Sarin (2025); Wang (2025)).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.471,
+                0.876,
+                0.566
+            ],
+            "angle": 0,
+            "content": "As catalysts, central banks have facilitated the development of standards and promoted coordination with the industry and other public authorities. In this role, many central banks sponsor national forums where stakeholders can convene to discuss issues related to coordination failures, a key risk arising in two-sided retail payment markets (for example, European Central Bank's Euro Retail Payments Board or the National Payments Council of India, a not-for-profit consortium of private and public banks supported by the Reserve Bank of India).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.573,
+                0.877,
+                0.749
+            ],
+            "angle": 0,
+            "content": "Central bank approaches to competition in retail digital payments reflect complex policy trade-offs. First is the trade-off between competition and fragmentation. Intense competition at the front end without interoperability can lead to fragmentation, limiting the benefits of economies of scale, reducing payment speed and fragmenting liquidity. Promoting and mandating interoperability can reduce consumer lock-in and switching costs but may not be effective if the market has already tipped towards the dominant participants. Second, central banks may also face stability and security concerns when expanding market access to non-banks. Opening payment systems to non-bank participants can spur innovation and improve efficiency but requires robust prudential and operational frameworks to manage the risks of operational outages, fraud, cyber attacks, money laundering or PSP default. Third, promoting competition at the retail payment system level, eg by launching an FPS with zero user fees and mandatory PSP participation, can accelerate adoption but may constrain the profitability of private sector participants.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.089,
+                0.754,
+                0.876,
+                0.834
+            ],
+            "angle": 0,
+            "content": "Navigating these trade-offs can be challenging. Data on pricing schemes and the costs of different payment instruments remain scant. For central banks and other regulators, enhancing data collection and sharing efforts can address blind spots in decision-making. Another challenge concerns potential overlaps in the regulatory perimeter with competition authorities and other regulators. This makes close coordination between different regulatory authorities essential.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.089,
+                0.878,
+                0.876,
+                0.917
+            ],
+            "angle": 0,
+            "content": "In a similar spirit, some central banks have also designed and facilitated open banking and finance frameworks (Eroglu et al (2026)). Such regulation may spur competition by lowering switching costs and data-related entry barriers for entrants, but it also raises concerns around data protection and security."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.093,
+                0.944,
+                0.16,
+                0.956
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.862,
+                0.945,
+                0.874,
+                0.956
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.086,
+                0.872,
+                0.1
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.103,
+                0.871,
+                0.115
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.118,
+                0.871,
+                0.132
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.135,
+                0.871,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.15,
+                0.871,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.165,
+                0.871,
+                0.179
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.182,
+                0.871,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.204,
+                0.872,
+                0.217
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.221,
+                0.87,
+                0.232
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.235,
+                0.872,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.252,
+                0.871,
+                0.264
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.266,
+                0.872,
+                0.281
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.284,
+                0.871,
+                0.296
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.299,
+                0.872,
+                0.311
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.317,
+                0.333,
+                0.326
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.338,
+                0.871,
+                0.35
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.354,
+                0.871,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.369,
+                0.872,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.384,
+                0.871,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.4,
+                0.873,
+                0.414
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.417,
+                0.872,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.432,
+                0.871,
+                0.444
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.448,
+                0.816,
+                0.462
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.473,
+                0.871,
+                0.483
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.489,
+                0.871,
+                0.499
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.503,
+                0.871,
+                0.516
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.52,
+                0.871,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.535,
+                0.871,
+                0.547
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.552,
+                0.29,
+                0.562
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.574,
+                0.871,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.589,
+                0.872,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.605,
+                0.873,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.622,
+                0.871,
+                0.633
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.638,
+                0.872,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.654,
+                0.872,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.669,
+                0.872,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.686,
+                0.872,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.701,
+                0.872,
+                0.713
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.716,
+                0.872,
+                0.729
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.732,
+                0.849,
+                0.745
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.755,
+                0.871,
+                0.766
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.771,
+                0.872,
+                0.783
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.786,
+                0.872,
+                0.799
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.093,
+                0.802,
+                0.872,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.818,
+                0.562,
+                0.831
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.091,
+                0.086,
+                0.195,
+                0.104
+            ],
+            "angle": 0,
+            "content": "References"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.118,
+                0.874,
+                0.151
+            ],
+            "angle": 0,
+            "content": "Aksonthung, C, A Kosse and I Mustafi (2026): \"Tap a card, pay by phone, but cash still holds its own\", CPMI Briefs, no 12."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.157,
+                0.875,
+                0.189
+            ],
+            "angle": 0,
+            "content": "Bank for International Settlements (BIS) (2020): \"Central banks and payments in the digital era\", Annual Economic Report 2020, Chapter III."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.196,
+                0.874,
+                0.228
+            ],
+            "angle": 0,
+            "content": "Bolt, W and D Humphrey (2007): \"Payment network scale economies, SEPA, and cash replacement\", Review of Network Economics, vol 6, no 4."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.234,
+                0.874,
+                0.266
+            ],
+            "angle": 0,
+            "content": "Claessens, S and T Rice (2026): \"Cross-border payment technologies: innovations and challenges\", BIS Papers, no 167."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.273,
+                0.874,
+                0.305
+            ],
+            "angle": 0,
+            "content": "Committee on Payment and Settlement Systems (CPSS) (2003): Policy issues for central banks in retail payments."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.312,
+                0.856,
+                0.328
+            ],
+            "angle": 0,
+            "content": "Competition Authority of Kenya (CAK) (2016): Competition inquiry into USSD service provision in Kenya."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.335,
+                0.874,
+                0.367
+            ],
+            "angle": 0,
+            "content": "Cornelli, G, J Frost, L Gambacorta, S Sinha and R Townsend (2024): \"The organisation of digital payments in India – lessons from the Unified Payments Interface (UPI)\", SUERF Policy Note, no 355."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.374,
+                0.874,
+                0.406
+            ],
+            "angle": 0,
+            "content": "Demirgüç-Kunt, A, L Klapper, D Singer and S Ansar (2022): The global 2021 findex database; financial inclusion, digital payments and resilience in the age of Covid-19, World Bank Group."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.413,
+                0.874,
+                0.445
+            ],
+            "angle": 0,
+            "content": "Duarte, A, J Frost, L Gambacorta, P K Wilkens and H S Shin (2022): \"Central banks, the monetary system and public payment infrastructures: lessons from Brazil's Pix\", BIS Bulletin, no 52, March."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.451,
+                0.873,
+                0.483
+            ],
+            "angle": 0,
+            "content": "Eroglu, H, G Cornelli, J Frost, F Rühmann and V Shreeti (2026): “Opening doors to open finance: evidence from the international experience”, BIS Papers, no 168."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.49,
+                0.873,
+                0.522
+            ],
+            "angle": 0,
+            "content": "Frost, J, P K Wilkens, A Kosse, V Shreeti and C Velásquez (2024): \"Fast payments: design and adoption\", BIS Quarterly Review, March."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.529,
+                0.873,
+                0.561
+            ],
+            "angle": 0,
+            "content": "Hernández de Cos, P (2026): \"Stablecoins: framing the debate\", speech at a Bank of Japan seminar, Tokyo, 20 April."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.567,
+                0.873,
+                0.599
+            ],
+            "angle": 0,
+            "content": "Lubbersen, V (2026): \"Locked out by loyalty: entry deterrence through rebates in payment card markets\", De Nederlandsche Bank Working Papers, no 856."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.606,
+                0.874,
+                0.638
+            ],
+            "angle": 0,
+            "content": "Mukharlyamov, V and N Sarin (2025): \"Price regulation in two-sided markets: empirical evidence from debit cards\", Journal of Financial Economics, vol 172, 104094."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.644,
+                0.874,
+                0.677
+            ],
+            "angle": 0,
+            "content": "Organisation for Economic Co-operation and Development (OECD) (2025): \"Competition in mobile payment services\", OECD Roundtables on Competition Policy Papers, no 324."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.683,
+                0.873,
+                0.716
+            ],
+            "angle": 0,
+            "content": "Puri, M, Y Qian and X Zheng (2024): \"From competitors to partners: banks' venture investments in fintechs\", NBER Working Papers, no 33297."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.722,
+                0.873,
+                0.754
+            ],
+            "angle": 0,
+            "content": "Rochet, J-C and J Tirole (2003): \"Platform competition in two-sided markets\", Journal of the European Economic Association, vol 1, no 4."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.76,
+                0.873,
+                0.793
+            ],
+            "angle": 0,
+            "content": "Statista (2025): \"Number of purchase transactions on global general purpose card brands American Express, Diners/Discover, JCB, Mastercard, UnionPay and Visa from 2014 to 2024 (in billions)\"."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.8,
+                0.873,
+                0.832
+            ],
+            "angle": 0,
+            "content": "Vipps MobilePay (2026): \"Vipps MobilePay close to profitability after strong turnaround\", press release, 12 May."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.838,
+                0.873,
+                0.87
+            ],
+            "angle": 0,
+            "content": "Wang, L (2025): \"Regulating competing payment networks\", Kilts Center at Chicago Booth Marketing Data Center Paper."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.093,
+                0.945,
+                0.105,
+                0.955
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.807,
+                0.944,
+                0.875,
+                0.956
+            ],
+            "angle": 0,
+            "content": "BIS Bulletin"
+        }
+    ]
+]

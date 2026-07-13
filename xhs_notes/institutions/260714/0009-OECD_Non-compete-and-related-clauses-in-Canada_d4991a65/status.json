@@ -1,0 +1,31 @@
+{
+  "source_pdf": "/tmp/pdf_batch_002_yk0e1dug/pdfs/0009-OECD_Non-compete-and-related-clauses-in-Canada_d4991a65.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "经合组织",
+  "cover_short_title": "加拿大竞业协议：30",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "wechat_stock_language_sanitized": [
+    "投资->研究 x1",
+    "sanitize_wechat_stock_line",
+    "经济->宏观环境 x1",
+    "下行|放缓->节奏变化 x1",
+    "sanitize_wechat_stock_line",
+    "sanitize_wechat_stock_line"
+  ],
+  "wechat_title": "经合组织：加拿大竞业限制条款法律脆弱但约束力强",
+  "wechat_title_source": "source_filename_weighted_finetune",
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

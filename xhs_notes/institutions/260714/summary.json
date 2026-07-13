@@ -1,0 +1,8 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_003_9diwxb1k/pdfs/0011-OECD_Policies-for-the-Future-of-Farming-and-Food-in-Peru_c28cd97f.pdf",
+    "mineru_state": "failed",
+    "mineru_error": "number of pages exceeds limit (200 pages), please split the file and try again",
+    "error": "MinerU did not finish successfully after 2 attempt(s)."
+  }
+]

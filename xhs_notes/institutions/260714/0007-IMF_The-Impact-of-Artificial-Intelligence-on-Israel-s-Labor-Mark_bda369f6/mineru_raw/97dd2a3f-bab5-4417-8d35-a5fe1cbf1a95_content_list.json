@@ -1,0 +1,2197 @@
+[
+    {
+        "type": "text",
+        "text": "The Impact of Artificial Intelligence on Israel's Labor Market",
+        "text_level": 1,
+        "bbox": [
+            76,
+            198,
+            715,
+            354
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ece Ozge Emeksiz",
+        "bbox": [
+            76,
+            434,
+            277,
+            458
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "SIP/2026/061",
+        "bbox": [
+            76,
+            497,
+            220,
+            518
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "IMF Selected Issues Papers are prepared by IMF staff as background documentation for periodic consultations with member countries. It is based on the information available at the time it was completed on June 10, 2026. This paper is also published separately as IMF Country Report No 26/162.",
+        "bbox": [
+            75,
+            594,
+            519,
+            683
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "2026\nJUL",
+        "bbox": [
+            76,
+            821,
+            230,
+            922
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/b6dd1d55117bf4005ce6da4359898819ba5a107f8e41c6484772c738d49f3e1a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            651,
+            809,
+            799,
+            926
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            76,
+            37,
+            830,
+            75
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "aside_text",
+        "text": "SELECTED ISSUES PAPER",
+        "bbox": [
+            918,
+            119,
+            983,
+            878
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "IMF Selected Issues Paper European Department",
+        "text_level": 1,
+        "bbox": [
+            398,
+            194,
+            599,
+            229
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The Impact of Artificial Intelligence on Israel's Labor Market Prepared by Ece Ozge Emeksiz\\*",
+        "text_level": 1,
+        "bbox": [
+            276,
+            244,
+            720,
+            280
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Authorized for distribution by Kotaro Ishi\nJuly 2026",
+        "bbox": [
+            359,
+            297,
+            640,
+            332
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "IMF Selected Issues Papers are prepared by IMF staff as background documentation for periodic consultations with member countries. It is based on the information available at the time it was completed on June 10, 2026. This paper is also published separately as IMF Country Report No 26/162.",
+        "bbox": [
+            125,
+            368,
+            844,
+            420
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "ABSTRACT: Artificial intelligence (AI)-particularly Generative AI -has the potential to raise productivity but could reshape workplaces across sectors. Using occupational microdata, this paper assesses the potential impact of Generative AI on Israel's labor market and benchmarks it against selected European economies. The results indicate that most Israeli workers are likely to benefit from AI adoption. However, about one-fifth of the workforce faces high exposure with low complementarity, indicating their vulnerability to displacement. To assist workers at risk of job displacement, a comprehensive lifelong learning strategy—including reskilling, upskilling, and mid-career training—is essential.",
+        "bbox": [
+            112,
+            452,
+            880,
+            574
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "RECOMMENDED CITATION: The impact of Artificial Intelligence on Israel's Labor Market; Emeksiz, Ece Ozge; IMF Selected Issues Paper (SIP/2026/061); Washington, D.C.",
+        "bbox": [
+            112,
+            590,
+            883,
+            625
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "JEL Classification Numbers:",
+        "bbox": [
+            127,
+            651,
+            326,
+            667
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "J21, J24, O32",
+        "bbox": [
+            385,
+            652,
+            486,
+            667
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Keywords:",
+        "bbox": [
+            125,
+            685,
+            205,
+            700
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Artificial Intelligence, AI, Digitalization, Labor Markets, Israel",
+        "bbox": [
+            383,
+            684,
+            800,
+            702
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Author's E-Mail Address:",
+        "bbox": [
+            127,
+            718,
+            303,
+            734
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "eemeksiz@imf.org",
+        "bbox": [
+            383,
+            719,
+            517,
+            734
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "© 2026 International Monetary Fund",
+        "bbox": [
+            116,
+            126,
+            372,
+            142
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "SIP/2026/061",
+        "bbox": [
+            776,
+            126,
+            872,
+            140
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "SELECTED ISSUES PAPERS",
+        "bbox": [
+            111,
+            194,
+            524,
+            220
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The Impact of Artificial Intelligence on Israel's Labor Market",
+        "text_level": 1,
+        "bbox": [
+            109,
+            300,
+            877,
+            383
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Israel",
+        "bbox": [
+            111,
+            425,
+            202,
+            454
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Prepared by Ece Ozge Emeksiz $^{1}$",
+        "bbox": [
+            109,
+            537,
+            452,
+            563
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{1}$ The author would like to thank Kotaro Ishi for helpful comments and suggestions, and Ella Shachar (Bank of Israel) for helpful discussions on AI exposure in Israel.",
+        "bbox": [
+            111,
+            883,
+            854,
+            911
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "References 12",
+        "bbox": [
+            215,
+            625,
+            882,
+            645
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "ISRAEL",
+        "text_level": 1,
+        "bbox": [
+            220,
+            123,
+            382,
+            159
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "SELECTED ISSUES",
+        "bbox": [
+            217,
+            181,
+            415,
+            204
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "June 10, 2026",
+        "bbox": [
+            31,
+            205,
+            138,
+            223
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Approved By",
+        "text_level": 2,
+        "bbox": [
+            235,
+            250,
+            370,
+            270
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Prepared by Ece Ozge Emeksiz",
+        "bbox": [
+            434,
+            251,
+            673,
+            270
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "European Department",
+        "bbox": [
+            235,
+            271,
+            419,
+            289
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "CONTENTS",
+        "text_level": 2,
+        "bbox": [
+            241,
+            316,
+            383,
+            339
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "THE IMPACT OF ARTIFICIAL INTELLIGENCE ON ISRAEL'S LABOR MARKET \\_\\_\\_\\_ 2\nA. Context \\_\\_\\_\\_ 2\nB. Preparedness and Challenges \\_\\_\\_\\_ 2\nC. Labor Market Exposure and Complementary to AI \\_\\_\\_\\_ 4\nD. Conclusions and Policy Considerations \\_\\_\\_\\_ 11",
+        "bbox": [
+            215,
+            359,
+            880,
+            473
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "FIGURES",
+        "text_level": 2,
+        "bbox": [
+            217,
+            493,
+            292,
+            510
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "1. AI Preparedness and Investment \\_\\_\\_\\_ 3",
+        "bbox": [
+            215,
+            512,
+            882,
+            530
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "2. Skill Readiness, Educational Attainment, and Workforce Composition \\_\\_\\_\\_ 5",
+        "bbox": [
+            217,
+            531,
+            880,
+            549
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "3. Exposure and Complementarity to AI \\_\\_\\_\\_ 8",
+        "bbox": [
+            217,
+            550,
+            880,
+            569
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "4. Sectoral Differences 9",
+        "bbox": [
+            217,
+            569,
+            880,
+            587
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "5. Gender, Education, and Age Differences \\_\\_\\_\\_ 10",
+        "bbox": [
+            215,
+            588,
+            882,
+            607
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "ANNEX",
+        "text_level": 2,
+        "bbox": [
+            217,
+            662,
+            285,
+            681
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "I. Measuring Exposure and Complementarity to AI \\_\\_\\_\\_ 13",
+        "bbox": [
+            215,
+            681,
+            883,
+            702
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            80,
+            16,
+            176,
+            95
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            233,
+            61,
+            826,
+            90
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "THE IMPACT OF ARTIFICIAL INTELLIGENCE ON ISRAEL'S LABOR MARKET $^{1}$",
+        "text_level": 1,
+        "bbox": [
+            114,
+            95,
+            761,
+            154
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Artificial intelligence (AI)-particularly Generative AI $^{2}$ -has the potential to raise productivity but could reshape workplaces across sectors. Using occupational microdata, this paper assesses the potential impact of Generative AI on Israel's labor market and benchmarks it against selected European economies. The results indicate that most Israeli workers are likely to benefit from AI adoption. However, about one-fifth of the workforce faces high exposure with low complementarity, indicating their vulnerability to displacement. To assist workers at risk of job displacement, a comprehensive lifelong learning strategy—including reskilling, upskilling, and mid-career training—is essential.",
+        "bbox": [
+            112,
+            172,
+            867,
+            306
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "A. Context",
+        "text_level": 2,
+        "bbox": [
+            114,
+            319,
+            240,
+            338
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "1. Artificial intelligence (AI), including Generative AI models, has advanced rapidly in recent years. These developments have expanded AI's scope beyond conventional machine-learning applications to encompass a wide range of cognitive tasks, such as pattern recognition, content creation, and decision support, thereby opening the door to sizable productivity gains. AI has diffused relatively quickly across firms and occupations (Mish et al., 2025). However, it remains unclear whether AI will primarily complement or substitute specific occupations, and how quickly these effects will materialize.",
+        "bbox": [
+            112,
+            354,
+            879,
+            488
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "2. Israel is well-positioned to navigate this transition, both as a producer and a user of AI technologies. The country plays a prominent role in the global AI ecosystem, supported by a dense ecosystem of AI-focused startups and multinational R&D centers. On the adoption side, the widespread diffusion of AI across sectors—including traditional industries and the public sector—has the potential to boost Israel's aggregate productivity.",
+        "bbox": [
+            112,
+            502,
+            877,
+            598
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "3. This chapter examines how AI diffusion across occupations may affect labor market outcomes. Section B assesses Israel's preparedness and challenges, while Section C analyzes the characteristics of the Israeli labor market, mapping measures of AI exposure and complementarity onto occupational microdata. Section D concludes and discusses policy implications.",
+        "bbox": [
+            112,
+            612,
+            862,
+            689
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "B. Preparedness and Challenges",
+        "text_level": 2,
+        "bbox": [
+            114,
+            700,
+            449,
+            722
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "4. Israel is relatively well prepared for AI adoption. The IMF's AI Preparedness Index ranks Israel 18th globally, reflecting strong innovation capacity and a supportive environment, while the Stanford AI Index places Israel among the top in AI-related private investment and newly funded AI Companies (Figure 1). AI adoption is relatively high, particularly in the high-tech sector. Across all",
+        "bbox": [
+            112,
+            737,
+            872,
+            814
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "ISRAEL",
+        "bbox": [
+            114,
+            47,
+            163,
+            61
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{1}$ Prepared by Ece Ozge Emeksiz (EUR). The authors thank Ella Shachar (Bank of Israel) for helpful discussion on AI exposure in Israel.",
+        "bbox": [
+            114,
+            835,
+            857,
+            868
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{2}$ Generative AI refers to AI systems that generate new content (e.g., text, images, or music) based on existing data, whereas conventional AI primarily analyzes existing data to identify patterns or perform predefined tasks.",
+        "bbox": [
+            112,
+            872,
+            861,
+            902
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            116,
+            933,
+            130,
+            954
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            153,
+            936,
+            390,
+            954
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "sectors, about 28 percent of Israeli firms report using AI. $^{3}$ Moreover, Israel is among the leading OECD countries in both current and projected business-sector AI adoption (Filippucci and others, 2026).",
+        "bbox": [
+            112,
+            90,
+            854,
+            148
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "AI Preparedness Index (Index)",
+        "bbox": [
+            127,
+            194,
+            269,
+            218
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4ffa0db339efec8d27d03bba34ed4d8cace04d8c9e1c03ef2b2ef0c007fe53fb.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: Cazzaniga and others (2024); and IMF staff estimates."
+        ],
+        "bbox": [
+            125,
+            191,
+            493,
+            382
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/dfd4bf103ea4783e8e800be8e9723a6d38f7b0be9c054c1434c94d2799be685a.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 1. AI Preparedness and Investment"
+        ],
+        "chart_footnote": [
+            "Sources: Cazzaniga and others (2024); and IMF staff estimates.",
+            "Total Private Investment for AI (2013-2024, percent of of GDP)"
+        ],
+        "bbox": [
+            527,
+            189,
+            903,
+            375
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4a7c6b49e6059b98049c8df2739fcce4cac5399211a253736086488eb0d8c3cf.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: Stanford AI Index 2025; and IMF Staff estimates.",
+            "Number Newly Funded AI Companies (2013-2024, relative to GDP)"
+        ],
+        "bbox": [
+            127,
+            411,
+            475,
+            604
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/44536b56d04aa17b81234a0a0ef1af055724ad8a52c7f32bc59c2900880abf52.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: Stanford AI Index 2025; and IMF Staff estimates.",
+            "AI Adoption of Firms by Industry-Israel (Share of firms reporting AI use)"
+        ],
+        "bbox": [
+            542,
+            439,
+            900,
+            595
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0a0d5863746e4cfc60f12a750cfcc0bbbb7987e49af68277786dccce32d1eb5f.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Israel Central Bureau of Statistics (CBS), Business Tendency Survey 2025.",
+            "AI Adoption of Firms by Industry-European Peers (Share of firms reporting AI use)"
+        ],
+        "bbox": [
+            122,
+            640,
+            467,
+            828
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f58ee21d932d27de465e4e47f85fc988d9eb03f5df4c5d0a2417298ffaa7dc91.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Eurostat, ICT Usage in Enterprises 2025; and IMF Staff estimates. Note: Average of Austria, Denmark, Finland, Sweden, and the Netherlands."
+        ],
+        "bbox": [
+            555,
+            667,
+            895,
+            824
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "ISRAEL",
+        "bbox": [
+            797,
+            47,
+            846,
+            61
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            861,
+            933,
+            875,
+            954
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{3}$ Israel Central Bureau of Statistics (CBS), 2025, “Business Tendency Survey: Artificial Intelligence Module”, June.",
+        "bbox": [
+            114,
+            885,
+            839,
+            902
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            596,
+            938,
+            834,
+            953
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "5. However, skill shortages and Israel's \"dual economy\" structure could constrain economy-wide AI diffusion and limit macroeconomic gains.",
+        "bbox": [
+            112,
+            92,
+            815,
+            130
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- The IMF's Skill Readiness and Imbalance Index—measuring the gap between projected new skill demand and the share of graduates with new skills (relative to the United States)—indicates that demand significantly exceeds supply (Figure 2). $^{4}$ The gap is larger than in many advanced economies, reflecting a relatively low number of graduates in AI-relevant fields.",
+        "bbox": [
+            114,
+            145,
+            875,
+            220
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- AI diffusion across broader sectors may be hindered by Israel's dual economy. While skills and productivity are high in the high-tech sector, they are weaker elsewhere, where digitization, including AI adoption, has lagged. AI use is concentrated in high-tech and information and communication technology (ICT) sectors; although European peers exhibit a similar pattern, sectoral disparities are more pronounced in Israel.",
+        "bbox": [
+            112,
+            234,
+            862,
+            330
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- Significant skill gaps persist across population groups, especially among Arab-Israeli and Haredi populations. Despite rising labor participation among women in these groups, alongside improved education and skills, many workers remain employed in lower-skilled level occupations. Arab-Israeli and Haredi men exhibit low tertiary attainment and remain concentrated in secondary education, limiting access to higher-productivity jobs. For Haredi men, limited participation in core studies (mathematics, science, and English) poses an additional constraint. As a result, these groups also remain underrepresented in the high-tech sector, where productivity and wages are higher (Figure 2). $^{5}$",
+        "bbox": [
+            112,
+            345,
+            872,
+            498
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "C. Labor Market Exposure and Complementary to AI",
+        "text_level": 2,
+        "bbox": [
+            114,
+            510,
+            653,
+            530
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "6. We evaluate occupational exposure to AI and its potential for complementarity or substitution. Building on Felten et al. (2021), who construct occupation-level measures by mapping AI capabilities to workplace tasks, Pizzinelli et al. (2023) broaden the approach by incorporating the social, ethical, and physical characteristics of jobs. This extension allows for a distinction between tasks that are likely to be augmented by AI and those that may be more easily automated. Occupations are grouped into three categories: high exposure with high complementarity (HEHC), high exposure with low complementarity (HELC), and low exposure (see Annex 1). $^{6}$",
+        "bbox": [
+            112,
+            547,
+            864,
+            698
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "\\- These measures are applied to the 2023 Israel, Eurostat and U.K. Labor Force Surveys to assess AI exposure and complementarity in Israel and benchmark it against the selected European",
+        "bbox": [
+            114,
+            713,
+            864,
+            751
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "ISRAEL",
+        "bbox": [
+            114,
+            47,
+            163,
+            61
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{4}$ Normalized to range between -1 and 1, where values closer to zero indicate smaller imbalances, and the US is set to zero as the benchmark.",
+        "bbox": [
+            114,
+            814,
+            866,
+            845
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{5}$ The index measures relative representation in high-tech employment, defined as a group's share of high-tech employment relative to its share of total employment. Values below one indicate underrepresentation.",
+        "bbox": [
+            112,
+            849,
+            839,
+            882
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{6}$ Cazzaniga and others (2024) apply these measures in a cross-country comparison.",
+        "bbox": [
+            114,
+            885,
+            663,
+            904
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            114,
+            931,
+            130,
+            954
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            153,
+            936,
+            390,
+            954
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Share of Graduates with New Skills (Percent)",
+        "bbox": [
+            145,
+            289,
+            354,
+            310
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "peers (Austria, Denmark, Finland, and Sweden), the United Kingdom, and other European countries.",
+        "bbox": [
+            142,
+            90,
+            823,
+            128
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- The analysis is undertaken at the ISCO two-digit level and covers 36 occupations, 19 economic activities, three age groups, gender, three educational levels, and three population groups.",
+        "bbox": [
+            114,
+            145,
+            864,
+            184
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- The results should be interpreted as reflecting the transition toward a new technological equilibrium as AI adoption and labor market adjustments unfold.",
+        "bbox": [
+            114,
+            198,
+            818,
+            236
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Figure 2. Skill Readiness, Educational Attainment, and Workforce Composition",
+        "bbox": [
+            178,
+            253,
+            823,
+            271
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/c55e8320f87f81d9a885a62798369cc46bcf78c1a18c0020c9fcfba15e54a8de.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: Jaumotte and others (2026)"
+        ],
+        "bbox": [
+            143,
+            287,
+            485,
+            454
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/65cff1e16cb3fc10d3fb59be908b172648ae8278d35741c946634fdb246d54b5.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: Jaumotte and others (2026)",
+            "Educational Attainment by Pop. Group-Men (Share of population ages 25-64 by group, percent)"
+        ],
+        "bbox": [
+            511,
+            287,
+            866,
+            470
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7945a2071d74f176fddd3e311009b6be8679985908148a6bff8a8ae114d3d13d.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: Israel Labor Force Survey 2023; and IMF Staff estimates.",
+            "Educational Attainment by Group-Female (Share of population ages 25-64 by group, percent)"
+        ],
+        "bbox": [
+            133,
+            501,
+            473,
+            659
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/8dd4d3dac7afe5af9eed87a90efe0b7f60a10231ecd54fe04510c2b8d5ad74e0.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: Israel Labor Force Survey 2023; and IMF Staff estimates.",
+            "Relative Representation of Population Groups in High-Tech (Index)"
+        ],
+        "bbox": [
+            521,
+            502,
+            854,
+            659
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6cee70f2b9ef57d40d5a30f626c790bee4b2014947a6d4869fe1da29aa79910a.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: Israel Labor Force Survey 2023; and IMF Staff estimates.",
+            "Female Labor Force Participation (Percent)"
+        ],
+        "bbox": [
+            138,
+            712,
+            465,
+            849
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f793ddc310272ef6425ec7f1f12fcb641db3309a07e5735306c62af6e194f0c7.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            524,
+            709,
+            872,
+            864
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "ISRAEL",
+        "bbox": [
+            797,
+            47,
+            846,
+            61
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            862,
+            933,
+            875,
+            954
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            598,
+            938,
+            834,
+            953
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Key Results",
+        "text_level": 2,
+        "bbox": [
+            114,
+            111,
+            215,
+            128
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Israel's labor force is comparatively more exposed to AI than those of most European peers (Figure 3). About two-thirds of Israeli workers face high AI exposure—broadly in line with the U.K., but higher than other European countries.",
+        "bbox": [
+            112,
+            145,
+            861,
+            202
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Among highly exposed workers, roughly two-thirds are employed in occupations with complementarity—including education, business and administration associate professionals, science and engineering, and health professions—making them more likely to benefit from AI adoption. $^{7}$",
+        "bbox": [
+            114,
+            217,
+            859,
+            292
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- The remaining third exhibits lower complementarity, partly reflecting the sizable employment share in ICT professionals and sales occupations, and faces higher job displacement risks. $^{8}$",
+        "bbox": [
+            114,
+            308,
+            856,
+            345
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- About one-third of the Israeli workforce has low AI exposure, primarily in personal care, personal services, and manual labor.",
+        "bbox": [
+            114,
+            361,
+            880,
+            398
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Israel's higher share of high-exposure and complementary occupations reflects its demographic and sectoral composition: a younger population increases employment in education, while a large high-tech sector and a higher share of legal, social, and cultural professionals also contribute.",
+        "bbox": [
+            112,
+            414,
+            875,
+            489
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "7. In the private sector, about one-third of employment faces high displacement risks. The riskiest occupations—characterized by high exposure and low complementarity—include business and administration professionals, sales workers, and ICT specialists. ICT, finance, and insurance are expected to be the most affected sectors. Together, they account for about 12 percent of total employment, suggesting potentially significant labor market impacts (Figure 4).",
+        "bbox": [
+            112,
+            505,
+            880,
+            601
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "8. By contrast, the public sector is likely to benefit from AI. Public services account for about one-third of total employment, with more than half of public sector workers employed in occupations with high exposure and high complementarity, such as education and healthcare. Compared with peers, displacement risks in Israel are lower than in the United Kingdom and other European economies. However, realizing these upside potentials will depend on effective adoption of AI. $^{9}$",
+        "bbox": [
+            112,
+            614,
+            867,
+            728
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "ISRAEL",
+        "bbox": [
+            114,
+            47,
+            163,
+            63
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{7}$ Business and administration associate professionals perform technical tasks in accounting, transactions, calculations, human resources, financial services, regulatory enforcement, and related business services.",
+        "bbox": [
+            114,
+            787,
+            800,
+            818
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{8}$ Business and administration professionals deliver analytical and operational services across finance, management, marketing, and information and communication technology. Sales workers sell goods and services across retail and wholesale settings and manage customer transactions.",
+        "bbox": [
+            112,
+            821,
+            867,
+            868
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{9}$ OECD Economic Survey: Israel (2025) suggests AI implementation in the public sector lags the private sector due to regulatory, budgetary, and coordination constraints.",
+        "bbox": [
+            112,
+            871,
+            877,
+            902
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            114,
+            931,
+            130,
+            954
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            153,
+            936,
+            390,
+            954
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "9. By gender, women are expected to benefit from AI more than men. Nearly three-quarters of female workers are highly exposed to AI, with most employed in occupations exhibiting high complementarity, including education, business and administration associate professions, legal, social, cultural services, and healthcare. Israeli women are likely to gain more than women in Europe, partly reflecting their greater concentration in education and healthcare—predominantly public-sector activities.",
+        "bbox": [
+            112,
+            92,
+            877,
+            205
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "10. AI-related displacement risks vary across population groups and education levels.",
+        "text_level": 2,
+        "bbox": [
+            114,
+            220,
+            836,
+            239
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "\\- Jewish populations face higher displacement risks than Arab-Israelis, reflecting substantially greater AI exposure. Around 25 percent of non-Haredi Jewish workers and 20 percent of Haredi workers are employed in occupations with high exposure and low complementarity. The lower share among Haredi workers reflects the concentration of women in education, where AI is more likely to be complementary. Arab-Israelis are less exposed overall, due to their concentration in lower-skill occupations.",
+        "bbox": [
+            114,
+            256,
+            506,
+            463
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e60e8ca40deccbfbbac558c55414cc0dc2315331c8a4a0b92111fa39f2b99751.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            521,
+            263,
+            875,
+            463
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "\\- Highly educated workers, despite being best positioned to benefit, also face meaningful risks: nearly 90 percent are exposed to AI, and about one-quarter may experience displacement pressures. Younger workers appear more vulnerable than older cohorts, as higher exposure is not consistently offset by task complementarity.",
+        "bbox": [
+            114,
+            479,
+            857,
+            554
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "ISRAEL",
+        "bbox": [
+            797,
+            49,
+            846,
+            61
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            598,
+            938,
+            834,
+            953
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            862,
+            933,
+            875,
+            955
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Figure 3. Exposure and Complementarity to AI",
+        "bbox": [
+            315,
+            94,
+            694,
+            112
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Employment Exposure and Complementarity to AI (Percent)",
+        "bbox": [
+            127,
+            132,
+            433,
+            157
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f369740c2c37b2f15e54697ec3c9ce8d50153c9269e6f8b73a24310c6ffb7d07.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: Israel Labor Force Survey 2023; and IMF staff estimates.",
+            "Comparison with Other Countries (Percent)"
+        ],
+        "bbox": [
+            127,
+            131,
+            475,
+            310
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/82b6e02757d64d09ec67e9441571eb331437040051effb33611e16fe3e2164db.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: Eurostat, Israel, UK Labor Force Surveys 2023; and IMF staff estimates.",
+            "Employment Exposure and Compl. to AI by Occupation (Main 1-digit occupations, employment share)"
+        ],
+        "bbox": [
+            527,
+            131,
+            872,
+            316
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/1e1fb1e5818986636d25e1f60f8210c22aee1bec8560edccafb037ad7a9828e3.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Exposure and Complementarity to AI (Index, dotted lines = median)"
+        ],
+        "bbox": [
+            124,
+            364,
+            468,
+            539
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/df307d871e12919b2bd5fbb3200565ce5c5fc429e134814e11e9f3400b67f56d.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            527,
+            364,
+            877,
+            534
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "ISRAEL",
+        "bbox": [
+            117,
+            49,
+            163,
+            61
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            117,
+            933,
+            130,
+            954
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            153,
+            938,
+            390,
+            953
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Figure 4. Sectoral Differences",
+        "bbox": [
+            383,
+            94,
+            627,
+            111
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Exposure and Complementarity to AI by Broad Sectors (Percent)",
+        "bbox": [
+            129,
+            132,
+            455,
+            155
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5b86fdfea403b808448c81167ff349cd5f1e7849e5c2c7b021587d59b9992636.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: Eurostat, Israel, UK Labor Force Surveys 2023; and IMF staff estimates.",
+            "Main Occupations in Israel",
+            "Exposure and Complementarity to AI by Sector (Percent)"
+        ],
+        "bbox": [
+            133,
+            156,
+            470,
+            315
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/14aaf7d03235552c7a1b959e76ab4d146f50ac8977c54623221491d26064c505.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: Israel Labor Force Survey 2023; and IMF staff estimates."
+        ],
+        "bbox": [
+            540,
+            156,
+            880,
+            314
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d5af95ef794cc2f9db4d6930fae362a04e4b85e25a67b7a0e3d75b1d71ec20fa.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: Eurostat, Israel, UK Labor Force Surveys 2023; and IMF staff estimates."
+        ],
+        "bbox": [
+            135,
+            362,
+            472,
+            517
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6eb0866264e3b74882204096e66cc76939be7ce336315beaf931f16f77b0cf56.jpg",
+        "content": "",
+        "chart_caption": [
+            "Employment by Sector\n(Percentage of total employment, 2023)"
+        ],
+        "chart_footnote": [
+            "Sources: Eurostat, Israel, UK Labor Force Surveys 2023; and IMF staff estimates."
+        ],
+        "bbox": [
+            537,
+            368,
+            877,
+            518
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "ISRAEL",
+        "bbox": [
+            797,
+            49,
+            846,
+            61
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            598,
+            938,
+            834,
+            953
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            862,
+            933,
+            875,
+            954
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Figure 5. Gender, Education, and Age Differences",
+        "text_level": 2,
+        "bbox": [
+            310,
+            114,
+            712,
+            132
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/8f72f88d42ad2800b19ac7318823989752d5bc3a629446ad9fd55649e69897c0.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exposure and Complementarity to AI for Women (Percent)"
+        ],
+        "chart_footnote": [
+            "Sources: Eurostat, Israel, UK Labor Force Surveys 2023; and IMF staff estimates."
+        ],
+        "bbox": [
+            132,
+            162,
+            455,
+            299
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/925a86a5003ee23b066c7bd1ed737d28e6fe0078884c3c9de179437d01e52786.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exposure and Complementarity to AI for Men (Percent)"
+        ],
+        "chart_footnote": [
+            "Sources: Eurostat, Israel, UK Labor Force Surveys 2023; and IMF staff estimates."
+        ],
+        "bbox": [
+            552,
+            164,
+            885,
+            297
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a0cd784c2f6f2d7d5639f2f99a5c9dfcff391d54766578e430b57c744d5f4d06.jpg",
+        "content": "",
+        "chart_caption": [
+            "Main Occupations for Female (Main 1-digit occupations, employment share)"
+        ],
+        "chart_footnote": [
+            "Sources: Israel Labor Force Survey 2023; and IMF staff estimates."
+        ],
+        "bbox": [
+            133,
+            345,
+            444,
+            491
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/8dd421d0f95c1606f2906b79de653be0a7d5f676be2fbc139b9a9ed79a090df2.jpg",
+        "content": "",
+        "chart_caption": [
+            "Main Occupations for Men\n(Main 1-digit occupations, employment share)"
+        ],
+        "chart_footnote": [
+            "Sources: Israel Labor Force Survey 2023; and IMF staff estimates."
+        ],
+        "bbox": [
+            558,
+            344,
+            883,
+            489
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7adf2156f7c46cf5b849c847eac1a9400d02e6ee18280b09cc533b6f9adb7395.jpg",
+        "content": "",
+        "chart_caption": [
+            "Education - Employment Exposure and Compl. to AI (Percent)"
+        ],
+        "chart_footnote": [
+            "Sources: Israel Labor Force Survey 2023; and IMF staff estimates."
+        ],
+        "bbox": [
+            130,
+            532,
+            444,
+            681
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/54a31375b7e28e715ceb7e971c6d601b53cc6a6eea7949b43cd6c6dc5986ad7e.jpg",
+        "content": "",
+        "chart_caption": [
+            "Age - Employment Exposure and Compl. to AI (Percent)"
+        ],
+        "chart_footnote": [
+            "Sources: Israel Labor Force Survey 2023; and IMF staff estimates."
+        ],
+        "bbox": [
+            560,
+            532,
+            890,
+            680
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "ISRAEL",
+        "bbox": [
+            117,
+            49,
+            163,
+            61
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            117,
+            936,
+            138,
+            954
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            153,
+            938,
+            390,
+            953
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "D. Conclusions and Policy Considerations",
+        "text_level": 2,
+        "bbox": [
+            114,
+            89,
+            542,
+            109
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "11. AI offers significant potential to raise productivity, including in traditional industries and the public sector, but it also poses adjustment challenges. $^{10}$ Rapid technological change has increased demand for skilled workers beyond supply. While Israel's labor market is less susceptible to AI-related job displacement than those of other European economies—due to higher complementarity—around one-fifth of workers remain at risk. Vulnerabilities are concentrated among employees in high-value added industries (e.g., ICT, finance, and professional services),",
+        "bbox": [
+            112,
+            126,
+            880,
+            239
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "younger workers, and those with tertiary education.",
+        "bbox": [
+            112,
+            239,
+            511,
+            258
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "12. Continued efforts to align workforce skills with evolving needs are therefore essential. Education reforms should focus on expanding STEM enrollment, updating mathematics and science curricula, and introducing AI education at earlier stages. Spending for active labor market policies in Israel remains low compared to peers. To assist workers at risk of displacement, a comprehensive lifelong",
+        "bbox": [
+            114,
+            273,
+            578,
+            406
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2ee16fbbfc8ac44b3f8ab60b586721c0735ceb516ce97ab50212221fbf7aae7b.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            594,
+            241,
+            875,
+            404
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "learning strategy is essential, including reskilling, upskilling, and mid-career training.",
+        "bbox": [
+            114,
+            407,
+            756,
+            425
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "13. Targeted policies are also needed to enable Arab-Israeli and Haredi populations to benefit from AI. The past initiatives, including MAHAT technological training programs, gap-year transition programs for Arab-Israeli youth, and employment support through Ryan Centers and Haredi-focused coding and placement initiatives, have helped narrow gaps in line with the 2022 Perlmutter Committee's recommendations, including upgrading seminary training and better aligning vocational education and training programs with evolving labor market needs.",
+        "bbox": [
+            112,
+            440,
+            864,
+            554
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "ISRAEL",
+        "bbox": [
+            797,
+            49,
+            846,
+            61
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{10}$ See also Bank of Israel",
+        "bbox": [
+            116,
+            883,
+            282,
+            901
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            598,
+            936,
+            834,
+            953
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            854,
+            936,
+            874,
+            954
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "References",
+        "text_level": 2,
+        "bbox": [
+            433,
+            93,
+            566,
+            114
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Bank of Israel, 2025, Annual Report 2024, Box 5.1, \"The expected effect of generative Artificial Intelligent on employees: Implications for labor market policy,\" March.",
+        "bbox": [
+            114,
+            131,
+            816,
+            170
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "EMPLOYEES: IMPLICATIONS FOR LABOR MARKET POLICY",
+        "bbox": [
+            114,
+            184,
+            557,
+            204
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "Cazzaniga M., F. Jaumotte, L. Li, G. Melina, A. J. Panton, C. Pizzinelli, E. Rockall, and M. M. Tavares, 2024, \"Gen-AI: Artificial Intelligence and the Future of Work\", IMF Staff Discussion Note SDN2024/001, International Monetary Fund, Washington, DC.",
+        "bbox": [
+            114,
+            219,
+            852,
+            276
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Felten E., M. Raj and R. Seamans, 2021, \"Occupational, industry, and geographic exposure to artificial intelligence: A novel dataset and its potential uses\", Strategic Management Journal, 2021;1-23.",
+        "bbox": [
+            114,
+            291,
+            872,
+            330
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "Filippucci, F., Gal, P., Laengle, K., Schief, M. and Yildirim, M.A., 2026. AI meets trade: Global linkages and the cross-country distribution of the gains from AI. OECD Artificial Intelligence Papers No. 57. Paris: OECD Publishing.",
+        "bbox": [
+            114,
+            343,
+            861,
+            400
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Institute for National Security Studies (INSS), 2025, Recommendations of the Nagel Committee: Rushing Toward the Al Abyss, Memorandum No. 2048.",
+        "bbox": [
+            114,
+            416,
+            833,
+            455
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "International Monetary Fund (IMF). 2026. Bridging Skill Gaps for the Future: New Jobs Creation in the AI Age. Staff Discussion Notes, No. 2026/001. Washington, DC: International Monetary Fund.",
+        "bbox": [
+            114,
+            469,
+            875,
+            508
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Israel Central Bureau of Statistics (CBS), 2025, “Business Tendency Survey: Artificial Intelligence Module”, June.",
+        "bbox": [
+            114,
+            522,
+            833,
+            559
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "Mish F., B. Park, C. Pizzinelli, and G. Sher., 2025 AI and Productivity in Europe, IMF Working Papers 2025/067, International Monetary Fund, Washington, DC.",
+        "bbox": [
+            114,
+            574,
+            854,
+            614
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "Organisation for Economic Co-operation and Development (OECD), 2025, OECD Economic Surveys: Israel 2025, OECD Publishing, Paris.",
+        "bbox": [
+            114,
+            627,
+            867,
+            666
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Pizzinelli C., A. Panton, M. M. Tavares, M. Cazzaniga, and L. Li. 2023. \"Labor Market Exposure to AI: Cross-Country Differences and Distributional Implications.\" IMF Working Paper 2023/216, International Monetary Fund, Washington, DC.",
+        "bbox": [
+            114,
+            680,
+            852,
+            739
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Stanford Institute for Human-Centered Artificial Intelligence (HAI), 2025, AI Index Report 2025, Stanford University, Stanford, CA.",
+        "bbox": [
+            114,
+            757,
+            828,
+            805
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "State Comptroller of Israel, 2024, “Artificial Intelligence: National Preparedness”, Special Report.",
+        "bbox": [
+            114,
+            838,
+            834,
+            858
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "ISRAEL",
+        "bbox": [
+            114,
+            47,
+            163,
+            61
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            117,
+            936,
+            138,
+            954
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            153,
+            938,
+            390,
+            954
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Annex I. Measuring Exposure and Complementarity to AI",
+        "text_level": 2,
+        "bbox": [
+            166,
+            94,
+            828,
+            116
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "1. Assessing Occupational Exposure to AI. Felten et al. (2021) introduce an approach to assessing AI exposure across occupations by associating a set of AI capabilities. such as image recognition and text generation, with a broad range of underlying worker abilities identified in the U.S. O\\*NET database. The framework treats occupations as portfolios of skills, where each ability contributes to job performance with varying degrees of importance and complexity, allowing exposure to AI to be quantified at the occupational level.",
+        "bbox": [
+            112,
+            133,
+            864,
+            247
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "2. Assessing Complementarity with AI. Pizzinelli et al. (2023) construct an index capturing how AI interacts with different occupations by incorporating two additional dimensions from the O\\*NET database: work contexts and job zones. The authors identify eleven AI-relevant work contexts and combine them with job-zone classifications to form six broader components—communication, responsibility, physical conditions, criticality, routine intensity, and skills. This framework allows for an evaluation of the extent to which AI technologies are likely to complement or substitute tasks performed within specific occupations.",
+        "bbox": [
+            112,
+            261,
+            882,
+            393
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "3. Combining Exposure and Complementarity. Exposure and complementarity measures can be jointly interpreted within a three-category framework that classifies occupations according to their degree of AI exposure and complementarity. Using the median values of both indicators as thresholds, occupations are grouped into: high exposure–high complementarity (HEHC), high exposure–low complementarity (HELC), and low exposure (LE). Occupations in the high exposure–low complementarity category are considered more susceptible to AI-driven job displacement, as AI technologies are more likely to substitute for, rather than complement, the tasks they perform.",
+        "bbox": [
+            112,
+            409,
+            880,
+            561
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "ISRAEL",
+        "bbox": [
+            797,
+            47,
+            846,
+            61
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            598,
+            938,
+            834,
+            953
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            852,
+            936,
+            875,
+            954
+        ],
+        "page_idx": 15
+    }
+]
