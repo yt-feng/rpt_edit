@@ -1,0 +1,695 @@
+# JPM
+
+## Equity Strategy
+
+![](images/f64a8407a3a869b2f04c95cfb3b94f77d1566a3db59f0b2e51e76edb67e81664.jpg)
+
+## Q2 Earnings Preview - robust corporate profits to offer support to the market
+
+Click here for our weekly podcast
+
+\- Our bullish 2026 view had strong earnings outlook as one of the key drivers, contrasting with the stance by many that consensus expectations entering the year were too high. Despite the spike in geopolitical uncertainty in Q2, it is encouraging that 2026 EPS projections kept moving higher, something which is seen in all regions, and is not solely the result of IT and Energy. In fact, the majority of sectors in MSCI AC World have seen net upgrades ytd. Iran conflict is flaring up again, but we think one keeps using the dips driven by this to add, the same stance we had since $2^{\text{nd}}$ half of March.
+
+\- We remain constructive on earnings delivery through 2H, on improving activity driving better topline growth, and positive operating leverage, resulting in resilient profit margins. In terms of market internals, we believe rotation and broadening in leadership is underway, from what was an extremely narrow participation in Q2, and that it will likely have legs – see July Chartbook. This naturally leads to bouts of increased volatility, but it should not result in prolonged market selloffs, in our view, especially if earnings backdrop remains resilient.
+
+\- Now, Q2 earnings growth projections by consensus appear punchy at face value, in both the US and in Eurozone, at 22% and 12% yoy growth rates, respectively. Importantly, unlike typically when the hurdle rate moves lower ahead of the reporting season, making it easier to beat as results come out, this time around there were no net downgrades, but continued increases in forecasts – top chart.
+
+\- We do not believe this is necessarily a red flag. Beneath the surface, while the upward revisions are broader than one would think, still, many sectors which are generally viewed to be under pressure have indeed seen the typical downgrades. Median Q2 EPS growth projections stand at 8% for both US and for Eurozone, which we believe is very achievable.
+
+\- Also, activity has been improving of late, as seen in the acceleration in the OECD lead indicator, and in a big move higher in Eurozone CESI, of 85+ points, entering net positive territory, a continued improvement in Eurozone credit growth and resilient US jobless claims. Big picture, macro indicators remain consistent with further earnings upside, and this is especially for Cyclical sectors – see middle chart.
+
+\- At the sector level, Banks are likely to deliver reassuring results, and we note that Semis price relative and earnings are opening up a gap, where strong results could drive a rebound in the space. Energy earnings relative does not show any cushion vs oil price anymore. Consumer sectors likely remain mixed, but we believe that the market could look through this, expecting an inflection point; see our recent more positive take on Consumer Cyclicals for 2H.
+
+\- Eurozone EPS revisions have been rising in the past weeks, moving into outright positive territory. The gap with the US has narrowed, on the brink of fully closing for the first time since early 2025 - bottom chart. Provided the Iran conflict doesn't fully re-escalate in 2H, we think this improvement can continue, and expect Eurozone to show strong double digit EPS growth this year, in contrast to the stagnation that took place since 2022.
+
+## Equity Strategy
+
+Mislav Matejka, CFA AC
+(44-20) 7134-9741
+mislav.matejka@JPM.com
+JPM Securities plc
+
+Prabhav Bhadani, CFA
+(44-20) 7742-4404
+prabhav.bhadani@JPM.com
+JPM Securities plc
+
+Nitya Saldanha, CFA
+(44 20) 7742 9986
+nitya.saldanha@jpmchase.com
+JPM Securities plc
+
+Karishma Manpuria, CFA
+(91-22) 6157-4115
+karishma.manpuria@jpmchase.com
+JPM India Private Limited
+
+## Anamil Kochar, CFA
+
+Anamil Kochar, CPA
+(91-22) 6157-5179
+anamil.kochar@jpmchase.com
+JPM India Private Limited
+
+In contrast to typical, where hurdle rate eases ahead of the results, this time around net consensus projections moved higher...
+
+![](images/95e6ac3055a292d030d7fd2718b65f1e1bcb30625d9575302e0f65f5ba3e6401.jpg)  
+...we remain optimistic over profits delivery, and believe Cyclicals will do better, as lead indicators point to further upside...
+
+![](images/e74852a7d29d784c1f9bee17df6601c43d47b74d91d8995519d90a72034bc272.jpg)  
+...notably, Eurozone earnings revisions have moved into outright positive territory of late, offering support to the region
+
+![](images/48e12c17eb1b1784ba679d818002ed8aecb48fe0fe9ca2d938c55ceb06feb88f.jpg)  
+Source: JPM, Bloomberg Finance L.P., Datastream
+
+## Table Of Contents
+
+Q2 Earnings Preview - robust corporate profits to offer support to the market. 3
+Equity Strategy Key Calls and Drivers. 16
+Top Picks. 18
+Equity Flows Snapshot. 19
+Technical Indicators. 20
+Performance. 21
+Earnings. 22
+Valuations. 23
+Economic, Interest Rate and Exchange Rate Outlook. 25
+Sector, Regional and Asset Class Allocations. 26
+
+# Q2 Earnings Preview - robust corporate profits to offer support to the market
+
+Figure 1: S&P500 and MSCI Eurozone 2026e EPS levels  
+![](images/e91986b90159e2f2d9072e51985c3de472a85fa6fef2621471406dd87166b2a3.jpg)  
+Source: IBES
+
+In our bullish 2026 Year Ahead view, a strong earnings outlook was one of the main supports. This went against the view of many investors who thought consensus earnings expectations going into the year were too high. Even with the jump in geopolitical uncertainty in the second quarter, it is a positive sign that 2026 EPS forecasts are rising across all regions. S&P500 2026 EPS estimates are up about 7% since the start of the year, while European estimates are up around 2.5%.
+
+Table 1: MSCI Europe sectors EPS revisions change since Jan '26
+
+<table><tr><td>EPS Revisions</td><td>Current</td><td>Jan &#x27;26</td><td>Change</td></tr><tr><td>MSCI Europe</td><td>11%</td><td>-4%</td><td>15%</td></tr><tr><td>Energy</td><td>15%</td><td>-27%</td><td>43%</td></tr><tr><td>Materials</td><td>33%</td><td>-24%</td><td>57%</td></tr><tr><td>Industrials</td><td>21%</td><td>-1%</td><td>22%</td></tr><tr><td>Discretionary</td><td>-29%</td><td>-33%</td><td>4%</td></tr><tr><td>Staples</td><td>11%</td><td>-47%</td><td>59%</td></tr><tr><td>Healthcare</td><td>-14%</td><td>-16%</td><td>2%</td></tr><tr><td>Financials</td><td>28%</td><td>39%</td><td>-12%</td></tr><tr><td>IT</td><td>18%</td><td>25%</td><td>-7%</td></tr><tr><td>Telecoms</td><td>-14%</td><td>-9%</td><td>-5%</td></tr><tr><td>Utilities</td><td>12%</td><td>8%</td><td>4%</td></tr><tr><td>Real Estate</td><td>10%</td><td>-18%</td><td>28%</td></tr></table>
+
+## Source: IBES
+
+The breadth of earnings upgrades is notable. In MSCI Europe, approximately 70% of Level 1 sectors have seen net positive EPS revisions year-to-date, compared to around 70% in the US and 60% in Japan.
+
+Figure 2: MSCI AC World sectors ytd change in 2026e EPS  
+![](images/e985b479e6989438ec7b24960d9c6e4cc981e56418bf169bdd68d7fb32463c0f.jpg)  
+Source: IBES
+
+Importantly, even sectors that many see as under pressure, such as Consumer Discretionary, have not had the large downgrades that the market narrative might imply. Estimates were trimmed somewhat, but the reductions were small compared with past cycles.
+
+Figure 3: MSCI AC World ytd  
+![](images/9bb754259a114badd804694a942d8205030eabc1aaf7f79752bdcf23186af070.jpg)
+
+## Source: Datastream
+
+The Iran conflict remains volatile, but we continue to believe that investors should use the dips driven by geopolitical headlines to add exposure, the same stance we have held since the second half of March. We believe the market has become increasingly adept at pricing geopolitical risk as transitory, particularly as there remain strong incentives on both sides to de-escalate.
+
+The key risk, of course, is a sustained escalation that disrupts oil supply or triggers a broader regional conflict. However, our base case remains that the geopolitical backdrop improves in 2H.
+
+Q2 earnings projections appear punchy, but this is not a red flag
+
+Figure 4: 2Q '26 Earnings reporting calendar  
+![](images/8e5990efe02194e27699a8003e234b3df4912c80ac14b3d2bd6fcd209091f669.jpg)  
+Source: Bloomberg Finance L.P.  
+We are entering the Q2 earnings season, with the majority of US and European companies set to report their results in the next few weeks.
+
+Figure 5: S&P500 and Stoxx600 Blended 2Q '26e EPS growth  
+![](images/fb72875be782f6622e1081ad72c2d487fc818d8350c96095eaf06e37cab2f151.jpg)  
+Source: Thomson Reuters
+
+Unlike typical pre-reporting-season patterns where estimates are walked down ahead of results, this cycle has seen continued upward revisions. We believe this reflects genuine fundamental improvement, particularly in Europe where fiscal impulses, improving credit conditions, and a stabilizing China have supported earnings power.
+
+Figure 6: S&P500 Negative/Positive Pre-announcements ratio  
+![](images/6a75961082c8d4a4218d157f65f4d0f26aadfb5536d41b32e34dd7611a7bd59f.jpg)  
+Source: Thomson Reuters
+
+Negative pre-announcements are well below typical. We do not believe this is necessarily a red flag. The upward drift in estimates reflects the fundamental improvement in economic activity that became evident through Q2, particularly in Europe where the manufacturing recovery remained resilient despite geopolitical headwinds. We believe the rising estimates ahead of the current reporting season could potentially reflect genuine improvements in corporate fundamentals rather than analyst complacency.
+
+Figure 7: S&P500 Quarterly EPS since Q1' 24  
+![](images/276c7c91de1c1088ec0f29cbd08450d70952826a4af838b792cae3af0787b377.jpg)  
+Source: Thomson Reuters
+
+The S&P500 Q2 EPS forecast of \$81.7 represents a meaningful step up from the \$75 delivered in Q1.
+
+Table 2: S&P500 Quarterly Earnings Seasonality
+
+<table><tr><td></td><td>1Q</td><td>2Q</td><td>3Q</td><td>4Q</td><td>2Q vs 1Q</td></tr><tr><td>2010</td><td>19.7</td><td>21.5</td><td>21.8</td><td>22.6</td><td>9.1%</td></tr><tr><td>2011</td><td>23.5</td><td>24.1</td><td>25.7</td><td>24.6</td><td>2.6%</td></tr><tr><td>2012</td><td>25.6</td><td>25.8</td><td>26.0</td><td>26.3</td><td>0.8%</td></tr><tr><td>2013</td><td>26.7</td><td>27.4</td><td>27.6</td><td>28.6</td><td>2.6%</td></tr><tr><td>2014</td><td>28.2</td><td>30.1</td><td>30.0</td><td>30.5</td><td>6.7%</td></tr><tr><td>2015</td><td>28.6</td><td>30.1</td><td>30.0</td><td>29.5</td><td>5.2%</td></tr><tr><td>2016</td><td>27.0</td><td>29.6</td><td>31.2</td><td>31.3</td><td>9.6%</td></tr><tr><td>2017</td><td>30.9</td><td>32.6</td><td>33.5</td><td>36.0</td><td>5.5%</td></tr><tr><td>2018</td><td>38.1</td><td>41.0</td><td>42.7</td><td>41.2</td><td>7.6%</td></tr><tr><td>2019</td><td>39.2</td><td>41.3</td><td>42.1</td><td>42.0</td><td>5.4%</td></tr><tr><td>2020</td><td>33.1</td><td>28.0</td><td>38.7</td><td>42.6</td><td>-15.4%</td></tr><tr><td>2021</td><td>49.1</td><td>52.6</td><td>53.7</td><td>54.0</td><td>7.1%</td></tr><tr><td>2022</td><td>54.8</td><td>57.6</td><td>56.0</td><td>53.2</td><td>5.1%</td></tr><tr><td>2023</td><td>53.1</td><td>54.3</td><td>58.4</td><td>57.2</td><td>2.3%</td></tr><tr><td>2024</td><td>56.6</td><td>60.4</td><td>63.2</td><td>65.0</td><td>6.8%</td></tr><tr><td>2025</td><td>63.1</td><td>67.0</td><td>72.8</td><td>72.9</td><td>6.2%</td></tr><tr><td>Average</td><td></td><td></td><td></td><td></td><td>4.2%</td></tr><tr><td>Median</td><td></td><td></td><td></td><td></td><td>5.4%</td></tr><tr><td>2026e</td><td>75.0</td><td>81.7</td><td>88.6</td><td>91.9</td><td>8.8%</td></tr></table>
+
+Source: Thomson Reuters  
+Some of this can be attributed to seasonality. Historically, Q2 EPS is usually 4% higher than the delivery in Q1.
+
+Table 3: 2Q '26e EPS growth expectations
+
+<table><tr><td rowspan="2"></td><td colspan="4">Q2 &#x27;26e EPS growth, %y/y</td></tr><tr><td>US</td><td>Europe</td><td>Eurozone</td><td>Japan</td></tr><tr><td>Energy</td><td>122%</td><td>113%</td><td>97%</td><td>39%</td></tr><tr><td>Materials</td><td>29%</td><td>39%</td><td>30%</td><td>19%</td></tr><tr><td>Industrials</td><td>5%</td><td>12%</td><td>10%</td><td>11%</td></tr><tr><td>Discretionary</td><td>5%</td><td>5%</td><td>6%</td><td>22%</td></tr><tr><td>Staples</td><td>6%</td><td>11%</td><td>9%</td><td>22%</td></tr><tr><td>Health Care</td><td>-18%</td><td>-6%</td><td>4%</td><td>0%</td></tr><tr><td>Financials</td><td>8%</td><td>2%</td><td>0%</td><td>13%</td></tr><tr><td>IT</td><td>63%</td><td>13%</td><td>18%</td><td>18%</td></tr><tr><td>Com. Services</td><td>8%</td><td>7%</td><td>13%</td><td>10%</td></tr><tr><td>Utilities</td><td>15%</td><td>2%</td><td>7%</td><td>-35%</td></tr><tr><td>Real Estate</td><td>0%</td><td>6%</td><td>1%</td><td>0%</td></tr><tr><td>Market</td><td>22%</td><td>12%</td><td>12%</td><td>12%</td></tr><tr><td>Market Ex-Financials</td><td>26%</td><td>20%</td><td>21%</td><td>13%</td></tr><tr><td>Market Ex-Energy</td><td>18%</td><td>4%</td><td>5%</td><td>12%</td></tr><tr><td>Cyclicals</td><td>38%</td><td>13%</td><td>12%</td><td>16%</td></tr><tr><td>Defensives</td><td>-2%</td><td>-1%</td><td>7%</td><td>2%</td></tr></table>
+
+Source: IBES, JPM
+
+At first glance, consensus Q2 earnings growth projections look high, with the US at roughly 22% y/y and the Eurozone at around 12% y/y.
+
+Table 4: 2Q '26e Median EPS Growth expectations
+
+<table><tr><td rowspan="2"></td><td colspan="4">Q2 &#x27;26e Median EPS growth, %y/y</td></tr><tr><td>US</td><td>Europe</td><td>Eurozone</td><td>Japan</td></tr><tr><td>Energy</td><td>107%</td><td>99%</td><td>98%</td><td>10%</td></tr><tr><td>Materials</td><td>5%</td><td>21%</td><td>23%</td><td>25%</td></tr><tr><td>Industrials</td><td>6%</td><td>12%</td><td>11%</td><td>15%</td></tr><tr><td>Discretionary</td><td>4%</td><td>4%</td><td>10%</td><td>8%</td></tr><tr><td>Staples</td><td>8%</td><td>6%</td><td>2%</td><td>5%</td></tr><tr><td>Health Care</td><td>4%</td><td>2%</td><td>6%</td><td>6%</td></tr><tr><td>Financials</td><td>8%</td><td>4%</td><td>5%</td><td>12%</td></tr><tr><td>IT</td><td>25%</td><td>6%</td><td>14%</td><td>16%</td></tr><tr><td>Com. Services</td><td>4%</td><td>6%</td><td>7%</td><td>12%</td></tr><tr><td>Utilities</td><td>12%</td><td>4%</td><td>7%</td><td>-48%</td></tr><tr><td>Real Estate</td><td>-7%</td><td>21%</td><td>9%</td><td>9%</td></tr><tr><td>Market</td><td>8%</td><td>9%</td><td>8%</td><td>11%</td></tr><tr><td>Cyclicals</td><td>8%</td><td>11%</td><td>11%</td><td>13%</td></tr><tr><td>Defensives</td><td>8%</td><td>6%</td><td>7%</td><td>4%</td></tr></table>
+
+Source: IBES, JPM
+
+We believe this is achievable and broadly consistent with the macro backdrop. Median EPS growth projections at 8-9% are much more realistic. The gap between market-cap weighted and median figures is driven by a handful of large-cap names in IT (AI-related earnings step-up) and Energy (base effects from lower oil in Q2 2025), rather than reflecting overly aggressive assumptions across the board.
+
+Table 5: 2Q '26e Median Sales growth expectations
+
+<table><tr><td rowspan="2"></td><td colspan="4">Q2&#x27;26e Median Sales growth, %y/y</td></tr><tr><td>US</td><td>Europe</td><td>Eurozone</td><td>Japan</td></tr><tr><td>Energy</td><td>15%</td><td>37%</td><td>29%</td><td>20%</td></tr><tr><td>Materials</td><td>5%</td><td>5%</td><td>3%</td><td>10%</td></tr><tr><td>Industrials</td><td>6%</td><td>6%</td><td>5%</td><td>8%</td></tr><tr><td>Discretionary</td><td>6%</td><td>2%</td><td>2%</td><td>6%</td></tr><tr><td>Staples</td><td>3%</td><td>5%</td><td>5%</td><td>5%</td></tr><tr><td>Health Care</td><td>5%</td><td>6%</td><td>5%</td><td>7%</td></tr><tr><td>Financials</td><td>8%</td><td>6%</td><td>6%</td><td>0%</td></tr><tr><td>IT</td><td>16%</td><td>7%</td><td>11%</td><td>10%</td></tr><tr><td>Com. Services</td><td>8%</td><td>1%</td><td>1%</td><td>7%</td></tr><tr><td>Utilities</td><td>5%</td><td>3%</td><td>2%</td><td>3%</td></tr><tr><td>Real Estate</td><td>4%</td><td>6%</td><td>5%</td><td>19%</td></tr><tr><td>Market</td><td>7%</td><td>6%</td><td>5%</td><td>8%</td></tr><tr><td>Cyclicals</td><td>8%</td><td>6%</td><td>5%</td><td>8%</td></tr><tr><td>Defensives</td><td>5%</td><td>4%</td><td>2%</td><td>6%</td></tr></table>
+
+Source: IBES, JPM
+
+Topline growth is projected at 7% and 5% for US and Europe, respectively.
+
+Figure 8: Brent vs S&P500 sales growth  
+![](images/663fbf2a8535094d7a3a84d45825980e9fbda1563fd619acdb03160e020e2895.jpg)  
+Source: Bloomberg Finance L.P., S&P Global  
+Historically, higher oil prices have been consistent with strong topline delivery.
+
+Figure 9: Stoxx600 Sales growth and Brent  
+![](images/ab6229c87f7f492c053ca4b3ccf1e8ced4f083c2eb1d3011741bb87be07ff91d.jpg)  
+Source: Bloomberg Finance L.P., JPM
+This is true in Europe, as well.
+
+The OECD leading indicator has also been ticking higher.
+
+Figure 10: S&P Quarterly EPS surprise  
+![](images/20daceee2ec3fe9d5a09f02feeca745a91ae35f73294bb6793ae2e4e257f252b.jpg)  
+Source: Thomson Reuters  
+Historically, S&P 500 companies have exceeded consensus EPS estimates by roughly 5–6% on average over the past decade. While we still expect the earnings environment to be broadly supportive, we recognize that the magnitude of beats may fall short of the exceptional results delivered during the Q1 reporting season.
+
+Activity indicators remain consistent with further earnings upside  
+Table 6: Key global activity indicators
+
+<table><tr><td></td><td>1Q &#x27;25</td><td>2Q &#x27;25</td><td>3Q &#x27;25</td><td>4Q &#x27;25</td><td>1Q &#x27;26</td><td>2Q &#x27;26</td></tr><tr><td colspan="7">Real GDP, % oya</td></tr><tr><td>US</td><td>2.0%</td><td>2.1%</td><td>2.3%</td><td>2.0%</td><td>2.7%</td><td>2.3%</td></tr><tr><td>Euro Area</td><td>1.7%</td><td>1.6%</td><td>1.4%</td><td>1.2%</td><td>0.3%</td><td>0.3%</td></tr><tr><td>Japan</td><td>1.5%</td><td>1.8%</td><td>0.5%</td><td>0.4%</td><td>0.3%</td><td>0.2%</td></tr><tr><td>EM</td><td>4.4%</td><td>4.4%</td><td>4.2%</td><td>4.1%</td><td>4.3%</td><td>4.2%</td></tr><tr><td colspan="7">IP, %oya</td></tr><tr><td>US</td><td>0.0%</td><td>0.3%</td><td>1.6%</td><td>1.3%</td><td>0.7%</td><td>1.2%</td></tr><tr><td>Euro Area</td><td>2.1%</td><td>1.4%</td><td>1.4%</td><td>1.9%</td><td>-1.7%</td><td>-0.3%</td></tr><tr><td>Japan</td><td>2.8%</td><td>0.1%</td><td>-1.2%</td><td>-1.3%</td><td>1.2%</td><td>2.0%</td></tr><tr><td colspan="7">PMI Composite</td></tr><tr><td>US</td><td>52.6</td><td>52.2</td><td>54.5</td><td>53.8</td><td>51.7</td><td>51.8</td></tr><tr><td>Euro Area</td><td>50.4</td><td>50.4</td><td>51.0</td><td>52.3</td><td>51.3</td><td>49.1</td></tr><tr><td>Japan</td><td>50.7</td><td>51.0</td><td>51.6</td><td>51.5</td><td>53.3</td><td>52.0</td></tr><tr><td>EM</td><td>52.3</td><td>51.5</td><td>52.4</td><td>52.3</td><td>52.9</td><td>53.1</td></tr><tr><td>German IFO</td><td>84.1</td><td>86.8</td><td>87.9</td><td>87.4</td><td>87.6</td><td>85.8</td></tr><tr><td colspan="7">CPI, %oya</td></tr><tr><td>US</td><td>2.7%</td><td>2.5%</td><td>2.9%</td><td>2.8%</td><td>2.7%</td><td></td></tr><tr><td>Euro Area</td><td>2.3%</td><td>2.0%</td><td>2.1%</td><td>2.1%</td><td>2.0%</td><td>3.0%</td></tr><tr><td>Japan</td><td>3.8%</td><td>3.5%</td><td>2.9%</td><td>2.7%</td><td>1.4%</td><td>1.4%</td></tr><tr><td>EM</td><td>3.2%</td><td>3.1%</td><td>2.7%</td><td>2.8%</td><td>3.1%</td><td>3.5%</td></tr><tr><td colspan="7">Consumer Sentiment</td></tr><tr><td>US</td><td>64.5</td><td>55.0</td><td>58.3</td><td>52.5</td><td>55.4</td><td>48.0</td></tr><tr><td>Euro Area</td><td>-12.7</td><td>-14.1</td><td>-13.6</td><td>-12.9</td><td>-13.7</td><td>-19.1</td></tr><tr><td>Japan</td><td>34.2</td><td>32.7</td><td>34.2</td><td>36.4</td><td>37.0</td><td>32.8</td></tr><tr><td colspan="7">Unemployment rate, %</td></tr><tr><td>US</td><td>4.1</td><td>4.2</td><td>4.3</td><td>4.5</td><td>4.3</td><td>4.3</td></tr><tr><td>Euro Area</td><td>6.3</td><td>6.3</td><td>6.3</td><td>6.3</td><td>6.3</td><td>6.2</td></tr><tr><td>Japan</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.6</td><td>2.7</td><td>2.5</td></tr></table>
+
+Source: JPM, Bloomberg Finance L.P.
+
+The Iran conflict's economic impact showed up across multiple indicators, from rising inflation pressures to softer PMI momentum. Still, overall activity was far more resilient than most had feared.
+
+Figure 11: US CESI  
+![](images/984e93328b5bd516375d2ea8f0cf31437d102e2de6ea152fa0beebd1f671f89d.jpg)  
+Source: Bloomberg Finance L.P.
+
+Economic surprise indices, which measure data outcomes relative to expectations, have rebounded sharply since late April.
+
+Figure 12: Eurozone CESI  
+![](images/cbd64034ff2ecc6f68fafc85b87f91782b188153965057a4e75ebe18112f9fd6.jpg)  
+Source: Bloomberg Finance L.P.
+
+The Eurozone economic surprise index has also been trending higher and is now in positive territory.
+
+Figure 13: US OECD Leading Indicator  
+![](images/807533c10c7511da9336dbc69181d9f9de709f071181f6ce140e8f04c0bf4fd2.jpg)  
+Source: Bloomberg Finance L.P.
+
+Figure 14: OECD Leading indicator and Eurozone 12m trailing EPS  
+![](images/2df10f287a690f7019b6ceb99ab1b7551c77a2bd8e397b009dbca8fe73bf4217.jpg)  
+Source: Bloomberg Finance L.P., IBES
+
+Historically, the OECD CLI has been a reliable lead indicator for global corporate earnings, with a lead time of 6 months. The current trajectory of the CLI is consistent with continued positive earnings surprises through the second half of 2026, and argues against the view that earnings growth is set to roll over.
+
+Figure 15: S&P500 Operating EPS and Jobless Claims  
+![](images/0f9fdc2be1295b0061d4ac9cbe0ff4d712bbb27efe329c1b7cbd60ed3d451897.jpg)  
+Source: S&P Global, Datastream
+
+US jobless claims have stayed notably resilient. Recent weekly readings point to a labour market that is easing gradually rather than weakening abruptly. This matters for the earnings outlook because moderating wage growth is still underpinning consumer spending while also reducing cost pressure for corporates. We view this as a Goldilocks backdrop for U.S. profit margins.
+
+Figure 16: ‘European Cyclicals vs Defensives 12m forward EPS  
+![](images/eb0ac56d3028293631e08ad7af0ba948b247bcefd25338afbb441c3c765bcef5.jpg)  
+Source: IBES
+
+We see this macro backdrop as particularly supportive for Cyclical sectors, where the earnings recovery has further to run given the low base from the past 2-3 years of relative weakness.
+
+Figure 17: European Cyclicals v Defensives EPS and Taiwan Export Orders  
+![](images/3c3214f56571d28846ec04aa295855e492f99dd004e9a26bd500f28672e18e54.jpg)  
+Source: IBES, JPM.
+
+We also highlight the resilience in Taiwan's export orders, which typically aligns with an improving earnings trajectory, particularly for cyclicals.
+
+Eurozone EPS revisions closing the gap with the US
+
+Figure 18: MSCI Eurozone and SPX Weekly EPS Revisions  
+![](images/c11c5bbd97bf570d4162e307e686ef033e355f7d87097dfca5c809024d79474e.jpg)  
+Source: IBES
+
+Eurozone EPS revisions have strengthened in recent weeks, turning decisively positive, while the divergence versus U.S. EPS revisions has tightened and may be on the verge of fully closing for the first time since early 2025. This is a meaningful shift. Over the past three years, European earnings have consistently fallen short of consensus expectations, with the EPS revisions ratio remaining structurally below that of the US.
+
+Figure 19: Eurozone EPS revisions vs US  
+![](images/e582a490dba254923361eb2c52a93234b71736bc2bc111136641142a9a88bee7.jpg)  
+Source: IBES
+
+We believe this improvement can continue, and expect the Eurozone to deliver strong double-digit EPS growth this year, in contrast to the stagnation of the past three years.
+
+Figure 20: US vs Europe Sales estimates beats and EURUSD  
+![](images/e0e3e54cfac71a7bcae4b5f0798887336d79ff43a6bce93d7b76c4b6b48f5756.jpg)  
+Source: Bloomberg Finance L.P., JPM
+
+The drivers are multiple: better operating leverage from recovering revenues, fiscal stimulus feeding through to Industrial and Defence sectors, a weaker EUR supporting exporters, and the tailwind from lower energy costs.
+
+Figure 21: MSCI Eurozone sectors ytd change in 2026e EPS  
+![](images/ede4dd39b875c9134a1fe18655523d6a9b4b70296ad40db2e74fbebc3dae555a.jpg)
+
+## Source: IBES
+
+The extent of positive earnings revisions across Eurozone sectors stands out. While Mining and Energy have recorded the largest upgrades in absolute terms, largely reflecting commodity price mark-to-market effects, the upswing is far more widespread. Capital Goods remains supported by the electrification and AI capex supercycle, Semis are benefitting from the memory upturn, and Banks continue to see support from resilient net interest income.
+
+Figure 22: European Cyclicals vs Defensives +ve to -ve EPS revisions  
+![](images/3bfb5ff8873aac3ea579e2913ece82f3078747904c9da034ee3d8a0a559e3cc1.jpg)
+
+## Source: IBES
+
+The inflection higher in Cyclical sector earnings revisions relative to Defensives has continued to develop. The spread between Cyclical and Defensive revisions has moved firmly into positive territory. This is consistent with the improving PMI backdrop and rising IFO expectations, both of which historically lead Cyclical earnings inflections by several months.
+
+We expect the improvement to have further runway. Europe's fiscal impulse is skewed toward cyclicals, with defence outlays, infrastructure investment, and power grid upgrades, and many of these initiatives are still at an early stage of rollout. This backdrop should support continued earnings outperformance from cyclical sectors through the rest of 2026 and into 2027.
+
+At a sector-level, Banks earnings could look reassuring and Semis appear set up for rebound...
+
+Figure 23: MSCI Europe Banks - EPS and price relative  
+![](images/d959795696564322986a0d037b0d7f7bae375fec40d4f8d59879a6cee1837a85.jpg)  
+Source: IBES, Datastream
+
+Banks are likely to report a reassuring set of second quarter results. Net interest income has proven more resilient than feared despite earlier rate cuts, helped by hedging actions and a pickup in loan demand. Fee income, particularly across investment banking and wealth management, has also surprised to the upside this year. We expect banks to modestly exceed second quarter consensus, with constructive commentary on the net interest income path helping to reinforce confidence in the durability of the sector's earnings.
+
+Figure 24: Eurozone - private loan growth  
+![](images/f707c79057e41bb5ca39ef2e81bc0de73c8072a720fc924bedd0d6108f2147f9.jpg)  
+Source: ECB
+
+European lending growth has been trending higher, which should support continued earnings strength for the Banking sector.
+
+Figure 25: MSCI Europe Semis relative and EPS relative  
+![](images/8bbeaed3d58e06fe29b2f6b120f6bcfe1bd3adf40d29d78798443c4e36710a60.jpg)  
+Source: IBES
+
+Semis offer one of the more compelling tactical setups into reporting season. A clear gap is emerging between price and earnings momentum. The sector has been weak in recent weeks amid profit-taking and geopolitical overhangs, yet earnings revisions have continued to grind higher, supported by firm memory pricing, amid resilient AI-led demand. We think strong Q2 prints could provide the catalyst to narrow this disconnect and drive a meaningful rebound across the group.
+
+Our sector analysts expect Q2 to show continued order momentum, with positive commentary on 2027 capacity plans. The larger-than-expected capex announcements from TSMC, Samsung and others earlier this year reinforce the structural demand story.
+
+...while Energy could look vulnerable
+
+Figure 26: MSCI Europe Energy relative vs Brent  
+![](images/e7556be002fbb87367b2b68c59888871b60f55c2bce1f045726ff00766a1e61d.jpg)  
+Source: Datastream, Bloomberg Finance L.P.
+
+In contrast, the Energy sector's earnings relative remains hostage to the oil price volatility. Through much of 2025, Energy stocks traded at a significant discount to what spot oil implied, providing a margin of safety. That gap had largely closed before last week's jump in oil prices.
+
+While the Iran conflict has provided intermittent support to oil prices, we believe the structural supply picture argues for lower oil over a 12-month horizon. Energy earnings revisions are likely to flatten as the base effects from last year and conflict-driven oil spike fade, and we maintain our Underweight stance on the sector.
+
+Figure 27: MSCI Europe Energy 12m Fwd EPS relative and Brent  
+![](images/9fa020fb411337edbceadccbf423ee735246374026800d2f5f920aef358d5fd9.jpg)  
+Source: IBES, Bloomberg Finance L.P.
+
+Energy earnings estimates are up roughly 45% since the conflict began, tracking the move higher in Brent, and Q2 earnings should reflect this. Earnings relative now sits in line with the oil price, so there is no gap between the two.
+
+## Consumer sectors earnings are likely to be mixed, but the market may look through
+
+Consumer sectors are likely to deliver mixed results in Q2, with Hotels and Airlines showing positive momentum while Autos and parts of Retail remain under pressure. However, we believe the market could look through near-term earnings weakness in these sectors, expecting an inflection point in 2H. As we outlined in our recent note, consumer confidence is at contrarian lows, tariff rates have come down, oil prices are sequentially down, and the central bank hiking cycle is likely approaching its peak. This is all supportive for the consumer outlook on a forward-looking basis.
+
+Figure 28: European Consumer sectors relative ytd  
+![](images/438a0f7b2a74694ce2f8ed231cb3cc542de7e004ca7e533e9863b1af66b327c0.jpg)  
+Source: Datastream, Bloomberg Finance L.P.
+
+We see three areas as particularly attractive. First, Luxury, where demand from Korea remains strong and trends in China are stabilising. Second, Airlines, which should benefit from lower jet fuel costs and easing geopolitical restrictions. Third, Hotels, Restaurants and Leisure, where RevPAR is improving and the FIFA World Cup could provide a near-term catalyst in the US.
+
+Table 7: Q2 Earnings Preview by Sector Analysts
+
+<table><tr><td>Sector</td><td>(+)/(-)</td><td>Comments</td></tr><tr><td>Energy</td><td>(+)</td><td>Middle East de-escalation is the sector's key near-term variable. EU Oils price performance is correlating most closely to 1-2Y forward oil prices (over spot volatility) and the 2027 FCF yield is now 11.0% at $75/bbl Brent. With that in mind, 2Q screens as strong absolute but backward looking (eg: avg oil price near $105/bbl vs spot $70-75). In parallel, potential variations in O&amp;G price capture, trading and cash conversion point to a wider than usual range around consensus expectations. Against that backdrop, sector analysts tactical views into reporting are: 1) Refining is re-strengthening on tight stocks, renewed supply constraints and a parachute effect vs. moderating oil prices. Longevity remains to be seen but, near term, this favours downstream geared midcaps led by OW Galp and N Repsol; 2) OW Galp for 2H. A catalyst-rich outlook creates scope to re-rate with less oil price dependency than peers. Results should also bring welcome FY upgrades, though the Street appears to be in the right ballpark; 3) Majors. The backdrop limits relative 2Q conviction across the large-caps. They favour OW TotalEnergies for sound cash conversion, deleveraging and potential for a further SBB increase to $2bn ('26 cash yield 9.4%). High end financial leverage and corporate flux heighten the importance of strong EPS capture at N BP</td></tr><tr><td>Metals &amp; Mining</td><td>(-)</td><td>Cost inflation is key concern into H1'26 results. Sector analysts see potential for earnings disappointments and upside risk to 2026 cost guidance. This is largely driven by higher diesel, freight, sulfuric acid and other raw material costs.Cost inflation is key risk specifically at Glencore (higher sulfuric acid costs in DRC), Anglo American (freight costs at Kumba &amp; weakness in diamonds).</td></tr><tr><td>Chemicals</td><td>(-)</td><td>Cyclical chemical stocks have lagged in recent weeks as easing Middle East (ME) geopolitical risk shifts investor focus away from potential 2Q26 earnings beats and back toward structural headwinds: significant industry overcapacity (especially in China) and intensifying competition in specialty products from Chinese and other Asian producers. Sector analysts see substantial downside risk to 3Q26/2H26 and 2027 consensus earnings across much of the cyclical chemicals complex, with estimates still well above the weak early 2026 earnings run-rate seen before the ME-driven uplift. With the geopolitical backdrop evolving and worsening earnings exit rates coming out of 2Q26, management teams may guide conservatively for 2H26 even if they deliver 2Q beats. Brenntag's trading update last evening illustrates the disconnect: despite guiding 2Q adjusted EBITDA to ~22% above Vara consensus, the midpoint of its upgraded FY26 adjusted EBITDA guidance still implies ~12% downside versus current 2H26 consensus (with top-end of new guidance in line with current consensus). Overall, a likely return of "sector blues" argues for greater selectivity and an emphasis on favorable bottom-up stories.</td></tr><tr><td>Construction Materials</td><td>(+)/(-)</td><td>Overall, sector analysts would expect Q2 results to showcase greater pricing impact in the numbers given recent actions taken, with volumes also showing an improvement, particularly given how Q1 was impacted by adverse weather. In terms of regional commentary, from their pre-close calls, commentary on trends in Europe were positive excluding the UK, which has been challenging; and in the US, activity remains generally positive with strong activity in the data-centre and infrastructure segments offsetting weak residential; whilst the roofing end-market continues to be up against tough comps; Australia continues to improve; Latam and in particular Mexico remains strong, and Saint-Gobain highlighted that trends remain strong in Asia and Emerging Markets; though China remains weak.</td></tr><tr><td>Capital Goods</td><td>(+)</td><td>The Q2 setup looks positive for the most part, given 1) swift price/cost management across our sector analysts coverage since Q1; 2) the still-strong end markets of AI/DC/wider Electrification, and Mining, alongside; and 3) a recovery in Discrete (particularly in China). They may also see some IEEPA tariff refunds too. More important for share prices as they enter and exit Q2, however, are the latest terminal debates which emerge each quarter, noting "SaaSmageddon" was front of mind heading into Q1, which has been superseded by 1) concerns of peak orders in GW and / or pricing terms for new CCGTs; 2) Grid investment sustainability beyond 2030; and 3) the 800VDC winners / losers debate.</td></tr><tr><td>Luxury</td><td>(+)/(-)</td><td>• Q2 26 to be in line to slightly better than Q1. Sector analysts expect Q2 luxury sales c.+4% yoy on average growth, broadly in line with the Q1 +4% sector average, and retail growth at +6% ex-FX. Within the mix, they expect ongoing strength of the American consumers (our Chase credit card data continue to suggest an improvement of discretionary spend - see link for Chase card disclosures), solid trends with the Korean cohort and the region, and the continued resiliency of the Japanese clientele. For Europe, they also expect to hear more positive commentary around the tourist spend during peak season, albeit mixed depending on the nationality exposure. The only region where we expect more muted trends in Q2 than in Q1 is China, following a good Chinese New Year and with most data points they track pointing to still volatile, and overall lacklustre, patterns. Against this backdrop, they think performance will remain polarised, with outperformance driven by self-help factors such as desirability, brand momentum and specific category exposure.• A mixed picture on margins. With a still muted topline in most cases, they anticipate an ongoing focus on cost control and not much operating leverage as of yet. Forex should also remain a headwind to H1 margins, albeit a fading one, notably towards the second half of Q2. They anticipate material margin expansion at some of the turnaround stories (e.g. Ferragamo, Swatch), on very depressed profitability levels, mainly thanks to self-help measures and the stabilisation of top lines. Out of the stronger stories, they expect Brunello Cucinelli to stand out, not just for its better top-line dynamics, but also for its ongoing steady progress on margins (JPMe: +30bps in H1).• Moving back to tougher comps, but how tough are they? Going into Q3, comps will be tougher across the board – nearly 500bps on average for the sector and, in some cases, such as Richemont, as tough as 800bps. Given the ongoing volatility in China and this tougher base of comparison, they expect comments on current trading to remain vague and generally cautious throughout reporting. That said, they do wonder whether comps might look tougher than they actually are. Recall Q3 24 saw a very sudden and deep drop in Chinese consumer demand and hence Q3 25, showing a stabilisation exactly with this cluster, should be looked at together with the prior year. On a two-year basis, comps are actually 200bps tougher sequentially. By company, on this basis, Richemont JM and Kering have the toughest comps Q3 on Q2, while Brunello Cucinelli and LVMH F&amp;LG look a lot easier than on a YoY basis (both have 1% tougher comp sequentially Yo2Y instead of 5% and 7% tougher, respectively). The stock with the most favourable comps into Q3 is Moncler (100bps tougher YoY but 700bos easier Yo2Y), and it is one of their preferred names into H2 26.</td></tr><tr><td>Staples</td><td>(-)</td><td>In Food/HPC, sector analysts expect L'Oreal, with a robust adjusted LFL in the quarter at +5.1% as our data tracking evidences continued share gains, although they flag that the Beauty market is not showing signs of acceleration while recent data points to risk of deceleration amid tough H2 comps. In Beverages they previewed the brewers, broadly lowering their estimates as Q1 tailwinds reverse and consumer wallets remain pressured. They expect a sequential deceleration in organic volumes for ABI at JPMe +0.4% with the US and Europe showing weak sell-put data, while LatAm should prove more resilient, and for Carlsberg at JPMe +1.3% with Asia performance weighted by bad weather in China. Meanwhile, Heineken's consolidated volumes should remain stable at JPMe -0.1% with continued momentum in AME and APAC offset by category softness in the Americas. On the Spirits, we previewed Campari where they expect Q2 to reassure on consistent growth of JPMe LFL sales +2% despite tough comps, and Pernod-Ricard where US and China should weigh on FY26 at JPMe LFL -3.8%, at the bottom end of the guide for -3.4%.</td></tr><tr><td>Food &amp; Drug Retail</td><td>(+)/(-)</td><td>Ahold (UW, -CW, AFL): Sector analysts have Ahold Delhaize on -CW ahead of 1H26 results on Aug 5. For context, recall that they had placed the shares on our AFL in early May as the cracks in the investment case were appearing more evident - given a slowdown across the broader market and Circana data that implies a deceleration in run rates, they expect 2Q to be reflective of further top line slowdown/volume pressure, coupled with price investments denting margins, in contrast to rather bullish market expectations.Carrefour (UW, -CW): They have Carrefour on -CW ahead of 1H26 results on July 23. Share outperformance and investor positioning imply a positive inflection in the equity story, whilst in turn, their analysis suggests that 1H26 might turn out to be a downgrade event. They estimate group ROI +1.6% y/y in 1H, sitting DD% below the St, with significant deviations in all three markets - group margins stay flattish on our forecasts vs guidance for 25bps expansion.Jeronimo (OW, AFL): Ahead of 2Q results on 29 July, they acknowledge that trading pressures appear greater-than-expected. The leading indicators have been rather lackluster: grocery implied volumes contracted to -MSD% in April-May, food CPI surprised to the downside and moved into negative territory (0.3% in June, negative for the first time since 2015), and the Easter timing effect is unfavorable for 2Q. With this in mind, we estimate 2Q Biedronka LFL at -1.5% with EBITDA margins still +8bps y/y given sound cost management and steadily expanding in 2H by 20bps y/y.</td></tr><tr><td>Banks</td><td>(+)</td><td>European Banks' valuations remain attractive at 10.1x P/E, 1.6x P/TBV for 17.1% RoTE in 2027e offering a total yield of c7.5% p.a. in 2026-28e. Our sector analysts remain constructive on the sector and believe long-term implied CoE should decline to c9% in line with post GFC lows seen in 2017-2018 (from c10% currently) given: 1) European Banks at a still material 2 yr fwd P/E discount of c30% vs. other sectors (SX7P vs. SXXP), 2) strong/better quality capital position, with an average CET1 ratio of 14%+, as well as the ability to absorb c270bps of provisions before breakeven, 3) healthy pre-provision operating profit growth of 6.9% p.a. over 2025-28E, 4) cost discipline with 1.8% p.a. costs CAGR '25-28E and 5) excellent capital management, balancing buybacks against selective acquisitions so far. Their top picks are BARC, Natwest, DB, SocGen, Caixabank, Standard Chartered and Erste.</td></tr><tr><td>Tech Hardware &amp; Semis</td><td>(+)</td><td>Into 2Q results, our analysts expect continued resilient earnings performance and forward looking commentary across 2026 and the medium term including on: 1) ECB rates trajectory and the NII outlook/sensitivities with some guidance upgrades expected considering: a) Rates trajectory with Euribor forward rates currently pricing 2.6%/2.8% vs. our analysts' assumptions of 2.25/2.4% in '26/27E, b) deposit beta developments post the ECB rate hike and amidst expectations for further hikes, c) loan demand, asset pricing and margins given the changed rates expectations and macro uncertainty although loan growth has remained resilient, d) impact of hedging actions and reinvestment yields amidst an uptick in long-term bonds yields; 2) The outlook for Non-NII where our analysts expect another strong quarter for IB revenues across Markets (+14% y/y in 2Q26E) as well as IB fees (+24% y/y); 3) Asset quality, which continues to be benign but our analysts see further normalization of cost of risk across the medium term from a strong starting position; 5) Capital return, with some banks expected to announce interim dividends and buybacks; 6) Comments regarding M&amp;A amidst some recent pick-up in activity across most European regions.</td></tr><tr><td>Software</td><td>(+)/(-)</td><td>For Semiconductor devices, AI exposed companies to see strong trends: AI Data Centre remains the most dynamic end-market with rapid growth expected to be reported in Q2 driven primarily by volume, but also price with Infineon, STMicroelectronics reporting price increases. Automotive is likely to improve driven by tight supply driving orders from automotive tier-1s and OEMs. The restocking in the industrial semi market is expected to continue. The consumer semi mkt is challenged (especially Mobile) as high DRAM prices are resulting in end-product price increases that are reducing demand.SemiCap is likely to see a strong trends and we expect most companies will guide to improving momentum in Q3 sales (and orders where reported). Companies are likely to report very high visibility into 2027 as well as increasing confidence on ability to increase supply (to meet surging demand). Investors will look to order strength or if that metric is not reported to capacity increase indications.</td></tr><tr><td>Utilities</td><td>(+)</td><td>SAP: Macro dynamics remain broadly unchanged into Q2, with management maintaining a constructive tone but acknowledging ongoing conflict-related risks. Sector analysts note that the 2026 guidance assumes a near-term de-escalation of the Middle East conflict. Recent pipeline commentary is positive, but the market needs clearer evidence of tangible AI monetisation to drive re-acceleration. For Q2, we model group revenue of €9.8bn (~10% YoY cc), current cloud backlog of ~24% YoY cc, non-IFRS EBIT of €2.86bn (29.1% margin) and FCF of €2.97bn.Dassault Systèmes: Q2 results are expected to be broadly in line with guidance, with Bloomberg consensus at 3.3% revenue growth YoY cc, matching the midpoint of company guidance (2-5% YoY cc). Medidata's growth is expected to remain negative, while Industrial Innovation could improve. They model Q2 revenue of €1.54bn (3.4% YoY cc), EBIT of €485m (29.7% margin), and adj. EPS of €0.30. Consensus continues to build in an acceleration in H2, but we see limited conviction in sustained performance.Amadeus: Q2 is likely to see the most pronounced volume pressure, with air distribution bookings and passengers boarded expected to be negative YoY due to Middle East disruptions. Pricing remains a partial offset, with healthy growth in revenue/booking and revenue/PB. For Q2, they model group revenue of €1.65bn, with Q2 Air Distribution Bookings of 113m (-5.4% y/y) and Air IT Passengers Boarded of 562m (-2.1% y/y). They model Q2 gross margin of ~76% and adj. EBIT of €503m (30.4% margin).</td></tr></table>
+
+Source: JPM, Bloomberg Finance L.P.
+
+Going into the reporting season, our analysts are particularly bullish on Cap Goods, Semis, and Banks, while earnings for Chemicals and Staples appear vulnerable.
+
+Figure 29: SPW vs SPX ytd
+
+![](images/c1a907789a793fe7d0e883fbb60ab7c22b3fc9a38a2992bd034edb5939ac01ce.jpg)  
+Source: Bloomberg Finance L.P.
+
+We believe the rotation and broadening in market leadership that became evident in Q2 is likely to have legs. The S&P500 equal-weighted index has outperformed the market-cap weighted index by approximately 5% since the May lows, as the AI concentration trade has given way to a more diversified earnings recovery.
+
+Figure 30: S&P500 companies outperforming on a 3m/m lookback  
+![](images/d9e9d6ef1db3b1e8f642b424fa3e966c6dc0d928922a01f6a570cd4ac837e43c.jpg)  
+Source: Datastream  
+We think this broadening is in its early stages, supported by the convergence in earnings growth between Mag-7 and the rest of the market.
+
+Rotation and broadening in leadership has legs  
+Figure 31: Mag 7 and S&P 500  
+![](images/3953d822b8261b15760d9b4a6a4d9f75336e54d84d713147344472e7b6a2ef76.jpg)  
+Source: Bloomberg Finance L.P.
+
+This dynamic will naturally bring periodic spikes in volatility as leadership rotates out of mega-cap winners and into laggards, which can make index-level price action feel choppy. In our view, however, this is unlikely to translate into a sustained market drawdown. The key difference versus prior correction episodes is that earnings fundamentals remain robust, and the rotation is unfolding within an improving profit cycle rather than at a late-cycle peak. Notably, S&P500 is down less than 2% from the recent peak, despite Mag-7 registering a much bigger drawdown.
+
+Figure 32: Mag-7 Earnings Growth minus S&P500 ex Mag-7 Earnings growth  
+![](images/30bc8e253ef60d1eec358ddaaff5e9d1eca87df934ffbab894163d23cf325346.jpg)  
+Source: JPM, Bloomberg Finance L.P.
+
+After a few quarters of convergence between the Mag-7 EPS growth and that of S&P500 ex Mag-7, Q1 reporting saw the gap widen once again. However, we estimate that revaluation of investments contributed meaningfully to the Q1 earnings delivery for the group.
+
+Figure 33: Mag -7 earnings growth - delivered and expected  
+![](images/16efc62b80e31182771ae77fac7c5a782f03ebcef56a6b636a05be2f360149d7.jpg)  
+Source: JPM, Bloomberg Finance L.P., IBES
+
+We estimate that core earnings growth for the Mag-7 names was close to 25%, versus the 63% EPS growth reported. We believe that this convergence trend will once again be re-inforced during Q2, creating a constructive backdrop for the equal weight trade and for Cyclical and Value factors more broadly.
+
+Table 8: Profit warnings so far
+
+<table><tr><td>Company Name</td><td>Ticker</td><td>Commentary</td><td>Date</td><td>1Day Perf relative to market, %</td><td>Sector</td></tr><tr><td>BAYERISCHE MOTOREN WERKE AG</td><td>BMW GR</td><td>Downturn in its Chinese automotive market</td><td>19 Jun</td><td>1.1%</td><td>Discretionary</td></tr><tr><td>PRIMORIS SERVICES CORP</td><td>PRIM US</td><td>Challenges in its renewable business</td><td>22 Jun</td><td>7.3%</td><td>Industrials</td></tr><tr><td>WINNEBAGO INDUSTRIES</td><td>WGO US</td><td>Towable RV market is stalling</td><td>25 Jun</td><td>13.2%</td><td>Discretionary</td></tr><tr><td>CONCENTRIX CORP</td><td>CNXC US</td><td>AI is shrinking demand for its core customer experience outsourcing business</td><td>30 Jun</td><td>-12.0%</td><td>Industrials</td></tr><tr><td>TOPPS TILES PLC</td><td>TPT LN</td><td>Challenging market conditions and reduced consumer spend</td><td>01 Jul</td><td>-4.8%</td><td>Discretionary</td></tr><tr><td>ASSOCIATED BRITISH FOODS PLC</td><td>ABF LN</td><td>Weak outlook and sugar business</td><td>01 Jul</td><td>-3.0%</td><td>Staples</td></tr><tr><td>NURMINEN LOGISTICS OYJ-A</td><td>NLG1V FH</td><td>Increase in railway tariffs for rail transport to Finland</td><td>02 Jul</td><td>-2.5%</td><td>Industrials</td></tr><tr><td>KURA SUSHI USA INC-CLASS A</td><td>KRUS US</td><td>Weak sales outlook by restaurant operator</td><td>07 Jul</td><td>-5.3%</td><td>Discretionary</td></tr><tr><td>BOKU INC-REG S</td><td>BOKU LN</td><td>Delays in product launching</td><td>08 Jul</td><td>-30.5%</td><td>Financials</td></tr></table>
+
+Source: Bloomberg Finance L.P., JPM.
+
+## Equity Strategy Key Calls and Drivers
+
+We have consistently argued since the second half of March to use the equity weakness brought on by the Iran conflict to buy into. In March, we also highlighted that Mag-7 has started to trade at its cheapest in 10 years, and that the AI-at-risk group of stocks has already crashed, becoming record cheap. While we do not necessarily expect a repeat of 2025, when the equity rally was almost exclusive to Mag-7 for most of the 2H, we believe there is more upside for Mag-7 over the next few months, as earnings are more than compensating for the stocks' rebound. We also find the EM memory trade has legs, as meaningful supply additions are not coming before the start of 2028. Stay OW EM equities. With MXWO and MXEF at fresh highs, having more than V-shaped, is the downside risk greater than the upside one from here? We think further upside is likely as investor positioning is lighter currently than pre-conflict, P/Es are lower, we remain very bullish on the broad earnings outlook, with lead indicators pointing to continued acceleration. Further, equities are not all that complacent beneath the surface – current market breadth is very narrow – we think this is a good sign this time around, as the rally to date was more driven by AI, an orthogonal trade to geopolitics, and nearly all consumer plays are still at lows. This can change, with broadening in participation in 2H. We do not expect bond yields to rise in 2H, we see big differences from the 2022 template, and do not see stagflation as the most likely outcome for 2H. Wage growth is moving lower this time around, and corporates are unlikely to exhibit sustained pricing power, with AI anxiety an overhang on sentiment in labour markets, as well. While some hikes can happen, we think the magnitude that the market is already pricing in is likely to reduce.
+
+Table 9: JPM Equity Strategy — Factors driving our medium-term views
+
+<table><tr><td>Driver</td><td>Impact</td><td>Our Core Working Assumptions</td><td>Recent Developments</td></tr><tr><td>Global Growth</td><td>Neutral</td><td>Hard labour market data has been a bright spot, but that can change quickly</td><td>Global composite PMI is at 52.0</td></tr><tr><td>European Growth</td><td>Positive</td><td>Fiscal policy changes and energy inflation to drive GDP revisions</td><td>Eurozone Manufacturing PMI is at 51.4</td></tr><tr><td>Monetary Policy</td><td>Neutral</td><td>Fed on pause</td><td></td></tr><tr><td>Currency</td><td>Neutral</td><td>Longer term bearish dollar view intact</td><td></td></tr><tr><td>Earnings</td><td>Positive</td><td>Eurozone earnings set to improve in 2026</td><td>2026 EPS projections are improving</td></tr><tr><td>Valuations</td><td>Negative</td><td>At 21x, U.S. forward P/E is still stretched, especially vs real yield</td><td>MSCI Europe on 14.8 Fwd P/E</td></tr><tr><td>Technicals</td><td>Neutral</td><td>Sentiment indicators appear close to oversold now, though positioning is still stretched</td><td>Households&#x27; equity weight as a share of total assets is at record high</td></tr></table>
+
+Source: JPM estimates
+
+Table 10: Base Case and Risks
+
+<table><tr><td>Scenario</td><td>Assumption</td></tr><tr><td>Upside scenario</td><td>Fed on pause while inflation remains in check and growth is stronger</td></tr><tr><td>Base-case scenario</td><td>Economic growth, inflation remains sustainable and Fed policy rate on hold, geopolitical uncertainty subsides</td></tr><tr><td>Downside scenario</td><td>Fed hikes rates with inflation picking up. Geopolitical uncertainty escalates further</td></tr></table>
+
+Table 11: Index targets
+
+<table><tr><td></td><td>Dec &#x27;26 Target</td><td>Current</td><td>% upside</td></tr><tr><td>MSCI EUROZONE</td><td>420</td><td>380</td><td>10%</td></tr><tr><td>FTSE 100</td><td>11,000</td><td>10,489</td><td>5%</td></tr><tr><td>MSCI EUROPE</td><td>2,750</td><td>2,531</td><td>9%</td></tr><tr><td>EURO STOXX 50</td><td>6,800</td><td>6,205</td><td>10%</td></tr><tr><td>STOXX 600 E</td><td>680</td><td>636</td><td>7%</td></tr></table>
+
+Source: JPM estimates.  
+Source: JPM
+
+Table 12: Key sector calls
+
+<table><tr><td>Overweight</td><td>Neutral</td><td>Underweight</td></tr><tr><td>Mining</td><td>Utilities</td><td>Energy</td></tr><tr><td>Capital Goods</td><td>Healthcare</td><td>Media</td></tr><tr><td>Semis</td><td>Autos</td><td>Staples</td></tr><tr><td>Construction Materials</td><td>Telecoms</td><td>Insurance</td></tr><tr><td>Luxury</td><td>Real Estate</td><td></td></tr><tr><td></td><td>Chemicals</td><td></td></tr><tr><td></td><td>Banks</td><td></td></tr><tr><td></td><td>Technology Hardware</td><td></td></tr></table>
+
+Source: JPM.
+
+Table 13: JPM Equity Strategy — Key sector calls\*
+
+<table><tr><td>Sector</td><td>Recommendations</td><td>Key Drivers</td></tr><tr><td>Metals &amp; Mining</td><td>Overweight</td><td>Preferred on a constructive China impulse and bearish USD backdrop (with “spot gap” now tighter), with China activity the key wildcard.</td></tr><tr><td>Cap Goods</td><td>Overweight</td><td>Supported by a constructive capex/electrification outlook, favoring parts of Industrials tied to investment spend.</td></tr><tr><td>Semis</td><td>Overweight</td><td>Expected to stabilize/benefit as the China/EM upswing helps previously China-exposed cyclicals and underperformers recover.</td></tr><tr><td>Media</td><td>Underweight</td><td>Likely to keep struggling regardless of near-term activity resilience, given ongoing AI-related disruption (though tactical bounces are possible after derating).</td></tr><tr><td>Software</td><td>Underweight</td><td>Similarly pressured by the AI threat and likely to remain a laggard structurally, even if oversold conditions drive intermittent rallies.</td></tr></table>
+
+Source: JPM estimates. \* Please see the last page for the full list of our calls and sector allocation.
+
+Table 14: JPM Equity Strategy — Key regional calls
+
+<table><tr><td>Region</td><td>Recommendations</td><td>JPM Views</td></tr><tr><td>EM</td><td>Overweight</td><td>EM are underowned, valuations are cheap, seeing accelerating inflows, reduced China trade headwinds, China policy support</td></tr><tr><td>DM</td><td>Underweight</td><td></td></tr><tr><td>US</td><td>Neutral</td><td>Crowded positioning, full valuations and AI commoditization risk, may not be regional outperformer</td></tr><tr><td>Japan</td><td>Neutral</td><td>Fundamentals remain solid, reforms/buybacks/wage gains help, but had big rally, fuller valuations</td></tr><tr><td>Eurozone</td><td>Overweight</td><td>Improving credit impulse and expected earnings rebound (if conflict doesn&#x27;t extend in 2H)</td></tr><tr><td>UK</td><td>Neutral</td><td>Structurally cheap with high dividends and lower AI/trade sensitivity - useful in risk-off - but lacks near-term growth catalysts</td></tr></table>
+
+Source: JPM estimates.
+
+## Top Picks
+
+Table 15: JPM European Strategy: Top European picks
+
+<table><tr><td rowspan="2">Name</td><td rowspan="2">Ticker</td><td rowspan="2">Sector</td><td rowspan="2">Price</td><td rowspan="2">Currency</td><td rowspan="2">Market Cap(€ Bn)</td><td colspan="3">EPS Growth</td><td>Dividend Yield</td><td colspan="3">12m Fwd P/E</td><td colspan="2">Performance</td></tr><tr><td>25</td><td>26e</td><td>27e</td><td>26e</td><td>Current</td><td>10Y Median</td><td>% Premium</td><td>-3m</td><td>-12m</td></tr><tr><td>AEGON LTD</td><td>AGN NA</td><td>Financials</td><td>8</td><td>E</td><td>12.1</td><td>-18%</td><td>61%</td><td>4%</td><td>4.6%</td><td>7.9</td><td>6.8</td><td>16%</td><td>15%</td><td>27%</td></tr><tr><td>AIB GROUP PLC</td><td>AIBG ID</td><td>Financials</td><td>10</td><td>E</td><td>21.6</td><td>0%</td><td>-7%</td><td>10%</td><td>3.5%</td><td>11.4</td><td>10.9</td><td>4%</td><td>10%</td><td>49%</td></tr><tr><td>ALSTOM</td><td>ALO FP</td><td>Industrials</td><td>16</td><td>E</td><td>7.2</td><td>958%</td><td>9%</td><td>49%</td><td>1.5%</td><td>8.4</td><td>16.4</td><td>-49%</td><td>-38%</td><td>-21%</td></tr><tr><td>ANHEUSER-BUSCH INBEV SA/NV</td><td>ABI BB</td><td>Staples</td><td>70</td><td>E</td><td>140.8</td><td>6%</td><td>17%</td><td>10%</td><td>1.3%</td><td>17.3</td><td>17.9</td><td>-4%</td><td>10%</td><td>20%</td></tr><tr><td>ARGENX SE</td><td>ARGX BB</td><td>Health Care</td><td>800</td><td>E</td><td>50.0</td><td>3977%</td><td>36%</td><td>38%</td><td>0.0%</td><td>29.0</td><td>-24.0</td><td>-</td><td>19%</td><td>72%</td></tr><tr><td>ASML HOLDING NV</td><td>ASML NA</td><td>IT</td><td>1529</td><td>E</td><td>593.5</td><td>28%</td><td>29%</td><td>38%</td><td>0.4%</td><td>40.4</td><td>29.3</td><td>38%</td><td>26%</td><td>125%</td></tr><tr><td>ASTRAZENECA PLC</td><td>AZN LN</td><td>Health Care</td><td>14240</td><td>E</td><td>259.1</td><td>12%</td><td>12%</td><td>13%</td><td>1.6%</td><td>17.5</td><td>18.1</td><td>-4%</td><td>-6%</td><td>38%</td></tr><tr><td>BABCOCK INTL GROUP PLC</td><td>BAB LN</td><td>Industrials</td><td>1052</td><td>E</td><td>6.1</td><td>64%</td><td>-21%</td><td>67%</td><td>0.5%</td><td>16.2</td><td>8.9</td><td>81%</td><td>-18%</td><td>-4%</td></tr><tr><td>BARC PLC</td><td>BARC LN</td><td>Financials</td><td>497</td><td>E</td><td>78.8</td><td>27%</td><td>8%</td><td>22%</td><td>1.6%</td><td>9.1</td><td>7.3</td><td>23%</td><td>14%</td><td>49%</td></tr><tr><td>BAYERISCHE MOTOREN WERKE AG</td><td>BMW GR</td><td>Discretionary</td><td>59</td><td>E</td><td>36.6</td><td>-</td><td>-41%</td><td>36%</td><td>7.3%</td><td>7.1</td><td>7.1</td><td>1%</td><td>-28%</td><td>-26%</td></tr><tr><td>BT GROUP PLC</td><td>BT/A LN</td><td>Telecoms</td><td>188</td><td>£</td><td>22.0</td><td>1%</td><td>-2%</td><td>4%</td><td>4.3%</td><td>9.9</td><td>8.3</td><td>19%</td><td>-14%</td><td>-4%</td></tr><tr><td>CIE FINANCIERE RICHEMO-A REG</td><td>CFR SW</td><td>Discretionary</td><td>181</td><td>SF</td><td>115.9</td><td>-1%</td><td>-3%</td><td>15%</td><td>1.4%</td><td>26.9</td><td>22.2</td><td>21%</td><td>19%</td><td>20%</td></tr><tr><td>CONTINENTAL AG</td><td>CON GR</td><td>Discretionary</td><td>72</td><td>E</td><td>14.2</td><td>1%</td><td>-16%</td><td>11%</td><td>3.5%</td><td>9.9</td><td>9.8</td><td>1%</td><td>8%</td><td>24%</td></tr><tr><td>DANONE</td><td>BN FP</td><td>Staples</td><td>73</td><td>E</td><td>50.0</td><td>5%</td><td>4%</td><td>8%</td><td>2.9%</td><td>17.8</td><td>16.9</td><td>5%</td><td>6%</td><td>8%</td></tr><tr><td>DSV A/S</td><td>DSV DC</td><td>Industrials</td><td>1630</td><td>E</td><td>52.4</td><td>-1%</td><td>30%</td><td>32%</td><td>0.4%</td><td>21.3</td><td>22.9</td><td>-7%</td><td>0%</td><td>6%</td></tr><tr><td>FERROVIAL NV</td><td>FER SM</td><td>Industrials</td><td>56</td><td>E</td><td>41.1</td><td>-72%</td><td>-20%</td><td>18%</td><td>1.3%</td><td>53.3</td><td>49.4</td><td>8%</td><td>-6%</td><td>27%</td></tr><tr><td>FRAPORT AG FRANKFURT AIRPORT</td><td>FRA GR</td><td>Industrials</td><td>70</td><td>E</td><td>6.6</td><td>-4%</td><td>-23%</td><td>7%</td><td>0.0%</td><td>19.0</td><td>15.2</td><td>25%</td><td>-13%</td><td>11%</td></tr><tr><td>FRESENIUS SE &amp; CO KGAA</td><td>FRE GR</td><td>Health Care</td><td>43</td><td>E</td><td>23.9</td><td>13%</td><td>0%</td><td>7%</td><td>2.3%</td><td>11.5</td><td>11.9</td><td>-3%</td><td>-4%</td><td>2%</td></tr><tr><td>FRESNILLO PLC</td><td>FRES LN</td><td>Materials</td><td>2570</td><td>E</td><td>22.2</td><td>465%</td><td>52%</td><td>0%</td><td>0.8%</td><td>11.0</td><td>20.1</td><td>-45%</td><td>-29%</td><td>75%</td></tr><tr><td>INDUSTRIA DE DISENO TEXTIL</td><td>ITX SM</td><td>Discretionary</td><td>54</td><td>E</td><td>168.8</td><td>9%</td><td>6%</td><td>9%</td><td>2.8%</td><td>25.1</td><td>22.8</td><td>10%</td><td>2%</td><td>25%</td></tr><tr><td>JERONIMO MARTINS</td><td>JMT PL</td><td>Staples</td><td>16</td><td>E</td><td>10.2</td><td>8%</td><td>14%</td><td>14%</td><td>3.6%</td><td>12.9</td><td>19.9</td><td>-35%</td><td>-23%</td><td>-29%</td></tr><tr><td>LEONARDO SPA</td><td>LDO IM</td><td>Industrials</td><td>53</td><td>E</td><td>30.9</td><td>15%</td><td>50%</td><td>20%</td><td>1.0%</td><td>20.7</td><td>9.8</td><td>112%</td><td>-7%</td><td>14%</td></tr><tr><td>MARKS &amp; SPENCER GROUP PLC</td><td>MKS LN</td><td>Staples</td><td>375</td><td>£</td><td>9.1</td><td>31%</td><td>-25%</td><td>42%</td><td>0.8%</td><td>11.4</td><td>11.2</td><td>2%</td><td>3%</td><td>12%</td></tr><tr><td>NEMETSCHEK SE</td><td>NEM GR</td><td>IT</td><td>55</td><td>E</td><td>6.5</td><td>41%</td><td>18%</td><td>18%</td><td>1.0%</td><td>20.1</td><td>48.7</td><td>-59%</td><td>-16%</td><td>-55%</td></tr><tr><td>NOKIA OYJ</td><td>NOKIA FH</td><td>IT</td><td>10</td><td>E</td><td>58.7</td><td>-26%</td><td>14%</td><td>21%</td><td>1.4%</td><td>27.8</td><td>14.6</td><td>90%</td><td>27%</td><td>131%</td></tr><tr><td>NOVONESIS (NOVOZYMES) B</td><td>NSISB DC</td><td>Materials</td><td>418</td><td>E</td><td>26.2</td><td>16%</td><td>36%</td><td>10%</td><td>1.0%</td><td>26.2</td><td>28.7</td><td>-9%</td><td>7%</td><td>-8%</td></tr><tr><td>ORANGE</td><td>ORA FP</td><td>Telecoms</td><td>16</td><td>E</td><td>42.4</td><td>5%</td><td>13%</td><td>15%</td><td>4.5%</td><td>15.3</td><td>10.4</td><td>47%</td><td>-11%</td><td>22%</td></tr><tr><td>PRUDENTIAL PLC</td><td>PRU LN</td><td>Financials</td><td>1009</td><td>E</td><td>29.7</td><td>13%</td><td>14%</td><td>21%</td><td>1.7%</td><td>10.6</td><td>10.8</td><td>-2%</td><td>-10%</td><td>9%</td></tr><tr><td>RWE AG</td><td>RWE GR</td><td>Utilities</td><td>56</td><td>E</td><td>43.9</td><td>-21%</td><td>10%</td><td>17%</td><td>1.8%</td><td>18.9</td><td>14.5</td><td>30%</td><td>-4%</td><td>58%</td></tr><tr><td>SAIPEM SPA</td><td>SPM IM</td><td>Energy</td><td>5</td><td>E</td><td>9.1</td><td>0%</td><td>50%</td><td>35%</td><td>3.6%</td><td>16.7</td><td>16.3</td><td>2%</td><td>10%</td><td>93%</td></tr><tr><td>SHELL PLC</td><td>SHEL LN</td><td>Energy</td><td>3080</td><td>E</td><td>201.3</td><td>-17%</td><td>60%</td><td>-10%</td><td>3.4%</td><td>8.7</td><td>10.2</td><td>-14%</td><td>-9%</td><td>18%</td></tr><tr><td>SIEMENS AG-REG</td><td>SIE GR</td><td>Industrials</td><td>265</td><td>E</td><td>210.1</td><td>17%</td><td>-11%</td><td>14%</td><td>2.0%</td><td>22.2</td><td>15.1</td><td>47%</td><td>15%</td><td>22%</td></tr><tr><td>SIEMENS ENERGY AG</td><td>ENR GR</td><td>Industrials</td><td>153</td><td>E</td><td>134.7</td><td>-</td><td>168%</td><td>38%</td><td>0.0%</td><td>27.0</td><td>30.4</td><td>-11%</td><td>-6%</td><td>66%</td></tr><tr><td>SSE PLC</td><td>SSE LN</td><td>Utilities</td><td>2448</td><td>£</td><td>34.8</td><td>13%</td><td>-5%</td><td>19%</td><td>2.4%</td><td>13.0</td><td>12.2</td><td>6%</td><td>-10%</td><td>31%</td></tr><tr><td>STANDARD CHARTERED PLC</td><td>STAN LN</td><td>Financials</td><td>2036</td><td>E</td><td>52.3</td><td>36%</td><td>0%</td><td>22%</td><td>1.4%</td><td>11.0</td><td>9.1</td><td>21%</td><td>18%</td><td>63%</td></tr><tr><td>TECHNIP ENERGIES NV</td><td>TE FP</td><td>Energy</td><td>34</td><td>E</td><td>6.0</td><td>-6%</td><td>14%</td><td>37%</td><td>2.5%</td><td>12.3</td><td>10.4</td><td>18%</td><td>-15%</td><td>-7%</td></tr><tr><td>UBS GROUP AG-REG</td><td>UBSG SW</td><td>Financials</td><td>41</td><td>E</td><td>146.1</td><td>55%</td><td>48%</td><td>25%</td><td>1.8%</td><td>13.0</td><td>10.5</td><td>24%</td><td>27%</td><td>47%</td></tr><tr><td>UNILEVER PLC</td><td>ULVR LN</td><td>Staples</td><td>4640</td><td>E</td><td>117.3</td><td>-8%</td><td>4%</td><td>7%</td><td>3.7%</td><td>16.5</td><td>18.4</td><td>-10%</td><td>8%</td><td>-3%</td></tr><tr><td>UNIVERSAL MUSIC GROUP NV</td><td>UMG NA</td><td>Telecoms</td><td>19</td><td>E</td><td>34.6</td><td>7%</td><td>0%</td><td>11%</td><td>2.8%</td><td>17.4</td><td>24.6</td><td>-29%</td><td>-5%</td><td>-30%</td></tr></table>
+
+Source: Datastream, MSCI, IBES, JPM, Prices and Valuations as of COB 8th Jul, 2026. Past performance is not indicative of future returns.
+
+Please see the most recent company-specific research published by JPM for an analysis of valuation methodology and risks on companies recommended in this report. Research is available at http://www.JPMmarkets.com
+
+## Equity Flows Snapshot
+
+Table 16: DM Equity Fund Flows Summary
+
+<table><tr><td colspan="11">Regional equity fund flows</td></tr><tr><td rowspan="2"></td><td colspan="5">$mn</td><td colspan="5">% AUM</td></tr><tr><td>1w</td><td>1m</td><td>3m</td><td>YTD</td><td>12m</td><td>1w</td><td>1m</td><td>3m</td><td>YTD</td><td>12m</td></tr><tr><td>Europe ex UK</td><td>-287</td><td>-3,759</td><td>-11,806</td><td>-11,254</td><td>-5,476</td><td>-0.1%</td><td>-0.8%</td><td>-2.6%</td><td>-2.5%</td><td>-1.4%</td></tr><tr><td>UK</td><td>-81</td><td>-734</td><td>-2,389</td><td>-6,666</td><td>-21,552</td><td>0.0%</td><td>-0.2%</td><td>-0.7%</td><td>-2.1%</td><td>-7.3%</td></tr><tr><td>US</td><td>-17,207</td><td>110,784</td><td>257,854</td><td>315,462</td><td>538,938</td><td>-0.1%</td><td>0.7%</td><td>1.8%</td><td>2.2%</td><td>4.2%</td></tr><tr><td>Japan</td><td>1,855</td><td>4,280</td><td>-5,307</td><td>14,659</td><td>6,030</td><td>0.2%</td><td>0.3%</td><td>-0.5%</td><td>1.4%</td><td>0.7%</td></tr></table>
+
+Source: EPFR, as of 1st Jul, 2026
+
+Figure 34: DM Equity Fund flows – last 12 month  
+![](images/ea6a183e38f2fea23273ea793397b4b123c55b819218a5f266a7b056d60b4ef1.jpg)  
+Source: EPFR, Japan includes BoJ purchases.
+
+Figure 35: DM Equity Fund flows – last month  
+![](images/06069d645dc83ec5a510f49d8c4ed4f7a8ca6eafc82b6a2324f15bb6576c135e.jpg)
+
+Figure 36: Cumulative fund flows into regional equity ETFs as a percentage of AUM  
+![](images/0ef5b86c3382a53f8b2e9931750035ec58845fad03de89a1a37e8ac3930bc01b.jpg)  
+Source: EPFR, Japan includes BoJ purchases.
+
+Source: Bloomberg Finance L.P. \*Based on the 25 biggest ETF's with a mandate to invest in that particular region. Japan includes BoJ purchases.  
+Figure 37: CPFR, as of 1st Jul, 2026. Japan includes Non-ETF purchases only  
+![](images/ceedaca84ccef6ecb56fc087f6f22c449e89fcc14bff9bc4c888a3f954e467e8.jpg)  
+Source: EPFR, as of 1st Jul, 2026. Japan includes Non-ETF purchases only.
+
+## Technical Indicators
+
+Figure 38: S&P500 RSI  
+![](images/67ec16be551f929ed3c41ecd73e6903c337264343abf7ec9bbff5c47176db720.jpg)  
+Source: Bloomberg Finance L.P.
+
+Figure 39: EuroStoxx50 RSI  
+![](images/35f3ee3bedd74d480ddd73e71aeac88b03833bc71b3d9f80cb38e6c5e6e98c98.jpg)  
+Source: Bloomberg Finance L.P.
+
+Figure 40: AAll Bull-Bear  
+![](images/1e56f5f6bcc1012e017f92c090344badd86c0eb4134778e181cd2c56a3f7e743.jpg)  
+Source: Bloomberg Finance L.P
+
+Figure 41: Put-call ratio  
+![](images/fc77bde408944251633cf29a053bd9f964d4563dd2404ae87ba5c13d7629fbcf.jpg)  
+Source: Bloomberg Finance L.P.
+
+Figure 42: Sentix Sentiment Index vs SX5E  
+![](images/a161598b4e4c199670db6c197cc589dd1fa609bcd83048684239629a79656b67.jpg)  
+Source: Bloomberg Finance L.P.
+
+Figure 43: Equity Skew  
+![](images/5c895e618639424e0504c73916f9073e3c7ee3272127c9a4513d580bd0f90f11.jpg)  
+Source: Bloomberg Finance L.P.
+
+Figure 44: Speculative positions in S&P500 futures contracts  
+![](images/b74821722e127306a5428f1bb5de8294f49a1ebc3ad575b2a253f3658b5209a9.jpg)  
+Source: Bloomberg Finance L.P.
+
+Figure 45: VIX  
+![](images/431fff16185a0199273def1cf3cfb3dd08bde591a0dff995ddb2d23e6edbe7ca.jpg)  
+Source: Bloomberg Finance L.P.
+
+## Performance
+
+Table 17: Sector Index Performances — MSCI Europe
+
+<table><tr><td colspan="2">(%change)</td><td colspan="3">Local currency</td></tr><tr><td>Industry Group</td><td></td><td>4week</td><td>12m</td><td>YTD</td></tr><tr><td>Europe</td><td></td><td>2.9</td><td>16.2</td><td>7.1</td></tr><tr><td>Energy</td><td></td><td>(6.9)</td><td>29.4</td><td>20.7</td></tr><tr><td>Materials</td><td></td><td>(3.1)</td><td>15.6</td><td>7.1</td></tr><tr><td></td><td>Chemicals</td><td>4.4</td><td>(0.3)</td><td>11.8</td></tr><tr><td></td><td>Construction Materials</td><td>(0.2)</td><td>(1.0)</td><td>(14.2)</td></tr><tr><td></td><td>Metals &amp; Mining</td><td>(10.8)</td><td>57.2</td><td>10.7</td></tr><tr><td>Industrials</td><td></td><td>3.6</td><td>13.5</td><td>7.1</td></tr><tr><td></td><td>Capital Goods</td><td>3.8</td><td>18.3</td><td>9.1</td></tr><tr><td></td><td>Transport</td><td>6.1</td><td>19.8</td><td>8.5</td></tr><tr><td></td><td>Business Svs</td><td>(0.9)</td><td>(28.2)</td><td>(13.9)</td></tr><tr><td>Consumer Discretionary</td><td></td><td>(0.4)</td><td>(5.9)</td><td>(12.0)</td></tr><tr><td></td><td>Automobile</td><td>(4.2)</td><td>(18.3)</td><td>(19.1)</td></tr><tr><td></td><td>Consumer Durables</td><td>1.5</td><td>(3.4)</td><td>(13.5)</td></tr><tr><td></td><td>Media</td><td>(0.6)</td><td>(28.6)</td><td>(13.9)</td></tr><tr><td></td><td>Retailing</td><td>0.3</td><td>4.1</td><td>(10.1)</td></tr><tr><td></td><td>Hotels,Restaurants&amp;Leisure</td><td>(2.1)</td><td>(5.9)</td><td>0.3</td></tr><tr><td>Consumer Staples</td><td></td><td>3.5</td><td>4.2</td><td>2.7</td></tr><tr><td></td><td>Food &amp; Drug Retailing</td><td>0.0</td><td>9.2</td><td>4.9</td></tr><tr><td></td><td>Food Beverage &amp; Tobacco</td><td>3.8</td><td>6.0</td><td>5.1</td></tr><tr><td></td><td>Household Products</td><td>4.0</td><td>(1.5)</td><td>(3.6)</td></tr><tr><td>Healthcare</td><td></td><td>5.7</td><td>13.6</td><td>2.0</td></tr><tr><td>Financials</td><td></td><td>8.9</td><td>26.6</td><td>7.9</td></tr><tr><td></td><td>Banks</td><td>10.0</td><td>44.5</td><td>12.5</td></tr><tr><td></td><td>Diversified Financials</td><td>6.2</td><td>4.5</td><td>1.3</td></tr><tr><td></td><td>Insurance</td><td>8.2</td><td>10.4</td><td>2.7</td></tr><tr><td>Real Estate</td><td></td><td>4.1</td><td>15.1</td><td>7.2</td></tr><tr><td>Information Technology</td><td></td><td>(3.0)</td><td>40.1</td><td>33.8</td></tr><tr><td></td><td>Software and Services</td><td>(6.3)</td><td>(38.4)</td><td>(23.2)</td></tr><tr><td></td><td>Technology Hardware</td><td>(11.6)</td><td>42.4</td><td>23.9</td></tr><tr><td></td><td>Semicon &amp; Semicon Equip</td><td>(0.5)</td><td>115.3</td><td>72.0</td></tr><tr><td>Telecommunications Services</td><td></td><td>(6.4)</td><td>(13.5)</td><td>(4.2)</td></tr><tr><td>Utilities</td><td></td><td>3.2</td><td>28.2</td><td>14.9</td></tr></table>
+
+Source: MSCI, Datastream, As at COB 8 $^{th}$ Jul, 2026
+
+Table 18: Country and Region Index Performances
+
+<table><tr><td rowspan="2">(%change)Country</td><td rowspan="2">Index</td><td colspan="3">Local Currency</td><td colspan="3">US$</td></tr><tr><td>4week</td><td>12m</td><td>YTD</td><td>4week</td><td>12m</td><td>YTD</td></tr><tr><td>Austria</td><td>ATX</td><td>6.8</td><td>44.6</td><td>19.7</td><td>5.5</td><td>41.0</td><td>16.3</td></tr><tr><td>Belgium</td><td>BEL 20</td><td>0.6</td><td>25.8</td><td>10.9</td><td>(0.7)</td><td>22.7</td><td>7.7</td></tr><tr><td>Denmark</td><td>KFX</td><td>8.8</td><td>(7.3)</td><td>2.1</td><td>7.4</td><td>(9.8)</td><td>(0.9)</td></tr><tr><td>Finland</td><td>HEX 20</td><td>(3.6)</td><td>23.3</td><td>6.2</td><td>(4.8)</td><td>20.3</td><td>3.2</td></tr><tr><td>France</td><td>CAC 40</td><td>1.1</td><td>6.3</td><td>1.3</td><td>(0.2)</td><td>3.7</td><td>(1.6)</td></tr><tr><td>Germany</td><td>DAX</td><td>2.9</td><td>2.9</td><td>1.7</td><td>1.6</td><td>0.3</td><td>(1.3)</td></tr><tr><td>Greece</td><td>ASE General</td><td>4.8</td><td>27.8</td><td>17.3</td><td>3.5</td><td>24.6</td><td>13.9</td></tr><tr><td>Ireland</td><td>ISEQ</td><td>5.3</td><td>20.0</td><td>5.2</td><td>4.0</td><td>17.0</td><td>2.2</td></tr><tr><td>Italy</td><td>FTSE MIB</td><td>3.6</td><td>29.0</td><td>15.3</td><td>2.3</td><td>25.8</td><td>12.0</td></tr><tr><td>Japan</td><td>Topix</td><td>4.1</td><td>42.2</td><td>17.5</td><td>2.8</td><td>28.5</td><td>13.3</td></tr><tr><td>Netherlands</td><td>AEX</td><td>2.3</td><td>17.4</td><td>13.1</td><td>1.0</td><td>14.5</td><td>9.9</td></tr><tr><td>Norway</td><td>OBX</td><td>(2.0)</td><td>16.4</td><td>14.6</td><td>(5.3)</td><td>20.4</td><td>18.1</td></tr><tr><td>Portugal</td><td>BVL GEN</td><td>1.8</td><td>16.4</td><td>10.1</td><td>0.5</td><td>13.5</td><td>6.9</td></tr><tr><td>Spain</td><td>IBEX 35</td><td>5.3</td><td>35.7</td><td>10.4</td><td>4.0</td><td>32.4</td><td>7.2</td></tr><tr><td>Sweden</td><td>OMX</td><td>3.0</td><td>24.7</td><td>9.1</td><td>0.5</td><td>22.6</td><td>3.5</td></tr><tr><td>Switzerland</td><td>SMI</td><td>5.3</td><td>18.4</td><td>6.8</td><td>3.8</td><td>16.8</td><td>4.6</td></tr><tr><td>United States</td><td>S&amp;P 500</td><td>3.0</td><td>20.2</td><td>9.3</td><td>3.0</td><td>20.2</td><td>9.3</td></tr><tr><td>United States</td><td>NASDAQ</td><td>2.8</td><td>26.7</td><td>11.3</td><td>2.8</td><td>26.7</td><td>11.3</td></tr><tr><td>United Kingdom</td><td>FTSE 100</td><td>2.3</td><td>18.5</td><td>5.6</td><td>2.1</td><td>17.0</td><td>5.0</td></tr><tr><td>EMU</td><td>MSCI EMU</td><td>2.6</td><td>16.9</td><td>8.2</td><td>1.3</td><td>14.0</td><td>5.1</td></tr><tr><td>Europe</td><td>MSCI Europe</td><td>2.9</td><td>16.2</td><td>7.1</td><td>1.8</td><td>13.9</td><td>4.6</td></tr><tr><td>Global</td><td>MSCI AC World</td><td>3.1</td><td>20.5</td><td>9.3</td><td>2.7</td><td>19.4</td><td>8.6</td></tr></table>
+
+Source: MSCI, Datastream, As at COB 8th Jul, 2026
+
+## Earnings
+
+Table 19: IBES Consensus EPS Sector Forecasts — MSCI Europe
+
+<table><tr><td rowspan="2"></td><td colspan="4">EPS Growth (%yoy)</td></tr><tr><td>2025E</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td>Europe</td><td>(0.4)</td><td>17.3</td><td>10.4</td><td>10.3</td></tr><tr><td>Energy</td><td>(13.7)</td><td>66.5</td><td>(13.8)</td><td>(0.7)</td></tr><tr><td>Materials</td><td>(9.4)</td><td>34.6</td><td>9.5</td><td>5.2</td></tr><tr><td>Chemicals</td><td>(6.6)</td><td>11.8</td><td>6.2</td><td>9.9</td></tr><tr><td>Construction Materials</td><td>(22.3)</td><td>9.3</td><td>13.0</td><td>10.8</td></tr><tr><td>Metals &amp; Mining</td><td>(6.0)</td><td>64.8</td><td>9.9</td><td>0.8</td></tr><tr><td>Industrials</td><td>8.9</td><td>11.3</td><td>14.8</td><td>13.5</td></tr><tr><td>Capital Goods</td><td>11.2</td><td>12.9</td><td>15.7</td><td>13.9</td></tr><tr><td>Transport</td><td>(3.1)</td><td>0.4</td><td>11.3</td><td>13.4</td></tr><tr><td>Business Svs</td><td>5.9</td><td>10.5</td><td>10.9</td><td>10.1</td></tr><tr><td>Discretionary</td><td>(63.0)</td><td>146.0</td><td>20.3</td><td>15.3</td></tr><tr><td>Automobile</td><td>(129.4)</td><td>-</td><td>29.7</td><td>18.4</td></tr><tr><td>Consumer Durables</td><td>(7.2)</td><td>9.2</td><td>14.8</td><td>13.6</td></tr><tr><td>Media</td><td>20.6</td><td>8.8</td><td>14.9</td><td>13.2</td></tr><tr><td>Retailing</td><td>15.8</td><td>12.6</td><td>14.0</td><td>11.7</td></tr><tr><td>Hotels,Restaurants&amp;Leisure</td><td>10.7</td><td>6.3</td><td>15.6</td><td>14.4</td></tr><tr><td>Staples</td><td>(1.9)</td><td>3.1</td><td>7.6</td><td>7.3</td></tr><tr><td>Food &amp; Drug Retailing</td><td>1.0</td><td>9.8</td><td>8.8</td><td>7.8</td></tr><tr><td>Food Beverage &amp; Tobacco</td><td>(1.6)</td><td>2.3</td><td>7.6</td><td>7.7</td></tr><tr><td>Household Products</td><td>(4.1)</td><td>2.2</td><td>7.2</td><td>5.9</td></tr><tr><td>Healthcare</td><td>9.2</td><td>3.4</td><td>9.8</td><td>10.8</td></tr><tr><td>Financials</td><td>10.0</td><td>9.9</td><td>12.9</td><td>11.1</td></tr><tr><td>Banks</td><td>12.9</td><td>8.6</td><td>13.7</td><td>11.6</td></tr><tr><td>Diversified Financials</td><td>(8.1)</td><td>22.6</td><td>18.2</td><td>15.2</td></tr><tr><td>Insurance</td><td>14.3</td><td>6.9</td><td>7.8</td><td>7.1</td></tr><tr><td>Real Estate</td><td>12.1</td><td>0.6</td><td>2.9</td><td>2.3</td></tr><tr><td>IT</td><td>12.1</td><td>16.9</td><td>28.4</td><td>18.5</td></tr><tr><td>Software and Services</td><td>24.6</td><td>12.1</td><td>15.1</td><td>16.1</td></tr><tr><td>Technology Hardware</td><td>4.4</td><td>(9.3)</td><td>12.6</td><td>11.8</td></tr><tr><td>Semicon &amp; Semicon Equip</td><td>7.3</td><td>32.6</td><td>42.0</td><td>21.4</td></tr><tr><td>Telecoms</td><td>9.2</td><td>7.6</td><td>14.4</td><td>10.4</td></tr><tr><td>Utilities</td><td>1.3</td><td>6.6</td><td>7.4</td><td>7.0</td></tr></table>
+
+Source: IBES, MSCI, Datastream. As at COB 8 $^{th}$ Jul, 2026
+
+Table 20: IBES Consensus EPS Country Forecasts
+
+<table><tr><td rowspan="2">Country</td><td rowspan="2">Index</td><td colspan="4">EPS growth (%change)</td></tr><tr><td>2025E</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td>Austria</td><td>ATX</td><td>9.7</td><td>23.0</td><td>10.4</td><td>8.2</td></tr><tr><td>Belgium</td><td>BEL 20</td><td>18.1</td><td>11.1</td><td>15.0</td><td>12.4</td></tr><tr><td>Denmark</td><td>Denmark KFX</td><td>(1.2)</td><td>(2.0)</td><td>5.1</td><td>10.6</td></tr><tr><td>Finland</td><td>MSCI Finland</td><td>4.5</td><td>17.2</td><td>11.4</td><td>10.5</td></tr><tr><td>France</td><td>CAC 40</td><td>(22.8)</td><td>44.6</td><td>9.3</td><td>9.8</td></tr><tr><td>Germany</td><td>DAX</td><td>4.9</td><td>7.5</td><td>15.6</td><td>14.2</td></tr><tr><td>Greece</td><td>MSCI Greece</td><td>(8.5)</td><td>12.8</td><td>12.7</td><td>10.8</td></tr><tr><td>Ireland</td><td>MSCI Ireland</td><td>2.9</td><td>(2.0)</td><td>12.5</td><td>13.1</td></tr><tr><td>Italy</td><td>MSCI Italy</td><td>(37.1)</td><td>84.1</td><td>10.8</td><td>10.2</td></tr><tr><td>Netherlands</td><td>AEX</td><td>(20.5)</td><td>33.9</td><td>11.0</td><td>10.9</td></tr><tr><td>Norway</td><td>MSCI Norway</td><td>(11.4)</td><td>54.1</td><td>(8.8)</td><td>1.9</td></tr><tr><td>Portugal</td><td>MSCI Portugal</td><td>23.6</td><td>19.3</td><td>2.8</td><td>6.2</td></tr><tr><td>Spain</td><td>IBEX 35</td><td>5.7</td><td>10.2</td><td>11.8</td><td>9.8</td></tr><tr><td>Sweden</td><td>OMX</td><td>(3.3)</td><td>4.3</td><td>9.1</td><td>8.2</td></tr><tr><td>Switzerland</td><td>SMI</td><td>6.8</td><td>7.3</td><td>10.4</td><td>9.5</td></tr><tr><td>United Kingdom</td><td>FTSE 100</td><td>6.8</td><td>17.9</td><td>8.0</td><td>8.4</td></tr><tr><td>EMU</td><td>MSCI EMU</td><td>(4.4)</td><td>20.1</td><td>12.4</td><td>11.6</td></tr><tr><td>Europe ex UK</td><td>MSCI Europe ex UK</td><td>(2.6)</td><td>16.8</td><td>11.5</td><td>11.1</td></tr><tr><td>Europe</td><td>MSCI Europe</td><td>(0.4)</td><td>17.3</td><td>10.4</td><td>10.3</td></tr><tr><td>United States</td><td>S&amp;P 500</td><td>13.6</td><td>25.3</td><td>19.3</td><td>14.6</td></tr><tr><td>Japan</td><td>Topix</td><td>11.4</td><td>14.1</td><td>11.6</td><td>10.5</td></tr><tr><td>Emerging Market</td><td>MSCI EM</td><td>10.4</td><td>61.5</td><td>23.7</td><td>10.4</td></tr><tr><td>Global</td><td>MSCI AC World</td><td>10.1</td><td>27.8</td><td>17.6</td><td>12.5</td></tr></table>
+
+Source: IBES, MSCI, Datastream. As at COB 8 $^{th}$ Jul, 2026\*\*Japan refers to the period from March in the year stated to March in the following year— EPS post-goodwill
+
+## Valuations
+
+Table 21: IBES Consensus European Sector Valuations
+
+<table><tr><td rowspan="2"></td><td colspan="3">P/E</td><td colspan="3">Dividend Yield</td><td colspan="3">EV/EBITDA</td><td colspan="3">Price to Book</td></tr><tr><td>2026e</td><td>2027e</td><td>2028e</td><td>2026e</td><td>2027e</td><td>2028e</td><td>2026e</td><td>2027e</td><td>2028e</td><td>2026e</td><td>2027e</td><td>2028e</td></tr><tr><td>Europe</td><td>15.7</td><td>14.2</td><td>12.9</td><td>3.1%</td><td>3.4%</td><td>3.6%</td><td>9.2</td><td>8.6</td><td>7.9</td><td>2.3</td><td>2.2</td><td>2.0</td></tr><tr><td>Energy</td><td>7.8</td><td>9.1</td><td>9.1</td><td>4.7%</td><td>4.9%</td><td>5.1%</td><td>3.3</td><td>3.7</td><td>3.7</td><td>1.4</td><td>1.3</td><td>1.2</td></tr><tr><td>Materials</td><td>15.9</td><td>14.5</td><td>13.8</td><td>3.1%</td><td>3.4%</td><td>3.5%</td><td>8.0</td><td>7.3</td><td>6.9</td><td>1.9</td><td>1.8</td><td>1.7</td></tr><tr><td>Chemicals</td><td>21.9</td><td>20.6</td><td>18.8</td><td>2.8%</td><td>2.9%</td><td>3.0%</td><td>11.1</td><td>10.6</td><td>9.8</td><td>2.3</td><td>2.2</td><td>2.1</td></tr><tr><td>Construction Materials</td><td>15.9</td><td>14.1</td><td>12.7</td><td>2.4%</td><td>2.7%</td><td>2.9%</td><td>9.2</td><td>8.1</td><td>7.3</td><td>1.7</td><td>1.6</td><td>1.5</td></tr><tr><td>Metals &amp; Mining</td><td>12.1</td><td>11.0</td><td>10.9</td><td>3.5%</td><td>3.9%</td><td>4.1%</td><td>6.3</td><td>5.8</td><td>5.6</td><td>1.8</td><td>1.7</td><td>1.6</td></tr><tr><td>Industrials</td><td>22.8</td><td>19.9</td><td>17.5</td><td>2.0%</td><td>2.3%</td><td>2.5%</td><td>12.0</td><td>10.8</td><td>9.7</td><td>4.1</td><td>3.7</td><td>3.3</td></tr><tr><td>Capital Goods</td><td>24.0</td><td>20.7</td><td>18.2</td><td>1.9%</td><td>2.1%</td><td>2.4%</td><td>13.3</td><td>11.7</td><td>10.4</td><td>4.6</td><td>4.2</td><td>3.6</td></tr><tr><td>Transport</td><td>18.0</td><td>16.2</td><td>14.3</td><td>2.7%</td><td>2.8%</td><td>2.9%</td><td>7.8</td><td>7.8</td><td>7.2</td><td>2.0</td><td>1.9</td><td>1.8</td></tr><tr><td>Business Svs</td><td>17.0</td><td>15.4</td><td>13.9</td><td>2.9%</td><td>3.2%</td><td>3.5%</td><td>11.0</td><td>10.0</td><td>9.2</td><td>5.5</td><td>5.2</td><td>4.9</td></tr><tr><td>Discretionary</td><td>16.2</td><td>13.5</td><td>11.7</td><td>2.6%</td><td>2.9%</td><td>3.3%</td><td>7.1</td><td>5.9</td><td>5.2</td><td>2.0</td><td>1.8</td><td>1.7</td></tr><tr><td>Automobile</td><td>8.8</td><td>6.8</td><td>5.7</td><td>4.2%</td><td>5.1%</td><td>5.9%</td><td>1.9</td><td>1.6</td><td>1.1</td><td>0.6</td><td>0.5</td><td>0.5</td></tr><tr><td>Consumer Durables</td><td>24.6</td><td>21.4</td><td>18.8</td><td>2.1%</td><td>2.3%</td><td>2.5%</td><td>14.5</td><td>11.6</td><td>10.7</td><td>4.0</td><td>3.6</td><td>3.4</td></tr><tr><td>Media &amp; Entertainment</td><td>20.6</td><td>18.0</td><td>15.9</td><td>1.6%</td><td>1.7%</td><td>1.9%</td><td>13.6</td><td>11.9</td><td>9.7</td><td>4.6</td><td>4.1</td><td>3.6</td></tr><tr><td>Retailing</td><td>15.4</td><td>13.5</td><td>12.1</td><td>2.4%</td><td>2.6%</td><td>2.9%</td><td>14.0</td><td>12.7</td><td>11.1</td><td>5.4</td><td>3.3</td><td>2.9</td></tr><tr><td>Hotels,Restaurants&amp;Leisure</td><td>20.7</td><td>17.9</td><td>15.6</td><td>2.4%</td><td>2.7%</td><td>3.0%</td><td>10.9</td><td>10.1</td><td>9.0</td><td>5.5</td><td>5.0</td><td>4.5</td></tr><tr><td>Staples</td><td>16.9</td><td>15.7</td><td>14.6</td><td>3.3%</td><td>3.4%</td><td>3.7%</td><td>10.5</td><td>9.7</td><td>9.1</td><td>3.0</td><td>2.8</td><td>2.7</td></tr><tr><td>Food &amp; Drug Retailing</td><td>13.3</td><td>12.2</td><td>11.3</td><td>3.7%</td><td>4.0%</td><td>4.3%</td><td>6.6</td><td>6.1</td><td>5.6</td><td>2.0</td><td>1.9</td><td>1.8</td></tr><tr><td>Food Beverage &amp; Tobacco</td><td>16.9</td><td>15.7</td><td>14.6</td><td>3.4%</td><td>3.6%</td><td>3.9%</td><td>10.7</td><td>10.0</td><td>9.4</td><td>2.8</td><td>2.6</td><td>2.5</td></tr><tr><td>Household Products</td><td>18.6</td><td>17.4</td><td>16.4</td><td>2.8%</td><td>2.9%</td><td>3.1%</td><td>12.4</td><td>11.2</td><td>10.6</td><td>4.2</td><td>3.9</td><td>3.6</td></tr><tr><td>Healthcare</td><td>16.7</td><td>15.2</td><td>13.7</td><td>2.4%</td><td>2.6%</td><td>2.8%</td><td>12.3</td><td>11.1</td><td>10.1</td><td>3.4</td><td>3.1</td><td>2.8</td></tr><tr><td>Financials</td><td>11.6</td><td>10.3</td><td>9.3</td><td>4.4%</td><td>4.9%</td><td>5.3%</td><td>-</td><td>-</td><td>-</td><td>1.6</td><td>1.5</td><td>1.4</td></tr><tr><td>Banks</td><td>10.9</td><td>9.6</td><td>8.6</td><td>4.8%</td><td>5.3%</td><td>5.9%</td><td>-</td><td>-</td><td>-</td><td>1.5</td><td>1.4</td><td>1.3</td></tr><tr><td>Diversified Financials</td><td>13.2</td><td>11.1</td><td>9.7</td><td>2.8%</td><td>3.0%</td><td>3.3%</td><td>-</td><td>-</td><td>-</td><td>1.6</td><td>1.5</td><td>1.4</td></tr><tr><td>Insurance</td><td>12.5</td><td>11.6</td><td>10.9</td><td>4.9%</td><td>5.2%</td><td>5.6%</td><td>-</td><td>-</td><td>-</td><td>2.1</td><td>2.0</td><td>1.9</td></tr><tr><td>Real Estate</td><td>13.6</td><td>13.5</td><td>13.1</td><td>4.9%</td><td>5.1%</td><td>5.3%</td><td>-</td><td>-</td><td>-</td><td>0.7</td><td>0.7</td><td>0.7</td></tr><tr><td>IT</td><td>34.0</td><td>26.5</td><td>22.4</td><td>1.0%</td><td>1.1%</td><td>1.2%</td><td>20.8</td><td>16.0</td><td>13.0</td><td>6.3</td><td>5.7</td><td>4.9</td></tr><tr><td>Software and Services</td><td>19.8</td><td>17.2</td><td>14.8</td><td>1.7%</td><td>1.9%</td><td>2.1%</td><td>13.6</td><td>10.6</td><td>8.3</td><td>3.4</td><td>3.1</td><td>2.8</td></tr><tr><td>Technology Hardware</td><td>22.7</td><td>20.1</td><td>18.0</td><td>1.8%</td><td>1.9%</td><td>2.0%</td><td>12.4</td><td>11.7</td><td>10.6</td><td>2.9</td><td>2.8</td><td>2.6</td></tr><tr><td>Semicon &amp; Semicon Equip</td><td>46.9</td><td>33.0</td><td>27.2</td><td>0.6%</td><td>0.7%</td><td>0.8%</td><td>30.5</td><td>21.9</td><td>18.2</td><td>12.5</td><td>10.5</td><td>8.4</td></tr><tr><td>Communication Services</td><td>16.2</td><td>14.1</td><td>12.8</td><td>3.6%</td><td>3.9%</td><td>4.2%</td><td>6.7</td><td>6.3</td><td>5.9</td><td>2.1</td><td>2.0</td><td>1.9</td></tr><tr><td>Utilities</td><td>16.2</td><td>15.1</td><td>14.1</td><td>3.9%</td><td>4.1%</td><td>4.3%</td><td>9.8</td><td>9.5</td><td>9.2</td><td>2.1</td><td>2.0</td><td>1.9</td></tr></table>
+
+Source: IBES, MSCI, Datastream. As at COB 8 $^{th}$ Jul, 2026.
+
+Table 22: IBES Consensus P/E and 12-Month Forward Dividend Yields — Country Forecasts
+
+<table><tr><td rowspan="2">Country</td><td rowspan="2">Index</td><td colspan="4">P/E</td><td rowspan="2">Dividend Yield12mth Fwd</td></tr><tr><td>12mth Fwd</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td>Austria</td><td>ATX</td><td>11.2</td><td>11.8</td><td>10.7</td><td>9.9</td><td>3.9%</td></tr><tr><td>Denmark</td><td>Denmark KFX</td><td>16.3</td><td>16.8</td><td>16.0</td><td>14.5</td><td>2.9%</td></tr><tr><td>Finland</td><td>MSCI Finland</td><td>19.3</td><td>20.6</td><td>18.5</td><td>16.7</td><td>3.0%</td></tr><tr><td>France</td><td>CAC 40</td><td>13.9</td><td>14.7</td><td>13.5</td><td>12.3</td><td>3.4%</td></tr><tr><td>Germany</td><td>DAX</td><td>14.4</td><td>15.9</td><td>13.7</td><td>12.0</td><td>3.0%</td></tr><tr><td>Greece</td><td>MSCI Greece</td><td>19.1</td><td>20.5</td><td>18.2</td><td>16.4</td><td>2.7%</td></tr><tr><td>Ireland</td><td>MSCI Ireland</td><td>12.7</td><td>13.6</td><td>12.0</td><td>10.6</td><td>3.4%</td></tr><tr><td>Italy</td><td>MSCI Italy</td><td>12.6</td><td>13.4</td><td>12.1</td><td>11.0</td><td>4.7%</td></tr><tr><td>Netherlands</td><td>AEX</td><td>17.0</td><td>18.0</td><td>16.2</td><td>14.6</td><td>2.2%</td></tr><tr><td>Norway</td><td>MSCI Norway</td><td>11.0</td><td>10.4</td><td>11.4</td><td>11.2</td><td>5.7%</td></tr><tr><td>Portugal</td><td>MSCI Portugal</td><td>13.6</td><td>13.8</td><td>13.5</td><td>12.7</td><td>3.9%</td></tr><tr><td>Spain</td><td>IBEX 35</td><td>13.9</td><td>14.8</td><td>13.2</td><td>12.1</td><td>3.7%</td></tr><tr><td>Sweden</td><td>OMX</td><td>17.2</td><td>18.1</td><td>16.6</td><td>15.3</td><td>3.2%</td></tr><tr><td>Switzerland</td><td>SMI</td><td>17.8</td><td>18.9</td><td>17.1</td><td>15.6</td><td>3.0%</td></tr><tr><td>United Kingdom</td><td>FTSE 100</td><td>12.3</td><td>12.9</td><td>11.9</td><td>11.0</td><td>3.5%</td></tr><tr><td>EMU</td><td>MSCI EMU</td><td>14.9</td><td>16.0</td><td>14.2</td><td>12.7</td><td>3.1%</td></tr><tr><td>Europe ex UK</td><td>MSCI Europe ex UK</td><td>15.7</td><td>16.7</td><td>15.0</td><td>13.5</td><td>3.1%</td></tr><tr><td>Europe</td><td>MSCI Europe</td><td>14.8</td><td>15.7</td><td>14.2</td><td>12.9</td><td>3.3%</td></tr><tr><td>United States</td><td>S&amp;P 500</td><td>20.0</td><td>22.7</td><td>19.0</td><td>16.6</td><td>1.2%</td></tr><tr><td>Japan</td><td>Topix</td><td>16.3</td><td>16.9</td><td>15.2</td><td>13.7</td><td>2.2%</td></tr><tr><td>Emerging Market</td><td>MSCI EM</td><td>11.2</td><td>12.7</td><td>10.0</td><td>9.3</td><td>2.3%</td></tr><tr><td>Global</td><td>MSCI AC World</td><td>17.3</td><td>19.3</td><td>16.3</td><td>14.6</td><td>1.8%</td></tr></table>
+
+Source: IBES, MSCI, Datastream. As at COB 8 $^{th}$ Jul, 2026; \*\*Japan refers to the period from March in the year stated to March in the following year-P/E post goodwill.
+
+## Economic, Interest Rate and Exchange Rate Outlook
+
+Table 23: Economic Outlook in Summary
+
+<table><tr><td rowspan="2"></td><td colspan="3">Real GDP% oya</td><td colspan="6">Real GDP</td><td colspan="4">Consumer prices% oya</td></tr><tr><td>2025</td><td>2026E</td><td>2027E</td><td>1Q26</td><td>2Q26E</td><td>3Q26E</td><td>4Q26E</td><td>1Q27E</td><td>2Q27E</td><td>4Q25</td><td>2Q26</td><td>4Q26</td><td>2Q27</td></tr><tr><td>United States</td><td>2.1</td><td>2.1</td><td>2.0</td><td>2.1</td><td>2.3</td><td>1.5</td><td>1.7</td><td>2.3</td><td>2.3</td><td>2.7</td><td>3.9</td><td>3.8</td><td>2.1</td></tr><tr><td>Eurozone</td><td>1.5</td><td>0.4</td><td>1.3</td><td>-0.9</td><td>0.5</td><td>1.0</td><td>1.3</td><td>1.3</td><td>1.5</td><td>2.1</td><td>3.0</td><td>3.0</td><td>2.0</td></tr><tr><td>United Kingdom</td><td>1.3</td><td>1.1</td><td>1.2</td><td>2.5</td><td>1.0</td><td>0.8</td><td>1.0</td><td>1.6</td><td>1.2</td><td>3.4</td><td>2.8</td><td>3.0</td><td>2.7</td></tr><tr><td>Japan</td><td>1.1</td><td>0.7</td><td>0.9</td><td>1.8</td><td>0.8</td><td>1.0</td><td>1.3</td><td>1.0</td><td>0.7</td><td>2.7</td><td>1.5</td><td>3.1</td><td>3.5</td></tr><tr><td>Emerging markets</td><td>4.2</td><td>4.0</td><td>3.7</td><td>4.9</td><td>3.6</td><td>3.3</td><td>3.4</td><td>3.9</td><td>3.9</td><td>2.8</td><td>3.5</td><td>3.5</td><td>2.9</td></tr><tr><td>Global</td><td>2.8</td><td>2.5</td><td>2.5</td><td>2.7</td><td>2.4</td><td>2.1</td><td>2.3</td><td>2.7</td><td>2.7</td><td>2.7</td><td>3.4</td><td>3.4</td><td>2.5</td></tr></table>
+
+Source: JPM Economic Research estimates, as of 8th Jul, 2026
+
+Table 24: Official Rates Outlook
+
+<table><tr><td rowspan="2"></td><td rowspan="2">Official interest rate</td><td rowspan="2">Current</td><td rowspan="2">Last change (bp)</td><td rowspan="2">Forecast next change (bp)</td><td colspan="4">Forecast for</td></tr><tr><td>Sep 26</td><td>Dec 26</td><td>Mar 27</td><td>Jun 27</td></tr><tr><td>United States</td><td>Federal funds rate</td><td>3.75</td><td>10 Dec 25 (-25bp)</td><td>Sep 27 (+25bp)</td><td>3.75</td><td>3.75</td><td>3.75</td><td>3.75</td></tr><tr><td>Eurozone</td><td>Depo rate</td><td>2.25</td><td>6 Jun 26 (+25bp)</td><td>Sep 26 (+25bp)</td><td>2.50</td><td>2.50</td><td>2.50</td><td>2.50</td></tr><tr><td>United Kingdom</td><td>Bank Rate</td><td>3.75</td><td>7 Aug 25 (-25bp)</td><td>Nov 26 (+25bp)</td><td>3.75</td><td>4.00</td><td>4.00</td><td>4.00</td></tr><tr><td>Japan</td><td>Pol rate IOER</td><td>1.00</td><td>16 Jun 26 (+25bp)</td><td>Oct 26 (+25bp)</td><td>1.00</td><td>1.25</td><td>1.25</td><td>1.25</td></tr></table>
+
+Source: JPM estimates, Datastream, as of 8 $^{th}$ Jul, 2026
+
+Table 25: 10-Year Government Bond Yield Forecasts
+
+<table><tr><td rowspan="2">10 Yr Govt BY</td><td rowspan="2">9-Jul-26</td><td colspan="4">Forecast for end of</td></tr><tr><td>Sep 26</td><td>Dec 26</td><td>Mar 27</td><td>Jun 27</td></tr><tr><td>US</td><td>4.58</td><td>4.65</td><td>4.70</td><td>4.75</td><td>4.75</td></tr><tr><td>Euro Area</td><td>3.10</td><td>2.95</td><td>2.90</td><td>2.85</td><td>2.80</td></tr><tr><td>United Kingdom</td><td>4.94</td><td>2.80</td><td>2.80</td><td>4.75</td><td>4.70</td></tr><tr><td>Japan</td><td>2.88</td><td>2.95</td><td>2.95</td><td>2.95</td><td>3.05</td></tr></table>
+
+Source: JPM estimates, Datastream, forecasts as of 8 $^{th}$ Jul, 2026
+
+Table 26: FX forecasts
+
+<table><tr><td rowspan="2">Exchange rates vs US$</td><td rowspan="2">8-Jul-26</td><td colspan="4">Forecast for end of</td></tr><tr><td>Sep 26</td><td>Dec 26</td><td>Mar 27</td><td>Jun 27</td></tr><tr><td>EUR</td><td>1.14</td><td>1.14</td><td>1.13</td><td>1.12</td><td>1.10</td></tr><tr><td>GBP</td><td>1.34</td><td>1.30</td><td>1.27</td><td>1.29</td><td>1.28</td></tr><tr><td>CHF</td><td>0.81</td><td>0.81</td><td>0.81</td><td>0.82</td><td>0.84</td></tr><tr><td>JPY</td><td>163</td><td>160</td><td>164</td><td>164</td><td>164</td></tr><tr><td>DXY</td><td>101.0</td><td>101.1</td><td>102.4</td><td>102.8</td><td>104.0</td></tr></table>
+
+Source: JPM estimates, Datastream, forecasts as of 8 $^{th}$ Jul, 2026
+
+# Sector, Regional and Asset Class Allocations
+
+Table 27: JPM Equity Strategy — European Sector Allocation
+
+<table><tr><td></td><td>MSCI Europe Weights</td><td>Allocation</td><td>Deviation</td><td>Recommendation</td></tr><tr><td>Energy</td><td>4.3%</td><td>4.0%</td><td>-0.3%</td><td>UW</td></tr><tr><td>Materials</td><td>5.3%</td><td>8.0%</td><td>2.7%</td><td>OW</td></tr><tr><td></td><td>Chemicals</td><td></td><td></td><td>N</td></tr><tr><td></td><td>Construction Materials</td><td></td><td></td><td>OW</td></tr><tr><td></td><td>Metals &amp; Mining</td><td></td><td></td><td>OW</td></tr><tr><td>Industrials</td><td>19.1%</td><td>21.0%</td><td>1.9%</td><td>OW</td></tr><tr><td></td><td>Capital Goods</td><td></td><td></td><td>OW</td></tr><tr><td></td><td>Transport</td><td></td><td></td><td>N</td></tr><tr><td></td><td>Business Services</td><td></td><td></td><td>N</td></tr><tr><td>Consumer Discretionary</td><td>5.1%</td><td>8.0%</td><td>2.9%</td><td>OW</td></tr><tr><td></td><td>Automobile</td><td></td><td></td><td>N</td></tr><tr><td></td><td>Consumer Durables</td><td></td><td></td><td>OW</td></tr><tr><td></td><td>Consumer Srvcs</td><td></td><td></td><td>N</td></tr><tr><td></td><td>Speciality Retail</td><td></td><td></td><td>N</td></tr><tr><td></td><td>Internet Retail</td><td></td><td></td><td>N</td></tr><tr><td>Consumer Staples</td><td>8.6%</td><td>7.0%</td><td>-1.6%</td><td>UW</td></tr><tr><td></td><td>Food &amp; Drug Retailing</td><td></td><td></td><td>UW</td></tr><tr><td></td><td>Beverages</td><td></td><td></td><td>UW</td></tr><tr><td></td><td>Food &amp; Tobacco</td><td></td><td></td><td>UW</td></tr><tr><td></td><td>Household Products</td><td></td><td></td><td>UW</td></tr><tr><td>Healthcare</td><td>13.2%</td><td>12.0%</td><td>-1.2%</td><td>N</td></tr><tr><td>Financials</td><td>24.6%</td><td>22.0%</td><td>-2.6%</td><td>N</td></tr><tr><td></td><td>Banks</td><td></td><td></td><td>N</td></tr><tr><td></td><td>Insurance</td><td></td><td></td><td>UW</td></tr><tr><td>Real Estate</td><td>0.6%</td><td>1.0%</td><td>0.4%</td><td>N</td></tr><tr><td>Information Technology</td><td>9.8%</td><td>7.0%</td><td>-2.8%</td><td>N</td></tr><tr><td></td><td>Software and Services</td><td></td><td></td><td>UW</td></tr><tr><td></td><td>Technology Hardware</td><td></td><td></td><td>N</td></tr><tr><td></td><td>Semicon &amp; Semicon Equip</td><td></td><td></td><td>OW</td></tr><tr><td>Communication Services</td><td>4.4%</td><td>4.0%</td><td>-0.4%</td><td>N</td></tr><tr><td></td><td>Telecommunication Services</td><td></td><td></td><td>N</td></tr><tr><td></td><td>Media</td><td></td><td></td><td>UW</td></tr><tr><td>Utilities</td><td>4.9%</td><td>6.0%</td><td>1.1%</td><td>N</td></tr><tr><td></td><td>100.0%</td><td>100.0%</td><td>0.0%</td><td>Balanced</td></tr></table>
+
+Source: MSCI, Datastream, JPM.
+
+Table 28: JPM Equity Strategy — Global Regional Allocation
+
+<table><tr><td></td><td>MSCI Weight</td><td>Allocation</td><td>Deviation</td><td>Recommendation</td></tr><tr><td>EM</td><td>12.2%</td><td>14.0%</td><td>1.8%</td><td>Overweight</td></tr><tr><td>DM</td><td>87.8%</td><td>86.0%</td><td>-1.8%</td><td>Underweight</td></tr><tr><td>US</td><td>73.3%</td><td>73.0%</td><td>-0.3%</td><td>Neutral</td></tr><tr><td>Japan</td><td>5.7%</td><td>6.0%</td><td>0.3%</td><td>Neutral</td></tr><tr><td>Eurozone</td><td>8.7%</td><td>11.0%</td><td>2.3%</td><td>Overweight</td></tr><tr><td>UK</td><td>3.5%</td><td>3.0%</td><td>-0.5%</td><td>Neutral</td></tr><tr><td>Others*</td><td>8.7%</td><td>7.0%</td><td>-1.7%</td><td>Underweight</td></tr><tr><td></td><td>100.0%</td><td>100.0%</td><td>0.0%</td><td>Balanced</td></tr></table>
+
+Source: MSCI, JPM \*Other includes Denmark, Switzerland, Australia, Canada, Hong Kong SAR, Sweden, Singapore, New Zealand, Israel and Norway
+
+Table 29: JPM Equity Strategy — European Regional Allocation
+
+<table><tr><td></td><td>MSCI Weight</td><td>Allocation</td><td>Deviation</td><td>Recommendation</td></tr><tr><td>Eurozone</td><td>54.5%</td><td>58.0%</td><td>3.5%</td><td>Overweight</td></tr><tr><td>United Kingdom</td><td>22.0%</td><td>21.0%</td><td>-1.0%</td><td>Neutral</td></tr><tr><td>Others**</td><td>23.5%</td><td>21.0%</td><td>-2.5%</td><td>Underweight</td></tr><tr><td></td><td>100.0%</td><td></td><td></td><td>Balanced</td></tr></table>
+
+Source: MSCI, JPM \*\*Other includes Denmark, Switzerland, Sweden and Norway
+
+Table 30: JPM Equity Strategy — Asset Class Allocation
+
+<table><tr><td></td><td>Benchmark weighting</td><td>Allocation</td><td>Deviation</td><td>Recommendation</td></tr><tr><td>Equities</td><td>60%</td><td>65%</td><td>5%</td><td>Overweight</td></tr><tr><td>Bonds</td><td>30%</td><td>30%</td><td>0%</td><td>Neutral</td></tr><tr><td>Cash</td><td>10%</td><td>5%</td><td>-5%</td><td>Underweight</td></tr><tr><td></td><td>100%</td><td>100%</td><td>0%</td><td>Balanced</td></tr></table>
+
+Source: MSCI, JPM
+
+![](images/8dd19c134eb800d209ce1d719a3ba512d024a3fe5214ffc65ad51c9fa191d242.jpg)
+
+Click here for our weekly podcast
+
+Companies Discussed in This Report (all prices in this report as of market close on 10 July 2026, unless otherwise indicated) BP(BP.L/483p/N), BARC(BARC.L/513p/OW), CaixaBank(CABK.MC/€12.54/OW), Carrefour(CARR.PA/€16.49/UW), DB(DBKGn.DE/€31.38/OW), Erste Group(ERST.VI/€117.70/OW), Galp Energia(GALP.LS/€19.57/OW), Jeronimo Martins(JMT.LS/€16.38/OW), Koninklijke Ahold Delhaize NV(AD.AS/€35.92/UW), Natwest Group(NWG.L/662p/OW), Repsol(REP.MC/€23.19/N), Standard Chartered(STAN.L/2,125p/OW), TotalEnergies(TTEF.PA/€68.38/OW)
+
+Analyst Certification: The Research Analyst(s) denoted by an “AC” on the cover of this report certifies (or, where multiple Research Analysts are primarily responsible for this report, the Research Analyst denoted by an “AC” on the cover or within the document individually certifies, with respect to each security or issuer that the Research Analyst covers in this research) that: (1) all of the views expressed in this report accurately reflect the Research Analyst’s personal views about any and all of the subject securities or issuers; and (2) no part of any of the Research Analyst's compensation was, is, or will be directly or indirectly related to the specific recommendations or views expressed by the Research Analyst(s) in this report. For all Korea-based Research Analysts listed on the front cover, if applicable, they also certify, as per KOFIA requirements, that the Research Analyst’s analysis was made in good faith and that the views reflect the Research Analyst’s own opinion, without undue influence or intervention.
+
+All authors named within this report are Research Analysts who produce independent research unless otherwise specified. In Europe, Sector Specialists (Sales and Trading) may be shown on this report as contacts but are not authors of the report or part of the Research Department.
+
+## Important Disclosures
+
+Company-Specific Disclosures: JPM does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. Important disclosures, including price charts and credit opinion history tables (if applicable), are available for compendium reports and all JPM-covered companies, and certain non-covered companies, by visiting https://www.jpmm.com/research/disclosures, calling 1-800-477-0406, or e-mailing research.disclosure.inquiries@JPM.com with your request.
+
+## Explanation of Equity Research Ratings, Designations and Analyst(s) Coverage Universe:
+
+JPM uses the following rating system: Overweight (over the duration of the price target indicated in this report, we expect this stock will outperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); Neutral (over the duration of the price target indicated in this report, we expect this stock will perform in line with the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); and Underweight (over the duration of the price target indicated in this report, we expect this stock will underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe. NR is Not Rated. In this case, JPM has removed the rating and, if applicable, the price target, for this stock because of either a lack of a sufficient fundamental basis or for legal, regulatory or policy reasons. The previous rating and, if applicable, the price target, no longer should be relied upon. An NR designation is not a recommendation or a rating. Some stocks under coverage have a rating but no price target; in these cases, we expect the stock will outperform/perform in line/underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe of the relevant duration of the region. In our Asia (ex-Australia and ex-India) and U.K. small- and mid-cap Equity Research, each stock's expected total return is compared to the expected total return of a benchmark country market index, not to those Research Analysts' coverage universe. If it does not appear in the Important Disclosures section of this report, the certifying Research Analyst's coverage universe can be found on JPM's Research website, https://www.JPMmarkets.com.
+
+## JPM Equity Research Ratings Distribution, as of July 04, 2026
+
+<table><tr><td></td><td>Overweight (buy)</td><td>Neutral (hold)</td><td>Underweight (sell)</td></tr><tr><td>JPM Global Equity Research Coverage*</td><td>53%</td><td>36%</td><td>12%</td></tr><tr><td>IB clients**</td><td>83%</td><td>80%</td><td>73%</td></tr><tr><td>JPMS Equity Research Coverage*</td><td>51%</td><td>37%</td><td>12%</td></tr><tr><td>IB clients**</td><td>95%</td><td>92%</td><td>87%</td></tr></table>
+
+\*Please note that the percentages may not add to 100% because of rounding.
+
+\*\*Percentage of subject companies within each of the "buy," "hold" and "sell" categories for which JPM has provided investment banking services within the previous 12 months.
+
+For purposes of FINRA ratings distribution rules only, our Overweight rating falls into a buy rating category; our Neutral rating falls into a hold rating category; and our Underweight rating falls into a sell rating category. Please note that stocks with an NR designation are not included in the table above. This information is current as of the end of the most recent calendar quarter.
+
+Equity Valuation and Risks: For valuation methodology and risks associated with covered companies or price targets for covered companies, please see the most recent company-specific research report at http://www.JPMmarkets.com, contact the primary analyst or your JPM representative, or email research.disclosure.inquiries@JPM.com. For material information about the proprietary models used, please see the Summary of Financials in company-specific research reports and the Company Tearsheets, which are available to download on the company pages of our client website, http://www.JPMmarkets.com. This report also sets out within it the material underlying
+
+## assumptions used.
+
+## History of Investment Recommendations:
+
+A history of JPM investment recommendations disseminated during the preceding 12 months can be accessed on the Research & Commentary page of http://www.JPMmarkets.com where you can also search by analyst name, sector or financial instrument.
+
+Analysts' Compensation: The research analysts responsible for the preparation of this report receive compensation based upon various factors, including the quality and accuracy of research, client feedback, competitive factors, and overall firm revenues.
+
+Registration of non-US Analysts: Unless otherwise noted, the non-US analysts listed on the front of this report are employees of non-US affiliates of JPM Securities LLC, may not be registered as research analysts under FINRA rules, may not be associated persons of JPM Securities LLC, and may not be subject to FINRA Rule 2241 or 2242 restrictions on communications with covered companies, public appearances, and trading securities held by a research analyst account.
+
+## Other Disclosures
+
+JPM is a marketing name for investment banking businesses of JPM Chase & Co. and its subsidiaries and affiliates worldwide.
+
+UK MIFID FICC research unbundling exemption: UK clients should refer to UK MIFID Research Unbundling exemption for details of JPM's implementation of the FICC research exemption and guidance on relevant FICC research categorisation.
+
+All research material made available to clients are simultaneously available on our client website, JPM Markets, unless specifically permitted by relevant laws. Not all research content is redistributed, e-mailed or made available to third-party aggregators. For all research material available on a particular stock, please contact your sales representative.
+
+Any long form nomenclature for references to China; Hong Kong; Taiwan; and Macau within this research material are Mainland China; Hong Kong SAR (China); Taiwan (China); and Macau SAR (China).
+
+JPM may, from time to time, write on issuers or securities targeted by economic or financial sanctions imposed or administered by the governmental authorities of the U.S., EU, UK or other relevant jurisdictions (Sanctioned Securities). Nothing in this report is intended to be read or construed as encouraging, facilitating, promoting or otherwise approving investment or dealing in such Sanctioned Securities. Clients should be aware of their own legal and compliance obligations when making investment decisions.
+
+Any digital or crypto assets discussed in this research report are subject to a rapidly changing regulatory landscape. For relevant regulatory advisories on crypto assets, including bitcoin and ether, please see https://www.JPM.com/disclosures/cryptoasset-disclosure.
+
+The author(s) of this research report may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so.
+
+Exchange-Traded Funds (ETFs): JPM Securities LLC (“JPMS”) acts as authorized participant for substantially all U.S.-listed ETFs. To the extent that any ETFs are mentioned in this report, JPMS may earn commissions and transaction-based compensation in connection with the distribution of those ETF shares and may earn fees for performing other trade-related services, such as securities lending to short sellers of the ETF shares. JPMS may also perform services for the ETFs themselves, including acting as a broker or dealer to the ETFs. In addition, affiliates of JPMS may perform services for the ETFs, including trust, custodial, administration, lending, index calculation and/or maintenance and other services.
+
+Options and Futures related research: If the information contained herein regards options- or futures-related research, such information is available only to persons who have received the proper options or futures risk disclosure documents. Please contact your JPM Representative or visit https://www.theocc.com/components/docs/riskstoc.pdf for a copy of the Option Clearing Corporation's Characteristics and Risks of Standardized Options or
+
+https://www.finra.org/sites/default/files/2020-08/Security\_Futures\_Risk\_Disclosure\_Statement\_2020.pdf for a copy of the Security Futures Risk Disclosure Statement.
+
+Changes to Interbank Offered Rates (IBORs) and other benchmark rates: Certain interest rate benchmarks are, or may in the future become, subject to ongoing international, national and other regulatory guidance, reform and proposals for reform. For more information, please consult: https://www.JPM.com/global/disclosures/interbank\_offered\_rates
+
+Private Bank Clients: Where you are receiving research as a client of the private banking businesses offered by JPM Chase & Co. and its subsidiaries (“JPM Private Bank”), research is provided to you by JPM Private Bank and not by any other division of JPM, including, but not limited to, the JPM Corporate and Investment Bank and its Global Research division.
+
+Legal entity responsible for the production and distribution of research: The legal entity identified below the name of the Reg AC Research Analyst who authored this material is the legal entity responsible for the production of this research. Where multiple Reg AC Research Analysts authored this material with different legal entities identified below their names, these legal entities are jointly responsible for the production of this research. Where more than one legal entity is listed under an analyst's name, the first legal entity is responsible for the production unless stated otherwise. Research Analysts from various JPM affiliates may have contributed to the production of this material but may not be
+
+licensed to carry out regulated activities in your jurisdiction (and do not hold themselves out as being able to do so). Unless otherwise stated below in the legal entity disclosures, this material has been distributed by the legal entity responsible for production, or where more than one legal entity is listed under the analyst's name, the first legal entity will be responsible for distribution. If you have any queries, please contact the relevant Research Analyst in your jurisdiction or the entity in your jurisdiction that has distributed this research material.
+
+## Legal Entities Disclosures and Country-/Region-Specific Disclosures:
+
+Argentina: JPM Chase Bank N.A Sucursal Buenos Aires is regulated by Banco Central de la República Argentina ("BCRA"- Central Bank of Argentina) and Comisión Nacional de Valores ("CNV"- Argentinian Securities Commission - ALYC y AN Integral N°51).
+
+Australia: JPM Securities Australia Limited (“JPMSAL”) (ABN 61 003 245 234/AFS Licence No: 238066) is regulated by the Australian Securities and Investments Commission and is a Market Participant of ASX Limited, a Clearing and Settlement Participant of ASX Clear Pty Limited and a Clearing Participant of ASX Clear (Futures) Pty Limited. This material is issued and distributed in Australia by or on behalf of JPMSAL only to "wholesale clients" (as defined in section 761G of the Corporations Act 2001). A list of all financial products covered can be found by visiting https://www.jpmm.com/research/disclosures. JPM seeks to cover companies of relevance to the domestic and international investor base across all Global Industry Classification Standard (GICS) sectors, as well as across a range of market capitalisation sizes. If applicable, in the course of conducting public side due diligence on the subject company(ies), the Research Analyst team may at times perform such diligence through corporate engagements such as site visits, discussions with company representatives, management presentations, etc. Research issued by JPMSAL has been prepared in accordance with JPM Australia’s Research Independence Policy which can be found at the following link: JPM Australia - Research Independence Policy.
+
+Brazil: Banco JPM S.A. is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsman JPM: 0800-7700847 / 0800-7700810 (For Hearing Impaired) / ouvidoria.jp.morgan@jpmchase.com.
+
+Canada: JPM Securities Canada Inc. is a registered investment dealer, regulated by the Canadian Investment Regulatory Organization and the Ontario Securities Commission and is the participating member on Canadian exchanges. This material is distributed in Canada by or on behalf of JPM Securities Canada Inc.
+
+Chile: Inversiones JPM Limitada is an unregulated entity incorporated in Chile.
+
+China: JPM Securities (China) Company Limited has been approved by CSRC to conduct the securities investment consultancy business.
+
+Colombia: Banco JPM Colombia S.A. is supervised by the Superintendencia Financiera de Colombia (SFC). Any reference in this material to products or services offered abroad by entities other than the Bank in Colombia is included exclusively for descriptive purposes. Such references do not constitute, and should not be construed as, promotional activity or the provision of financial products or services within Colombian territory, as defined under applicable Colombian regulation.
+
+Dubai International Financial Centre (DIFC): JPM Chase Bank, N.A., Dubai Branch is regulated by the Dubai Financial Services Authority (DFSA) and its registered address is Dubai International Financial Centre - The Gate, West Wing, Level 3 and 9 PO Box 506551, Dubai, UAE. This material has been distributed by JPM Chase Bank, N.A., Dubai Branch to persons regarded as professional clients or market counterparties as defined under the DFSA rules.
+
+European Economic Area (EEA): Unless specified to the contrary, research is distributed in the EEA by JPM SE (“JPM SE”), which is authorised as a credit institution by the Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and jointly supervised by the BaFin, the German Central Bank (Deutsche Bundesbank) and the European Central Bank (ECB). JPM SE is a company headquartered in Frankfurt with registered address at TaunusTurm, Taunustor 1, Frankfurt am Main, 60310, Germany. The material has been distributed in the EEA to persons regarded as professional investors (or equivalent) pursuant to Art. 4 para. 1 no. 10 and Annex II of MiFID II and its respective implementation in their home jurisdictions (“EEA professional investors”). This material must not be acted on or relied on by persons who are not EEA professional investors. Any investment or investment activity to which this material relates is only available to EEA relevant persons and will be engaged in only with EEA relevant persons.
+
+Hong Kong: JPM Securities (Asia Pacific) Limited (CE number AAJ321) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission in Hong Kong, and JPM Broking (Hong Kong) Limited (CE number AAB027) is regulated by the Securities and Futures Commission in Hong Kong. JPM Chase Bank, N.A., Hong Kong Branch (CE Number AAL996) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission, is organized under the laws of the United States with limited liability. Where the distribution of this material is a regulated activity in Hong Kong, the material is distributed in Hong Kong by or through JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited.
+
+India: JPM India Private Limited (Corporate Identity Number - U67120MH1992FTC068724), having its registered office at JPM Tower, Off. C.S.T. Road, Kalina, Santacruz - East, Mumbai – 400098, is registered with the Securities and Exchange Board of India (SEBI) as a 'Research Analyst' having registration number INH000001873. JPM India Private Limited is also registered with SEBI as a member of the National Stock Exchange of India Limited and the Bombay Stock Exchange Limited (SEBI Registration Number – INZ000239730) and as a Merchant Banker (SEBI Registration Number - MB/INM000002970). Telephone: 91-22-6157 3000, Facsimile: 91-22-6157 3990 and Website: http://www.jpmipl.com. JPM Chase Bank, N.A. - Mumbai Branch is licensed by the Reserve Bank of India (RBI) (Licence No. 53/Licence No. BY.4/94; SEBI - IN/CUS/014/ CDSL : IN-DP-CDSL-444-2008/ IN-DP-NSDL-285-2008/ INBI00000984/ INE231311239) as a Scheduled Commercial Bank in India, which is its primary license allowing it to carry on Banking business in India and other activities, which a
+
+Bank branch in India are permitted to undertake. For non-local research material, this material is not distributed in India by JPM India Private Limited. Compliance Officer: Ashutosh Sharma; ashutosh.j.sharma@jpmchase.com; +912261575002. Grievance Officer: Ramprasadh K, jpmipl.research.feedback@JPM.com; +912261573000. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Please visit Terms and Conditions and Most Important Terms and Conditions (MITC). The annual Compliance audit report is available at http://www.jpmipl.com/#research.
+
+Indonesia: PT JPM Sekuritas Indonesia is a member of the Indonesia Stock Exchange and is registered and supervised by the Otoritas Jasa Keuangan (OJK).
+
+Korea: JPM Securities (Far East) Limited, Seoul Branch, is a member of the Korea Exchange (KRX). JPM Chase Bank, N.A., Seoul Branch, is licensed as a branch office of foreign bank (JPM Chase Bank, N.A.) in Korea. Both entities are regulated by the Financial Services Commission (FSC) and the Financial Supervisory Service (FSS). For non-macro research material, the material is distributed in Korea by or through JPM Securities (Far East) Limited, Seoul Branch.
+
+Japan: JPM Securities Japan Co., Ltd. and JPM Chase Bank, N.A., Tokyo Branch are regulated by the Financial Services Agency in Japan.
+
+Malaysia: This material is issued and distributed in Malaysia by JPM Securities (Malaysia) Sdn Bhd (18146-X), which is a Participating Organization of Bursa Malaysia Berhad and holds a Capital Markets Services License issued by the Securities Commission in Malaysia.
+
+Mexico: JPM Casa de Bolsa, S.A. de C.V., JPM Grupo Financiero is member of the Mexican Stock Exchange (“Bolsa Mexicana de Valores”) and the Institutional Stock Exchange (“Bolsa Institucional de Valores”), and it is authorized to act as a broker dealer by the National Banking and Securities Exchange Commission (“Comisión Nacional Bancaria y de Valores”).
+
+New Zealand: This material is issued and distributed by JPMSAL in New Zealand only to "wholesale clients" (as defined in the Financial Markets Conduct Act 2013). JPMSAL is registered as a Financial Service Provider under the Financial Service providers (Registration and Dispute Resolution) Act of 2008.
+
+Philippines: JPM Securities Philippines Inc. is a Trading Participant of the Philippine Stock Exchange and a member of the Securities Clearing Corporation of the Philippines and the Securities Investor Protection Fund. It is regulated by the Securities and Exchange Commission.
+
+Singapore: This material is issued and distributed in Singapore by or through JPM Securities Singapore Private Limited (JPMSS) [MDDI (P) 057/08/2025 and Co. Reg. No.: 199405335R], which is a member of the Singapore Exchange Securities Trading Limited, and/or JPM Chase Bank, N.A., Singapore branch (JPMCB Singapore), both of which are regulated by the Monetary Authority of Singapore. This material is issued and distributed in Singapore only to accredited investors, expert investors and institutional investors, as defined in Section 4A of the Securities and Futures Act, Cap. 289 (SFA). This material is not intended to be issued or distributed to any retail investors or any other investors that do not fall into the classes of “accredited investors,” “expert investors” or “institutional investors,” as defined under Section 4A of the SFA. Recipients of this material in Singapore are to contact JPMSS or JPMCB Singapore in respect of any matters arising from, or in connection with, the material.
+
+South Africa: JPM Equities South Africa Proprietary Limited and JPM Chase Bank, N.A., Johannesburg Branch are members of the Johannesburg Securities Exchange and are regulated by the Financial Services Conduct Authority (FSCA).
+
+Taiwan: JPM Securities (Taiwan) Limited is a participant of the Taiwan Stock Exchange (company-type) and regulated by the Taiwan Securities and Futures Bureau. Material relating to equity securities is issued and distributed in Taiwan by JPM Securities (Taiwan) Limited, subject to the license scope and the applicable laws and the regulations in Taiwan. To the extent that JPM Securities (Taiwan) Limited produces research materials on securities not listed on the Taiwan Stock Exchange or Taipei Exchange (“Non-Taiwan Listed Securities”), these materials shall not constitute securities recommendations for the purpose of applicable Taiwan regulations, and, for the avoidance of doubt, JPM Securities (Taiwan) Limited does not act as broker for Non-Taiwan Listed Securities. According to Paragraph 2, Article 7-1 of Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers (as amended or supplemented) and/or other applicable laws or regulations, please note that the recipient of this material is not permitted to engage in any activities in connection with the material that may give rise to conflicts of interests, unless otherwise disclosed in the “Important Disclosures” in this material.
+
+Thailand: This material is issued and distributed in Thailand by JPM Securities (Thailand) Ltd., which is a member of the Stock Exchange of Thailand and is regulated by the Ministry of Finance and the Securities and Exchange Commission. The registered address is 548 One City Center Building, 50th Floor, Ploenchit Road, Lymphini, Pathum Wan, Bangkok 10330.
+
+UK: Research is produced in the UK by JPM Securities plc (“JPMS plc”) which is a member of the London Stock Exchange and is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority or JPM Markets Limited (“JPMML Ltd”) which is authorised and regulated by the Financial Conduct Authority. Unless specified to the contrary, this material is distributed in the UK by JPMS plc and is directed in the UK only to: (a) persons having professional experience in matters relating to investments falling within article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) (Order) 2005 (“the FPO”); (b) persons outlined in article 49 of the FPO (high net worth companies, unincorporated associations or partnerships, the trustees of high value trusts, etc.); or (c) any persons to whom this communication may otherwise lawfully be made; all such persons being referred to as "UK relevant persons". This material must not be acted on or relied on by persons who are not UK relevant persons. Any investment or investment activity to which this material relates is only available to UK relevant persons and will be engaged in only with UK relevant persons.
+
+A description of JPM EMEA's policy for prevention and avoidance of conflicts of interest related to the production of Research can be found at the following link: JPM EMEA - Research Independence Policy.
+
+U.S.: JPM Securities LLC (“JPMS”) is a member of the NYSE, FINRA, SIPC, and the NFA. JPM Chase Bank, N.A. is a member of the FDIC. Material published by non-U.S. affiliates is distributed in the U.S. by JPMS who accepts responsibility for its content.
+
+General: Additional information is available upon request. The information in this material has been obtained from sources believed to be reliable. While all reasonable care has been taken to ensure that the facts stated in this material are accurate and that the forecasts, opinions and expectations contained herein are fair and reasonable, JPM Chase & Co. or its affiliates and/or subsidiaries (collectively JPM) make no representations or warranties whatsoever to the completeness or accuracy of the material provided, except with respect to any disclosures relative to JPM and the Research Analyst's involvement with the issuer that is the subject of the material. Accordingly, no reliance should be placed on the accuracy, fairness or completeness of the information contained in this material. There may be certain discrepancies with data and/or limited content in this material as a result of calculations, adjustments, translations to different languages, and/or local regulatory restrictions, as applicable. These discrepancies should not impact the overall investment analysis, views and/or recommendations of the subject company(ies) that may be discussed in the material. Artificial intelligence tools may have been used in the preparation of this material, including assisting in data analysis, pattern recognition, and content drafting for research material. JPM accepts no liability whatsoever for any loss arising from any use of this material or its contents, and neither JPM nor any of its respective directors, officers or employees, shall be in any way responsible for the contents hereof, apart from the liabilities and responsibilities that may be imposed on them by the relevant regulatory authority in the jurisdiction in question, or the regulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction.
+
+Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email
+
+MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer
+
+Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not constitute investment advice nor an endorsement of any product or project; (4) are provided solely for informational purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All Rights Reserved.
+
+"Other Disclosures" last revised July 04, 2026.
+
+Completed 12 Jul 2026 11:00 PM BST

@@ -1,0 +1,91 @@
+ZH_A: 最近我看到一份JPM发布的深度报告，专门做了一个服务器CPU的出货量模型。他们说2025到2028年，服务器CPU市场会迎来一个超周期。你觉得这个判断靠谱吗？
+
+ZH_B: 这个判断非常有意思。他们预测总出货量从2600万颗增长到6800万颗，年复合增长率38%。核心驱动力不只是AI训练，而是AI推理和所谓的“代理式AI”带来的增量需求。
+
+ZH_A: 代理式AI？这听起来像是一个新概念。它和传统的AI服务器CPU需求有什么不同？
+
+ZH_B: 对，这是报告里分出的三个细分市场之一。第一个是AI头节点CPU，就是直接连接AI加速器的；第二个是传统通用服务器CPU；第三个就是代理式AI CPU。报告认为，随着AI从训练转向推理，代理式AI会成为爆发点，预计2025到2028年增长155%。
+
+ZH_A: 155%的年复合增长率？这太惊人了。那为什么代理式AI会需要这么多CPU？
+
+ZH_B: 因为代理式AI的工作负载更复杂。比如，一个AI代理需要做规划、调用工具、管理存储和安全。这些任务需要大量的CPU来编排，而不是只靠GPU算。报告里提到，像英伟达的Vera CPU，不仅用在NVL72机架里，还会作为独立CPU服务于整个平台。
+
+ZH_A: 也就是说，CPU的角色从“配角”变成了“指挥家”？
+
+ZH_B: 没错。而且还有一个关键趋势：每个AI加速器对应的CPU数量在增加。以前HGX服务器里，一个CPU配四个加速器；现在NVL72里变成两个加速器配一个CPU；未来谷歌的TPU设计可能直接做到一比一。
+
+ZH_A: 加速器越来越多，但每个加速器需要的CPU却变多了？这听起来有点反直觉。
+
+ZH_B: 对，因为服务器架构越来越复杂。加速器越强，就越需要CPU来做数据调度和协调。所以报告认为，AI头节点CPU的增速会达到74%的年复合增长率，远超加速器本身的50%。
+
+ZH_A: 那传统通用服务器CPU呢？会不会被完全取代？
+
+ZH_B: 不会。报告预测它仍然有5%的稳定增长。但真正有意思的是，代理式AI CPU会从几乎为零，到2028年占整个服务器CPU市场的一半以上。
+
+ZH_A: 一半以上？那整个市场结构会发生根本变化。谁会是最大的受益者？
+
+ZH_B: 报告点名了几类公司。首先是ARM架构的CPU，因为英伟达和谷歌都在推自家ARM芯片，预计到2028年ARM会占AI头节点CPU的90%。其次是像ASPEED这样的BMC芯片公司、Lotes这样的连接器厂商、Unimicron这样的基板供应商。
+
+ZH_A: 那x86阵营呢？AMD和英特尔还有机会吗？
+
+ZH_B: 报告认为x86市场也会加速增长，年复合增长率25%，比之前的周期快很多。AMD在x86服务器CPU里的份额提升，对台积电和日月光这样的代工厂也是利好。
+
+ZH_A: 听起来整个产业链都在受益。但报告里有没有提到哪些风险或者还没完全解答的问题？
+
+ZH_B: 有。比如代理式AI的CPU需求模型，现在更多是基于假设。报告说2024年几乎没有代理式AI活动，2025年的比例也是推算出来的。这个比率未来能否持续上升，还需要验证。
+
+ZH_A: 所以这个超周期能否兑现，很大程度上取决于代理式AI的实际部署速度？
+
+ZH_B: 对。另一个悬念是，ARM架构的渗透率会不会比预期更快或更慢。报告假设了72%的ARM年复合增长率，但如果超大规模客户加速自研芯片，x86的份额可能会更快被侵蚀。
+
+ZH_A: 那如果我们想更深入了解这些细节，比如每个客户的CPU配比具体怎么算，或者哪些股票最值得关注，是不是得看完整报告？
+
+ZH_B: 没错。报告里还有详细的表格，拆解了英伟达、AMD、谷歌、亚马逊等各家客户的加速器与CPU配比变化，以及对应的供应商受益逻辑。这些我们在播客里没法全部展开。
+
+ZH_A: 好的。如果你对这份报告的完整数据和投资逻辑感兴趣，欢迎加入我们的财经社群，获取完整PDF和更多深度解读。今天先聊到这里，我们下期见。
+
+EN_A: So I just came across this JPM report that builds a proprietary model for server CPU shipments. They are calling for a super cycle from 2025 to 2028. Is that the real deal?
+
+EN_B: It is a bold call. They project total shipments to grow from 26 million units in 2025 to 68 million by 2028, that is a 38 percent CAGR. But the real story is not just about AI training anymore. It is about inference and what they call agentic AI.
+
+EN_A: Agentic AI? That sounds like a new buzzword. How is that different from the usual AI server demand?
+
+EN_B: The report splits server CPU demand into three buckets. One is AI headnode CPUs, those directly connected to accelerators. Two is general purpose server CPUs. And three is agentic AI CPUs. They see agentic AI as the breakout growth vector, with a 155 percent CAGR over the forecast period.
+
+EN_A: 155 percent? That is explosive. But why does agentic AI need so many more CPUs?
+
+EN_B: Because agentic workloads are more complex. Think about it. An AI agent has to plan, call tools, manage storage, and handle security. All that orchestration requires CPUs, not just GPUs. The report points out that Nvidia's Vera CPU, for example, is not just inside the NVL72 rack. It also serves as a standalone CPU across the entire platform.
+
+EN_A: So CPUs are moving from a supporting role to a conductor role?
+
+EN_B: Exactly. And there is another key trend. The number of accelerators per CPU is shrinking. In older HGX servers, you had four accelerators for every one CPU. In NVL72, it is two to one. And for Google's next generation TPU designs, it could go to one to one.
+
+EN_A: That is counterintuitive. More accelerators, but each one needs more CPU support?
+
+EN_B: Right. Because server architectures are getting more complex. The stronger the accelerator, the more CPU orchestration it needs. So the report forecasts AI headnode CPU demand to grow at a 74 percent CAGR, even faster than the 50 percent CAGR for accelerators themselves.
+
+EN_A: What about traditional general purpose servers? Are they being replaced?
+
+EN_B: No, they still grow at a steady 5 percent CAGR. But the real shift is that agentic AI CPUs will go from almost nothing to over half of the total server CPU market by 2028.
+
+EN_A: Half the market? That changes the entire landscape. Who benefits the most?
+
+EN_B: The report names several groups. First, ARM based CPUs. Nvidia and Google are pushing their own ARM chips, so ARM could capture 90 percent of AI headnode CPU demand by 2028. Then there are BMC chip makers like ASPEED, connector suppliers like Lotes, and substrate makers like Unimicron.
+
+EN_A: What about the x86 camp? Do AMD and Intel still have a chance?
+
+EN_B: The report says the x86 market will also accelerate, with a 25 percent CAGR, much faster than previous cycles. And AMD gaining share in x86 servers is good for foundries like TSMC and OSAT players like ASE.
+
+EN_A: So the whole supply chain benefits. But are there any risks or questions the report does not fully answer?
+
+EN_B: Definitely. For one, the agentic AI CPU demand model is based on assumptions. The report assumes zero agentic AI activity in 2024, and the ratio for 2025 is estimated. Whether that ratio keeps rising is something we need to verify.
+
+EN_A: So the super cycle really depends on how fast agentic AI gets deployed in the real world?
+
+EN_B: Exactly. Another open question is how fast ARM penetration will be. The report assumes a 72 percent CAGR for ARM. But if hyperscalers accelerate their in house chip plans, x86 share could erode even faster.
+
+EN_A: To get into the nitty gritty, like the exact accelerator to CPU ratios for each customer, or which stocks are most leveraged, we would need the full report.
+
+EN_B: Right. The report has detailed tables breaking down Nvidia, AMD, Google, Amazon, and others, plus a full list of beneficiary stocks. We cannot cover all that here.
+
+EN_A: If you want the full data and deeper analysis, join our community to get the complete PDF and more insights. That is all for today. See you next time.
