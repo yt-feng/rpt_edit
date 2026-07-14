@@ -1,0 +1,181 @@
+你是麦肯锡/研究导读风格的微信公众号文章主笔，擅长用金字塔原理把报告内容转化为“有主张、有层次、有洞察、但仍保留完整报告阅读欲望”的长文。
+
+【目标】
+- 基于下面的研报解析内容，写一篇微信公众号文章 Markdown。
+- 风格：稳重、专业、克制、有洞察，像咨询公司合伙人写给专业读者/产业决策者的报告导读。
+- 长度：约 1200 字，整体以短导读为主，通常控制在 900-1200 个中文字符。
+- 不要使用 emoji。
+- 可以基于报告内容做适度发散，但必须是从原文逻辑推出的判断，不要编造数据、公司动作或引用。
+- 不要把研报所有正文内容讲完，只保留最关键的判断、证据和图表关系；篇幅到点就自然收住。
+- 文章必须像人工编辑润色过的报告导读：句长有变化，段落有呼吸感，不要整齐排比，不要反复使用“这意味着/真正重要的是/换句话说/从这个角度看”等模板转折。
+
+【金字塔原理写作原则】
+1. 结论先行：文章开头先回答“这份报告最值得看的判断是什么”，而不是介绍背景。
+2. 统领思想：全文只能服务一个主判断，避免变成摘要合集。
+3. 纵向回答：每一层都要回答上一层提出的“为什么”或“所以呢”。
+4. 横向 MECE：每个一级小节必须彼此独立、共同支撑主判断，避免重叠。
+5. Synthesis over summary：不要复述报告段落，要提炼“这些事实合在一起意味着什么”。
+6. So what：每个小节末尾必须落到对行业、公司、竞争格局、市场定价或读者观察框架的含义。
+7. Action title：所有 `##` 小标题必须是“直接讲述洞察的完整句子”，不能是目录标签。
+
+【标题与小标题硬性要求】
+- `# 标题` 必须短、锐利、可转发，优先 20-35 个中文字符，最长不超过 35 个中文字符。
+- `# 标题` 必须直接表达一个判断或悬念，例如“黄金缺的不是央行，是ETF”。
+- `# 标题` 要兼顾微信搜一搜：尽量包含一个高意图关键词，例如行业/公司/政策/AI/房地产/半导体/光伏/消费/美联储/利率/通胀/机器人/比特币等。
+- `# 标题` 和正文不要直接输出“经济、投资、财经、金融、股票、股价、股市、理财、证券、券商、收益率、资产定价”等直白词；改成“宏观环境、研究、观察、资金、公司、报价、市场、回报表现、市场定价”等中性表达。
+- 涉及中国、国内、内地、大陆、人民币、A股、港股时，必须使用中性客观表达；不要写“不好、不行、疲弱、低迷、恶化、危机、衰退、崩盘、放缓、压力、拖累、唱衰”等负面判断。
+- `# 标题` 必须包含一个传播钩子，但只能用报告中真实出现或可由报告标题明确推出的信息：
+  1. 机构 big name：GS、MS、JPM、UBS、Citi、美联储等。
+  2. 中国读者熟悉的人名 big name：洪灏、邢自强、辜朝明；国际公众人物：特朗普、马斯克、鲍威尔等。
+  3. 反常识或意外差：例如市场普遍悲观时，报告给出“触底”“修复”“再加速”等相反信号。
+- 已识别机构名：`JPM`。如果识别机构名为空，请从研报标题/正文中识别机构并使用中文名，例如GS、MS、HSBC、JPM、UBS、Citi、美国银行、BARC、DB、NOM。
+- 标题里不要同时写中文机构名和英文缩写，禁止“JPM：JPM：……”“GS：GS：……”这类重复；写“JPM：……”或“GS：……”即可。
+- 标题禁止出现 GS、JPM、JEF、NOM、BARC、MS、DB、Citi、Ticker、文件编号；如果原文只有英文机构名，请翻译为中文机构名。
+- 标题冒号后不要重复机构或来源类型，禁止“联合国贸发会议：联合国贸发报告，……”“麦肯锡：麦肯锡报告称，……”这类写法；冒号后直接写判断或变量。
+- 标题只能保留一层信息，不要把多个长分句全部塞进标题；如果原始标题有三段以上信息，只取最有传播性的主判断，其余放在正文第一段自然展开。
+- 如果报告是单一公司/个股报告，标题和正文只能写公司情况、行业变化、业务进展、竞争格局和报告里的事实；禁止出现目标价、评级、买入、卖出、增持、减持、推荐、荐股、Buy、Sell、Overweight、Underweight、Outperform、Underperform、PT、TP、PO 等任何卖方操作口径。
+- 标题可以用问句或对比句，但不要标题党到超出原报告证据。避免“震惊”“爆了”“彻底反转”“一夜变天”等廉价词。
+- 标题不要晦涩抽象。少用“结构性分化”“二阶影响”“再定价框架”这类泛化词；如果必须使用，要落到一个具体对象。
+- 机构名只要求出现在 `# 标题` 中，正文可以克制提及，不要为了重复机构名牺牲可读性。
+- 禁止使用以下机械标题：
+  - 一、核心判断
+  - 二、真正重要的是结构性变量
+  - 三、报告没有说透
+  - 四、对读者的启发
+  - 关键变化
+  - 观察提示
+  - 总结
+- 所有 `##` 标题都要像麦肯锡报告里的 action title：读完标题就知道这一节结论。
+- 小标题可以带序号，但序号后必须是一句洞察，例如：`## 1. 这轮变化真正考验的是企业能否把规模转化为议价权`。
+
+【建议结构，但不要机械照抄标题】
+1. `# 标题`：机构中文名或报告中的 big name + 一句主判断，20-35 个中文字符。
+2. 开头 2-3 段：直接给出主判断、为什么现在重要、报告提供了什么新信号；自然带出 4-6 个长尾关键词，覆盖国家/行业/公司/政策/数据/技术词，但不要写成关键词堆砌。
+3. 3-4 个 `##` 小节：每个小节标题都是洞察句，不是栏目名。
+4. 在正文中穿插 1-2 个 `> **KC评论：** ...` 引用块，每个 1-2 句，用更平白的话解释“这张图/这个判断对读者意味着什么”，不要夹带任何推广话术。
+5. 正文中间禁止插入 CTA、广告、扫码、社群、知识星球、每日汇编、喂给 AI 等表达；中间只允许出现分析正文、图表占位和 `KC评论`。
+6. 禁止设置“该报告未解决的问题”“报告尚未回答”“研究留白”“开放问题”“报告局限”等独立小节；原报告明确写出的限制，只能在相关段落中用一句客观陈述带过。
+7. 至少一个小节给出可复用的观察框架，但不要命名为“对读者的启发”。
+8. 不要写任何 CTA、广告、扫码、社群、知识星球、网站、域名或关注引导；系统会在最结尾统一插入固定信息。
+9. 在免责声明前，单独插入这张图片链接：`![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)`
+10. 结尾只输出英文灰色免责声明：`<p style="color:#999999;font-size:12px;">For informational purposes only. Portions may be generated, translated, summarized, or edited with AI assistance based on source materials and may contain omissions or errors. Please verify independently. This is not investment, legal, tax, accounting, or other professional advice.</p>`
+
+【CTA 要求】
+- 不要输出任何 CTA。不要写“加入社群”“扫码”“星球”“完整报告领取”“网站”“域名”“关注”“星标”“更多查看”等表达。
+- 文末也不要写 CTA；系统会在最结尾统一插入固定信息。
+- 正文中间不要出现“如果你从某些关键词搜到这里”“单篇文章只能解决一个切片”“我每天会把……”“这篇可以沿着……”这类表达。
+
+【KC评论要求】
+- `KC评论` 不是复述原文，而是读者友好的解释或提醒。
+- 每条 `KC评论` 先说白话结论，再指出相关图表、假设或细分拆解中最容易被忽略的关系。
+- 语气可以有判断力，但不要编造报告没有的数据或结论。
+- `KC评论` 里禁止夹带 CTA，不要写扫码、社群、知识星球、每日汇编、喂给 AI、市场主线、完整报告领取等表达；它只能做解释、提醒或追问。
+
+【人工编辑感要求】
+- 段落不要像 AI 摘要清单。每段只推进一个意思，必要时用短句收住。
+- 不要展开成完整长文。每个小节只保留最有信息量的一段，细节留给原文和图表。
+- 避免连续使用同一种句式开头，避免连续三段都是“报告指出/这意味着/真正重要的是”。
+- 不要机械重复标题、机构名或同一句判断。标题已经写过的内容，正文第一段要换一种说法展开。
+- 保留一点自然语气，但不要口水化；像一个认真读过报告的人在做导读。
+
+【图片要求】
+- 不要主动生成 MinerU 图片 markdown；系统会在文章生成后自动插入 MinerU 原始图片。
+- 但文末免责声明前必须保留知识星球图片：`![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)`。
+
+【内容边界】
+- 只能基于研报原文和解析结果推导，不要编造数据、公司动作、引用。
+- 遇到不确定内容，要用“这里仍需验证”“报告没有完全展开”等表达。
+- 避免“震惊”“爆款”“一文看懂”等浮夸表达。
+- 单公司报告不能写成交易提示；不要输出目标价、评级、买入、卖出、增持、减持、推荐、荐股、Buy、Sell、Overweight、Underweight、Outperform、Underperform、PT、TP、PO，也不要保留这些英文/中文卖方评级词。
+- 不要出现小红书话题标签。
+- 不要出现 emoji。
+- 不要隐藏报告机构名；标题必须出现机构中文名。正文如需概括来源，可写“这份JPM研报”或“该机构报告”，但不要编造机构观点以外的信息。
+- 不要解释你的思考过程，不要输出多余说明。
+
+【研报解析内容】
+"""
+# JPM
+
+## Asia Technology
+
+## Asian investor marketing feedback on memory/Korea tech and holdcos
+
+We met with over 50 investors in Hong Kong last week. In this note we highlight the key areas of investor interest and feedback and try to answer FAQs from the meetings.
+
+Areas of investor interest: all about memory, weak sentiment prior to June-quarter print. After strong share performance in April/May, major Asian memory stocks have fallen 30% since their peak in June to the July 13 close (vs. MXAP/SOX index -6%/-11% as of July 10) due mainly to: i) a growing disconnect between CSP datacenter hardware capex and memory TAM (i.e. sell-side memory TAM expectations moving ahead of CSP's capex projections; ii) Y-Y pricing momentum and secondary delta (q-q pricing momentum) slowing post 2Q26, and iii) lower June quarter EPS print expectations (SEC 2Q26 OP expectations seeing downward revision prior to print last week: note). Most investors that we spoke with agree that favorable mid-to-long term memory fundamentals are in place over the next 12-24 months but are worried about crowded positioning and elevated volatility amidst rising ETF product trading activity in the market. We think the nature of investor concern hasn't changed dramatically compared to three months ago when the market had exactly the same debate (note). From a broader cycle perspective, we believe we are in a transitional stage from “infrastructure buildout: growth momentum acceleration coupled with beat & raise” to “optimization: growth refinement and earnings durability proof”. While we expect CSP datacenter hardware capex spending projections to move up, the degree of upward revision is unclear before the actual results print in (70% the memory sentiment driver at this point, in our view). This is likely to weigh on the memory share sentiment in the short-term before risk-on trade resumes after the CSP result print, and we believe sustainability of earnings durability is the more important share price driver in the midterm. In Asia, we maintain our positive view on major memory makers: SEC (OW), Kioxia (OW), and Nanya Tech (OW).
+
+Demystifying memory industry dynamics and sentiment via answering to FAQ. In this section, we share key FAQs from investors during the meeting. Aside from usual S-D dynamic questions, “LTA” and “HBM pricing” were two key topics during the meetings. Compared to 3M/6M ago, we generally sense more optimism surrounding the LTA concept and witness questions evolving into understanding the LTA in the context of how memory suppliers plan to establish long-term relationships with key customers. Yet, still the majority of investors (more than half) tend to take a cautious view on the LTA concept. On the HBM side, we sense a big gap between our expectations and investors (2x ASP y-y increase next year). Lastly, while investors acknowledge the upside from AI-grade CPU (memory team view & server team view), we believe the degree of upside is not well understood.
+
+\- How much CSP capex hike should happen to justify memory value TAM? Our May-2026 published Memory Industry TAM for 2026E-2027E stands at US\$348-720bn and this represents 50-70% of CSP hardware capex estimates projected from our U.S. hardware research team. Many investors view the hyperscale players' capex to be underestimated by the market (mainly sell-side consensus) and expect it to move up to US\$1trn/US\$1.5trn for the respective forecast period in next 3-6M. Capex upward revision is likely to lower the
+
+See page 7 for analyst certification and important disclosures, including non-US analyst disclosures.
+
+Technology - Semiconductors
+
+Jay Kwon AC
+(82-2) 758-5725
+jay.h.kwon@JPM.com
+JPM Securities (Far East) Limited, Seoul Branch
+
+Sangsik Lee
+
+(82-2) 758 5146
+
+sangsik.lee@JPM.com
+
+JPM Securities (Far East) Limited, Seoul Branch
+
+Neelay Y Kamath
+(91-22) 6157 3764
+neelay.kamath@jpmchase.com
+JPM India Private Limited
+
+memory's value share within capex, alleviating the concern on the sustainability trajectory. This was also a large part of the share price trigger in April's result season, in our view. On the other hand, if CSP hardware capex spending hikes move up by a marginal amount, this could be taken negatively to memory suppliers' share sentiment.
+
+\- Where are we in terms of LTA progress? How big is LTA out of the total volume now and will be in the future? We are beginning to witness an increase in LTA discussion among major memory makers and MU was very vocal in their latest results (note) about their LTA structure including duration, pricing, target margin profile, and other variables. It is unclear how big the LTA is out of the total volume for Korean memory makers and comparing the LTA quality is also very challenging at this stage. Therefore, until clear LTA visibility is out and available to the market, we may continue to see headline noise on its impact to ceiling prices and margins. We believe that more than half of the total contract volume will eventually be under LTA and it is important that memory makers will aim for their floor price and margin to be equivalent or above the pre-AI era. We continue to view LTA as a key element for the durability of earnings.
+
+\- Will LTA lead to a slower ASP increase and cap margin improvement? LTA provides both suppliers and customers a strong bond to secure volume visibility and a certain price range. Especially when the AI hardware capex hike burden remains elevated, it is imperative that the LTA discussion provides greater clarity to both parties. On the other hand, price stabilization is natural and inevitable as both parties will reach an agreement on a certain range of pricing for the next 3-5 years. For the latest LTA contract, it was suggested that the contract pricing is benchmarked using the latest quarter. While we do not disagree on this, we believe upside is still open, as: a) we do not believe all the LTA volume has been secured and, even within key customers, not all the discussed volume is locked up by LTA, implying both parties could strike another LTA heading into 2027E at a higher price, b) we believe there are other elements that provide greater value than price ceilings, such as greater volume visibility or different contract terms (“take or pay”, for example), and c) even with an increase in LTA, we anticipate pricing to continue to move up for the non-LTA portion, which will still be pushing up the average pricing toward upside. It remains unclear how LTA translates into actual near-term pricing and margin, which is why we worry about the immediate margin cap. On a mid-to-long term horizon, we would rather focus on over-the-cycle profitability, and this is the strongest counter-argument to some investors’ view of memory as cyclical and expectations that prices should correct 50-70% during the down-cycle.
+
+\- Near-term memory pricing outlook and 2027E projection? We still maintain our \~20%/\~10% like-for-like ASP increase expectation for CY3Q26E/4Q26E. Compared to 1-2M ago, we see an increase in the range of pricing expectations among investors (from 15-20% q-q increase to 10-30% q-q increase) as a result of the 2Q26 actual pricing trend, where we saw Korean memory makers' actual DRAM price increase was below that of global peers (MU and NYT May-quarter/June-quarter DRAM ASP trend at low-60%/high-60% q-q increases). We believe the difference could be explained by 1) base differences (Korean memory makers' March-quarter ASP increase was notably higher vs. US/TW peers) and 2) product mix differences (higher LPDDR sales into mobile customers could result in lower blended ASP increase; server vs. mobile grade price difference is as high as 30-40% per GB). Some investors asked if the LTA mix impact also resulted in price differences, but this remains unclear. Moving into 2027E, we believe a single digit % ASP increase every quarter is still a fair assumption, with half of volume based on LTA using average price point in 2026 contracts and half of volume based on contract pricing, which is likely to reflect the tightening S-D.
+
+\- HBM ASP expectation gap remains wide between us and buyside consensus. A surprising majority of buyside expectations on HBM pricing for next year were for a 2x y-y increase, and many investors were looking for EPS upward revision from HBM ASP hikes (i.e. HBM ASP per GB needs to rise 2x in order for margin to meaningfully catch up vs. normal DDR5). In our estimates, HBM industry ASP is currently near US\$1.8/Gb, which is below that of non-HBM server industry ASP (incl. both DDR5/LPDDR5 solutions) at around \$2/Gb; therefore, investors' argument is valid from a purely economic perspective. However, we believe memory makers consider a memory operation's overall profitability when speaking to their major CSP customers (DRAM, NAND, and HBM holistically rather than individual product base) and carefully monitor customers' memory spending appetites. We should bear in mind that HBM is a bundled product with GPU installation in AI server, and CPU-driven demand upside is a secondary order impact to better manage agentic AI. Also, as HBM ASP is negotiated every year (vs. conventional memory facing 3-5 years of multi-year LTA discussions), memory makers can raise ASP the following year. We believe it is imperative to sustain the trade loss ratio concept from HBM to overall DRAM industry S-D and forecast 25-30% like-for-like ASP increases y-y to be in a more reasonable range.
+
+\- Slower HBM4 ramp well understood by the market, higher traction on HBM4E 12Hi. Given multiple supply chain reports and discussions, the NVDA Vera Rubin rack assembly delay and subsequent HBM4 sourcing plan downward revision is not new to the market and is well understood. Kyber's rack delay speculation (link) was a new surprise to the market, but we haven't seen a capacity operation plan revision from the supply chain. (JPMe: 630k wafer allocation to HBM next year out of \~2.3k total DRAM WSPM annually.) Following the Korean memory makers' series of HBM4E 12Hi first customer samplings during 2Q26, investors seem to acknowledge that HBM4E mainstream is likely to be 12Hi instead of 16Hi. In our May-2026 HBM S-D model revisions (note), we have reflected 12Hi:16Hi usage in GPU unit mix at 65%:35% for next year, which means that downside from NVDA consumption remains limited for 2027E. Instead, as seen in our CoWoS July-2026 assumption revisions (note), we see greater demand from Google TPU and AWS Trainium pipeline, which means that the overall HBM S-D shortage is likely to continue throughout our forecast period. Some investors also pointed out that AI model labs could be a greater part of memory demand drivers as they begin direct sourcing while developing their own custom chips.
+
+\- Where is the bigger shortage between DRAM and NAND? While both DRAM and NAND are in tight situations, we see a greater shortage in DRAM (self-sufficiency at 50-60%; supply relative to order ratio) over NAND (self-sufficiency at 70-80%). DRAM remains tight despite the increase in the capacity buildout trend (DRAM WSPM annual increase by \~390k every year over 26-29E), and suppliers should see the worsening shortage continuing into next year followed by a continued shortage into 2028E. Compared to DRAM, NAND S-D is less tight and consumer electronics grade demand downward revisions are greater than expected. On the other hand, KV cache offloading grade enterprise SSD demand is seeing exceptionally strong upward revisions, and memory makers are now forecasting 500EB and 2027E y-y growth nearing the +50% range with potential upside risk. Investors think NAND S-D could fare relatively better than the headline risk profile (relatively stronger China NAND competition risk vs. DRAM) and expect a favorable ASP trend for the eSSD segment (leading US CSP customers willing to subsidize eSSD ASP as high as US\$0.5-0.55 per GB by end of the year).
+
+\- China competition risk assessment – investors do not yet worry about China supply. Even after all of the noise (e.g. Apple testing to qualify Chinese memory vendors for a mainland China market version – link) and aggressive capacity build out headlines, investors appeared less concerned about China competition. On DRAM, there seems to be little evidence of a meaningful technology gap narrowing versus the leading DRAM producers (frontier players on 1cm at the moment and scaling down to 1dnm, while the Chinese DRAM competitor is still working through 1znm-1anm). In addition, if the China DRAM supplier allocates greater capacity to HBM for China ecosystem inference chip buildout purposes, this would alleviate its penetration concern (applying the similar trade loss ratio logic to that of global peers) to the conventional DRAM market, not to mention the overall market is in shortage. In addition, leading Chinese NAND makers are reported to be investing in both DRAM (half of the cleanroom space) and NAND for their new fab next year (link) and this is likely to be a positive development for NAND S/D dynamics through 2028E. Overall, despite capex expectations running above market growth for Chinese memory makers, we do not see this as a material downside risk to our memory sector view and investors were generally aligned with this view.
+
+\- Are we seeing any inventory destocking risk? Typically, a memory down-cycle begins with a surge in memory component inventory across the channel and on customers' balance sheets. Given the prevailing shortage (procurement, installation, and actual consumption trend outpacing the supply increase), we see a decline in major customers' memory inventory (across consumer electronics to server, and B2B side) and little risk of unexpected inventory destocking. As memory consumption cannot exceed the amount of supply (added by inventory), we believe memory procurement eventually needs to be normalized, narrowing the theoretical S-D gap. However, this should not be read as a signal for a potential inventory build-up immediately, as multiple end-demand areas are being disrupted by limited supply. Some segment demand (consumer and automotive applications) could recover quickly when supply improves amid stable pricing trends. Lastly, a few investors also asked if power supply will become a bottleneck and widen the gap between upstream semiconductor and downstream server rack installation in datacenter. Specific lead times and inventory in the supply chain remain unclear, and we would closely monitor finished server rack inventory related risk to memory procurement going forward.
+
+\- Mixed takes on Korea's AI mega-investment plan; more positive bias towards memory SPE from potentially higher capex spending. Investors generally found the US\$3+trn Korean AI mega-investment master plan announcement net-negative to memory sector sentiment as the initial interpretation was focused on lack of supply discipline. We believe there are many moving parts in actual capex execution, and additional fab investment will be necessary on an extremely long-term horizon after Korean memory producers fill in Yong-in fab. It is important to note that supply debottlenecking is necessary to sustain the aforementioned AI capex race while memory sustains adequate value share. From a capex perspective, we believe up to 20% or higher annualized capex could be spent vs. our published forecast, looking at the pace of near-term and mid-to-long term fab construction schedules. MU's US\$50bn additional capex plan (link) on top of its previous US\$200bn spending echoes a similar view and news reports (link) on Samsung potentially pulling in Yong-in fab infrastructure for up to two years is a clear indication of memory makers' fab first strategy to obtain flexibility in preparing new supply and the capacity to respond to its multi-year shortage view.
+
+\- Where else do we see bottlenecks in the memory supply chain? Within the memory sub-components industry, we currently see an increase in the shortage of memory-grade substrate and PCB (both at DRAM/NAND) and controller IC as well as DDR4 (mainly for NAND). This is a result of the broadening range of different memory specs required by key customers (demanding various SKUs instead of of only high density SKU). While memory makers' overall TAM (GB terms) is unchanged, the increase in module SKUs (higher number of DRAM modules or SSD modules) will result in greater sourcing needs for respective components. Therefore, we consider market speculation on memory-grade substrate price cuts (link) as unrealistic and view the ongoing BT substrate (FC-CSP) migration/conversion to ABF substrate (JPM Asia Tech research view) as a tailwind to S-D improvement. The aforementioned trend is also favorable to third party NAND controller IC solution providers and DDR4 solution providers, in our view. Lastly, a few investors asked if we are seeing S/D tightness in the silicon wafer sector as well (little evidence of substantial S-D dynamic improvement in the next 6-9M, according to our discussions with memory suppliers).
+
+\- MLCC received the second most attention outside of memory, followed by ABF substrate, with relatively less interest in RV ideas than in the past. Most investors understand the similarities between memory and MLCC cycles (both following S-D with AI being the new demand driver) but continue to underestimate the supply bottlenecks (increase in different needs of AI server grade MLCC at low yield and trade loss due to larger form-factor SKU production). Our bullish MLCC sector thesis (note) is based on 1) structural product mix improvement driven by AI server related demand strength and 2) S-D tightness resulting in broad-based MLCC ASP strength for non-AI products. Another area of investor pushback was on potentially much weaker-than-expected IT MLCC demand (due mainly to component price hikes driven by production cutbacks), which could push back the point of shortage. In terms of key catalysts, investors are waiting for clear signals of price hikes to justify demanding valuations (e.g. SEMCO is trading at 18x FY28E to JPM EPS or 14x to bullish investor EPS expectations above W90k). It remains unclear if leading MLCC producers (Murata/Taiyo Yuden – both OW, covered by Akinori Kanemoto, and SEMCO) will provide a clear path to a price hike in the upcoming July result season. This is a key reason why MLCC stocks saw a big selloff (three suppliers collectively down 34% since the peak in June vs. TPX/Kospi - 2%/-25%) alongside weak memory stock sentiment, in our view. Substrate sector thesis is unchanged (higher layer migration towards AI applications and S/D tightness potentially extendi
+
+[中间内容因长度限制已省略]
+
+ neither JPM nor any of its respective directors, officers or employees, shall be in any way responsible for the contents hereof, apart from the liabilities and responsibilities that may be imposed on them by the relevant regulatory authority in the jurisdiction in question, or the regulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction.
+
+Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email
+
+MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer
+
+Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not constitute investment advice nor an endorsement of any product or project; (4) are provided solely for informational purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All Rights Reserved.
+
+"Other Disclosures" last revised July 04, 2026.
+
+Completed 14 Jul 2026 04:10 AM HKT
+"""
+
+【DeepSeek 交稿硬约束】
+1. 全文只服务一个主判断。不要按原报告目录逐段摘要，也不要把多个结论平铺成清单。
+2. 开头直接使用原文中最有辨识度的事实、数字、对比或矛盾切入；禁止用“在……背景下”“随着……”“近年来……”空泛起笔。
+3. 正文至少使用三个原文锚点：一个可核验的数字或日期、一个具体主体/项目/制度名、一个比较或因果关系。判断必须紧挨证据，保留“可能、样本显示、报告认为”等限定词。
+4. 句子长短要自然变化。大多数段落写 2-4 句，允许用一句短句收住；不要连续使用“报告指出、这意味着、换句话说、真正重要的是、值得注意的是”等模板转折。
+5. KC评论只写一条具体、平白的解释或提醒，不能复述正文，不能提推广、原文领取、完整报告、读者行动或网站。
+6. 禁止单独设置“该报告未解决的问题、报告尚未回答、研究留白、开放问题、报告局限、还需追问”等小节，也禁止用问句收尾。若原报告明确写了限制，只能在相关正文中用一句客观陈述自然带过。
+7. 最后一段必须仍是实质内容或 KC评论。不要添加总结、结语、延伸阅读、继续阅读、关注引导、社群、扫码、网站或任何 CTA；系统会统一处理文末固定信息。
+8. 不要虚构“我读完后”“我们采访了”等个人经历，不要故意口语化或加入情绪。人工编辑感来自具体证据、准确取舍和自然节奏。
+9. 输出前自行核对：标题与导语不重复；每个小标题都是完整判断；没有元话语、推广语和未解问题栏目。只输出最终 Markdown，不输出核对过程。
