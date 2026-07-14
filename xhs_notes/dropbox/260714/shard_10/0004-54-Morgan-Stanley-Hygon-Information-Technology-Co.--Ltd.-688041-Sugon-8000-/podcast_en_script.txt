@@ -1,0 +1,19 @@
+EN_A: So there is this Chinese chip company that everyone is talking about right now, Hygon. B, you just published a deep-dive report on it. What is the big question this report is trying to answer?
+EN_B: The report is really focused on three investor questions. First, what makes Hygon different from other local GPU companies? Second, why should it trade at a high valuation like other GPU players? And third, where does Hygon fit in the era of agentic AI?
+EN_A: Those are all big questions. Let us start with the first one. Hygon is often compared to companies like Cambricon or Jingjiwei. What is its real differentiation?
+EN_B: The biggest difference is its integrated CPU plus GPU model. Most local GPU companies only make AI accelerators. Hygon makes both CPUs and GPUs. That means it can handle traditional server workloads and AI training and inference at the same time. And its largest shareholder is Sugon, which holds about 28 percent. Sugon is not just a supercomputer maker. It is a major player in China AI infrastructure, covering chips, computing, storage, networking, cooling, applications, and services.
+EN_A: So Hygon can leverage Sugon ecosystem to gain share in both CPU and GPU markets. That does sound like a unique advantage.
+EN_B: Exactly. But some investors are reluctant to give Hygon CPU business a high valuation. They think CPU growth is slower than GPU, and most CPUs are not restricted from import. We disagree.
+EN_A: Really? You think CPU growth is actually underestimated?
+EN_B: Yes. We expect China server CPU total addressable market to reach 42 billion US dollars by 2030, growing at 31 percent CAGR. That is actually higher than the AI GPU market growth of 23 percent. Why? Because policy and supply chain security are driving CPU localization. And the rise of agentic AI will make CPUs even more important.
+EN_A: That brings us to the third question. In the agentic AI era, is the CPU not becoming less relevant? Is it not all about GPUs?
+EN_B: Actually, the opposite. As AI systems move to multi-agent architectures, CPUs become responsible for workflow control and system-level coordination. They are not a sidekick anymore. They are the brain. We estimate China agentic AI CPU market will be 17 billion US dollars by 2030, which is 21 percent of global demand.
+EN_A: 17 billion dollars. How much of that can Hygon capture?
+EN_B: We expect Hygon to address 3 to 5 percent of that demand. Because its CPUs are already strong in security-sensitive verticals like government and finance. Those sectors have growing requirements for data sovereignty, compute isolation, and trusted infrastructure.
+EN_A: But can Hygon deliver? Can its next-generation CPUs really support agentic AI?
+EN_B: The report says the next-gen CPUs will have higher clock speeds, stronger performance, and enhanced security. But how much exactly, and whether it will be enough for agentic AI workloads, those details are not fully laid out.
+EN_A: So you are saying if we want to understand Hygon true competitive position in the agentic AI era, we need to read the full report.
+EN_B: Exactly. And there is also a key point about valuation. Why does the report argue that Hygon CPU business should not trade at lower multiples than pure GPU companies? The full logic is in the report.
+EN_A: Sounds like the report answers three big questions but also leaves some interesting threads to pull on. So what should our listeners do if they want to dig deeper?
+EN_B: If you are interested in Hygon, the landscape of Chinese AI chips, or the investment opportunities in agentic AI, I would suggest reading the full report. It is available in our community, or you can reach out to your client representative.
+EN_A: Great. Thank you, B, for the insights. That is all for today. See you next time.
